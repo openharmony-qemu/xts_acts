@@ -19,6 +19,7 @@ import testNapi from 'libentry.so';
 
 const ERR_PARAM = 401;
 const ERR_BUFFER_TOO_SMALL = 16000179;
+const ERR_NO_ERROR = 0;
 const IDX_CODE = 0;
 const IDX_COUNT = 1;
 const IDX_INDEX_CODE = 2;
@@ -26,6 +27,13 @@ const IDX_PID = 3;
 const IDX_PID_CODE = 4;
 const IDX_NAME_CODE = 5;
 const IDX_NAME_LEN = 6;
+const IDX_PARENT_PID = 7;
+const IDX_PARENT_PID_CODE = 8;
+const IDX_PARENT_DETAIL_CODE = 0;
+const IDX_PARENT_DETAIL_PID = 1;
+const IDX_PARENT_DETAIL_SELF = 2;
+const IDX_ENUM_NO_ERROR = 0;
+const IDX_ENUM_PARAM_INVALID = 1;
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -146,6 +154,47 @@ export default function childProcessInfosTest() {
       });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Enum_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Enum_0100
+     * @tc.desc   GetParentPid related AbilityRuntime_ErrorCode enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Enum_0100', Level.LEVEL0,
+      () => {
+        let enums: number[] = testNapi.childProcessInfoGetParentPidErrorEnums();
+        expect(enums[IDX_ENUM_NO_ERROR]).assertEqual(ERR_NO_ERROR);
+        expect(enums[IDX_ENUM_PARAM_INVALID]).assertEqual(ERR_PARAM);
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Invalid_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Invalid_0100
+     * @tc.desc   GetParentPid returns 401 when info is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Invalid_0100',
+      Level.LEVEL0, () => {
+        expect(testNapi.childProcessInfoGetParentPidInvalid()).assertEqual(ERR_PARAM);
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_BothNull_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_BothNull_0100
+     * @tc.desc   GetParentPid returns 401 when info and parentPid are both null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_BothNull_0100',
+      Level.LEVEL0, () => {
+        expect(testNapi.childProcessInfoGetParentPidBothNull()).assertEqual(ERR_PARAM);
+      });
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_Invalid_0100
      * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetName_Invalid_0100
      * @tc.desc   OH_AbilityRuntime_ChildProcessInfo_GetProcessName returns 401 on null
@@ -205,6 +254,75 @@ export default function childProcessInfosTest() {
           expect(info[IDX_PID] > 0).assertTrue();
           expect(info[IDX_NAME_CODE]).assertEqual(0);
           expect(info[IDX_NAME_LEN] > 0).assertTrue();
+          expect(info[IDX_PARENT_PID_CODE]).assertEqual(0);
+          expect(info[IDX_PARENT_PID] > 0).assertTrue();
+          expect(1).assertEqual(testNapi.requestExitChildProcess(0));
+          await sleep(600);
+        } catch (err) {
+          console.info(`${tag} error: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        } finally {
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_NullOut_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_NullOut_0100
+     * @tc.desc   GetParentPid returns 401 when parentPid out-param is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_NullOut_0100',
+      Level.LEVEL0, async (done: Function) => {
+        let tag = 'ChildProcessInfos_GetParentPid_NullOut_0100';
+        try {
+          let ret: number = testNapi.startNativeChildProcess('libentry.so');
+          if (!mpEnable || !ncpEnable) {
+            console.info(`${tag} skip create unsupported ret=${ret}`);
+            done();
+            return;
+          }
+          expect(0).assertEqual(ret);
+          await sleep(500);
+          expect(testNapi.childProcessInfoGetParentPidNullOut()).assertEqual(ERR_PARAM);
+          expect(1).assertEqual(testNapi.requestExitChildProcess(0));
+          await sleep(600);
+        } catch (err) {
+          console.info(`${tag} error: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        } finally {
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Value_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Value_0100
+     * @tc.desc   GetParentPid returns NO_ERROR and parentPid equals caller getpid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ChildProcessInfos_GetParentPid_Value_0100',
+      Level.LEVEL0, async (done: Function) => {
+        let tag = 'ChildProcessInfos_GetParentPid_Value_0100';
+        try {
+          let ret: number = testNapi.startNativeChildProcess('libentry.so');
+          if (!mpEnable || !ncpEnable) {
+            console.info(`${tag} skip create unsupported ret=${ret}`);
+            done();
+            return;
+          }
+          expect(0).assertEqual(ret);
+          await sleep(500);
+          let detail: number[] = testNapi.queryChildProcessInfoParentPid();
+          console.info(`${tag} detail=${JSON.stringify(detail)}`);
+          expect(detail[IDX_PARENT_DETAIL_CODE]).assertEqual(ERR_NO_ERROR);
+          expect(detail[IDX_PARENT_DETAIL_PID] > 0).assertTrue();
+          expect(detail[IDX_PARENT_DETAIL_PID]).assertEqual(
+            detail[IDX_PARENT_DETAIL_SELF]);
           expect(1).assertEqual(testNapi.requestExitChildProcess(0));
           await sleep(600);
         } catch (err) {
@@ -265,6 +383,8 @@ export default function childProcessInfosTest() {
           expect(info[IDX_PID_CODE]).assertEqual(0);
           expect(info[IDX_PID] > 0).assertTrue();
           expect(info[IDX_NAME_CODE]).assertEqual(0);
+          expect(info[IDX_PARENT_PID_CODE]).assertEqual(0);
+          expect(info[IDX_PARENT_PID] > 0).assertTrue();
         }
       });
   });

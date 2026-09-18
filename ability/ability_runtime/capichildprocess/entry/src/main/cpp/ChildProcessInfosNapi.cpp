@@ -17,6 +17,7 @@
 
 #include <cstdint>
 #include <cstring>
+#include <unistd.h>
 #include <vector>
 
 #include "AbilityKit/ability_runtime/application_context.h"
@@ -33,7 +34,9 @@ namespace {
 
 // G.CNS.02: named lengths for NAPI int arrays returned to Hypium.
 constexpr size_t K_ACQUIRE_RESULT_LEN = 2;
-constexpr size_t K_QUERY_RESULT_LEN = 7;
+constexpr size_t K_QUERY_RESULT_LEN = 9;
+constexpr size_t K_PARENT_PID_DETAIL_LEN = 3;
+constexpr size_t K_PARENT_PID_ERR_ENUM_LEN = 2;
 
 struct QueryResultFields {
     int32_t acquireCode = 0;
@@ -43,6 +46,8 @@ struct QueryResultFields {
     int32_t pidCode = 0;
     int32_t nameCode = 0;
     int32_t nameLen = 0;
+    int32_t parentPid = 0;
+    int32_t parentPidCode = 0;
 };
 
 napi_value MakeInt32(napi_env env, int32_t value)
@@ -139,6 +144,33 @@ napi_value GetPidInvalid(napi_env env, napi_callback_info info)
     return MakeInt32(env, static_cast<int32_t>(ret));
 }
 
+napi_value GetParentPidInvalid(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    int32_t parentPid = 0;
+    AbilityRuntime_ErrorCode ret =
+        OH_AbilityRuntime_ChildProcessInfo_GetParentPid(nullptr, &parentPid);
+    return MakeInt32(env, static_cast<int32_t>(ret));
+}
+
+napi_value GetParentPidBothNull(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    AbilityRuntime_ErrorCode ret =
+        OH_AbilityRuntime_ChildProcessInfo_GetParentPid(nullptr, nullptr);
+    return MakeInt32(env, static_cast<int32_t>(ret));
+}
+
+napi_value GetParentPidErrorEnums(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    int32_t vals[K_PARENT_PID_ERR_ENUM_LEN] = {
+        static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_NO_ERROR),
+        static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID),
+    };
+    return MakeIntArray(env, vals, K_PARENT_PID_ERR_ENUM_LEN);
+}
+
 napi_value GetProcessNameInvalid(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -189,8 +221,22 @@ napi_value BuildQueryResult(napi_env env, const QueryResultFields &fields)
         fields.pidCode,
         fields.nameCode,
         fields.nameLen,
+        fields.parentPid,
+        fields.parentPidCode,
     };
     return MakeIntArray(env, vals, K_QUERY_RESULT_LEN);
+}
+
+void FillChildInfoFields(
+    OH_AbilityRuntime_ChildProcessInfoHandle child, QueryResultFields &fields)
+{
+    fields.pidCode = OH_AbilityRuntime_ChildProcessInfo_GetPid(child, &fields.pid);
+    fields.parentPidCode = OH_AbilityRuntime_ChildProcessInfo_GetParentPid(
+        child, &fields.parentPid);
+    std::vector<char> nameBuf;
+    uint32_t required = 0;
+    fields.nameCode = FillProcessName(child, nameBuf, required);
+    fields.nameLen = static_cast<int32_t>(required);
 }
 
 napi_value QueryNativeChildInfos(napi_env env, napi_callback_info info)
@@ -206,18 +252,14 @@ napi_value QueryNativeChildInfos(napi_env env, napi_callback_info info)
     fields.indexCode = -1;
     fields.pidCode = -1;
     fields.nameCode = -1;
+    fields.parentPidCode = -1;
     if (acq == NCP_NO_ERROR && infos != nullptr && count > 0) {
         OH_AbilityRuntime_ChildProcessInfoHandle child = nullptr;
         fields.indexCode = OH_AbilityRuntime_GetChildProcessInfoByIndex(
             infos, 0, &child);
         if (fields.indexCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR &&
             child != nullptr) {
-            fields.pidCode =
-                OH_AbilityRuntime_ChildProcessInfo_GetPid(child, &fields.pid);
-            std::vector<char> nameBuf;
-            uint32_t required = 0;
-            fields.nameCode = FillProcessName(child, nameBuf, required);
-            fields.nameLen = static_cast<int32_t>(required);
+            FillChildInfoFields(child, fields);
         }
     }
     if (infos != nullptr) {
@@ -239,6 +281,7 @@ napi_value QueryUIAbilityChildInfos(napi_env env, napi_callback_info info)
     fields.indexCode = -1;
     fields.pidCode = -1;
     fields.nameCode = -1;
+    fields.parentPidCode = -1;
     if (acq == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR && infos != nullptr &&
         count > 0) {
         OH_AbilityRuntime_ChildProcessInfoHandle child = nullptr;
@@ -246,18 +289,62 @@ napi_value QueryUIAbilityChildInfos(napi_env env, napi_callback_info info)
             infos, 0, &child);
         if (fields.indexCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR &&
             child != nullptr) {
-            fields.pidCode =
-                OH_AbilityRuntime_ChildProcessInfo_GetPid(child, &fields.pid);
-            std::vector<char> nameBuf;
-            uint32_t required = 0;
-            fields.nameCode = FillProcessName(child, nameBuf, required);
-            fields.nameLen = static_cast<int32_t>(required);
+            FillChildInfoFields(child, fields);
         }
     }
     if (infos != nullptr) {
         OH_AbilityRuntime_ReleaseChildProcessInfos(&infos);
     }
     return BuildQueryResult(env, fields);
+}
+
+napi_value GetParentPidNullOut(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    OH_AbilityRuntime_ChildProcessInfosHandle infos = nullptr;
+    uint32_t count = 0;
+    Ability_NativeChildProcess_ErrCode acq =
+        OH_Ability_AcquireChildProcessInfos(&infos, &count);
+    int32_t result = static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID);
+    if (acq == NCP_NO_ERROR && infos != nullptr && count > 0) {
+        OH_AbilityRuntime_ChildProcessInfoHandle child = nullptr;
+        AbilityRuntime_ErrorCode idx =
+            OH_AbilityRuntime_GetChildProcessInfoByIndex(infos, 0, &child);
+        if (idx == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR && child != nullptr) {
+            result = OH_AbilityRuntime_ChildProcessInfo_GetParentPid(
+                child, nullptr);
+        }
+    }
+    if (infos != nullptr) {
+        OH_AbilityRuntime_ReleaseChildProcessInfos(&infos);
+    }
+    return MakeInt32(env, result);
+}
+
+napi_value QueryParentPidDetail(napi_env env, napi_callback_info info)
+{
+    (void)info;
+    OH_AbilityRuntime_ChildProcessInfosHandle infos = nullptr;
+    uint32_t count = 0;
+    Ability_NativeChildProcess_ErrCode acq =
+        OH_Ability_AcquireChildProcessInfos(&infos, &count);
+    int32_t code = static_cast<int32_t>(ABILITY_RUNTIME_ERROR_CODE_PARAM_INVALID);
+    int32_t parentPid = 0;
+    int32_t selfPid = static_cast<int32_t>(getpid());
+    if (acq == NCP_NO_ERROR && infos != nullptr && count > 0) {
+        OH_AbilityRuntime_ChildProcessInfoHandle child = nullptr;
+        AbilityRuntime_ErrorCode idx =
+            OH_AbilityRuntime_GetChildProcessInfoByIndex(infos, 0, &child);
+        if (idx == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR && child != nullptr) {
+            code = OH_AbilityRuntime_ChildProcessInfo_GetParentPid(
+                child, &parentPid);
+        }
+    }
+    if (infos != nullptr) {
+        OH_AbilityRuntime_ReleaseChildProcessInfos(&infos);
+    }
+    int32_t vals[K_PARENT_PID_DETAIL_LEN] = { code, parentPid, selfPid };
+    return MakeIntArray(env, vals, K_PARENT_PID_DETAIL_LEN);
 }
 
 napi_value GetProcessNameBufferTooSmall(napi_env env, napi_callback_info info)
@@ -305,6 +392,17 @@ void RegisterChildProcessInfosNapi(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "childProcessInfoGetPidInvalid", nullptr, GetPidInvalid, nullptr,
             nullptr, nullptr, napi_default, nullptr },
+        { "childProcessInfoGetParentPidInvalid", nullptr, GetParentPidInvalid,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "childProcessInfoGetParentPidBothNull", nullptr, GetParentPidBothNull,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "childProcessInfoGetParentPidErrorEnums", nullptr,
+            GetParentPidErrorEnums, nullptr, nullptr, nullptr, napi_default,
+            nullptr },
+        { "childProcessInfoGetParentPidNullOut", nullptr, GetParentPidNullOut,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "queryChildProcessInfoParentPid", nullptr, QueryParentPidDetail,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "childProcessInfoGetProcessNameInvalid", nullptr,
             GetProcessNameInvalid, nullptr, nullptr, nullptr, napi_default,
             nullptr },
