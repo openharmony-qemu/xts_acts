@@ -159,7 +159,6 @@ class XtsBuild:
             build_command = "{} --{}={}".format(build_command, i, self._other_args.get(i))
         if self._arkts_static:
             build_command = "{} {}".format(build_command, "--prebuilts-sdk-gn-args sdk_build_arkts=true")
-        build_command = "{} {}".format(build_command, "--keep-ninja-going")
 
         # 执行编译命令
         os.chdir(self._code_root_dir)
