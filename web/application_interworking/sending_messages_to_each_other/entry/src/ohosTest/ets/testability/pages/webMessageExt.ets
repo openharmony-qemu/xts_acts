@@ -522,7 +522,7 @@ struct webMessageExt {
               break;
             }
 
-            case "testWebMessageExtSetTypeParamSpec001": {
+            case "testWebMessageExtSetTypeParam001": {
               try {
                 let ext: webView.WebMessageExt = new webView.WebMessageExt();
                 ext.setType(webView.WebMessageType.STRING);

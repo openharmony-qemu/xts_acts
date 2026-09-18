@@ -652,17 +652,17 @@ export default function webMessageExt() {
     })
 
     /**
-     * @tc.name   testWebMessageExtSetTypeParamSpec001
+     * @tc.name   testWebMessageExtSetTypeParam001
      * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_0700
      * @tc.desc   test WebMessageExt.setType param spec with getType return
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testWebMessageExtSetTypeParamSpec001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testWebMessageExtSetTypeParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-      Utils.emitEvent('testWebMessageExtSetTypeParamSpec001', 170010);
-      Utils.registerEvent('testWebMessageExtSetTypeParamSpec001', true, 170290, done);
+      Utils.emitEvent('testWebMessageExtSetTypeParam001', 170010);
+      Utils.registerEvent('testWebMessageExtSetTypeParam001', true, 170290, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 
