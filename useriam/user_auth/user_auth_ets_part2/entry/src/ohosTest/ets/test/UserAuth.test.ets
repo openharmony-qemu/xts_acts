@@ -82,18 +82,24 @@ export default function UserAuthTest() {
      */
     it('SUB_Security_IAM_PassiveRecognition_Api_5001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5001 start');
-      try {
-        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        if (mgr === null) {
-          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
-          expect(deviceInfo.deviceType !== 'car').assertTrue();
-        } else {
-          expect(mgr !== null).assertTrue();
-          expect(deviceInfo.deviceType === 'car').assertTrue();
+      let isSupport =  !canIUse("SystemCapability.Security.DataLossPrevention");
+      if (isSupport) {
+        try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr != null).assertTrue();
+          console.info("SUB_Security_IAM_PassiveRecognition_Api_5001: getUserRecognitionMgr success");
+        } catch (err) {
+          console.info(`SUB_Security_IAM_PassiveRecognition_Api_5001: getUserRecognitionMgr failed, err.code ${err.code}, err.message ${err.message}`);
+          expect(false).assertTrue();
         }
-      } catch (err) {
-        console.info("SUB_Security_IAM_PassiveRecognition_Api_5001 failed", err.code, err.message);
-        expect(false).assertTrue();
+      } else {
+        try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr === null).assertTrue();
+          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
+        } catch (err) {
+          expect(false).assertTrue();
+        }     
       }
     })
     /**
@@ -106,19 +112,30 @@ export default function UserAuthTest() {
      */
     it('SUB_Security_IAM_PassiveRecognition_Api_5002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5002 start');
-      try {
+      let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
+      if (isSupport) {
         let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        if (mgr === null) {
-          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
-          expect(deviceInfo.deviceType !== 'car').assertTrue();
-        } else {
-          let result: userAuth.UserRecognitionResult = await mgr.getUserRecognitionResult();
+        expect(mgr != null).assertTrue();
+        try {
+          let result: userAuth.UserRecognitionResult = await mgr!.getUserRecognitionResult();
           console.info("SUB_Security_IAM_PassiveRecognition_Api_5002 status: " + result.status);
-          expect(result !== undefined).assertTrue();
+          expect(result != undefined).assertTrue();
+          expect(result.status != undefined).assertTrue();
+          expect(result.userId != undefined).assertTrue();
+          expect(result.userInfo != undefined).assertTrue();
+          expect(result.authTrustLevel != undefined).assertTrue();
+        } catch (err) {
+          console.info(`SUB_Security_IAM_PassiveRecognition_Api_5002: getUserRecognitionResult failed, err.code ${err.code}, err.message ${err.message}`);
+          expect(false).assertTrue();
         }
-      } catch (err) {
-        console.info("SUB_Security_IAM_PassiveRecognition_Api_5002 failed", err.code, err.message);
-        expect(false).assertTrue();
+      } else {
+        try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr === null).assertTrue();
+          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
+        } catch (err) {
+          expect(false).assertTrue();
+        }
       }
     })
     /**
@@ -131,28 +148,30 @@ export default function UserAuthTest() {
      */
     it('SUB_Security_IAM_PassiveRecognition_Api_5003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5003 start');
-      try {
+      let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
+      if (isSupport) {
         let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        if (mgr === null) {
-          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
-          expect(deviceInfo.deviceType !== 'car').assertTrue();
-        } else {
-          let callback: userAuth.UserRecognitionResultCallback = (result: userAuth.UserRecognitionResult): void => {
-            if (result.status === userAuth.UserRecognitionStatus.UNCERTAIN) {
-              console.info("SUB_Security_IAM_PassiveRecognition_Api_5003 status: UNCERTAIN, userId: " + result.userId);
-            } else if (result.status === userAuth.UserRecognitionStatus.MISMATCH) {
-              console.info("SUB_Security_IAM_PassiveRecognition_Api_5003 status: MISMATCH, userId: " + result.userId);
-            } else if (result.status === userAuth.UserRecognitionStatus.MATCH) {
-              console.info("SUB_Security_IAM_PassiveRecognition_Api_5003 status: MATCH, userId: " + result.userId
-                + ", authTrustLevel: " + result.authTrustLevel);
-            }
-          };
-          mgr.onUserRecognitionChange(callback);
-          expect(true).assertTrue();
+        expect(mgr != null).assertTrue();
+        try {
+          mgr!.onUserRecognitionChange((result: userAuth.UserRecognitionResult) =>{
+            expect(result != undefined).assertTrue();
+            expect(result.status != undefined).assertTrue();
+            expect(result.userId != undefined).assertTrue();
+            expect(result.userInfo != undefined).assertTrue();
+            expect(result.authTrustLevel != undefined).assertTrue();
+          });
+        } catch (err) {
+          console.info(`SUB_Security_IAM_PassiveRecognition_Api_5003: onUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
+          expect(false).assertTrue();
         }
-      } catch (err) {
-        console.info("SUB_Security_IAM_PassiveRecognition_Api_5003 failed", err.code, err.message);
-        expect(false).assertTrue();
+      } else {
+        try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr === null).assertTrue();
+          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
+        } catch (err) {
+          expect(false).assertTrue();
+        }
       }
     })
     /**
@@ -165,22 +184,33 @@ export default function UserAuthTest() {
      */
     it('SUB_Security_IAM_PassiveRecognition_Api_5004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5004 start');
-      try {
+      let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
+      if (isSupport) {
         let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        if (mgr === null) {
-          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
-          expect(deviceInfo.deviceType !== 'car').assertTrue();
-        } else {
-          let callback: userAuth.UserRecognitionResultCallback = (result: userAuth.UserRecognitionResult): void => {
-            console.info("SUB_Security_IAM_PassiveRecognition_Api_5004 status: " + result.status);
-          };
-          mgr.onUserRecognitionChange(callback);
-          mgr.offUserRecognitionChange(callback);
-          expect(true).assertTrue();
+        expect(mgr != null).assertTrue();
+        mgr!.onUserRecognitionChange((result) => {
+          expect(result != undefined).assertTrue();
+        });
+        try {
+          mgr!.offUserRecognitionChange((result: userAuth.UserRecognitionResult) => {
+            expect(result != undefined).assertTrue();
+            expect(result.status != undefined).assertTrue();
+            expect(result.userId != undefined).assertTrue();
+            expect(result.userInfo != undefined).assertTrue();
+            expect(result.authTrustLevel != undefined).assertTrue();
+          });
+        } catch (err) {
+          console.info(`SUB_Security_IAM_PassiveRecognition_Api_5004: offUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
+          expect(false).assertTrue();
         }
-      } catch (err) {
-        console.info("SUB_Security_IAM_PassiveRecognition_Api_5004 failed", err.code, err.message);
-        expect(false).assertTrue();
+      } else {
+        try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr === null).assertTrue();
+          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
+        } catch (err) {
+          expect(false).assertTrue();
+        }
       }
     })
     /**
@@ -193,22 +223,28 @@ export default function UserAuthTest() {
      */
     it('SUB_Security_IAM_PassiveRecognition_Api_5005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5005 start');
-      try {
+      let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
+      if (isSupport) {
         let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        if (mgr === null) {
-          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
-          expect(deviceInfo.deviceType !== 'car').assertTrue();
-        } else {
-          let callback: userAuth.UserRecognitionResultCallback = (result: userAuth.UserRecognitionResult): void => {
-            console.info("SUB_Security_IAM_PassiveRecognition_Api_5005 status: " + result.status);
-          };
-          mgr.onUserRecognitionChange(callback);
-          mgr.offUserRecognitionChange();
-          expect(true).assertTrue();
+        expect(mgr != null).assertTrue();
+        mgr!.onUserRecognitionChange((result) => {
+          expect(result != undefined).assertTrue();
+        });
+        try {
+          mgr!.offUserRecognitionChange();
+          console.info("SUB_Security_IAM_PassiveRecognition_Api_5005: offUserRecognitionChange success");
+        } catch (err) {
+          console.info(`SUB_Security_IAM_PassiveRecognition_Api_5005: offUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
+          expect(false).assertTrue();
         }
-      } catch (err) {
-        console.info("SUB_Security_IAM_PassiveRecognition_Api_5005 failed", err.code, err.message);
-        expect(false).assertTrue();
+      } else {
+        try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr === null).assertTrue();
+          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
+        } catch (err) {
+          expect(false).assertTrue();
+        }
       }
     })
     /**
@@ -235,22 +271,28 @@ export default function UserAuthTest() {
      */
     it('SUB_Security_IAM_PassiveRecognition_Api_5007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       console.info('SUB_Security_IAM_PassiveRecognition_Api_5007 start');
-      try {
+      let isSupport = !canIUse("SystemCapability.Security.DataLossPrevention");
+      if (isSupport) {
         let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
-        if (mgr === null) {
-          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
-          expect(deviceInfo.deviceType !== 'car').assertTrue();
-        } else {
-          let callback: userAuth.UserRecognitionResultCallback = (result: userAuth.UserRecognitionResult): void => {
-            console.info("SUB_Security_IAM_PassiveRecognition_Api_5007 status: " + result.status);
-          };
-          mgr.onUserRecognitionChange(callback);
-          mgr.offUserRecognitionChange();
-          expect(true).assertTrue();
+        expect(mgr != null).assertTrue();
+        mgr!.onUserRecognitionChange((result) => {
+          expect(result != undefined).assertTrue();
+        });
+        try {
+          mgr!.offUserRecognitionChange();
+          console.info("SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange success");
+        } catch (err) {
+          console.info(`SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
+          expect(false).assertTrue();
         }
-      } catch (err) {
-        console.info("SUB_Security_IAM_PassiveRecognition_Api_5007 failed", err.code, err.message);
-        expect(false).assertTrue();
+      } else {
+        try {
+          let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+          expect(mgr === null).assertTrue();
+          console.info("getUserRecognitionMgr returned null, device does not support passive recognition");
+        } catch (err) {
+          expect(false).assertTrue();
+        }
       }
     })
   })
