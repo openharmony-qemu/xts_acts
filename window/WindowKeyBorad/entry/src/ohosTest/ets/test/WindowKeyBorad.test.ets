@@ -645,7 +645,7 @@ export default function windowKeyBorad() {
 
      /**
      * @tc.name   testSubWindowDestroy_offkeyboardDidHide
-     * @tc.number SUB_BASIC_WMS_ONKEYBOARDDIDHIDE_0100
+     * @tc.number SUB_BASIC_WMS_ONKEYBOARDDIDHIDE_0300
      * @tc.desc   子窗销毁后取消监听offKeyboarddidhide返回1300002错误码
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
