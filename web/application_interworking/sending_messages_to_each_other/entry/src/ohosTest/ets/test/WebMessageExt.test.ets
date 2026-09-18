@@ -14,6 +14,7 @@
  */
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import { BusinessError } from '@kit.BasicServicesKit';
 import webview from '@ohos.web.webview'
 import router from '@ohos.router';
 import Utils from './Utils';
@@ -528,6 +529,57 @@ export default function webMessageExt() {
         ext.setType(999 as webview.WebMessageType);
       } catch (error) {
         console.info('setType(invalid) err=' + JSON.stringify(error));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testWebMessageExtSetTypeError401Direct
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_401_0300
+     * @tc.desc   setType null/undefined/invalid enum returns 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetTypeError401Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ext: webview.WebMessageExt = new webview.WebMessageExt();
+      try {
+        ext.setType(null);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(401);
+      }
+      try {
+        ext.setType(undefined);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(401);
+      }
+      try {
+        ext.setType(999 as webview.WebMessageType);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testWebMessageExtSetTypeError17100014Direct
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_17100014_0400
+     * @tc.desc   setType type mismatch after setString returns 17100014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetTypeError17100014Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ext: webview.WebMessageExt = new webview.WebMessageExt();
+      ext.setString('hello');
+      try {
+        ext.setType(webview.WebMessageType.NUMBER);
+        expect().assertFail();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(17100014);
       }
       done();
     })
