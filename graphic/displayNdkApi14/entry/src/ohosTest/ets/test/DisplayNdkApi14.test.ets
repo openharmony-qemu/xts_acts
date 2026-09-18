@@ -540,7 +540,7 @@ export default function ActsDisplayNdkApi14Test() {
     let caseName = 'test_NativeDisplayManager_CaptureScreenPixeImapMax';
     try{
     let errcode = testNapi.getDisplayCaptureMax();
-    console.log(${caseName} result: ${JSON.stringify(errcode)});
+    console.log(`${caseName} result: ${JSON.stringify(errcode)}`);
     expect(errcode).assertEqual(1400003);
     done();
     } catch (err) {
