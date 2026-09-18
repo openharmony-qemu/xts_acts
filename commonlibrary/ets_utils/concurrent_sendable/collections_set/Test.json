@@ -1,12 +1,12 @@
 {
-    "description": "Configuration for Sendable Containers Tests",
+"description": "Configuration for startup collections Set Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "180000",
-        "shell-timeout": "600000",
-        "bundle-name": "com.example.collectionsSet",
+        "test-timeout": "800000",
+        "bundle-name": "com.example.collections.set",
         "module-name": "entry_test",
-        "testcase-timeout": 70000
+        "shell-timeout": "800000",
+        "compile-mode": "esmodule"
     },
     "kits": [
         {

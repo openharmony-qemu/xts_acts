@@ -39,9 +39,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMediaBase640100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMediaBase640100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase640100 start====");
           let result: number = nativeTest.GetMediaBase640100($r('app.media.icon').id);
@@ -123,9 +123,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMediaBase64Data0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMediaBase64Data0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64Data0100 start====");
           let result: number = nativeTest.GetMediaBase64Data0100($r('app.media.icon').id);
@@ -207,9 +207,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMediaBase64ByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMediaBase64ByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64ByName0100 start====");
           let result: number = nativeTest.GetMediaBase64ByName0100('icon');
@@ -270,9 +270,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMediaBase64DataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMediaBase64DataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           console.info("====>TestGetMediaBase64DataByName0100 start====");
           let result: number = nativeTest.GetMediaBase64DataByName0100('icon');
@@ -333,9 +333,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMedia0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMedia0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           console.info("====>TestGetMedia0100 start====");
           let result: number = nativeTest.GetMedia0100($r('app.media.icon').id);
@@ -417,9 +417,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMediaData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMediaData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetMediaData0100 start====");
         let result: number = nativeTest.GetMediaData0100($r('app.media.icon').id);
@@ -501,9 +501,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMediaByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMediaByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetMediaByName0100 start====");
         let result: number = nativeTest.GetMediaByName0100('icon');
@@ -564,9 +564,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetMediaDataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetMediaDataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetMediaDataByName0100 start====");
         let result: number = nativeTest.GetMediaDataByName0100('icon');
@@ -627,9 +627,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetDrawableDescriptor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetDrawableDescriptor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptor0100 start====");
         let result: number = nativeTest.GetDrawableDescriptor0100($r('app.media.icon').id);
@@ -711,9 +711,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetDrawableDescriptorData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetDrawableDescriptorData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorData0100 start====");
         let result: number = nativeTest.GetDrawableDescriptorData0100($r('app.media.icon').id);
@@ -795,9 +795,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetDrawableDescriptorByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetDrawableDescriptorByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorByName0100 start====");
         let result: number = nativeTest.GetDrawableDescriptorByName0100();
@@ -858,9 +858,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetDrawableDescriptorDataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetDrawableDescriptorDataByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetDrawableDescriptorDataByName0100 start====");
         let result: number = nativeTest.GetDrawableDescriptorDataByName0100('icon');
@@ -921,9 +921,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetSymbol0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetSymbol0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetSymbol0100 start====");
         let result: number = nativeTest.GetSymbol0100($r('app.symbol.symbol_test').id);
@@ -1026,9 +1026,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetSymbolByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetSymbolByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetSymbolByName0100 start====");
         let result: number = nativeTest.GetSymbolByName0100();
@@ -1110,9 +1110,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetLocales0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetLocales0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetLocales0100 start====");
         let result: number = nativeTest.GetLocales0100();
@@ -1152,9 +1152,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetLocalesData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetLocalesData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetLocalesData0100 start====");
         let result: number = nativeTest.GetLocalesData0100();
@@ -1194,9 +1194,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetConfiguration0100 start====");
         let result: number = nativeTest.GetConfiguration0100();
@@ -1236,9 +1236,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetResourceConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetResourceConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetResourceConfiguration0100 start====");
         let result: number = nativeTest.GetResourceConfiguration0100();
@@ -1257,9 +1257,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestReleaseConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestReleaseConfiguration0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestReleaseConfiguration0100 start====");
         let result: number = nativeTest.ReleaseConfiguration0100();
@@ -1299,9 +1299,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetString0100 start====");
         let result: number = nativeTest.GetString0100($r('app.string.entry_MainAbility').id);
@@ -1427,9 +1427,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetStringByName0100 start====");
         let result: number = nativeTest.GetStringByName0100();
@@ -1534,9 +1534,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetStringArray0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetStringArray0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetStringArray0100 start====");
         let result: number = nativeTest.GetStringArray0100($r('app.strarray.size').id);
@@ -1639,9 +1639,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetStringArrayByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetStringArrayByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetStringArrayByName0100 start====");
         let result: number = nativeTest.GetStringArrayByName0100();
@@ -1723,9 +1723,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestReleaseStringArray0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestReleaseStringArray0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestReleaseStringArray0100 start====");
         let result: number = nativeTest.ReleaseStringArray0100();
@@ -1765,9 +1765,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetPluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetPluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetPluralString0100 start====");
         let result: number = nativeTest.GetPluralString0100($r('app.plural.eat_apple').id);
@@ -1870,9 +1870,9 @@ export default function abilityTest() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetPluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetPluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetPluralStringByName0100 start====");
         let result: number = nativeTest.GetPluralStringByName0100();

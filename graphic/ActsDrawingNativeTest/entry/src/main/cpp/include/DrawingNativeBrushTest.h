@@ -41,12 +41,14 @@ int TestBrushSetColorNormal();
 int TestBrushSetColorNull();
 int TestBrushSetColorAbnormal();
 int TestBrushSetColorMaximum();
+int TestBrushSetGetColorMultipleTimes();
 int TestBrushGetAlphaNormal();
 int TestBrushGetAlphaNull();
 int TestBrushSetAlphaNormal();
 int TestBrushSetAlphaNull();
 int TestBrushSetAlphaAbnormal();
 int TestBrushSetAlphaMaximum();
+int TestBrushSetGetAlphaMultipleTimes();
 int TestBrushSetShaderEffectNormal();
 int TestBrushSetShaderEffectNull();
 int TestBrushSetShadowLayerNormal();
@@ -61,6 +63,7 @@ int TestBrushResetNormal();
 int TestBrushResetNull();
 int TestBrushGetAlphaFloatNormal();
 int TestBrushGetAlphaFloatAbnormal();
+int TestBrushGetAlphaFloatBoundary();
 int TestBrushGetRedFloatNormal();
 int TestBrushGetRedFloatAbnormal();
 int TestBrushGetGreenFloatNormal();
@@ -70,6 +73,7 @@ int TestBrushGetBlueFloatAbnormal();
 int TestBrushSetColor4fNormal();
 int TestBrushSetColor4fNull();
 int TestBrushSetColor4fAbnormal();
+int TestBrushSetColor4fMaximum();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

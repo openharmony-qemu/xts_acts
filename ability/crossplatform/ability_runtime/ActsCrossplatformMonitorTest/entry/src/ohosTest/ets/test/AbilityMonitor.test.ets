@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
-import { describe, beforeEach, afterEach, expect, it, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, expect, it, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import commonEvent from '@ohos.commonEventManager';

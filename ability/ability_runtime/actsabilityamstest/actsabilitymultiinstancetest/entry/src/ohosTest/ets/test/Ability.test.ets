@@ -14,7 +14,7 @@
  */
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { common, StartOptions } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry, Driver, MatchPattern, ON } from '@kit.TestKit';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';

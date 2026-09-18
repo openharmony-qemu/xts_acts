@@ -24,6 +24,10 @@ let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
 let testUri2 = "datashareproxy://com.acts.dataShare.config/test2";
 let TAG = "ttt ";
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export default function dataShareConfigSubscribeTest() {
   describe("dataShareConfigSubscribeTest", () => {
     beforeAll(async () => {
@@ -759,6 +763,7 @@ export default function dataShareConfigSubscribeTest() {
           console.log(TAG + "count:" + count);
           changeInfo.forEach((info) => {
             expect(info.uri).assertEqual(testUri);
+            console.log(TAG + "count:762:" + count);
             let infoType = count == 0 ? dataShare.ChangeType.DELETE : dataShare.ChangeType.INSERT;
             expect(info.type).assertEqual(infoType);
           });
@@ -774,6 +779,7 @@ export default function dataShareConfigSubscribeTest() {
       }
       try {
         await g_handle!.delete(uris, g_config);
+        await sleep(500);
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -781,7 +787,9 @@ export default function dataShareConfigSubscribeTest() {
           allowList: []
         }
         proxyData.push(g_proxyDataAllowTest1);
+        console.log(TAG + "count:785:" + count);
         count += 1;
+        console.log(TAG + "count:787:" + count);
         await g_handle?.publish(proxyData, g_config);
         g_handle!.off("dataChange", uris, g_config, null);
         done();

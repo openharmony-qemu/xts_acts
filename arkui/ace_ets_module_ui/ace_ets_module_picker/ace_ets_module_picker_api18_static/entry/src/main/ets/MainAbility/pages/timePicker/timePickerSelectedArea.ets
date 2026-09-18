@@ -13,24 +13,53 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,Color,
-  Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker, TimePickerResult,
-  TimePicker,HorizontalAlign, TextAlign} from '@ohos.arkui.component'
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  Color,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  AttributeModifier,
+  DatePickerAttribute,
+  DatePicker,
+  TimePickerResult,
+  TimePicker,
+  HorizontalAlign,
+  TextAlign
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct TimePickerSelectedAreaExample {
   @State isMilitaryTime: boolean = false
   private selectedTime: Date = new Date('2022-07-22T08:00:00')
   @State textFlag: string = ''
+
   build() {
     Column() {
-      Text(this.textFlag).id('textFlag').height('5%').width('90%').margin({ top: 10, bottom: 10 } as Margin).textAlign(TextAlign.Center)
+      Text(this.textFlag)
+        .id('textFlag')
+        .height('5%')
+        .width('90%')
+        .margin({ top: 10, bottom: 10 } as Margin)
+        .textAlign(TextAlign.Center)
       TimePicker({
         selected: this.selectedTime
-      }).id('timePicker')
+      })
+        .id('timePicker')
         .width('90%')
         .height('80%')
         .useMilitaryTime(this.isMilitaryTime)

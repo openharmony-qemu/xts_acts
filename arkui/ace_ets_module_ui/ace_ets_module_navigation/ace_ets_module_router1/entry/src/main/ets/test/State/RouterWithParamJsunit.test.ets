@@ -153,6 +153,7 @@ export default function RouterWithParamJsunit() {
     it('RouterWithParamJsunit_005', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_005] START');
       let driver = await Driver.create();
+      await driver.delayMs(waitUiReadyMs);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll'));
       let btn = await scrollBar.scrollSearch(ON.id('turn_RouterPushUrlOne_string_numArray'));
       await driver.delayMs(waitUiReadyMs);

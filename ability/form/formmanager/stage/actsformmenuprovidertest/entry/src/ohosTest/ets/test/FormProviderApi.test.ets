@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeEach, beforeAll, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 import formProvider from '@ohos.app.form.formProvider'
