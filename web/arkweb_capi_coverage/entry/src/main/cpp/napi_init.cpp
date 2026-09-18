@@ -39,6 +39,9 @@ constexpr uint32_t BLANKLESS_CACHE_CAPACITY_OVER_MAX = BLANKLESS_CACHE_CAPACITY_
 
 constexpr int32_t BLANKLESS_INFO_PREDICTION_INIT = 0;
 constexpr int32_t BLANKLESS_INFO_LOADING_TIME_INIT = 0;
+
+constexpr uint32_t BLANKLESS_CLEAR_CACHE_SIZE_MAX = 100;
+constexpr uint32_t BLANKLESS_CLEAR_CACHE_SIZE_OVER_MAX = BLANKLESS_CLEAR_CACHE_SIZE_MAX + 1;
 } // namespace
 
 // ========== 全局状态变量 ==========
@@ -659,6 +662,40 @@ static napi_value TestNativeArkWeb_ClearBlanklessLoadingCacheNull(napi_env env, 
     return result;
 }
 
+static napi_value TestNativeArkWeb_ClearBlanklessLoadingCacheByCase(napi_env env, napi_callback_info info)
+{
+    int32_t caseNum = GetCaseNum(env, info);
+    const char* keys[] = {"key1", "key2", "key3"};
+    const size_t normalKeyCount = sizeof(keys) / sizeof(keys[0]);
+    const char* tempKeys[BLANKLESS_CLEAR_CACHE_SIZE_MAX + 1] = {nullptr};
+    switch (caseNum) {
+        case CASE_NUM_0:
+            OH_NativeArkWeb_ClearBlanklessLoadingCache(nullptr, NULL_KEY_COUNT);
+            break;
+        case CASE_NUM_1:
+            OH_NativeArkWeb_ClearBlanklessLoadingCache(keys, normalKeyCount);
+            break;
+        case CASE_NUM_2:
+            OH_NativeArkWeb_ClearBlanklessLoadingCache(tempKeys, BLANKLESS_CLEAR_CACHE_SIZE_MAX);
+            break;
+        case CASE_NUM_3:
+            OH_NativeArkWeb_ClearBlanklessLoadingCache(tempKeys, BLANKLESS_CLEAR_CACHE_SIZE_OVER_MAX);
+            break;
+        default:
+            break;
+    }
+    return CreateResult(env, TEST_RESULT_SUCCESS);
+}
+
+static napi_value TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields(napi_env env, napi_callback_info info)
+{
+    ArkWeb_BlanklessInfo info = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+    if (info.similarity < 0 || info.loadingTime < 0) {
+        return CreateResult(env, TEST_RESULT_FAILURE);
+    }
+    return CreateResult(env, static_cast<int32_t>(info.errCode));
+}
+
 static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid(napi_env env, napi_callback_info info)
 {
     ArkWeb_BlanklessErrorCode ret = OH_NativeArkWeb_SetBlanklessLoadingWithKey(nullptr, nullptr, true);
@@ -854,6 +891,12 @@ static const napi_property_descriptor K_NAPI_DESCRIPTORS[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_ClearBlanklessLoadingCacheNull", nullptr,
         TestNativeArkWeb_ClearBlanklessLoadingCacheNull,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_ClearBlanklessLoadingCacheByCase", nullptr,
+        TestNativeArkWeb_ClearBlanklessLoadingCacheByCase,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields", nullptr,
+        TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields,
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid", nullptr,
         TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid,

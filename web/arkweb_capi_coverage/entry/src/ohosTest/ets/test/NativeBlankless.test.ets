@@ -215,6 +215,63 @@ export default function native_blanklessTest() {
       });
 
     /**
+     * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheSizeZero
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_ZERO_0027
+     * @tc.desc Test ClearBlanklessLoadingCache with key size 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestNativeArkWeb_ClearBlanklessLoadingCacheSizeZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestNativeArkWeb_ClearBlanklessLoadingCacheByCase(0)).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheSize100
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_100_0028
+     * @tc.desc Test ClearBlanklessLoadingCache with key size 100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestNativeArkWeb_ClearBlanklessLoadingCacheSize100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestNativeArkWeb_ClearBlanklessLoadingCacheByCase(2)).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheSize101
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_101_0029
+     * @tc.desc Test ClearBlanklessLoadingCache with key size 101
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestNativeArkWeb_ClearBlanklessLoadingCacheSize101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        expect(nativeFunc.TestNativeArkWeb_ClearBlanklessLoadingCacheByCase(3)).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_RETURN_FIELDS_0030
+     * @tc.desc Test GetBlanklessInfoWithKey errCode/similarity/loadingTime fields
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        assertBlanklessErrCode(nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields(),
+          ALL_BLANKLESS_ERR_CODES);
+        done();
+      });
+
+    /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid
      * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_INVALID_0015
      * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingWithKey null params
