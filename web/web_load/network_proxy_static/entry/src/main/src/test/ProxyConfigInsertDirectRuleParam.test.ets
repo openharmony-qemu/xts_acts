@@ -103,53 +103,53 @@ export default function proxyConfigInsertDirectRuleParam():void {
         done();
       })
 
-    // /**
-    //  * @tc.name   testInsertDirectRuleNullStatic
-    //  * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0400
-    //  * @tc.desc   insertDirectRule null 401 test.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testInsertDirectRuleNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> =>  {
-    //     try {
-    //       await Utils.msSleep(2000);
-    //       Utils.emitEvent('testInsertDirectRuleNull', 10)
-    //       await Utils.msSleep(2000);
-    //       Utils.registerEvent('testInsertDirectRuleNull', true, 202502403, done);
-    //       await Utils.msSleep(2000);
-    //       inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
-    //       await Utils.msSleep(2000);
-    //     } catch(err) {
-    //       console.log('testEnableReverseBypassNullStatic' + err)
-    //     }
-    //     done();
-    //   })
+    /**
+     * @tc.name   testInsertDirectRuleNullStatic
+     * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0400
+     * @tc.desc   insertDirectRule null returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertDirectRuleNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        try {
+          await Utils.msSleep(2000);
+          Utils.emitEvent('testInsertDirectRuleNull', 10);
+          await Utils.msSleep(2000);
+          Utils.registerEvent('testInsertDirectRuleNull', true, 202502403, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          console.log('testInsertDirectRuleNullStatic' + err);
+        }
+        done();
+      })
 
-    // /**
-    //  * @tc.name   testInsertDirectRuleUndefinedStatic
-    //  * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0500
-    //  * @tc.desc   insertDirectRule undefined 401 test.
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL0
-    //  */
-    // it('testInsertDirectRuleUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-    //   async (done: () => void): Promise<void> =>  {
-    //     try {
-    //       await Utils.msSleep(2000);
-    //       Utils.emitEvent('testInsertDirectRuleUndefined', 10)
-    //       await Utils.msSleep(2000);
-    //       Utils.registerEvent('testInsertDirectRuleUndefined', true, 202502404, done);
-    //       await Utils.msSleep(2000);
-    //       inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
-    //       await Utils.msSleep(2000);
-    //     } catch(err) {
-    //       console.log('testEnableReverseBypassNullStatic' + err)
-    //     }
-    //     done();
-    //   })
+    /**
+     * @tc.name   testInsertDirectRuleUndefinedStatic
+     * @tc.number SUB_WEB_INSERTDIRECTRULE_PARAM_0500
+     * @tc.desc   insertDirectRule undefined returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testInsertDirectRuleUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> =>  {
+        try {
+          await Utils.msSleep(2000);
+          Utils.emitEvent('testInsertDirectRuleUndefined', 10);
+          await Utils.msSleep(2000);
+          Utils.registerEvent('testInsertDirectRuleUndefined', true, 202502404, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('insertDirectRuleParamButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          console.log('testInsertDirectRuleUndefinedStatic' + err);
+        }
+        done();
+      })
 
     /**
      * @tc.name   testInsertDirectRuleNegativeEnumStatic

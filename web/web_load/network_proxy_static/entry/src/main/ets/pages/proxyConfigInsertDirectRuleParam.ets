@@ -120,33 +120,33 @@ struct proxyConfigInsertDirectRuleParam {
               break;
             }
 
-            // case 'testInsertDirectRuleNull': {
-            //   try {
-            //     let config: webview.ProxyConfig = new webview.ProxyConfig();
-            //     let nullValue: webview.ProxySchemeFilter | null = null;
-            //     config.insertDirectRule(nullValue as webview.ProxySchemeFilter);
-            //     Utils.emitEvent(false, 202502403);
-            //   } catch (error) {
-            //     error = error as BusinessError;
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //     Utils.emitEvent(error.code === 401, 202502403);
-            //   }
-            //   break;
-            // }
+            case 'testInsertDirectRuleNull': {
+              try {
+                let config: webview.ProxyConfig = new webview.ProxyConfig();
+                let nullValue: webview.ProxySchemeFilter | null = null;
+                config.insertDirectRule(nullValue as webview.ProxySchemeFilter);
+                Utils.emitEvent(false, 202502403);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code === 401, 202502403);
+              }
+              break;
+            }
 
-            // case 'testInsertDirectRuleUndefined': {
-            //   try {
-            //     let config: webview.ProxyConfig = new webview.ProxyConfig();
-            //     let undefinedValue: webview.ProxySchemeFilter | undefined = undefined;
-            //     config.insertDirectRule(undefinedValue as webview.ProxySchemeFilter);
-            //     Utils.emitEvent(false, 202502404);
-            //   } catch (error) {
-            //     error = error as BusinessError;
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //     Utils.emitEvent(error.code === 401, 202502404);
-            //   }
-            //   break;
-            // }
+            case 'testInsertDirectRuleUndefined': {
+              try {
+                let config: webview.ProxyConfig = new webview.ProxyConfig();
+                let undefinedValue: webview.ProxySchemeFilter | undefined = undefined;
+                config.insertDirectRule(undefinedValue as webview.ProxySchemeFilter);
+                Utils.emitEvent(false, 202502404);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code === 401, 202502404);
+              }
+              break;
+            }
 
             case 'testInsertDirectRuleNegativeEnum': {
               try {

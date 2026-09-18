@@ -161,5 +161,25 @@ export default function ClearPrefetchedResourceTest() : void {
         await Utils.msSleep(5000);
         done();
       })
+
+    /**
+     * @tc.name   testPrefetchResourceError17100002Static001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_ERROR_17100002_0400
+     * @tc.desc   test prefetchResource null RequestInfo returns error code 17100002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPrefetchResourceError17100002Static001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testPrefetchResourceError17100002Static001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testPrefetchResourceError17100002Static001', 17100002, 41023107, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }

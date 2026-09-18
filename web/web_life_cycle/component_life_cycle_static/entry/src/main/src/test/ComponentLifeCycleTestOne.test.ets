@@ -217,5 +217,45 @@ export default function componentLifeCycleTestOne(): void {
         await Utils.msSleep(5000);
         done();
       })
+
+    /**
+     * @tc.name   testSetRenderProcessModeNullStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_NULL_0200
+     * @tc.desc   test setRenderProcessMode null returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSetRenderProcessModeNull001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testSetRenderProcessModeNullStatic001', '401', 10009, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /**
+     * @tc.name   testSetRenderProcessModeUndefinedStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_UNDEFINED_0300
+     * @tc.desc   test setRenderProcessMode undefined returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSetRenderProcessModeUndefined001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testSetRenderProcessModeUndefinedStatic001', '401', 10010, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
   })
 }

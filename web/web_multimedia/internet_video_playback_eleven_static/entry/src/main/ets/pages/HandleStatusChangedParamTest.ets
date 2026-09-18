@@ -136,6 +136,30 @@ struct HandleStatusChangedParamTest {
                 break;
               }
 
+              case 'testHandleStatusChangedNullStatic001': {
+                try {
+                  this.nativeMediaPlayerHandler?.handleStatusChanged(null);
+                  Utils.emitEvent('401', 202609024);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 202609024);
+                }
+                break;
+              }
+
+              case 'testHandleStatusChangedUndefinedStatic001': {
+                try {
+                  this.nativeMediaPlayerHandler?.handleStatusChanged(undefined);
+                  Utils.emitEvent('401', 202609025);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 202609025);
+                }
+                break;
+              }
+
               case 'emitOnSwitchNextPageChangeParamTest': {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();

@@ -120,6 +120,46 @@ export default function handleStatusChangedParamTest():void {
       })
 
     /**
+     * @tc.name   testHandleStatusChangedNullStatic001
+     * @tc.number SUB_WEB_NATIVEMEDIAPLAYERHANDLER_HANDLESTATUSCHANGED_NULL_0400
+     * @tc.desc   handleStatusChanged null returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHandleStatusChangedNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testHandleStatusChangedNullStatic001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testHandleStatusChangedNullStatic001', '401', 202609024, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HandleStatusChangedParamTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /**
+     * @tc.name   testHandleStatusChangedUndefinedStatic001
+     * @tc.number SUB_WEB_NATIVEMEDIAPLAYERHANDLER_HANDLESTATUSCHANGED_UNDEFINED_0500
+     * @tc.desc   handleStatusChanged undefined returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testHandleStatusChangedUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testHandleStatusChangedUndefinedStatic001', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testHandleStatusChangedUndefinedStatic001', '401', 202609025, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('HandleStatusChangedParamTestButton', 10, '');
+        await Utils.msSleep(5000);
+        done();
+      })
+
+    /**
      * @tc.name   testOnSwitchNextPageChangeParamTest
      * @tc.number SUB_WEB_NEXT_PAGE_0200
      * @tc.desc   PAGE_REDIRECT.

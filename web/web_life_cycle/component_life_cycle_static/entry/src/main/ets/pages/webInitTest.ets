@@ -158,14 +158,27 @@ struct WebInitTest {
 
               case 'emitOnceReturn001': {
                 try {
-                  webView.once('webInited', () => {
-                    console.error('webInited callback');
+                  let result: void = webView.once('webInited', () => {
+                    console.info('once webInited callback registered');
                   });
-                  let isVoid: boolean = true;
+                  let isVoid: boolean = result === undefined;
                   Utils.emitEvent(isVoid, 202603190);
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                   Utils.emitEvent(false, 202603190);
+                }
+                break;
+              }
+
+              case 'emitOnceCallback001': {
+                try {
+                  webView.once('webInited', () => {
+                    Utils.emitEvent(true, 202603191);
+                  });
+                  this.controller.refresh();
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(false, 202603191);
                 }
                 break;
               }
