@@ -506,6 +506,39 @@ export default function webMessageExt() {
     })
 
     /**
+     * @tc.name   testWebMessageExtSetTypeParamSpec001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_SPEC_0500
+     * @tc.desc   setType param spec covers all WebMessageType enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetTypeParamSpec001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let types: Array<webview.WebMessageType> = [
+          webview.WebMessageType.NOT_SUPPORT,
+          webview.WebMessageType.STRING,
+          webview.WebMessageType.NUMBER,
+          webview.WebMessageType.BOOLEAN,
+          webview.WebMessageType.ARRAY_BUFFER,
+          webview.WebMessageType.ARRAY,
+          webview.WebMessageType.ERROR
+        ];
+        let successCount: number = 0;
+        for (let i = 0; i < types.length; i++) {
+          try {
+            let ext: webview.WebMessageExt = new webview.WebMessageExt();
+            ext.setType(types[i]);
+            successCount++;
+          } catch (error) {
+            console.info('setType paramSpec enum=' + types[i] + ' err=' + JSON.stringify(error));
+          }
+        }
+        expect(successCount).assertEqual(types.length);
+        done();
+      })
+
+    /**
      * @tc.name   testWebMessageExtSetTypeNullUndefinedDirect
      * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_NULL_0200
      * @tc.desc   setType null/undefined and invalid enum for param coverage

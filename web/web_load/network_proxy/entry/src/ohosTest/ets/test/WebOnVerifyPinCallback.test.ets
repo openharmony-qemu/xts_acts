@@ -83,6 +83,21 @@ export default function webOnVerifyPinCallback() {
       })
 
     /**
+     * @tc.name   testVerifyPinHandlerConstructorReturn001
+     * @tc.number SUB_WEB_VERIFYPINHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.desc   test VerifyPinHandler constructor return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testVerifyPinHandlerConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testVerifyPinHandlerConstructorReturn001', EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent('testVerifyPinHandlerConstructorReturn001', true, 200230, done);
+        await Utils.waitAndClickComponent(driver, 'onVerifyPinButton');
+      })
+
+    /**
      * @tc.name   testOnVerifyPinCallbackInterfaceCall001
      * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0100
      * @tc.desc   test OnVerifyPinCallback type alias interface call

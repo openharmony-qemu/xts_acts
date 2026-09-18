@@ -67,7 +67,8 @@ struct webOnVerifyPinCallback {
           console.info('key==>' + this.str);
           this.isReceive = -1;
           switch (this.str) {
-            case 'testVerifyPinHandlerConstructor001': {
+            case 'testVerifyPinHandlerConstructor001':
+            case 'testVerifyPinHandlerConstructorReturn001': {
               try {
                 let handler: VerifyPinHandler = new VerifyPinHandler();
                 let isDefined: boolean = handler !== undefined && handler !== null;

@@ -16,6 +16,7 @@ import componentLifeCycleTestOne from './componentLifeCycleTestOne.test'
 import webInitTest from './WebInitTest.test'
 import webViewSharedRenderProcessToken from './webViewSharedRenderProcessToken.test'
 import WebViewSetWebDestroyMode from './WebViewSetWebDestroyMode.test'
+import webInterfaceConstructorCoverageDirect from './WebInterfaceConstructorCoverageDirect.test'
 
 
 export default function testsuite() {
@@ -23,4 +24,5 @@ export default function testsuite() {
   componentLifeCycleTestOne()
   webViewSharedRenderProcessToken()
   WebViewSetWebDestroyMode()
+  webInterfaceConstructorCoverageDirect()
 }

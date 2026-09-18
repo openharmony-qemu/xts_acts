@@ -50,5 +50,37 @@ export default function webDownloadUrlCoverageDirect() {
         expect(protoDesc2 !== undefined).assertTrue();
         done();
       })
+
+    /**
+     * @tc.name   testGetOriginalUrlReturnTypeDirect
+     * @tc.number SUB_WEB_DOWNLOADITEM_GETORIGINALURL_RETURN_0200
+     * @tc.desc   verify getOriginalUrl is declared as string-returning method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetOriginalUrlReturnTypeDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let fn: Function = (webview.WebDownloadItem.prototype as object as Record<string, Function>)['getOriginalUrl'];
+        expect(typeof fn).assertEqual('function');
+        expect(fn.length).assertLarger(0);
+        done();
+      })
+
+    /**
+     * @tc.name   testGetReferrerUrlReturnTypeDirect
+     * @tc.number SUB_WEB_DOWNLOADITEM_GETREFERRERURL_RETURN_0200
+     * @tc.desc   verify getReferrerUrl is declared as string-returning method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetReferrerUrlReturnTypeDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let fn: Function = (webview.WebDownloadItem.prototype as object as Record<string, Function>)['getReferrerUrl'];
+        expect(typeof fn).assertEqual('function');
+        expect(fn.length).assertLarger(0);
+        done();
+      })
   })
 }
