@@ -718,23 +718,23 @@ static napi_value TestNativeArkWeb_ClearBlanklessLoadingCacheByCase(napi_env env
 
 static napi_value TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields(napi_env env, napi_callback_info info)
 {
-    ArkWeb_BlanklessInfo info = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
-    if (info.similarity < 0 || info.loadingTime < 0) {
+    ArkWeb_BlanklessInfo blanklessInfo = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+    if (blanklessInfo.similarity < 0 || blanklessInfo.loadingTime < 0) {
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
-    return CreateResult(env, static_cast<int32_t>(info.errCode));
+    return CreateResult(env, static_cast<int32_t>(blanklessInfo.errCode));
 }
 
 static napi_value TestNativeArkWeb_GetBlanklessInfoSimilarity(napi_env env, napi_callback_info info)
 {
-    ArkWeb_BlanklessInfo info = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
-    return CreateResult(env, info.similarity);
+    ArkWeb_BlanklessInfo blanklessInfo = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+    return CreateResult(env, blanklessInfo.similarity);
 }
 
 static napi_value TestNativeArkWeb_GetBlanklessInfoLoadingTime(napi_env env, napi_callback_info info)
 {
-    ArkWeb_BlanklessInfo info = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
-    return CreateResult(env, static_cast<int32_t>(info.loadingTime));
+    ArkWeb_BlanklessInfo blanklessInfo = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
+    return CreateResult(env, static_cast<int32_t>(blanklessInfo.loadingTime));
 }
 
 static napi_value TestNativeArkWeb_SetBlanklessLoadingWithKeyErrUnknown(napi_env env, napi_callback_info info)
