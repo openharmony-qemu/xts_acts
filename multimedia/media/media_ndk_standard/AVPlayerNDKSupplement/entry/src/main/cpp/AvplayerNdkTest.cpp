@@ -2113,6 +2113,7 @@ static napi_value OhAVPlayerSetSeiReceivedCallbackWithUserData(napi_env env, nap
     OH_AVPlayer_SetSeiReceivedCallback(ndkAVPlayerUser->player, typeList, 1,
         AVPlayerOnSeiMessageReceivedCallbackImpl, ndkAVPlayerUser);
     ndkAVPlayerUser->InitAVPlayer(fd, offset, size);
+    OH_AVPlayer_Release(ndkAVPlayerUser->player);
     napi_create_object(env, &result);
     SetInt32NamedProperty(env, result, "result", ndkAVPlayerUser->errorCode);
     SetUserDataProperty(env, result, "userData", &ndkAVPlayerUser);
