@@ -4557,7 +4557,7 @@ export default function printTest(): void {
       let printerInformation: print.PrinterInformation = {
         printerId: '',
         printerName: '',
-        printerStatus: 3,
+        printerStatus: 3 as print.PrinterStatus,
         description: '',
         capability: printerCapabilities,
         uri: '',
@@ -4595,7 +4595,7 @@ export default function printTest(): void {
       try {
         let jobId: string = '';
         let state: print.PrintJobState = print.PrintJobState.PRINT_JOB_QUEUED;
-        let subState: print.PrintJobSubState = -1;
+        let subState: print.PrintJobSubState = -1 as print.PrintJobSubState;
         print.updatePrintJobState(jobId, state, subState).then(() => {
           hilog.info(domain, tag, 'SUB_print_print_fwk_updatePrintJobState_0700 success');
           done();
@@ -4626,7 +4626,7 @@ export default function printTest(): void {
       try {
         let jobId: string = '';
         let state: print.PrintJobState = print.PrintJobState.PRINT_JOB_QUEUED;
-        let subState: print.PrintJobSubState = -1;
+        let subState: print.PrintJobSubState = -1 as print.PrintJobSubState;
         print.updatePrintJobState(jobId, state, subState, (err: Object | null | undefined) => {
           if (err) {
             const error = err as BusinessError;
