@@ -272,9 +272,6 @@ export default function abilityTest() {
                   abilityName: 'MainAbility2'
                 })
                 .then(() => {
-                  if (err) {
-                    console.error(JSON.stringify(err));
-                  }
                   console.log('====>startAbility end====>');
                 }).catch((error: BusinessError) => {
                   if (error) {
