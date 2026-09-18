@@ -201,8 +201,10 @@ export default function ActsOsAccountAuthorizationTestStatic(): void {
       try {
         let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
         hilog.info(0x0000, tag, "====>AuthorizationGetManagerReturn_001 manager: " + JSON.stringify(manager));
+        hilog.info(0x0000, tag, "====>AuthorizationGetManagerReturn_001 typeof manager: " + JSON.stringify(typeof manager));
         expect(manager != null).assertTrue();
         expect(manager != undefined).assertTrue();
+        expect(typeof manager === 'object').assertTrue();
         hilog.info(0x0000, tag, "====>AuthorizationGetManagerReturn_001 end====");
         done();
       } catch (err) {
