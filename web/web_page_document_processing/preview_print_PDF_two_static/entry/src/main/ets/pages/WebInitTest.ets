@@ -153,6 +153,18 @@ struct webViewController {
 
 
 
+              case 'emitDeleteAllData003': {
+                try {
+                  webView.WebStorage.deleteAllData(null as boolean);
+                  Utils.emitEvent("success", 60607);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(`${error.code}`, 60607);
+                }
+                break;
+              }
+
               case 'emitDeleteAllData004': {
                 try {
                   webView.WebStorage.deleteAllData(undefined);
