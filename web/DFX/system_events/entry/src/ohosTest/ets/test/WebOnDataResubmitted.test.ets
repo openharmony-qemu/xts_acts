@@ -187,7 +187,7 @@ export default function webOnDataResubmitted() {
 
     /**
      * @tc.name   testDataResubmissionHandlerConstructorReturn001
-     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CONSTRUCTOR_RETURN_0200
      * @tc.desc   test DataResubmissionHandler constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -211,7 +211,7 @@ export default function webOnDataResubmitted() {
 
     /**
      * @tc.name   testDataResubmissionHandlerClass001
-     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CLASS_0100
+     * @tc.number SUB_WEB_DATARESUBMISSIONHANDLER_CLASS_0300
      * @tc.desc   test DataResubmissionHandler class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

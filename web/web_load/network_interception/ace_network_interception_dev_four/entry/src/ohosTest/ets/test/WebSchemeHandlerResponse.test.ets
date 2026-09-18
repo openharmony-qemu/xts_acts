@@ -106,7 +106,7 @@ export default function WebSchemeHandlerResponse() {
 
     /**
      * @tc.name   testWebSchemeHandlerResponseConstructor001
-     * @tc.number SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CTOR_0100
+     * @tc.number SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CTOR_3500
      * @tc.desc   test WebSchemeHandlerResponse class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function WebSchemeHandlerResponse() {
 
     /**
      * @tc.name   testWebSchemeHandlerResponseClass001
-     * @tc.number SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CLASS_0100
+     * @tc.number SUB_WEB_WEBSCHEMEHANDLERRESPONSE_CLASS_3600
      * @tc.desc   test WebSchemeHandlerResponse class instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

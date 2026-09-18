@@ -664,7 +664,7 @@ export default function webviewApi() {
 
     /**
      * @tc.name   testWebResourceRequestConstructor001
-     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CONSTRUCTOR_4000
      * @tc.desc   test WebResourceRequest class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -683,7 +683,7 @@ export default function webviewApi() {
 
     /**
      * @tc.name   testWebResourceRequestConstructorReturn001
-     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CONSTRUCTOR_RETURN_4100
      * @tc.desc   test WebResourceRequest constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -701,7 +701,7 @@ export default function webviewApi() {
 
     /**
      * @tc.name   testWebResourceRequestClass001
-     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CLASS_0100
+     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CLASS_4200
      * @tc.desc   test WebResourceRequest class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

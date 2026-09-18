@@ -117,7 +117,7 @@ export default function webviewControllerSetUrlTrustListParam() {
 
     /**
      * @tc.name   testSetUrlTrustListInvalidFormat001
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETURLTRUSTLIST_ERROR_0100
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETURLTRUSTLIST_ERROR_5000
      * @tc.desc   test WebviewController.setUrlTrustList invalid format error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

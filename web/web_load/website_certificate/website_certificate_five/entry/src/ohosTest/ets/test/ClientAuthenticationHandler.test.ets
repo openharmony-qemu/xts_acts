@@ -101,7 +101,7 @@ export default function ClientAuthenticationHandlerTest() {
 
     /**
      * @tc.name   testClientAuthenticationHandlerConstructor001
-     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CONSTRUCTOR_5300
      * @tc.desc   test ClientAuthenticationHandler class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function ClientAuthenticationHandlerTest() {
 
     /**
      * @tc.name   testClientAuthenticationHandlerConstructorReturn001
-     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CONSTRUCTOR_RETURN_5400
      * @tc.desc   test ClientAuthenticationHandler constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function ClientAuthenticationHandlerTest() {
 
     /**
      * @tc.name   testClientAuthenticationHandlerClass001
-     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CLASS_0100
+     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CLASS_5500
      * @tc.desc   test ClientAuthenticationHandler class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

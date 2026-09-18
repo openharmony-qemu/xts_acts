@@ -263,7 +263,7 @@ export default function webviewNetworkProxy() {
     })
     /**
      * @tc.name   testProxyGetUrl
-     * @tc.number SUB_WEB_NETWORKPROXY_1400
+     * @tc.number SUB_WEB_NETWORKPROXY_5100
      * @tc.desc   test getUrl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function webviewNetworkProxy() {
     })
     /**
      * @tc.name   testOnProxyConfigChangeCallback001
-     * @tc.number SUB_WEB_ONPROXYCONFIG_CHANGE_CALLBACK_0100
+     * @tc.number SUB_WEB_ONPROXYCONFIG_CHANGE_CALLBACK_5200
      * @tc.desc   test OnProxyConfigChangeCallback type alias with applyProxyOverride
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

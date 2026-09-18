@@ -164,7 +164,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testJsResultConstructor001
-     * @tc.number SUB_WEB_JSRESULT_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_JSRESULT_CONSTRUCTOR_0800
      * @tc.desc   test JsResult class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -181,7 +181,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testScreenCaptureHandlerConstructor001
-     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_0900
      * @tc.desc   test ScreenCaptureHandler class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testJsGeolocationConstructor001
-     * @tc.number SUB_WEB_JSGEOLOCATION_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_JSGEOLOCATION_CONSTRUCTOR_1000
      * @tc.desc   test JsGeolocation class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testJsResultConstructorReturn001
-     * @tc.number SUB_WEB_JSRESULT_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_JSRESULT_CONSTRUCTOR_RETURN_1100
      * @tc.desc   test JsResult constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testJsResultClass001
-     * @tc.number SUB_WEB_JSRESULT_CLASS_0100
+     * @tc.number SUB_WEB_JSRESULT_CLASS_1200
      * @tc.desc   test JsResult class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -253,7 +253,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testScreenCaptureHandlerConstructorReturn001
-     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_RETURN_1300
      * @tc.desc   test ScreenCaptureHandler constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -275,7 +275,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testScreenCaptureHandlerClass001
-     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CLASS_0100
+     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CLASS_1400
      * @tc.desc   test ScreenCaptureHandler class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -293,7 +293,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testJsGeolocationConstructorReturn001
-     * @tc.number SUB_WEB_JSGEOLOCATION_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_JSGEOLOCATION_CONSTRUCTOR_RETURN_1500
      * @tc.desc   test JsGeolocation constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function webAttributeTest() {
 
     /**
      * @tc.name   testJsGeolocationClass001
-     * @tc.number SUB_WEB_JSGEOLOCATION_CLASS_0100
+     * @tc.number SUB_WEB_JSGEOLOCATION_CLASS_1600
      * @tc.desc   test JsGeolocation class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

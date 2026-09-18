@@ -126,7 +126,7 @@ export default function GetReferrerUrlTest() {
 
     /**
      * @tc.name   testGetReferrerUrlReturnType001
-     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETREFERRERURL_RETURN_0100
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETREFERRERURL_RETURN_2000
      * @tc.desc   test WebDownloadItem.getReferrerUrl return type is string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,7 +144,7 @@ export default function GetReferrerUrlTest() {
 
     /**
      * @tc.name   testGetOriginalUrlReturnType001
-     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETORIGINALURL_RETURN_0100
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETORIGINALURL_RETURN_2100
      * @tc.desc   test WebDownloadItem.getOriginalUrl return type is string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -62,7 +62,7 @@ export default function webOnVerifyPinCallback() {
 
     /**
      * @tc.name   testVerifyPinHandlerConstructor001
-     * @tc.number SUB_WEB_VERIFYPINHANDLER_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_VERIFYPINHANDLER_CONSTRUCTOR_4300
      * @tc.desc   test VerifyPinHandler class and constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function webOnVerifyPinCallback() {
 
     /**
      * @tc.name   testVerifyPinHandlerConstructorReturn001
-     * @tc.number SUB_WEB_VERIFYPINHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_VERIFYPINHANDLER_CONSTRUCTOR_RETURN_4400
      * @tc.desc   test VerifyPinHandler constructor return value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -99,7 +99,7 @@ export default function webOnVerifyPinCallback() {
 
     /**
      * @tc.name   testOnVerifyPinCallbackInterfaceCall001
-     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_0100
+     * @tc.number SUB_WEB_ONVERIFYPIN_CALLBACK_4500
      * @tc.desc   test OnVerifyPinCallback type alias interface call
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function webOnVerifyPinCallback() {
 
     /**
      * @tc.name   testVerifyPinHandlerClass001
-     * @tc.number SUB_WEB_VERIFYPINHANDLER_CLASS_0100
+     * @tc.number SUB_WEB_VERIFYPINHANDLER_CLASS_4600
      * @tc.desc   test VerifyPinHandler class export is available
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

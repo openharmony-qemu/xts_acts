@@ -48,7 +48,7 @@ export default function connectNativePermissionCoverageDirect() {
 
     /**
      * @tc.name   testConnectNativePermission201Direct
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_6500
      * @tc.desc   connectNative without ohos.permission.WEB_NATIVE_MESSAGING in module.json5 returns 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -56,7 +56,7 @@ export default function connectNativePermissionCoverageDirect() {
      */
     it('testConnectNativePermission201Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        const tcNumber = 'SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_0100';
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_6500';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin, permission=${WEB_NATIVE_MESSAGING_PERMISSION} not declared`);
 
         let want: Want = {
@@ -92,7 +92,7 @@ export default function connectNativePermissionCoverageDirect() {
 
     /**
      * @tc.name   testDisconnectNativePermission201Direct
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_0200
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_6600
      * @tc.desc   disconnectNative without ohos.permission.WEB_NATIVE_MESSAGING in module.json5 returns 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -100,7 +100,7 @@ export default function connectNativePermissionCoverageDirect() {
      */
     it('testDisconnectNativePermission201Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        const tcNumber = 'SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_0200';
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_6600';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin, permission=${WEB_NATIVE_MESSAGING_PERMISSION} not declared`);
 
         try {
@@ -122,7 +122,7 @@ export default function connectNativePermissionCoverageDirect() {
 
     /**
      * @tc.name   testConnectNativeError801Direct
-     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Error_801_0300
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Error_801_6700
      * @tc.desc   connectNative invalid bundle returns error code 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

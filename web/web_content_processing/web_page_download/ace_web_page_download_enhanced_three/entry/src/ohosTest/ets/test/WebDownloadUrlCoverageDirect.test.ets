@@ -34,7 +34,7 @@ export default function webDownloadUrlCoverageDirect() {
 
     /**
      * @tc.name   testDownloadItemUrlMethodsReturnStringDirect
-     * @tc.number SUB_WEB_DOWNLOADITEM_URL_RETURN_DIRECT_0100
+     * @tc.number SUB_WEB_DOWNLOADITEM_URL_RETURN_DIRECT_2200
      * @tc.desc   verify getOriginalUrl/getReferrerUrl return string type signature
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -53,7 +53,7 @@ export default function webDownloadUrlCoverageDirect() {
 
     /**
      * @tc.name   testGetOriginalUrlReturnTypeDirect
-     * @tc.number SUB_WEB_DOWNLOADITEM_GETORIGINALURL_RETURN_0200
+     * @tc.number SUB_WEB_DOWNLOADITEM_GETORIGINALURL_RETURN_2300
      * @tc.desc   verify getOriginalUrl is declared as string-returning method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -69,7 +69,7 @@ export default function webDownloadUrlCoverageDirect() {
 
     /**
      * @tc.name   testGetReferrerUrlReturnTypeDirect
-     * @tc.number SUB_WEB_DOWNLOADITEM_GETREFERRERURL_RETURN_0200
+     * @tc.number SUB_WEB_DOWNLOADITEM_GETREFERRERURL_RETURN_2400
      * @tc.desc   verify getReferrerUrl is declared as string-returning method
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

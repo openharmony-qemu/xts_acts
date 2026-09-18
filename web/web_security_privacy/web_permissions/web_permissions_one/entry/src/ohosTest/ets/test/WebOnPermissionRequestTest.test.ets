@@ -145,7 +145,7 @@ export default function webOnPermissionRequest() {
 
     /**
      * @tc.name   testPermissionRequestConstructor001
-     * @tc.number SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_6200
      * @tc.desc   test PermissionRequest constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function webOnPermissionRequest() {
 
     /**
      * @tc.name   testPermissionRequestConstructorReturn001
-     * @tc.number SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_PERMISSIONREQUEST_CONSTRUCTOR_RETURN_6300
      * @tc.desc   test PermissionRequest constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -181,7 +181,7 @@ export default function webOnPermissionRequest() {
 
     /**
      * @tc.name   testPermissionRequestClass001
-     * @tc.number SUB_WEB_PERMISSIONREQUEST_CLASS_0100
+     * @tc.number SUB_WEB_PERMISSIONREQUEST_CLASS_6400
      * @tc.desc   test PermissionRequest class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

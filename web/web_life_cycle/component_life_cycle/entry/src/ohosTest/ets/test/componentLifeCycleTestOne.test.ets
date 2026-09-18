@@ -272,7 +272,7 @@ export default function componentLifeCycleTestOne() {
 
     /**
      * @tc.name   testWebInterfaceConstructorParam001
-     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_PARAM_0100
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_PARAM_2800
      * @tc.desc   test WebInterface constructor param spec via controller attached
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -287,7 +287,7 @@ export default function componentLifeCycleTestOne() {
 
     /**
      * @tc.name   testWebInterfaceConstructorReturn001
-     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_RETURN_2900
      * @tc.desc   test WebInterface constructor return value via controller
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

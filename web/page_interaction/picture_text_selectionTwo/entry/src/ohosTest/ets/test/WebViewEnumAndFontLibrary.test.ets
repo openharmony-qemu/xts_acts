@@ -402,7 +402,7 @@ export default function WebViewEnumAndFontLibrary() {
 
     /**
      * @tc.name   testWebContextMenuParamConstructor001
-     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CONSTRUCTOR_1700
      * @tc.desc   test WebContextMenuParam class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -420,7 +420,7 @@ export default function WebViewEnumAndFontLibrary() {
 
     /**
      * @tc.name   testWebContextMenuParamConstructorReturn001
-     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CONSTRUCTOR_RETURN_1800
      * @tc.desc   test WebContextMenuParam constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -440,7 +440,7 @@ export default function WebViewEnumAndFontLibrary() {
 
     /**
      * @tc.name   testWebContextMenuParamClass001
-     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CLASS_0100
+     * @tc.number SUB_WEB_WEBCONTEXTMENUPARAM_CLASS_1900
      * @tc.desc   test WebContextMenuParam class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

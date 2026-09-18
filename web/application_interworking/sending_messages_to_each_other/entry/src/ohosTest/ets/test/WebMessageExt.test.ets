@@ -507,7 +507,7 @@ export default function webMessageExt() {
 
     /**
      * @tc.name   testWebMessageExtSetTypeParamSpec001
-     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_SPEC_0500
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_SPEC_0400
      * @tc.desc   setType param spec covers all WebMessageType enum values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -568,7 +568,7 @@ export default function webMessageExt() {
 
     /**
      * @tc.name   testWebMessageExtSetTypeError401Direct
-     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_401_0300
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_401_0500
      * @tc.desc   setType null/undefined/invalid enum returns 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -599,7 +599,7 @@ export default function webMessageExt() {
 
     /**
      * @tc.name   testWebMessageExtSetTypeError17100014Direct
-     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_17100014_0400
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_17100014_0600
      * @tc.desc   setType type mismatch after setString returns 17100014
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -653,7 +653,7 @@ export default function webMessageExt() {
 
     /**
      * @tc.name   testWebMessageExtSetTypeParamSpec001
-     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_0100
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_0700
      * @tc.desc   test WebMessageExt.setType param spec with getType return
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -29,7 +29,7 @@ export default function webviewControllerSetUrlTrustListErrorDirect() {
 
     /**
      * @tc.name   testSetUrlTrustListError401Direct
-     * @tc.number SUB_WEB_SETURLTRUSTLIST_ERROR_401_DIRECT_0100
+     * @tc.number SUB_WEB_SETURLTRUSTLIST_ERROR_401_DIRECT_4800
      * @tc.desc   setUrlTrustList null/undefined returns error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -54,7 +54,7 @@ export default function webviewControllerSetUrlTrustListErrorDirect() {
 
     /**
      * @tc.name   testSetUrlTrustListError17100001Direct
-     * @tc.number SUB_WEB_SETURLTRUSTLIST_ERROR_17100001_DIRECT_0200
+     * @tc.number SUB_WEB_SETURLTRUSTLIST_ERROR_17100001_DIRECT_4900
      * @tc.desc   setUrlTrustList invalid url format returns error code 17100001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

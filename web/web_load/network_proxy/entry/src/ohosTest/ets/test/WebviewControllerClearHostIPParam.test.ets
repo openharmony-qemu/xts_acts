@@ -117,7 +117,7 @@ export default function webviewControllerClearHostIPParam() {
 
     /**
      * @tc.name   testClearHostIPReturnValue001
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARHOSTIP_RETURN_0100
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARHOSTIP_RETURN_4700
      * @tc.desc   test WebviewController.clearHostIP void return value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

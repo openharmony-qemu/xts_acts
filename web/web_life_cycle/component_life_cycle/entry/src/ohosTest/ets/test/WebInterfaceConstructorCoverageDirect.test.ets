@@ -28,7 +28,7 @@ export default function webInterfaceConstructorCoverageDirect() {
   describe('webInterfaceConstructorCoverageDirect', () => {
     /**
      * @tc.name   testWebInterfaceConstructorParamSpecDirect
-     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_PARAM_SPEC_0200
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_PARAM_SPEC_2500
      * @tc.desc   Web constructor param spec: src/renderMode/incognitoMode/sharedRenderProcessToken
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function webInterfaceConstructorCoverageDirect() {
 
     /**
      * @tc.name   testWebInterfaceConstructorNullUndefinedDirect
-     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_NULL_0300
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_NULL_2600
      * @tc.desc   Web constructor options null/undefined param spec coverage
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,7 +82,7 @@ export default function webInterfaceConstructorCoverageDirect() {
 
     /**
      * @tc.name   testWebInterfaceConstructorReturnDirect
-     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_RETURN_DIRECT_0200
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_RETURN_DIRECT_2700
      * @tc.desc   WebviewController constructor return for Web component binding
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

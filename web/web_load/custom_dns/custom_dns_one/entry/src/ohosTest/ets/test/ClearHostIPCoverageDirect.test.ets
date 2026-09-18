@@ -40,7 +40,7 @@ export default function clearHostIPCoverageDirect() {
 
     /**
      * @tc.name   testClearHostIPNullDirect
-     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_NULL_0200
+     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_NULL_3000
      * @tc.desc   clearHostIP null hostName returns error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -59,7 +59,7 @@ export default function clearHostIPCoverageDirect() {
 
     /**
      * @tc.name   testClearHostIPUndefinedDirect
-     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_UNDEFINED_0300
+     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_UNDEFINED_3100
      * @tc.desc   clearHostIP undefined hostName returns error code 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -101,7 +101,7 @@ export default function webResourceError() {
 
     /**
      * @tc.name   testWebResourceErrorConstructor001
-     * @tc.number SUB_WEB_WEBRESOURCEERROR_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_CONSTRUCTOR_3200
      * @tc.desc   test WebResourceError class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function webResourceError() {
 
     /**
      * @tc.name   testWebResourceErrorConstructorReturn001
-     * @tc.number SUB_WEB_WEBRESOURCEERROR_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_CONSTRUCTOR_RETURN_3300
      * @tc.desc   test WebResourceError constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function webResourceError() {
 
     /**
      * @tc.name   testWebResourceErrorClass001
-     * @tc.number SUB_WEB_WEBRESOURCEERROR_CLASS_0100
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_CLASS_3400
      * @tc.desc   test WebResourceError class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

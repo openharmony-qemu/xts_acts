@@ -153,7 +153,7 @@ export default function httpAuthHandler() {
 
     /**
      * @tc.name   testHttpAuthHandlerConstructor001
-     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONSTRUCTOR_3700
      * @tc.desc   test HttpAuthHandler constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function httpAuthHandler() {
 
     /**
      * @tc.name   testHttpAuthHandlerConstructorReturn001
-     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONSTRUCTOR_RETURN_3800
      * @tc.desc   test HttpAuthHandler constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -189,7 +189,7 @@ export default function httpAuthHandler() {
 
     /**
      * @tc.name   testHttpAuthHandlerClass001
-     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CLASS_0100
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CLASS_3900
      * @tc.desc   test HttpAuthHandler class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

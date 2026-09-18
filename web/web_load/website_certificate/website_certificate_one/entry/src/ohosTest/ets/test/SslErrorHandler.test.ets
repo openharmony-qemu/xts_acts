@@ -158,7 +158,7 @@ export default function sslErrorHandler() {
 
     /**
      * @tc.name   testSslErrorHandlerConstructor001
-     * @tc.number SUB_WEB_SSLERRORHANDLER_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_SSLERRORHANDLER_CONSTRUCTOR_5600
      * @tc.desc   test SslErrorHandler constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function sslErrorHandler() {
 
     /**
      * @tc.name   testSslErrorHandlerConstructorReturn001
-     * @tc.number SUB_WEB_SSLERRORHANDLER_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_SSLERRORHANDLER_CONSTRUCTOR_RETURN_5700
      * @tc.desc   test SslErrorHandler constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function sslErrorHandler() {
 
     /**
      * @tc.name   testSslErrorHandlerClass001
-     * @tc.number SUB_WEB_SSLERRORHANDLER_CLASS_0100
+     * @tc.number SUB_WEB_SSLERRORHANDLER_CLASS_5800
      * @tc.desc   test SslErrorHandler class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

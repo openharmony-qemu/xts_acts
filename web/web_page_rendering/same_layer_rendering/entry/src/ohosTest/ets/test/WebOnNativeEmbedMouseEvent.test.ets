@@ -70,7 +70,7 @@ export default function webViewControllerPart2() {
 
     /**
      * @tc.name   testEventResultConstructor001
-     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_0100
+     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_5900
      * @tc.desc   test EventResult class constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -87,7 +87,7 @@ export default function webViewControllerPart2() {
 
     /**
      * @tc.name   testEventResultConstructorReturn001
-     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_RETURN_0100
+     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_RETURN_6000
      * @tc.desc   test EventResult constructor return value instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function webViewControllerPart2() {
 
     /**
      * @tc.name   testEventResultClass001
-     * @tc.number SUB_WEB_EVENTRESULT_CLASS_0100
+     * @tc.number SUB_WEB_EVENTRESULT_CLASS_6100
      * @tc.desc   test EventResult class export accessible
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
