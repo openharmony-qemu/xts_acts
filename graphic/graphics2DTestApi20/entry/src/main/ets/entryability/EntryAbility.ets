@@ -19,7 +19,7 @@ import window from '@ohos.window';
 import { AbilityConstant, Want } from '@kit.AbilityKit';
 import testsuite from '../../../ohosTest/ets/test/List.test';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 const OH_DRAWING_SUCCESS = 0;
 const OH_DRAWING_ERROR_INVALID_PARAMETER = 401;
