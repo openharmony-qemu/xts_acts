@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 import ConnectionPublicNopTest from "./ConnectionPublicNop.test.ets";
-export default function testsuite() {
+import ConnectionNoPTest from "./ConnectionNoP.test.ets";
+export default function testsuite(): void {
     ConnectionPublicNopTest();
+    ConnectionNoPTest();
 }

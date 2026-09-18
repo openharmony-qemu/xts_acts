@@ -15,7 +15,7 @@ const ExpectTrue = (n: boolean) => {
   }
 }
 
-export default function EmptyTest() {
+export default function EmptyTest(): void {
 
   describe("EmptyTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
