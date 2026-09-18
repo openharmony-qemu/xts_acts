@@ -106,8 +106,8 @@ export default function beforeAllTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        if (error.code === '801') {
-          expect(error.code === '801').assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
           expect(error.code === '9200010').assertTrue();
         }
@@ -140,8 +140,8 @@ export default function beforeAllTest() {
         deviceSettings.removeHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
         expect(false).assertTrue();
       } catch (error) {
-        if (error.code === '801') {
-          expect(error.code === '801').assertTrue();
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
         } else {
           expect(error.code === '9200010').assertTrue();
         }
