@@ -293,17 +293,17 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
         return result;
     }
     void *virAddr = nullptr;
-    uint32_t TARGET_USAGE = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA;
+    uint32_t targetUsage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA;
     for (int i = 0; i < NUMBER_10; i++) {
         int32_t ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer1, &virAddr, &config1);
         if (ret != 0 || config1.width != NUMBER_0X001 || config1.height != NUMBER_0X001 || config1.format !=
-            NATIVEBUFFER_PIXEL_FMT_RGBA_8888 || (config1.usage & TARGET_USAGE) != TARGET_USAGE) {
+            NATIVEBUFFER_PIXEL_FMT_RGBA_8888 || (config1.usage & targetUsage) != targetUsage) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
         ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer2, &virAddr, &config2);
         if (ret != 0 || config2.width != NUMBER_0X001 || config2.height != NUMBER_0X001 || config2.format !=
-            NATIVEBUFFER_PIXEL_FMT_BGRA_8888 || (config2.usage & TARGET_USAGE) != TARGET_USAGE) {
+            NATIVEBUFFER_PIXEL_FMT_BGRA_8888 || (config2.usage & targetUsage) != targetUsage) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
@@ -695,7 +695,7 @@ napi_value OHNativeBufferSetDmaBufferNameNormal(napi_env env, napi_callback_info
     if (nativeBuffer == nullptr) {
         napi_create_int32(env, FAIL, &result);
         return result;
-    } 
+    }
     const char *name = "Surface123";
     int32_t ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name);
     if (ret != NATIVE_ERROR_OK) {
@@ -721,13 +721,13 @@ napi_value OHNativeBufferSetDmaBufferNameNormal2(napi_env env, napi_callback_inf
     if (nativeBuffer == nullptr) {
         napi_create_int32(env, FAIL, &result);
         return result;
-    } 
+    }
     // 传入长度为64字节的合规字符串
-    char name[65];
+    char name[NUMBER_65];
     for (int i = 0; i < NUMBER_64; i++) {
         name[i] = 'a';
     }
-    name[64] = '\0';
+    name[NUMBER_64] = '\0';
     int32_t ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name);
     if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, FAIL, &result);
@@ -804,11 +804,11 @@ napi_value OHNativeBufferSetDmaBufferNameAbnormal(napi_env env, napi_callback_in
         return result;
     }
     // 3. 传入长度大于64字节的字符串
-    char name4[66];
+    char name4[NUMBER_66];
     for (int i = 0; i < NUMBER_65; i++) {
         name4[i] = 'b';
     }
-    name4[65] = '\0';
+    name4[NUMBER_65] = '\0';
     ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name4);
     if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, NUMBER_3, &result);

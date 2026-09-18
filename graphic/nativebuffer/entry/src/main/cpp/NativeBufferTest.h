@@ -51,6 +51,7 @@
 #define NUMBER_60 60
 #define NUMBER_64 64
 #define NUMBER_65 65
+#define NUMBER_66 66
 #define NUMBER_100 100
 #define NUMBER_200 200
 #define NUMBER_256 256

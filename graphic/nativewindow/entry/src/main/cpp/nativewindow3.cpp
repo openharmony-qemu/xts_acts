@@ -1577,7 +1577,8 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameNormal(napi_env env, napi_ca
     napi_value result = nullptr;
 
     InitNativeWindow* initNative = new InitNativeWindow();
-    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();;
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
     if (nativeWindow == nullptr) {
         napi_create_int32(env, FAIL, &result);
         return result;
@@ -1615,7 +1616,8 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameNull(napi_env env, napi_call
     napi_value result = nullptr;
 
     InitNativeWindow* initNative = new InitNativeWindow();
-    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();;
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
     if (nativeWindow == nullptr) {
         napi_create_int32(env, FAIL, &result);
         return result;
@@ -1641,7 +1643,8 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameAbnormal(napi_env env, napi_
     napi_value result = nullptr;
 
     InitNativeWindow* initNative = new InitNativeWindow();
-    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
     if (nativeWindow == nullptr) {
         napi_create_int32(env, FAIL, &result);
         return result;
@@ -1692,7 +1695,8 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameMultipleCalls(napi_env env, 
     napi_value result = nullptr;
 
     InitNativeWindow* initNative = new InitNativeWindow();
-    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
     if (nativeWindow == nullptr) {
         napi_create_int32(env, FAIL, &result);
         return result;
