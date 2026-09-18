@@ -611,8 +611,9 @@ export default function displayTest() {
         display.makeUnique(screenId).then(() => {
           console.info(msgStr + 'succeeded in destroy virtual screen, data : ');
         }).catch((err: BusinessError) => {
-          console.error(caseName + `Failed to destroy the virtual screen.Code:${err.code},message is ${err.message}`);
-          if (!isSyscapSessionManagerSupported) {
+          console.error(caseName + `Failed to destroy the virtua
+          l screen.Code:${err.code},message is ${err.message}`);
+          if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
             expect(err.code).assertEqual(801);
             done();
           } else {
