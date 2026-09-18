@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium-dynamic"
 import hilog from '@ohos.hilog'
 import image from '@ohos.multimedia.image';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';

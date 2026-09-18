@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 import deviceInfo from '@ohos.deviceInfo'
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-dynamic'
 import display from '@ohos.display';
 import window from '@ohos.window';
 import screen from '@ohos.screen';
