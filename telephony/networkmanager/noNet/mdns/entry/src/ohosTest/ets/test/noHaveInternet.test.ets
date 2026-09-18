@@ -59,7 +59,7 @@ export default function NoHaveInternetTest() {
         mdns.addLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           console.info(`${caseName}: callback : ${JSON.stringify(error)}  | ${JSON.stringify(data)}`);
           if (error) {
-            ExpectTrue(error.code===2204006 || error.code===2204009, caseName);
+            ExpectTrue(error.code==2204006 || error.code==2204009, caseName);
             done();
           } else {
             ExpectTrue(true, caseName);
@@ -99,7 +99,7 @@ export default function NoHaveInternetTest() {
         mdns.addLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
           console.info(`${caseName}: callback : ${JSON.stringify(error)}  | ${JSON.stringify(data)}`);
           if (error) {
-            ExpectTrue(error.code===2204006 || error.code===2204009, caseName);
+            ExpectTrue(error.code==2204006 || error.code==2204009, caseName);
             done();
           } else {
             ExpectTrue(true, caseName);
@@ -164,7 +164,7 @@ export default function NoHaveInternetTest() {
         mdns.resolveLocalService(context, localServiceInfo, (error: BusinessError, data: mdns.LocalServiceInfo) => {
               if (error) {
                 console.log(`${caseName} falil ${JSON.stringify(error)}`);
-                ExpectTrue(error.code===2204006 || error.code===2204009, caseName);
+                ExpectTrue(error.code==2204006 || error.code==2204009, caseName);
                 done();
               } else {
                 console.log(`${caseName} success ${JSON.stringify(data)}`);
@@ -209,7 +209,7 @@ export default function NoHaveInternetTest() {
           done();
         }).catch((error:BusinessError)=>{
           console.log(`${caseName} falil ${JSON.stringify(error)}`);
-          ExpectTrue(error.code===2204006 || error.code===2204009, caseName);
+          ExpectTrue(error.code==2204006 || error.code==2204009, caseName);
           done();
         });
       } catch (err) {
