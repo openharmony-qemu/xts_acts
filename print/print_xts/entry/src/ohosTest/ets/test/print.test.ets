@@ -3120,7 +3120,7 @@ export default function printTest() {
       let extensionList: string[] = ["extension"];
       // Permissions required: ohos.permission.PRINT
       await print.startDiscoverPrinter(extensionList).then((data: void) => {
-        hilog.info('SUB_print_print_fwk_check_printerInfo_fields_1000 expect success');
+        hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_printerInfo_fields_1000 expect success');
         expect(data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
@@ -3146,7 +3146,7 @@ export default function printTest() {
             expect(err).assertTrue();
             done();
           } else {
-            hilog.info('SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100 expect success');
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100 expect success');
             expect(data).assertTrue();
             done();
           }
@@ -3172,7 +3172,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            hilog.info('SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -3187,7 +3187,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, null, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            hilog.info('SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -3202,7 +3202,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, undefined, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            hilog.info('SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -3219,7 +3219,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            hilog.info('SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -3234,7 +3234,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, null, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            hilog.info('SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
             expect(err).assertEqual(401);
             done();
           } else {
@@ -3249,7 +3249,7 @@ export default function printTest() {
       print.updatePrintJobState(jobId, state, undefined, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            hilog.info('SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
             expect(err).assertEqual(401);
             done();
           } else {
