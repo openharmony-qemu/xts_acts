@@ -15,7 +15,7 @@
 
 import hilog from '@ohos.hilog';
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
-import { Hypium, Level } from '@ohos/hypium'
+import { Hypium, Level } from '@ohos/hypium-dynamic'
 import testsuite from '../../test/List.test'
 
 @Entry

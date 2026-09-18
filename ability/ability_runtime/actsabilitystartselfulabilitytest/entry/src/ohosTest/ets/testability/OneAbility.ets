@@ -18,7 +18,7 @@ import { window } from '@kit.ArkUI';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 
 const DOMAIN = 0x0000;
 

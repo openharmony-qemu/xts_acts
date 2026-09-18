@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll,TestType, Size, Level , it, expect } from '@ohos/hypium';
+import { describe, beforeAll,TestType, Size, Level , it, expect } from '@ohos/hypium-dynamic';
 import testNapi from 'libentry.so';
 import { application, common, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@ohos.base';
