@@ -15,7 +15,7 @@
 
 import commonEvent from '@ohos.commonEventManager';
 import delegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, it, expect, Level, afterEach } from '@ohos/hypium-dynamic';
 import { getContext } from '../common/getContext';
 import common from '@ohos.app.ability.common';
 

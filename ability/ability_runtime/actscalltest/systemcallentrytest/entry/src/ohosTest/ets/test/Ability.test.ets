@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
+import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
 import commonEvent from '@ohos.commonEvent'
 import missionManager from '@ohos.application.missionManager'
 import { BusinessError } from '@ohos.base';
@@ -81,9 +81,7 @@ export default function abilityTest() {
 
     beforeAll(async (done: Function) => {
       try {
-        // 同应用 startAbilityByCall 被框架拒绝（16000050，CheckStartByCallPermission 同 token 拦截），
-        // 改普通 startAbility 激活 MainAbility（同模块同进程共享 globalThis.callee），2026-08-18 实战
-        await (globalThis.globalThis.abilityContext).startAbility({
+        await globalThis.abilityContext.startAbility({
           bundleName: 'com.example.systemcalltest',
           abilityName: 'com.example.systemcalltest.MainAbility',
           moduleName: 'entry_test',
@@ -168,7 +166,7 @@ export default function abilityTest() {
         caller.release();
       });
 
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
@@ -201,7 +199,7 @@ export default function abilityTest() {
         done();
       }
 
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
@@ -261,12 +259,12 @@ export default function abilityTest() {
         caller2.release();
       });
 
-      caller1 = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller1 = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
 
-      caller2 = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller2 = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       });
@@ -300,11 +298,11 @@ export default function abilityTest() {
         done();
       }
 
-      let caller1:Caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller1:Caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAMainAbilityName,
       });
-      let caller2:Caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      let caller2:Caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       });
@@ -355,7 +353,7 @@ export default function abilityTest() {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0700 releaseCallBack1' + data);
         setTimeout(() => {
-          globalThis.globalThis.abilityContext.startAbilityByCall({
+          globalThis.abilityContext.startAbilityByCall({
             bundleName: systemAppCalleeABundleName,
             abilityName: systemAppCalleeASecondAbilityName,
           }).then((data:Caller) => {
@@ -384,7 +382,7 @@ export default function abilityTest() {
         caller.release();
       });
 
-      globalThis.globalThis.abilityContext.startAbilityByCall({
+      globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       }).then((data:Caller) => {
@@ -418,7 +416,7 @@ export default function abilityTest() {
         expect(data).assertEqual('release');
         console.log('ACTS_CommonComponent_Call_0800 releaseCallBack' + data);
         setTimeout(() => {
-          globalThis.globalThis.abilityContext.startAbilityByCall({
+          globalThis.abilityContext.startAbilityByCall({
             bundleName: systemAppCalleeABundleName,
             abilityName: systemAppCalleeASecondAbilityName,
           }).then((data:Caller) => {
@@ -442,7 +440,7 @@ export default function abilityTest() {
         }, 100);
       }
 
-      globalThis.globalThis.abilityContext.startAbilityByCall({
+      globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeASecondAbilityName,
       }).then((data:Caller) => {
@@ -488,7 +486,7 @@ export default function abilityTest() {
         console.log('AMS_CallTest_0900 do release');
         caller.release();
       });
-      caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: thirdAppABundleName,
         abilityName: thirdAppAMainAbilityName,
       });
@@ -522,7 +520,7 @@ export default function abilityTest() {
         done();
       }
 
-      caller = await globalThis.globalThis.abilityContext.startAbilityByCall({
+      caller = await globalThis.abilityContext.startAbilityByCall({
         bundleName: thirdAppABundleName,
         abilityName: thirdAppAMainAbilityName,
       });
@@ -556,7 +554,7 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_1700 begin');
       let exceptionFlag = false;
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall({
+      await globalThis.abilityContext.startAbilityByCall({
         bundleName: systemAppCalleeABundleName,
         abilityName: systemAppCalleeAThirdAbilityName,
       }).then((data:Caller) => {
@@ -898,7 +896,7 @@ export default function abilityTest() {
       let exceptionFlag = false;
 
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall(null)
+      await globalThis.abilityContext.startAbilityByCall(null)
         .then((data:Caller) => {
           expect().assertFail();
           done();
@@ -925,7 +923,7 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_5300 begin');
       let exceptionFlag = false;
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall({
+      await globalThis.abilityContext.startAbilityByCall({
         bundleName: '',
         abilityName: '',
       }).then((data:Caller) => {
@@ -954,7 +952,7 @@ export default function abilityTest() {
       console.log('ACTS_CommonComponent_Call_5400 begin');
       let exceptionFlag = false;
 
-      await globalThis.globalThis.abilityContext.startAbilityByCall(undefined)
+      await globalThis.abilityContext.startAbilityByCall(undefined)
         .then((data:Caller) => {
           expect().assertFail();
           done();
@@ -992,7 +990,7 @@ export default function abilityTest() {
         bundleName: bundleNameCallee,
         abilityName: abilityNameCallee,
       }
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall(want);
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall(want);
       if (typeof caller !== 'object' || caller == null) {
         console.log('ACTS_CommonComponent_Call_5600 startAbilityByCall fail');
         expect().assertFail();
@@ -1025,7 +1023,7 @@ export default function abilityTest() {
         bundleName: bundleNameCallee,
         abilityName: abilityNameCallee,
       }
-      let caller:Caller =  await globalThis.globalThis.abilityContext.startAbilityByCall(want);
+      let caller:Caller =  await globalThis.abilityContext.startAbilityByCall(want);
       if (typeof caller !== 'object' || caller == null) {
         console.log('ACTS_CommonComponent_Call_6000 startAbilityByCall fail');
         expect().assertFail();
