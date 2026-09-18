@@ -29,7 +29,7 @@ struct WebOnPermissionRequest {
   @State str: string = ''
   @State deny: boolean = false
   @State userAgentPC:string = '';
-  permissionRequest: object | null = null
+  permissionRequest: PermissionRequest | null = null
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
 
@@ -494,7 +494,7 @@ struct WebOnPermissionRequest {
 }
 
 interface OnPermissionRequestEventType {
-  request: object;
+  request: PermissionRequest;
 }
 
 interface OnConsoleEventType {

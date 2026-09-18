@@ -22,8 +22,8 @@ import { Driver, ON } from '@kit.TestKit';
 
 const EVENT_ID_SET_EMIT_KEY = 200215;
 const driver = Driver.create();
-const CAPACITY = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const ENABLE_CAPABILITY = ['retrieve', 'gesture'] as Parameters<typeof config.enableAbility>[1];
 
 export default function webOnVerifyPinCallback() {
 
@@ -51,7 +51,7 @@ export default function webOnVerifyPinCallback() {
     });
 
     beforeEach(async (done: Function) => {
-      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      config.enableAbility(BUNDLE_NAME, ENABLE_CAPABILITY).then(() => {
         console.info(`enable success`);
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);

@@ -79,10 +79,10 @@ export default function webViewControllerPart2() {
      */
     it('testEventResultConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitEventResultConstructor001', 153530);
-      let isReturn = false;
-      Utils.registerEvent('testEventResultConstructor001', true, 153550, () => { isReturn = true });
+      let isReturn = 0;
+      Utils.registerEvent('testEventResultConstructor001', true, 153550, () => { isReturn = 1 });
       await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultConstructor001');
-      await waitForExist(() => isReturn, 'testEventResultConstructor001_returnCheck', true, 1000);
+      await waitForExist(() => isReturn, 'testEventResultConstructor001_returnCheck', 1, 1000);
       done();
     })
 
@@ -97,11 +97,11 @@ export default function webViewControllerPart2() {
     it('testEventResultConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       Utils.emitEvent('emitEventResultConstructorReturn001', 153530);
-      let isReturn = false;
-      Utils.registerEvent('testEventResultConstructorReturn001', true, 153551, () => { isReturn = true });
+      let isReturn = 0;
+      Utils.registerEvent('testEventResultConstructorReturn001', true, 153551, () => { isReturn = 1 });
       await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton',
         'testEventResultConstructorReturn001');
-      await waitForExist(() => isReturn, 'testEventResultConstructorReturn001_returnCheck', true, 1000);
+      await waitForExist(() => isReturn, 'testEventResultConstructorReturn001_returnCheck', 1, 1000);
       done();
     })
 
@@ -116,10 +116,10 @@ export default function webViewControllerPart2() {
     it('testEventResultClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       Utils.emitEvent('emitEventResultClass001', 153530);
-      let isReturn = false;
-      Utils.registerEvent('testEventResultClass001', true, 153552, () => { isReturn = true });
+      let isReturn = 0;
+      Utils.registerEvent('testEventResultClass001', true, 153552, () => { isReturn = 1 });
       await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultClass001');
-      await waitForExist(() => isReturn, 'testEventResultClass001_returnCheck', true, 1000);
+      await waitForExist(() => isReturn, 'testEventResultClass001_returnCheck', 1, 1000);
       done();
     })
   })
