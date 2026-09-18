@@ -42,12 +42,9 @@ export default function webDownloadUrlCoverageDirect() {
      */
     it('testDownloadItemUrlMethodsReturnStringDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let protoDesc: PropertyDescriptor | undefined =
-          Object.getOwnPropertyDescriptor(webview.WebDownloadItem.prototype, 'getOriginalUrl');
-        expect(protoDesc !== undefined).assertTrue();
-        let protoDesc2: PropertyDescriptor | undefined =
-          Object.getOwnPropertyDescriptor(webview.WebDownloadItem.prototype, 'getReferrerUrl');
-        expect(protoDesc2 !== undefined).assertTrue();
+        let proto: object = webview.WebDownloadItem.prototype as object;
+        expect(typeof (proto as Record<string, Function>)['getOriginalUrl']).assertEqual('function');
+        expect(typeof (proto as Record<string, Function>)['getReferrerUrl']).assertEqual('function');
         done();
       })
 

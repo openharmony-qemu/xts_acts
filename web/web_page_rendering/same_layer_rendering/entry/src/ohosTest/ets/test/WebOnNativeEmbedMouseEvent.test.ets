@@ -16,6 +16,7 @@
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import { waitForExist } from './WaitTest.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 let driver: Driver = Driver.create();
@@ -81,7 +82,7 @@ export default function webViewControllerPart2() {
       let isReturn = false;
       Utils.registerEvent('testEventResultConstructor001', true, 153550, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultConstructor001');
-      await Utils.waitForExist(() => isReturn, 'testEventResultConstructor001_returnCheck', true, 1000);
+      await waitForExist(() => isReturn, 'testEventResultConstructor001_returnCheck', true, 1000);
       done();
     })
 
@@ -100,7 +101,7 @@ export default function webViewControllerPart2() {
       Utils.registerEvent('testEventResultConstructorReturn001', true, 153551, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton',
         'testEventResultConstructorReturn001');
-      await Utils.waitForExist(() => isReturn, 'testEventResultConstructorReturn001_returnCheck', true, 1000);
+      await waitForExist(() => isReturn, 'testEventResultConstructorReturn001_returnCheck', true, 1000);
       done();
     })
 
@@ -118,7 +119,7 @@ export default function webViewControllerPart2() {
       let isReturn = false;
       Utils.registerEvent('testEventResultClass001', true, 153552, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultClass001');
-      await Utils.waitForExist(() => isReturn, 'testEventResultClass001_returnCheck', true, 1000);
+      await waitForExist(() => isReturn, 'testEventResultClass001_returnCheck', true, 1000);
       done();
     })
   })

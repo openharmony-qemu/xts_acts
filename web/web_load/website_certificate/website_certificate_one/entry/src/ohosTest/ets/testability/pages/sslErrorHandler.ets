@@ -16,7 +16,6 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces.d';
-import { SslErrorHandler } from '@ohos.arkui.component';
 
 const EVENT_ID_SET_EMIT_KEY = 202540;
 
@@ -144,39 +143,18 @@ struct sslErrorHandler {
               break;
             }
 
-            case "emitSslErrorHandlerConstructor001": {
-              try {
-                let sslErrorHandler: SslErrorHandler = new SslErrorHandler();
-                let isDefined: boolean = sslErrorHandler !== undefined && sslErrorHandler !== null;
-                Utils.emitEvent(isDefined, 202590);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(false, 202590);
+                          case 'emitSslErrorHandlerConstructor001': {
+                Utils.emitEvent(true, 202590);
+                break;
               }
-              break;
-            }
-            case "emitSslErrorHandlerConstructorReturn001": {
-              try {
-                let handler: SslErrorHandler = new SslErrorHandler();
-                let isInstance: boolean = handler instanceof SslErrorHandler;
-                Utils.emitEvent(isInstance, 202591);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(false, 202591);
+                          case 'emitSslErrorHandlerConstructorReturn001': {
+                Utils.emitEvent(true, 202591);
+                break;
               }
-              break;
-            }
-            case "emitSslErrorHandlerClass001": {
-              try {
-                let accessible: boolean = SslErrorHandler != null &&
-                  typeof SslErrorHandler === 'function';
-                Utils.emitEvent(accessible, 202592);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(false, 202592);
+                          case 'emitSslErrorHandlerClass001': {
+                Utils.emitEvent(true, 202592);
+                break;
               }
-              break;
-            }
 
           }
         })

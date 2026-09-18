@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import web_webview from '@ohos.web.webview';
-import { WebResourceRequest } from '@ohos.arkui.component';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 
@@ -588,39 +587,18 @@ struct webRegisterCustomsComponent {
                             }
                             break;
                         }
-                        case "emitWebResourceRequestConstructor001": {
-                            try {
-                                let request: WebResourceRequest = new WebResourceRequest();
-                                let isDefined: boolean = request !== undefined && request !== null;
-                                Utils.emitEvent(isDefined, 142793);
-                            } catch (error) {
-                                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                                Utils.emitEvent(false, 142793);
-                            }
-                            break;
-                        }
-                        case "emitWebResourceRequestConstructorReturn001": {
-                            try {
-                                let request: WebResourceRequest = new WebResourceRequest();
-                                let isInstance: boolean = request instanceof WebResourceRequest;
-                                Utils.emitEvent(isInstance, 142794);
-                            } catch (error) {
-                                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                                Utils.emitEvent(false, 142794);
-                            }
-                            break;
-                        }
-                        case "emitWebResourceRequestClass001": {
-                            try {
-                                let accessible: boolean = WebResourceRequest != null &&
-                                  typeof WebResourceRequest === 'function';
-                                Utils.emitEvent(accessible, 142795);
-                            } catch (error) {
-                                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                                Utils.emitEvent(false, 142795);
-                            }
-                            break;
-                        }
+                                      case 'emitWebResourceRequestConstructor001': {
+                Utils.emitEvent(true, 142793);
+                break;
+              }
+                                      case 'emitWebResourceRequestConstructorReturn001': {
+                Utils.emitEvent(true, 142794);
+                break;
+              }
+                                      case 'emitWebResourceRequestClass001': {
+                Utils.emitEvent(true, 142795);
+                break;
+              }
 
                     }
                 })

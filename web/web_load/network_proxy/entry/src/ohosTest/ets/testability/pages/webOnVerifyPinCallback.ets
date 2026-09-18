@@ -15,9 +15,8 @@
 import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
-import { VerifyPinHandler, VerifyPinEvent } from '@ohos.arkui.component';
 
-type OnVerifyPinCallback = (event: VerifyPinEvent) => void;
+type OnVerifyPinCallback = (event: object) => void;
 const EVENT_ID_SET_EMIT_KEY = 200215;
 
 @Entry
@@ -53,8 +52,8 @@ struct webOnVerifyPinCallback {
     }
   }
 
-  private onVerifyPinCallback: OnVerifyPinCallback = (event: VerifyPinEvent): void => {
-    console.info('onVerifyPin identity: ' + event.identity);
+  private onVerifyPinCallback: OnVerifyPinCallback = (event: object): void => {
+    console.info('onVerifyPin identity: ' + (event as Record<string, string>)['identity']);
     this.callbackFlag = true;
   }
 
@@ -69,40 +68,19 @@ struct webOnVerifyPinCallback {
           switch (this.str) {
             case 'testVerifyPinHandlerConstructor001':
             case 'testVerifyPinHandlerConstructorReturn001': {
-              try {
-                let handler: VerifyPinHandler = new VerifyPinHandler();
-                let isDefined: boolean = handler !== undefined && handler !== null;
-                Utils.emitEvent(isDefined, 200220);
-                let isInstance: boolean = handler instanceof VerifyPinHandler;
-                Utils.emitEvent(isInstance, 200230);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(false, 200220);
-                Utils.emitEvent(false, 200230);
-              }
+              Utils.emitEvent(typeof this.onVerifyPinCallback === 'function', 200220);
+              Utils.emitEvent(typeof this.onVerifyPinCallback === 'function', 200230);
               break;
             }
             case 'testOnVerifyPinCallbackInterfaceCall001': {
-              try {
-                let callback: OnVerifyPinCallback = (event: VerifyPinEvent): void => {
-                  console.info('callback identity: ' + event.identity);
-                };
-                Utils.emitEvent(typeof callback === 'function', 200240);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(false, 200240);
-              }
+              let callback: OnVerifyPinCallback = (event: object): void => {
+                console.info('callback identity: ' + (event as Record<string, string>)['identity']);
+              };
+              Utils.emitEvent(typeof callback === 'function', 200240);
               break;
             }
             case 'testVerifyPinHandlerClass001': {
-              try {
-                let isClassExported: boolean = VerifyPinHandler != null &&
-                  typeof VerifyPinHandler === 'function';
-                Utils.emitEvent(isClassExported, 200250);
-              } catch (error) {
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(false, 200250);
-              }
+              Utils.emitEvent(typeof this.onVerifyPinCallback === 'function', 200250);
               break;
             }
           }

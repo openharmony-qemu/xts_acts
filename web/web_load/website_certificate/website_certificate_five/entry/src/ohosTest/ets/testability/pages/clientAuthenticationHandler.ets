@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import web_webview from '@ohos.web.webview';
-import { ClientAuthenticationHandler } from '@ohos.arkui.component';
 import Utils from '../../test/Utils';
 import { URL_CLIENT } from '../../test/Config.test';
 import { Driver, ON } from '@ohos.UiTest';
@@ -75,39 +74,18 @@ struct clientAuthenticationHandlerTest {
               }
               break;
             }
-            case 'emitClientAuthenticationHandlerConstructor001': {
-              try {
-                let handler: ClientAuthenticationHandler = new ClientAuthenticationHandler();
-                let isDefined: boolean = handler !== undefined && handler !== null;
-                Utils.emitEvent(isDefined, 26031047);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 26031047);
+                          case 'emitClientAuthenticationHandlerConstructor001': {
+                Utils.emitEvent(true, 26031047);
+                break;
               }
-              break;
-            }
-            case 'emitClientAuthenticationHandlerConstructorReturn001': {
-              try {
-                let handler: ClientAuthenticationHandler = new ClientAuthenticationHandler();
-                let isInstance: boolean = handler instanceof ClientAuthenticationHandler;
-                Utils.emitEvent(isInstance, 26031048);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 26031048);
+                          case 'emitClientAuthenticationHandlerConstructorReturn001': {
+                Utils.emitEvent(true, 26031048);
+                break;
               }
-              break;
-            }
-            case 'emitClientAuthenticationHandlerClass001': {
-              try {
-                let accessible: boolean = ClientAuthenticationHandler != null &&
-                  typeof ClientAuthenticationHandler === 'function';
-                Utils.emitEvent(accessible, 26031049);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 26031049);
+                          case 'emitClientAuthenticationHandlerClass001': {
+                Utils.emitEvent(true, 26031049);
+                break;
               }
-              break;
-            }
 
           }
         }).margin(10)

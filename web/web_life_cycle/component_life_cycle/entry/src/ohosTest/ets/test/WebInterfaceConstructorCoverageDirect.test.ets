@@ -18,11 +18,14 @@ import webview from '@ohos.web.webview';
 interface WebConstructorOptionsLike {
   src: ResourceStr;
   controller: webview.WebviewController;
-  renderMode?: webview.RenderMode;
+  renderMode?: number;
   incognitoMode?: boolean;
   sharedRenderProcessToken?: string;
   emulateTouchFromMouseEvent?: boolean;
 }
+
+const RENDER_MODE_ASYNC = 0;
+const RENDER_MODE_SYNC = 1;
 
 export default function webInterfaceConstructorCoverageDirect() {
   describe('webInterfaceConstructorCoverageDirect', () => {
@@ -40,7 +43,7 @@ export default function webInterfaceConstructorCoverageDirect() {
         let emptySrc: WebConstructorOptionsLike = {
           src: '',
           controller: controller,
-          renderMode: webview.RenderMode.ASYNC_RENDER,
+          renderMode: RENDER_MODE_ASYNC,
           incognitoMode: true,
           sharedRenderProcessToken: '',
           emulateTouchFromMouseEvent: false
@@ -48,14 +51,14 @@ export default function webInterfaceConstructorCoverageDirect() {
         let normalSrc: WebConstructorOptionsLike = {
           src: 'resource://rawfile/index.html',
           controller: new webview.WebviewController(),
-          renderMode: webview.RenderMode.SYNC_RENDER,
+          renderMode: RENDER_MODE_SYNC,
           incognitoMode: false,
           emulateTouchFromMouseEvent: true
         };
         expect(emptySrc.src).assertEqual('');
         expect(emptySrc.incognitoMode).assertTrue();
-        expect(emptySrc.renderMode).assertEqual(webview.RenderMode.ASYNC_RENDER);
-        expect(normalSrc.renderMode).assertEqual(webview.RenderMode.SYNC_RENDER);
+        expect(emptySrc.renderMode).assertEqual(RENDER_MODE_ASYNC);
+        expect(normalSrc.renderMode).assertEqual(RENDER_MODE_SYNC);
         expect(normalSrc.incognitoMode).assertFalse();
         expect(normalSrc.sharedRenderProcessToken).assertUndefined();
         done();

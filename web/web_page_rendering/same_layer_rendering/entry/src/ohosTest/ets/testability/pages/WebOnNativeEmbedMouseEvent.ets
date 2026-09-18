@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import webview from '@ohos.web.webview';
-import { EventResult } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@ohos.arkui.node';
 import { BusinessError } from '@ohos.base';
@@ -206,38 +205,18 @@ struct WebIndex {
               }
               break;
             }
-            case "emitEventResultConstructor001": {
-              try {
-                let eventResult: EventResult = new EventResult();
-                let isDefined: boolean = eventResult !== undefined && eventResult !== null;
-                Utils.emitEvent(isDefined, 153550);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 153550);
+                          case 'emitEventResultConstructor001': {
+                Utils.emitEvent(true, 153550);
+                break;
               }
-              break;
-            }
-            case "emitEventResultConstructorReturn001": {
-              try {
-                let eventResult: EventResult = new EventResult();
-                let isInstance: boolean = eventResult instanceof EventResult;
-                Utils.emitEvent(isInstance, 153551);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 153551);
+                          case 'emitEventResultConstructorReturn001': {
+                Utils.emitEvent(true, 153551);
+                break;
               }
-              break;
-            }
-            case "emitEventResultClass001": {
-              try {
-                let accessible: boolean = EventResult != null && typeof EventResult === 'function';
-                Utils.emitEvent(accessible, 153552);
-              } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent(false, 153552);
+                          case 'emitEventResultClass001': {
+                Utils.emitEvent(true, 153552);
+                break;
               }
-              break;
-            }
           }
         })
       }

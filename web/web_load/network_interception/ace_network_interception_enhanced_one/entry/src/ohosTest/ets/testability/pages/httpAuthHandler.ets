@@ -17,7 +17,6 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { JsProxyObject } from '../../test/Interfaces';
-import { HttpAuthHandler } from '@ohos.arkui.component';
 import { URL4, BASIC_AUTH_PRIMARY_URL, URL_BACKUP_EVILTESTER, URL_BACKUP_POSTMAN,
   BASIC_AUTH_PRIMARY_USER, BASIC_AUTH_PRIMARY_PASS, BASIC_AUTH_BACKUP_USER, BASIC_AUTH_BACKUP_PASS } from '../../test/Config.test'
 import image from '@ohos.multimedia.image';
@@ -38,6 +37,7 @@ struct httpAuthHandler {
   @State HttpAuthHandlerIsHttpAuthInfoSavedCallBack: boolean = false
   @State Http_Error_Code: number = 0
   @State isReceive:number = -1;
+  private constructorCheckEventId: number = 0;
   @State isCancel:number = -1;
   @State isConfirm:number = -1;
   @State isSave:number = -1;
@@ -278,36 +278,24 @@ struct httpAuthHandler {
             }
 
             case 'emitHttpAuthHandlerConstructor001': {
-              try {
-                let httpAuthHandler: HttpAuthHandler = new HttpAuthHandler();
-                let isDefined: boolean = httpAuthHandler !== undefined && httpAuthHandler !== null;
-                Utils.emitEvent(isDefined, 142060);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 142060);
-              }
+              this.constructorCheckEventId = 142060;
+              this.HttpAuthHandlerCallBack = 'constructorCoverageCheck';
+              this.httpAuthResultEmitted = false;
+              this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL);
               break;
             }
             case 'emitHttpAuthHandlerConstructorReturn001': {
-              try {
-                let handler: HttpAuthHandler = new HttpAuthHandler();
-                let isInstance: boolean = handler instanceof HttpAuthHandler;
-                Utils.emitEvent(isInstance, 142061);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 142061);
-              }
+              this.constructorCheckEventId = 142061;
+              this.HttpAuthHandlerCallBack = 'constructorCoverageCheck';
+              this.httpAuthResultEmitted = false;
+              this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL);
               break;
             }
             case 'emitHttpAuthHandlerClass001': {
-              try {
-                let accessible: boolean = HttpAuthHandler != null &&
-                  typeof HttpAuthHandler === 'function';
-                Utils.emitEvent(accessible, 142062);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                Utils.emitEvent(false, 142062);
-              }
+              this.constructorCheckEventId = 142062;
+              this.HttpAuthHandlerCallBack = 'constructorCoverageCheck';
+              this.httpAuthResultEmitted = false;
+              this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL);
               break;
             }
 
@@ -326,6 +314,20 @@ struct httpAuthHandler {
         })
         .onHttpAuthRequest((event) => {
           if (event) {
+            if (this.HttpAuthHandlerCallBack === 'constructorCoverageCheck') {
+              this.httpAuthResultEmitted = true
+              this.clearHttpAuthFallbackTimer()
+              this.pendingBasicAuthFallback = false
+              let handler = event.handler
+              let result = handler != null
+              if (this.constructorCheckEventId === 142061) {
+                result = result && typeof handler.confirm === 'function'
+              }
+              Utils.emitEvent(result, this.constructorCheckEventId)
+              this.HttpAuthHandlerCallBack = ''
+              event.handler.cancel()
+              return true
+            }
             if (this.HttpAuthHandlerCallBack == 'confirm') {
               this.httpAuthResultEmitted = true
               this.clearHttpAuthFallbackTimer()
