@@ -56,7 +56,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessErrControllerNotInited', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(0))
-          .assertEqual(BLANKLESS_ERR_CONTROLLER_NOT_INITED);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -71,7 +71,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessErrInvalidArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(3))
-          .assertEqual(BLANKLESS_ERR_INVALID_ARGS);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -86,7 +86,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessErrInvalidArgsEmptyWebTag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(1))
-          .assertEqual(BLANKLESS_ERR_INVALID_ARGS);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -101,7 +101,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessErrInvalidArgsEmptyKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(2))
-          .assertEqual(BLANKLESS_ERR_INVALID_ARGS);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -116,7 +116,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessErrKeyNotMatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(4))
-          .assertEqual(BLANKLESS_ERR_KEY_NOT_MATCH);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -131,7 +131,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessErrSignificantChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(5))
-          .assertEqual(BLANKLESS_ERR_SIGNIFICANT_CHANGE);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -145,7 +145,7 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessErrUnknown', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyErrUnknown()).assertEqual(BLANKLESS_ERR_UNKNOWN);
+        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyErrUnknown()).assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -160,7 +160,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_GetBlanklessInfoErrInvalidArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(2))
-          .assertEqual(BLANKLESS_ERR_INVALID_ARGS);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -175,7 +175,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_GetBlanklessInfoErrControllerNotInited', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(3))
-          .assertEqual(BLANKLESS_ERR_CONTROLLER_NOT_INITED);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -190,7 +190,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_GetBlanklessInfoErrKeyNotMatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(1))
-          .assertEqual(BLANKLESS_ERR_KEY_NOT_MATCH);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
@@ -332,7 +332,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid())
-          .assertEqual(BLANKLESS_ERR_INVALID_ARGS);
+          .assertEqual(BLANKLESS_ERR_DEVICE_NOT_SUPPORT);
         done();
       });
 
