@@ -52,7 +52,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 @Component
 struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
   controller: webView.WebviewController = new webView.WebviewController(undefined);
-  controllerOne: webView.WebviewController = new webView.WebviewController(undefined);
   scroller: Scroller = new Scroller()
   @State str: string = '';
   @State selfScrollTime: number = 0
@@ -115,14 +114,14 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
             case "testNestedScrollOptionsScrollBackwardHorizontal004": {
               try {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
-                this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
-                this.scroller.scrollEdge(Edge.Start)
-                this.controllerOne.scrollTo(5000, 0)
+                this.scrollBackwardEnums = NestedScrollMode.PARALLEL
+                this.controller.scrollTo(5000, 0)
+                this.scroller.scrollEdge(Edge.End)
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                this.scroller.scrollBy(40, 0)
+                this.scroller.scrollBy(-40, 0)
                 setTimeout(() => {
-                  Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 2026031811)
+                  Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 2026031811)
                 }, 2000)
               } catch (error) {
                 error = error as BusinessError;

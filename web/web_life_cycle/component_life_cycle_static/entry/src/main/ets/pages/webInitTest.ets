@@ -193,8 +193,8 @@ struct WebInitTest {
               case 'emitonSwitchNextPageRichText': {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
-                router.pushUrl({ url: 'pages/RichTextTest' })
-                console.log('push RichTextTest URL success')
+                router.replaceUrl({ url: 'pages/RichTextTest' })
+                console.log('replace RichTextTest URL success')
               }
             }
           })

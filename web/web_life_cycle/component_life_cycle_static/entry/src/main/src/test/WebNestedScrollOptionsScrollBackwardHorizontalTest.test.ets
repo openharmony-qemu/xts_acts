@@ -49,22 +49,20 @@ export default function webNestedScrollOptionsScrollBackwardHorizontalTest(): vo
      */
     it('testNestedScrollOptionsScrollBackwardHorizontalStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testNestedScrollOptionsScrollBackwardHorizontal003", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testNestedScrollOptionsScrollBackwardHorizontalStatic003", true, 9003, done);
+      inspector.sendEventByKey('NestedScrollOptionsScrollBackwardHorizontalTestButton', 10, '');
+      await Utils.msSleep(2000);
       let webRect = UtilsHelpers.getComponentRect('RowSize');
-      // await Utils.msSleep(2000)
       let X = Utils.getRectHorizontalCenterX(webRect).toInt();
       let Y = Utils.getRectVerticalCenterY(webRect).toInt();
       let driver = Driver.create();
-      // await Utils.msSleep(5000)
       if (Utils.isPhone()) {
         driver.swipe(X - 60, Y, X + 60, Y);
       } else {
         driver.swipe(X - 100, Y, X + 100, Y);
       }
-      // await Utils.msSleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackwardHorizontal003", true, 9003, done);
-      inspector.sendEventByKey('NestedScrollOptionsScrollBackwardHorizontalTestButton', 10, '');
-      await Utils.msSleep(5000);
-      done();
+      await Utils.msSleep(3000);
     })
 
     /**
@@ -77,22 +75,20 @@ export default function webNestedScrollOptionsScrollBackwardHorizontalTest(): vo
      */
     it('testNestedScrollOptionsScrollBackwardHorizontalStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testNestedScrollOptionsScrollBackwardHorizontal004", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testNestedScrollOptionsScrollBackwardHorizontalStatic004", true, 2026031811, done);
+      inspector.sendEventByKey('NestedScrollOptionsScrollBackwardHorizontalTestButton', 10, '');
+      await Utils.msSleep(2000);
       let webRect = UtilsHelpers.getComponentRect('RowSize');
-      await Utils.msSleep(2000)
       let X = Utils.getRectHorizontalCenterX(webRect).toInt();
       let Y = Utils.getRectVerticalCenterY(webRect).toInt();
       let driver = Driver.create();
-      await Utils.msSleep(5000)
       if (Utils.isPhone()) {
         driver.swipe(X - 60, Y, X + 60, Y);
       } else {
         driver.swipe(X - 100, Y, X + 100, Y);
       }
-      await Utils.msSleep(2000);
-      Utils.registerEvent("testNestedScrollOptionsScrollBackwardHorizontal004", "17100001", 2026031811, done);
-      inspector.sendEventByKey('NestedScrollOptionsScrollBackwardHorizontalTestButton', 10, '');
-      await Utils.msSleep(5000);
-      done();
+      await Utils.msSleep(3000);
     })
 
   })

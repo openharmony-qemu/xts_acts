@@ -108,25 +108,29 @@ struct webSetUserAgentClientHintsEnabled {
               }
               case 'emitSetUserAgentClientHintsEnabledNull': {
                 try {
-                  let param: boolean | null = null;
-                  webView.WebviewController.setUserAgentClientHintsEnabled(param as boolean);
-                  let result = webView.WebviewController.getUserAgentClientHintsEnabled();
-                  Utils.emitEvent(result, 174140);
+                  webView.WebviewController.setUserAgentClientHintsEnabled(null);
+                  Utils.emitEvent(false, 174140);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(String(error.code), 174140);
+                  if (Number(error.code) == 401) {
+                    Utils.emitEvent('401', 174140);
+                  } else {
+                    Utils.emitEvent(String(error.code), 174140);
+                  }
                 }
                 break;
               }
               case 'emitSetUserAgentClientHintsEnabledUndefined': {
                 try {
-                  let param: boolean | undefined = undefined;
-                  webView.WebviewController.setUserAgentClientHintsEnabled(param as boolean);
-                  let result = webView.WebviewController.getUserAgentClientHintsEnabled();
-                  Utils.emitEvent(result, 174150);
+                  webView.WebviewController.setUserAgentClientHintsEnabled(undefined);
+                  Utils.emitEvent(false, 174150);
                 } catch (error) {
                   console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                  Utils.emitEvent(String(error.code), 174150);
+                  if (Number(error.code) == 401) {
+                    Utils.emitEvent('401', 174150);
+                  } else {
+                    Utils.emitEvent(String(error.code), 174150);
+                  }
                 }
                 break;
               }

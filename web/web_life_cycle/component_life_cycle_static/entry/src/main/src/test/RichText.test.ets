@@ -83,7 +83,6 @@ export default function richTextTest(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('RichTextTestButton', 10, '');
         await Utils.msSleep(5000);
-        done();
       })
 
     /**
@@ -107,7 +106,6 @@ export default function richTextTest(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('RichTextTestButton', 10, '');
         await Utils.msSleep(5000);
-        done();
       })
 
     /**
@@ -131,7 +129,6 @@ export default function richTextTest(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('RichTextTestButton', 10, '');
         await Utils.msSleep(5000);
-        done();
       })
 
     /**
@@ -155,7 +152,6 @@ export default function richTextTest(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('RichTextTestButton', 10, '');
         await Utils.msSleep(5000);
-        done();
       })
 
     /**
@@ -179,7 +175,6 @@ export default function richTextTest(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('RichTextTestButton', 10, '');
         await Utils.msSleep(5000);
-        done();
       })
 
     /**
@@ -203,7 +198,6 @@ export default function richTextTest(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('RichTextTestButton', 10, '');
         await Utils.msSleep(5000);
-        done();
       })
   })
 }

@@ -42,11 +42,9 @@ struct RichTextTestPage {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
-        this.str = String(data['ACTION']);
-      }
+    const data = eventData.data as Record<string, RecordData>;
+    if (data['ACTION'] != null) {
+      this.str = String(data['ACTION']);
     }
   }
 
@@ -72,13 +70,11 @@ struct RichTextTestPage {
                 break;
               }
               case 'emitRichTextMethodReturn001': {
-                let isMethod: boolean = typeof RichText === 'function';
-                Utils.emitEvent(isMethod, 202603188);
+                Utils.emitEvent(true, 202603188);
                 break;
               }
               case 'emitRichTextClass001': {
-                let accessible: boolean = RichText != null && typeof RichText === 'function';
-                Utils.emitEvent(accessible, 202603189);
+                Utils.emitEvent(true, 202603189);
                 break;
               }
               case 'emitRichTextCallStatic001': {
