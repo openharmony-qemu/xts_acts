@@ -1,0 +1,70 @@
+<!-- 路径动画：offset-path 直线/折线/贝塞尔/跟随旋转，每个用例独立按钮控制开始/结束 -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">路径动画</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 A到B直线运动：path("M 0 0 L 400 115") 斜向右下，单程停在 B -->
+    <list-item class="card">
+      <div class="card-head">
+        <text class="label">001 A到B直线运动</text>
+        <input type="button" value="{{playing1 ? '结束' : '开始'}}" class="case-btn" onclick="toggle1" />
+      </div>
+      <div class="stage">
+        <div class="a-box a-square p-a2b" if="{{playing1}}"></div>
+        <div class="a-box a-square" if="{{!playing1}}"></div>
+      </div>
+      <text class="expect">预期：开始后块从左侧(A)匀速斜向右下移动（横向400px、下移115px）到(B)并停住，结束后回到原位</text>
+    </list-item>
+
+    <!-- 002 矩形折线循环：path("M 0 0 L 240 0 L 240 30 L 0 30 Z") -->
+    <list-item class="card">
+      <div class="card-head">
+        <text class="label">002 矩形折线循环</text>
+        <input type="button" value="{{playing2 ? '结束' : '开始'}}" class="case-btn" onclick="toggle2" />
+      </div>
+      <div class="stage">
+        <div class="a-box p-rect" if="{{playing2}}"></div>
+        <div class="a-box" if="{{!playing2}}"></div>
+      </div>
+      <text class="expect">预期：块沿矩形折线循环移动（Z 闭合回起点），结束后回到原位</text>
+    </list-item>
+
+    <!-- 003 贝塞尔波浪运动：path("M 0 0 Q 100 -220 200 0 Q 300 220 400 0")，先上拱后下凹 -->
+    <list-item class="card">
+      <div class="card-head">
+        <text class="label">003 贝塞尔曲线运动</text>
+        <input type="button" value="{{playing3 ? '结束' : '开始'}}" class="case-btn" onclick="toggle3" />
+      </div>
+      <div class="stage">
+        <div class="a-box p-bezier" if="{{playing3}}"></div>
+        <div class="a-box" if="{{!playing3}}"></div>
+      </div>
+      <text class="expect">预期：块沿波浪曲线循环移动（先上拱110px再下凹110px，横向400px），结束后回到原位</text>
+    </list-item>
+
+    <!-- 004 offset-rotate:auto 跟随旋转：路径同 003 波浪，方形块朝向跟随路径切线 -->
+    <list-item class="card">
+      <div class="card-head">
+        <text class="label">004 跟随旋转(auto)</text>
+        <input type="button" value="{{playing4 ? '结束' : '开始'}}" class="case-btn" onclick="toggle4" />
+      </div>
+      <div class="stage">
+        <div class="a-box a-square a-block-blue p-auto-rotate" if="{{playing4}}"></div>
+        <div class="a-box a-square a-block-blue" if="{{!playing4}}"></div>
+      </div>
+      <text class="expect">预期：方形块沿波浪循环移动的同时朝向跟随路径切线实时旋转（offset-rotate:auto），结束后回到原位</text>
+    </list-item>
+
+    <!-- 底部 pass/fail/back 按钮，作为 list 最后一项，随 list 滚动可见 -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

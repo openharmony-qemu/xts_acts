@@ -1,0 +1,164 @@
+/* flex-direction page styles (card framework aligned with pathAnimator page) */
+.container {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.header {
+  width: 100%;
+  height: 56px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 40px;
+}
+
+.header-title {
+  color: #333333;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.help-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+}
+
+.content {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  /* reserve header height at the bottom to avoid list dead area */
+  padding-bottom: 60px;
+}
+
+.card-head {
+  flex-direction: row;
+  width: 100%;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+/* card must have a fixed height in lite, otherwise it collapses or clips */
+.card {
+  flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+.card-1 {
+  height: 195px;
+}
+
+.card-2 {
+  height: 310px;
+}
+
+.label {
+  font-size: 18px;
+  color: #333333;
+}
+
+.stage {
+  width: 100%;
+  align-items: center;
+}
+
+.stage-row {
+  height: 80px;
+}
+
+.stage-col {
+  height: 190px;
+}
+
+/* explicit demo container sizes to prevent collapse in lite */
+.demo-row {
+  flex-direction: row;
+  width: 180px;
+  height: 60px;
+}
+
+.demo-col {
+  flex-direction: column;
+  width: 60px;
+  height: 180px;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.box-text {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.r {
+  background-color: #e74c3c;
+}
+
+.g {
+  background-color: #2ecc71;
+}
+
+.b {
+  background-color: #3498db;
+}
+
+.expect {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 6px;
+}
+
+.bottom-card {
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.bottom-bt {
+  width: 100%;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 31%;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.button:active {
+  background-color: blueviolet;
+}
+
+.help-btn:active {
+  background-color: blueviolet;
+}

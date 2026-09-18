@@ -1,0 +1,152 @@
+<!-- SVG填充与描边：线性渐变/纯色填充/描边样式，参考talm RM.003 basic_gradient / RM.002 basic_stroke -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">SVG填充与描边</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 线性渐变：linearGradient 水平方向红到蓝 -->
+    <list-item class="card">
+      <text class="label">001 线性渐变填充(linearGradient)</text>
+      <div class="svg-item">
+        <svg width="450" height="150" viewBox="0 0 300 100">
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff0000"/>
+              <stop offset="100%" stop-color="#0000ff"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="260" height="60" fill="url(#g1)"/>
+        </svg>
+      </div>
+      <text class="expect">预期：矩形从左到右红→蓝平滑渐变，无断层或色带</text>
+    </list-item>
+
+    <!-- 002 纯色填充：单一颜色均匀填充 -->
+    <list-item class="card">
+      <text class="label">002 纯色填充</text>
+      <div class="svg-item">
+        <svg width="450" height="150" viewBox="0 0 300 100">
+          <rect x="20" y="20" width="260" height="60" fill="#44aa44"/>
+        </svg>
+      </div>
+      <text class="expect">预期：绿色纯色均匀填充整个矩形，无渐变或杂色</text>
+    </list-item>
+
+    <!-- 003 不同宽度描边：stroke-width 1/2/4/8 逐级加粗 -->
+    <list-item class="card">
+      <text class="label">003 描边宽度(stroke-width)</text>
+      <div class="svg-item">
+        <svg width="450" height="225" viewBox="0 0 300 150">
+          <circle cx="45" cy="75" r="20" fill="none" stroke="#ff4444" stroke-width="1"/>
+          <rect x="90" y="55" width="40" height="40" fill="none" stroke="#ff4444" stroke-width="2"/>
+          <polygon points="165,55 205,55 185,95" fill="none" stroke="#ff4444" stroke-width="4"/>
+          <ellipse cx="255" cy="75" rx="28" ry="12" fill="none" stroke="#ff4444" stroke-width="8"/>
+        </svg>
+      </div>
+      <text class="expect">预期：四个形状描边按1/2/4/8逐级加粗，粗细差异清晰可辨</text>
+    </list-item>
+
+    <!-- 004 不同颜色描边：颜色关键字 / 十六进制 / rgb -->
+    <list-item class="card">
+      <text class="label">004 描边颜色(stroke)</text>
+      <div class="svg-item">
+        <svg width="450" height="180" viewBox="0 0 300 120">
+          <circle cx="55" cy="60" r="40" fill="none" stroke="red" stroke-width="4"/>
+          <circle cx="150" cy="60" r="40" fill="none" stroke="#00aa00" stroke-width="4"/>
+          <circle cx="245" cy="60" r="40" fill="none" stroke="rgb(0,0,255)" stroke-width="4"/>
+        </svg>
+      </div>
+      <text class="expect">预期：三个空心圆描边依次为红（red关键字）、绿（#00aa00）、蓝（rgb(0,0,255)），三种颜色格式均正确解析</text>
+    </list-item>
+
+    <!-- 005 虚线、端头与偏移 -->
+    <list-item class="card">
+      <text class="label">005 虚线与线端(stroke-dasharray/linecap)</text>
+      <div class="svg-item">
+        <svg width="450" height="270" viewBox="0 0 300 180">
+          <circle cx="60" cy="80" r="45" fill="none" stroke="#222222" stroke-width="3" stroke-dasharray="10 5"/>
+          <circle cx="150" cy="80" r="45" fill="none" stroke="#4488ff" stroke-width="6" stroke-dasharray="12 6" stroke-linecap="round"/>
+          <circle cx="240" cy="80" r="45" fill="none" stroke="#22bb55" stroke-width="4" stroke-dasharray="140 280" stroke-dashoffset="30"/>
+        </svg>
+      </div>
+      <text class="expect">预期：左圆虚线等距排列，中圆圆角线端，右圆虚线偏移后显示部分缺口</text>
+    </list-item>
+
+    <!-- 006 垂直渐变：linearGradient 从上到下黄到紫 -->
+    <list-item class="card">
+      <text class="label">006 垂直渐变</text>
+      <div class="svg-item">
+        <svg width="450" height="150" viewBox="0 0 300 100">
+          <defs>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffcc00"/>
+              <stop offset="100%" stop-color="#6600ff"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="260" height="60" fill="url(#g2)"/>
+        </svg>
+      </div>
+      <text class="expect">预期：矩形从上到下黄→紫平滑渐变，无断层或色带</text>
+    </list-item>
+
+    <!-- 007 对角渐变：linearGradient 从左上到右下青到红 -->
+    <list-item class="card">
+      <text class="label">007 对角渐变</text>
+      <div class="svg-item">
+        <svg width="450" height="250" viewBox="0 0 300 200">
+          <defs>
+            <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00ffcc"/>
+              <stop offset="100%" stop-color="#ff0044"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="20" width="260" height="160" fill="url(#g3)"/>
+        </svg>
+      </div>
+      <text class="expect">预期：矩形从左上到右下青→红平滑渐变，方向正确，无断层或色带</text>
+    </list-item>
+
+    <!-- 008 五色对角渐变：高对比度五色沿对角线依次过渡 -->
+    <list-item class="card">
+      <text class="label">008 五色对角渐变</text>
+      <div class="svg-item">
+        <svg width="450" height="220" viewBox="0 0 300 200">
+          <defs>
+            <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0000ff"/>
+              <stop offset="25%" stop-color="#00cc00"/>
+              <stop offset="50%" stop-color="#ffff00"/>
+              <stop offset="75%" stop-color="#ff8800"/>
+              <stop offset="100%" stop-color="#ff0000"/>
+            </linearGradient>
+          </defs>
+          <rect x="60" y="10" width="180" height="180" fill="url(#g5)"/>
+        </svg>
+      </div>
+      <text class="expect">预期：正方形沿左上至右下对角线蓝→绿→黄→橙→红依次平滑过渡，色彩区分清晰</text>
+    </list-item>
+
+    <!-- 009 描边圆环：填充描边与空心描边 -->
+    <list-item class="card">
+      <text class="label">009 描边圆环</text>
+      <div class="svg-item">
+        <svg width="450" height="270" viewBox="0 0 300 180">
+          <circle cx="60" cy="80" r="40" fill="#ffeecc" stroke="#2266dd" stroke-width="4" />
+          <circle cx="160" cy="80" r="40" fill="none" stroke="#dd3333" stroke-width="3" />
+        </svg>
+      </div>
+      <text class="expect">预期：左侧圆环填充浅黄色并带蓝色描边，右侧圆环空心仅红色描边</text>
+    </list-item>
+
+    <!-- 底部 pass/fail/back 按钮，作为 list 最后一项，随 list 滚动可见 -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

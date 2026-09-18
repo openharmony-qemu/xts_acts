@@ -1,0 +1,136 @@
+/* gradient 角度渐变页样式 */
+.container {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+
+.header {
+  width: 100%;
+  height: 56px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 40px;
+}
+
+.header-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.help-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 60px;
+}
+
+.card {
+  flex-direction: column;
+  width: 100%;
+  height: 280px;
+  background-color: #16213e;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+.label {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.g-box {
+  width: 100%;
+  height: 200px;
+}
+
+.g-deg0 {
+  background: linear-gradient(0deg, #ff0000, #0000ff);
+}
+
+.g-deg45 {
+  background: linear-gradient(45deg, #ff0000, #0000ff);
+}
+
+.g-deg90 {
+  background: linear-gradient(90deg, #ff0000, #0000ff);
+}
+
+.g-deg135 {
+  background: linear-gradient(135deg, #ff0000, #0000ff);
+}
+
+.g-deg180 {
+  background: linear-gradient(180deg, #ff0000, #0000ff);
+}
+
+.g-deg270 {
+  background: linear-gradient(270deg, #ff0000, #0000ff);
+}
+
+.g-deg-45 {
+  background: linear-gradient(-45deg, #ff0000, #0000ff);
+}
+
+.g-deg-default {
+  background: linear-gradient(#ff0000, #0000ff);
+}
+
+.g-rad {
+  background: linear-gradient(1.5708rad, #ff0000, #0000ff);
+}
+
+.g-turn {
+  background: linear-gradient(0.25turn, #ff0000, #0000ff);
+}
+
+.expect {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 6px;
+}
+
+.bottom-card {
+  flex-direction: column;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-bt {
+  width: 100%;
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 31%;
+  height: 50px;
+  font-size: 14px;
+}
+
+.button:active {
+  background-color: blueviolet;
+}
+
+.help-btn:active {
+  background-color: blueviolet;
+}
