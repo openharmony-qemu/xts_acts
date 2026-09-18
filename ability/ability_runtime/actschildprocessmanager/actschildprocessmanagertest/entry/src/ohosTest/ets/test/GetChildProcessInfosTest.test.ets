@@ -21,7 +21,6 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import { contextConstant, StartOptions, Want } from '@kit.AbilityKit';
 import XTSArkProcess from '../xts/XTSArkProcess';
-import InfosSpawnProcess from '../../../main/ets/process/InfosSpawnProcess';
 
 const TAG = 'GetChildProcessInfos';
 const ERR_SERVICE = 16000050;
@@ -168,7 +167,6 @@ export default function getChildProcessInfosTest() {
     it('SUB_Ability_AbilityRuntime_GetChildProcessInfos_AfterSpawn_0100', Level.LEVEL0,
       async (done: Function) => {
         try {
-          InfosSpawnProcess.toString();
           pid = await childProcessManager.startChildProcess(
             spawnProcessPath, childProcessManager.StartMode.APP_SPAWN_FORK);
           expect(pid > 0).assertTrue();
