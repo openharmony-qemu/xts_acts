@@ -30,6 +30,12 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"huksNativeApi22Type0200", nullptr, OHHuksNativeApi22Type0200, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"huksNativeApi22KeyAlg0100", nullptr, OHHuksNativeApi22KeyAlg0100, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"huksNativeApi22Struct0100", nullptr, OHHuksNativeApi22Struct0100, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"huksNativeApi22Struct0200", nullptr, OHHuksNativeApi22Struct0200, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"huksNativeApi22Utils0100", nullptr, OHHuksNativeApi22Utils0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},
     };
