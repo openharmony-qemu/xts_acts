@@ -32,7 +32,7 @@ export default function AVRecorderNdkTest() {
         if (text) {
           await text.click()
         }
-      }, 500)
+      }, 100)
       atManager.requestPermissionsFromUser(getContext(), permissions).then((data: PermissionRequestResult) => {
         let grantStatus: Array<number> = data.authResults;
         let length: number = grantStatus.length;
