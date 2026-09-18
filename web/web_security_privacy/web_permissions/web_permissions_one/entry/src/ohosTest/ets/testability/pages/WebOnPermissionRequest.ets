@@ -361,15 +361,15 @@ struct WebOnPermissionRequest {
                   Utils.emitEvent('"grant"', 160920)
                 }
               }
-                            case 'emitPermissionRequestConstructor001': {
+              case 'emitPermissionRequestConstructor001': {
                 Utils.emitEvent(true, 160950);
                 break;
               }
-                            case 'emitPermissionRequestConstructorReturn001': {
+              case 'emitPermissionRequestConstructorReturn001': {
                 Utils.emitEvent(true, 160951);
                 break;
               }
-                            case 'emitPermissionRequestClass001': {
+              case 'emitPermissionRequestClass001': {
                 Utils.emitEvent(true, 160952);
                 break;
               }
