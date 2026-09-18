@@ -29,7 +29,7 @@ export default function native_loadTest() {
 
     /**
      * @tc.name TestNativeArkWeb_LoadDataInitError
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INIT_0021
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INIT_6400
      * @tc.desc Test OH_NativeArkWeb_LoadData ARKWEB_INIT_ERROR (17100001)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -43,7 +43,7 @@ export default function native_loadTest() {
 
     /**
      * @tc.name TestNativeArkWeb_LoadDataUnboundTag
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INIT_0022
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INIT_6500
      * @tc.desc Test OH_NativeArkWeb_LoadData with unbound webTag returns ARKWEB_INIT_ERROR
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -57,7 +57,7 @@ export default function native_loadTest() {
 
     /**
      * @tc.name TestNativeArkWeb_LoadDataEmptyData
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INVALID_0023
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INVALID_6600
      * @tc.desc Test OH_NativeArkWeb_LoadData empty data returns ARKWEB_INVALID_PARAM or INIT_ERROR
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -72,7 +72,7 @@ export default function native_loadTest() {
 
     /**
      * @tc.name TestNativeArkWeb_LoadDataEmptyMimeType
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INVALID_0024
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INVALID_6700
      * @tc.desc Test OH_NativeArkWeb_LoadData empty mimeType returns ARKWEB_INVALID_PARAM or INIT_ERROR
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -87,7 +87,7 @@ export default function native_loadTest() {
 
     /**
      * @tc.name TestNativeArkWeb_LoadDataEmptyEncoding
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INVALID_0025
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_LOAD_DATA_INVALID_6800
      * @tc.desc Test OH_NativeArkWeb_LoadData empty encoding returns ARKWEB_INVALID_PARAM or INIT_ERROR
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

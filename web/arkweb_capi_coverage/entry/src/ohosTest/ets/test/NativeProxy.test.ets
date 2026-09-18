@@ -13,7 +13,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestArkWeb_ProxyMethod_UserData
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_PROXY_METHOD_USER_DATA_0022
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_PROXY_METHOD_USER_DATA_5200
      * @tc.desc Test ArkWeb_ProxyMethod userData field declaration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -27,7 +27,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestArkWeb_ControllerAPI_DeleteJavaScriptRegister
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CONTROLLER_API_DELETE_JS_REGISTER_0028
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CONTROLLER_API_DELETE_JS_REGISTER_5300
      * @tc.desc Test ArkWeb_ControllerAPI deleteJavaScriptRegister field
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -41,7 +41,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestArkWeb_ControllerAPI_RegisterJavaScriptProxyEx
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CONTROLLER_API_REGISTER_JS_PROXY_EX_0029
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CONTROLLER_API_REGISTER_JS_PROXY_EX_5400
      * @tc.desc Test ArkWeb_ControllerAPI registerJavaScriptProxyEx field
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -55,7 +55,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestArkWeb_WebMessagePortAPI_PostMessage
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_WEB_MESSAGE_PORT_API_POST_MESSAGE_0030
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_WEB_MESSAGE_PORT_API_POST_MESSAGE_5500
      * @tc.desc Test ArkWeb_WebMessagePortAPI postMessage field
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -69,7 +69,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestArkWeb_WebMessageAPI_SetData
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_WEB_MESSAGE_API_SET_DATA_0031
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_WEB_MESSAGE_API_SET_DATA_5600
      * @tc.desc Test ArkWeb_WebMessageAPI setData field
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -83,7 +83,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestNativeArkWeb_RegisterJavaScriptProxy
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_REGISTER_JAVA_SCRIPT_PROXY_0023
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_REGISTER_JAVA_SCRIPT_PROXY_5700
      * @tc.desc Test OH_NativeArkWeb_RegisterJavaScriptProxy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -97,7 +97,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestNativeArkWeb_UnregisterJavaScriptProxy
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_UNREGISTER_JAVA_SCRIPT_PROXY_0024
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_UNREGISTER_JAVA_SCRIPT_PROXY_5800
      * @tc.desc Test OH_NativeArkWeb_UnregisterJavaScriptProxy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -111,7 +111,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetJavaScriptProxyValidCallback
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_JAVA_SCRIPT_PROXY_VALID_CALLBACK_0025
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_JAVA_SCRIPT_PROXY_VALID_CALLBACK_5900
      * @tc.desc Test OH_NativeArkWeb_SetJavaScriptProxyValidCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -125,7 +125,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetJavaScriptProxyValidCallback
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_JAVA_SCRIPT_PROXY_VALID_CALLBACK_0026
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_JAVA_SCRIPT_PROXY_VALID_CALLBACK_6000
      * @tc.desc Test OH_NativeArkWeb_GetJavaScriptProxyValidCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -139,7 +139,7 @@ export default function native_proxyTest() {
 
     /**
      * @tc.name TestNativeArkWeb_RegisterAsyncThreadJavaScriptProxy
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_REGISTER_ASYNC_THREAD_JAVA_SCRIPT_PROXY_0027
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_REGISTER_ASYNC_THREAD_JAVA_SCRIPT_PROXY_6100
      * @tc.desc Test OH_NativeArkWeb_RegisterAsyncThreadJavaScriptProxy
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

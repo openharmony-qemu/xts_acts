@@ -33,7 +33,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingWithKey
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_BLANKLESS_LOADING_WITH_KEY_0010
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_BLANKLESS_LOADING_WITH_KEY_6900
      * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingWithKey
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -47,7 +47,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessErrControllerNotInited
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_CONTROLLER_0018
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_CONTROLLER_7000
      * @tc.desc Test SetBlanklessLoadingWithKey ARKWEB_BLANKLESS_ERR_CONTROLLER_NOT_INITED
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -62,7 +62,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessErrInvalidArgs
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_INVALID_ARGS_0017
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_INVALID_ARGS_7100
      * @tc.desc Test SetBlanklessLoadingWithKey ARKWEB_BLANKLESS_ERR_INVALID_ARGS
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -77,7 +77,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessErrInvalidArgsEmptyWebTag
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_INVALID_ARGS_WEBTAG_0031
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_INVALID_ARGS_WEBTAG_7200
      * @tc.desc Test SetBlanklessLoadingWithKey ARKWEB_BLANKLESS_ERR_INVALID_ARGS empty webTag
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -92,7 +92,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessErrInvalidArgsEmptyKey
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_INVALID_ARGS_KEY_0032
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_INVALID_ARGS_KEY_7300
      * @tc.desc Test SetBlanklessLoadingWithKey ARKWEB_BLANKLESS_ERR_INVALID_ARGS empty key
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -107,7 +107,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessErrKeyNotMatch
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_KEY_NOT_MATCH_0019
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_KEY_NOT_MATCH_7400
      * @tc.desc Test SetBlanklessLoadingWithKey ARKWEB_BLANKLESS_ERR_KEY_NOT_MATCH
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -122,7 +122,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessErrSignificantChange
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_SIGNIFICANT_0020
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_SIGNIFICANT_7500
      * @tc.desc Test SetBlanklessLoadingWithKey ARKWEB_BLANKLESS_ERR_SIGNIFICANT_CHANGE
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -137,7 +137,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessErrUnknown
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_UNKNOWN_0033
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_ERR_UNKNOWN_7600
      * @tc.desc Test SetBlanklessLoadingWithKey ARKWEB_BLANKLESS_ERR_UNKNOWN
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -151,7 +151,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoErrInvalidArgs
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_ERR_INVALID_ARGS_0021
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_ERR_INVALID_ARGS_7700
      * @tc.desc Test GetBlanklessInfoWithKey ARKWEB_BLANKLESS_ERR_INVALID_ARGS
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -166,7 +166,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoErrControllerNotInited
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_ERR_CONTROLLER_0022
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_ERR_CONTROLLER_7800
      * @tc.desc Test GetBlanklessInfoWithKey ARKWEB_BLANKLESS_ERR_CONTROLLER_NOT_INITED
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -181,7 +181,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoErrKeyNotMatch
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_ERR_KEY_NOT_MATCH_0023
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_ERR_KEY_NOT_MATCH_7900
      * @tc.desc Test GetBlanklessInfoWithKey ARKWEB_BLANKLESS_ERR_KEY_NOT_MATCH
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -196,7 +196,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoWithKey
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_BLANKLESS_INFO_WITH_KEY_0012
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_BLANKLESS_INFO_WITH_KEY_8000
      * @tc.desc Test OH_NativeArkWeb_GetBlanklessInfoWithKey errCode
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -210,7 +210,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoWithKeyReturnFields
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_RETURN_FIELDS_0030
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_RETURN_FIELDS_8100
      * @tc.desc Test GetBlanklessInfoWithKey return errCode field
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -225,7 +225,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoSimilarityReturn
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_SIMILARITY_0034
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_SIMILARITY_8200
      * @tc.desc Test GetBlanklessInfoWithKey return similarity field
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -239,7 +239,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetBlanklessInfoLoadingTimeReturn
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_LOADING_TIME_0035
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_GET_BLANKLESS_LOADING_TIME_8300
      * @tc.desc Test GetBlanklessInfoWithKey return loadingTime field
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -253,7 +253,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCache
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_CLEAR_BLANKLESS_LOADING_CACHE_0011
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_CLEAR_BLANKLESS_LOADING_CACHE_8400
      * @tc.desc Test OH_NativeArkWeb_ClearBlanklessLoadingCache
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -267,7 +267,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheNull
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_NULL_0014
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_NULL_8500
      * @tc.desc Test OH_NativeArkWeb_ClearBlanklessLoadingCache with null keys
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -281,7 +281,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheSizeZero
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_ZERO_0027
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_ZERO_8600
      * @tc.desc Test ClearBlanklessLoadingCache uint32_t size boundary 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -295,7 +295,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheSize100
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_100_0028
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_100_8700
      * @tc.desc Test ClearBlanklessLoadingCache uint32_t size boundary 100
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -309,7 +309,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_ClearBlanklessLoadingCacheSize101
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_101_0029
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_CLEAR_BLANKLESS_CACHE_SIZE_101_8800
      * @tc.desc Test ClearBlanklessLoadingCache uint32_t size boundary 101
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -323,7 +323,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingWithKeyInvalid
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_INVALID_0015
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_INVALID_8900
      * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingWithKey null params
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -338,7 +338,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingCacheCapacityZero
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_ZERO_0024
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_ZERO_9000
      * @tc.desc Test SetBlanklessLoadingCacheCapacity returns 0 for capacity=0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -352,7 +352,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingCacheCapacityMax
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_MAX_0025
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_MAX_9100
      * @tc.desc Test SetBlanklessLoadingCacheCapacity returns 100 for capacity=100
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -366,7 +366,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingCacheCapacityClamp
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_CLAMP_0026
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_CLAMP_9200
      * @tc.desc Test SetBlanklessLoadingCacheCapacity clamps 101 to 100
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -380,7 +380,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_RETURN_0016
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_SET_BLANKLESS_CAPACITY_RETURN_9300
      * @tc.desc Test SetBlanklessLoadingCacheCapacity returns effective value 50
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -394,7 +394,7 @@ export default function native_blanklessTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetBlanklessLoadingCacheCapacity
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_BLANKLESS_LOADING_CACHE_CAPACITY_0013
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_BLANKLESS_LOADING_CACHE_CAPACITY_9400
      * @tc.desc Test OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

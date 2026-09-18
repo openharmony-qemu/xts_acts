@@ -13,7 +13,7 @@ export default function scheme_handlerTest() {
 
     /**
      * @tc.name TestArkWebSchemeHandler_SetUserData
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_SCHEME_HANDLER_SET_USER_DATA_0045
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_SCHEME_HANDLER_SET_USER_DATA_4300
      * @tc.desc Test OH_ArkWebSchemeHandler_SetUserData
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
