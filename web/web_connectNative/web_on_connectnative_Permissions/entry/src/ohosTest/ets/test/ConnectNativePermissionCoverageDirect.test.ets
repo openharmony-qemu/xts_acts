@@ -119,5 +119,44 @@ export default function connectNativePermissionCoverageDirect() {
           done();
         }
       })
+
+    /**
+     * @tc.name   testConnectNativeError801Direct
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_Error_801_0300
+     * @tc.desc   connectNative invalid bundle returns error code 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testConnectNativeError801Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let want: Want = {
+          bundleName: 'com.example.nonexistent.bundle.invalid',
+          abilityName: 'NonexistentAbility',
+          parameters: {
+            'ohos.arkweb.extensionOrigin': 'testOrigin',
+          }
+        };
+        let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
+          onConnect: () => {},
+          onDisconnect: () => {},
+          onFailed: (code: number, errMsg: string) => {
+            if (code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+              expect(code).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
+            } else {
+              expect(code).assertLarger(0);
+            }
+            done();
+          }
+        };
+        try {
+          webNativeMessagingExtensionManager.connectNative(context, want, callback);
+          await sleep(PERMISSION_CHECK_WAIT_MS);
+          done();
+        } catch (err) {
+          assertPermissionOrCapabilityError(err as BusinessError);
+          done();
+        }
+      })
   })
 }

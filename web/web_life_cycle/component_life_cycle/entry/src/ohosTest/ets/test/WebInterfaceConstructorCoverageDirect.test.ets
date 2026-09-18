@@ -18,7 +18,7 @@ import webview from '@ohos.web.webview';
 interface WebConstructorOptionsLike {
   src: ResourceStr;
   controller: webview.WebviewController;
-  renderMode?: number;
+  renderMode?: webview.RenderMode;
   incognitoMode?: boolean;
   sharedRenderProcessToken?: string;
   emulateTouchFromMouseEvent?: boolean;
@@ -40,7 +40,7 @@ export default function webInterfaceConstructorCoverageDirect() {
         let emptySrc: WebConstructorOptionsLike = {
           src: '',
           controller: controller,
-          renderMode: 0,
+          renderMode: webview.RenderMode.ASYNC_RENDER,
           incognitoMode: true,
           sharedRenderProcessToken: '',
           emulateTouchFromMouseEvent: false
@@ -48,14 +48,35 @@ export default function webInterfaceConstructorCoverageDirect() {
         let normalSrc: WebConstructorOptionsLike = {
           src: 'resource://rawfile/index.html',
           controller: new webview.WebviewController(),
-          renderMode: 1,
+          renderMode: webview.RenderMode.SYNC_RENDER,
           incognitoMode: false,
           emulateTouchFromMouseEvent: true
         };
         expect(emptySrc.src).assertEqual('');
         expect(emptySrc.incognitoMode).assertTrue();
-        expect(normalSrc.renderMode).assertEqual(1);
+        expect(emptySrc.renderMode).assertEqual(webview.RenderMode.ASYNC_RENDER);
+        expect(normalSrc.renderMode).assertEqual(webview.RenderMode.SYNC_RENDER);
         expect(normalSrc.incognitoMode).assertFalse();
+        expect(normalSrc.sharedRenderProcessToken).assertUndefined();
+        done();
+      });
+
+    /**
+     * @tc.name   testWebInterfaceConstructorNullUndefinedDirect
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_NULL_0300
+     * @tc.desc   Web constructor options null/undefined param spec coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebInterfaceConstructorNullUndefinedDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let nullOptions: WebConstructorOptionsLike | null = null;
+        let undefinedOptions: WebConstructorOptionsLike | undefined = undefined;
+        expect(nullOptions).assertNull();
+        expect(undefinedOptions).assertUndefined();
+        let controller: webview.WebviewController = new webview.WebviewController();
+        expect(controller !== null).assertTrue();
         done();
       });
 

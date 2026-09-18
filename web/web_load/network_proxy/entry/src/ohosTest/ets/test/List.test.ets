@@ -47,6 +47,7 @@ import webDownloadManagerResumeDownloadParam from './WebDownloadManagerResumeDow
 import webviewControllerAddIntelligentTrackingParam from './WebviewControllerAddIntelligentTrackingParam.test';
 import webviewControllerBackOrForwardErrorCode from './WebviewControllerBackOrForwardErrorCode.test';
 import webviewControllerClearHostIPParam from './WebviewControllerClearHostIPParam.test';
+import webviewControllerSetUrlTrustListErrorDirect from './WebviewControllerSetUrlTrustListErrorDirect.test';
 import webviewControllerDeleteJavaScriptRegisterParam from './WebviewControllerDeleteJavaScriptRegisterParam.test';
 import webviewControllerEnableBackForwardCacheParam from './WebviewControllerEnableBackForwardCacheParam.test';
 
@@ -67,6 +68,7 @@ export default function testsuite() {
   webviewControllerAddIntelligentTrackingParam()
   webviewControllerBackOrForwardErrorCode()
   webviewControllerClearHostIPParam()
+  webviewControllerSetUrlTrustListErrorDirect()
   webviewControllerDeleteJavaScriptRegisterParam()
   webviewControllerEnableBackForwardCacheParam()
   webviewControllerSetConnectionTimeoutParam()

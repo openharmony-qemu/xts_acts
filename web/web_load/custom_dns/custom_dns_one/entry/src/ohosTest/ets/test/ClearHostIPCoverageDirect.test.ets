@@ -16,6 +16,8 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import webview from '@ohos.web.webview';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+const ERROR_CODE_INVALID_PARAM = 401;
+
 export default function clearHostIPCoverageDirect() {
   describe('clearHostIPCoverageDirect', () => {
     /**
@@ -29,12 +31,49 @@ export default function clearHostIPCoverageDirect() {
     it('testClearHostIPEmptyStringDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         webview.WebviewController.clearHostIP('');
-        expect(1).assertEqual(1);
+        done();
       } catch (error) {
-        let errorCode = Number((error as BusinessError).code);
-        expect(errorCode === 401 || errorCode === 17100001 || !Number.isNaN(errorCode)).assertTrue();
+        expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+        done();
       }
-      done();
+    })
+
+    /**
+     * @tc.name   testClearHostIPNullDirect
+     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_NULL_0200
+     * @tc.desc   clearHostIP null hostName returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testClearHostIPNullDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        webview.WebviewController.clearHostIP(null);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testClearHostIPUndefinedDirect
+     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_UNDEFINED_0300
+     * @tc.desc   clearHostIP undefined hostName returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testClearHostIPUndefinedDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        webview.WebviewController.clearHostIP(undefined);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+        done();
+      }
     })
   })
 }
