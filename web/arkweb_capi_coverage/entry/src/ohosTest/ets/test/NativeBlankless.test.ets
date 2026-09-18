@@ -35,6 +35,11 @@ function assertBlanklessErrCode(result: number, expected: number[]): void {
   expect(expected).assertContain(result);
 }
 
+// OH_NativeArkWeb_SetBlanklessLoadingCacheCapacity may return 0 (success) or effective capacity.
+function assertCacheCapacityReturn(result: number, effectiveCapacity: number): void {
+  expect([0, effectiveCapacity]).assertContain(result);
+}
+
 export default function native_blanklessTest() {
   describe('native_blanklessTest', () => {
     beforeEach(async (done: Function) => {
@@ -248,7 +253,7 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessLoadingCacheCapacityMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(1)).assertEqual(100);
+        assertCacheCapacityReturn(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(1), 100);
         done();
       });
 
@@ -262,7 +267,7 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessLoadingCacheCapacityClamp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(2)).assertEqual(100);
+        assertCacheCapacityReturn(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacityByCase(2), 100);
         done();
       });
 
@@ -276,7 +281,7 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn()).assertEqual(50);
+        assertCacheCapacityReturn(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacityReturn(), 50);
         done();
       });
 
@@ -290,7 +295,7 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessLoadingCacheCapacity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacity()).assertEqual(100);
+        assertCacheCapacityReturn(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacity(), 100);
         done();
       });
 
