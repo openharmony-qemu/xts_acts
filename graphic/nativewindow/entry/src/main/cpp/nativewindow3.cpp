@@ -17,6 +17,8 @@
 #include "napi/native_api.h"
 #include <map>
 #include <cstdint>
+#include <thread>
+#include <chrono>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <native_image/native_image.h>
 #include <native_window/external_window.h>
@@ -47,6 +49,9 @@
 #define CONSTANT_8 8
 #define CONSTANT_10 10
 #define CONSTANT_60 60
+#define CONSTANT_64 64
+#define CONSTANT_65 65
+#define CONSTANT_66 66
 #define CONSTANT_2999 2999
 #define CONSTANT_3000 3000
 #define CONSTANT_3001 3001
@@ -1563,6 +1568,145 @@ napi_value testNativeWindowSet3DMetadataValueUnknown(napi_env env, napi_callback
         return result;
     }
     napi_create_int32(env, errorCode, &result);
+    return result;
+}
+
+// 进程运行期间 dump信息验证  cat /proc/pid/mm_dmabuf_info
+napi_value testNativeWindowHandleOptSetDmaBufferNameNormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();;
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+    int fenceFd = -1;
+    int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    const char* name = "Surface123";
+    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_4, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetDmaBufferNameNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();;
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    const char* name = "Surface123";
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(nullptr, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, nullptr);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetDmaBufferNameAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    // 1. 非法字符串（非字母数字）
+    const char* name1 = "Surface@#$";
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name1);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    // 2. 首字符非字母的字符串
+    const char* name2 = "123Abc";
+    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name2);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+    // 3. 传入长度为64字节的合规字符串
+    char name3[65];
+    for (int32_t i = 0; i < CONSTANT_64; i++) {
+        name3[i] = 'a';
+    }
+    name3[64] = '\0';
+    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name3);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    // 4. 传入长度大于64字节的字符串
+    char name4[66];
+    for (int32_t i = 0; i < CONSTANT_65; i++) {
+        name4[i] = 'b';
+    }
+    name4[65] = '\0';
+    ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name4);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_4, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowHandleOptSetDmaBufferNameMultipleCalls(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    InitNativeWindow* initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    const char* name = "Surface123";
+    for (int i = 0; i < CONSTANT_10; i++) {
+        int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name);
+        if (ret != NATIVE_ERROR_OK) {
+            napi_create_int32(env, CONSTANT_1, &result);
+            return result;
+        }
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 

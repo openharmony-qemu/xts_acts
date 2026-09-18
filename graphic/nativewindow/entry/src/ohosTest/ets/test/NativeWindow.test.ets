@@ -2131,5 +2131,65 @@ export default function nativeWindowTest() {
         expect(result).assertEqual(50002000);
         done();
       });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetDmaBufferNameNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetDmaBufferName_0100
+     * @tc.desc   testNativeWindowHandleOptSetDmaBufferNameNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeWindowHandleOptSetDmaBufferNameNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetDmaBufferNameNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetDmaBufferNameNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetDmaBufferName_0200
+     * @tc.desc   testNativeWindowHandleOptSetDmaBufferNameNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetDmaBufferNameNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetDmaBufferNameNull();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetDmaBufferNameAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetDmaBufferName_0300
+     * @tc.desc   testNativeWindowHandleOptSetDmaBufferNameAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetDmaBufferNameAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetDmaBufferNameAbnormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeWindowHandleOptSetDmaBufferNameMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_WINDOW_HandleOptSetDmaBufferName_0400
+     * @tc.desc   testNativeWindowHandleOptSetDmaBufferNameMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeWindowHandleOptSetDmaBufferNameMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowHandleOptSetDmaBufferNameMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }
