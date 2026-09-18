@@ -64,7 +64,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -91,7 +90,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -172,7 +170,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists, null);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -199,7 +196,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists, undefined);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -226,7 +222,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -253,7 +248,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -280,7 +274,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -363,7 +356,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
@@ -390,7 +382,6 @@ export default function DlpEnterpriseServiceTest() {
       try {
         await dlpPermission.setControlledAppLists(appLists);
         console.info(curTag, "setControlledAppLists success");
-        expect(true).assertTrue();
       } catch (err) {
         console.info(curTag, "setControlledAppLists failed," + err.code + err.message);
         if (err.code === 801) {
