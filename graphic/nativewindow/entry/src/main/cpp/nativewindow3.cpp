@@ -1664,22 +1664,22 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameAbnormal(napi_env env, napi_
         return result;
     }
     // 3. 传入长度为64字节的合规字符串
-    char name3[65];
+    char name3[CONSTANT_65];
     for (int32_t i = 0; i < CONSTANT_64; i++) {
         name3[i] = 'a';
     }
-    name3[64] = '\0';
+    name3[CONSTANT_64] = '\0';
     ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name3);
     if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3, &result);
         return result;
     }
     // 4. 传入长度大于64字节的字符串
-    char name4[66];
+    char name4[CONSTANT_66];
     for (int32_t i = 0; i < CONSTANT_65; i++) {
         name4[i] = 'b';
     }
-    name4[65] = '\0';
+    name4[CONSTANT_65] = '\0';
     ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, OH_NATIVEWINDOW_SET_DMABUFFER_NAME, name4);
     if (ret != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_4, &result);
