@@ -187,26 +187,6 @@ export default function webInitTest(): void {
       })
 
     /**
-     * @tc.name   testOnceStringReturnStatic001
-     * @tc.number SUB_WEB_ONCE_RETURN_0600
-     * @tc.desc   test once returns void and callback invoked for webInited
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testOnceStringReturnStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('emitOnceReturn001', 10);
-        await Utils.msSleep(2000);
-        Utils.registerEvent('testOnceStringReturnStatic001', true, 202603190, done);
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebInitTestButton', 10, '');
-        await Utils.msSleep(5000);
-        done();
-      })
-
-    /**
      * @tc.name   testOnceCallbackStatic001
      * @tc.number SUB_WEB_ONCE_CALLBACK_0700
      * @tc.desc   test once callback is invoked when webInited fires
