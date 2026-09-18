@@ -24,6 +24,7 @@
 #include <napi/native_api.h>
 #include <string>
 #include <sys/stat.h>
+#include "native_common.h"
 
 namespace RelationalStoreTest {
 const char *RDB_TEST = "/data/storage/el2/database/com.acts.acttransactiontest/";

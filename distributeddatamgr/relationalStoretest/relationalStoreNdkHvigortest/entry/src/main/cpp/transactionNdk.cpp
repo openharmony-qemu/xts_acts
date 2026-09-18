@@ -967,18 +967,6 @@ static napi_value OH_RdbTrans_UpdateWithConflictResolution0100(napi_env env, nap
 
 napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0100(napi_env env, napi_callback_info info)
 {
-    OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    InitRdbTransConfigV2(configV2);
-    OH_Rdb_Store *testRdbStore = nullptr;
-    int errCode = 0;
-    testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
-                                 "id INT64 PRIMARY KEY, "
-                                 "data1 TEXT, "
-                                 "data2 FLOAT, "
-                                 "data3 INT64)";
-
-    OH_Rdb_Execute(testRdbStore, createTableSql);
     OH_Rdb_Transaction *trans = nullptr;
     OH_VBucket *valueBucket = nullptr;
     OH_Predicates *predicates = nullptr;
@@ -993,18 +981,6 @@ napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0100(napi_env env
 }
 napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0200(napi_env env, napi_callback_info info)
 {
-    OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    InitRdbTransConfigV2(configV2);
-    OH_Rdb_Store *testRdbStore = nullptr;
-    int errCode = 0;
-    testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
-                                 "id INT64 PRIMARY KEY, "
-                                 "data1 TEXT, "
-                                 "data2 FLOAT, "
-                                 "data3 INT64)";
-
-    OH_Rdb_Execute(testRdbStore, createTableSql);
     OH_Rdb_Transaction *trans = nullptr;
     OH_VBucket *valueBucket = nullptr;
     OH_Predicates *predicates = nullptr;
@@ -1019,18 +995,6 @@ napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0200(napi_env env
 }
 napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0300(napi_env env, napi_callback_info info)
 {
-    OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    InitRdbTransConfigV2(configV2);
-    OH_Rdb_Store *testRdbStore = nullptr;
-    int errCode = 0;
-    testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
-                                 "id INT64 PRIMARY KEY, "
-                                 "data1 TEXT, "
-                                 "data2 FLOAT, "
-                                 "data3 INT64)";
-
-    OH_Rdb_Execute(testRdbStore, createTableSql);
     OH_Rdb_Transaction *trans = nullptr;
     OH_VBucket *valueBucket = nullptr;
     OH_Predicates *predicates = nullptr;
@@ -1045,18 +1009,6 @@ napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0300(napi_env env
 }
 napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0400(napi_env env, napi_callback_info info)
 {
-    OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    InitRdbTransConfigV2(configV2);
-    OH_Rdb_Store *testRdbStore = nullptr;
-    int errCode = 0;
-    testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
-                                 "id INT64 PRIMARY KEY, "
-                                 "data1 TEXT, "
-                                 "data2 FLOAT, "
-                                 "data3 INT64)";
-
-    OH_Rdb_Execute(testRdbStore, createTableSql);
     OH_Rdb_Transaction *trans = nullptr;
     OH_VBucket *valueBucket = nullptr;
     OH_Predicates *predicates = nullptr;
@@ -1071,18 +1023,6 @@ napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0400(napi_env env
 }
 napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0500(napi_env env, napi_callback_info info)
 {
-    OH_Rdb_ConfigV2 *configV2 = OH_Rdb_CreateConfig();
-    InitRdbTransConfigV2(configV2);
-    OH_Rdb_Store *testRdbStore = nullptr;
-    int errCode = 0;
-    testRdbStore = OH_Rdb_CreateOrOpen(configV2, &errCode);
-    const char *createTableSql = "CREATE TABLE IF NOT EXISTS test ("
-                                 "id INT64 PRIMARY KEY, "
-                                 "data1 TEXT, "
-                                 "data2 FLOAT, "
-                                 "data3 INT64)";
-
-    OH_Rdb_Execute(testRdbStore, createTableSql);
     OH_Rdb_Transaction *trans = nullptr;
     OH_VBucket *valueBucket = nullptr;
     OH_Predicates *predicates = nullptr;
