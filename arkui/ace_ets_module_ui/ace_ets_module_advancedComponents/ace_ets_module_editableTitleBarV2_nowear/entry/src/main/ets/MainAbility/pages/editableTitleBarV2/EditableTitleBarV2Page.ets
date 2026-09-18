@@ -185,6 +185,7 @@ struct EditableTitleBarV2Page {
             .fontSize(20)
             .fontWeight(FontWeight.Bold)
             .margin({ top: 20 })
+            .id('SaveButtonTitle')
 
           EditableTitleBarV2({
             title: 'With Save Button',
