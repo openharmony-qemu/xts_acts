@@ -38,15 +38,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_0100
+     * @tc.name   testCanvasDrawRecordCmdNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_0100
      * @tc.desc   testCanvasDrawRecordCmdNormal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCanvasDrawRecordCmdNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testCanvasDrawRecordCmdNormal';
+    it('testCanvasDrawRecordCmdNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawRecordCmdNormalStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -68,15 +68,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdEmptyRecording
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_0200
+     * @tc.name   testCanvasDrawRecordCmdEmptyRecordingStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_0200
      * @tc.desc   testCanvasDrawRecordCmdEmptyRecording
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdEmptyRecording', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdEmptyRecording';
+    it('testCanvasDrawRecordCmdEmptyRecordingStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdEmptyRecordingStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -92,15 +92,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdMultipleDrawCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_0300
+     * @tc.name   testCanvasDrawRecordCmdMultipleDrawCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_0300
      * @tc.desc   testCanvasDrawRecordCmdMultipleDrawCalls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdMultipleDrawCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdMultipleDrawCalls';
+    it('testCanvasDrawRecordCmdMultipleDrawCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdMultipleDrawCallsStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -125,15 +125,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdMultiplePlayback
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_0700
+     * @tc.name   testCanvasDrawRecordCmdMultiplePlaybackStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_0700
      * @tc.desc   testCanvasDrawRecordCmdMultiplePlayback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdMultiplePlayback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdMultiplePlayback';
+    it('testCanvasDrawRecordCmdMultiplePlaybackStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdMultiplePlaybackStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -157,15 +157,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdDifferentCanvas
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_0800
+     * @tc.name   testCanvasDrawRecordCmdDifferentCanvasStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_0800
      * @tc.desc   testCanvasDrawRecordCmdDifferentCanvas
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdDifferentCanvas', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdDifferentCanvas';
+    it('testCanvasDrawRecordCmdDifferentCanvasStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdDifferentCanvasStatic';
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
         let recordCanvas: drawing.Canvas | undefined = recordCmdUtils.beginRecording(200, 200);
@@ -192,15 +192,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithBrush
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_0900
+     * @tc.name   testCanvasDrawRecordCmdWithBrushStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_0900
      * @tc.desc   testCanvasDrawRecordCmdWithBrush
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithBrush', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithBrush';
+    it('testCanvasDrawRecordCmdWithBrushStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithBrushStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -221,15 +221,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithPath
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1000
+     * @tc.name   testCanvasDrawRecordCmdWithPathStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1000
      * @tc.desc   testCanvasDrawRecordCmdWithPath
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithPath', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithPath';
+    it('testCanvasDrawRecordCmdWithPathStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithPathStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -257,15 +257,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdBeginRecordingBoundaryValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1100
+     * @tc.name   testCanvasDrawRecordCmdBeginRecordingBoundaryValueStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1100
      * @tc.desc   testCanvasDrawRecordCmdBeginRecordingBoundaryValue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdBeginRecordingBoundaryValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdBeginRecordingBoundaryValue';
+    it('testCanvasDrawRecordCmdBeginRecordingBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdBeginRecordingBoundaryValueStatic';
       let canvas = new drawing.Canvas(pixel!);
       let widths: Array<int> = [1, 1, 100, 500, 1000];
       let heights: Array<int> = [1, 100, 1, 500, 1000];
@@ -292,15 +292,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdBeginRecordingOutOfRange
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1200
+     * @tc.name   testCanvasDrawRecordCmdBeginRecordingOutOfRangeStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1200
      * @tc.desc   testCanvasDrawRecordCmdBeginRecordingOutOfRange
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdBeginRecordingOutOfRange', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdBeginRecordingOutOfRange';
+    it('testCanvasDrawRecordCmdBeginRecordingOutOfRangeStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdBeginRecordingOutOfRangeStatic';
       let widths: Array<int> = [0, 100, 0, -1, 100, -100];
       let heights: Array<int> = [100, 0, 0, 100, -1, -100];
 
@@ -319,15 +319,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdGetWidthGetHeight
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1400
+     * @tc.name   testCanvasDrawRecordCmdGetWidthGetHeightStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1400
      * @tc.desc   testCanvasDrawRecordCmdGetWidthGetHeight
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdGetWidthGetHeight', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdGetWidthGetHeight';
+    it('testCanvasDrawRecordCmdGetWidthGetHeightStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdGetWidthGetHeightStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -348,15 +348,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdMultipleRecordCmdUtils
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1500
+     * @tc.name   testCanvasDrawRecordCmdMultipleRecordCmdUtilsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1500
      * @tc.desc   testCanvasDrawRecordCmdMultipleRecordCmdUtils
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdMultipleRecordCmdUtils', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdMultipleRecordCmdUtils';
+    it('testCanvasDrawRecordCmdMultipleRecordCmdUtilsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdMultipleRecordCmdUtilsStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils1 = new drawing.RecordCmdUtils();
@@ -390,15 +390,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdChainingPlayback
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1600
+     * @tc.name   testCanvasDrawRecordCmdChainingPlaybackStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1600
      * @tc.desc   testCanvasDrawRecordCmdChainingPlayback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdChainingPlayback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdChainingPlayback';
+    it('testCanvasDrawRecordCmdChainingPlaybackStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdChainingPlaybackStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -424,15 +424,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithDrawColor
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1700
+     * @tc.name   testCanvasDrawRecordCmdWithDrawColorStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1700
      * @tc.desc   testCanvasDrawRecordCmdWithDrawColor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithDrawColor', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithDrawColor';
+    it('testCanvasDrawRecordCmdWithDrawColorStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithDrawColorStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -449,15 +449,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithDrawCircle
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1800
+     * @tc.name   testCanvasDrawRecordCmdWithDrawCircleStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1800
      * @tc.desc   testCanvasDrawRecordCmdWithDrawCircle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithDrawCircle', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithDrawCircle';
+    it('testCanvasDrawRecordCmdWithDrawCircleStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithDrawCircleStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -480,15 +480,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithDrawLine
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_1900
+     * @tc.name   testCanvasDrawRecordCmdWithDrawLineStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_1900
      * @tc.desc   testCanvasDrawRecordCmdWithDrawLine
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithDrawLine', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithDrawLine';
+    it('testCanvasDrawRecordCmdWithDrawLineStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithDrawLineStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -510,15 +510,15 @@ export default function DrawingTsCanvasPart11Test(): void {
       }
     })
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithPenAndBrush
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2200
+     * @tc.name   testCanvasDrawRecordCmdWithPenAndBrushStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2200
      * @tc.desc   testCanvasDrawRecordCmdWithPenAndBrush
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithPenAndBrush', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithPenAndBrush';
+    it('testCanvasDrawRecordCmdWithPenAndBrushStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithPenAndBrushStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -544,15 +544,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdBeginRecordingExtremeValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2300
+     * @tc.name   testCanvasDrawRecordCmdBeginRecordingExtremeValueStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2300
      * @tc.desc   testCanvasDrawRecordCmdBeginRecordingExtremeValue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdBeginRecordingExtremeValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdBeginRecordingExtremeValue';
+    it('testCanvasDrawRecordCmdBeginRecordingExtremeValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdBeginRecordingExtremeValueStatic';
       let canvas = new drawing.Canvas(pixel!);
       let heightMax = (Number.MAX_VALUE).toInt();
       let widthMax = (Number.MAX_VALUE).toInt();
@@ -581,15 +581,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithRoundRect
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2400
+     * @tc.name   testCanvasDrawRecordCmdWithRoundRectStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2400
      * @tc.desc   testCanvasDrawRecordCmdWithRoundRect
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithRoundRect', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithRoundRect';
+    it('testCanvasDrawRecordCmdWithRoundRectStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithRoundRectStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -612,15 +612,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2500
+     * @tc.name   testCanvasDrawRecordCmdMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2500
      * @tc.desc   testCanvasDrawRecordCmdMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdMultipleCalls';
+    it('testCanvasDrawRecordCmdMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdMultipleCallsStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         for (let i = 0; i < 20; i++) {
@@ -644,15 +644,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdReplayAfterDraw
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2600
+     * @tc.name   testCanvasDrawRecordCmdReplayAfterDrawStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2600
      * @tc.desc   testCanvasDrawRecordCmdReplayAfterDraw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdReplayAfterDraw', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdReplayAfterDraw';
+    it('testCanvasDrawRecordCmdReplayAfterDrawStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdReplayAfterDrawStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let pen = new drawing.Pen();
@@ -681,15 +681,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithClip
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2700
+     * @tc.name   testCanvasDrawRecordCmdWithClipStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2700
      * @tc.desc   testCanvasDrawRecordCmdWithClip
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithClip', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithClip';
+    it('testCanvasDrawRecordCmdWithClipStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithClipStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -710,15 +710,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithTransform
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2800
+     * @tc.name   testCanvasDrawRecordCmdWithTransformStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2800
      * @tc.desc   testCanvasDrawRecordCmdWithTransform
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithTransform', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithTransform';
+    it('testCanvasDrawRecordCmdWithTransformStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithTransformStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -740,15 +740,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdWithSaveRestore
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_2900
+     * @tc.name   testCanvasDrawRecordCmdWithSaveRestoreStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_2900
      * @tc.desc   testCanvasDrawRecordCmdWithSaveRestore
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdWithSaveRestore', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdWithSaveRestore';
+    it('testCanvasDrawRecordCmdWithSaveRestoreStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdWithSaveRestoreStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
@@ -772,15 +772,15 @@ export default function DrawingTsCanvasPart11Test(): void {
     })
 
     /**
-     * @tc.name   testCanvasDrawRecordCmdBeginRecordingMinValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_3000
+     * @tc.name   testCanvasDrawRecordCmdBeginRecordingMinValueStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_CANVAS_CMD_STATIC_3000
      * @tc.desc   testCanvasDrawRecordCmdBeginRecordingMinValue
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testCanvasDrawRecordCmdBeginRecordingMinValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testCanvasDrawRecordCmdBeginRecordingMinValue';
+    it('testCanvasDrawRecordCmdBeginRecordingMinValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRecordCmdBeginRecordingMinValueStatic';
       let canvas = new drawing.Canvas(pixel!);
       try {
         let recordCmdUtils = new drawing.RecordCmdUtils();
