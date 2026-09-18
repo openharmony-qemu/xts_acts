@@ -23,15 +23,19 @@ struct DrawableTabBarIndicatorPage {
   @State barMode: BarMode = BarMode.Fixed;
   @State pixmapDesc: DrawableDescriptor | null = null;
 
-  async aboutToAppear() {
-    const resManager = this.getUIContext().getHostContext()?.resourceManager;
-    if (!resManager) {
-      return;
-    }
-    // $r('app.media.indicator')需要替换为开发者所需的图像资源文件。
-    let pixmapDescResult = resManager.getDrawableDescriptor($r('app.media.icon').id);
-    if (pixmapDescResult) {
-      this.pixmapDesc = pixmapDescResult as DrawableDescriptor;
+  aboutToAppear() {
+    try {
+      const resManager = getContext(this).resourceManager;
+      if (!resManager) {
+        return;
+      }
+      // $r('app.media.icon')需要替换为开发者所需的图像资源文件。
+      let pixmapDescResult = resManager.getDrawableDescriptor($r('app.media.icon').id);
+      if (pixmapDescResult) {
+        this.pixmapDesc = pixmapDescResult as DrawableDescriptor;
+      }
+    } catch (err) {
+      console.error('DrawableTabBarIndicatorPage aboutToAppear error: ' + err);
     }
   }
 

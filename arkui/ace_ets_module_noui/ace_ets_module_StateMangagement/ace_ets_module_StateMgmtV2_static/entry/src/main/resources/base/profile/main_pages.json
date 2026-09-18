@@ -29,7 +29,9 @@
     "MainAbility/pages/AddMonitor/AddMonitorWildcard2",
     "MainAbility/pages/Env/EnvBreakpoint",
     "MainAbility/pages/Env/EnvBreakpoint2",
-    "MainAbility/pages/CustomComponent/CustomEnvIndex"
+    "MainAbility/pages/CustomComponent/CustomEnvIndex",
+    "MainAbility/pages/CustomComponent/CustomEnvArray",
+    "MainAbility/pages/CustomComponent/CustomEnvDate"
     
   ]
 }

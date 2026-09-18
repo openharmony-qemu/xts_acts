@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@ohos.base';
 import { Want, WantAgent, wantAgent, } from '@kit.AbilityKit';
 

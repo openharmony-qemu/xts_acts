@@ -935,6 +935,36 @@ static napi_value OH_Rdb_SetSemanticIndex_Param_0300(napi_env env, napi_callback
     return result;
 }
 
+static napi_value OH_RDB_TRANS_BUTT0100(napi_env env, napi_callback_info info)
+{
+    g_options = OH_RdbTrans_CreateOptions();
+    NAPI_ASSERT(env, g_options != nullptr, "OH_Rdb_CreateConfig is fail.");
+    int ret = OH_RdbTransOption_SetType(g_options, RDB_TRANS_BUTT);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_CreateConfig is fail.");
+    napi_value result = nullptr;
+    ret = OH_RdbTransOption_SetType(g_options, RDB_TRANS_DEFERRED);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_CreateConfig is fail.");
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+static napi_value OH_RdbTrans_UpdateWithConflictResolution0100(napi_env env, napi_callback_info info)
+{
+    OH_Rdb_Transaction *trans = nullptr;
+    const char *table = "test";
+    OH_VBucket *valueBucket = OH_Rdb_CreateValuesBucket();
+    OH_Predicates *predicates = OH_Rdb_CreatePredicates(table);
+    Rdb_ConflictResolution resolution = RDB_CONFLICT_NONE;
+    int64_t changes = 0;
+    int ret = OH_RdbTrans_UpdateWithConflictResolution(trans, valueBucket, predicates, resolution, &changes);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Rdb_CreateConfig is fail.");
+    predicates->destroy(predicates);
+    valueBucket->destroy(valueBucket);
+    int64_t errCode = 0;
+    napi_value result = nullptr;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -955,7 +985,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_Rdb_SetTokenizer0100", nullptr, OH_Rdb_SetTokenizer0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_IsTokenizerSupported0100", nullptr, OH_Rdb_IsTokenizerSupported0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_RdbTrans_Commit0100", nullptr, OH_RdbTrans_Commit0100, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "OH_RdbTrans_InsertWithConflictResolution0100", nullptr, OH_RdbTrans_InsertWithConflictResolution0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_RdbTrans_InsertWithConflictResolution0100", nullptr, OH_RdbTrans_InsertWithConflictResolution0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_SetCustomDir0100", nullptr, OH_Rdb_SetCustomDir0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_SetReadOnly0100", nullptr, OH_Rdb_SetReadOnly0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_SetPlugins0100", nullptr, OH_Rdb_SetPlugins0100, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -965,6 +996,9 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "OH_Rdb_SetSemanticIndex_Param_0300", nullptr, OH_Rdb_SetSemanticIndex_Param_0300, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "OH_RDB_TRANS_BUTT0100", nullptr, OH_RDB_TRANS_BUTT0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_RdbTrans_UpdateWithConflictResolution0100", nullptr, OH_RdbTrans_UpdateWithConflictResolution0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

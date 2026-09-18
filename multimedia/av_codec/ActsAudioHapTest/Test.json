@@ -16,19 +16,22 @@
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
-        },{
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/com.example.actsaudiotesttest/haps/entry_test/files",
-                "chmod 777 -R /data/app/el2/100/base/com.example.actsaudiotesttest/haps/entry_test",
-                "power-shell wakeup",
-                "power-shell setmode 602"
-            ]
-        },{
+        },
+        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/media/codec/audio_test/aac_2c_44100hz_199k.pcm ->/data/app/el2/100/base/com.example.actsaudiotesttest/haps/entry_test/files/"
+                "./resource/media/codec/audio_test/aac_2c_44100hz_199k.pcm ->/data/local/tmp/",
+                "./resource/media/setup_avcodec_audio_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "power-shell setmode 602",
+                "chmod 755 /data/local/tmp/setup_avcodec_audio_test.sh",
+                "sh /data/local/tmp/setup_avcodec_audio_test.sh"
             ]
         }
     ]

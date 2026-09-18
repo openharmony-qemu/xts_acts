@@ -27,8 +27,10 @@ namespace ArkUICapiTest {
 
         napi_property_descriptor desc[] = {
             {"getContext", nullptr, PluginManager::GetContext, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"nativeDragDrop", nullptr, DragDropTest::CreateNativeNode, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+            {"nativeDragDrop", nullptr, DragDropTest::CreateNativeNode, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"isDragDropCompleted", nullptr, DragDropTest::IsDragDropCompleted, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
             OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

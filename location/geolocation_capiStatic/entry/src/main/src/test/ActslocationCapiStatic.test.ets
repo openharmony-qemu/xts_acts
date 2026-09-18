@@ -400,6 +400,7 @@ export default function actslocationTest() {
                         "minLongitude": 121.5782001832,
                         "maxLatitude": 31.1537977881,
                         "maxLongitude": 121.8026736943,
+                        "locale": "zh",
                         "country": "CN"
                     };
                     try{
@@ -2646,17 +2647,6 @@ export default function actslocationTest() {
           await Utils.msSleep(1000)
           done();
       })      
-
-
-
-
-
-
-
-
-
-
-
 
     })
 }

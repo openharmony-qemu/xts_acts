@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, afterEach, it, expect, Level } from '@ohos/hypium'
-import commonEvent from '@ohos.commonEventManager'
+import { describe, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
+import commonEvent from '@ohos.commonEvent'
 import missionManager from '@ohos.application.missionManager'
 import Want from '@ohos.app.ability.Want';
 

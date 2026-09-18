@@ -106,6 +106,7 @@ static void OnEventReceive(ArkUI_NodeEvent* event)
         ArkUI_ErrorCode errorCode1 = OH_ArkUI_DragEvent_SetDataLoadParams(dragEvent, dataLoadParams);
          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "dragTest",
                          "OH_ArkUI_DragEvent_StartDataLoading errorCode1 = %{public}d js1111", errorCode1);
+        Manager::GetInstance()->MarkCompleted();
 
         break;
     }
@@ -154,6 +155,17 @@ static void OnEventReceive(ArkUI_NodeEvent* event)
     default:
         break;
     }
+}
+
+napi_value Manager::IsDragEventCompleted(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    auto manager = Manager::GetInstance();
+    napi_value result = nullptr;
+    napi_get_boolean(env, manager ? manager->isCompleted_ : false, &result);
+    return result;
 }
 
 napi_value Manager::DragEventGetDisplayId(napi_env env, napi_callback_info info) {
@@ -239,38 +251,10 @@ napi_value Manager::DragEventGetDisplayId(napi_env env, napi_callback_info info)
             id_item.string = "dragArea";
             nodeAPI->addChild(Column, image);
 
-            // 拖拽区域4允许任何组件拖入
-            ArkUI_NumberValue fontSize[] = {10};
-            ArkUI_AttributeItem Font_Item = {fontSize, 1};
-            ArkUI_NumberValue widthValue[] = {150};
-            ArkUI_AttributeItem widthItem = {widthValue, 1};
-            ArkUI_NumberValue heightValue1[] = {150};
-            ArkUI_AttributeItem heightItem = {heightValue1, 1};
-            ArkUI_NumberValue borderValue[] = {1};
-            ArkUI_AttributeItem borderItem = {borderValue, 1};
-            ArkUI_NumberValue marginValue[] = {20};
-            ArkUI_AttributeItem marginItem = {marginValue, 1};
-
-            auto dragArea4Text = nodeAPI->createNode(ARKUI_NODE_TEXT);
-            ArkUI_AttributeItem dragArea4Text_Item = {.string = "拖拽区域4允许任何组件拖入"};
-            nodeAPI->setAttribute(dragArea4Text, NODE_TEXT_CONTENT, &dragArea4Text_Item);
-            nodeAPI->setAttribute(dragArea4Text, NODE_TEXT_FONT, &Font_Item);
-            auto dragArea4 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
-            nodeAPI->setAttribute(dragArea4, NODE_WIDTH, &widthItem);
-            nodeAPI->setAttribute(dragArea4, NODE_HEIGHT, &heightItem);
-            nodeAPI->setAttribute(dragArea4, NODE_BORDER_WIDTH, &borderItem);
-            nodeAPI->setAttribute(dragArea4, NODE_MARGIN, &marginItem);
-            nodeAPI->registerNodeEvent(dragArea4, NODE_ON_DROP, 7, nullptr);
-            nodeAPI->addChild(dragArea4, dragArea4Text);
-            int ret = OH_ArkUI_DisableDropDataPrefetchOnNode(dragArea4, true);
-            auto returnValue = OH_ArkUI_AllowNodeAllDropDataTypes(dragArea4);
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager",
-                         "dragTest AllowNodeAllDropDataTypes returnValue = %{public}d", returnValue);
-            nodeAPI->addChild(Column, dragArea4);
-
 
             ArkUI_NodeEvent *event;
-            nodeAPI->registerNodeEventReceiver(&OnEventReceive);
+            nodeAPI->addNodeEventReceiver(image, &OnEventReceive);
+            nodeAPI->addNodeEventReceiver(Column, &OnEventReceive);
 
             OH_NativeXComponent_AttachNativeRootNode(component, Column);
             

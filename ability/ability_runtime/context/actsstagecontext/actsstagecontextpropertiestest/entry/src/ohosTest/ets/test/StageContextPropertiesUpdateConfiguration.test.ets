@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import common from '@ohos.app.ability.common';
 import { EnvironmentCallback } from '@kit.AbilityKit';

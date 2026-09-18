@@ -45,7 +45,7 @@ struct bindPopupTest {
   @State handlePopup5: boolean = false;
   @State handlePopup6: boolean = false;
   @State openPopup: string = 'init'
-  @State name: string = 'bindPopup_borderLinearGradient_Test';
+  @State name: string = 'bindPopupTest';
   @State stepTips: string = '操作步骤:\n' + '1.点击页面中不同的按钮\n' +
     '2.观察弹出气泡的描边线性渐边效果是否正常\n' +
     '预期结果：\n'+'1.点击按钮PopupOptions1，弹框正常显示且边框颜色渐变效果正常\n'

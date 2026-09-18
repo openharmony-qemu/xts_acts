@@ -92,7 +92,7 @@ export default function AVSessionTest3() {
     it('testOHAVCastControllerUnregisterPlaybackStateChangedCallback002',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
-          let result: number = libavsession.AVCastControllerRegisterPlaybackStateChangedCallbackInvalidParam();
+          let result: number = libavsession.AVCastControllerUnregisterPlaybackStateChangedCallbackInvalidParam();
           expect(result).assertEqual(1);
           done()
         } catch (err) {

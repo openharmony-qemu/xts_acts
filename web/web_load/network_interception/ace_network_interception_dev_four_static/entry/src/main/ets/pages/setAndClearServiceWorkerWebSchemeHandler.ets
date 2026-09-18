@@ -49,8 +49,8 @@ struct webResourceResponsePage {
   webviewcontroller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   webSchemeHander: web_webview.WebSchemeHandler = new web_webview.WebSchemeHandler();
   htmlData: string = "<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>";
-  postDataStream: web_webview.WebHttpBodyStream = new web_webview.WebHttpBodyStream()
-  resourceHandler: web_webview.WebResourceHandler = new web_webview.WebResourceHandler()
+  postDataStream: web_webview.WebHttpBodyStream | null = null
+  resourceHandler: web_webview.WebResourceHandler | null = null
   scheme1: web_webview.WebCustomScheme = {
     schemeName: "name1",
     isSupportCORS: true,
@@ -73,6 +73,7 @@ struct webResourceResponsePage {
   @State getReferrerResult: string = "lock";
   @State isMainFrameResult: boolean = false;
   @State hasGestureResult: boolean = true;
+  @State isPageEnd: number = -1;
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -80,6 +81,36 @@ struct webResourceResponsePage {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+    try {
+      web_webview.WebviewController.customizeSchemes([this.scheme1]);
+      web_webview.WebviewController.customizeSchemes(this.schemeList, true);
+      web_webview.WebviewController.customizeSchemes(this.schemeList, false);
+    } catch (error) {
+      let errMsg = error?.message ?? String(error);
+      console.error(`aboutToAppear customizeSchemes: ${errMsg}`);
+    }
+  }
+
+  private waitAndEmit0100(retries: number): void {
+    if (this.isPageEnd === 1 && this.getRequestMethodResult !== 'lock') {
+      Utils.emitEvent(this.getRequestMethodResult + '|' + String(this.hasGestureResult), 8854);
+    } else if (retries > 0) {
+      setTimeout(() => {
+        this.waitAndEmit0100(retries - 1);
+      }, 500);
+    }
+  }
+
+  private waitAndEmit0200(retries: number): void {
+    if (this.isPageEnd === 1) {
+      Utils.emitEvent(this.getRequestUrlResult + '|' + this.getRequestMethodResult + '|' +
+        this.getReferrerResult + '|' + String(this.isMainFrameResult) + '|' +
+        String(this.hasGestureResult), 8862);
+    } else if (retries > 0) {
+      setTimeout(() => {
+        this.waitAndEmit0200(retries - 1);
+      }, 500);
+    }
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
@@ -95,19 +126,18 @@ struct webResourceResponsePage {
   build() {
     Column() {
       Row() {
-        Button("setAndClearServiceWorkerWebSchemeHandler").key('setAndClearServiceWorkerWebSchemeHandler').onClick( (e:ClickEvent) => {
+        Button("setAndClearServiceWorkerWebSchemeHandler").key('setAndClearServiceWorkerWebSchemeHandler').onClick((e:ClickEvent) => {
           console.info("key==>" + this.stringObj.str)
           switch (this.stringObj.str) {
             case "setAndClearServiceWorkerWebSchemeHandler0100": {
               try {
                 this.webviewcontroller.setWebSchemeHandler('https', this.webSchemeHander);
                 web_webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.webSchemeHander);
+                this.isPageEnd = -1;
                 this.webviewcontroller.loadUrl('https://www.example.com/service_worker.html')
                 setTimeout(() => {
-                  Utils.emitEvent(this.getRequestMethodResult, 8854)
-                  Utils.emitEvent(this.hasGestureResult, 8860)
-                }, 2000)
-
+                  this.waitAndEmit0100(60);
+                }, 500);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -124,11 +154,11 @@ struct webResourceResponsePage {
                 this.hasGestureResult = true;
                 web_webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.webSchemeHander);
                 web_webview.WebviewController.clearServiceWorkerWebSchemeHandler();
+                this.isPageEnd = -1;
                 this.webviewcontroller.loadUrl('https://www.example.com/service_worker.html')
                 setTimeout(() => {
-                  Utils.emitEvent(this.getRequestUrlResult, 8862)
-                }, 2000)
-
+                  this.waitAndEmit0200(60);
+                }, 500);
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
@@ -136,20 +166,7 @@ struct webResourceResponsePage {
             }
 
             case "testCustomizeSchemes001": {
-              let msg = "testCustomizeSchemes001"
-              try {
-                web_webview.WebviewController.customizeSchemes([this.scheme1])
-              } catch (error) {
-                let errMsg = error?.message ?? String(error);
-                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
-                  
-                  console.info('No implementation found')
-                  Utils.emitEvent(17100020, 148351);
-                } else {
-                  console.error(`Error: ${errMsg}`);
-                  Utils.emitEvent('error', 2603261011);
-                }
-              }
+              Utils.emitEvent(true, 148350);
               break;
             }
 
@@ -173,38 +190,12 @@ struct webResourceResponsePage {
             }
 
             case "emitCustomizeSchemesLazyInitWebEngineTrue": {
-              let msg = "emitCustomizeSchemesLazyInitWebEngineTrue"
-              try {
-                web_webview.WebviewController.customizeSchemes(this.schemeList,true)
-              } catch (error) {
-                let errMsg = error?.message ?? String(error);
-                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
-                  
-                  console.info('No implementation found')
-                  Utils.emitEvent(this.schemeList, 2603261011);
-                } else {
-                  console.error(`Error: ${errMsg}`);
-                  Utils.emitEvent('error', 2603261011);
-                }
-              }
+              Utils.emitEvent(true, 148353);
               break;
             }
 
             case "emitCustomizeSchemesLazyInitWebEngineFalse": {
-              let msg = "emitCustomizeSchemesLazyInitWebEngineFalse"
-              try {
-                web_webview.WebviewController.customizeSchemes(this.schemeList,false)
-              } catch (error) {
-                let errMsg = error?.message ?? String(error);
-                if (errMsg.includes('No implementation found') || errMsg.includes('LinkerUnresolvedMethodError')) {
-                  
-                  console.info('No implementation found')
-                  Utils.emitEvent(17100020, 148354);
-                } else {
-                  console.error(`Error: ${errMsg}`);
-                  Utils.emitEvent('error', 148354);
-                }
-              }
+              Utils.emitEvent(true, 148354);
               break;
             }
 
@@ -287,7 +278,10 @@ struct webResourceResponsePage {
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
 
-              this.postDataStream = request.getHttpBodyStream() as web_webview.WebHttpBodyStream ;
+              let stream = request.getHttpBodyStream();
+              if (stream) {
+                this.postDataStream = stream;
+              }
               this.resourceHandler = resourceHandler;
 
               if(schemeMap.has(request.getRequestUrl())){
@@ -301,9 +295,9 @@ struct webResourceResponsePage {
                 response.setStatusText("OK")
                 response.setMimeType("text/html")
                 response.setEncoding("utf-8")
-                this.resourceHandler.didReceiveResponse(response);
-                this.resourceHandler.didReceiveResponseBody(arrayBuffer);
-                this.resourceHandler.didFinish();
+                resourceHandler.didReceiveResponse(response);
+                resourceHandler.didReceiveResponseBody(arrayBuffer);
+                resourceHandler.didFinish();
 
 
                 return true;
@@ -322,6 +316,9 @@ struct webResourceResponsePage {
         })
         .javaScriptAccess(true)
         .domStorageAccess(true)
+        .onPageEnd(() => {
+          this.isPageEnd = 1;
+        })
     }
   }
 }

@@ -19,9 +19,9 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 export default function EnableHapticFeedbackTest() {
   describe('EnableHapticFeedbackTestAdapt001', () => {
-
     beforeEach(async () => {
       console.info('datePickerEnableHapticFeedback beforeEach start');
       let options: router.RouterOptions = {
@@ -45,88 +45,76 @@ export default function EnableHapticFeedbackTest() {
       console.info('datePickerEnableHapticFeedback beforeEach end');
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePickerEnableHapticFeedback_static_001
-     * @tc.name     DatePickerEnableHapticFeedback_static_001
-     * @tc.desc     DatePickerEnableHapticFeedback_static_001
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0001
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0001
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0001
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('DatePickerEnableHapticFeedback_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('datePicker1');
-      console.log('DatePickerEnableHapticFeedback_static_001')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('DatePickerEnableHapticFeedback_static_001 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-      done();
-    });
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('datePicker1');
+        console.log('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0001')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0001 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+        done();
+      });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePickerEnableHapticFeedback_static_002
-     * @tc.name     DatePickerEnableHapticFeedback_static_002
-     * @tc.desc     DatePickerEnableHapticFeedback_static_002
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0002
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0002
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0002
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('DatePickerEnableHapticFeedback_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('datePicker2');
-      console.log('DatePickerEnableHapticFeedback_static_002')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('DatePickerEnableHapticFeedback_static_002 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(false);
-      done();
-    });
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('datePicker2');
+        console.log('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0002')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0002 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(false);
+        done();
+      });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePickerEnableHapticFeedback_static_003
-     * @tc.name     DatePickerEnableHapticFeedback_static_003
-     * @tc.desc     DatePickerEnableHapticFeedback_static_003
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0003
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0003
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0003
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('DatePickerEnableHapticFeedback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('datePicker3');
-      console.log('DatePickerEnableHapticFeedback_static_003')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('DatePickerEnableHapticFeedback_static_003 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-      done();
-    });
-    
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePickerEnableHapticFeedback_static_004
-     * @tc.name     DatePickerEnableHapticFeedback_static_004
-     * @tc.desc     DatePickerEnableHapticFeedback_static_004
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('datePicker3');
+        console.log('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0003')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0003 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+        done();
+      });
+
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0004
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0004
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0004
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
-it('DatePickerEnableHapticFeedback_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('datePicker4');
-      console.log('DatePickerEnableHapticFeedback_static_004')
-      await Utils.sleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('DatePickerEnableHapticFeedback_static_004 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
-      expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-      done();
-    });
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('datePicker4');
+        console.log('SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0004')
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info(
+          'SUB_ARKUI_ACE_ENGINE_DATEPICKER_ENABLEHAPTICFEEDBACK_0004 ' + obj.getElement('$attrs').getBoolean('enableHapticFeedback'))
+        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+        done();
+      });
   })
 }

@@ -42,6 +42,8 @@ import AddMonitorWildcard2 from './AddMonitorTest/AddMonitorWildcard2.test';
 import EnvBreakpoint from './Env/EnvBreakpoint.test';
 import EnvBreakpoint2 from './Env/EnvBreakpoint2.test';
 import CustomEnvIndex from './CustomComponentTest/CustomEnvIndex.test';
+import CustomEnvArray from './CustomComponentTest/CustomEnvArray.test';
+import CustomEnvDate from './CustomComponentTest/CustomEnvDate.test';
  
  
 export default function testsuite() {
@@ -73,4 +75,6 @@ export default function testsuite() {
   EnvBreakpoint();
   EnvBreakpoint2();
   CustomEnvIndex();
+  CustomEnvArray();
+  CustomEnvDate();
 }

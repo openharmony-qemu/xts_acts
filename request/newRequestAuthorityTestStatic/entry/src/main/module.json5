@@ -53,7 +53,10 @@
         "name" : "ohos.permission.GET_NETWORK_INFO",
       },
       {
-        "name": "ohos.permission.PROTECT_SCREEN_LOCK_DATA"
+        "name": "ohos.permission.PROTECT_SCREEN_LOCK_DATA",
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_INFO",
       }
     ]
   }

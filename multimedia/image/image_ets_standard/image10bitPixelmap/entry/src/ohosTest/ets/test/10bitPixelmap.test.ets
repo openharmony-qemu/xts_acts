@@ -61,7 +61,7 @@ export default function image10bitPixelMap() {
       isSupportHEICEncode =
         image.createImagePacker().supportedFormats.includes("image/heic");
     })
-    afterEach(() => {
+    afterEach(async () => {
       if (globalPixelMap != undefined) {
         hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'afterEach case');
         try {
@@ -85,6 +85,7 @@ export default function image10bitPixelMap() {
         hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'fileDescriptor close failed. ' + error);
       }
       hilog.info(0x0000, '10bitPixelMap', '%{public}s', 'after each case');
+      await sleep(500);
     })
 
     class Logger {

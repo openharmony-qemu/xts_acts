@@ -28,6 +28,8 @@ namespace ArkUICapiTest {
     public:
         ~ButtonSourceTypeTest();
         static napi_value CreateNativeNode(napi_env env, napi_callback_info info);
+        static napi_value IsSourceTypeCompleted(napi_env env, napi_callback_info info);
+        static napi_value GetLastSourceType(napi_env env, napi_callback_info info);
     };
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_BUTTON_SOURCETYPE_TEST_H

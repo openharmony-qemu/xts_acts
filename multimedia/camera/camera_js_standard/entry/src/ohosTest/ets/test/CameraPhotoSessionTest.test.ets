@@ -2222,7 +2222,7 @@ export default function CameraPhotoSessionTest() {
 
         for (let i = 0; i < 10; i++) {	 
           await sleep(200);	 
-          if (isExposureStart) {	 
+          if (isExposureStart || isExposureFinish) {	 
             break;	 
           }
         }
@@ -2413,7 +2413,7 @@ export default function CameraPhotoSessionTest() {
           expect(currentVal).assertEqual(0)
         } catch (error) {
           console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-          expect(error.code).assertEqual(401)
+          expect(error.code).assertEqual('401')
         }
       }
       //--------------------------------------------后置处理------------------------------------------------------

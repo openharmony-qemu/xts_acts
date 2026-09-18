@@ -17,6 +17,7 @@
 
 #include <algorithm>
 #include <cstdint>
+#include <cstdio>
 #include <cstring>
 #include <fstream>
 #include <string>
@@ -616,6 +617,26 @@ static int32_t HandleNormalOEidByMessage(std::string &message)
     return result;
 }
 
+static int32_t DeleteFileFlushAndCallback(ContentEmbed_ObjectHandle object,
+    ContentEmbed_Document* oeDocument)
+{
+    OH_LOG_INFO(LOG_APP, "DeleteFileFlushAndCallback start");
+    ContentEmbed_Storage* rootStorage = nullptr;
+    ContentEmbed_ErrorCode errCode = OH_ContentEmbed_Document_GetRootStorage(oeDocument, &rootStorage);
+    OH_LOG_INFO(LOG_APP, "DeleteFileFlushAndCallback GetRootStorage ret: %{public}d", errCode);
+    if (errCode != CE_ERR_OK) {
+        return static_cast<int32_t>(errCode);
+    }
+    errCode = OH_ContentEmbed_Storage_DeleteEntry(rootStorage, "testStream");
+    OH_LOG_INFO(LOG_APP, "DeleteFileFlushAndCallback DeleteEntry ret: %{public}d", errCode);
+    errCode = OH_ContentEmbed_Document_Flush(oeDocument);
+    OH_LOG_INFO(LOG_APP, "DeleteFileFlushAndCallback Flush ret: %{public}d", errCode);
+    errCode = OH_ContentEmbed_Extension_CallbackToOnUpdate(object);
+    OH_LOG_INFO(LOG_APP, "DeleteFileFlushAndCallback CallbackToOnUpdate ret: %{public}d", errCode);
+    OH_LOG_INFO(LOG_APP, "DeleteFileFlushAndCallback end");
+    return static_cast<int32_t>(errCode);
+}
+
 static int32_t HandleNormalOEid(ContentEmbed_ObjectHandle object, ContentEmbed_Document* oeDocument,
     uint32_t *bitmask)
 {
@@ -650,6 +671,8 @@ static int32_t HandleNormalOEid(ContentEmbed_ObjectHandle object, ContentEmbed_D
         result = TestExtensionRegisterOnGetSnapshotFunc_Normal_Extension();
     } else if (std::string(message) == std::string(testExtensionRegisterOnDoEditFuncNormal)) {
         result = TestExtensionRegisterOnDoEditFunc_Normal_Extension();
+    } else if (std::string(message) == "testStreamReadFailed") {
+        result = DeleteFileFlushAndCallback(object, oeDocument);
     } else {
         std::string msg(message);
         result = HandleNormalOEidByMessage(msg);

@@ -36,6 +36,7 @@ int TestColorFilterCreateMatrixNormal();
 int TestColorFilterCreateMatrixNULL();
 int TestColorFilterCreateMatrixAbnormal();
 int TestColorFilterCreateMatrixMultipleCalls();
+int TestColorFilterCreateMatrixBoundaryValues();
 
 // ColorFilter CreateLinearToSrgbGamma related functions
 int TestColorFilterCreateLinearToSrgbGammaNormal();

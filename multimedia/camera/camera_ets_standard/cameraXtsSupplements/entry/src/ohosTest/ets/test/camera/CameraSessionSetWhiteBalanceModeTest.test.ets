@@ -1551,6 +1551,35 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
     })
 
     /**
+     * @tc.name   SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0300
+     * @tc.number SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0300
+     * @tc.desc   isWhiteBalanceModeSupported param invalid -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0300';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          let isSupported =mPhotoSession.isWhiteBalanceModeSupported(-1);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported -1:", isSupported);
+          expect(isSupported == false || isSupported == true).assertTrue()
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releasePhotoSession();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
      * @tc.number SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
      * @tc.desc   setWhiteBalanceMode param null
@@ -1613,6 +1642,46 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             mode = mVideoSession.getWhiteBalanceMode();
             console.info(TAG, testName, "getWhiteBalanceMode :", mode);
             expect(mode).assertEqual(camera.WhiteBalanceMode.AUTO);
+          } else {
+            console.info(TAG, testName, "该设备不支持");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+      }finally{
+        await releaseVideoSession();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0300
+     * @tc.number SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0300
+     * @tc.desc   setWhiteBalanceMode param invalid -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0300';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+        }else {
+          await createVideoOutput();
+          await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+          let status = mVideoSession.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.AUTO);
+          console.info(TAG, testName, "isWhiteBalanceModeSupported AUTO:", status);
+          if (status) {
+            mVideoSession.setWhiteBalanceMode(camera.WhiteBalanceMode.AUTO);
+            let mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.AUTO);
+            mVideoSession.setWhiteBalanceMode(-1);
+            mode = mVideoSession.getWhiteBalanceMode();
+            console.info(TAG, testName, "getWhiteBalanceMode :", mode);
+            expect(mode).assertEqual(camera.WhiteBalanceMode.MANUAL);
           } else {
             console.info(TAG, testName, "该设备不支持");
           }

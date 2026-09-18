@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import commonEvent from '@ohos.commonEvent'
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import common from '@ohos.app.ability.common';

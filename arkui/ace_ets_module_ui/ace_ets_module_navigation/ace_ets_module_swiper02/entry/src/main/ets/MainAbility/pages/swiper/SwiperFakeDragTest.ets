@@ -18,45 +18,62 @@
 struct SwiperFakeDragTest {
   private swiperController1: SwiperController = new SwiperController();
   private swiperController2: SwiperController = new SwiperController();
-  private baseDisplayX: number = 0;
-  private panOption: PanGestureOptions = new PanGestureOptions({ direction: PanDirection.Left | PanDirection.Right });
 
   build() {
     Scroll() {
       Column({ space: 20 }) {
+        Button('FakeDrag 0100')
+          .id('btn_fakeDrag_0100')
+          .onClick(() => {
+            let ret = this.swiperController1.isFakeDragging();
+            console.info('SwiperFakeDrag 0100 isFakeDragging ret = ', ret);
+            AppStorage.setOrCreate('isFakeDraggingFlag', ret);
+            ret = this.swiperController1.fakeDragBy(0);
+            console.info('SwiperFakeDrag 0100 fakeDragBy ret = ', ret);
+            AppStorage.setOrCreate('fakeDragByFlag', ret);
+            ret = this.swiperController1.stopFakeDrag();
+            console.info('SwiperFakeDrag 0100 stopFakeDrag ret = ', ret);
+            AppStorage.setOrCreate('stopFakeDragFlag', ret);
+          })
+
+        Button('isFakeDragging 0200')
+          .id('btn_isFakeDragging_0200')
+          .onClick(() => {
+            let ret = this.swiperController2.isFakeDragging();
+            console.info('SwiperFakeDrag 0200 isFakeDragging ret = ', ret);
+            AppStorage.setOrCreate('isFakeDraggingFlag', ret);
+          })
+
+        Button('startFakeDrag 0200')
+          .id('btn_startFakeDrag_0200')
+          .onClick(() => {
+            let ret = this.swiperController2.startFakeDrag();
+            console.info('SwiperFakeDrag 0200 startFakeDrag ret = ', ret);
+            AppStorage.setOrCreate('startFakeDragFlag', ret);
+          })
+
+        Button('fakeDragBy 0200')
+          .id('btn_fakeDragBy_0200')
+          .onClick(() => {
+            let ret = this.swiperController2.fakeDragBy(100);
+            console.info('SwiperFakeDrag 0200 fakeDragBy ret = ', ret);
+            AppStorage.setOrCreate('fakeDragByFlag', ret);
+          })
+
+        Button('stopFakeDrag 0200')
+          .id('btn_stopFakeDrag_0200')
+          .onClick(() => {
+            let ret = this.swiperController2.stopFakeDrag();
+            console.info('SwiperFakeDrag 0200 stopFakeDrag ret = ', ret);
+            AppStorage.setOrCreate('stopFakeDragFlag', ret);
+          })
+
         Swiper(this.swiperController1) {
           Column() {
             Text('可消费拖动事件的内层组件1')
           }
           .justifyContent(FlexAlign.Center)
           .backgroundColor('#D5D5D5')
-          .gesture(
-            // 内层组件消费了拖拽事件，根据事件信息触发外层Swiper滚动。
-            PanGesture(this.panOption)
-              .onActionStart((event: GestureEvent) => {
-                let ret = this.swiperController1.isFakeDragging();
-                console.log('SwiperFakeDrag test isFakeDragging ret = ', ret)
-                AppStorage.setOrCreate('isFakeDraggingFlag', ret);
-                if (ret) {
-                  return;
-                }
-                console.info('SwiperFakeDrag test startFakeDrag ret = ', ret);
-                this.baseDisplayX = event.offsetX;
-              })
-              .onActionUpdate((event: GestureEvent) => {
-                if (event) {
-                  let ret = this.swiperController1.fakeDragBy(0);
-                  console.info('fakeDragBy ret = ', ret);
-                  AppStorage.setOrCreate('fakeDragByFlag', ret);
-                  this.baseDisplayX = event.offsetX;
-                }
-              })
-              .onActionEnd((event: GestureEvent) => {
-                let ret = this.swiperController1.stopFakeDrag();
-                AppStorage.setOrCreate('stopFakeDragFlag', ret);
-                console.info('SwiperFakeDrag test stopFakeDrag ret = ', ret);
-              })
-          )
 
           Column()
             .backgroundColor('#E3F8F9')
@@ -71,35 +88,6 @@ struct SwiperFakeDragTest {
           .id('column2')
           .justifyContent(FlexAlign.Center)
           .backgroundColor('#D5D5D5')
-          .gesture(
-            // 内层组件消费了拖拽事件，根据事件信息触发外层Swiper滚动。
-            PanGesture(this.panOption)
-              .onActionStart((event: GestureEvent) => {
-                let ret = this.swiperController2.isFakeDragging();
-                console.log('SwiperFakeDrag test isFakeDragging ret = ', ret)
-                AppStorage.setOrCreate('isFakeDraggingFlag', ret);
-                if (ret) {
-                  return;
-                }
-                ret = this.swiperController2.startFakeDrag();
-                console.info('SwiperFakeDrag test startFakeDrag ret = ', ret);
-                AppStorage.setOrCreate('startFakeDragFlag', ret);
-                this.baseDisplayX = event.offsetX;
-              })
-              .onActionUpdate((event: GestureEvent) => {
-                if (event) {
-                  let ret = this.swiperController2.fakeDragBy(event.offsetX - this.baseDisplayX);
-                  console.info('fakeDragBy ret = ', ret);
-                  AppStorage.setOrCreate('fakeDragByFlag', ret);
-                  this.baseDisplayX = event.offsetX;
-                }
-              })
-              .onActionEnd((event: GestureEvent) => {
-                let ret = this.swiperController2.stopFakeDrag();
-                AppStorage.setOrCreate('stopFakeDragFlag', ret);
-                console.info('SwiperFakeDrag test stopFakeDrag ret = ', ret);
-              })
-          )
 
           Column()
             .backgroundColor('#E3F8F9')

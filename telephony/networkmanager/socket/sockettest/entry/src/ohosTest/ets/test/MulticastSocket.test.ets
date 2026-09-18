@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it , Level, Size, TestType} from '@ohos/hypium';
+import { describe, it , Level, Size, expect, TestType} from '@ohos/hypium';
 import socket from '@ohos.net.socket';
 import { BusinessError, Callback } from '@ohos.base';
 import {
@@ -1357,6 +1357,72 @@ export default function MulticastSocket() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_Null_0401
+     * @tc.desc   SetMulticastTTL with null parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL0401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setMulticastTTL(paramNull).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetMulticastTTL0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetMulticastTTL_Undefined_0402
+     * @tc.desc   SetMulticastTTL with undefined parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL0402';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expect(paramUndefined === undefined).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setMulticastTTL(paramUndefined).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketMulticastSocketGetSocketFd0100
      * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetSocketFd_0100
      * @tc.desc   Get Socket FD after successful addMembership
@@ -1840,6 +1906,130 @@ export default function MulticastSocket() {
     });
 
     /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_Null_0401
+     * @tc.desc   SetLoopbackMode with null parameter (callback), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(paramNull, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_Undefined_0402
+     * @tc.desc   SetLoopbackMode with undefined parameter (callback), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0402';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expect(paramUndefined === undefined).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(paramUndefined, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0403
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_NullPromise_0403
+     * @tc.desc   SetLoopbackMode with null parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0403', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0403';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(paramNull).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketSetLoopbackMode0404
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_SetLoopbackMode_UndefinedPromise_0404
+     * @tc.desc   SetLoopbackMode with undefined parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketSetLoopbackMode0404', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetLoopbackMode0404';
+      console.info(`${caseName} test start`);
+      try {
+        let paramUndefined = undefined;
+        expect(paramUndefined === undefined).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.setLoopbackMode(paramUndefined).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testNetworkMgrSocketMulticastSocketGetLoopbackMode0100
      * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_GetLoopbackMode_0100
      * @tc.desc   Get the loopback mode flag in multicast communication
@@ -2148,7 +2338,7 @@ export default function MulticastSocket() {
         multicast.send(null, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
-            expectEqual(err.code, 401);
+            expectEqual(Number(err.code), 401);
           } else {
             expectFail();
           }
@@ -2182,7 +2372,7 @@ export default function MulticastSocket() {
         multicast.send(undefined, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
-            expectEqual(err.code, 401);
+            expectEqual(Number(err.code), 401);
           } else {
             expectFail();
           }
@@ -2303,7 +2493,7 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expectEqual(Number(err.code), 401);
           console.info(`${caseName} test end`);
           done();
         });
@@ -2337,7 +2527,7 @@ export default function MulticastSocket() {
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} err: ${JSON.stringify(err)}`);
-          expectEqual(err.code, 401);
+          expectEqual(Number(err.code), 401);
           console.info(`${caseName} test end`);
           done();
         });
@@ -2554,6 +2744,97 @@ export default function MulticastSocket() {
       await closeReuseAddressSocket(caseName, 'socketA', socketA);
       console.info(`${caseName} test end`);
       done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketAddMembership0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_AddMembership_0401
+     * @tc.desc   AddMembership with null address parameter (sync throw), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketAddMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketAddMembership0401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.addMembership(paramNull, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketDropMembership0401
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_DropMembership_0401
+     * @tc.desc   DropMembership with null address parameter (callback), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketDropMembership0401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketDropMembership0401';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expectTrue(paramNull === null);
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.dropMembership(paramNull, (err: BusinessError) => {
+          console.info(`${caseName} callback err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName}---End`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(err.code !== 401);
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketDropMembership0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_DropMembership_Null_0402
+     * @tc.desc   DropMembership with null address parameter (Promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketDropMembership0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketDropMembership0402';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.dropMembership(paramNull).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
     });
   });
 }

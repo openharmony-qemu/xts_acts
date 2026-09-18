@@ -51,8 +51,9 @@ export default function avMusicTemplateManagerTest() {
             avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
           expect(temp).not().assertUndefined();
           expect(temp).not().assertNull();
-          expect(temp.sessionId).assertUndefined()
-          expect(temp.sessionTag).assertUndefined()
+          expect(temp.sessionId.length).assertLarger(0);
+          expect(temp.sessionTag.length).assertLarger(0);
+          CommonUtils.logInfo(TAG, `0100 temp.sessionId=${temp.sessionId}, sessionTag=${temp.sessionTag}`);
           temp.destroy();
           done();
         } catch (err) {
@@ -75,14 +76,19 @@ export default function avMusicTemplateManagerTest() {
           let temp: avMusicTemplate.AVMusicTemplate =
             avMusicTemplate.createAVMusicTemplate(CommonConstants.TEMPLATE_TYPE);
           let des: avMusicTemplate.AVMusicTemplateDescriptor[] = avMusicTemplate.getAllAVMusicTemplateDescriptors();
+          CommonUtils.logInfo(TAG, `0200 des.length=${des.length}`);
           expect(des.length).assertLarger(0);
-          const sid: string = des[0].sessionId;
-          CommonUtils.logInfo(TAG, `002 sessionid=${JSON.stringify(des)}`);
+          let sid: string = '';
+          if (des.length > 0 && des[0].sessionId) {
+            sid = des[0].sessionId;
+          }
+          CommonUtils.logInfo(TAG, `002 sessionid=${JSON.stringify(des)}, sid=${sid}`);
+          expect(sid.length).assertLarger(0);
           let controller: avMusicTemplate.AVMusicTemplateController =
             avMusicTemplate.createAVMusicTemplateController(sid);
           CommonUtils.logInfo(TAG, `002 controller ${JSON.stringify(controller)}`)
           expect(controller).not().assertUndefined();
-          expect(sid.length).assertLarger(0)
+          CommonUtils.logInfo(TAG, `002 controller.sessionId=${JSON.stringify(controller.sessionId)}, sid=${sid}`);
           expect(controller.sessionId).assertEqual(sid);
           await controller.destroy();
           await temp.destroy();

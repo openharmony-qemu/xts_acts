@@ -191,6 +191,26 @@ export default function AudioRoutingManagerSpecErrorTest() {
     });
 
     /**
+     * @tc.name    testOnDeviceChangeEnumUndefined0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_ROUTING_MANAGER_ON_DEVICE_CHANGE_ERROR_0100
+     * @tc.desc    on deviceChange deviceFlag is undefined, expect error code
+     * @tc.type    FUNCTION
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('testOnDeviceChangeEnumUndefined0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      try {
+        routingManager!.on('deviceChange', undefined!, (deviceChange: audio.DeviceChangeAction) => {});
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOnDeviceChangeEnumUndefined0100 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('parameter');
+        done();
+      }
+    });
+
+    /**
      * @tc.name    testGetAvailableDevicesEnumNull0100
      * @tc.number  SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_ROUTING_MANAGER_GET_AVAILABLE_DEVICES_ERROR_0100
      * @tc.desc    getAvailableDevices deviceUsage is null, expect error code 401
@@ -225,6 +245,46 @@ export default function AudioRoutingManagerSpecErrorTest() {
         done();
       } catch (error) {
         console.error(`${TAG} testGetAvailableDevicesEnumUndefined0100 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('parameter');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testOnAvailableDeviceChangeEnumNull0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_ROUTING_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_ERROR_0100
+     * @tc.desc    on availableDeviceChange deviceUsage is null, expect error code
+     * @tc.type    FUNCTION
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('testOnAvailableDeviceChangeEnumNull0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      try {
+        routingManager!.on('availableDeviceChange', null!, (deviceChange: audio.DeviceChangeAction) => {});
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOnAvailableDeviceChangeEnumNull0100 error: ${error.code}, ${error.message}`);
+        expect(error.message).assertContain('parameter');
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testOnAvailableDeviceChangeEnumUndefined0100
+     * @tc.number  SUB_MULTIMEDIA_AUDIO_SPEC_AUDIO_ROUTING_MANAGER_ON_AVAILABLE_DEVICE_CHANGE_ERROR_0200
+     * @tc.desc    on availableDeviceChange deviceUsage is undefined, expect error code
+     * @tc.type    FUNCTION
+     * @tc.size    MediumTest
+     * @tc.level   Level2
+     */
+    it('testOnAvailableDeviceChangeEnumUndefined0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      try {
+        routingManager!.on('availableDeviceChange', undefined!, (deviceChange: audio.DeviceChangeAction) => {});
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.error(`${TAG} testOnAvailableDeviceChangeEnumUndefined0100 error: ${error.code}, ${error.message}`);
         expect(error.message).assertContain('parameter');
         done();
       }

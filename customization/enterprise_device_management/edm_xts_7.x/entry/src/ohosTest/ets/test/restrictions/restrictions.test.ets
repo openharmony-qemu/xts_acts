@@ -380,6 +380,101 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_system_rollback_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with system_rollback feature byod admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_system_rollback_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_system_rollback_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0200
+   * @tc.desc   test restrictions setDisallowedPolicy with system_rollback feature normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_system_rollback_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK);
+      expect(ret).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_system_rollback_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0300
+   * @tc.desc   test restrictions setDisallowedPolicy with system_rollback feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_system_rollback_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK);
+      expect(ret).assertTrue();
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_system_rollback_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0400
+   * @tc.desc   test restrictions setDisallowedPolicy with system_rollback without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_system_rollback_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
 }
 
 function testGetDisallowedPolicy() {
@@ -728,6 +823,95 @@ function testGetDisallowedPolicy() {
       } else {
         expect(error.code === 401).assertTrue();
       }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_system_rollback_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0100
+   * @tc.desc   test restrictions getDisallowedPolicy with system_rollback feature byod admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_system_rollback_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_system_rollback_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0200
+   * @tc.desc   test restrictions getDisallowedPolicy with system_rollback feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_system_rollback_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK);
+      expect(ret).assertFalse();
+    } catch (error) {
+      expect(error.code === 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_system_rollback_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0300
+   * @tc.desc   test restrictions getDisallowedPolicy with system_rollback feature normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_system_rollback_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK);
+      expect(ret).assertFalse();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200002).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_system_rollback_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYSYSTEM_ROLLBACK_0400
+   * @tc.desc   test restrictions getDisallowedPolicy with system_rollback feature without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_system_rollback_0400", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
     }
     done();
   });

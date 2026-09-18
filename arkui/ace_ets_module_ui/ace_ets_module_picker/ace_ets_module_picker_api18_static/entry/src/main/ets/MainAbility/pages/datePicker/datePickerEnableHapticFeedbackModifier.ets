@@ -13,8 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,Color,
-  Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker} from '@ohos.arkui.component'
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  Color,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  AttributeModifier,
+  DatePickerAttribute,
+  DatePicker
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
@@ -24,16 +42,19 @@ class DatePickerModifier1 implements AttributeModifier<DatePickerAttribute> {
     instance.enableHapticFeedback(true)
   }
 }
+
 class DatePickerModifier2 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.enableHapticFeedback(false)
   }
 }
+
 class DatePickerModifier3 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     instance.enableHapticFeedback(undefined)
   }
 }
+
 class DatePickerModifier4 implements AttributeModifier<DatePickerAttribute> {
   applyNormalAttribute(instance: DatePickerAttribute): void {
     // instance.enableHapticFeedback(null)
@@ -49,6 +70,7 @@ struct DatePickerModifierPage {
   @State mod2: DatePickerModifier2 = new DatePickerModifier2()
   @State mod3: DatePickerModifier3 = new DatePickerModifier3()
   @State mod4: DatePickerModifier4 = new DatePickerModifier4()
+
   build() {
     Column() {
       DatePicker({
@@ -57,9 +79,9 @@ struct DatePickerModifierPage {
         selected: this.selectedDate
       })
         .id('datePicker5')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         .attributeModifier(this.mod1)
         .onDateChange((value: Date) => {
@@ -72,9 +94,9 @@ struct DatePickerModifierPage {
         selected: this.selectedDate
       })
         .id('datePicker6')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         .attributeModifier(this.mod2)
         .onDateChange((value: Date) => {
@@ -87,9 +109,9 @@ struct DatePickerModifierPage {
         selected: this.selectedDate
       })
         .id('datePicker7')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         .attributeModifier(this.mod3)
         .onDateChange((value: Date) => {
@@ -102,9 +124,9 @@ struct DatePickerModifierPage {
         selected: this.selectedDate
       })
         .id('datePicker8')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         .attributeModifier(this.mod4)
         .onDateChange((value: Date) => {

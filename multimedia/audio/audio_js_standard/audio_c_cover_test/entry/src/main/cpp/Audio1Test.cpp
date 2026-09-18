@@ -510,12 +510,12 @@ napi_value AudioSessionSetDefaultOutputDeviceSuccess(napi_env env, napi_callback
     OH_AudioSessionManager *audioSessionManager = nullptr;
     OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
     result = OH_AudioSessionManager_SetDefaultOutputDevice(audioSessionManager, AUDIO_DEVICE_TYPE_DEFAULT);
-    if (result == AUDIOCOMMON_RESULT_SUCCESS || result == AUDIOCOMMON_RESULT_ERROR_SYSTEM) {
-        napi_value res;
-        napi_create_int32(env, result, &res);
-        return res;
+    if (result != AUDIOCOMMON_RESULT_SUCCESS && result != AUDIOCOMMON_RESULT_ERROR_SYSTEM) {
+        return nullptr;
     }
-    return nullptr;
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
 }
 
 napi_value AudioSessionGetDefaultOutputDeviceInvalidParam(napi_env env, napi_callback_info info)

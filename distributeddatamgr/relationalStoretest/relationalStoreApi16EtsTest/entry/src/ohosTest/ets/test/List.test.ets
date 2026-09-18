@@ -25,6 +25,7 @@ import queryByStepTest from './RelationalStoreQueryByStepTest.test';
 import RdbQueryByStep from './RdbQueryByStep.test';
 import RelationalStoreCoverageRateTestAddTest from './RelationalStoreCoverageRateTestAdd.test';
 import relationalStoreCoverageTest from './RelationalStoreCoverageTest.test';
+import rdbSyncModeBoundaryTest from './RdbSyncModeBoundaryTest.test';
 
 export default function testsuite() {
   relationalStoreEtsTest();
@@ -40,4 +41,5 @@ export default function testsuite() {
   RdbQueryByStep();
   RelationalStoreCoverageRateTestAddTest();
   relationalStoreCoverageTest();
+  rdbSyncModeBoundaryTest();
 }

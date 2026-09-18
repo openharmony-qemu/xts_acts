@@ -40,9 +40,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetIntPluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetIntPluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralString0100 start====");
         let result: number = nativeTest.GetIntPluralString0100($r('app.plural.p_str7').id);
@@ -145,9 +145,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetDoublePluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetDoublePluralString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralString0100 start====");
         let result: number = nativeTest.GetDoublePluralString0100($r('app.plural.p_str7').id);
@@ -250,9 +250,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetIntPluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetIntPluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetIntPluralStringByName0100 start====");
         let result: number = nativeTest.GetIntPluralStringByName0100('p_str7');
@@ -334,9 +334,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetDoublePluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetDoublePluralStringByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetDoublePluralStringByName0100 start====");
         let result: number = nativeTest.GetDoublePluralStringByName0100('p_str7');
@@ -418,9 +418,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetColor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetColor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetColor0100 start====");
         let result: number = nativeTest.GetColor0100($r('app.color.start_window_background_test').id);
@@ -523,9 +523,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetColorByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetColorByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetColorByName0100 start====");
         let result: number = nativeTest.GetColorByName0100('start_window_background_test');
@@ -607,9 +607,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetInt0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetInt0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetInt0100 start====");
         let result: number = nativeTest.GetInt0100($r('app.integer.integer_one').id);
@@ -712,9 +712,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetIntByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetIntByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetIntByName0100 start====");
         let result: number = nativeTest.GetIntByName0100('integer_one');
@@ -796,9 +796,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetFloat0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetFloat0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetFloat0100 start====");
         let result: number = nativeTest.GetFloat0100($r('app.float.float_one').id);
@@ -901,9 +901,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetFloatByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetFloatByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetFloatByName0100 start====");
         let result: number = nativeTest.GetFloatByName0100('float_one');
@@ -985,9 +985,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetBool0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetBool0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetBool0100 start====");
         let result: number = nativeTest.GetBool0100($r('app.boolean.boolean_one').id);
@@ -1090,9 +1090,9 @@ export default function NativeApiString2Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetBoolByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetBoolByName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetBoolByName0100 start====");
         let result: number = nativeTest.GetBoolByName0100('boolean_one');

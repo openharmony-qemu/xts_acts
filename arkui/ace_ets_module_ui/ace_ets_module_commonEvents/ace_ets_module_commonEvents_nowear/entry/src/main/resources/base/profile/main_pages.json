@@ -30,6 +30,10 @@
         "MainAbility/pages/customGestureTest/gestureParallel",
         "MainAbility/pages/customGestureTest/listMonopolize",
         "MainAbility/pages/TextArea/textAreaInputTest",
-        "MainAbility/pages/cursorControl/setCursorNullAndUndefined"
+        "MainAbility/pages/cursorControl/setCursorNullAndUndefined",
+        "MainAbility/pages/GameCtrollerCallBackData/GameCtrollerCallBackData",
+        "MainAbility/pages/HoverMove/HoverMove",
+        "MainAbility/pages/GestureListener/GestureListener",
+        "MainAbility/pages/CancelTouch/CancelTouch"
     ]
 }

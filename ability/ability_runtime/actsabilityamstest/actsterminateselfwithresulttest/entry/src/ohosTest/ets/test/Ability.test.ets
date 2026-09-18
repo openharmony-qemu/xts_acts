@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect, beforeEach, beforeAll, Level } from '@ohos/hypium'
+import { describe, afterEach, it, expect, beforeEach, beforeAll, Level } from '@ohos/hypium-dynamic'
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

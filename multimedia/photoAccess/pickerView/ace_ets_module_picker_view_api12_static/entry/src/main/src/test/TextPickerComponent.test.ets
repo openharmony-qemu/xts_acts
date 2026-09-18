@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Hypiu
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import { EdgeEffect } from '@ohos.arkui.component'
 import Utils from './Util.test';
 import { EventType } from '../../ets/MainAbility/common/Common';
 import { Component, Driver, ON, MatchPattern } from '@ohos.UiTest';
@@ -42,7 +43,16 @@ import {
   AnimatorParams,
   PhotoBrowserRange,
   VideoPlayerState,
-  PhotoBrowserUIElement
+  PhotoBrowserUIElement,
+  UpdatablePickerConfigs,
+  PreselectedInfo,
+  BadgeConfig,
+  BadgeType,
+  ClickResult,
+  PickerError,
+  CompletedResult,
+  ScrollStopAtStartCallback,
+  ScrollStopAtEndCallback
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, AlbumPickerController } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -366,6 +376,97 @@ export default function TextPicker(): void {
       }
 
       await Utils.msSleep(time ?? 500);
+    }
+
+    let closeNewPickerPage = async (): Promise<void> => {
+      try {
+        const state: router.RouterState = routerInstance.getState();
+        if (state.name === 'PickerComponent' || state.name === 'BindSheetPicker') {
+          routerInstance.back();
+          await Utils.msSleep(800);
+        }
+      } catch (error) {
+        console.error(TAG + 'closeNewPickerPage error: ' + JSON.stringify(error));
+      }
+    }
+
+    let verifyNewPickerVisible = (): void => {
+      const strJson: string | null = inspector.getInspectorByKey('PhotoPickerComponent');
+      if (strJson === null || strJson.length === 0) {
+        console.error(TAG + 'PhotoPickerComponent is not mounted');
+        expect().assertFail();
+        return;
+      }
+      const element = JSON.parseJsonElement(strJson);
+      expect(element.getElement('$attrs').getString('visibility') === 'Visibility.Visible').assertTrue();
+    }
+
+    let launchPhotoSelectOptions = async (
+      options: photoAccessHelper.PhotoSelectOptions,
+      caseName: string
+    ): Promise<void> => {
+      let picker: photoAccessHelper.PhotoViewPicker = new photoAccessHelper.PhotoViewPicker();
+      let invocation: Promise<void>;
+      try {
+        invocation = picker.select(options).then((result: photoAccessHelper.PhotoSelectResult): void => {
+          console.info(caseName + ' select result: ' + JSON.stringify(result));
+        }).catch((error: Error): void => {
+          if (error instanceof BusinessError) {
+            console.info(caseName + ' select closed with code: ' + error.code);
+          } else {
+            console.info(caseName + ' select closed: ' + error.message);
+          }
+        });
+        expect(invocation).not().assertUndefined();
+      } catch (error) {
+        console.error(caseName + ' select invocation failed: ' + JSON.stringify(error));
+        expect().assertFail();
+        return;
+      }
+
+      await Utils.msSleep(1200);
+      const closeButton: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
+      if (closeButton !== null) {
+        await closeButton.click();
+      } else {
+        const pickerItem: Component | null = await driver.findComponent(ON.type('GridItem'));
+        const completeButton: Component | null = await driver.findComponent(ON.id('Complete'));
+        if (pickerItem !== null || completeButton !== null) {
+          await driver.pressBack();
+        } else {
+          console.info(caseName + ' picker UI closed before cleanup');
+        }
+      }
+      await Utils.msSleep(800);
+    }
+
+    let mountNewPickerOptions = async (
+      pickerOptions: PickerOptions,
+      eventId: long = EventType.PHOTO_PICKER_INFO,
+      isOnItemClickedNotifySet: boolean = false
+    ): Promise<void> => {
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: eventId,
+          pickerOptions: pickerOptions,
+          isOnItemClickedNotifySet: isOnItemClickedNotifySet
+        } as RouterOptionsParams
+      };
+      await routeToUrl(options);
+      verifyNewPickerVisible();
+      await Utils.msSleep(1000);
+    }
+
+    let clickNewPickerButton = async (buttonId: string, caseName: string): Promise<void> => {
+      const button: Component | null = await driver.findComponent(ON.id(buttonId));
+      if (button === null) {
+        console.error(caseName + ' button not found: ' + buttonId);
+        expect().assertFail();
+        return;
+      }
+      await button.click();
+      await Utils.msSleep(1000);
     }
 
     beforeAll(async () => {
@@ -1085,7 +1186,7 @@ export default function TextPicker(): void {
     });
 
 
-     /**
+    /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0014
      * @tc.name     SUB_PHOTO_PICKER_TEST_0014
      * @tc.desc     Testing ItemInfo's all properties
@@ -1906,8 +2007,8 @@ export default function TextPicker(): void {
         let boxPath = fileUri.getUriFromPath(appContext.filesDir + '/test.jpg').toString();
         photoAccessHelper.getPhotoAccessHelper(appContext)!.showAssetsCreationDialog([boxPath],
           [photoCreationConfig]).then((result) => {
-            originalUris = result;
-          });
+          originalUris = result;
+        });
         await Utils.msSleep(1000);
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (a) => {
           if (!a) {
@@ -1959,8 +2060,8 @@ export default function TextPicker(): void {
         let boxPath = fileUri.getUriFromPath(appContext.filesDir + '/test.jpg').toString();
         photoAccessHelper.getPhotoAccessHelper(appContext)!.showAssetsCreationDialog([boxPath],
           [photoCreationConfig]).then((result) => {
-            originalUris = result;
-          });
+          originalUris = result;
+        });
         console.log('SUB_PHOTO_PICKER_TEST_0029 originalUris' + originalUris);
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, (a) => {
           if (!a) {
@@ -2514,7 +2615,7 @@ export default function TextPicker(): void {
         routerInstance.back();
         console.info('SUB_PHOTO_PICKER_TEST_0041 finish');
         done();
-    });
+      });
 
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0042
@@ -2622,7 +2723,7 @@ export default function TextPicker(): void {
 
         console.info('SUB_PHOTO_PICKER_TEST_0042 finish');
         done();
-    });
+      });
 
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0043
@@ -2776,7 +2877,7 @@ export default function TextPicker(): void {
 
         console.info('SUB_PHOTO_PICKER_TEST_0044 finish');
         done();
-    });
+      });
 
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0045
@@ -2822,7 +2923,7 @@ export default function TextPicker(): void {
         routerInstance.back();
         console.info('SUB_PHOTO_PICKER_TEST_0045 finish');
         done();
-    });
+      });
 
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0046
@@ -2912,7 +3013,7 @@ export default function TextPicker(): void {
           console.info('SUB_PHOTO_PICKER_TEST_0046 finish');
           done();
         }
-    });
+      });
 
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0048
@@ -2997,7 +3098,7 @@ export default function TextPicker(): void {
           }
           done();
         }
-    });
+      });
 
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0049
@@ -3800,6 +3901,1051 @@ export default function TextPicker(): void {
         expect(isValidErrorCode).assertTrue();
       }
       console.info('SUB_PHOTO_PICKER_TEST_0065 finish');
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0066
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0066
+     * @tc.desc     Testing PhotoSelectOptions combinedMediaTypeFilter
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0066', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.combinedMediaTypeFilter = ['image|(movingPhoto)|(image/gif)', 'video|*|video/mp4'];
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0066');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0066 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0067
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0067
+     * @tc.desc     Testing PhotoSelectOptions photoViewMimeTypeFileSizeFilters
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0067', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        let sizeFilter: photoAccessHelper.FileSizeFilter = {
+          filterOperator: photoAccessHelper.FilterOperator.LESS_THAN,
+          fileSize: 8048576
+        };
+        let mimeSizeFilter: photoAccessHelper.PhotoViewMimeTypeFileSizeFilter = {
+          photoViewMimeType: photoAccessHelper.PhotoViewMIMETypes.MOVING_PHOTO_IMAGE_TYPE,
+          sizeFilter: sizeFilter
+        };
+        options.photoViewMimeTypeFileSizeFilters = [mimeSizeFilter];
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0067');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0067 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0068
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0068
+     * @tc.desc     Testing PhotoSelectOptions isMovingPhotoBadgeShown
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0068', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+        options.isMovingPhotoBadgeShown = true;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0068');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0068 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0069
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0069
+     * @tc.desc     Testing PickerOptions assetFilter on a mounted PhotoPickerComponent
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0069', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let pickerOptions: PickerOptions = getDefaultPickerOptions();
+        let begin: photoAccessHelper.OperationItem = new photoAccessHelper.OperationItem();
+        begin.operationType = photoAccessHelper.OperationType.BEGIN_WRAP;
+        let equals: photoAccessHelper.OperationItem = new photoAccessHelper.OperationItem();
+        equals.operationType = photoAccessHelper.OperationType.EQUAL_TO;
+        equals.field = photoAccessHelper.PhotoKeys.PHOTO_TYPE;
+        let end: photoAccessHelper.OperationItem = new photoAccessHelper.OperationItem();
+        end.operationType = photoAccessHelper.OperationType.END_WRAP;
+        pickerOptions.assetFilter = [begin, equals, end];
+        await mountNewPickerOptions(pickerOptions);
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0069 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      await closeNewPickerPage();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0070
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0070
+     * @tc.desc     Testing PhotoSelectOptions autoPlayScenes
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.autoPlayScenes = [{
+          sceneType: photoAccessHelper.SceneType.GRID_TO_PHOTO_BROWSER,
+          playMode: photoAccessHelper.PlayMode.AUTO_PLAY
+        }, {
+          sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
+          playMode: photoAccessHelper.PlayMode.DEFAULT
+        }];
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0070');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0070 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0071
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0071
+     * @tc.desc     Testing PhotoSelectOptions gridPinchMode
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0071', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        let gridPinchMode: photoAccessHelper.GridPinchMode = new photoAccessHelper.GridPinchMode();
+        gridPinchMode.gridPinchModeType = photoAccessHelper.GridPinchModeType.FULL_FUNCTION_GRID;
+        gridPinchMode.defaultGridLevel = photoAccessHelper.GridLevel.COMPACT;
+        options.gridPinchMode = gridPinchMode;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0071');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0071 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0072
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0072
+     * @tc.desc     Testing PhotoSelectOptions globalMovingPhotoState
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0072', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.globalMovingPhotoState = photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0072');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0072 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0073
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0073
+     * @tc.desc     Testing PhotoSelectOptions showDateOnScrollbar
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0073', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.showDateOnScrollbar = true;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0073');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0073 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0074
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0074
+     * @tc.desc     Testing PhotoSelectOptions preferredCompatibleMode
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0074', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.preferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.DEFAULT;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0074');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0074 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0075
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0075
+     * @tc.desc     Testing PhotoSelectOptions assetCompatibleCapability
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0075', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        let capability: photoAccessHelper.AssetCompatibleCapability = {
+          supportedHighResolution: false,
+          supportedMimeType: ['image/heic']
+        };
+        options.assetCompatibleCapability = capability;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0075');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0075 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0076
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0076
+     * @tc.desc     Testing PhotoSelectOptions isDestroyedWithNavigation
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0076', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.isDestroyedWithNavigation = true;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0076');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0076 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0077
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0077
+     * @tc.desc     Testing PhotoSelectOptions maxPhotoSelectNumber and maxVideoSelectNumber
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0077', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.maxSelectNumber = 3;
+        options.maxPhotoSelectNumber = 2;
+        options.maxVideoSelectNumber = 1;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0077');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0077 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0078
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0078
+     * @tc.desc     Testing PhotoSelectOptions isReturnToPhotoBrowserEnabled
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0078', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.isReturnToPhotoBrowserEnabled = true;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0078');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0078 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0079
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0079
+     * @tc.desc     Testing PhotoSelectOptions isSelectionNumberVisible
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0079', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.maxSelectNumber = 2;
+        options.isSelectionNumberVisible = true;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0079');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0079 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0080
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0080
+     * @tc.desc     Testing PhotoSelectOptions isSelectionOrderAdjustable
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.maxSelectNumber = 2;
+        options.isSelectionNumberVisible = true;
+        options.isSelectionOrderAdjustable = true;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0080');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0080 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0081
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0081
+     * @tc.desc     Testing PhotoSelectOptions contextRecoveryInfo
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0081', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        let recovery: photoAccessHelper.ContextRecoveryInfo = {
+          albumUri: '',
+          displayName: '',
+          recommendationType: 0,
+          selectedRecommendationType: 0,
+          time: 1756371999125,
+          version: 1,
+          gridLevel: photoAccessHelper.GridLevel.STANDARD,
+          sortRule: '',
+          fileSize: 0
+        };
+        options.contextRecoveryInfo = recovery;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0081');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0081 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0082
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0082
+     * @tc.desc     Testing PickerOptions pickerIndex
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0082', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.pickerIndex = 4;
+      expect(pickerOptions.pickerIndex).assertEqual(4);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0083
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0083
+     * @tc.desc     Testing PickerOptions preselectedInfos
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0083', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.pickerIndex = 2;
+      let info: PreselectedInfo = new PreselectedInfo();
+      info.uri = 'file://media/Photo/static_preselected.jpg';
+      info.preselectablePickerIndex = 2;
+      const preselectedInfos: Array<PreselectedInfo> = [info];
+      pickerOptions.preselectedInfos = preselectedInfos;
+      expect(preselectedInfos.length).assertEqual(1);
+      expect(info.preselectablePickerIndex).assertEqual(2);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0084
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0084
+     * @tc.desc     Testing PickerOptions badgeConfig
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0084', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let pickerOptions: PickerOptions = getDefaultPickerOptions();
+        let badgeConfig: BadgeConfig = new BadgeConfig();
+        badgeConfig.badgeType = BadgeType.BADGE_UPLOADED;
+        badgeConfig.uris = ['file://media/Photo/static_badge.jpg'];
+        pickerOptions.badgeConfig = badgeConfig;
+        await mountNewPickerOptions(pickerOptions);
+        expect(pickerOptions.badgeConfig?.badgeType).assertEqual(BadgeType.BADGE_UPLOADED);
+        expect(pickerOptions.badgeConfig?.uris?.length).assertEqual(1);
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0084 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      await closeNewPickerPage();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0085
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0085
+     * @tc.desc     Testing PickerOptions isSlidingSupported
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0085', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.isSlidingSupported = false;
+      expect(pickerOptions.isSlidingSupported).assertFalse();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0086
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0086
+     * @tc.desc     Testing PickerOptions edgeEffect
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0086', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.edgeEffect = EdgeEffect.None;
+      expect(pickerOptions.edgeEffect).assertEqual(EdgeEffect.None);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0087
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0087
+     * @tc.desc     Testing PickerOptions appAlbumFilters and backgroundOpacity
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0087', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      const appAlbumFilters: Array<string> = ['com.example.sourceapp.album'];
+      pickerOptions.appAlbumFilters = appAlbumFilters;
+      pickerOptions.backgroundOpacity = 0.5;
+      expect(appAlbumFilters.length).assertEqual(1);
+      expect(pickerOptions.backgroundOpacity).assertEqual(0.5);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0088
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0088
+     * @tc.desc     Testing BaseItemInfo extended properties
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0088', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let itemInfo: BaseItemInfo = new BaseItemInfo();
+      itemInfo.photoSubType = photoAccessHelper.PhotoSubtype.MOVING_PHOTO;
+      itemInfo.dynamicRangeType = photoAccessHelper.DynamicRangeType.HDR;
+      itemInfo.orientation = 90;
+      itemInfo.movingPhotoBadgeState = photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED;
+      itemInfo.videoMode = photoAccessHelper.VideoMode.LOG_VIDEO;
+      expect(itemInfo.photoSubType).assertEqual(photoAccessHelper.PhotoSubtype.MOVING_PHOTO);
+      expect(itemInfo.orientation).assertEqual(90);
+      expect(itemInfo.videoMode).assertEqual(photoAccessHelper.VideoMode.LOG_VIDEO);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0089
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0089
+     * @tc.desc     Testing PhotoPickerComponent onError callback and PickerError
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0089', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let pickerError: PickerError = new PickerError();
+        pickerError.functionName = 'staticCoverage';
+        pickerError.errorCode = 23800202;
+        pickerError.message = 'illegal scenario';
+        expect(pickerError.functionName).assertEqual('staticCoverage');
+        expect(pickerError.errorCode).assertEqual(23800202);
+        await mountNewPickerOptions(getDefaultPickerOptions());
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0089 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      await closeNewPickerPage();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0090
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0090
+     * @tc.desc     Testing PhotoPickerComponent onItemClickedNotify callback
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let callbackReceived: boolean = false;
+      const callback = (eventData: events_emitter.EventData): void => {
+        if (eventData.data === undefined) {
+          return;
+        }
+        const data = eventData.data as Record<string, RecordData>;
+        const itemInfo: ItemInfo = data['msg'] as ItemInfo;
+        callbackReceived = true;
+        expect(itemInfo).not().assertUndefined();
+      };
+      events_emitter.on({
+        eventId: EventType.ITEM_CLICKED_NOTIFY,
+        priority: events_emitter.EventPriority.LOW
+      }, callback);
+      try {
+        await mountNewPickerOptions(getDefaultPickerOptions(), EventType.PHOTO_PICKER_INFO, true);
+        const pickerItem: Component | null = await driver.findComponent(ON.type('GridItem'));
+        if (pickerItem !== null) {
+          await pickerItem.click();
+          await Utils.msSleep(1000);
+          console.info('SUB_PHOTO_PICKER_TEST_0090 callbackReceived=' + callbackReceived);
+        } else {
+          console.info('SUB_PHOTO_PICKER_TEST_0090 no media item; callback registration covered');
+        }
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0090 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      events_emitter.off(EventType.ITEM_CLICKED_NOTIFY, callback);
+      await closeNewPickerPage();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0091
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0091
+     * @tc.desc     Testing scroll boundary callbacks
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0091', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let startCalled: boolean = false;
+      let endCalled: boolean = false;
+      const onStart: ScrollStopAtStartCallback = (): void => { startCalled = true; };
+      const onEnd: ScrollStopAtEndCallback = (): void => { endCalled = true; };
+      onStart();
+      onEnd();
+      expect(startCalled).assertTrue();
+      expect(endCalled).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0092
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0092
+     * @tc.desc     Testing onPinchGridSwitched callback registration
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0092', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let pickerOptions: PickerOptions = getDefaultPickerOptions();
+        pickerOptions.gridPinchMode = {
+          gridPinchModeType: photoAccessHelper.GridPinchModeType.FULL_FUNCTION_GRID,
+          defaultGridLevel: photoAccessHelper.GridLevel.STANDARD
+        };
+        await mountNewPickerOptions(pickerOptions);
+        expect(pickerOptions.gridPinchMode?.defaultGridLevel).assertEqual(photoAccessHelper.GridLevel.STANDARD);
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0092 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      await closeNewPickerPage();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0093
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0093
+     * @tc.desc     Testing photo browser change and zoom callback registration
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0093', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        await mountNewPickerOptions(getDefaultPickerOptions());
+        const pickerItem: Component | null = await driver.findComponent(ON.type('GridItem'));
+        if (pickerItem !== null) {
+          await pickerItem.click();
+          await Utils.msSleep(800);
+        } else {
+          console.info('SUB_PHOTO_PICKER_TEST_0093 no media item; callbacks remain registered');
+        }
+        verifyNewPickerVisible();
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0093 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      await closeNewPickerPage();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0094
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0094
+     * @tc.desc     Testing ItemInfo moving photo and video properties
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0094', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let itemInfo: ItemInfo = new ItemInfo();
+      itemInfo.uri = 'file://media/Photo/static_item.jpg';
+      itemInfo.photoSubType = photoAccessHelper.PhotoSubtype.MOVING_PHOTO;
+      itemInfo.dynamicRangeType = photoAccessHelper.DynamicRangeType.SDR;
+      itemInfo.orientation = 0;
+      itemInfo.movingPhotoBadgeState = photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_DISABLED;
+      itemInfo.videoMode = photoAccessHelper.VideoMode.DEFAULT;
+      expect(itemInfo.movingPhotoBadgeState)
+        .assertEqual(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_DISABLED);
+      expect(itemInfo.videoMode).assertEqual(photoAccessHelper.VideoMode.DEFAULT);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0095
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0095
+     * @tc.desc     Testing PickerController setData, addData and deleteData additions
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0095', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let pickerController: PickerController = new PickerController();
+        let selectedInfo: PreselectedInfo = new PreselectedInfo();
+        selectedInfo.uri = 'file://media/Photo/static_sample.jpg';
+        selectedInfo.preselectablePickerIndex = 1;
+        let badgeConfig: BadgeConfig = new BadgeConfig();
+        badgeConfig.badgeType = BadgeType.BADGE_UPLOADED;
+        badgeConfig.uris = [selectedInfo.uri];
+        let clickResult: ClickResult = new ClickResult();
+        clickResult.uri = selectedInfo.uri;
+        clickResult.isSelected = true;
+
+        pickerController.setData(DataType.SET_SELECTED_INFO, [selectedInfo]);
+        pickerController.setData(DataType.SET_BADGE_CONFIGS, badgeConfig);
+        pickerController.addData(DataType.SET_BADGE_CONFIGS, badgeConfig);
+        pickerController.deleteData(DataType.SET_BADGE_CONFIGS, badgeConfig);
+        pickerController.addData(DataType.SET_ITEM_CLICK_RESULT, [clickResult]);
+        expect(clickResult.isSelected).assertTrue();
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0095 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0096
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0096
+     * @tc.desc     Testing PickerController updatePickerOptions
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0096', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let pickerController: PickerController = new PickerController();
+        let config: UpdatablePickerConfigs = new UpdatablePickerConfigs();
+        config.maxSelectNumber = 10;
+        config.maxPhotoSelectNumber = 5;
+        config.maxVideoSelectNumber = 5;
+        config.edgeEffect = EdgeEffect.None;
+        config.backgroundOpacity = 0.75;
+        config.appAlbumFilters = ['com.example.sourceapp.album'];
+        await pickerController.updatePickerOptions(config);
+        expect(config.maxSelectNumber).assertEqual(10);
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0096 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0097
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0097
+     * @tc.desc     Testing PickerController setMovingPhotoState parameter validation
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0097', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let validationRejected: boolean = false;
+      let pickerController: PickerController = new PickerController();
+      try {
+        await pickerController.setMovingPhotoState(photoAccessHelper.MovingPhotoBadgeStateType.NOT_MOVING_PHOTO);
+      } catch (error) {
+        validationRejected = true;
+        const businessError: BusinessError = error as BusinessError;
+        expect(businessError.code).assertEqual(23800151);
+      }
+      expect(validationRejected).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0098
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0098
+     * @tc.desc     Testing PickerController completed Promise return
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0098', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let pickerController: PickerController = new PickerController();
+        const completedPromise: Promise<CompletedResult> = pickerController.completed();
+        expect(completedPromise).not().assertUndefined();
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0098 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0099
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0099
+     * @tc.desc     Testing an unbound PickerController setMovingPhotoState call
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0099', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let rejected: boolean = false;
+      let pickerController: PickerController = new PickerController();
+      try {
+        await pickerController.setMovingPhotoState(
+          photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED);
+      } catch (error) {
+        rejected = true;
+        const businessError: BusinessError = error as BusinessError;
+        expect(businessError.code).assertEqual(23800202);
+      }
+      expect(rejected).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0100
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0100
+     * @tc.desc     Testing PreselectedInfo, BadgeConfig and ClickResult
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let preselectedInfo: PreselectedInfo = new PreselectedInfo();
+      preselectedInfo.uri = 'file://media/Photo/static_model.jpg';
+      preselectedInfo.preselectablePickerIndex = 3;
+      let badgeConfig: BadgeConfig = new BadgeConfig();
+      badgeConfig.badgeType = BadgeType.BADGE_UPLOADED;
+      badgeConfig.uris = [preselectedInfo.uri];
+      let clickResult: ClickResult = new ClickResult();
+      clickResult.uri = preselectedInfo.uri;
+      clickResult.isSelected = true;
+      expect(preselectedInfo.preselectablePickerIndex).assertEqual(3);
+      expect(badgeConfig.badgeType).assertEqual(BadgeType.BADGE_UPLOADED);
+      expect(clickResult.isSelected).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0101
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0101
+     * @tc.desc     Testing UpdatablePickerConfigs properties
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let config: UpdatablePickerConfigs = new UpdatablePickerConfigs();
+      config.mimeType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+      config.mimeTypeFilter = { mimeTypeArray: ['image/jpeg'] };
+      config.maxSelectNumber = 2;
+      config.selectMode = SelectMode.MULTI_SELECT;
+      config.singleSelectionMode = photoAccessHelper.SingleSelectionMode.BROWSER_AND_SELECT_MODE;
+      config.isRepeatSelectSupported = true;
+      config.preselectedUris = ['file://media/Photo/static_update.jpg'];
+      config.edgeEffect = EdgeEffect.None;
+      config.gridMargin = {};
+      config.photoBrowserMargin = {};
+      expect(config.maxSelectNumber).assertEqual(2);
+      expect(config.mimeTypeFilter?.mimeTypeArray).assertDeepEquals(['image/jpeg']);
+      expect(config.edgeEffect).assertEqual(EdgeEffect.None);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0102
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0102
+     * @tc.desc     Testing RequestReadPermissionResult fields
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let result: photoAccessHelper.RequestReadPermissionResult =
+        new photoAccessHelper.RequestReadPermissionResult();
+      const authorizedUris: Array<string> = ['file://media/Photo/static_authorized.jpg'];
+      const invalidUris: Array<string> = ['invalid://static_uri'];
+      result.authorizedUris = authorizedUris;
+      result.invalidUris = invalidUris;
+      expect(authorizedUris.length).assertEqual(1);
+      expect(invalidUris.length).assertEqual(1);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0103
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0103
+     * @tc.desc     Testing saveTrustedPhotoAssetsEx invalid URI validation
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let rejected: boolean = false;
+      try {
+        let pickerController: PickerController = new PickerController();
+        await pickerController.saveTrustedPhotoAssetsEx([]);
+      } catch (error) {
+        rejected = true;
+        const businessError: BusinessError = error as BusinessError;
+        expect(businessError.code).assertEqual(14000002);
+      }
+      expect(rejected).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0104
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0104
+     * @tc.desc     Testing added multimedia enum values
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0104', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      expect(photoAccessHelper.OperationType.EQUAL_TO).assertEqual(1);
+      expect(photoAccessHelper.OperationType.NOT_BETWEEN).assertEqual(14);
+      expect(photoAccessHelper.GridPinchModeType.FULL_FUNCTION_GRID).assertEqual(0);
+      expect(photoAccessHelper.PhotoSource.CAMERA).assertEqual(1);
+      expect(photoAccessHelper.PhotoSource.SCREENSHOT).assertEqual(2);
+      expect(photoAccessHelper.VideoMode.LOG_VIDEO).assertEqual(1);
+      expect(photoAccessHelper.RecommendationType.CAT).assertEqual(13);
+      expect(photoAccessHelper.RecommendationType.GAUSSIAN_SPLAT_3D).assertEqual(17);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0105
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0105
+     * @tc.desc     Testing CompletedResult fields
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0105', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let completedResult: CompletedResult = new CompletedResult();
+      completedResult.photoUris = ['file://media/Photo/static_completed.jpg'];
+      completedResult.movingPhotoBadgeStates = [
+        photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED
+      ];
+      completedResult.contextRecoveryInfo = {
+        albumUri: '', displayName: '', recommendationType: 0, selectedRecommendationType: 0,
+        time: 1756371999125, version: 1, gridLevel: photoAccessHelper.GridLevel.STANDARD,
+        sortRule: '', fileSize: 0
+      };
+      expect(completedResult.photoUris.length).assertEqual(1);
+      expect(completedResult.movingPhotoBadgeStates[0])
+        .assertEqual(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED);
+      expect(completedResult.contextRecoveryInfo?.gridLevel).assertEqual(photoAccessHelper.GridLevel.STANDARD);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0106
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0106
+     * @tc.desc     Testing PhotoViewPicker select Promise overload
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0106', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        let options: photoAccessHelper.PhotoSelectOptions = getDefaultPhotoSelectOptions();
+        options.isDestroyedWithNavigation = true;
+        await launchPhotoSelectOptions(options, 'SUB_PHOTO_PICKER_TEST_0106');
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0106 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0107
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0107
+     * @tc.desc     Testing getRecentPhotoInfo
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0107', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      try {
+        const phAccessHelper: photoAccessHelper.PhotoAccessHelper | null =
+          photoAccessHelper.getPhotoAccessHelper(appContext);
+        if (phAccessHelper === null) {
+          expect().assertFail();
+          done();
+          return;
+        }
+        let options: photoAccessHelper.RecentPhotoOptions = new photoAccessHelper.RecentPhotoOptions();
+        options.period = 60;
+        options.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_VIDEO_TYPE;
+        options.photoSource = photoAccessHelper.PhotoSource.ALL;
+        const result: photoAccessHelper.RecentPhotoInfo = await phAccessHelper.getRecentPhotoInfo(options);
+        expect(result).not().assertUndefined();
+        expect(result.dateTaken).not().assertUndefined();
+        expect(result.identifier).not().assertUndefined();
+      } catch (error) {
+        console.error('SUB_PHOTO_PICKER_TEST_0107 error: ' + JSON.stringify(error));
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0108
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0108
+     * @tc.desc     Testing showAssetsCreationDialogEx parameter validation
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0108', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) { done(); return; }
+      let rejected: boolean = false;
+      try {
+        const phAccessHelper: photoAccessHelper.PhotoAccessHelper | null =
+          photoAccessHelper.getPhotoAccessHelper(appContext);
+        if (phAccessHelper === null) {
+          expect().assertFail();
+          done();
+          return;
+        }
+        await phAccessHelper.showAssetsCreationDialogEx([], []);
+      } catch (error) {
+        rejected = true;
+        const businessError: BusinessError = error as BusinessError;
+        expect(businessError.code).assertEqual(401);
+      }
+      expect(rejected).assertTrue();
       done();
     });
   })

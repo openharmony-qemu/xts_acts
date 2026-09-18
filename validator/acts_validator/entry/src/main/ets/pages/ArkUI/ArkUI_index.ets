@@ -44,17 +44,9 @@ struct IndexPage {
   @State TEST: number = 0;
   private TestCaseList: TestCase[] = [
     { title: 'CapiGrid', uri: 'pages/ArkUI/CapiGrid' },
-    { title: 'AccessibilityCustom', uri: 'pages/ArkUI/AccessibilityCustom' },
     { title: 'TouchMove', uri: 'pages/ArkUI/TouchMoveTest' },
-    { title: 'PinchGesture', uri: 'pages/ArkUI/PinchGestureTest' },
-    { title: 'RotationGesture', uri: 'pages/ArkUI/RotationGestureTest' },
-    { title: 'SwipeGesture', uri: 'pages/ArkUI/SwipeGestureTest' },
-    { title: 'LongPressGesture', uri: 'pages/ArkUI/LongPressGesture' },
-    { title: 'TapGesture', uri: 'pages/ArkUI/TapGesture' },
-    { title: 'PanGesture', uri: 'pages/ArkUI/PanGesture' },
     { title: 'DraggingSizeChangeEffect', uri: 'pages/ArkUI/DraggingSizeChangeEffect' },
     { title: 'KeyEvent', uri: 'pages/ArkUI/KeyEvent' },
-    { title: 'CapiKeyEvent', uri: 'pages/ArkUI/CapiKeyEvent' },
     { title: 'enableDropDisallowedBadge', uri: 'pages/ArkUI/enableDropDisallowedBadge' },
     { title: 'bindSheetTest', uri: 'pages/ArkUI/bindSheetTest' },
     { title: 'DatePickerDialog', uri: 'pages/ArkUI/DatePickerDialog' },
@@ -88,42 +80,19 @@ struct IndexPage {
     { title: 'AccessibilityThirdFramework01', uri: 'pages/ArkUI/AccessibilityThirdFramework01' },
     { title: 'GetBarRect', uri: 'pages/ArkUI/GetBarRect' },
     { title: 'CapiHandDetect', uri: 'pages/ArkUI/CapiHandDetect' },
-    { title: 'GameCtrollerCallBackData', uri: 'pages/ArkUI/GameCtrollerCallBackData' },
-    { title: 'GameCtronllerCTest', uri: 'pages/ArkUI/GameCtronllerCTest' },
-    { title: 'HoverMove', uri: 'pages/ArkUI/HoverMove' },
     { title: 'Clickhand', uri: 'pages/ArkUI/Clickhand' },
-    { title: 'Taphand', uri: 'pages/ArkUI/Taphand' },
-    { title: 'Touchhand', uri: 'pages/ArkUI/Touchhand' },
-    { title: 'HoverSpen', uri: 'pages/ArkUI/HoverSpen' },
     { title: 'stopSwiper', uri: 'pages/ArkUI/stopSwiper' },
     { title: 'moveList', uri: 'pages/ArkUI/moveList' },
-    { title: 'AccessibilityRoleTypeTest', uri: 'pages/ArkUI/AccessibilityRoleTypeTest' },
-    { title: 'StylusPen', uri: 'pages/ArkUI/StylusPen' },
     { title: 'AccessibilityFocusDrawLevel', uri: 'pages/ArkUI/AccessibilityFocusDrawLevel' },
-	  { title: 'EmbeddedComponentInstanceTest', uri: 'pages/ArkUI/EmbeddedComponentInstanceTest' },
-    { title: 'AccessibilityNextFocusIdPage', uri: 'pages/ArkUI/AccessibilityNextFocusIdPage' },
-    { title: 'AccessibilityNextFocusId26Page', uri: 'pages/ArkUI/AccessibilityNextFocusId26Page' },
-    { title: 'AccessibilityDefaultFocusPage', uri: 'pages/ArkUI/AccessibilityDefaultFocusPage' },
-    { title: 'AccessibilityScrollTriggerablePage', uri: 'pages/ArkUI/AccessibilityScrollTriggerablePage' },
     { title: 'OnAccessibilityActionIntercept', uri: 'pages/ArkUI/OnAccessibilityActionIntercept' },
     { title: 'AccessBilityHoverTransparent', uri: 'pages/ArkUI/AccessBilityHoverTransparent' },
     { title: 'hoverScaleInterruption', uri: 'pages/ArkUI/hoverScaleInterruption' },
     { title: 'transform3D', uri: 'pages/ArkUI/transform3D' },
-    { title: 'dragEvent_dataLoad', uri: 'pages/ArkUI/dragEvent_dataLoad' },
-    { title: 'dragAction_dataLoad', uri: 'pages/ArkUI/dragAction_dataLoad' },
-    { title: 'TapGestureListener', uri: 'pages/ArkUI/TapGestureListener' },
-    { title: 'SwipeGestureListener', uri: 'pages/ArkUI/SwipeGestureListener' },
-    { title: 'LongPressGestureListener', uri: 'pages/ArkUI/LongPressGestureListener' },
-    { title: 'PinchGestureListener', uri: 'pages/ArkUI/PinchGestureListener' },
-    { title: 'RotationGestureListener', uri: 'pages/ArkUI/RotationGestureListener' },
-    { title: 'PanGestureListener', uri: 'pages/ArkUI/PanGestureListener' },
+    { title: 'DragDataLoadCombined', uri: 'pages/ArkUI/DragDataLoadCombined' },
     { title: 'AccessibilityShowStepOptions', uri: 'pages/ArkUI/AccessibilityShowStepOptions' },
-    { title: 'cancelTouch', uri: 'pages/ArkUI/cancelTouch' },
     { title: 'fingerInfos', uri: 'pages/ArkUI/fingerInfos' },
     { title: 'bindPopupTest', uri: 'pages/ArkUI/bindPopupTest' },
     { title: 'AccessibilityHoverEvent', uri: 'pages/ArkUI/AccessibilityHoverEvent' },
-    { title: 'CapiDragEvent', uri: 'pages/ArkUI/CapiDragEvent' },
-    { title: 'CapiDragAction', uri: 'pages/ArkUI/CapiDragAction' },
     { title: 'SliderTest', uri: 'pages/ArkUI/SliderTest' },
     { title: 'ModalTransition', uri: 'pages/ArkUI/ModalTransition' },
     { title: 'BindContentCoverOption', uri: 'pages/ArkUI/BindContentCoverOption' },
@@ -131,34 +100,23 @@ struct IndexPage {
     { title: 'AnimatedDrawableDescriptorFrameDurations', uri: 'pages/ArkUI/AnimatedDrawableDescriptorFrameDurations' },
     { title: 'GetDarkModeTest', uri: 'pages/ArkUI/GetDarkModeTest' },
     { title: 'TabBarIndicatorPixmap', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },
-    { title: 'RichEditiorComponentContentKeyboard', uri: 'pages/ArkUI/RichEditiorComponentContentKeyboard' },
     { title: 'WindowSizeLayoutBreakpointChange', uri: 'pages/ArkUI/WindowSizeLayoutBreakpointChange' },
-    { title: 'AccessibilityActionOptionsScrollStep', uri: 'pages/ArkUI/AccessibilityActionOptionsScrollStep' },
-    { title: 'CapiSourceType', uri: 'pages/ArkUI/CapiSourceType' },
-    { title: 'AccessiBilityStateDescription', uri: 'pages/ArkUI/AccessiBilityStateDescription' },
     { title: 'RadiusRenderStrategy', uri: 'pages/ArkUI/RadiusRenderStrategy' },
     { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
-    { title: 'GameAddTest', uri: 'pages/ArkUI/GameAddTest' },
     { title: 'AdvancedBlendMode', uri: 'pages/ArkUI/AdvancedBlendMode' },
-    { title: 'PluginComponentTest', uri: 'pages/ArkUI/PluginComponentTest' },
     { title: 'CapiDragDrop', uri: 'pages/ArkUI/CapiDragDropTest' },
     { title: 'CapionDigitalCrown', uri: 'pages/ArkUI/CapionDigitalCrown' },
     { title: 'PassThrough', uri: 'pages/ArkUI/PassThrough' },
     { title: 'MenuColorMode', uri: 'pages/ArkUI/MenuColorMode' },
     { title: 'SetCustomCursor', uri: 'pages/ArkUI/SetCustomCursor' },
     { title: 'PopupColorMode', uri: 'pages/ArkUI/PopupColorMode' },
-    { title: 'AccessibilityCustomActionsTest', uri: 'pages/ArkUI/AccessibilityCustomActionsTest' },
-    { title: 'SmartGestureSelect', uri: 'pages/ArkUI/SmartGestureSelect' },
-    { title: 'SmartGestureMonitor001', uri: 'pages/ArkUI/SmartGestureMonitor001' },
-    { title: 'SmartGestureMonitor002', uri: 'pages/ArkUI/SmartGestureMonitor002' },
-    { title: 'SmartGestureMonitor003', uri: 'pages/ArkUI/SmartGestureMonitor003' },
-    { title: 'SmartGestureCallBack', uri: 'pages/ArkUI/SmartGestureCallBack' },
     { title: 'selectMenuBackgroundBlurStyleOptions', uri: 'pages/ArkUI/selectMenuBackgroundBlurStyleOptions' },
     { title: 'selectMenuBackgroundEffect', uri: 'pages/ArkUI/selectMenuBackgroundEffect' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
   @State ColorTrue2: number[] = [];
+  @State colorVersion: number = 0;
 
   async onPageShow() {
     let Test : data_preferences.Preferences | number = 0;
@@ -202,67 +160,91 @@ struct IndexPage {
     let ColorBack: string = String.fromCharCode(...uint8Array);
     let TestList: string[] = ColorBack.split(';');
     for (let i = 0; i < Math.floor(TestList.length / 2); i++) {
-      letColor[i] = TestList[i * 2+1];
+      this.ColorObject[i] = TestList[i * 2+1];
     }
     fs.closeSync(opt);
 
     if (this.count === 1) {
-      let myRouter = router.getParams() as Record<string, string | number>
-      this.result = myRouter.result as string
-      let titles: string = myRouter.title as string;
-      let name1: string = '刚刚点进了哪个用例：' + titles;
-      let results = this.result;
-      let WriteTitle = (titles).toString();
-      let number = WriteTitle.length + 7;
-      let Index = ColorBack.indexOf(WriteTitle);
+      let routerParams = router.getParams() as Record<string, string | number>
+      let resultStr: string = '';
+      let titleStr: string = '';
+      if (routerParams) {
+        resultStr = routerParams.result as string;
+        titleStr = routerParams.title as string;
+      } else {
+        resultStr = globalThis.arkResult as string;
+        titleStr = globalThis.arkTitle as string;
+      }
+      if (resultStr) {
+        this.result = resultStr
+        let titles: string = titleStr;
+        let name1: string = '刚刚点进了哪个用例：' + titles;
+        let results = this.result;
+        let WriteTitle = (titles).toString();
+        let number = WriteTitle.length + 7;
+        let Index = ColorBack.indexOf(WriteTitle);
+        if (Index === -1) {
+          console.error('ArkUI_index: title not found in ArkUIColorBack.txt, skip write: ' + WriteTitle);
+        }
 
-      if (this.result === 'true ') {
-        this.ColorObject[this.current] = 'true ';
-        let Log = (titles + ';' + 'true ' + ';');
-        let key = ColorBack.substring(Index, Index + number);
-        let FD = fs.openSync(ColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-        ColorBack = ColorBack.replace(key, Log);
-        let buffer = new ArrayBuffer(4096);
-        let rd = fs.readSync(FD.fd, buffer);
-        let Report = ColorBack.substring(0, rd);
-        fs.closeSync(FD);
-        let Fd = fs.openSync(ColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-        fs.writeSync(Fd.fd, Report);
-        filewrite(name1, results, titles);
-      }
-      else if (this.result === 'false') {
-        this.ColorObject[this.current] = 'false';
-        let Log = (titles + ';' + 'false' + ';');
-        let key = ColorBack.substring(Index, Index + number);
-        let FD = fs.openSync(ColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-        ColorBack = ColorBack.replace(key, Log);
-        let buffer = new ArrayBuffer(4096);
-        let rd = fs.readSync(FD.fd, buffer);
-        let Report = ColorBack.substring(0, rd);
-        fs.closeSync(FD);
-        let Fd = fs.openSync(ColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-        fs.writeSync(Fd.fd, Report);
-        filewrite(name1, results, titles);
-      }
-      else {
-        this.ColorObject[this.current] = this.ColorObject[this.current];
+        if (this.result === 'true ') {
+          this.ColorObject[this.current] = 'true ';
+          if (Index === -1) {
+            filewrite(name1, results, titles);
+          }
+          else {
+            let Log = (titles + ';' + 'true ' + ';');
+            let key = ColorBack.substring(Index, Index + number);
+            ColorBack = ColorBack.replace(key, Log);
+            let Fd = fs.openSync(ColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(Fd.fd, ColorBack);
+            fs.closeSync(Fd);
+            filewrite(name1, results, titles);
+          }
+        }
+        else if (this.result === 'false') {
+          this.ColorObject[this.current] = 'false';
+          if (Index === -1) {
+            filewrite(name1, results, titles);
+          }
+          else {
+            let Log = (titles + ';' + 'false' + ';');
+            let key = ColorBack.substring(Index, Index + number);
+            ColorBack = ColorBack.replace(key, Log);
+            let Fd = fs.openSync(ColorBackPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+            fs.writeSync(Fd.fd, ColorBack);
+            fs.closeSync(Fd);
+            filewrite(name1, results, titles);
+          }
+        }
+        else {
+          this.ColorObject[this.current] = this.ColorObject[this.current];
+        }
       }
     }
-    for (let i = 0; i < TestList.length; i++) {
-      if (this.ColorObject[i] === 'true ') {
-        this.ColorTrue[i] = 0x263526
-        this.ColorTrue2[i] = 0x0CB60C
-
+    let colorObj = this.ColorObject;
+    let testListLen = TestList.length;
+    setTimeout(() => {
+      let colorTrue: number[] = [];
+      let colorTrue2: number[] = [];
+      for (let i = 0; i < testListLen; i++) {
+        if (colorObj[i] === 'true ') {
+          colorTrue[i] = 0x263526;
+          colorTrue2[i] = 0x0CB60C;
+        }
+        else if (colorObj[i] === 'false') {
+          colorTrue[i] = 0x380303;
+          colorTrue2[i] = 0xd60a0a;
+        }
+        else {
+          colorTrue[i] = 0x000000;
+          colorTrue2[i] = 0x000000;
+        }
       }
-      else if (this.ColorObject[i] === 'false') {
-        this.ColorTrue[i] = 0x380303
-        this.ColorTrue2[i] = 0xd60a0a
-      }
-      else {
-        this.ColorTrue[i] = 0x000000
-        this.ColorTrue2[i] = 0x000000
-      }
-    }
+      this.ColorTrue = colorTrue;
+      this.ColorTrue2 = colorTrue2;
+      this.colorVersion++;
+    }, 50);
 
   }
 
@@ -383,7 +365,7 @@ struct IndexPage {
                 })
               })
             }
-          }, (item: TestCase) => item.title)
+          }, (item: TestCase) => item.title + this.colorVersion)
         }.width('100%').divider({ strokeWidth: 1, color: Color.Grey }).height('100%')
       }
     }.backgroundColor(Color.Black)

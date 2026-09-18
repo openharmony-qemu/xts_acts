@@ -20,7 +20,7 @@ import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import { BusinessError } from '@ohos.base';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import window from '@ohos.window';
 
 async function startAbilityTest(TAG: string, context: common.UIAbilityContext) {

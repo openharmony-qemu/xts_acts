@@ -43,8 +43,8 @@ async function createAssetCallbackWithOptionsTest(done: Function, type: photoAcc
   }
 }
 
-async function createAssetCallbackWithOptionsAbnormalTest(done: Function, type: photoAccessHelper.PhotoType | undefined,
-  extension: string | undefined, options: photoAccessHelper.CreateOptions | undefined) {
+async function createAssetCallbackWithOptionsAbnormalTest(done: Function, type: photoAccessHelper.PhotoType | undefined
+ | null, extension: string | undefined, options: photoAccessHelper.CreateOptions | undefined | null) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -120,8 +120,8 @@ async function createAssetPromiseWithOptionsTest(done: Function, type: photoAcce
   }
 }
 
-async function createAssetPromiseWithOptionsAbnormalTest(done: Function, type: photoAccessHelper.PhotoType | undefined,
-  extension: string | undefined, options: photoAccessHelper.CreateOptions | undefined) {
+async function createAssetPromiseWithOptionsAbnormalTest(done: Function, type: photoAccessHelper.PhotoType | undefined
+ | null, extension: string | undefined, options: photoAccessHelper.CreateOptions | undefined | null) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -167,6 +167,8 @@ async function createAssetPromiseAbnormalTest(done: Function, type: photoAccessH
 export default function createAssetTest() {
   describe('createAssetTest', () => {
     const testTitle = 'createAssetTest';
+    let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
 
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
@@ -356,6 +358,151 @@ export default function createAssetTest() {
         subtype: undefined
       };
       await createAssetCallbackWithOptionsAbnormalTest(done, type, extension, options);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0053
+     * @tc.desc   callback,createAsset image, with photoType-> null, error code:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_006';
+      console.info(TAG, testName);
+      const type = null;
+      const extension = 'jpg';
+      const options: photoAccessHelper.CreateOptions = {
+        title: testTitle,
+        subtype: photoAccessHelper.PhotoSubtype.DEFAULT
+      };
+      await createAssetCallbackWithOptionsAbnormalTest(done, type, extension, options);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0054
+     * @tc.desc   callback,createAsset image, with options-> null, error code:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_007';
+      console.info(TAG, testName);
+      const type = null;
+      const extension = 'jpg';
+      const options = null;
+      await createAssetCallbackWithOptionsAbnormalTest(done, type, extension, options);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0055
+     * @tc.desc   callback,createAsset image, with subtype -> null, success return uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_008';
+      console.info(TAG, testName);
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const extension = 'jpg';
+      const options: photoAccessHelper.CreateOptions = {
+        title: testTitle,
+        subtype: null as ESObject
+      };
+      try {
+        phAccessHelper.createAsset(type, extension, options, (error, uri) => {
+          if (uri !== undefined) {
+            console.info(TAG, `createAsset success; uri: ${uri}`);
+            expect(uri.includes(testTitle)).assertTrue();
+            done();
+          } else {
+            console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (err) {
+        console.error(TAG, `createAsset fail catch error: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0056
+     * @tc.desc   callback,createAsset image, with subtype -> '',success return uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_009';
+      console.info(TAG, testName);
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const extension = 'jpg';
+      const options: photoAccessHelper.CreateOptions = {
+        title: testTitle,
+        subtype: '' as ESObject
+      };
+      try {
+        phAccessHelper.createAsset(type, extension, options, (error, uri) => {
+          if (uri !== undefined) {
+            console.info(TAG, `createAsset success; uri: ${uri}`);
+            expect(uri.includes(testTitle)).assertTrue();
+            done();
+          } else {
+            console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (err) {
+        console.error(TAG, `createAsset fail catch error: ${err}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0057
+     * @tc.desc   callback,createAsset image, with subtype -> -1,success return uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010', Level.LEVEL4, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_CALLBACK_OPS_010';
+      console.info(TAG, testName);
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const extension = 'jpg';
+      const options: photoAccessHelper.CreateOptions = {
+        title: testTitle,
+        subtype: -1
+      };
+      try {
+        phAccessHelper.createAsset(type, extension, options, (error, uri) => {
+          if (uri !== undefined) {
+            console.info(TAG, `createAsset success; uri: ${uri}`);
+            expect(uri.includes(testTitle)).assertTrue();
+            done();
+          } else {
+            console.error(TAG, `createAsset failed; error: ${error?.code}, ${error?.message}`);
+            expect().assertFail();
+            done();
+          }
+        })
+      } catch (err) {
+        console.error(TAG, `createAsset fail catch error: ${err}`);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -828,6 +975,107 @@ export default function createAssetTest() {
         subtype: undefined
       };
       await createAssetPromiseWithOptionsAbnormalTest(done, type, extension, options);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0058
+     * @tc.desc   promise,createAsset image, with options -> null,error code:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_006';
+      console.info(TAG, testName);
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const extension = 'jpg';
+      const options = null;
+      await createAssetPromiseWithOptionsAbnormalTest(done, type, extension, options);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0059
+     * @tc.desc   promise,createAsset image, with subtype -> null, success return uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_007';
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const extension = 'jpg';
+      const options: photoAccessHelper.CreateOptions = {
+        title: testTitle,
+        subtype: null as ESObject
+      };
+      try {
+        let uri: string = await phAccessHelper.createAsset(type, extension, options);
+        console.info(TAG, testName, `createAsset success; uri: ${uri}`);
+        expect(uri.includes(testTitle)).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createAsset failed; error: ${error?.code}, ${error?.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0060
+     * @tc.desc   promise,createAsset image, with subtype -> '', success return uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_008';
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const extension = 'jpg';
+      const options: photoAccessHelper.CreateOptions = {
+        title: testTitle,
+        subtype: '' as ESObject
+      };
+      try {
+        let uri: string = await phAccessHelper.createAsset(type, extension, options);
+        console.info(TAG, testName, `createAsset success; uri: ${uri}`);
+        expect(uri.includes(testTitle)).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createAsset failed; error: ${error?.code}, ${error?.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009
+     * @tc.number SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATE_ASSET_0061
+     * @tc.desc   promise,createAsset image, with subtype -> -1, success return uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_PHOTOACCESSHELPER_CREATEASSETS_PROMISE_OPS_009';
+      const type: photoAccessHelper.PhotoType = photoType.IMAGE;
+      const extension = 'jpg';
+      const options: photoAccessHelper.CreateOptions = {
+        title: testTitle,
+        subtype: -1
+      };
+      try {
+        let uri: string = await phAccessHelper.createAsset(type, extension, options);
+        console.info(TAG, testName, `createAsset success; uri: ${uri}`);
+        expect(uri.includes(testTitle)).assertTrue();
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `createAsset failed; error: ${error?.code}, ${error?.message}`);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**

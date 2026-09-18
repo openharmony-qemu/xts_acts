@@ -1236,13 +1236,14 @@ napi_value AVSessionSetAVMetadataSuccess(napi_env env, napi_callback_info info)
     OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
     OH_AVSession_Activate(avsession);
     int32_t setResult = OH_AVSession_SetAVMetadata(avsession, avmetadata);
+    OH_AVSession_Destroy(avsession);
     OH_AVMetadata_Destroy(avmetadata);
     OH_AVMetadataBuilder_Destroy(builder);
     napi_value retValue;
     if (setResult == AV_SESSION_ERR_SUCCESS) {
-        napi_create_int32(env, g_trueValue, &retValue);
-    } else {
         napi_create_int32(env, g_falseValue, &retValue);
+    } else {
+        napi_create_int32(env, g_trueValue, &retValue);
     }
     return retValue;
 }

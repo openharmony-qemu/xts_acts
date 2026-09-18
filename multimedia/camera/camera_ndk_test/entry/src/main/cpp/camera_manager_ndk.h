@@ -526,6 +526,8 @@ public:
     Camera_ErrorCode OHgetPhysicalAperture(int useCaseCode);
     Camera_ErrorCode OHgetSupportedExposureDurationRange(int useCaseCode);
     Camera_ErrorCode OHgetExposureDuration(int useCaseCode);
+    Camera_ErrorCode GetWhiteBalanceRange(int useCaseCode);
+    Camera_ErrorCode GetWhiteBalance(int useCaseCode);
 
 private:
     NDKCamera(const NDKCamera&) = delete;

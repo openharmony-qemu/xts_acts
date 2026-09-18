@@ -3,6 +3,7 @@
     "pages/webSchemeHandlerResponse",
     "pages/webHttpBodyStream",
     "pages/setAndClearServiceWorkerWebSchemeHandler",
-    "pages/webSchemeHandlerRequest"
+    "pages/webSchemeHandlerRequest",
+    "pages/webCustomErrorCode"
   ]
 }

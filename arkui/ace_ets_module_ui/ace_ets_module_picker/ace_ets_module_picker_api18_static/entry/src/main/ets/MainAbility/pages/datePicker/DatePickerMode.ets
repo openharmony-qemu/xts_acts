@@ -13,8 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker, DatePickerMode} from '@ohos.arkui.component'
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  AttributeModifier,
+  DatePickerAttribute,
+  DatePicker,
+  DatePickerMode
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
@@ -30,7 +48,7 @@ struct DatePickerModeExample {
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: this.selectedDate,
-        mode:DatePickerMode.DATE,
+        mode: DatePickerMode.DATE,
       })
         .key('key_DatePicker_001')
         .onDateChange((value: Date) => {
@@ -41,7 +59,7 @@ struct DatePickerModeExample {
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: this.selectedDate,
-        mode:DatePickerMode.YEAR_AND_MONTH,
+        mode: DatePickerMode.YEAR_AND_MONTH,
       })
         .key('key_DatePicker_002')
         .onDateChange((value: Date) => {
@@ -52,7 +70,7 @@ struct DatePickerModeExample {
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: this.selectedDate,
-        mode:DatePickerMode.MONTH_AND_DAY,
+        mode: DatePickerMode.MONTH_AND_DAY,
       })
         .key('key_DatePicker_003')
         .onDateChange((value: Date) => {
@@ -63,7 +81,7 @@ struct DatePickerModeExample {
         start: new Date('1970-1-1'),
         end: new Date('2100-1-1'),
         selected: this.selectedDate,
-        mode:undefined,
+        mode: undefined,
       })
         .key('key_DatePicker_004')
         .onDateChange((value: Date) => {
@@ -103,7 +121,6 @@ struct DatePickerModeExample {
           this.selectedDate = value
           console.info('select current date is: ' + value.toString())
         })
-
     }.width('100%').height('100%')
   }
 }

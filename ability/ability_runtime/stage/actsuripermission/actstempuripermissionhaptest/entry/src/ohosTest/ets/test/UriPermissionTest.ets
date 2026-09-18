@@ -19,7 +19,7 @@ import base from '@ohos.base';
 import fileUri from '@ohos.file.fileuri';
 import fs from '@ohos.file.fs'
 import wantConstant from '@ohos.ability.wantConstant';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import Want from '@ohos.app.ability.Want';
 import ability from '@ohos.ability.ability';

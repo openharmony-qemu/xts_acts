@@ -163,10 +163,15 @@ int TestMatrixCreateRotationAbnormal()
         -DRAWING_NUMBER_10);
     // add assert
     EXPECT_NE(matrix3, nullptr);
+    
+    OH_Drawing_Matrix *matrix4 = OH_Drawing_MatrixCreateRotation(-DRAWING_NUMBER_90, DRAWING_NUMBER_10,
+        -DRAWING_NUMBER_10);
+    EXPECT_NE(matrix4, nullptr);
     // 4. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_MatrixDestroy(matrix2);
     OH_Drawing_MatrixDestroy(matrix3);
+    OH_Drawing_MatrixDestroy(matrix4);
     DrawingNativeMatrixTestTearDown();
     return OH_DRAWING_SUCCESS;
 }
@@ -784,11 +789,16 @@ int TestMatrixCreateScaleAbnormal()
         -DRAWING_NUMBER_10);
     // add assert
     EXPECT_NE(matrix4, nullptr);
+    // sx和sy为负数测试（镜像翻转）
+    OH_Drawing_Matrix *matrix5 = OH_Drawing_MatrixCreateScale(-DRAWING_NUMBER_10, -DRAWING_NUMBER_10, DRAWING_NUMBER_10,
+        DRAWING_NUMBER_10);
+    EXPECT_NE(matrix5, nullptr);
     // 5. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_MatrixDestroy(matrix2);
     OH_Drawing_MatrixDestroy(matrix3);
     OH_Drawing_MatrixDestroy(matrix4);
+    OH_Drawing_MatrixDestroy(matrix5);
     DrawingNativeMatrixTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

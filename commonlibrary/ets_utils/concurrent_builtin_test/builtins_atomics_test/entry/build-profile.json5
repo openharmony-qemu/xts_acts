@@ -23,6 +23,12 @@
         './src/ohosTest/ets/test/atomics/workers/Worker04.ets',
         './src/ohosTest/ets/test/atomics/workers/Worker05.ets',
         './src/ohosTest/ets/test/atomics/workers/Worker06.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker07.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker08.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker09.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker10.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker11.ets',
+        './src/ohosTest/ets/test/atomics/workers/Worker12.ets',
       ]
     }
   },

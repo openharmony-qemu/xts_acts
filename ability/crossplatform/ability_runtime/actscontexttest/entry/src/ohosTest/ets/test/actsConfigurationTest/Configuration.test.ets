@@ -15,7 +15,7 @@
 
 import common from '@ohos.app.ability.common';
 import configurationConstant from '@ohos.app.ability.ConfigurationConstant';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 
 export default function Configuration() {
   describe("Configuration", () => {
