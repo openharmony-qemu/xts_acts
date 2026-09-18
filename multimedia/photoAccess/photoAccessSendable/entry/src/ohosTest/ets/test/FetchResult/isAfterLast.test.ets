@@ -22,7 +22,8 @@ import {
   driveFn,
   getPermission,
   fetchAllOption,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function IsAfterLastTest () {
@@ -37,6 +38,7 @@ export default function IsAfterLastTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

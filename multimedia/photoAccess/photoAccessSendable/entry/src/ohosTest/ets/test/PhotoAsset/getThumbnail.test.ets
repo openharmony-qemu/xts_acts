@@ -25,7 +25,8 @@ import {
   getPermission,
   photoKeys,
   fetchOption,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function getThumbnailTest () {
@@ -39,6 +40,7 @@ export default function getThumbnailTest () {
       await getPermission();
       await driveFn();
       await sleep(2000);
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

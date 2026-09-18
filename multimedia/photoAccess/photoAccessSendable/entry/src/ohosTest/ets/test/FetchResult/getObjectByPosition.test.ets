@@ -23,7 +23,8 @@ import {
   fetchOption,
   photoKeys,
   getPermission,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function getObjectByPositionTest () {
@@ -38,6 +39,7 @@ export default function getObjectByPositionTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 
