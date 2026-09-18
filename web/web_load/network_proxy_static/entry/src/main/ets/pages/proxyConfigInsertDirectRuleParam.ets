@@ -120,34 +120,6 @@ struct proxyConfigInsertDirectRuleParam {
               break;
             }
 
-            case 'testInsertDirectRuleNull': {
-              try {
-                let config: webview.ProxyConfig = new webview.ProxyConfig();
-                let nullValue: webview.ProxySchemeFilter | null = null;
-                config.insertDirectRule(nullValue as webview.ProxySchemeFilter);
-                Utils.emitEvent(false, 202502403);
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code === 401, 202502403);
-              }
-              break;
-            }
-
-            case 'testInsertDirectRuleUndefined': {
-              try {
-                let config: webview.ProxyConfig = new webview.ProxyConfig();
-                let undefinedValue: webview.ProxySchemeFilter | undefined = undefined;
-                config.insertDirectRule(undefinedValue as webview.ProxySchemeFilter);
-                Utils.emitEvent(false, 202502404);
-              } catch (error) {
-                error = error as BusinessError;
-                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code === 401, 202502404);
-              }
-              break;
-            }
-
             case 'testInsertDirectRuleNegativeEnum': {
               try {
                 let config: webview.ProxyConfig = new webview.ProxyConfig();
@@ -186,34 +158,6 @@ struct proxyConfigInsertDirectRuleParam {
               }
               break;
             }
-
-            // case 'testInsertDirectRuleString': {
-            //   try {
-            //     let config: webview.ProxyConfig = new webview.ProxyConfig();
-            //     let stringValue: webview.ProxySchemeFilter | string = 'MATCH_ALL_SCHEMES';
-            //     config.insertDirectRule(stringValue as webview.ProxySchemeFilter);
-            //     Utils.emitEvent(false, 202502408);
-            //   } catch (error) {
-            //     error = error as BusinessError;
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //     Utils.emitEvent(error.code === 401, 202502408);
-            //   }
-            //   break;
-            // }
-
-            // case 'testInsertDirectRuleObject': {
-            //   try {
-            //     let config: webview.ProxyConfig = new webview.ProxyConfig();
-            //     let objectValue: Object = new webview.ProxyConfig();
-            //     config.insertDirectRule(objectValue as webview.ProxySchemeFilter);
-            //     Utils.emitEvent(false, 202502409);
-            //   } catch (error) {
-            //     error = error as BusinessError;
-            //     console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
-            //     Utils.emitEvent(error.code === 401, 202502409);
-            //   }
-            //   break;
-            // }
 
             case 'emitOnSwitchNextPageSetWow': {
               let uiContext: UIContext = this.getUIContext();

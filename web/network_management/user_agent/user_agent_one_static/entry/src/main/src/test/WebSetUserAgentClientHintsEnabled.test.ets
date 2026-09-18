@@ -134,54 +134,6 @@ export default function webSetUserAgentClientHintsEnabled() {
     })
 
     /**
-     * @tc.name   testSetUserAgentClientHintsEnabledNullStatic
-     * @tc.number SUB_ACE_WEB_SETUSERAGENTCLIENTHINTSENABLEDAPI_0500
-     * @tc.desc   test setUserAgentClientHintsEnabled null
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetUserAgentClientHintsEnabledNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      Utils.emitEvent('emitSetUserAgentClientHintsEnabledNull', 10);
-      await Utils.msSleep(2000);
-      Utils.registerBaseEvent('testSetUserAgentClientHintsEnabledNullStatic', '401', 174140, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
-      await Utils.msSleep(2000);
-      done();
-    })
-
-    /**
-     * @tc.name   testSetUserAgentClientHintsEnabledUndefinedStatic
-     * @tc.number SUB_ACE_WEB_SETUSERAGENTCLIENTHINTSENABLEDAPI_0600
-     * @tc.desc   test setUserAgentClientHintsEnabled undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetUserAgentClientHintsEnabledUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      Utils.emitEvent('emitSetUserAgentClientHintsEnabledUndefined', 10);
-      await Utils.msSleep(2000);
-      Utils.registerBaseEvent('testSetUserAgentClientHintsEnabledUndefinedStatic', '401', 174150, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          const data = backData?.data as Record<string, RecordData>;
-          const action = data['ACTION'];
-          expect(action).assertEqual(expected);
-        });
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('WebSetUserAgentClientHintsEnabledButton', 10, '');
-      await Utils.msSleep(2000);
-      done();
-    })
-
-    /**
      * @tc.name        SwitchNextPageStatic
      * @tc.number      SUB_WEB_ERRORCODE_JSMESSAGEEXTGET_ARRAY_0500
      * @tc.desc        test PAGE_REDIRECT

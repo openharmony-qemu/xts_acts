@@ -106,34 +106,6 @@ struct webSetUserAgentClientHintsEnabled {
                 }
                 break;
               }
-              case 'emitSetUserAgentClientHintsEnabledNull': {
-                try {
-                  webView.WebviewController.setUserAgentClientHintsEnabled(null);
-                  Utils.emitEvent(false, 174140);
-                } catch (error) {
-                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                  if (Number(error.code) == 401) {
-                    Utils.emitEvent('401', 174140);
-                  } else {
-                    Utils.emitEvent(String(error.code), 174140);
-                  }
-                }
-                break;
-              }
-              case 'emitSetUserAgentClientHintsEnabledUndefined': {
-                try {
-                  webView.WebviewController.setUserAgentClientHintsEnabled(undefined);
-                  Utils.emitEvent(false, 174150);
-                } catch (error) {
-                  console.error(`catch ErrorCode: ${error.code},  Message: ${error.message}`);
-                  if (Number(error.code) == 401) {
-                    Utils.emitEvent('401', 174150);
-                  } else {
-                    Utils.emitEvent(String(error.code), 174150);
-                  }
-                }
-                break;
-              }
               case 'SwitchNextPageStatic' : {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();

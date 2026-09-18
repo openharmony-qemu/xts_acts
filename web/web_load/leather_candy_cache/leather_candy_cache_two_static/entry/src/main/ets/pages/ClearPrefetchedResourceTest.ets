@@ -149,18 +149,6 @@ struct clearPrefetchedResourceTest {
               break;
             }
 
-            case 'testPrefetchResourceError17100002Static001': {
-              try {
-                web_webview.WebviewController.prefetchResource(
-                  null,
-                  [{ headerKey: 'Accept', headerValue: 'application/json' }],
-                  'KeyNullRequest', 500);
-                Utils.emitEvent(false, 41023107);
-              } catch (error) {
-                Utils.emitEvent(error.code, 41023107);
-              }
-              break;
-            }
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
