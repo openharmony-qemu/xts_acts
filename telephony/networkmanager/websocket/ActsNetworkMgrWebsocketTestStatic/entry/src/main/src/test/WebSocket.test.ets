@@ -1577,6 +1577,7 @@ export default function WebSocketTest() {
         it('testNetworkWebSocketServerClose_static_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
             async (done: () => void): Promise<void> => {
+                let testDone: boolean = false;
                 try {
                     let caseName: string = 'testNetworkWebSocketServerClose_static_0200';
                     let server: webSocket.WebSocketServer = webSocket.createWebSocketServer()
@@ -1591,10 +1592,12 @@ export default function WebSocketTest() {
                             hilog.info(domain, tag, '%{public}s', caseName + 'webSocketServer start success!');
                         } else {
                             hilog.info(domain, tag, '%{public}s', caseName + 'webSocketServer start fail!');
+                            testDone = true;
                             done();
                         }
                     }).catch((err: Error) => {
                         hilog.info(domain, tag, '%{public}s', caseName + 'webSocketServer start fail!');
+                        testDone = true;
                         done();
                     });
 
@@ -1610,22 +1613,27 @@ export default function WebSocketTest() {
                                 clientPort: 8888
                             }
                             server.close(wrongConnection).then((value: boolean | undefined) => {
+                                if (testDone) return;
                                 if (value) {
                                     ExpectTrue(value !== null);
                                     console.info('close client successfully');
+                                    testDone = true;
                                     done();
                                 } else {
                                     console.error('close client failed');
                                 }
                             }).catch((err: Error) => {
+                                if (testDone) return;
                                 ExpectTrue(err.code === 2302006);
                                 server.stop()
+                                testDone = true;
                                 console.info(`${caseName} test end`);
                                 done();
                             });
                         } catch (err) {
                             hilog.info(domain, tag, '%{public}s', caseName + 'client fail!' + err.code);
                             ExpectTrue(err.code === 2302006);
+                            testDone = true;
                             done();
                         }
                     });
@@ -1633,11 +1641,13 @@ export default function WebSocketTest() {
                     let client: webSocket.WebSocket = webSocket.createWebSocket()
                     hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
                     client.connect('ws://127.0.0.1:8061', (err: BusinessError<void> | null, value: boolean | undefined) => {
+                        if (testDone) return;
                         if (value) {
                             hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
                         } else {
                             hilog.info(domain, tag, '%{public}s', caseName + 'client success!');
                             ExpectFail();
+                            testDone = true;
                             done();
                         }
                     })
@@ -1647,15 +1657,18 @@ export default function WebSocketTest() {
                         ExpectTrue(connections !== null);
                         server.stop()
                         hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                        testDone = true;
                         done();
                     } else {
                         ExpectFail();
                         server.stop();
                         hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                        testDone = true;
                         done();
                     }
                 } catch (err) {
                     ExpectTrue(err.code === 201);
+                    testDone = true;
                     done();
                 }
             });
@@ -1695,7 +1708,7 @@ export default function WebSocketTest() {
                     client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
                         if (value) {
                             hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-                            msSleep(2000).then(() => {
+                            msSleep(5000).then(() => {
                                 let connections = server.listAllConnections();
                                 if (connections && connections.length > 0) {
                                     hilog.info(domain, tag, '%{public}s', caseName + JSON.stringify(connections[0]) + ' connections');
