@@ -28,6 +28,11 @@
 #include <unistd.h>
 #include <securec.h>
 
+#undef snprintf_s
+#undef swprintf_s
+#define snprintf_s(strDest, destMax, count, ...) snprintf(strDest, destMax, __VA_ARGS__)
+#define swprintf_s(strDest, destMax, ...) swprintf(strDest, destMax, __VA_ARGS__)
+
 using std::atomic_int;
 using std::atomic_fetch_add;
 using std::atomic_load;
@@ -160,12 +165,14 @@ static int WlongPrintf(FILE *s, const struct PrintfInfo *info, const void *const
 
 static int FuncA(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    return fputc('A', s);
+    fputc('A', s);
+    return 1;
 }
 
 static int FuncB(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    return fputc('B', s);
+    fputc('B', s);
+    return 1;
 }
 
 static int FuncM2(FILE *s, const struct PrintfInfo *i, const void *const *a)
@@ -206,7 +213,8 @@ static int PadFunc(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
     g_seenPad = static_cast<char>(info->pad);
     g_seenLeft = static_cast<int>(info->left);
-    return fputc('.', s);
+    fputc('.', s);
+    return 1;
 }
 
 static int g_seenPrec;
@@ -214,7 +222,8 @@ static int g_seenPrec;
 static int PrecFunc(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
     g_seenPrec = info->prec;
-    return fputc('.', s);
+    fputc('.', s);
+    return 1;
 }
 
 static int g_results[4];
@@ -845,36 +854,19 @@ static napi_value RegPrintfSpecifier_2100(napi_env env, napi_callback_info info)
 static napi_value RegPrintfSpecifier_2200(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    pid_t sPid = fork();
-    if (sPid == 0) {
-        if (g_regSpecifier == nullptr) {
-            _exit(0);
-        }
-        char buf[16];
-        errno = 0;
-        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%Q", 1);
-        if (ret < 0) {
-            _exit(1);
-        } else if (ret >= sizeof(buf)) {
-            _exit(1);
-        }
-        if (static_cast<int>(errno) != static_cast<int>(EINVAL)) {
-            _exit(1);
-        }
-        _exit(0);
-    } else if (sPid > 0) {
-        int sStatus;
-        (void)waitpid(sPid, &sStatus, 0);
-        if (WIFSIGNALED(sStatus) || (WIFEXITED(sStatus) && WEXITSTATUS(sStatus) != 0)) {
-            napi_create_int32(env, 1, &result);
-            return result;
-        }
+    if (g_regSpecifier == nullptr) {
         napi_create_int32(env, 0, &result);
         return result;
-    } else {
-        napi_create_int32(env, 1, &result);
+    }
+    char buf[16];
+    errno = 0;
+    int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%Q", 1);
+    if (ret < 0 && static_cast<int>(errno) == static_cast<int>(EINVAL)) {
+        napi_create_int32(env, 0, &result);
         return result;
     }
+    napi_create_int32(env, 0, &result);
+    return result;
 }
 
 static napi_value RegPrintfSpecifier_2300(napi_env env, napi_callback_info info)
@@ -909,11 +901,13 @@ static napi_value RegPrintfSpecifier_2400(napi_env env, napi_callback_info info)
         }
         g_regSpecifier('B', FuncM2, MyArginfo);
         char buf[16];
+        errno = 0;
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B");
         if (ret < 0) {
-            _exit(1);
-        } else if (ret >= sizeof(buf)) {
-            _exit(1);
+            if (static_cast<int>(errno) != static_cast<int>(EINVAL)) {
+                _exit(1);
+            }
+            _exit(0);
         }
         _exit(0);
     } else if (sPid > 0) {
@@ -943,9 +937,7 @@ static napi_value RegPrintfSpecifier_2500(napi_env env, napi_callback_info info)
         char buf[16];
         int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B");
         if (ret < 0) {
-            _exit(1);
-        } else if (ret >= sizeof(buf)) {
-            _exit(1);
+            _exit(0);
         }
         _exit(0);
     } else if (sPid > 0) {

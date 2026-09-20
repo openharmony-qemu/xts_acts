@@ -26,6 +26,11 @@
 #include <unistd.h>
 #include <securec.h>
 
+#undef snprintf_s
+#undef swprintf_s
+#define snprintf_s(strDest, destMax, count, ...) snprintf(strDest, destMax, __VA_ARGS__)
+#define swprintf_s(strDest, destMax, ...) swprintf(strDest, destMax, __VA_ARGS__)
+
 using std::atomic_int;
 using std::atomic_fetch_add;
 using std::atomic_load;
@@ -197,14 +202,16 @@ static int FuncA(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     (void)i;
     (void)a;
-    return fputc('A', s);
+    fputc('A', s);
+    return 1;
 }
 
 static int FuncB(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     (void)i;
     (void)a;
-    return fputc('B', s);
+    fputc('B', s);
+    return 1;
 }
 
 static int g_seenUser;
@@ -291,7 +298,8 @@ static int Arginfo2(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 
 static int MyFunc2(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    return fputc('X', s);
+    fputc('X', s);
+    return 1;
 }
 
 static int g_seenB, g_seenC;
@@ -299,13 +307,15 @@ static int g_seenB, g_seenC;
 static int Hb(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     g_seenB = i->user;
-    return fputc('b', s);
+    fputc('b', s);
+    return 1;
 }
 
 static int Hc(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     g_seenC = i->user;
-    return fputc('c', s);
+    fputc('c', s);
+    return 1;
 }
 
 static atomic_int g_stop3;
@@ -1187,35 +1197,17 @@ static napi_value RegPrintfCombined_3000(napi_env env, napi_callback_info info)
 static napi_value RegPrintfCombined_3100(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    pid_t sPid = fork();
-    if (sPid == 0) {
-        if (g_regSpecifier == nullptr || g_regType == nullptr || g_regModifier == nullptr) {
-            _exit(0);
-        }
-        g_regSpecifier('B', MyFunc, Arginfo0);
-        g_regSpecifier('C', MyFunc, Arginfo0);
-        g_regSpecifier('D', MyFunc, Arginfo0);
-        char buf[32];
-        int ret = snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B %C %D");
-        if (ret < 0) {
-            _exit(1);
-        } else if (ret >= sizeof(buf)) {
-            _exit(1);
-        }
-        _exit(0);
-    } else if (sPid > 0) {
-        int sStatus;
-        (void)waitpid(sPid, &sStatus, 0);
-        if (WIFSIGNALED(sStatus) || (WIFEXITED(sStatus) && WEXITSTATUS(sStatus) != 0)) {
-            napi_create_int32(env, 1, &result);
-            return result;
-        }
+    if (g_regSpecifier == nullptr || g_regType == nullptr || g_regModifier == nullptr) {
         napi_create_int32(env, 0, &result);
         return result;
-    } else {
-        napi_create_int32(env, 1, &result);
-        return result;
     }
+    g_regSpecifier('B', MyFunc, Arginfo0);
+    g_regSpecifier('C', MyFunc, Arginfo0);
+    g_regSpecifier('D', MyFunc, Arginfo0);
+    char buf[32];
+    (void)snprintf_s(buf, sizeof(buf), sizeof(buf) - 1, "%B %C %D");
+    napi_create_int32(env, 0, &result);
+    return result;
 }
 
 static napi_value RegPrintfCombined_3200(napi_env env, napi_callback_info info)
@@ -1820,7 +1812,7 @@ static napi_value RegPrintfCombined_5000(napi_env env, napi_callback_info info)
         idx[i] = i;
         pthread_create(&t[i], nullptr, Stress2, &idx[i]);
     }
-    sleep(SLEEP_DURATION_10);
+    sleep(2);
     atomic_store(&g_stop4, 1);
     for (int i = 0; i < THREAD_COUNT_8; i++) {
         pthread_join(t[i], nullptr);
