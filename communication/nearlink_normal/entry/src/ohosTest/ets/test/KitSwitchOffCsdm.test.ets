@@ -18,8 +18,8 @@ import cdsm from '@ohos.nearlink.cdsm';
 import manager from '@ohos.nearlink.manager';
 import { clickRequestPermission } from './ClickRequestPermission';
 import { sleep } from './Sleep';
-
-import {clickCloseNearLinkSwitch,clickOpenNearLinkSwitch} from './Tools';
+import { openNearLink } from './OpenNearLink';
+import { closeNearLink } from './CloseNearLink';
 
 export default function nearlinkswitchoffCsdmTest() {
   describe('nearlinkswitchoffCsdmTest', () => {
@@ -53,7 +53,7 @@ export default function nearlinkswitchoffCsdmTest() {
     })
     beforeEach(async (done: Function) => {
       console.info('beforeEach start');
-      await clickCloseNearLinkSwitch();
+      await closeNearLink();
       console.info('beforeEach end');
       done();
     })
@@ -62,7 +62,7 @@ export default function nearlinkswitchoffCsdmTest() {
     })
     afterAll(async (done: Function) => {
       console.info('beforeEach start');
-      await clickOpenNearLinkSwitch();
+      await openNearLink();
       console.info('beforeEach end');
       done();
     })
