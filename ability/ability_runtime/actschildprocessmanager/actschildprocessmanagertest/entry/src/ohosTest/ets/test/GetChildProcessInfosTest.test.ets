@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import childProcessManager from '@ohos.app.ability.childProcessManager';
 import { ChildProcessArgs } from '@ohos.app.ability.ChildProcessArgs';
 import { ChildProcessOptions } from '@ohos.app.ability.ChildProcessOptions';
