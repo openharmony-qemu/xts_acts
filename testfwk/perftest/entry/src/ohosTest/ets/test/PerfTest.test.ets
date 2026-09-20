@@ -111,16 +111,17 @@ export default function PerfTestTest() {
       let driver = Driver.create()
       await driver.delayMs(3000)
       let metrics: Array<PerfMetric> = [PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
-      let button = await driver.findComponent(ON.text('ListPage'))
+      let displayId: number = 0;
       let actionCode = async (finish: Callback<boolean>) => {
+        let button = await driver.findComponent(ON.text('ListPage'))
+        displayId = await button.getDisplayId()
         await driver.delayMs(1000)
         await button.click()
         await driver.delayMs(1000)
         finish(true)
       }
       let resetCode = async (finish: Callback<boolean>) => {
-        let id = await button.getDisplayId()
-        await driver.pressBack(id)
+        await driver.pressBack(displayId)
         await driver.delayMs(1000)
         finish(true)
       }
