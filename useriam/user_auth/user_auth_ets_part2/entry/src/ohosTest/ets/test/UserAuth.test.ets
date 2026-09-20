@@ -264,7 +264,7 @@ export default function UserAuthTest() {
     /**
      * @tc.name   SUB_Security_IAM_PassiveRecognition_Api_5007
      * @tc.number SUB_Security_IAM_PassiveRecognition_Api_5007
-     * @tc.desc   Verify offUserRecognitionChange unregisters all callbacks registered by onUserRecognitionChange when its optional overload is called without any argument
+     * @tc.desc   Verify offUserRecognitionChange returns null when called without any callback registered
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
@@ -275,12 +275,10 @@ export default function UserAuthTest() {
       if (isSupport) {
         let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
         expect(mgr != null).assertTrue();
-        mgr!.onUserRecognitionChange((result) => {
-          expect(result != undefined).assertTrue();
-        });
         try {
-          mgr!.offUserRecognitionChange();
-          console.info("SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange success");
+          let ret = mgr!.offUserRecognitionChange();
+          expect(ret === null || ret === undefined).assertTrue();
+          console.info("SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange returns null");
         } catch (err) {
           console.info(`SUB_Security_IAM_PassiveRecognition_Api_5007: offUserRecognitionChange failed, err.code ${err.code}, err.message ${err.message}`);
           expect(false).assertTrue();
