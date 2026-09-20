@@ -36,12 +36,17 @@ export class AVMusicTemplateUtil {
     if (!AVMusicTemplateUtil.controller) {
       AVMusicTemplateUtil.getTemplate();
       const des: avMusicTemplate.AVMusicTemplateDescriptor[] = avMusicTemplate.getAllAVMusicTemplateDescriptors();
+      CommonUtils.logInfo(TAG, `des.length=${des.length}`);
       let sessionId = '';
       for (let item of des) {
         if (item.bundleName === BUNDLE_NAME) {
           sessionId = item.sessionId;
           break;
         }
+      }
+      if (sessionId === '' && des.length > 0) {
+        sessionId = des[0].sessionId;
+        CommonUtils.logInfo(TAG, `Using first available sessionId=${sessionId}, bundleName=${des[0].bundleName}`);
       }
       CommonUtils.logInfo(TAG, `sessionId=${sessionId}`);
       AVMusicTemplateUtil.controller = avMusicTemplate.createAVMusicTemplateController(sessionId);

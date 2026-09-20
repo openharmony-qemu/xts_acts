@@ -388,3 +388,5 @@ export type typeWait02 ={ ta:Int32Array, index: number }
 export type typeWait05 ={ ta:BigInt64Array, index: number }
 export type typeWait03 ={ ta:Int32Array, index: number, value: number ,timeout:number}
 export type typeWait06 ={ ta:BigInt64Array, index: number, value: bigint ,timeout:number}
+export type typeWait07 = { ta: Int32Array }
+export type typeWait11 = { sab: SharedArrayBuffer }

@@ -14,6 +14,7 @@
  */
 
 import { beforeAll, beforeEach, describe, it , TestType, Size, expect, Level } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -102,6 +103,24 @@ export default function webResourceError() {
     it('testGetErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetErrorCode001", 120010)
       Utils.registerEvent("testGetErrorCode001", -200, 120020, done);
+      let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   testGetCustomErrorCode001
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_0100
+     * @tc.desc   test WebResourceError getCustomErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetCustomErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("testGetCustomErrorCode001", 120010)
+      Utils.registerBaseEvent("testGetCustomErrorCode001", 32159, 120025, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
       await component.click();
     })

@@ -147,6 +147,108 @@ static napi_value Asset_Add_Auth(napi_env env, napi_callback_info info)
     return result;
 }
 
+static int32_t AddAssetForPreQuery(const char *alias, uint32_t accessibility)
+{
+    Asset_Blob aliasBlob = {static_cast<uint32_t>(strlen(alias)),
+                            reinterpret_cast<uint8_t *>(const_cast<char *>(alias))};
+    static const char secret[] = "123456789";
+    Asset_Blob secretBlob = {static_cast<uint32_t>(sizeof(secret) - 1),
+                             reinterpret_cast<uint8_t *>(const_cast<char *>(secret))};
+    Asset_Attr attr[] = {
+        {.tag = ASSET_TAG_SECRET, .value.blob = secretBlob},
+        {.tag = ASSET_TAG_ALIAS, .value.blob = aliasBlob},
+        {.tag = ASSET_TAG_ACCESSIBILITY, .value.u32 = accessibility},
+        {.tag = ASSET_TAG_AUTH_TYPE, .value.u32 = ASSET_AUTH_TYPE_ANY},
+    };
+    int32_t ret = OH_Asset_Add(attr, sizeof(attr) / sizeof(attr[0]));
+    if (ret == ASSET_SUCCESS || ret == ASSET_DUPLICATED) {
+        return ASSET_SUCCESS;
+    }
+    return ret;
+}
+
+static napi_value Asset_PreQueryLimitExceeded(napi_env env, napi_callback_info info)
+{
+    const uint32_t preQueryTimes = 20;
+    int32_t addResult = AddAssetForPreQuery("pre_query_limit_alias", ASSET_ACCESSIBILITY_DEVICE_POWERED_ON);
+    Asset_Attr query[] = {};
+    Asset_Blob challenges[preQueryTimes] = {{0, nullptr}};
+    uint32_t successCount = 0;
+    int32_t ret = addResult;
+    for (uint32_t i = 0; i < preQueryTimes && ret == ASSET_SUCCESS; ++i) {
+        Asset_Blob challenge = {0, nullptr};
+        ret = OH_Asset_PreQuery(query, sizeof(query) / sizeof(query[0]), &challenge);
+        if (ret == ASSET_SUCCESS) {
+            challenges[successCount++] = challenge;
+        }
+    }
+
+    for (uint32_t i = 0; i < successCount; ++i) {
+        Asset_Attr postQuery[] = {
+            {.tag = ASSET_TAG_AUTH_CHALLENGE, .value.blob = challenges[i]},
+        };
+        OH_Asset_PostQuery(postQuery, sizeof(postQuery) / sizeof(postQuery[0]));
+        OH_Asset_FreeBlob(&challenges[i]);
+    }
+
+    int32_t result = ret;
+    if (addResult != ASSET_SUCCESS) {
+        result = addResult;
+    } else if (ret == ASSET_SUCCESS) {
+        result = -1;
+    }
+    napi_value resultReal;
+    napi_create_uint32(env, static_cast<uint32_t>(result), &resultReal);
+    return resultReal;
+}
+
+static napi_value Asset_PreQueryUnsupported(napi_env env, napi_callback_info info)
+{
+    int32_t addResult = AddAssetForPreQuery("pre_query_unsupported_alias1",
+                                            ASSET_ACCESSIBILITY_DEVICE_UNLOCKED);
+    if (addResult != ASSET_SUCCESS) {
+        napi_value resultReal;
+        napi_create_uint32(env, static_cast<uint32_t>(addResult), &resultReal);
+        return resultReal;
+    }
+    addResult = AddAssetForPreQuery("pre_query_unsupported_alias2",
+                                    ASSET_ACCESSIBILITY_DEVICE_FIRST_UNLOCKED);
+    if (addResult != ASSET_SUCCESS) {
+        napi_value resultReal;
+        napi_create_uint32(env, static_cast<uint32_t>(addResult), &resultReal);
+        return resultReal;
+    }
+
+    Asset_Attr query[] = {};
+    Asset_Blob challenge = {0, nullptr};
+    int32_t ret = OH_Asset_PreQuery(query, sizeof(query) / sizeof(query[0]), &challenge);
+    if (ret == ASSET_SUCCESS) {
+        Asset_Attr postQuery[] = {
+            {.tag = ASSET_TAG_AUTH_CHALLENGE, .value.blob = challenge},
+        };
+        OH_Asset_PostQuery(postQuery, sizeof(postQuery) / sizeof(postQuery[0]));
+        OH_Asset_FreeBlob(&challenge);
+    }
+    napi_value resultReal;
+    napi_create_uint32(env, static_cast<uint32_t>(ret), &resultReal);
+    return resultReal;
+}
+
+static napi_value Asset_QuerySyncResultError(napi_env env, napi_callback_info info)
+{
+    const char *alias = "demo_code";
+    Asset_Blob aliasBlob = {static_cast<uint32_t>(strlen(alias)),
+                            reinterpret_cast<uint8_t *>(const_cast<char *>(alias))};
+    Asset_Attr query[] = {
+        {.tag = ASSET_TAG_ALIAS, .value.blob = aliasBlob},
+    };
+    Asset_SyncResult syncResult = {0};
+    int32_t result = OH_Asset_QuerySyncResult(query, sizeof(query) / sizeof(query[0]), &syncResult);
+    napi_value resultReal;
+    napi_create_uint32(env, static_cast<uint32_t>(result), &resultReal);
+    return resultReal;
+}
+
 static int32_t AssetPreAndPostQuerySuccess(Asset_Attr *attr, uint32_t attrCnt)
 {
     uint8_t challengeBuffer[32] = "";
@@ -889,6 +991,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"asset_preAndPostQuery", nullptr, Asset_PreAndPostQuery, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"asset_postQuery", nullptr, Asset_PostQuery, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"asset_querySyncResult", nullptr, Asset_QuerySyncResult, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"asset_preQueryLimitExceeded", nullptr, Asset_PreQueryLimitExceeded, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"asset_preQueryUnsupported", nullptr, Asset_PreQueryUnsupported, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"asset_querySyncResultError", nullptr, Asset_QuerySyncResultError, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
 
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

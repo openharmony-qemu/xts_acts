@@ -905,5 +905,41 @@ export default function avMusicTemplateEnumTest() {
           CommonUtils.logError(TAG, "AV_MUSIC_TEMPLATE_ENUM_0051 catch err: " + err);
         }
       })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0100
+     * @tc.desc   Testing av music template enum data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          expect(avMusicTemplate.SearchPlayInfoType?.PLAY_MUSIC_LIST).assertEqual('playMusicList');
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "AV_MUSIC_TEMPLATE_ENUM_0100 catch err: " + err);
+          expect().assertFail();
+        }
+      })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0200
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0200
+     * @tc.desc   Testing av music template enum data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_AV_MUSIC_TEMPLATE_ENUM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          expect(avMusicTemplate.SearchPlayInfoType?.PLAY_VIDEO_LIST).assertEqual('playVideoList');
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "AV_MUSIC_TEMPLATE_ENUM_0200 catch err: " + err);
+          expect().assertFail();
+        }
+      })
   })
 }

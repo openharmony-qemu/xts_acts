@@ -1226,26 +1226,27 @@ async function getPlaybackPosition(avPlayer: media.AVPlayer | null, done: Functi
           console.info(`avPlayer is null`);
           break;
         }
-        avPlayer.prepare()
+        await avPlayer.prepare()
         break;
       case PREPARED:
-        avPlayer?.play()
+        await avPlayer?.play()
         break;
       case PLAYING:
-        avPlayer?.pause()
+        await mediaTestBase.msleepAsync(500)
+        await avPlayer?.pause()
         break;
       case PAUSED:
         if (!avPlayer) {
           console.info(`avPlayer is null`);
           break;
         }
-        avPlayer?.play()
+        await avPlayer?.play()
         playbackPosition = avPlayer.getPlaybackPosition();
         console.info(`AVPlayer getPlaybackPosition == ${playbackPosition} ms`);
         expect(playbackPosition).assertLargerOrEqual(0);
         break;
       case COMPLETED:
-        avPlayer?.release()
+        await avPlayer?.release()
         break;
       case RELEASED:
         avPlayer = null;

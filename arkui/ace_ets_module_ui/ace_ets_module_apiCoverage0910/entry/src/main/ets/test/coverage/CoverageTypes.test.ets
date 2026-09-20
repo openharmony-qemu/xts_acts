@@ -207,5 +207,148 @@ export default function coverageTypesTest() {
       expect(getInspectorByKey('btnPopup').length > 0).assertTrue();
       done();
     });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_COLORMETRICS_1200
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_COLORMETRICS_1200
+     * @tc.desc Cover ColorMetrics getters alpha/red/green/blue/color and blendColor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_COLORMETRICS_1200', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('colorMetricsFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_MATRIXMETHOD_1300
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_MATRIXMETHOD_1300
+     * @tc.desc Cover Matrix2D.identity / invert
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_MATRIXMETHOD_1300', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('matrixMethodFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_CURVES_1400
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_CURVES_1400
+     * @tc.desc Cover curves.init / spring / steps
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_CURVES_1400', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('curvesFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_TRANSITIONCTOR_1500
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_TRANSITIONCTOR_1500
+     * @tc.desc Cover TransitionEffect constructor
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_TRANSITIONCTOR_1500', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('transitionCtorFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_RADIOSTYLE_1600
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_RADIOSTYLE_1600
+     * @tc.desc Cover RadioAttribute.radioStyle
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_RADIOSTYLE_1600', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('radioStyleFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      expect(getInspectorByKey('radioCoverage').length > 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_PIVOTFILTER_1700
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_PIVOTFILTER_1700
+     * @tc.desc Cover Pivot / Filter type aliases
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_PIVOTFILTER_1700', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('pivotFilterFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_MENUSYMBOL_1800
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_MENUSYMBOL_1800
+     * @tc.desc Cover Menu.subMenuExpandSymbol
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_MENUSYMBOL_1800', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('menuSymbolFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      expect(getInspectorByKey('btnMenu').length > 0).assertTrue();
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_DIALOGGETSTATE_1900
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_DIALOGGETSTATE_1900
+     * @tc.desc Cover CustomDialogController.getState
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_DIALOGGETSTATE_1900', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('dialogGetStateFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_LAZYFOREACH_2000
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_LAZYFOREACH_2000
+     * @tc.desc Cover LazyForEach and DataChangeListener.onDataReloaded
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_LAZYFOREACH_2000', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('lazyFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ARKUI_APICOVERAGE0910_PARTICLE_2100
+     * @tc.name SUB_ARKUI_APICOVERAGE0910_PARTICLE_2100
+     * @tc.desc Cover ParticleAttribute.rippleFields / velocityFields
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_ARKUI_APICOVERAGE0910_PARTICLE_2100', Level.LEVEL1, async (done: Function) => {
+      let node = getInspectorByKey('particleFlag');
+      expect(JSON.parse(node).$attrs.content).assertEqual('ok');
+      expect(getInspectorByKey('particleCoverage').length > 0).assertTrue();
+      done();
+    });
   });
 }

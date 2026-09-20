@@ -15,6 +15,7 @@
 
 #include "WebErrorCodeList.h"
 #include "WebSchemeHandlerTest.h"
+#include "WebErrorInfoTest.h"
 #include "napi/native_api.h"
 #include "native_common.h"
 #include "web/arkweb_interface.h"
@@ -956,6 +957,7 @@ static void AddExFunction(std::vector<napi_property_descriptor> &descVector)
     for (const auto& desc : descEx) {
         descVector.push_back(desc);
     }
+    AddErrorInfoFunctions(descVector);
 }
 
 static napi_value Init(napi_env env, napi_value exports)

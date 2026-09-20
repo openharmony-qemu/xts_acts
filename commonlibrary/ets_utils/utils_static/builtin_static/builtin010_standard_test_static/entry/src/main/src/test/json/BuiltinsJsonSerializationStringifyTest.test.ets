@@ -386,7 +386,7 @@ export default function builtinsJsonSerializationStringifyTest(): void {
      */
     it('builtinsJsonSerializationStringifyTest0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const undefResult: string | undefined = JSON.stringify(undefined);
-      const isUndef = (undefResult === undefined) || (undefResult === "");
+      const isUndef = (undefResult === undefined) || (undefResult === 'undefined');
       expect(isUndef).assertTrue();
 
       const nullResult: string = JSON.stringify(null);

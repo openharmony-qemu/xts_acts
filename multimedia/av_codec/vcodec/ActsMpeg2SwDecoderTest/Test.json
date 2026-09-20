@@ -18,20 +18,22 @@
       "cleanup-apps": true
     },
     {
-      "type": "ShellKit",
-      "run-command": [
-	    "mkdir -p /data/app/el2/100/base/com.example.actsmpeg2swdecodertest/haps/entry_test/files",
- 	    "chmod 777 -R /data/app/el2/100/base/com.example.actsmpeg2swdecodertest/haps/entry_test/files",
-        "power-shell wakeup",
-        "power-shell setmode 602"
-      ]
-    },
-    {
       "type": "PushKit",
       "pre-push": [],
       "push": [
- 	       "./resource/media/codec/video_decoder/main@high_level_1920_1080_60.m2v->/data/app/el2/100/base/com.example.actsmpeg2swdecodertest/haps/entry_test/files/"
+ 	       "./resource/media/codec/video_decoder/main@high_level_1920_1080_60.m2v ->/data/local/tmp/",
+         "./resource/media/codec/video_decoder/setup_mpeg2swdecoder_test.sh ->/data/local/tmp/"
+      ]
+    },
+    {
+      "type": "ShellKit",
+      "run-command": [
+      "power-shell wakeup",
+      "power-shell setmode 602",
+      "chmod 755  /data/local/tmp/setup_mpeg2swdecoder_test.sh",
+      "sh /data/local/tmp/setup_mpeg2swdecoder_test.sh"
       ]
     }
+
   ]
 }

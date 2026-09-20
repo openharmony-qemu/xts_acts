@@ -41,6 +41,7 @@ export interface myObj {
   height: number;
 }
 export const createAvailableArea: () => myObj;
+export const createAvailableAreaMax: () => myObj;
 export const createAvailableArea_ErrCode140004: () => number;
 export const destroyAvailableArea: () => number;
 export const getDisplaySourceMode_1: () => number;

@@ -84,6 +84,7 @@ export default function MenuTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.text('click to show menu', MatchPattern.EQUALS));
         expect(!!button).assertEqual(true);
         await (button?.click() as Promise<void>);

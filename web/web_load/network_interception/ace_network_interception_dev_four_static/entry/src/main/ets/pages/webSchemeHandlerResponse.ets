@@ -147,6 +147,17 @@ struct WebSchemeHandlerResponse {
                 break;
               }
 
+              case "WebSchemeHandlerResponse_setCustomErrorCode": {
+                try {
+                  response.setCustomErrorCode(32159)
+                  console.log("[schemeHandler] getCustomErrorCode:" + response.getCustomErrorCode())
+                  Utils.emitEvent(response.getCustomErrorCode(), 8826)
+                } catch (error) {
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                }
+                break;
+              }
+
           }
         })
 
@@ -218,6 +229,14 @@ struct WebSchemeHandlerResponse {
               break;
             }
 
+
+            case 'SwitchNextPageStaticWebCustomErrorCode': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webCustomErrorCode' })
+              console.log('push webCustomErrorCode success')
+              break;
+            }
 
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();

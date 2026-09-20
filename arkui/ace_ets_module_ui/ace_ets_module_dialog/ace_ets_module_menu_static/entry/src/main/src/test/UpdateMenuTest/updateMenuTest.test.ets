@@ -63,6 +63,7 @@ export default function updateMenuTest(): void {
     it('updateMenuTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('openUpdate'));
         await (button?.click() as Promise<void>);
         await Utils.sleep(5000);

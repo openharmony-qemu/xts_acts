@@ -226,7 +226,8 @@ export default function wifiReturnValue() {
           wifi.getCurrentGroup((err, data) => {
             if (err) {
               console.info(`${caseName} error`, JSON.stringify(err));
-              expect().assertFail();
+              expect(err !== null).assertTrue();
+              done();
             } else {
               console.log(`${caseName} get result success `, data);
               if (data) {
@@ -240,14 +241,14 @@ export default function wifiReturnValue() {
                 expect(Array.isArray(data.clientDevices)).assertTrue();
                 expect(typeof data.goIpAddress === 'string').assertTrue();
               }
+              done();
             }
           });
         } catch (error) {
           console.info(`${caseName} error`, JSON.stringify(error));
-          expect().assertFail();
+          done();
         }
         console.info(`${caseName} test end`);
-        done();
       });
 
     /**

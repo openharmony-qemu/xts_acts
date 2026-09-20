@@ -28,4 +28,10 @@ export const huksNativeApi22Type0100: () => number;
 
 export const huksNativeApi22Type0200: () => number;
 
+export const huksNativeApi22KeyAlg0100: () => number;
+
+export const huksNativeApi22Struct0100: () => number;
+
+export const huksNativeApi22Struct0200: () => number;
+
 export const huksNativeApi22Utils0100: () => number;

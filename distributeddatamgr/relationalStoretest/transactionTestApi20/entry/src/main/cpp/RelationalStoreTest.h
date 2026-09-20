@@ -92,5 +92,10 @@ napi_value TestSetTokenizerNotSupported(napi_env env, napi_callback_info info);
 napi_value TestRollBackByTrxIdSuccess(napi_env env, napi_callback_info info);
 napi_value TestCommitByTrxIdSuccess(napi_env env, napi_callback_info info);
 napi_value TestSubscribeSuccess(napi_env env, napi_callback_info info);
+napi_value TestUpdateWithConflictResolutionSuccess_0100(napi_env env, napi_callback_info info);
+napi_value TestUpdateWithConflictResolutionSuccess_0200(napi_env env, napi_callback_info info);
+napi_value TestUpdateWithConflictResolutionSuccess_0300(napi_env env, napi_callback_info info);
+napi_value TestUpdateWithConflictResolutionSuccess_0400(napi_env env, napi_callback_info info);
+napi_value TestUpdateWithConflictResolutionSuccess_0500(napi_env env, napi_callback_info info);
 
 #endif //TRANSACTIONTESTAPI20_RELATIONALSTORETEST_H

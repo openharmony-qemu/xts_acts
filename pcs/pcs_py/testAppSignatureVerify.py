@@ -15,13 +15,14 @@
 # limitations under the License.
 
 from devicetest.core.test_case import TestCase, Step
+from bundle_utils import install_bundle
 
-# @tc.number: G-SOFTWARE-0500
-# @tc.name: testAppSignatureVerify
-# @tc.desc: 【C-ALL-SOFTWARE-1700】必须对应用进行签名，用于应用完整性和来源验证。
-#           【C-ALL-SOFTWARE-1701】在安装应用时，必须对应用的签名进行校验，确保应用来源可信和未被篡改；禁止安装签名校验失败的应用。
+
+# @tc.number G-SOFTWARE-0500
+# @tc.name   testAppSignatureVerify
+# @tc.desc   [C-ALL-SOFTWARE-1700] 必须对应用进行签名，用于应用完整性和来源验证。
+#            [C-ALL-SOFTWARE-1701] 在安装应用时，必须对应用的签名进行校验，确保应用来源可信和未被篡改；禁止安装签名校验失败的应用。
 class testAppSignatureVerify(TestCase):
-
     def __init__(self, controllers):
         self.TAG = self.__class__.__name__
         super().__init__(self.TAG, controllers)
@@ -31,14 +32,15 @@ class testAppSignatureVerify(TestCase):
 
     def process(self):
         Step("Process")
-        installHapResult = self.device1.execute_shell_command("bm install -p /data/local/tmp/unsigned.hap")
-        assert 'error: no signature file' in installHapResult.strip()
-        bundleNames = self.device1.execute_shell_command("bm dump -a").strip()
-        assert 'com.pcs.software.signedhap' not in bundleNames
-        installHapResult = self.device1.execute_shell_command("bm install -p /data/local/tmp/signed.hap")
-        assert 'install bundle successfully' in installHapResult.strip()
-        bundleNames = self.device1.execute_shell_command("bm dump -a").strip()
-        assert 'com.pcs.software.signedhap' in bundleNames
+        bundle_name = 'com.pcs.software.signedhap'
+
+        installed, hap_install_res = install_bundle(self.device1, '/data/local/tmp/unsigned.hap', bundle_name, self.log)
+        assert 'error: no signature file' in hap_install_res
+        assert not installed
+
+        installed, hap_install_res = install_bundle(self.device1, '/data/local/tmp/signed.hap', bundle_name, self.log)
+        assert 'install bundle successfully' in hap_install_res
+        assert installed
 
     def teardown(self):
         Step("Teardown")

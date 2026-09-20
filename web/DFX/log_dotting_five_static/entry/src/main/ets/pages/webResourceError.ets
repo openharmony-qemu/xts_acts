@@ -95,6 +95,13 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               console.log('push URL success')
             }
 
+            case 'SwitchNextPageStaticWebCustomErrorCode': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webCustomErrorCodeStatic' })
+              console.log('push webCustomErrorCodeStatic success')
+            }
+
           }
         })
       }

@@ -194,7 +194,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<int> = new FixedArray<int>(1000);
+      let src: FixedArray<int> = new FixedArray<int>(1000, 0);
       for (let i: int = 0; i < 1000; i++) {
         src[i] = 1;
       }
@@ -356,7 +356,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(0);
+      let source: Array<number> = Array.create<number>(0, 0);
       let result: Int16Array = Int16Array.from(source);
       let r1: boolean = result instanceof Int16Array;
       expect(r1).assertTrue();
@@ -388,7 +388,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 0;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -405,7 +405,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 5;
       let result: Int16Array = Int16Array.from(source);
       let r1: int = result.length;
@@ -422,7 +422,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -32768;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -439,7 +439,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 32767;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -456,7 +456,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -1;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -473,7 +473,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 1;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -490,7 +490,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -32769;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -507,7 +507,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 32768;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -524,7 +524,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 65535;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -541,7 +541,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 65536;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -558,7 +558,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -65536;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -575,7 +575,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 100000;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -592,7 +592,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 3.7;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -609,7 +609,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -3.7;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -626,7 +626,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 0.9;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -643,7 +643,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 32767.9;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -660,7 +660,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -32768.9;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -677,7 +677,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = Number.NaN;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -694,7 +694,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = Number.POSITIVE_INFINITY;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -711,7 +711,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -Number.POSITIVE_INFINITY;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -728,7 +728,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -0;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1172,7 +1172,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 5;
       let result: Int16Array = Int16Array.from(source);
       let rNull: boolean = result !== null;
@@ -1242,7 +1242,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 1;
       let result: Int16Array = Int16Array.from(source);
       let r1: int = result.BYTES_PER_ELEMENT;
@@ -1480,7 +1480,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(-1);
+      let source: Array<number> = Array.create<number>(1, -1);
       let result: Int16Array = Int16Array.from(source);
       let rNotNull: boolean = result !== null;
       expect(rNotNull).assertTrue();
@@ -1496,7 +1496,7 @@ export default function Int16ArrayFromTest04(): void {
      */
     it('testInt16ArrayFromTestFour073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let lenVal: number = 1e308;
-      let source: Array<number> = new Array<number>(lenVal);
+      let source: Array<number> = Array.create<number>(1, lenVal);
       let result: Int16Array = Int16Array.from(source);
       let rNotNull: boolean = result !== null;
       expect(rNotNull).assertTrue();
@@ -1511,7 +1511,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 2147483647;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1528,7 +1528,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -2147483648;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1545,7 +1545,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 1000000;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1562,7 +1562,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -1000000;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1608,7 +1608,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 32768.1;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1625,7 +1625,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = -32769.1;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1663,7 +1663,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 4294967295;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);
@@ -1680,7 +1680,7 @@ export default function Int16ArrayFromTest04(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayFromTestFour083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Array<number> = new Array<number>(1);
+      let source: Array<number> = Array.create<number>(1, 0);
       source[0] = 4294901760;
       let result: Int16Array = Int16Array.from(source);
       let r1: number = result.$_get(0);

@@ -25,6 +25,7 @@ int TestRegionCreateMoreTimes();
 int TestRegionDestroyNormal();
 int TestRegionDestroyNull();
 int TestRegionSetRectResultTrue();
+int TestRegionSetRectResultFalse();
 int TestRegionSetRectRegionNull();
 int TestRegionSetRectRectNull();
 int TestRegionSetRectResultFalse();
@@ -43,6 +44,7 @@ int TestRegionTranslateNull();
 int TestRegionTranslateMultipleCalls();
 
 // Region Query Operations related functions (Contains/Empty/GetBoundary/GetBounds/IsComplex/IsEmpty/IsRect)
+int TestRegionContainsBoundary();
 int TestRegionContainsInRange();
 int TestRegionContainsXvalueNotInRange();
 int TestRegionContainsYvalueNotInRange();
