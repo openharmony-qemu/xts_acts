@@ -868,7 +868,7 @@ export default function EAWorker3Test(): void {
       });
 
     /**
-     * @tc.number EAWorker3Test_0018
+     * @tc.number SUB_BUILTINS_EAWORKER_EXCLUSIVE_THREAD_TEST_0100
      * @tc.name threadExclusivityTest
      * @tc.desc Verify 64 EAWorkers each have unique thread IDs and worker IDs
      * @tc.size MediumTest
@@ -913,7 +913,7 @@ export default function EAWorker3Test(): void {
     });
 
     /**
-     * @tc.number EAWorker3Test_0019
+     * @tc.number SUB_BUILTINS_EAWORKER_MSG_CALLBACK_THREAD_TEST_0100
      * @tc.name messageCallbackThreadTest
      * @tc.desc Verify message callback and run() task execute on the same thread
      * @tc.size MediumTest
@@ -954,7 +954,7 @@ export default function EAWorker3Test(): void {
 
 
     /**
-     * @tc.number EAWorker3Test_0021
+     * @tc.number SUB_BUILTINS_EAWORKER_NOSTART_NO_THREAD_TEST_0100
      * @tc.name EAWorkerNotStartedNoResourceLeak
      * @tc.desc Verify 64 EAWorkers created without start do not leak resources, then new workers can start and receive messages normally
      * @tc.size MediumTest
