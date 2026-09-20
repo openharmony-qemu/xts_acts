@@ -4557,7 +4557,7 @@ export default function printTest(): void {
       let printerInformation: print.PrinterInformation = {
         printerId: '',
         printerName: '',
-        printerStatus: print.printerStatus.PRINTER_BUSY,
+        printerStatus: print.PrinterStatus.PRINTER_BUSY,
         description: '',
         capability: printerCapabilities,
         uri: '',
