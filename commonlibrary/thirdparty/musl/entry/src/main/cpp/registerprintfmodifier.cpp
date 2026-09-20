@@ -55,6 +55,7 @@ using std::atomic_store;
 #define MODIFIER_MAX_16 16
 #define MODIFIER_BIT_0X8000 0x8000
 #define SLEEP_DURATION_10 10
+#define SLEEP_DURATION_2 2
 #define TEST_DOUBLE_2_0 2.0
 #define TEST_DOUBLE_3_0 3.0
 #define TEST_DOUBLE_3_14 3.14
@@ -202,7 +203,9 @@ static int FuncA(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     (void)i;
     (void)a;
-    fputc('A', s);
+    if (fputc('A', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
@@ -210,7 +213,9 @@ static int FuncB(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     (void)i;
     (void)a;
-    fputc('B', s);
+    if (fputc('B', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
@@ -298,7 +303,9 @@ static int Arginfo2(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 
 static int MyFunc2(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    fputc('X', s);
+    if (fputc('X', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
@@ -307,14 +314,18 @@ static int g_seenB, g_seenC;
 static int Hb(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     g_seenB = i->user;
-    fputc('b', s);
+    if (fputc('b', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
 static int Hc(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
     g_seenC = i->user;
-    fputc('c', s);
+    if (fputc('c', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
@@ -1812,7 +1823,7 @@ static napi_value RegPrintfCombined_5000(napi_env env, napi_callback_info info)
         idx[i] = i;
         pthread_create(&t[i], nullptr, Stress2, &idx[i]);
     }
-    sleep(2);
+    sleep(SLEEP_DURATION_2);
     atomic_store(&g_stop4, 1);
     for (int i = 0; i < THREAD_COUNT_8; i++) {
         pthread_join(t[i], nullptr);

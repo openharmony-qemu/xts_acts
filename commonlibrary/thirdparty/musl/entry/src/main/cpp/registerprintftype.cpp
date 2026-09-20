@@ -230,7 +230,9 @@ static int DblArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 
 static int UnkPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    fputc('.', s);
+    if (fputc('.', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 

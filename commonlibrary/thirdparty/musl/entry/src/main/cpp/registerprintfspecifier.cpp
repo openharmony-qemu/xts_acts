@@ -165,13 +165,17 @@ static int WlongPrintf(FILE *s, const struct PrintfInfo *info, const void *const
 
 static int FuncA(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    fputc('A', s);
+    if (fputc('A', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
 static int FuncB(FILE *s, const struct PrintfInfo *i, const void *const *a)
 {
-    fputc('B', s);
+    if (fputc('B', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
@@ -213,7 +217,9 @@ static int PadFunc(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
     g_seenPad = static_cast<char>(info->pad);
     g_seenLeft = static_cast<int>(info->left);
-    fputc('.', s);
+    if (fputc('.', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
@@ -222,7 +228,9 @@ static int g_seenPrec;
 static int PrecFunc(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
     g_seenPrec = info->prec;
-    fputc('.', s);
+    if (fputc('.', s) == EOF) {
+        return 0;
+    }
     return 1;
 }
 
