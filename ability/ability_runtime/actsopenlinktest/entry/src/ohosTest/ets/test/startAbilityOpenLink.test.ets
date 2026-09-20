@@ -113,10 +113,12 @@ export default function startAbilityOpenLink() {
                   context.openLink(link)
                     .catch((error: BusinessError) => {
                       console.info(`${tag} open link err : ${error}`);
+                      expect().assertFail();
                       done();
                     })
                 } catch (err) {
                   console.info(`${tag} open fail : ${err}`);
+                  expect().assertFail();
                   done();
                 }
               }, 500);
@@ -296,9 +298,11 @@ export default function startAbilityOpenLink() {
                   })
                     .catch((error: BusinessError) => {
                       console.info(`#${tag}# open link err : ${error}`);
+                      expect().assertFail();
                     })
                 } catch (err) {
                   console.info(`#${tag}# open fail : ${err}`);
+                  expect().assertFail();
                 }
               }, 500);
             }
@@ -614,6 +618,7 @@ export default function startAbilityOpenLink() {
                 })
                   .catch((err: BusinessError) => {
                     console.log(tag, `open link failed. Code is ${err.code}, message is ${err.message}`);
+                    expect().assertFail();
                     done();
                   })
               }, 500);
@@ -667,6 +672,7 @@ export default function startAbilityOpenLink() {
                 })
                   .catch((err: BusinessError) => {
                     console.log(tag, `open link failed. Code is ${err.code}, message is ${err.message}`);
+                    expect().assertFail();
                     done();
                   })
               }, 500);
@@ -718,6 +724,7 @@ export default function startAbilityOpenLink() {
                 })
                   .catch((err: BusinessError) => {
                     console.log(tag, `open link failed. Code is ${err.code}, message is ${err.message}`);
+                    expect().assertFail();
                     done();
                   })
               }, 500);
@@ -769,6 +776,7 @@ export default function startAbilityOpenLink() {
                 })
                   .catch((err: BusinessError) => {
                     console.log(tag, `open link failed. Code is ${err.code}, message is ${err.message}`);
+                    expect().assertFail();
                     done();
                   })
               }, 500);
@@ -821,6 +829,7 @@ export default function startAbilityOpenLink() {
                   .catch((err: BusinessError) => {
                     console.log(tag, `open link failed. Code is ${err.code}, message is ${err.message}`);
                     // commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+                    expect().assertFail();
                     done();
                   })
               }, 500);
@@ -872,6 +881,7 @@ export default function startAbilityOpenLink() {
                 })
                   .catch((err: BusinessError) => {
                     console.log(tag, `open link failed. Code is ${err.code}, message is ${err.message}`);
+                    expect().assertFail();
                     done();
                   })
               }, 500);

@@ -128,10 +128,12 @@ export default function openLinkTest() {
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
+          expect().assertFail();
           done();
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });
@@ -151,6 +153,7 @@ export default function openLinkTest() {
       try {
         context.openLink(linkNotExist).then(() => {
           console.info(`#${tag}# open link successful`);
+          expect().assertFail();
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
@@ -159,6 +162,7 @@ export default function openLinkTest() {
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });
@@ -178,6 +182,7 @@ export default function openLinkTest() {
       try {
         context.openLink(link, trueParamOptions).then(() => {
           console.info(`#${tag}# open link successful`);
+          expect().assertFail();
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
@@ -186,6 +191,7 @@ export default function openLinkTest() {
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });
@@ -208,10 +214,12 @@ export default function openLinkTest() {
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
+          expect().assertFail();
           done();
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });
@@ -234,10 +242,12 @@ export default function openLinkTest() {
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
+          expect().assertFail();
           done();
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });

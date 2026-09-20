@@ -95,6 +95,10 @@ export default function abilityTest() {
         console.log('ACTS_GetAbilityState_0200====>Create Subscriber====>');
         subscriber = data;
         await commonEvent.subscribe(subscriber, onAbilityForegroundCallback2);
+      }).catch((err: BusinessError) => {
+        console.log('ACTS_GetAbilityState_0200 createSubscriber err:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
       })
 
       let unSubscribeCallback = (): void => {
@@ -181,6 +185,10 @@ export default function abilityTest() {
         console.log('ACTS_GetAbilityState_0300====>Create Subscriber====>');
         subscriber = data;
         await commonEvent.subscribe(subscriber, onAbilityForegroundCallback3);
+      }).catch((err: BusinessError) => {
+        console.log('ACTS_GetAbilityState_0300 createSubscriber err:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
       })
 
       let unSubscribeCallback = (): void => {
@@ -271,6 +279,10 @@ export default function abilityTest() {
         console.log('ACTS_GetAbilityState_0600====>Create Subscriber====>');
         subscriber = data;
         await commonEvent.subscribe(subscriber, onAbilityForegroundCallback6);
+      }).catch((err: BusinessError) => {
+        console.log('ACTS_GetAbilityState_0600 createSubscriber err:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
       })
 
       let unSubscribeCallback = (): void => {

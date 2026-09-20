@@ -95,10 +95,14 @@ export default function abilityTest() {
                 ).then(()=>{
                     console.info('====>ACTS_GetCurrentTopAbility_0200 startAbility Ability2 start ====>');
                 }).catch((err:BusinessError) =>{
-                    console.info('====>ACTS_GetCurrentTopAbility_0200 startAbility Ability2 err
-                      ====>'+JSON.stringify(err));
+                    console.info('====>ACTS_GetCurrentTopAbility_0200 startAbility Ability2 err ====>' +
+                      JSON.stringify(err));
                 })
             
+            }).catch((err: BusinessError) => {
+                console.info('ACTS_GetCurrentTopAbility_0200 createSubscriber err====>' + JSON.stringify(err));
+                expect().assertFail();
+                done();
             })
         })
 
@@ -139,6 +143,10 @@ export default function abilityTest() {
                                 await globalThis.ability3Context.terminateSelf();
                                 done();
                             })
+                        }).catch((err: BusinessError) => {
+                            console.info('====>getCurrentTopAbility err====>' + JSON.stringify(err));
+                            expect().assertFail();
+                            done();
                         })
                     }
                 });
@@ -160,9 +168,13 @@ export default function abilityTest() {
                     }).then(()=>{
                         console.info('====>ACTS_GetCurrentTopAbility_0500 startAbility Ability2 start ====>');
                     }).catch((err:BusinessError) =>{
-                        console.info('====>ACTS_GetCurrentTopAbility_0500 startAbility Ability2 err
-                          ====>'+JSON.stringify(err));
+                        console.info('====>ACTS_GetCurrentTopAbility_0500 startAbility Ability2 err ====>' +
+                          JSON.stringify(err));
                     })
+            }).catch((err: BusinessError) => {
+                console.info('ACTS_GetCurrentTopAbility_0500 createSubscriber err====>' + JSON.stringify(err));
+                expect().assertFail();
+                done();
             })
         })
     })
