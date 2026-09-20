@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,46 +13,19 @@
  * limitations under the License.
  */
 
-{
+ {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/lenovo/.ohos/config/openharmony/default_perftest_7cJbCphS07H4NCGJFE-dDFsKmcxBTiT2-PJbF4D5mak=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BF9D499DD1181329FA2AFDE7DB23895BC35F0D523AFF5A7E00AA50117DBA841F2EE1CB0F5348EBE",
-          "profile": "C:/Users/lenovo/.ohos/config/openharmony/default_perftest_7cJbCphS07H4NCGJFE-dDFsKmcxBTiT2-PJbF4D5mak=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/lenovo/.ohos/config/openharmony/default_perftest_7cJbCphS07H4NCGJFE-dDFsKmcxBTiT2-PJbF4D5mak=.p12",
-          "storePassword": "0000001B964DA4DDA4D22F2699615890AA0982E3C95F5C5556190885EAA245D1E1F2FF12796FBB1E618927"
-        }
-      }
     ],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "targetSdkVersion": "26.0.0",
-        "compileSdkVersion": "26.0.0",
-        "compatibleSdkVersion": "26.0.0",
+        "compileSdkVersion": "26.0.1",
+        "compatibleSdkVersion": 16,
         "runtimeOS": "OpenHarmony",
-        "buildOption": {
-          "strictMode": {
-            "caseSensitiveCheck": true,
-            "useNormalizedOHMUrl": true
-          }
-        }
       }
     ],
-    "buildModeSet": [
-      {
-        "name": "debug",
-      },
-      {
-        "name": "release"
-      }
-    ]
   },
   "modules": [
     {

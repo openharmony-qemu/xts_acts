@@ -247,26 +247,23 @@ export default function PerfTestTest() {
       await driver.delayMs(3000)
       let textCom = await driver.findComponent(ON.text('navigation'))
       await driver.delayMs(1000)
-      let center = await textCom.getBoundsCenter()
-      await driver.delayMs(1000)
-      await driver.click(center.x, center.y)
+      await textCom.click()
       await driver.delayMs(1000)
       let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS, PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
+      let displayId: number = await textCom.getDisplayId();
       let actionCode = async (finish: Callback<boolean>) => {
         let driver = Driver.create()
         await driver.delayMs(1000)
         let textCom1 = await driver.findComponent(ON.text('push Page01'))
         await driver.delayMs(1000)
-        let center1 = await textCom1.getBoundsCenter()
-        await driver.delayMs(1000)
-        await driver.click(center1.x, center1.y)
+        await textCom1.click()
         await driver.delayMs(1000)
         finish(true)
       }
       let resetCode = async (finish: Callback<boolean>) => {
         let driver = Driver.create()
         await driver.delayMs(1000)
-        await driver.pressBack()
+        await driver.pressBack(displayId)
         await driver.delayMs(1000)
         finish(true)
       }
