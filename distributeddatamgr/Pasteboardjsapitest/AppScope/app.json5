@@ -23,10 +23,10 @@
 	  "debug": false,
     "distributedNotificationEnabled": true,
 	  "keepAlive": true,
-    "minAPIVersion": 9,
-    "targetAPIVersion": 9,
+    "minAPIVersion": 12,
+    "targetAPIVersion": 12,
     "car": {
-        "minAPIVersion": 9
+        "minAPIVersion": 12
     }
   }
 }
