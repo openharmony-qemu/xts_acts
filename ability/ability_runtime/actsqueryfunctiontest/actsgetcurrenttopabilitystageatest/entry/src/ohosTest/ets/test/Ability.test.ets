@@ -97,6 +97,10 @@ export default function abilityTest() {
                     console.log('====>ACTS_GetCurrentTopAbility_0100 err:' + JSON.stringify(err))
                 })
                 console.log('ACTS_GetCurrentTopAbility_0100 end');
+            }).catch((err: BusinessError) => {
+                console.log('ACTS_GetCurrentTopAbility_0100 createSubscriber err====>' + JSON.stringify(err));
+                expect().assertFail();
+                done();
             })
         })
     })
