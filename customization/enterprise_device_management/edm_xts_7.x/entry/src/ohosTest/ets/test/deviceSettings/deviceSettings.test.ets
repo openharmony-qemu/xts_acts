@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, DEFAULT_USER_ID, getErrorCode } from '../commom.test.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';

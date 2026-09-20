@@ -16,7 +16,7 @@
 import http from '@ohos.net.http';
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 // no permission.
 const NOT_PERMISSION = 201;

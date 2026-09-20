@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit'
 import { digestSpec, JsX963KdfCallback, JsX963KdfPromise, JsX963KdfSync, JsX963Spec } from './utils/x963/x963';
 import { getMdSize } from './utils/digest/digestSyncUtils';

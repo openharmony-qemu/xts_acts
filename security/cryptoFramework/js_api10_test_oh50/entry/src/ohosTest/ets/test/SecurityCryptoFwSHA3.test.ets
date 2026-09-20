@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit'
 import { doDigest, doMd, doMdSpilt, SHA3_SPEC } from './utils/digest/sha3';
 import { asyncType, compareDataBlob, createData, decToHexString, stringToUint8Array } from './utils/common/commonUtils';

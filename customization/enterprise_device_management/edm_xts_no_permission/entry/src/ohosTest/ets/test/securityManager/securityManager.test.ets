@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, beforeAll, Level } from '@ohos/hypium';
+import { describe, expect, it, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY,
   WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID, getPixelMap, PIXEL_MAP, getCurrentUserId,
   CURRENT_USER_ID, TEST_APP_INSTANCE, TEST_PERMISSION_MANAGED_STATE_GRANTED,

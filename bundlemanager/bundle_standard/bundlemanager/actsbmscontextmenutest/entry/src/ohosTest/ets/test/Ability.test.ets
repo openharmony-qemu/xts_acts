@@ -15,7 +15,7 @@
 import hilog from '@ohos.hilog';
 import bundle from '@ohos.bundle.bundleManager';
 import overlay from '@ohos.bundle.overlay';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const MODULE_NAME = "entry_test";

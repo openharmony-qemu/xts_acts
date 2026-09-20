@@ -15,7 +15,7 @@
 import { AsyncCallback } from '@ohos.base'
 import { sleep, startAbility, stopAbility } from './Common'
 import picker from '@ohos.file.picker'
-import { afterEach, describe, expect, it, Level } from '@ohos/hypium'
+import { afterEach, describe, expect, it, Level } from '@ohos/hypium-dynamic'
 
 async function select(testNum: string, done: Function, dirName: string, fileName: string) {
   try {

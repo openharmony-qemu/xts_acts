@@ -14,7 +14,7 @@
  */
 
 import { hidebug, hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { errorManager } from '@kit.AbilityKit';
 import { process, taskpool } from '@kit.ArkTS';
 

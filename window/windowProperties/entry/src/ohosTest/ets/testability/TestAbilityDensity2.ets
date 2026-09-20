@@ -14,7 +14,7 @@
  */
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../test/List.test';
 import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';

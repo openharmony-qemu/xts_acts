@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import { IsNotificationEnabled } from 'libenable.so'
 import common from '@ohos.app.ability.common';
 import notificationManager from '@ohos.notificationManager';

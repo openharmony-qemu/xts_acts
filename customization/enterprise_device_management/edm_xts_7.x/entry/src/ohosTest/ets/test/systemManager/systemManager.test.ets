@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, INVALID_USER_ID,
   IP_LIST_1, IP_LIST_2, IP_LIST_SINGLE, IP_LIST_OVER_MAX, ipListOverMaxInit, INVALID_IP_LIST,
   IPV6_LIST_1, IPV6_LIST_SINGLE, INVALID_IPV6_LIST, IP_LIST_MAX_100, IP_LIST_ONE_EXTRA } from '../commom.test.ets';

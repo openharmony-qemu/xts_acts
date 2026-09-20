@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe,it, expect, Level,afterEach } from '@ohos/hypium';
+import { describe,it, expect, Level,afterEach } from '@ohos/hypium-dynamic';
 import { emitter, Callback } from '@kit.BasicServicesKit';
 
 

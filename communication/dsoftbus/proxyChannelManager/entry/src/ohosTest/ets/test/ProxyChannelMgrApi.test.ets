@@ -14,7 +14,7 @@
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import proxyChannelManager from '@ohos.distributedsched.proxyChannelManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import abilityAccessCtrl ,{ Permissions } from '@ohos.abilityAccessCtrl';
 import {common} from '@kit.AbilityKit';
 import { Driver, ON } from '@ohos.UiTest';

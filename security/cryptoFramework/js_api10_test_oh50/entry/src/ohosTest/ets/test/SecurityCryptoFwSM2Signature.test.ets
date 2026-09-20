@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import { doSignSync, doVerifySync, generateSignKey } from './utils/signVerify/signVerifySyncUtils';
 import { compareDataBlob, compareString, createData } from './utils/common/commonUtils';

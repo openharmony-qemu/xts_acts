@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import asset from '@ohos.security.asset';
 import { Logger } from './utils/common/Logger';
 import { CreateBatchAssetMaps, CleanAllAssets, CreateAssetMap, MinGroupId, MaxGroupId } from './utils/asset/AssetUtils';

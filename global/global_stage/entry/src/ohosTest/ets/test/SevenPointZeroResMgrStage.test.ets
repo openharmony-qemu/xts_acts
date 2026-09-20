@@ -22,7 +22,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'

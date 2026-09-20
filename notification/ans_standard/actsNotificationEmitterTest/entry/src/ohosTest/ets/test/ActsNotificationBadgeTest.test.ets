@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import notificationManager from '@ohos.notificationManager';
 import hilog from '@ohos.hilog';
 import notificationemitter from '@ohos.events.emitter';

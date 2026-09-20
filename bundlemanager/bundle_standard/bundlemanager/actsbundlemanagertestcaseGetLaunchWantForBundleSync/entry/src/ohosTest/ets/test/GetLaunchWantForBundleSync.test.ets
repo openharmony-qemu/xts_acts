@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import bundleMgr from '@ohos.bundle.bundleManager';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import hilog from '@ohos.hilog';
 
 const NAME1 = "ohos.acts.bundlemanager.test.getLaunchWantForBundleSync";

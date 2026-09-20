@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { authorization, BusinessError } from '@kit.BasicServicesKit'
-import { describe, it, expect, beforeEach, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeEach, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit'
 import { Driver, ON } from '@ohos.UiTest'
 import { abilityDelegatorRegistry } from '@kit.TestKit';

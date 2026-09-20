@@ -15,7 +15,7 @@
 
 import wifiManager from '@ohos.wifiManager';
 import common from '@ohos.bluetooth.common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { Driver,ON,} from '@ohos.UiTest';
 
 let PERMISSION_TEXT: string = "允许";

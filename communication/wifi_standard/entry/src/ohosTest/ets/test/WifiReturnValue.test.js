@@ -14,7 +14,7 @@
  */
 
 import wifi from '@ohos.wifi';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 
 export default function wifiReturnValue() {
   describe('wifiReturnValue', () => {

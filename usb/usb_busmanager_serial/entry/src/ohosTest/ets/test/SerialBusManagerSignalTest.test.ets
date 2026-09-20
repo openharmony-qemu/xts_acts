@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, afterAll, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { serial } from "@kit.BasicServicesKit";
 

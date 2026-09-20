@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, it, expect, Level } from '@ohos/hypium'
+import { beforeEach, describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import { BusinessError, zlib } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import fs from '@ohos.file.fs';

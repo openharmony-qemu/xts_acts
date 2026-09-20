@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import socket from "@ohos.net.socket";
 import { BusinessError } from '@ohos.base';
 

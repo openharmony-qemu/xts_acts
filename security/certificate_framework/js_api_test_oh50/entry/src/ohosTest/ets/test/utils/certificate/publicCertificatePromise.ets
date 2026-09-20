@@ -41,7 +41,7 @@ import {
   certExtensionWithUnSupportedCritical,
 } from "../common/commonParam";
 import { convertToUint8Array, stringTouInt8Array, uInt8ArrayToString, } from "../common/commonFunction";
-import { expect } from "@ohos/hypium";
+import { expect } from "@ohos/hypium-dynamic";
 import { IAnyObj } from '../common/commonType';
 
 

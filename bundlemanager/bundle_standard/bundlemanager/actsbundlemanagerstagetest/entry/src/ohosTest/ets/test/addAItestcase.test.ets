@@ -15,7 +15,7 @@
 
  import bundle from '@ohos.bundle.bundleManager';
  import { BusinessError } from '@kit.BasicServicesKit';
- import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
+ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic";
  import { JSON } from '@kit.ArkTS';
  
  const BUNDLE_NAME = "ohos.acts.bundle.stage.test";
