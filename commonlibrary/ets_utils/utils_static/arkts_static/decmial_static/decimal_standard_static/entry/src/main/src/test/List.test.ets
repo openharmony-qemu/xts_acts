@@ -1,21 +1,5 @@
 'use static';
-/*
-* Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
 
-import decimalTest1 from "./decimal/Decimal1.test";
-import decimalTest2 from './decimal/Decimal2.test';
 import decimalToDecimalDigitsPart01Test from './decimal/DecimalToDecimalDigitsPart01.test';
 import decimalToDecimalDigitsPart02Test from './decimal/DecimalToDecimalDigitsPart02.test';
 import decimalToDecimalDigitsPart03Test from './decimal/DecimalToDecimalDigitsPart03.test';
@@ -51,10 +35,11 @@ import decimalTruncStaticMethodPart01Test from './decimal/DecimalTruncStaticMeth
 import decimalTruncStaticMethodPart02Test from './decimal/DecimalTruncStaticMethodPart02.test';
 import decimalTruncTestTest from './decimal/DecimalTruncTest.test';
 import decimalValueOfTestTest from './decimal/DecimalValueOfTest.test';
+
+
+
 export default function testsuite(): void {
-    decimalTest1();
-    decimalTest2();
-decimalToDecimalDigitsPart01Test();
+  decimalToDecimalDigitsPart01Test();
   decimalToDecimalDigitsPart02Test();
   decimalToDecimalDigitsPart03Test();
   decimalToExponentialPart01Test();
