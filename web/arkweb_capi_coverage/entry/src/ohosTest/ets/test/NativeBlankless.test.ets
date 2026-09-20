@@ -25,7 +25,7 @@ const BLANKLESS_ERR_SIGNIFICANT_CHANGE = -5;
 const BLANKLESS_ERR_DEVICE_NOT_SUPPORT = 801;
 
 function assertBlanklessErrCode(actual: number, expected: number): void {
-  expect(actual === expected || actual === BLANKLESS_ERR_DEVICE_NOT_SUPPORT).assertTrue();
+  expect([expected, BLANKLESS_ERR_DEVICE_NOT_SUPPORT]).assertContain(actual);
 }
 
 export default function native_blanklessTest() {
