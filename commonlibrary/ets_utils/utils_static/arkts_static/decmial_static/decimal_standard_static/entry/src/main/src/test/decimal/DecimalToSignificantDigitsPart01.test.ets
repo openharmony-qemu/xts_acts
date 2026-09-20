@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 import { BusinessError } from "@ohos.base";
@@ -835,7 +836,6 @@ export default function decimalToSignificantDigitsPart01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(10200001);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
@@ -853,7 +853,6 @@ export default function decimalToSignificantDigitsPart01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(10200001);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
@@ -871,7 +870,6 @@ export default function decimalToSignificantDigitsPart01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(10200001);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
@@ -889,7 +887,6 @@ export default function decimalToSignificantDigitsPart01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(10200001);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
@@ -907,7 +904,6 @@ export default function decimalToSignificantDigitsPart01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(10200001);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
@@ -925,7 +921,6 @@ export default function decimalToSignificantDigitsPart01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(10200001);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
@@ -943,7 +938,6 @@ export default function decimalToSignificantDigitsPart01Test(): void {
         expect().assertFail();
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(10200001);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
   });

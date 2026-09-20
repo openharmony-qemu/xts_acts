@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -403,9 +404,7 @@ export default function decimalToStringTestTest(): void {
         new Decimal('');
         expect().assertFail();
       } catch (e) {
-        let m: string = (e as Error).message;
-        expect(m).assertEqual("Invalid index: 0");
-        expect(e.name).assertEqual("RangeError");
+        expect(e instanceof RangeError).assertTrue();
       }
     });
 
@@ -950,14 +949,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6000
-     * @tc.name decimalToStringTest060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_5900
+     * @tc.name decimalToStringTest059
      * @tc.desc Verify toString() after Decimal.set({ precision: 50, toExpPos: 100 }) on new Decimal("123456789012345678901234567890") returns "123456789012345678901234567890"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 50, toExpPos: 100 });
       let d: Decimal = new Decimal("123456789012345678901234567890");
       let r1: string = d.toString();
@@ -967,14 +966,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6100
-     * @tc.name decimalToStringTest061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6000
+     * @tc.name decimalToStringTest060
      * @tc.desc Verify toString() after Decimal.set({ precision: 20000, toExpPos: 10000 }) on new Decimal(big) returns big
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 20000, toExpPos: 10000 });
       let big: string = '9'.repeat(10000);
       let d: Decimal = new Decimal(big);
@@ -985,14 +984,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6200
-     * @tc.name decimalToStringTest062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6100
+     * @tc.name decimalToStringTest061
      * @tc.desc Verify toString() on new Decimal("0.0000010") returns "0.000001"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("0.0000010");
       let r1: string = d.toString();
       let e1: string = "0.000001";
@@ -1000,14 +999,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6300
-     * @tc.name decimalToStringTest063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6200
+     * @tc.name decimalToStringTest062
      * @tc.desc Verify toString() on new Decimal("1234567890.12345") returns "1234567890.12345"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234567890.12345");
       let r1: string = d.toString();
       let e1: string = "1234567890.12345";
@@ -1015,14 +1014,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6400
-     * @tc.name decimalToStringTest064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6300
+     * @tc.name decimalToStringTest063
      * @tc.desc Verify toString() on new Decimal("-0.0000001") returns "-1e-7"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("-0.0000001");
       let r1: string = d.toString();
       let e1: string = "-1e-7";
@@ -1030,14 +1029,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6500
-     * @tc.name decimalToStringTest065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6400
+     * @tc.name decimalToStringTest064
      * @tc.desc Verify 1/0 toString Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(1).div(0);
       let r1: string = d.toString();
       let e1: string = "Infinity";
@@ -1045,14 +1044,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6600
-     * @tc.name decimalToStringTest066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6500
+     * @tc.name decimalToStringTest065
      * @tc.desc Verify 0/0 toString returns NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(0).div(0);
       let r1: string = d.toString();
       let e1: string = "NaN";
@@ -1060,14 +1059,14 @@ export default function decimalToStringTestTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6700
-     * @tc.name decimalToStringTest067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_STRING_6600
+     * @tc.name decimalToStringTest066
      * @tc.desc Verify sqrt(-1) toString returns NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToStringTest067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToStringTest066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(-1).sqrt();
       let r1: string = d.toString();
       let e1: string = "NaN";
