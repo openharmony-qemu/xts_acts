@@ -85,6 +85,7 @@ export default function HoverScaleInterruptionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnHoverScaleInterruptionTrue'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnHoverScaleInterruptionTrue'));
@@ -122,6 +123,7 @@ export default function HoverScaleInterruptionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnHoverScaleInterruptionFalse'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnHoverScaleInterruptionFalse'));
