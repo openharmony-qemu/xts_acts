@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import webviewNetworkProxy from './webviewNetworkProxy.test'
-import webOnVerifyPinCallback from './WebOnVerifyPinCallback.test'
+import webOnVerifyPinCallbackCoverageDirect from './WebOnVerifyPinCallbackCoverageDirect.test'
 import WebCookieManager from './WebCookieManager.test'
 
 import webviewControllerPostMessageParam from './WebviewControllerPostMessageParam.test';
@@ -53,7 +53,7 @@ import webviewControllerEnableBackForwardCacheParam from './WebviewControllerEna
 
 export default function testsuite() {
   webviewNetworkProxy()
-  webOnVerifyPinCallback()
+  webOnVerifyPinCallbackCoverageDirect()
   WebCookieManager()
   webviewControllerPostMessageParam()
   webviewControllerSearchAllAsyncParam()
