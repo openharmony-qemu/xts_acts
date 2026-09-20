@@ -1145,8 +1145,7 @@ export default function EAWorkerExclusiveScopeTest(): void {
         jobs.push(ea.run<int>((): int => {
           for (let i = 0; i < iterationsPerWorker; ++i) {
             EAWorker.exclusiveScope<void>((): void => {
-              let current = counter.load();
-              counter.store(current + 1);
+              counter.fetchAdd(1);
             });
           }
           return iterationsPerWorker;
