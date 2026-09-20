@@ -26,7 +26,7 @@ import {
   Level,
   Size,
   TestType,
-} from "../../../ets/hypium/index";
+} from "../../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
