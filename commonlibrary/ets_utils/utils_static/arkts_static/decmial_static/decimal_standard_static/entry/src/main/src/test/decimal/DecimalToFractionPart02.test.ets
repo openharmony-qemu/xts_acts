@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -45,30 +46,12 @@ export default function decimalToFractionPart02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0100
      * @tc.name decimalToFractionPart02Test001
-     * @tc.desc Verify toFraction(4) on new Decimal("0.75") returns 3/4 and does not modify the original Decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFractionPart02Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const d: Decimal = new Decimal("0.75");
-      const f: Decimal[] = d.toFraction(4);
-      expect(f[0].comparedTo(3)).assertEqual(0);
-      expect(f[1].comparedTo(4)).assertEqual(0);
-      let actual: string = d.toString();
-      let expected: string = "0.75";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0200
-     * @tc.name decimalToFractionPart02Test002
      * @tc.desc Verify toFraction(1) on new Decimal("0.5") returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       const f: Decimal[] = d.toFraction(1);
       let actual: string = f[0].toString();
@@ -80,14 +63,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0300
-     * @tc.name decimalToFractionPart02Test003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0200
+     * @tc.name decimalToFractionPart02Test002
      * @tc.desc Verify toFraction(2) on new Decimal("0.5") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       const f: Decimal[] = d.toFraction(2);
       let actual: string = f[0].toString();
@@ -99,14 +82,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0400
-     * @tc.name decimalToFractionPart02Test004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0300
+     * @tc.name decimalToFractionPart02Test003
      * @tc.desc Verify toFraction(3) on new Decimal("0.6") returns 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.6");
       const f: Decimal[] = d.toFraction(3);
       let actual: string = f[0].toString();
@@ -118,14 +101,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0500
-     * @tc.name decimalToFractionPart02Test005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0400
+     * @tc.name decimalToFractionPart02Test004
      * @tc.desc Verify toFraction(4) on new Decimal("0.75") returns 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.75");
       const f: Decimal[] = d.toFraction(4);
       let actual: string = f[0].toString();
@@ -137,14 +120,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0600
-     * @tc.name decimalToFractionPart02Test006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0500
+     * @tc.name decimalToFractionPart02Test005
      * @tc.desc Verify toFraction(5) on new Decimal("0.4") returns 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.4");
       const f: Decimal[] = d.toFraction(5);
       let actual: string = f[0].toString();
@@ -156,14 +139,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0700
-     * @tc.name decimalToFractionPart02Test007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0600
+     * @tc.name decimalToFractionPart02Test006
      * @tc.desc Verify toFraction(7) on new Decimal("3.5") returns 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("3.5");
       const f: Decimal[] = d.toFraction(7);
       let actual: string = f[0].toString();
@@ -175,14 +158,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0800
-     * @tc.name decimalToFractionPart02Test008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0700
+     * @tc.name decimalToFractionPart02Test007
      * @tc.desc Verify toFraction(9) on new Decimal("1.1") returns 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("1.1");
       const f: Decimal[] = d.toFraction(9);
       let actual: string = f[0].toString();
@@ -194,14 +177,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0900
-     * @tc.name decimalToFractionPart02Test009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0800
+     * @tc.name decimalToFractionPart02Test008
      * @tc.desc Verify toFraction(10) on new Decimal("0.9") returns 9
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.9");
       const f: Decimal[] = d.toFraction(10);
       let actual: string = f[0].toString();
@@ -213,14 +196,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1000
-     * @tc.name decimalToFractionPart02Test010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_0900
+     * @tc.name decimalToFractionPart02Test009
      * @tc.desc Verify toFraction(10) on new Decimal("0.3333333333") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.3333333333");
       const f: Decimal[] = d.toFraction(10);
       let actual: string = f[0].toString();
@@ -232,14 +215,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1100
-     * @tc.name decimalToFractionPart02Test011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1000
+     * @tc.name decimalToFractionPart02Test010
      * @tc.desc Verify toFraction(100) on new Decimal("0.35") returns 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.35");
       const f: Decimal[] = d.toFraction(100);
       let actual: string = f[0].toString();
@@ -251,14 +234,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1200
-     * @tc.name decimalToFractionPart02Test012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1100
+     * @tc.name decimalToFractionPart02Test011
      * @tc.desc Verify toFraction(125) on new Decimal("123.456") returns 15432
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("123.456");
       const f: Decimal[] = d.toFraction(125);
       let actual: string = f[0].toString();
@@ -270,14 +253,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1300
-     * @tc.name decimalToFractionPart02Test013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1200
+     * @tc.name decimalToFractionPart02Test012
      * @tc.desc Verify toFraction(124) on new Decimal("123.456") returns 8395
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("123.456");
       const f: Decimal[] = d.toFraction(124);
       let actual: string = f[0].toString();
@@ -289,14 +272,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1400
-     * @tc.name decimalToFractionPart02Test014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1300
+     * @tc.name decimalToFractionPart02Test013
      * @tc.desc Verify toFraction(100000) on new Decimal("0.0001") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.0001");
       const f: Decimal[] = d.toFraction(100000);
       let actual: string = f[0].toString();
@@ -308,14 +291,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1500
-     * @tc.name decimalToFractionPart02Test015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1400
+     * @tc.name decimalToFractionPart02Test014
      * @tc.desc Verify toFraction(9999) on new Decimal("0.0001") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.0001");
       const f: Decimal[] = d.toFraction(9999);
       let actual: string = f[0].toString();
@@ -327,14 +310,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1600
-     * @tc.name decimalToFractionPart02Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1500
+     * @tc.name decimalToFractionPart02Test015
      * @tc.desc Verify toFraction(1000) on new Decimal("0.999") returns 999
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.999");
       const f: Decimal[] = d.toFraction(1000);
       let actual: string = f[0].toString();
@@ -346,14 +329,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1700
-     * @tc.name decimalToFractionPart02Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1600
+     * @tc.name decimalToFractionPart02Test016
      * @tc.desc Verify toFraction(1000) on new Decimal("3.14159") returns 355
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("3.14159");
       const f: Decimal[] = d.toFraction(1000);
       let actual: string = f[0].toString();
@@ -365,14 +348,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1800
-     * @tc.name decimalToFractionPart02Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1700
+     * @tc.name decimalToFractionPart02Test017
      * @tc.desc Verify toFraction(1000) on new Decimal("0.123456789") returns 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.123456789");
       const f: Decimal[] = d.toFraction(1000);
       let actual: string = f[0].toString();
@@ -384,14 +367,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1900
-     * @tc.name decimalToFractionPart02Test019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1800
+     * @tc.name decimalToFractionPart02Test018
      * @tc.desc Verify toFraction(1000) on new Decimal("0.6666666666666666") returns 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.6666666666666666");
       const f: Decimal[] = d.toFraction(1000);
       let actual: string = f[0].toString();
@@ -403,14 +386,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2000
-     * @tc.name decimalToFractionPart02Test020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_1900
+     * @tc.name decimalToFractionPart02Test019
      * @tc.desc Verify toFraction(1000) on new Decimal("0.142857142857142857") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.142857142857142857");
       const f: Decimal[] = d.toFraction(1000);
       let actual: string = f[0].toString();
@@ -422,14 +405,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2100
-     * @tc.name decimalToFractionPart02Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2000
+     * @tc.name decimalToFractionPart02Test020
      * @tc.desc Verify toFraction(1000) on new Decimal("2.718281828") returns 1457
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("2.718281828");
       const f: Decimal[] = d.toFraction(1000);
       let actual: string = f[0].toString();
@@ -441,14 +424,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2200
-     * @tc.name decimalToFractionPart02Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2100
+     * @tc.name decimalToFractionPart02Test021
      * @tc.desc Verify toFraction(1000000000) on new Decimal("0.5") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       const f: Decimal[] = d.toFraction(1000000000);
       let actual: string = f[0].toString();
@@ -460,14 +443,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2300
-     * @tc.name decimalToFractionPart02Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2200
+     * @tc.name decimalToFractionPart02Test022
      * @tc.desc Verify toFraction(1000000000) on new Decimal("0.123456789012345678") returns 97393689
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.123456789012345678");
       const f: Decimal[] = d.toFraction(1000000000);
       let actual: string = f[0].toString();
@@ -479,14 +462,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2400
-     * @tc.name decimalToFractionPart02Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2300
+     * @tc.name decimalToFractionPart02Test023
      * @tc.desc Verify toFraction("100") on new Decimal("0.75") returns 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.75");
       const f: Decimal[] = d.toFraction("100");
       let actual: string = f[0].toString();
@@ -498,14 +481,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2500
-     * @tc.name decimalToFractionPart02Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2400
+     * @tc.name decimalToFractionPart02Test024
      * @tc.desc Verify toFraction(den) on new Decimal("0.5") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       const den: Decimal = new Decimal(100);
       const f: Decimal[] = d.toFraction(den);
@@ -518,32 +501,32 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2600
-     * @tc.name decimalToFractionPart02Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2500
+     * @tc.name decimalToFractionPart02Test025
      * @tc.desc Verify toFraction('') on new Decimal("0.5") throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       try {
         d.toFraction('');
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("RangeError");
+        expect(e instanceof RangeError).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2700
-     * @tc.name decimalToFractionPart02Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2600
+     * @tc.name decimalToFractionPart02Test026
      * @tc.desc Verify toFraction("0x10") on new Decimal("0.5") returns 1/2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       const f: Decimal[] = d.toFraction("0x10");
       let actual: string = f[0].toString();
@@ -555,51 +538,32 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2800
-     * @tc.name decimalToFractionPart02Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2700
+     * @tc.name decimalToFractionPart02Test027
      * @tc.desc Verify toFraction("NaN") on new Decimal("0.5") throws BusinessError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       try {
         d.toFraction("NaN");
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2900
-     * @tc.name decimalToFractionPart02Test029
-     * @tc.desc Verify toFraction(100) on new Decimal("0.5") returns 1/2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFractionPart02Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const d: Decimal = new Decimal("0.5");
-      const f: Decimal[] = d.toFraction(100);
-      let actual: string = f[0].toString();
-      let expected: string = '1';
-      expect(actual).assertEqual(expected);
-      let actual2: string = f[1].toString();
-      let expected2: string = '2';
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3000
-     * @tc.name decimalToFractionPart02Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2800
+     * @tc.name decimalToFractionPart02Test028
      * @tc.desc Verify toFraction(100) on new Decimal("0.5") does not return the original Decimal instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       const f: Decimal[] = d.toFraction(100);
       let actual: boolean = f[0] === d;
@@ -607,14 +571,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3100
-     * @tc.name decimalToFractionPart02Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_2900
+     * @tc.name decimalToFractionPart02Test029
      * @tc.desc Verify toFraction(100) on new Decimal(0) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal(0);
       const f: Decimal[] = d.toFraction(100);
       let actual: string = f[0].toString();
@@ -626,14 +590,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3200
-     * @tc.name decimalToFractionPart02Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3000
+     * @tc.name decimalToFractionPart02Test030
      * @tc.desc Verify toFraction(100) on new Decimal(1) returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal(1);
       const f: Decimal[] = d.toFraction(100);
       let actual: string = f[0].toString();
@@ -645,14 +609,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3300
-     * @tc.name decimalToFractionPart02Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3100
+     * @tc.name decimalToFractionPart02Test031
      * @tc.desc Verify toFraction(100) on new Decimal("-0.5") returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("-0.5");
       const f: Decimal[] = d.toFraction(100);
       let actual: string = f[0].toString();
@@ -664,14 +628,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3400
-     * @tc.name decimalToFractionPart02Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3200
+     * @tc.name decimalToFractionPart02Test032
      * @tc.desc Verify toFraction(100) on new Decimal("-3") returns -3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("-3");
       const f: Decimal[] = d.toFraction(100);
       let actual: string = f[0].toString();
@@ -683,14 +647,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3500
-     * @tc.name decimalToFractionPart02Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3300
+     * @tc.name decimalToFractionPart02Test033
      * @tc.desc Verify toFraction(100) on new Decimal(0.1).add(0.2) returns 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal(0.1).add(0.2);
       const f: Decimal[] = d.toFraction(100);
       let actual: string = f[0].toString();
@@ -702,14 +666,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3600
-     * @tc.name decimalToFractionPart02Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3400
+     * @tc.name decimalToFractionPart02Test034
      * @tc.desc Verify toFraction(8) on new Decimal("0.125") returns 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.125");
       const f: Decimal[] = d.toFraction(8);
       let actual: string = f[0].toString();
@@ -721,14 +685,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3700
-     * @tc.name decimalToFractionPart02Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3500
+     * @tc.name decimalToFractionPart02Test035
      * @tc.desc Verify toFraction(10) on new Decimal("3.141592653589793") returns 22
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("3.141592653589793");
       const f: Decimal[] = d.toFraction(10);
       let actual: string = f[0].toString();
@@ -740,14 +704,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3800
-     * @tc.name decimalToFractionPart02Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3600
+     * @tc.name decimalToFractionPart02Test036
      * @tc.desc Verify toFraction(100) on new Decimal("3.141592653589793") returns 311
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("3.141592653589793");
       const f: Decimal[] = d.toFraction(100);
       let actual: string = f[0].toString();
@@ -759,14 +723,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3900
-     * @tc.name decimalToFractionPart02Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3700
+     * @tc.name decimalToFractionPart02Test037
      * @tc.desc Verify toFraction(1000) on new Decimal("3.141592653589793") returns 355
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("3.141592653589793");
       const f: Decimal[] = d.toFraction(1000);
       let actual: string = f[0].toString();
@@ -778,14 +742,14 @@ export default function decimalToFractionPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_4000
-     * @tc.name decimalToFractionPart02Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_3800
+     * @tc.name decimalToFractionPart02Test038
      * @tc.desc Verify toFraction(112) on new Decimal("3.141592653589793") returns 333
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFractionPart02Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFractionPart02Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("3.141592653589793");
       const f: Decimal[] = d.toFraction(112);
       let actual: string = f[0].toString();
@@ -793,25 +757,6 @@ export default function decimalToFractionPart02Test(): void {
       expect(actual).assertEqual(expected);
       let actual2: string = f[1].toString();
       let expected2: string = "106";
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART02_4100
-     * @tc.name decimalToFractionPart02Test041
-     * @tc.desc Verify toFraction(8) on new Decimal("3.141592653589793") returns 22
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFractionPart02Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const d: Decimal = new Decimal("3.141592653589793");
-      const f: Decimal[] = d.toFraction(8);
-      let actual: string = f[0].toString();
-      let expected: string = "22";
-      expect(actual).assertEqual(expected);
-      let actual2: string = f[1].toString();
-      let expected2: string = '7';
       expect(actual2).assertEqual(expected2);
     });
   });

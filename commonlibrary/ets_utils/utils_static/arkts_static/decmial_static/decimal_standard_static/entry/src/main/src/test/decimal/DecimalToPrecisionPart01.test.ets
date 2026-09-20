@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -227,7 +228,7 @@ export default function decimalToPrecisionPart01Test(): void {
         d.toPrecision(0);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -245,7 +246,7 @@ export default function decimalToPrecisionPart01Test(): void {
         d.toPrecision(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -263,7 +264,7 @@ export default function decimalToPrecisionPart01Test(): void {
         d.toPrecision(2.5);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -281,7 +282,7 @@ export default function decimalToPrecisionPart01Test(): void {
         d.toPrecision(1e9 + 1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -299,7 +300,7 @@ export default function decimalToPrecisionPart01Test(): void {
         d.toPrecision(Number.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -317,7 +318,7 @@ export default function decimalToPrecisionPart01Test(): void {
         d.toPrecision(Number.NEGATIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -335,7 +336,7 @@ export default function decimalToPrecisionPart01Test(): void {
         d.toPrecision(Double.NaN);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -578,345 +579,298 @@ export default function decimalToPrecisionPart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_3900
      * @tc.name decimalToPrecisionPart01Test039
-     * @tc.desc Verify toPrecision(3) on new Decimal("1.2345") returns 1.23 and does not mutate source
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToPrecisionPart01Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let s: string = d.toPrecision(3);
-      let actual: string = d.toString();
-      let expected: string = "1.2345";
-      expect(actual).assertEqual(expected);
-      expect(s).assertEqual("1.23");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4000
-     * @tc.name decimalToPrecisionPart01Test040
-     * @tc.desc Verify toPrecision(3) on new Decimal("1.2345") returns 1.23
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToPrecisionPart01Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let actual: string = d.toPrecision(3);
-      expect(actual).assertEqual("1.23");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4100
-     * @tc.name decimalToPrecisionPart01Test041
-     * @tc.desc Verify toPrecision(3) on new Decimal("1.2345") returns 1.23
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToPrecisionPart01Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let s: string = d.toPrecision(3);
-      let actual: string = new Decimal(s).toString();
-      let expected: string = "1.23";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4200
-     * @tc.name decimalToPrecisionPart01Test042
      * @tc.desc Verify toPrecision(2) on new Decimal("1.25") returns 1.3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("1.25").toPrecision(2);
       expect(s).assertEqual("1.3");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4300
-     * @tc.name decimalToPrecisionPart01Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4000
+     * @tc.name decimalToPrecisionPart01Test040
      * @tc.desc Verify toPrecision(3) on new Decimal("123456789") returns 1.23e+8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("123456789").toPrecision(3);
       expect(s).assertEqual("1.23e+8");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4400
-     * @tc.name decimalToPrecisionPart01Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4100
+     * @tc.name decimalToPrecisionPart01Test041
      * @tc.desc Verify toPrecision(3) on new Decimal("999999999") returns 1.00e+9
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("999999999").toPrecision(3);
       expect(s).assertEqual("1.00e+9");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4500
-     * @tc.name decimalToPrecisionPart01Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4200
+     * @tc.name decimalToPrecisionPart01Test042
      * @tc.desc Verify toPrecision(2) on new Decimal("999.99") returns 1.0e+3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("999.99").toPrecision(2);
       expect(s).assertEqual("1.0e+3");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4600
-     * @tc.name decimalToPrecisionPart01Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4300
+     * @tc.name decimalToPrecisionPart01Test043
      * @tc.desc Verify toPrecision(3) on new Decimal("1e22") returns 1.00e+22
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("1e22").toPrecision(3);
       expect(s).assertEqual("1.00e+22");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4700
-     * @tc.name decimalToPrecisionPart01Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4400
+     * @tc.name decimalToPrecisionPart01Test044
      * @tc.desc Verify toPrecision(3) on new Decimal("0.0000001") returns 1.00e-7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("0.0000001").toPrecision(3);
       expect(s).assertEqual("1.00e-7");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4800
-     * @tc.name decimalToPrecisionPart01Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4500
+     * @tc.name decimalToPrecisionPart01Test045
      * @tc.desc Verify toPrecision(4) on new Decimal("1.2300") returns 1.230
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("1.2300").toPrecision(4);
       expect(s).assertEqual("1.230");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4900
-     * @tc.name decimalToPrecisionPart01Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4600
+     * @tc.name decimalToPrecisionPart01Test046
      * @tc.desc Verify toPrecision(3) on new Decimal("150.00") returns 150
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("150.00").toPrecision(3);
       expect(s).assertEqual("150");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5000
-     * @tc.name decimalToPrecisionPart01Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4700
+     * @tc.name decimalToPrecisionPart01Test047
      * @tc.desc Verify toPrecision(5) on new Decimal("150") returns 150.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("150").toPrecision(5);
       expect(s).assertEqual("150.00");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5100
-     * @tc.name decimalToPrecisionPart01Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4800
+     * @tc.name decimalToPrecisionPart01Test048
      * @tc.desc Verify toPrecision(2) on new Decimal("0.9999") returns 1.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("0.9999").toPrecision(2);
       expect(s).assertEqual("1.0");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5200
-     * @tc.name decimalToPrecisionPart01Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_4900
+     * @tc.name decimalToPrecisionPart01Test049
      * @tc.desc Verify toPrecision(3) on new Decimal("0.0000123456") returns 0.0000123
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("0.0000123456").toPrecision(3);
       expect(s).assertEqual("0.0000123");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5300
-     * @tc.name decimalToPrecisionPart01Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5000
+     * @tc.name decimalToPrecisionPart01Test050
      * @tc.desc Verify toPrecision(5) on new Decimal("123456789012345678901234567890") returns 1.2346e+29
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("123456789012345678901234567890").toPrecision(5);
       expect(s).assertEqual("1.2346e+29");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5400
-     * @tc.name decimalToPrecisionPart01Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5100
+     * @tc.name decimalToPrecisionPart01Test051
      * @tc.desc Verify toPrecision(16) on new Decimal("1.9999999999999999") returns 2.000000000000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("1.9999999999999999").toPrecision(16);
       expect(s).assertEqual("2.000000000000000");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5500
-     * @tc.name decimalToPrecisionPart01Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5200
+     * @tc.name decimalToPrecisionPart01Test052
      * @tc.desc Verify toPrecision(3) on new Decimal("10000") returns 1.00e+4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("10000").toPrecision(3);
       expect(s).assertEqual("1.00e+4");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5600
-     * @tc.name decimalToPrecisionPart01Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5300
+     * @tc.name decimalToPrecisionPart01Test053
      * @tc.desc Verify toPrecision(3) on new Decimal("10000.5") returns 1.00e+4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("10000.5").toPrecision(3);
       expect(s).assertEqual("1.00e+4");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5700
-     * @tc.name decimalToPrecisionPart01Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5400
+     * @tc.name decimalToPrecisionPart01Test054
      * @tc.desc Verify toPrecision(20) on new Decimal("12345678901234567890") returns 12345678901234567890
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("12345678901234567890").toPrecision(20);
       expect(s).assertEqual("12345678901234567890");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5800
-     * @tc.name decimalToPrecisionPart01Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5500
+     * @tc.name decimalToPrecisionPart01Test055
      * @tc.desc Verify toPrecision(19) on new Decimal("12345678901234567890") returns 1.234567890123456789e+19
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("12345678901234567890").toPrecision(19);
       expect(s).assertEqual("1.234567890123456789e+19");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5900
-     * @tc.name decimalToPrecisionPart01Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5600
+     * @tc.name decimalToPrecisionPart01Test056
      * @tc.desc Verify toPrecision(5) on new Decimal("0.000123456789") returns 0.00012346
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("0.000123456789").toPrecision(5);
       expect(s).assertEqual("0.00012346");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6000
-     * @tc.name decimalToPrecisionPart01Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5700
+     * @tc.name decimalToPrecisionPart01Test057
      * @tc.desc Verify toPrecision(20) on new Decimal("1.000000000000000000001") returns 1.00000000000000000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("1.000000000000000000001").toPrecision(20);
       expect(s).assertEqual("1.0000000000000000000");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6100
-     * @tc.name decimalToPrecisionPart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5800
+     * @tc.name decimalToPrecisionPart01Test058
      * @tc.desc Verify toPrecision(3) on new Decimal("1.23499999") returns 1.23
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("1.23499999").toPrecision(3);
       expect(s).assertEqual("1.23");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6200
-     * @tc.name decimalToPrecisionPart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_5900
+     * @tc.name decimalToPrecisionPart01Test059
      * @tc.desc Verify toPrecision(2) on new Decimal("9.9999e-9") returns 1.0e-8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("9.9999e-9").toPrecision(2);
       expect(s).assertEqual("1.0e-8");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6300
-     * @tc.name decimalToPrecisionPart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6000
+     * @tc.name decimalToPrecisionPart01Test060
      * @tc.desc Verify toPrecision(3) on new Decimal("9.9999e5") returns 1.00e+6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("9.9999e5").toPrecision(3);
       expect(s).assertEqual("1.00e+6");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6400
-     * @tc.name decimalToPrecisionPart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6100
+     * @tc.name decimalToPrecisionPart01Test061
      * @tc.desc Verify toPrecision(6) on new Decimal("1.23450") returns 1.2345
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.23450");
       let s: string = d.toPrecision(6);
       let actual: string = new Decimal(s).toString();
@@ -925,93 +879,96 @@ export default function decimalToPrecisionPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6500
-     * @tc.name decimalToPrecisionPart01Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6200
+     * @tc.name decimalToPrecisionPart01Test062
      * @tc.desc Verify toPrecision(1) on new Decimal("0.5000001") returns 0.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("0.5000001").toPrecision(1);
       expect(s).assertEqual("0.5");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6600
-     * @tc.name decimalToPrecisionPart01Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6300
+     * @tc.name decimalToPrecisionPart01Test063
      * @tc.desc Verify toPrecision(2) on new Decimal('7') returns 7.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal('7').toPrecision(2);
       expect(s).assertEqual("7.0");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6700
-     * @tc.name decimalToPrecisionPart01Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6400
+     * @tc.name decimalToPrecisionPart01Test064
      * @tc.desc Verify toPrecision(3) on new Decimal("-9.999e-9") returns -1.00e-8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToPrecisionPart01Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal("-9.999e-9").toPrecision(3);
       expect(s).assertEqual("-1.00e-8");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6900
-     * @tc.name decimalToPrecisionPart01Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6500
+     * @tc.name decimalToPrecisionPart01Test065
      * @tc.desc Verify toPrecision(2) on new Decimal("1.26") returns 1.2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it("decimalToPrecisionPart01Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
         Decimal.set({ rounding: Decimal.ROUND_DOWN });
         let s: string = new Decimal("1.26").toPrecision(2);
         expect(s).assertEqual("1.2");
+      } finally {
         Decimal.set({ defaults: true });
-
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_7000
-     * @tc.name decimalToPrecisionPart01Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6600
+     * @tc.name decimalToPrecisionPart01Test066
      * @tc.desc Verify toPrecision(2) on new Decimal("1.21") returns 1.3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it("decimalToPrecisionPart01Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
         Decimal.set({ rounding: Decimal.ROUND_UP });
         let s: string = new Decimal("1.21").toPrecision(2);
         expect(s).assertEqual("1.3");
+      } finally {
         Decimal.set({ defaults: true });
-
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_7100
-     * @tc.name decimalToPrecisionPart01Test071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_PRECISION_PART01_6700
+     * @tc.name decimalToPrecisionPart01Test067
      * @tc.desc Verify toPrecision(3) on new Decimal("123456789012") returns 1.23e+11
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToPrecisionPart01Test071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
+    it("decimalToPrecisionPart01Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
         Decimal.set({ toExpPos: 10 });
         let s: string = new Decimal("123456789012").toPrecision(3);
         expect(s).assertEqual("1.23e+11");
+      } finally {
         Decimal.set({ defaults: true });
-
+      }
     });
   });
 }
