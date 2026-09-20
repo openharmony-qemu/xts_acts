@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import testNapi from 'libentry.so'
 import { display, screenshot, window } from '@kit.ArkUI';
 import { abilityAccessCtrl, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
@@ -528,7 +528,27 @@ export default function ActsDisplayNdkApi14Test() {
         done();
       }
     })
-
+    /**
+    * @tc.name test_NativeDisplayManager_CaptureScreenPixeImapMax
+    * @tc.number SUB_DMS_OH_NativeDisplayManager_CaptureScreenPixeImap_0200
+    * @tc.desc test_NativeDisplayManager_CaptureScreenPixeImapMax
+    * @tc.type FUNCTION
+    * @tc.size MEDIUMTEST
+    * @tc.level LEVEL3
+    */
+    it('test_NativeDisplayManager_CaptureScreenPixeImapMax', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
+    let caseName = 'test_NativeDisplayManager_CaptureScreenPixeImapMax';
+    try{
+    let errcode = testNapi.getDisplayCaptureMax();
+    console.log(`${caseName} result: ${JSON.stringify(errcode)}`);
+    expect(errcode).assertEqual(1400003);
+    done();
+    } catch (err) {
+    console.log(caseName + ': fail:'+ err + ' '+err.code);
+    expect(false).assertTrue();
+    done();
+    }
+    })
     /**
      * @tc.name   test_getDefaultDisplaySync_api14
      * @tc.number SUB_BASIC_DMS_JS_0100

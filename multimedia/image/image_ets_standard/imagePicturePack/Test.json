@@ -17,46 +17,39 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files/*",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/cache/",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/HEIFISOMultiChannelBaseColor0512V12.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/0801_sdr2.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/all_auxtype.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/AllAuxiliaryPictures.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/JPEGISOSingle.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/AllAuxiliaryPictures_exclude_fragment.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/JpegFragmentMap.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/testExif.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/GainMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/UnrefocusMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/FragmentMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/jpeg_exif_thumbnail.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/jpeg_no_thumbnail.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/heif_box_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/heif_exif_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/heif_no_thumbnail.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/300_100.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files",
-                "./resource/image/generateThumbnailFailed.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files"
+                "./resource/image/HEIFISOMultiChannelBaseColor0512V12.heic ->/data/local/tmp/",
+                "./resource/image/0801_sdr2.heic ->/data/local/tmp/",
+                "./resource/image/all_auxtype.heic ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./resource/image/AllAuxiliaryPictures.jpg ->/data/local/tmp/",
+                "./resource/image/JPEGISOSingle.jpg ->/data/local/tmp/",
+                "./resource/image/AllAuxiliaryPictures_exclude_fragment.jpg ->/data/local/tmp/",
+                "./resource/image/JpegFragmentMap.jpg ->/data/local/tmp/",
+                "./resource/image/testExif.jpg ->/data/local/tmp/",
+                "./resource/image/GainMap.dat ->/data/local/tmp/",
+                "./resource/image/UnrefocusMap.dat ->/data/local/tmp/",
+                "./resource/image/FragmentMap.dat ->/data/local/tmp/",
+                "./resource/image/jpeg_exif_thumbnail.jpg ->/data/local/tmp/",
+                "./resource/image/jpeg_no_thumbnail.jpg ->/data/local/tmp/",
+                "./resource/image/heif_box_thumbnail.heic ->/data/local/tmp/",
+                "./resource/image/heif_exif_thumbnail.heic ->/data/local/tmp/",
+                "./resource/image/heif_no_thumbnail.heic ->/data/local/tmp/",
+                "./resource/image/300_100.jpg ->/data/local/tmp/",
+                "./resource/image/generateThumbnailFailed.jpg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_picturePack_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicturePack/haps/entry_test/files/*",
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "chmod 755 /data/local/tmp/setup_image_picturePack_test.sh",
+                "sh /data/local/tmp/setup_image_picturePack_test.sh"
             ]
         }
     ]

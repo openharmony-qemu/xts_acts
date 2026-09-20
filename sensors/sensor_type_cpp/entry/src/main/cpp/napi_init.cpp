@@ -323,116 +323,6 @@ static napi_value OH_SensorSubscriber_GetCallbackTest(napi_env env, napi_callbac
     return result;
 }
 
-static napi_value Vibrator_AttributeTest1(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_UNKNOWN;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest2(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_ALARM;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest3(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_RING;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest4(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_NOTIFICATION;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest5(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_COMMUNICATION;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest6(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_TOUCH;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest7(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_MEDIA;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest8(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_PHYSICAL_FEEDBACK;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest9(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_SIMULATED_REALITY;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
-static napi_value Vibrator_AttributeTest10(napi_env env, napi_callback_info info)
-{
-    napi_value result;
-    int32_t duration = 1;
-    Vibrator_Attribute vibrateAttribute;
-    vibrateAttribute.usage = VIBRATOR_USAGE_MAX;
-    int32_t ret = OH_Vibrator_PlayVibration(duration, vibrateAttribute);
-    napi_create_int32(env, ret, &result);
-    return result;
-}
-
 static napi_value Sensor_AccuracyTest1(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -581,16 +471,6 @@ napi_property_descriptor desc[] = {
         nullptr, nullptr, nullptr, napi_default, nullptr},
     {"sensorSubscriber_GetCallbackTest", nullptr, OH_SensorSubscriber_GetCallbackTest,
      nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest1", nullptr, Vibrator_AttributeTest1, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest2", nullptr, Vibrator_AttributeTest2, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest3", nullptr, Vibrator_AttributeTest3, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest4", nullptr, Vibrator_AttributeTest4, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest5", nullptr, Vibrator_AttributeTest5, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest6", nullptr, Vibrator_AttributeTest6, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest7", nullptr, Vibrator_AttributeTest7, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest8", nullptr, Vibrator_AttributeTest8, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest9", nullptr, Vibrator_AttributeTest9, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"vibrator_AttributeTest10", nullptr, Vibrator_AttributeTest10, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"sensor_AccuracyTest1", nullptr, Sensor_AccuracyTest1, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"sensor_AccuracyTest2", nullptr, Sensor_AccuracyTest2, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"sensor_AccuracyTest3", nullptr, Sensor_AccuracyTest3, nullptr, nullptr, nullptr, napi_default, nullptr},

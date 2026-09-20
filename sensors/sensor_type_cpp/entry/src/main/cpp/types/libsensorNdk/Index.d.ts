@@ -77,26 +77,6 @@ export const sensor_DestroySubscriberTest2: () => number;
 
 export const sensorSubscriber_GetCallbackTest: () => number;
 
-export const vibrator_AttributeTest1: () => number;
-
-export const vibrator_AttributeTest2: () => number;
-
-export const vibrator_AttributeTest3: () => number;
-
-export const vibrator_AttributeTest4: () => number;
-
-export const vibrator_AttributeTest5: () => number;
-
-export const vibrator_AttributeTest6: () => number;
-
-export const vibrator_AttributeTest7: () => number;
-
-export const vibrator_AttributeTest8: () => number;
-
-export const vibrator_AttributeTest9: () => number;
-
-export const vibrator_AttributeTest10: () => number;
-
 export const sensor_AccuracyTest1: () => number;
 
 export const sensor_AccuracyTest2: () => number;

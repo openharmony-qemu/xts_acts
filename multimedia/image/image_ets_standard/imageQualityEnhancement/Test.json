@@ -1,41 +1,37 @@
 {
-    "description": "Configuration for hjunit demo Tests",
-    "driver": {
-    "type": "OHJSUnitTest",
-    "test-timeout": "300000",
-    "bundle-name": "ohos.acts.multimedia.image.imagequalityenhancement",
-    "module-name": "entry_test",
-    "shell-timeout": "300000",
-    "testcase-timeout": "180000"
-    },
-    "kits": [
-        {
-            "test-file-name": [
-                "ActsImageQualityEnhancementTest.hap"
-            ],
-            "type": "AppInstallKit",
-            "cleanup-apps": true
-    },
-    {
-            "type": "ShellKit",
-            "run-command": [
-        "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagequalityenhancement/haps/entry_test/files/"
-      ]
-    },
-    {
-      "type": "PushKit",
-      "pre-push": [],
-      "push": [
-        "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagequalityenhancement/haps/entry_test/files",
-        "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagequalityenhancement/haps/entry_test/files",
-        "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagequalityenhancement/haps/entry_test/files"
-      ]
-    },
-    {
-      "type": "ShellKit",
-      "run-command": [
-        "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagequalityenhancement/haps/entry_test/files/*"
-            ]
-        }
-    ]
+  "description": "Configuration for hjunit demo Tests",
+  "driver": {
+      "type": "OHJSUnitTest",
+      "test-timeout": "300000",
+      "bundle-name": "ohos.acts.multimedia.image.imagequalityenhancement",
+      "module-name": "entry_test",
+      "shell-timeout": "300000",
+      "testcase-timeout": "180000"
+  },
+  "kits": [
+      {
+          "test-file-name": [
+              "ActsImageQualityEnhancementTest.hap"
+          ],
+          "type": "AppInstallKit",
+          "cleanup-apps": true
+      },
+      {
+          "type": "PushKit",
+          "pre-push": [],
+          "push": [
+              "./resource/image/test.jpg ->/data/local/tmp/",
+              "./resource/image/test.bmp ->/data/local/tmp/",
+              "./resource/image/test.png ->/data/local/tmp/",
+              "./resource/image/sh/setup_image_qualityEnhancement_test.sh ->/data/local/tmp/"
+          ]
+      },
+      {
+          "type": "ShellKit",
+          "run-command": [
+              "chmod 755 /data/local/tmp/setup_image_qualityEnhancement_test.sh",
+              "sh /data/local/tmp/setup_image_qualityEnhancement_test.sh"
+          ]
+      }
+  ]
 }
