@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,17 +15,20 @@
  */
 
 import media from '@ohos.multimedia.media';
-import { describe, it, expect, Level } from '@ohos/hypium';
-import Common, { FdObject } from './Common';
+import { describe, it, expect, Level } from '../../../hypium/index';
+import Common, { FdObject } from './Common.test';
 
-const TAG = 'avRecorderSqrFactorTest: ';
+const TAG = 'AVRecorderSqrFactorTest: ';
 const SQR_FACTOR_MIN = 0;
 const SQR_FACTOR_MAX = 51;
 
-export default function avRecorderSqrFactorTest() {
-  describe('avRecorderSqrFactorTest', () => {
-    let avRecorder: media.AVRecorder | null = null;
-    let fdObject: FdObject | undefined;
+export default function AVRecorderSqrFactorTest() {
+  describe('AVRecorderSqrFactorTest', () => {
+    let avRecorder: media.AVRecorder | undefined = undefined;
+    let fdObject: FdObject = {
+      fileAsset: null,
+      fdNumber: null
+    };
     let commonFun = new Common();
 
     /**
@@ -36,7 +39,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -50,7 +53,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: SQR_FACTOR_MIN
         };
@@ -58,9 +60,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -68,25 +68,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=0 and enableStableQualityMode=true success');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100 end');
       done();
@@ -100,7 +104,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -114,7 +118,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: SQR_FACTOR_MAX
         };
@@ -122,9 +125,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -132,25 +133,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=51 and enableStableQualityMode=true success');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200 end');
       done();
@@ -164,7 +169,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -178,7 +183,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: 27
         };
@@ -186,9 +190,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -196,25 +198,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=27 and enableStableQualityMode=true success');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300 end');
       done();
@@ -228,7 +234,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0400', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0400 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -242,7 +248,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: -1
         };
@@ -250,9 +255,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -260,25 +263,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.error(TAG + 'prepare with sqrFactor=-1 should have failed');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(false).assertTrue();
       } catch (err) {
         console.info(TAG + 'prepare with sqrFactor=-1 failed as expected: ' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0400 end');
       done();
@@ -292,7 +299,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0500', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0500 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -306,7 +313,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: 52
         };
@@ -314,9 +320,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -324,25 +328,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.error(TAG + 'prepare with sqrFactor=52 should have failed');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(false).assertTrue();
       } catch (err) {
         console.info(TAG + 'prepare with sqrFactor=52 failed as expected: ' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0500 end');
       done();
@@ -356,7 +364,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -370,7 +378,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: 10
         };
@@ -378,9 +385,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -388,25 +393,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=10 and enableStableQualityMode=true success');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600 end');
       done();
@@ -420,7 +429,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -434,16 +443,13 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true
         };
         let avConfig: media.AVRecorderConfig = {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -451,25 +457,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare without sqrFactor and enableStableQualityMode=true success');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700 end');
       done();
@@ -483,7 +493,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -497,7 +507,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: 1
         };
@@ -505,9 +514,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -515,25 +522,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=1 and enableStableQualityMode=true success');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800 end');
       done();
@@ -547,7 +558,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -561,7 +572,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: true,
           sqrFactor: 50
         };
@@ -569,9 +579,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -579,25 +587,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=50 and enableStableQualityMode=true success');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900 end');
       done();
@@ -611,7 +623,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -625,7 +637,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: false,
           sqrFactor: -1
         };
@@ -633,9 +644,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -643,25 +652,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=-1 and enableStableQualityMode=false success (no validation)');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000 end');
       done();
@@ -675,7 +688,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -689,7 +702,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: false,
           sqrFactor: 52
         };
@@ -697,9 +709,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -707,25 +717,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=52 and enableStableQualityMode=false success (no validation)');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100 end');
       done();
@@ -739,7 +753,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -753,7 +767,6 @@ export default function avRecorderSqrFactorTest() {
           videoFrameWidth: 640,
           videoFrameHeight: 480,
           videoFrameRate: 30,
-          enableBFrame: false,
           enableStableQualityMode: false,
           sqrFactor: 27
         };
@@ -761,9 +774,7 @@ export default function avRecorderSqrFactorTest() {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -771,25 +782,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=27 and enableStableQualityMode=false success (VBR mode)');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200 end');
       done();
@@ -803,7 +818,7 @@ export default function avRecorderSqrFactorTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300', Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300 start');
       try {
         let avProfile: media.AVRecorderProfile = {
@@ -816,16 +831,13 @@ export default function avRecorderSqrFactorTest() {
           videoCodec: media.CodecMimeType.VIDEO_HEVC,
           videoFrameWidth: 640,
           videoFrameHeight: 480,
-          videoFrameRate: 30,
-          enableBFrame: false
+          videoFrameRate: 30
         };
         let avConfig: media.AVRecorderConfig = {
           audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
           videoSourceType: media.VideoSourceType.VIDEO_SOURCE_TYPE_SURFACE_ES,
           profile: avProfile,
-          url: 'fd://35',
-          rotation: 0,
-          location: { latitude: 30, longitude: 130 }
+          url: 'fd://35'
         };
         let fileName = commonFun.resourceName();
         fdObject = await commonFun.getFd(fileName);
@@ -833,25 +845,29 @@ export default function avRecorderSqrFactorTest() {
         avConfig.url = fdPath;
 
         avRecorder = await media.createAVRecorder();
-        await avRecorder.prepare(avConfig);
+        if (avRecorder == undefined) {
+          console.error(TAG + 'createAVRecorder failed');
+          expect(false).assertTrue();
+          done();
+          return;
+        }
+        await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare without sqrFactor and enableStableQualityMode=false success (default)');
-        await avRecorder.release();
+        await avRecorder!.release();
         expect(true).assertTrue();
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300 failed: ' + JSON.stringify(err));
         expect(false).assertTrue();
       } finally {
-        if (avRecorder != null) {
+        if (avRecorder != undefined) {
           try {
-            await avRecorder.release();
+            await avRecorder!.release();
           } catch (e) {
             console.error(TAG + 'release failed: ' + JSON.stringify(e));
           }
-          avRecorder = null;
+          avRecorder = undefined;
         }
-        if (fdObject != null) {
-          await commonFun.closeFd(fdObject.fdNumber);
-        }
+        await commonFun.closeFd(fdObject.fdNumber);
       }
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300 end');
       done();
