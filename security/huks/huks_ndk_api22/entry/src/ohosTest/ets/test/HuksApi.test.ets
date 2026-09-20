@@ -108,5 +108,44 @@ export default function SecurityHuksApiTest() {
       let result: number = huksNdk.huksNativeApi22Type0200();
       expect(result).assertEqual(0);
     });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_KeyAlg_Native_API26_Func_0700
+     * @tc.number SUB_Security_HUKS_KeyAlg_Native_API26_Func_0700
+     * @tc.desc   test OH_Huks_KeyAlg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_HUKS_KeyAlg_Native_API26_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let result: number = huksNdk.huksNativeApi22KeyAlg0100();
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Struct_Native_API26_Func_0800
+     * @tc.number SUB_Security_HUKS_Struct_Native_API26_Func_0800
+     * @tc.desc   test all members of OH_Huks_Param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_HUKS_Struct_Native_API26_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let result: number = huksNdk.huksNativeApi22Struct0100();
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   SUB_Security_HUKS_Struct_Native_API26_Func_0900
+     * @tc.number SUB_Security_HUKS_Struct_Native_API26_Func_0900
+     * @tc.desc   test all members of OH_Huks_ExternalCryptoParam
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Security_HUKS_Struct_Native_API26_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      let result: number = huksNdk.huksNativeApi22Struct0200();
+      expect(result).assertEqual(0);
+    });
   })
 }
