@@ -17,7 +17,7 @@
  * Direct API calls for coverage detector (avoid emitEvent-only blind spot).
  * Complements existing page+emitEvent suites under user_agent_one.
  */
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import webview from '@ohos.web.webview';
 import { BusinessError } from '@kit.BasicServicesKit';
 

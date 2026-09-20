@@ -15,7 +15,7 @@
 import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium'
+import { Hypium } from '@ohos/hypium-dynamic'
 import Utils from '../../test/Utils';
 import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 

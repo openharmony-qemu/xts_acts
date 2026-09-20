@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
