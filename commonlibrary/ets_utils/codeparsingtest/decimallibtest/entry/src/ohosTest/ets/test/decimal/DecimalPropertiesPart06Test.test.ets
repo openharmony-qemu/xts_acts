@@ -1137,7 +1137,1079 @@ export default function decimalPropertiesPart06TestTest() {
       }
     });
   
-
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5100
+     * @tc.name testDecimalPropertiesPart06TestTest051
+     * @tc.desc Verify '1"><script>alert(1)</script>' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1"><script>alert(1)</script>');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5200
+     * @tc.name testDecimalPropertiesPart06TestTest052
+     * @tc.desc Verify SQL "' OR '1'='1" 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal("' OR '1'='1");
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5300
+     * @tc.name testDecimalPropertiesPart06TestTest053
+     * @tc.desc Verify ';DROP TABLE users;' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal(';DROP TABLE users;');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5400
+     * @tc.name testDecimalPropertiesPart06TestTest054
+     * @tc.desc Verify iframe '<iframe src=x>' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('<iframe src=x>');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5500
+     * @tc.name testDecimalPropertiesPart06TestTest055
+     * @tc.desc Verify '${1+1}' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('${1+1}');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5600
+     * @tc.name testDecimalPropertiesPart06TestTest056
+     * @tc.desc Verify '`5`' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('`5`');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5700
+     * @tc.name testDecimalPropertiesPart06TestTest057
+     * @tc.desc Verify '{{7*7}}' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('{{7*7}}');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5800
+     * @tc.name testDecimalPropertiesPart06TestTest058
+     * @tc.desc Verify HTML '&lt;' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('&lt;');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_5900
+     * @tc.name testDecimalPropertiesPart06TestTest059
+     * @tc.desc Verify HTML '&amp;' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('&amp;');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6000
+     * @tc.name testDecimalPropertiesPart06TestTest060
+     * @tc.desc Verify block-comment-like string rejected with 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('/*5*/');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6100
+     * @tc.name testDecimalPropertiesPart06TestTest061
+     * @tc.desc Verify '//5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('//5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6200
+     * @tc.name testDecimalPropertiesPart06TestTest062
+     * @tc.desc Verify '5#' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('5#');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6300
+     * @tc.name testDecimalPropertiesPart06TestTest063
+     * @tc.desc Verify '>5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('>5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6400
+     * @tc.name testDecimalPropertiesPart06TestTest064
+     * @tc.desc Verify '--5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('--5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6500
+     * @tc.name testDecimalPropertiesPart06TestTest065
+     * @tc.desc Verify '+-5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('+-5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6600
+     * @tc.name testDecimalPropertiesPart06TestTest066
+     * @tc.desc Verify '5--' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('5--');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6700
+     * @tc.name testDecimalPropertiesPart06TestTest067
+     * @tc.desc Verify '1..2' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1..2');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6800
+     * @tc.name testDecimalPropertiesPart06TestTest068
+     * @tc.desc Verify '..5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('..5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_6900
+     * @tc.name testDecimalPropertiesPart06TestTest069
+     * @tc.desc Verify '1e' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1e');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7000
+     * @tc.name testDecimalPropertiesPart06TestTest070
+     * @tc.desc Verify '1E' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1E');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7100
+     * @tc.name testDecimalPropertiesPart06TestTest071
+     * @tc.desc Verify '1e-' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1e-');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7200
+     * @tc.name testDecimalPropertiesPart06TestTest072
+     * @tc.desc Verify '1e++5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1e++5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7300
+     * @tc.name testDecimalPropertiesPart06TestTest073
+     * @tc.desc Verify '1e5e6' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1e5e6');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7400
+     * @tc.name testDecimalPropertiesPart06TestTest074
+     * @tc.desc Verify '1e5.5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1e5.5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7500
+     * @tc.name testDecimalPropertiesPart06TestTest075
+     * @tc.desc Verify '1 5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1 5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7600
+     * @tc.name testDecimalPropertiesPart06TestTest076
+     * @tc.desc Verify '1,000' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1,000');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7700
+     * @tc.name testDecimalPropertiesPart06TestTest077
+     * @tc.desc Verify '1/5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1/5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7800
+     * @tc.name testDecimalPropertiesPart06TestTest078
+     * @tc.desc Verify '1-5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1-5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_7900
+     * @tc.name testDecimalPropertiesPart06TestTest079
+     * @tc.desc Verify '5.5.5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('5.5.5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8000
+     * @tc.name testDecimalPropertiesPart06TestTest080
+     * @tc.desc Verify '0x' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('0x');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8100
+     * @tc.name testDecimalPropertiesPart06TestTest081
+     * @tc.desc Verify '0b' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('0b');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8200
+     * @tc.name testDecimalPropertiesPart06TestTest082
+     * @tc.desc Verify '0o' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('0o');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8300
+     * @tc.name testDecimalPropertiesPart06TestTest083
+     * @tc.desc Verify hex '0x1p2' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+        it('testDecimalPropertiesPart06TestTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let d: Decimal = new Decimal('0x1p2');
+        expect(d.toString()).assertLarger(0);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8400
+     * @tc.name testDecimalPropertiesPart06TestTest084
+     * @tc.desc Verify '1a' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1a');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8500
+     * @tc.name testDecimalPropertiesPart06TestTest085
+     * @tc.desc Verify '5L' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('5L');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8600
+     * @tc.name testDecimalPropertiesPart06TestTest086
+     * @tc.desc Verify bigint '5n' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('5n');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8700
+     * @tc.name testDecimalPropertiesPart06TestTest087
+     * @tc.desc Verify d '1d5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('1d5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8800
+     * @tc.name testDecimalPropertiesPart06TestTest088
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('１２３');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_8900
+     * @tc.name testDecimalPropertiesPart06TestTest089
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('⁵');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9000
+     * @tc.name testDecimalPropertiesPart06TestTest090
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('₅');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9100
+     * @tc.name testDecimalPropertiesPart06TestTest091
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('①②');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9200
+     * @tc.name testDecimalPropertiesPart06TestTest092
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('Ⅻ');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9300
+     * @tc.name testDecimalPropertiesPart06TestTest093
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('½');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9400
+     * @tc.name testDecimalPropertiesPart06TestTest094
+     * @tc.desc Verify - ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('١٢٣');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9500
+     * @tc.name testDecimalPropertiesPart06TestTest095
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('१२३');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9600
+     * @tc.name testDecimalPropertiesPart06TestTest096
+     * @tc.desc Verify U+2212 ' 5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('−5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9700
+     * @tc.name testDecimalPropertiesPart06TestTest097
+     * @tc.desc Verify U+2012 ' 5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('‒5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9800
+     * @tc.name testDecimalPropertiesPart06TestTest098
+     * @tc.desc Verify ' 5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('¯5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART06_SUPPLEMENT_TEST_9900
+     * @tc.name testDecimalPropertiesPart06TestTest099
+     * @tc.desc Verify '%5' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart06TestTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+      let d: Decimal = new Decimal('%5');
+      expect(d.toString()).assertEqual('NaN');
+      expect(d.d.length).assertEqual(0);
+      expect(Number.isNaN(d.e)).assertTrue();
+      expect(Number.isNaN(d.s)).assertTrue();
+      expect(d.isNaN()).assertTrue();
+      expect(d.d === d.d).assertTrue();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+  
   });
 
 }
