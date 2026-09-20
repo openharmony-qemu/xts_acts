@@ -18,7 +18,7 @@ import wifiManager from '@ohos.wifiManager';
 import wifiManagerExt from '@ohos.wifiManagerExt';
 import geoLocationManager from '@ohos.geoLocationManager'
 import { BusinessError } from '@ohos.base'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 
 
 // no permission.

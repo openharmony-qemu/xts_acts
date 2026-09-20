@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { expect } from "@ohos/hypium";
+import { expect } from "@ohos/hypium-dynamic";
 import cryptoFramework from "@ohos.security.cryptoFramework";
 import cert from "@ohos.security.cert";
 import { BusinessError } from '@ohos.base';

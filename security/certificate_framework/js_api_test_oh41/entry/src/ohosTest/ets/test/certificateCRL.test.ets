@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic'
 import * as certPromise from "./utils/certificate/publicCertificatePromise";
 import * as certCallback from "./utils/certificate/publicCertificateCallback";
 

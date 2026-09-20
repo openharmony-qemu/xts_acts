@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import webSocket from '@ohos.net.webSocket';
 import { BusinessError } from '@kit.BasicServicesKit';
 import buffer from '@ohos.buffer';

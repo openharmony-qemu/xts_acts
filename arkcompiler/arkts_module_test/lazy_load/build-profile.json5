@@ -22,12 +22,18 @@
         "signingConfig": "default",
         "compileSdkVersion": "26.0.1",
         "compatibleSdkVersion": 14,
-        "runtimeOS": "OpenHarmony"
+        "runtimeOS": "OpenHarmony",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
       }
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"
@@ -49,7 +55,7 @@
     },
     {
       "name": "lazyhar",
-      "srcPath": "./lazyhar",
+      "srcPath": "./lazyhar"
     },
     {
       "name": "lazyhsp",

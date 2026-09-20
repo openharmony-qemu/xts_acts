@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import { AnnoTest0200Class, AnnoTest0300Class, AnnoTest0400Class, AnnoTest0500Class, AnnoTest0600Class, AnnoTest0700Class, AnnoTest0900Class } from '../exports_annotation/AnnoTestClasses';
 import { sleep } from "../utils/Utils";
 

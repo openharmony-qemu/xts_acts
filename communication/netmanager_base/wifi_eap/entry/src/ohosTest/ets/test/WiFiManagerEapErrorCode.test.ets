@@ -14,7 +14,7 @@
  */
 
 import eap from '@ohos.net.eap';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import {BusinessError,Callback} from '@ohos.base'
 
 function sleep(delay:number):Promise<void> {

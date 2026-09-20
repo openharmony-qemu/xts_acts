@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import socket from '@ohos.net.socket';
 import util from '@ohos.util';
 

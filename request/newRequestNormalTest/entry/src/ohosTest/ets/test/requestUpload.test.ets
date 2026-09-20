@@ -17,7 +17,7 @@ import fileio from '@ohos.fileio';
 import request from "@ohos.request";
 import common from '@ohos.app.ability.common';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 
 export default function requestUploadNormalJSUnit() {
   describe('requestUploadNormalJSUnit', () => {

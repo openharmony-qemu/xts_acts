@@ -18,7 +18,7 @@ import bluetoothBle from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import connection from '@ohos.bluetooth.connection';
 import { util } from '@kit.ArkTS'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 let gattS: bluetoothBle.GattServer;
 let gattC: bluetoothBle.GattClientDevice;

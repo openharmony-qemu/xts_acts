@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import defaultAppMgr from '@ohos.bundle.defaultAppManager'
 
 const PARAM_ERROR_CODE = 401;

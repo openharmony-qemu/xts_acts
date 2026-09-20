@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import { ENTINFO1, SELFWANT, SELFHAPNAME, DEFAULT_USER_ID, INVALID_USER_ID, appIdsInit,
   INVALID_WANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1 } from "../commom.ets";
 import { Driver, ON } from '@kit.TestKit';

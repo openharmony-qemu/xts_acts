@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { TestType, Size, Level, describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { TestType, Size, Level, describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium-dynamic';
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {

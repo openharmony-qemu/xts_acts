@@ -18,7 +18,7 @@ import fs from '@ohos.file.fs'
 import request from "@ohos.request";
 import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { WifiConnectStatus } from '../common/WifiConnectStatus';
 import  { Request, UploadRequestOptions, UploadResponse } from '@kit.BasicServicesKit';

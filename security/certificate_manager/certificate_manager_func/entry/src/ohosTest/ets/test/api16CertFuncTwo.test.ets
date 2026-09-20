@@ -17,7 +17,7 @@ import certManager from '@ohos.security.certManager';
 import { BusinessError } from '@ohos.base';
 import { systemParameterEnhance } from '@kit.BasicServicesKit';
 import buffer from '@ohos.buffer';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import * as signVerifyPromise from './utils/signAndVerify/signVerifyPromise';
 import { GlobalContext } from '../../../../src/main/ets/pages/HomePage';
 import certManagerDialog from '@ohos.security.certManagerDialog';

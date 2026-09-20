@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium-dynamic";
 import * as certFunc from "./utils/collection/certFunc";
 import * as crlFunc from "./utils/collection/crlFunc";
 import * as collectionFunc from "./utils/collection/collectionFunc";

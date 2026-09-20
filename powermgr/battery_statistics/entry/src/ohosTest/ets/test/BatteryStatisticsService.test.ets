@@ -14,7 +14,7 @@
  */
 
 import batteryStatistics from '@ohos.batteryStatistics';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 
 export default function BatteryStatisticsServiceTest(): void {

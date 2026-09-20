@@ -14,7 +14,7 @@
  */
 
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { asyncGenerator } from './test2018_01'
 import { obj3 } from './test2018_02'
 import { remaining } from './test2018_03'

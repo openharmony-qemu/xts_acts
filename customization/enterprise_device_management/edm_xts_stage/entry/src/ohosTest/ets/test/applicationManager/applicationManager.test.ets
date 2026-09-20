@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, expect, it, Level } from '@ohos/hypium-dynamic';
 import systemParameterEnhance from "@ohos.systemParameterEnhance";
 import {
   ENTINFO1,

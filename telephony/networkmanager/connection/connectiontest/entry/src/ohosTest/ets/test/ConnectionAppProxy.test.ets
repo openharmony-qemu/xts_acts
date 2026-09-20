@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, TestType, Size, Level  } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, TestType, Size, Level  } from '@ohos/hypium-dynamic'
 import http from '@ohos.net.http';
 import connection from '@ohos.net.connection';
 
