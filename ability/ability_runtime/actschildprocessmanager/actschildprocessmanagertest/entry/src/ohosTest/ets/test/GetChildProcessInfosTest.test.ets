@@ -19,11 +19,8 @@ import { ChildProcessArgs } from '@ohos.app.ability.ChildProcessArgs';
 import { ChildProcessOptions } from '@ohos.app.ability.ChildProcessOptions';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
-import Want from '@ohos.app.ability.Want';
-import StartOptions from '@ohos.app.ability.StartOptions';
-import contextConstant from '@ohos.app.ability.contextConstant';
+import { contextConstant, StartOptions, Want } from '@kit.AbilityKit';
 import XTSArkProcess from '../xts/XTSArkProcess';
-import InfosSpawnProcess from '../xts/InfosSpawnProcess';
 
 const TAG = 'GetChildProcessInfos';
 const ERR_SERVICE = 16000050;
@@ -52,7 +49,7 @@ export default function getChildProcessInfosTest() {
   describe('GetChildProcessInfosTest', () => {
     let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     let arkProcessPath = 'entry/./ets/xts/XTSArkProcess.ets';
-    let spawnProcessPath = 'entry/./ets/xts/InfosSpawnProcess.ets';
+    let spawnProcessPath = './ets/process/InfosSpawnProcess.ets';
     let pid = 0;
     let arkSupported = false;
 
@@ -170,7 +167,6 @@ export default function getChildProcessInfosTest() {
     it('SUB_Ability_AbilityRuntime_GetChildProcessInfos_AfterSpawn_0100', Level.LEVEL0,
       async (done: Function) => {
         try {
-          InfosSpawnProcess.toString();
           pid = await childProcessManager.startChildProcess(
             spawnProcessPath, childProcessManager.StartMode.APP_SPAWN_FORK);
           expect(pid > 0).assertTrue();
