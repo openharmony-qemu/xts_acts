@@ -20,6 +20,10 @@ import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { accessibility, config } from '@kit.AccessibilityKit';
+
+const A11Y_BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const A11Y_CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 
 export default class Utils {
   static sleep(time: number) {
@@ -314,5 +318,13 @@ export default class Utils {
         }
       }
     }
+  }
+
+  static enableAccessibilityAbility(): void {
+    config.enableAbility(A11Y_BUNDLE_NAME, A11Y_CAPACITY).then(() => {
+      console.info('enableAccessibilityAbility success');
+    }).catch((err: BusinessError) => {
+      console.error(`enableAccessibilityAbility failed, code: ${err.code}, message: ${err.message}`);
+    });
   }
 }
