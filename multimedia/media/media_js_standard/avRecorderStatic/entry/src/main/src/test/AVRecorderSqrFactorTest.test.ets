@@ -70,17 +70,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=0 and enableStableQualityMode=true success');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0100 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -135,17 +135,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=51 and enableStableQualityMode=true success');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0200 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -200,17 +200,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=27 and enableStableQualityMode=true success');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0300 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -265,14 +265,14 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.error(TAG + 'prepare with sqrFactor=-1 should have failed');
         await avRecorder!.release();
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (err) {
         console.info(TAG + 'prepare with sqrFactor=-1 failed as expected: ' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
@@ -330,14 +330,14 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.error(TAG + 'prepare with sqrFactor=52 should have failed');
         await avRecorder!.release();
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (err) {
         console.info(TAG + 'prepare with sqrFactor=52 failed as expected: ' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
@@ -395,17 +395,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=10 and enableStableQualityMode=true success');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0600 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -459,17 +459,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare without sqrFactor and enableStableQualityMode=true success');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0700 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -524,17 +524,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=1 and enableStableQualityMode=true success');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0800 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -589,17 +589,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=50 and enableStableQualityMode=true success');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_0900 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -654,17 +654,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=-1 and enableStableQualityMode=false success (no validation)');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1000 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -719,17 +719,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=52 and enableStableQualityMode=false success (no validation)');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1100 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -784,17 +784,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare with sqrFactor=27 and enableStableQualityMode=false success (VBR mode)');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1200 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
@@ -847,17 +847,17 @@ export default function AVRecorderSqrFactorTest() {
         avRecorder = await media.createAVRecorder();
         if (avRecorder == undefined) {
           console.error(TAG + 'createAVRecorder failed');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
           return;
         }
         await avRecorder!.prepare(avConfig);
         console.info(TAG + 'prepare without sqrFactor and enableStableQualityMode=false success (default)');
         await avRecorder!.release();
-        expect(true).assertTrue();
+        expect(avRecorder!.state).assertEqual(commonFun.AV_RECORDER_STATE.RELEASED);
       } catch (err) {
         console.error(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_SQRFACTOR_PROMISE_1300 failed: ' + JSON.stringify(err));
-        expect(false).assertTrue();
+        expect().assertFail();
       } finally {
         if (avRecorder != undefined) {
           try {
