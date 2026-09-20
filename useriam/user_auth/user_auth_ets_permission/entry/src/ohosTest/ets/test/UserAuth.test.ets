@@ -72,5 +72,23 @@ export default function UserAuthTest() {
         expect(err.code).assertEqual(201);
       }
     })
+    /**
+     * @tc.name   SUB_Security_IAM_PassiveRecognition_Api_5008
+     * @tc.number SUB_Security_IAM_PassiveRecognition_Api_5008
+     * @tc.desc   Verify getUserRecognitionMgr returns error code 201 without permission
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_IAM_PassiveRecognition_Api_5008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
+      console.info('SUB_Security_IAM_PassiveRecognition_Api_5008 start');
+      try {
+        let mgr: userAuth.UserRecognitionMgr | null = userAuth.getUserRecognitionMgr();
+        expect(false).assertTrue();
+      } catch (err) {
+        console.info(`SUB_Security_IAM_PassiveRecognition_Api_5008: getUserRecognitionMgr failed, err.code ${err.code}, err.message ${err.message}`);
+        expect(err.code).assertEqual(201);
+      }
+    })
   })
 }
