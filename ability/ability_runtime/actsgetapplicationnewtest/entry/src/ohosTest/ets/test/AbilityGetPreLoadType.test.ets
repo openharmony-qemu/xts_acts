@@ -1,4 +1,4 @@
-import { describe, it, expect, afterEach, Level } from '@ohos/hypium';
+import { describe, it, expect, afterEach, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@kit.TestKit';
 import commonEventManager from '@ohos.commonEventManager';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

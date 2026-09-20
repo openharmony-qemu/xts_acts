@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, afterEach, Level } from '@ohos/hypium';
+import { describe, it, expect, afterEach, Level } from '@ohos/hypium-dynamic';
 import commonEvent from '@ohos.commonEventManager';
 import { Constant } from '../Common';
 import display from '@ohos.display';

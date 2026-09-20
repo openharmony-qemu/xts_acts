@@ -13,7 +13,7 @@
   * limitations under the License.
 */
 
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@ohos.UiTest';
 
 import { ChildProcessArgs, ChildProcessOptions, childProcessManager, common } from '@kit.AbilityKit';

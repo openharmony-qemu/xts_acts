@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 // 加载js测试框架
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import CommonEventManager from '@ohos.commonEventManager';

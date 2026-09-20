@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, afterEach, beforeAll, it, expect, Level } from '@ohos/hypium'
+import { describe, afterEach, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import hilog from '@ohos.hilog';
 import { Driver, ON } from '@ohos.UiTest';

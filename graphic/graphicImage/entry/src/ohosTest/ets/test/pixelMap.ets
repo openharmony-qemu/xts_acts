@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium"
+import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';

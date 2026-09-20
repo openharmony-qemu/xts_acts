@@ -1579,7 +1579,6 @@ export default function btBleServiceTest() {
         });
         gattServer.off('BLEMtuChange');
         console.info('[bluetooth_js]off BLEMtuChange without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error("bluetooth mtu changed off no callback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {

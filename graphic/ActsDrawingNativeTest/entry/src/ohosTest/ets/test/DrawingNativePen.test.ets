@@ -404,28 +404,41 @@ export default function DrawingNativePenTest() {
     })
 
     /**
-     * @tc.name   testPenSetWidthMultipleCalls
+     * @tc.name   testPenSetWidthBoundaryValues
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0700
+     * @tc.desc   Test for testPenSetWidthBoundaryValues.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPenSetWidthBoundaryValues', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPenWidth(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPenSetWidthMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0800
      * @tc.desc   Test for testPenSetWidthMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPenSetWidthMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPenWidth(6);
+      const result = libDrawingNative.DrawingPenWidth(7);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testPenSetWidthMultipleCallsBoundary
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenWidth_0900
      * @tc.desc   Test for testPenSetWidthMultipleCallsBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPenSetWidthMultipleCallsBoundary', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPenWidth(7);
+      const result = libDrawingNative.DrawingPenWidth(8);
       expect(result).assertEqual(0);
     })
 
@@ -496,15 +509,28 @@ export default function DrawingNativePenTest() {
     })
 
     /**
-     * @tc.name   testPenSetMiterLimitMultipleCalls
+     * @tc.name   testPenSetMiterLimitBoundaryValues
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0600
+     * @tc.desc   Test for testPenSetMiterLimitBoundaryValues.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPenSetMiterLimitBoundaryValues', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPenMiterLimit(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPenSetMiterLimitMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenMiterLimit_0700
      * @tc.desc   Test for testPenSetMiterLimitMultipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPenSetMiterLimitMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPenMiterLimit(5);
+      const result = libDrawingNative.DrawingPenMiterLimit(6);
       expect(result).assertEqual(0);
     })
 
@@ -894,80 +920,93 @@ export default function DrawingNativePenTest() {
     })
 
     /**
-     * @tc.name   testPenGetRedFloatNormal
+     * @tc.name   testPenGetAlphaFloatBoundary
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0300
+     * @tc.desc   test for testPenGetAlphaFloatBoundary.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testPenGetAlphaFloatBoundary', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingPenGetFloat(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPenGetRedFloatNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0400
      * @tc.desc   test for testPenGetRedFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('testPenGetRedFloatNormal', Level.LEVEL2, () => {
-      const result = libDrawingNative.DrawingPenGetFloat(2);
+      const result = libDrawingNative.DrawingPenGetFloat(3);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testPenGetRedFloatAbnormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0500
      * @tc.desc   test for testPenGetRedFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPenGetRedFloatAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPenGetFloat(3);
+      const result = libDrawingNative.DrawingPenGetFloat(4);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testPenGetGreenFloatNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0600
      * @tc.desc   test for testPenGetGreenFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('testPenGetGreenFloatNormal', Level.LEVEL2, () => {
-      const result = libDrawingNative.DrawingPenGetFloat(4);
+      const result = libDrawingNative.DrawingPenGetFloat(5);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testPenGetGreenFloatAbnormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0700
      * @tc.desc   test for testPenGetGreenFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPenGetGreenFloatAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPenGetFloat(5);
+      const result = libDrawingNative.DrawingPenGetFloat(6);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testPenGetBlueFloatNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0800
      * @tc.desc   test for testPenGetBlueFloatNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('testPenGetBlueFloatNormal', Level.LEVEL2, () => {
-      const result = libDrawingNative.DrawingPenGetFloat(6);
+      const result = libDrawingNative.DrawingPenGetFloat(7);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testPenGetBlueFloatAbnormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPenGetFloat_0900
      * @tc.desc   test for testPenGetBlueFloatAbnormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPenGetBlueFloatAbnormal', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPenGetFloat(7);
+      const result = libDrawingNative.DrawingPenGetFloat(8);
       expect(result).assertEqual(0);
     })
 

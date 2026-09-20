@@ -193,5 +193,109 @@ export default function DrawingNativeRecordCmdTest() {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(4);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetHeightNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0100
+     * @tc.desc   test for testRecordCmdUtilsGetHeightNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetHeightNormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetHeightNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0200
+     * @tc.desc   test for testRecordCmdUtilsGetHeightNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetHeightNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetHeightAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0300
+     * @tc.desc   test for testRecordCmdUtilsGetHeightAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetHeightAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetHeightMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0400
+     * @tc.desc   test for testRecordCmdUtilsGetHeightMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetHeightMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetWidthNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0500
+     * @tc.desc   test for testRecordCmdUtilsGetWidthNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetWidthNormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetWidthNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0600
+     * @tc.desc   test for testRecordCmdUtilsGetWidthNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetWidthNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetWidthAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0700
+     * @tc.desc   test for testRecordCmdUtilsGetWidthAbnormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetWidthAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRecordCmdUtilsGetWidthMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRecordCmdUtilsGetHeightOrWidth_0800
+     * @tc.desc   test for testRecordCmdUtilsGetWidthMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRecordCmdUtilsGetWidthMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(7);
+      expect(result).assertEqual(0);
+    })
   })
 }

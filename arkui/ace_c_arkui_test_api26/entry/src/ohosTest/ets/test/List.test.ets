@@ -56,8 +56,10 @@ import ArcSwiperMethodTest from './arcSwiper/ArcSwiperMethodTest.test'
 import ArcSwiperEventCallbackTest from './arcSwiper/ArcSwiperEventCallbackTest.test'
 import ArcAlphabetIndexerAttributeTest from './arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.test'
 import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.test'
+import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
 
 export default function testsuite() {
+  SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
   RegisterCommonAreaApproximateChangeEventTest();
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();

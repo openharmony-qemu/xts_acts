@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import { Want, common } from '@kit.AbilityKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import { BusinessError, systemParameterEnhance } from '@kit.BasicServicesKit';

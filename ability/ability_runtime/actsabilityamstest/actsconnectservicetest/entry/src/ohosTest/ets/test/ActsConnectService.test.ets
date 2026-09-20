@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { common, Want } from '@kit.AbilityKit';
 
 let testAbilityContext: common.UIAbilityContext;

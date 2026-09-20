@@ -1161,7 +1161,7 @@ export default function Int16ArrayOfTest02(): void {
      * @tc.level Level 2
      */
     it('testInt16ArrayOfTestTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let vals: FixedArray<short> = new FixedArray<short>(50);
+      let vals: FixedArray<short> = new FixedArray<short>(50, 0);
       for (let i = 0; i < 50; i++) {
         vals[i] = (i % 2 === 0 ? 1 as short : -1 as short);
       }

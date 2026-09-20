@@ -17,28 +17,26 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files/*",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/cache/",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/cache/*",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_v2.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_v2.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_empty.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_empty.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_empty.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_v3.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_v3.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files",
-                "./resource/image/test_exif_v3.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePackerExif/haps/entry_test/files"
+                "./resource/image/test_exif_v2.jpg ->/data/local/tmp/",
+                "./resource/image/test_exif_v2.png ->/data/local/tmp/",
+                "./resource/image/test_exif_v2.webp ->/data/local/tmp/",
+                "./resource/image/test_exif_empty.jpg ->/data/local/tmp/",
+                "./resource/image/test_exif_empty.png ->/data/local/tmp/",
+                "./resource/image/test_exif_empty.webp ->/data/local/tmp/",
+                "./resource/image/test_exif_v3.jpg ->/data/local/tmp/",
+                "./resource/image/test_exif_v3.png ->/data/local/tmp/",
+                "./resource/image/test_exif_v3.webp ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_packerExif_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_packerExif_test.sh",
+                "sh /data/local/tmp/setup_image_packerExif_test.sh"
             ]
         }
     ]

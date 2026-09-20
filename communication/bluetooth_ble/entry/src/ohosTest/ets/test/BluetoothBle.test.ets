@@ -3306,9 +3306,42 @@ export default function bluetoothBleTest() {
                 console.info('[bt_arkts]device on serviceChange success');
                 device.off('serviceChange');
                 console.info('[bt_arkts]device off serviceChange without callback success');
-                expect(true).assertTrue();
             } catch (error) {
                 console.error(`[bt_arkts]service change off no callback is failed, code is ${error.code},message is ${error.message}`);
+                if (error.code === '801') {
+                    console.info('[bt_arkts]is not support');
+                    expect(error.code === '801').assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100
+         * @tc.desc   Test GattClientDevice on serviceChange with mutiple callback param test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_ON_MultiCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let onReceiveEvent1 = () => {
+                console.info('[bluetooth_js] BLEscan device result_viod1');
+            }
+            let onReceiveEvent2 = () => {
+                console.info('[bluetooth_js] BLEscan device result_viod2');
+            }
+            try {
+                device.on('serviceChange', onReceiveEvent1);
+                console.info('[bt_arkts]device on serviceChange success');
+                device.on('serviceChange', onReceiveEvent2);
+                console.info('[bt_arkts]device on serviceChange success');
+                device.off('serviceChange');
+                console.info('[bt_arkts]device off serviceChange without callback success');
+            } catch (error) {
+                console.error(`[bt_arkts]service change on with mutiple callback is failed, code is ${error.code},message is ${error.message}`);
                 if (error.code === '801') {
                     console.info('[bt_arkts]is not support');
                     expect(error.code === '801').assertTrue();
@@ -3343,6 +3376,248 @@ export default function bluetoothBleTest() {
                     expect().assertFail();
                 }
             }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0800
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0800
+         * @tc.desc   Test startBLEScan api10 with illegal dutyMode enum value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0800"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: -1,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.NORMAL,
+                isExtended: false
+            };
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info(`${caseName} startBLEScan success`);
+            } catch (err) {
+                console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
+                if (err.code == '801') {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    console.info(`${caseName} startBLEScan failed, invalid dutyMode parameter.`);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0900
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0900
+         * @tc.desc   Test startBLEScan api10 with illegal matchMode enum value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_0900"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: -1,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.NORMAL,
+                isExtended: false
+            };
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info(`${caseName} startBLEScan success`);
+            } catch (err) {
+                console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
+                if (err.code == '801') {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    console.info(`${caseName} startBLEScan failed, invalid matchMode parameter.`);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1000
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1000
+         * @tc.desc   Test startBLEScan api10 with illegal phyType enum value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1000"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: -1,
+                reportMode: bluetooth.ScanReportMode.NORMAL,
+                isExtended: false
+            };
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info(`${caseName} startBLEScan success`);               
+            } catch (err) {
+                console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
+                if (err.code == '801') {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    console.info(`${caseName} startBLEScan failed, invalid phyType parameter.`);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1100
+         * @tc.desc   Test startBLEScan api10 with illegal reportMode enum value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1100"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: -1,
+                isExtended: false
+            };
+            try {
+                console.info(`${caseName} test start`)
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info(`${caseName} startBLEScan success`);
+            } catch (err) {
+                console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
+                if (err.code == '801') {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    console.info(`${caseName} startBLEScan failed, invalid reportMode parameter.`);
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1200
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1200
+         * @tc.desc   Test startBLEScan api10 with isExtended true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1200"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.NORMAL,
+                isExtended: true
+            };
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info(`${caseName} startBLEScan success`);
+                
+            } catch (err) {
+                console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
+                if (err.code == '801') {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    expect().assertFail();
+                }
+            }
+            bluetooth.off("BLEDeviceFind", onReceiveEvent);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1300
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1300
+         * @tc.desc   Test startBLEScan api10 with isExtended false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_BLESCAN_ADD_1300"
+            let scanOptions: bluetooth.ScanOptions = {
+                interval: 500,
+                dutyMode: bluetooth.ScanDuty.SCAN_MODE_LOW_POWER,
+                matchMode: bluetooth.MatchMode.MATCH_MODE_AGGRESSIVE,
+                phyType: bluetooth.PhyType.PHY_LE_ALL_SUPPORTED,
+                reportMode: bluetooth.ScanReportMode.NORMAL,
+                isExtended: false
+            };
+            try {
+                bluetooth.on("BLEDeviceFind", onReceiveEvent);
+                bluetooth.startBLEScan(
+                    [{
+                        deviceId:"00:11:22:33:44:55",
+                        name:"test",
+                        serviceUuid:"00001888-0000-1000-8000-00805f9b34fb"
+                    }], scanOptions);
+                console.info(`${caseName} startBLEScan success`);
+                
+            } catch (err) {
+                console.error(`${caseName} errCode:` + err.code + ",errMessage:" + err.message);
+                if (err.code == '801') {
+                    console.info('[bluetooth_js]startBLEScan is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    expect().assertFail();
+                }
+            }
+            bluetooth.off("BLEDeviceFind", onReceiveEvent);
             done();
         })
     })

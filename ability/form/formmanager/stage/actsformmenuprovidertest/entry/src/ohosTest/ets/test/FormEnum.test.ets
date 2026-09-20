@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { it, expect, TestType, Size, Level, describe } from '@ohos/hypium';
+import { it, expect, TestType, Size, Level, describe } from '@ohos/hypium-dynamic';
 import formInfo from '@ohos.app.form.formInfo'
 import formError from '@ohos.application.formError';
 

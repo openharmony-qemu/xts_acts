@@ -28,6 +28,9 @@ export const DrawingRecordCmdUtilsDestroy: (caseName: number) => number;
 // RecordCmdUtils FinishRecording related functions
 export const DrawingRecordCmdUtilsFinishRecording: (caseName: number) => number;
 
+// RecordCmdUtils GetHeightOrWidth related functions
+export const DrawingRecordCmdUtilsGetHeightOrWidth: (caseName: number) => number;
+
 // Canvas DrawSingleCharacterWithFeatures related functions
 export const DrawingCanvasDrawSingleChaWithFeatures: (caseName: number) => number;
 

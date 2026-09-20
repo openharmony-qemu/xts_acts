@@ -17,33 +17,31 @@
             "cleanup-apps": true
         },
         {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./resource/image/test.bmp ->/data/local/tmp/",
+                "./resource/image/test.dng ->/data/local/tmp/",
+                "./resource/image/test.gif ->/data/local/tmp/",
+                "./resource/image/test.ico ->/data/local/tmp/",
+                "./resource/image/test.png ->/data/local/tmp/",
+                "./resource/image/test.webp ->/data/local/tmp/",
+                "./resource/image/SVG.svg ->/data/local/tmp/",
+                "./resource/image/dog.astc ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_sendableImageSource_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
             "type": "ShellKit",
             "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files/*",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/cache/",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/cache/*",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/*",
                 "param set persist.ace.testmode.enabled 1",
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
-                "power-shell setmode 602"
-            ]
-        },
-        {
-            "type": "PushKit",
-            "pre-push": [],
-            "push": [
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/test.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/test.ico ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/test.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/SVG.svg ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files",
-                "./resource/image/dog.astc ->/data/app/el2/100/base/ohos.acts.multimedia.image.sendableImageSource/haps/entry_test/files"
+                "power-shell setmode 602",
+                "chmod 755 /data/local/tmp/setup_image_sendableImageSource_test.sh",
+                "sh /data/local/tmp/setup_image_sendableImageSource_test.sh"
             ]
         }
     ]

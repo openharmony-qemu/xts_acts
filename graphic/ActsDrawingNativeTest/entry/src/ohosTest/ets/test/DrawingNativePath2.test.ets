@@ -556,28 +556,41 @@ export default function DrawingNativePath2Test() {
     })
 
     /**
-     * @tc.name   testPathIsEqualNull
+     * @tc.name   testPathIsEqualNormal2
      * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2200
+     * @tc.desc   test for testPathIsEqualNormal2
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPathIsEqualNormal2', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingPathPart4GetData(21);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testPathIsEqualNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2300
      * @tc.desc   test for testPathIsEqualNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPathIsEqualNull', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPathPart4GetData(21);
+      const result = libDrawingNative.DrawingPathPart4GetData(22);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testPathIsEqualMultipleCalls
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingPathPart4GetData_2400
      * @tc.desc   test for testPathIsEqualMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
     it('testPathIsEqualMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingPathPart4GetData(22);
+      const result = libDrawingNative.DrawingPathPart4GetData(23);
       expect(result).assertEqual(0);
     })
   })

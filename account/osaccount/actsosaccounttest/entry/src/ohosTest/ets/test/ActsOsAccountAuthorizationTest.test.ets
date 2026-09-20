@@ -165,8 +165,10 @@ export default function ActsOsAccountAuthorizationTest(): void {
       try {
         let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
         console.info("====>AuthorizationGetManagerReturn_001 manager: " + JSON.stringify(manager));
+        console.info("====>AuthorizationGetManagerReturn_001 typeof manager: " + JSON.stringify(typeof manager))
         expect(manager != null).assertTrue();
         expect(manager != undefined).assertTrue();
+        expect(typeof manager === 'object').assertTrue();
         console.info("====>AuthorizationGetManagerReturn_001 end====");
         done();
       } catch (err) {
@@ -643,6 +645,56 @@ export default function ActsOsAccountAuthorizationTest(): void {
         let code: number = (err as BusinessError).code;
         let pass: boolean = (code == 12300001) || (code == 12300305);
         expect(pass).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationHasError_002
+     * @tc.number SUB_Account_OsAccount_HasError_0002
+     * @tc.desc   Verify hasAuthorization with null throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationHasError_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationHasError_002 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        let has: boolean = await manager.hasAuthorization(null);
+        console.info("====>AuthorizationHasError_002 run result has: " + has);
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationHasError_002 catch err: " + JSON.stringify(err));
+        let code: number = (err as BusinessError).code;
+        expect(code).assertEqual(401)
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   AuthorizationHasError_003
+     * @tc.number SUB_Account_OsAccount_HasError_0003
+     * @tc.desc   Verify hasAuthorization with undefined throws 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('AuthorizationHasError_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+      console.info("====>AuthorizationHasError_003 start====");
+      try {
+        let manager: authorization.AuthorizationManager = authorization.getAuthorizationManager();
+        let has: boolean = await manager.hasAuthorization(undefined);
+        console.info("====>AuthorizationHasError_003 run result has: " + has);
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.info("====>AuthorizationHasError_003 catch err: " + JSON.stringify(err));
+        let code: number = (err as BusinessError).code;
+        expect(code).assertEqual(401)
         done();
       }
     });

@@ -17,35 +17,36 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/CUVAHdr.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/JPEGVividSingle.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.ico ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.cr2 ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.raf ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.nrw ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.rw2 ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.pef ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.arw ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.nef ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.orf ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.srw ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.cur ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/mimeType_test.jfif ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/flower.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/normal1.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files",
-                "./resource/image/normal2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.image/haps/entry_test/files"
+                "./resource/image/CUVAHdr.jpg ->/data/local/tmp/",
+                "./resource/image/JPEGVividSingle.jpg ->/data/local/tmp/",
+                "./resource/image/mimeType_test.jpg ->/data/local/tmp/",
+                "./resource/image/mimeType_test.ico ->/data/local/tmp/",
+                "./resource/image/mimeType_test.dng ->/data/local/tmp/",
+                "./resource/image/mimeType_test.cr2 ->/data/local/tmp/",
+                "./resource/image/mimeType_test.raf ->/data/local/tmp/",
+                "./resource/image/mimeType_test.nrw ->/data/local/tmp/",
+                "./resource/image/mimeType_test.rw2 ->/data/local/tmp/",
+                "./resource/image/mimeType_test.pef ->/data/local/tmp/",
+                "./resource/image/mimeType_test.arw ->/data/local/tmp/",
+                "./resource/image/mimeType_test.nef ->/data/local/tmp/",
+                "./resource/image/mimeType_test.orf ->/data/local/tmp/",
+                "./resource/image/mimeType_test.srw ->/data/local/tmp/",
+                "./resource/image/mimeType_test.cur ->/data/local/tmp/",
+                "./resource/image/mimeType_test.jfif ->/data/local/tmp/",
+                "./resource/image/flower.webp ->/data/local/tmp/",
+                "./resource/image/normal1.jpg ->/data/local/tmp/",
+                "./resource/image/normal2.jpg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_image_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_image_test.sh",
+                "sh /data/local/tmp/setup_image_image_test.sh"
             ]
         }
     ]
