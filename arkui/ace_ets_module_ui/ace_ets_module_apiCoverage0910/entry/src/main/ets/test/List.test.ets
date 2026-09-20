@@ -14,7 +14,9 @@
  */
 
 import coverageTypesTest from './coverage/CoverageTypes.test';
+import coverage0917BatchTest from './coverage/Coverage0917Batch.test';
 
 export default function testsuite() {
   coverageTypesTest();
+  coverage0917BatchTest();
 }
