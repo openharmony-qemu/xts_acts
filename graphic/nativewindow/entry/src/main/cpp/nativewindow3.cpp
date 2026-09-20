@@ -1607,6 +1607,8 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameNormal(napi_env env, napi_ca
         return result;
     }
     delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+    OH_NativeWindow_DestroyNativeWindowBuffer(nativeWindowBuffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1634,6 +1636,7 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameNull(napi_env env, napi_call
         return result;
     }
     delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1686,6 +1689,7 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameAbnormal(napi_env env, napi_
         return result;
     }
     delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
@@ -1710,6 +1714,7 @@ napi_value testNativeWindowHandleOptSetDmaBufferNameMultipleCalls(napi_env env, 
         }
     }
     delete initNative;
+    OH_NativeWindow_DestroyNativeWindow(nativeWindow);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
