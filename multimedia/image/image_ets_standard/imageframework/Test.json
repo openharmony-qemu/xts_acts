@@ -18,32 +18,24 @@
       "cleanup-apps": true
     },
     {
-      "type": "ShellKit",
-      "run-command": [
-        "remount",
-        "mkdir -p /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files",
-        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test",
-        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/*",
-        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/*"
-      ]
-    },
-    {
       "type": "PushKit",
       "pre-push": [],
       "push": [
-        "./resource/image/test_exif_v21.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/",
-        "./resource/image/test51.jpg ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/",
-        "./resource/image/test61.gif ->/data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/"
-      ]
+        "./resource/image/test_exif_v21.jpg ->/data/local/tmp/",
+        "./resource/image/test51.jpg ->/data/local/tmp/",
+        "./resource/image/test61.gif ->/data/local/tmp/",
+        "./resource/image/sh/setup_image_Framework_20_test.sh ->/data/local/tmp/"
+    ]
     },
     {
       "type": "ShellKit",
       "run-command": [
-        "chmod -R 777 /data/app/el2/100/base/com.acts.imageframework20Test/haps/entry_test/files/*",
         "power-shell wakeup",
         "power-shell setmode 602",
         "power-shell timeout -o 86400000",
-        "hidumper -s 3301 -a -t"
+        "hidumper -s 3301 -a -t",
+        "chmod 755 /data/local/tmp/setup_image_Framework_20_test.sh",
+        "sh /data/local/tmp/setup_image_Framework_20_test.sh"
       ]
     }
   ]

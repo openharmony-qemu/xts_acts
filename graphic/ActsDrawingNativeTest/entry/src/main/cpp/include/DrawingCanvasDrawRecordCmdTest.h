@@ -25,6 +25,15 @@ int TestCanvasDrawRecordCmdABNormal();
 int TestCanvasDrawRecordCmdNestingNormal();
 int TestCanvasDrawRecordCmdNestingAbNormal();
 int TestCanvasDrawRecordCmdNestingAbNormal1();
+
+int TestRecordCmdUtilsGetHeightNormal();
+int TestRecordCmdUtilsGetHeightNull();
+int TestRecordCmdUtilsGetHeightAbnormal();
+int TestRecordCmdUtilsGetHeightMultipleCalls();
+int TestRecordCmdUtilsGetWidthNormal();
+int TestRecordCmdUtilsGetWidthNull();
+int TestRecordCmdUtilsGetWidthAbnormal();
+int TestRecordCmdUtilsGetWidthMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

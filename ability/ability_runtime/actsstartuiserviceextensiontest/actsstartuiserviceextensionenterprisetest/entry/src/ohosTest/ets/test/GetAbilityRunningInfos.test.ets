@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, } from '@ohos/hypium';
+import { describe, it, expect, Level, } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityManager } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';

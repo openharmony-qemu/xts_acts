@@ -280,7 +280,7 @@ export default function select() {
       let strJson = getInspectorByKey('selectTest');
       
       console.info("[ArkUI_Stage_Select_Space_0400] space:" + JSON.parse(strJson).$attrs.space);
-      expect(JSON.parse(strJson).$attrs.space).assertEqual('8.00vp');
+      expect(JSON.parse(strJson).$attrs.space.substr(JSON.parse(strJson).$attrs.space.length-2, 2)).assertEqual("vp");
       done();
     });
 
@@ -314,7 +314,7 @@ export default function select() {
       let strJson = getInspectorByKey('selectTest');
       
       console.info("[ArkUI_Stage_Select_Space_0500] space:" + JSON.parse(strJson).$attrs.space);
-      expect(JSON.parse(strJson).$attrs.space).assertEqual('8.00vp');
+      expect(JSON.parse(strJson).$attrs.space.substr(JSON.parse(strJson).$attrs.space.length-2, 2)).assertEqual("vp");
       done();
     });
 

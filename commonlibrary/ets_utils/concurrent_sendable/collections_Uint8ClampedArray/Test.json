@@ -1,0 +1,20 @@
+{
+"description": "Configuration for startup collections Uint8ClampedArray Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "800000",
+        "bundle-name": "com.example.collections.uint8clampedarray",
+        "module-name": "entry_test",
+        "shell-timeout": "800000",
+        "compile-mode": "esmodule"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsCollectionsUint8ClampedArrayTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        }
+    ]
+}

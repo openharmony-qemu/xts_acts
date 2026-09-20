@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import image from '@ohos.multimedia.image'
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';

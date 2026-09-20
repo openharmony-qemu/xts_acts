@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import formProvider from '@ohos.app.form.formProvider'
 import formBindingData from '@ohos.app.form.formBindingData'
 import { BusinessError } from '@ohos.base';

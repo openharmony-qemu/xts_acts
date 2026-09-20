@@ -20,7 +20,7 @@ import CommonEventManager from '@ohos.commonEventManager';
 import emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 
 let subscriberInfo_startdebugapp: CommonEventManager.CommonEventSubscribeInfo = {
   events: ["AACommand_Debugapp"],

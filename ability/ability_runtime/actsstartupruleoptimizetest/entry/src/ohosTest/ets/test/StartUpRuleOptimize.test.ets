@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';

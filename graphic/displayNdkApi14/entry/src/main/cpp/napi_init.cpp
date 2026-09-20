@@ -312,7 +312,16 @@ static napi_value GetDisplayCapture(napi_env env, napi_callback_info info)
     napi_create_uint32(env,errCode,&objValue);
     return objValue;
 }
-
+static napi_value GetDisplayCaptureMax(napi_env env, napi_callback_info info)
+{
+    OH_PixelmapNative *imagePixelMap = nullptr;
+    uint64_t displayId = 9223372036854775807;
+    NativeDisplayManager_ErrorCode errCode = OH_NativeDisplayManager_CaptureScreenPixelmap(displayId, &imagePixelMap);
+    OH_LOG_INFO(LOG_APP, "get capture errorCode=%{public}d", errCode);
+    napi_value errorCode;
+    napi_create_int32(env, errCode, &errorCode);
+    return errorCode;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -330,6 +339,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getDisplayState_VR", nullptr, GetDisplayState_VR, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getDisplayState_ON_SUSPEND", nullptr, GetDisplayState_ON_SUSPEND, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getDisplayCapture", nullptr, GetDisplayCapture, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getDisplayCaptureMax", nullptr, GetDisplayCaptureMax, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

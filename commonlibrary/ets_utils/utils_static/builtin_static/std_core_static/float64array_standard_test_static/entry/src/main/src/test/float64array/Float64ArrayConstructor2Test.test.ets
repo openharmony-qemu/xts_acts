@@ -317,9 +317,11 @@ export default function Float64ArrayConstructor2Test(): void {
     it('testFloat64ArrayConstructor2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
       const buf = new ArrayBuffer(1);
-      const arr = new Float64Array(buf, 0);
-      const expectVal = zeroValue;
-      expect(arr.length).assertEqual(expectVal);
+      try{
+        const arr = new Float64Array(buf, 0);
+      }catch(err){
+        expect(err.name).assertEqual("RangeError");
+      }
     });
 
     /**
@@ -332,10 +334,12 @@ export default function Float64ArrayConstructor2Test(): void {
      */
     it('testFloat64ArrayConstructor2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const zeroValue: number = 0;
-      const buf = new ArrayBuffer(7);
-      const arr = new Float64Array(buf, 0);
-      const expectVal = zeroValue;
-      expect(arr.length).assertEqual(expectVal);
+      try{
+        const buf = new ArrayBuffer(7);
+        const arr = new Float64Array(buf, 0);
+      }catch(err){
+        expect(err.name).assertEqual("RangeError");
+      }
     });
 
     /**

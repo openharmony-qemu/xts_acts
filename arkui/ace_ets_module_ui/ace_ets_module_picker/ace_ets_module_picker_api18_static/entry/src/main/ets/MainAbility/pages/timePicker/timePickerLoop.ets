@@ -13,13 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,Color,
-  Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker,TimePicker,
-  TimePickerResult}
-  from '@ohos.arkui.component'
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  Color,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  AttributeModifier,
+  DatePickerAttribute,
+  DatePicker,
+  TimePicker,
+  TimePickerResult
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
+
 @Entry
 @Component
 struct TimePickerLoopExample {
@@ -41,13 +60,13 @@ struct TimePickerLoopExample {
         })
 
       Row() {
-        Button('TRUE').id('trueFlag').width('20%').fontSize(8).onClick((e:ClickEvent) => {
+        Button('TRUE').id('trueFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
           this.isLoop = true
         })
-        Button('FALSE').id('falseFlag').width('20%').fontSize(8).onClick((e:ClickEvent) => {
+        Button('FALSE').id('falseFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
           this.isLoop = false
         })
-        Button('UNDEFINED').id('undefinedFlag').width('20%').fontSize(8).onClick((e:ClickEvent) => {
+        Button('UNDEFINED').id('undefinedFlag').width('20%').fontSize(8).onClick((e: ClickEvent) => {
           this.isLoop = undefined
         })
       }

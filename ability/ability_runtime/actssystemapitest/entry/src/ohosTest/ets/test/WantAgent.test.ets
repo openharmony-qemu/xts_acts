@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import WantAgent from '@ohos.app.ability.wantAgent'
 let ERROR_CODE = 202;
 

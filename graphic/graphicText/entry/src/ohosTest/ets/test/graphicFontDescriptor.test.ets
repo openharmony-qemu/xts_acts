@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium";
+import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium-dynamic";
 import { BusinessError } from '@ohos.base';
 import text from "@ohos.graphics.text"
 import fileIo from '@ohos.file.fs';

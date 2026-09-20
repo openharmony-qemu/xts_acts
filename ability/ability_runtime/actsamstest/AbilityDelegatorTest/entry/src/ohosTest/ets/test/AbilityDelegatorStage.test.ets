@@ -16,7 +16,7 @@
 import hilog from '@ohos.hilog';
 import { Driver, ON } from '@ohos.UiTest';
 
-import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';

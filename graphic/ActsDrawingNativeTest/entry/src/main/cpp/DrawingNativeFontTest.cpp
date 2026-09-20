@@ -566,6 +566,10 @@ int TestFontSetTextSizeAbnormal()
     OH_Drawing_FontSetTextSize(font, -DRAWING_NUMBER_100);
     float textSize = OH_Drawing_FontGetTextSize(font);
     EXPECT_EQ(textSize, 0);
+    
+    OH_Drawing_FontSetTextSize(font, FLT_MAX);
+    textSize = OH_Drawing_FontGetTextSize(font);
+    EXPECT_EQ(textSize, FLT_MAX);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
     DrawingNativeFontTestTearDown();
@@ -1099,6 +1103,8 @@ int TestFontSetTextSkewXNULL()
     OH_Drawing_ErrorCodeReset();
     // 3. Pass 0 as the second parameter to OH_Drawing_FontSetTextSkewX
     OH_Drawing_FontSetTextSkewX(font, 0);
+    float skewX = OH_Drawing_FontGetTextSkewX(font);
+    EXPECT_EQ(skewX, 0.0f);
     // 4. Pass nullptr as the parameter to OH_Drawing_FontGetTextSkewX and check the error code using
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_FontGetTextSkewX(nullptr);
@@ -1181,6 +1187,8 @@ int TestFontSetTextSkewXMaximum()
     EXPECT_NE(font, nullptr);
     // 2. Call OH_Drawing_FontSetTextSkewX interface with skewX parameter set to FLT_MAX
     OH_Drawing_FontSetTextSkewX(font, FLT_MAX);
+    float skewX = OH_Drawing_FontGetTextSkewX(font);
+    EXPECT_EQ(skewX, FLT_MAX);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
     DrawingNativeFontTestTearDown();
@@ -1282,8 +1290,6 @@ int TestFontSetScaleXNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     float scaleX = OH_Drawing_FontGetScaleX(font);
-    // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_EQ(scaleX, DRAWING_NUMBER_10);
     // 3. Call OH_Drawing_FontSetScaleX interface with scaleX parameter set to 0.55, and then call
     // OH_Drawing_FontGetScaleX to get the text scale on the x-axis
@@ -1291,8 +1297,6 @@ int TestFontSetScaleXNormal()
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     scaleX = OH_Drawing_FontGetScaleX(font);
-    // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_EQ(IsScalarAlmostEqual(scaleX, 0.55f), true);
     // 4. Release memory
     OH_Drawing_FontDestroy(font);
@@ -1314,6 +1318,8 @@ int TestFontSetScaleXNULL()
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_FontSetScaleX with 0 as the second parameter
     OH_Drawing_FontSetScaleX(font, 0);
+    float scaleX = OH_Drawing_FontGetScaleX(font);
+    EXPECT_EQ(scaleX, 0.0f);
     // 4. Call OH_Drawing_FontGetScaleX with nullptr as the parameter and check the error code using
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_FontGetScaleX(nullptr);
@@ -1379,6 +1385,7 @@ int TestFontSetScaleXAbnormal()
     // 2. Call OH_Drawing_FontSetScaleX interface with scaleX parameter set to -1, and then call
     // OH_Drawing_FontGetScaleX to get the text scale on the x-axis
     OH_Drawing_FontSetScaleX(font, -DRAWING_NUMBER_1);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     float scaleX = OH_Drawing_FontGetScaleX(font);
     EXPECT_EQ(scaleX, -DRAWING_NUMBER_1);
     // 3. Release memory
@@ -1397,6 +1404,9 @@ int TestFontSetScaleXMaximum()
     // 2. Call OH_Drawing_FontSetScaleX interface with scaleX parameter set to FLT_MAX, and then call
     // OH_Drawing_FontGetScaleX to get the text scale on the x-axis
     OH_Drawing_FontSetScaleX(font, FLT_MAX);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    float scaleX = OH_Drawing_FontGetScaleX(font);
+    EXPECT_EQ(scaleX, FLT_MAX);
     // 3. Release memory
     OH_Drawing_FontDestroy(font);
     DrawingNativeFontTestTearDown();

@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import appManager from '@ohos.app.ability.appManager'
+
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 

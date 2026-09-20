@@ -14,7 +14,7 @@
  */
 import { ToneMappingType, ToneMappingSettings, PostProcessSettings, Vec3, Vec4, Color, Quaternion, Position3,  Scale3, NodeType, Container, Node, Geometry, LightType, Light, SpotLight, DirectionalLight,
   SceneResourceFactory, Scene, CameraParameters, SceneNodeParameters, Camera } from '@ohos.graphics.scene'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import * as scene3d from '@ohos.graphics.scene'
 import { lookAt } from '../common/utils';
 

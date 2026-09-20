@@ -145,7 +145,8 @@ export default function editableTitleBarV2PageTest() {
       let driver = await Driver.create();
       await driver.delayMs(2000);
 
-      let component = await driver.findComponent(ON.text('With Save Button'));
+      let scrollBar = await driver.findComponent(ON.type('Scroll'));
+      let component = await scrollBar.scrollSearch(ON.text('With Save Button'));
       expect(component !== null).assertTrue();
 
       console.info('[EditableTitleBarV2PageTest_0500] END');

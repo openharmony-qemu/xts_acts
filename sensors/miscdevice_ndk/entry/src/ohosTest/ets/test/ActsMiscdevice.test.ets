@@ -23,6 +23,8 @@ import vibrators from '@ohos.vibrator'
 export default function ActsMiscdeviceNdkTest() {
   let isAvailable: boolean;
   const ABILITYJUDGMENT = canIUse('SystemCapability.Sensors.MiscDevice');
+  const SENSOR_SUCCESS = 0;
+  const SENSOR_PARAMETER_ERROR = 401;
   describe('ActsMiscdeviceNdkTest', () => {
     beforeAll(async (done: Function) => {
       /*
@@ -63,12 +65,17 @@ export default function ActsMiscdeviceNdkTest() {
       console.info('beforeEach called')
     })
 
-    afterEach(() => {
-      /*
-      * @tc.teardown: teardown invoked after each testcases
-      */
-      console.info('afterEach called')
-    })
+    afterEach(async (done: Function) => {
+      console.info('====>ActsMiscdeviceNdkTest afterEach start');
+      try{
+        await vibrators.stopVibration()
+        console.info("afterEach: Success in stopping vibration. ");
+        done();
+      } catch (error) {
+        console.info("afterEach error: " + JSON.stringify(error));
+        done();
+      }
+    });
 
     const USAGE_ALARM = 1;
     const USAGE_RING = 2;
@@ -357,6 +364,270 @@ export default function ActsMiscdeviceNdkTest() {
         console.info(TAG + ' is not supported on this device.');
         expect(ret).assertEqual(UNSUPPORTED);
         done()
+      }
+    });
+
+    /**
+     * @tc.name   testSensor_typeNdkTest330
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_3300
+     * @tc.desc   VIBRATOR_USAGE_UNKNOWN test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest330"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest1();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if(isAvailable){
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        }else{
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest340
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_3400
+     * @tc.desc   VIBRATOR_USAGE_ALARM test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest340"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest2();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if(isAvailable){
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        }else{
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest350
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_3500
+     * @tc.desc   VIBRATOR_USAGE_RING test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest350"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest3();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest360
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_3600
+     * @tc.desc   VIBRATOR_USAGE_NOTIFICATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest360"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest4();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest370
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_3700
+     * @tc.desc   VIBRATOR_USAGE_COMMUNICATION test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest370', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest370"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest5();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest380
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_3800
+     * @tc.desc   VIBRATOR_USAGE_TOUCH test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest380"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest6();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest390
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_3900
+     * @tc.desc   VIBRATOR_USAGE_MEDIA and DEVICE_OPERATION_FAILED test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest390', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest390"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest7();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSensor_typeNdkTest400
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_4000
+     * @tc.desc   VIBRATOR_USAGE_PHYSICAL_FEEDBACK ande OH_Vibrator_PlayVibration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest400"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest8();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest410
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_4100
+     * @tc.desc   VIBRATOR_USAGE_SIMULATED_REALITY test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest410', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest410"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest9();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        if (isAvailable) {
+          expect(ret).assertEqual(SENSOR_SUCCESS);
+        } else {
+          expect(ret).assertEqual(DEVICE_OPERATION_FAILED);
+        }
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   testSensor_typeNdkTest420
+     * @tc.number SUB_SEN_MISC_Miscdevice_ETS_4200
+     * @tc.desc   VIBRATOR_USAGE_MAX test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSensor_typeNdkTest420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      TAG = "testSensor_typeNdkTest420"
+      try {
+        console.info(TAG + "===> START");
+        let ret : number = vibrator.vibrator_AttributeTest10();
+        console.info(TAG + "Test ret Result ===> " + ret);
+        expect(ret).assertEqual(SENSOR_PARAMETER_ERROR);
+        done()
+      } catch (err) {
+        console.error(TAG + "Test err ===>" + err);
+        done();
       }
     });
   })}
