@@ -17,7 +17,6 @@ import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hy
 import Want from '@ohos.app.ability.Want';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON, UiDirection } from '@ohos.UiTest'
-import display from '@ohos.display';
 import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@ohos.test.PerfTest';
 import { BusinessError, Callback } from '@kit.BasicServicesKit';
 import { PerfUtils } from '../../../main/ets/utils/PerfUtils';
@@ -112,16 +111,16 @@ export default function PerfTestTest() {
       let driver = Driver.create()
       await driver.delayMs(3000)
       let metrics: Array<PerfMetric> = [PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
+      let button = await driver.findComponent(ON.text('ListPage'))
       let actionCode = async (finish: Callback<boolean>) => {
-        let button = await driver.findComponent(ON.text('ListPage'))
         await driver.delayMs(1000)
         await button.click()
         await driver.delayMs(1000)
         finish(true)
       }
       let resetCode = async (finish: Callback<boolean>) => {
-        let disPlay = display.getDefaultDisplaySync()
-        await driver.pressBack(disPlay.id)
+        let id = await button.getDisplayId()
+        await driver.pressBack(id)
         await driver.delayMs(1000)
         finish(true)
       }
