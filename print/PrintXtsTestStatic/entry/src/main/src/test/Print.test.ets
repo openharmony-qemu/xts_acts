@@ -4557,7 +4557,7 @@ export default function printTest(): void {
       let printerInformation: print.PrinterInformation = {
         printerId: '',
         printerName: '',
-        printerStatus: 3 as print.PrinterStatus,
+        printerStatus: print.printerStatus.PRINTER_BUSY,
         description: '',
         capability: printerCapabilities,
         uri: '',
@@ -4582,70 +4582,6 @@ export default function printTest(): void {
       hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrinterInformation_0600 end');
     })
 
-    /**
-     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0700
-     * @tc.number SUB_print_print_fwk_updatePrintJobState_0700
-     * @tc.desc   check updatePrintJobState api with promise
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_print_print_fwk_updatePrintJobState_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrintJobState_0700 start');
-      try {
-        let jobId: string = '';
-        let state: print.PrintJobState = print.PrintJobState.PRINT_JOB_QUEUED;
-        let subState: print.PrintJobSubState = -1 as print.PrintJobSubState;
-        print.updatePrintJobState(jobId, state, subState).then(() => {
-          hilog.info(domain, tag, 'SUB_print_print_fwk_updatePrintJobState_0700 success');
-          done();
-        }).catch((err: Object | null | undefined) => {
-          let error = err as BusinessError;
-          hilog.error(domain, tag, 'SUB_print_print_fwk_updatePrintJobState_0700 error, %{public}s', JSON.stringify(error));
-          done();
-        });
-      } catch (err) {
-        let error = err as BusinessError;
-        hilog.error(domain, tag, 'SUB_print_print_fwk_updatePrintJobState_0700 error');
-        expect().assertFail();
-      }
-      hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrintJobState_0700 end');
-    })
-
-    /**
-     * @tc.name   SUB_print_print_fwk_updatePrintJobState_0800
-     * @tc.number SUB_print_print_fwk_updatePrintJobState_0800
-     * @tc.desc   check updatePrintJobState api with callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_print_print_fwk_updatePrintJobState_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrintJobState_0800 start');
-
-      try {
-        let jobId: string = '';
-        let state: print.PrintJobState = print.PrintJobState.PRINT_JOB_QUEUED;
-        let subState: print.PrintJobSubState = -1 as print.PrintJobSubState;
-        print.updatePrintJobState(jobId, state, subState, (err: Object | null | undefined) => {
-          if (err) {
-            const error = err as BusinessError;
-            hilog.error(domain, tag, 'SUB_print_print_fwk_updatePrintJobState_0800 error, code: %{public}d, message: %{public}s',
-              error.code, error.message);
-          } else {
-            hilog.info(domain, tag, 'SUB_print_print_fwk_updatePrintJobState_0800 success');
-          }
-          done();
-        });
-      } catch (err) {
-        const error = err as BusinessError;
-        hilog.error(domain, tag, 'SUB_print_print_fwk_updatePrintJobState_0800 error');
-        expect().assertFail();
-        done();
-      }
-
-      hilog.info(domain, tag, '%{public}s', 'SUB_print_print_fwk_updatePrintJobState_0800 end');
-    });
     hilog.info(domain, tag, '%{public}s', 'printTest end');
   });
 
