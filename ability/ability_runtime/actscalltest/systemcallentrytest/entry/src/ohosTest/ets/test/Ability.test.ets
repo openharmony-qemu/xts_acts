@@ -393,6 +393,9 @@ export default function abilityTest() {
         console.log('ACTS_CommonComponent_Call_0700 caller get')
         caller.onRelease(releaseCallback1);
         caller.release();
+      }).catch((err: BusinessError) => {
+        console.log('ACTS_CommonComponent_Call_0700 startAbilityByCall exception' + err);
+        expect().assertFail();
       })
     })
 
@@ -439,6 +442,9 @@ export default function abilityTest() {
               expect().assertFail();
               caller.release();
             })
+          }).catch((err: BusinessError) => {
+            console.log('ACTS_CommonComponent_Call_0800 startAbilityByCall exception' + err);
+            expect().assertFail();
           });
         }, 100);
       }
