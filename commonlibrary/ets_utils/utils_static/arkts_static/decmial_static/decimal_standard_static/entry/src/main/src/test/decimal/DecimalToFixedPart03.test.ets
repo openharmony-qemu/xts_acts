@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -315,7 +316,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.toString();
       let expected: string = "1.2345";
@@ -336,7 +337,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(1000000001);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = d.e;
       let expected: int = 3;
@@ -357,7 +358,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(Double.NaN);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.toFixed(2, Decimal.ROUND_DOWN);
       let expected: string = "1.23";
@@ -378,7 +379,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(2, 9);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = d.s;
       let expected: int = -1;
@@ -399,7 +400,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(2, -1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.toString();
       let expected: string = "12345.678";
@@ -420,13 +421,13 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(-2);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       try {
         d.toFixed(2, 10);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.toFixed(2);
       let expected: string = "1.23";
@@ -450,7 +451,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(Number.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.toFixed(4);
       let expected: string = "0.0001";
@@ -471,7 +472,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(2, 99);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = d.e;
       let expected: int = 5;
@@ -492,7 +493,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = new Decimal("1.235").toFixed(2);
       let expected: string = "1.24";
@@ -513,7 +514,7 @@ export default function decimalToFixedPart03Test(): void {
         d.toFixed(0, 9);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.toString();
       let expected: string = "1.5";
@@ -523,44 +524,12 @@ export default function decimalToFixedPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_2800
      * @tc.name decimalToFixedPart03Test028
-     * @tc.desc Verify toFixed(2) on new Decimal("1.2345") returns 1.23
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let actual: string = new Decimal("1.2345").toFixed(2);
-      let expected: string = "1.23";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_2900
-     * @tc.name decimalToFixedPart03Test029
-     * @tc.desc Verify toString on new Decimal("1.2345") returns 1.2345 and toFixed(2) returns 1.23
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let actual: string = d.toString();
-      let expected: string = "1.2345";
-      expect(actual).assertEqual(expected);
-      let actualToFixed2: string = d.toFixed(2);
-      let expectedToFixed2: string = "1.23";
-      expect(actualToFixed2).assertEqual(expectedToFixed2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3000
-     * @tc.name decimalToFixedPart03Test030
      * @tc.desc Verify toFixed(10) on new Decimal("1.2345") returns 1.2345000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.2345");
       let actual: string = d.toFixed(10);
       let expected: string = "1.2345000000";
@@ -571,14 +540,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3100
-     * @tc.name decimalToFixedPart03Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_2900
+     * @tc.name decimalToFixedPart03Test029
      * @tc.desc Verify toString on new Decimal('5') returns '5' and toFixed(2) returns "5.00"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('5');
       let actual: string = d.toString();
       let expected: string = '5';
@@ -589,14 +558,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3200
-     * @tc.name decimalToFixedPart03Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3000
+     * @tc.name decimalToFixedPart03Test030
      * @tc.desc Verify d.e equals 2 and toFixed(2) returns 123.45
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("123.45");
       let actual: number = d.e;
       let expected: int = 2;
@@ -610,14 +579,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3300
-     * @tc.name decimalToFixedPart03Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3100
+     * @tc.name decimalToFixedPart03Test031
      * @tc.desc Verify toFixed(2) does not mutate the Decimal, toString still returns 1.2345
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.2345");
       d.toFixed(2);
       d.toFixed(2, Decimal.ROUND_UP);
@@ -627,14 +596,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3400
-     * @tc.name decimalToFixedPart03Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3200
+     * @tc.name decimalToFixedPart03Test032
      * @tc.desc Verify toFixed(3) on new Decimal("1.2345") returns 1.235
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.2345");
       let actual: string = d.toFixed(3);
       let expected: string = "1.235";
@@ -645,32 +614,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3500
-     * @tc.name decimalToFixedPart03Test035
-     * @tc.desc Verify toFixed(2) on new Decimal("1.2345") returns 1.23
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let actual: string = d.toFixed(2);
-      let expected: string = "1.23";
-      expect(actual).assertEqual(expected);
-      let actualToFixed4: string = d.toFixed(4);
-      let expectedToFixed4: string = "1.2345";
-      expect(actualToFixed4).assertEqual(expectedToFixed4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3600
-     * @tc.name decimalToFixedPart03Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3300
+     * @tc.name decimalToFixedPart03Test033
      * @tc.desc Verify toFixed(5) on new Decimal("1.2") returns 1.20000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: string = new Decimal("1.2").toFixed(5);
       expect(r).assertEqual("1.20000");
       let actual: int = r.length;
@@ -679,14 +630,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3700
-     * @tc.name decimalToFixedPart03Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3400
+     * @tc.name decimalToFixedPart03Test034
      * @tc.desc Verify toFixed(2) on new Decimal("-5") returns -5.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let actual: string = new Decimal("-5").toFixed(2);
       let expected: string = "-5.00";
       expect(actual).assertEqual(expected);
@@ -696,14 +647,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3800
-     * @tc.name decimalToFixedPart03Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3500
+     * @tc.name decimalToFixedPart03Test035
      * @tc.desc Verify toFixed(2) on new Decimal("0.00123") returns 0.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal("0.00123").toFixed(2);
       let b: string = new Decimal("0.00123").toFixed(2, Decimal.ROUND_UP);
       expect(a).assertEqual("0.00");
@@ -711,14 +662,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3900
-     * @tc.name decimalToFixedPart03Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3600
+     * @tc.name decimalToFixedPart03Test036
      * @tc.desc Verify toFixed(2) on new Decimal("123456789.5") returns 123456789.50
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let actual: string = new Decimal("123456789.5").toFixed(2);
       let expected: string = "123456789.50";
       expect(actual).assertEqual(expected);
@@ -728,14 +679,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4000
-     * @tc.name decimalToFixedPart03Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3700
+     * @tc.name decimalToFixedPart03Test037
      * @tc.desc Verify toFixed(2) on new Decimal("-1.5") returns -1.50 and sign field s equals -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("-1.5");
       let actual: number = d.s;
       let expected: int = -1;
@@ -746,14 +697,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4100
-     * @tc.name decimalToFixedPart03Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3800
+     * @tc.name decimalToFixedPart03Test038
      * @tc.desc Verify toFixed(2) on new Decimal("001.2300") returns 1.23
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("001.2300");
       let actual: string = d.toFixed(2);
       let expected: string = "1.23";
@@ -764,14 +715,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4200
-     * @tc.name decimalToFixedPart03Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_3900
+     * @tc.name decimalToFixedPart03Test039
      * @tc.desc Verify 1.5e3 toString 1500 toFixed(2) 1500.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.5e3");
       let actual: string = d.toString();
       let expected: string = "1500";
@@ -782,14 +733,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4300
-     * @tc.name decimalToFixedPart03Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4000
+     * @tc.name decimalToFixedPart03Test040
      * @tc.desc Verify toFixed(2) on new Decimal("1.2345") returns 1.23
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d1: Decimal = new Decimal("1.2345");
       let d2: Decimal = new Decimal(d1);
       let actual: string = d2.toFixed(2);
@@ -798,29 +749,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4400
-     * @tc.name decimalToFixedPart03Test044
-     * @tc.desc Verify toFixed(2) on new Decimal("1.235") returns 1.24
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      Decimal.set({ rounding: Decimal.ROUND_UP });
-      let r1: string = new Decimal("1.235").toFixed(2);
-      Decimal.set({ defaults: true });
-      expect(r1).assertEqual("1.24");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4500
-     * @tc.name decimalToFixedPart03Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4100
+     * @tc.name decimalToFixedPart03Test041
      * @tc.desc Verify toFixed(2) does not mutate the source Decimal("1.2345"); d2 stays 6.789
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d1: Decimal = new Decimal("1.2345");
       let d2: Decimal = new Decimal("6.789");
       d1.toFixed(2);
@@ -830,14 +766,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4600
-     * @tc.name decimalToFixedPart03Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4200
+     * @tc.name decimalToFixedPart03Test042
      * @tc.desc Verify toFixed(2) on new Decimal("1.23456") with precision set returns 1.23
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 4 });
       let r: string = new Decimal("1.23456").toFixed(2);
       Decimal.set({ defaults: true });
@@ -845,14 +781,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4700
-     * @tc.name decimalToFixedPart03Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4300
+     * @tc.name decimalToFixedPart03Test043
      * @tc.desc Verify toFixed(2, Decimal.ROUND_DOWN) on new Decimal("1.23456") returns 1.23
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 4 });
       let r: string = new Decimal("1.23456").toFixed(2, Decimal.ROUND_DOWN);
       Decimal.set({ defaults: true });
@@ -860,29 +796,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4800
-     * @tc.name decimalToFixedPart03Test048
-     * @tc.desc Verify toFixed(2) on new Decimal("-1.235") returns -1.24
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      Decimal.set({ rounding: Decimal.ROUND_FLOOR });
-      let r1: string = new Decimal("-1.235").toFixed(2);
-      Decimal.set({ defaults: true });
-      expect(r1).assertEqual("-1.24");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4900
-     * @tc.name decimalToFixedPart03Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4400
+     * @tc.name decimalToFixedPart03Test044
      * @tc.desc Verify toFixed(2) on new Decimal(-0) returns 0.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(-0);
       let actual: string = d.toFixed(2);
       let expected: string = "0.00";
@@ -893,14 +814,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5000
-     * @tc.name decimalToFixedPart03Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4500
+     * @tc.name decimalToFixedPart03Test045
      * @tc.desc Verify toFixed(2) on new Decimal("-1.235") returns -1.23
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: Decimal.ROUND_CEILING });
       let a: string = new Decimal("-1.235").toFixed(2);
       let b: string = new Decimal("-1.235").toFixed(2, Decimal.ROUND_FLOOR);
@@ -910,49 +831,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5100
-     * @tc.name decimalToFixedPart03Test051
-     * @tc.desc Verify toFixed(2) on new Decimal("1.2345") returns 1.23
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let s1: string = d.toFixed(2);
-      let s2: string = d.toFixed(2, Decimal.ROUND_UP);
-      expect(s1).assertEqual("1.23");
-      expect(s2).assertEqual("1.24");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5200
-     * @tc.name decimalToFixedPart03Test052
-     * @tc.desc Verify repeated toFixed(2) on new Decimal("1.2345") always returns 1.23 (mismatch count 0)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let mismatch: int = 0;
-      for (let i: int = 0; i < 3; i++) {
-        if (d.toFixed(2) !== "1.23") {
-          mismatch = mismatch + 1;
-        }
-      }
-      expect(mismatch).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5300
-     * @tc.name decimalToFixedPart03Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4600
+     * @tc.name decimalToFixedPart03Test046
      * @tc.desc Verify repeated toFixed(2, ROUND_DOWN) on new Decimal("1.235") always returns 1.23 (mismatch count 0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.235");
       let mismatch: int = 0;
       for (let i: int = 0; i < 3; i++) {
@@ -964,14 +850,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5400
-     * @tc.name decimalToFixedPart03Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4700
+     * @tc.name decimalToFixedPart03Test047
      * @tc.desc Verify concatenation of toFixed(2) and toFixed(2, Decimal.ROUND_DOWN) on new Decimal("1.235") returns 1.241.23
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.235");
       let actual: string = d.toFixed(2) + d.toFixed(2, Decimal.ROUND_DOWN);
       let expected: string = "1.241.23";
@@ -979,31 +865,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5500
-     * @tc.name decimalToFixedPart03Test055
-     * @tc.desc Verify toFixed(2) on new Decimal("1.2345") returns 1.23
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFixedPart03Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.2345");
-      let r: string = d.toFixed(2);
-      let d2: Decimal = new Decimal(r);
-      let actual: string = d2.toString();
-      let expected: string = "1.23";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5600
-     * @tc.name decimalToFixedPart03Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4800
+     * @tc.name decimalToFixedPart03Test048
      * @tc.desc Verify toFixed(2) on new Decimal("1.235") yields value greater than toFixed(2, ROUND_DOWN) via comparedTo (==1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.235");
       let r1: Decimal = new Decimal(d.toFixed(2));
       let r2: Decimal = new Decimal(d.toFixed(2, Decimal.ROUND_DOWN));
@@ -1013,14 +882,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5700
-     * @tc.name decimalToFixedPart03Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_4900
+     * @tc.name decimalToFixedPart03Test049
      * @tc.desc Verify toFixed(2, Decimal.ROUND_UP) on new Decimal("1.235") produces Decimal whose exponent e equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.235");
       let a: Decimal = new Decimal(d.toFixed(2, Decimal.ROUND_UP));
       let actual: number = a.e;
@@ -1029,14 +898,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5800
-     * @tc.name decimalToFixedPart03Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5000
+     * @tc.name decimalToFixedPart03Test050
      * @tc.desc Verify toFixed(2) on new Decimal("9.999") returns 10.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: string = new Decimal("9.999").toFixed(2);
       expect(r).assertEqual("10.00");
       let actual: int = r.length;
@@ -1045,14 +914,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5900
-     * @tc.name decimalToFixedPart03Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5100
+     * @tc.name decimalToFixedPart03Test051
      * @tc.desc Verify toFixed(2) on new Decimal('0') returns 0.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal('0');
       let actual: string = d.toFixed(2);
       let expected: string = "0.00";
@@ -1063,14 +932,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6000
-     * @tc.name decimalToFixedPart03Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5200
+     * @tc.name decimalToFixedPart03Test052
      * @tc.desc Verify toFixed(1) on new Decimal(0.1 + 0.2) returns 0.3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(0.1 + 0.2);
       let actual: string = d.toFixed(1);
       let expected: string = "0.3";
@@ -1081,14 +950,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6100
-     * @tc.name decimalToFixedPart03Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5300
+     * @tc.name decimalToFixedPart03Test053
      * @tc.desc Verify toFixed(2) on new Decimal("1.2345") keeps internal digit array length 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.2345");
       let digitsBefore: int = d.d!.length;
       d.toFixed(2);
@@ -1099,14 +968,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6200
-     * @tc.name decimalToFixedPart03Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5400
+     * @tc.name decimalToFixedPart03Test054
      * @tc.desc Verify toFixed(2) on new Decimal("123456789012345678901234567890") returns 123456789012345678901234567890.00
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("123456789012345678901234567890");
       let actual: string = d.toFixed(2);
       let expected: string = "123456789012345678901234567890.00";
@@ -1117,14 +986,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6300
-     * @tc.name decimalToFixedPart03Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5500
+     * @tc.name decimalToFixedPart03Test055
      * @tc.desc Verify toFixed(1) on new Decimal("1e5") returns 100000.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1e5");
       let actual: string = d.toFixed(1);
       let expected: string = "100000.0";
@@ -1135,14 +1004,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6400
-     * @tc.name decimalToFixedPart03Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5600
+     * @tc.name decimalToFixedPart03Test056
      * @tc.desc Verify toFixed(6) on new Decimal("1.23e-4") returns 0.000123
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1.23e-4");
       let actual: string = d.toFixed(6);
       let expected: string = "0.000123";
@@ -1153,14 +1022,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6500
-     * @tc.name decimalToFixedPart03Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5700
+     * @tc.name decimalToFixedPart03Test057
      * @tc.desc Verify toFixed(12) on new Decimal("1.5") returns 1.500000000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal("1.5").toFixed(12);
       let b: string = new Decimal("1.5").toFixed(12, Decimal.ROUND_HALF_UP);
       expect(a).assertEqual(b);
@@ -1168,14 +1037,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6600
-     * @tc.name decimalToFixedPart03Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5800
+     * @tc.name decimalToFixedPart03Test058
      * @tc.desc Verify toFixed(0) on new Decimal("1.999") returns 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal("1.999").toFixed(0);
       let b: string = new Decimal("1.999").toFixed(0, Decimal.ROUND_DOWN);
       expect(a).assertEqual('2');
@@ -1183,14 +1052,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6700
-     * @tc.name decimalToFixedPart03Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_5900
+     * @tc.name decimalToFixedPart03Test059
      * @tc.desc Verify toFixed(0) on new Decimal("-1.5") returns -2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal("-1.5").toFixed(0);
       let b: string = new Decimal("-1.5").toFixed(0, Decimal.ROUND_DOWN);
       expect(a).assertEqual("-2");
@@ -1198,14 +1067,14 @@ export default function decimalToFixedPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6800
-     * @tc.name decimalToFixedPart03Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FIXED_PART03_6000
+     * @tc.name decimalToFixedPart03Test060
      * @tc.desc Verify toFixed(1) on new Decimal("99.99") returns 100.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToFixedPart03Test068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToFixedPart03Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal("99.99").toFixed(1);
       let b: string = new Decimal("99.99").toFixed(1, Decimal.ROUND_DOWN);
       expect(a).assertEqual("100.0");

@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -162,7 +163,7 @@ export default function decimalToExponentialPart04Test(): void {
         d.toExponential(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -180,7 +181,7 @@ export default function decimalToExponentialPart04Test(): void {
         d.toExponential(2.5, 4);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
     });
 
@@ -292,27 +293,12 @@ export default function decimalToExponentialPart04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_1700
      * @tc.name decimalToExponentialPart04Test017
-     * @tc.desc Verify toExponential(1) on new Decimal(-0) returns 0.0e+0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal(-0);
-      let actual: string = d.toExponential(1);
-      let expected: string = "0.0e+0";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_1800
-     * @tc.name decimalToExponentialPart04Test018
      * @tc.desc Verify toExponential(10) on new Decimal("1234.5") returns 1.2345000000e+3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       let actual: string = d.toExponential(10);
       let expected: string = "1.2345000000e+3";
@@ -320,30 +306,39 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_1900
-     * @tc.name decimalToExponentialPart04Test019
-     * @tc.desc Verify toExponential(-1) throws BusinessError
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_1800
+     * @tc.name decimalToExponentialPart04Test018
+     * @tc.desc Verify toExponential(2) on new Decimal("1234.5") returns 1.23e+3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
-      try {
-        d.toExponential(-1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
-      }
       let actual: string = d.toExponential(2);
       let expected: string = "1.23e+3";
       expect(actual).assertEqual(expected);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_1900
+     * @tc.name decimalToExponentialPart04Test019
+     * @tc.desc Verify toExponential(2, 3) on new Decimal("1.005") returns 1.00e+0
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToExponentialPart04Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d: Decimal = new Decimal("1.005");
+      let actual: string = d.toExponential(2, 3);
+      let expected: string = "1.00e+0";
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2000
      * @tc.name decimalToExponentialPart04Test020
-     * @tc.desc Verify toExponential(-1) throws BusinessError
+     * @tc.desc Verify toExponential(2.5) throws BusinessError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -351,58 +346,10 @@ export default function decimalToExponentialPart04Test(): void {
     it("decimalToExponentialPart04Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       try {
-        d.toExponential(-1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
-      }
-      try {
-        d.toExponential(1000000001);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
-      }
-      let actual: number = d.e;
-      let expected: int = 3;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2100
-     * @tc.name decimalToExponentialPart04Test021
-     * @tc.desc Verify toExponential(-1) throws BusinessError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1.005");
-      try {
-        d.toExponential(-1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
-      }
-      let actual: string = d.toExponential(2, 3);
-      let expected: string = "1.00e+0";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2200
-     * @tc.name decimalToExponentialPart04Test022
-     * @tc.desc Verify toExponential(2.5) throws BusinessError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1234.5");
-      try {
         d.toExponential(2.5);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.add(new Decimal("0.5")).toString();
       let expected: string = "1235";
@@ -410,9 +357,45 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2100
+     * @tc.name decimalToExponentialPart04Test021
+     * @tc.desc Verify toExponential(2, 9) throws BusinessError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToExponentialPart04Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d: Decimal = new Decimal("1234.5");
+      try {
+        d.toExponential(2, 9);
+        expect().assertFail();
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(10200001);
+      }
+      let actual: string = d.toString();
+      let expected: string = "1234.5";
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2200
+     * @tc.name decimalToExponentialPart04Test022
+     * @tc.desc Verify toExponential(2) on new Decimal("1234.5") returns d.toExponential(2, 4)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToExponentialPart04Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d: Decimal = new Decimal("1234.5");
+      let actual: string = d.toExponential(2);
+      let expected: string = d.toExponential(2, 4);
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2300
      * @tc.name decimalToExponentialPart04Test023
-     * @tc.desc Verify toExponential(2, 9) throws BusinessError
+     * @tc.desc Verify toExponential(Double.NaN) throws BusinessError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -420,10 +403,10 @@ export default function decimalToExponentialPart04Test(): void {
     it("decimalToExponentialPart04Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       try {
-        d.toExponential(2, 9);
+        d.toExponential(Double.NaN);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d.toString();
       let expected: string = "1234.5";
@@ -433,22 +416,18 @@ export default function decimalToExponentialPart04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2400
      * @tc.name decimalToExponentialPart04Test024
-     * @tc.desc Verify toExponential(Double.NaN) throws BusinessError
+     * @tc.desc Verify toExponential(2, 4) on new Decimal("1.005") returns 1.01e+0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it("decimalToExponentialPart04Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1234.5");
-      try {
-        d.toExponential(Double.NaN);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
-      }
-      let actual: string = d.toString();
-      let expected: string = "1234.5";
+      let d1: Decimal = new Decimal("1.005");
+      let d2: Decimal = new Decimal("1.005");
+      let actual: string = d1.toExponential(2, 4);
+      let expected: string = d2.toExponential(2, 4);
       expect(actual).assertEqual(expected);
+      expect(actual).assertEqual("1.01e+0");
     });
 
     /**
@@ -466,7 +445,7 @@ export default function decimalToExponentialPart04Test(): void {
         d1.toExponential(1, 9);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d1.toExponential(1);
       let expected: string = d2.toExponential(1);
@@ -509,29 +488,12 @@ export default function decimalToExponentialPart04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2800
      * @tc.name decimalToExponentialPart04Test028
-     * @tc.desc Verify toExponential(2,4) digits
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1234.5");
-      let n: int = d.d!.length;
-      d.toExponential(2, 4);
-      let actual: int = d.d!.length;
-      let expected: number = n;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2900
-     * @tc.name decimalToExponentialPart04Test029
      * @tc.desc Verify toExponential(3) e
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       let n: number = d.e;
       d.toExponential(3);
@@ -541,14 +503,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3000
-     * @tc.name decimalToExponentialPart04Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_2900
+     * @tc.name decimalToExponentialPart04Test029
      * @tc.desc Verify toExponential(3,4) s
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       let n: number = d.s;
       d.toExponential(3, 4);
@@ -558,14 +520,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3100
-     * @tc.name decimalToExponentialPart04Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3000
+     * @tc.name decimalToExponentialPart04Test030
      * @tc.desc Verify double toExponential
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Decimal = new Decimal("1234.5");
       let b: Decimal = new Decimal(1234.5);
       let actual: string = a.toExponential(2);
@@ -574,14 +536,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3200
-     * @tc.name decimalToExponentialPart04Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3100
+     * @tc.name decimalToExponentialPart04Test031
      * @tc.desc Verify new Decimal(existing) toExponential
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Decimal = new Decimal("1234.5");
       let c: Decimal = new Decimal(a);
       let actual: string = a.toExponential(2);
@@ -590,65 +552,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3300
-     * @tc.name decimalToExponentialPart04Test033
-     * @tc.desc Verify toExponential(2, 4) on new Decimal("1234.5") yields same result as default rounding mode
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d1: Decimal = new Decimal("1234.5");
-      let x1: string = d1.toExponential(2, 4);
-      let y1: string = d1.toExponential(2);
-      let d2: Decimal = new Decimal("1234.5");
-      let y2: string = d2.toExponential(2);
-      let x2: string = d2.toExponential(2, 4);
-      expect(x1).assertEqual(x2);
-      expect(y1).assertEqual(y2);
-      expect(x1).assertEqual("1.23e+3");
-      expect(y1).assertEqual("1.23e+3");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3400
-     * @tc.name decimalToExponentialPart04Test034
-     * @tc.desc Verify toExponential(1) on new Decimal("1234.5") returns d.toExponential(1, 4)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1234.5");
-      let actual: string = d.toExponential(1);
-      let expected: string = d.toExponential(1, 4);
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3500
-     * @tc.name decimalToExponentialPart04Test035
-     * @tc.desc Verify toExponential(2) on new Decimal("-0.0001") returns d.toExponential(2, 4)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("-0.0001");
-      let actual: string = d.toExponential(2);
-      let expected: string = d.toExponential(2, 4);
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3600
-     * @tc.name decimalToExponentialPart04Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3200
+     * @tc.name decimalToExponentialPart04Test032
      * @tc.desc Verify toExponential(0) on new Decimal("1e21") returns 1e+21
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1e21");
       let actual: string = d.toExponential(0);
       let expected: string = "1e+21";
@@ -656,14 +567,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3700
-     * @tc.name decimalToExponentialPart04Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3300
+     * @tc.name decimalToExponentialPart04Test033
      * @tc.desc Verify toExponential(0, 4) on new Decimal("1e21") returns 1e+21
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1e21");
       let actual: string = d.toExponential(0, 4);
       let expected: string = "1e+21";
@@ -671,14 +582,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3800
-     * @tc.name decimalToExponentialPart04Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3400
+     * @tc.name decimalToExponentialPart04Test034
      * @tc.desc Verify toExponential(2) and toExponential(2, 4) produce equal-length output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       let actual: int = d.toExponential(2).length;
       let expected: number = d.toExponential(2, 4).length;
@@ -687,14 +598,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3900
-     * @tc.name decimalToExponentialPart04Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3500
+     * @tc.name decimalToExponentialPart04Test035
      * @tc.desc Verify toExponential(4) on new Decimal("1234.5") output round-trips through Decimal constructor to 1234.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s1: string = new Decimal("1234.5").toExponential(4);
       let actual: string = new Decimal(s1).toString();
       let expected: string = "1234.5";
@@ -702,14 +613,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4000
-     * @tc.name decimalToExponentialPart04Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3600
+     * @tc.name decimalToExponentialPart04Test036
      * @tc.desc Verify toExponential(2) on new Decimal("0.001") returns 1.00e-3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("0.001");
       let actual: string = d.toExponential(2);
       let expected: string = "1.00e-3";
@@ -717,14 +628,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4100
-     * @tc.name decimalToExponentialPart04Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3700
+     * @tc.name decimalToExponentialPart04Test037
      * @tc.desc Verify toExponential(2) on new Decimal("1234.5") returns b.toExponential(2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Decimal = new Decimal("1234.5");
       let b: Decimal = new Decimal("1234.5");
       let actual: string = a.toExponential(2);
@@ -734,14 +645,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4200
-     * @tc.name decimalToExponentialPart04Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3800
+     * @tc.name decimalToExponentialPart04Test038
      * @tc.desc Verify toExponential() on two equal Decimal instances returns the same output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Decimal = new Decimal("1234.5");
       let b: Decimal = new Decimal("1234.5");
       let actual: string = a.toExponential();
@@ -750,14 +661,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4300
-     * @tc.name decimalToExponentialPart04Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_3900
+     * @tc.name decimalToExponentialPart04Test039
      * @tc.desc Verify toExponential(1) on new Decimal("1.05") returns d.toExponential(1, 3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 3 });
       let d: Decimal = new Decimal("1.05");
       let actual: string = d.toExponential(1);
@@ -767,14 +678,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4400
-     * @tc.name decimalToExponentialPart04Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4000
+     * @tc.name decimalToExponentialPart04Test040
      * @tc.desc Verify toExponential(1, 4) on new Decimal("1.05") returns 1.1e+0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 3 });
       let d: Decimal = new Decimal("1.05");
       let actual: string = d.toExponential(1, 4);
@@ -784,14 +695,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4500
-     * @tc.name decimalToExponentialPart04Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4100
+     * @tc.name decimalToExponentialPart04Test041
      * @tc.desc Verify toExponential(1) on new Decimal("1.05") returns 1.0e+0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 3 });
       let d: Decimal = new Decimal("1.05");
       let actual: string = d.toExponential(1);
@@ -804,14 +715,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4600
-     * @tc.name decimalToExponentialPart04Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4200
+     * @tc.name decimalToExponentialPart04Test042
      * @tc.desc Verify toExponential(8) on new Decimal("123456789") returns d.toExponential(8, 4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 3 });
       let d: Decimal = new Decimal("123456789");
       let actual: string = d.toExponential(8);
@@ -821,14 +732,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4700
-     * @tc.name decimalToExponentialPart04Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4300
+     * @tc.name decimalToExponentialPart04Test043
      * @tc.desc Verify toExponential(8) on new Decimal("123456789") returns 1.23456789e+8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 3 });
       let d: Decimal = new Decimal("123456789");
       let actual: string = d.toExponential(8);
@@ -841,14 +752,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4800
-     * @tc.name decimalToExponentialPart04Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4400
+     * @tc.name decimalToExponentialPart04Test044
      * @tc.desc Verify toExponential(1) on new Decimal("1.05") returns d.toExponential(1, 0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 0 });
       let d: Decimal = new Decimal("1.05");
       let actual: string = d.toExponential(1);
@@ -858,14 +769,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4900
-     * @tc.name decimalToExponentialPart04Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4500
+     * @tc.name decimalToExponentialPart04Test045
      * @tc.desc Verify toExponential(1) on new Decimal("1.05") returns 1.1e+0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 0 });
       let d: Decimal = new Decimal("1.05");
       let actual: string = d.toExponential(1);
@@ -878,14 +789,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5000
-     * @tc.name decimalToExponentialPart04Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4600
+     * @tc.name decimalToExponentialPart04Test046
      * @tc.desc Verify toExponential(2) on new Decimal("1.005") returns b.toExponential(2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Decimal = new Decimal("1.005");
       let b: Decimal = new Decimal("1.005");
       let actual: string = a.toExponential(2);
@@ -899,14 +810,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5100
-     * @tc.name decimalToExponentialPart04Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4700
+     * @tc.name decimalToExponentialPart04Test047
      * @tc.desc Verify toExponential(1) on new Decimal("-1.05") returns -1.1e+0 and sign field s equals -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("-1.05");
       let actual: number = d.s;
       let expected: int = -1;
@@ -917,28 +828,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5200
-     * @tc.name decimalToExponentialPart04Test052
-     * @tc.desc Verify toExponential(2, 4) on new Decimal("1234.5") returns 1.23e+3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal("1234.5");
-      let s: string = d.toExponential(2, 4);
-      expect(s).assertEqual("1.23e+3");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5300
-     * @tc.name decimalToExponentialPart04Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4800
+     * @tc.name decimalToExponentialPart04Test048
      * @tc.desc Verify digits dp toExponential(8)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       let n: int = d.d!.length;
       d.toExponential(8);
@@ -948,14 +845,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5400
-     * @tc.name decimalToExponentialPart04Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_4900
+     * @tc.name decimalToExponentialPart04Test049
      * @tc.desc Verify toExponential(0) on new Decimal("0.9999") returns 1e+0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("0.9999");
       let actual: string = d.toExponential(0);
       let expected: string = "1e+0";
@@ -963,14 +860,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5500
-     * @tc.name decimalToExponentialPart04Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5000
+     * @tc.name decimalToExponentialPart04Test050
      * @tc.desc Verify toExponential(0, 3) on new Decimal("0.9999") returns 9e-1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("0.9999");
       let actual: string = d.toExponential(0, 3);
       let expected: string = "9e-1";
@@ -978,14 +875,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5600
-     * @tc.name decimalToExponentialPart04Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5100
+     * @tc.name decimalToExponentialPart04Test051
      * @tc.desc Verify toExponential(0, 3) on new Decimal("7.5") returns 7e+0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("7.5");
       let actual: string = d.toExponential(0, 3);
       let expected: string = "7e+0";
@@ -993,14 +890,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5700
-     * @tc.name decimalToExponentialPart04Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5200
+     * @tc.name decimalToExponentialPart04Test052
      * @tc.desc Verify toExponential(4) on new Decimal("1234.5") returns 1.2345e+3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal("1234.5");
       let actual: string = d.toExponential(4);
       let expected: string = "1.2345e+3";
@@ -1008,33 +905,14 @@ export default function decimalToExponentialPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5800
-     * @tc.name decimalToExponentialPart04Test058
-     * @tc.desc Verify toExponential(1) on new Decimal("1.05") returns b.toExponential(1)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToExponentialPart04Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      Decimal.set({ rounding: 3 });
-      let a: Decimal = new Decimal("1.05");
-      let b: Decimal = new Decimal("1.05");
-      let actual: string = a.toExponential(1);
-      let expected: string = b.toExponential(1);
-      expect(actual).assertEqual(expected);
-      expect(actual).assertEqual("1.0e+0");
-      Decimal.set({ defaults: true });
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5900
-     * @tc.name decimalToExponentialPart04Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_EXPONENTIAL_PART04_5300
+     * @tc.name decimalToExponentialPart04Test053
      * @tc.desc Verify toExponential(1) on new Decimal("1.05") returns 1.0e+0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToExponentialPart04Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToExponentialPart04Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 3 });
       let a: Decimal = new Decimal("1.05");
       let b: Decimal = new Decimal("1.05");

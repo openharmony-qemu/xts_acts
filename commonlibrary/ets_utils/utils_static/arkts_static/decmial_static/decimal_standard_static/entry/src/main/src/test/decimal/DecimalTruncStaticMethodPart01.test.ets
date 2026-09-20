@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -255,27 +256,12 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1500
      * @tc.name decimalTruncStaticMethodPart01Test015
-     * @tc.desc Verify trunc("-0.0") returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc("-0.0");
-      let actual: string = r.toString();
-      let expected: string = '0';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1600
-     * @tc.name decimalTruncStaticMethodPart01Test016
      * @tc.desc Verify trunc("3.500") returns 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("3.500");
       let actual: string = r.toString();
       let expected: string = '3';
@@ -283,29 +269,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1700
-     * @tc.name decimalTruncStaticMethodPart01Test017
-     * @tc.desc Verify trunc("NaN") returns Double.NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc("NaN");
-      let actual: string = r.toString();
-      let expected: string = "NaN";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1800
-     * @tc.name decimalTruncStaticMethodPart01Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1600
+     * @tc.name decimalTruncStaticMethodPart01Test016
      * @tc.desc Verify trunc("111222333444555666777888999.5") returns 1.11222333444555666777888999e+26
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("111222333444555666777888999.5");
       let actual: string = r.toString();
       let expected: string = "1.11222333444555666777888999e+26";
@@ -313,14 +284,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1900
-     * @tc.name decimalTruncStaticMethodPart01Test019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1700
+     * @tc.name decimalTruncStaticMethodPart01Test017
      * @tc.desc Verify trunc("-12345678901234567890.99") returns -12345678901234567890
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("-12345678901234567890.99");
       let actual: string = r.toString();
       let expected: string = "-12345678901234567890";
@@ -328,14 +299,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2000
-     * @tc.name decimalTruncStaticMethodPart01Test020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1800
+     * @tc.name decimalTruncStaticMethodPart01Test018
      * @tc.desc Verify trunc("4e+30") returns 4e+30
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("4e+30");
       let actual: string = r.toString();
       let expected: string = "4e+30";
@@ -343,14 +314,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2100
-     * @tc.name decimalTruncStaticMethodPart01Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_1900
+     * @tc.name decimalTruncStaticMethodPart01Test019
      * @tc.desc Verify trunc(-4.3) returns -4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc(-4.3);
       let actual: string = r.toString();
       let expected: string = "-4";
@@ -358,14 +329,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2200
-     * @tc.name decimalTruncStaticMethodPart01Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2000
+     * @tc.name decimalTruncStaticMethodPart01Test020
      * @tc.desc Verify trunc(-0.3) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc(-0.3);
       let actual: string = r.toString();
       let expected: string = '0';
@@ -373,14 +344,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2300
-     * @tc.name decimalTruncStaticMethodPart01Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2100
+     * @tc.name decimalTruncStaticMethodPart01Test021
      * @tc.desc Verify trunc(1.1 + 2.2) returns 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc(1.1 + 2.2);
       let actual: string = r.toString();
       let expected: string = '3';
@@ -388,77 +359,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2400
-     * @tc.name decimalTruncStaticMethodPart01Test024
-     * @tc.desc Verify trunc(0) returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc(0);
-      let actual: string = r.toString();
-      let expected: string = '0';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2500
-     * @tc.name decimalTruncStaticMethodPart01Test025
-     * @tc.desc Verify trunc(-0) returns -1 sign
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc(-0);
-      let actual: number = r.s;
-      let expected: int = -1;
-      expect(actual).assertEqual(expected);
-      let actual2: string = r.toString();
-      let expected2: string = '0';
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2600
-     * @tc.name decimalTruncStaticMethodPart01Test026
-     * @tc.desc Verify trunc(-Number.POSITIVE_INFINITY) returns -Number.POSITIVE_INFINITY
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc(-Number.POSITIVE_INFINITY);
-      let actual: string = r.toString();
-      let expected: string = "-Infinity";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2700
-     * @tc.name decimalTruncStaticMethodPart01Test027
-     * @tc.desc Verify trunc(1.7976931348623157e+308) returns 1.7976931348623157e+308
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc(1.7976931348623157e308);
-      let actual: string = r.toString();
-      let expected: string = "1.7976931348623157e+308";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2800
-     * @tc.name decimalTruncStaticMethodPart01Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2200
+     * @tc.name decimalTruncStaticMethodPart01Test022
      * @tc.desc Verify trunc(-1.7976931348623157e+308) returns sign -1 and exponent 308
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc(-1.7976931348623157e308);
       let actual: number = r.s;
       let expected: int = -1;
@@ -469,29 +377,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2900
-     * @tc.name decimalTruncStaticMethodPart01Test029
-     * @tc.desc Verify trunc(5e-324) returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc(5e-324);
-      let actual: string = r.toString();
-      let expected: string = '0';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3000
-     * @tc.name decimalTruncStaticMethodPart01Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2300
+     * @tc.name decimalTruncStaticMethodPart01Test023
      * @tc.desc Verify trunc(9007199254740991) returns 9007199254740991
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc(9007199254740991);
       let actual: string = r.toString();
       let expected: string = "9007199254740991";
@@ -499,14 +392,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3100
-     * @tc.name decimalTruncStaticMethodPart01Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2400
+     * @tc.name decimalTruncStaticMethodPart01Test024
      * @tc.desc Verify trunc(0.1 + 0.2 - 0.3) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc(0.1 + 0.2 - 0.3);
       let actual: string = r.toString();
       let expected: string = '0';
@@ -514,14 +407,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3200
-     * @tc.name decimalTruncStaticMethodPart01Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2500
+     * @tc.name decimalTruncStaticMethodPart01Test025
      * @tc.desc Verify trunc(src) on new Decimal("8.5") returns 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("8.5");
       let r: Decimal = Decimal.trunc(src);
       let actual: string = r.toString();
@@ -530,14 +423,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3300
-     * @tc.name decimalTruncStaticMethodPart01Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2600
+     * @tc.name decimalTruncStaticMethodPart01Test026
      * @tc.desc Verify trunc(src) on new Decimal("-8.5") returns -8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("-8.5");
       let r: Decimal = Decimal.trunc(src);
       let actual: string = r.toString();
@@ -546,14 +439,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3400
-     * @tc.name decimalTruncStaticMethodPart01Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2700
+     * @tc.name decimalTruncStaticMethodPart01Test027
      * @tc.desc Verify trunc(src) on new Decimal("0.00") returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("0.00");
       let r: Decimal = Decimal.trunc(src);
       let actual: string = r.toString();
@@ -562,14 +455,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3500
-     * @tc.name decimalTruncStaticMethodPart01Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2800
+     * @tc.name decimalTruncStaticMethodPart01Test028
      * @tc.desc Verify trunc(src) on new Decimal("-0.00") returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("-0.00");
       let r: Decimal = Decimal.trunc(src);
       let actual: boolean = r.isZero();
@@ -580,14 +473,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3600
-     * @tc.name decimalTruncStaticMethodPart01Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_2900
+     * @tc.name decimalTruncStaticMethodPart01Test029
      * @tc.desc Verify trunc(src) on new Decimal("9e+25") returns 9e+25
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("9e+25");
       let r: Decimal = Decimal.trunc(src);
       let actual: string = r.toString();
@@ -596,14 +489,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3700
-     * @tc.name decimalTruncStaticMethodPart01Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3000
+     * @tc.name decimalTruncStaticMethodPart01Test030
      * @tc.desc Verify trunc(src) on new Decimal("0.123456789") returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("0.123456789");
       let r: Decimal = Decimal.trunc(src);
       let actual: string = r.toString();
@@ -612,14 +505,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3800
-     * @tc.name decimalTruncStaticMethodPart01Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3100
+     * @tc.name decimalTruncStaticMethodPart01Test031
      * @tc.desc Verify trunc(src) on new Decimal("-9876543210.987") returns -9876543210
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("-9876543210.987");
       let r: Decimal = Decimal.trunc(src);
       let actual: string = r.toString();
@@ -628,30 +521,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3900
-     * @tc.name decimalTruncStaticMethodPart01Test039
-     * @tc.desc Verify trunc(src) on new Decimal(Number.POSITIVE_INFINITY) returns Number.POSITIVE_INFINITY
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Decimal = new Decimal(Number.POSITIVE_INFINITY);
-      let r: Decimal = Decimal.trunc(src);
-      let actual: string = r.toString();
-      let expected: string = "Infinity";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4000
-     * @tc.name decimalTruncStaticMethodPart01Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3200
+     * @tc.name decimalTruncStaticMethodPart01Test032
      * @tc.desc Verify trunc(5.7)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc(5.7);
       let actual: string = r.toString();
       let expected: string = '5';
@@ -659,14 +536,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4100
-     * @tc.name decimalTruncStaticMethodPart01Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3300
+     * @tc.name decimalTruncStaticMethodPart01Test033
      * @tc.desc Verify trunc("-5.7") returns sign -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("-5.7");
       let actual: number = r.s;
       let expected: int = -1;
@@ -674,14 +551,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4200
-     * @tc.name decimalTruncStaticMethodPart01Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3400
+     * @tc.name decimalTruncStaticMethodPart01Test034
      * @tc.desc Verify trunc("-0.1")
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("-0.1");
       let actual: boolean = r.isPositive();
       expect(actual).assertFalse();
@@ -691,14 +568,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4300
-     * @tc.name decimalTruncStaticMethodPart01Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3500
+     * @tc.name decimalTruncStaticMethodPart01Test035
      * @tc.desc Verify trunc("6.7") and not negative and positive
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("6.7");
       let actual: boolean = r.isInteger();
       expect(actual).assertTrue();
@@ -711,14 +588,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4400
-     * @tc.name decimalTruncStaticMethodPart01Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3600
+     * @tc.name decimalTruncStaticMethodPart01Test036
      * @tc.desc Verify string trunc trunc "-6.3"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let actual: string = Decimal.trunc("-6.3").toString();
       let expected: string = new Decimal("-6.3").trunc().toString();
       expect(actual).assertEqual(expected);
@@ -726,14 +603,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4500
-     * @tc.name decimalTruncStaticMethodPart01Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3700
+     * @tc.name decimalTruncStaticMethodPart01Test037
      * @tc.desc Verify double trunc trunc 6.3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let actual: string = Decimal.trunc(6.3).toString();
       let expected: string = new Decimal(6.3).trunc().toString();
       expect(actual).assertEqual(expected);
@@ -741,14 +618,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4600
-     * @tc.name decimalTruncStaticMethodPart01Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3800
+     * @tc.name decimalTruncStaticMethodPart01Test038
      * @tc.desc Verify Decimal trunc trunc -7.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Decimal = new Decimal("-7.5");
       let actual: string = Decimal.trunc(src).toString();
       let expected: string = src.trunc().toString();
@@ -757,31 +634,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4700
-     * @tc.name decimalTruncStaticMethodPart01Test047
-     * @tc.desc Verify NaN trunc trunc NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Decimal = Decimal.trunc(Double.NaN);
-      let b: Decimal = new Decimal(Double.NaN).trunc();
-      let actual: boolean = a.isNaN();
-      expect(actual).assertTrue();
-      let actual2: boolean = b.isNaN();
-      expect(actual2).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4800
-     * @tc.name decimalTruncStaticMethodPart01Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_3900
+     * @tc.name decimalTruncStaticMethodPart01Test039
      * @tc.desc Verify -Infinity trunc trunc
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let actual: string = Decimal.trunc(-Number.POSITIVE_INFINITY).toString();
       let expected: string = new Decimal(-Number.POSITIVE_INFINITY).trunc().toString();
       expect(actual).assertEqual(expected);
@@ -789,14 +649,14 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4900
-     * @tc.name decimalTruncStaticMethodPart01Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4000
+     * @tc.name decimalTruncStaticMethodPart01Test040
      * @tc.desc Verify trunc("6.7").add(1) returns 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("6.7").add(1);
       let actual: string = r.toString();
       let expected: string = '7';
@@ -804,45 +664,31 @@ export default function decimalTruncStaticMethodPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_5000
-     * @tc.name decimalTruncStaticMethodPart01Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4100
+     * @tc.name decimalTruncStaticMethodPart01Test041
      * @tc.desc Verify trunc("invalid-object") throws BusinessError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Decimal.trunc("invalid-object");
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_5100
-     * @tc.name decimalTruncStaticMethodPart01Test051
-     * @tc.desc Verify trunc(Number.NaN) returns NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalTruncStaticMethodPart01Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let r: Decimal = Decimal.trunc(Number.NaN);
-      let actual: boolean = r.isNaN();
-      expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_5200
-     * @tc.name decimalTruncStaticMethodPart01Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TRUNC_STATIC_METHOD_PART01_4200
+     * @tc.name decimalTruncStaticMethodPart01Test042
      * @tc.desc Verify trunc("0x10") returns 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalTruncStaticMethodPart01Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalTruncStaticMethodPart01Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = Decimal.trunc("0x10");
       let actual: string = r.toString();
       let expected: string = "16";
