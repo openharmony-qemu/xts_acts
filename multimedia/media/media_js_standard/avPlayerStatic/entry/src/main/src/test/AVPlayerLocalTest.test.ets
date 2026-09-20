@@ -767,7 +767,9 @@ function getPlaybackPosition(avPlayer: media.AVPlayer | null, done: () => void) 
         avPlayer?.play()
         break;
       case PLAYING:
-        avPlayer?.pause()
+        setTimeout(() => {
+          avPlayer?.pause()
+        }, 500)
         break;
       case PAUSED:
         if (!avPlayer) {
