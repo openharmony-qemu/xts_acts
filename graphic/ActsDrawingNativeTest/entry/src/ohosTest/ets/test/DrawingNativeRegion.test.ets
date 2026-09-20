@@ -88,112 +88,8 @@ export default function DrawingNativeRegionTest() {
     })
 
     /**
-     * @tc.name   testRegionContainsInRange
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0100
-     * @tc.desc   test for testRegionContainsInRange.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testRegionContainsInRange', Level.LEVEL0, () => {
-      const result = libDrawingNative.DrawingRegionQueryOperations(0);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionContainsXvalueNotInRange
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0200
-     * @tc.desc   test for testRegionContainsXvalueNotInRange.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testRegionContainsXvalueNotInRange', Level.LEVEL1, () => {
-      const result = libDrawingNative.DrawingRegionQueryOperations(1);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionContainsYvalueNotInRange
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0300
-     * @tc.desc   test for testRegionContainsYvalueNotInRange.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testRegionContainsYvalueNotInRange', Level.LEVEL1, () => {
-      const result = libDrawingNative.DrawingRegionQueryOperations(2);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionContainsAllNotInRange
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0400
-     * @tc.desc   test for testRegionContainsAllNotInRange.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testRegionContainsAllNotInRange', Level.LEVEL1, () => {
-      const result = libDrawingNative.DrawingRegionQueryOperations(3);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionContainsRegionNull
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0500
-     * @tc.desc   test for testRegionContainsRegionNull.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testRegionContainsRegionNull', Level.LEVEL1, () => {
-      const result = libDrawingNative.DrawingRegionQueryOperations(4);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionOpNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0500
-     * @tc.desc   test for testRegionOpNormal.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testRegionOpNormal', Level.LEVEL0, () => {
-      const result = libDrawingNative.DrawingRegionBasicOperations(15);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionOpRegionNull
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0600
-     * @tc.desc   test for testRegionOpRegionNull.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testRegionOpRegionNull', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingRegionBasicOperations(16);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionOpMultipleCalls
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0700
-     * @tc.desc   test for testRegionOpMultipleCalls
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
-     */
-    it('testRegionOpMultipleCalls', Level.LEVEL3, () => {
-      const result = libDrawingNative.DrawingRegionBasicOperations(17);
-      expect(result).assertEqual(0);
-    })
-
-    /**
      * @tc.name   testRegionSetRectResultTrue
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0500
      * @tc.desc   test for testRegionSetRectResultTrue.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -205,47 +101,47 @@ export default function DrawingNativeRegionTest() {
     })
 
     /**
+     * @tc.name   testRegionSetRectResultFalse
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0600
+     * @tc.desc   test for testRegionSetRectResultFalse.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegionSetRectResultFalse', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRegionBasicOperations(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
      * @tc.name   testRegionSetRectRegionNull
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0700
      * @tc.desc   test for testRegionSetRectRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it('testRegionSetRectRegionNull', Level.LEVEL1, () => {
-      const result = libDrawingNative.DrawingRegionBasicOperations(5);
+      const result = libDrawingNative.DrawingRegionBasicOperations(6);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testRegionSetRectRectNull
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1000
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0800
      * @tc.desc   test for testRegionSetRectRectNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL1
      */
     it('testRegionSetRectRectNull', Level.LEVEL1, () => {
-      const result = libDrawingNative.DrawingRegionBasicOperations(6);
-      expect(result).assertEqual(0);
-    })
-
-    /**
-     * @tc.name   testRegionSetRectResultFalse
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1100
-     * @tc.desc   test for testRegionSetRectResultFalse.
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('testRegionSetRectResultFalse', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(7);
       expect(result).assertEqual(0);
     })
 
     /**
      * @tc.name   testRegionSetPathResultTrue
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1200
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_0900
      * @tc.desc   test for testRegionSetPathResultTrue.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -258,7 +154,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetPathRegionNull
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1300
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1000
      * @tc.desc   test for testRegionSetPathRegionNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -271,7 +167,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionSetPathResultFalse
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1400
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1100
      * @tc.desc   test for testRegionSetPathResultFalse.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +180,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyNormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1500
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1200
      * @tc.desc   test for testRegionCopyNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -297,7 +193,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyNull
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1600
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1300
      * @tc.desc   test for testRegionCopyNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -310,7 +206,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyAbnormal
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1700
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1400
      * @tc.desc   test for testRegionCopyAbnormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -323,7 +219,7 @@ export default function DrawingNativeRegionTest() {
 
     /**
      * @tc.name   testRegionCopyMultipleCalls
-     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1800
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1500
      * @tc.desc   test for testRegionCopyMultipleCalls
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -331,6 +227,123 @@ export default function DrawingNativeRegionTest() {
      */
     it('testRegionCopyMultipleCalls', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingRegionBasicOperations(14);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionOpNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1600
+     * @tc.desc   test for testRegionOpNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegionOpNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRegionBasicOperations(15);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionOpRegionNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1700
+     * @tc.desc   test for testRegionOpRegionNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRegionOpRegionNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRegionBasicOperations(16);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionOpMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionBasicOperations_1800
+     * @tc.desc   test for testRegionOpMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRegionOpMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingRegionBasicOperations(17);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionContainsBoundary
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0100
+     * @tc.desc   test for testRegionContainsBoundary.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegionContainsBoundary', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRegionQueryOperations(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionContainsInRange
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0200
+     * @tc.desc   test for testRegionContainsInRange.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRegionContainsInRange', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingRegionQueryOperations(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionContainsXvalueNotInRange
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0300
+     * @tc.desc   test for testRegionContainsXvalueNotInRange.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegionContainsXvalueNotInRange', Level.LEVEL1, () => {
+      const result = libDrawingNative.DrawingRegionQueryOperations(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionContainsYvalueNotInRange
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0400
+     * @tc.desc   test for testRegionContainsYvalueNotInRange.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegionContainsYvalueNotInRange', Level.LEVEL1, () => {
+      const result = libDrawingNative.DrawingRegionQueryOperations(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionContainsAllNotInRange
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0500
+     * @tc.desc   test for testRegionContainsAllNotInRange.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegionContainsAllNotInRange', Level.LEVEL1, () => {
+      const result = libDrawingNative.DrawingRegionQueryOperations(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testRegionContainsRegionNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingRegionQueryOperations_0600
+     * @tc.desc   test for testRegionContainsRegionNull.
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegionContainsRegionNull', Level.LEVEL1, () => {
+      const result = libDrawingNative.DrawingRegionQueryOperations(5);
       expect(result).assertEqual(0);
     })
 

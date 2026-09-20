@@ -1,0 +1,20 @@
+{
+"description": "Configuration for startup collections Float32Array Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "800000",
+        "bundle-name": "com.example.collections.float32array",
+        "module-name": "entry_test",
+        "shell-timeout": "800000",
+        "compile-mode": "esmodule"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsCollectionsFloat32ArrayTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        }
+    ]
+}

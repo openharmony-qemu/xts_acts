@@ -13,11 +13,12 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import commonEvent from '@ohos.commonEventManager';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import commonEvent from '@ohos.commonEvent';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
+import { BusinessError } from '@ohos.base';
 
 const START_ABILITY_TIMEOUT = 5000;
 let getAppContext1: commonEventManager.CommonEventSubscribeInfo = {
@@ -65,7 +66,15 @@ export default function abilityTest() {
             abilityName: 'MainAbility1'
           }).then(() => {
           console.debug('====>startAbility end====');
+        }).catch((err: BusinessError) => {
+          console.debug('====>startAbility err:' + JSON.stringify(err));
+          expect().assertFail();
+          done();
         })
+      }).catch((err: BusinessError) => {
+        console.debug('====>createSubscriber err:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
       })
 
       setTimeout(() => {

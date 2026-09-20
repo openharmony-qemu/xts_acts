@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 {
-  "modelVersion": "6.0.0",
-  "dependencies": {
+  "modelVersion": "26.0.0",
+  "dependencies": {},
+  "properties": {
+    "ohos.byteCodeHar.integratedOptimization": true
   }
 }

@@ -31,6 +31,7 @@ export default function cdsmTest() {
       await clickRequestPermission();
       return_boolean = manager.isNearLinkSupported();
       try {
+        await openNearLink();
         cdsmClient = cdsm.createCdsmClient(ADDRESS);
         console.info('nearLink createCdsmClient result:' + cdsmClient);
         expect(cdsmClient != null).assertTrue();
@@ -51,7 +52,6 @@ export default function cdsmTest() {
     })
     beforeEach(async (done:Function) => {
       console.info('beforeEach start');
-      await openNearLink();
       console.info('beforeEach end');
       done();
     })

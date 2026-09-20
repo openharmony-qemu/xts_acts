@@ -14,7 +14,7 @@
  * limitations under the License.
  */
  
-import { describe, it, Level } from '@ohos/hypium'
+import { describe, it, Level } from '@ohos/hypium-dynamic'
 
 export default function abilityTest() {
     describe('AACommandPrintOneTest', () => {

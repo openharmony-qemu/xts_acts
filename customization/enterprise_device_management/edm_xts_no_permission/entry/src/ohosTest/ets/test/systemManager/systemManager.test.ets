@@ -49,6 +49,10 @@ export default function systemManagerTest() {
  	  testIsOtaUpdateNonceEnable();
     testSetLocalHotaDomain();
     testGetLocalHotaDomain();
+    testCreateExactTimer();
+    testStartExactTimer();
+    testStopExactTimer();
+    testDestroyExactTimer();
   })
 }
 
@@ -754,6 +758,120 @@ function testGetLocalHotaDomain() {
       systemManager.getLocalHotaDomain(SELFWANT);
     } catch (error) {
       expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testCreateExactTimer() {
+  /**
+  * @tc.name   test_create_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_CREATE_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager createExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_create_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let config: systemManager.ExactTimerConfig = {
+        name: 'test_exact_timer',
+        repeat: true,
+        interval: 1000,
+        callback: () => {}
+      };
+      await systemManager.createExactTimer(config);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testStartExactTimer() {
+  /**
+  * @tc.name   test_start_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_START_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager startExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_start_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await systemManager.startExactTimer(1, 5000);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testStopExactTimer() {
+  /**
+  * @tc.name   test_stop_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_STOP_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager stopExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_stop_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await systemManager.stopExactTimer(1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testDestroyExactTimer() {
+  /**
+  * @tc.name   test_destroy_exact_timer_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_DESTROY_EXACT_TIMER_JS_0100
+  * @tc.desc   test systemManager destroyExactTimer with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_destroy_exact_timer_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await systemManager.destroyExactTimer(1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

@@ -27,6 +27,11 @@ import TaskGroupAbilityTest3 from './TaskGroupAbility3.test';
 import TaskPolymorphismTest from './TaskPolymorphismTest.test';
 import TaskGroupInheritanceTest from './TaskGroupInheritanceTest.test';
 import UseConcurrentTest from './UseConcurrentTest.test';
+import TaskGroupConstructorDefaultTest from './taskGroup/TaskGroupConstructorDefaultTest.test';
+import TaskGroupConstructorNamedTest from './taskGroup/TaskGroupConstructorNamedTest.test';
+import TaskGroupAddTaskFuncTest from './taskGroup/TaskGroupAddTaskFuncTest.test';
+import TaskGroupAddTaskInstanceTest from './taskGroup/TaskGroupAddTaskInstanceTest.test';
+import TaskGroupNameTest from './taskGroup/TaskGroupNameTest.test';
 
 export default function testsuite() {
   taskPoolTaskMultipleTest();
@@ -44,4 +49,9 @@ export default function testsuite() {
   TaskPolymorphismTest();
   TaskGroupInheritanceTest();
   UseConcurrentTest();
+  TaskGroupConstructorDefaultTest();
+  TaskGroupConstructorNamedTest();
+  TaskGroupAddTaskFuncTest();
+  TaskGroupAddTaskInstanceTest();
+  TaskGroupNameTest();
 }

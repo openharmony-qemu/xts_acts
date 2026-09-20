@@ -266,5 +266,46 @@ export default function AssetNdkTest() {
       expect(result).assertEqual(0);
     })
 
+    /**
+     * @tc.name   SUB_Security_Asset_ErrorCode_PreQuery_NDK_1100
+     * @tc.number SUB_Security_Asset_ErrorCode_PreQuery_NDK_1100
+     * @tc.desc   test OH_Asset_PreQuery with ASSET_LIMIT_EXCEEDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_Asset_ErrorCode_PreQuery_NDK_1100', TestType.FUNCTION | Size.MEDIUMTEST |
+      Level.LEVEL3, () => {
+      let result: number = myAssetNdk.asset_preQueryLimitExceeded();
+      expect(result).assertEqual(asset.ErrorCode.LIMIT_EXCEEDED);
+    })
+
+    /**
+     * @tc.name   SUB_Security_Asset_ErrorCode_PreQuery_NDK_1200
+     * @tc.number SUB_Security_Asset_ErrorCode_PreQuery_NDK_1200
+     * @tc.desc   test OH_Asset_PreQuery with ASSET_UNSUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_Asset_ErrorCode_PreQuery_NDK_1200', TestType.FUNCTION | Size.MEDIUMTEST |
+      Level.LEVEL3, () => {
+      let result: number = myAssetNdk.asset_preQueryUnsupported();
+      expect(result).assertEqual(asset.ErrorCode.UNSUPPORTED);
+    })
+
+    /**
+     * @tc.name   SUB_Security_Asset_QuerySyncResult_NDK_Func_1300
+     * @tc.number SUB_Security_Asset_QuerySyncResult_NDK_Func_1300
+     * @tc.desc   test OH_Asset_QuerySyncResult with ASSET_PARAM_VERIFICATION_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_Asset_QuerySyncResult_NDK_Func_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      let result: number = myAssetNdk.asset_querySyncResultError();
+      expect(result).assertEqual(asset.ErrorCode.PARAM_VERIFICATION_FAILED);
+    })
+
   })
 }

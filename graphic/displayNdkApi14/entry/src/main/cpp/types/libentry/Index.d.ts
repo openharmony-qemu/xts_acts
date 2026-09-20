@@ -27,3 +27,4 @@ export const getDisplayState_ON_SUSPEND: () => number;
 export const getDisplayState_DOZE: () => number;
 export const getDisplayState_VR: () => number;
 export const getDisplayCapture: (displayId:number) => image.PixelMap;
+export const getDisplayCaptureMax: () => number;

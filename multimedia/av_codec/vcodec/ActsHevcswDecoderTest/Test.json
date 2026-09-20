@@ -16,20 +16,23 @@
      ],
      "type": "AppInstallKit",
      "cleanup-apps": true
-   },{
-     "type": "ShellKit",
-     "run-command": [
-       "mkdir -p /data/app/el2/100/base/com.example.actshevcswdecodertest/files",
-       "chmod 777 -R /data/app/el2/100/base/com.example.actshevcswdecodertest/files",
-       "power-shell wakeup",
-       "power-shell setmode 602"
-     ]
-   },{
+   },
+   {
      "type": "PushKit",
      "pre-push": [],
      "push": [
-       "./resource/media/codec/video_decoder/1920_1080_30.h265 ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files/",
-       "./resource/media/codec/video_decoder/hash_val.json ->/data/app/el2/100/base/com.example.actshevcswdecodertest/files/"
+       "./resource/media/codec/video_decoder/1920_1080_30.h265 ->/data/local/tmp/",
+       "./resource/media/codec/video_decoder/hash_val.json ->/data/local/tmp/",
+       "./resource/media/codec/video_decoder/setup_hevcswdecoder_test.sh ->/data/local/tmp/"
+     ]
+   },
+   {
+     "type": "ShellKit",
+     "run-command": [
+      "power-shell wakeup",
+      "power-shell setmode 602",
+      "chmod 755 /data/local/tmp/setup_hevcswdecoder_test.sh",
+      "sh /data/local/tmp/setup_hevcswdecoder_test.sh"
      ]
    }
  ]

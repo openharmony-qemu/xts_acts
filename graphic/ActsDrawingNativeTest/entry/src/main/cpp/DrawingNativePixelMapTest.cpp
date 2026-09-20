@@ -16,6 +16,7 @@
 #include "include/DrawingNativePixelMapTest.h"
 #include "include/DrawingNativeCanvasCommonTest.h"
 #include "include/OhosCommonTest.h"
+#include "log_common.h"
 
 #define DRAWING_NUMBER_10 10
 
@@ -136,16 +137,16 @@ int TestPixelMapGetFromOhPixelMapNativeBoundary()
     uint32_t width = DRAWING_NUMBER_4096;
     uint32_t height = DRAWING_NUMBER_2160;
     OH_PixelmapNative *pixelMap = GET_OH_PixelmapNative(width, height);
-    // add assert
     EXPECT_EQ(pixelMap, nullptr);
+    
+    pixelMap = GET_OH_PixelmapNative4KBoundary();
+    EXPECT_NE(pixelMap, nullptr);
     // 1. Call OH_Drawing_PixelMapGetFromOhPixelMapNative
     OH_Drawing_PixelMap *drPixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMap);
-    // add assert
-    EXPECT_EQ(drPixelMap, nullptr);
+    EXPECT_NE(drPixelMap, nullptr);
     // 2. Release memory
     OH_Drawing_PixelMapDissolve(drPixelMap);
     OH_PixelmapNative_Release(pixelMap);
-    EXPECT_EQ(pixelMap, nullptr);
     DrawingNativePixelMapTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

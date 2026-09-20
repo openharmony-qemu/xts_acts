@@ -94,7 +94,7 @@ export default function ActsOsAccountNdkTest() {
       async (done: Function) => {
         try {
           console.info('====>GetDefaultDisplayRotation3 start====')
-          let result = osAccountNdk.GetDefaultDisplayRotation0();
+          let result = osAccountNdk.GetDefaultDisplayRotation3();
           expect(0).assertEqual(result)
           done()
         } catch (err) {

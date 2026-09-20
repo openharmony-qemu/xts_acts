@@ -145,6 +145,7 @@ napi_value DrawingPathPart4GetData(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPathGetLastPointNull,
             OHOS::Rosen::Drawing::TestPathGetLastPointMultipleCalls,
             OHOS::Rosen::Drawing::TestPathIsEqualNormal,
+            OHOS::Rosen::Drawing::TestPathIsEqualNormal2,
             OHOS::Rosen::Drawing::TestPathIsEqualNull,
             OHOS::Rosen::Drawing::TestPathIsEqualMultipleCalls,
         };

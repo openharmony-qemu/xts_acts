@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll} from '@ohos/hypium'
+import { describe, it, expect, Level, beforeAll} from '@ohos/hypium-dynamic'
 import { Driver, ON } from '@ohos.UiTest';
 
 import appManager from "@ohos.app.ability.appManager"

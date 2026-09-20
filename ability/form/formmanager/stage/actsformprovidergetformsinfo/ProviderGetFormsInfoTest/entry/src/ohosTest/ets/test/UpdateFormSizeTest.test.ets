@@ -14,7 +14,7 @@
  */
 
 import commonEvent from '@ohos.commonEvent';
-import { beforeAll, beforeEach, afterEach, describe, expect, it } from '@ohos/hypium';
+import { beforeAll, beforeEach, afterEach, describe, expect, it } from '@ohos/hypium-dynamic';
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

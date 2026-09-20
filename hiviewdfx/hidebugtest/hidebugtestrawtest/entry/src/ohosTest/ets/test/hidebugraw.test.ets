@@ -749,6 +749,274 @@ export default function HidebugrawTest() {
         done();
       }
     })
-    
+
+    /**
+     * @tc.name   testHidebugrawprocess_1800
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1800
+     * @tc.desc   验证dumpJsRawHeapData()接口传入null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/' ;
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_1800 output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          let filename = await hidebug.dumpJsRawHeapData(null)
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1800 success and generated file path is ${filename}`)
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1800 > err code: ${error.code}, err msg: ${error.message}`)
+        expect(error.code === '401').assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_1900
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_1900
+     * @tc.desc   验证dumpJsRawHeapData()接口传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/' ;
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_1900 output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          let filename = await hidebug.dumpJsRawHeapData(undefined)
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_1900 success and generated file path is ${filename}`)
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_1900 > err code: ${error.code}, err msg: ${error.message}`)
+        expect(error.code === '401').assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2000
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2000
+     * @tc.desc   验证dumpJsRawHeapData()接口needGC参数传入null，needClean参数传入true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/' ;
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2000 output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          let filename = await hidebug.dumpJsRawHeapData(null, true)
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2000 success and generated file path is ${filename}`)
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2000 > err code: ${error.code}, err msg: ${error.message}`)
+        expect(error.code === '401').assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2100
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2100
+     * @tc.desc   验证dumpJsRawHeapData()接口needGC参数传入undefined，needClean参数传入true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/' ;
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2100 output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          let filename = await hidebug.dumpJsRawHeapData(undefined, true)
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2100 success and generated file path is ${filename}`)
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2100 > err code: ${error.code}, err msg: ${error.message}`)
+        expect(error.code === '401').assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2200
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2200
+     * @tc.desc   验证dumpJsRawHeapData()接口needGC参数传入true，needClean参数传入null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/' ;
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2200 output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          let filename = await hidebug.dumpJsRawHeapData(true, null)
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2200 success and generated file path is ${filename}`)
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2200 > err code: ${error.code}, err msg: ${error.message}`)
+        expect(error.code === '401').assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2300
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2300
+     * @tc.desc   验证dumpJsRawHeapData()接口needGC参数传入true，needClean参数传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/' ;
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2300 output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          let filename = await hidebug.dumpJsRawHeapData(true, undefined)
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_2300 success and generated file path is ${filename}`)
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2300 > err code: ${error.code}, err msg: ${error.message}`)
+        expect(error.code === '401').assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2400
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2400
+     * @tc.desc   验证getAppNativeMemInfoWithCache接口传入null值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2400 start");
+      try {
+        hidebug.getAppNativeMemInfoWithCache(null);
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2400 null");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code === '401').assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2400 end");
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2500
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2500
+     * @tc.desc   验证setJsRawHeapTrimLevel接口传入null值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2500 start");
+      try {
+        hidebug.setJsRawHeapTrimLevel(null);
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2500 null");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code === '401').assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2500 end");
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2600
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2600
+     * @tc.desc   验证setProcDumpInSharedOOM接口传入null值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2600 start");
+      try {
+        hidebug.setProcDumpInSharedOOM(null);
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2600 null");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code === '401').assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2600 end");
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2700
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2700
+     * @tc.desc   验证setProcDumpInSharedOOM接口传入undefined值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2700 start");
+      try {
+        hidebug.setProcDumpInSharedOOM(undefined);
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2700 undefined");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code === '401').assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2700 end");
+    })
+
+    /**
+     * @tc.name   testHidebugrawprocess_2800
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_2800
+     * @tc.desc   验证startAppTraceCapture接口flag参数传入null值返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2800 start");
+      try {
+        let tag = [hidebug.tags.ABILITY_MANAGER];
+        let limit_size = 1024 * 1024;
+        let path = hidebug.startAppTraceCapture(tag, null, limit_size);
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2800 startAppTraceCapture null" + path);
+        hidebug.stopAppTraceCapture();
+        console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2800 startAppTraceCapture null end");
+        expect(false).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_2800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(err.code === '401').assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_Hidebug_Ets_Raw_2800 end");
+    })
   })
 }

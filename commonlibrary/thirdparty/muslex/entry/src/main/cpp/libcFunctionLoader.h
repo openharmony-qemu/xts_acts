@@ -110,6 +110,8 @@ public:
     using StrtoullLFunc = unsigned long long (*)(const char*, char**, int, locale_t);
     using TimelocalFunc = time_t (*)(struct tm*);
     using SetSigchainPreValidationIgnoreFunc = void (*)(int);
+    using GwpAsanUnwindFastFunc = size_t (*)(size_t*, size_t);
+    using GwpAsanUnwindSegvFunc = size_t (*)(size_t*, size_t, void*);
 
     // ==================== Lazy-Load Getter Methods ====================
     WcstofLFunc GetWcstofL() const { return LazyLoad(wcstofL_, "wcstof_l"); }
@@ -245,6 +247,14 @@ public:
     {
         return LazyLoad(setSigchainPreValidationIgnore_, "set_sigchain_pre_validation_ignore");
     }
+    GwpAsanUnwindFastFunc GetGwpAsanUnwindFast() const
+    {
+        return LazyLoad(gwpAsanUnwindFast_, "libc_gwp_asan_unwind_fast");
+    }
+    GwpAsanUnwindSegvFunc GetGwpAsanUnwindSegv() const
+    {
+        return LazyLoad(gwpAsanUnwindSegv_, "libc_gwp_asan_unwind_segv");
+    }
 
 private:
     LibcFunctionLoader() = default;
@@ -340,5 +350,7 @@ private:
     mutable StrtoullLFunc strtoullL_ = nullptr;
     mutable TimelocalFunc timelocal_ = nullptr;
     mutable SetSigchainPreValidationIgnoreFunc setSigchainPreValidationIgnore_ = nullptr;
+    mutable GwpAsanUnwindFastFunc gwpAsanUnwindFast_ = nullptr;
+    mutable GwpAsanUnwindSegvFunc gwpAsanUnwindSegv_ = nullptr;
 };
 #endif // LIBC_FUNCTION_LOADER_H

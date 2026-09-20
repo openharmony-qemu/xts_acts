@@ -139,6 +139,12 @@ function postErrorToApp() {
   }
 }
 
+function postErrorErrorToApp() {
+  if (h5Port) {
+    h5Port.postMessage('not an error');
+  }
+}
+
 
 function postStringToHtml() {
   var a = document.getElementById('msg').innerText;

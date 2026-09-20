@@ -17,23 +17,21 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/files/*",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/cache/",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/cache/*",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/yuv_test_ete.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/files",
-                "./resource/image/yuv_test_ote.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/files",
-                "./resource/image/yuv_test_eto.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/files",
-                "./resource/image/yuv_test_oto.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagepixelMapSupportYuv/haps/entry_test/files"
+                "./resource/image/yuv_test_ete.jpg ->/data/local/tmp/",
+                "./resource/image/yuv_test_ote.jpg ->/data/local/tmp/",
+                "./resource/image/yuv_test_eto.jpg ->/data/local/tmp/",
+                "./resource/image/yuv_test_oto.jpeg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_pixelMapSupportYuv_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_pixelMapSupportYuv_test.sh",
+                "sh /data/local/tmp/setup_image_pixelMapSupportYuv_test.sh"
             ]
         }
     ]

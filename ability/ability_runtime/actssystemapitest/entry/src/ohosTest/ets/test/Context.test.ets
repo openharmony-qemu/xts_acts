@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import common from '@ohos.app.ability.common';
 
 let ERROR_CODE = 202;

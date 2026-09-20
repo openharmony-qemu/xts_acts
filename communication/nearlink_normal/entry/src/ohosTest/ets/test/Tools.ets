@@ -15,6 +15,7 @@
 import {Component, Driver, ON } from '@ohos.UiTest';
 import {abilityDelegatorRegistry} from '@kit.TestKit';
 import { abilityAccessCtrl } from '@kit.AbilityKit';
+import manager from '@ohos.nearlink.manager';
 const DEMO_ABILITY_NAME = 'EntryAbility';
 const DEMO_BUNDLE_NAME = 'hms.hcts.communication.nearlink.demo';
 export async function getbutton(driver: Driver, text: string): Promise<Component> {
@@ -41,6 +42,11 @@ export async function clickGetPermission(): Promise<void> {
   try {
     // 打开demo界面
     let UI_CLICK_ALLOWED = "允许";
+    let return_boolean: boolean;
+    return_boolean = manager.isNearLinkSupported();
+    if(return_boolean ===false){
+      return;
+    }
     console.info('[nearlink_Permission_demo] getPermission clickRequestPermission start');
     await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(
       `aa start -a ${DEMO_ABILITY_NAME} -b ${DEMO_BUNDLE_NAME}`);
@@ -92,6 +98,7 @@ export async function clickCloseNearLinkSwitch(): Promise<void> {
     console.info('nearLink clickCloseNearLinkSwitch start');
     await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(
       `aa start -a ${DEMO_ABILITY_NAME} -b ${DEMO_BUNDLE_NAME}`);
+    await clickGetPermission();
     let driver = Driver.create();
     await driver.delayMs(1000);
     let button = await getbutton(driver,Get_Permission);
@@ -108,6 +115,7 @@ export async function system_support_nearlink(): Promise<string> {
     console.info('nearLink clickCloseNearLinkSwitch start');
     await abilityDelegatorRegistry.getAbilityDelegator().executeShellCommand(
       `aa start -a ${DEMO_ABILITY_NAME} -b ${DEMO_BUNDLE_NAME}`);
+    await clickGetPermission();
     let driver = Driver.create();
     await driver.delayMs(1000);
     let button = await getbutton(driver,Get_support);

@@ -15,7 +15,7 @@
 
 import commonEvent from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
-import { it, expect, describe, Level } from '@ohos/hypium';
+import { it, expect, describe, Level } from '@ohos/hypium-dynamic';
 import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
