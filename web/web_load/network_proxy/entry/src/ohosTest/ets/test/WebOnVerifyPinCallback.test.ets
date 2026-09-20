@@ -17,10 +17,13 @@ import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@oho
 import router from '@ohos.router';
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
+import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 
 const EVENT_ID_SET_EMIT_KEY = 200215;
 const driver = Driver.create();
+const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webOnVerifyPinCallback() {
 
@@ -48,7 +51,11 @@ export default function webOnVerifyPinCallback() {
     });
 
     beforeEach(async (done: Function) => {
-      Utils.enableAccessibilityAbility();
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
       console.info('webOnVerifyPinCallback beforeEach start');
       done();
     })
