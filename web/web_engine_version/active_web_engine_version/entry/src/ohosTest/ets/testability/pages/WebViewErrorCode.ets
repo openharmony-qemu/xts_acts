@@ -19,7 +19,7 @@ import web_webview from '@ohos.web.webview';
 import cert from '@ohos.security.cert';
 import { waitForExist } from '../../test/WaitTest.test';
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../../test/List.test';
 
 const EVENT_ID_SET_EMIT_KEY = 111120;
