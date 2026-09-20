@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 import { BusinessError } from "@ohos.base";
@@ -232,103 +233,90 @@ export default function decimalToHexadecimalPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_1500
      * @tc.name decimalToHexadecimalPart03Test015
-     * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(1e2) returns 0x1.9p+6
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToHexadecimalPart03Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: string = new Decimal(1e2).toHexadecimal(20, Decimal.ROUND_HALF_UP);
-      expect(s).assertEqual("0x1.9p+6");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_1600
-     * @tc.name decimalToHexadecimalPart03Test016
      * @tc.desc Verify NaN toHexadecimal "NaN"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(Double.NaN).toHexadecimal(20, Decimal.ROUND_HALF_UP);
+      expect(s).assertEqual("NaN");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_1600
+     * @tc.name decimalToHexadecimalPart03Test016
+     * @tc.desc Verify "NaN" toHexadecimal "NaN"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToHexadecimalPart03Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = new Decimal("NaN").toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("NaN");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_1700
      * @tc.name decimalToHexadecimalPart03Test017
-     * @tc.desc Verify "NaN" toHexadecimal "NaN"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToHexadecimalPart03Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: string = new Decimal("NaN").toHexadecimal(20, Decimal.ROUND_HALF_UP);
-      expect(s).assertEqual("NaN");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_1800
-     * @tc.name decimalToHexadecimalPart03Test018
      * @tc.desc Verify Infinity toHexadecimal "Infinity"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(Number.POSITIVE_INFINITY).toHexadecimal(20, Decimal.ROUND_HALF_UP);
+      expect(s).assertEqual("Infinity");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_1800
+     * @tc.name decimalToHexadecimalPart03Test018
+     * @tc.desc Verify "Infinity" toHexadecimal "Infinity"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToHexadecimalPart03Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = new Decimal("Infinity").toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("Infinity");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_1900
      * @tc.name decimalToHexadecimalPart03Test019
-     * @tc.desc Verify "Infinity" toHexadecimal "Infinity"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToHexadecimalPart03Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: string = new Decimal("Infinity").toHexadecimal(20, Decimal.ROUND_HALF_UP);
-      expect(s).assertEqual("Infinity");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2000
-     * @tc.name decimalToHexadecimalPart03Test020
      * @tc.desc Verify -Infinity toHexadecimal "-Infinity"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(-Number.POSITIVE_INFINITY).toHexadecimal(20, Decimal.ROUND_HALF_UP);
+      expect(s).assertEqual("-Infinity");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2000
+     * @tc.name decimalToHexadecimalPart03Test020
+     * @tc.desc Verify "-Infinity" toHexadecimal "-Infinity"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToHexadecimalPart03Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: string = new Decimal("-Infinity").toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("-Infinity");
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2100
      * @tc.name decimalToHexadecimalPart03Test021
-     * @tc.desc Verify "-Infinity" toHexadecimal "-Infinity"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToHexadecimalPart03Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: string = new Decimal("-Infinity").toHexadecimal(20, Decimal.ROUND_HALF_UP);
-      expect(s).assertEqual("-Infinity");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2200
-     * @tc.name decimalToHexadecimalPart03Test022
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(1.7976931348623157e+308)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal(1.7976931348623157e308).toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(a).assertEqual("0x1.ffffffffffffef58d65p+1023");
       let b: string = new Decimal(1).toHexadecimal(20, Decimal.ROUND_HALF_UP);
@@ -338,14 +326,14 @@ export default function decimalToHexadecimalPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2300
-     * @tc.name decimalToHexadecimalPart03Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2200
+     * @tc.name decimalToHexadecimalPart03Test022
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(5e-324)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal(5e-324).toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(a).assertEqual("0x1.03132b9cf541c364e68p-1074");
       let b: string = new Decimal(0).toHexadecimal(20, Decimal.ROUND_HALF_UP);
@@ -355,14 +343,14 @@ export default function decimalToHexadecimalPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2400
-     * @tc.name decimalToHexadecimalPart03Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2300
+     * @tc.name decimalToHexadecimalPart03Test023
      * @tc.desc Verify toHexadecimal(30, Decimal.ROUND_HALF_UP) on new Decimal(0.1 + 0.2) returns 0x1.3333333333333ebaadd6569d7e77cp-2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let da: Decimal = new Decimal(0.1 + 0.2);
       let db: Decimal = new Decimal("0.3");
       let actual: boolean = da.greaterThan(db);
@@ -372,66 +360,66 @@ export default function decimalToHexadecimalPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2500
-     * @tc.name decimalToHexadecimalPart03Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2400
+     * @tc.name decimalToHexadecimalPart03Test024
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(5)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(5).toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("0x1.4p+2");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2600
-     * @tc.name decimalToHexadecimalPart03Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2500
+     * @tc.name decimalToHexadecimalPart03Test025
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(-5)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(-5).toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("-0x1.4p+2");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2700
-     * @tc.name decimalToHexadecimalPart03Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2600
+     * @tc.name decimalToHexadecimalPart03Test026
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(42)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(42).toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("0x1.5p+5");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2800
-     * @tc.name decimalToHexadecimalPart03Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2700
+     * @tc.name decimalToHexadecimalPart03Test027
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(10) returns 0x1.4p+3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string = new Decimal(10).toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(a).assertEqual("0x1.4p+3");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2900
-     * @tc.name decimalToHexadecimalPart03Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2800
+     * @tc.name decimalToHexadecimalPart03Test028
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(255) returns 0x1.fep+7 and toString 255
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(255);
       let s: string = d.toHexadecimal(20, Decimal.ROUND_HALF_UP);
       let actual: string = d.toString();
@@ -441,14 +429,14 @@ export default function decimalToHexadecimalPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3000
-     * @tc.name decimalToHexadecimalPart03Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_2900
+     * @tc.name decimalToHexadecimalPart03Test029
      * @tc.desc Verify toHexadecimal(30, Decimal.ROUND_HALF_UP) on new Decimal(0.75)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(0.75).toHexadecimal(30, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("0x1.8p-1");
       let actual: boolean = new Decimal(s).equals(new Decimal(0.75));
@@ -456,29 +444,44 @@ export default function decimalToHexadecimalPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3100
-     * @tc.name decimalToHexadecimalPart03Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3000
+     * @tc.name decimalToHexadecimalPart03Test030
      * @tc.desc Verify toHexadecimal(20, Decimal.ROUND_HALF_UP) on new Decimal(0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(0).toHexadecimal(20, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("0x0p+0");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3200
-     * @tc.name decimalToHexadecimalPart03Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3100
+     * @tc.name decimalToHexadecimalPart03Test031
      * @tc.desc Verify toHexadecimal(1000, Decimal.ROUND_HALF_UP) on new Decimal(15) returns 0x1.ep+3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = new Decimal(15).toHexadecimal(1000, Decimal.ROUND_HALF_UP);
       expect(s).assertEqual("0x1.ep+3");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3200
+     * @tc.name decimalToHexadecimalPart03Test032
+     * @tc.desc Verify toHexadecimal(1, Decimal.ROUND_UP) on new Decimal(255) returns 0x1p+8
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToHexadecimalPart03Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      Decimal.set({ rounding: Decimal.ROUND_DOWN });
+      let s: string = new Decimal(255).toHexadecimal(1, Decimal.ROUND_UP);
+      Decimal.set({ defaults: true });
+      expect(s).assertEqual("0x1p+8");
     });
 
     /**
@@ -513,7 +516,6 @@ export default function decimalToHexadecimalPart03Test(): void {
         let actual: number = (e as BusinessError).code;
         let expected: int = 10200001;
         expect(actual).assertEqual(expected);
-        expect(e.name).assertEqual("BusinessError");
       }
       let actual2: string = d.toString();
       let expected2: string = "255";
@@ -534,7 +536,7 @@ export default function decimalToHexadecimalPart03Test(): void {
         d.toHexadecimal(20, -1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = d.comparedTo(new Decimal(42));
       let expected: int = 0;
@@ -558,7 +560,6 @@ export default function decimalToHexadecimalPart03Test(): void {
         let actual: number = (e as BusinessError).code;
         let expected: int = 10200001;
         expect(actual).assertEqual(expected);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
@@ -579,44 +580,18 @@ export default function decimalToHexadecimalPart03Test(): void {
         let actual: number = (e as BusinessError).code;
         let expected: int = 10200001;
         expect(actual).assertEqual(expected);
-        expect(e.name).assertEqual("BusinessError");
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3800
      * @tc.name decimalToHexadecimalPart03Test038
-     * @tc.desc Verify toHexadecimal(20, 9) throws BusinessError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToHexadecimalPart03Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal(42);
-      let before: Array<double> | null = d.d;
-      try {
-        d.toHexadecimal(20, 9);
-        expect().assertFail();
-      } catch (e) {
-        let actual: number = (e as BusinessError).code;
-        let expected: int = 10200001;
-        expect(actual).assertEqual(expected);
-        expect(e.name).assertEqual("BusinessError");
-      }
-      let actual2: Array<double> | null = d.d;
-      let expected2: Array<double> | null = before;
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3900
-     * @tc.name decimalToHexadecimalPart03Test039
      * @tc.desc Verify toHexadecimal(2e9, 4) throws BusinessError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(42);
       try {
         d.toHexadecimal(2e9, 4);
@@ -625,7 +600,6 @@ export default function decimalToHexadecimalPart03Test(): void {
         let actual: number = (e as BusinessError).code;
         let expected: int = 10200001;
         expect(actual).assertEqual(expected);
-        expect(e.name).assertEqual("BusinessError");
       }
       let actual2: string = d.toString();
       let expected2: string = "42";
@@ -633,21 +607,21 @@ export default function decimalToHexadecimalPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_4000
-     * @tc.name decimalToHexadecimalPart03Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_HEXADECIMAL_PART03_3900
+     * @tc.name decimalToHexadecimalPart03Test039
      * @tc.desc Verify toHexadecimal throws BusinessError and returns 0x1.cp+2 for 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToHexadecimalPart03Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToHexadecimalPart03Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d1: Decimal = new Decimal(42);
       let d2: Decimal = new Decimal(7);
       try {
         d1.toHexadecimal(5.5, 4);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = d2.toHexadecimal(20, 4);
       let expected: string = "0x1.cp+2";

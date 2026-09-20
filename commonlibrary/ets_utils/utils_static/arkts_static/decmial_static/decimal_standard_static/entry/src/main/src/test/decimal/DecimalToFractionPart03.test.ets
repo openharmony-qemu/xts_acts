@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -294,7 +295,7 @@ export default function decimalToFractionPart03Test(): void {
         d.toFraction(Number.NaN);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
@@ -312,7 +313,7 @@ export default function decimalToFractionPart03Test(): void {
         d.toFraction(Number.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
@@ -331,7 +332,7 @@ export default function decimalToFractionPart03Test(): void {
         d.toFraction(bad);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
@@ -349,7 +350,7 @@ export default function decimalToFractionPart03Test(): void {
         d.toFraction(-5);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
@@ -367,7 +368,7 @@ export default function decimalToFractionPart03Test(): void {
         d.toFraction(2.5);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
@@ -385,14 +386,14 @@ export default function decimalToFractionPart03Test(): void {
         d.toFraction(0);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART03_2000
      * @tc.name decimalToFractionPart03Test020
-     * @tc.desc Verify toFraction(Double.NaN) on new Decimal("0.5") throws BusinessError
+     * @tc.desc Verify toFraction(-Number.POSITIVE_INFINITY) on new Decimal("0.5") throws BusinessError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -400,28 +401,10 @@ export default function decimalToFractionPart03Test(): void {
     it("decimalToFractionPart03Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("0.5");
       try {
-        d.toFraction(Double.NaN);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_FRACTION_PART03_2100
-     * @tc.name decimalToFractionPart03Test021
-     * @tc.desc Verify toFraction(-Number.POSITIVE_INFINITY) on new Decimal("0.5") throws BusinessError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToFractionPart03Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const d: Decimal = new Decimal("0.5");
-      try {
         d.toFraction(-Number.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
   });

@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -646,7 +647,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = src.toString();
       let expected: string = "1.23345";
@@ -667,7 +668,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(-1, 4);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = src.comparedTo("1.23345");
       let expected: int = 0;
@@ -688,7 +689,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(2, -1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = src.e;
       let expected: int = 0;
@@ -709,7 +710,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(Double.NaN);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = src.s;
       let expected: int = 1;
@@ -730,7 +731,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(1e9 + 1, 4);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = src.add(0.01).toString();
       let expected: string = "1.24345";
@@ -751,7 +752,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(2, 9);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = src.toString();
       let expected: string = "1.23345";
@@ -772,7 +773,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(-1e9);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = src.comparedTo("1.23345");
       let expected: int = 0;
@@ -793,7 +794,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(-0.5);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: boolean = src.isFinite();
       expect(actual).assertTrue();
@@ -813,7 +814,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(Double.NaN, 4);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = src.comparedTo("1.23345");
       let expected: int = 0;
@@ -834,7 +835,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(Number.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: number = src.d![0];
       let expected: int = 1;
@@ -855,7 +856,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(-1e9, Decimal.ROUND_UP);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: string = src.toDecimalPlaces(2, Decimal.ROUND_UP).toString();
       let expected: string = "1.24";
@@ -876,7 +877,7 @@ export default function decimalToDecimalDigitsPart03Test(): void {
         src.toDecimalPlaces(1e9 + 0.5);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(10200001);
       }
       let actual: boolean = src.isNegative();
       expect(actual).assertFalse();
@@ -1145,14 +1146,14 @@ export default function decimalToDecimalDigitsPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_6000
-     * @tc.name decimalToDecimalDigitsPart03Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_5900
+     * @tc.name decimalToDecimalDigitsPart03Test059
      * @tc.desc Verify repeated toDecimalPlaces calls do not mutate source Decimal("1.23345"), source remains 1.23345
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToDecimalDigitsPart03Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToDecimalDigitsPart03Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src: Decimal = new Decimal("1.23345");
       src.toDecimalPlaces(3);
       src.toDecimalPlaces(3, Decimal.ROUND_UP);
@@ -1163,48 +1164,14 @@ export default function decimalToDecimalDigitsPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_6100
-     * @tc.name decimalToDecimalDigitsPart03Test061
-     * @tc.desc Verify toDecimalPlaces(3) on new Decimal("1.23345") returns 1.233
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToDecimalDigitsPart03Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.23345").toDecimalPlaces(3);
-      Decimal.set({ rounding: Decimal.ROUND_UP });
-      Decimal.set({ defaults: true });
-      let actual: string = r.toString();
-      let expected: string = "1.233";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_6200
-     * @tc.name decimalToDecimalDigitsPart03Test062
-     * @tc.desc Verify toDecimalPlaces(3, Decimal.ROUND_DOWN) on new Decimal("1.23345") returns 1.233
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToDecimalDigitsPart03Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.23345").toDecimalPlaces(3, Decimal.ROUND_DOWN);
-      Decimal.set({ rounding: Decimal.ROUND_UP });
-      Decimal.set({ defaults: true });
-      let actual: string = r.toString();
-      let expected: string = "1.233";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_6300
-     * @tc.name decimalToDecimalDigitsPart03Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_6000
+     * @tc.name decimalToDecimalDigitsPart03Test060
      * @tc.desc Verify toDecimalPlaces(3) 1.233 toDecimalPlaces(2, ROUND_UP) 1.24
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToDecimalDigitsPart03Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToDecimalDigitsPart03Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const d: Decimal = new Decimal("1.23345");
       const r1: Decimal = d.toDecimalPlaces(3);
       const r2: Decimal = d.toDecimalPlaces(2, Decimal.ROUND_UP);
@@ -1217,14 +1184,14 @@ export default function decimalToDecimalDigitsPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_6400
-     * @tc.name decimalToDecimalDigitsPart03Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_DECIMAL_DIGITS_PART03_6100
+     * @tc.name decimalToDecimalDigitsPart03Test061
      * @tc.desc Verify (1.23345, 3).toDecimalPlaces(2, ROUND_UP) 1.24
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToDecimalDigitsPart03Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToDecimalDigitsPart03Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("1.23345").toDecimalPlaces(3).toDecimalPlaces(2, Decimal.ROUND_UP);
       let actual: string = r.toString();
       let expected: string = "1.24";
