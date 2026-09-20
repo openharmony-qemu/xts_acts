@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 import { BusinessError } from "@ohos.base";
@@ -241,9 +242,7 @@ export default function decimalValueOfTestTest(): void {
         expect(r1).assertEqual(e1);
         expect().assertFail();
       } catch (e) {
-        let r2: string = (e as BusinessError).message;
-        expect(r2).assertContain("must be Hex/Binary/Octal");
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
@@ -474,13 +473,13 @@ export default function decimalValueOfTestTest(): void {
      */
     it("decimalValueOfTest028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let d: Decimal = new Decimal("你好");
+        let d: Decimal = new Decimal("浣犲ソ");
         let r1: string = d.valueOf();
         let e1: string = '';
         expect(r1).assertEqual(e1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
@@ -642,9 +641,8 @@ export default function decimalValueOfTestTest(): void {
         expect(r1).assertEqual(e1);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
-
   });
 }

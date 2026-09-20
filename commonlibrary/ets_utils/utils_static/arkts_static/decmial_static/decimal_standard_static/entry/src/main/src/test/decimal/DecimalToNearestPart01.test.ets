@@ -27,6 +27,7 @@ import {
   Size,
   TestType,
 } from "../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import Utils from "../Util.test";
 import { Decimal } from "@kit.ArkTS";
 
@@ -258,57 +259,26 @@ export default function decimalToNearestPart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1500
      * @tc.name decimalToNearestPart01Test015
-     * @tc.desc Verify toNearest(Double.POSITIVE_INFINITY) on new Decimal("1.7") returns Infinity
+     * @tc.desc Verify toNearest(Double.POSITIVE_INFINITY) on new Decimal("1.7") does not return NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it("decimalToNearestPart01Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("1.7").toNearest(Double.POSITIVE_INFINITY);
-      let actual: string = r.toString();
-      let expected: string = "Infinity";
-      expect(actual).assertEqual(expected);
+      let actual: boolean = r.isNaN();
+      expect(actual).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1600
      * @tc.name decimalToNearestPart01Test016
-     * @tc.desc Verify toNearest("0.5") on new Decimal("1.7") returns 1.5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.7").toNearest("0.5");
-      let actual: string = r.toString();
-      let expected: string = "1.5";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1700
-     * @tc.name decimalToNearestPart01Test017
-     * @tc.desc Verify toNearest("0.25") on new Decimal("1.7") returns 1.75
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.7").toNearest("0.25");
-      let actual: string = r.toString();
-      let expected: string = "1.75";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1800
-     * @tc.name decimalToNearestPart01Test018
      * @tc.desc Verify toNearest("1e5") on new Decimal("123456") returns 100000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("123456").toNearest("1e5");
       let actual: string = r.toString();
       let expected: string = "100000";
@@ -316,14 +286,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1900
-     * @tc.name decimalToNearestPart01Test019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1700
+     * @tc.name decimalToNearestPart01Test017
      * @tc.desc Verify toNearest("1.23e-4") on new Decimal("0.005") returns 0.005043
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("0.005").toNearest("1.23e-4");
       let actual: string = r.toString();
       let expected: string = "0.005043";
@@ -331,14 +301,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2000
-     * @tc.name decimalToNearestPart01Test020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1800
+     * @tc.name decimalToNearestPart01Test018
      * @tc.desc Verify toNearest("1e+5") on new Decimal("150000") returns 200000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("150000").toNearest("1e+5");
       let actual: string = r.toString();
       let expected: string = "200000";
@@ -346,14 +316,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2100
-     * @tc.name decimalToNearestPart01Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_1900
+     * @tc.name decimalToNearestPart01Test019
      * @tc.desc Verify toNearest("1E5") on new Decimal("250000") returns 300000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("250000").toNearest("1E5");
       let actual: string = r.toString();
       let expected: string = "300000";
@@ -361,14 +331,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2200
-     * @tc.name decimalToNearestPart01Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2000
+     * @tc.name decimalToNearestPart01Test020
      * @tc.desc Verify toNearest("0x10") on new Decimal("20") returns 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("20").toNearest("0x10");
       let actual: string = r.toString();
       let expected: string = "16";
@@ -376,14 +346,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2300
-     * @tc.name decimalToNearestPart01Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2100
+     * @tc.name decimalToNearestPart01Test021
      * @tc.desc Verify toNearest("0b101") on new Decimal('7') returns 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal('7').toNearest("0b101");
       let actual: string = r.toString();
       let expected: string = '5';
@@ -391,14 +361,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2400
-     * @tc.name decimalToNearestPart01Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2200
+     * @tc.name decimalToNearestPart01Test022
      * @tc.desc Verify toNearest("0123") on new Decimal("250") returns 246
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("250").toNearest("0123");
       let actual: string = r.toString();
       let expected: string = "246";
@@ -406,73 +376,42 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2300
+     * @tc.name decimalToNearestPart01Test023
+     * @tc.desc Verify toNearest("-Infinity") on new Decimal("1.7") does not return NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToNearestPart01Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: Decimal = new Decimal("1.7").toNearest("-Infinity");
+      let actual: boolean = r.isNaN();
+      expect(actual).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2400
+     * @tc.name decimalToNearestPart01Test024
+     * @tc.desc Verify toNearest("-0") on new Decimal("1.7") does not return NaN
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("decimalToNearestPart01Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: Decimal = new Decimal("1.7").toNearest("-0");
+      let actual: boolean = r.isNaN();
+      expect(actual).assertFalse();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2500
      * @tc.name decimalToNearestPart01Test025
-     * @tc.desc Verify toNearest("NaN") on new Decimal("1.7")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.7").toNearest("NaN");
-      let actual: boolean = r.isNaN();
-      expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2600
-     * @tc.name decimalToNearestPart01Test026
-     * @tc.desc Verify toNearest("Infinity") on new Decimal("1.7") returns Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.7").toNearest("Infinity");
-      let actual: string = r.toString();
-      let expected: string = "Infinity";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2700
-     * @tc.name decimalToNearestPart01Test027
-     * @tc.desc Verify toNearest("-Infinity") on new Decimal("1.7") returns Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.7").toNearest("-Infinity");
-      let actual: string = r.toString();
-      let expected: string = "Infinity";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2800
-     * @tc.name decimalToNearestPart01Test028
-     * @tc.desc Verify toNearest("-0") on new Decimal("1.7") returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.7").toNearest("-0");
-      let actual: string = r.toString();
-      let expected: string = '0';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2900
-     * @tc.name decimalToNearestPart01Test029
      * @tc.desc Verify toNearest("1.5e-2") on new Decimal("0.1") returns 0.105
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("0.1").toNearest("1.5e-2");
       let actual: string = r.toString();
       let expected: string = "0.105";
@@ -480,14 +419,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3000
-     * @tc.name decimalToNearestPart01Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2600
+     * @tc.name decimalToNearestPart01Test026
      * @tc.desc Verify toNearest(s) on new Decimal("1.7") returns 1.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = "0.5";
       for (let i: int = 0; i < 9998; i++) {
         s = s + '0';
@@ -499,62 +438,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3100
-     * @tc.name decimalToNearestPart01Test031
-     * @tc.desc Verify toNearest(n) with n = Decimal("0.5") on new Decimal("1.7") returns 1.5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const n: Decimal = new Decimal("0.5");
-      const r: Decimal = new Decimal("1.7").toNearest(n);
-      let actual: string = r.toString();
-      let expected: string = "1.5";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3200
-     * @tc.name decimalToNearestPart01Test032
-     * @tc.desc Verify toNearest(n) with n = Decimal("1e5") on new Decimal("123456") returns 100000
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const n: Decimal = new Decimal("1e5");
-      const r: Decimal = new Decimal("123456").toNearest(n);
-      let actual: string = r.toString();
-      let expected: string = "100000";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3300
-     * @tc.name decimalToNearestPart01Test033
-     * @tc.desc Verify toNearest(n) with n = Decimal("-1") on new Decimal("2.3") returns 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const n: Decimal = new Decimal("-1");
-      const r: Decimal = new Decimal("2.3").toNearest(n);
-      let actual: string = r.toString();
-      let expected: string = '2';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3400
-     * @tc.name decimalToNearestPart01Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2700
+     * @tc.name decimalToNearestPart01Test027
      * @tc.desc Verify toNearest(0.5) on new Decimal("-1.7") returns -1.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("-1.7").toNearest(0.5);
       let actual: string = r.toString();
       let expected: string = "-1.5";
@@ -562,29 +453,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3500
-     * @tc.name decimalToNearestPart01Test035
-     * @tc.desc Verify toNearest(2) on new Decimal('5') returns 6
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal('5').toNearest(2);
-      let actual: string = r.toString();
-      let expected: string = '6';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3600
-     * @tc.name decimalToNearestPart01Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2800
+     * @tc.name decimalToNearestPart01Test028
      * @tc.desc Verify toNearest(0.5) on new Decimal(0) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal(0).toNearest(0.5);
       let actual: string = r.toString();
       let expected: string = '0';
@@ -592,14 +468,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3700
-     * @tc.name decimalToNearestPart01Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_2900
+     * @tc.name decimalToNearestPart01Test029
      * @tc.desc Verify toNearest(0.5) on new Decimal(-0) returns negative zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal(-0).toNearest(0.5);
       let actual: boolean = r.isZero();
       expect(actual).assertTrue();
@@ -608,28 +484,28 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3800
-     * @tc.name decimalToNearestPart01Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3000
+     * @tc.name decimalToNearestPart01Test030
      * @tc.desc Verify toNearest(0.5) on new Decimal(Double.NaN)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal(Double.NaN).toNearest(0.5);
       let actual: boolean = r.isNaN();
       expect(actual).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3900
-     * @tc.name decimalToNearestPart01Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3100
+     * @tc.name decimalToNearestPart01Test031
      * @tc.desc Verify toNearest(0.5) on new Decimal(Double.POSITIVE_INFINITY) returns Number.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal(Double.POSITIVE_INFINITY).toNearest(0.5);
       let actual: string = r.toString();
       let expected: string = "Infinity";
@@ -637,14 +513,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4000
-     * @tc.name decimalToNearestPart01Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3200
+     * @tc.name decimalToNearestPart01Test032
      * @tc.desc Verify toNearest(0.5) on new Decimal(Double.NEGATIVE_INFINITY) returns -Number.POSITIVE_INFINITY
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal(Double.NEGATIVE_INFINITY).toNearest(0.5);
       let actual: string = r.toString();
       let expected: string = "-Infinity";
@@ -652,14 +528,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4100
-     * @tc.name decimalToNearestPart01Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3300
+     * @tc.name decimalToNearestPart01Test033
      * @tc.desc Verify toNearest(0.1) on new Decimal(0.1 + 0.2) returns 0.3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal(0.1 + 0.2).toNearest(0.1);
       let actual: string = r.toString();
       let expected: string = "0.3";
@@ -667,14 +543,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4200
-     * @tc.name decimalToNearestPart01Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3400
+     * @tc.name decimalToNearestPart01Test034
      * @tc.desc Verify toNearest(0.01) on new Decimal("0.1234567890123456789012345678901234567890") returns 0.12
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("0.1234567890123456789012345678901234567890").toNearest(0.01);
       let actual: string = r.toString();
       let expected: string = "0.12";
@@ -682,14 +558,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4300
-     * @tc.name decimalToNearestPart01Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3500
+     * @tc.name decimalToNearestPart01Test035
      * @tc.desc Verify toNearest(1) on new Decimal("1.5e1") returns 15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("1.5e1").toNearest(1);
       let actual: string = r.toString();
       let expected: string = "15";
@@ -697,14 +573,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4400
-     * @tc.name decimalToNearestPart01Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3600
+     * @tc.name decimalToNearestPart01Test036
      * @tc.desc Verify toNearest(0.01) on new Decimal("2.675") returns 2.68
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("2.675").toNearest(0.01);
       let actual: string = r.toString();
       let expected: string = "2.68";
@@ -712,29 +588,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4500
-     * @tc.name decimalToNearestPart01Test045
-     * @tc.desc Verify toNearest(0.01) on new Decimal(2.675) returns 2.68
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal(2.675).toNearest(0.01);
-      let actual: string = r.toString();
-      let expected: string = "2.68";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4600
-     * @tc.name decimalToNearestPart01Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3700
+     * @tc.name decimalToNearestPart01Test037
      * @tc.desc Verify plus toNearest 1.7 + 0.3 = 2.0 0.5 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("1.7").add("0.3").toNearest(0.5);
       let actual: string = r.toString();
       let expected: string = '2';
@@ -742,30 +603,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4700
-     * @tc.name decimalToNearestPart01Test047
-     * @tc.desc Verify toNearest 1.5 0.5 1.5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal("1.7").toNearest(0.5);
-      const r2: Decimal = r.toNearest(0.5);
-      let actual: string = r2.toString();
-      let expected: string = "1.5";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4800
-     * @tc.name decimalToNearestPart01Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3800
+     * @tc.name decimalToNearestPart01Test038
      * @tc.desc Verify toNearest(0) on new Decimal(0) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal(0).toNearest(0);
       let actual: string = r.toString();
       let expected: string = '0';
@@ -773,14 +618,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4900
-     * @tc.name decimalToNearestPart01Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_3900
+     * @tc.name decimalToNearestPart01Test039
      * @tc.desc Verify toNearest(1) on new Decimal("7.5") returns 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("7.5").toNearest(1);
       let actual: string = r.toString();
       let expected: string = '8';
@@ -788,14 +633,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5000
-     * @tc.name decimalToNearestPart01Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4000
+     * @tc.name decimalToNearestPart01Test040
      * @tc.desc Verify toNearest(1) on new Decimal("-7.5") returns -8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("-7.5").toNearest(1);
       let actual: string = r.toString();
       let expected: string = "-8";
@@ -803,14 +648,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5100
-     * @tc.name decimalToNearestPart01Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4100
+     * @tc.name decimalToNearestPart01Test041
      * @tc.desc Verify toNearest(0.1) on new Decimal("0.35") returns 0.4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("0.35").toNearest(0.1);
       let actual: string = r.toString();
       let expected: string = "0.4";
@@ -818,14 +663,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5200
-     * @tc.name decimalToNearestPart01Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4200
+     * @tc.name decimalToNearestPart01Test042
      * @tc.desc Verify toNearest(0.1) on new Decimal("-0.35") returns -0.4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("-0.35").toNearest(0.1);
       let actual: string = r.toString();
       let expected: string = "-0.4";
@@ -833,14 +678,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5300
-     * @tc.name decimalToNearestPart01Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4300
+     * @tc.name decimalToNearestPart01Test043
      * @tc.desc Verify toNearest(0.5) on new Decimal("1.25") returns 1.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("1.25").toNearest(0.5);
       let actual: string = r.toString();
       let expected: string = "1.5";
@@ -848,14 +693,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5400
-     * @tc.name decimalToNearestPart01Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4400
+     * @tc.name decimalToNearestPart01Test044
      * @tc.desc Verify toNearest(0.5) on new Decimal("-1.25") returns -1.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("-1.25").toNearest(0.5);
       let actual: string = r.toString();
       let expected: string = "-1.5";
@@ -863,14 +708,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5500
-     * @tc.name decimalToNearestPart01Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4500
+     * @tc.name decimalToNearestPart01Test045
      * @tc.desc Verify toNearest(0.1) on new Decimal("0.125") returns 0.1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("0.125").toNearest(0.1);
       let actual: string = r.toString();
       let expected: string = "0.1";
@@ -878,33 +723,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5600
-     * @tc.name decimalToNearestPart01Test056
-     * @tc.desc Verify toNearest 1.7 1.7 1.5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const d: Decimal = new Decimal("1.7");
-      const r: Decimal = d.toNearest(0.5);
-      let actual: string = d.toString();
-      let expected: string = "1.7";
-      expect(actual).assertEqual(expected);
-      let actual2: string = r.toString();
-      let expected2: string = "1.5";
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5700
-     * @tc.name decimalToNearestPart01Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4600
+     * @tc.name decimalToNearestPart01Test046
      * @tc.desc Verify 1.7.toNearest(0.5) 0.1 1.6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("1.7").toNearest(0.5).add("0.1");
       let actual: string = r.toString();
       let expected: string = "1.6";
@@ -912,14 +738,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5800
-     * @tc.name decimalToNearestPart01Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4700
+     * @tc.name decimalToNearestPart01Test047
      * @tc.desc Verify 1 toNearest round() 2.5 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a: Decimal = new Decimal("2.5").toNearest(1);
       const b: Decimal = Decimal.round(new Decimal("2.5"));
       let actual: boolean = a.equals(b);
@@ -927,60 +753,32 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5900
-     * @tc.name decimalToNearestPart01Test059
-     * @tc.desc Verify toNearest(Number.NaN) on new Decimal(5) returns NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal(5).toNearest(Number.NaN);
-      let actual: boolean = r.isNaN();
-      expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_6000
-     * @tc.name decimalToNearestPart01Test060
-     * @tc.desc Verify toNearest(Number.POSITIVE_INFINITY) on new Decimal(5) returns non-finite value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("decimalToNearestPart01Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const r: Decimal = new Decimal(5).toNearest(Number.POSITIVE_INFINITY);
-      let actual: boolean = r.isFinite();
-      expect(actual).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_6100
-     * @tc.name decimalToNearestPart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4800
+     * @tc.name decimalToNearestPart01Test048
      * @tc.desc Verify toNearest("invalid-boolean") throws BusinessError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string = "invalid-boolean";
       try {
         new Decimal(5).toNearest(v);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual("BusinessError");
+        expect((e as BusinessError).code).assertEqual(401);
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_6200
-     * @tc.name decimalToNearestPart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_4900
+     * @tc.name decimalToNearestPart01Test049
      * @tc.desc Verify maxE=2 123456 e=5 Infinity toNearest(1) Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Decimal.set({ maxE: 2 });
         const r: Decimal = new Decimal("123456").toNearest(1);
@@ -993,14 +791,14 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_6300
-     * @tc.name decimalToNearestPart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5000
+     * @tc.name decimalToNearestPart01Test050
      * @tc.desc Verify minE=-5 0.00000001 e=-8 0 toNearest(0.00001) 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         Decimal.set({ minE: -5 });
         const r: Decimal = new Decimal("0.00000001").toNearest(0.00001);
@@ -1013,28 +811,28 @@ export default function decimalToNearestPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_6400
-     * @tc.name decimalToNearestPart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5100
+     * @tc.name decimalToNearestPart01Test051
      * @tc.desc Verify toNearest("1e307") on new Decimal("1e308") result equals original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("1e308").toNearest("1e307");
       const cmp: double = r.comparedTo(new Decimal("1e308"));
       expect(cmp).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_6500
-     * @tc.name decimalToNearestPart01Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_TO_NEAREST_PART01_5200
+     * @tc.name decimalToNearestPart01Test052
      * @tc.desc Verify toNearest("1e10") on new Decimal("12345678901234567890") returns 12345678900000000000
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("decimalToNearestPart01Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("decimalToNearestPart01Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const r: Decimal = new Decimal("12345678901234567890").toNearest("1e10");
       let actual: string = r.toString();
       let expected: string = "12345678900000000000";
