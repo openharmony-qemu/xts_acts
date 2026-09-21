@@ -14,7 +14,7 @@
  */
 
 import { ArkTSUtils } from '@kit.ArkTS';
-import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import * as nonSendableHelper from './NonSendableCacheHelper';
 
 function sleep(time: number): Promise<void> {

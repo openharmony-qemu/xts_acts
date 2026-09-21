@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import LightWeightSet from '@ohos.util.LightWeightSet';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import {
   test005,
   test015,

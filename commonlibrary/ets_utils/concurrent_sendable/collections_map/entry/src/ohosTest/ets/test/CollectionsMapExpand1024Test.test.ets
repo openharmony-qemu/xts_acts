@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
 import { MAP_CFG } from './MapExpandCfg';
 import Utils from './Util.test';

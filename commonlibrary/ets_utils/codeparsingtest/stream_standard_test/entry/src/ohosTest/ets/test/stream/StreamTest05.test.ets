@@ -11,7 +11,7 @@ import {
   TestType,
   Size,
   Level
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 
 type StreamData = string | Uint8Array | null;
 

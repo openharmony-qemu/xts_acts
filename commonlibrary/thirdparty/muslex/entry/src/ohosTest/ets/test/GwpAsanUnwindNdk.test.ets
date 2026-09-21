@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import Utils from './Utils';
 import libgwpasanunwindndktest from 'libgwpasanunwindndktest.so';
 

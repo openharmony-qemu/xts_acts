@@ -100,7 +100,7 @@ import {
 import {
   describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach,
   afterAll
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 interface HasOwnInheritedResult {
   hasToString: boolean;
   hasHasOwnProperty: boolean;

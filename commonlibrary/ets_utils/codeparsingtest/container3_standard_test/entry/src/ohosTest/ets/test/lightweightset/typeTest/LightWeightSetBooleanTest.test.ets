@@ -14,7 +14,7 @@
  */
 
 import { LightWeightSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 interface BooleanInvalidObject { marker: string; }
 const BOOLEAN_INVALID_OBJECT: BooleanInvalidObject = { marker: 'invalid' };
 const VALID_VALUES: Array<boolean> = [true, false];

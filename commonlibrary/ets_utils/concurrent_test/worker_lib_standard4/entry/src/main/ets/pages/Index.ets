@@ -14,7 +14,7 @@
  */
 import testNapi from 'libentry.so';
 import worker  from '@ohos.worker'
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 
 const expectAssertEqual: Function = (actualValue: number | string, expectValue: number | string): void => {
   try {

@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { taskpool } from '@kit.ArkTS';
 import { Count1, Count2, Count3, Count4, Worker1, Worker2 } from '../testability/pages/DataFlg';
 import {

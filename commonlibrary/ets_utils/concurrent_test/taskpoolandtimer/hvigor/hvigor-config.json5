@@ -14,9 +14,9 @@
  */
 {
   "modelVersion": "26.0.0",
-  "dependencies": {
-  },
+  "dependencies": {},
   "properties": {
     "ohos.nativeResolver": false,
-  },
+    "ohos.byteCodeHar.integratedOptimization": true
+  }
 }

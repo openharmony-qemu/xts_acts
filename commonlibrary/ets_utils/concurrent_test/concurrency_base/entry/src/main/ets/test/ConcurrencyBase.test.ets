@@ -15,7 +15,7 @@
 import app from '@system.app'
 import worker from "@ohos.worker"
 import taskpool from '@ohos.taskpool';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 
 @Concurrent
 function taskDateFunction(input: Date): Date {

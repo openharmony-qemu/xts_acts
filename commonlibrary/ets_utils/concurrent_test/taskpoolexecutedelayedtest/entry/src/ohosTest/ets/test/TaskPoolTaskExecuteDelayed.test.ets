@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { taskpool } from '@kit.ArkTS';
 import { testFun1, testFun2, testFun3, testFun4, testFun5 } from '../testability/pages/TaskMethodTest';
 import { BusinessError } from '@kit.BasicServicesKit';

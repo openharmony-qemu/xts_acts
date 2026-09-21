@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { collections, taskpool } from '@kit.ArkTS';
 import Utils from '../Util';
 import { SendableClassOver1024, SimpleSendable } from './SendableExpand1024Model';

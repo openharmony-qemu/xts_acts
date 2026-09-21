@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { getSymbolAllValues, getSymbolAtLast, getSymbolValidValues } from './ArraySymbolTest';
 
 function sleep(time: number): Promise<void> {

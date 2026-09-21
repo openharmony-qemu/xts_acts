@@ -20,7 +20,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import {
   observeMathLog1pInvalidStringConversion,
   observeMathLog1pNullConversion,

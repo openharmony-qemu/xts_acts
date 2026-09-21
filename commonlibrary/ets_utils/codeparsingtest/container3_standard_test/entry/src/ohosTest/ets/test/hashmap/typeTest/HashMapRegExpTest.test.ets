@@ -14,7 +14,7 @@
  */
 
 import { HashMap } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 const VALID_VALUES: Array<RegExp> = [
   /abc/gi, /def/m, /^test$/u, new RegExp(''), /测试😀/u, /[\u0000-\u001F]/g, /abc/gi,

@@ -14,14 +14,12 @@
  */
 {
   "modelVersion": "26.0.0",
-  "dependencies": {
-  },
-  "execution": {
-  },
-  "logging": {
-  },
-  "debugging": {
-  },
-  "nodeOptions": {
+  "dependencies": {},
+  "execution": {},
+  "logging": {},
+  "debugging": {},
+  "nodeOptions": {},
+  "properties": {
+    "ohos.byteCodeHar.integratedOptimization": true
   }
 }

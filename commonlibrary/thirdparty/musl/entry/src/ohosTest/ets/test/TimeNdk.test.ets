@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
+import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium-dynamic"
 import time from 'libtimendk.so'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import fs from '@ohos.file.fs'

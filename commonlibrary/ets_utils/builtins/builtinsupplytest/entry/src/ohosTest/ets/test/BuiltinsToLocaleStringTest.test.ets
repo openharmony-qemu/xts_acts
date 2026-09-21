@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from "@ohos/hypium-dynamic";
 import { sleep } from '../testability/pages/Utils';
 
 export default function BuiltinsToLocaleStringTest() {

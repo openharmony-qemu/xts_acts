@@ -1,5 +1,5 @@
 import * as testNapi from 'libentry.so';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 
 export default function FunctionalextLdsoDlopenConfigAbsPathTestGroupTest() {
   describe('ActsToolChainHapTest_src_functionalext_ldso_dlopen_config_abs_path', () => {

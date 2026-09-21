@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { testNoReturnIsUndefined, testEarlyExitWithSideEffect, testThrowTypeAndMessage, returnASITest, testGeneratorReturn } from './returnTypeTsHelper'
 
 function add(a: number, b: number): number {

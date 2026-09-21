@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { testGenericSuperCtor, testSuperSpreadArgs, testSuperComputed, testSuperStaticMethod, testSuperComputedSymbol, testSuperComputedGetter, testSuperComputedSideEffect } from './classSuperTsHelper'
 
 class SuperProtectedBase {

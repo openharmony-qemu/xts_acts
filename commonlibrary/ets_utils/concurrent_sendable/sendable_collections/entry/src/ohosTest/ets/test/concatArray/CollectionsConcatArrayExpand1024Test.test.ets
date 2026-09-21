@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { collections, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { CAT_CFG } from './ConcatArrayExpandCfg';

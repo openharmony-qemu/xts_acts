@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, TestType, Size, Level} from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level} from '@ohos/hypium-dynamic'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';

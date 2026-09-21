@@ -14,7 +14,7 @@
  */
 
 import { HashSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 interface ObjectItem {
   id: number;
   label: string;

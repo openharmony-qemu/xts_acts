@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium-dynamic'
 import { hilog } from '@kit.PerformanceAnalysisKit'
 import { testMap as mapTimer2 } from '../../testability/pages/ArrayFunOpen'
 import { sleep } from '../../testability/pages/Utils'

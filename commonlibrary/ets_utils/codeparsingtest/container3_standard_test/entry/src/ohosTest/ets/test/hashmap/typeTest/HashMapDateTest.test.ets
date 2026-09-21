@@ -14,7 +14,7 @@
  */
 
 import { HashMap } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 const DATE_A: Date = new Date('2026-03-05');
 const DATE_B: Date = new Date(0);

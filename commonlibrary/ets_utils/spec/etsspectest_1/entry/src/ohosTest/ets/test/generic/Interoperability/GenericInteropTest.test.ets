@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { etsIdentity, EtsBox } from './ets_producer'
 import { runEtsFunctionInterop, runEtsClassInterop, runEtsInterfaceInterop } from './ets_consumer'
 import { tsIdentity, tsAsync, tsReject, tsArray, tsReadMap, tsThrower } from './genericInteropTsHelper'
