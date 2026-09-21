@@ -21,7 +21,8 @@ import dataTransfer from '@ohos.nearlink.dataTransfer';
 import scan from '@ohos.nearlink.scan';
 import { clickRequestPermission } from './ClickRequestPermission';
 import { sleep } from './Sleep';
-import {clickCloseNearLinkSwitch,clickOpenNearLinkSwitch} from './Tools';
+import { openNearLink } from './OpenNearLink';
+import { closeNearLink } from './CloseNearLink';
 
 export default function nearlinkswitchoffNormalTest() {
   describe('nearlinkswitchoffNormalTest', () => {
@@ -41,7 +42,7 @@ export default function nearlinkswitchoffNormalTest() {
     })
     beforeEach(async (done: Function) => {
       console.info('beforeEach start');
-      await clickCloseNearLinkSwitch();
+      await closeNearLink();
       console.info('beforeEach end');
       done();
     })
@@ -50,7 +51,7 @@ export default function nearlinkswitchoffNormalTest() {
     })
     afterAll(async (done: Function) => {
       console.info('beforeEach start');
-      await clickOpenNearLinkSwitch();
+      await openNearLink();
       console.info('beforeEach end');
       done();
     })
