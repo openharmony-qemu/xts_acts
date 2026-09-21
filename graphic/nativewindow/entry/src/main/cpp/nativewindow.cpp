@@ -321,6 +321,14 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"testNativeWindowSet3DMetadataValueUnknown", nullptr, testNativeWindowSet3DMetadataValueUnknown,
      nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowHandleOptSetDmaBufferNameNormal", nullptr, testNativeWindowHandleOptSetDmaBufferNameNormal,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowHandleOptSetDmaBufferNameNull", nullptr, testNativeWindowHandleOptSetDmaBufferNameNull,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowHandleOptSetDmaBufferNameAbnormal", nullptr, testNativeWindowHandleOptSetDmaBufferNameAbnormal,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"testNativeWindowHandleOptSetDmaBufferNameMultipleCalls", nullptr,
+     testNativeWindowHandleOptSetDmaBufferNameMultipleCalls, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

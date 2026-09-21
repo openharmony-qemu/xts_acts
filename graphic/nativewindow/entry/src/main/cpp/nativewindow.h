@@ -371,4 +371,8 @@ napi_value testNativeWindowGet3DMetadataValueNull(napi_env env, napi_callback_in
 napi_value testNativeWindowGet3DMetadataValueAbnormal(napi_env env, napi_callback_info info);
 napi_value testNativeWindowSetGet3DMetadataValueMultipleCalls(napi_env env, napi_callback_info info);
 napi_value testNativeWindowSet3DMetadataValueUnknown(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetDmaBufferNameNormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetDmaBufferNameNull(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetDmaBufferNameAbnormal(napi_env env, napi_callback_info info);
+napi_value testNativeWindowHandleOptSetDmaBufferNameMultipleCalls(napi_env env, napi_callback_info info);
 #endif // NATIVEWINDOW_USELESS_H
