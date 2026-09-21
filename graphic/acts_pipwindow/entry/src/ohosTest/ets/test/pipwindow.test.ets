@@ -6884,6 +6884,77 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
+     * @tc.name   createPiP_templateType_videoNavigation
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_VIDEO_NAVIGATION_0100
+     * @tc.desc   To test the function of startPiP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('createPiP_templateType_videoNavigation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let msgStr = 'createPiP_templateType_videoNavigation '
+      let pipController: pipWindow.PiPController | undefined = undefined;
+      let mXComponentController = new XComponentController();
+      let navId = "";
+      let contentWidth = 400;
+      let contentHeight = 600;
+      let config: pipWindow.PiPConfiguration = {
+        context: context1,
+        componentController: mXComponentController,
+        navigationId: navId,
+        templateType: pipWindow.PiPTemplateType.VIDEO_NAVIGATION,
+        contentWidth: contentWidth,
+        contentHeight: contentHeight,
+      };
+      let testSupport = async () => {
+        try {
+          pipController = await pipWindow.create(config)
+          console.log(msgStr + ' startPiP_Function_Promise begin')
+          let promise = pipController?.startPiP();
+          promise.then(async () => {
+            console.log(msgStr + ' Succeeded in starting pip')
+            await pipController?.stopPiP();
+            done();
+          }).catch((err: BusinessError) => {
+            console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          expect().assertFail();
+          done();
+        }
+      }
+
+      let testNotSupport = async () => {
+        try {
+          pipController = await pipWindow.create(config)
+          console.log(msgStr + ' startPiP_Function_Promise begin')
+          let promise = pipController.startPiP();
+          promise.then(() => {
+            console.log(msgStr + ' Succeeded in starting pip')
+            done();
+          }).catch((err: BusinessError) => {
+            console.log(msgStr + ' Failed1 to start pip. Cause:' + JSON.stringify(err.code) + ':msg:' + JSON.stringify(err.message));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          console.log(msgStr + ' Failed2 to start pip. Cause:' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      }
+
+      if (deviceType == 'car') {
+        testSupport()
+      } else {
+        testNotSupport()
+      }
+    })
+
+    /**
      * @tc.name   test_createPiP_multi
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_CREATE_MULTI_PIP_0200
      * @tc.desc   test_createPiP_multi
