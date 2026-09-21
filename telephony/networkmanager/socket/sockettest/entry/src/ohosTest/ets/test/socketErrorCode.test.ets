@@ -2163,5 +2163,43 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrSocketProxyTypesNONE0100
+     * @tc.number SUB_NetworkMgr_Socket_ProxyTypes_NONE_0100
+     * @tc.desc   Test socket ProxyTypes NONE value equals 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketProxyTypesNONE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testNetworkMgrSocketProxyTypesNONE0100';
+      console.info(`${caseName}---Start`);
+      let tcpSocket: socket.TCPSocket | undefined = undefined;
+      try {
+        tcpSocket = socket.constructTCPSocketInstance();
+        console.info(`${caseName} constructTCPSocketInstance success`);
+        new Promise<void>((resolve) => {
+          setTimeout(() => {
+            tcpSocket!.close((err: BusinessError) => {
+              console.info(`${caseName} tcpSocket close callback, err: ${JSON.stringify(err)}`);
+            });
+            resolve();
+          }, 1000);
+        }).then(() => {
+          console.info(`${caseName} ProxyTypes.NONE value: ${socket.ProxyTypes.NONE}`);
+          expect(socket.ProxyTypes.NONE).assertEqual(0);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: Object) => {
+          console.info(`${caseName} promise err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+    });
   })
 }
