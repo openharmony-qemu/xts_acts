@@ -1704,12 +1704,15 @@ export default function WebSocketTest() {
                         ExpectFail();
                         done();
                     })
+                    let onConnectCallback = (connection: webSocket.WebSocketConnection) => {
+                        console.info(`${caseName} connections-->+${JSON.stringify(connection)}`);
+                    };
+                    server.onConnect(onConnectCallback);
                     let client: webSocket.WebSocket = webSocket.createWebSocket();
                     client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
                         if (value) {
                             hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-                            msSleep(5000).then(() => {
-                                let connections = server.listAllConnections();
+                            let connections = server.listAllConnections();
                                 if (connections && connections.length > 0) {
                                     hilog.info(domain, tag, '%{public}s', caseName + JSON.stringify(connections[0]) + ' connections');
                                     try {
@@ -1747,11 +1750,6 @@ export default function WebSocketTest() {
                                     server.stop();
                                     done();
                                 }
-                            }).catch((error: Error) => {
-                                hilog.info(domain, tag, '%{public}s', caseName + 'connect fail!' + error);
-                                ExpectFail();
-                                done();
-                            });
                         } else {
                             ExpectFail();
                             server.stop();
@@ -2842,6 +2840,180 @@ export default function WebSocketTest() {
                                 hilog.info(domain, tag, '%{public}s', caseName + 'send fail' + JSON.stringify(err));
                                 ExpectFail();
                                 done();
+                            });
+                        }
+                    });
+                    ws.connect(availableWebSocketAddress).then((value: boolean) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+                    }).catch((err: Error) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + JSON.stringify(err));
+                    });
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectFail();
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                }
+            });
+        /**
+         * @tc.name   testWebSocketSendCallbackTrue_static_0100
+         * @tc.number SUB_NetworkMgr_WebSocket_Send_Callback_True_0100
+         * @tc.desc   Cover webSocket.send(data, callback) interface, verify callback returns true value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testWebSocketSendCallbackTrue_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testWebSocketSendCallbackTrue_static_0100';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                let ws: webSocket.WebSocket | null = null;
+                try {
+                    ws = webSocket.createWebSocket();
+                    ws.onOpen((value: webSocket.OpenResult | undefined) => {
+                        if (value && value !== null) {
+                            hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+                            ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
+                                hilog.info(domain, tag, '%{public}s', caseName + 'send callback err:' + JSON.stringify(err) + ' value:' + value);
+                                ExpectTrue(err === null || err === undefined);
+                                ExpectTrue(value === true);
+                                ws!.close();
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                            });
+                        }
+                    });
+                    ws.connect(availableWebSocketAddress).then((value: boolean) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+                    }).catch((err: Error) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + JSON.stringify(err));
+                    });
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectFail();
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                }
+            });
+
+        /**
+         * @tc.name   testWebSocketSendCallbackFalse_static_0100
+         * @tc.number SUB_NetworkMgr_WebSocket_Send_Callback_False_0100
+         * @tc.desc   Cover webSocket.send(data, callback) interface, verify callback returns false value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testWebSocketSendCallbackFalse_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testWebSocketSendCallbackFalse_static_0100';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                let ws: webSocket.WebSocket | null = null;
+                try {
+                    ws = webSocket.createWebSocket();
+                    ws.onOpen(async (value: webSocket.OpenResult | undefined) => {
+                        if (value && value !== null) {
+                            hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+                            await ws!.close();
+                            ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
+                                hilog.info(domain, tag, '%{public}s', caseName + 'send callback err:' + JSON.stringify(err) + ' value:' + value);
+                                if (err && err.code !== 0) {
+                                    ExpectTrue(value === undefined || value === false);
+                                } else {
+                                    ExpectTrue(value === false);
+                                }
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                            });
+                        }
+                    });
+                    ws.connect(availableWebSocketAddress).then((value: boolean) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+                    }).catch((err: Error) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + JSON.stringify(err));
+                    });
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectFail();
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                }
+            });
+
+        /**
+         * @tc.name   testWebSocketSendPromiseTrue_static_0100
+         * @tc.number SUB_NetworkMgr_WebSocket_Send_Promise_True_0100
+         * @tc.desc   Cover webSocket.send(data) interface, verify promise returns true value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testWebSocketSendPromiseTrue_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testWebSocketSendPromiseTrue_static_0100';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                let ws: webSocket.WebSocket | null = null;
+                try {
+                    ws = webSocket.createWebSocket();
+                    ws.onOpen((value: webSocket.OpenResult | undefined) => {
+                        if (value && value !== null) {
+                            hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+                            ws!.send('hello!').then((value: boolean) => {
+                                hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
+                                ExpectTrue(value === true);
+                                ws!.close();
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                            }).catch((err: Error) => {
+                                hilog.info(domain, tag, '%{public}s', caseName + 'send fail! : errcode is ->' + JSON.stringify(err));
+                                ExpectFail();
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                            });
+                        }
+                    });
+                    ws.connect(availableWebSocketAddress).then((value: boolean) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+                    }).catch((err: Error) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + JSON.stringify(err));
+                    });
+                } catch (err) {
+                    hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+                    ExpectFail();
+                    done();
+                    hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                }
+            });
+
+        /**
+         * @tc.name   testWebSocketSendPromiseFalse_static_0100
+         * @tc.number SUB_NetworkMgr_WebSocket_Send_Promise_False_0100
+         * @tc.desc   Cover webSocket.send(data) interface, verify promise returns false value
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testWebSocketSendPromiseFalse_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+            async (done: () => void): Promise<void> => {
+                let caseName: string = 'testWebSocketSendPromiseFalse_static_0100';
+                hilog.info(domain, tag, '%{public}s', caseName + ' start');
+                let ws: webSocket.WebSocket | null = null;
+                try {
+                    ws = webSocket.createWebSocket();
+                    ws.onOpen(async (value: webSocket.OpenResult | undefined) => {
+                        if (value && value !== null) {
+                            hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+                            await ws!.close();
+                            ws!.send('hello!').then((value: boolean) => {
+                                hilog.info(domain, tag, '%{public}s', caseName + 'send success false ' + value);
+                                ExpectTrue(value === false);
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+                            }).catch((err: Error) => {
+                                hilog.info(domain, tag, '%{public}s', caseName + 'send fail after close, err: ' + JSON.stringify(err));
+                                ExpectTrue(err !== null);
+                                done();
+                                hilog.info(domain, tag, '%{public}s', caseName + ' test end');
                             });
                         }
                     });
