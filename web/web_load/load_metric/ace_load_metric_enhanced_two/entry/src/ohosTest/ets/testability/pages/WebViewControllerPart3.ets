@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
 import { JsProxyObject } from '../../test/Interfaces';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../../test/List.test';
 import {waitForExist} from '../../test/WaitTest.test';
 

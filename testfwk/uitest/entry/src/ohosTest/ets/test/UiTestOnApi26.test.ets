@@ -13,7 +13,7 @@
  * limitations under the License.
          */
 
-import { describe, it, expect, TestType, Level, Size, beforeAll, beforeEach, afterAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Level, Size, beforeAll, beforeEach, afterAll } from '@ohos/hypium-dynamic'
 import { Driver, ON, Component } from '@kit.TestKit'
 import { startAbility, stopApplication } from './Util.test'
 

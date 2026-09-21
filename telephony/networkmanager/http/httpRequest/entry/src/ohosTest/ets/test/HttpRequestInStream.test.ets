@@ -1,6 +1,6 @@
 import type { BusinessError } from "@ohos.base";
 import http from "@ohos.net.http";
-import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import connection from "@ohos.net.connection";
 export const ADDR_TEST_ILLEGAL: string = "abc";
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.moyufangge.com/anything";

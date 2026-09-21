@@ -14,7 +14,7 @@
  */
 import windowndkapi20 from 'libwindowndkapi20.so';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../../test/List.test';
 import { router, window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';

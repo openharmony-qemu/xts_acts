@@ -22,7 +22,7 @@ import map from '@ohos.bluetooth.map';
 import pbap from '@ohos.bluetooth.pbap';
 import bluetooth from '@ohos.bluetooth.baseProfile';
 import opp from '@ohos.bluetooth.opp';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 function sleep(delay : number) : Promise<void> {

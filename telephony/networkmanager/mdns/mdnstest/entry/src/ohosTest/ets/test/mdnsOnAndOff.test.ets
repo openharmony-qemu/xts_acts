@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, beforeAll, Size, Level, TestType, beforeEach, afterEach } from '@ohos/hypium';
+import { describe, expect, it, beforeAll, Size, Level, TestType, beforeEach, afterEach } from '@ohos/hypium-dynamic';
 import mdns from '@ohos.net.mdns';
 
 let context = AppStorage.get('context') as Context;

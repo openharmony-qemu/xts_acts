@@ -1,4 +1,4 @@
-import { describe, beforeAll, it, expect,TestType, Size,Level} from '@ohos/hypium';
+import { describe, beforeAll, it, expect,TestType, Size,Level} from '@ohos/hypium-dynamic';
 import netFirewall from '@ohos.net.netFirewall';
 import { BusinessError } from '@kit.BasicServicesKit';
 const ExpectFail: () => void = () => {

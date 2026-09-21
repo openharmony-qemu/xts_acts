@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog'
 import fileio from '@ohos.fileio'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic'
 import { zlib, BusinessError } from '@kit.BasicServicesKit';
 
 export default function abilityTest() {

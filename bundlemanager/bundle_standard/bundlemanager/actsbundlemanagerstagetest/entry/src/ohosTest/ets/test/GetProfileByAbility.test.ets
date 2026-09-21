@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@kit.BasicServicesKit';
 import manager from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 
 const MODULE_NAME = "testModule"
 const MODULE_NAME_TEST = "testModule1"

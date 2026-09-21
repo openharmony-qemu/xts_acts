@@ -14,7 +14,7 @@
  */
 
 import webSocket from '@ohos.net.webSocket';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Level, Size, TestType} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Level, Size, TestType} from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 
 export default function NetManagerWSProxy() {

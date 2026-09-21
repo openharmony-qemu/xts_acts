@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from "@ohos/hypium-dynamic";
 import cert from '@ohos.security.cert';
 import * as certChainFunc from "./utils/certchain/certChainFunc";
 import { CERT_CHAIN_DATA_PEM_PARAMETERS, CERT_CHAIN_PEM_DATA0 } from './utils/common/commonParam';

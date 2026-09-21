@@ -15,7 +15,7 @@
 
 import usbMgr from '@ohos.usbManager';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 const TAG: string = "[UsbAccessoryTest]";
 const SKIP_TAG: string = "[SKIP]";

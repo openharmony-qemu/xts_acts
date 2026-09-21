@@ -15,7 +15,7 @@
 
 import bundle from '@ohos.bundle';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic";
 
 const USER_ID = 100;
 const ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID = 1;

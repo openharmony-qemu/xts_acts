@@ -13,7 +13,7 @@
  * limitations under the License.
  */
  
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import {
   ENTINFO1,
   SELFWANT,

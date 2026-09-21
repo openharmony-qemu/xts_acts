@@ -15,7 +15,7 @@
 */
 import zlib from '@ohos.zlib'
 import fs, { ReadOptions } from '@ohos.file.fs';
-import { describe, it, expect, beforeAll, afterEach, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterEach, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@ohos.base'
 
 let testPathsToClean: string[] = [];

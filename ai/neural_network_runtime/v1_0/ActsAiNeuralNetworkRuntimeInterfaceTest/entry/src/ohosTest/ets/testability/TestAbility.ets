@@ -15,7 +15,7 @@
 
 import { UIAbility } from '@kit.AbilityKit';
 import { AbilityDelegatorRegistry } from '@kit.TestKit';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../test/List.test';
 
 export default class TestAbility extends UIAbility {

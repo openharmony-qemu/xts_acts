@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import { DisplayRotation, MatchPattern, ResizeDirection, UiDirection, WindowMode, MouseButton  } from '@kit.TestKit'
 
 

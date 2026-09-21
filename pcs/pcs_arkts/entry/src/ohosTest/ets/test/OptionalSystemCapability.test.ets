@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Level, Size} from "@ohos/hypium"
+import { describe, it, expect, TestType, Level, Size} from "@ohos/hypium-dynamic"
 import { batteryInfo, BusinessError, systemDateTime } from "@kit.BasicServicesKit"
 import { systemTimer } from '@kit.BasicServicesKit';
 import { inputMethod } from '@kit.IMEKit';

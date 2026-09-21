@@ -191,7 +191,7 @@ let arr3: FixedArray<Object> = [0.0, 1.0, 2.0]
 class A17 {
   tup: readonly [() => boolean, () => string, () => number]
 
-  constructor(...tup: [() => boolean, () => string, () => number]) {
+  constructor(...tup: readonly [() => boolean, () => string, () => number]) {
     this.tup = tup
   }
 }
@@ -418,7 +418,7 @@ let arr7: FixedArray<Object> = [0.0, 1.0, 2.0]
 class A41<T, U, V> {
   tup2: readonly [() => T, () => U, () => V]
 
-  constructor(...tup2: [() => T, () => U, () => V]) {
+  constructor(...tup2: readonly [() => T, () => U, () => V]) {
     this.tup2 = tup2
   }
 }

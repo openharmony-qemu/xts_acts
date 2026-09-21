@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import * as pbkCallback from './utils/pbkdf2/publicPbkdf2Callback';
 import * as pbkPromise from './utils/pbkdf2/publicPbkdf2Promise';
 import * as common from './utils/common/publicDoString';

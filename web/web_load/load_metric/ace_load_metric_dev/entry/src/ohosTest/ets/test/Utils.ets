@@ -14,7 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@kit.TestKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 

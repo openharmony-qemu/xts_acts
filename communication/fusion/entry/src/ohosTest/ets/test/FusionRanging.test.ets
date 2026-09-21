@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import {describe, it, beforeAll, expect, Level, TestType, Size} from '@ohos/hypium';
+import {describe, it, beforeAll, expect, Level, TestType, Size} from '@ohos/hypium-dynamic';
 import ranging from '@ohos.FusionConnectivity.ranging';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'

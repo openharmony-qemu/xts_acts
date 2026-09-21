@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { add, addtest, getDescFromLibrary2 } from 'library';
 import { getModuleDescription as getDescFromLib2 ,nativeAdd  } from 'library2';
 import { getModuleDescription as getDescFromLib3 } from 'library3';

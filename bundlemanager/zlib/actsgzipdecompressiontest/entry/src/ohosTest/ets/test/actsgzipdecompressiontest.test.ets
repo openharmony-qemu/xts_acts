@@ -16,7 +16,7 @@
 import zlib from '@ohos.zlib'
 import base from '@ohos.base'
 import fileio from '@ohos.fileio'
-import { describe, it, expect, beforeAll, afterEach, beforeEach, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterEach, beforeEach, TestType, Size, Level } from '@ohos/hypium-dynamic'
 
 let filePath: string = "/my/test.gz";
 let allfilePath: string = "";

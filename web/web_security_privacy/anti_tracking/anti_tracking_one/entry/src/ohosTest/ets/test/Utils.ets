@@ -14,7 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 
 
 export default class Utils {

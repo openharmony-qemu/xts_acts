@@ -14,7 +14,7 @@
  */
 
 import cellular from "@ohos.telephony.data";
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { BusinessError } from "@kit.BasicServicesKit";
 
 const ExpectTrue = (n: boolean) => {

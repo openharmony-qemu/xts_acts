@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
