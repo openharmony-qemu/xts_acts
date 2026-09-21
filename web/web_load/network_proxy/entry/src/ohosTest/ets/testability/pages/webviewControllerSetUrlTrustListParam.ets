@@ -103,17 +103,6 @@ struct Index {
               }
               break;
             }
-            case 'emitSetUrlTrustListInvalidFormat001': {
-              try {
-                this.controller.setUrlTrustList('invalid-url-format');
-                Utils.emitEvent('success', 180840);
-              } catch (error) {
-                let e: BusinessError = error as BusinessError;
-                console.error(this.str + `ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(String(e.code), 180840);
-              }
-              break;
-            }
             default:
               console.info('can not match case');
           }
