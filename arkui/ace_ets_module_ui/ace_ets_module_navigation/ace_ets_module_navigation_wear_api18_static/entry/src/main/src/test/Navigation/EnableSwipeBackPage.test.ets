@@ -16,7 +16,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect} from '@ohos.UiTest';
+import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect, Point} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -103,7 +103,9 @@ it('EnableSwipeBackPage_static_00100', Level.LEVEL0, async (done: () => void): P
         console.info('[EnableSwipeBackPage_0100] bottom is ', bottom);
   console.log('++++++++++++++++++11111')
         let uiContext = AppStorage.get<UIContext>('uiContext');
-        await driver.fling({x: Math.round(uiContext!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
+        let fromPoint: Point = { x: Math.round(uiContext!.vp2px(11)).toInt(), y: Math.round(bottom / 2).toInt() } as Point;
+        let toPoint: Point = { x: Math.round(right / 3).toInt(), y: Math.round(bottom / 2).toInt() } as Point;
+        await driver.fling(fromPoint, toPoint, 2, 40000);
   console.log('++++++++++++++++++22222')
         await driver.delayMs(1000)
   console.log('++++++++++++++++++3333')
@@ -151,7 +153,9 @@ it('EnableSwipeBackPage_static_00200', Level.LEVEL0, async (done: () => void): P
         console.info('[EnableSwipeBackPage_0200] right is ', right);
         console.info('[EnableSwipeBackPage_0200] bottom is ', bottom);
         let uiContext = AppStorage.get<UIContext>('uiContext');
-        await driver.fling({x: Math.round(uiContext!.vp2px(11)) as int, y: Math.round(bottom/2) as int}, {x: Math.round(right/3) as int, y: Math.round(bottom/2) as int}, 2, 40000);
+        let fromPoint2: Point = { x: Math.round(uiContext!.vp2px(11)).toInt(), y: Math.round(bottom / 2).toInt() } as Point;
+        let toPoint2: Point = { x: Math.round(right / 3).toInt(), y: Math.round(bottom / 2).toInt() } as Point;
+        await driver.fling(fromPoint2, toPoint2, 2, 40000);
         await driver.delayMs(1000)
         await driver.assertComponentExist(ON.id('enableId'));
 

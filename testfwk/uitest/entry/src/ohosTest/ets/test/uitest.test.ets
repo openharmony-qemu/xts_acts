@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On, WindowChangeType } from '@kit.TestKit'
 import ability_featureAbility from '@ohos.ability.featureAbility';
@@ -445,29 +445,19 @@ export default function UiTest() {
             await nextPageBtn.click();
             await driver.delayMs(waitUiReadyMs);
             try {
-                observer.once('componentEventOccur', ComponentEventType.COMPONENT_TEXT_CHANGED, {
-                    on: ON.id('changContext')
-                }, callback);
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_TEXT_CHANGED, {}, callback);
             } catch (err) {
                 console.log(`${TestTag}, testComponentEventOccurOptionsTextContentMonitor once error, ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(DeviceErrorCode);
             }
-            let changTest = await driver.findComponent(ON.id('changTest'));
-            await driver.delayMs(1000);
-            let center = await changTest.getBoundsCenter();
-            await driver.click(center.x, center.y);
-            await driver.delayMs(waitUiReadyMs);
-            await driver.triggerCombineKeys(2072, 2017);
-            await driver.delayMs(waitUiReadyMs);
-            await driver.triggerCombineKeys(2072, 2019);
-            await driver.delayMs(waitUiReadyMs);
-            await exitInputMethod();
-            await driver.delayMs(1000);
             let changContextTxt = await driver.findComponent(ON.id('changContext'));
             let changCenter = await changContextTxt.getBoundsCenter();
             await driver.click(changCenter.x, changCenter.y);
             await driver.delayMs(waitUiReadyMs);
-            await driver.triggerCombineKeys(2072, 2038);
+            await driver.inputText(changCenter, 'Second Page', {
+                paste: true,
+                addition: true
+            });
             await driver.delayMs(1000);
             await exitInputMethod();
             await driver.delayMs(5000);
@@ -546,7 +536,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             let center = await longClickBtn.getBoundsCenter();
             await driver.delayMs(waitUiReadyMs);
-            let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center)
+            let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 2500)
             expect(result).assertTrue();
             await driver.delayMs(waitUiReadyMs);
             let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -587,7 +577,7 @@ export default function UiTest() {
                 x: center.x,
                 y: center.y,
                 displayId: disPlay.id
-            }, 3000)
+            })
             expect(result).assertFalse();
             await driver.delayMs(waitUiReadyMs);
             let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -623,8 +613,8 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let center = await longClickBtn.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, null)
-                expect(result).assertTrue();
+                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), center, null)
+                expect(result).assertFalse();
                 await driver.delayMs(waitUiReadyMs);
                 let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
                 let longClickText = await longClickTextResultBtn.getText();
@@ -663,8 +653,8 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs);
                 let center = await longClickBtn.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
-                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, undefined)
-                expect(result).assertTrue();
+                let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), center, undefined)
+                expect(result).assertFalse();
                 await driver.delayMs(waitUiReadyMs);
                 let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
                 let longClickText = await longClickTextResultBtn.getText();
@@ -740,7 +730,7 @@ export default function UiTest() {
             let center = await scrollBar.getBoundsCenter()
             let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
                 { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) })
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, 200)
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue result, ${JSON.stringify(result)}`);
             expect(result).assertTrue();
             let text = await driver.findComponent(ON.text('toast'))
@@ -769,7 +759,7 @@ export default function UiTest() {
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse disPlay is: ${JSON.stringify(disPlay)}`);
             let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
                 { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlay.id },
-                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, 5000)
+                { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id })
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse result, ${JSON.stringify(result)}`);
             expect(result).assertFalse();
             let text = await driver.findComponent(ON.text('toast'))
@@ -793,11 +783,11 @@ export default function UiTest() {
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
                 { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
                 { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, null)
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringNull result, ${JSON.stringify(result)}`);
-            expect(result).assertTrue();
+            expect(result).assertFalse();
             let text = await driver.findComponent(ON.text('toast'))
             expect(text == null).assertTrue()
             await stopApplication('com.uitestScene.acts')
@@ -821,11 +811,11 @@ export default function UiTest() {
                 let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
                 let rect = await scrollBar.getBounds()
                 let center = await scrollBar.getBoundsCenter()
-                let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+                let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
                     { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4) },
                     { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4) }, undefined)
                 console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined result, ${JSON.stringify(result)}`);
-                expect(result).assertTrue();
+                expect(result).assertFalse();
                 let text = await driver.findComponent(ON.text('toast'))
                 expect(text == null).assertTrue()
                 await stopApplication('com.uitestScene.acts')

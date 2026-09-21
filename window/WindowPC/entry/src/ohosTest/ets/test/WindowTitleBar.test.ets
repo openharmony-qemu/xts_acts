@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError, settings } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';

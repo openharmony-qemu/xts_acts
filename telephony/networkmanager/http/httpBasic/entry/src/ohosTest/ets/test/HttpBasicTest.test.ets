@@ -14,7 +14,7 @@
  */
 
 import netHttp from '@ohos.net.http';
-import { describe, expect, it, TestType, Size, Level  } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level  } from '@ohos/hypium-dynamic';
 import {BusinessError} from '@ohos.base';
 
 const ExpectFail = () => {

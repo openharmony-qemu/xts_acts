@@ -14,7 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@ohos.UiTest';

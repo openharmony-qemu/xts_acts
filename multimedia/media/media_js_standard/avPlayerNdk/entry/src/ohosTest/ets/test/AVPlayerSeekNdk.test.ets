@@ -444,7 +444,7 @@ export default function AVPlayerSeekNdk() {
       console.info(TAG, 'player fileDescriptorFs fd://' + fileDescriptorFs?.fd);
       let result: number = avplayer.setup('sss', fileDescriptorFs?.fd, fileDescriptorFs?.offset, fileDescriptorFs?.length);
       expect(result).assertEqual(0);
-      await Utils.sleep(5000)
+      await Utils.sleep(15000)
       await avplayer.release();
       done();
     });

@@ -16,7 +16,7 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import window from '@ohos.window';
 import commonEvent from '@ohos.commonEvent'
 import CommonEventManager from '@ohos.commonEventManager';

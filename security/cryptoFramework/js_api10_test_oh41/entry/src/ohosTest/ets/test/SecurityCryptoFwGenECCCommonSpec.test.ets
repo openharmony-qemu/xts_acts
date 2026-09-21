@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import { BusinessError } from '@ohos.base';
 import { compareECCParams, comparePairParams, } from './utils/keyGenerate/genECCSpecFunc';

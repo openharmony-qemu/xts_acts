@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import manager from '@ohos.nearlink.manager';
 import ssap from '@ohos.nearlink.ssap';
 import { clickRequestPermission } from './ClickRequestPermission';
@@ -43,6 +43,7 @@ export default function sSapTest() {
       await clickRequestPermission();
       return_boolean = manager.isNearLinkSupported();
       try {
+        await openNearLink();
         ssapClient=ssap.createClient(ADDRESS);
         console.info('[Nearlink Test]ssap client info: '+ ssapClient);
         expect(ssapClient != null).assertTrue();
@@ -63,14 +64,11 @@ export default function sSapTest() {
     });
     beforeEach(async (done:Function) => {
       console.info('beforeEach start');
-      await openNearLink();
       console.info('beforeEach end');
       done();
     })
     afterEach(async(done: Function) => {
       console.info('afterEach start');
-      console.info('sleep 500ms');
-      // await sleep(TIME_SLEEP_AFTER);
       console.info('afterEach end');
       done();
     })

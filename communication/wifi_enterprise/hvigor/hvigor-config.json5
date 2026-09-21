@@ -14,7 +14,8 @@
  */
 {
   "modelVersion": "26.0.0",
-  "dependencies": {
-
+  "dependencies": {},
+  "properties": {
+    "ohos.byteCodeHar.integratedOptimization": true
   }
 }

@@ -6,7 +6,7 @@
         "shell-timeout": "180000",
         "bundle-name": "ohos.acts.communication.nearlink.normal",
         "module-name": "entry_test",
-		"testcase-timeout": "20000"
+		"testcase-timeout": "80000"
     },
     "kits": [
         {

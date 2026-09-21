@@ -14,7 +14,7 @@
  */
 
 import contact from '@ohos.contact';
-import { afterAll, afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { bundleManager } from '@kit.AbilityKit';
 import account from '@ohos.account.osAccount';

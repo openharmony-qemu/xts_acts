@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Level, TestType, Size} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Level, TestType, Size} from '@ohos/hypium-dynamic';
 import testNapi from 'libentry.so';
 import { display, window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -684,7 +684,27 @@ export default function DisplayNdkTest() {
         }
       }
     })
-
+    /**
+     * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea_InvalidParam
+     * @tc.number SUB_DMS_OH_NativeDisplayManager_CreateAvailableArea_0200
+     * @tc.desc   test_OH_NativeDisplayManager_CreateAvailableArea参数边界值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_OH_NativeDisplayManager_CreateAvailableArea_InvalidParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      let caseName = 'test_OH_NativeDisplayManager_CreateAvailableArea_InvalidParam';
+      try{
+        let errcode  = testNapi.createAvailableAreaMax();
+        console.log(`${caseName} result: ${JSON.stringify(errcode)}`);
+        expect(errcode).assertEqual(1400004);
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:'+ err + ' '+err.code);
+        expect(false).assertTrue();
+        done();
+      }
+    })
     /**
      * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea_ErrCode140004
      * @tc.number OH_NativeDisplayManager_CreateAvailableAreaErrCode_140004

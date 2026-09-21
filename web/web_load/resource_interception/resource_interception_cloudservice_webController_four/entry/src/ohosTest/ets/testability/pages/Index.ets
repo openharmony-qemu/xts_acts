@@ -14,7 +14,7 @@
 */
 
 import { abilityDelegatorRegistry } from '@kit.TestKit';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../../test/List.test';
 import { webview } from '@kit.ArkWeb';
 import { URL } from './ConstConfig';

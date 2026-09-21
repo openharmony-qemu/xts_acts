@@ -30,6 +30,8 @@ group("xts_global_acts") {
       "i18n_util_static:i18n_util_static_hap",
       "resmgr_standard/resmgrjsStatic:resmgrjs_test_static",
       "global_napi_c_test:ActsGlobalNapiCTest",
+      "fontmanager_stage:fontmanager_stage_hap",
+      "fontmanager_stage_static:fontmanager_stage_static_hap",
     ]
   } else {
     deps = [

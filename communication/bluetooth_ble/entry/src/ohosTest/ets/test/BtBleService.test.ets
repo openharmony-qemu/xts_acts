@@ -16,7 +16,7 @@ import bluetoothManager from '@ohos.bluetoothManager'
 import bluetooth from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import { BusinessError} from '@ohos.base';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 let gattServer: bluetooth.GattServer;
@@ -1579,7 +1579,6 @@ export default function btBleServiceTest() {
         });
         gattServer.off('BLEMtuChange');
         console.info('[bluetooth_js]off BLEMtuChange without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error("bluetooth mtu changed off no callback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {

@@ -14,7 +14,7 @@
  */
 import account from '@ohos.account.appAccount'
 import Want from '@ohos.app.ability.Want';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { Driver, ON } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';

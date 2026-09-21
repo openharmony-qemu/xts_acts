@@ -20,7 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 import { JSON } from '@kit.ArkTS';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import testsuite from '../../test/List.test';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import {waitForAssert, waitForExist} from '../../test/WaitTest';
 
 class TestObj {

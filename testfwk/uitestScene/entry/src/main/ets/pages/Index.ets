@@ -25,9 +25,19 @@ struct ScrollExample {
   @State isShowSwipeEventCom: boolean = false;
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text('MainPage')
-        .fontWeight(FontWeight.Bold)
-        .accessibilityDefaultFocus(true)
+      Column() {
+        Text('MainPage')
+          .fontWeight(FontWeight.Bold)
+          .accessibilityDefaultFocus(true)
+        Text(this.pressure.toFixed(1))
+          .id('pressure')
+        Text('ShowSwipeEventCom')
+          .id('ShowSwipeEventCom')
+          .visibility(this.isShowSwipeEventCom ? Visibility.Visible: Visibility.Hidden)
+          .margin({
+            bottom: 10
+          })
+      }
       Stack({ alignContent: Alignment.TopStart }) {
         Scroll(this.scroller) {
           Column() {
@@ -263,11 +273,6 @@ struct ScrollExample {
         this.pressure = event.pressure;
       })
       Column() {
-          Text('ShowSwipeEventCom')
-            .id('ShowSwipeEventCom')
-            .visibility(this.isShowSwipeEventCom ? Visibility.Visible: Visibility.Hidden)
-        Text(this.pressure.toFixed(1))
-          .id('pressure')
         Text('MainPage_End')
           .fontWeight(FontWeight.Bold)
       }.margin({

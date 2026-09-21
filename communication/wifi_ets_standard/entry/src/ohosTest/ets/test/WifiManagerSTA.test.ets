@@ -14,7 +14,7 @@
  */
 import wifiMg from '@ohos.wifiManager';
 import wifi from '@ohos.wifi';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON} from '@ohos.UiTest';
 function sleep(delay:number): Promise<void> {

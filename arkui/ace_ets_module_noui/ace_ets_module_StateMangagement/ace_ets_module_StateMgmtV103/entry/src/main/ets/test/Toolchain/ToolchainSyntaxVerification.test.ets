@@ -120,6 +120,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0100 error:" + err);
+        expect(true).assertEqual(false);
       }
 
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0100] END');
@@ -142,6 +143,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0200 error:" + err);
+        expect(true).assertEqual(false);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0200] END');
       done()
@@ -164,6 +166,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0300 error:" + err);
+        expect(true).assertEqual(false);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0300] END');
       done()
@@ -185,6 +188,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0400 error:" + err);
+        expect(true).assertEqual(false);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0400] END');
       done()
@@ -207,6 +211,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0500 error:" + err);
+        expect(true).assertEqual(false);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0500] END');
       done()
@@ -227,6 +232,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0600 error:" + err);
+        expect(true).assertEqual(false);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0600] END');
       done()
@@ -248,6 +254,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0700 error:" + err);
+        expect(true).assertEqual(false);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0700] END');
       done()
@@ -271,6 +278,7 @@ export default function ToolchainSyntaxVerification() {
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error("SUB_ARKUI_TOOLCHAIN_WRITING_0800 error:" + err);
+        expect(true).assertEqual(false);
       }
       console.info('[SUB_ARKUI_TOOLCHAIN_WRITING_0800] END');
       done()

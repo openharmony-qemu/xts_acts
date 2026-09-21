@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Size, Level, TestType, beforeAll, afterAll } from '@ohos/hypium';
+import { describe, expect, it, Size, Level, TestType, beforeAll, afterAll } from '@ohos/hypium-dynamic';
 import { http } from '@kit.NetworkKit';
 import testNetManager from 'libentry.so';
 import { socket } from '@kit.NetworkKit';

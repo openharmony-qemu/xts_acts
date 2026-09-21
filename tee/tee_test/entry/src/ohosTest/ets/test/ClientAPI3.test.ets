@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import TEETEST from 'libclient_api_test3.so';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic'
 
 
 const TEEC_SUCCESS = 0x0;

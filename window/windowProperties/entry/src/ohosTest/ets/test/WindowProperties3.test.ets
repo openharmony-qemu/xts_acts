@@ -14,7 +14,7 @@
  */
 import window from '@ohos.window';
 import display from '@ohos.display';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import deviceInfo from '@ohos.deviceInfo';
@@ -5003,6 +5003,165 @@ export default function windowPropertiesTest3() {
         if (exception.code === 801) {
           console.info(`${message} Capability not supported.`);
           expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== off('occlusionStateChanged') 不传入入参取消全部监听 测试用例 ====================
+
+    /**
+     * @tc.name   testOffOcclusionStateChanged_twoCallbacksOffAll
+     * @tc.number SUB_WINDOW_OFFOCCLUSIONSTATECHANGED_FUNCTION_0100
+     * @tc.desc   注册两个callback监听occlusionStateChanged事件，然后off不传入入参一次性取消全部监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffOcclusionStateChanged_twoCallbacksOffAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffOcclusionStateChanged_twoCallbacksOffAll';
+      let callbackACalled = false;
+      let callbackBCalled = false;
+      let occlusionStatesA: number[] = [];
+      let occlusionStatesB: number[] = [];
+      const callbackA = (data: window.OcclusionState) => {
+        console.info(`${message} callbackA triggered. Data: ${JSON.stringify(data)}`);
+        callbackACalled = true;
+        occlusionStatesA.push(data);
+      };
+      const callbackB = (data: window.OcclusionState) => {
+        console.info(`${message} callbackB triggered. Data: ${JSON.stringify(data)}`);
+        callbackBCalled = true;
+        occlusionStatesB.push(data);
+      };
+      let subWindow: window.Window | undefined;
+      try {
+        mainWindowClass.on('occlusionStateChanged', callbackA);
+        console.info(`${message} Succeeded in registering callbackA.`);
+        mainWindowClass.on('occlusionStateChanged', callbackB);
+        console.info(`${message} Succeeded in registering callbackB.`);
+        mainWindowClass.off('occlusionStateChanged');
+        console.info(`${message} Succeeded in unregistering all callbacks.`);
+
+        const mainWindowProperties = mainWindowClass.getWindowProperties();
+        const mainWindowRect = mainWindowProperties.windowRect;
+        console.info(`${message} mainWindowRect: ${JSON.stringify(mainWindowRect)}`);
+        subWindow = await windowStage.createSubWindow('testOffOcclusionStateChanged_twoCallbacksOffAll');
+        console.info(`${message} Succeeded in creating subWindow.`);
+
+        // off后触发遮挡，验证监听不会被触发
+        console.info(`${message} Trigger occlusion by showing subwindow to occlude main window`);
+        await subWindow.resize(mainWindowRect.width / 2, mainWindowRect.height / 2);
+        await subWindow.moveWindowTo(mainWindowRect.left + mainWindowRect.width / 3,
+          mainWindowRect.top + mainWindowRect.height / 3);
+        await subWindow.setUIContent('testability/pages/First/index2');
+        await subWindow.showWindow();
+        await sleep(1000);
+        expect(callbackACalled).assertFalse();
+        expect(occlusionStatesA.length).assertEqual(0);
+        expect(callbackBCalled).assertFalse();
+        expect(occlusionStatesB.length).assertEqual(0);
+        console.info(`${message} Verified - callbacks not triggered after occlusion.`);
+
+        await subWindow.destroyWindow();
+        console.info(`${message} Subwindow destroyed successfully.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        await subWindow?.destroyWindow();
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowColorSpace callback 传入不存在的ColorSpace 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowColorSpace_callback_invalidColorSpace
+     * @tc.number SUB_WINDOW_SETWINDOWCOLORSPACE_PARAM_0500
+     * @tc.desc   setWindowColorSpace callback形式传入不存在的ColorSpace值3，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowColorSpace_callback_invalidColorSpace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowColorSpace_callback_invalidColorSpace';
+      try {
+        mainWindowClass.setWindowColorSpace(3, (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${message} Callback error. Cause: ${err.code}, ${err.message}`);
+            if (errCode === 401) {
+              console.info(`${message} Expected error 401 in callback.`);
+              expect(errCode).assertEqual(401);
+            } else {
+              expect().assertFail();
+            }
+            done();
+          } else {
+            console.error(`${message} Should not succeed.`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== getWindowTransitionAnimation 传入不存在的WindowTransitionType 测试用例 ====================
+
+    /**
+     * @tc.name   testGetWindowTransitionAnimation_invalidEnum3
+     * @tc.number SUB_WINDOW_GETWINDOWTRANSITIONANIMATION_PARAM_0500
+     * @tc.desc   getWindowTransitionAnimation传入不存在的WindowTransitionType值3，满足自由多窗条件报401，不满足报801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetWindowTransitionAnimation_invalidEnum3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testGetWindowTransitionAnimation_invalidEnum3';
+      let isInFreeWindowMode = false;
+      try {
+        isInFreeWindowMode = mainWindowClass.isInFreeWindowMode();
+        console.info(`${message} isInFreeWindowMode: ${isInFreeWindowMode}`);
+      } catch (e) {
+        console.info(`${message} isInFreeWindowMode not supported.`);
+      }
+      try {
+        mainWindowClass.getWindowTransitionAnimation(3 as window.WindowTransitionType);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (isInFreeWindowMode && exception.code === 401) {
+          console.info(`${message} Expected error 401 on free window device.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else if (!isInFreeWindowMode && exception.code === 801) {
+          console.info(`${message} Expected error 801 on non-free window device.`);
+          expect(exception.code).assertEqual(801);
           done();
         } else {
           expect().assertFail();

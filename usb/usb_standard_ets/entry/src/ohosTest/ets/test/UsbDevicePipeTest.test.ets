@@ -17,7 +17,7 @@ import usbMgr from '@ohos.usbManager';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { isFilteredDevice } from './FilterUtils';
 import parameter from '@ohos.systemparameter';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 let deviceList: Array<usbMgr.USBDevice>;
 let testDevice: usbMgr.USBDevice | null = null;

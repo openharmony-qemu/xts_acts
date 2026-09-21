@@ -1,5 +1,5 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level }
-    from '@ohos/hypium';
+    from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@kit.TestKit';
 import Utils from './Utils.test';
 import nativeFunc from 'libentry.so';

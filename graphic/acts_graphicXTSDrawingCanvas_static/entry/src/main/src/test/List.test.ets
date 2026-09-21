@@ -23,6 +23,8 @@ import drawingTsCanvasPart7Test from "./CanvasPart7.test";
 import drawingTsCanvasPart8Test from "./CanvasPart8.test";
 import drawingTsCanvasPart9Test from "./CanvasPart9.test";
 import drawingTsCanvasPart10Test from "./CanvasPart10.test";
+import DrawingTsCanvasPart11Test from "./CanvasPart11.test";
+import DrawingTsRecordCmdUtilsTest from './RecordCmdUtils.test';
 
 export default function testsuite(): void {
   drawingTsCanvasTest();
@@ -35,4 +37,6 @@ export default function testsuite(): void {
   drawingTsCanvasPart8Test();
   drawingTsCanvasPart9Test();
   drawingTsCanvasPart10Test();
+  DrawingTsCanvasPart11Test();
+  DrawingTsRecordCmdUtilsTest();
 }

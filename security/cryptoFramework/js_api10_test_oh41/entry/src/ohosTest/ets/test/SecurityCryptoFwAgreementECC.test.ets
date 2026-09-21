@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import * as agreementAsyCallbackFunc from './utils/agreement/agreementAsyCallbackFunc';

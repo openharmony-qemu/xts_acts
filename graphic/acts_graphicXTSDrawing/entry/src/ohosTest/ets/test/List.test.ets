@@ -52,6 +52,7 @@ import drawingTsCanvasPart7Test from './CanvasPart7.test';
 import drawingTsCanvasPart8Test from './CanvasPart8.test';
 import drawingTsCanvasPart9Test from './CanvasPart9.test';
 import drawingTsCanvasPart10Test from './CanvasPart10.test';
+import drawingTsCanvasPart11Test from './CanvasPart11.test';
 import drawingTsRegionTest from './Region.test';
 import drawingTsRegionPart2Test from "./Region2.test";
 import drawingTsRegionPart3Test from "./Region3.test";
@@ -77,6 +78,7 @@ import PathIterator from './PathIterator.test';
 import DrawingPathIteratorPart2Test from './PathIteratorPart2.test';
 import PenPart3 from './PenPart3.test';
 import PointUtils from './PointUtils.test';
+import DrawingTsRecordCmdUtilsTest from './RecordCmdUtils.test';
 
 export default function testsuite() {
   samplingOptionsTest();
@@ -122,6 +124,7 @@ export default function testsuite() {
   drawingTsCanvasPart8Test();
   drawingTsCanvasPart9Test();
   drawingTsCanvasPart10Test();
+  drawingTsCanvasPart11Test();
   drawingTsRegionTest();
   drawingTsRegionPart2Test();
   drawingTsRegionPart3Test();
@@ -144,4 +147,5 @@ export default function testsuite() {
   DrawingPathIteratorPart2Test();
   PenPart3();
   PointUtils();
+  DrawingTsRecordCmdUtilsTest();
 }

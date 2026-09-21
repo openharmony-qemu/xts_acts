@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { common } from '@kit.AbilityKit';
 // /data/app/el2/100/base/com.example.cloneAppNoSys/cache
 import { BusinessError } from '@kit.BasicServicesKit';

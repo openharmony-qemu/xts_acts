@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 import { util } from '@kit.ArkTS'
 
 import connection from '@ohos.bluetooth.connection';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 let PERMISSION_TEXT:string = "允许";
@@ -2578,7 +2578,6 @@ export default function bluetoothAdvertisingTest() {
         console.info('[bluetooth_js] on advertisingStateChange success');
         bluetooth.off('advertisingStateChange');
         console.info('[bluetooth_js] off advertisingStateChange without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.info("offNoCallback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {

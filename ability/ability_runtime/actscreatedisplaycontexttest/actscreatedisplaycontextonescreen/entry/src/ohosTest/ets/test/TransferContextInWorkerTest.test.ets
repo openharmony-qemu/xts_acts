@@ -15,7 +15,7 @@
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { application, common, Context } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { JSON, worker, MessageEvents } from '@kit.ArkTS';

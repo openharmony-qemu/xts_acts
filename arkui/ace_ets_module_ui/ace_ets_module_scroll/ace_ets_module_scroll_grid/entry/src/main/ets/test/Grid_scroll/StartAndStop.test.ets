@@ -61,7 +61,7 @@ export default function StartAndStop() {
     it('StartAndStop_0300',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[StartAndStop_0300] START');
-      let gridRect = CommonFunc.getComponentRect('StartandStop')
+      let gridRect = CommonFunc.getComponentRectOnScreen('StartandStop')
       let driver = Driver.create()
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),

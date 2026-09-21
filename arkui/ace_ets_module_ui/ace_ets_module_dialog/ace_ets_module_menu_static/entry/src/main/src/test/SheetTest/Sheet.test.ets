@@ -68,6 +68,7 @@ export default function SheetTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));
@@ -96,6 +97,7 @@ export default function SheetTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));
@@ -124,6 +126,7 @@ export default function SheetTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));
@@ -152,6 +155,7 @@ export default function SheetTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
         await (bindSheetButton?.click() as Promise<void>);
@@ -178,6 +182,7 @@ export default function SheetTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const bindSheetButton = await driver.findComponent(ON.id('bindSheet'));
         expect(!!bindSheetButton).assertEqual(true);
         let node = JSON.parseJsonElement(inspector.getInspectorByKey('bindSheet'));

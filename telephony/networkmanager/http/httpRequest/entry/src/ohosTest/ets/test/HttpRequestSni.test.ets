@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { http } from '@kit.NetworkKit';
 
 const BASE_URL = "https://146.56.217.118:7808";

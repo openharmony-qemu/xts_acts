@@ -84,7 +84,8 @@ export default function navRouterJsunit() {
     it('NavRouterJsunit_0101', Level.LEVEL0, async (done: Function) => {
       console.info('NavRouterJsunit_0101 START');
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('navRouter' + '_changeButton'));
+      await driver.delayMs(1000);
+      let button = await driver.findComponent(ON.id('changeButton'));
       await button.click();
       await Utils.sleep(2000)
 

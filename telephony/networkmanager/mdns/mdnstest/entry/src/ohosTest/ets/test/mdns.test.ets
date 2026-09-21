@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import mdns from '@ohos.net.mdns';
 import { BusinessError } from '@ohos.base';
 import ethernet from '@ohos.net.ethernet';

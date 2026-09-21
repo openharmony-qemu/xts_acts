@@ -69,6 +69,7 @@ export default function GetStateTest(): void {
         console.info('GetStateTest execute: getStateTest START');
           await CommonFunc.sleep(SLEEP_TIME);
           const driver = Driver.create();
+          await Utils.sleep(500);
           const openDialogButton = await driver.findComponent(ON.id('btnGetCustomDialogOpen'));
           console.info('GetStateTest: getStateTest - found btnGetCustomDialogOpen button component');
           expect(!!openDialogButton).assertEqual(true);

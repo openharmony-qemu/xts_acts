@@ -728,6 +728,7 @@ napi_value DrawingBrushColor(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestBrushSetColorNull,
             OHOS::Rosen::Drawing::TestBrushSetColorAbnormal,
             OHOS::Rosen::Drawing::TestBrushSetColorMaximum,
+            OHOS::Rosen::Drawing::TestBrushSetGetColorMultipleTimes,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -748,6 +749,7 @@ napi_value DrawingBrushAlpha(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestBrushSetAlphaNull,
             OHOS::Rosen::Drawing::TestBrushSetAlphaAbnormal,
             OHOS::Rosen::Drawing::TestBrushSetAlphaMaximum,
+            OHOS::Rosen::Drawing::TestBrushSetGetAlphaMultipleTimes,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -846,6 +848,7 @@ napi_value DrawingBrushGetFloat(napi_env env, napi_callback_info info)
         static const std::array<DrawingNativeFn, BRUSH_GET_FLOAT_HANDLER_COUNT> handlers = {
             OHOS::Rosen::Drawing::TestBrushGetAlphaFloatNormal,
             OHOS::Rosen::Drawing::TestBrushGetAlphaFloatAbnormal,
+            OHOS::Rosen::Drawing::TestBrushGetAlphaFloatBoundary,
             OHOS::Rosen::Drawing::TestBrushGetRedFloatNormal,
             OHOS::Rosen::Drawing::TestBrushGetRedFloatAbnormal,
             OHOS::Rosen::Drawing::TestBrushGetGreenFloatNormal,
@@ -869,6 +872,7 @@ napi_value DrawingBrushSetColor4f(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestBrushSetColor4fNormal,
             OHOS::Rosen::Drawing::TestBrushSetColor4fNull,
             OHOS::Rosen::Drawing::TestBrushSetColor4fAbnormal,
+            OHOS::Rosen::Drawing::TestBrushSetColor4fMaximum,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;
@@ -967,6 +971,7 @@ napi_value DrawingPenWidth(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPenSetWidthNormal,
             OHOS::Rosen::Drawing::TestPenSetWidthNull,
             OHOS::Rosen::Drawing::TestPenSetWidthAbnormal,
+            OHOS::Rosen::Drawing::TestPenSetWidthBoundaryValues,
             OHOS::Rosen::Drawing::TestPenSetWidthMultipleCalls,
             OHOS::Rosen::Drawing::TestPenSetWidthMultipleCallsBoundary,
         };
@@ -988,6 +993,7 @@ napi_value DrawingPenMiterLimit(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestPenSetMiterLimitNormal,
             OHOS::Rosen::Drawing::TestPenSetMiterLimitNull,
             OHOS::Rosen::Drawing::TestPenSetMiterLimitAbnormal,
+            OHOS::Rosen::Drawing::TestPenSetMiterLimitBoundaryValues,
             OHOS::Rosen::Drawing::TestPenSetMiterLimitMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
@@ -1130,6 +1136,7 @@ napi_value DrawingPenGetFloat(napi_env env, napi_callback_info info)
         static const std::array<DrawingNativeFn, PEN_GET_FLOAT_HANDLER_COUNT> handlers = {
             OHOS::Rosen::Drawing::TestPenGetAlphaFloatNormal,
             OHOS::Rosen::Drawing::TestPenGetAlphaFloatAbnormal,
+            OHOS::Rosen::Drawing::TestPenGetAlphaFloatBoundary,
             OHOS::Rosen::Drawing::TestPenGetRedFloatNormal,
             OHOS::Rosen::Drawing::TestPenGetRedFloatAbnormal,
             OHOS::Rosen::Drawing::TestPenGetGreenFloatNormal,

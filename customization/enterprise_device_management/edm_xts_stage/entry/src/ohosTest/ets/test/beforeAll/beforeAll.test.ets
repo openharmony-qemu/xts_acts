@@ -13,21 +13,26 @@
  * limitations under the License.
  */
  
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import {
   ENTINFO1,
   SELFWANT,
   SELFHAPNAME,
   BLUETOOTH_STATE,
   WIFI_STATE,
+  DEFAULT_USER_ID,
   setBluetoothState,
   setWifiState
 } from '../commom.ets';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import { osAccount } from '@kit.BasicServicesKit';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import applicationManager from '@ohos.enterprise.applicationManager';
 import bluetoothManager from '@ohos.enterprise.bluetoothManager';
+import common from '@ohos.enterprise.common';
 import deviceSettings from '@ohos.enterprise.deviceSettings';
+import restrictions from '@ohos.enterprise.restrictions';
 import wifiManager from '@ohos.enterprise.wifiManager';
 
 const FULL_VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
@@ -77,6 +82,75 @@ const FULL_VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
 
 export default function beforeAllTest() {
   describe('beforeAll_test', () => {
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_SUPERHUB_JS_0300
+     * @tc.name      : test_set_disallowed_policy_for_account_superhub_0300
+     * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub then nonStop
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_set_disallowed_policy_for_account_superhub_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+      try {
+        let localId: number =  await osAccountManager.getOsAccountLocalId();
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+        let userNonStopApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"5765880207854114601",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === '9200010').assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_SUPERHUB_JS_0500
+     * @tc.name      : test_set_disallowed_policy_for_account_superhub_0500
+     * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub before removeHiddenSettingsMenu
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_set_disallowed_policy_for_account_superhub_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
+      try {
+        let localId: number =  await osAccountManager.getOsAccountLocalId();
+        restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
+
+        const VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
+          deviceSettings.SettingsMenu.SUPERHUB,
+          deviceSettings.SettingsMenu.WIFI
+        ];
+        deviceSettings.addHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
+        deviceSettings.removeHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code === 801).assertTrue();
+        } else {
+          expect(error.code === '9200010').assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
     /**
      * @tc.name   test_device_settings_add_hidden_settings_menu_0105
      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_ADD_HIDDEN_SETTINGS_MENU_JS_0105
@@ -145,5 +219,131 @@ export default function beforeAllTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   addDockApp_test_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1500
+     * @tc.desc   addDockApp with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1500", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1500  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = "";
+        let index: number = 5;
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
+        console.info(' --- addDockApp_test_1500 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1500 error 9201015 is expected, actually catch: ' + error.code);
+        if (error.code === '801') {
+          expect(error.code === '801').assertTrue();
+        } else {
+          expect(error.code === '9201015').assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1500  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1600
+     * @tc.desc   addDockApp with empty abilityName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1600", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1600  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        let index: number = 5;
+        let abilityName: string = "";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
+        console.info(' --- addDockApp_test_1600 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1600 error 9200015 is expected, actually catch: ' + error.code);
+        if (error.code === '801') {
+          expect(error.code === '801').assertTrue();
+        } else {
+          expect(error.code === '9200015').assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1600  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1700
+     * @tc.desc   addDockApp with empty abilityName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1700", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1700  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = SELFHAPNAME;
+        let abilityName: string = "";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName);
+        console.info(' --- addDockApp_test_1700 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1700 error 9200015 is expected, actually catch: ' + error.code);
+        if (error.code === '801') {
+          expect(error.code === '801').assertTrue();
+        } else {
+          expect(error.code === '9200015').assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1700  -------- END --------');
+    })
+
+    /**
+     * @tc.name   addDockApp_test_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1800
+     * @tc.desc   addDockApp with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("addDockApp_test_1800", Level.LEVEL2, async (done: Function) => {
+      console.info(' --- addDockApp_test_1800  -------- START --------');
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleName: string = "";
+        let abilityName: string = "EntryAbility";
+        applicationManager.addDockApp(SELFWANT, bundleName, abilityName);
+        console.info(' --- addDockApp_test_1800 error is expected, but it done.');
+        expect(false).assertTrue();
+      } catch (error) {
+        console.info(' --- addDockApp_test_1800 error 9201015 is expected, actually catch: ' + error.code);
+        if (error.code === '801') {
+          expect(error.code === '801').assertTrue();
+        } else {
+          expect(error.code === '9201015').assertTrue();
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+      console.info(' --- addDockApp_test_1800  -------- END --------');
+    })
   })
 }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import cdsm from '@ohos.nearlink.cdsm';
 import manager from '@ohos.nearlink.manager';
 import { clickRequestPermission } from './ClickRequestPermission';
@@ -31,6 +31,7 @@ export default function cdsmTest() {
       await clickRequestPermission();
       return_boolean = manager.isNearLinkSupported();
       try {
+        await openNearLink();
         cdsmClient = cdsm.createCdsmClient(ADDRESS);
         console.info('nearLink createCdsmClient result:' + cdsmClient);
         expect(cdsmClient != null).assertTrue();
@@ -51,7 +52,6 @@ export default function cdsmTest() {
     })
     beforeEach(async (done:Function) => {
       console.info('beforeEach start');
-      await openNearLink();
       console.info('beforeEach end');
       done();
     })

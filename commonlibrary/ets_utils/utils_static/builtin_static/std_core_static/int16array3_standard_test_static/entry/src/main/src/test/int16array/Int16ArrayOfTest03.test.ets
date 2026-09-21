@@ -327,7 +327,7 @@ export default function Int16ArrayOfTest03(): void {
      */
     it('testInt16ArrayOfTestThree013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrOf = Int16Array.of();
-      let arrNew = new Int16Array(new FixedArray<int>(0));
+      let arrNew = new Int16Array(new FixedArray<int>(0, 0));
       let r1: int = arrOf.length;
       let e1: number = arrNew.length;
       expect(r1).assertEqual(e1);

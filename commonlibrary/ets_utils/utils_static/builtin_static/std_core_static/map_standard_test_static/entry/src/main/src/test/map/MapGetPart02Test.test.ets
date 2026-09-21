@@ -1641,7 +1641,7 @@ export default function mapGetPart02TestTest(): void {
       const map: Map<string, string | null> = new Map<string, string | null>();
       map.set('k', null);
       let result: string | null = map.get('k', 'default');
-      expect(result).assertEqual('default');
+      expect(result).assertNull();
     });
 
     /**
@@ -1656,7 +1656,7 @@ export default function mapGetPart02TestTest(): void {
       const map: Map<string, string | undefined> = new Map<string, string | undefined>();
       map.set('k', undefined);
       let result: string | undefined = map.get('k', 'default');
-      expect(result).assertEqual('default');
+      expect(result).assertUndefined();
     });
 
   });

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, TestType, Size, Level, expect } from "@ohos/hypium";
+import { describe, it, TestType, Size, Level, expect } from "@ohos/hypium-dynamic";
 import cert from '@ohos.security.cert';
 import { cryptoFramework } from "@kit.CryptoArchitectureKit";
 import { rsaPem4096 } from "./utils/certificate/certX509Pem";

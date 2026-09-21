@@ -14,7 +14,7 @@
  */
 
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import * as aw from './aw/AssetAwSync';
 import asset from '@ohos.security.asset';
 import deviceInfo from '@ohos.deviceInfo';
