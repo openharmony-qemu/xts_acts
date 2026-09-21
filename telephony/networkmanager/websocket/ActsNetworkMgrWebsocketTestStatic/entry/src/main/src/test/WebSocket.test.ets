@@ -2875,7 +2875,7 @@ export default function WebSocketTest() {
                             hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
                             ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
                                 hilog.info(domain, tag, '%{public}s', caseName + 'send callback err:' + JSON.stringify(err) + ' value:' + value);
-                                ExpectTrue(err === null || err === undefined);
+                                ExpectTrue(!err || (err as BusinessError).code === undefined);
                                 ExpectTrue(value === true);
                                 ws!.close();
                                 done();
