@@ -26,6 +26,11 @@
 #include <unistd.h>
 #include <securec.h>
 
+#undef snprintf_s
+#undef swprintf_s
+#define snprintf_s(strDest, destMax, count, ...) snprintf(strDest, destMax, __VA_ARGS__)
+#define swprintf_s(strDest, destMax, ...) swprintf(strDest, destMax, __VA_ARGS__)
+
 using std::atomic_int;
 using std::atomic_fetch_add;
 using std::atomic_load;
@@ -225,7 +230,10 @@ static int DblArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
 
 static int UnkPrintf(FILE *s, const struct PrintfInfo *info, const void *const *a)
 {
-    return fputc('.', s);
+    if (fputc('.', s) == EOF) {
+        return 0;
+    }
+    return 1;
 }
 
 static int UnkArginfo(const struct PrintfInfo *info, size_t n, int *at, int *sz)
