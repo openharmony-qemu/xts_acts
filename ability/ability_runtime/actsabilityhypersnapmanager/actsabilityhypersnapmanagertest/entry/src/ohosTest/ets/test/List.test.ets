@@ -14,7 +14,9 @@
 */
 
 import HyperSnapManagerTest from './HyperSnapManagerTest.test'
+import HyperSnapGetLastErrorTest from './HyperSnapGetLastErrorTest.test'
 
 export default function testsuite() {
   HyperSnapManagerTest();
+  HyperSnapGetLastErrorTest();
 }
