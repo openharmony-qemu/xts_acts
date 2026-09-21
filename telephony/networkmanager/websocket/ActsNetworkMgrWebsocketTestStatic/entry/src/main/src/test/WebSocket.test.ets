@@ -2925,7 +2925,11 @@ export default function WebSocketTest() {
                                 done();
                                 hilog.info(domain, tag, '%{public}s', caseName + ' test end');
                             });
-                        }
+                        }).catch((err: Error) => {
+                            hilog.info(domain, tag, '%{public}s', caseName + 'close fail, err: ' + JSON.stringify(err));
+                            ExpectTrue(err !== null);
+                            done();
+                        });
                     });
                     ws.connect(availableWebSocketAddress).then((value: boolean) => {
                         hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
