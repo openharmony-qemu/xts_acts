@@ -14,7 +14,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   BUILDER_NODE_POST_INPUT_PAGE,
   BUILDER_NODE_POST_INPUT_RETURN_KEY,

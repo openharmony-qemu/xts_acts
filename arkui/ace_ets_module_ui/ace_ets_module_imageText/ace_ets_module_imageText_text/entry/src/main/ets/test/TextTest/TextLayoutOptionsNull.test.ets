@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-dynamic';
 
 
 export default function TextLayoutOptionsNullTest() {

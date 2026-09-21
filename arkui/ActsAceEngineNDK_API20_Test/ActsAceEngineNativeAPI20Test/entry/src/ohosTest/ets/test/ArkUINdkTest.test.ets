@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import osAccountNdk from 'libosaccountndk.so'
 const OS_ACCOUNT_ERR_OK = 0;
 const ARKUI_ERROR_CODE_NO_ERROR = 0

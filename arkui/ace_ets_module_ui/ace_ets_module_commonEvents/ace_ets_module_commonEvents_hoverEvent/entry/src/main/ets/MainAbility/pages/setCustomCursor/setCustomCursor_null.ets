@@ -16,7 +16,7 @@
 import { image } from '@kit.ImageKit';
 import { CursorController } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import effectKit from '@ohos.effectKit';
 
 @Entry

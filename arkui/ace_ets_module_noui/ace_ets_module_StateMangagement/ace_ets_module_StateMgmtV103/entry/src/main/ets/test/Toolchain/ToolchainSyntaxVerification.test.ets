@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,  beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe,  beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/common/Common';
 
 //   1. 属性简写 (Property Shorthand)

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-dynamic'
 import nativerenderndk from 'libnoderenderndk.so'
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;

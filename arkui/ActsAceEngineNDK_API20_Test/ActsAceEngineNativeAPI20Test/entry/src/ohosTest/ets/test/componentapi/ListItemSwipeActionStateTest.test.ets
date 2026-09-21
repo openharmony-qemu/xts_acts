@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import nativexcomponent from 'libnativexcomponent.so';
 
 const ARKUI_LIST_ITEM_SWIPE_ACTION_STATE_COLLAPSED = 0;

@@ -15,7 +15,7 @@
 
 import router from '@ohos.router';
 import { Driver, ON, Component, MatchPattern } from '@ohos.UiTest';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/common/Common';
 
 /**

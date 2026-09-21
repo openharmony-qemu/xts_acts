@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { afterAll, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { Component, Driver, MouseButton, ON, BY, WindowMode } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { ThemeControl } from '@ohos.arkui.theme';

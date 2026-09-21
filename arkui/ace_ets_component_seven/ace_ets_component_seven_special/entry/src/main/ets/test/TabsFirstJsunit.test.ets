@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router'
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
 import Utils from './Utils';
 export default function tabsFirstJsunit() {
   describe('tabsFirstTest', () => {

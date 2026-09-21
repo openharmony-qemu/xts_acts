@@ -16,7 +16,7 @@
 /**
  * AnimationStopMode and AnimationOptions.stopMode (ohos.arkui.drawableDescriptor); AnimationOptionsLike mirrors optional stopMode.
  */
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import { AnimationStopMode } from '@ohos.arkui.drawableDescriptor';
 
 interface AnimationOptionsLike {

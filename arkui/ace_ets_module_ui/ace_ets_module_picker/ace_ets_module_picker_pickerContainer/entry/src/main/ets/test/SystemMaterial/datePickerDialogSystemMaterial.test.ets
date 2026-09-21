@@ -1,4 +1,4 @@
-import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { router } from '@kit.ArkUI';
 import { Driver, ON, Component } from '@kit.TestKit';
 import CommonFunc from '../../MainAbility/common/Common';
