@@ -15,15 +15,37 @@
  */
 
 import { FullScreenLaunchComponent } from '@ohos.arkui.advanced.FullScreenLaunchComponent';
-import { Entry, ComponentV2, Column, Text, Builder } from '@ohos.arkui.component';
+import { Entry, Component, ComponentV2, Column, Text, Builder } from '@ohos.arkui.component';
 import { Local, AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
+
+@Component
+struct Coverage0917FsLaunch {
+  private appId: string = '0000000000000000000';
+
+  @Builder
+  contentBuilder(): void {
+    Column() {
+      Text('fsLaunch').id('fsContent')
+    }
+  }
+
+  build() {
+    Column() {
+      FullScreenLaunchComponent({
+        content: (): void => {
+          this.contentBuilder();
+        },
+        appId: this.appId
+      })
+    }
+  }
+}
 
 @Entry
 @ComponentV2
 struct Coverage0917Static {
   @Local fsFlag: string = 'init';
-  private appId: string = '0000000000000000000';
 
   aboutToAppear(): void {
     try {
@@ -35,23 +57,11 @@ struct Coverage0917Static {
     this.fsFlag = 'ok';
   }
 
-  @Builder
-  contentBuilder(): void {
-    Column() {
-      Text('fsLaunch').id('fsContent')
-    }
-  }
-
   build() {
     Column() {
       Text('Coverage0917Static').id('coverage0917Title').fontSize(18)
       Text(this.fsFlag).id('fsLaunchFlag')
-      FullScreenLaunchComponent({
-        content: (): void => {
-          this.contentBuilder();
-        },
-        appId: this.appId
-      })
+      Coverage0917FsLaunch()
     }
     .width('100%')
     .height('100%')
