@@ -14,7 +14,7 @@
  */
 
 import hwasan from 'libentry.so'
-import { describe, it, expect , TestType, Size, Level } from "@ohos/hypium";
+import { describe, it, expect , TestType, Size, Level } from "@ohos/hypium-dynamic";
 
 export default function abilityTest() {
 

@@ -14,7 +14,7 @@
  */
 
 // Batch2.ets
-import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium-dynamic';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
 import { lang } from '@kit.ArkTS';
 

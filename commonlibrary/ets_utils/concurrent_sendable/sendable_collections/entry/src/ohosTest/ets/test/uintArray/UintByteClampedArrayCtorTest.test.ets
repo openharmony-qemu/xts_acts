@@ -14,7 +14,7 @@
  */
 
 import { collections } from '@kit.ArkTS';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { sleep } from '../Utils';
 
 export default function UintByteClampedArrayCtorTest(): void {

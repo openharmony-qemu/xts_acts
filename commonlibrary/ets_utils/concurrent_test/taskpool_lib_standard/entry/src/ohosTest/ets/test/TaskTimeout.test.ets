@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import {describe, it, expect, TestType, Size, Level} from '@ohos/hypium'
+import {describe, it, expect, TestType, Size, Level} from '@ohos/hypium-dynamic'
 import { taskpool } from '@kit.ArkTS'
 import { BusinessError } from '@ohos.base'
 import { timeoutDemo, demoSenddata, taskFunc, sendableClassWithTime, taskError, sendableFuncWithTime,

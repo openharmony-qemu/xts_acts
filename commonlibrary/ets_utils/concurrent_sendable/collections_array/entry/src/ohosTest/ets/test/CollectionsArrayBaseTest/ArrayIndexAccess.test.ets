@@ -15,7 +15,7 @@
 // ArrayIndexAccess.test.ets
 // 索引访问测试：at(), [index] 操作符（含边界/负索引行为）
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getStringTestValues,

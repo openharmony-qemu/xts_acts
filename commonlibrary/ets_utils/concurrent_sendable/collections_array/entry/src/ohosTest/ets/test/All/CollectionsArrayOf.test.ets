@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import { MyArray, TestA } from './pages/InterfaceDefined';
 import { sleep } from './pages/Utils';
 import { collections } from '@kit.ArkTS'

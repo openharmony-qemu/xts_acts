@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, TestType, Size, Level} from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level} from '@ohos/hypium-dynamic';
 import worker, { ErrorEvent, MessageEvents } from '@ohos.worker';
 import { collections, lang } from '@kit.ArkTS';
 import json from '@ohos.util.json';

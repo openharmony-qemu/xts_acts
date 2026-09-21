@@ -15,7 +15,7 @@
 // ArrayTransform.test.ets 预期 join/toString/toLocaleString 对 null/undefined 返回 "null"/"undefined"，
 // 但当前环境返回空字符串，注释了6个用例
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,

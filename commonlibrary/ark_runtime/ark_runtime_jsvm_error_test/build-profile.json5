@@ -22,6 +22,12 @@
         "compileSdkVersion": "26.0.1",
         "compatibleSdkVersion": 20,
         "runtimeOS": "OpenHarmony",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
       }
     ]
   },

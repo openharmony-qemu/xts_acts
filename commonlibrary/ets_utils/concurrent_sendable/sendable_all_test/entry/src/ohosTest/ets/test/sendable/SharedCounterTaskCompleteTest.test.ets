@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import taskpool from '@ohos.taskpool'
 import { worker, MessageEvents } from '@kit.ArkTS'
 import { SendableCounter } from '../../workers/Sendable'

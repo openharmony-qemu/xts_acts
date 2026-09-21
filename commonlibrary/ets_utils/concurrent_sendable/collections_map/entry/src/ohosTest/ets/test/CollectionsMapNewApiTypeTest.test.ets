@@ -15,7 +15,7 @@
 // CollectionsMapNewApiTypeTest.test.ets
 // Type traversal tests for containsValue, put, putAll(collections.Map), putAll(Map), remove
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
 
 function sleep(time: number): Promise<void> {

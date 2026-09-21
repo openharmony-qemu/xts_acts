@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 
 import { testChainedPath1, testChainedPath0, testChainedPath0Negative,  testChainedPath2 } from './SendablesChainTest';
 import { skipConditional } from './utils';

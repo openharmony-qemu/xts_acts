@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 {
-	"license": "",
-	"devDependencies": {
-		"@ohos/hypium": "1.0.26"
-	},
-	"author": "",
-        "modelVersion": "26.0.0",
-	"name": "workermixtest",
-	"description": "Please describe the basic information.",
-	"main": "",
-	"version": "1.0.0",
-	"dependencies": {}
+  "license": "",
+  "devDependencies": {
+    "@ohos/hypium-dynamic": "file:../../../../../tools/hypium_prepare/hypium-dynamic.har"
+  },
+  "author": "",
+  "modelVersion": "26.0.0",
+  "name": "workermixtest",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "version": "1.0.0",
+  "dependencies": {}
 }

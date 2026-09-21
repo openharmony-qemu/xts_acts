@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import LightWeightMap from "@ohos.util.LightWeightMap";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import { test005, test023, test027, test036, test037, test038, test039, test040, test048, test051, test053, test054 } from './LightWeightMapResource';
 export default function LightWeightMapTest() {
 describe("LightWeightMapTest",  ()=> {

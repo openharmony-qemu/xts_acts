@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import worker, { ErrorEvent, MessageEvents } from '@ohos.worker'
 import { ArkTSUtils } from '@kit.ArkTS'
 import { SharedWorkerData } from '../../workers/Sendable'

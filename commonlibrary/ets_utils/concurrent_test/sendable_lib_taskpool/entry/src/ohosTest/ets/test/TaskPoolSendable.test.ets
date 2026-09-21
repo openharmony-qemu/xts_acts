@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level} from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level} from '@ohos/hypium-dynamic';
 import { ClassB, MyClass, MyClass2, MySendAbleClass, SendAbleClassB, SendableA, A, sendableAFunc1,
   ClassB2 } from '../utils/SendAbleClass';
 import taskpool from '@ohos.taskpool';

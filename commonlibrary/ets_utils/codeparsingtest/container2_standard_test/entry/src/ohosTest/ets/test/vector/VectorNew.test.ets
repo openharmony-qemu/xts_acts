@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import Vector from '@ohos.util.Vector';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import {
   test004, test027, test031, test035, test036, test037, test038, test044,
   test046, test048, test052, test053, test054, test055, test056, test069

@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { ExportedPoint } from './classTypeModuleData'
 import { Point as TsPoint, createWithCtor, makeContainer, getClassName, getInstanceConstructorName } from './classTypeTsHelper'
 

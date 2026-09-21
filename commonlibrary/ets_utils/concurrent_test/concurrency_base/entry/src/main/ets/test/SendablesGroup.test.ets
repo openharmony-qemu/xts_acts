@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 
 import { testManySendablesToGroup, testSendableToGroupAndUpdate, testSendablesFromOtherTask,
   testSendablesFromOtherTask_1, testSendablesFromOtherTask_2, testSendablesFromOtherTask_2_1,

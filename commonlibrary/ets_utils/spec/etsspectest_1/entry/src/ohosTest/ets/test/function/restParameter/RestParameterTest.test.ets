@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { restLength, sumArrayViaApply, restDestruct } from './restParameterTsHelper'
 
 function sumAll(...args: number[]): number {

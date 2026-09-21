@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import HashMap from '@ohos.util.HashMap';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import {
   test005, test012, test017, test026, test027, test028, test030, test033,
   test034, test037, test038, test039, test040, test041, test046, test048,

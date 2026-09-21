@@ -14,7 +14,7 @@
  */
 
 import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import {CrossThreadApiResult} from './common'
 
 @Sendable

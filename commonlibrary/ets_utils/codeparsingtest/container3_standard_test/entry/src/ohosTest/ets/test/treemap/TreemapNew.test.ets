@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import TreeMap from '@ohos.util.TreeMap';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test002, test005, test010, test036, test037, test038, test039, test041 } from './TreeMapResource';
 
 export default function TreeMapTest() {

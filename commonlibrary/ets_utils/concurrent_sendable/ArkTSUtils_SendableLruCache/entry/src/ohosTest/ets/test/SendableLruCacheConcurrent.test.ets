@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import { ArkTSUtils, taskpool } from '@kit.ArkTS'
 import type { BusinessError } from '@ohos.base'
 import { ContainsLruCache, ChildLruCache, testWorkerReceiveCache001, testWorkerReceiveCache002, testWorkerSendCache001, testTaskPoolCreateCacheInMainThread001, testTaskPoolCreateCacheInMainThread002, testTaskPoolCreateCacheInTaskThread001 } from './SendableLruCache'

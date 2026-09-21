@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
+import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium-dynamic"
 import Utils from './Utils'
 import unistd1 from 'libunistdndk1.so'
 import fs from '@ohos.file.fs';

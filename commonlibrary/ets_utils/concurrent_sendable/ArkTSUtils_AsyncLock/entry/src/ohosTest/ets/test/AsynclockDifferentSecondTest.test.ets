@@ -24,7 +24,7 @@ import {
   Size,
   Level,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import {
   delay,
   printArgs1,
