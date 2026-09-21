@@ -1173,16 +1173,18 @@ export default function MapConstructorPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_MAP_CONSTRUCTOR_PART03_TEST_7600
      * @tc.name mapConstructorPart03Test076
-     * @tc.desc Verify bucketsCount=int.MAX set throws ArrayIndexOutOfBoundsError
+     * @tc.desc Verify bucketsCount=int.MAX set throws OutOfMemoryError
      * @tc.size MEDIUMTEST
      * @tc.type FUNCTION
      * @tc.level LEVEL2
      */
     it('mapConstructorPart03Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const map: Map<string, int> = new Map<string, int>(INT_MAX);
-      expect((): void => {
-        map.set('maxKey', 999);
-      }).assertThrowError('ArrayIndexOutOfBoundsError');
+      try {
+        const map: Map<string, int> = new Map<string, int>(INT_MAX);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("OutOfMemoryError");
+      }
     });
 
     /**
