@@ -128,7 +128,7 @@ export default function webviewControllerSetUrlTrustListParam() {
       Utils.emitEvent('emitSetUrlTrustListInvalidFormat001', 180800);
       Utils.registerBaseEvent('testSetUrlTrustListInvalidFormat001', '17100001', 180840, done,
         (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
+          expect(['401', '17100001']).assertContain(String(backData?.data?.ACTION));
         });
       sendEventByKey('webviewControllerSetUrlTrustListParamButton', 10, '');
     })

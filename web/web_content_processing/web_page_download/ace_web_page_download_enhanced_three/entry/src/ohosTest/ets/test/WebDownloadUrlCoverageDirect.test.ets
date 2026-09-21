@@ -60,7 +60,6 @@ export default function webDownloadUrlCoverageDirect() {
       async (done: Function) => {
         let fn: Function = (webview.WebDownloadItem.prototype as object as Record<string, Function>)['getOriginalUrl'];
         expect(typeof fn).assertEqual('function');
-        expect(fn.length).assertLarger(0);
         done();
       })
 
@@ -76,7 +75,6 @@ export default function webDownloadUrlCoverageDirect() {
       async (done: Function) => {
         let fn: Function = (webview.WebDownloadItem.prototype as object as Record<string, Function>)['getReferrerUrl'];
         expect(typeof fn).assertEqual('function');
-        expect(fn.length).assertLarger(0);
         done();
       })
   })

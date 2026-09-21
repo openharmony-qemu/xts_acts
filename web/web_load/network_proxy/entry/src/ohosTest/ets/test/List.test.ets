@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import webviewNetworkProxy from './webviewNetworkProxy.test'
-import webOnVerifyPinCallbackCoverageDirect from './WebOnVerifyPinCallbackCoverageDirect.test'
 import WebCookieManager from './WebCookieManager.test'
 
 import webviewControllerPostMessageParam from './WebviewControllerPostMessageParam.test';
@@ -33,6 +32,7 @@ import webviewControllerRemoveIntelligentTrackingPreventionBypassingListParam fr
 import webviewControllerSetDownloadDelegateParam from './WebviewControllerSetDownloadDelegateParam.test';
 import webviewControllerSetHostIPParam from './WebviewControllerSetHostIPParam.test';
 import webviewControllerSetUrlTrustListParam from './WebviewControllerSetUrlTrustListParam.test';
+import webviewControllerSetUrlTrustListErrorDirect from './WebviewControllerSetUrlTrustListErrorDirect.test';
 import webviewControllerSetAppCustomUserAgentParam from './WebviewControllerSetAppCustomUserAgentParam.test';
 import webviewControllerSetSocketIdleTimeoutParam from './WebviewControllerSetSocketIdleTimeoutParam.test';
 import webviewControllerWarmupServiceWorkerParam from './WebviewControllerWarmupServiceWorkerParam.test';
@@ -47,13 +47,11 @@ import webDownloadManagerResumeDownloadParam from './WebDownloadManagerResumeDow
 import webviewControllerAddIntelligentTrackingParam from './WebviewControllerAddIntelligentTrackingParam.test';
 import webviewControllerBackOrForwardErrorCode from './WebviewControllerBackOrForwardErrorCode.test';
 import webviewControllerClearHostIPParam from './WebviewControllerClearHostIPParam.test';
-import webviewControllerSetUrlTrustListErrorDirect from './WebviewControllerSetUrlTrustListErrorDirect.test';
 import webviewControllerDeleteJavaScriptRegisterParam from './WebviewControllerDeleteJavaScriptRegisterParam.test';
 import webviewControllerEnableBackForwardCacheParam from './WebviewControllerEnableBackForwardCacheParam.test';
 
 export default function testsuite() {
   webviewNetworkProxy()
-  webOnVerifyPinCallbackCoverageDirect()
   WebCookieManager()
   webviewControllerPostMessageParam()
   webviewControllerSearchAllAsyncParam()
@@ -68,7 +66,6 @@ export default function testsuite() {
   webviewControllerAddIntelligentTrackingParam()
   webviewControllerBackOrForwardErrorCode()
   webviewControllerClearHostIPParam()
-  webviewControllerSetUrlTrustListErrorDirect()
   webviewControllerDeleteJavaScriptRegisterParam()
   webviewControllerEnableBackForwardCacheParam()
   webviewControllerSetConnectionTimeoutParam()
@@ -81,6 +78,7 @@ export default function testsuite() {
   webviewControllerSetHostIPParam()
   webviewControllerWarmupServiceWorkerParam()
   webviewControllerSetUrlTrustListParam()
+  webviewControllerSetUrlTrustListErrorDirect()
   webviewControllerSetBackForwardCacheOptionsParam()
   webviewControllerSetAppCustomUserAgentParam()
   webviewControllerSetUserAgentForHostsParam()

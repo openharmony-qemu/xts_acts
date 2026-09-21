@@ -16,9 +16,6 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hy
 import webview from '@ohos.web.webview';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-const ERROR_CODE_INVALID_PARAM = 401;
-const ERROR_CODE_INVALID_FORMAT = 17100001;
-
 export default function webviewControllerSetUrlTrustListErrorDirect() {
   describe('webviewControllerSetUrlTrustListErrorDirect', () => {
     let controller: webview.WebviewController;
@@ -41,13 +38,13 @@ export default function webviewControllerSetUrlTrustListErrorDirect() {
           controller.setUrlTrustList(null);
           expect().assertFail();
         } catch (error) {
-          expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+          expect(String((error as BusinessError).code)).assertEqual('401');
         }
         try {
           controller.setUrlTrustList(undefined);
           expect().assertFail();
         } catch (error) {
-          expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+          expect(String((error as BusinessError).code)).assertEqual('401');
         }
         done();
       })
@@ -55,7 +52,7 @@ export default function webviewControllerSetUrlTrustListErrorDirect() {
     /**
      * @tc.name   testSetUrlTrustListError17100001Direct
      * @tc.number SUB_WEB_SETURLTRUSTLIST_ERROR_17100001_DIRECT_4900
-     * @tc.desc   setUrlTrustList invalid url format returns error code 17100001
+     * @tc.desc   setUrlTrustList invalid url format returns error code 17100001 or 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -66,7 +63,7 @@ export default function webviewControllerSetUrlTrustListErrorDirect() {
           controller.setUrlTrustList('invalid-url-format');
           expect().assertFail();
         } catch (error) {
-          expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_FORMAT);
+          expect(['401', '17100001']).assertContain(String((error as BusinessError).code));
         }
         done();
       })

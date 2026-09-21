@@ -16,8 +16,6 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynami
 import webview from '@ohos.web.webview';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-const ERROR_CODE_INVALID_PARAM = 401;
-
 export default function clearHostIPCoverageDirect() {
   describe('clearHostIPCoverageDirect', () => {
     /**
@@ -33,7 +31,7 @@ export default function clearHostIPCoverageDirect() {
         webview.WebviewController.clearHostIP('');
         done();
       } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+        expect(String((error as BusinessError).code)).assertEqual('401');
         done();
       }
     })
@@ -52,7 +50,7 @@ export default function clearHostIPCoverageDirect() {
         expect().assertFail();
         done();
       } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+        expect(String((error as BusinessError).code)).assertEqual('401');
         done();
       }
     })
@@ -71,7 +69,7 @@ export default function clearHostIPCoverageDirect() {
         expect().assertFail();
         done();
       } catch (error) {
-        expect((error as BusinessError).code).assertEqual(ERROR_CODE_INVALID_PARAM);
+        expect(String((error as BusinessError).code)).assertEqual('401');
         done();
       }
     })
