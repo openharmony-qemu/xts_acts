@@ -156,7 +156,10 @@ acts_validator_lite/
             ├── FileManagement/
             ├── DistributedData/
             ├── Startup/
-            └── Communication/
+            ├── Communication/
+            ├── Sensors/
+            ├── Location/
+            └── RouterTransition/  # 页切换动效(10项) + target 探针页
 ```
 
 ## 用例开发
