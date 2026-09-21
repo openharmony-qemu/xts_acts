@@ -24,10 +24,10 @@
     "description": "$string:description_application",
     "distributedNotificationEnabled": true,
     "keepAlive": true,
-    "minAPIVersion": 9,
-    "targetAPIVersion": 9,
+    "minAPIVersion": 14,
+    "targetAPIVersion": 14,
     "car": {
-        "minAPIVersion": 9,
+        "minAPIVersion": 14,
     }
   }
 }
