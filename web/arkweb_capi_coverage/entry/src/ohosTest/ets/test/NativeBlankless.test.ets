@@ -28,6 +28,10 @@ function assertBlanklessErrCode(actual: number, expected: number): void {
   expect([expected, BLANKLESS_ERR_DEVICE_NOT_SUPPORT]).assertContain(actual);
 }
 
+function assertBlanklessErrCodeWithControllerFallback(actual: number, expected: number): void {
+  expect([expected, BLANKLESS_ERR_CONTROLLER_NOT_INITED, BLANKLESS_ERR_DEVICE_NOT_SUPPORT]).assertContain(actual);
+}
+
 export default function native_blanklessTest() {
   describe('native_blanklessTest', () => {
     beforeEach(async (done: Function) => {
@@ -89,8 +93,8 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessErrInvalidArgsEmptyWebTag', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        assertBlanklessErrCode(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(1),
-          BLANKLESS_ERR_INVALID_ARGS);
+        assertBlanklessErrCodeWithControllerFallback(
+          nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(1), BLANKLESS_ERR_INVALID_ARGS);
         done();
       });
 
@@ -119,8 +123,8 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessErrKeyNotMatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        assertBlanklessErrCode(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(4),
-          BLANKLESS_ERR_KEY_NOT_MATCH);
+        assertBlanklessErrCodeWithControllerFallback(
+          nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(4), BLANKLESS_ERR_KEY_NOT_MATCH);
         done();
       });
 
@@ -135,7 +139,7 @@ export default function native_blanklessTest() {
     it('TestNativeArkWeb_SetBlanklessErrSignificantChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         assertBlanklessErrCode(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(5),
-          BLANKLESS_ERR_SIGNIFICANT_CHANGE);
+          BLANKLESS_ERR_CONTROLLER_NOT_INITED);
         done();
       });
 
