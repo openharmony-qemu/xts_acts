@@ -2911,11 +2911,11 @@ export default function WebSocketTest() {
                 let ws: webSocket.WebSocket | null = null;
                 try {
                     ws = webSocket.createWebSocket();
-                    ws.onOpen(async (value: webSocket.OpenResult | undefined) => {
+                    ws.onOpen((value: webSocket.OpenResult | undefined) => {
                         if (value && value !== null) {
                             hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
-                            await ws!.close();
-                            ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
+                            ws!.close().then(() => {
+                                ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
                                 hilog.info(domain, tag, '%{public}s', caseName + 'send callback err:' + JSON.stringify(err) + ' value:' + value);
                                 if (err && err.code !== 0) {
                                     ExpectTrue(value === undefined || value === false);
@@ -3000,11 +3000,11 @@ export default function WebSocketTest() {
                 let ws: webSocket.WebSocket | null = null;
                 try {
                     ws = webSocket.createWebSocket();
-                    ws.onOpen(async (value: webSocket.OpenResult | undefined) => {
+                    ws.onOpen((value: webSocket.OpenResult | undefined) => {
                         if (value && value !== null) {
                             hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
-                            await ws!.close();
-                            ws!.send('hello!').then((value: boolean) => {
+                            ws!.close().then(() => {
+                                ws!.send('hello!').then((value: boolean) => {
                                 hilog.info(domain, tag, '%{public}s', caseName + 'send success false ' + value);
                                 ExpectTrue(value === false);
                                 done();
