@@ -845,6 +845,7 @@ export default function accountManagerTest() {
         expect(getPolicy.authenticationValidityPeriod == -1).assertTrue();
         expect(getPolicy.passwordValidityPeriod == -1).assertTrue();
         expect(getPolicy.passwordExpirationNotification == 0).assertTrue();
+        expect(getPolicy.supportUKeyAuthentication == false).assertTrue();
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_0400 error 801 is expected, actually catch: ' + error.code);
         expect(error.code == 801).assertTrue();
@@ -905,6 +906,7 @@ export default function accountManagerTest() {
         authenticationValidityPeriod: 6.9,
         passwordValidityPeriod: -0.1,
         passwordExpirationNotification: 3.3,
+        supportUKeyAuthentication: true,
       };
       try {
         await accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, policy1);
@@ -913,6 +915,7 @@ export default function accountManagerTest() {
         expect(policy2.authenticationValidityPeriod == 6).assertTrue();
         expect(policy2.passwordValidityPeriod == 0).assertTrue();
         expect(policy2.passwordExpirationNotification == 3).assertTrue();
+        expect(policy2.supportUKeyAuthentication == true).assertTrue();
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_0600 error 801 is expected, actually catch: ' + error.code);
         expect(error.code == 801).assertTrue();
@@ -1026,6 +1029,7 @@ export default function accountManagerTest() {
         expect(getPolicy.authenticationValidityPeriod == - 1).assertTrue();
         expect(getPolicy.passwordValidityPeriod == 300).assertTrue();
         expect(getPolicy.passwordExpirationNotification == 360).assertTrue();
+        expect(getPolicy.supportUKeyAuthentication == false).assertTrue();
       } catch (error) {
         console.info(' --- setDomainAccountPolicy_test_0900 error 801 is expected, actually catch: ' + error.code);
         expect(error.code == 801).assertTrue();

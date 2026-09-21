@@ -172,6 +172,7 @@ export default function accountManagerTest() {
         authenticationValidityPeriod: 120,
         passwordValidityPeriod: 90,
         passwordExpirationNotification: 60,
+        supportUKeyAuthentication: true,
       };
       try {
         await accountManager.setDomainAccountPolicy(SELFWANT, domainAccountInfo, policy);
