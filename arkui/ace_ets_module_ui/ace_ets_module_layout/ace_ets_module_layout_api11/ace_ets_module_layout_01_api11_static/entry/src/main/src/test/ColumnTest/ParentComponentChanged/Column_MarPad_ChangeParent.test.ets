@@ -1,6 +1,7 @@
 'use static';
+
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -54,15 +55,12 @@ export default function column_MarPad_ChangeParent() {
         console.info("get Column_MarPad_ChangeParentTest state pages:" + JSON.stringify(pages));
         if (!("Column_MarPad_ChangeParent" == pages.name)) {
           console.info("get Column_MarPad_ChangeParentTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          // console.info("push Column_MarPad_ChangeParentTest page result:" + JSON.stringify(result));
+          await routerInstance.pushUrl(options);
         }
       } catch (err) {
         console.error("push Column_MarPad_ChangeParentTest page error:" + err);
       }
+      await CommonFunc.sleep(2000);
       console.info("Column_MarPad_ChangeParentTest beforeEach end");
     });
 
@@ -70,7 +68,6 @@ export default function column_MarPad_ChangeParent() {
       await CommonFunc.sleep(1000);
       console.info("Column_MarPad_ChangeParent after each called");
     });
-
 
     /**
      * @tc.number  testColumnMarPadChangeParentInRange_static
@@ -139,7 +136,6 @@ export default function column_MarPad_ChangeParent() {
         .assertTrue();
       console.info('new testColumnMarPadChangeParentInRange_static END');
     });
-
 
     /**
      * @tc.number  testColumnMarPadChangeParentOutRange_static
