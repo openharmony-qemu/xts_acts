@@ -146,7 +146,7 @@ export default function webMessageExtErrorCode() {
      */
     it('testWebMessageExtSetErrorErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetErrorErrorCode001", 170290)
-      Utils.registerEvent("testWebMessageExtSetError002", "17100014", 170350, done);
+      Utils.registerEvent("testWebMessageExtSetErrorErrorCode001", "17100014", 170350, done);
       sendEventByKey('WebMessageExtErrorCodeButton', 10, '');
     })
 

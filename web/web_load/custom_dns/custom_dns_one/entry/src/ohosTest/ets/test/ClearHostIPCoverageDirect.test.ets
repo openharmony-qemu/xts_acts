@@ -29,12 +29,49 @@ export default function clearHostIPCoverageDirect() {
     it('testClearHostIPEmptyStringDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         webview.WebviewController.clearHostIP('');
-        expect(1).assertEqual(1);
+        done();
       } catch (error) {
-        let errorCode = Number((error as BusinessError).code);
-        expect(errorCode === 401 || errorCode === 17100001 || !Number.isNaN(errorCode)).assertTrue();
+        expect(String((error as BusinessError).code)).assertEqual('401');
+        done();
       }
-      done();
+    })
+
+    /**
+     * @tc.name   testClearHostIPNullDirect
+     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_NULL_3000
+     * @tc.desc   clearHostIP null hostName returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testClearHostIPNullDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        webview.WebviewController.clearHostIP(null);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        expect(String((error as BusinessError).code)).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testClearHostIPUndefinedDirect
+     * @tc.number SUB_WEB_CLEARHOSTIP_DIRECT_401_UNDEFINED_3100
+     * @tc.desc   clearHostIP undefined hostName returns error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testClearHostIPUndefinedDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        webview.WebviewController.clearHostIP(undefined);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        expect(String((error as BusinessError).code)).assertEqual('401');
+        done();
+      }
     })
   })
 }

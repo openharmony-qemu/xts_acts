@@ -26,12 +26,56 @@ export default function webDownloadUrlCoverageDirect() {
      * @tc.level  LEVEL2
      */
     it('testDownloadItemUrlMethodsExist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      // Methods are instance APIs on WebDownloadItem from download callback.
-      // Smoke: type-level invoke via prototype if runtime item absent.
       let proto: object = webview.WebDownloadItem.prototype as object;
       expect(typeof (proto as Record<string, Function>)['getOriginalUrl']).assertEqual('function');
       expect(typeof (proto as Record<string, Function>)['getReferrerUrl']).assertEqual('function');
       done();
     })
+
+    /**
+     * @tc.name   testDownloadItemUrlMethodsReturnStringDirect
+     * @tc.number SUB_WEB_DOWNLOADITEM_URL_RETURN_DIRECT_2200
+     * @tc.desc   verify getOriginalUrl/getReferrerUrl return string type signature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testDownloadItemUrlMethodsReturnStringDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let proto: object = webview.WebDownloadItem.prototype as object;
+        expect(typeof (proto as Record<string, Function>)['getOriginalUrl']).assertEqual('function');
+        expect(typeof (proto as Record<string, Function>)['getReferrerUrl']).assertEqual('function');
+        done();
+      })
+
+    /**
+     * @tc.name   testGetOriginalUrlReturnTypeDirect
+     * @tc.number SUB_WEB_DOWNLOADITEM_GETORIGINALURL_RETURN_2300
+     * @tc.desc   verify getOriginalUrl is declared as string-returning method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetOriginalUrlReturnTypeDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let fn: Function = (webview.WebDownloadItem.prototype as object as Record<string, Function>)['getOriginalUrl'];
+        expect(typeof fn).assertEqual('function');
+        done();
+      })
+
+    /**
+     * @tc.name   testGetReferrerUrlReturnTypeDirect
+     * @tc.number SUB_WEB_DOWNLOADITEM_GETREFERRERURL_RETURN_2400
+     * @tc.desc   verify getReferrerUrl is declared as string-returning method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetReferrerUrlReturnTypeDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let fn: Function = (webview.WebDownloadItem.prototype as object as Record<string, Function>)['getReferrerUrl'];
+        expect(typeof fn).assertEqual('function');
+        done();
+      })
   })
 }
