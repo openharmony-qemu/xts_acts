@@ -1,6 +1,7 @@
 'use static';
+
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,10 +18,8 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import {FlexAlign,HorizontalAlign} from '@ohos.arkui.component'
-// import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
 import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-// import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -40,10 +39,7 @@ export default function column_AlignItems_ChangeParent() {
   describe('Column_AlignItems_ChangeParentTest', () => {
     beforeAll(async () => {
       console.info("Column_JustifyContent_ChangeParentTest beforeEach start");
-
-
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-
     })
     beforeEach(async (): Promise<void> => {
       console.info("Column_AlignItems_ChangeParent beforeEach called");
@@ -58,9 +54,7 @@ export default function column_AlignItems_ChangeParent() {
         console.info("get Column_AlignItems_ChangeParent state pages:" + JSON.stringify(pages));
         if (!("Column_AlignItems_ChangeParent" == pages?.name)) {
           console.info("get Column_AlignItems_ChangeParent state pages.name:" + JSON.stringify(pages?.name));
-          routerInstance?.pushUrl(options);
-          // let result = await router.push(options);
-          // console.info("push Column_AlignItems_ChangeParent page result:" + JSON.stringify(result));
+          await routerInstance?.pushUrl(options);
         }
       } catch (err) {
         console.error("push Column_AlignItems_ChangeParent page error:" + JSON.stringify(err));
@@ -73,11 +67,6 @@ export default function column_AlignItems_ChangeParent() {
       console.info("Column_AlignItems_ChangeParent afterEach called");
     });
 
-    
-    
-
-
-
     /**
      * @tc.number  testColumnAlignItemsChangeParentHorizontalAlignStart_static
      * @tc.name     testColumnAlignItemsChangeParentHorizontalAlignStart_static
@@ -86,9 +75,6 @@ export default function column_AlignItems_ChangeParent() {
      */
     it('testColumnAlignItemsChangeParentHorizontalAlignStart_static', Level.LEVEL0, async () => {
       console.info('new testColumnAlignItemsChangeParentHorizontalAlignStart_static START');
-      // GlobalContext.getContext().getObject<number>('value').message.notify({
-      //   name: 'alignItems', value: HorizontalAlign.Start
-      // })
       AppStorage.get<MessageManager<HorizontalAlign>>("messageManager")?.notify({
         name: 'alignItems', value: HorizontalAlign.Start
       });
@@ -126,11 +112,6 @@ export default function column_AlignItems_ChangeParent() {
         .assertTrue();
       console.info('new testColumnAlignItemsChangeParentHorizontalAlignStart_static END');
     });
-
-    
-    
-
-
 
     /**
      * @tc.number  testColumnAlignItemsChangeParentHorizontalAlignEnd_static
@@ -180,5 +161,6 @@ export default function column_AlignItems_ChangeParent() {
         .assertTrue();
       console.info('new testColumnAlignItemsChangeParentHorizontalAlignEnd END');
     });
+    
   })
 }
