@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { ArkTSUtils, lang, JSON, collections } from '@kit.ArkTS';
 
 function buildNumbericKeyJson(propertyCount: number): string {
