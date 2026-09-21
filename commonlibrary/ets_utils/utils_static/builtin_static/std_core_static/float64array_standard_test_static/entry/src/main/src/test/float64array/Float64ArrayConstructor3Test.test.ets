@@ -1296,17 +1296,14 @@ export default function Float64ArrayConstructor3Test(): void {
      * @tc.level Level 2
      */
     it('testFloat64ArrayConstructor3069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const src: Array<number> = new Array<number>(1000);
-        for (let i: int = 0; i < 1000; i++) {
-          src[i] = i * 1.0;
-        }
-        const arrLike: ArrayLike<Number> = src;
-        new Float64Array(arrLike);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
+      const src: Array<number> = Array.create<number>(1000, 0);
+      for (let i: int = 0; i < 1000; i++) {
+        src[i] = i * 1.0;
       }
+      const arrLike: ArrayLike<Number> = src;
+      let res = new Float64Array(arrLike);
+      expect(res.length).assertEqual(1000);
+    
     });
 
     /**

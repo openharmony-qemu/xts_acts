@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import { reExportConstValue, ReExportClass, reExportFunction } from '../exports_reexport/ReExportChain';
 import { renamedConstValue, RenamedClass, renamedFunction } from '../exports_reexport/ReExportRename';
 import { ReExportDefaultAsNamedClass } from '../exports_reexport/ReExportDefaultAsNamed';

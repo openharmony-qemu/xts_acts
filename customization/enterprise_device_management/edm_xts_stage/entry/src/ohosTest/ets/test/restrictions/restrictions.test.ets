@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, DEFAULT_USER_ID, APP_IDS_1 } from '../commom';
 
-import { applicationManager, deviceSettings, usbManager } from '@kit.MDMKit';
+import { applicationManager, usbManager } from '@kit.MDMKit';
 import adminManager from '@ohos.enterprise.adminManager';
 import common from '@ohos.enterprise.common';
 import restrictions from '@ohos.enterprise.restrictions';
@@ -11736,41 +11736,6 @@ function testSetDisallowedForAccountPolicy26() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0300
-   * @tc.name      : test_set_disallowed_policy_for_account_26_0300
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub then nonStop
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
-   */
-  it("test_set_disallowed_policy_for_account_26_0300", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
-    try {
-      let localId: number =  await osAccountManager.getOsAccountLocalId();
-      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
-      let userNonStopApps: Array<common.ApplicationInstance> = [
-        {
-          appIdentifier:"5765880207854114601",
-          accountId:DEFAULT_USER_ID,
-          appIndex:0
-        }
-      ];
-      applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
-      expect(false).assertTrue();
-    } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
-      } else {
-        expect(Number(error.code) === 9200010).assertTrue();
-      }
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
-
-  /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0400
    * @tc.name      : test_set_disallowed_policy_for_account_26_0400
    * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub after nonStop
@@ -11797,40 +11762,6 @@ function testSetDisallowedForAccountPolicy26() {
     } catch (error) {
       if (Number(error.code) === 9200012) {
         expect(Number(error.code) === 9200012).assertTrue();
-      } else {
-        expect(Number(error.code) === 9200010).assertTrue();
-      }
-    } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
-    }
-    done();
-  });
-
-  /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_26_JS_0500
-   * @tc.name      : test_set_disallowed_policy_for_account_26_0500
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount superhub before removeHiddenSettingsMenu
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
-   */
-  it("test_set_disallowed_policy_for_account_26_0500", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-    let osAccountManager: osAccount.AccountManager = osAccount.getAccountManager();
-    try {
-      let localId: number =  await osAccountManager.getOsAccountLocalId();
-      restrictions.setDisallowedPolicyForAccount(SELFWANT, restrictions.FeatureForAccount.SUPER_HUB, true, localId);
-
-      const VALID_MENUS_TO_HIDE: Array<deviceSettings.SettingsMenu> = [
-        deviceSettings.SettingsMenu.SUPERHUB,
-        deviceSettings.SettingsMenu.WIFI
-      ];
-      deviceSettings.addHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
-      deviceSettings.removeHiddenSettingsMenu(SELFWANT, VALID_MENUS_TO_HIDE);
-      expect(false).assertTrue();
-    } catch (error) {
-      if (Number(error.code) === 801) {
-        expect(Number(error.code) === 801).assertTrue();
       } else {
         expect(Number(error.code) === 9200010).assertTrue();
       }

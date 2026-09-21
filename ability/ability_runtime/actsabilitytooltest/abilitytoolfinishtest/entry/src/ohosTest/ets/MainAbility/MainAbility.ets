@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import Ability from '@ohos.app.ability.UIAbility';
 import testsuite from '../test/List.test';

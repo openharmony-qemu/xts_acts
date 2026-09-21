@@ -15,7 +15,7 @@
 
 import overlay from '@ohos.bundle.overlay';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 const MODULE_NAME = 'entry_test';
 const ERROR_CODE = 401;

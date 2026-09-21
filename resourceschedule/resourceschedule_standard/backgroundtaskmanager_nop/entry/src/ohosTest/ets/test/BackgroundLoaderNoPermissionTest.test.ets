@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from '@ohos/hypium-dynamic'
 import { backgroundLoader } from '@kit.BackgroundTasksKit'
 import { BusinessError } from '@kit.BasicServicesKit'
 import hilog from '@ohos.hilog'

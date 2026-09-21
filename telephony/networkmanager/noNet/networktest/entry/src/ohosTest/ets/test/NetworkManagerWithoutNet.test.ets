@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import network, { NetworkResponse } from '@system.network';
 
 const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseName?: string) => {

@@ -593,7 +593,7 @@ export default function mapOverviewPart01TestTest(): void {
         expect(m.get('x')).assertEqual(100);
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('ArrayIndexOutOfBoundsError');
+        expect((e as Error).name).assertEqual('OutOfMemoryError');
       }
     });
 

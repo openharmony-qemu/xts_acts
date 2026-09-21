@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, afterEach, TestType, Size, Level } from "@ohos/hypium"
+import { describe, it, expect, afterEach, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import { worker } from "@kit.ArkTS";
 import { Sleep } from "./utils/utils";
 import { harAbsolutePathLoadWorker, harRelativePathLoadWorker, } from "har";

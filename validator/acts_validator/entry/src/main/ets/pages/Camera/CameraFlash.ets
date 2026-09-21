@@ -18,6 +18,7 @@ import CameraService from '../model/CameraService'
 import { CustomContainer } from '../common/CameraFlashContainer';
 import FirstDialog from '../model/FirstDialog';
 import router from '@ohos.router';
+import promptAction from '@ohos.promptAction';
 
 @Entry
 @Component
@@ -34,7 +35,7 @@ struct cameraOrientation {
   @State surfaceId: number = 0;
 
   async aboutToAppear() {
-    await FirstDialog.ChooseDialog(this.StepTips, this.name);
+    
   }
 
   cameraInit() {
@@ -43,7 +44,30 @@ struct cameraOrientation {
       this.captureSession = CameraService.captureSession;
       this.isFlash = this.captureSession.hasFlash();
       Logger.info(this.tag, `onLoad isFlash: ${this.isFlash}`);
+      ///如果设备不支持闪光灯，弹出提示
+      if (!this.isFlash) {
+        this.showNoFlashDialog();
+      } else {
+        FirstDialog.ChooseDialog(this.StepTips, this.name);
+      }
     })
+  }
+
+  showNoFlashDialog() {
+    promptAction.showDialog({
+      title: '提示',
+      message: '当前设备无闪光灯能力，无需测试',
+      buttons: [{
+        text: '确定',
+        color: '#007DFF'
+      }]
+    }).then(() => {
+      router.replaceUrl({
+        url: 'pages/Camera/Camera_index',
+      });
+    }).catch((err: Error) => {
+      Logger.error(`showDialog failed: ${err.message}`);
+    });
   }
 
   openFlash() {

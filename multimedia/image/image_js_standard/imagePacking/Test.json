@@ -17,32 +17,29 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/moving_test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/test.ico ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/test.svg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/test.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/test.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/test.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files",
-                "./resource/image/HDRVividSingleLayer.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.Packing/haps/entry_test/files"
+                "./resource/image/test.png ->/data/local/tmp/",
+                "./resource/image/moving_test.gif ->/data/local/tmp/",
+                "./resource/image/test.bmp ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./resource/image/test.ico ->/data/local/tmp/",
+                "./resource/image/test.svg ->/data/local/tmp/",
+                "./resource/image/test.dng ->/data/local/tmp/",
+                "./resource/image/test.jpeg ->/data/local/tmp/",
+                "./resource/image/test.webp ->/data/local/tmp/",
+                "./resource/image/HDRVividSingleLayer.heic ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_packingJs_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
-            "run-command": []
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_packingJs_test.sh",
+                "sh /data/local/tmp/setup_image_packingJs_test.sh"
+            ],
+            "teardown-command": []
         }
     ]
 }

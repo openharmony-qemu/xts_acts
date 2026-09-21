@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterEach, it, TestType, Size, Level, expect } from "@ohos/hypium";
+import { describe, beforeAll, afterEach, it, TestType, Size, Level, expect } from "@ohos/hypium-dynamic";
 import * as certPromise from "./utils/certificate/publicCertificatePromise";
 
 export default function certificateJsunit() {

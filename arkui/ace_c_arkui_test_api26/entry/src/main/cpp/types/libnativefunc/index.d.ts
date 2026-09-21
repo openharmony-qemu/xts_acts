@@ -202,3 +202,8 @@ export const testArcAlphabetSelectedFont001: () => number;
 export const testArcAlphabetIndexerPopupColor001: () => number;
 export const testArcAlphabetIndexerPopupBackgroundColor001: () => number;
 export const testArcAlphabetIndexerArray001: () => number;
+
+export const SetUiDvsyncSwitchTest001: () => number;
+export const SetUiDvsyncSwitchTest002: () => number;
+export const SetUiDvsyncSwitchTest003: () => number;
+export const SetUiDvsyncSwitchTest004: () => number;

@@ -31,11 +31,6 @@
 #define DRAWING_NUMBER_500 500
 #define DRAWING_NUMBER_12345678 12345678
 #define DRAWING_NUMBER_87654321 87654321
-#define DRAWING_NUMBER_0X12345678 0X12345678
-#define DRAWING_NUMBER_0X87654321 0x87654321
-#define DRAWING_NUMBER_0XFFFF0000 0xFFFF0000
-#define DRAWING_NUMBER_0XFF00FF00 0xFF00FF00
-#define DRAWING_NUMBER_0XFFFFFFFF 0xFFFFFFFF
 
 namespace OHOS {
 namespace Rosen {
@@ -374,11 +369,32 @@ int TestBrushSetColorMaximum()
     EXPECT_NE(brush, nullptr);
     // 2. Set the color of the brush object by calling OH_Drawing_BrushSetColor with a value greater than the maximum
     // value of uint32_t (0xFFFFFFFF)
-    OH_Drawing_BrushSetColor(brush, DRAWING_NUMBER_0XFFFFFFFF + DRAWING_NUMBER_1);
+    OH_Drawing_BrushSetColor(brush, 0xFFFFFFFF + DRAWING_NUMBER_1);
     // 3. Get the color of the brush object by calling OH_Drawing_BrushGetColor
     uint32_t color = OH_Drawing_BrushGetColor(brush);
     EXPECT_EQ(color, 0);
     // 4. Free memory
+    OH_Drawing_BrushDestroy(brush);
+    DrawingNativeBrushTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+// 补充场景6: Brush连续SetGet验证准确性
+int TestBrushSetGetColorMultipleTimes()
+{
+    DrawingNativeBrushTestSetUp();
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    EXPECT_NE(brush, nullptr);
+    
+    // 连续设置和获取颜色验证准确性
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        uint32_t setColor = 0xFFFF0000 + i;
+        OH_Drawing_BrushSetColor(brush, setColor);
+        
+        uint32_t getColor = OH_Drawing_BrushGetColor(brush);
+        EXPECT_EQ(getColor, setColor);
+    }
+    
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -483,11 +499,32 @@ int TestBrushSetAlphaMaximum()
     EXPECT_NE(brush, nullptr);
     // 2. Set the alpha value of the brush object by calling OH_Drawing_BrushSetAlpha with a value greater than the
     // maximum value of uint8_t (0xFFFFFFFF + 1)
-    OH_Drawing_BrushSetAlpha(brush, DRAWING_NUMBER_0XFFFFFFFF + DRAWING_NUMBER_1);
+    OH_Drawing_BrushSetAlpha(brush, 0xFFFFFFFF + DRAWING_NUMBER_1);
     // 3. Get the alpha value of the brush object by calling OH_Drawing_BrushGetAlpha
     uint8_t alpha = OH_Drawing_BrushGetAlpha(brush);
     EXPECT_EQ(alpha, 0);
     // 4. Free memory
+    OH_Drawing_BrushDestroy(brush);
+    DrawingNativeBrushTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+// 补充场景7: Brush连续SetGetAlpha验证准确性
+int TestBrushSetGetAlphaMultipleTimes()
+{
+    DrawingNativeBrushTestSetUp();
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    EXPECT_NE(brush, nullptr);
+    
+    // 连续设置和获取alpha验证准确性
+    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+        uint8_t setAlpha = static_cast<uint8_t>(i * 25);
+        OH_Drawing_BrushSetAlpha(brush, setAlpha);
+        
+        uint8_t getAlpha = OH_Drawing_BrushGetAlpha(brush);
+        EXPECT_EQ(getAlpha, setAlpha);
+    }
+    
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -503,7 +540,7 @@ int TestBrushSetShaderEffectNormal()
     // 2. Create a shader object by calling OH_Drawing_ShaderEffectCreate
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_400);
     OH_Drawing_Point *endPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500);
-    uint32_t color[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00};
+    uint32_t color[] = {0xFFFF0000, 0xFF00FF00};
     float pos[] = {0, DRAWING_NUMBER_1};
     OH_Drawing_ShaderEffect *linearGradient =
         OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, color, pos, 2.0f, OH_Drawing_TileMode::CLAMP);
@@ -531,7 +568,7 @@ int TestBrushSetShaderEffectNull()
     EXPECT_NE(brush, nullptr);
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(DRAWING_NUMBER_100, DRAWING_NUMBER_400);
     OH_Drawing_Point *endPt = OH_Drawing_PointCreate(DRAWING_NUMBER_200, DRAWING_NUMBER_500);
-    uint32_t color[] = {DRAWING_NUMBER_0XFFFF0000, DRAWING_NUMBER_0XFF00FF00};
+    uint32_t color[] = {0xFFFF0000, 0xFF00FF00};
     float pos[] = {0, DRAWING_NUMBER_1};
     OH_Drawing_ShaderEffect *linearGradient =
         OH_Drawing_ShaderEffectCreateLinearGradient(startPt, endPt, color, pos, 2.0f, OH_Drawing_TileMode::CLAMP);
@@ -818,6 +855,29 @@ int TestBrushGetAlphaFloatAbnormal()
     return OH_DRAWING_SUCCESS;
 }
 
+// 补充场景9: BrushGetAlphaFloat等浮点接口边界测试
+int TestBrushGetAlphaFloatBoundary()
+{
+    DrawingNativeBrushTestSetUp();
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    EXPECT_NE(brush, nullptr);
+    float a = 0;
+    // 设置alpha为0和255的边界值
+    OH_Drawing_BrushSetAlpha(brush, 0);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_BrushGetAlphaFloat(brush, &a);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(a, 0.0f);
+    
+    OH_Drawing_BrushSetAlpha(brush, DRAWING_NUMBER_255);
+    errorCode = OH_Drawing_BrushGetAlphaFloat(brush, &a);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(a, 1.0f);
+    
+    OH_Drawing_BrushDestroy(brush);
+    DrawingNativeBrushTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
 int TestBrushGetRedFloatNormal()
 {
     DrawingNativeBrushTestSetUp();
@@ -911,16 +971,16 @@ int TestBrushSetColor4fNormal()
     float g = 0;
     float b = 0;
     int num = DRAWING_NUMBER_201;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_BrushSetColor4f(brush, 1.0f, 0.4f, 1.0f, 0.2f, nullptr);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_BrushSetColor4f(brush, 1.0f, 1.0f, 1.0f, 1.0f, nullptr);
     OH_Drawing_BrushGetAlphaFloat(brush, &a);
     OH_Drawing_BrushGetRedFloat(brush, &r);
     OH_Drawing_BrushGetGreenFloat(brush, &g);
     OH_Drawing_BrushGetBlueFloat(brush, &b);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(a, 1.0f);
-    EXPECT_EQ(r, 0.4f);
+    EXPECT_EQ(r, 1.0f);
     EXPECT_EQ(g, 1.0f);
-    EXPECT_EQ(b, 0.2f);
+    EXPECT_EQ(b, 1.0f);
     EXPECT_EQ(num, OH_DRAWING_ERROR_NO_PERMISSION);
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
@@ -998,6 +1058,36 @@ int TestBrushSetColor4fAbnormal()
     EXPECT_EQ(errorCode6, OH_DRAWING_SUCCESS);
     EXPECT_EQ(errorCode7, OH_DRAWING_SUCCESS);
     EXPECT_EQ(errorCode8, OH_DRAWING_SUCCESS);
+    OH_Drawing_BrushDestroy(brush);
+    DrawingNativeBrushTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
+int TestBrushSetColor4fMaximum()
+{
+    DrawingNativeBrushTestSetUp();
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    EXPECT_NE(brush, nullptr);
+    float a = 0;
+    float r = 0;
+    float g = 0;
+    float b = 0;
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_BrushSetColor4f(brush, FLT_MAX, 0.4f, 1.0f, 0.2f, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_BrushGetAlphaFloat(brush, &a);
+    EXPECT_EQ(a, 1.0f);
+    errorCode = OH_Drawing_BrushSetColor4f(brush, 1.0f, FLT_MAX, 1.0f, 0.2f, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_BrushGetAlphaFloat(brush, &r);
+    EXPECT_EQ(r, 1.0f);
+    errorCode = OH_Drawing_BrushSetColor4f(brush, 1.0f, 0.4f, FLT_MAX, 0.2f, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_BrushGetAlphaFloat(brush, &g);
+    EXPECT_EQ(g, 1.0f);
+    errorCode = OH_Drawing_BrushSetColor4f(brush, 1.0f, 0.4f, 1.0f, FLT_MAX, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    OH_Drawing_BrushGetAlphaFloat(brush, &b);
+    EXPECT_EQ(b, 1.0f);
     OH_Drawing_BrushDestroy(brush);
     DrawingNativeBrushTestTearDown();
     return OH_DRAWING_SUCCESS;

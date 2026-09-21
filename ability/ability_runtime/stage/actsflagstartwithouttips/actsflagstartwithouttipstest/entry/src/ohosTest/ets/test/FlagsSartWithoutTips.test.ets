@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium-dynamic'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import Want from '@ohos.app.ability.Want';

@@ -17,7 +17,7 @@ import fs from '@ohos.file.fs';
 import account from '@ohos.account.distributedAccount'
 import account_osAccount from '@ohos.account.osAccount';
 import type Want from '@ohos.app.ability.Want';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { deviceInfo } from '@kit.BasicServicesKit';

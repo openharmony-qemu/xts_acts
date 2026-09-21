@@ -20,7 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 
 import testsuite from '../../test/List.test';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import { waitForExist } from '../../test/WaitTest.test';
 
 

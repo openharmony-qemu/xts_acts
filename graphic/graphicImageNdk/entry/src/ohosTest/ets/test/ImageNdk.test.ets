@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterEach, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, afterEach, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import ndkTest from 'libImageNdk.so'
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';

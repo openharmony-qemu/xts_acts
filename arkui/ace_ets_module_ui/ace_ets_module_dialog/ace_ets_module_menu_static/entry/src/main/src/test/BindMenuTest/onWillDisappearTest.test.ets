@@ -63,6 +63,7 @@ export default function onWillDisappearTest(): void {
     it('onWillDisappearTest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('onWillDisappearBindMenu'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);

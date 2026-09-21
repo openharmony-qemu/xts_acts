@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { huks } from '@kit.UniversalKeystoreKit';
 import { GetEmptyOptions, GetParam, MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
 import { BuildSignVerifyData, DoSign, DoVerify, SignVerify, SignVerifyData, SignVerifyReal } from './utils/huks/SignVerifyUtils';

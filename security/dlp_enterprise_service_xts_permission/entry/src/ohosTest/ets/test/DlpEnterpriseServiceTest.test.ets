@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import dlpPermission from '@ohos.dlpPermission';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 const TAG = "DLP_ENTERPRISE_SERVICE_PERMISSION_XTS ";
 

@@ -15,7 +15,7 @@
 import { Vec4, Aabb, SceneResourceType, SceneResource, Shader, MaterialType, Material, ShaderMaterial, SubMesh, Mesh,
   Animation, EnvironmentBackgroundType, Environment, Node, Geometry, SceneResourceFactory, Scene, PolygonMode, 
   Effect, EffectParameters,SceneNodeParameters } from '@kit.ArkGraphics3D'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import * as scene3d from '@ohos.graphics.scene'
 import { lookAt, GenRandom, sleep } from '../common/utils';
 import { RenderingPipelineType, CameraParameters } from '@ohos.graphics.scene'

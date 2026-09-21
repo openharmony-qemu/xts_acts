@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import usbMgr from '@ohos.usbManager';
 import { isFilteredDevice } from './FilterUtils';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';

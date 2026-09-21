@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, Level} from '@ohos/hypium';
+import { afterEach, describe, expect, it, Level} from '@ohos/hypium-dynamic';
 import { sleep, startAbility, stopAbility } from './Common'
 import picker from '@ohos.file.picker';
 import globalContext from './GlobalContext'

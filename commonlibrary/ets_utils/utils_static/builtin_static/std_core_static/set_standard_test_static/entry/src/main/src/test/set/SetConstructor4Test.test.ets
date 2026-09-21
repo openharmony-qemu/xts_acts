@@ -172,8 +172,12 @@ export default function SetConstructor4Test(): void {
      * @tc.level LEVEL2
      */
     it('testSetConstructor4010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<string>(2147483647);
-      expect(set.size).assertEqual(0);
+      try {
+        let set = new Set<string>(2147483647);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("OutOfMemoryError");
+      }
     });
 
     /**

@@ -14,7 +14,7 @@
  */
 
 import http from '@ohos.net.http';
-import { describe, it, expect, beforeAll, afterAll, beforeEach, afterEach, TestType, Size, Level} from '@ohos/hypium';
+import { describe, it, expect, beforeAll, afterAll, beforeEach, afterEach, TestType, Size, Level} from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 
 class Header {

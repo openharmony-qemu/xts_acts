@@ -29,3 +29,7 @@ export const asset_preAndPostQueryNormal: (alias:string,secret:string) => number
 export const asset_preAndPostQueryError: (alias:string,secret:string) => number;
 export const asset_addCE: (alias:string,secret:string) => number;
 export const asset_querySyncResult: () => number;
+
+export const asset_preQueryLimitExceeded: () => number;
+export const asset_preQueryUnsupported: () => number;
+export const asset_querySyncResultError: () => number;

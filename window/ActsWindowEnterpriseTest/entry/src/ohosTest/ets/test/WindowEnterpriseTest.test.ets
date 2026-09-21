@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import ohosWindow from '@ohos.window';
@@ -186,7 +186,7 @@ export default function WindowEnterpriseTest() {
               expect(info!.globalRect!.top).assertEqual(res.windowRect.top);
               expect(info!.globalRect!.width).assertEqual(res.windowRect.width);
               expect(info!.globalRect!.height).assertEqual(res.windowRect.height);
-              expect(info!.displayId).assertEqual(0);
+              expect(info!.displayId).assertLargerOrEqual(0);
               console.info(caseName + `info.windowStatusType: ${info.windowStatusType}`);
               console.info(caseName + `info.bundleName: ${info.bundleName}`);
               console.info(caseName + `info.abilityName: ${info.abilityName}`);

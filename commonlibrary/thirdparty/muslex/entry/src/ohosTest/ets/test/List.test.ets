@@ -60,6 +60,7 @@ import HilogBaseIsLoggableNdkTest from './HilogBaseIsLoggableNdk.test';
 import HilogBasePrintNdkTest from './HilogBasePrintNdk.test';
 import GwpAsanCollectNdkTest from './GwpAsanCollectNdk.test';
 import GwpAsanRegisterFfrtNdkTest from './GwpAsanRegisterFfrtNdk.test';
+import GwpAsanUnwindNdkTest from './GwpAsanUnwindNdk.test';
 import MallocCheckFromPtrNdkTest from './MallocCheckFromPtrNdk.test';
 import MktimeNoenvNdkTest from './MktimeNoenvNdk.test';
 import PthreadAttrExtDestroyNdkTest from './PthreadAttrExtDestroyNdk.test';
@@ -140,6 +141,7 @@ export default function testsuite() {
   HilogBasePrintNdkTest();
   GwpAsanCollectNdkTest();
   GwpAsanRegisterFfrtNdkTest();
+  GwpAsanUnwindNdkTest();
   MallocCheckFromPtrNdkTest();
   MktimeNoenvNdkTest();
   PthreadAttrExtDestroyNdkTest();

@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import bundleManager from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestType ,Size ,Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE;

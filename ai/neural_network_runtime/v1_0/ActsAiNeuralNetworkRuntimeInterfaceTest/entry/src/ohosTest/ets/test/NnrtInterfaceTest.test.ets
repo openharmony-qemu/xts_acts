@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, TestType, Size, Level, it } from "@ohos/hypium"
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, TestType, Size, Level, it } from "@ohos/hypium-dynamic"
 import { hilog } from "@kit.PerformanceAnalysisKit"
 import ai_nnrt_interface_test from 'libai_nnrt_interface_test.so'
 

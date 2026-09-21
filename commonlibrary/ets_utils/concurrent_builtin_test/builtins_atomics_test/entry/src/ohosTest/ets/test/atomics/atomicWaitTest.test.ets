@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { sleep } from './utils';
 import { worker } from '@kit.ArkTS';
-import { typeWait01, typeWait02, typeWait03, typeWait04, typeWait05, typeWait06 } from './atomics';
+import { typeWait01, typeWait02, typeWait03, typeWait04, typeWait05, typeWait06, typeWait07, typeWait11 } from './atomics';
 
 
 export default function atomicsWaitTest() {
@@ -785,6 +785,144 @@ export default function atomicsWaitTest() {
         await sleep(100)
       }
       expect(result).assertEqual('timed-out');
+    });
+
+    /**
+     * @tc.name   atomicsWaitTest021
+     * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0021
+     * @tc.desc   Atomics.notify wakes up multiple workers waiting on different indices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('atomicsWaitTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const sab = new SharedArrayBuffer(20);
+      const int32 = new Int32Array(sab);
+      let flag = false;
+      let res = 0;
+      let res1 = 0;
+
+      const ss = new worker.ThreadWorker("./workers/Worker07.ets");
+      const tt = new worker.ThreadWorker("./workers/Worker08.ets");
+      const uu = new worker.ThreadWorker("./workers/Worker09.ets");
+
+      ss.onmessage = (e) => {
+        if ((e.data as string) == "end") { res++; }
+        flag = true;
+      };
+      tt.onmessage = (e) => {
+        if ((e.data as string) == "end1") { res1++; }
+        if ((e.data as string) == "end2") { res1 += 5; }
+        flag = true;
+      };
+      uu.onmessage = (e) => {
+        if ((e.data as string) == "end") { flag = true; }
+      };
+      ss.onexit = () => { flag = true; };
+      tt.onexit = () => { flag = true; };
+      uu.onexit = () => { flag = true; };
+
+      ss.postMessage({ ta: int32 } as typeWait07);
+      while (!flag) { await sleep(50); }
+      flag = false;
+      tt.postMessage({ ta: int32 } as typeWait07);
+      while (!flag) { await sleep(50); }
+      flag = false;
+      uu.postMessage({ ta: int32 } as typeWait07);
+      while (!flag) { await sleep(50); }
+
+      Atomics.notify(int32, 0, 1);
+      Atomics.notify(int32, 2, 1);
+      while (res == 0 || res1 == 0) { await sleep(50); }
+
+      flag = false;
+      ss.terminate();
+      while (!flag) { await sleep(50); }
+      flag = false;
+      tt.terminate();
+      while (!flag) { await sleep(50); }
+      flag = false;
+      uu.terminate();
+      while (!flag) { await sleep(50); }
+
+      expect(res).assertEqual(1);
+      expect(res1).assertEqual(5);
+    });
+
+    /**
+     * @tc.name   atomicsWaitTest022
+     * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0022
+     * @tc.desc   Atomics.wait woken by notify, then add and load in worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('atomicsWaitTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      const sab = new SharedArrayBuffer(20);
+      const int32 = new Int32Array(sab);
+      let flag = false;
+      let res = 0;
+
+      const ss = new worker.ThreadWorker("./workers/Worker10.ets");
+      ss.onmessage = (e) => {
+        const msg = e.data as string;
+        if (msg == 'wait') {
+          flag = true;
+        } else {
+          res = parseInt(msg, 10);
+          flag = true;
+        }
+      };
+      ss.onexit = () => { flag = true; };
+
+      ss.postMessage({ ta: int32 } as typeWait07);
+      while (!flag) { await sleep(50); }
+      flag = false;
+      Atomics.store(int32, 0, 2);
+      Atomics.load(int32, 0);
+      Atomics.notify(int32, 0, 1);
+      while (!flag) { await sleep(50); }
+      flag = false;
+      ss.terminate();
+      while (!flag) { await sleep(50); }
+
+      expect(res).assertEqual(3);
+    });
+
+    /**
+     * @tc.name   atomicsWaitTest023
+     * @tc.number SUB_BUILTINS_Atomics_wait_TEST_0023
+     * @tc.desc   Atomics.add from multiple workers on SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('atomicsWaitTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      const sab = new SharedArrayBuffer(20);
+      const int32 = new Uint32Array(sab);
+      int32[0] = 1;
+      let flag = false;
+      let count = 0;
+
+      const ss = new worker.ThreadWorker("./workers/Worker11.ets");
+      const tt = new worker.ThreadWorker("./workers/Worker12.ets");
+      ss.onmessage = () => { count += 1; };
+      tt.onmessage = () => { count += 1; };
+      ss.onexit = () => { flag = true; };
+      tt.onexit = () => { flag = true; };
+
+      ss.postMessage({ sab: sab } as typeWait11);
+      tt.postMessage({ sab: sab } as typeWait11);
+      while (count != 2) { await sleep(50); }
+
+      flag = false;
+      ss.terminate();
+      while (!flag) { await sleep(50); }
+      flag = false;
+      tt.terminate();
+      while (!flag) { await sleep(50); }
+
+      expect(int32[0]).assertEqual(21);
     });
 
   })

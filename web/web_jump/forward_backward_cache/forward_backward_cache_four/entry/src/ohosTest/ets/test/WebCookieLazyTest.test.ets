@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import { beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { BusinessError } from '@ohos.base';
 import { webview } from '@kit.ArkWeb';

@@ -16,7 +16,7 @@
 import {BusinessError } from '@kit.BasicServicesKit'
 import {backgroundProcessManager } from '@kit.BackgroundTasksKit'
 import hilog from '@ohos.hilog'
-import {describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium'
+import {describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium-dynamic'
 import {process} from '@kit.ArkTS'
 import {backgroundTaskManager} from '@kit.BackgroundTasksKit'
 

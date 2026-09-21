@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import webview from '@ohos.web.webview'
 import router from '@ohos.router';
 import Utils from './Utils';

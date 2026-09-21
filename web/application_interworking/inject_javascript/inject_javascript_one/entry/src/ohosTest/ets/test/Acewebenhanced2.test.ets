@@ -16,7 +16,7 @@
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { webview } from '@kit.ArkWeb';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 import { router } from '@kit.ArkUI';

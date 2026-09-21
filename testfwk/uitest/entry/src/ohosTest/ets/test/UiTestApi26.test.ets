@@ -13,7 +13,7 @@
  * limitations under the License.
          */
 
-import { describe, it, expect, TestType, Level, Size, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium'
+import { describe, it, expect, TestType, Level, Size, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium-dynamic'
 import { Driver, ON, PenKey, PenKeyOperation, PenMode, TouchOptions, } from '@kit.TestKit'
 import { display } from '@kit.ArkUI';
 import { startAbility, stopApplication } from './Util.test';

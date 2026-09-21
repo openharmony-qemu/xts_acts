@@ -18,7 +18,7 @@ import common from '@ohos.bluetooth.common';
 import hid from '@ohos.bluetooth.hid';
 import { BusinessError } from '@ohos.base';
 import { bundleManager } from '@kit.AbilityKit';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 let PERMISSION_TEXT:string = "允许";
 let OPEN_BT_TEXT:string = "开启";

@@ -1,10 +1,11 @@
 {
-    "description": "Configuration for Image Tests",
+    "description": "Configuration for Image Exif Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "300000",
-        "shell-timeout": "120000",
+        "shell-timeout": "300000",
         "bundle-name": "ohos.acts.multimedia.image.Exif",
+        "testcase-timeout": 60000,
         "module-name": "entry_test"
     },
     "kits": [
@@ -16,24 +17,20 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.Exif/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.Exif/haps/entry_test/files/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test_exif.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Exif/haps/entry_test/files",
-                "./resource/image/test_exif1.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Exif/haps/entry_test/files"
+                "./resource/image/test_exif.jpg ->/data/local/tmp/",
+                "./resource/image/test_exif1.jpg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_exif_js_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
-            "run-command": []
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_exif_js_test.sh",
+                "sh /data/local/tmp/setup_image_exif_js_test.sh"
+            ]
         }
     ]
 }

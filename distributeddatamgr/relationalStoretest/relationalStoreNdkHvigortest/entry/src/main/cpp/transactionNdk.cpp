@@ -965,6 +965,77 @@ static napi_value OH_RdbTrans_UpdateWithConflictResolution0100(napi_env env, nap
     return result;
 }
 
+napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0100(napi_env env, napi_callback_info info)
+{
+    OH_Rdb_Transaction *trans = nullptr;
+    OH_VBucket *valueBucket = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = RDB_CONFLICT_ROLLBACK;
+    int64_t changes = 0;
+    int ret = OH_RdbTrans_UpdateWithConflictResolution(trans, valueBucket, predicates, resolution, &changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0200(napi_env env, napi_callback_info info)
+{
+    OH_Rdb_Transaction *trans = nullptr;
+    OH_VBucket *valueBucket = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = RDB_CONFLICT_ABORT;
+    int64_t changes = 0;
+    int ret = OH_RdbTrans_UpdateWithConflictResolution(trans, valueBucket, predicates, resolution, &changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0300(napi_env env, napi_callback_info info)
+{
+    OH_Rdb_Transaction *trans = nullptr;
+    OH_VBucket *valueBucket = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = RDB_CONFLICT_FAIL;
+    int64_t changes = 0;
+    int ret = OH_RdbTrans_UpdateWithConflictResolution(trans, valueBucket, predicates, resolution, &changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0400(napi_env env, napi_callback_info info)
+{
+    OH_Rdb_Transaction *trans = nullptr;
+    OH_VBucket *valueBucket = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = RDB_CONFLICT_IGNORE;
+    int64_t changes = 0;
+    int ret = OH_RdbTrans_UpdateWithConflictResolution(trans, valueBucket, predicates, resolution, &changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+napi_value TestTransUpdateWithConflictResolutionDatabaseClosed_0500(napi_env env, napi_callback_info info)
+{
+    OH_Rdb_Transaction *trans = nullptr;
+    OH_VBucket *valueBucket = nullptr;
+    OH_Predicates *predicates = nullptr;
+    Rdb_ConflictResolution resolution = RDB_CONFLICT_REPLACE;
+    int64_t *changes = nullptr;
+    int ret = OH_RdbTrans_UpdateWithConflictResolution(trans, valueBucket, predicates, resolution, changes);
+    NAPI_ASSERT(env, ret == OH_Rdb_ErrCode::RDB_E_INVALID_ARGS, "OH_RdbTrans_UpdateWithConflictResolution is fail");
+    napi_value result;
+    int returnCode = 0;
+    napi_create_int32(env, returnCode, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -998,6 +1069,18 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "OH_RDB_TRANS_BUTT0100", nullptr, OH_RDB_TRANS_BUTT0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_RdbTrans_UpdateWithConflictResolution0100", nullptr, OH_RdbTrans_UpdateWithConflictResolution0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_RdbTrans_UpdateWithConflictResolution0100", nullptr, OH_RdbTrans_UpdateWithConflictResolution0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestTransUpdateWithConflictResolutionDatabaseClosed_0100", nullptr, TestTransUpdateWithConflictResolutionDatabaseClosed_0100,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestTransUpdateWithConflictResolutionDatabaseClosed_0200", nullptr, TestTransUpdateWithConflictResolutionDatabaseClosed_0200,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestTransUpdateWithConflictResolutionDatabaseClosed_0300", nullptr, TestTransUpdateWithConflictResolutionDatabaseClosed_0300,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestTransUpdateWithConflictResolutionDatabaseClosed_0400", nullptr, TestTransUpdateWithConflictResolutionDatabaseClosed_0400,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "TestTransUpdateWithConflictResolutionDatabaseClosed_0500", nullptr, TestTransUpdateWithConflictResolutionDatabaseClosed_0500,
             nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     

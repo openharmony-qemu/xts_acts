@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Size, Level, beforeEach  } from '@ohos/hypium';
+import { describe, expect, it, TestType, Size, Level, beforeEach  } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 
 const ExpectFail = () => {

@@ -16,7 +16,7 @@
 import notificationManager from '@ohos.notificationManager';
 import Base from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level } from '@ohos/hypium-dynamic';
 import { logGenerator, succeedGenerator, exitGenerator, sleep, exitSpecialGenerator } from '../common/utils';
 
 import common from '@ohos.app.ability.common';
