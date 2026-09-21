@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';

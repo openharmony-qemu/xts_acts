@@ -3,7 +3,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium-dynamic';
 import testNapi from 'libuvtest.so';
 import hilog from '@ohos.hilog';
 

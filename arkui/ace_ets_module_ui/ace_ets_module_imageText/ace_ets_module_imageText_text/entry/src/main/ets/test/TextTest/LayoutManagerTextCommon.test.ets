@@ -13,7 +13,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   LAYOUT_MANAGER_TEXT_COMMON_PAGE,
   LAYOUT_MANAGER_TEXT_COMMON_ROUTE_PARAM,

@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import libnativetype from 'libnativetype.so'
 import Utils from '../common/Utils';
 import { Driver } from '@kit.TestKit';

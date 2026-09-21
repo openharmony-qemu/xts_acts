@@ -3,7 +3,7 @@ import { FrameNode, inspector, UIContext } from '@kit.ArkUI';
 import fs from '@ohos.file.fs';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium-dynamic'
 @Component
 struct ChildComponent {
     build() {

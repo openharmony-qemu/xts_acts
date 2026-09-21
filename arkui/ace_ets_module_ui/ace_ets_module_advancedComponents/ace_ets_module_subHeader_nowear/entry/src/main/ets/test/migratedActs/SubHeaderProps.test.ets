@@ -20,7 +20,7 @@
  *锛堜笌 ActsLibuvTest `SegmentButtonOptions` 璇?`text1` 鍚岀被锛夛紝骞舵墦 `FALLBACK:mirror_Text.content`銆? */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   SUBHEADER_PROPS_PAGE,
   SUBHEADER_ROUTE_PARAM,

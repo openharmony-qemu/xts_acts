@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { UIUtils } from '@kit.ArkUI';
 import { assertCallCompleted, assertUnexpectedError } from '../common/NullUndefinedAssertHelper';
 

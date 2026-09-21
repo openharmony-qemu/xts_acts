@@ -14,7 +14,7 @@
  */
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 import { Want } from '@kit.AbilityKit';
 import CommonFunc from '../../MainAbility/common/Common';

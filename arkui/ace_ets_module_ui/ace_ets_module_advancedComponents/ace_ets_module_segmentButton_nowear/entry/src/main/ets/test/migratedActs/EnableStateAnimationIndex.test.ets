@@ -18,7 +18,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { ENABLE_STATE_ANIMATION_INDEX_PAGE } from '../../MainAbility/pages/migratedActs/EnableStateAnimationIndex';
 
 const UI_EVENT_CLICK: number = 10;

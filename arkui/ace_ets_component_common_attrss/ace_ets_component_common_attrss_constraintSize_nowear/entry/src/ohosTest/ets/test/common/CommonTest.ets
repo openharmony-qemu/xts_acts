@@ -15,7 +15,7 @@
 
 import { AttrsManager } from '../../MainAbility/common/AttrsManager';
 import Utils from '../../MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '@ohos/hypium'
+import { expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic'
 
 export default class CommonTest {
   /**

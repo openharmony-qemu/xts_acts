@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeEach } from '@ohos/hypium-dynamic'
 import libnativetype from 'libnativetype.so'
 import { ON } from '@kit.TestKit';
 import Utils from '../common/Utils';

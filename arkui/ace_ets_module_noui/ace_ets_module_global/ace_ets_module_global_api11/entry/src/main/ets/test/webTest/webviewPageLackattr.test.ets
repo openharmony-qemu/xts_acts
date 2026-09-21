@@ -23,7 +23,7 @@ import {
     it,
     Level,
     expect,
-} from "@ohos/hypium"
+} from "@ohos/hypium-dynamic"
 import Utils from "../../MainAbility/common/Utils"
 export default function webViewPageattrLackJsunit() {
     describe("webViewPageattrLackJsunit", () => {

@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium"
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from "@ohos/hypium-dynamic"
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from "../MainAbility/common/Common";
 const SLEEP_TIME = 1000;

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium';
+import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium-dynamic';
 import { colorValuesKey } from '../../MainAbility/pages/index/index';
 import router from '@ohos.router';
 import { CounterKeys, counterThemeProperty, counterThemeSetProperty } from '../../MainAbility/pages/components/CounterPage';

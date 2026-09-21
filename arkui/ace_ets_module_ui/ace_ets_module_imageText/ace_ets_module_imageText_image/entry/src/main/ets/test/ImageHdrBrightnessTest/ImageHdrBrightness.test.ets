@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium-dynamic';
 // 导入测试依赖kit
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 import { router } from '@kit.ArkUI';

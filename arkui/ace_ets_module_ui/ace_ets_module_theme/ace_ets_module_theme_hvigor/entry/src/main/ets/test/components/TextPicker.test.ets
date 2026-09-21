@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium';
+import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium-dynamic';
 import { TextPickerKeys, textPickerThemeProperty, textPickerThemeSetProperty } from '../../MainAbility/pages/components/TextPickerPage';
 import { colorValuesKey } from '../../MainAbility/pages/index/index';
 import { brownCustomTheme, greenCustomTheme, redCustomTheme } from '../../MainAbility/themes/CustomTheme';

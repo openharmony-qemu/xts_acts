@@ -14,7 +14,7 @@
  */
 import events_emitter from '@ohos.events.emitter';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import hilog from '@ohos.hilog';
 // import testsuite from '../../test/List.test'
 

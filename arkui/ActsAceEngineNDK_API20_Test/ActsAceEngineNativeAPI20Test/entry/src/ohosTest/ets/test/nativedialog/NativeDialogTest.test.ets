@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Size, Level, afterAll } from '@ohos/hypium'
+import { describe, beforeAll, it, expect, TestType, Size, Level, afterAll } from '@ohos/hypium-dynamic'
 import nativedialog from 'libnativedialog.so'
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;

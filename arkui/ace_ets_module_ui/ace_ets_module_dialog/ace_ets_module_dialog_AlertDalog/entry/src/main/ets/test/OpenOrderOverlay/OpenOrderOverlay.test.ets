@@ -14,7 +14,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '@ohos/hypium-dynamic';
 import { router } from '@kit.ArkUI';
 import Utils from '../../MainAbility/common/Utils';
 import { Driver, ON, } from '@ohos.UiTest';
