@@ -36,6 +36,7 @@ import utilTest from './util/Util.test';
 import util2Test from './util/Util2.test';
 import util3Test from './util/Util3.test';
 import utilTypeTest from './util/UtilType.test';
+import utilGetGlobalHandleCountTest from './util/GetGlobalHandleCount.test';
 import vmHeapMemoryPressureTest from './util/VMHeapMemoryPressureTest.test';
 
 import util1FPTest from './utilfp/Util1FP.test';
@@ -74,6 +75,7 @@ export default function testsuite() {
   util2Test();
   util3Test();
   utilTypeTest();
+  utilGetGlobalHandleCountTest();
   vmHeapMemoryPressureTest();
   util1FPTest();
   util2FPTest();
