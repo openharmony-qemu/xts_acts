@@ -52,8 +52,7 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('ACTS_PhotoEditorExtension_0100', Level.LEVEL0, async () => {
- 	        // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case
-   function.
+ 	        // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
  	        const newTag = 'ACTS_PhotoEditorExtension_0100 == ';
  	        try{
  	            let subscriber: commonEventManager.CommonEventSubscriber | null = null;

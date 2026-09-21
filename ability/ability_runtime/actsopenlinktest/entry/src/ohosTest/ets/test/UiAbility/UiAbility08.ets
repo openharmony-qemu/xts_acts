@@ -31,8 +31,7 @@ export default class UiAbility08 extends UIAbility {
     globalThis.uiAbilityContext8 = this.context
     console.info('UiAbility08 JSON.stringify(want) is',JSON.stringify(want));
     if(want.parameters.appLinkingOnly == false){
-      console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700 want.parameters.appLinkingOnly
-        == false');
+      console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700 want.parameters.appLinkingOnly == false');
     }
   }
 
