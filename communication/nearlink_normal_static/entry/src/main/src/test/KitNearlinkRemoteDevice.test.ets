@@ -66,6 +66,123 @@ export default function remoteDeviceTest(): void {
     })
 
     /**
+     * @tc.name SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0100
+     * @tc.number SUB_Communication_XTS_NearLink_RemoteDevice_Enum_0100
+     * @tc.desc PairingReason enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0100';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let PAIRING_REASON_SUCCESS: remoteDevice.PairingReason = remoteDevice.PairingReason.PAIRING_REASON_SUCCESS;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_REASON_SUCCESS result: %{public}d', caseName, PAIRING_REASON_SUCCESS);
+          expect(PAIRING_REASON_SUCCESS).assertEqual(0);
+          let PAIRING_REASON_FAILURE: remoteDevice.PairingReason = remoteDevice.PairingReason.PAIRING_REASON_FAILURE;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_REASON_FAILURE result: %{public}d', caseName, PAIRING_REASON_FAILURE);
+          expect(PAIRING_REASON_FAILURE).assertEqual(1);
+          let PAIRING_REASON_ACB_CONNECTION_FAIL: remoteDevice.PairingReason = remoteDevice.PairingReason.PAIRING_REASON_ACB_CONNECTION_FAIL;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_REASON_ACB_CONNECTION_FAIL result: %{public}d', caseName, PAIRING_REASON_ACB_CONNECTION_FAIL);
+          expect(PAIRING_REASON_ACB_CONNECTION_FAIL).assertEqual(2);
+          let PAIRING_REASON_EXCEED_ACB_MAX: remoteDevice.PairingReason = remoteDevice.PairingReason.PAIRING_REASON_EXCEED_ACB_MAX;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_REASON_EXCEED_ACB_MAX result: %{public}d', caseName, PAIRING_REASON_EXCEED_ACB_MAX);
+          expect(PAIRING_REASON_EXCEED_ACB_MAX).assertEqual(3);
+          let PAIRING_REASON_REMOTE_CANCELED: remoteDevice.PairingReason = remoteDevice.PairingReason.PAIRING_REASON_REMOTE_CANCELED;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_REASON_REMOTE_CANCELED result: %{public}d', caseName, PAIRING_REASON_REMOTE_CANCELED);
+          expect(PAIRING_REASON_REMOTE_CANCELED).assertEqual(4);
+          let PAIRING_REASON_LOCAL_CANCELED: remoteDevice.PairingReason = remoteDevice.PairingReason.PAIRING_REASON_LOCAL_CANCELED;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_REASON_LOCAL_CANCELED result: %{public}d', caseName, PAIRING_REASON_LOCAL_CANCELED);
+          expect(PAIRING_REASON_LOCAL_CANCELED).assertEqual(5);
+          let PAIRING_REASON_AUTH_FAIL: remoteDevice.PairingReason = remoteDevice.PairingReason.PAIRING_REASON_AUTH_FAIL;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_REASON_AUTH_FAIL result: %{public}d', caseName, PAIRING_REASON_AUTH_FAIL);
+          expect(PAIRING_REASON_AUTH_FAIL).assertEqual(6);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s PairingReason error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0200
+     * @tc.number SUB_Communication_XTS_NearLink_RemoteDevice_Enum_0200
+     * @tc.desc PairingType enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0200';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let NO_PASSKEY_CONFIRMATION: remoteDevice.PairingType = remoteDevice.PairingType.NO_PASSKEY_CONFIRMATION;
+          hilog.info(0x0000, 'testTag', '%{public}s NO_PASSKEY_CONFIRMATION result: %{public}d', caseName, NO_PASSKEY_CONFIRMATION);
+          expect(NO_PASSKEY_CONFIRMATION).assertEqual(0);
+          let PAIRING_TYPE_PASSCODE: remoteDevice.PairingType = remoteDevice.PairingType.PAIRING_TYPE_PASSCODE;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_TYPE_PASSCODE result: %{public}d', caseName, PAIRING_TYPE_PASSCODE);
+          expect(PAIRING_TYPE_PASSCODE).assertEqual(1);
+          let PAIRING_TYPE_NUMBER_COMPARE: remoteDevice.PairingType = remoteDevice.PairingType.PAIRING_TYPE_NUMBER_COMPARE;
+          hilog.info(0x0000, 'testTag', '%{public}s PAIRING_TYPE_NUMBER_COMPARE result: %{public}d', caseName, PAIRING_TYPE_NUMBER_COMPARE);
+          expect(PAIRING_TYPE_NUMBER_COMPARE).assertEqual(2);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s PairingType error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0300
+     * @tc.number SUB_Communication_XTS_NearLink_RemoteDevice_Enum_0300
+     * @tc.desc ConnectionReason enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_RemoteDevice_Enum_static_0300';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let CONNECTION_SUCCESS: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_SUCCESS;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_SUCCESS result: %{public}d', caseName, CONNECTION_SUCCESS);
+          expect(CONNECTION_SUCCESS).assertEqual(0);
+          let CONNECTION_FAILURE: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_FAILURE;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_FAILURE result: %{public}d', caseName, CONNECTION_FAILURE);
+          expect(CONNECTION_FAILURE).assertEqual(1);
+          let CONNECTION_LOCAL_DISCONNECT: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_LOCAL_DISCONNECT;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_LOCAL_DISCONNECT result: %{public}d', caseName, CONNECTION_LOCAL_DISCONNECT);
+          expect(CONNECTION_LOCAL_DISCONNECT).assertEqual(2);
+          let CONNECTION_REMOTE_DISCONNECT: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_REMOTE_DISCONNECT;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_REMOTE_DISCONNECT result: %{public}d', caseName, CONNECTION_REMOTE_DISCONNECT);
+          expect(CONNECTION_REMOTE_DISCONNECT).assertEqual(3);
+          let CONNECTION_FAIL_ACB_CONNECTION: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_FAIL_ACB_CONNECTION;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_FAIL_ACB_CONNECTION result: %{public}d', caseName, CONNECTION_FAIL_ACB_CONNECTION);
+          expect(CONNECTION_FAIL_ACB_CONNECTION).assertEqual(4);
+          let CONNECTION_FAIL_SERVICE_DISCOVERY: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_FAIL_SERVICE_DISCOVERY;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_FAIL_SERVICE_DISCOVERY result: %{public}d', caseName, CONNECTION_FAIL_SERVICE_DISCOVERY);
+          expect(CONNECTION_FAIL_SERVICE_DISCOVERY).assertEqual(5);
+          let CONNECTION_FAIL_NO_AVAILABLE_SERVICE: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_FAIL_NO_AVAILABLE_SERVICE;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_FAIL_NO_AVAILABLE_SERVICE result: %{public}d', caseName, CONNECTION_FAIL_NO_AVAILABLE_SERVICE);
+          expect(CONNECTION_FAIL_NO_AVAILABLE_SERVICE).assertEqual(6);
+          let CONNECTION_FAIL_CONNECTION_NUM_LIMITED: remoteDevice.ConnectionReason = remoteDevice.ConnectionReason.CONNECTION_FAIL_CONNECTION_NUM_LIMITED;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTION_FAIL_CONNECTION_NUM_LIMITED result: %{public}d', caseName, CONNECTION_FAIL_CONNECTION_NUM_LIMITED);
+          expect(CONNECTION_FAIL_CONNECTION_NUM_LIMITED).assertEqual(7);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s ConnectionReason error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLinkPub_RemoteDevice_On_static_0100
      * @tc.number SUB_Communication_XTS_NearLinkPub_RemoteDevice_On_0100
      * @tc.desc remoteDevice.onPairingStateChange normal call with callback

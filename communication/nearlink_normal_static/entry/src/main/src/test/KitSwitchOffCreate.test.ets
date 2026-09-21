@@ -91,7 +91,7 @@ export default function nearlinkswitchoffTest(): void {
     })
     beforeEach(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach start');
-      await Utils.clickCloseNearLinkSwitch();
+      await Utils.closeNearLink();
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach end');
       done();
     })
@@ -100,7 +100,7 @@ export default function nearlinkswitchoffTest(): void {
     })
     afterAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach start');
-      await Utils.clickOpenNearLinkSwitch();
+      await Utils.openNearLink();
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach end');
       done();
     })
@@ -349,7 +349,7 @@ export default function nearlinkswitchoffTest(): void {
     })
 
     /**
-     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_0100
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_Create_0100
      * @tc.name SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_static_0100
      * @tc.desc connect in SwitchOff state, error 36100003 expected.
      * @tc.size MediumTest
@@ -376,7 +376,7 @@ export default function nearlinkswitchoffTest(): void {
       done();
     })
     /**
-     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_0200
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_Create_0200
      * @tc.name SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_static_0200
      * @tc.desc ssapClient.disconnect in SwitchOff state, error 36100003 expected.
      * @tc.size MediumTest
@@ -403,7 +403,7 @@ export default function nearlinkswitchoffTest(): void {
       done();
     })
     /**
-     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_0300
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_Create_0300
      * @tc.name SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_static_0300
      * @tc.desc ssapClient.close in SwitchOff state, error 36100003 expected.
      * @tc.size MediumTest

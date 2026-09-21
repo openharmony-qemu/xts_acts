@@ -23,6 +23,7 @@ import dataTransferTest from './KitNearlinkDataTransfer.test';
 import nearlinkswitchoffCreateTest from './KitSwitchOffCreate.test';
 import nearlinkswitchoffNormalTest from './KitSwitchOffNormal.test';
 import nearlinkswitchoffCsdmTest from './KitSwitchOffCsdm.test';
+import constantTest from './KitNearlinkConstant.test';
 import cdsmTest from './KitNearlinkCdsm.test';
 import manager from '@ohos.nearlink.manager';
 import hilog from '@ohos.hilog';
@@ -36,6 +37,7 @@ try {
 export default function testsuite(): void {
   advertisingTest();
   scanTest();
+  constantTest();
   nearLinkManagerTest();
   nearlinkswitchoffNormalTest();
   cdsmTest();

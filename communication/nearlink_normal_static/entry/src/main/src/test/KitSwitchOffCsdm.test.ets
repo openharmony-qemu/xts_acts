@@ -53,7 +53,7 @@ export default function nearlinkswitchoffCsdmTest(): void {
     })
     beforeEach(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach start');
-      await Utils.clickCloseNearLinkSwitch();
+      await Utils.closeNearLink();
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach end');
       done();
     })
@@ -62,7 +62,7 @@ export default function nearlinkswitchoffCsdmTest(): void {
     })
     afterAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach start');
-      await Utils.clickOpenNearLinkSwitch();
+      await Utils.openNearLink();
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach end');
       done();
     })
