@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium-dynamic'
 import { createUserAlbum, driveFn, fetchAllOption, getPermission, sleep, genRandomStr } from '../common'
 import common from '@ohos.app.ability.common'
 

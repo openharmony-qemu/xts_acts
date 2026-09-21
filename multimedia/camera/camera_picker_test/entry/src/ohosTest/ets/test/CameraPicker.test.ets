@@ -14,7 +14,7 @@
  */
 import camera from '@ohos.multimedia.camera';
 import picker from '@ohos.multimedia.cameraPicker';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import common from '@ohos.app.ability.common';
 import { UiDriver, BY } from '@ohos.UiTest'
 import data from '@ohos.telephony.data'

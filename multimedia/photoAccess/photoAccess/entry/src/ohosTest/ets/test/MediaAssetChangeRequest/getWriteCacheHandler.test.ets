@@ -15,7 +15,7 @@
 
 import fs from '@ohos.file.fs';
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { driveFn, fetchOption, getPermission, photoKeys, sleep } from '../common'
 import common from '@ohos.app.ability.common';
 

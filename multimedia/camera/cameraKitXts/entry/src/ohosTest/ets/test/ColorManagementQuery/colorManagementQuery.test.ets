@@ -15,7 +15,7 @@
 
 import cameraObj from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { camera } from '@kit.CameraKit';
 import { indexSurfaceId } from '../../testability/pages/Index';

@@ -15,7 +15,7 @@
  
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { exifKeys, CUVAHdrExpectedValue, CUVAHdrMultiExpectedValue, testExifExpectedValue, verifyExifPropertiesByArray } from '../ImageProperties.test'
  
 const TAG = 'getAllProperties';

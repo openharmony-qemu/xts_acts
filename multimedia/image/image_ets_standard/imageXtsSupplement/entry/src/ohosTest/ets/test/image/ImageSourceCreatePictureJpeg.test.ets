@@ -1,4 +1,4 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium-dynamic";
 import { common, ErrorCode } from "@kit.AbilityKit";
 import { image } from "@kit.ImageKit";
 let imageSourceObj: image.ImageSource | null = null;

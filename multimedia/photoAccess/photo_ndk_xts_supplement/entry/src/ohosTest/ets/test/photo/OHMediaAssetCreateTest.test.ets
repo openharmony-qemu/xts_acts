@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import image from '@ohos.multimedia.image';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium-dynamic";
 import testNapi from 'libentry.so'
 import fileio from '@ohos.fileio'
 import { common } from "@kit.AbilityKit";

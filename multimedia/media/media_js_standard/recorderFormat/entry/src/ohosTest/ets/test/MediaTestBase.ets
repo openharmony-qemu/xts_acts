@@ -14,7 +14,7 @@
  */
 
 import audio from '@ohos.multimedia.audio';
-import { expect } from '@ohos/hypium'
+import { expect } from '@ohos/hypium-dynamic'
 import fs from '@ohos.file.fs';
 import { UiDriver, BY } from '@ohos.UiTest';
 import { BusinessError } from '@kit.BasicServicesKit';

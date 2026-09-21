@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, afterAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterAll, Level } from '@ohos/hypium-dynamic'
 import common from '@ohos.app.ability.common';
 import fs from "@ohos.file.fs"
 import dataSharePredicates from '@ohos.data.dataSharePredicates';

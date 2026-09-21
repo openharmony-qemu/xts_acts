@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { photoKeys, fetchOption, getPermission, driveFn, sleep, pushCreateAsset} from '../common'
 import common from '@ohos.app.ability.common'
 import { BusinessError } from '@ohos.base';

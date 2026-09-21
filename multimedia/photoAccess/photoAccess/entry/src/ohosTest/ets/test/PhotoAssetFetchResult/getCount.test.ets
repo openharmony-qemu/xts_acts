@@ -21,9 +21,9 @@ import {
   photoKeys, getPermission, driveFn, sleep, albumSubtype, albumType
 } from '../common'
 import common from '@ohos.app.ability.common';
-import { beforeAll, expect, Level } from '@ohos/hypium';
-import { describe } from '@ohos/hypium';
-import { it } from '@ohos/hypium';
+import { beforeAll, expect, Level } from '@ohos/hypium-dynamic';
+import { describe } from '@ohos/hypium-dynamic';
+import { it } from '@ohos/hypium-dynamic';
 
 export default function assetGetCountTest () {
   describe('assetGetCountTest', ()=>{

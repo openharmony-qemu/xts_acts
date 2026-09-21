@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import systemDateTime from '@ohos.systemDateTime';
 import common from '@ohos.app.ability.common';

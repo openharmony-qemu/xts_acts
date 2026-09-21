@@ -18,7 +18,7 @@ import media from '@ohos.multimedia.media'
 import camera from '@ohos.multimedia.camera'
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import display from '@ohos.display';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import eventEmitter from '@ohos.events.emitter';
 import { hdrCapability } from '@kit.ArkGraphics2D';

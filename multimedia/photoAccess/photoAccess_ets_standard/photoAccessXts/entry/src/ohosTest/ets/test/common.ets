@@ -22,7 +22,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import { sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
 
 export const LOG_TAG = '[PhotoAccessXts].';

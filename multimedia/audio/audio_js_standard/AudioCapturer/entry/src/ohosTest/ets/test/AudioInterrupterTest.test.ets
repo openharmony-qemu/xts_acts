@@ -15,7 +15,7 @@
 
 import audio from '@ohos.multimedia.audio';
 import fileio from '@ohos.fileio';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';

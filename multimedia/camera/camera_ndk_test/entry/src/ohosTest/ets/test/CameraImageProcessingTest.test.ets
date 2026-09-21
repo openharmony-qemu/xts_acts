@@ -19,7 +19,7 @@ import image from '@ohos.multimedia.image';
 //import fs from '@ohos.file.fs';
 import featureAbility from '@ohos.ability.featureAbility'
 import fs from '@ohos.file.fs';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Camera_MediaType } from './Constants';
 // 创建视频录制的参数
 let mediaUtil = MediaUtils.getInstance()

@@ -17,7 +17,7 @@ import { sendableImage } from '@kit.ImageKit';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG, copyImageToSandbox, genRandomStr } from '../../common';
 
 const TAG = LOG_TAG + 'createPixelMap';

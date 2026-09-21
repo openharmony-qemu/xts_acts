@@ -17,7 +17,7 @@ import cameraObj from 'libentry.so';
 import { cameraInfo } from 'libentry.so';
 import image from '@ohos.multimedia.image';
 import deviceInfo from '@ohos.deviceInfo';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import fs from '@ohos.file.fs';
 import featureAbility from '@ohos.ability.featureAbility'
 import { Camera_FlashMode, GlobalThis } from './Constants';

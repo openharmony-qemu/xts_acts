@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, Level, afterAll, beforeEach, afterEach } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level, afterAll, beforeEach, afterEach } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { JSON } from '@kit.ArkTS';
 import { dataSharePredicates } from '@kit.ArkData';

@@ -16,7 +16,7 @@
 import media from '@ohos.multimedia.media'
 import MediaTestBase, { FdObject } from './MediaTestBase';
 import VideoRecorderBase, { RecorderConfigFile } from './VideoRecorderTestBase';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import { Permissions } from '@kit.AbilityKit';
 
 let audioRecorder: media.AudioRecorder | null = null;

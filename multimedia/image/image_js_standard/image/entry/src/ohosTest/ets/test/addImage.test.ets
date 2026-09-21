@@ -14,7 +14,7 @@
  */
 
 import image from "@ohos.multimedia.image";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import { base64Image, scale2x1, translate3x1, rotate90, flipH, testBmp, testGif, crop3x3, scale1x4, 
 setAlpha8, translate1x3 }from './testImg2.test'
 import { testPng ,testJpg} from "./testImg.test";

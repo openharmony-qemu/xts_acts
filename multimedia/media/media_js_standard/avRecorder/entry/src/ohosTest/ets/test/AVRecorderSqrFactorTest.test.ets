@@ -14,7 +14,7 @@
  */
 
 import media from '@ohos.multimedia.media';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import Common, { FdObject } from './Common';
 
 const TAG = 'AVRecorderSqrFactorTest: ';

@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { albumKeys, albumSubtype, albumType, driveFn, fetchOption, getPermission, LOG_TAG } from '../../common';
 import { common } from '@kit.AbilityKit';
 import { dataSharePredicates } from '@kit.ArkData';

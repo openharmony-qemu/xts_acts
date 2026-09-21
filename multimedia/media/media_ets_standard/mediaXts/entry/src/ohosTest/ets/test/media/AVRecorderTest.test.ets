@@ -14,7 +14,7 @@
  */
 
 import media from '@ohos.multimedia.media';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import MediaTestBase from './MediaTestBase';
 import { Permissions } from '@kit.AbilityKit';
