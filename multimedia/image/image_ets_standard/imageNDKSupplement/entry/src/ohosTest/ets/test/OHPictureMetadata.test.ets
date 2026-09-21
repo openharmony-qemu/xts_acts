@@ -14,7 +14,7 @@
  */
 
 import
-  { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+  { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import testNapi from 'libimageEffect.so';
 import { JSON } from '@kit.ArkTS';
 const IMAGE_SUCCESS = 0;

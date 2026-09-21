@@ -14,7 +14,7 @@
  */
 
 import image from '@ohos.multimedia.image'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import { testPng, testJpg } from './testImg.test'
 import colorSpaceManager from "@ohos.graphics.colorSpaceManager"
 import common from '@ohos.app.ability.common'

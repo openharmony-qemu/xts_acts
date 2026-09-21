@@ -14,7 +14,7 @@
  */
 
 import resourceManager from '@ohos.resourceManager';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import router, { RouterOptions } from '@system.router';
 import { BY, UiDriver } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';

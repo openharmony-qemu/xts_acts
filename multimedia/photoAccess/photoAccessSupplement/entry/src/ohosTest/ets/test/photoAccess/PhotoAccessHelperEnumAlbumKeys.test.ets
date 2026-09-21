@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { copyImageToSandbox, driveFn, ErrorCode, fetchOption, getPermission, isEmpty, LOG_TAG, sleep} from '../common';
 import { common } from '@kit.AbilityKit';
 

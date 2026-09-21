@@ -14,7 +14,7 @@
  */
 
 import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { CommonUtils } from '../utils/CommonUtil.test';
 
 const TAG = 'avMusicTemplateManagerTest';

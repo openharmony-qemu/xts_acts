@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import testNapi from 'libentry.so'
 const sleep = (ms: number) => {
   return new Promise<void>(resolve => setTimeout(resolve, ms));

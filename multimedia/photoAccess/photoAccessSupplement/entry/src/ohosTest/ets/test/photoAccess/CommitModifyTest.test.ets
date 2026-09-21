@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit'
 import { driveFn, photoKeys, sleep, getPermission, fetchAllOption, } from '../common'
 import { JSON } from '@kit.ArkTS'

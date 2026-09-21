@@ -28,7 +28,7 @@ import {
 } from './common'
 import { BusinessError } from '@ohos.base';
 import { driveFn, getPermission, photoKeys, sleep } from '../common'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 

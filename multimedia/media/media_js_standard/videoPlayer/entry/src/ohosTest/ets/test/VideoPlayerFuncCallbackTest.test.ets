@@ -15,7 +15,7 @@
 
 import media from '@ohos.multimedia.media'
 import MediaTestBase from './MediaTestBase';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import resourceManager from '@ohos.resourceManager';
 
 const VIDEO_SOURCE = 'H264_AAC.mp4';

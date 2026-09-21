@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { driveFn, genRadomStr, getPermission, photoType, sleep } from '../common';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';

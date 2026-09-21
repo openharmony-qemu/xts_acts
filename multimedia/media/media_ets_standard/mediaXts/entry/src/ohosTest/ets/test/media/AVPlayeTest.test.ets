@@ -16,7 +16,7 @@
 import MediaTestBase from './MediaTestBase';
 import media from '@ohos.multimedia.media';
 import { idle, offCallback, PlayTest, setSource, setSubtitle, testAVPlayerFun, } from './AVPlayerTestBase';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { BusinessError, Callback } from '@kit.BasicServicesKit';
 import drm from '@ohos.multimedia.drm';
 import {

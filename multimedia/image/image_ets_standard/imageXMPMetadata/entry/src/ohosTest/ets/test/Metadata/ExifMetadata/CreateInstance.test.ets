@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { image } from '@kit.ImageKit';
 
 const TAG = 'createInstance';

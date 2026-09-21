@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { camera } from '@kit.CameraKit';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';

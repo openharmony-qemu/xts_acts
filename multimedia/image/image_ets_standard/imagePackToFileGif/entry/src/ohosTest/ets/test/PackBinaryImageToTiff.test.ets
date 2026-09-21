@@ -15,7 +15,7 @@
 
 import image from "@ohos.multimedia.image";
 import common from '@ohos.app.ability.common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import fs from '@ohos.file.fs';
 
 const TAG = 'PackBinaryImageToTiff';

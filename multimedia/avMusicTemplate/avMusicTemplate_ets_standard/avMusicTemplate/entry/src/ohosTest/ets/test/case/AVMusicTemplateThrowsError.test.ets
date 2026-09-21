@@ -15,7 +15,7 @@
 
 import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
 import { WantAgent } from '@ohos.wantAgent';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { CommonConstants } from '../constants/CommonConstants.test';
 import { AVMusicTemplateUtil } from '../utils/AVMusicTemplateUtil.test';
 import { CommonUtils } from '../utils/CommonUtil.test';

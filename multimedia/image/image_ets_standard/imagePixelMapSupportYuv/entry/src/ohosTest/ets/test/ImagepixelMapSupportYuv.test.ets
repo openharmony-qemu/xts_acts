@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium-dynamic'
 import image from '@ohos.multimedia.image';
 import hilog from '@ohos.hilog';
 import colorSpaceManager from '@ohos.graphics.colorSpaceManager';

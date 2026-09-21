@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import fs from '@ohos.file.fs';
 import File from '@system.file';
 import { Driver, ON, MatchPattern, } from '@ohos.UiTest';
