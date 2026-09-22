@@ -581,19 +581,19 @@ export default function webMessageExt() {
         ext.setType(null);
         expect().assertFail();
       } catch (error) {
-        expect(String((error as BusinessError).code)).assertEqual('401');
+        expect(String((error as BusinessError).code)).assertEqual('17100014');
       }
       try {
         ext.setType(undefined);
         expect().assertFail();
       } catch (error) {
-        expect(String((error as BusinessError).code)).assertEqual('401');
+        expect(String((error as BusinessError).code)).assertEqual('17100014');
       }
       try {
         ext.setType(999 as webview.WebMessageType);
         expect().assertFail();
       } catch (error) {
-        expect(String((error as BusinessError).code)).assertEqual('401');
+        expect(String((error as BusinessError).code)).assertEqual('17100014');
       }
       done();
     })
@@ -613,12 +613,7 @@ export default function webMessageExt() {
         ext.setType(webview.WebMessageType.NUMBER);
         expect().assertFail();
       } catch (error) {
-        let err = error as BusinessError;
-        if (err.code !== undefined) {
-          expect(String(err.code)).assertEqual('17100014');
-        } else {
-          expect(String(err.message)).assertContain('do not match');
-        }
+        expect(String((error as BusinessError).code)).assertEqual('17100014');
       }
       done();
     })
@@ -634,7 +629,7 @@ export default function webMessageExt() {
     it('testWebMessageExtSetTypeParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
       Utils.emitEvent('testWebMessageExtSetTypeParam001', 170010);
-      Utils.registerEvent('testWebMessageExtSetTypeParam001', true, 170290, done);
+      Utils.registerEvent('testWebMessageExtSetTypeParam001', true, 170296, done);
       sendEventByKey('WebMessageExtButton', 10, '');
     })
 

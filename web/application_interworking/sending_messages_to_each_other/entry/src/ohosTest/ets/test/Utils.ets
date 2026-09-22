@@ -97,6 +97,7 @@ export default class Utils {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
+        events_emitter.off(eventId);
         try {
           console.info(`${testCaseName} get result is:` + JSON.stringify(backData));
           expectFunction(backData, expected);
