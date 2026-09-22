@@ -296,7 +296,7 @@ export default function setPropertiesTest() {
         await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
           if (metaData == null) {
             console.info(TAG, testName, ' metaData is null, skip');
-            return
+            return;
           }
           metaData.setProperties(null);
           expect().assertFail();
@@ -324,7 +324,7 @@ export default function setPropertiesTest() {
         await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
           if (metaData == null) {
             console.info(TAG, testName, ' metaData is null, skip');
-            return
+            return;
           }
           metaData.setProperties(undefined);
           expect().assertFail();
@@ -352,7 +352,7 @@ export default function setPropertiesTest() {
         await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
           if (metaData == null) {
             console.info(TAG, testName, ' metaData is null, skip');
-            return
+            return;
           }
           metaData.setProperties(AppStorage.get('emptyString'));
           expect().assertFail();
