@@ -108,8 +108,8 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessErrInvalidArgsEmptyKey', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        assertBlanklessErrCode(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(2),
-          BLANKLESS_ERR_INVALID_ARGS);
+        assertBlanklessErrCodeWithControllerFallback(
+          nativeFunc.TestNativeArkWeb_SetBlanklessLoadingWithKeyByCase(2), BLANKLESS_ERR_INVALID_ARGS);
         done();
       });
 
@@ -168,8 +168,8 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_GetBlanklessInfoErrInvalidArgs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        assertBlanklessErrCode(nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(2),
-          BLANKLESS_ERR_INVALID_ARGS);
+        assertBlanklessErrCodeWithControllerFallback(
+          nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(2), BLANKLESS_ERR_INVALID_ARGS);
         done();
       });
 
