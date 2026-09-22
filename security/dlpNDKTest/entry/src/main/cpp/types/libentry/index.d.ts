@@ -18,3 +18,16 @@ export const osIsInSandboxA: () => number;
 export const osSetSandboxAppConfigA: () => number;
 export const osGetSandboxAppConfigA: () => number;
 export const osCleanSandboxAppConfigA: () => number;
+
+export interface DlpEnumValues {
+  ERR_OH_SUCCESS: number;
+  OH_DLP_NOT_SUPPORTED: number;
+  ERR_OH_INVALID_PARAMETER: number;
+  ERR_OH_API_ONLY_FOR_SANDBOX: number;
+  ERR_OH_API_NOT_FOR_SANDBOX: number;
+  ERR_OH_SYSTEM_SERVICE_EXCEPTION: number;
+  ERR_OH_OUT_OF_MEMORY: number;
+  ERR_OH_APPLICATION_NOT_AUTHORIZED: number;
+}
+
+export const ohDlpValidateEnumTest0100: () => DlpEnumValues;
