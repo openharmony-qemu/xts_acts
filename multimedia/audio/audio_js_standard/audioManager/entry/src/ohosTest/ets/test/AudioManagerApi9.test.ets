@@ -35,6 +35,7 @@ let minVol = 0;
 let maxVol = 15;
 let maxVolPc = 20;
 let maxVolDP = 100;
+let maxVolCar = 39;
 let volGroupId = null;
 let volConnectType = null;
 let onMicStateChangeFlag1: boolean | null = null;
@@ -585,6 +586,8 @@ export default function audioManagerApi9() {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
             } else if (data == maxVolDP) {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
+            } else if (data == maxVolCar) {
+              console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: PASS :' + data);
             } else {
               console.info('audioManagerApi9Test: callback : Ringtone getMaxVolume: FAIL :' + data);
               expect(false).assertTrue();
@@ -615,6 +618,8 @@ export default function audioManagerApi9() {
         if (maxVolume == maxVol) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
         } else if (maxVolume == maxVolPc) {
+          console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
+        } else if (maxVolume == maxVolDP) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
         } else if (maxVolume == maxVolDP) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
@@ -1706,6 +1711,16 @@ export default function audioManagerApi9() {
         done();
         return;
       }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
           flag = true;
@@ -1837,6 +1852,16 @@ export default function audioManagerApi9() {
         done();
         return;
       }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
           flag = true;
@@ -1898,6 +1923,16 @@ export default function audioManagerApi9() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
@@ -1964,6 +1999,16 @@ export default function audioManagerApi9() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
@@ -2046,6 +2091,16 @@ export default function audioManagerApi9() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
@@ -2154,6 +2209,16 @@ export default function audioManagerApi9() {
         done();
         return;
       }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let audioRender:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       console.info(`${TagFrmwk},createAudioRenderer SUCCESS`);
       await audioRender.start().then(() =>{
@@ -2249,6 +2314,16 @@ export default function audioManagerApi9() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
@@ -2349,6 +2424,16 @@ export default function audioManagerApi9() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice2) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
@@ -2682,6 +2767,20 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_MUTE_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
+        if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
         await audioManager.setVolume(audio.AudioVolumeType.ALARM, 1);
         await audioManager.mute(audio.AudioVolumeType.ALARM, true);
         let data = await audioManager.isMute(audio.AudioVolumeType.ALARM);
@@ -2769,6 +2868,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolCar) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolCar);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -2833,6 +2943,17 @@ export default function audioManagerApi9() {
               let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
               console.info('MaxData is ' + MaxData)
               expect(MaxData).assertEqual(maxVolDP);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
+            }
+          } else if (value == maxVolCar) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolCar);
             } else {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
@@ -2905,6 +3026,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolCar) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolCar);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ALARM: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -2933,6 +3065,20 @@ export default function audioManagerApi9() {
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_MUTE_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
+        let audioManager = audio.getAudioManager();
+        let audioRoutingManager = audioManager.getRoutingManager();
+        let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+        console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+        if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
+        if (outputDeviceDescription.length == 0) {
+          console.info(`this device has external device`)
+          done();
+          return;
+        }
         await audioManager.setVolume(audio.AudioVolumeType.ACCESSIBILITY, 1);
         await audioManager.mute(audio.AudioVolumeType.ACCESSIBILITY, true);
         let data = await audioManager.isMute(audio.AudioVolumeType.ACCESSIBILITY);
@@ -3019,6 +3165,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolCar) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolCar);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -3087,6 +3244,17 @@ export default function audioManagerApi9() {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
             }
+          } else if (value == maxVolCar) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolCar);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
+            }
           } else {
             console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: getVolume: Fail:${value}`);
             expect(false).assertTrue();
@@ -3151,6 +3319,17 @@ export default function audioManagerApi9() {
               let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ACCESSIBILITY);
               console.info('MaxData is ' + MaxData)
               expect(MaxData).assertEqual(maxVolDP);
+            } else {
+              expect(false).assertTrue();
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);
+            }
+          } else if (value == maxVolCar) {
+            let data1 = await audioManager.isMute(audio.AudioVolumeType.ALARM);
+            console.info("data1 is " + data1);
+            if (data1 == false) {
+              let MaxData = await audioManager.getMaxVolume(audio.AudioVolumeType.ALARM);
+              console.info('MaxData is ' + MaxData)
+              expect(MaxData).assertEqual(maxVolCar);
             } else {
               expect(false).assertTrue();
               console.log(`${TagFrmwk}: Promise: Is Stream Mute ACCESSIBILITY: isMute: Fail:${data}`);

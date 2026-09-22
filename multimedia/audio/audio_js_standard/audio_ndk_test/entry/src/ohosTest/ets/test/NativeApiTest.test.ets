@@ -8105,7 +8105,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8146,7 +8145,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8186,7 +8184,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8226,7 +8223,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8266,7 +8262,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8306,7 +8301,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8346,7 +8340,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8386,7 +8379,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8425,7 +8417,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8464,7 +8455,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8503,7 +8493,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8542,7 +8531,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();
@@ -8582,7 +8570,6 @@ export default function audioNDK() {
           let audioManager = audio.getAudioManager();
           let audioRoutingManager = audioManager.getRoutingManager();
           let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
           if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
             console.info(`this device has external device`)
             done();

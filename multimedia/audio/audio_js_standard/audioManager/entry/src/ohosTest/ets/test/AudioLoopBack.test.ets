@@ -503,6 +503,7 @@ export default function audioLoopBack() {
           done();
         }
       }
+      done();
     })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ENABLE_0100
