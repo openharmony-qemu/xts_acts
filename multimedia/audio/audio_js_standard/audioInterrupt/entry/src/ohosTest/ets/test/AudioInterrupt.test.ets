@@ -157,7 +157,6 @@ export default function audioInterrupt() {
       let activated: boolean | undefined = false;
       let InterruptHint: audio.InterruptHint | undefined = 0;
       await sleep(7000);
-      let audioManager = audio.getAudioManager();
       let interAudioInterrupt: audio.AudioInterrupt = {
         streamUsage: 1,
         contentType: 0,
