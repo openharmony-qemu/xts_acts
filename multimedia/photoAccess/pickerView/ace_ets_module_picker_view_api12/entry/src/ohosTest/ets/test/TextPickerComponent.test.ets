@@ -381,6 +381,22 @@ async function closePickerModel(driver: Driver, time ?: number) {
   await CommonFunc.sleep(time ?? 500);
 }
 
+async function closePickerModelWithNoResult(driver: Driver, time ?: number) {
+  await CommonFunc.sleep(time ?? 500);
+  const checkbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
+  if (!checkbox) {
+    const button: Component | null = await driver.findComponent(ON.id('Complete'));
+    await button?.click();
+  } else {
+    expect(false).assertTrue();
+    console.error(
+      `closePickerModelWithNoResult failed, expect no item in grid view`);
+    const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
+    await closeBtn?.click();
+  }
+  await CommonFunc.sleep(time ?? 500);
+}
+
 async function savePhoto() {
   console.log('savePhoto start');
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
@@ -5505,5 +5521,41 @@ export default function TextPicker() {
       events_emitter.off(event.eventId);
       done();
     });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_1000
+     * @tc.number SUB_PHOTO_PICKER_TEST_1000
+     * @tc.desc   Testing mimeTypeFilter without supporting heif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_1000', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.mimeTypeFilter = {
+        mimeTypeArray: ['image/heic']
+      }
+      pickerOptions.preferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.DEFAULT;
+      pickerOptions.assetCompatibleCapability = { supportedHighResolution: false, supportedMimeType: ['image/jpeg'] };
+      try {
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('SUB_PHOTO_PICKER_TEST_1000, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+            JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModelWithNoResult(driver);
+      } catch (err) {
+        expect(false).assertTrue();
+        console.error(
+          `SUB_PHOTO_PICKER_TEST_1000, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("SUB_PHOTO_PICKER_TEST_1000 finish");
+      done();
+    });
+
   })
 }
