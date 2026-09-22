@@ -114,5 +114,23 @@ export default function webviewControllerClearHostIPParam() {
         });
       sendEventByKey('webviewControllerClearHostIPParamButton', 10, '');
     })
+
+    /**
+     * @tc.name   testClearHostIPReturnValue001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARHOSTIP_RETURN_4700
+     * @tc.desc   test WebviewController.clearHostIP void return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testClearHostIPReturnValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitClearHostIPReturnValue001', 179800);
+      Utils.registerBaseEvent('testClearHostIPReturnValue001', true, 179840, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webviewControllerClearHostIPParamButton', 10, '');
+    })
   })
 }

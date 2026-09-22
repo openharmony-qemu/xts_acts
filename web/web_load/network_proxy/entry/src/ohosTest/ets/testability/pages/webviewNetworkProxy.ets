@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import { JSON } from '@kit.ArkTS';
 
+type OnProxyConfigChangeCallback = () => void;
 const EVENT_ID_SET_EMIT_KEY = 200040;
 
 @Entry
@@ -351,6 +352,20 @@ struct webviewNetworkProxy {
                 });
               } catch (error) {
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testOnProxyConfigChangeCallback': {
+              try {
+                this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn');
+                let typedCallback: OnProxyConfigChangeCallback = (): void => {
+                  this.callbackFlag = true;
+                  Utils.emitEvent(true, 200210);
+                };
+                webview.ProxyController.applyProxyOverride(this.proxyConfig, typedCallback);
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 200210);
               }
               break;
             }

@@ -269,5 +269,35 @@ export default function componentLifeCycleTestOne() {
         await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton',
           'emitWebViewNotRespondingReason_NAVIGATION_COMMIT_TIMEOUT');
       })
+
+    /**
+     * @tc.name   testWebInterfaceConstructorParam001
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_PARAM_2800
+     * @tc.desc   test WebInterface constructor param spec via controller attached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebInterfaceConstructorParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        Utils.emitEvent('emitWebInterfaceConstructorParam001', 138100);
+        Utils.registerEvent('testWebInterfaceConstructorParam001', true, 138260, done);
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitWebInterfaceConstructorParam001');
+      })
+
+    /**
+     * @tc.name   testWebInterfaceConstructorReturn001
+     * @tc.number SUB_WEB_WEBINTERFACE_CONSTRUCTOR_RETURN_2900
+     * @tc.desc   test WebInterface constructor return value via controller
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebInterfaceConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        Utils.emitEvent('emitWebInterfaceConstructorReturn001', 138100);
+        Utils.registerEvent('testWebInterfaceConstructorReturn001', true, 138261, done);
+        await Utils.waitAndClickComponent(driver, 'HttpAuthHandlerButton', 'emitWebInterfaceConstructorReturn001');
+      })
   })
 }

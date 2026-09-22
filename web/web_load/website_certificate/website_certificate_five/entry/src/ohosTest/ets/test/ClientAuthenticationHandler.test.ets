@@ -99,6 +99,59 @@ export default function ClientAuthenticationHandlerTest() {
       sendEventByKey('clientAuthenticationHandlerButton', 10, '');
     })
 
+    /**
+     * @tc.name   testClientAuthenticationHandlerConstructor001
+     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CONSTRUCTOR_5300
+     * @tc.desc   test ClientAuthenticationHandler class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClientAuthenticationHandlerConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      Utils.emitEvent('emitClientAuthenticationHandlerConstructor001', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent('testClientAuthenticationHandlerConstructor001', true, 26031047, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('clientAuthenticationHandlerButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testClientAuthenticationHandlerConstructorReturn001
+     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CONSTRUCTOR_RETURN_5400
+     * @tc.desc   test ClientAuthenticationHandler constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClientAuthenticationHandlerConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      Utils.emitEvent('emitClientAuthenticationHandlerConstructorReturn001', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent('testClientAuthenticationHandlerConstructorReturn001', true, 26031048, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('clientAuthenticationHandlerButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testClientAuthenticationHandlerClass001
+     * @tc.number SUB_WEB_CLIENTAUTHENTICATIONHANDLER_CLASS_5500
+     * @tc.desc   test ClientAuthenticationHandler class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClientAuthenticationHandlerClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      Utils.emitEvent('emitClientAuthenticationHandlerClass001', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent('testClientAuthenticationHandlerClass001', true, 26031049, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('clientAuthenticationHandlerButton', 10, '');
+    })
 
   })
 }

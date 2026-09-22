@@ -32,6 +32,7 @@ import webviewControllerRemoveIntelligentTrackingPreventionBypassingListParam fr
 import webviewControllerSetDownloadDelegateParam from './WebviewControllerSetDownloadDelegateParam.test';
 import webviewControllerSetHostIPParam from './WebviewControllerSetHostIPParam.test';
 import webviewControllerSetUrlTrustListParam from './WebviewControllerSetUrlTrustListParam.test';
+import webviewControllerSetUrlTrustListErrorDirect from './WebviewControllerSetUrlTrustListErrorDirect.test';
 import webviewControllerSetAppCustomUserAgentParam from './WebviewControllerSetAppCustomUserAgentParam.test';
 import webviewControllerSetSocketIdleTimeoutParam from './WebviewControllerSetSocketIdleTimeoutParam.test';
 import webviewControllerWarmupServiceWorkerParam from './WebviewControllerWarmupServiceWorkerParam.test';
@@ -77,6 +78,7 @@ export default function testsuite() {
   webviewControllerSetHostIPParam()
   webviewControllerWarmupServiceWorkerParam()
   webviewControllerSetUrlTrustListParam()
+  webviewControllerSetUrlTrustListErrorDirect()
   webviewControllerSetBackForwardCacheOptionsParam()
   webviewControllerSetAppCustomUserAgentParam()
   webviewControllerSetUserAgentForHostsParam()

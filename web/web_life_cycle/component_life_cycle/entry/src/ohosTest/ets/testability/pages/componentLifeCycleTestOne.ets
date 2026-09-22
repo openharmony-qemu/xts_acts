@@ -277,6 +277,27 @@ struct httpAuthHandler {
               Utils.emitEvent(true, 138250)
               break;
             }
+            case 'emitWebInterfaceConstructorParam001': {
+              try {
+                let attached: boolean = this.webId > 0;
+                Utils.emitEvent(attached, 138260);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(false, 138260);
+              }
+              break;
+            }
+            case 'emitWebInterfaceConstructorReturn001': {
+              try {
+                let hasController: boolean = this.controllerone !== undefined &&
+                  this.controllerone !== null;
+                Utils.emitEvent(hasController, 138261);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(false, 138261);
+              }
+              break;
+            }
           }
         })
       }

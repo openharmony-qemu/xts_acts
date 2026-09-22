@@ -49,12 +49,16 @@ struct WebComponent {
   webOptions: MyWebOptions = {
     src: this.mServer.getAssetUrl('index.html'),
     controller: this.controller,
+    renderMode: 0,
+    incognitoMode: true,
     sharedRenderProcessToken: '111',
   }
   webOptions2: MyWebOptions = {
     src: this.mServer.getAssetUrl('second.html'),
     controller: this.controller,
-    sharedRenderProcessToken: '111',
+    renderMode: 1,
+    incognitoMode: false,
+    sharedRenderProcessToken: '',
   }
   @State testObj: TestClass = new TestClass();
   @State isPageEnd1: number = -1;

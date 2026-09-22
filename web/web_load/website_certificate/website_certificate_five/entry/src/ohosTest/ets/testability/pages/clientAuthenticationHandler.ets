@@ -74,6 +74,18 @@ struct clientAuthenticationHandlerTest {
               }
               break;
             }
+            case 'emitClientAuthenticationHandlerConstructor001': {
+              Utils.emitEvent(true, 26031047);
+              break;
+            }
+            case 'emitClientAuthenticationHandlerConstructorReturn001': {
+              Utils.emitEvent(true, 26031048);
+              break;
+            }
+            case 'emitClientAuthenticationHandlerClass001': {
+              Utils.emitEvent(true, 26031049);
+              break;
+            }
 
           }
         }).margin(10)
