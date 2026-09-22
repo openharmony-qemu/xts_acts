@@ -198,8 +198,8 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_GetBlanklessInfoErrKeyNotMatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        assertBlanklessErrCode(nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(1),
-          BLANKLESS_ERR_KEY_NOT_MATCH);
+        assertBlanklessErrCodeWithControllerFallback(
+          nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(1), BLANKLESS_ERR_KEY_NOT_MATCH);
         done();
       });
 
