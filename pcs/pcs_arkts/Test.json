@@ -10,12 +10,6 @@
     },
     "kits": [
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/com.acts.pcs.arktstest/haps/entry/files"
-            ]
-        },
-        {
             "test-file-name": [
                 "ActsPCSArkts.hap",
                 "ActsPCSArktsTest.hap",
@@ -28,15 +22,17 @@
         {
             "type": "PushKit",
             "push": [
-                "./resource/pcs/bundle_fifth.hap -> /data/app/el2/100/base/com.acts.pcs.arktstest/haps/entry/files/bundle_fifth.hap",
-                "./resource/pcs/Believer.wav -> /data/app/el2/100/base/com.acts.pcs.arktstest/haps/entry/files/Believer.wav",
-				"./common_event.txt -> /data/app/el2/100/base/com.acts.pcs.arktstest/haps/entry/files/common_event.txt" 
-
+                "./resource/pcs/bundle_fifth.hap -> /data/local/tmp/bundle_fifth.hap",
+                "./resource/pcs/Believer.wav -> /data/local/tmp/Believer.wav",
+				"./common_event.txt -> /data/local/tmp/common_event.txt",
+                "./setup_pcs_arkts_test.sh -> /data/local/tmp/setup_pcs_arkts_test.sh"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
+                "chmod 755 /data/local/tmp/setup_pcs_arkts_test.sh",
+                "sh /data/local/tmp/setup_pcs_arkts_test.sh",
                 "uitest dumpLayout"
             ]
         }
