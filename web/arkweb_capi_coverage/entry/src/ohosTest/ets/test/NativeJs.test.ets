@@ -13,7 +13,7 @@ export default function native_jsTest() {
 
     /**
      * @tc.name TestNativeArkWeb_RunJavaScript
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_RUN_JAVA_SCRIPT_0020
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_RUN_JAVA_SCRIPT_5100
      * @tc.desc Test OH_NativeArkWeb_RunJavaScript
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

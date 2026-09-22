@@ -13,7 +13,7 @@ export default function releaseTest() {
 
     /**
      * @tc.name TestArkWeb_ReleaseString
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RELEASE_STRING_0028
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RELEASE_STRING_4900
      * @tc.desc Test OH_ArkWeb_ReleaseString
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -27,7 +27,7 @@ export default function releaseTest() {
 
     /**
      * @tc.name TestArkWeb_ReleaseByteArray
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RELEASE_BYTE_ARRAY_0029
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RELEASE_BYTE_ARRAY_5000
      * @tc.desc Test OH_ArkWeb_ReleaseByteArray
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

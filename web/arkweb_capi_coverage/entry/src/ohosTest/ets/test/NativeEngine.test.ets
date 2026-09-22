@@ -13,7 +13,7 @@ export default function native_engineTest() {
 
     /**
      * @tc.name TestNativeArkWeb_SetActiveWebEngineVersion
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_ACTIVE_WEB_ENGINE_VERSION_0017
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_SET_ACTIVE_WEB_ENGINE_VERSION_9500
      * @tc.desc Test OH_NativeArkWeb_SetActiveWebEngineVersion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -29,7 +29,7 @@ export default function native_engineTest() {
 
     /**
      * @tc.name TestNativeArkWeb_GetActiveWebEngineVersion
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_ACTIVE_WEB_ENGINE_VERSION_0018
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_GET_ACTIVE_WEB_ENGINE_VERSION_9600
      * @tc.desc Test OH_NativeArkWeb_GetActiveWebEngineVersion
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -44,7 +44,7 @@ export default function native_engineTest() {
 
     /**
      * @tc.name TestNativeArkWeb_IsActiveWebEngineEvergreen
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_IS_ACTIVE_WEB_ENGINE_EVERGREEN_0019
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_IS_ACTIVE_WEB_ENGINE_EVERGREEN_9700
      * @tc.desc Test OH_NativeArkWeb_IsActiveWebEngineEvergreen
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

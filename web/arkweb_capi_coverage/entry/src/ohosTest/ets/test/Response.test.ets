@@ -13,7 +13,7 @@ export default function responseTest() {
 
     /**
      * @tc.name TestArkWebResponse_GetHeaderByName
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESPONSE_GET_HEADER_BY_NAME_0044
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_RESPONSE_GET_HEADER_BY_NAME_4400
      * @tc.desc Test OH_ArkWebResponse_GetHeaderByName
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
