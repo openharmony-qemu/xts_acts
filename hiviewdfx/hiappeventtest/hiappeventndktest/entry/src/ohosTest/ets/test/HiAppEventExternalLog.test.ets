@@ -106,7 +106,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
             try{
@@ -115,7 +115,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
 
@@ -129,7 +129,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
             try{
@@ -137,7 +137,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
 
@@ -153,7 +153,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
             try{
@@ -161,7 +161,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
             // // 按大小过滤 — 删除小于100KB的日志
@@ -172,7 +172,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
             try{
@@ -180,7 +180,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
 
@@ -192,7 +192,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
             try{
@@ -200,7 +200,7 @@ export default function HiAppEventExternalLog() {
               done();
             } catch (err) {
               hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-              expect(err.code === 401).assertTrue();
+              expect(err.code === '401').assertTrue();
               done();
             }
             done();
@@ -270,7 +270,7 @@ export default function HiAppEventExternalLog() {
         done();
       } catch (err) {
         hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code === '401').assertTrue();
         done();
       }
       hilog.info(0x0000, 'hiAppEvent', '%{public}s', 'hiAppEventRegisterExternalLogManager040 test end');
@@ -295,7 +295,7 @@ export default function HiAppEventExternalLog() {
         done();
       } catch (err) {
         hilog.error(0x0000, 'hiAppEvent', `hiappevent [MyLogManager] registerExternalLogManager failed, err code: ${err.code}, err msg: ${err.message}`);
-        expect(err.code === 401).assertTrue();
+        expect(err.code === '401').assertTrue();
         done();
       }
       hilog.info(0x0000, 'hiAppEvent', '%{public}s', 'hiAppEventRegisterExternalLogManager050 test end');
