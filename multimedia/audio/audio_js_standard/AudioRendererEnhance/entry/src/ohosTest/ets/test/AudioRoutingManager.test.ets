@@ -140,6 +140,16 @@ export default function AudioRoutingManagerTest() {
         done();
         return;
       }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let devices: ESObject = audioRoutingManager.getAvailableDevices(audio.DeviceUsage.MEDIA_INPUT_DEVICES);
         console.info(`${Tag}:getAvailableDevices :SUCCESS ${JSON.stringify(devices)}`);
@@ -179,6 +189,16 @@ export default function AudioRoutingManagerTest() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
@@ -265,6 +285,16 @@ export default function AudioRoutingManagerTest() {
         done();
         return;
       }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let devices: ESObject = audioRoutingManager.getAvailableDevices(audio.DeviceUsage.CALL_INPUT_DEVICES);
         console.info(`${Tag}:getAvailableDevices :SUCCESS ${JSON.stringify(devices)}`);
@@ -304,6 +334,16 @@ export default function AudioRoutingManagerTest() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;

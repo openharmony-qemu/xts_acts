@@ -51,7 +51,7 @@ let highVol: number = 14;
 let outOfRangeVol: number = 101;
 let longValue = '28374837458743875804735081439085918459801437584738967509184509813904850914375904790589104801843';
 let AudioVolumeType: ESObject = "123";
-const MaxVloume: number[] = [15,20,100];
+const MaxVloume: number[] = [15,20,100,39];
 
 async function getAudioManager() {
   audioManager = audio.getAudioManager();

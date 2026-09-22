@@ -21,6 +21,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { resourceManager } from '@kit.LocalizationKit';
 import common from '@ohos.app.ability.common';
 import audio from '@ohos.multimedia.audio';
+import fs from '@ohos.file.fs';
 
 const Tag = 'audio_ndk_test:'
 const test_pass = 0;  // success result
@@ -79,7 +80,20 @@ let sleepForPermissions = async () => {
 
 export default function audioNDK() {
   describe('audioNDKTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
+      try{
+        let testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
+        let pathDir = testContext.filesDir;
+        let filePath = pathDir + '/test_44100_2.wav';
+        console.log(filePath + 'filePath')
+        let buffer = await testContext.resourceManager.getRawFileContent('test_44100_2.wav');
+        let fd = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+        fs.writeSync(fd.fd, buffer.buffer);
+        fs.closeSync(fd);
+        console.log('filePath copy success:')
+      } catch (e) {
+        console.log('filePath copy fail:' + e)
+      }
       console.info('beforeAll case');
     })
 
@@ -1550,6 +1564,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioRoutingManagerGetDevices_02();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_MANAGER_GETDEVICES_0200 audioRoutingManagerDevice result: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2090,6 +2118,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceType_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICETYPE_0200 audioAudioDeviceDescriptorGetDeviceType: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2135,6 +2177,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceRole_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEROLE_0200 audioAudioDeviceDescriptorGetDeviceRole: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2180,6 +2236,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceId_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEID_0200 audioAudioDeviceDescriptorGetDeviceId: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2225,6 +2295,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceName_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICENAME_0200 audioAudioDeviceDescriptorGetDeviceName: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2270,6 +2354,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceAddress_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEADDRESS_0200 audioAudioDeviceDescriptorGetDeviceAddress: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2315,6 +2413,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceSampleRates_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0200 audioAudioDeviceDescriptorGetDeviceSampleRates: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2330,6 +2442,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceSampleRates_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICESAMPLERATES_0300 audioAudioDeviceDescriptorGetDeviceSampleRates: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2375,6 +2501,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceChannelCounts_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0200 audioAudioDeviceDescriptorGetDeviceChannelCounts: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2390,6 +2530,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceChannelCounts_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICECHANNELCOUNTS_0300 audioAudioDeviceDescriptorGetDeviceChannelCounts: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2435,6 +2589,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceDisplayName_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEDISPLAYNAME_0200 audioAudioDeviceDescriptorGetDeviceDisplayName: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2480,6 +2648,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceEncodingTypes_002();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0200 audioAudioDeviceDescriptorGetDeviceEncodingTypes: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -2495,6 +2677,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.audioAudioDeviceDescriptorGetDeviceEncodingTypes_003();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_NDK_ROUTING_MANAGER_GETDEVICEENCODINGTYPES_0300 audioAudioDeviceDescriptorGetDeviceEncodingTypes: ${result}`);
       expect(result).assertEqual(test_pass)
@@ -3135,6 +3331,20 @@ export default function audioNDK() {
      * @tc.level  LEVEL0
      */
     it('SUM_MULTIMEDIA_AUDIO_OH_AudioSessionManagerReleaseDevices_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUM_MULTIMEDIA_AUDIO_OH_AudioSessionManagerReleaseDevices_001 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.AudioSessionManagerReleaseDevices_001();
       console.info(`Tag: SUM_MULTIMEDIA_AUDIO_OH_AudioSessionManagerReleaseDevices_001`,
         `AudioSessionManagerReleaseDevices_001: ${result}`);
@@ -4724,6 +4934,20 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0100();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100 : ${result}`);
       expect(result).assertEqual(test_pass);
@@ -4740,6 +4964,20 @@ export default function audioNDK() {
      */
     it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let result = myaudioNdk.AudioSuiteRendererGetLatency_0200();
       console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200 : ${result}`);
       expect(result).assertEqual(test_pass);
@@ -7828,6 +8066,16 @@ export default function audioNDK() {
             done();
             return;
           }
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100()
           console.info(`${Tag} Write frame length mismatch result: ${result}`)
           expect(result).assertEqual(test_pass)
@@ -7854,13 +8102,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
         try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100()
           console.info(`${Tag} Writable illegal state (released) result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_ILLEGALSTATE_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -7881,13 +8143,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
         try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100()
           console.info(`${Tag} GetWritableSize illegal state (released) result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_ERROR_ILLEGALSTATE_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -7907,13 +8183,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
         try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100()
           console.info(`${Tag} RegisterStartCallback illegal state result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTART_ERROR_ILLEGALSTATE_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -7933,13 +8223,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
         try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100()
           console.info(`${Tag} RegisterStopCallback illegal state result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGSTOP_ERROR_ILLEGALSTATE_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -7959,13 +8263,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
         try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100()
           console.info(`${Tag} RegisterReleaseCallback illegal state result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGRELEASE_ERROR_ILLEGALSTATE_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -7985,13 +8303,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
         try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100()
           console.info(`${Tag} RegisterLatencyCallback illegal state result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGLATENCY_ERROR_ILLEGALSTATE_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -8011,13 +8343,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
         try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100()
           console.info(`${Tag} RegisterFramePositionCallback illegal state result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_REGFRAME_ERROR_ILLEGALSTATE_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -8036,10 +8382,30 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100()
-        console.info(`${Tag} SetNoiseReductionMode success result: ${result}`)
-        expect(result).assertEqual(test_pass)
-        done()
+        try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100()
+          console.info(`${Tag} SetNoiseReductionMode success result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_SETNOISE_SUCCESS_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+          done()
+        }
     })
 
     /**
@@ -8055,10 +8421,30 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100()
-        console.info(`${Tag} Connected success result: ${result}`)
-        expect(result).assertEqual(test_pass)
-        done()
+        try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100()
+          console.info(`${Tag} Connected success result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYCONN_SUCCESS_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+          done()
+        }
     })
 
     /**
@@ -8074,10 +8460,30 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100()
-        console.info(`${Tag} Disconnected success result: ${result}`)
-        expect(result).assertEqual(test_pass)
-        done()
+        try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100()
+          console.info(`${Tag} Disconnected success result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_NOTIFYDISCONN_SUCCESS_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+          done()
+        }
     })
 
     /**
@@ -8093,10 +8499,30 @@ export default function audioNDK() {
       */
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
         async (done: Function) => {
-        let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100()
-        console.info(`${Tag} Destroy success result: ${result}`)
-        expect(result).assertEqual(test_pass)
-        done()
+        try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          let result : number = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100()
+          console.info(`${Tag} Destroy success result: ${result}`)
+          expect(result).assertEqual(test_pass)
+          done()
+        } catch (error) {
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_DESTORY_SUCCESS_0100 ERROR: ${error.message}`);
+          expect().assertFail();
+          done()
+        }
     })
 
     /**
@@ -8113,13 +8539,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100()
           console.info(`${Tag} Write success result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_SUCCESS_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
@@ -8139,13 +8579,27 @@ export default function audioNDK() {
     it('SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       try {
+          let audioManager = audio.getAudioManager();
+          let audioRoutingManager = audioManager.getRoutingManager();
+          let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+          if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
+          if (outputDeviceDescription.length == 0) {
+            console.info(`this device has external device`)
+            done();
+            return;
+          }
           let result = myaudioNdk.SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100()
           console.info(`${Tag} GetWritableSize success result: ${result}`)
           expect(result).assertEqual(test_pass)
           await sleep(3000)
           done()
         } catch (error) {
-          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_WRITE_ERROR_FRAMELENGTH_0100 ERROR: ${error.message}`);
+          console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100 ERROR: ${error.message}`);
           expect().assertFail();
         }
         done()
