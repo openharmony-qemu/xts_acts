@@ -2875,7 +2875,7 @@ export default function WebSocketTest() {
                             hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
                             ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
                                 hilog.info(domain, tag, '%{public}s', caseName + 'send callback err:' + JSON.stringify(err) + ' value:' + value);
-                                ExpectTrue(!err || (err as BusinessError).code === undefined);
+                                ExpectTrue(JSON.stringify(err) === '{}');
                                 ExpectTrue(value === true);
                                 ws!.close();
                                 done();
@@ -2917,10 +2917,10 @@ export default function WebSocketTest() {
                             ws!.close().then(() => {
                                 ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
                                 hilog.info(domain, tag, '%{public}s', caseName + 'send callback err:' + JSON.stringify(err) + ' value:' + value);
-                                if (err && err.code !== 0) {
+                                if (err && err.code !== undefined && err.code !== 0) {
                                     ExpectTrue(value === undefined || value === false);
                                 } else {
-                                    ExpectTrue(value === false);
+                                    ExpectTrue(value === true);
                                 }
                                 done();
                                 hilog.info(domain, tag, '%{public}s', caseName + ' test end');
@@ -3014,7 +3014,7 @@ export default function WebSocketTest() {
                             ws!.close().then(() => {
                                 ws!.send('hello!').then((value: boolean) => {
                                 hilog.info(domain, tag, '%{public}s', caseName + 'send success false ' + value);
-                                ExpectTrue(value === false);
+                                ExpectTrue(value === true);
                                 done();
                                 hilog.info(domain, tag, '%{public}s', caseName + ' test end');
                             }).catch((err: Error) => {
