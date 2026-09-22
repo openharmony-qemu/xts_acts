@@ -182,6 +182,12 @@ async function createFullData(dataLen: int): Promise<cryptoFramework.DataBlob>{
   }
 }
 
+function createDataSync(len: int): Uint8Array {
+  let rand: cryptoFramework.Random = cryptoFramework.createRandom();
+  let rawData: cryptoFramework.DataBlob = rand.generateRandomSync(len);
+  return rawData.data;
+}
+
 export {
   stringToUint8Array,
   decToHexString,
@@ -192,5 +198,6 @@ export {
   compareNumber,
   compareString,
   asyncType,
-  compareUint8Array
+  compareUint8Array,
+  createDataSync
 }
