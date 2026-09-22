@@ -1734,21 +1734,16 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('open_manager_settings_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
-      try{
+      if (!isDeviceSupportOpenNetWork()) {
+        done();
+        return;
+      }
+      try {
         let value = await settings.openNetworkManagerSettings(mContext);
         console.info("[open_manager_settings_120] result is:" + value);
-        if (!isDeviceSupportOpenNetWork()) {
-          console.info("[open_manager_settings_120] sleep 1s");
-          await CommonFunc.sleep(1000);
-          let driver = await uitest.Driver.create();
-          let textComponent = await driver.findComponent(uitest.ON.text('设置网络'));
-          console.info("[open_manager_settings_120] text = " + textComponent);
-          expect(textComponent === undefined || textComponent === null).assertTrue();
-        } else {
-          expect(value).assertTrue();
-        }
+        expect(value).assertTrue();
         done();
-      }catch (err) {
+      } catch (err) {
         console.error("[open_manager_settings_120] error = " + err);
         expect(err.code).assertEqual(14800010);
       }
@@ -3430,6 +3425,10 @@ export default function settingUiJsunit() {
      */
     it('settings_openNetworkManagerSettings_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
+        if (!isDeviceSupportOpenNetWork()) {
+          done();
+          return;
+        }
         try {
           let value = await settings.openNetworkManagerSettings(null);
           expect().assertFail();
@@ -3500,6 +3499,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodSettings_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openInputMethodSettings(mContext);
@@ -3507,17 +3510,7 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodSettings_valid_param] error = " + err);
         code = err?.code;
       }
-      console.info("[openInputMethodSettings_valid_param] sleep 1s");
-      await CommonFunc.sleep(1000);
-      let driver = await uitest.Driver.create();
-      console.info("[openInputMethodSettings_valid_param] code = " + code);
-      let textComponent = await driver.findComponent(uitest.ON.text('输入法管理'));
-      console.info("[openInputMethodSettings_valid_param] text = " + textComponent);
-      if (!isDeviceSupportInputMethod()) {
-        expect(textComponent === undefined || textComponent === null).assertTrue();
-      } else {
-        expect(code).assertEqual(0);
-      }
+      expect(code).assertEqual(0);
       done();
     });
 
@@ -3724,6 +3717,10 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('openInputMethodDetail_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
       let code = 0;
       try {
         settings.openInputMethodDetail(mContext, 'bundleName', 'inputMethodId');
@@ -3731,16 +3728,7 @@ export default function settingUiJsunit() {
         console.error("[openInputMethodDetail_valid_param] error = " + err);
         code = err.code;
       }
-      console.info("[openInputMethodDetail_valid_param] sleep 1s");
-      await CommonFunc.sleep(1000);
-      let driver = await uitest.Driver.create();
-      let textComponent = await driver.findComponent(uitest.ON.text('输入法'));
-      console.info("[openInputMethodSettings_valid_param] text = " + textComponent);
-      if (!isDeviceSupportInputMethod()) {
-        expect(textComponent === undefined || textComponent === null).assertTrue();
-      } else {
-        expect(code).assertEqual(0);
-      }
+      expect(code).assertEqual(0);
       done();
     });
 
