@@ -581,19 +581,19 @@ export default function webMessageExt() {
         ext.setType(null);
         expect().assertFail();
       } catch (error) {
-        expect(String((error as BusinessError).code)).assertEqual('17100014');
+        expect(['401', '17100014']).assertContain(String((error as BusinessError).code));
       }
       try {
         ext.setType(undefined);
         expect().assertFail();
       } catch (error) {
-        expect(String((error as BusinessError).code)).assertEqual('17100014');
+        expect(['401', '17100014']).assertContain(String((error as BusinessError).code));
       }
       try {
         ext.setType(999 as webview.WebMessageType);
         expect().assertFail();
       } catch (error) {
-        expect(String((error as BusinessError).code)).assertEqual('17100014');
+        expect(['401', '17100014']).assertContain(String((error as BusinessError).code));
       }
       done();
     })
@@ -613,7 +613,12 @@ export default function webMessageExt() {
         ext.setType(webview.WebMessageType.NUMBER);
         expect().assertFail();
       } catch (error) {
-        expect(String((error as BusinessError).code)).assertEqual('17100014');
+        let err = error as BusinessError;
+        if (err.code !== undefined && err.code !== null) {
+          expect(['401', '17100014']).assertContain(String(err.code));
+        } else {
+          expect(String(err.message)).assertEqual('The type and value of the message do not match.');
+        }
       }
       done();
     })

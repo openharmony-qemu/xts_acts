@@ -31,10 +31,11 @@ function sleep(time: number): Promise<void> {
 }
 
 function assertPermissionOrCapabilityError(err: BusinessError): void {
-  if (err.code === CAPABILITY_NOT_SUPPORTED_ERROR) {
-    expect(err.code).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
+  let code = Number(err.code);
+  if (code === CAPABILITY_NOT_SUPPORTED_ERROR) {
+    expect(code).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
   } else {
-    expect(err.code).assertEqual(PERMISSION_DENIED_ERROR);
+    expect(code).assertEqual(PERMISSION_DENIED_ERROR);
   }
 }
 
