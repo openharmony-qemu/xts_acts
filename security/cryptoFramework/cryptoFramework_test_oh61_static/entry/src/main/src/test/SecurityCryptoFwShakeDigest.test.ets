@@ -230,7 +230,7 @@ export default function SecurityCryptoFwShakeDigestTestUnit() {
 
         let md2: cryptoFramework.Md = cryptoFramework.createMd('SHAKE128');
         let msgLen: int = message.data.byteLength as int;
-        let iterate: int = Math.floor(msgLen / blockSize) as int;
+        let iterate: int = (Math.floor(msgLen / blockSize)).toInt();
         let rem: int = msgLen % blockSize;
         for (let i = 0; i < iterate; i++) {
           let chunk: cryptoFramework.DataBlob = { data: message.data.subarray(blockSize * i, blockSize * (i + 1)) };
