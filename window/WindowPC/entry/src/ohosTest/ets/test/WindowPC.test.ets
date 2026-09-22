@@ -3167,7 +3167,7 @@ export default function windowPCTest() {
       try {
         let windowClass = await windowStage.createSubWindowWithOptions('testOffWindowStatusDidChange_NoCallback',options);
         await windowClass.setUIContent('testability/pages/Index1')
-
+        await windowClass.showWindow()
         const callback1 = (data: window.WindowStatusType) => {
           console.log(`${msgStr} callback1 data: ${JSON.stringify(data)}`);
           count1++;
