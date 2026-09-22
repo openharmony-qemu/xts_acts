@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level, afterAll } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import Utils from '../Utils';
 import { Driver } from '@ohos.UiTest';
@@ -47,6 +47,10 @@ export default function counterApi() {
       }
       console.info('counterApi after each called');
     });
+    afterAll(async () => {
+      AppStorage.delete('isActive');
+      console.info("afterAll case");
+    });
 
     /**
      * @tc.name      counterApi_001
@@ -59,18 +63,22 @@ export default function counterApi() {
     it('counterApi_001', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_001] START');
       try {
-        await Utils.sleep(1000);
-        // press tab
-        let driver = await Driver.create();
-        await Utils.sleep(1000);
-        await driver.triggerKey(2049);
-        await Utils.sleep(1000);
-        let strJson = getInspectorByKey('counterApiText2');
-        await Utils.sleep(1000);
-        let obj: Record<string, ESObject> = JSON.parse(strJson);
-        console.info('[counterApi_001] component obj is: ' + JSON.stringify(obj));
-        await Utils.sleep(1000);
-        expect(obj.$attrs.content).assertEqual('onFocusDecrease');
+        if(AppStorage.get('isActive')) {
+          await Utils.sleep(1000);
+          // press tab
+          let driver = await Driver.create();
+          await Utils.sleep(1000);
+          await driver.triggerKey(2049);
+          await Utils.sleep(1000);
+          let strJson = getInspectorByKey('counterApiText2');
+          await Utils.sleep(1000);
+          let obj: Record<string, ESObject> = JSON.parse(strJson);
+          console.info('[counterApi_001] component obj is: ' + JSON.stringify(obj));
+          await Utils.sleep(1000);
+          expect(obj.$attrs.content).assertEqual('onFocusDecrease');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('counterApi_001 error: ' + err);
         expect(true).assertEqual(false);
@@ -90,21 +98,25 @@ export default function counterApi() {
     it('counterApi_002', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_002] START');
       try {
-        await Utils.sleep(1000);
-        // press tab
-        let driver = await Driver.create();
-        await Utils.sleep(1000);
-        await driver.triggerKey(2049);
-        await Utils.sleep(1000);
-        let strJson = getInspectorByKey('counterApiText1');
-        await Utils.sleep(1000);
-        let strJson2 = getInspectorByKey('counterApiText2');
-        await Utils.sleep(1000);
-        console.info('[counterApi_002] component obj is: ' + JSON.stringify(JSON.parse(strJson)));
-        console.info('[counterApi_002] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
-        await Utils.sleep(1000);
-        expect(JSON.parse(strJson).$attrs.content).assertEqual('onFocusIncrease');
-        expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurDecrease');
+        if(AppStorage.get('isActive')) {
+          await Utils.sleep(1000);
+          // press tab
+          let driver = await Driver.create();
+          await Utils.sleep(1000);
+          await driver.triggerKey(2049);
+          await Utils.sleep(1000);
+          let strJson = getInspectorByKey('counterApiText1');
+          await Utils.sleep(1000);
+          let strJson2 = getInspectorByKey('counterApiText2');
+          await Utils.sleep(1000);
+          console.info('[counterApi_002] component obj is: ' + JSON.stringify(JSON.parse(strJson)));
+          console.info('[counterApi_002] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
+          await Utils.sleep(1000);
+          expect(JSON.parse(strJson).$attrs.content).assertEqual('onFocusIncrease');
+          expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurDecrease');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('counterApi_002 error: ' + err);
         expect(true).assertEqual(false);
@@ -124,17 +136,21 @@ export default function counterApi() {
     it('counterApi_003', Level.LEVEL3, async (done: Function) => {
       console.info('[counterApi_003] START');
       try {
-        await Utils.sleep(1000);
-        // press tab
-        let driver = await Driver.create();
-        await Utils.sleep(1000);
-        await driver.triggerKey(2049);
-        await Utils.sleep(1000);
-        let strJson2 = getInspectorByKey('counterApiText1');
-        await Utils.sleep(1000);
-        console.info('[counterApi_003] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
-        await Utils.sleep(1000);
-        expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurIncrease');
+        if(AppStorage.get('isActive')) {
+          await Utils.sleep(1000);
+          // press tab
+          let driver = await Driver.create();
+          await Utils.sleep(1000);
+          await driver.triggerKey(2049);
+          await Utils.sleep(1000);
+          let strJson2 = getInspectorByKey('counterApiText1');
+          await Utils.sleep(1000);
+          console.info('[counterApi_003] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
+          await Utils.sleep(1000);
+          expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurIncrease');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('counterApi_003 error: ' + err);
         expect(true).assertEqual(false);

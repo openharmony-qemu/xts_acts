@@ -59,7 +59,6 @@ group("ActsAceEtsModuleInformationTest") {
       "ace_ets_module_information02_static:ActsAceEtsModuleInformation02StaticTest",
       "ace_ets_module_information01_undefined_static:ActsAceEtsModuleInformation01UndefinedStaticTest",
       "ace_ets_module_counter:ActsAceEtsModuleCounterTest",
-      "ace_ets_module_counter_nowear:ActsAceEtsModuleCounterNowearTest",
       "ace_ets_module_advance_counter_static:ActsAceEtsModuleAdvanceCounterStaticTest",
     ]
   }

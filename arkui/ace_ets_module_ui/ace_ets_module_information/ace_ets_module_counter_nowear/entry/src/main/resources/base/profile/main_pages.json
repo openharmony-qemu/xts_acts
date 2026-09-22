@@ -1,8 +1,0 @@
-{
-  "src": [
-    "MainAbility/pages/index/Index",
-    "MainAbility/pages/counter/counterApi",
-    "MainAbility/pages/CounterV2/CounterV2Api",
-    "MainAbility/pages/CounterV2/CounterV2Attrs"
-  ]
-}

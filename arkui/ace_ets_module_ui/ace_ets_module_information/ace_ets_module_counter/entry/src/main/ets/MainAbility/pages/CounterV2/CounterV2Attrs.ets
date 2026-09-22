@@ -23,6 +23,11 @@ struct CounterV2Attrs {
   @Local ymdDateText: string = ''
   @Local defaultDateText: string = ''
 
+  aboutToAppear(): void {
+    console.log('是否支持走焦：'+this.getUIContext().getFocusController().isActive())
+    AppStorage.setOrCreate('isActive',this.getUIContext().getFocusController().isActive())
+  }
+
   build() {
     Column({ space: 10 }) {
       CounterV2Component({

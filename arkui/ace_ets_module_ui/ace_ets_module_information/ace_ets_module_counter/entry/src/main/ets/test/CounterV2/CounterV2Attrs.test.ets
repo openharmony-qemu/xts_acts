@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level, afterAll } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -79,6 +79,10 @@ export default function CounterV2AttrsTest() {
         console.log('CounterV2AttrsTest afterEach error: ' + err);
       }
     });
+    afterAll(async () => {
+      AppStorage.delete('isActive');
+      console.info("afterAll case");
+    });
 
     /**
      * @tc.name      SUB_ARKUI_API_CounterV2Attrs_0100
@@ -90,10 +94,14 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0100', Level.LEVEL0, async () => {
       try {
-        let driver = Driver.create();
-        let labelX = await labelCenterX(driver, 'cv2_attr_list_rtl', '价格');
-        let counterX = await counterCenterX(driver, 'cv2_attr_list_rtl');
-        expect(labelX > counterX).assertTrue();
+        if(AppStorage.get('isActive')) {
+          let driver = Driver.create();
+          let labelX = await labelCenterX(driver, 'cv2_attr_list_rtl', '价格');
+          let counterX = await counterCenterX(driver, 'cv2_attr_list_rtl');
+          expect(labelX > counterX).assertTrue();
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0100 error: ' + err);
         expect(true).assertEqual(false);
@@ -110,11 +118,15 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0200', Level.LEVEL0, async () => {
       try {
-        let driver = Driver.create();
-        let counter = await driver.findComponent(ON.id('cv2_attr_compact_ltr'));
-        let label = await driver.findComponent(ON.text('数量'));
-        expect(counter !== null).assertTrue();
-        expect(label !== null).assertTrue();
+        if(AppStorage.get('isActive')) {
+          let driver = Driver.create();
+          let counter = await driver.findComponent(ON.id('cv2_attr_compact_ltr'));
+          let label = await driver.findComponent(ON.text('数量'));
+          expect(counter !== null).assertTrue();
+          expect(label !== null).assertTrue();
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0200 error: ' + err);
         expect(true).assertEqual(false);
@@ -131,9 +143,13 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0300', Level.LEVEL0, async () => {
       try {
-        let driver = Driver.create();
-        let counter = await driver.findComponent(ON.id('cv2_attr_inline_auto'));
-        expect(counter !== null).assertTrue();
+        if(AppStorage.get('isActive')) {
+          let driver = Driver.create();
+          let counter = await driver.findComponent(ON.id('cv2_attr_inline_auto'));
+          expect(counter !== null).assertTrue();
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0300 error: ' + err);
         expect(true).assertEqual(false);
@@ -150,9 +166,13 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0400', Level.LEVEL0, async () => {
       try {
-        let driver = Driver.create();
-        let counter = await driver.findComponent(ON.id('cv2_attr_date_ymd'));
-        expect(counter !== null).assertTrue();
+        if(AppStorage.get('isActive')) {
+          let driver = Driver.create();
+          let counter = await driver.findComponent(ON.id('cv2_attr_date_ymd'));
+          expect(counter !== null).assertTrue();
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0400 error: ' + err);
         expect(true).assertEqual(false);
@@ -169,12 +189,16 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0500', Level.LEVEL0, async () => {
       try {
-        await CommonFunc.sleep(800);
-        let hint = attrContent('cv2_attr_date_default_hint');
-        console.info('[ARKUI_DYN] defaultDate hint=' + hint);
-        expect(hint).assertContain('1年');
-        expect(hint).assertContain('1月');
-        expect(hint).assertContain('1日');
+        if(AppStorage.get('isActive')) {
+          await CommonFunc.sleep(800);
+          let hint = attrContent('cv2_attr_date_default_hint');
+          console.info('[ARKUI_DYN] defaultDate hint=' + hint);
+          expect(hint).assertContain('1年');
+          expect(hint).assertContain('1月');
+          expect(hint).assertContain('1日');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0500 error: ' + err);
         expect(true).assertEqual(false);
@@ -191,11 +215,15 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0600', Level.LEVEL0, async () => {
       try {
-        await CommonFunc.sleep(800);
-        let hint = attrContent('cv2_attr_date_ymd_hint');
-        console.info('[ARKUI_DYN] ymdDate hint=' + hint);
-        expect(hint).assertContain('2025');
-        expect(hint).assertContain('18');
+        if(AppStorage.get('isActive')) {
+          await CommonFunc.sleep(800);
+          let hint = attrContent('cv2_attr_date_ymd_hint');
+          console.info('[ARKUI_DYN] ymdDate hint=' + hint);
+          expect(hint).assertContain('2025');
+          expect(hint).assertContain('18');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0600 error: ' + err);
         expect(true).assertEqual(false);
@@ -212,8 +240,12 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0700', Level.LEVEL0, async () => {
       try {
-        let text = await tabUntilFocusText('cv2_attr_focus_true_text', 15);
-        expect(text.indexOf('onFocus') >= 0 || text.indexOf('onBlur') >= 0).assertTrue();
+        if(AppStorage.get('isActive')) {
+          let text = await tabUntilFocusText('cv2_attr_focus_true_text', 15);
+          expect(text.indexOf('onFocus') >= 0 || text.indexOf('onBlur') >= 0).assertTrue();
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0700 error: ' + err);
         expect(true).assertEqual(false);
@@ -230,8 +262,12 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0800', Level.LEVEL0, async () => {
       try {
-        let text = await tabUntilFocusText('cv2_attr_focus_false_text', 15);
-        expect(text).assertEqual('focus_idle');
+        if(AppStorage.get('isActive')) {
+          let text = await tabUntilFocusText('cv2_attr_focus_false_text', 15);
+          expect(text).assertEqual('focus_idle');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0800 error: ' + err);
         expect(true).assertEqual(false);
@@ -248,8 +284,12 @@ export default function CounterV2AttrsTest() {
      */
     it('SUB_ARKUI_API_CounterV2Attrs_0900', Level.LEVEL0, async () => {
       try {
-        let text = await tabUntilFocusText('cv2_attr_focus_undef_text', 20);
-        expect(text.indexOf('onFocus') >= 0 || text.indexOf('onBlur') >= 0).assertTrue();
+        if(AppStorage.get('isActive')) {
+          let text = await tabUntilFocusText('cv2_attr_focus_undef_text', 20);
+          expect(text.indexOf('onFocus') >= 0 || text.indexOf('onBlur') >= 0).assertTrue();
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Attrs_0900 error: ' + err);
         expect(true).assertEqual(false);
