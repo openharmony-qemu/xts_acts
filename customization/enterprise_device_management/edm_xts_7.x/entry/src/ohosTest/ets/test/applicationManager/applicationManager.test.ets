@@ -2410,5 +2410,592 @@ export default function applicationManagerTest() {
       }
       done();
     });
+
+   /**
+     * @tc.name   test_requestExemptionResource_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0100
+     * @tc.desc   test requestExemptionResource without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200001);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0200
+     * @tc.desc   test requestExemptionResource with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200002);
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0300
+     * @tc.desc   test requestExemptionResource with null resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          null, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0400
+     * @tc.desc   test requestExemptionResource with undefined resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          undefined, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0500
+     * @tc.desc   test requestExemptionResource with invalid resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          99, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0600
+     * @tc.desc   test requestExemptionResource with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, null, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0700
+     * @tc.desc   test requestExemptionResource with undefined bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, undefined, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0800
+     * @tc.desc   test requestExemptionResource with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, '', 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0900
+     * @tc.desc   test requestExemptionResource with null duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0900", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1000
+     * @tc.desc   test requestExemptionResource with undefined duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1000", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1100
+     * @tc.desc   test requestExemptionResource with zero duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 0);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1200
+     * @tc.desc   test requestExemptionResource with negative duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, -1);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1300
+     * @tc.desc   test requestExemptionResource success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_requestExemptionResource_1300", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME, 3600);
+      } catch (error) {
+        expect(error.code).assertEqual(801);
+      } finally {
+        try {
+          applicationManager.releaseExemptionResource(
+            applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME);
+        } catch (err) {
+          expect(err.code).assertEqual(801);
+        }
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1400
+     * @tc.desc   test requestExemptionResource with not installed bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9201002);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0100
+     * @tc.desc   test releaseExemptionResource without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200001);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0200
+     * @tc.desc   test releaseExemptionResource with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200002);
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0300
+     * @tc.desc   test releaseExemptionResource with null resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          null, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0400
+     * @tc.desc   test releaseExemptionResource with undefined resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          undefined, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0500
+     * @tc.desc   test releaseExemptionResource with invalid resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.releaseExemptionResource(
+          99, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0600
+     * @tc.desc   test releaseExemptionResource with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0700
+     * @tc.desc   test releaseExemptionResource with undefined bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0800
+     * @tc.desc   test releaseExemptionResource with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, '');
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0900
+     * @tc.desc   test releaseExemptionResource success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_releaseExemptionResource_0900", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME, 3600);
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME);
+      } catch (error) {
+        expect(error.code).assertEqual(801);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_1000
+     * @tc.desc   test releaseExemptionResource with not installed bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_1000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9201002);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
   });
 }
