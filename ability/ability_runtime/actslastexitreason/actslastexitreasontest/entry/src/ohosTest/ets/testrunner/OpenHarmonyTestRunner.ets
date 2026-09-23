@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { BusinessError } from '@ohos.base';
 
-let abilityDelegator = undefined
-let abilityDelegatorArguments = undefined
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined
+let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined
 
 async function onAbilityCreateCallback() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
@@ -40,28 +41,22 @@ export default class OpenHarmonyTestRunner implements TestRunner {
         hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun run');
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-        let testAbilityName = abilityDelegatorArguments.bundleName + '.TestAbility'
-        let lMonitor = {
+        const bundleName = abilityDelegatorArguments.bundleName;
+        const testAbilityName = 'TestAbility';
+        let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
             abilityName: testAbilityName,
             onAbilityCreate: onAbilityCreateCallback,
         };
         abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback)
-        let cmd = 'aa start -d 0 -a TestAbility' + ' -b ' + abilityDelegatorArguments.bundleName
-        let debug = abilityDelegatorArguments.parameters['-D']
-        if (debug === 'true') {
-            cmd += ' -D'
-        }
-        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
-        if(user !== undefined){
-            cmd += ' -u ' + user;
-        }
-        hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
-        abilityDelegator.executeShellCommand(cmd,
-            (err: BusinessError, d: AbilityDelegatorRegistry.ShellCmdResult) => {
-                hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
-                hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');
-                hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.exitCode ?? '');
-            })
+        const want: Want = {
+            bundleName: bundleName,
+            abilityName: testAbilityName
+        };
+        abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+        abilityDelegator.startAbility(want, (err : ESObject, data : ESObject) => {
+            hilog.info(0x0000, 'testTag', 'startAbility : err : %{public}s', JSON.stringify(err) ?? '');
+            hilog.info(0x0000, 'testTag', 'startAbility : data : %{public}s',JSON.stringify(data) ?? '');
+        })
         hilog.info(0x0000, 'testTag', '%{public}s', 'OpenHarmonyTestRunner onRun end');
     }
 }

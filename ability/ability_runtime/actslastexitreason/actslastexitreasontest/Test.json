@@ -4,7 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "bundle-name": "com.acts.lastexitreasontest",
-        "module-name": "entry",
+        "module-name": "entry_test",
         "shell-timeout": "30000",
         "testcase-timeout": 60000
     },
