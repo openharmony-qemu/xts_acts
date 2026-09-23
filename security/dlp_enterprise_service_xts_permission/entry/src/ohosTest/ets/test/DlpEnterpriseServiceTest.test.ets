@@ -13,9 +13,11 @@
  * limitations under the License.
  */
 import dlpPermission from '@ohos.dlpPermission';
+import identifySensitiveContent from '@ohos.security.identifySensitiveContent';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 const TAG = "DLP_ENTERPRISE_SERVICE_PERMISSION_XTS ";
+const dataPath = "/data/app/el2/0/database/h.txt";
 
 function generateArray(len: number) {
   let arr = new Array<string>(len);
@@ -128,6 +130,30 @@ export default function DlpEnterpriseServicePermissionTest() {
             console.info(curTag, "processPluginCommand failed," + err.code + err.message);
             expect(err.code).assertEqual(201);
           }
+        }
+        done();
+      })
+
+    /**
+      * @tc.name   SUB_SECURITY_DLP_scanFile_permission_0400
+      * @tc.number Test_scanFile_004
+      * @tc.desc   scanFile permission test, return 201 or 801.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('SUB_SECURITY_DLP_scanFile_permission_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let curTag = TAG + "Test_scanFile_004";
+        console.info(curTag, "start");
+        let policy: identifySensitiveContent.Policy = { sensitiveLabel: "Pornography", keywords: [], regex: "hello" };
+        let policies: identifySensitiveContent.Policy[] = [policy];
+        try {
+          let matchResult = await identifySensitiveContent.scanFile(dataPath, policies);
+          console.info(curTag, "scanFile success, length:" + matchResult.length);
+        } catch (err) {
+          console.info('scanfileCaseSensitive:' + error.code);
+          expect(error.code === 201 || error.code === 19110004).assertTrue();
         }
         done();
       })
