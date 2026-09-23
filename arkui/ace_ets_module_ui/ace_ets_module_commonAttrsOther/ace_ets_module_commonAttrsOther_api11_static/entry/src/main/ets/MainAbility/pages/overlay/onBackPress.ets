@@ -1,5 +1,6 @@
-'use static';
-/**
+'use static'
+
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +16,33 @@
  */
 
 import {
+  Entry,
+  Component,
   Builder,
-  Button,
-  Color,
   Column,
   ColumnOptions,
-  Component,
-  ComponentContent,
-  Divider,
-  Entry,
-  FlexAlign,
-  FontWeight,
   Row,
   RowOptions,
-  Scroll,
-  ShadowOptions,
   Text,
-  wrapBuilder
-} from '@ohos.arkui.component'
-import { NodeIdentity, OverlayManager, OverlayManagerOptions, UIContext } from '@ohos.arkui.UIContext'
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
-import promptAction from '@ohos.promptAction'
+  Button,
+  Divider,
+  Scroll,
+  NavDestination,
+  FontWeight,
+  FlexAlign,
+  Color,
+  ComponentContent,
+  wrapBuilder,
+
+  $r
+} from '@kit.ArkUI';
+import { UIContext, OverlayManager, OverlayManagerOptions, NodeIdentity } from '@ohos.arkui.UIContext';
+import { State } from '@ohos.arkui.stateManagement';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+
+const TAG: string = '[Sample_dialogproject]';
+const DOMAIN: int = 0xFF00;
 
 export class FloatParams {
   public message: string = '';
@@ -72,12 +79,12 @@ function floatBuilder(params: FloatParams): void {
   .justifyContent(FlexAlign.Center)
   .borderRadius(16)
   .backgroundColor('#333333')
-  .shadow({ radius: 20, color: '#66000000', offsetX: 0, offsetY: 6 } as ShadowOptions)
+  .shadow({ radius: 20, color: '#66000000', offsetX: 0, offsetY: 6 })
 }
 
 @Entry
 @Component
-struct OverlayManagerOnBackPress {
+export struct OverlayManagerOnBackPress {
   @State s1: NodeIdentity = '111';
   @State s2: NodeIdentity = 3333;
   @State showStatus: string = '无浮层';
@@ -85,16 +92,12 @@ struct OverlayManagerOnBackPress {
   private floatContent: ComponentContent<FloatParams> | null = null;
   private optionsSet: boolean = false;
 
-  // 追加一条日志，最新日志显示在最上方，便于观察onBackPress的拦截与透传。
   addLog(msg: string): void {
     let now: Date = new Date();
     let ts: string = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
     this.logText = `[${ts}] ${msg}\n` + this.logText;
   }
 
-  // 通过setOverlayManagerOptions设置enableBackPressedEvent为true并注册onBackPress回调，
-  // 即可拦截Overlay的侧滑返回事件。返回true表示拦截（事件被消费，不会向下层传递）；
-  // 返回false表示不拦截，事件向下层组件透传。
   ensureOptions(): void {
     if (this.optionsSet) {
       return;
@@ -103,16 +106,17 @@ struct OverlayManagerOnBackPress {
 
     let ret: boolean = ctx.setOverlayManagerOptions({
       enableBackPressedEvent: true,
-      onBackPress: (): boolean => {
+
+      onBackPress : (): boolean => {
         if (this.floatContent !== null) {
           this.addLog('onBackPress → 有浮层, return TRUE (拦截)');
           try {
             this.getUIContext().getPromptAction().showToast({
               message: 'backPress事件被overlay拦截',
               duration: 2000
-            } as promptAction.ShowToastOptions);
+            });
           } catch (error) {
-            console.error('showToast args error: ' + JSON.stringify(error));
+            hilog.error(DOMAIN, TAG, '%{public}s', 'showToast args error: %{public}s', error);
           }
           return true;
         }
@@ -158,61 +162,62 @@ struct OverlayManagerOnBackPress {
     this.dismissFloat();
   }
 
-  onPageShow(): void {
-    console.info('[onBackPress] onPageShow called');
-    AppStorage.setOrCreate<string>('NodeIdentity_sring', typeof this.s1);
-    AppStorage.setOrCreate<string>('NodeIdentity_number', typeof this.s2);
+  onpageshow(): void {
+    AppStorage.setOrCreate<NodeIdentity>("NodeIdentity_sring", typeof this.s1)
+    AppStorage.setOrCreate<NodeIdentity>("NodeIdentity_number", typeof this.s2)
   }
 
-  build() {
-    Column({ space: 16 } as ColumnOptions) {
-      Text('overlayManager 侧滑拦截')
-        .fontSize(22)
-        .fontWeight(FontWeight.Bold)
+  build(): void {
+    NavDestination() {
+      Column({ space: 16 } as ColumnOptions) {
+        Text('overlayManager 侧滑拦截')
+          .fontSize(22)
+          .fontWeight(FontWeight.Bold)
 
-      Text('• 点击按钮添加浮层\n• 有浮层时侧滑/返回 → onBackPress return true 拦截\n• 无浮层时侧滑/返回 → onBackPress return false 透传')
-        .fontSize(13)
-        .fontColor('#666666')
-        .lineHeight(20)
+        Text('• 点击按钮添加浮层\n• 有浮层时侧滑/返回 → onBackPress return true 拦截\n• 无浮层时侧滑/返回 → onBackPress return false 透传')
+          .fontSize(13)
+          .fontColor('#666666')
+          .lineHeight(20)
 
-      Row({ space: 12 } as RowOptions) {
-        Button('显示浮层')
-          .id('show')
-          .fontSize(15)
-          .height(40)
-          .onClick((): void => {
-            this.showFloat();
-          })
+        Row({ space: 12 } as RowOptions) {
+          Button('显示浮层')
+            .fontSize(15)
+            .height(40)
+            .onClick((): void => {
+              this.showFloat();
+            })
 
-        Button('关闭浮层')
-          .id('close')
-          .fontSize(15)
-          .height(40)
-          .onClick((): void => {
-            this.dismissFloat();
-          })
+          Button('关闭浮层')
+            .fontSize(15)
+            .height(40)
+            .onClick((): void => {
+              this.dismissFloat();
+            })
+        }
+
+        Divider().margin({ top: 4, bottom: 4 })
+
+        Text(`状态: ${this.showStatus}`)
+          .fontSize(14)
+          .fontWeight(FontWeight.Medium)
+
+        Scroll() {
+          Text(this.logText)
+            .fontSize(10)
+            .fontColor('#333333')
+            .width('100%')
+        }
+        .height(120)
+        .width('100%')
+        .backgroundColor('#F5F5F5')
+        .borderRadius(8)
+        .padding(8)
       }
-
-      Divider().margin({ top: 4, bottom: 4 })
-
-      Text(`状态: ${this.showStatus}`)
-        .fontSize(14)
-        .fontWeight(FontWeight.Medium)
-
-      Scroll() {
-        Text(this.logText)
-          .fontSize(10)
-          .fontColor('#333333')
-          .width('100%')
-      }
-      .height(120)
       .width('100%')
-      .backgroundColor('#F5F5F5')
-      .borderRadius(8)
-      .padding(8)
+      .height('100%')
+      .padding(24)
     }
-    .width('100%')
-    .height('100%')
-    .padding(24)
+    .backgroundColor('#f1f2f3')
+    .title($r('app.string.EntryAbility_label'));
   }
 }
