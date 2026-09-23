@@ -3121,10 +3121,10 @@ export default function printTest() {
       // Permissions required: ohos.permission.PRINT
       await print.startDiscoverPrinter(extensionList).then((data: void) => {
         hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_printerInfo_fields_1000 expect success');
-        expect(data).assertTrue();
+        expect(!!data).assertTrue();
         done();
       }).catch((err: BusinessError) => {
-        expect(err).assertTrue();
+        expect(!!err).assertTrue();
         done();
       })
     })
@@ -3143,11 +3143,11 @@ export default function printTest() {
       print.startDiscoverPrinter(extensionList, (err: BusinessError, data: void) => {
         try {
           if (err) {
-            expect(err).assertTrue();
+            expect(!!err).assertTrue();
             done();
           } else {
             hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100 expect success');
-            expect(data).assertTrue();
+            expect(!!data).assertTrue();
             done();
           }
         } catch (error) {
