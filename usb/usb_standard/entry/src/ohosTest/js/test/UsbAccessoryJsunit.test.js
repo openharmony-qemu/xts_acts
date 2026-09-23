@@ -339,7 +339,7 @@ describe("UsbAccessoryJsTest", function () {
 
     /**
      * @tc.name   testOpenAccessory002
-     * @tc.number SUB_USB_DeviceManager_JS_Accessory_200
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_1000
      * @tc.desc   verify openAccessory result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
