@@ -45,14 +45,19 @@ export default class EntryAbility extends UIAbility {
     readPath = 'StarWars10s-2C-48000-4SW.wav';
     console.info(TAG + 'case0 context is  ' + this.context);
     filePath = this.context.filesDir + '/' + readPath;
-    fdPath = 'fd://';
     console.info('filePath is: ' + filePath)
-    await fileio.open(filePath).then((fdNumber) => {
-      fdPath = fdPath + '' + fdNumber;
-      fdRead = fdNumber;
+    console.info(TAG + 'copying from rawfile: ' + readPath);
+    let buffer = await this.context.resourceManager.getRawFileContent(readPath);
+    let fd = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+    fs.writeSync(fd.fd, buffer.buffer);
+    fs.closeSync(fd);
+    console.info(TAG + 'copying from rawfile success: ' + buffer.byteLength);
+    fdPath = 'fd://';
+    await fs.open(filePath).then((file: fs.File) => {
+      fdPath = fdPath + '' + file.fd;
+      fdRead = file.fd;
       console.info(TAG + '[fileIO]case open fd success,fdPath is ' + fdPath);
       console.info(TAG + '[fileIO]case open fd success,fdRead is ' + fdRead);
-
     }, (err: BusinessError) => {
       console.info(TAG + '[fileIO]case open fd failed');
     }).catch((err: BusinessError) => {
