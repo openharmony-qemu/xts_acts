@@ -821,9 +821,10 @@ export default function arkTSUtilJSONTest() {
         let parsed = JSON.parseSendable('{"0":"value-0","1":"value-1"}') as lang.ISendable;
         expect(parsed !== null).assertTrue();
         expect(parsed !== undefined).assertTrue();
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect((record['0'] as string)).assertEqual('value-0');
-        expect((record['1'] as string)).assertEqual('value-1');
+        console.info(`${TAG} obj[0]=${(parsed as object)?.["0"]}`);
+        console.info(`${TAG} obj[1]=${(parsed as object)?.["1"]}`);
+        expect((parsed as object)?.["0"]).assertEqual('value-0');
+        expect((parsed as object)?.["1"]).assertEqual('value-1');
         expect(ArkTSUtils.isSendable(parsed)).assertTrue();
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -844,8 +845,8 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0102";
       try {
         let parsed = JSON.parseSendable(buildDoubledNumericKeyJson(85)) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(85);
+        expect(Object.keys(parsed as object).length).assertEqual(85);
+        console.info(`${TAG} obj[0]=${(parsed as object)?.[0]} obj[84]=${(parsed as object)?.[84]}`);
         let code = await taskpool.execute(verifyDoubledNumericKeys, parsed, 85) as number;
         expect(code).assertEqual(-1);
       } catch (err) {
@@ -867,8 +868,8 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0103";
       try {
         let parsed = JSON.parseSendable(buildDoubledNumericKeyJson(86)) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(86);
+        expect(Object.keys(parsed as object).length).assertEqual(86);
+        console.info(`${TAG} obj[84]=${(parsed as object)?.[84]} obj[85]=${(parsed as object)?.[85]}`);
         let code = await taskpool.execute(verifyDoubledNumericKeys, parsed, 86) as number;
         expect(code).assertEqual(-1);
       } catch (err) {
@@ -890,8 +891,8 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0104";
       try {
         let parsed = JSON.parseSendable(buildDoubledNumericKeyJson(1020)) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(1020);
+        expect(Object.keys(parsed as object).length).assertEqual(1020);
+        console.info(`${TAG} obj[0]=${(parsed as object)?.[0]} obj[1019]=${(parsed as object)?.[1019]}`);
         let code = await taskpool.execute(verifyDoubledNumericKeys, parsed, 1020) as number;
         expect(code).assertEqual(-1);
       } catch (err) {
@@ -913,8 +914,8 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0105";
       try {
         let parsed = JSON.parseSendable(buildDoubledNumericKeyJson(1021)) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(1021);
+        expect(Object.keys(parsed as object).length).assertEqual(1021);
+        console.info(`${TAG} obj[0]=${(parsed as object)?.[0]} obj[1020]=${(parsed as object)?.[1020]}`);
         let code = await taskpool.execute(verifyDoubledNumericKeys, parsed, 1021) as number;
         expect(code).assertEqual(-1);
       } catch (err) {
@@ -936,8 +937,8 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0106";
       try {
         let parsed = JSON.parseSendable(buildDoubledNumericKeyJson(1025)) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(1025);
+        expect(Object.keys(parsed as object).length).assertEqual(1025);
+        console.info(`${TAG} obj[0]=${(parsed as object)?.[0]} obj[1024]=${(parsed as object)?.[1024]}`);
         let code = await taskpool.execute(verifyDoubledNumericKeys, parsed, 1025) as number;
         expect(code).assertEqual(-1);
       } catch (err) {
@@ -959,8 +960,8 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0107";
       try {
         let parsed = JSON.parseSendable(buildCharKeyJson(1025)) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(1025);
+        expect(Object.keys(parsed as object).length).assertEqual(1025);
+        console.info(`${TAG} obj[key-0]=${(parsed as object)?.["key-0"]} obj[key-1024]=${(parsed as object)?.["key-1024"]}`);
         let code = await taskpool.execute(verifyCharKeys, parsed, 1025) as number;
         expect(code).assertEqual(-1);
       } catch (err) {
@@ -982,10 +983,10 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0108";
       try {
         let parsed = JSON.parseSendable(buildAlternatingKeyJson(1025)) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(1025);
-        expect((record['512'] as string)).assertEqual('numeric-512');
-        expect((record['str-511'] as string)).assertEqual('char-511');
+        expect(Object.keys(parsed as object).length).assertEqual(1025);
+        console.info(`${TAG} obj[512]=${(parsed as object)?.["512"]} obj[str-511]=${(parsed as object)?.["str-511"]}`);
+        expect((parsed as object)?.["512"]).assertEqual('numeric-512');
+        expect((parsed as object)?.["str-511"]).assertEqual('char-511');
         let code = await taskpool.execute(verifyAlternatingKeys, parsed, 1025) as number;
         expect(code).assertEqual(-1);
       } catch (err) {
@@ -1007,15 +1008,15 @@ export default function arkTSUtilJSONTest() {
       const TAG = "testParseSendable0109";
       try {
         let parsed = JSON.parseSendable(buildPseudoNumericKeyJson()) as lang.ISendable;
-        let record: Record<string, Object> = parsed as Record<string, Object>;
-        expect(Object.keys(record).length).assertEqual(7);
-        expect((record['01'] as string)).assertEqual('pseudo-01');
-        expect((record['00'] as string)).assertEqual('pseudo-00');
-        expect((record['+1'] as string)).assertEqual('pseudo-plus-1');
-        expect((record['-0'] as string)).assertEqual('pseudo-minus-0');
-        expect((record['1.0'] as string)).assertEqual('pseudo-1-0');
-        expect((record['1e2'] as string)).assertEqual('pseudo-1e2');
-        expect((record['4294967295'] as string)).assertEqual('pseudo-max-index');
+        expect(Object.keys(parsed as object).length).assertEqual(7);
+        console.info(`${TAG} obj[01]=${(parsed as object)?.["01"]} obj[4294967295]=${(parsed as object)?.["4294967295"]}`);
+        expect((parsed as object)?.["01"]).assertEqual('pseudo-01');
+        expect((parsed as object)?.["00"]).assertEqual('pseudo-00');
+        expect((parsed as object)?.["+1"]).assertEqual('pseudo-plus-1');
+        expect((parsed as object)?.["-0"]).assertEqual('pseudo-minus-0');
+        expect((parsed as object)?.["1.0"]).assertEqual('pseudo-1-0');
+        expect((parsed as object)?.["1e2"]).assertEqual('pseudo-1e2');
+        expect((parsed as object)?.["4294967295"]).assertEqual('pseudo-max-index');
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);
         expect().assertFail();
@@ -1894,18 +1895,6 @@ export default function arkTSUtilJSONTest() {
       done()
     })
 
-    // /**
-    //  * @tc.name   testParseSendable0133
-    //  * @tc.number SUB_JSON_PARSE_SENDABLE_3300
-    //  * @tc.desc   Test json_parser.cpp source diff is empty via git (manual).
-    //  * @tc.type   FUNCTION
-    //  * @tc.size   MEDIUMTEST
-    //  * @tc.level  LEVEL1
-    //  */
-    // it("testParseSendable0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-    //   // 源码 git diff 校验，属 CI/手工，设备侧无 git，占位。
-    //   done()
-    // })
 
     /**
      * @tc.name   testParseSendable0134
