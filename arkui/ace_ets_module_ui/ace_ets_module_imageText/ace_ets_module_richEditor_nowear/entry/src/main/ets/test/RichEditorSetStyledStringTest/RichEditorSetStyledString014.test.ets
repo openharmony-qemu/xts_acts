@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorSetStyledString014() {
   describe('RichEditorSetStyledString014', () => {
     beforeEach(async (done: Function) => {
@@ -73,11 +75,11 @@ export default function RichEditorSetStyledString014() {
       let image_top = await driver.findComponent(ON.id('image_top'));
       await image_top.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      driver.triggerKey(KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
       await CommonFunc.sleep(500);
       let onWillChangeCall = await driver.findComponent(ON.id('onWillChangeCall'));
       let onWillChangeCallText = await onWillChangeCall.getText();
@@ -118,9 +120,9 @@ export default function RichEditorSetStyledString014() {
       let setStyledString = await driver.findComponent(ON.id('setStyledString'));
       await setStyledString.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
       await CommonFunc.sleep(500);
       let onWillChangeCall = await driver.findComponent(ON.id('onWillChangeCall'));
       let onWillChangeCallText = await onWillChangeCall.getText();
@@ -134,5 +136,6 @@ export default function RichEditorSetStyledString014() {
     });
   })
 }
+
 
 

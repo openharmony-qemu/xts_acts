@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorShortCutKeys015() {
   describe('RichEditorShortCutKeys015', () => {
     beforeEach(async (done: Function) => {
@@ -78,9 +80,9 @@ export default function RichEditorShortCutKeys015() {
       expect(styleText).assertContain('"decoration":{"type":3');
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U, displayID);
       await CommonFunc.sleep(500);
       await getSpans.click();
       await CommonFunc.sleep(500);
@@ -92,5 +94,6 @@ export default function RichEditorShortCutKeys015() {
 
   })
 }
+
 
 

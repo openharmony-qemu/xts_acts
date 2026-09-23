@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorAttributeStrings001() {
   describe('RichEditorAttributeStrings001', () => {
     beforeEach(async (done: Function) => {
@@ -70,16 +72,16 @@ export default function RichEditorAttributeStrings001() {
       await CommonFunc.sleep(500);
       await driver.click(getBounds.x, getBounds.y );
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
       await CommonFunc.sleep(500);
       let richOther = await driver.findComponent(ON.id('RichEditorAttributeStrings001_1'));
       let getBoundsOther = await richOther.getBoundsCenter();
       await CommonFunc.sleep(500);
       await driver.click(getBoundsOther.x, getBoundsOther.y );
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(500);
       let getSpans = await driver.findComponent(ON.id('getSpans'));
       await getSpans.click();
@@ -105,12 +107,12 @@ export default function RichEditorAttributeStrings001() {
       let setCenter = await driver.findComponent(ON.id('setCenter'));
       await setCenter.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(500);
       let setStart = await driver.findComponent(ON.id('setStart'));
       await setStart.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(500);
       let getFinalSpans = await driver.findComponent(ON.id('getFinalSpans'));
       await getFinalSpans.click();
@@ -138,18 +140,18 @@ export default function RichEditorAttributeStrings001() {
       await CommonFunc.sleep(500);
       await driver.click(getBounds.x, getBounds.y );
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
       await CommonFunc.sleep(500);
       let richOther = await driver.findComponent(ON.id('RichEditorAttributeStrings001_1'));
       let getBoundsOther = await richOther.getBoundsCenter();
       await CommonFunc.sleep(500);
       await driver.click(getBoundsOther.x, getBoundsOther.y );
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(500);
       let getFinalSpans = await driver.findComponent(ON.id('getFinalSpans'));
       await getFinalSpans.click();
@@ -162,5 +164,6 @@ export default function RichEditorAttributeStrings001() {
     });
   })
 }
+
 
 

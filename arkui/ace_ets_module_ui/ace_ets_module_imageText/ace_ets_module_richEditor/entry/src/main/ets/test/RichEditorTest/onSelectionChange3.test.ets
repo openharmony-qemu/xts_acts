@@ -18,6 +18,8 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {KeyCode} from '@ohos.multimodalInput.keyCode';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function onSelectionChange3() {
   describe('onSelectionChange3', () => {
     beforeEach(async (done: Function) => {
@@ -72,7 +74,11 @@ export default function onSelectionChange3() {
       let Obj1_1: ESObject = JSON.parse(text1_1);
       expect(Obj1_1.$attrs.content).assertEqual('1');
 
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      try {
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1_2 = getInspectorByKey('onSelectionChange3_text1');
       let Obj1_2: ESObject = JSON.parse(text1_2);
@@ -81,7 +87,11 @@ export default function onSelectionChange3() {
 
       await richEditor.longClick();
       await CommonFunc.sleep(1000);
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      try {
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1_3 = getInspectorByKey('onSelectionChange3_text1');
       let Obj1_3: ESObject = JSON.parse(text1_3);

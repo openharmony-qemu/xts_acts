@@ -108,7 +108,7 @@ struct TextAreaExampleBC1 {
         .placeholderFont({ size: this.sizeT, weight: this.weightT })
         .placeholderColor(this.placeholderColor)
         .width(336)
-        .key('textArea1')
+        .id('textArea1')
         .height('5%')
         .fontSize(this.fontSize)
         .fontColor(this.textColor)
@@ -140,25 +140,25 @@ struct TextAreaExampleBC1 {
           }
         })
       Row(){
-        Text(this.message1).key('textAreaBC1_change').width('45%')
-        Text(this.message2).key('textAreaBC1_copy').width('45%')
+        Text(this.message1).id('textAreaBC1_change').width('45%')
+        Text(this.message2).id('textAreaBC1_copy').width('45%')
       }.height('5%')
       Row(){
-        Text(this.message3).key('cut_textAreaBC1').width('45%')
-        Text(this.message4).key('textAreaBC1_paste').width('45%')
+        Text(this.message3).id('cut_textAreaBC1').width('45%')
+        Text(this.message4).id('textAreaBC1_paste').width('45%')
       }.height('5%')
-      Text(this.message5).key('isEdit').height('5%')
+      Text(this.message5).id('isEdit').height('5%')
       Row(){
       Button(`button1`)
         .backgroundColor('#007DFF')
-        .key(`button1`)
+        .id(`button1`)
         .height('10%')
         .onClick(() => {
           this.controller1.caretPosition(2)
         })
       Button(`button2`)
 	.backgroundColor('#007DFF')
-	.key(`button2`)
+	.id(`button2`)
 	.height('10%')
 	.onClick(() => {
 	this.controller2.caretPosition(0)
@@ -169,7 +169,7 @@ struct TextAreaExampleBC1 {
         placeholder: '请输入',
         controller: this.controller2
       })
-        .key('textArea2')
+        .id('textArea2')
         .placeholderFont({ size: 16, weight: 400 })
         .width(336)
         .height('5%')

@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter'
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function APISearchExample() {
   describe('APISearchExample', () => {
     beforeEach(async (done: Function) => {
@@ -61,11 +63,19 @@ export default function APISearchExample() {
       let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.click()
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       await textComponent.inputText("DFE")
       await CommonFunc.sleep(2000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APISearchExample' + '_Text01');
       let obj: ESObject = JSON.parse(strJson);
@@ -89,7 +99,11 @@ export default function APISearchExample() {
       let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.inputText("1")
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       await textComponent.clearText();
       await CommonFunc.sleep(2000);
@@ -114,11 +128,19 @@ export default function APISearchExample() {
       let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.click()
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       await textComponent.inputText("123");
       await CommonFunc.sleep(2000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APISearchExample' + '_Text03');
       let obj: ESObject = JSON.parse(strJson);
@@ -142,11 +164,19 @@ export default function APISearchExample() {
       let textComponent = await driver.findComponent(ON.id('APISearchExample' + '_Search'));
       await textComponent.click()
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       await textComponent.inputText("2")
       await CommonFunc.sleep(2000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APISearchExample' + '_Text04');
       let obj: ESObject = JSON.parse(strJson);

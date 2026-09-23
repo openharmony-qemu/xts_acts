@@ -18,6 +18,8 @@ import { describe, beforeEach, afterEach, it, expect, Level } from "@ohos/hypium
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function OnTextSelectionChangeTest() {
   describe('OnTextSelectionChangeTest', () => {
     beforeEach(async (done: Function) => {
@@ -88,13 +90,33 @@ export default function OnTextSelectionChangeTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(500);
       // 点击tab键(2049),Text控件获焦
-      await driver.triggerKey(2049);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       // 点击shift键(2047)+向右方向键(2015)
-      await driver.triggerCombineKeys(2047, 2015);
-      await driver.triggerCombineKeys(2047, 2015);
-      await driver.triggerCombineKeys(2047, 2015);
-      await driver.triggerCombineKeys(2047, 2015);
+      try {
+        await driver.triggerCombineKeys(2047, 2015, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerCombineKeys(2047, 2015, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerCombineKeys(2047, 2015, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerCombineKeys(2047, 2015, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       console.info('[OnTextSelectionChangeTest_0020] get1: ' + AppStorage.get('OnTextSelectionChange'));
       expect(AppStorage.get('OnTextSelectionChange')).assertEqual('start:3,end:11');

@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnSelectionChange011() {
   describe('RichEditorOnSelectionChange011', () => {
     beforeEach(async (done: Function) => {
@@ -71,7 +73,7 @@ export default function RichEditorOnSelectionChange011() {
       await CommonFunc.sleep(1000);
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(1000);
       let onSelectCallBack = await driver.findComponent(ON.id('onSelectCallBack'));
       let onSelectCallBackText = await onSelectCallBack.getText();
@@ -81,14 +83,14 @@ export default function RichEditorOnSelectionChange011() {
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertEqual('message:{"start":0,"end":1}');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
       await CommonFunc.sleep(1000);
       await driver.longClick(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
       let set1 = await driver.findComponent(ON.id('set1'))
       await set1?.click();
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(1000);
       onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);
@@ -98,5 +100,6 @@ export default function RichEditorOnSelectionChange011() {
 
   })
 }
+
 
 

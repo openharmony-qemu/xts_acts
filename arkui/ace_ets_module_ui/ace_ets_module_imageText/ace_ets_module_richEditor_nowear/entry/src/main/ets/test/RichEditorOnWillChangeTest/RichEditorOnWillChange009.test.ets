@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnWillChange009() {
   describe('RichEditorOnWillChange009', () => {
     beforeEach(async (done: Function) => {
@@ -88,7 +90,11 @@ export default function RichEditorOnWillChange009() {
       await set_style.click();
       await CommonFunc.sleep(500);
 
-      await driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let range_text = await driver.findComponent(ON.id('range_text'));
@@ -107,5 +113,6 @@ export default function RichEditorOnWillChange009() {
 
   })
 }
+
 
 

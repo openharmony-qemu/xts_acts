@@ -21,6 +21,8 @@ import commoneventmanager from '@ohos.commonEventManager';
 import inputMethod from '@ohos.inputMethod';
 import { BusinessError } from '@ohos.base'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function textInputApi11() {
   describe('textInputApi11', () => {
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -109,7 +111,11 @@ export default function textInputApi11() {
       await text.inputText('9');
       await CommonFunc.sleep(1000);
       //回车点击
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn_Api11'));
       await CommonFunc.sleep(500);

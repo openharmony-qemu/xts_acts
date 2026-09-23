@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditor4() {
   describe('RichEditor4', () => {
     beforeEach(async (done: Function) => {
@@ -63,7 +65,11 @@ export default function RichEditor4() {
       let RichEditor_supportAvoidance = await driver.findComponent(ON.id("RichEditor_emoji"));
       let text1 = await RichEditor_supportAvoidance.getText()
       await RichEditor_supportAvoidance.click()
-      await driver.triggerKey(2055)
+      try {
+        await driver.triggerKey(2055, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       let text2 = await RichEditor_supportAvoidance.getText()
       expect(text1.length).assertLarger(text2.length);
       expect(text2.length).assertLarger(0);
@@ -73,3 +79,4 @@ export default function RichEditor4() {
 
   })
 }
+

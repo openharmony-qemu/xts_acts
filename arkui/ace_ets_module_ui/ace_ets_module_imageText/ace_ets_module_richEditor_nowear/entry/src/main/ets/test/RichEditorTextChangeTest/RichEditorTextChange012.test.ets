@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorTextChange012() {
   describe('RichEditorTextChange012', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +69,7 @@ export default function RichEditorTextChange012() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_TAB)
+      driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
       await CommonFunc.sleep(1000);
 
       let onEditingChangeCallBack = await driver.findComponent(ON.id('onEditingChangeCallBack'));
@@ -80,7 +82,7 @@ export default function RichEditorTextChange012() {
       await CommonFunc.sleep(500);
       expect(isEditingFlagText).assertEqual('isEditingFlag:true');
 
-      driver.triggerKey(KeyCode.KEYCODE_TAB)
+      driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
       await CommonFunc.sleep(1000);
 
       onEditingChangeCallBackText = await onEditingChangeCallBack.getText();
@@ -95,5 +97,6 @@ export default function RichEditorTextChange012() {
 
   })
 }
+
 
 

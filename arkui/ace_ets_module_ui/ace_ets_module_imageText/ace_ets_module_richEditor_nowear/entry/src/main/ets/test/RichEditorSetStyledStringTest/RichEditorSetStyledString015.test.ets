@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorSetStyledString015() {
   describe('RichEditorSetStyledString015', () => {
     beforeEach(async (done: Function) => {
@@ -105,7 +107,7 @@ export default function RichEditorSetStyledString015() {
       let setTypingStyle = await driver.findComponent(ON.id('setTypingStyle'));
       await setTypingStyle.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      driver.triggerKey(KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
       let getTypingStyle = await driver.findComponent(ON.id('getTypingStyle'));
       await getTypingStyle.click();
@@ -136,9 +138,9 @@ export default function RichEditorSetStyledString015() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0044',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0044 START');
       let driver = Driver.create();
-      driver.triggerKey(KeyCode.KEYCODE_C);
+      driver.triggerKey(KeyCode.KEYCODE_C, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_D);
+      driver.triggerKey(KeyCode.KEYCODE_D, displayID);
       await CommonFunc.sleep(500);
       let getTypingStyle = await driver.findComponent(ON.id('getTypingStyle'));
       await getTypingStyle.click();
@@ -184,5 +186,6 @@ export default function RichEditorSetStyledString015() {
     });
   })
 }
+
 
 
