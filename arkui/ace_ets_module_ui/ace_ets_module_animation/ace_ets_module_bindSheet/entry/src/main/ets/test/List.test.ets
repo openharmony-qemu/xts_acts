@@ -25,6 +25,10 @@ import closeBindSheetTest from './UIContextTest/closeBindSheetTest.test'
 import openBindSheetTest from './UIContextTest/openBindSheetTest.test'
 import updateBindSheetTest from './UIContextTest/updateBindSheetTest.test'
 import sheetBorderWidth from './bindSheet/sheetBorderWidth.test';
+import closeButtonMaterial from './bindSheet/CloseButtonMaterial.test';
+import scrollBarState from './bindSheet/ScrollBarState.test';
+import titleBarBackgroundBlur from './bindSheet/TitleBarBackgroundBlur.test';
+import titleBarHoverMode from './bindSheet/TitleBarHoverMode.test';
 import panelJsunit from './Panel/PanelJsunit.test';
 import panelClose from './Panel/panelClose'
 import PanelUIJsunit from './Panel/PanelUIJsunit.test.ets';
@@ -43,6 +47,10 @@ export default function testsuite() {
   openBindSheetTest();
   updateBindSheetTest();
   sheetBorderWidth();
+  closeButtonMaterial();
+  scrollBarState();
+  titleBarBackgroundBlur();
+  titleBarHoverMode();
   panelJsunit();
   panelClose();
   PanelUIJsunit();
