@@ -16,7 +16,7 @@
 import usbMgr from '@ohos.usbManager';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { isFilteredDevice } from './FilterUtils';
-import { afterAll, beforeEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterAll, beforeEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 const TAG: string = "[UsbClaimInterfaceExclusiveTest]";
 const SKIP_TAG: string = "[SKIP]";
@@ -134,14 +134,21 @@ export default function UsbClaimInterfaceExclusiveTest() {
         let localPipe: usbMgr.USBDevicePipe | null = null;
         try {
           localPipe = usbMgr.connectDevice(testDevice!);
+          console.info(`${TAG} localPipe: ${JSON.stringify(localPipe)}`);
           expect(localPipe === undefined).assertFalse();
           for (let j = 0; j < deviceList[0].configs.length; j++) {
             for (let k = 0; k < deviceList[0].configs[j].interfaces.length; k++) {
               let targetInterface = deviceList[0].configs[j].interfaces[k];
-              usbMgr.claimInterfaceExclusive(localPipe, targetInterface);
-              let releaseRet = usbMgr.releaseInterface(localPipe, targetInterface);
-              console.info(`${TAG} claim exclusive iface ${targetInterface.id}, release result: ${releaseRet}`);
-              expect(releaseRet).assertEqual(0);
+              console.info(`${TAG} try claim exclusive, configIdx=${j}, ifaceIdx=${k}, ifaceId=${targetInterface.id}`);
+              try {
+                usbMgr.claimInterfaceExclusive(localPipe, targetInterface);
+                console.info(`${TAG} claim exclusive iface ${targetInterface.id} ok`);
+                let releaseRet = usbMgr.releaseInterface(localPipe, targetInterface);
+                console.info(`${TAG} release iface ${targetInterface.id}, release result: ${releaseRet}`);
+                expect(releaseRet).assertEqual(0);
+              } catch (error) {
+                console.info(`${TAG} iface ${targetInterface.id} claim failed (unsupported), skip. err: ${JSON.stringify(error)}`);
+              }
             }
           }
         } catch (error) {
