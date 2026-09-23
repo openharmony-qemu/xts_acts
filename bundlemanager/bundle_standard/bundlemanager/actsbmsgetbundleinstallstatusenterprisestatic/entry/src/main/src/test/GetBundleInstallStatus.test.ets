@@ -21,7 +21,7 @@ const BUNDLE_NAME_NOT_EXIST = 'ohos.acts.bundle.not.exist.dummy';
 const TAG = 'testTag';
 const TEST_SUITE_NAME = 'GetBundleInstallStatusStaticTest';
 
-export default function getBundleInstallStatusTest() {
+export default function getBundleInstallStatusTest(): void {
   describe('GetBundleInstallStatusStaticTest', (): void => {
     /**
      * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0100
