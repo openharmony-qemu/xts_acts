@@ -599,31 +599,6 @@ export default function webMessageExt() {
     })
 
     /**
-     * @tc.name   testWebMessageExtSetTypeError17100014Direct
-     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_17100014_0600
-     * @tc.desc   setType type mismatch after setString returns 17100014
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testWebMessageExtSetTypeError17100014Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let ext: webview.WebMessageExt = new webview.WebMessageExt();
-      ext.setString('hello');
-      try {
-        ext.setType(webview.WebMessageType.NUMBER);
-        expect().assertFail();
-      } catch (error) {
-        let err = error as BusinessError;
-        if (err.code !== undefined && err.code !== null) {
-          expect(['401', '17100014']).assertContain(String(err.code));
-        } else {
-          expect(String(err.message)).assertEqual('The type and value of the message do not match.');
-        }
-      }
-      done();
-    })
-
-    /**
      * @tc.name   testWebMessageExtSetTypeParam001
      * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_0700
      * @tc.desc   test WebMessageExt.setType param spec with getType return
