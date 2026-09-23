@@ -1201,7 +1201,7 @@ export default function arkTSUtilJSONTest() {
     /**
      * @tc.name   testParseSendable0114
      * @tc.number SUB_JSON_PARSE_SENDABLE_1400
-     * @tc.desc   Test object enumeration method surface stays available across threads.
+     * @tc.desc   Test object enumeration methods remain available across threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
