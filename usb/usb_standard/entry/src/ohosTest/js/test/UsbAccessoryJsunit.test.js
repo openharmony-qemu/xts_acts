@@ -69,10 +69,10 @@ describe("UsbAccessoryJsTest", function () {
             let driver = await UiDriver.create();
             console.info(TAG, ` come in driveFn`);
             console.info(TAG, `driver is ${JSON.stringify(driver)}`);
-            CheckEmptyUtils.sleep(1000);
+            CheckEmptyUtils.sleep(200);
             let button = await driver.findComponent(BY.text('允许'));
             console.info(TAG, `button is ${JSON.stringify(button)}`);
-            CheckEmptyUtils.sleep(1000);
+            CheckEmptyUtils.sleep(200);
             await button.click();
         } catch (err) {
             console.info(TAG, 'err is ' + err);
@@ -164,7 +164,7 @@ describe("UsbAccessoryJsTest", function () {
                 expect(data).assertTrue();
             });
             await driveFn();
-            CheckEmptyUtils.sleep(1000);
+            CheckEmptyUtils.sleep(200);
             usbMgr.cancelAccessoryRight(accList[0]);
         } catch (err) {
             console.info(TAG, 'testRequestAccessoryRight002 err : ', err);
@@ -237,9 +237,9 @@ describe("UsbAccessoryJsTest", function () {
     it("testHasAccessoryRight003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
         console.info(TAG, '----------------------testHasAccessoryRight003---------------------------');
         await getAccPermission();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         await driveFn();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         try {
             let ret = usbMgr.hasAccessoryRight(accList[0]);
             console.info(TAG, 'testHasAccessoryRight003 ret : ', ret);
@@ -294,9 +294,9 @@ describe("UsbAccessoryJsTest", function () {
     it("testCancelAccessoryRight002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
         console.info(TAG, '----------------------testCancelAccessoryRight002---------------------------');
         await getAccPermission();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         await driveFn();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         try {
             usbMgr.cancelAccessoryRight(accList[0]);
             let ret = usbMgr.hasAccessoryRight(access);
@@ -339,7 +339,7 @@ describe("UsbAccessoryJsTest", function () {
 
     /**
      * @tc.name   testOpenAccessory002
-     * @tc.number SUB_USB_DeviceManager_JS_Accessory_1000
+     * @tc.number SUB_USB_DeviceManager_JS_Accessory_200
      * @tc.desc   verify openAccessory result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -348,9 +348,9 @@ describe("UsbAccessoryJsTest", function () {
     it("testOpenAccessory002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
         console.info(TAG, '----------------------testOpenAccessory002---------------------------');
         await getAccPermission();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         await driveFn();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         try {
             let accHandle = usbMgr.openAccessory(accList[0]);
             console.info(TAG, 'testOpenAccessory002 ret : ', accHandle);
@@ -382,9 +382,9 @@ describe("UsbAccessoryJsTest", function () {
     it("testOpenAccessory003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
         console.info(TAG, '----------------------testOpenAccessory003---------------------------');
         await getAccPermission();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         await driveFn();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         try {
             let accHandle = usbMgr.openAccessory(accList[0]);
             console.info(TAG, 'testOpenAccessory003 accHandle : ', accHandle);
@@ -440,9 +440,9 @@ describe("UsbAccessoryJsTest", function () {
     it("testCloseAccessory001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
         console.info(TAG, '----------------------testCloseAccessory001---------------------------');
         await getAccPermission();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         await driveFn();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         let acchandle;
         try {
             acchandle = usbMgr.openAccessory(accList[0]);
@@ -504,9 +504,9 @@ describe("UsbAccessoryJsTest", function () {
     it("testHasAccessoryRight801Err003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
         console.info(TAG, '----------------------testHasAccessoryRight801Err003---------------------------');
         await getAccPermission();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         await driveFn();
-        CheckEmptyUtils.sleep(1000);
+        CheckEmptyUtils.sleep(200);
         try {
             let ret = usbMgr.hasAccessoryRight(accList[0]);
             console.info(TAG, 'testHasAccessoryRight801Err003 ret : ', ret);
