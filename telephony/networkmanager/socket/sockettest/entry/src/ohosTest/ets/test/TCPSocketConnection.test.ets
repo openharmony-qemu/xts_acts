@@ -15,7 +15,6 @@
 import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic'
 import socket from "@ohos.net.socket";
 import { BusinessError, Callback } from '@ohos.base';
-import connection from '@ohos.net.connection';
 import { ArrayBufferToString } from './utils';
 
 
@@ -100,7 +99,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             client.off('error',(err:BusinessError) => {
@@ -158,7 +157,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -214,7 +213,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -270,7 +269,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -326,7 +325,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -382,7 +381,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -438,7 +437,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -494,7 +493,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -550,7 +549,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -606,7 +605,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -662,7 +661,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -710,9 +709,9 @@ export default function TCPSocketConnectionTest() {
           let tcpSendOption: socket.TCPSendOptions = {
             data: 'Hello, client!'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -764,9 +763,9 @@ export default function TCPSocketConnectionTest() {
           let tcpSendOption: socket.TCPSendOptions = {
             data: new ArrayBuffer(234)
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -819,9 +818,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: ''
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -874,9 +873,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: 'UTF-8'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -929,9 +928,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: 'UTF-16BE'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -984,9 +983,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: 'UTF-16LE'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1039,9 +1038,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: 'UTF-16'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1094,9 +1093,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: 'US-AECII'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1149,9 +1148,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: 'US-AECII'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1204,9 +1203,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: 'GB2312'
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1259,9 +1258,9 @@ export default function TCPSocketConnectionTest() {
             data: 'Hello, client!',
             encoding: undefined
           };
-          client.send(tcpSendOption).then(() => {
+          client.send(tcpSendOption).then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} send should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1317,7 +1316,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             tcpServer.off('connect');
@@ -1362,9 +1361,9 @@ export default function TCPSocketConnectionTest() {
           address: listenAddress
         };
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
-          client.close().then(() => {
+          client.close().then((result: void) => {
             console.info(`${caseName} success`);
-            expectSuccess();
+            expectTrue(result === undefined, `${caseName} close should succeed`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1420,7 +1419,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success data:${JSON.stringify(data)}`);
-              expectSuccess();
+              expectTrue(data.address === '127.0.0.1', `${caseName} address should be 127.0.0.1`);
               done();
             };
             tcpServer.off('connect');
@@ -1467,7 +1466,7 @@ export default function TCPSocketConnectionTest() {
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
           client.getRemoteAddress().then((data: socket.NetAddress) => {
             console.info(`${caseName} success data:${JSON.stringify(data)}`);
-            expectSuccess();
+            expectTrue(data.address === '127.0.0.1', `${caseName} address should be 127.0.0.1`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -1624,8 +1623,9 @@ export default function TCPSocketConnectionTest() {
           let clientSendOptions: socket.TCPSendOptions = {
             data: 'Hello, server!'
           };
+          let messageCallbackInvoked: boolean = false;
           const callback: Callback<socket.SocketMessageInfo> = () => {
-            expectFail();
+            messageCallbackInvoked = true;
             console.info(`${caseName} test end`);
             done();
           };
@@ -1637,7 +1637,7 @@ export default function TCPSocketConnectionTest() {
           await client.close().catch((err:BusinessError) => {
             console.info('fail to close' + err.code.toString());
           });
-          expectSuccess();
+          expectTrue(!messageCallbackInvoked, `${caseName} message callback should not have been invoked after off`);
           done();
         });
         await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
@@ -1680,13 +1680,15 @@ export default function TCPSocketConnectionTest() {
           let clientSendOptions: socket.TCPSendOptions = {
             data: 'Hello, server!'
           };
+          let callback1Invoked: boolean = false;
+          let callback2Invoked: boolean = false;
           const callback1: Callback<socket.SocketMessageInfo> = () => {
-            expectFail();
+            callback1Invoked = true;
             console.info(`${caseName} test end`);
             done();
           };
           const callback2: Callback<socket.SocketMessageInfo> = () => {
-            expectFail();
+            callback2Invoked = true;
             console.info(`${caseName} test end`);
             done();
           };
@@ -1699,8 +1701,61 @@ export default function TCPSocketConnectionTest() {
           await client.close().catch((err:BusinessError) => {
             console.info('fail to close' + err.code.toString());
           });
-          expectSuccess();
+          expectTrue(!callback1Invoked, `${caseName} callback1 should not have been invoked after off`);
+          expectTrue(!callback2Invoked, `${caseName} callback2 should not have been invoked after off`);
           done();
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOffMessage0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OffMessage_0300
+     * @tc.desc   UnSubscription message event with null callback on TCPSocketConnection, expect 401 error (invalid parameter)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOffMessage0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOffMessage0300';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14061,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.off('message', null);
+            console.info(`${caseName} off should have thrown 401 error`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `Expected error code 401 but got ${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
         });
         await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
           console.info('fail to connect' + err.code.toString());
@@ -1740,14 +1795,23 @@ export default function TCPSocketConnectionTest() {
         };
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
           const callback: Callback<void> = () => {
-            expectSuccess();
+            tcpServer.off('connect');
+          };
+          try {
+            client.on('close', callback);
+          } catch (err) {
+            console.info(`${caseName} on('close') should not throw for valid callback`);
+            expectTrue(err.code !== null, `${caseName} on('close') threw unexpectedly`);
             tcpServer.off('connect');
             console.info(`${caseName} test end`);
             done();
-          };
-          client.on('close', callback);
-          await client.close().catch((err:BusinessError) => {
+            return;
+          }
+          await client.close().then((closeResult: void) => {
+            expectTrue(closeResult === undefined, `${caseName} close should succeed after on('close')`);
+          }).catch((err: BusinessError) => {
             console.info('fail to close' + err.code.toString());
+            expectTrue(err.code !== null, `${caseName} close failed with error`);
           });
           console.info(`${caseName} test end`);
           done();
@@ -1789,18 +1853,16 @@ export default function TCPSocketConnectionTest() {
           address: listenAddress
         };
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
+          let closeCallbackInvoked: boolean = false;
           const callback: Callback<void> = () => {
-            expectFail();
-            tcpServer.off('connect');
-            console.info(`${caseName} test end`);
-            done();
+            closeCallbackInvoked = true;
           };
           client.on('close', callback);
           client.off('close', callback);
           await client.close().catch((err:BusinessError) => {
             console.info('fail to close' + err.code.toString());
           });
-          expectSuccess();
+          expectTrue(!closeCallbackInvoked, `${caseName} close callback should not have been invoked after off`);
           console.info(`${caseName} test end`);
           done();
         });
@@ -1841,17 +1903,13 @@ export default function TCPSocketConnectionTest() {
           address: listenAddress
         };
         tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
+          let callback1Invoked: boolean = false;
+          let callback2Invoked: boolean = false;
           const callback1: Callback<void> = () => {
-            expectFail();
-            tcpServer.off('connect');
-            console.info(`${caseName} test end`);
-            done();
+            callback1Invoked = true;
           };
           const callback2: Callback<void> = () => {
-            expectFail();
-            tcpServer.off('connect');
-            console.info(`${caseName} test end`);
-            done();
+            callback2Invoked = true;
           };
           client.on('close', callback1);
           client.on('close', callback2);
@@ -1859,7 +1917,8 @@ export default function TCPSocketConnectionTest() {
           await client.close().catch((err:BusinessError) => {
             console.info('fail to close' + err.code.toString());
           });
-          expectSuccess();
+          expectTrue(!callback1Invoked, `${caseName} callback1 should not have been invoked after off`);
+          expectTrue(!callback2Invoked, `${caseName} callback2 should not have been invoked after off`);
           console.info(`${caseName} test end`);
           done();
         });
@@ -1960,7 +2019,7 @@ export default function TCPSocketConnectionTest() {
               expectTrue(data.address != null);
               expectTrue(data.port != null);
               expectTrue(data.family != null);
-              expectSuccess();
+              expectTrue(data.address === '127.0.0.1', `${caseName} address should be 127.0.0.1`);
               done();
             };
             tcpServer.off('connect');
@@ -2011,7 +2070,7 @@ export default function TCPSocketConnectionTest() {
             expectTrue(data.address != null);
             expectTrue(data.port != null);
             expectTrue(data.family != null);
-            expectSuccess();
+            expectTrue(data.address === '127.0.0.1', `${caseName} address should be 127.0.0.1`);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -2064,9 +2123,9 @@ export default function TCPSocketConnectionTest() {
           let clientSendOptions: socket.TCPSendOptions = {
             data: 'Hello, server!'
           };
+          let messageCallbackInvoked: boolean = false;
           const callback: Callback<socket.SocketMessageInfo> = (data) => {
-            expectTrue(data.message != null);
-            expectTrue(data.remoteInfo != null);
+            messageCallbackInvoked = true;
             console.info(`${caseName} test end`);
             done();
           };
@@ -2078,7 +2137,7 @@ export default function TCPSocketConnectionTest() {
           await client.close().catch((err:BusinessError) => {
             console.info('fail to close' + err.code.toString());
           });
-          expectSuccess();
+          expectTrue(!messageCallbackInvoked, `${caseName} message callback should not have been invoked after off`);
           done();
         });
         await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
@@ -2134,7 +2193,7 @@ export default function TCPSocketConnectionTest() {
               done();
             } else {
               console.info(`${caseName} success`);
-              expectSuccess();
+              expectTrue(err === undefined, `${caseName} send should succeed without error`);
               done();
             };
             client.off('error',(err:BusinessError) => {
@@ -2155,58 +2214,774 @@ export default function TCPSocketConnectionTest() {
         done();
       }
     });
+
     /**
-     * @tc.name   testConnectionTCPSocketType0100
-     * @tc.number SUB_NetworkMgr_Connection_TCPSocket_Type_0100
-     * @tc.desc   test connection.TCPSocket type (type TCPSocket = socket.TCPSocket) with constructTCPSocketInstance and connection module APIs
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionSend2300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_Send_2300
+     * @tc.desc   Send data with null options parameter, expect 401 error (invalid parameter)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL2
      */
-    it('testConnectionTCPSocketType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName: string = 'testConnectionTCPSocketType0100';
-      console.info(`${caseName} test start`);
+    it('testNetworkMgrSocketTCPSocketConnectionSend2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionSend2300';
       try {
-        let tcpSocket: connection.TCPSocket = socket.constructTCPSocketInstance();
-        console.info(`${caseName} TCPSocket created`);
-        expect(tcpSocket).assertInstanceOf('Object');
-        expectTrue(tcpSocket !== undefined);
-        expectTrue(tcpSocket !== null);
-        connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-          if (error) {
-            console.info(`${caseName} getDefaultNet error: ${JSON.stringify(error)}`);
-            expectTrue(false);
-            done();
-            return;
-          }
-          if (data.netId == 0) {
-            console.info(`${caseName} Please connect to the network`);
-            expectTrue(false);
-            done();
-          } else {
-            console.info(`${caseName} getDefaultNet success, netId: ${data.netId}`);
-            expectTrue(data.netId > 0);
-            expectTrue(data.netId !== undefined);
-            expectTrue(data.netId !== null);
-            tcpSocket.close((err: BusinessError) => {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14057,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.send(undefined, (err: BusinessError) => {
               if (err) {
-                console.info(`${caseName} close err: ${JSON.stringify(err)}`);
-                expectTrue(err.code === 2300999);
+                console.info(`${caseName} fail err:${JSON.stringify(err)}`);
+                expectTrue(err.code === 401, `Expected error code 401 but got ${err.code}`);
+                done();
               } else {
-                console.info(`${caseName} close success`);
-                expectSuccess();
-              }
-              console.info(`${caseName}---End`);
+                console.info(`${caseName} unexpected success`);
+                expectFail();
+                done();
+              };
+              tcpServer.off('connect');
+              console.info(`${caseName} test end`);
               done();
             });
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `Expected error code 401 but got ${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
           }
         });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
       } catch (err) {
-        console.info(`${caseName} catch err: ${JSON.stringify(err)}`);
-        expectTrue(false);
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
         done();
       }
     });
 
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionClose0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_Close_0300
+     * @tc.desc   Close a connection via promise, then verify getRemoteAddress fails, confirming close took effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionClose0300';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14058,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', async (client: socket.TCPSocketConnection) => {
+          try {
+            const closeResult: void = await client.close();
+            console.info(`${caseName} close resolved successfully`);
+            expectTrue(closeResult === undefined, 'close() should resolve to void (undefined)');
+            client.getRemoteAddress((err: BusinessError, data: socket.NetAddress) => {
+              if (err) {
+                console.info(`${caseName} getRemoteAddress after close returned error as expected`);
+                expectTrue(err.code !== null, 'getRemoteAddress should fail after connection is closed');
+              } else {
+                console.info(`${caseName} getRemoteAddress should have failed after close`);
+                expectFalse(true, 'getRemoteAddress unexpectedly succeeded after close');
+              }
+              tcpServer.off('connect');
+              console.info(`${caseName} test end`);
+              done();
+            });
+          } catch (err) {
+            console.info(`${caseName} close err:${JSON.stringify(err)}`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOnMessage0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OnMessage_0100
+     * @tc.desc   Register message event with undefined callback, expect 401 error (invalid parameter)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOnMessage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOnMessage0100';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14059,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.on('message', undefined);
+            console.info(`${caseName} on should have thrown 401 error`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `Expected error code 401 but got ${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOnMessage0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OnMessage_0200
+     * @tc.desc   Register message event with null callback on TCPSocketConnection, expect 401 error (invalid parameter)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOnMessage0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOnMessage0200';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14060,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.on('message', null);
+            console.info(`${caseName} on should have thrown 401 error`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `Expected error code 401 but got ${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOnClose0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OnClose_0200
+     * @tc.desc   Register close event with undefined callback on TCPSocketConnection, expect 401 error (invalid parameter)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOnClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOnClose0200';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14071,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.on('close', undefined);
+            console.info(`${caseName} on should have thrown 401 error`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `Expected error code 401 but got ${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOnClose0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OnClose_0300
+     * @tc.desc   Register close event with valid callback on TCPSocketConnection, verify return value is undefined (void)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOnClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOnClose0300';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14062,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            const callback: Callback<void> = () => {
+              console.info(`${caseName} on close callback invoked`);
+            };
+            let ret: void = client.on('close', callback);
+            expectTrue(ret === undefined, `${caseName} on('close') should return undefined`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOffClose0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OffClose_0300
+     * @tc.desc   Unregister close event with undefined callback on TCPSocketConnection, expect 401 error (invalid parameter)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOffClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOffClose0300';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14063,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.off('close', undefined);
+            console.info(`${caseName} off should have thrown 401 error`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `Expected error code 401 but got ${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOffClose0400
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OffClose_0400
+     * @tc.desc   Unregister close event with valid callback on TCPSocketConnection, verify return value is undefined (void)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOffClose0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOffClose0400';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14064,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            const callback: Callback<void> = () => {
+              console.info(`${caseName} on close callback invoked`);
+            };
+            client.on('close', callback);
+            let ret: void = client.off('close', callback);
+            expectTrue(ret === undefined, `${caseName} off('close') should return undefined`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOnError0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OnError_0100
+     * @tc.desc   Register error event with undefined callback on TCPSocketConnection, expect 401 error (invalid parameter)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOnError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOnError0100';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14065,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.on('error', undefined);
+            console.info(`${caseName} on should have thrown 401 error`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `Expected error code 401 but got ${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOnError0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OnError_0200
+     * @tc.desc   Register error event with valid callback on TCPSocketConnection, verify return value is undefined (void)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOnError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOnError0200';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14066,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            const errorCallback: Callback<BusinessError> = (err: BusinessError) => {
+              console.info(`${caseName} on error callback invoked, err:${JSON.stringify(err)}`);
+            };
+            let ret: void = client.on('error', errorCallback);
+            expectTrue(ret === undefined, `${caseName} on('error') should return undefined`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOnError0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OnError_0300
+     * @tc.desc   Register error event with multiple callbacks on TCPSocketConnection, verify multi-callback coverage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOnError0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOnError0300';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14067,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            let callback1Invoked: boolean = false;
+            let callback2Invoked: boolean = false;
+            const errorCallback1: Callback<BusinessError> = (err: BusinessError) => {
+              callback1Invoked = true;
+              console.info(`${caseName} error callback1 invoked, err:${JSON.stringify(err)}`);
+            };
+            const errorCallback2: Callback<BusinessError> = (err: BusinessError) => {
+              callback2Invoked = true;
+              console.info(`${caseName} error callback2 invoked, err:${JSON.stringify(err)}`);
+            };
+            let ret1: void = client.on('error', errorCallback1);
+            let ret2: void = client.on('error', errorCallback2);
+            expectTrue(ret1 === undefined, `${caseName} first on('error') should return undefined`);
+            expectTrue(ret2 === undefined, `${caseName} second on('error') should return undefined`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOffError0100
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OffError_0100
+     * @tc.desc   注销error事件时传入undefined回调，期望抛出401参数错误
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOffError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOffError0100';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14068,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            client.off('error', undefined);
+            console.info(`${caseName} off should have thrown 401 error`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectTrue(err.code !== 401, `期望错误码为401但实际为${err.code}`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOffError0200
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OffError_0200
+     * @tc.desc   注销error事件时传入合法回调（有第2个参数），验证返回值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOffError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOffError0200';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14069,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            const errorCallback: Callback<BusinessError> = (err: BusinessError) => {
+              console.info(`${caseName} on error callback invoked, err:${JSON.stringify(err)}`);
+            };
+            client.on('error', errorCallback);
+            let ret: void = client.off('error', errorCallback);
+            expectTrue(ret === undefined, `${caseName} off('error', callback)应返回undefined`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketTCPSocketConnectionOffError0300
+     * @tc.number SUB_NetworkMgr_Socket_TCPSocketConnection_OffError_0300
+     * @tc.desc   注销error事件时不传第2个参数（无callback），验证返回值为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketTCPSocketConnectionOffError0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketTCPSocketConnectionOffError0300';
+      try {
+        console.info(`${caseName} test start`);
+        let tcpServer: socket.TCPSocketServer = socket.constructTCPSocketServerInstance();
+        let tcp: socket.TCPSocket = socket.constructTCPSocketInstance();
+        let listenAddress: socket.NetAddress = {
+          address: '127.0.0.1',
+          port: 14070,
+          family: 1
+        };
+        await tcpServer.listen(listenAddress).catch((err:BusinessError) => {
+          console.info('fail to listen' + err.code.toString());
+        });
+        let tcpConnectOptions: socket.TCPConnectOptions = {
+          address: listenAddress
+        };
+        tcpServer.on('connect', (client: socket.TCPSocketConnection) => {
+          try {
+            const errorCallback: Callback<BusinessError> = (err: BusinessError) => {
+              console.info(`${caseName} on error callback invoked, err:${JSON.stringify(err)}`);
+            };
+            client.on('error', errorCallback);
+            let ret: void = client.off('error');
+            expectTrue(ret === undefined, `${caseName} off('error')无callback应返回undefined`);
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          } catch (err) {
+            console.info(`${caseName} catch err:${JSON.stringify(err)}`);
+            expectFail();
+            tcpServer.off('connect');
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+        await tcp.connect(tcpConnectOptions).catch((err:BusinessError) => {
+          console.info('fail to connect' + err.code.toString());
+        });
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectFail();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
   })
 }
