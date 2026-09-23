@@ -133,6 +133,8 @@ export default function windowEventTest() {
     it('testTouchOutSide_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTouchOutSide_0100 ';
       console.log(caseName + 'begin');
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       let mainWindow = windowStage.getMainWindowSync();
       let subWindowClass = await windowStage.createSubWindow('testTouchOutSide_0100');
       await subWindowClass.setUIContent('testability/pages/First/index2');
@@ -164,8 +166,8 @@ export default function windowEventTest() {
           done();
         }
         mainWindow.on('touchOutside', callback);
-        await sleep(200);
-        await driver.click(Math.round(windowProperties.windowRect.left as number + 5), Math.round(windowProperties.windowRect.top as number + 5));
+        await sleep(500);
+        await driver.clickAt({x: Math.round(windowProperties.windowRect.left as number + 5), y: Math.round(windowProperties.windowRect.top as number + 5), displayId: displayId});
         await sleep(300);
 
       } catch (e) {
@@ -191,6 +193,8 @@ export default function windowEventTest() {
     it('testTouchOutSide_TopBar_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTouchOutSide_TopBar_0100 ';
       console.log(caseName + 'begin');
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       let mainWindow = windowStage.getMainWindowSync();
       let subWindowClass = await windowStage.createSubWindow('testTouchOutSide_TopBar_0100');
       await subWindowClass.setUIContent('testability/pages/First/index2');
@@ -215,13 +219,11 @@ export default function windowEventTest() {
         let windowProperties = subWindowClass.getWindowProperties();
         console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
         await sleep(200);
-        // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
-        await driver.click(Math.round((windowProperties.windowRect.left as number + 5)), (windowProperties.windowRect.top as number + 5));
+        await driver.clickAt({x: Math.round(windowProperties.windowRect.left as number + 5), y: Math.round(windowProperties.windowRect.top as number + 5), displayId: displayId});
         await sleep(300);
         console.log(`${caseName} timer1: ${timer}`);
         expect(timer).assertEqual(0);
-        // await driver.click(((windowLimits.minWidth as number+200)+10) , 0);
-        await driver.click(50, 50);
+        await driver.clickAt({x: Math.round(windowProperties.windowRect.left as number + windowLimits.minWidth!  + 20), y: Math.round(windowProperties.windowRect.top as number + windowLimits.minHeight! + 20), displayId: displayId});
         await sleep(300);
         console.log(`${caseName} timer2: ${timer}`);
         expect(timer).assertEqual(1);
