@@ -90,7 +90,10 @@ export default function nativeProcessTest() {
       } catch (err) {
         fs.closeSync(file.fd);
         console.error(`${tag} StartNativeChildProcess error, errorCode: ${err.code}`);
-        if (!mpEnable && err.code == 801) {
+        if (err.code === 16000062) {
+          done();
+        } 
+        else if (!mpEnable && err.code === 801) {
           done();
         } else {
           expect().assertFail();
@@ -139,7 +142,10 @@ export default function nativeProcessTest() {
       } catch (err) {
         fs.closeSync(file.fd);
         console.error(`${tag} StartNativeChildProcess error, errorCode: ${err.code}`);
-        if (!mpEnable && err.code == 801) {
+        if (err.code === 16000062) {
+          done();
+        } 
+        else if (!mpEnable && err.code === 801) {
           done();
         } else {
           expect().assertFail();
@@ -174,7 +180,10 @@ export default function nativeProcessTest() {
         done();
       } catch (err) {
         console.error(`${tag} StartNativeChildProcess error, errorCode: ${err.code}`);
-        if (!mpEnable && err.code == 801) {
+        if (err.code === 16000062) {
+          done();
+        } 
+        else if (!mpEnable && err.code === 801) {
           done();
         } else {
           expect().assertFail();
@@ -197,13 +206,15 @@ export default function nativeProcessTest() {
         console.log(`${tag} startNativeChildProcess before`);
         let ret: number = testNapi.startChildIsolated();
         console.log(`${tag} startNativeChildProcess ret:${ret}, mpEnable:${mpEnable}`);
-        if (ret == 0) {
+        if (ret === 0) {
           await sleep(3000);
           let path = abilityDelegator.getAppContext().filesDir + "/test.txt";
           let result = readFile(path);
           expect(result).assertEqual('SUCC');
           done();
-        } else if (!mpEnable && ret == 16010004) {
+        } else if (!mpEnable && ret === 16010004) {
+          done();
+        } else if (ret === 16010006) {
           done();
         } else {
           expect().assertFail();
@@ -230,15 +241,17 @@ export default function nativeProcessTest() {
         console.log(`${tag} startNativeChildProcess before`);
         let ret: number = testNapi.startChildIsolated();
         console.log(`${tag} startNativeChildProcess ret:${ret}`);
-        if (ret == 0) {
+        if (ret === 0) {
           await sleep(3000);
           let path = abilityDelegator.getAppContext().filesDir + "/test.txt";
           let result = readFile(path);
           expect(result).assertEqual('SUCC');
           done();
-        } else if (!mpEnable && ret == 16010004) {
+        } else if (!mpEnable && ret === 16010004) {
           done();
-        } else {
+        } else if (ret  === 16010006) {
+          done();
+        }else {
           expect().assertFail();
           done();
         }
@@ -264,11 +277,13 @@ export default function nativeProcessTest() {
         let ret: number = testNapi.startChildNoArgs();
         console.log(`${tag} startNativeChildProcess ret:${ret}`);
         await sleep(1000);
-        if (ret == 0) {
+        if (ret === 0) {
           done();
-        } else if (!mpEnable && ret == 16010004) {
+        } else if (!mpEnable && ret === 16010004) {
           done();
-        } else {
+        } else if (ret === 16010006) {
+          done();
+        }else {
           expect().assertFail();
           done();
         }

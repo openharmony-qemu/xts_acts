@@ -73,7 +73,7 @@ export default function abilityTest() {
 
   describe('ActsAbilityTest', () => {
     beforeAll(async () => {
-      let driver = Driver.create();	
+      let driver = await Driver.create();	
       try {
         let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
         if (allowed) {
@@ -88,7 +88,7 @@ export default function abilityTest() {
           hilog.error(DOMAIN_NUMBER, TAG, 'Failed to obtain all the display objects. error: %{public}s',
             JSON.stringify(err));
         } else {
-          disPlayId = data[0].id;
+          disPlayId = display.getDefaultDisplaySync().id;
           hilog.info(DOMAIN_NUMBER, TAG, 'displayId: %{public}s', JSON.stringify(disPlayId));
         }
       });

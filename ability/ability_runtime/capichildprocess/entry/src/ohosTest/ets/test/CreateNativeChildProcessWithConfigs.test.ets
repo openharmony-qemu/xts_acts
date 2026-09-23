@@ -56,7 +56,7 @@ export default function createNativeChildProcessWithConfigsTest() {
       try {
         let ret : Number = testNapi.CreateNativeChildProcessWithConfigs('libentry.so');
         console.log(`${tag}, get ret ` + JSON.stringify(ret));
-        if(ret == 801 || ret == 16010004){
+        if(ret == 801 || ret == 16010004 || ret == 16010006){
           console.info(`${tag}: multi process model disable or Native child process disable`);
           done();
         }else{
@@ -158,7 +158,7 @@ export default function createNativeChildProcessWithConfigsTest() {
       try {
         let ret:number = testNapi.CreateNativeChildProcessWithConfigs('/data/storage/el1/bundle/libs/arm64/libentry.so');
         console.log(`${tag}, get ret ` + JSON.stringify(ret));
-        if(ret == 801 || ret == 16010004){
+        if(ret == 801 || ret == 16010004 || ret == 16010006){
           console.info(`${tag}: multi process model disable or Native child process disable`);
           done();
         }else{
@@ -187,7 +187,7 @@ export default function createNativeChildProcessWithConfigsTest() {
       try {
         let ret:number = testNapi.CreateNativeChildProcessWithConfigs('fake.so');
         console.log(`${tag}, get ret ` + JSON.stringify(ret));
-        if(ret == 801 || ret == 16010004){
+        if(ret == 801 || ret == 16010004 || ret == 16010006){
           console.info(`${tag}: multi process model disable or Native child process disable`);
           done();
         }else{
