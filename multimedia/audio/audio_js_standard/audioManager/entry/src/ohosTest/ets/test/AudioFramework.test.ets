@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import audio from '@ohos.multimedia.audio';
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
@@ -51,7 +51,7 @@ let highVol: number = 14;
 let outOfRangeVol: number = 101;
 let longValue = '28374837458743875804735081439085918459801437584738967509184509813904850914375904790589104801843';
 let AudioVolumeType: ESObject = "123";
-const MaxVloume: number[] = [15,20,100,39];
+const MaxVloume: number[] = [15,20,100];
 
 async function getAudioManager() {
   audioManager = audio.getAudioManager();
@@ -2300,20 +2300,6 @@ export default function audioFramework() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let audioManager = audio.getAudioManager();
-      let audioRoutingManager = audioManager.getRoutingManager();
-      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
-      console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device.`)
-        done();
-        return;
-      }
-      if (outputDeviceDescription.length == 0) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
       const PROMISE = audioManager.getDevices(1);
       // Getting all Output devices Enumb 1 = OUTPUT_DEVICES_FLAG
       PROMISE.then((value) => {
@@ -5344,16 +5330,6 @@ export default function audioFramework() {
         done();
         return;
       }
-      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
-      if (outputDeviceDescription.length == 0) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
       try {
         let flag: boolean | null = null;
         if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
@@ -5416,16 +5392,6 @@ export default function audioFramework() {
         done();
         return;
       }
-      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
-      if (outputDeviceDescription.length == 0) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
       try {
         await audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true);
         let value = await audioManager.isDeviceActive(2);
@@ -5469,16 +5435,6 @@ export default function audioFramework() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice2) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
-      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
-      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
@@ -5541,16 +5497,6 @@ export default function audioFramework() {
         device.deviceType === audio.DeviceType.INVALID && device.deviceRole === audio.DeviceRole.OUTPUT_DEVICE
       );
       if (detecteDevice2) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
-      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device`)
-        done();
-        return;
-      }
-      if (outputDeviceDescription.length == 0) {
         console.info(`this device has external device`)
         done();
         return;
