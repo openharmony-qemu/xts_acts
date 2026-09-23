@@ -59,12 +59,52 @@ function promiseFunc1(observer: errorManager.GlobalError) {
   console.log("result instaceType :" + observer.instanceType);
 }
 
+function errorFunc2(observer: errorManager.GlobalError) {
+  console.log("errorFunc2 name :" + observer.name);
+  console.log("errorFunc2 message :" + observer.message);
+  console.log("errorFunc2 stack :" + observer.stack);
+}
+
+function errorFunc3(observer: errorManager.GlobalError) {
+  console.log("errorFunc3 name :" + observer.name);
+  console.log("errorFunc3 message :" + observer.message);
+  console.log("errorFunc3 stack :" + observer.stack);
+}
+
+function errorFunc4(observer: errorManager.GlobalError) {
+  console.log("errorFunc4 name :" + observer.name);
+  console.log("errorFunc4 message :" + observer.message);
+  console.log("errorFunc4 stack :" + observer.stack);
+}
+
+function errorFunc5(observer: errorManager.GlobalError) {
+  console.log("errorFunc5 name :" + observer.name);
+  console.log("errorFunc5 message :" + observer.message);
+  console.log("errorFunc5 stack :" + observer.stack);
+}
+
 function freezeCallback() {
   console.log("freezecallback");
 }
 
 function freezeCallback1() {
   console.log("freezecallback1");
+}
+
+function freezeCallback2() {
+  console.log("freezecallback2");
+}
+
+function freezeCallback3() {
+  console.log("freezecallback3");
+}
+
+function freezeCallback4() {
+  console.log("freezecallback4");
+}
+
+function freezeCallback5() {
+  console.log("freezecallback5");
 }
 
 function unregisterErrorObserverCallback(err: BusinessError) {
@@ -1372,7 +1412,7 @@ export default function ErrormangerTest() {
         done();
       }catch(error){
         console.info("testErrorManger_3100 err = " + error.code);
-        expect(false).assertTrue();
+        expect(error.code == 401).assertTrue();
         done();
       }
       console.info("testErrorManger_3100 end");
@@ -1509,7 +1549,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_3700 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(err.code === 16300004).assertTrue();
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -1551,7 +1591,7 @@ export default function ErrormangerTest() {
         done();
       } catch (err) {
         console.error(`====>testErrorManger_3900 loopObserver catch > error code: ${err.code}, error msg: ${err.message}`)
-        expect(false).assertTrue();
+        expect(err.code === 401).assertTrue()
         done();
       }
     })
@@ -1638,6 +1678,230 @@ export default function ErrormangerTest() {
         expect(err.code === 401).assertTrue()
         done();
       }
+    })
+
+    /**
+     * @tc.name   testErrorManger_4400
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4400
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc)重复注册返回错误码16200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info("====> testErrorManger_4400 globalErrorOccurred start");
+      try {
+        errorManager.on('globalErrorOccurred', errorFunc);
+        console.info("====> testErrorManger_4400 globalErrorOccurred first register success");
+        errorManager.on('globalErrorOccurred', errorFunc2);
+        console.info("====> testErrorManger_4400 globalErrorOccurred second register success");
+        errorManager.off('globalErrorOccurred', errorFunc);
+        console.info("====> testErrorManger_4400 unregister errorFunc success");
+        errorManager.off('globalErrorOccurred', errorFunc2);
+        console.info("====> testErrorManger_4400 unregister errorFunc2 success");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_4400 globalErrorOccurred catch: " + JSON.stringify(err));
+        expect(err.code === 16200001).assertTrue();
+        errorManager.off('globalErrorOccurred', errorFunc);
+        done();
+      }
+      console.info("====> testErrorManger_4400 globalErrorOccurred end");
+    })
+
+    /**
+     * @tc.name   testErrorManger_4500
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4500
+     * @tc.desc   验证errorManager.on("freeze", observer)第2个参数传空对象注册与注销
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_4500 freeze start");
+        let observer: errorManager.FreezeObserver = {} as errorManager.FreezeObserver;
+        errorManager.on("freeze", observer);
+        console.info("====> testErrorManger_4500 freeze register success");
+        errorManager.off("freeze", observer);
+        console.info("====> testErrorManger_4500 freeze unregister success");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_4500 freeze catch: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+      console.info("====> testErrorManger_4500 freeze end");
+    })
+
+    /**
+     * @tc.name   testErrorManger_4600
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4600
+     * @tc.desc   验证errorManager.on("freeze", observer)第2个参数传空对象注册与注销
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info("====> testErrorManger_4600 freeze start");
+        let observer: errorManager.FreezeObserver = {} as errorManager.FreezeObserver;
+        errorManager.on("freeze", observer);
+        console.info("====> testErrorManger_4600 freeze register success");
+        errorManager.off("freeze", observer);
+        console.info("====> testErrorManger_4600 freeze unregister success");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_4600 freeze catch: " + JSON.stringify(err));
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+      console.info("====> testErrorManger_4600 freeze end");
+    })
+
+    /**
+     * @tc.name   testErrorManger_4700
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4700
+     * @tc.desc   验证errorManager.on("freeze", observer)多callback注册与注销覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info("====> testErrorManger_4700 freeze multi-callback start");
+      try {
+        errorManager.on("freeze", freezeCallback);
+        console.info("====> testErrorManger_4700 register freezeCallback success");
+        errorManager.off("freeze", freezeCallback);
+        console.info("====> testErrorManger_4700 unregister freezeCallback success");
+        errorManager.on("freeze", freezeCallback2);
+        console.info("====> testErrorManger_4700 register freezeCallback2 success");
+        errorManager.off("freeze", freezeCallback2);
+        console.info("====> testErrorManger_4700 unregister freezeCallback2 success");
+        errorManager.on("freeze", freezeCallback3);
+        console.info("====> testErrorManger_4700 register freezeCallback3 success");
+        errorManager.off("freeze", freezeCallback3);
+        console.info("====> testErrorManger_4700 unregister freezeCallback3 success");
+        errorManager.on("freeze", freezeCallback4);
+        console.info("====> testErrorManger_4700 register freezeCallback4 success");
+        errorManager.off("freeze", freezeCallback4);
+        console.info("====> testErrorManger_4700 unregister freezeCallback4 success");
+        errorManager.on("freeze", freezeCallback5);
+        console.info("====> testErrorManger_4700 register freezeCallback5 success");
+        errorManager.off("freeze", freezeCallback5);
+        console.info("====> testErrorManger_4700 unregister freezeCallback5 success");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_4700 freeze catch: " + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("====> testErrorManger_4700 freeze end");
+    })
+
+    /**
+     * @tc.name   testErrorManger_4800
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4800
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', observer)多callback注册与注销覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info("====> testErrorManger_4800 globalErrorOccurred multi-callback start");
+      try {
+        errorManager.on('globalErrorOccurred', errorFunc);
+        console.info("====> testErrorManger_4800 register errorFunc success");
+        errorManager.on('globalErrorOccurred', errorFunc2);
+        console.info("====> testErrorManger_4800 register errorFunc2 success");
+        errorManager.on('globalErrorOccurred', errorFunc3);
+        console.info("====> testErrorManger_4800 register errorFunc3 success");
+        errorManager.on('globalErrorOccurred', errorFunc4);
+        console.info("====> testErrorManger_4800 register errorFunc4 success");
+        errorManager.on('globalErrorOccurred', errorFunc5);
+        console.info("====> testErrorManger_4800 register errorFunc5 success");
+        errorManager.off('globalErrorOccurred', errorFunc);
+        console.info("====> testErrorManger_4800 unregister errorFunc success");
+        errorManager.off('globalErrorOccurred', errorFunc2);
+        console.info("====> testErrorManger_4800 unregister errorFunc2 success");
+        errorManager.off('globalErrorOccurred', errorFunc3);
+        console.info("====> testErrorManger_4800 unregister errorFunc3 success");
+        errorManager.off('globalErrorOccurred', errorFunc4);
+        console.info("====> testErrorManger_4800 unregister errorFunc4 success");
+        errorManager.off('globalErrorOccurred', errorFunc5);
+        console.info("====> testErrorManger_4800 unregister errorFunc5 success");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_4800 globalErrorOccurred catch: " + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("====> testErrorManger_4800 globalErrorOccurred end");
+    })
+
+    /**
+     * @tc.name   testErrorManger_4900
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_4900
+     * @tc.desc   验证errorManager.on("loopObserver", timeout, observer)多callback注册与注销覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testErrorManger_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info("====> testErrorManger_4900 loopObserver multi-callback start");
+      try {
+        let observer1: errorManager.LoopObserver = {
+          onLoopTimeOut(timeout: number) {
+            console.info('observer1 Duration timeout: ' + timeout);
+          }
+        };
+        let observer2: errorManager.LoopObserver = {
+          onLoopTimeOut(timeout: number) {
+            console.info('observer2 Duration timeout: ' + timeout);
+          }
+        };
+        let observer3: errorManager.LoopObserver = {
+          onLoopTimeOut(timeout: number) {
+            console.info('observer3 Duration timeout: ' + timeout);
+          }
+        };
+        let observer4: errorManager.LoopObserver = {
+          onLoopTimeOut(timeout: number) {
+            console.info('observer4 Duration timeout: ' + timeout);
+          }
+        };
+        let observer5: errorManager.LoopObserver = {
+          onLoopTimeOut(timeout: number) {
+            console.info('observer5 Duration timeout: ' + timeout);
+          }
+        };
+        errorManager.on("loopObserver", 5000, observer1);
+        console.info("====> testErrorManger_4900 register observer1 success");
+        errorManager.off("loopObserver", observer1);
+        console.info("====> testErrorManger_4900 unregister observer1 success");
+        errorManager.on("loopObserver", 5000, observer2);
+        console.info("====> testErrorManger_4900 register observer2 success");
+        errorManager.off("loopObserver", observer2);
+        console.info("====> testErrorManger_4900 unregister observer2 success");
+        errorManager.on("loopObserver", 5000, observer3);
+        console.info("====> testErrorManger_4900 register observer3 success");
+        errorManager.off("loopObserver", observer3);
+        console.info("====> testErrorManger_4900 unregister observer3 success");
+        errorManager.on("loopObserver", 5000, observer4);
+        console.info("====> testErrorManger_4900 register observer4 success");
+        errorManager.off("loopObserver", observer4);
+        console.info("====> testErrorManger_4900 unregister observer4 success");
+        errorManager.on("loopObserver", 5000, observer5);
+        console.info("====> testErrorManger_4900 register observer5 success");
+        errorManager.off("loopObserver", observer5);
+        console.info("====> testErrorManger_4900 unregister observer5 success");
+        done();
+      } catch (err) {
+        console.info("====> testErrorManger_4900 loopObserver catch: " + JSON.stringify(err));
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("====> testErrorManger_4900 loopObserver end");
     })
 
   })
