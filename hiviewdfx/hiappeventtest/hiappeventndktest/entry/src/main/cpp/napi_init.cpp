@@ -19,11 +19,6 @@
 #include <cstring>
 #include <vector>
 #include <string>
-#include "hilog/log.h"
-#include <unistd.h>
-#include <sys/wait.h>
-#include <hiappevent/hiappevent_event.h>
-#include <sys/prctl.h>
 
 #define FAIL (-1)
 #define SUCCESS 0
@@ -31,7 +26,6 @@
 #define PARAM_1 1
 #define PARAM_2 100
 #define PARAM_3 256
-#define PARAM_4 5
 
 #undef LOG_DOMAIN
 #define LOG_DOMAIN 0xD003200
@@ -2571,128 +2565,6 @@ static napi_value TestHiAppEventReportFrameworkMemAnomaly12(napi_env env, napi_c
     return result;
 }
 
-static void OnExternalLogCapacityReached(OH_HiAppEvent_ExternalLog* externalLogArr, uint32_t arrLen)
-{
-  OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi] onCapacityReached triggered, log count: %{public}u", arrLen);
-  for (uint32_t i = 0; i < arrLen; i++) {
-      OH_HiAppEvent_ExternalLog* log = &externalLogArr[i];
-      OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent [cpi]  filePath: %{public}s, %{public}lld, %{public}ld kb event: %{public}d", log->filePath, log->generationTs, log->fileSize, log->event);
-    if (i >= PARAM_4) {
-        break;
-    }
-  }
-}
-
-static napi_value RegisterExternalLogMgrFalse(napi_env env, napi_callback_info info)
-{
-    OH_LOG_INFO(LOG_APP, "testTag start");
-    OH_HiAppEvent_RegExternalLogCapacityReachedCallback(OnExternalLogCapacityReached);
-    int code = OH_HiAppEvent_RegExternalLogCapacityReachedCallback(OnExternalLogCapacityReached);
-    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
-    if (code == HIAPPEVENT_OPERATE_FAILED){
-        code = HIAPPEVENT_OPERATE_FAILED;
-    }
-    napi_value result;
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
-static napi_value RegisterExternalLogMgrNull(napi_env env, napi_callback_info info)
-{
-    OH_LOG_INFO(LOG_APP, "testTag start");
-    int code = OH_HiAppEvent_RegExternalLogCapacityReachedCallback(NULL);
-    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
-    if (code == HIAPPEVENT_INVALID_PARAM_VALUE){
-        code = HIAPPEVENT_INVALID_PARAM_VALUE;
-    }
-    napi_value result;
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
-static napi_value RegisterExternalLogMgrnullptr(napi_env env, napi_callback_info info)
-{
-    OH_LOG_INFO(LOG_APP, "testTag start");
-    int code = OH_HiAppEvent_RegExternalLogCapacityReachedCallback(nullptr);
-    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
-    if (code == HIAPPEVENT_INVALID_PARAM_VALUE){
-        code = HIAPPEVENT_INVALID_PARAM_VALUE;
-    }
-    napi_value result;
-    napi_create_int32(env, code, &result);
-    return result;
-}
-
-static napi_value CheckHiAppEventSysEventAppCRASH(napi_env env, napi_callback_info info)
-{
-    bool res = OH_HiAppEvent_SysEvent::OH_APP_CRASH == 1;
-    napi_value ret = nullptr;
-    napi_get_boolean(env, res, &ret);
-    return ret;
-}
-
-static napi_value CheckHiAppEventSysEventAppFreeze(napi_env env, napi_callback_info info)
-{
-    bool res = OH_HiAppEvent_SysEvent::OH_APP_FREEZE == 2;
-    napi_value ret = nullptr;
-    napi_get_boolean(env, res, &ret);
-    return ret;
-}
-
-static napi_value CheckHiAppEventSysEventResourceOverLimmit(napi_env env, napi_callback_info info)
-{
-    bool res = OH_HiAppEvent_SysEvent::OH_RESOURCE_OVERLIMIT == 3;
-    napi_value ret = nullptr;
-    napi_get_boolean(env, res, &ret);
-    return ret;
-}
-
-static napi_value CheckHiAppEventSysEventAddress(napi_env env, napi_callback_info info)
-{
-    bool res = OH_HiAppEvent_SysEvent::OH_ADDRESS_SANITIZER == 4;
-    napi_value ret = nullptr;
-    napi_get_boolean(env, res, &ret);
-    return ret;
-}
-
-static napi_value CheckHiAppEventSysEventAppHicollte(napi_env env, napi_callback_info info)
-{
-    bool res = OH_HiAppEvent_SysEvent::OH_APP_HICOLLIE == 5;
-    napi_value ret = nullptr;
-    napi_get_boolean(env, res, &ret);
-    return ret;
-}
-
-static napi_value CheckHiAppEventSysEventAppCpuUsageHigh(napi_env env, napi_callback_info info)
-{
-    bool res = OH_HiAppEvent_SysEvent::OH_CPU_USAGE_HIGH == 6;
-    napi_value ret = nullptr;
-    napi_get_boolean(env, res, &ret);
-    return ret;
-}
-
-static napi_value CrashLink(napi_env env, napi_callback_info info)
-{
-    napi_value res = nullptr;
-    pid_t pid = fork();
-    if (pid < 0) {
-        napi_get_boolean(env, false, &res);
-    } else if (pid == 0) {
-        napi_get_boolean(env, true, &res);
-        raise(SIGABRT);
-    } else {
-        int status;
-        pid_t child_pid = waitpid(pid, &status, 0);
-        if (child_pid > 0) {
-            bool child_success = WIFEXITED(status) && WEXITSTATUS(status) == 0;
-            napi_get_boolean(env, child_success, &res);
-        } else {
-            napi_get_boolean(env, false, &res);
-        }
-    }
-    return res;
-}
-
 static napi_value NAPI_Global_add(napi_env env, napi_callback_info info) {
 }
 EXTERN_C_START
@@ -2869,18 +2741,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestHiAppEventReportFrameworkMemAnomaly10", nullptr, TestHiAppEventReportFrameworkMemAnomaly10, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestHiAppEventReportFrameworkMemAnomaly11", nullptr, TestHiAppEventReportFrameworkMemAnomaly11, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestHiAppEventReportFrameworkMemAnomaly12", nullptr, TestHiAppEventReportFrameworkMemAnomaly12, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"add", nullptr, NAPI_Global_add, nullptr, nullptr, nullptr, napi_default, nullptr},
-        { "RegisterExternalLogMgrFalse", nullptr, RegisterExternalLogMgrFalse, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "RegisterExternalLogMgrNull", nullptr, RegisterExternalLogMgrNull, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "RegisterExternalLogMgrnullptr", nullptr, RegisterExternalLogMgrnullptr, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "CheckHiAppEventSysEventAppCRASH", nullptr, CheckHiAppEventSysEventAppCRASH, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "CheckHiAppEventSysEventAppFreeze", nullptr, CheckHiAppEventSysEventAppFreeze, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "CheckHiAppEventSysEventResourceOverLimmit", nullptr, CheckHiAppEventSysEventResourceOverLimmit, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "CheckHiAppEventSysEventAddress", nullptr, CheckHiAppEventSysEventAddress, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "CheckHiAppEventSysEventAppHicollte", nullptr, CheckHiAppEventSysEventAppHicollte, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "CheckHiAppEventSysEventAppCpuUsageHigh", nullptr, CheckHiAppEventSysEventAppCpuUsageHigh, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "CrashLink", nullptr, CrashLink, nullptr, nullptr, nullptr, napi_default, nullptr },
-};
+        {"add", nullptr, NAPI_Global_add, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }
