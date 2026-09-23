@@ -1,0 +1,50 @@
+{
+  "app": {
+    "bundleName": "com.ohos.actjsunitlitetest",
+    "vendor": "ohos",
+    "version": {
+      "code": 1,
+      "name": "1.0.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 4
+    }
+  },
+  "deviceConfig": {
+    "default": {}
+  },
+  "module": {
+    "package": "com.ohos.actjsunitlitetest",
+    "name": ".ActsJsunitLiteAbilityPackage",
+    "deviceType": [
+      "smartVision"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "name": "JsunitAbility",
+        "srcLanguage": "js",
+        "srcPath": "default",
+        "icon": "assets/entry/resources/base/media/icon.png",
+        "description": "Jsunit Lite test ability",
+        "label": "JsunitLiteTest",
+        "type": "page",
+        "visible": true,
+        "launchType": "standard"
+      }
+    ],
+    "js": [
+      {
+        "pages": [
+          "pages/index/index"
+        ],
+        "name": "JsunitAbility"
+      }
+    ]
+  }
+}

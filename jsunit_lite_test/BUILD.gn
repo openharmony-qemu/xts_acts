@@ -1,0 +1,23 @@
+import("//test/xts/tools/lite/build/jsunit_lite_suite.gni")
+
+jsunit_lite_suite("acts_jsunit_lite_test") {
+  hap_name = "ActsJsunitLiteTest"
+  hap_dir = "jsunit_lite_test"
+  config_path = "entry/src/main/config.json"
+  test_json_path = "Test.json"
+  suite_name = "acts"
+  cert_profile = "cert/openharmony_sx.p7b"
+  resources_path = "entry/src/main/resources"
+  js_source_dir = "entry/src/main/js/MainAbility"
+  extra_sources = [
+    "entry/src/main/js/MainAbility/pages/index/index.js",
+    "entry/src/main/js/test/List.test.js",
+    "entry/src/main/js/test/Constant.test.js",
+    "entry/src/main/js/test/Core.test.js",
+    "entry/src/main/js/test/Assert.test.js",
+    "entry/src/main/js/test/SkipError.test.js",
+    "entry/src/main/js/test/Lifecycle.test.js",
+    "entry/src/main/js/test/Report.test.js",
+    "entry/src/main/js/test/Kernel.test.js",
+  ]
+}
