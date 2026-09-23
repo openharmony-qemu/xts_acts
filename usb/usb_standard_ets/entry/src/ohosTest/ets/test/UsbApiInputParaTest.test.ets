@@ -1813,7 +1813,7 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       }
     })
- 
+
     /**
      * @tc.name   testUsbCancelTransferParamEx003
      * @tc.number SUB_USB_HostManager_InputPara_7300
