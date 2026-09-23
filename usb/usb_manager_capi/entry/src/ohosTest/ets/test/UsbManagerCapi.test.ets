@@ -27,14 +27,14 @@ const REQUEST_DIRECTION_ENUM: number[] = [0, 128];
 export default function usbManagerCapiTest() {
   describe('UsbManagerCapiTest', () => {
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0100
-     * @tc.name          getUsbDeviceListNoDevice
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0100
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0100
      * @tc.desc          Verify OH_UsbManager_GetUsbDeviceList returns an empty list without a peripheral.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let deviceCount: number = testNapi.getUsbDeviceListNoDevice();
@@ -49,14 +49,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0200
-     * @tc.name          freeUsbDeviceListSafeNoop
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0200
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0200
      * @tc.desc          Verify OH_UsbManager_FreeUsbDeviceList is a safe no-op for a null array.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let ret: number = testNapi.freeUsbDeviceListSafeNoop();
@@ -71,14 +71,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0300
-     * @tc.name          connectDeviceNullDevice
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0300
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0300
      * @tc.desc          Verify OH_UsbManager_ConnectDevice rejects a null device pointer.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let ret: number = testNapi.connectDeviceNullDevice();
@@ -93,14 +93,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0400
-     * @tc.name          hasPermissionNullDeviceName
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0400
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0400
      * @tc.desc          Verify OH_UsbManager_HasPermission rejects a null device name pointer.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let ret: number = testNapi.hasPermissionNullDeviceName();
@@ -115,14 +115,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0500
-     * @tc.name          requestPermissionNullCallback
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0500
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0500
      * @tc.desc          Verify OH_UsbManager_RequestPermission rejects a null callback pointer.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let ret: number = testNapi.requestPermissionNullCallback();
@@ -137,14 +137,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0600
-     * @tc.name          getFileDescriptorNullPipe
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0600
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0600
      * @tc.desc          Verify OH_UsbManager_GetFileDescriptor rejects a null pipe pointer.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let ret: number = testNapi.getFileDescriptorNullPipe();
@@ -159,14 +159,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0700
-     * @tc.name          closePipeNullPipe
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0700
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0700
      * @tc.desc          Verify OH_UsbManager_ClosePipe rejects a null pipe pointer.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let ret: number = testNapi.closePipeNullPipe();
@@ -181,14 +181,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0800
-     * @tc.name          errorCodeEnumValues
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0800
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0800
      * @tc.desc          Verify the numeric values of OH_UsbManager_ErrorCode.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let codes: number[] = testNapi.errorCodeEnumValues();
@@ -206,14 +206,14 @@ export default function usbManagerCapiTest() {
       })
 
     /**
-     * @tc.number        SUB_USB_USBMANAGER_0900
-     * @tc.name          requestDirectionEnumValues
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0900
+     * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0900
      * @tc.desc          Verify the numeric values of OH_UsbManager_RequestDirection.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
-    it('SUB_USB_USBMANAGER_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_USB_USBMANAGER_CAPI_TEST_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
           let directions: number[] = testNapi.requestDirectionEnumValues();
