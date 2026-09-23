@@ -16,7 +16,7 @@
 import usbMgr from '@ohos.usbManager';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { isFilteredDevice } from './FilterUtils';
-import { afterAll, beforeEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, beforeEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 const TAG: string = "[UsbClaimInterfaceExclusiveTest]";
 const SKIP_TAG: string = "[SKIP]";
