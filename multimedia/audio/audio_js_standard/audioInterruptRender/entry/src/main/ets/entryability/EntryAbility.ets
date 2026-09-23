@@ -4,6 +4,7 @@ import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
 import { common, Want, UIAbility, AbilityConstant } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
+import fs from '@ohos.file.fs';
 
 let fdRead: number;
 let readPath: string;
