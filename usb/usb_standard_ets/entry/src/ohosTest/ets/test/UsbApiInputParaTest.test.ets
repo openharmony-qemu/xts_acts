@@ -1648,7 +1648,7 @@ export default function UsbApiInputParaTest() {
         usbMgr.usbSubmitTransfer(transferParams);
       } catch (err) {
         console.info(`${TAG} testUsbSubmitTransferParamEx001 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1713,7 +1713,7 @@ export default function UsbApiInputParaTest() {
         usbMgr.usbSubmitTransfer(transferParams);
       } catch (err) {
         console.info(`${TAG} testUsbSubmitTransferParamEx003 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1778,7 +1778,7 @@ export default function UsbApiInputParaTest() {
         usbMgr.usbCancelTransfer(transferParams);
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx001 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1810,7 +1810,7 @@ export default function UsbApiInputParaTest() {
         usbMgr.usbCancelTransfer(transferParams);
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx002 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1842,7 +1842,7 @@ export default function UsbApiInputParaTest() {
         usbMgr.usbCancelTransfer(transferParams);
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx003 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
+        expect(err.code).assertEqual(14400001);
       }
     })
 
@@ -1874,7 +1874,7 @@ export default function UsbApiInputParaTest() {
         usbMgr.usbCancelTransfer(transferParams);
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx004 catch err: ${JSON.stringify(err)}`);
-        expect().assertFail();
+        expect(err.code).assertEqual(14400001);
       }
     })
   })
