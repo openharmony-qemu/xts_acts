@@ -97,7 +97,7 @@ export default function webViewOnErrorReceive03Jsunit() {
             Utils.registerEvent("testOnErrorReceive03", isRequestGesture, 202050, null);
 
             let a:Header[] =[
-                {"headerKey":"Accept","headerValue":"text/html,application/xhtml+xml,application/xml;q=0.9,image/heif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"},
+                {"headerKey":"Accept","headerValue":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/heif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"},
                 {"headerKey":"Accept-Encoding","headerValue":"gzip, deflate, br, zstd"},
                 {"headerKey":"Accept-Language","headerValue":"zh-CN,zh;q=0.9"},
                 {"headerKey":"Sec-Fetch-Dest","headerValue":"document"},
