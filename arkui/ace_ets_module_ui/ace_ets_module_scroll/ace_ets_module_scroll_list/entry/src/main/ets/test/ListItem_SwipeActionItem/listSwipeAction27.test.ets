@@ -76,9 +76,11 @@ export default function listSwipeAction27Jsunit() {
       let width = right - left;
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0260 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + bottom - vp2px(20)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(10))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe27Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(bottom - vp2px(20)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipe27State');

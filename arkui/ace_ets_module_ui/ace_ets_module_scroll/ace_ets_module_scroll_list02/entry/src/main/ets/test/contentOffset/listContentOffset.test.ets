@@ -79,7 +79,9 @@ export default function listContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('list_contentOffset_start'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('list_contentOffset_num');
+      let listSwipeComponent = await driver.findComponent(ON.id('list_contentOffset_num'));
+      let listSwipe = await listSwipeComponent.getBounds();
+      let displayId = await listSwipeComponent.getDisplayId();
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -87,16 +89,20 @@ export default function listContentOffset() {
       console.info("listContentOffset_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.2),Math.round(left + width/2),Math.round(top + height*0.6));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('list_contentOffset_num');
       console.info("[listContentOffset_0200] contentStartOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentStartOffset));
       expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("30.000000");
 
-      let list = CommonFunc.getComponentRectOnScreen('list_contentOffset_num');
+      let listComponent = await driver.findComponent(ON.id('list_contentOffset_num'));
+      let list = await listComponent.getBounds();
       console.info("[listContentOffset_0200] list_top is: " + list.top);
-      let listItem = CommonFunc.getComponentRectOnScreen('list_item_0');
+      let listItemComponent = await driver.findComponent(ON.id('list_item_0'));
+      let listItem = await listItemComponent.getBounds();
       console.info("[listContentOffset_0200] listItem_top is: " + listItem.top);
       let size_start = listItem.top - list.top
       console.info("[listContentOffset_0200] size_start is: " + size_start);
@@ -123,7 +129,9 @@ export default function listContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('list_contentOffset_end'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('list_contentOffset_num');
+      let listSwipeComponent = await driver.findComponent(ON.id('list_contentOffset_num'));
+      let listSwipe = await listSwipeComponent.getBounds();
+      let displayId = await listSwipeComponent.getDisplayId();
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -131,16 +139,20 @@ export default function listContentOffset() {
       console.info("listContentOffset_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('list_contentOffset_num');
       console.info("[listContentOffset_0300] contentEndOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentEndOffset));
       expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("20.000000");
 
-      let list = CommonFunc.getComponentRectOnScreen('list_contentOffset_num');
+      let listComponent = await driver.findComponent(ON.id('list_contentOffset_num'));
+      let list = await listComponent.getBounds();
       console.info("[listContentOffset_0300] list_bottom is: " + list.bottom);
-      let listItem = CommonFunc.getComponentRectOnScreen('list_item_9');
+      let listItemComponent = await driver.findComponent(ON.id('list_item_9'));
+      let listItem = await listItemComponent.getBounds();
       console.info("[listContentOffset_0300] listItem_bottom is: " + listItem.bottom);
       let size_end = list.bottom - listItem.bottom
       console.info("[listContentOffset_0300] size_end is: " + size_end);

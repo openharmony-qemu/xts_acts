@@ -110,7 +110,9 @@ export default function List_Margin() {
       expect(Math.abs(Math.round(List_Margin_01.bottom - List_Margin_01.top) - Math.round(vp2px(520))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List_Margin_01.right - List_Margin_01.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(360, 690, 360, 30);
+      let swipeComponent = await driver.findComponent(ON.id('List_Margin_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
       let List_Margin_014Again: RectValue = CommonFunc.getComponentRect('List_Margin' + '_014');
       expect(Math.abs(List_Margin_014.top - List_Margin_014Again.top) <= 1).assertTrue();
       console.info('testListMargin END');

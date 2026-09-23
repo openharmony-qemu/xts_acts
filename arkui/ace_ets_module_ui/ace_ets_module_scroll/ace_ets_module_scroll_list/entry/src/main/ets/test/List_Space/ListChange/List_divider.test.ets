@@ -113,7 +113,13 @@ export default function List_divider() {
       expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - vp2px(500))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + (bottom-top)/2 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
+      let swipeComponent = await driver.findComponent(ON.id('List_divider_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let List_divider_014Again = CommonFunc.getComponentRect('List_divider' + '_014');
       expect(Math.floor(Math.abs(List_divider_014.top - List_divider_014Again.top)) <= 1).assertTrue();
@@ -173,7 +179,13 @@ export default function List_divider() {
       expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
       console.info('testListDividerStrokeWidthToForty 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2),  Math.round(globalThis.winTop + (bottom-top)*0.4 + top), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(globalThis.winTop + top));
+      let swipeComponent = await driver.findComponent(ON.id('List_divider_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let List_divider_014Again = CommonFunc.getComponentRect('List_divider' + '_014');
       expect(Math.floor(Math.abs(List_divider_01.bottom - List_divider_014Again.bottom)) <= 1)

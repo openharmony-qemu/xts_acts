@@ -89,11 +89,13 @@ export default function List_lanes_1() {
       expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(height*0.15)) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(List_lanes_013.left + ((List_lanes_013.right - List_lanes_013.left) / 2)),
-        Math.round(List_lanes_013.bottom),
-        Math.round(List_lanes_012.left + ((List_lanes_012.right - List_lanes_012.left) / 2)),
-        Math.round(List_lanes_012.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_lanes_1_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(List_lanes_013.left + ((List_lanes_013.right - List_lanes_013.left) / 2)),
+          y: Math.round(List_lanes_013.bottom), displayId: displayId },
+        { x: Math.round(List_lanes_012.left + ((List_lanes_012.right - List_lanes_012.left) / 2)),
+          y: Math.round(List_lanes_012.bottom), displayId: displayId });
       await CommonFunc.sleep(2000);
       let List_lanes_024 = CommonFunc.getComponentRect('List_lanes_004');
       expect(Math.abs((List_lanes_01.bottom - List_lanes_024.bottom) - Math.round(height - height*0.15*4 - 3*vp2px(20))) <= 1).assertTrue();

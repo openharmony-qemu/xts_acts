@@ -113,7 +113,9 @@ export default function List_Padding() {
       expect(Math.abs(Math.round(List_Padding_014.top - List_Padding_013.bottom) - Math.round(vp2px(20))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(360, 690, 360, 30);
+      let swipeComponent = await driver.findComponent(ON.id('List_Padding_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
       let List_Padding_014Again: RectValue = CommonFunc.getComponentRect('List_Padding' + '_014');
       expect(List_Padding_014.top).assertEqual(List_Padding_014Again.top);
       console.info('testListPaddingToTwenty END');

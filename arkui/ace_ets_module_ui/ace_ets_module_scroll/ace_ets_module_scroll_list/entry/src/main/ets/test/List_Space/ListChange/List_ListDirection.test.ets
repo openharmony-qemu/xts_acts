@@ -106,11 +106,15 @@ export default function List_ListDirection() {
       expect(Math.abs(Math.round(List_ListDirection_014.bottom - List_ListDirection_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(List_ListDirection_013.left + ((List_ListDirection_013.right - List_ListDirection_013.left) / 2)),
-        Math.round(List_ListDirection_013.bottom),
-        Math.round(List_ListDirection_012.left + ((List_ListDirection_012.right - List_ListDirection_012.left) / 2)),
-        Math.round(List_ListDirection_012.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_ListDirection_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(List_ListDirection_013.left +
+            ((List_ListDirection_013.right - List_ListDirection_013.left) / 2)),
+          y: Math.round(List_ListDirection_013.bottom), displayId: displayId },
+        { x: Math.round(List_ListDirection_012.left +
+            ((List_ListDirection_012.right - List_ListDirection_012.left) / 2)),
+          y: Math.round(List_ListDirection_012.bottom), displayId: displayId });
       await CommonFunc.sleep(2000);
       let List_ListDirection_024: RectValue = CommonFunc.getComponentRect('List_ListDirection' + '_014');
       expect(Math.abs(List_ListDirection_01.bottom - List_ListDirection_024.bottom - Math.round(vp2px(60))) <= 1).assertTrue();

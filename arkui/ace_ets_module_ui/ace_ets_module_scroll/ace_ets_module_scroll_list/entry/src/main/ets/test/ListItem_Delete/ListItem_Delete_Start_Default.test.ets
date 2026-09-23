@@ -79,6 +79,8 @@ export default function ListItem_Delete_Start_Default() {
       let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_00');
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_01');
       let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_Default_1'));
+      let displayId = await swipeComponent.getDisplayId();
       let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_Start_Default' + '_1');
       let top = swipeBar.top;
       let right = swipeBar.right;
@@ -88,9 +90,9 @@ export default function ListItem_Delete_Start_Default() {
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_Start_Default_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + vp2px(50))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + vp2px(50)), displayId: displayId },
+        { x: Math.round(right - vp2px(10)), y: Math.round(top + vp2px(50)), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let text_011 = getInspectorByKey('ListItem_Delete_Start_Default' + '_text_01');
@@ -139,9 +141,11 @@ export default function ListItem_Delete_Start_Default() {
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_Start_Default_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + vp2px(50))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_Default_1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + vp2px(50)), displayId: displayId },
+        { x: Math.round(left + vp2px(120)), y: Math.round(top + vp2px(50)), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let text_011 = getInspectorByKey('ListItem_Delete_Start_Default' + '_text_01');

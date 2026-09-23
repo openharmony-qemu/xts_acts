@@ -109,11 +109,15 @@ export default function List_alignListItem() {
       expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(List_alignListItem_013.left + ((List_alignListItem_013.right - List_alignListItem_013.left) / 2)),
-        Math.round(List_alignListItem_013.bottom),
-        Math.round(List_alignListItem_012.left + ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
-        Math.round(List_alignListItem_012.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_alignListItem_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(List_alignListItem_013.left +
+            ((List_alignListItem_013.right - List_alignListItem_013.left) / 2)),
+          y: Math.round(List_alignListItem_013.bottom), displayId: displayId },
+        { x: Math.round(List_alignListItem_012.left +
+            ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
+          y: Math.round(List_alignListItem_012.bottom), displayId: displayId });
       await CommonFunc.sleep(1000);
       let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
       expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(vp2px(60))) <= 1).assertTrue();
@@ -173,11 +177,15 @@ export default function List_alignListItem() {
       expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(List_alignListItem_013.left + ((List_alignListItem_013.right - List_alignListItem_013.left) / 2)),
-        Math.round(List_alignListItem_013.bottom),
-        Math.round(List_alignListItem_012.left + ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
-        Math.round(List_alignListItem_012.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_alignListItem_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(List_alignListItem_013.left +
+            ((List_alignListItem_013.right - List_alignListItem_013.left) / 2)),
+          y: Math.round(List_alignListItem_013.bottom), displayId: displayId },
+        { x: Math.round(List_alignListItem_012.left +
+            ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
+          y: Math.round(List_alignListItem_012.bottom), displayId: displayId });
       await CommonFunc.sleep(1000);
       let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
       expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(vp2px(60))) <= 1).assertTrue();
@@ -232,11 +240,15 @@ export default function List_alignListItem() {
       expect(Math.abs(Math.round(List_alignListItem_014.bottom - List_alignListItem_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(List_alignListItem_013.left + ((List_alignListItem_013.right - List_alignListItem_013.left) / 2)),
-        Math.round(List_alignListItem_013.bottom),
-        Math.round(List_alignListItem_012.left + ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
-        Math.round(List_alignListItem_012.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_alignListItem_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(List_alignListItem_013.left +
+            ((List_alignListItem_013.right - List_alignListItem_013.left) / 2)),
+          y: Math.round(List_alignListItem_013.bottom), displayId: displayId },
+        { x: Math.round(List_alignListItem_012.left +
+            ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
+          y: Math.round(List_alignListItem_012.bottom), displayId: displayId });
       await CommonFunc.sleep(1000);
       let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
       expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(vp2px(60))) <= 1).assertTrue();

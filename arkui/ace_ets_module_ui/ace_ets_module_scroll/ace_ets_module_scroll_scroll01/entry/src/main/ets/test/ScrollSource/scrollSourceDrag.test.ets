@@ -51,7 +51,10 @@ export default function scrollSourceDrag() {
      */
     it('scrollSourceDrag_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[scrollSourceDrag_0100] START');
-      let swiperDrag = CommonFunc.getComponentRectOnScreen('scrollSource_drag');
+      let driver = await Driver.create()
+      let dragComp = await driver.findComponent(ON.id('scrollSource_drag'))
+      let swiperDrag = await dragComp.getBounds()
+      let displayId = await dragComp.getDisplayId()
       let top = swiperDrag.top;
       let right = swiperDrag.right;
       let left = swiperDrag.left;
@@ -59,8 +62,8 @@ export default function scrollSourceDrag() {
       console.info("scrollSourceDrag_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
-      await driver.drag(Math.round(left + width/2),Math.round(top + height*0.2),Math.round(left + width/2),Math.round(top + height*0.6));
+      await driver.dragBetween({x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId});
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('scroller_DRAG');
       console.info("[scrollSourceDrag_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));

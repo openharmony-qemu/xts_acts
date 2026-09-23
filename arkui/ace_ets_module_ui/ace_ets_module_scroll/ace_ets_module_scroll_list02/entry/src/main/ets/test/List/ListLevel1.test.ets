@@ -556,7 +556,10 @@ export default function listLevel1Test() {
      */
     it('listLevel1Test_1500', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1500] START');
-      let listItemRect = CommonFunc.getComponentRectOnScreen('listitemlevel0');
+      let driver = await Driver.create()
+      let listItemRectComponent = await driver.findComponent(ON.id('listitemlevel0'));
+      let listItemRect = await listItemRectComponent.getBounds();
+      let displayId = await listItemRectComponent.getDisplayId();
       let top = listItemRect.top;
       let right = listItemRect.right;
       let left = listItemRect.left;
@@ -564,9 +567,10 @@ export default function listLevel1Test() {
       console.info("listLevel1Test_1500 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(right - vp2px(10)),Math.round(bottom - height/2),Math.round(left + width/2),Math.round(bottom - height/2));
+      await driver.swipeBetween(
+        { x: Math.round(right - vp2px(10)), y: Math.round(bottom - height/2), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(bottom - height/2), displayId: displayId });
       await CommonFunc.sleep(3000);
       try {
         let eventData: events_emitter.EventData = {
@@ -601,7 +605,10 @@ export default function listLevel1Test() {
      */
     it('listLevel1Test_1600', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1600] START');
-      let listItemRect = CommonFunc.getComponentRectOnScreen('listitemlevel0');
+      let driver = await Driver.create()
+      let listItemRectComponent = await driver.findComponent(ON.id('listitemlevel0'));
+      let listItemRect = await listItemRectComponent.getBounds();
+      let displayId = await listItemRectComponent.getDisplayId();
       let top = listItemRect.top;
       let right = listItemRect.right;
       let left = listItemRect.left;
@@ -609,9 +616,10 @@ export default function listLevel1Test() {
       console.info("listLevel1Test_1600 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + vp2px(10)),Math.round(bottom - height/2),Math.round(left + width/2),Math.round(bottom - height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(10)), y: Math.round(bottom - height/2), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(bottom - height/2), displayId: displayId });
       await CommonFunc.sleep(3000);
       try {
         let eventData: events_emitter.EventData = {
@@ -646,7 +654,10 @@ export default function listLevel1Test() {
      */
     it('listLevel1Test_1700', Level.LEVEL1, async (done:Function) => {
       console.info('[listLevel1Test_1700] START');
-      let listItemRect = CommonFunc.getComponentRectOnScreen('listitemlevel0');
+      let driver = await Driver.create()
+      let listItemRectComponent = await driver.findComponent(ON.id('listitemlevel0'));
+      let listItemRect = await listItemRectComponent.getBounds();
+      let displayId = await listItemRectComponent.getDisplayId();
       let top = listItemRect.top;
       let right = listItemRect.right;
       let left = listItemRect.left;
@@ -654,9 +665,10 @@ export default function listLevel1Test() {
       console.info("listLevel1Test_1700 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(right - vp2px(10)),Math.round(bottom - height/2),Math.round(left + width/2),Math.round(bottom - height/2));
+      await driver.swipeBetween(
+        { x: Math.round(right - vp2px(10)), y: Math.round(bottom - height/2), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(bottom - height/2), displayId: displayId });
       await CommonFunc.sleep(3000);
       try {
         let eventData: events_emitter.EventData = {

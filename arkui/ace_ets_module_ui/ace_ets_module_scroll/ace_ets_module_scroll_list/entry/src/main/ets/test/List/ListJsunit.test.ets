@@ -135,53 +135,78 @@ export default function ListJsunit() {
       let gridRight = CommonFunc.getComponentRect('list');
       let right = gridRight.right
       let left = gridRight.left;
-      let driver = await UiDriver.create()
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('list'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2 - vp2px(4)), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
 
-      let onScrollText = await driver.findComponent(BY.key('onScrollText'));
+      let onScrollText = await driver.findComponent(ON.id('onScrollText'));
       let text1 = await onScrollText.getText();
       console.info("[ListJsunit_0200] onScrollText: " + text1);
       expect(text1).assertEqual('onScroll');
 
       // Verify the functions of onReachStart
       await CommonFunc.sleep(200);
-      let onReachStartText = await driver.findComponent(BY.key('onReachStartText'));
+      let onReachStartText = await driver.findComponent(ON.id('onReachStartText'));
       let text2 = await onReachStartText.getText();
       console.info("[ListJsunit_0200] onReachStartText: " + text2);
       expect(text2).assertEqual('onReachStart:succ');
 
       // Verify the functions of onScrollFrameBegin
       await CommonFunc.sleep(200);
-      let onScrollBeginText = await driver.findComponent(BY.key('listPage' + '_onScrollBeginText'));
+      let onScrollBeginText = await driver.findComponent(ON.id('listPage' + '_onScrollBeginText'));
       let text3 = await onScrollBeginText.getText();
       console.info("[ListJsunit_0200] onScrollBeginText: " + text3);
       expect(text3).assertEqual('onScrollBegin');
 
       // Verify the functions of onScrollStart
       await CommonFunc.sleep(200);
-      let onScrollStartText = await driver.findComponent(BY.key('onScrollStartText'));
+      let onScrollStartText = await driver.findComponent(ON.id('onScrollStartText'));
       let text4 = await onScrollStartText.getText();
       console.info("[ListJsunit_0200] onScrollStartText: " + text4);
       expect(text4).assertEqual('onScrollStart');
 
       // Verify the functions of onScrollStop
       await CommonFunc.sleep(200);
-      let onScrollStopText = await driver.findComponent(BY.key('onScrollStopText'));
+      let onScrollStopText = await driver.findComponent(ON.id('onScrollStopText'));
       let text5 = await onScrollStopText.getText();
       console.info("[ListJsunit_0200] onScrollStopText: " + text5);
       expect(text5).assertEqual('onScrollStop');
 
       // Verify the functions of onReachEnd
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2 - vp2px(4)), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId });
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2 - vp2px(4)), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2 - vp2px(4)), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId });
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2 - vp2px(4)), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId });
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2 - vp2px(4)), y: Math.round(top + (bottom - top) / 2),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
-      let onReachEndText = await driver.findComponent(BY.key('onReachEndText'));
+      let onReachEndText = await driver.findComponent(ON.id('onReachEndText'));
       let text= await onReachEndText.getText();
       console.info("[ListJsunit_0200] onReachEndText: " + text);
       expect(text).assertEqual('onReachEnd');

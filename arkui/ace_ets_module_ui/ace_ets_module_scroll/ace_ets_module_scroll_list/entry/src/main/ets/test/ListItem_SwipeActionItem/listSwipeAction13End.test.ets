@@ -78,9 +78,11 @@ export default function listSwipeAction13EndJsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0130 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(80)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeAction13End0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(80)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipeState13End');

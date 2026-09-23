@@ -121,7 +121,13 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest44');
       expect(locationText4.top).assertEqual(locationText4Again.top);
       console.info('new testListItemVisibilityFirstNone END');
@@ -185,7 +191,13 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top +  globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top +  globalThis.winTop));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest44');
       expect(locationText4.top).assertEqual(locationText4Again.top);
       console.info('new testListItemVisibilitySecondNone END');
@@ -252,13 +264,23 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemVisibilityFirstHidden 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)*0.4 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest44');
       console.info(`[testListItemVisibilityFirstHidden] locationText4Again.bottom=${(locationText4Again.bottom)}`);
       console.info(`[testListItemVisibilityFirstHidden] locationList.bottom=${(locationList.bottom)}`);
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + vp2px(50) + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + vp2px(50)),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId });
       await CommonFunc.sleep(2000);
       console.info('new testListItemVisibilityFirstHidden END');
       done();
@@ -322,13 +344,23 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemVisibilityFirstVisibile 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)*0.4 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest44');
       console.info(`[testListItemVisibilityFirstVisibile] locationText4Again.bottom=${(locationText4Again.bottom)}`);
       console.info(`[testListItemVisibilityFirstVisibile] locationList.bottom=${(locationList.bottom)}`);
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + vp2px(50) + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top +  globalThis.winTop));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + vp2px(50)),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
       console.info('new testListItemVisibilityFirstVisibile END');
       done();

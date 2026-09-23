@@ -87,9 +87,11 @@ export default function ListItem_Delete_Start_String() {
       console.info("SUB_ACE_ListItem_Delete_Start_String_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(right - vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let text_011 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_01');
@@ -140,9 +142,11 @@ export default function ListItem_Delete_Start_String() {
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_String_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(60)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(120)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let text_011 = getInspectorByKey('ListItem_Delete_Start_String' + '_text_01');

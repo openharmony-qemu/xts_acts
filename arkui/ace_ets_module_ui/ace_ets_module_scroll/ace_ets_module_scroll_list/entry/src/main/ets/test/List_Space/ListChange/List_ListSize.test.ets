@@ -106,11 +106,13 @@ export default function List_ListSize() {
       expect(Math.round(List_ListSize_014.bottom - List_ListSize_014.top)).assertEqual(Math.round(vp2px(100)));
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(List_ListSize_013.left + ((List_ListSize_013.right - List_ListSize_013.left) / 2)),
-        Math.round(List_ListSize_013.bottom),
-        Math.round(List_ListSize_012.left + ((List_ListSize_012.right - List_ListSize_012.left) / 2)),
-        Math.round(List_ListSize_012.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_ListSize_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(List_ListSize_013.left + ((List_ListSize_013.right - List_ListSize_013.left) / 2)),
+          y: Math.round(List_ListSize_013.bottom), displayId: displayId },
+        { x: Math.round(List_ListSize_012.left + ((List_ListSize_012.right - List_ListSize_012.left) / 2)),
+          y: Math.round(List_ListSize_012.bottom), displayId: displayId });
       await CommonFunc.sleep(1000);
       let List_ListSize_024: RectValue = CommonFunc.getComponentRect('List_ListSize' + '_014');
       expect(Math.abs(Math.floor((List_ListSize_01.bottom - List_ListSize_024.bottom) - vp2px(40))) <= 1).assertTrue();

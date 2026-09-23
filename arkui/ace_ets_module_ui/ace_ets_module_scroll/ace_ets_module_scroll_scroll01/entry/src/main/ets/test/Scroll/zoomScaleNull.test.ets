@@ -80,9 +80,6 @@ export default function zoomScaleNull() {
     it('zoomScaleNull_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[zoomScaleNull_0200] START');
       await CommonFunc.sleep(1000);
-      let windowOffsetX:number = globalThis.winLeft
-      let windowOffsetY:number = globalThis.winTop
-      console.log('zoomScaleNull_0200 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
       let driver: Driver = Driver.create();
       let image: Component = await driver.findComponent(ON.id('img_nullZoom'));
       await image.pinchIn(0.5);

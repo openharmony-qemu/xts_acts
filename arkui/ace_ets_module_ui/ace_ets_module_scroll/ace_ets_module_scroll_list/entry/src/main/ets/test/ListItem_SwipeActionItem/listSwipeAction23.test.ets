@@ -76,9 +76,11 @@ export default function listSwipeAction23Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0220 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0220] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(40)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(30))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe23Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(40)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(30)), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipe23State');
@@ -115,9 +117,11 @@ export default function listSwipeAction23Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0230 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0230] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(100)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(50))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe23Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(100)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(50)), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipe23State');
@@ -154,9 +158,11 @@ export default function listSwipeAction23Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0240 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0240] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + height*0.9), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top - height*0.1)
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe23Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.9), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top - height * 0.1), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipe23State');

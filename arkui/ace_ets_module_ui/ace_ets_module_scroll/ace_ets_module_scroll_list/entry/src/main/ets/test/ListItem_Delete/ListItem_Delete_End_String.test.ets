@@ -89,9 +89,11 @@ export default function ListItem_Delete_End_String() {
       let height = bottom -top;
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_End_String_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(100)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop  + top + vp2px(50))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_End_String_1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(100)), y: Math.round(top + vp2px(50)), displayId: displayId },
+        { x: Math.round(left + vp2px(50)), y: Math.round(top + vp2px(50)), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let text_011 = getInspectorByKey('ListItem_Delete_End_String' + '_text_01');
@@ -143,9 +145,11 @@ export default function ListItem_Delete_End_String() {
       let height = bottom -top;
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_End_String_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(100)), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop  + top + vp2px(50))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_End_String_1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(100)), y: Math.round(top + vp2px(50)), displayId: displayId },
+        { x: Math.round(left + vp2px(50)), y: Math.round(top + vp2px(50)), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let text_011 = getInspectorByKey('ListItem_Delete_End_String' + '_text_01');

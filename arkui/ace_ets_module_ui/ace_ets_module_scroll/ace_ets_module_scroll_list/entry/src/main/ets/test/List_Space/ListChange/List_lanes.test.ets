@@ -110,7 +110,9 @@ export default function List_lanes() {
       expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(100, 120, 100, 0);
+      let swipeComponent = await driver.findComponent(ON.id('List_lanes_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 100, y: 120, displayId: displayId }, { x: 100, y: 0, displayId: displayId });
       await CommonFunc.sleep(1000);
       let List_lanes_024 = CommonFunc.getComponentRect('List_lanes' + '_013');
       expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - vp2px(120))) <= 1).assertTrue();
@@ -165,7 +167,9 @@ export default function List_lanes() {
       expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(100, 120, 100, 0);
+      let swipeComponent = await driver.findComponent(ON.id('List_lanes_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 100, y: 120, displayId: displayId }, { x: 100, y: 0, displayId: displayId });
       await CommonFunc.sleep(1000);
       let List_lanes_024 = CommonFunc.getComponentRect('List_lanes' + '_014');
       expect(Math.abs(List_lanes_024.top - List_lanes_01.top - Math.round(vp2px(120))) <= 1).assertTrue();
@@ -219,7 +223,9 @@ export default function List_lanes() {
       expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(100, 120, 100, 0);
+      let swipeComponent = await driver.findComponent(ON.id('List_lanes_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 100, y: 120, displayId: displayId }, { x: 100, y: 0, displayId: displayId });
       await CommonFunc.sleep(1000);
       let List_lanes_024 = CommonFunc.getComponentRect('List_lanes' + '_013');
       expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - vp2px(120))) <= 1).assertTrue();

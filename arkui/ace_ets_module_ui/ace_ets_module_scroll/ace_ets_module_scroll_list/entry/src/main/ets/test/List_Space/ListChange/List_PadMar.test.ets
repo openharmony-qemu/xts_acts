@@ -129,7 +129,9 @@ export default function List_PadMar() {
       expect(Math.abs(Math.round(List_PadMar_01.right - List_PadMar_01.left) - Math.round(vp2px(350))) <= 1)
         .assertTrue();
       let driver = Driver.create();
-      await driver.swipe(360, 690, 360, 30);
+      let swipeComponent = await driver.findComponent(ON.id('List_PadMar_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
       let List_PadMar_014Again: RectValue = CommonFunc.getComponentRect('List_PadMar' + '_014');
       expect(Math.abs(List_PadMar_014.top - List_PadMar_014Again.top) <= 1).assertTrue();
       console.info('testListPadMar END');

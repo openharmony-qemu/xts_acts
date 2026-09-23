@@ -55,15 +55,19 @@ export default function listDidJsunit() {
      */
     it('listDidJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[listDidJsunit_0100] START');
-      let listRect = CommonFunc.getComponentRectOnScreen('scrollSource_list')
       let driver = Driver.create()
+      let listRectComponent = await driver.findComponent(ON.id('scrollSource_list'))
+      let listRect = await listRectComponent.getBounds()
+      let displayId = await listRectComponent.getDisplayId()
       await driver.fling({
         x: Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`),
-        y: Number.parseInt(`${(listRect.bottom - listRect.top) * 0.6 + listRect.top}`)
+        y: Number.parseInt(`${(listRect.bottom - listRect.top) * 0.6 + listRect.top}`),
+        displayId: displayId
       },
         {
           x: Number.parseInt(`${(listRect.right - listRect.left) * 0.5 + listRect.left}`),
-          y: Number.parseInt(`${(listRect.bottom - listRect.top) * 0.2 + listRect.top}`)
+          y: Number.parseInt(`${(listRect.bottom - listRect.top) * 0.2 + listRect.top}`),
+          displayId: displayId
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

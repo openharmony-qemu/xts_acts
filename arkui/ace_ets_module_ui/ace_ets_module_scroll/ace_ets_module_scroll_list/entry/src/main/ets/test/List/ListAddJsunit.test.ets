@@ -61,13 +61,19 @@ export default function ListAddJsunit() {
     it('ListAddJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ListAddJsunit_0200 START');
       await CommonFunc.sleep(1000);
-      let gridAdd = CommonFunc.getComponentRectOnScreen('listadd');
+      let driver = await Driver.create();
+      let gridAddComp = await driver.findComponent(ON.id('listadd'));
+      let gridAdd = await gridAddComp.getBounds();
+      let displayId = await gridAddComp.getDisplayId();
       let top = gridAdd.top;
       let bottom = gridAdd.bottom;
       let right = gridAdd.right;
       let left = gridAdd.left;
-      let driver = await Driver.create();
-      await driver.swipe(Math.round(left + Math.round(vp2px(30))), Math.round(top + Math.round(vp2px(30))), Math.round(left + Math.round(vp2px(20))), Math.round(top + Math.round(vp2px(30))));
+      await driver.swipeBetween(
+        { x: Math.round(left + Math.round(vp2px(30))), y: Math.round(top + Math.round(vp2px(30))),
+          displayId: displayId },
+        { x: Math.round(left + Math.round(vp2px(20))), y: Math.round(top + Math.round(vp2px(30))),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
       // judge whether the top
       let onScrollStartText = await driver.findComponent(ON.id('4'));

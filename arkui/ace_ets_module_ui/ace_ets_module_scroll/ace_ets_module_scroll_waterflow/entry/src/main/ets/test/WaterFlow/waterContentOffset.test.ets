@@ -79,7 +79,9 @@ export default function waterContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('water_contentOffset_start'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('water_contentOffset_num');
+      let listSwipeComp = await driver.findComponent(ON.id('water_contentOffset_num'));
+      let listSwipe = await listSwipeComp.getBounds();
+      let displayId = await listSwipeComp.getDisplayId();
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -87,16 +89,20 @@ export default function waterContentOffset() {
       console.info("waterContentOffset_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.2),Math.round(left + width/2),Math.round(top + height*0.6));
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.2), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.6), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('water_contentOffset_num');
       console.info("[waterContentOffset_0200] contentStartOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentStartOffset));
       expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("30.000000");
 
-      let waterflow = CommonFunc.getComponentRectOnScreen('water_contentOffset_num');
+      let waterflowComp = await driver.findComponent(ON.id('water_contentOffset_num'));
+      let waterflow = await waterflowComp.getBounds();
       console.info("[waterContentOffset_0200] waterflow_top is: " + waterflow.top);
-      let flowItem = CommonFunc.getComponentRectOnScreen('flow_item_0');
+      let flowItemComp = await driver.findComponent(ON.id('flow_item_0'));
+      let flowItem = await flowItemComp.getBounds();
       console.info("[waterContentOffset_0200] flowItem_top is: " + flowItem.top);
       let size_start = flowItem.top - waterflow.top
       console.info("[waterContentOffset_0200] size_start is: " + size_start);
@@ -123,7 +129,9 @@ export default function waterContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('water_contentOffset_end'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('water_contentOffset_num');
+      let listSwipeComp = await driver.findComponent(ON.id('water_contentOffset_num'));
+      let listSwipe = await listSwipeComp.getBounds();
+      let displayId = await listSwipeComp.getDisplayId();
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -131,16 +139,20 @@ export default function waterContentOffset() {
       console.info("waterContentOffset_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.6), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('water_contentOffset_num');
       console.info("[waterContentOffset_0300] contentEndOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentEndOffset));
       expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("20.000000");
 
-      let waterflow = CommonFunc.getComponentRectOnScreen('water_contentOffset_num');
+      let waterflowComp = await driver.findComponent(ON.id('water_contentOffset_num'));
+      let waterflow = await waterflowComp.getBounds();
       console.info("[waterContentOffset_0300] waterflow_bottom is: " + waterflow.bottom);
-      let flowItem = CommonFunc.getComponentRectOnScreen('flow_item_15');
+      let flowItemComp = await driver.findComponent(ON.id('flow_item_15'));
+      let flowItem = await flowItemComp.getBounds();
       console.info("[waterContentOffset_0300] flowItem_bottom is: " + flowItem.bottom);
       let size_end = waterflow.bottom - flowItem.bottom
       console.info("[waterContentOffset_0300] size_end is: " + size_end);

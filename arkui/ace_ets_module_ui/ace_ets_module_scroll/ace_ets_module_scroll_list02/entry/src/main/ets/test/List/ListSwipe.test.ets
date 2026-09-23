@@ -56,11 +56,14 @@ export default function ListSwipeTest() {
       await driver.delayMs(waitUiReadyMs)
       // 3.swipe item to left
       let baseKey: string = 'MyList1_ListItem0'
-      let strJson: string = getInspectorByKey(baseKey);
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      let rectCenter: number[] = getRectCenter(JSON.parse(strJson).$rect)
-      await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4), Math.round( globalThis.winTop + rectCenter[1]),
-        0, Math.round(globalThis.winTop + rectCenter[1]))
+      let itemComponent = await driver.findComponent(ON.id(baseKey));
+      let itemRect = await itemComponent.getBounds();
+      let displayId = await itemComponent.getDisplayId();
+      let height = itemRect.bottom - itemRect.top;
+      let centerY = Math.round(itemRect.top + height / 2);
+      await driver.swipeBetween(
+        { x: Math.round(itemRect.left + (itemRect.right - itemRect.left) * 0.75), y: centerY, displayId: displayId },
+        { x: 0, y: centerY, displayId: displayId })
 
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0100')
@@ -88,10 +91,10 @@ export default function ListSwipeTest() {
       await driver.delayMs(waitUiReadyMs)
 
       let baseKey: string = 'MyList2_ListItem0'
-      let strJson: string = getInspectorByKey(baseKey);
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
       // 2.swipe right
-      let swipeList = CommonFunc.getComponentRectOnScreen('MyList2_ListItem0');
+      let swipeListComponent = await driver.findComponent(ON.id('MyList2_ListItem0'));
+      let swipeList = await swipeListComponent.getBounds();
+      let displayId = await swipeListComponent.getDisplayId();
       let top = swipeList.top;
       let right = swipeList.right;
       let left = swipeList.left;
@@ -99,7 +102,9 @@ export default function ListSwipeTest() {
       console.info("ArkUI_List_Swipe_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.3), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.9), y: Math.round(top + height/2), displayId: displayId });
 
       await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0300')
@@ -153,11 +158,14 @@ export default function ListSwipeTest() {
       await driver.delayMs(waitUiReadyMs)
       // 2.swipe item to left
       let baseKey: string = 'MyList1_ListItem1'
-      let strJson: string = getInspectorByKey(baseKey);
-      let rectCenter: number[] = getRectCenter(JSON.parse(strJson).$rect)
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] -rectCenter[2]) / 4), Math.round(globalThis.winTop + rectCenter[1]),
-        0, Math.round(globalThis.winTop + rectCenter[1]))
+      let itemComponent = await driver.findComponent(ON.id(baseKey));
+      let itemRect = await itemComponent.getBounds();
+      let displayId = await itemComponent.getDisplayId();
+      let height = itemRect.bottom - itemRect.top;
+      let centerY = Math.round(itemRect.top + height / 2);
+      await driver.swipeBetween(
+        { x: Math.round(itemRect.left + (itemRect.right - itemRect.left) * 0.75), y: centerY, displayId: displayId },
+        { x: 0, y: centerY, displayId: displayId })
       await sleep(3000) // wait for ui update
       let strJson2: string = getInspectorByKey('swipe0500')
 
@@ -179,24 +187,4 @@ async function sleep(time: number) {
   }).then(() => {
     console.info(`sleep ${time} over...`)
   })
-}
-
-function getRectCenter(rect: string) {
-  let regexp: RegExp = new RegExp('\\[', 'g');
-  let rtn = rect.replace(regexp, '').replace(regexp, '').split(',')
-  return [
-    Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2,
-    Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2,
-    Number.parseFloat(rtn[0].trim()),
-    Number.parseFloat(rtn[2].trim()),
-  ]
-}
-
-function getRectCenterVp(rect: string) {
-  let regexp: RegExp = new RegExp('\\[', 'g');
-  let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
-  return [
-    px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
-  ]
 }

@@ -76,7 +76,10 @@ export default function refreshOffsetChangeJsunit() {
      */
     it('refreshOffsetChangeJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0200 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset2');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset2'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -84,9 +87,10 @@ export default function refreshOffsetChangeJsunit() {
       console.info("refreshOffsetChangeJsunit_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(bottom - height/2),Math.round(left + width*0.2),Math.round(top));
+      await driver.swipeBetween(
+        {x: Math.round(left + width*0.2), y: Math.round(bottom - height/2), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(top), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('refresh_mess2');
       let obj: ESObject = JSON.parse(strJson);
@@ -106,7 +110,10 @@ export default function refreshOffsetChangeJsunit() {
      */
     it('refreshOffsetChangeJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0300 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset3');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset3'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -114,9 +121,9 @@ export default function refreshOffsetChangeJsunit() {
       console.info("refreshOffsetChangeJsunit_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height/10),Math.round(left + width*0.2),Math.round(bottom));
+      await driver.swipeBetween({x: Math.round(left + width*0.2), y: Math.round(top + height/10), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(bottom), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('refresh_mess3');
       let obj: ESObject = JSON.parse(strJson);
@@ -136,7 +143,10 @@ export default function refreshOffsetChangeJsunit() {
      */
     it('refreshOffsetChangeJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0400 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset1'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -144,9 +154,9 @@ export default function refreshOffsetChangeJsunit() {
       console.info("refreshOffsetChangeJsunit_0400 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height/10),Math.round(left + width*0.2),Math.round(bottom));
+      await driver.swipeBetween({x: Math.round(left + width*0.2), y: Math.round(top + height/10), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(bottom), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson1 = getInspectorByKey('refresh_mess1_1');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -178,7 +188,10 @@ export default function refreshOffsetChangeJsunit() {
      */
     it('refreshOffsetChangeJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0500 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset2');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset2'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -186,9 +199,9 @@ export default function refreshOffsetChangeJsunit() {
       console.info("refreshOffsetChangeJsunit_0500 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height/10),Math.round(left + width*0.2),Math.round(bottom));
+      await driver.swipeBetween({x: Math.round(left + width*0.2), y: Math.round(top + height/10), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(bottom), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('refresh_mess2');
       let obj: ESObject = JSON.parse(strJson);
@@ -208,7 +221,10 @@ export default function refreshOffsetChangeJsunit() {
      */
     it('refreshOffsetChangeJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0600 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset1'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -216,10 +232,12 @@ export default function refreshOffsetChangeJsunit() {
       console.info("refreshOffsetChangeJsunit_0600 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.drag(Math.round(left + width*0.2),Math.round(top + height*0.1),Math.round(left + width*0.2),Math.round(top + height*0.25));
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height*0.25),Math.round(left + width*0.2),Math.round(top + height/8));
+      await driver.dragBetween({x: Math.round(left + width*0.2), y: Math.round(top + height*0.1), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.25), displayId: displayId});
+      await driver.swipeBetween(
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.25), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(top + height/8), displayId: displayId});
       let strJson = getInspectorByKey('refresh_mess1_2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[refreshOffsetChangeJsunit_0600] component obj is: " + JSON.stringify(obj));
@@ -238,7 +256,10 @@ export default function refreshOffsetChangeJsunit() {
      */
     it('refreshOffsetChangeJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0700 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset1'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -246,16 +267,19 @@ export default function refreshOffsetChangeJsunit() {
       console.info("refreshOffsetChangeJsunit_0700 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height*0.1),Math.round(left + width*0.2),Math.round(top + height*0.9));
+      await driver.swipeBetween(
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.1), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.9), displayId: displayId});
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('refresh_mess1_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[refreshOffsetChangeJsunit_0700] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('onStateChange:3');
 
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height*0.5),Math.round(left + width*0.2),Math.round(top + height*0.4));
+      await driver.swipeBetween(
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.5), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.4), displayId: displayId});
       let strJson = getInspectorByKey('refresh_mess1_2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[refreshOffsetChangeJsunit_0700] component obj is: " + JSON.stringify(obj));
@@ -274,7 +298,10 @@ export default function refreshOffsetChangeJsunit() {
      */
     it('refreshOffsetChangeJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('refreshOffsetChangeJsunit_0800 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset1');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset1'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -282,16 +309,19 @@ export default function refreshOffsetChangeJsunit() {
       console.info("refreshOffsetChangeJsunit_0800 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height*0.1),Math.round(left + width*0.2),Math.round(top + height*0.8));
+      await driver.swipeBetween(
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.1), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.8), displayId: displayId});
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('refresh_mess1_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[refreshOffsetChangeJsunit_0800] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('onStateChange:3');
 
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height*0.5),Math.round(left + width*0.2),Math.round(top + height*0.8));
+      await driver.swipeBetween(
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.5), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(top + height*0.8), displayId: displayId});
       let strJson = getInspectorByKey('refresh_mess1_2');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[refreshOffsetChangeJsunit_0800] component obj is: " + JSON.stringify(obj));
@@ -316,7 +346,9 @@ export default function refreshOffsetChangeJsunit() {
       await button.click();
       await CommonFunc.sleep(1000);
 
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset3');
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset3'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -325,7 +357,8 @@ export default function refreshOffsetChangeJsunit() {
       let height = bottom - top;
       let width = right - left;
 
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height/10),Math.round(left + width*0.2),Math.round(bottom));
+      await driver.swipeBetween({x: Math.round(left + width*0.2), y: Math.round(top + height/10), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(bottom), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('refresh_mess2');
       let obj: ESObject = JSON.parse(strJson);
