@@ -64,11 +64,20 @@ export default function audioInterrupt() {
     }
 
     let getFdRead = async (pathName: string, done: Function) => {
-      console.info("case0 context is  " + testContext);
-      let pathDir = testContext.filesDir;
-      filePath = pathDir + '/' + pathName;
-      console.log(filePath + 'filePath')
-      fdPath = 'fd://';
+      try {
+        console.info("case0 context is  " + testContext);
+        let pathDir = testContext.filesDir;
+        filePath = pathDir + '/' + pathName;
+        console.log(filePath + 'filePath')
+        let buffer = await testContext.resourceManager.getRawFileContent(pathName);
+        let fd = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+        fs.writeSync(fd.fd, buffer.buffer);
+        fs.closeSync(fd);
+        console.info(`getFdRead success dirPath: ${filePath}`);
+        fdPath = 'fd://';
+      } catch (e) {
+        console.info(`getFdRead fail: ${e}`);
+      }
       await fs.open(filePath).then((file: fs.File) => {
         console.info("file fd: " + file.fd);
         fdPath = fdPath + '' + file.fd;
@@ -107,6 +116,20 @@ export default function audioInterrupt() {
      * @tc.level  LEVEL0
      */
     it('SUB_AUDIO_INTERRUPT_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_AUDIO_INTERRUPT_001 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device.`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let AudioStreamInfo: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
         channels: audio.AudioChannel.CHANNEL_2,
@@ -134,7 +157,6 @@ export default function audioInterrupt() {
       let activated: boolean | undefined = false;
       let InterruptHint: audio.InterruptHint | undefined = 0;
       await sleep(7000);
-      let audioManager = audio.getAudioManager();
       let interAudioInterrupt: audio.AudioInterrupt = {
         streamUsage: 1,
         contentType: 0,

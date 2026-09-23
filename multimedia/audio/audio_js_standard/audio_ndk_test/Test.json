@@ -29,13 +29,6 @@
                 "power-shell setmode 600"
             ],
             "cleanup-apps": true
-        },
-        {
-            "type": "PushKit",
-            "pre-push": [],
-            "push": [
-                "./resource/audio/audioRenderer/test_44100_2.wav ->/data/app/el2/100/base/ohos.audio.napitest/haps/entry_test/files/"
-            ]
         }
     ]
 }
