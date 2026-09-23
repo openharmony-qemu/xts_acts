@@ -1781,7 +1781,7 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       }
     })
- 
+
     /**
      * @tc.name   testUsbCancelTransferParamEx002
      * @tc.number SUB_USB_HostManager_InputPara_7200
@@ -1845,7 +1845,7 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       }
     })
- 
+
     /**
      * @tc.name   testUsbCancelTransferParamEx004
      * @tc.number SUB_USB_HostManager_InputPara_7400
