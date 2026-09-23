@@ -148,7 +148,7 @@ export default function DlpEnterpriseServicePermissionTest() {
         try {
           let matchResult = await identifySensitiveContent.scanFile(null, null);
           console.info(curTag, "scanFile success, length:" + matchResult.length);
-        } catch (err) {
+        } catch (error) {
           console.info('scanfileCaseSensitive:' + error.code);
           expect(error.code === 201 || error.code === 19110004).assertTrue();
         }
