@@ -133,6 +133,7 @@ import RegisterPrintfSpecifierTest from './RegisterPrintfSpecifier.test';
 import RegisterPrintftypeTest from './RegisterPrintftype.test';
 import RegisterPrintfModifierTest from './RegisterPrintfModifier.test';
 import abilityPthreadJoinTest from './PthreadJoinDetach.test';
+import GroupIpcTest from './GroupIpc.test';
 
 
 export default function testsuite() {
@@ -246,4 +247,5 @@ export default function testsuite() {
   RegisterPrintfModifierTest();
   
   abilityPthreadJoinTest();
+  GroupIpcTest();
 }

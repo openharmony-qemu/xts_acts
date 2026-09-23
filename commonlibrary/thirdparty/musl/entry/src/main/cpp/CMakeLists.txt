@@ -209,6 +209,7 @@ add_library(registerprintfspecifier SHARED registerprintfspecifier.cpp ${src_sec
 add_library(registerprintftype SHARED registerprintftype.cpp ${src_sec})
 add_library(registerprintfmodifier SHARED registerprintfmodifier.cpp ${src_sec})
 add_library(pthreadjoindetach SHARED pthreadjoindetach.cpp ${src_sec})
+add_library(groupipc SHARED groupipc.cpp ${src_sec})
 
 target_link_libraries(applicationTargetSdkVersionndk PUBLIC libace_napi.z.so libhilog_ndk.z.so)
 target_link_libraries(capabilityndk PUBLIC libace_napi.z.so libhilog_ndk.z.so)
@@ -341,3 +342,4 @@ target_link_libraries(registerprintfspecifier PUBLIC libace_napi.z.so)
 target_link_libraries(registerprintftype PUBLIC libace_napi.z.so)
 target_link_libraries(registerprintfmodifier PUBLIC libace_napi.z.so)
 target_link_libraries(pthreadjoindetach PUBLIC libace_napi.z.so)
+target_link_libraries(groupipc PUBLIC libace_napi.z.so)
