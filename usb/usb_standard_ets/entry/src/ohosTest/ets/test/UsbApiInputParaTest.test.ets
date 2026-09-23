@@ -1621,6 +1621,38 @@ export default function UsbApiInputParaTest() {
     })
 
     /**
+     * @tc.name   testUsbSubmitTransferParamEx001
+     * @tc.number SUB_USB_HostManager_InputPara_6700
+     * @tc.desc   usbSubmitTransfer with invalid flags=-1 should throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbSubmitTransferParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info(`${TAG} testUsbSubmitTransferParamEx001 start`);
+      try {
+        let pip: usbMgr.USBDevicePipe = { devAddress: 1, busNum: 2 };
+        let transferParams: usbMgr.UsbDataTransferParams = {
+          devPipe: pip,
+          flags: -1,
+          endpoint: 1,
+          type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
+          timeout: 2000,
+          length: 10,
+          callback: () => {
+          },
+          userData: new Uint8Array(10),
+          buffer: new Uint8Array(10),
+          isoPacketCount: 0,
+        };
+        usbMgr.usbSubmitTransfer(transferParams);
+      } catch (err) {
+        console.info(`${TAG} testUsbSubmitTransferParamEx001 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+    })
+
+    /**
      * @tc.name   testUsbSubmitTransferParamEx002
      * @tc.number SUB_USB_HostManager_InputPara_6800
      * @tc.desc   usbSubmitTransfer with invalid flags=4 (out of range) should throw 401
@@ -1654,6 +1686,38 @@ export default function UsbApiInputParaTest() {
     })
 
     /**
+     * @tc.name   testUsbSubmitTransferParamEx003
+     * @tc.number SUB_USB_HostManager_InputPara_6900
+     * @tc.desc   usbSubmitTransfer with invalid type=0 should throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbSubmitTransferParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info(`${TAG} testUsbSubmitTransferParamEx003 start`);
+      try {
+        let pip: usbMgr.USBDevicePipe = { devAddress: 1, busNum: 2 };
+        let transferParams: usbMgr.UsbDataTransferParams = {
+          devPipe: pip,
+          flags: usbMgr.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
+          endpoint: 1,
+          type: 0,
+          timeout: 2000,
+          length: 10,
+          callback: () => {
+          },
+          userData: new Uint8Array(10),
+          buffer: new Uint8Array(10),
+          isoPacketCount: 0,
+        };
+        usbMgr.usbSubmitTransfer(transferParams);
+      } catch (err) {
+        console.info(`${TAG} testUsbSubmitTransferParamEx003 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+    })
+
+    /**
      * @tc.name   testUsbSubmitTransferParamEx004
      * @tc.number SUB_USB_HostManager_InputPara_7000
      * @tc.desc   usbSubmitTransfer with invalid type=4 (out of range) should throw 401
@@ -1683,6 +1747,134 @@ export default function UsbApiInputParaTest() {
       } catch (err) {
         console.info(`${TAG} testUsbSubmitTransferParamEx004 catch err: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   testUsbCancelTransferParamEx001
+     * @tc.number SUB_USB_HostManager_InputPara_7100
+     * @tc.desc   usbCancelTransfer with invalid flags=-1 should throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbCancelTransferParamEx001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info(`${TAG} testUsbCancelTransferParamEx001 start`);
+      try {
+        let pip: usbMgr.USBDevicePipe = { devAddress: 1, busNum: 2 };
+        let transferParams: usbMgr.UsbDataTransferParams = {
+          devPipe: pip,
+          flags: -1,
+          endpoint: 1,
+          type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
+          timeout: 2000,
+          length: 10,
+          callback: () => {
+          },
+          userData: new Uint8Array(10),
+          buffer: new Uint8Array(10),
+          isoPacketCount: 0,
+        };
+        usbMgr.usbCancelTransfer(transferParams);
+      } catch (err) {
+        console.info(`${TAG} testUsbCancelTransferParamEx001 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+    })
+ 
+    /**
+     * @tc.name   testUsbCancelTransferParamEx002
+     * @tc.number SUB_USB_HostManager_InputPara_7200
+     * @tc.desc   usbCancelTransfer with invalid flags=4 (out of range) should throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbCancelTransferParamEx002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info(`${TAG} testUsbCancelTransferParamEx002 start`);
+      try {
+        let pip: usbMgr.USBDevicePipe = { devAddress: 1, busNum: 2 };
+        let transferParams: usbMgr.UsbDataTransferParams = {
+          devPipe: pip,
+          flags: 4,
+          endpoint: 1,
+          type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
+          timeout: 2000,
+          length: 10,
+          callback: () => {
+          },
+          userData: new Uint8Array(10),
+          buffer: new Uint8Array(10),
+          isoPacketCount: 0,
+        };
+        usbMgr.usbCancelTransfer(transferParams);
+      } catch (err) {
+        console.info(`${TAG} testUsbCancelTransferParamEx002 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+    })
+ 
+    /**
+     * @tc.name   testUsbCancelTransferParamEx003
+     * @tc.number SUB_USB_HostManager_InputPara_7300
+     * @tc.desc   usbCancelTransfer with invalid type=0 should throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbCancelTransferParamEx003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info(`${TAG} testUsbCancelTransferParamEx003 start`);
+      try {
+        let pip: usbMgr.USBDevicePipe = { devAddress: 1, busNum: 2 };
+        let transferParams: usbMgr.UsbDataTransferParams = {
+          devPipe: pip,
+          flags: usbMgr.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
+          endpoint: 1,
+          type: 0,
+          timeout: 2000,
+          length: 10,
+          callback: () => {
+          },
+          userData: new Uint8Array(10),
+          buffer: new Uint8Array(10),
+          isoPacketCount: 0,
+        };
+        usbMgr.usbCancelTransfer(transferParams);
+      } catch (err) {
+        console.info(`${TAG} testUsbCancelTransferParamEx003 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+      }
+    })
+ 
+    /**
+     * @tc.name   testUsbCancelTransferParamEx004
+     * @tc.number SUB_USB_HostManager_InputPara_7400
+     * @tc.desc   usbCancelTransfer with invalid type=4 (out of range) should throw 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testUsbCancelTransferParamEx004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      console.info(`${TAG} testUsbCancelTransferParamEx004 start`);
+      try {
+        let pip: usbMgr.USBDevicePipe = { devAddress: 1, busNum: 2 };
+        let transferParams: usbMgr.UsbDataTransferParams = {
+          devPipe: pip,
+          flags: usbMgr.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
+          endpoint: 1,
+          type: 4,
+          timeout: 2000,
+          length: 10,
+          callback: () => {
+          },
+          userData: new Uint8Array(10),
+          buffer: new Uint8Array(10),
+          isoPacketCount: 0,
+        };
+        usbMgr.usbCancelTransfer(transferParams);
+      } catch (err) {
+        console.info(`${TAG} testUsbCancelTransferParamEx004 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
       }
     })
   })
