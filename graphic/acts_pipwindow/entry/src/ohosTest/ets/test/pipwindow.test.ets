@@ -307,7 +307,10 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
               let dragToY = pipWindowCenter.y;
               await driver.drag(pipWindowCenter.x, pipWindowCenter.y, dragToX, dragToY);
               await sleep(3000);
-              let expectValue = deviceType == 'tv' ? 0 : 1
+              let expectValue = 1
+              if (deviceType ===  'tv'|| deviceType === 'car'){
+                expectValue = 0
+              }
               expect(callbackIndex1).assertEqual(expectValue);
               expect(callbackIndex2).assertEqual(expectValue);
               await pipController?.stopPiP();
