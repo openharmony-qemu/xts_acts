@@ -2305,7 +2305,7 @@ export default function audioFramework() {
       let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_ACCESSORY_GETWRITABLE_SUCCESS_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device`)
+        console.info(`this device has external device.`)
         done();
         return;
       }

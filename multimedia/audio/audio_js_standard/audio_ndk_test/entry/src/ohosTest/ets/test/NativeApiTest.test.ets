@@ -1568,7 +1568,7 @@ export default function audioNDK() {
       let audioRoutingManager = audioManager.getRoutingManager();
       let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device`)
+        console.info(`this device has external device.`)
         done();
         return;
       }

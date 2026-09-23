@@ -1694,7 +1694,7 @@ export default function audioManagerApi9() {
       let outputDeviceDescription = await AudioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_0100
                 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
-      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      console.info(`${TagFrmwk}: Determine if this is a default device.`)
       const detecteDevice = outputDeviceDescription.some(device =>
             device.deviceType === audio.DeviceType.DISPLAY_PORT
         );

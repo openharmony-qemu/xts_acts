@@ -121,7 +121,7 @@ export default function audioInterrupt() {
       let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
       console.info(`SUB_AUDIO_INTERRUPT_001 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
       if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
-        console.info(`this device has external device`)
+        console.info(`this device has external device.`)
         done();
         return;
       }
