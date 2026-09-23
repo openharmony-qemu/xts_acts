@@ -18,6 +18,7 @@ group("usb") {
   if (is_standard_system) {
     deps = [
       "usb_perstandard_ets_static:ActsUsbPerETSApiStaticTest",
+      "usb_manager_capi:ActsUsbManagerCapiTest",
       "usb_standard:ActsUsbJSApiTest",
       "usb_standard_ets:ActsUsbETSApiTest",
       "usb_standard_ets_static:ActsUsbETSApiStaticTest",
