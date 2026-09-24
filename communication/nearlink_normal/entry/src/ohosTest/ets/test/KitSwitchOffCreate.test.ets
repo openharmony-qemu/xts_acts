@@ -13,14 +13,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import manager from '@ohos.nearlink.manager';
 import ssap from '@ohos.nearlink.ssap';
 import remoteDevice from '@ohos.nearlink.remoteDevice';
 import { clickRequestPermission } from './ClickRequestPermission';
 import { sleep } from './Sleep';
-import {clickCloseNearLinkSwitch,clickOpenNearLinkSwitch} from './Tools';
-
+import { openNearLink } from './OpenNearLink';
+import { closeNearLink } from './CloseNearLink';
 export default function nearlinkswitchoffTest() {
   describe('nearlinkswitchoffTest', () => {
     let RemoteD: remoteDevice.RemoteDevice;
@@ -86,7 +86,7 @@ export default function nearlinkswitchoffTest() {
     })
     beforeEach(async (done: Function) => {
       console.info('beforeEach start');
-      await clickCloseNearLinkSwitch();
+      await closeNearLink();
       console.info('beforeEach end');
       done();
     })
@@ -95,7 +95,7 @@ export default function nearlinkswitchoffTest() {
     })
     afterAll(async (done: Function) => {
       console.info('beforeEach start');
-      await clickOpenNearLinkSwitch();
+      await openNearLink();
       console.info('beforeEach end');
       done();
     })

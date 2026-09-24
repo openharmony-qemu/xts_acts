@@ -14,7 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@ohos.UiTest';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
@@ -97,6 +97,7 @@ export default class Utils {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
+        events_emitter.off(eventId);
         try {
           console.info(`${testCaseName} get result is:` + JSON.stringify(backData));
           expectFunction(backData, expected);
@@ -110,6 +111,7 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
+      events_emitter.off(eventId);
       events_emitter.on(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));

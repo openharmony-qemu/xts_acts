@@ -15,7 +15,7 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libentry.so": "file:./src/main/cpp/types/lisensorNdk"
+    "@types/libsensorNdk.so": "file:./src/main/cpp/types/libsensorNdk"
   },
   "author": "",
   "name": "entry",
@@ -25,6 +25,6 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "libentry.so": "file:./src/main/cpp/types/lisensorNdk"
+    "libsensorNdk.so": "file:./src/main/cpp/types/libsensorNdk"
   }
 }

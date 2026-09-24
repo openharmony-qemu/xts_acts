@@ -25,6 +25,8 @@ static const uint32_t MAX_NAME_LENGTH = 1024;
 static uint32_t g_singleFd = 100;
 } // namespace
 static void PrinterChangeCallback(Print_PrinterEvent event, const Print_PrinterInfo *printerInfo) {}
+static void JobStateChangedCallback(const char *jobId, OH_Print_JobState state) {}
+static void PrinterDiscoveryCallback(Print_DiscoveryEvent event, const Print_PrinterInfo *printerInfo) {}
 static constexpr size_t ARG_SIZE_ONE = 1;
 static constexpr int32_t ERROR_COMMON = -1;
 
@@ -131,8 +133,7 @@ napi_value OH_Print_Init1(napi_env env, napi_callback_info info)
 
 napi_value OH_Print_StartPrinterDiscovery1(napi_env env, napi_callback_info info)
 {
-    Print_PrinterDiscoveryCallback callback;
-    Print_ErrorCode errorCode = OH_Print_StartPrinterDiscovery(callback);
+    Print_ErrorCode errorCode = OH_Print_StartPrinterDiscovery(PrinterDiscoveryCallback);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_NONE ? 0 : -1, &result);
     return result;
@@ -140,8 +141,7 @@ napi_value OH_Print_StartPrinterDiscovery1(napi_env env, napi_callback_info info
 
 napi_value OH_Print_StopPrinterDiscovery1(napi_env env, napi_callback_info info)
 {
-    Print_PrinterDiscoveryCallback callback;
-    OH_Print_StartPrinterDiscovery(callback);
+    OH_Print_StartPrinterDiscovery(PrinterDiscoveryCallback);
     Print_ErrorCode errorCode = OH_Print_StopPrinterDiscovery();
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_NONE ? 0 : -1, &result);
@@ -239,8 +239,8 @@ napi_value OH_Print_StartPrintWithJobStateCallback3(napi_env env, napi_callback_
                                .paperSource = strdup("Auto"),
                                .pageSizeId = strdup("A4")};
     OH_Print_ConnectPrinter(virtualPrinter.printerId);
-    OH_Print_OnJobStateChanged cb;
-    Print_ErrorCode errorCode = OH_Print_StartPrintWithJobStateCallback(&printJob, cb);
+    Print_ErrorCode errorCode =
+        OH_Print_StartPrintWithJobStateCallback(&printJob, JobStateChangedCallback);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_INVALID_PRINTER ? 0 : -1, &result);
     return result;
@@ -248,8 +248,7 @@ napi_value OH_Print_StartPrintWithJobStateCallback3(napi_env env, napi_callback_
 
 napi_value OH_Print_RegisterPrinterChangeListener1(napi_env env, napi_callback_info info)
 {
-    Print_PrinterChangeCallback callback;
-    Print_ErrorCode errorCode = OH_Print_RegisterPrinterChangeListener(callback);
+    Print_ErrorCode errorCode = OH_Print_RegisterPrinterChangeListener(PrinterChangeCallback);
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_NONE ? 0 : -1, &result);
     return result;

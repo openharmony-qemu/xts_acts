@@ -17,28 +17,23 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files/"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/jpeg_xmp.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files",
-                "./resource/image/jpeg_xmp.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files/jpeg_xmp_v2.jpg",
-                "./resource/image/png_xmp.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files",
-                "./resource/image/3gif_xmp.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files",
-                "./resource/image/dng_xmp.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files",
-                "./resource/image/tiff_xmp.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files",
-                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/files"
+                "./resource/image/jpeg_xmp.jpg ->/data/local/tmp/",
+                "./resource/image/png_xmp.png ->/data/local/tmp/",
+                "./resource/image/3gif_xmp.gif ->/data/local/tmp/",
+                "./resource/image/dng_xmp.dng ->/data/local/tmp/",
+                "./resource/image/tiff_xmp.tiff ->/data/local/tmp/",
+                "./resource/image/test_exif_v2.jpg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_xmpMetadata_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imageXMPMetadata/haps/entry_test/*"
+                "chmod 755 /data/local/tmp/setup_image_xmpMetadata_test.sh",
+                "sh /data/local/tmp/setup_image_xmpMetadata_test.sh"
             ]
         }
     ]

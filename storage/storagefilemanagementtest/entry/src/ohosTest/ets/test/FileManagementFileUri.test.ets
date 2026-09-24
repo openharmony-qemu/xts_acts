@@ -331,5 +331,28 @@ export default function FileManagementFileUri(){
         console.error("====>FileUriGetFileName002 catch err: " + err);
       }
     });
+
+    /**
+     * @tc.name   FileUriConstructor001
+     * @tc.number SUB_STORAGE_FILEURI_CONSTRUCTOR_0100
+     * @tc.desc   test OH_FileUri_Constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('FileUriConstructor001', Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>FileUriConstructor001 start====");
+        let obj = new fileUri.FileUri("");
+        console.info("====>FileUriConstructor001 obj: " + JSON.stringify(obj));
+        console.info("====>FileUriConstructor001 obj name: " + JSON.stringify(obj.name));
+        expect(obj).not().assertUndefined();
+        expect(obj.name).assertEqual("");
+      } catch (err) {
+        console.error("====>FileUriConstructor001 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+      }
+      done()
+    });
   });
 }

@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextSupplementEnvTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_env", () => {
@@ -27,7 +27,7 @@ export default function FunctionalextSupplementEnvTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("putenv", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("putenv");
+      const result: number = await testNapi.runTest("putenv");
       expect(result).assertEqual(0);
       done();
     });

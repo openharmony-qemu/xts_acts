@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterAll, it, afterEach, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterAll, it, afterEach, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { ErrorEvent, MessageEvents, worker } from '@kit.ArkTS';
 
 async function terminateAndAwait(w: worker.ThreadWorker | null): Promise<void> {

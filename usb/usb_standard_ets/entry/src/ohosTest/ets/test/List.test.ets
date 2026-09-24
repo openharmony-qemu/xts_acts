@@ -13,36 +13,38 @@
  * limitations under the License.
  */
 
-import UsbSystemApiNormalJsTest from './UsbSystemApiNormalJsTest.test';
-import UsbSceneEtsTest from './UsbSceneEtsTest.test'
+import UsbSystemApiPermissionTest from './UsbSystemApiPermissionTest.test';
+import UsbControlTransferSceneTest from './UsbControlTransferSceneTest.test'
 import UsbApiBulkTransferTest from './UsbApiBulkTransferTest.test';
 import UsbApiInterruptTransferTest from './UsbApiInterruptTransferTest.test';
 import UsbApiIsochronousTransferTest from './UsbApiIsochronousTransferTest.test';
-import UsbAccessoryEtsTest from './UsbAccessoryEtsTest.test';
+import UsbAccessoryTest from './UsbAccessoryTest.test';
 import UsbCoreApiTest from './UsbCoreApiTest.test';
-import UsbCoreEtsTestEx from './UsbCoreEtsTestEx.test';
+import UsbCoreCompatTest from './UsbCoreCompatTest.test';
 import UsbDevicePipeTest from './UsbDevicePipeTest.test';
-import UsbDevicePipeTestEx from './UsbDevicePipeTestEx.test';
+import UsbDevicePipeCompatTest from './UsbDevicePipeCompatTest.test';
 import UsbApiParamExceEtsTest from './UsbApiParamExceEtsTest.test';
 import UsbApiTransferCompatEtsTest from './UsbApiTransferCompatEtsTest.test';
 import UsbApiDeprecatedEtsTest from './UsbApiDeprecatedEtsTest.test';
 import UsbApiDeprecatedAddEtsTest from './UsbApiDeprecatedAddEtsTest.test';
 import UsbApiInputParaTest from './UsbApiInputParaTest.test';
+import UsbClaimInterfaceExclusiveTest from './UsbClaimInterfaceExclusiveTest.test';
 
 export default function testsuite() {
-  UsbSystemApiNormalJsTest()
-  UsbSceneEtsTest()
+  UsbSystemApiPermissionTest()
+  UsbControlTransferSceneTest()
   UsbApiBulkTransferTest()
   UsbApiInterruptTransferTest()
   UsbApiIsochronousTransferTest()
   UsbCoreApiTest()
-  UsbCoreEtsTestEx()
+  UsbCoreCompatTest()
   UsbDevicePipeTest()
-  UsbDevicePipeTestEx()
+  UsbDevicePipeCompatTest()
   UsbApiParamExceEtsTest()
   UsbApiTransferCompatEtsTest()
-  UsbAccessoryEtsTest()
+  UsbAccessoryTest()
   UsbApiDeprecatedEtsTest()
   UsbApiDeprecatedAddEtsTest()
   UsbApiInputParaTest()
+  UsbClaimInterfaceExclusiveTest()
 }

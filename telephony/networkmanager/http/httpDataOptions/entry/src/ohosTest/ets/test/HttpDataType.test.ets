@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import http from '@ohos.net.http';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
@@ -115,6 +115,7 @@ export default function HttpHttpDataTypeTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
+              httpRequest.destroy();
               ExpectFail();
               done();
             });
@@ -206,6 +207,7 @@ export default function HttpHttpDataTypeTest() {
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
+              httpRequest.destroy();
               ExpectFail();
               done();
             });

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { expect } from "@ohos/hypium";
+import { expect } from "@ohos/hypium-dynamic";
 import crypto from "@ohos.security.cryptoFramework";
 import { stringTouInt8Array, uInt8ArrayToShowStr, uInt8ArrayToString } from "../common/publicDoString";
 import { createSymKeyGenerator, createSymCipher } from "./publicSymmetricCommon";

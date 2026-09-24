@@ -117,7 +117,19 @@ struct WebResourceErrorConstructor {
                   Utils.emitEvent(String(isObject), 70036)
                 } catch (error) {
                   console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-                  Utils.emitEvent('error', 70037)
+                  Utils.emitEvent('error', 70039)
+                }
+                break;
+              }
+              case "emitClassStatic001": {
+                try {
+                  let error: WebResourceError = new WebResourceError();
+                  let isClass: boolean = error instanceof WebResourceError;
+                  console.info('WebResourceError class check isClass: ' + isClass);
+                  Utils.emitEvent(String(isClass), 70037)
+                } catch (error) {
+                  console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                  Utils.emitEvent('error', 70039)
                 }
                 break;
               }

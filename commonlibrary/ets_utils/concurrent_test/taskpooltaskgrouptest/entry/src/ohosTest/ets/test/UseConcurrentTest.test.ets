@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { taskpool, collections, worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 import { ConcurrentData, ResultData } from '../testability/pages/ConcurrentTestData';
 import { tsConcurrentAdd, tsConcurrentMultiply, tsConcurrentIdentity, tsConcurrentStringLength, tsComboConcurrent, ucComboSendableMainDispatch } from './ConcurrentTsFuncSource';

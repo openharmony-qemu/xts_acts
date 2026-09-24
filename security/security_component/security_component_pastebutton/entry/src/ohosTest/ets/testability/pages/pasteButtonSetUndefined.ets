@@ -53,7 +53,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .iconSize(undefined)
-              .key('setUndefined0')
+              .id('setUndefined0')
           }
           .visibility(this.isShow === 0 ? Visibility.Visible : Visibility.None)
 
@@ -77,7 +77,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .position(undefined)
-              .key('setUndefined1')
+              .id('setUndefined1')
           }
           .visibility(this.isShow === 1 ? Visibility.Visible : Visibility.None)
 
@@ -101,7 +101,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .markAnchor(undefined)
-              .key('setUndefined2')
+              .id('setUndefined2')
           }
           .visibility(this.isShow === 2 ? Visibility.Visible : Visibility.None)
 
@@ -125,7 +125,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .offset(undefined)
-              .key('setUndefined3')
+              .id('setUndefined3')
           }
           .visibility(this.isShow === 3 ? Visibility.Visible : Visibility.None)
 
@@ -149,7 +149,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .fontStyle(undefined)
-              .key('setUndefined5')
+              .id('setUndefined5')
           }
           .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
 
@@ -173,7 +173,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .fontWeight(undefined)
-              .key('setUndefined6')
+              .id('setUndefined6')
           }
           .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
 
@@ -197,12 +197,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .fontFamily(undefined)
-              .key('setUndefined7')
+              .id('setUndefined7')
           }
           .visibility(this.isShow === 6 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined8-1')
+            PasteButton().id('setUndefined8-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -223,12 +223,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .fontColor(undefined)
-              .key('setUndefined8-2')
+              .id('setUndefined8-2')
           }
           .visibility(this.isShow === 7 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined9-1')
+            PasteButton().id('setUndefined9-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -249,12 +249,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .iconColor(undefined)
-              .key('setUndefined9-2')
+              .id('setUndefined9-2')
           }
           .visibility(this.isShow === 8 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined10-1')
+            PasteButton().id('setUndefined10-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -275,7 +275,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .backgroundColor(undefined)
-              .key('setUndefined10-2')
+              .id('setUndefined10-2')
           }
           .visibility(this.isShow === 9 ? Visibility.Visible : Visibility.None)
 
@@ -299,7 +299,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .borderStyle(undefined)
-              .key('setUndefined11')
+              .id('setUndefined11')
           }
           .visibility(this.isShow === 10 ? Visibility.Visible : Visibility.None)
 
@@ -323,7 +323,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .borderWidth(undefined)
-              .key('setUndefined12')
+              .id('setUndefined12')
           }
           .visibility(this.isShow === 11 ? Visibility.Visible : Visibility.None)
 
@@ -347,7 +347,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .borderColor(undefined)
-              .key('setUndefined13')
+              .id('setUndefined13')
           }
           .visibility(this.isShow === 12 ? Visibility.Visible : Visibility.None)
 
@@ -371,7 +371,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .borderRadius(undefined)
-              .key('setUndefined14')
+              .id('setUndefined14')
           }
           .visibility(this.isShow === 13 ? Visibility.Visible : Visibility.None)
 
@@ -400,7 +400,7 @@ struct pasteButtonSetUndefined {
                 bottomLeft: undefined,
                 bottomRight: undefined,
               })
-              .key('setUndefined15')
+              .id('setUndefined15')
           }
           .visibility(this.isShow === 14 ? Visibility.Visible : Visibility.None)
 
@@ -424,7 +424,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .padding(undefined)
-              .key('setUndefined16')
+              .id('setUndefined16')
           }
           .visibility(this.isShow === 15 ? Visibility.Visible : Visibility.None)
 
@@ -448,12 +448,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .textIconSpace(undefined)
-              .key('setUndefined17')
+              .id('setUndefined17')
           }
           .visibility(this.isShow === 16 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined18-1')
+            PasteButton().id('setUndefined18-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -474,12 +474,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .width(undefined)
-              .key('setUndefined18-2')
+              .id('setUndefined18-2')
           }
           .visibility(this.isShow === 17 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined19-1')
+            PasteButton().id('setUndefined19-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -500,12 +500,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .height(undefined)
-              .key('setUndefined19-2')
+              .id('setUndefined19-2')
           }
           .visibility(this.isShow === 18 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined20-1')
+            PasteButton().id('setUndefined20-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -526,12 +526,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .size(undefined)
-              .key('setUndefined20-2')
+              .id('setUndefined20-2')
           }
           .visibility(this.isShow === 19 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined21-1')
+            PasteButton().id('setUndefined21-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -552,7 +552,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .constraintSize(undefined)
-              .key('setUndefined21-2')
+              .id('setUndefined21-2')
           }
           .visibility(this.isShow === 20 ? Visibility.Visible : Visibility.None)
 
@@ -576,12 +576,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .align(undefined)
-              .key('setUndefined22')
+              .id('setUndefined22')
           }
           .visibility(this.isShow === 21 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined23-1')
+            PasteButton().id('setUndefined23-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -602,7 +602,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .alignRules(undefined)
-              .key('setUndefined23-2')
+              .id('setUndefined23-2')
           }
           .visibility(this.isShow === 22 ? Visibility.Visible : Visibility.None)
 
@@ -626,12 +626,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .id(undefined)
-              .key('setUndefined24')
+              .id('setUndefined24')
           }
           .visibility(this.isShow === 23 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined25-1')
+            PasteButton().id('setUndefined25-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -652,12 +652,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .chainMode(undefined, undefined)
-              .key('setUndefined25-2')
+              .id('setUndefined25-2')
           }
           .visibility(this.isShow === 24 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined26-1')
+            PasteButton().id('setUndefined26-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -678,12 +678,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .minFontScale(undefined)
-              .key('setUndefined26-2')
+              .id('setUndefined26-2')
           }
           .visibility(this.isShow === 25 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined27-1')
+            PasteButton().id('setUndefined27-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -704,12 +704,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .maxFontScale(undefined)
-              .key('setUndefined27-2')
+              .id('setUndefined27-2')
           }
           .visibility(this.isShow === 26 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined28-1')
+            PasteButton().id('setUndefined28-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -730,12 +730,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .minFontSize(undefined)
-              .key('setUndefined28-2')
+              .id('setUndefined28-2')
           }
           .visibility(this.isShow === 27 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined29-1')
+            PasteButton().id('setUndefined29-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -756,7 +756,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .maxFontSize(undefined)
-              .key('setUndefined29-2')
+              .id('setUndefined29-2')
           }
           .visibility(this.isShow === 28 ? Visibility.Visible : Visibility.None)
 
@@ -780,7 +780,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .maxLines(undefined)
-              .key('setUndefined30')
+              .id('setUndefined30')
           }
           .visibility(this.isShow === 29 ? Visibility.Visible : Visibility.None)
 
@@ -804,12 +804,12 @@ struct pasteButtonSetUndefined {
                 }
               })
               .heightAdaptivePolicy(undefined)
-              .key('setUndefined31')
+              .id('setUndefined31')
           }
           .visibility(this.isShow === 30 ? Visibility.Visible : Visibility.None)
 
           Column() {
-            PasteButton().key('setUndefined32-1')
+            PasteButton().id('setUndefined32-1')
 
             PasteButton()
               .onClick((event: ClickEvent, result: PasteButtonOnClickResult) => {
@@ -830,7 +830,7 @@ struct pasteButtonSetUndefined {
                 }
               })
               .focusBox(undefined)
-              .key('setUndefined32-2')
+              .id('setUndefined32-2')
           }
           .visibility(this.isShow === 31 ? Visibility.Visible : Visibility.None)
 

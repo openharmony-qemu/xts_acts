@@ -14,7 +14,7 @@
  */
 import camera from '@ohos.multimedia.camera';
 import picker from '@ohos.multimedia.cameraPicker';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import common from '@ohos.app.ability.common';
 import { UiDriver, BY } from '@ohos.UiTest'
 import data from '@ohos.telephony.data'
@@ -233,20 +233,28 @@ export function cameraPicker() {
       console.info(`driver is ${JSON.stringify(driver)}`);
       await sleep(1000);
       console.info(`UiDriver start`);
+
+      // switch to video mode
+      let videoModeButton = await driver.findComponent(BY.key("COMPONENT_ID_CONTROL_VIDEO_2"));
+      await sleep(1000);
+      await videoModeButton.click();
+      await sleep(2000);
       let button = await driver.findComponent(BY.key("COMPONENT_ID_SHUTTER_VIDEO_1"));
       console.info(`button is ${JSON.stringify(button)}`);
+      await sleep(1000);
       await button.click();
       if (videoDuration > 0) {
         await sleep(videoDuration * 1000);
       } else {
         await sleep(2000);
-        let button2 = await driver.findComponent(BY.key("COMPONENT_ID_SHUTTER_VIDEO_END_1"));
-        console.info(`button is ${JSON.stringify(button2)}`);
-        await button2.click();
       }
-      await sleep(2000);
+      let button2 = await driver.findComponent(BY.key("COMPONENT_ID_SHUTTER_VIDEO_END_1"));
+      console.info(`button is ${JSON.stringify(button2)}`);
+      await sleep(1000);
+      await button2.click();
       let saveButt = await driver.findComponent(BY.key("COMPONENT_ID_THIRDPARTYCALL_CONFIRM_1"));
       console.info(`button is ${JSON.stringify(saveButt)}`);
+      await sleep(3000);
       await saveButt.click();
       await sleep(1000);
     }
@@ -428,6 +436,44 @@ export function cameraPicker() {
       await driveSafeFn();
       await drivePhotoFrontFn();
       console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103 ends here");
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECOERD_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECOERD_0100
+     * @tc.desc   cameraPicker Video recording api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECOERD_0100', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECOERD_0100--------------");
+      let pathDir = getContext().filesDir;
+      let filePath = pathDir + `/${new Date().getTime()}.mp4}`
+      fs.createRandomAccessFileSync(filePath, fs.OpenMode.CREATE);
+      let uri = fileuri.getUriFromPath(filePath);
+      let photoProfile: picker.PickerProfile = {
+        cameraPosition: camera.CameraPosition.CAMERA_POSITION_BACK,
+        saveUri: uri
+      };
+      await sleep(2000);
+      picker.pick(getContext(), [picker.PickerMediaType.PHOTO, picker.PickerMediaType.VIDEO], photoProfile)
+        .then(data => {
+          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECOERD_0100 get pick result " + JSON.stringify(data));
+          expect(data.resultCode).assertEqual(0);
+          expect(data.resultUri).assertEqual(uri);
+          expect(data.mediaType).assertEqual(picker.PickerMediaType.VIDEO);
+          done();
+        })
+        .catch((err:BusinessError)=>{
+          console.log("SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECOERD_0100 get pick error " + JSON.stringify(err));
+          expect(true).assertFalse();
+          done();
+        });
+      await sleep(1000);
+      await driveAllowFn();
+      await driveSafeFn();
+      await driveVideoFn(1);
+      console.info(TAG + "SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_RECOERD_0100 ends here");
     });
   })
 }

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import cameraObj from 'libentry.so'
 import image from '@ohos.multimedia.image';
 import { Camera_SceneMode, Parameter_Setting } from './Constants';
@@ -406,6 +406,22 @@ export default function CameraDevicePropertyTest() {
         getCameraManagerInstance();
         let ret: number = cameraObj.oHCaptureSessionTestPhyAptNoOutput();
         expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG);
+    })
+
+    /**
+     * @tc.name   SUB_Multimedia_Camera_PhysicalAperture_Func_0600
+     * @tc.number SUB_Multimedia_Camera_PhysicalAperture_Func_0600
+     * @tc.desc   Test OH_CaptureSession_GetSupportedPhysicalApertures with null size,
+     *            return CAMERA_INVALID_ARGUMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Multimedia_Camera_PhysicalAperture_Func_0600', Level.LEVEL0, () => {
+      if (PhysicalcaptureSessionstart()) {
+        let ret: number = cameraObj.oHCaptureSessionTestPhyAptNullSize();
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
     })
 
     /**

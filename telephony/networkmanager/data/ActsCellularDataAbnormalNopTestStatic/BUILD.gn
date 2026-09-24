@@ -19,7 +19,7 @@ ohos_js_app_static_suite("ActsCellularDataAbnormalNopStaticTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsCellularDataAbnormalNopStaticTest"
-  part_name = "telephony_data"
+  part_name = "cellular_data"
   subsystem_name = "telephony"
 }
 

@@ -13,17 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import common from '@ohos.app.ability.common';
-import deviceInfo from "@ohos.deviceInfo"
 import window from '@ohos.window';
-import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Axis } from '@ohos.arkui.component'
@@ -31,10 +28,6 @@ import { RecordData } from '@ohos.base';
 
 export default function calendarJsunit() {
   describe('appInfoTest_four_1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("appInfoTest_four_1 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
-    })
 
     beforeEach(async (): Promise<void> => {
       console.info("calendar beforeEach start");
@@ -57,7 +50,11 @@ export default function calendarJsunit() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('calendar afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("calendar after each called");
     })
 

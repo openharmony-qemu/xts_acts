@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium-dynamic";
 import testNapi from 'libimageEffect.so'
 import { JSON } from '@kit.ArkTS';
 const EFFECT_ERROR_PARAM_INVALID = 401;

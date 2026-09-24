@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
@@ -263,7 +263,7 @@ export default function webviewNetworkProxy() {
     })
     /**
      * @tc.name   testProxyGetUrl
-     * @tc.number SUB_WEB_NETWORKPROXY_1300
+     * @tc.number SUB_WEB_NETWORKPROXY_5100
      * @tc.desc   test getUrl
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -300,5 +300,19 @@ export default function webviewNetworkProxy() {
       Utils.registerEvent('testRemoveProxyOverride', true, 200200, done);
       await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
+    /**
+     * @tc.name   testOnProxyConfigChangeCallback001
+     * @tc.number SUB_WEB_ONPROXYCONFIG_CHANGE_CALLBACK_5200
+     * @tc.desc   test OnProxyConfigChangeCallback type alias with applyProxyOverride
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOnProxyConfigChangeCallback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('testOnProxyConfigChangeCallback', EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent('testOnProxyConfigChangeCallback001', true, 200210, done);
+        await Utils.waitAndClickComponent(driver, 'networkProxyButton');
+      })
   })
 }

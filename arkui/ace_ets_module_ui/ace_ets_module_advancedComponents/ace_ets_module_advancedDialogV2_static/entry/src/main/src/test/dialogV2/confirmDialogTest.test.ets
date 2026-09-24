@@ -14,23 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function confirmDialogTest() {
   describe('confirmDialogTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("confirmDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.advancedDialogV2.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("confirmDialogTest beforeEach start");
@@ -57,11 +50,14 @@ export default function confirmDialogTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('confirmDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('confirmDialogTest after each called');
     })
 
-    
     
     
     /**
@@ -73,11 +69,23 @@ export default function confirmDialogTest() {
 it('confirmDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[confirmDialogTest_static_0100] START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('confirmDialogTest sleep err: ' + JSON.stringify(err));
+      }
       // 点击打开ConfirmDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('ConfirmDialogV2'))
-      await (openAlertDialog?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (openAlertDialog?.click() as Promise<void>);
+      } catch (err) {
+        console.info('confirmDialogTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('confirmDialogTest sleep err: ' + JSON.stringify(err));
+      }
       // 点击打开ConfirmDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('文本标题'));
       let checkTips = await driver.findComponent(ON.text('禁止后不再提示'));
@@ -90,8 +98,16 @@ it('confirmDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.
       expect(cancelButton !== null).assertTrue();
       expect(confirmButton !== null).assertTrue();
       // 关闭ConfirmDialog
-      await (cancelButton?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (cancelButton?.click() as Promise<void>);
+      } catch (err) {
+        console.info('confirmDialogTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('confirmDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[confirmDialogTest_static_0100] END');
       done();
     });

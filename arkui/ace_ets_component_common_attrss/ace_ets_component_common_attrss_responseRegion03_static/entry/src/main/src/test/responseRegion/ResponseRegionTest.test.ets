@@ -15,21 +15,12 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { $r, Rectangle } from '@ohos.arkui.component';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: int= 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 const uiContext = new UIContext();
 
 async function clickPoint(data: BasePageConfig, xPoint: number, yPoint: number) {
@@ -236,11 +227,6 @@ export default function responseRegionTest() {
   ]
 
   describe('ResponseRegionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ResponseRegionTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs03.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get the initial region information of the target component
       console.info('[' + data.caseTag + '] get Component rect before position changed.');

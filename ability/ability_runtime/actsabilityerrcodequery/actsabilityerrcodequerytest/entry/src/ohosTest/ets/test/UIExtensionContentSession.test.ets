@@ -12,12 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium-dynamic';
 import { commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
 import base, { BusinessError } from '@ohos.base';
 import { abilityAccessCtrl, common } from '@kit.AbilityKit';
 import { router } from '@kit.ArkUI';
 import { bundleManager } from '@kit.AbilityKit';
+import { UIExtensionContentSession } from '@kit.AbilityKit';
+
 
 let ACTS_EVENT: commonEventManager.CommonEventSubscribeInfo = {
   events: ['ACTS_TEST_LOADCONTENT',
@@ -35,7 +37,7 @@ class MyRouterParam {
     this.fromPage = from;
   }
 
-  fromPage: string = "";
+  fromPage: string = '';
 }
 
 export default function UIExtensionContentSessionTest() {
@@ -51,6 +53,7 @@ export default function UIExtensionContentSessionTest() {
       }
     })
     beforeEach(() => {
+      router.clear();
     })
     afterEach(() => {
     })
@@ -77,10 +80,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -123,10 +126,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -169,10 +172,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -215,10 +218,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -261,10 +264,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -307,10 +310,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -353,10 +356,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -399,10 +402,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -445,10 +448,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -491,10 +494,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -537,10 +540,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -583,10 +586,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -629,10 +632,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -675,10 +678,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -721,10 +724,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -767,10 +770,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -813,10 +816,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -859,10 +862,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -905,10 +908,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -951,10 +954,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -997,10 +1000,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1043,10 +1046,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1089,10 +1092,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1135,10 +1138,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(16000050)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1181,10 +1184,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(0)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1227,10 +1230,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(0)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1274,10 +1277,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1320,10 +1323,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("subscribeCallBack success")
+            console.log('subscribeCallBack success')
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(0)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1366,10 +1369,10 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log(tag + "subscribeCallBack success " + JSON.stringify(data))
+            console.log(tag + 'subscribeCallBack success ' + JSON.stringify(data))
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
-              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
@@ -1412,7 +1415,99 @@ export default function UIExtensionContentSessionTest() {
             }, 1000);
           }
           let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log(tag + "subscribeCallBack success " + JSON.stringify(data))
+            console.log(tag + 'subscribeCallBack success ' + JSON.stringify(data))
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(401)
+              console.log('subscribeCallBack ACTS_TEST_DESTROY')
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
+            }
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
+        })
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3300
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3300
+     * @tc.desc   session.setWindowPrivacyMode param is null promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3300', Level.LEVEL0, (done: Function) => {
+      let tag: string = `SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3300`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(`====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log("subscribeCallBack success")
+            if (data.event == 'ACTS_TEST_DESTROY') {
+              expect(data?.parameters?.result).assertEqual(401)
+              console.log("subscribeCallBack ACTS_TEST_DESTROY")
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
+            }
+          }
+          commonEventManager.subscribe(subscriber, subscribeCallBack);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
+            }
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
+        })
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3400
+     * @tc.number SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3400
+     * @tc.desc   session.setWindowPrivacyMode param is null callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3400', Level.LEVEL0, (done: Function) => {
+      let tag: string = `SUB_Ability_AbilityRuntime_UIExtensionContentSession_errorCode_3400`;
+      commonEventManager.createSubscriber(ACTS_EVENT)
+        .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
+          subscriber = commonEventSubscriber;
+          let unSubscribeCallback = () => {
+            setTimeout(async () => {
+              console.info(`====>${tag} unSubscribeCallback`);
+              done();
+            }, 1000);
+          }
+          let subscribeCallBack = async (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
+            console.log("subscribeCallBack success")
             if (data.event == 'ACTS_TEST_DESTROY') {
               expect(data?.parameters?.result).assertEqual(401)
               console.log("subscribeCallBack ACTS_TEST_DESTROY")

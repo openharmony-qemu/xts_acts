@@ -18,7 +18,7 @@
  * Imports JS test functions and verifies their execution in ArkTS
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import Utils from '../../Util.test';
 
 import {

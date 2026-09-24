@@ -23,6 +23,8 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:test_pages",
+    // BK coverage: ohos.permission.WEB_NATIVE_MESSAGING is intentionally NOT declared here.
+    // web_on_connectnative declares this permission; this module verifies error code 201 without it.
     "requestPermissions": [
     ],
     "abilities": [

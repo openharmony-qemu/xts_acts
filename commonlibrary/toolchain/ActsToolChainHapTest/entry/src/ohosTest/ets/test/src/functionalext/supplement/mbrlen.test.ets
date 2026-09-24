@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextSupplementMbrlenTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_mbrlen", () => {
@@ -27,7 +27,7 @@ export default function FunctionalextSupplementMbrlenTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("mbrlen", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("mbrlen");
+      const result: number = await testNapi.runTest("mbrlen");
       expect(result).assertEqual(0);
       done();
     });

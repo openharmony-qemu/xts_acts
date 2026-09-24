@@ -728,3 +728,15 @@ export const getAutomotiveCameraPosition: () => number;
 export const getAutomotiveCameraPositionErrorParameter: () => number;
 
 export const enumTestAutomotiveCameraPosition: () => number;
+
+export const oHCaptureSessionTestPhyAptNullSize: () => number;
+
+export const oHgetPhysicalAperture: (index: number) => number;
+
+export const oHgetSupportedExposureDurationRange: (index: number) => number;
+
+export const oHgetExposureDuration: (index: number) => number;
+
+export const getWhiteBalanceRange: (index: number) => number;
+
+export const getWhiteBalance: (index: number) => number;

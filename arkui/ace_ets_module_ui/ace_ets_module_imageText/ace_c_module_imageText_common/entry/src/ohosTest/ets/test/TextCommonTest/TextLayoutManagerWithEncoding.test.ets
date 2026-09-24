@@ -160,6 +160,21 @@ export default function TextLayoutManagerWithEncodingTest() {
       done()
     });
 
+    /**
+     * @tc.name   SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_ENCODING_RANGE_VALID_MGR_1000
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_ENCODING_RANGE_VALID_MGR_1000
+     * @tc.desc   Test GetGlyphRangeForCharacterRangeWithEncoding with valid layoutManager
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_ENCODING_RANGE_VALID_MGR_1000', Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_ENCODING_RANGE_VALID_MGR_1000 START');
+      expect(nativeFunc.GetGlyphRangeForCharacterRangeWithEncodingTest_010()).assertEqual(0)
+      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETGLYPHRANGE_ENCODING_RANGE_VALID_MGR_1000 END');
+      done()
+    });
+
     // ==================== GetCharacterRangeForGlyphRangeWithEncoding ====================
 
     /**
@@ -294,6 +309,21 @@ export default function TextLayoutManagerWithEncodingTest() {
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_ENCODING_NULL_RANGE_VALID_MGR_1800 START');
       expect(nativeFunc.GetCharacterRangeForGlyphRangeWithEncodingTest_009()).assertEqual(0)
       console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_ENCODING_NULL_RANGE_VALID_MGR_1800 END');
+      done()
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_ENCODING_RANGE_VALID_MGR_1900
+     * @tc.number SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_ENCODING_RANGE_VALID_MGR_1900
+     * @tc.desc   Test GetCharacterRangeForGlyphRangeWithEncoding with valid layoutManager
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_ENCODING_RANGE_VALID_MGR_1900', Level.LEVEL0, async (done: Function) => {
+      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_ENCODING_RANGE_VALID_MGR_1900 START');
+      expect(nativeFunc.GetCharacterRangeForGlyphRangeWithEncodingTest_010()).assertEqual(0)
+      console.info('SUB_ARKUI_TEXT_LAYOUTMANAGER_GETCHARRANGE_ENCODING_RANGE_VALID_MGR_1900 END');
       done()
     });
 

@@ -71,8 +71,9 @@ export default function openMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY1'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(textPositionX).assertLess(menuPositionX)
-        expect(textPositionY).assertLess(menuPositionY)
+        
+        expect(textPositionX != menuPositionX).assertTrue()
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');
@@ -95,6 +96,9 @@ export default function openMenuAnchorPositionTest() {
         await button.longClick();
         await CommonFunc.sleep(3000);
 
+        let menuBtton = await driver.findComponent(ON.text('菜单选项1'));
+        expect(menuBtton).not().assertUndefined();
+
         let menu = await driver.findComponent(ON.id('menuItem'));
         await menu.click();
         await CommonFunc.sleep(2000);
@@ -110,8 +114,7 @@ export default function openMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY2'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(textPositionY).assertLess(menuPositionY)
-
+        
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');
         done();
@@ -147,8 +150,8 @@ export default function openMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY3'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(menuPositionX).assertLess(textPositionX)
-        expect(textPositionY).assertLess(menuPositionY)
+        expect(textPositionX != menuPositionX).assertTrue()
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');

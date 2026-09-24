@@ -62,6 +62,13 @@ class MyNodeController extends NodeController {
     if (this.builderNode == null) {
       this.builderNode = new ReactiveBuilderNode(uiContext, { selfIdealSize: { width: 200, height: 200 } });
       this.builderNode.build(wrapBuilder<[string]>(buildNode), {}, this.item);
+      this.builderNode.updateConfiguration()
+      this.builderNode.dispose()
+      this.builderNode.getFrameNode()
+      this.builderNode.reuse()
+      this.builderNode.recycle()
+      this.builderNode.flushState()
+      this.builderNode.isDisposed()
     }
     return this.builderNode.getFrameNode();
   }
@@ -181,7 +188,8 @@ struct ReactiveBuilderNodeReuseNullUndefined {
       .id('ReactiveBuilderNodeReuseNullUndefined')
       .width(200)
       .height(200)
-    }.width('100%')
+    }
+    .width('100%')
     .height('100%')
   }
 }

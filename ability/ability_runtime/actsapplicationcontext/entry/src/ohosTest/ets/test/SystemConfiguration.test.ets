@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach } from '@ohos/hypium-dynamic';
 import { common, systemConfiguration, ConfigurationConstant, abilityManager, application } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -338,6 +338,48 @@ export default function systemConfigurationTest() {
       } catch (error) {
         console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_0400:` + (error as BusinessError).code);
         expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100
+     * @tc.desc 测试offSystemConfigurationUpdated省略参数取消所有监听器
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100 start`);
+      let callback1Triggered = false;
+      let callback2Triggered = false;
+      let callback1: systemConfiguration.UpdatedCallback = {
+        onColorModeUpdated(colorMode: ConfigurationConstant.ColorMode) {
+          console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100 callback1 onColorModeUpdated:` + colorMode);
+          callback1Triggered = true;
+        }
+      };
+      let callback2: systemConfiguration.UpdatedCallback = {
+        onColorModeUpdated(colorMode: ConfigurationConstant.ColorMode) {
+          console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100 callback2 onColorModeUpdated:` + colorMode);
+          callback2Triggered = true;
+        }
+      };
+      try {
+        applicationContext.onSystemConfigurationUpdated(callback1);
+        applicationContext.onSystemConfigurationUpdated(callback2);
+        applicationContext.offSystemConfigurationUpdated();
+        testAbilityContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
+        timeoutId = setTimeout(() => {
+          console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100: check callbacks`);
+          expect(callback1Triggered).assertFalse();
+          expect(callback2Triggered).assertFalse();
+          done();
+        }, 3000);
+      } catch (error) {
+        console.info(`SUB_Ability_AbilityRuntime_ApplicationContext_SystemConfigurationUpdated_1100:` + (error?.code));
+        expect(false).assertTrue();
         done();
       }
     });

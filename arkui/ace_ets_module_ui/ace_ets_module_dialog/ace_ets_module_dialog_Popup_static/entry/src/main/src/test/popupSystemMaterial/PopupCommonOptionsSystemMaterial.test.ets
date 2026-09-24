@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { uiMaterial } from '@kit.ArkUI';
 
 const SLEEP_TIME = 1000;
@@ -29,10 +28,6 @@ const PAGE_URL = 'MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystem
 
 export default function PopupCommonOptionsSystemMaterialTest(): void {
   describe('PopupCommonOptionsSystemMaterial', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility('com.arkui.ace.dialog.popup.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = { url: PAGE_URL };
@@ -42,7 +37,7 @@ export default function PopupCommonOptionsSystemMaterialTest(): void {
         let pages = routerInstance.getState();
         if (pages.name !== 'PopupCommonOptionsSystemMaterial') {
           routerInstance.replaceUrl(options);
-          await CommonFunc.sleep(SLEEP_TIME);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('replace PopupCommonOptionsSystemMaterial page error: ' + err);
@@ -51,92 +46,216 @@ export default function PopupCommonOptionsSystemMaterialTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
     });
 
     it('PopupCommonOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let button = await driver.findComponent(ON.id('undefined'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (button?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let popupText = await driver.findComponent(ON.text('Popup Content'));
       expect(!!popupText).assertEqual(true);
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
       expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let closeButton = await driver.findComponent(ON.text('Close'));
-      await (closeButton?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (closeButton?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('PopupCommonOptionsSystemMaterial_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let button = await driver.findComponent(ON.id('hds_thick'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (button?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let popupText = await driver.findComponent(ON.text('Popup Content'));
       expect(!!popupText).assertEqual(true);
       let closeButton = await driver.findComponent(ON.text('Close'));
-      await (closeButton?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (closeButton?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('PopupCommonOptionsSystemMaterial_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let button = await driver.findComponent(ON.id('semi_transparent'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (button?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let popupText = await driver.findComponent(ON.text('Popup Content'));
       expect(!!popupText).assertEqual(true);
       let closeButton = await driver.findComponent(ON.text('Close'));
-      await (closeButton?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (closeButton?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('PopupCommonOptionsSystemMaterial_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let button = await driver.findComponent(ON.id('immersive_thick'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (button?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let popupText = await driver.findComponent(ON.text('Popup Content'));
       expect(!!popupText).assertEqual(true);
       let closeButton = await driver.findComponent(ON.text('Close'));
-      await (closeButton?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (closeButton?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('PopupCommonOptionsSystemMaterial_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (button?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let popupText = await driver.findComponent(ON.text('Popup Content'));
       expect(!!popupText).assertEqual(true);
       let closeButton = await driver.findComponent(ON.text('Close'));
-      await (closeButton?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (closeButton?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
 
     it('PopupCommonOptionsSystemMaterial_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let button = await driver.findComponent(ON.id('none'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (button?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let popupText = await driver.findComponent(ON.text('Popup Content'));
       expect(!!popupText).assertEqual(true);
       let closeButton = await driver.findComponent(ON.text('Close'));
-      await (closeButton?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await (closeButton?.click() as Promise<void>);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
   });

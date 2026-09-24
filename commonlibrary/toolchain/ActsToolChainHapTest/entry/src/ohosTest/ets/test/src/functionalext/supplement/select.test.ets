@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextSupplementSelectTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_select", () => {
@@ -27,7 +27,7 @@ export default function FunctionalextSupplementSelectTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("pselect", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pselect");
+      const result: number = await testNapi.runTest("pselect");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function FunctionalextSupplementSelectTestGroupTest() {
      * @tc.desc   libc-test select
      */
     it("select", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("select");
+      const result: number = await testNapi.runTest("select");
       expect(result).assertEqual(0);
       done();
     });

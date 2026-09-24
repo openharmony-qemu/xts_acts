@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { camera } from '@kit.CameraKit';
 import { common } from '@kit.AbilityKit';
 import {
@@ -1352,6 +1352,46 @@ export default function CameraVideoSessionTest() {
           console.info(TAG, testName + ' session created successfully.');
           await onErrorListen(testName);
           mVideoSession.off('error');
+          await mVideoSession.release();
+        }
+        done();
+      } catch (error) {
+        console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEOSESSION_OFF_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEOSESSION_OFF_CALLBACK_0100
+     * @tc.desc   Test VideoSession off error with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_VIDEOSESSION_OFF_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_VIDEOSESSION_OFF_CALLBACK_0100';
+      console.info(TAG, testName + ' begin.');
+      try {
+        if (isEmpty(mCameraManager) && isEmpty(mSupportedModes)) {
+          console.info(TAG, testName + ' cameraManager is null.');
+          expect().assertFail();
+        } else {
+          expect(isEmpty(mVideoSession)).assertFalse();
+          console.info(TAG, testName + ' session created successfully.');
+
+          let errorCallback = (error: BusinessError) => {
+            if (error !== undefined && error.code !== 0) {
+              console.error(TAG, testName + ' on error listen, code: ' + error.code + ', msg: ' + error.message);
+              expect().assertFail();
+            } else {
+              console.info(TAG, testName + ' session release passed.');
+              expect(true).assertTrue();
+            }
+          }
+          mVideoSession.on('error', errorCallback);
+          mVideoSession.off('error', errorCallback);
           await mVideoSession.release();
         }
         done();

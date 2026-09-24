@@ -205,6 +205,18 @@ struct WebIndex {
               }
               break;
             }
+            case 'emitEventResultConstructor001': {
+              Utils.emitEvent(true, 153550);
+              break;
+            }
+            case 'emitEventResultConstructorReturn001': {
+              Utils.emitEvent(true, 153551);
+              break;
+            }
+            case 'emitEventResultClass001': {
+              Utils.emitEvent(true, 153552);
+              break;
+            }
           }
         })
       }

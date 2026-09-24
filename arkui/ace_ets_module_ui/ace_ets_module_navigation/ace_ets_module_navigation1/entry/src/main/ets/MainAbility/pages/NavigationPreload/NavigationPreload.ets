@@ -104,20 +104,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload STANDARD 0400')
@@ -126,20 +130,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload STANDARD 1200')
@@ -148,20 +156,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload STANDARD 3000')
@@ -170,20 +182,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload DIALOG 0500')
@@ -192,20 +208,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('DIALOG_1', new NavParamTwo('ParamTag2')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('DIALOG_1', new NavParamTwo('ParamTag2')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload Wrong Name 1900')
@@ -214,95 +234,12 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('PageWrong', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
-            })
-
-          Button('Preload Wrong Name 2600')
-            .id('btnPreloadWrongName_2600')
-            .key('btnPreloadWrongName_2600')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
-            .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('PageWrong', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
-            })
-
-          Button('Preload Empty Name 1600')
-            .id('btnPreloadEmptyName_1600')
-            .key('btnPreloadEmptyName_1600')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
-            .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
-            })
-
-          Button('Preload NotFound 2700')
-            .id('btnPreloadNotFound_2700')
-            .key('btnPreloadNotFound_2700')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
-            .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('UNKNOWN_DEST', null),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
-            })
-
-          Button('Preload Undefined 3500')
-            .id('btnPreloadUndefined_3500')
-            .key('btnPreloadUndefined_3500')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
-            .onClick(() => {
-              this.resetState()
-              let undefinedNavInfo = new NavPathInfo('', undefined);
-              this.stack.preloadPath(undefinedNavInfo,
-                { onDestroy: () => { this.onDestroyCalled = 'true' } })
-                .then(() => {
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('PageWrong', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
                   this.preloadResult = 'success'
                   this.thenCalled = 'true'
                 }).catch((error: BusinessError) => {
@@ -311,6 +248,109 @@ struct NavigationPreload {
                   this.errorCode = String(error.code)
                   this.errorMsg = error.message
                 })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
+            })
+
+          Button('Preload Wrong Name 2600')
+            .id('btnPreloadWrongName_2600')
+            .key('btnPreloadWrongName_2600')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('PageWrong', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
+            })
+
+          Button('Preload Empty Name 1600')
+            .id('btnPreloadEmptyName_1600')
+            .key('btnPreloadEmptyName_1600')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
+            })
+
+          Button('Preload NotFound 2700')
+            .id('btnPreloadNotFound_2700')
+            .key('btnPreloadNotFound_2700')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('UNKNOWN_DEST', null),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
+            })
+
+          Button('Preload Undefined 3500')
+            .id('btnPreloadUndefined_3500')
+            .key('btnPreloadUndefined_3500')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              try {
+                this.resetState()
+                let undefinedNavInfo = new NavPathInfo('', undefined);
+                this.stack.preloadPath(undefinedNavInfo,
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } })
+                  .then(() => {
+                    this.preloadResult = 'success'
+                    this.thenCalled = 'true'
+                  }).catch((error: BusinessError) => {
+                    this.preloadResult = 'error'
+                    this.catchCalled = 'true'
+                    this.errorCode = String(error.code)
+                    this.errorMsg = error.message
+                  })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Function call coverage ==========
@@ -320,20 +360,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload DIALOG')
@@ -342,20 +386,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('DIALOG_1', new NavParamTwo('ParamTag2')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('DIALOG_1', new NavParamTwo('ParamTag2')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Parameter coverage - NavPathInfo.param types ==========
@@ -365,20 +413,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_2', 'stringParam'),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_2', 'stringParam'),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload Number Param')
@@ -387,20 +439,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_3', 12345),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_3', 12345),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload No Param')
@@ -409,20 +465,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_4', null),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_4', null),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Parameter coverage - PreloadOptions ==========
@@ -432,19 +492,23 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_5', new NavParamTwo('ParamTag5'))
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_5', new NavParamTwo('ParamTag5'))
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Parameter specification coverage - Error 401 ==========
@@ -454,19 +518,23 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              let undefinedNavInfo = new NavPathInfo('', undefined);
-              this.stack.preloadPath(undefinedNavInfo,
-                { onDestroy: () => { this.onDestroyCalled = 'true' } })
-                .then(() => {
-                  this.preloadResult = 'success'
-                  this.thenCalled = 'true'
-                }).catch((error: BusinessError) => {
-                  this.preloadResult = 'error'
-                  this.catchCalled = 'true'
-                  this.errorCode = String(error.code)
-                  this.errorMsg = error.message
-                })
+              try {
+                this.resetState()
+                let undefinedNavInfo = new NavPathInfo('', undefined);
+                this.stack.preloadPath(undefinedNavInfo,
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } })
+                  .then(() => {
+                    this.preloadResult = 'success'
+                    this.thenCalled = 'true'
+                  }).catch((error: BusinessError) => {
+                    this.preloadResult = 'error'
+                    this.catchCalled = 'true'
+                    this.errorCode = String(error.code)
+                    this.errorMsg = error.message
+                  })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload Empty Name')
@@ -475,19 +543,23 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Error 100005 - Builder not registered ==========
@@ -497,19 +569,23 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('PageWrong', new NavParamTwo('ParamTag1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('PageWrong', new NavParamTwo('ParamTag1')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Parameter spec coverage - null param ==========
@@ -519,20 +595,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_6', null),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_6', null),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== NavPathInfo.onPop callback ==========
@@ -542,23 +622,27 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              let navInfo: NavPathInfo = new NavPathInfo('STANDARD_11', new NavParamTwo('OnPopTest'));
-              navInfo.onPop = (popInfo: PopInfo) => {
-                this.onPopCalled = 'true'
-              };
-              this.stack.preloadPath(navInfo,
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                let navInfo: NavPathInfo = new NavPathInfo('STANDARD_11', new NavParamTwo('OnPopTest'));
+                navInfo.onPop = (popInfo: PopInfo) => {
+                  this.onPopCalled = 'true'
+                };
+                this.stack.preloadPath(navInfo,
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== NavPathInfo.isEntry ==========
@@ -568,21 +652,25 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              let navInfo: NavPathInfo = new NavPathInfo('STANDARD_12', new NavParamTwo('IsEntryTrue'));
-              navInfo.isEntry = true;
-              this.stack.preloadPath(navInfo,
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                let navInfo: NavPathInfo = new NavPathInfo('STANDARD_12', new NavParamTwo('IsEntryTrue'));
+                navInfo.isEntry = true;
+                this.stack.preloadPath(navInfo,
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload IsEntry False')
@@ -591,21 +679,25 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              let navInfo: NavPathInfo = new NavPathInfo('STANDARD_13', new NavParamTwo('IsEntryFalse'));
-              navInfo.isEntry = false;
-              this.stack.preloadPath(navInfo,
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                let navInfo: NavPathInfo = new NavPathInfo('STANDARD_13', new NavParamTwo('IsEntryFalse'));
+                navInfo.isEntry = false;
+                this.stack.preloadPath(navInfo,
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Return value coverage ==========
@@ -615,20 +707,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_7', new NavParamTwo('ThenVerify')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.thenCalled = 'true'
-                this.preloadResult = 'success'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.catchCalled = 'true'
-                this.preloadResult = 'error'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_7', new NavParamTwo('ThenVerify')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.thenCalled = 'true'
+                  this.preloadResult = 'success'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.catchCalled = 'true'
+                  this.preloadResult = 'error'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           Button('Preload Catch Verify')
@@ -637,19 +733,23 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('nonexistent_route', new NavParamTwo('CatchVerify')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.thenCalled = 'true'
-                this.preloadResult = 'success'
-              }).catch((error: BusinessError) => {
-                this.catchCalled = 'true'
-                this.preloadResult = 'error'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('nonexistent_route', new NavParamTwo('CatchVerify')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.thenCalled = 'true'
+                  this.preloadResult = 'success'
+                }).catch((error: BusinessError) => {
+                  this.catchCalled = 'true'
+                  this.preloadResult = 'error'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Error code 100006 - NavDestination not found ==========
@@ -659,19 +759,23 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('UNKNOWN_DEST', null),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('UNKNOWN_DEST', null),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== PreloadOptions.onDestroy - trigger by clearing ==========
@@ -681,24 +785,28 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_8', new NavParamTwo('DestroyVerify')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-                setTimeout(() => {
-                  this.stack.clear()
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_8', new NavParamTwo('DestroyVerify')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
-                }, 500)
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+                  setTimeout(() => {
+                    this.stack.clear()
+                    this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                  }, 500)
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Object param ==========
@@ -708,21 +816,25 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              let paramObj = new NavParamOne()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_9', paramObj),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                let paramObj = new NavParamOne()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_9', paramObj),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Multiple sequential preload ==========
@@ -732,33 +844,37 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              let successCount: number = 0
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_10', new NavParamTwo('Multi1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                successCount++
+              try {
+                this.resetState()
+                let successCount: number = 0
                 this.stack.preloadPath(
-                  new NavPathInfo('DIALOG_10', new NavParamTwo('Multi2')),
+                  new NavPathInfo('STANDARD_10', new NavParamTwo('Multi1')),
                   { onDestroy: () => { this.onDestroyCalled = 'true' } }
                 ).then(() => {
                   successCount++
-                  this.preloadResult = 'success_' + String(successCount)
-                  this.thenCalled = 'true'
-                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                  this.stack.preloadPath(
+                    new NavPathInfo('DIALOG_10', new NavParamTwo('Multi2')),
+                    { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                  ).then(() => {
+                    successCount++
+                    this.preloadResult = 'success_' + String(successCount)
+                    this.thenCalled = 'true'
+                    this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                  }).catch((error: BusinessError) => {
+                    this.preloadResult = 'error'
+                    this.catchCalled = 'true'
+                    this.errorCode = String(error.code)
+                    this.errorMsg = error.message
+                  })
                 }).catch((error: BusinessError) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
                   this.errorCode = String(error.code)
                   this.errorMsg = error.message
                 })
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Preload then pushPath integration ==========
@@ -768,25 +884,29 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_14', new NavParamTwo('PreloadPush')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-                this.stack.pushPath({ name: 'STANDARD_14', param: new NavParamTwo('PreloadPush') })
-                setTimeout(() => {
-                  this.pushAfterPreloadResult = 'pushed'
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_14', new NavParamTwo('PreloadPush')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
-                }, 1000)
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+                  this.stack.pushPath({ name: 'STANDARD_14', param: new NavParamTwo('PreloadPush') })
+                  setTimeout(() => {
+                    this.pushAfterPreloadResult = 'pushed'
+                    this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                  }, 1000)
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Preload then pushPath with different param ==========
@@ -796,24 +916,28 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_15', new NavParamTwo('PreloadParam')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stack.pushPath({ name: 'STANDARD_15', param: new NavParamTwo('DifferentParam') })
-                setTimeout(() => {
-                  this.pushAfterPreloadResult = 'pushed_diff'
-                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
-                }, 1000)
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_15', new NavParamTwo('PreloadParam')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stack.pushPath({ name: 'STANDARD_15', param: new NavParamTwo('DifferentParam') })
+                  setTimeout(() => {
+                    this.pushAfterPreloadResult = 'pushed_diff'
+                    this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                  }, 1000)
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Preload same name twice ==========
@@ -823,33 +947,37 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              let callCount: number = 0
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_16', new NavParamTwo('SameTwice1')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                callCount++
+              try {
+                this.resetState()
+                let callCount: number = 0
                 this.stack.preloadPath(
-                  new NavPathInfo('STANDARD_16', new NavParamTwo('SameTwice2')),
+                  new NavPathInfo('STANDARD_16', new NavParamTwo('SameTwice1')),
                   { onDestroy: () => { this.onDestroyCalled = 'true' } }
                 ).then(() => {
                   callCount++
-                  this.preloadResult = 'success_' + String(callCount)
-                  this.thenCalled = 'true'
-                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                  this.stack.preloadPath(
+                    new NavPathInfo('STANDARD_16', new NavParamTwo('SameTwice2')),
+                    { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                  ).then(() => {
+                    callCount++
+                    this.preloadResult = 'success_' + String(callCount)
+                    this.thenCalled = 'true'
+                    this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                  }).catch((error: BusinessError) => {
+                    this.preloadResult = 'error'
+                    this.catchCalled = 'true'
+                    this.errorCode = String(error.code)
+                    this.errorMsg = error.message
+                  })
                 }).catch((error: BusinessError) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
                   this.errorCode = String(error.code)
                   this.errorMsg = error.message
                 })
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Error 100005 - no builder registered for name ==========
@@ -859,19 +987,23 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('NoBuilderPage', new NavParamTwo('NoBuilder')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('NoBuilderPage', new NavParamTwo('NoBuilder')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== Preload with name-only NavPathInfo ==========
@@ -881,20 +1013,24 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_17', null),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_17', null),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
 
           // ========== PreloadOptions.onDestroy not called on success ==========
@@ -904,20 +1040,104 @@ struct NavigationPreload {
             .fontSize(16)
             .margin({ top: 10 } as Margin)
             .onClick(() => {
-              this.resetState()
-              this.stack.preloadPath(
-                new NavPathInfo('STANDARD_18', new NavParamTwo('NoDestroy')),
-                { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then(() => {
-                this.preloadResult = 'success'
-                this.thenCalled = 'true'
-                this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
-                this.preloadResult = 'error'
-                this.catchCalled = 'true'
-                this.errorCode = String(error.code)
-                this.errorMsg = error.message
-              })
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_18', new NavParamTwo('NoDestroy')),
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
+            })
+
+          // ========== Parameter spec coverage - info = null ==========
+          Button('InfoNull')
+            .id('btnPreloadInfoNull')
+            .key('btnPreloadInfoNull')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  null as ESObject,
+                  { onDestroy: () => { this.onDestroyCalled = 'true' } }
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
+            })
+
+          // ========== Parameter spec coverage - options = null ==========
+          Button('OptNull')
+            .id('btnPreloadOptionsNull')
+            .key('btnPreloadOptionsNull')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_19', new NavParamTwo('OptNull')),
+                  null as ESObject
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
+            })
+
+          // ========== Parameter spec coverage - options = undefined (explicit) ==========
+          Button('OptUndef')
+            .id('btnPreloadOptionsUndefined')
+            .key('btnPreloadOptionsUndefined')
+            .fontSize(16)
+            .margin({ top: 10 } as Margin)
+            .onClick(() => {
+              try {
+                this.resetState()
+                this.stack.preloadPath(
+                  new NavPathInfo('STANDARD_20', new NavParamTwo('OptUndef')),
+                  undefined
+                ).then(() => {
+                  this.preloadResult = 'success'
+                  this.thenCalled = 'true'
+                  this.stackNames = JSON.stringify(this.stack.getAllPathName())
+                }).catch((error: BusinessError) => {
+                  this.preloadResult = 'error'
+                  this.catchCalled = 'true'
+                  this.errorCode = String(error.code)
+                  this.errorMsg = error.message
+                })
+              } catch (err) {
+                console.error('NavigationPreload onClick error: ' + err)
+              }
             })
         }
         .width('100%')

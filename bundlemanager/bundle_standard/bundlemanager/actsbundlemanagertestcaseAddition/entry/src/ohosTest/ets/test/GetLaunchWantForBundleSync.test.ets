@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import bundleManager from '@ohos.bundle.bundleManager';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Size, Level, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Size, Level, TestType } from '@ohos/hypium-dynamic';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import hilog from '@ohos.hilog';
 

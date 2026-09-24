@@ -35,26 +35,41 @@ struct AccessibilityHoverEventDemo {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    Button({ stateEffect: this.isOk }) {
-      Image($r('app.media.ic_public_pass'))
-        .width('20vp')
-        .height('20vp')
-    }
-    .margin({ bottom: '20vp' })
-    .width('30%')
-    .height('30vp')
-    .backgroundColor(Color.Grey)
-    .onClick(() => {
-      router.back({
-        url: 'pages/ArkUI/ArkUI_index',
-        params: {
-          result: 'true ', title: this.name,
-        }
+    if (this.isOk === false) {
+      Button({ stateEffect: this.isOk }) {
+        Image($r('app.media.ic_public_pass'))
+          .width('20vp')
+          .height('20vp')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
+      .height('30vp')
+      .backgroundColor(Color.Grey)
+      .opacity(0.4)
+      .onClick(() => {
       })
-      promptAction.showToast({
-        message: '通过', duration: 1000
-      });
-    })
+    } else {
+      Button({ stateEffect: this.isOk }) {
+        Image($r('app.media.ic_public_pass'))
+          .width('20vp')
+          .height('20vp')
+      }
+      .margin({ bottom: '20vp' })
+      .width('30%')
+      .height('30vp')
+      .backgroundColor(Color.Grey)
+      .onClick(() => {
+        router.back({
+          url: 'pages/ArkUI/ArkUI_index',
+          params: {
+            result: 'true ', title: this.name,
+          }
+        })
+        promptAction.showToast({
+          message: '通过', duration: 1000
+        });
+      })
+    }
   }
 
   @Builder
@@ -83,6 +98,14 @@ struct AccessibilityHoverEventDemo {
 
   aboutToAppear() {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
+  }
+
+  onPageShow() {
+    this.intervalNum = setInterval(() => {
+      if (this.globalDisplayX !== 0 && this.globalDisplayY !== 0) {
+        this.isOk = true;
+      }
+    }, 500)
   }
 
   onPageHide() {

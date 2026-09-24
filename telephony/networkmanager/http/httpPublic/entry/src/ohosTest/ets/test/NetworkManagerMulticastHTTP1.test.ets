@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, afterEach, afterAll, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, afterEach, afterAll, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 
 let httpRequest = http.createHttp();
@@ -71,7 +71,7 @@ export default function NetworkManagerMulticast1HTTP2Test() {
         console.log('NetworkManagerMulticastHTTPTest afterAll end');
     });
     describe("NetworkManagerMulticast1HTTP2Test", ()=> {
-         /**
+        /**
          * @tc.name   testNetworkMgrHttpQUICXtsAsync0100
          * @tc.number SUB_NetworkMgr_Http_QUIC_Xts_Async_0100
          * @tc.desc   Test request property.
@@ -86,7 +86,7 @@ export default function NetworkManagerMulticast1HTTP2Test() {
                 httpRequest.request(url,httpRequestOptions_http3,(err,data)=>{
                     if(err) {
                         console.log(`${caseName} request failed, err: ${JSON.stringify(err)}`);
-                        expectTrue(err.code === 2300999);
+                        expectFalse();
                         console.info(`${caseName}---End`);
                         done();
                     } else {
@@ -97,7 +97,7 @@ export default function NetworkManagerMulticast1HTTP2Test() {
                     }
                 })
             } catch(error) {
-                console.log(`${caseName}  request failed, error: ${JSON.stringify(error)}`);
+                console.log(`${caseName} request failed, err: ${JSON.stringify(error)}`);
                 expectFalse();
                 console.info(`${caseName}---End`);
                 done();

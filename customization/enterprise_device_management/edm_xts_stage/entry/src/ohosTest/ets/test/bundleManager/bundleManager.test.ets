@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, expect, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, expect, it, Level } from '@ohos/hypium-dynamic';
 import {
   BUNDLENAME1,
   ENTINFO1,

@@ -16,7 +16,7 @@
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG } from '../common';
 import fs from '@ohos.file.fs';
 

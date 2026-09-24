@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import huks from '@ohos.security.huks';
 import { GenParam, SetParam } from './utils/huks/HuksOptionsUtils';
 import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';

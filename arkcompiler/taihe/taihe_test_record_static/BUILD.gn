@@ -1,0 +1,65 @@
+# Copyright (c) 2026 Huawei Device Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("//test/xts/tools/build/suite.gni")
+import("//build/ohos_var.gni")
+
+action("run_taihe") {
+  script = rebase_path("my_script.sh")
+  
+  _output_dir = "$root_build_dir/taihe_output/ActsTaiheRecordStaticTest"
+  
+  args = [
+    rebase_path("${prebuilts_sdk_dir}/toolchains/taihe/bin/taihec"),
+    rebase_path("entry/src/main/idl/record_test.taihe"),
+    "-O",
+    rebase_path(_output_dir, root_build_dir),
+    "-G",
+    "cpp-author",
+    "-G",
+    "ani-bridge",
+    "-Carkts:path-prefix=entry.src.main.src.ets"
+  ]
+  
+  outputs = [
+    "$root_build_dir/taihe_output/ActsTaiheRecordStaticTest/record_test.ets",
+  ]
+}
+
+action("copy_taihe_output") {
+  script = rebase_path("copy_output.sh")
+  
+  _src_dir = "$root_build_dir/taihe_output/ActsTaiheRecordStaticTest"
+  _stamp = "$target_gen_dir/copy_taihe.stamp"
+  
+  args = [
+    rebase_path(_src_dir, root_build_dir),
+    rebase_path("entry/src/main/src/ets", root_build_dir),
+    rebase_path(_stamp, root_build_dir),
+    rebase_path("entry/src/main/cpp", root_build_dir),
+    rebase_path("entry/src/main/cpp/include", root_build_dir),
+  ]
+  
+  outputs = [ _stamp ]
+  deps = [ ":run_taihe" ]
+}
+
+ohos_js_app_static_suite("ActsTaiheRecordStaticTest") {
+  deps = [":copy_taihe_output"]
+#   test_hap = true
+  testonly = true
+  certificate_profile = "./signature/myApplication_ohos_Provision.p7b"
+  hap_name = "ActsTaiheRecordStaticTest"
+  part_name = "taihe_ffi_gen"
+  subsystem_name = "arkcompiler"
+}

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -107,6 +107,8 @@ export default function WebTextMenuGestureTest() {
       await image.longClick();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('CONTEXT_MENU_HOVER_GESTURE')).assertEqual(GestureControl.GestureType.CONTEXT_MENU_HOVER_GESTURE);
+      let menum = await driver.findComponent(ON.text('菜单选项'));
+      await menum.click();
       console.info('[WebTextMenumGestureTest_0300] END');
       done();
     });

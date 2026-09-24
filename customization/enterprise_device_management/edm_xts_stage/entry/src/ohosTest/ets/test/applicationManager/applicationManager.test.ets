@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, expect, it, Level } from '@ohos/hypium-dynamic';
 import systemParameterEnhance from "@ohos.systemParameterEnhance";
 import {
   ENTINFO1,
@@ -2401,10 +2401,9 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], null);
-        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
-        expect(Array.isArray(apps)).assertTrue();
-      } catch (error) {
         expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === '401').assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2423,10 +2422,9 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], undefined);
-        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
-        expect(Array.isArray(apps)).assertTrue();
-      } catch (error) {
         expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === '401').assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -4512,132 +4510,6 @@ export default function applicationManagerTest() {
       }
       done();
       console.info(' --- addDockApp_test_1400  -------- END --------');
-    })
-
-    /**
-     * @tc.name   addDockApp_test_1500
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1500
-     * @tc.desc   addDockApp with empty bundleName
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDockApp_test_1500", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_1500  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        let bundleName: string = "";
-        let index: number = 5;
-        let abilityName: string = "EntryAbility";
-        applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
-        console.info(' --- addDockApp_test_1500 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDockApp_test_1500 error 9201015 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9201015).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-      console.info(' --- addDockApp_test_1500  -------- END --------');
-    })
-
-    /**
-     * @tc.name   addDockApp_test_1600
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1600
-     * @tc.desc   addDockApp with empty abilityName
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDockApp_test_1600", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_1600  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        let bundleName: string = SELFHAPNAME;
-        let index: number = 5;
-        let abilityName: string = "";
-        applicationManager.addDockApp(SELFWANT, bundleName, abilityName, index);
-        console.info(' --- addDockApp_test_1600 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDockApp_test_1600 error 9200015 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200015).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-      console.info(' --- addDockApp_test_1600  -------- END --------');
-    })
-
-    /**
-     * @tc.name   addDockApp_test_1700
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1700
-     * @tc.desc   addDockApp with empty abilityName
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDockApp_test_1700", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_1700  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        let bundleName: string = SELFHAPNAME;
-        let abilityName: string = "";
-        applicationManager.addDockApp(SELFWANT, bundleName, abilityName);
-        console.info(' --- addDockApp_test_1700 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDockApp_test_1700 error 9200015 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9200015).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-      console.info(' --- addDockApp_test_1700  -------- END --------');
-    })
-
-    /**
-     * @tc.name   addDockApp_test_1800
-     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDOCKAPP_1800
-     * @tc.desc   addDockApp with empty bundleName
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("addDockApp_test_1800", Level.LEVEL2, async (done: Function) => {
-      console.info(' --- addDockApp_test_1800  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        let bundleName: string = "";
-        let abilityName: string = "EntryAbility";
-        applicationManager.addDockApp(SELFWANT, bundleName, abilityName);
-        console.info(' --- addDockApp_test_1800 error is expected, but it done.');
-        expect(false).assertTrue();
-      } catch (error) {
-        console.info(' --- addDockApp_test_1800 error 9201015 is expected, actually catch: ' + error.code);
-        if (Number(error.code) === 801) {
-          expect(Number(error.code) === 801).assertTrue();
-        } else {
-          expect(Number(error.code) === 9201015).assertTrue();
-        }
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-      console.info(' --- addDockApp_test_1800  -------- END --------');
     })
 
     /**

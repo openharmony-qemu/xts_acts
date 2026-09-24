@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { common } from '@kit.AbilityKit'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 import {
   sleep,

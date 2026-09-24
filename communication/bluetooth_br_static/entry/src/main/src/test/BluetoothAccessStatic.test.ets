@@ -707,5 +707,25 @@ export default function bluetoothAccessTest() {
             }
             done();
         });
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400
+         * @tc.desc    Test convertUuid API 入参 ''
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let uuid = '';
+                let converuuid = access.convertUuid(uuid);
+                hilog.info(domain, tag, "convertUuid success" + converuuid);
+                expect(converuuid).assertEqual('11112222-3333-4444-5555-666677778888');
+            } catch (err) {
+                hilog.info(domain, tag, "convertUuid get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(err.code).assertEqual(401);
+            }
+            done();
+        });
     })
 }

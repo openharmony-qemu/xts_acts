@@ -15,23 +15,24 @@
 
 {
   "module": {
-    "package": "com.example.statistics",
     "name": "entry",
     "type": "entry",
     "description": "$string:entry_desc",
-    "mainElement": "MainAbility",
+    "mainElement": "EntryAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
-    "uiSyntax": "ets",
     "abilities": [
       {
-        "name": "com.example.statistics.MainAbility",
-        "srcEntry": "./ets/entryability/EntryAbility.ts",
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:MainAbility_desc",
         "icon": "$media:icon",
         "label": "$string:MainAbility_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
         "visible": true,
         "skills": [
           {

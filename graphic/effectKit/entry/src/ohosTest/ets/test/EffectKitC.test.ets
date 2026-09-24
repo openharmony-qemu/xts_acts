@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from "@ohos/hypium-dynamic"
 import image from '@ohos.multimedia.image';
 import effectKit from '@ohos.effectKit';
 import { testPng, testJpg } from '../model/testImg';
@@ -1597,6 +1597,121 @@ export default function effectKitCTest() {
           done();
         }
       })
+      
+    /**
+     * @tc.name   testFilterBlur_0100
+     * @tc.number SUB_GRAPHIC_Effect_blue_0100
+     * @tc.desc   filter blur
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFilterBlur_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testFilterBlur_0100';
+      let msgStr = 'www data jsunitTest ' + caseName + ' ';
+      console.log("effectKitTest" + msgStr + 'begin');
+      let imageSource = image.createImageSource(testJpg.buffer);
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info(msgStr + "Napi create createEffect.start");
+        let headFilter = effectKit.createEffect(pixelMap);
+        if (headFilter == null) {
+          console.log("www data effectKitTest blur2 createEffect faild");
+          expect(true).assertFail();
+          done();
+        }
+        try {
+          let blurFilter = headFilter.blur(1);
+          console.info(msgStr + 'success in blur 1 ', JSON.stringify(blurFilter));
+          expect(blurFilter !== undefined).assertTrue();
+        } catch (err) {
+          console.info(msgStr + 'failed to blur');
+          expect().assertFail();
+        }
+        try {
+          let blurFilter = headFilter.blur(-1);
+          console.info(msgStr + 'success in blur -1 ', JSON.stringify(blurFilter));
+          expect(blurFilter !== undefined).assertTrue();
+        } catch (err) {
+          console.info(msgStr + 'failed to blur');
+          expect().assertFail();
+        }
+        try {
+          let blurFilter = headFilter.blur(0);
+          console.info(msgStr + 'success in blur 0 ', JSON.stringify(blurFilter));
+          expect(blurFilter !== undefined).assertTrue();
+        } catch (err) {
+          console.info(msgStr + 'failed to blur');
+          expect().assertFail();
+        }
+        done();
+      }).catch((ex: BusinessError) => {
+        console.error(msgStr + "Napi pixelMap.error=" + ex.toString());
+        expect(true).assertFail();
+        done();
+      })
+    })
+
+
+    /**
+     * @tc.name   testFilterBlur_0200
+     * @tc.number SUB_GRAPHIC_Effect_blue_0200
+     * @tc.desc   filter blur
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFilterBlur_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testFilterBlur_0200';
+      let msgStr = 'www data jsunitTest ' + caseName + ' ';
+      console.log("effectKitTest" + msgStr + 'begin');
+      let imageSource = image.createImageSource(testJpg.buffer);
+      let info = imageSource.getImageInfoSync();
+      console.info(msgStr + "Napi size=" + info.size.width + " X " + info.size.height);
+      expect(info.size.width).assertEqual(472);
+      expect(info.size.height).assertEqual(226);
+      imageSource.createPixelMap().then(pixelMap => {
+        console.info(msgStr + "Napi create createEffect.start");
+        let headFilter = effectKit.createEffect(pixelMap);
+        if (headFilter == null) {
+          console.log("www data effectKitTest blur2 createEffect faild");
+          expect(true).assertFail();
+          done();
+        }
+        try {
+          let blurFilter = headFilter.blur(1, effectKit.TileMode.MIRROR);
+          console.info(msgStr + 'success in blur 1 ', JSON.stringify(blurFilter));
+          expect(blurFilter !== undefined).assertTrue();
+        } catch (err) {
+          console.info(msgStr + 'failed to blur');
+          expect().assertFail();
+        }
+        try {
+          let blurFilter = headFilter.blur(-1, effectKit.TileMode.MIRROR);
+          console.info(msgStr + 'success in blur -1 ', JSON.stringify(blurFilter));
+          expect(blurFilter !== undefined).assertTrue();
+        } catch (err) {
+          console.info(msgStr + 'failed to blur');
+          expect().assertFail();
+        }
+        try {
+          let blurFilter = headFilter.blur(0, effectKit.TileMode.MIRROR);
+          console.info(msgStr + 'success in blur 0 ', JSON.stringify(blurFilter));
+          expect(blurFilter !== undefined).assertTrue();
+        } catch (err) {
+          console.info(msgStr + 'failed to blur');
+          expect().assertFail();
+        }
+        done();
+      }).catch((ex: BusinessError) => {
+        console.error(msgStr + "Napi pixelMap.error=" + ex.toString());
+        expect(true).assertFail();
+        done();
+      })
+    })
 
   })
 }

@@ -16,27 +16,24 @@ import("//test/xts/tools/build/suite.gni")
 group("concurrent_test") {
   testonly = true
   if (is_standard_system) {
-    deps = [
-      "asynclockutilstest:ActsAsyncLockUtilsTest",
-      "atomicstest:ActsAtomicsTest",
-      "collectionstaskpooltest:ActsCollectionsTaskPoolTest",
-      "collectionstest:ActsCollectionsTest",
-      "concurrentcollectionstest:ActsConcurrentCollectionsTest",
-      "concurrenterrormessagetest:ActsConcurrentErrMessageTest",
+    deps = [      "concurrenterrormessagetest:ActsConcurrentErrMessageTest",
       "concurrentlibtest:ActsConcurrentLibTest",
       "concurrent_guide:ActsConcurrentGuideTest",
-      "concurrentmoduletest:ActsConcurrentModuleTest",
-      "processtest:ActsProcessTest",
-      "promisetest:ActsPromiseTest",
-      "sharedarraybuffertest:ActsSharedArrayBufferTest",
-      "taskpoolandtimer:ActsTaskPoolAndTimerTest",
+      "concurrentmoduletest:ActsConcurrentModuleTest",      "taskpoolandtimer:ActsTaskPoolAndTimerTest",
       "taskpoolasyncrunnertest:ActsTaskpoolAsyncrunnerTest",
       "taskpoolexecutedelayedtest:ActsTaskPoolExecuteDelayedTest",
       "taskpoolsequencerunnertest:ActsTaskPoolSequenceRunnerTest",
       "taskpoolsupplementtest:ActsTaskPoolSupplementTest",
-      "taskpooltaskgrouptest:ActsTaskPoolTaskGroupTest",
-      "asonutilstest:ActsAsonUtilsTest",
-      "collections_all_test:ActsCollections_All_Test",
+      "taskpooltaskgrouptest:ActsTaskPoolTaskGroupTest",      "taskpool_lib_standard:taskPool_js_test",
+      "taskpool_lib_standard2:ActsTaskPoolTest",
+      "threadWorker_lib_standard:threadWorker_js_hap",
+      "worker_lib_standard:worker_js_hap",
+      "worker_lib_standard2:ActsWorkerTest",
+      "worker_lib_standard3:ActsWorkerPriTest",
+      "worker_lib_standard4:ActsWorkerMixTest",
+      "sendable_lib_taskpool:sendableTaskpool_js_test",
+      "sendable_lib_worker:sendableWorker_js_test",
+      "concurrency_base:concurrency_base_js_hap",
     ]
   }
 }

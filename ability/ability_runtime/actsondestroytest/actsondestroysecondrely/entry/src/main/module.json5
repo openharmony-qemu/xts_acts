@@ -16,7 +16,7 @@
   "module": {
     "name": "second",
     "type": "feature",
-    "srcEntry": "./ets/application/SecondAbilityStage.ts",
+    "srcEntry": "./ets/application/SecondAbilityStage.ets",
     "description": "$string:module_desc",
     "mainElement": "SecondAbility",
     "deviceTypes": [],
@@ -26,7 +26,7 @@
     "abilities": [
       {
         "name": "SecondAbility",
-        "srcEntry": "./ets/secondability/SecondAbility.ts",
+        "srcEntry": "./ets/secondability/SecondAbility.ets",
         "description": "$string:SecondAbility_desc",
         "icon": "$media:icon",
         "label": "$string:SecondAbility_label",
@@ -36,7 +36,7 @@
       },
       {
         "name": "SecondOtherAbility",
-        "srcEntry": "./ets/secondotherability/SecondOtherAbility.ts",
+        "srcEntry": "./ets/secondotherability/SecondOtherAbility.ets",
         "description": "$string:SecondOtherAbility_desc",
         "icon": "$media:icon",
         "label": "$string:SecondOtherAbility_label",

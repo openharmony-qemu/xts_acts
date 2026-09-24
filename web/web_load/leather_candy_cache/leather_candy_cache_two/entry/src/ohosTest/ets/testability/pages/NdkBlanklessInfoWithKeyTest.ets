@@ -486,6 +486,77 @@ struct ndkBlanklessInfoWithKeyTest {
               }
               break;
             }
+            case 'testndkBlanklessInfoWithKey016': {
+              let msg = 'testndkBlanklessInfoWithKey016'
+              try {
+                let num: number = testNapi.doblankless_SET_CONTROLLER_NOT_INITED(this.webTag);
+                console.log(msg, `预期值：-3`,`实际值${num}`);
+                if (num == 801) {
+                  Utils.emitEvent(-3, 148293)
+                } else {
+                  Utils.emitEvent(num, 148293)
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-3, 148293)
+                } else {
+                  Utils.emitEvent(401, 148293)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey017': {
+              let msg = 'testndkBlanklessInfoWithKey017'
+              try {
+                let num: number = testNapi.doblankless_SET_INVALID_ARGS(this.webTag);
+                console.log(msg, `预期值：-2`,`实际值${num}`);
+                if (num == 801) {
+                  Utils.emitEvent(-2, 148294)
+                } else {
+                  Utils.emitEvent(num, 148294)
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-2, 148294)
+                } else {
+                  Utils.emitEvent(401, 148294)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testndkBlanklessInfoWithKey018': {
+              let msg = 'testndkBlanklessInfoWithKey018'
+              let num: number = -1
+              try {
+                this.isPageEnd = -1;
+                testNapi.clearBlanklessLoadingCache(this.webTag);
+                await this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                let num1: number = testNapi.doblankless_SET_SIGNIFICANT_CHANGE(this.webTag);
+                console.log(msg, 'first call return:' + num1);
+                this.isPageEnd = -1;
+                testNapi.clearBlanklessLoadingCache(this.webTag);
+                await this.controller.refresh();
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                num = testNapi.doblankless_SET_SIGNIFICANT_CHANGE(this.webTag);
+                console.log(msg, `预期值：-5`,`实际值${num}`);
+                if (num == 801) {
+                  Utils.emitEvent(-5, 148295)
+                } else {
+                  Utils.emitEvent(num, 148295)
+                }
+              } catch (error) {
+                if (Number(error.code) == 801) {
+                  Utils.emitEvent(-5, 148295)
+                } else {
+                  Utils.emitEvent(401, 148295)
+                }
+                console.error(`${msg} ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
           }
         })
       }

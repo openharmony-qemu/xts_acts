@@ -18,6 +18,7 @@
 import ErrcodeTest from './ErrorCodeTest.test.ets';
 import GetAbilityInfoNopermissionTest from './GetAbilityInfoNopermission.test.ets';
 import testGetLaunchWantForBundleSync from './GetLaunchWantForBundleSync.test';
+import getBundleInstallStatusNoPermissionTest from './GetBundleInstallStatusNoPermission.test';
 
 
 export default function testsuite() {
@@ -25,5 +26,6 @@ export default function testsuite() {
   ErrcodeTest();
   GetAbilityInfoNopermissionTest();
   testGetLaunchWantForBundleSync();
+  getBundleInstallStatusNoPermissionTest();
 
 }

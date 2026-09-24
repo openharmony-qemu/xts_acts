@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { taskpool, collections, lang, worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 import utils from '@arkts.utils';
 import { SharedSendableData } from './SendableSharedData';

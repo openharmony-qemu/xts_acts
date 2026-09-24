@@ -29,6 +29,7 @@ namespace ArkUICapiTest {
     public:
         ~DragDropTest();
         static napi_value CreateNativeNode(napi_env env, napi_callback_info info);
+        static napi_value IsDragDropCompleted(napi_env env, napi_callback_info info);
     };
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_DIALOG_GET_STATE_TEST_H

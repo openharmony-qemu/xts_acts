@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import http from '@ohos.net.http';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
@@ -829,7 +829,7 @@ export default function HttpResponseExtraInfoTest() {
               } else {
                 console.info(`${caseName} Network connected`);
                 let httpRequest = http.createHttp();
-                httpRequest.request('https://www.microsoft.com')
+                httpRequest.request('https://httpbin.moyufangge.com/redirect/1')
                   .then((res: http.HttpResponse) => {
                     console.info(' success');
                     if (res?.connectionExtraInfo) {

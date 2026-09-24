@@ -17,7 +17,7 @@ import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
 import { rpc } from '@kit.IPCKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG } from '../common';
 
 const TAG = LOG_TAG + 'CreatePictureFromParcelTestSupp';

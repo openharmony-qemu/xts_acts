@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, beforeAll, Level } from '@ohos/hypium';
+import { describe, expect, it, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY,
   WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID, getPixelMap, PIXEL_MAP, getCurrentUserId,
   CURRENT_USER_ID, TEST_APP_INSTANCE, TEST_PERMISSION_MANAGED_STATE_GRANTED,
@@ -329,6 +329,9 @@ export default function securityManagerTest() {
 
     testInstallEnterpriseReSignatureCertificate();
     testUninstallEnterpriseReSignatureCertificate();
+
+    testSetDeviceSecurityLevelPolicy();
+    testGetDeviceSecurityLevelPolicy();
 
     testSetDisallowedPermission();
     testGetDisallowedPermissions();
@@ -1145,6 +1148,62 @@ function testGetWatermarkImageApps() {
       expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetDeviceSecurityLevelPolicy() {
+  /**
+   * @tc.name   test_set_device_security_level_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetDeviceSecurityLevelPolicy() {
+  /**
+   * @tc.name   test_get_device_security_level_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_SECURITY_LEVEL_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getDeviceSecurityLevelPolicy without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_device_security_level_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.getDeviceSecurityLevelPolicy();
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_device_security_level_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });

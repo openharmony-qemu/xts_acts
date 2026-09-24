@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function legacy_group_test() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_legacy", () => {
@@ -27,7 +27,7 @@ export default function legacy_group_test() {
      * @tc.level  LEVEL1
      */
     it("getloadavg", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("getloadavg");
+      const result: number = await testNapi.runTest("getloadavg");
       expect(result).assertEqual(0);
       done();
     });
@@ -40,7 +40,7 @@ export default function legacy_group_test() {
      * @tc.desc   libc-test daemon
      */
     it("daemon", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("daemon");
+      const result: number = await testNapi.runTest("daemon");
       expect(result).assertEqual(0);
       done();
     });
@@ -54,7 +54,7 @@ export default function legacy_group_test() {
      * @tc.desc   libc-test futimes
      */
     it("futimes", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("futimes");
+      const result: number = await testNapi.runTest("futimes");
       expect(result).assertEqual(0);
       done();
     });

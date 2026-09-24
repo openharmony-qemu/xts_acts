@@ -3,7 +3,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import napispecdiffbatch1ndktest from 'libnapispecdiffbatch1ndktest.so';
 
 interface ArkToolsApi {

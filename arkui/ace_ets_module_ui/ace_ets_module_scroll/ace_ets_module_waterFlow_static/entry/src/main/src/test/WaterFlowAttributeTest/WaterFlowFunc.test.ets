@@ -98,6 +98,7 @@ export default function WaterFlowFuncTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await Utils.sleep(1000);
         const wire = await driver.findComponent(ON.id('wfAttr_wire'));
         expect(!!wire).assertTrue();
         await (wire?.click() as Promise<void>);

@@ -14,7 +14,7 @@
  */
 import zlib from '@ohos.zlib'
 import fs from '@ohos.file.fs';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@kit.BasicServicesKit';
 
 

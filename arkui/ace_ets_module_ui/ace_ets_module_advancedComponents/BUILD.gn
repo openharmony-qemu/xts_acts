@@ -19,7 +19,6 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_advancedComponents_api12:ActsAceEtsModuleAdvancedComponentsApi12Test",
       "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest",
       "ace_ets_module_advancedComponents_api12_static:ActsAceEtsModuleAdvancedComponentsApi12StaticTest",
-      "ace_ets_module_counter:ActsAceEtsModuleCounterTest",
     ]
   } else {
     deps = [
@@ -40,8 +39,6 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_advance_chip_static:ActsAceEtsModuleAdvanceChipStaticTest",
       "ace_ets_module_segmentButton_nowear:ActsAceEtsModuleSegmentButtonNoWearTest",
       "ace_ets_module_segmentButton_static:ActsAceEtsModuleAdvancedSegmentButtonStaticTest",
-      "ace_ets_module_counter:ActsAceEtsModuleCounterTest",
-      "ace_ets_module_advance_counter_static:ActsAceEtsModuleAdvanceCounterStaticTest",
       "ace_ets_module_composeTitleBar_nowear:ActsAceEtsModuleComposeTitleBarNoWearTest",
       "ace_ets_module_composeTitleBarV2_nowear:ActsAceEtsModuleComposeTitleBarV2Test",
       "ace_ets_module_editableTitleBar_nowear:ActsAceEtsModuleEditableTitleBarNoWearTest",
@@ -63,6 +60,7 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_toolBarV2_nowear:ActsAceEtsModuleToolBarV2Test",
       "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest",
       "ace_ets_module_composeListItem_nowear:ActsAceEtsModuleComposeListItemNoWearTest",
+      "ace_ets_module_composeListItem_nowear_static:ActsAceEtsModuleComposeListItemNoWearStaticTest",
       "ace_ets_module_composeListItemV2_nowear:ActsAceEtsModuleComposeListItemV2Test",
       "ace_ets_module_composeListItemV2_nowear_static:ActsAceEtsModuleAdvancedComposeListItemV2NoWearStaticTest",
       "ace_ets_module_progressButton_nowear:ActsAceEtsModuleProgressButtonNoWearTest",

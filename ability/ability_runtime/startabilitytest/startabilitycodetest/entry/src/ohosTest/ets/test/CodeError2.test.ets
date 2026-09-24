@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { BusinessError, commonEventManager, systemParameterEnhance } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
 import { Driver, MatchPattern, ON } from '@kit.TestKit';

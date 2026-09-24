@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,6 +21,18 @@ export const OHDrawingCopyTypographyStyle: (caseName: number) => number;
 export const OHDrawingFontMgrTest: (caseName: number) => number;
 
 export const OHDrawingFontMgrMatchFamilyStyleCharacter: (caseName: number) => number;
+
+export const OHDrawingFontMgrMatchFamilyStyleCharacterWidth1: () => number;
+
+export const OHDrawingFontMgrMatchFamilyStyleCharacterWidth2: () => number;
+
+export const OHDrawingFontMgrMatchFamilyStyleCharacterWidth3: () => number;
+
+export const OHDrawingFontMgrMatchFamilyStyleCharacterWidth4: () => number;
+
+export const OHDrawingFontMgrMatchFamilyStyleCharacterWidth7: () => number;
+
+export const OHDrawingFontMgrMatchFamilyStyleCharacterWidth9: () => number;
 
 export const NativeFontTest_FontMeasureText: (caseName: number) => number;
 

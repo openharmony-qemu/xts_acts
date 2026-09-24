@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -36,6 +36,7 @@ export default function usbManagerTest() {
     testAddDisallowedPermissiveUsbDevices();
     testRemoveDisallowedPermissiveUsbDevices();
     testGetDisallowedPermissiveUsbDevices();
+    testGetUsbSerialNumber();
   })
 }
 
@@ -308,6 +309,29 @@ function testGetDisallowedPermissiveUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       usbManager.getDisallowedPermissiveUsbDevices(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetUsbSerialNumber() {
+  /**
+   * @tc.name   test_get_usb_serial_number_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager getUsbSerialNumber with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_usb_serial_number_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.getUsbSerialNumber(1, 1);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code === 201).assertTrue();

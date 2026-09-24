@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function errno_group_test() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_errno", () => {
@@ -27,7 +27,7 @@ export default function errno_group_test() {
      * @tc.level  LEVEL1
      */
     it("strerror", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("strerror");
+      const result: number = await testNapi.runTest("strerror");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function errno_group_test() {
      * @tc.level  LEVEL1
      */
     it("test_errno_location", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("__errno_location");
+      const result: number = await testNapi.runTest("__errno_location");
       expect(result).assertEqual(0);
       done();
     });

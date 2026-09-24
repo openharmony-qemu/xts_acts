@@ -15,7 +15,7 @@
 
 import common from '@ohos.app.ability.common';
 import { sendableImage } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { JSON } from '@kit.ArkTS';
 
 const TAG = 'ImageSendableImagecreateImageSource';

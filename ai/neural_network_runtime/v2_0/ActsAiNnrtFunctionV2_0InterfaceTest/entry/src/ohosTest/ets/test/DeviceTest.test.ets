@@ -14,7 +14,7 @@
  */
 
 import nnrt_function_v2_0_interface_test from 'libnnrt_function_v2_0_interface_test.so';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 
 export default function DeviceTest() {
   describe('DeviceTest', () => {

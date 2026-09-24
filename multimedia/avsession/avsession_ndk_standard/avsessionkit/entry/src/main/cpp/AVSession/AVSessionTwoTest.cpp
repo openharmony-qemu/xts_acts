@@ -451,9 +451,9 @@ napi_value AVSessionCreateAVCastControllerSuccess(napi_env env, napi_callback_in
     OH_AVSession_Destroy(avsession);
     napi_value retValue;
     if (getResult == AV_SESSION_ERR_SUCCESS) {
-        napi_create_int32(env, g_trueValue, &retValue);
-    } else {
         napi_create_int32(env, g_falseValue, &retValue);
+    } else {
+        napi_create_int32(env, g_trueValue, &retValue);
     }
     return retValue;
 }

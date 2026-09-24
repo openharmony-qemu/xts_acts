@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium"
+import { beforeEach, describe, expect, it , TestType, Size, Level } from "@ohos/hypium-dynamic"
 import Utils from './Utils'
 import fnmatchndk from 'libfnmatchndk32.so'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';

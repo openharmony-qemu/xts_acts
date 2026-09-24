@@ -18,6 +18,7 @@ import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { AVMusicTemplateUtil } from '../utils/AVMusicTemplateUtil.test';
 import { CommonUtils } from '../utils/CommonUtil.test';
+import { CommonConstants } from '../constants/CommonConstants.test';
 import { FakerDataUtil } from '../utils/FakerDataUtil.test';
 
 const TAG = 'avMusicTemplateControllerThrowsErrorTest';
@@ -3517,6 +3518,131 @@ export default function avMusicTemplateControllerThrowsErrorTest() {
         } catch (err) {
           CommonUtils.logError(TAG, "DESTROY_THROWS_ERROR_4700 catch err: " + CommonUtils.getError(err));
           expect(Number(err.code) !== 801).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4800
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4800
+     * @tc.desc   Testing send custom command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4800',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          });
+          await CommonUtils.msSleep();
+          const command = 'commandTest';
+          const args = 'argsTest';
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `4900: before off res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_STATIC_4900 catch err: " + CommonUtils.getError(err));
+          expect(err.code !== 801).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4900
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4900
+     * @tc.desc   Testing send custom command throws error 35000003 - Template listener not registered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4900',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          let testTemplate: avMusicTemplate.AVMusicTemplate = avMusicTemplate.createAVMusicTemplate(avMusicTemplate.AVMusicTemplateType.DEFAULT);
+          let descriptors: avMusicTemplate.AVMusicTemplateDescriptor[] = avMusicTemplate.getAllAVMusicTemplateDescriptors();
+          let sessionId = '';
+          for (let item of descriptors) {
+            if (item.bundleName === 'com.example.avmusictemplate') {
+              sessionId = item.sessionId;
+              break;
+            }
+          }
+          let testController: avMusicTemplate.AVMusicTemplateController = avMusicTemplate.createAVMusicTemplateController(sessionId);
+          await testTemplate.destroy();
+          let command = 'commandTest2';
+          const args = 'argsTest';
+          let res: avMusicTemplate.OperResult | undefined = await testController.sendCustomCommand(command, args);
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4900 should throw but succeeded ");
+          expect().assertFail();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_4900 catch err: " + CommonUtils.getError(err));
+          expect(err.code !== 35000003).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5000
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5000
+     * @tc.desc   Testing send custom command throws error 35000005 - AVMusicTemplate does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5000',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          });
+          await CommonUtils.msSleep();
+          const command = 'commandTest';
+          const args = 'argsTest';
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `5000: before off res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5000 catch err: " + CommonUtils.getError(err));
+          expect(err.code !== 35000005).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5100
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5100
+     * @tc.desc   Testing send custom command throws error 35000006 - AVMusicTemplateController does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5100',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          });
+          await CommonUtils.msSleep();
+          const command = 'commandTest';
+          const args = 'argsTest';
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `5100: before off res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SEND_CUSTOM_COMMAND_THROWS_ERROR_STATIC_5100 catch err: " + CommonUtils.getError(err));
+          expect(err.code).assertEqual(35000006);
           done();
         }
       })

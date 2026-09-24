@@ -16,11 +16,10 @@
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, afterEach } from '../../../../hypium/index';
 import { i18n } from '@kit.LocalizationKit';
 import display from '@ohos.display';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test'
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -29,11 +28,6 @@ import { BorderRadiuses } from '@ohos.arkui.component'
 
 export default function SegmentButtonBorderTest() {
   describe('SegmentButtonBorderTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentButtonBorderTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("SegmentButtonBorderTest beforeEach start");
@@ -56,7 +50,11 @@ export default function SegmentButtonBorderTest() {
       console.info("SegmentButtonBorderTest beforeEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info("SegmentButtonBorderTest afterEach sleep err: " + JSON.stringify(err));
+      }
       console.info("SegmentButtonBorderTest after each called");
     });
 
@@ -70,9 +68,17 @@ export default function SegmentButtonBorderTest() {
      */
 it('SegmentButtonBorderTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonBorderTest_static_001] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info("SegmentButtonBorderTest_static_001 sleep1 err: " + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info("SegmentButtonBorderTest_static_001 sleep2 err: " + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -83,7 +89,11 @@ it('SegmentButtonBorderTest_static_001', Level.LEVEL0, async (done: () => void):
         .getArray('$children')[0]
       console.info("[SegmentButtonBorderTest_static_001_1] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual('14.00vp');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info("SegmentButtonBorderTest_static_001 sleep3 err: " + JSON.stringify(err));
+      }
       let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -117,9 +127,17 @@ it('SegmentButtonBorderTest_static_001', Level.LEVEL0, async (done: () => void):
      */
 it('SegmentButtonBorderTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonBorderTest_static_002] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info("SegmentButtonBorderTest_static_002 sleep1 err: " + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info("SegmentButtonBorderTest_static_002 sleep2 err: " + JSON.stringify(err));
+      }
       let obj3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[0]
@@ -130,7 +148,11 @@ it('SegmentButtonBorderTest_static_002', Level.LEVEL0, async (done: () => void):
         .getArray('$children')[0]
       console.info("[SegmentButtonBorderTest_static_002_1] component obj is: " + JSON.stringify(obj3));
       expect(obj3.getElement('$attrs').getString('borderRadius')).assertEqual('20.00vp');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info("SegmentButtonBorderTest_static_002 sleep3 err: " + JSON.stringify(err));
+      }
       let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray('$children')[0]
         .getArray('$children')[0]

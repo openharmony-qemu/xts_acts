@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { notificationExtensionSubscription, notificationManager } from '@kit.NotificationKit';
@@ -24,9 +24,9 @@ let context: common.UIAbilityContext;
 export default function ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest() {
   describe('ActsNotificationAnsThreePartyWatchNoSystemNoPermissionTest', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.setNotificationEnable({
-        bundle: "com.example.actsnotificationansthreepartywatchnosystemnopermissiontest"
+        bundle: 'com.example.actsnotificationansthreepartywatchnosystemnopermissiontest'
       }, true)
     })
     beforeEach(() => {

@@ -29,6 +29,7 @@ add_library(swdecoder_test SHARED
     ActsApiTest.cpp
     ActsStateTest.cpp
     SecurecTest.cpp
+    JsonWrapper.cpp
     VideodecApi11SampleTest.cpp
     VideodecNdkSampleTest.cpp
 )
@@ -44,4 +45,5 @@ target_link_libraries(swdecoder_test PUBLIC
     libnative_media_vdec.so
     libnative_window.so
     libnative_image.so
+    libohcrypto.so
 )

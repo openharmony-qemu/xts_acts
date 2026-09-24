@@ -12,10 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium-dynamic";
 import testNapi from 'libimageEffect.so'
 import { common } from "@kit.AbilityKit";
 import fileio from '@ohos.fileio'
+import image from "@ohos.multimedia.image";
 
 const CASE_INDEX_1 = 1;
 const CASE_INDEX_2 = 2;
@@ -25,6 +26,8 @@ const CASE_INDEX_5 = 5;
 const CASE_INDEX_6 = 6;
 const TAG = 'ImageNdk.ImageReceiverNativeTest'
 let fdNumber: number;
+let isSupportAVIF: Boolean;
+
 async function getFd(path: string) {
   let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let basePath = context.filesDir;
@@ -43,6 +46,8 @@ export default function ImageReceiverNativeTest() {
   describe('ImageReceiverNativeTest', () => {
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case');
+      isSupportAVIF = image.getImageSourceSupportedFormats().includes("image/avif");
+      console.info(TAG, ' isSupportAVIF is ' + isSupportAVIF);
     });
 
     beforeEach(() => {
@@ -208,6 +213,10 @@ export default function ImageReceiverNativeTest() {
      * @tc.level     Level 0
      */
     it("SUB_IMAGE_RICEIVER_NATIVE_TEST_011", Level.LEVEL0, async () => {
+      if (!isSupportAVIF) {
+        console.info("device does not support avif");
+        return;
+      }
       console.info(TAG, 'Start');
       await getFd('4K-2160x3840.avif');
       let result: number = testNapi.CreatePixelmapUsingAllocatorTest(CASE_INDEX_4,fdNumber);
@@ -223,6 +232,10 @@ export default function ImageReceiverNativeTest() {
      * @tc.level     Level 0
      */
     it("SUB_IMAGE_RICEIVER_NATIVE_TEST_012", Level.LEVEL0, async () => {
+      if (!isSupportAVIF) {
+        console.info("device does not support avif");
+        return;
+      }
       console.info(TAG, 'Start');
       await getFd('4K-2160x3840.avif');
       let result: number = testNapi.ImageSourceNativeCreatePictureTest(CASE_INDEX_1,fdNumber);

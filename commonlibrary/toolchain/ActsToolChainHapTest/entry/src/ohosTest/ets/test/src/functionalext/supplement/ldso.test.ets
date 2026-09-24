@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextSupplementLdsoTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_ldso", () => {
@@ -27,7 +27,7 @@ export default function FunctionalextSupplementLdsoTestGroupTest() {
      * @tc.desc   libc-test dl_iterate_phdr
      */
     it("dl_iterate_phdr", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("dl_iterate_phdr");
+      const result: number = await testNapi.runTest("dl_iterate_phdr");
       expect(result).assertEqual(0);
       done();
     });

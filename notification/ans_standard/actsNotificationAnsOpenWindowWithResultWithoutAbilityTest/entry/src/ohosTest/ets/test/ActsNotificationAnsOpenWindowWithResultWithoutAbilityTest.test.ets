@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { notificationExtensionSubscription } from '@kit.NotificationKit';
 import common from '@ohos.app.ability.common';
@@ -24,7 +24,7 @@ let ctx = getContext(this) as common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }

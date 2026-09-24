@@ -57,7 +57,7 @@ export default class AppService extends AppServiceExtensionAbility {
   async onRequest(want: Want, startId: number) {
     hilog.info(0x0000, TAG, `AppService onRequest, want: ${JSON.stringify(want)}, startId: ${startId}`);
     let eventName: string;
-    if (want.parameters?.case === '0600') {
+    if (want.parameters!.case === '0600') {
       eventName = 'connectServiceExtensionAbility_0600';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       let options: common.ConnectOptions = {
@@ -92,7 +92,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connect or disconnectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if(want.parameters?.case === '0700') {
+    } else if(want.parameters!.case === '0700') {
       eventName = 'connectServiceExtensionAbility_0700';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       let options: common.ConnectOptions = {
@@ -118,7 +118,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if(want.parameters?.case === '0800') {
+    } else if(want.parameters!.case === '0800') {
       eventName = 'connectServiceExtensionAbility_0800';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       try {
@@ -132,7 +132,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if(want.parameters?.case === '3200') {
+    } else if(want.parameters!.case === '3200') {
       eventName = 'connectServiceExtensionAbility_3200';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       let options: common.ConnectOptions = {
@@ -158,7 +158,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if(want.parameters?.case === '3300') {
+    } else if(want.parameters!.case === '3300') {
       eventName = 'connectServiceExtensionAbility_3300';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       let options: common.ConnectOptions = {
@@ -184,7 +184,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if(want.parameters?.case === '3400') {
+    } else if(want.parameters!.case === '3400') {
       eventName = 'connectServiceExtensionAbility_3400';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       let options: common.ConnectOptions = {
@@ -213,7 +213,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if (want.parameters?.case === '5100') {
+    } else if (want.parameters!.case === '5100') {
       eventName = 'connectServiceExtensionAbility_5100';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       try {
@@ -223,7 +223,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if (want.parameters?.case === '5200') {
+    } else if (want.parameters!.case === '5200') {
       eventName = 'connectServiceExtensionAbility_5200';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       try {
@@ -233,7 +233,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if (want.parameters?.case === '5400') {
+    } else if (want.parameters!.case === '5400') {
       eventName = 'connectServiceExtensionAbility_5400';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       let wantInfo: Want = {
@@ -247,7 +247,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if (want.parameters?.case === '5500') {
+    } else if (want.parameters!.case === '5500') {
       eventName = 'connectServiceExtensionAbility_5500';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       let wantInfo: Want = {
@@ -261,7 +261,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} connectServiceExtensionAbility error: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if (want.parameters?.case === '5600') {
+    } else if (want.parameters!.case === '5600') {
       eventName = 'disconnectServiceExtensionAbility_5600';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       try {
@@ -275,7 +275,7 @@ export default class AppService extends AppServiceExtensionAbility {
         hilog.info(0x0000, TAG, `${eventName} disconnectServiceExtensionAbility failed: ${JSON.stringify(error)}`);
         publishEvent(eventName, error?.code);
       }
-    } else if (want.parameters?.case === '5700') {
+    } else if (want.parameters!.case === '5700') {
       eventName = 'disconnectServiceExtensionAbility_5700';
       hilog.info(0x0000, TAG, `${eventName} Begin`);
       try {

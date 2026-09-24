@@ -15,29 +15,15 @@
  */
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
-import hilog from '@ohos.hilog';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function gradientHeight() {
   describe('gradientHeight', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("gradientHeight beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-
-      console.info("gradientHeight beforeAll end");
-    });
 
     beforeEach(async () => {
       let options: router.RouterOptions = {
@@ -51,7 +37,7 @@ export default function gradientHeight() {
         if (!("gradientHeight" == pages.name)) {
           console.info("get gradientHeight state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await Utils.sleep(2000);
+          await Utils.sleep(1000);
         }
       } catch (err) {
         console.error("push gradientHeight page error: " + err);

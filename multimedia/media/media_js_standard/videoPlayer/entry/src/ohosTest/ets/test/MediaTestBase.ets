@@ -14,7 +14,7 @@
  */
 
 import resourceManager from '@ohos.resourceManager';
-import { expect } from '@ohos/hypium'
+import { expect } from '@ohos/hypium-dynamic'
 import router, { RouterOptions } from '@system.router'
 import fs from '@ohos.file.fs';
 import fileio from '@ohos.fileio'

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import connection from "@ohos.net.connection";
 import socket from '@ohos.net.socket';
@@ -1006,7 +1006,9 @@ export default function httpJsunit() {
           console.info(`${caseName}---End`);
           done();
         }).catch((err:BusinessError) => {
+
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1035,6 +1037,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1063,6 +1066,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1091,6 +1095,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });

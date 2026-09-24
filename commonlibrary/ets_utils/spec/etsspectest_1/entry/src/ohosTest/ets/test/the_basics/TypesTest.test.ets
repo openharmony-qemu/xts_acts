@@ -14,7 +14,7 @@
  */
 import {
   describe, expect, it, Level, Size, TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import {
   assertArrayRuntimeType,
   assertArrayTypeofMethods,

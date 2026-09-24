@@ -1245,7 +1245,7 @@ export default function mapKeysPart01TestTest(): void {
         expect(r.done).assertFalse();
         expect().assertFail();
       } catch (e) {
-        expect((e as Error).name).assertEqual('ArrayIndexOutOfBoundsError');
+        expect((e as Error).name).assertEqual('OutOfMemoryError');
       }
     });
 

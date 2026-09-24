@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import image from '@ohos.multimedia.image';
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { photoKeys, fetchOption, getFileAsset, getPermission, driveFn, sleep, pushCreateAsset, createMovingPhoto, albumSubtype, albumType } from '../common'
 import common from '@ohos.app.ability.common';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';

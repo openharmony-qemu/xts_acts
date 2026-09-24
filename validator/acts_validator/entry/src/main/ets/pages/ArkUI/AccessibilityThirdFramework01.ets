@@ -23,7 +23,9 @@ struct AccessibilityThirdFramework {
     '\n' +
     '预期结果：\n' +
     '若支持屏幕朗读，则下滑期间绿框会在两个灰色区域中绘制。若不支持屏幕朗读，直接按照失败处理走豁免。';
-  @State Vue: boolean = true;
+  @State vueStatus: boolean = false;
+  @State step1: boolean = false;
+  @State step2: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -43,8 +45,8 @@ struct AccessibilityThirdFramework {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
+    if (this.vueStatus == false) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -58,7 +60,7 @@ struct AccessibilityThirdFramework {
 
       })
     } else {
-      Button({ stateEffect: this.Vue }) {
+      Button({ stateEffect: this.vueStatus }) {
         Image($r('app.media.ic_public_pass'))
           .width('20vp')
           .height('20vp')
@@ -111,9 +113,8 @@ struct AccessibilityThirdFramework {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.text1 === 'HOVER_ENTER' && this.text2 === 'HOVER_MOVE' && this.text3 === 'HOVER_EXIT' &&
-        this.text4 === 'HOVER_CANCEL') {
-        this.Vue = true;
+      if (this.step1 && this.step2) {
+        this.vueStatus = true;
       }
     }, 500)
   }
@@ -161,6 +162,7 @@ struct AccessibilityThirdFramework {
         // 业务代码
         Column() {
           Button('SubWnd').onClick(() => {
+            this.step1 = true
             this.mainWindow?.createSubWindowWithOptions('Modal',
               { title: 'SubWindow', decorEnabled: true, isModal: true });
           })
@@ -197,6 +199,9 @@ struct AccessibilityThirdFramework {
             .height('30%')
 
           Button('end')
+            .onClick(() => {
+              this.step2 = true
+            })
         }
         .focusable(true)
         .defaultFocus(true)

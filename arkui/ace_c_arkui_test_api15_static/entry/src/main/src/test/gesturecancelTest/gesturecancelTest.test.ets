@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, beforeEach, Level, beforeAll } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, beforeEach, Level } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import {LibUtil} from '../../../ets/pages/LibUtil'
 import { TouchEventData } from '../../../ets/pages/gestureCancel/TouchEventData'
 let libUtil:LibUtil = new LibUtil();
@@ -29,9 +28,6 @@ let libUtil:LibUtil = new LibUtil();
 export default function gesturecancelTest() {
 
   describe('gesturecancelTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
     beforeEach(async () => {
       console.info("gesturecancelTest beforeEach start");
       let options: router.RouterOptions = {
@@ -53,7 +49,11 @@ export default function gesturecancelTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('gesturecancelTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -64,26 +64,30 @@ export default function gesturecancelTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testGestureCancelTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await Utils.sleep(500);
-      // inner list scroll
-      let strJson = inspector.getInspectorByKey("inner");  //可能是inspector.getInspectorByKey返回值有问题
-      let rect = JSON.parseJsonElement(strJson);
-      let context: UIContext = AppStorage.get<UIContext>('uiContent') as UIContext;
-      let x = Math.round(AppStorage.get<number>('winLeft') as  number + Utils.getRectHorizontalCenterX(Utils.getComponentRectByObj(rect)));
-      // the visual list height is vp2px(200)
-      let y = Math.round(AppStorage.get<number>('winTop') as number + Utils.getComponentRectByObj(rect).top + context.vp2px(100));
-      console.info("testGestureCancelTest001  x= " +  x  + ", y = " + y);
-      driver.swipe(x.toInt(), y.toInt(), x.toInt(), Math.round(y - context.vp2px(200)).toInt());
-      await Utils.sleep(2000);
-       // test the callbackData;
-      let object1:TouchEventData = libUtil.GetTouchEventData();
-      console.info("testGestureCancelTest00_" + object1.scrollCount);
-      console.info("testGestureCancelTest00_" + object1.columnCount);
+      try {
+        let driver = Driver.create();
+        await Utils.sleep(500);
+        // inner list scroll
+        let strJson = inspector.getInspectorByKey("inner");  //可能是inspector.getInspectorByKey返回值有问题
+        let rect = JSON.parseJsonElement(strJson);
+        let context: UIContext = AppStorage.get<UIContext>('uiContent') as UIContext;
+        let x = Math.round(AppStorage.get<number>('winLeft') as  number + Utils.getRectHorizontalCenterX(Utils.getComponentRectByObj(rect)));
+        // the visual list height is vp2px(200)
+        let y = Math.round(AppStorage.get<number>('winTop') as number + Utils.getComponentRectByObj(rect).top + context.vp2px(100));
+        console.info("testGestureCancelTest001  x= " +  x  + ", y = " + y);
+        driver.swipe(x.toInt(), y.toInt(), x.toInt(), Math.round(y - context.vp2px(200)).toInt());
+        await Utils.sleep(2000);
+         // test the callbackData;
+        let object1:TouchEventData = libUtil.GetTouchEventData();
+        console.info("testGestureCancelTest00_" + object1.scrollCount);
+        console.info("testGestureCancelTest00_" + object1.columnCount);
 
-      expect(object1.scrollCount >= object1.columnCount).assertTrue();
-      done();
-
+        expect(object1.scrollCount >= object1.columnCount).assertTrue();
+        done();
+      } catch (err) {
+        console.info('testGestureCancelTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
   })

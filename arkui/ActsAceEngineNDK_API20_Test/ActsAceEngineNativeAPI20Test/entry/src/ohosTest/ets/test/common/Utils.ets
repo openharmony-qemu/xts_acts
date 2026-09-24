@@ -20,7 +20,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import fs from '@ohos.file.fs';
 import router from '@ohos.router';
 import RectValue from './Rect';
-import { expect, it } from '@ohos/hypium';
+import { expect, it } from '@ohos/hypium-dynamic';
 
 const KEY_CODE_EVENT_OK = 1;
 const KEY_CODE_EVENT_ERROR = 0;

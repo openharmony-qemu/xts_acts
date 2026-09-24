@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from "@ohos.UiTest"
 import window from '@ohos.window';
@@ -40,7 +40,6 @@ export default function extensionWindowPropertiesTest() {
       windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       let mainWindow = windowStage.getMainWindowSync();
       mainWindow.resizeAsync(1500, 1000);
-      mainWindow.moveWindowToAsync(1200, 200);
       isFreeWindowMode = mainWindow.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
@@ -1657,6 +1656,7 @@ export default function extensionWindowPropertiesTest() {
       try {
         const callback = (data: boolean) => { };
         subWindowClass.on("uiExtensionSecureLimitChange", callback);
+        subWindowClass.off("uiExtensionSecureLimitChange");
         expect().assertFail();
         done()
       } catch (error) {

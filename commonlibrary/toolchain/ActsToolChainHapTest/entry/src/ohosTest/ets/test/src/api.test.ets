@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function api_group_test() {
   describe("ActsToolChainHapTest_src_api", () => {
@@ -27,7 +27,7 @@ export default function api_group_test() {
      * @tc.level  LEVEL1
      */
     it("main", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("main");
+      const result: number = await testNapi.runTest("main");
       expect(result).assertEqual(0);
       done();
     });

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { notificationSubscribe } from '@kit.NotificationKit';
 
@@ -40,7 +40,7 @@ export default function ActsNotificationAnsSubscribeNotificationTest() {
       };
       try {
         await notificationSubscribe.subscribeNotification(subscriber).then(() => {
-          console.info(testNum + "subscribeNotification success");
+          console.info(testNum + 'subscribeNotification success');
           expect().assertFail()
           done()
         }).catch((err: BusinessError) => {
@@ -81,7 +81,7 @@ export default function ActsNotificationAnsSubscribeNotificationTest() {
       }
       try {
         await notificationSubscribe.subscribeNotification(subscriber, subscribeInfo).then(() => {
-          console.info(testNum + "subscribeNotification success");
+          console.info(testNum + 'subscribeNotification success');
           expect().assertFail()
           done()
         }).catch((err: BusinessError) => {

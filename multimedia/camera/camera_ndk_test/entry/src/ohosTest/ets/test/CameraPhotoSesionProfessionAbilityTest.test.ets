@@ -16,7 +16,7 @@ import cameraObj from 'libentry.so';
 import { cameraInfo } from 'libentry.so';
 import image from '@ohos.multimedia.image';
 import deviceInfo from '@ohos.deviceInfo';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import fs from '@ohos.file.fs';
 import featureAbility from '@ohos.ability.featureAbility'
 import { Camera_PreconfigType, Camera_SceneMode, Parameter_Setting, GlobalThis } from './Constants';
@@ -821,6 +821,26 @@ export default function CameraPhotoSesionProfessionAbilityTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0400 ret is "+ret);
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG)
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0400 ends here");
+      await releaseCameraSessionInstance();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500
+     * @tc.desc   Check capture session Get ISO  when the second param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500--------------");
+      createCameraSessionInstance();
+      await startCameraSession();
+      let ret = cameraObj.oHgetIso(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500 ret is "+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT)
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_SESSION_GET_ISO_0500 ends here");
+      await stopCameraSession();
       await releaseCameraSessionInstance();
     });
 

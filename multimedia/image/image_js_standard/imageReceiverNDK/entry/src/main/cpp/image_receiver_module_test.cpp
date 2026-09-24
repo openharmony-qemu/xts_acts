@@ -188,7 +188,13 @@ Image_ErrorCode ImageReceiverModuleTest::VerifyImageReceiver()
         return ret;
     }
     LOG("Image Receiver size = %{public}dx%{public}d.", size.width, size.height);
-    if (size.width != width_ || size.height != height_) {
+    if (size.width != width_) {
+        LOG("Get Image Receiver options size value is wrong: "
+            "expect(%{public}dx%{public}d) actual(%{public}dx%{public}d).",
+            width_, height_, size.width, size.height);
+        return IMAGE_BAD_PARAMETER;
+    }
+    if (size.height != height_) {
         LOG("Get Image Receiver options size value is wrong: "
             "expect(%{public}dx%{public}d) actual(%{public}dx%{public}d).",
             width_, height_, size.width, size.height);
@@ -231,9 +237,13 @@ Image_ErrorCode ImageReceiverModuleTest::DumpImageInfo(OH_ImageNative *image)
     Image_Size size = { 0 };
     std::vector<uint32_t> types;
 
-    if (GetImageSize(image, &size) != IMAGE_SUCCESS ||
-        GetImageComponentTypes(image, &types) != IMAGE_SUCCESS) {
-        LOG("Get Image property failed");
+    if (GetImageSize(image, &size) != IMAGE_SUCCESS) {
+        LOG("Get Image size failed");
+        return IMAGE_BAD_PARAMETER;
+    }
+
+    if (GetImageComponentTypes(image, &types) != IMAGE_SUCCESS) {
+        LOG("Get Image component types failed");
         return IMAGE_BAD_PARAMETER;
     }
 
@@ -244,10 +254,19 @@ Image_ErrorCode ImageReceiverModuleTest::DumpImageInfo(OH_ImageNative *image)
         size_t bufferSize = 0;
         int32_t rowStride = 0;
         int32_t pixelStride = 0;
-        if (GetImageByteBuffer(image, types[i], &nativeBuffer) != IMAGE_SUCCESS ||
-            GetImageBufferSize(image, types[i], &bufferSize) != IMAGE_SUCCESS ||
-            GetImageRowStride(image, types[i], &rowStride) != IMAGE_SUCCESS ||
-            GetImagePixelStride(image, types[i], &pixelStride) != IMAGE_SUCCESS) {
+        if (GetImageByteBuffer(image, types[i], &nativeBuffer) != IMAGE_SUCCESS) {
+            LOG("Get Image property failed.");
+            return IMAGE_BAD_PARAMETER;
+        }
+        if (GetImageBufferSize(image, types[i], &bufferSize) != IMAGE_SUCCESS) {
+            LOG("Get Image property failed.");
+            return IMAGE_BAD_PARAMETER;
+        }
+        if (GetImageRowStride(image, types[i], &rowStride) != IMAGE_SUCCESS) {
+            LOG("Get Image property failed.");
+            return IMAGE_BAD_PARAMETER;
+        }
+        if (GetImagePixelStride(image, types[i], &pixelStride) != IMAGE_SUCCESS) {
             LOG("Get Image property failed.");
             return IMAGE_BAD_PARAMETER;
         }
@@ -293,7 +312,13 @@ Image_ErrorCode ImageReceiverModuleTest::VerifyImageReceiverOptions(OH_ImageRece
         return ret;
     }
     LOG("Image Receiver options size = %{public}dx%{public}d.", size.width, size.height);
-    if (size.width != width_ || size.height != height_) {
+    if (size.width != width_) {
+        LOG("Get Image Receiver options size value is wrong: "
+            "expect(%{public}dx%{public}d) actual(%{public}dx%{public}d).",
+            width_, height_, size.width, size.height);
+        return IMAGE_BAD_PARAMETER;
+    }
+    if (size.height != height_) {
         LOG("Get Image Receiver options size value is wrong: "
             "expect(%{public}dx%{public}d) actual(%{public}dx%{public}d).",
             width_, height_, size.width, size.height);

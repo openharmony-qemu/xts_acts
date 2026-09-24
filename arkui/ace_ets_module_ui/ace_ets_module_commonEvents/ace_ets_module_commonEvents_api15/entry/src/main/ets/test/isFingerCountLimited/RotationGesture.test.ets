@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -75,7 +75,7 @@ export default function rotationGestureTest() {
       pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) });
       pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) });
       try {
-        await driver.injectMultiPointerAction(pointers,1200);
+        await driver.injectMultiPointerAction(pointers,2400);
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error('RotationGesture after each error: ' + err);
@@ -128,7 +128,7 @@ export default function rotationGestureTest() {
       pointers.setPoint(2,0,{x: Math.round(areaObj1.left + areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) });
       pointers.setPoint(2,1,{x: Math.round(areaObj1.right - areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) });
       try {
-        await driver.injectMultiPointerAction(pointers,1200);
+        await driver.injectMultiPointerAction(pointers,2400);
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error('RotationGesture after each error: ' + err);

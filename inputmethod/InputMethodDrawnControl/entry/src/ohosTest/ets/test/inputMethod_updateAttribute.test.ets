@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import inputMethod from '@ohos.inputMethod';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import * as env from './lib/Const';
 import { BusinessError } from '@ohos.base'
 
@@ -73,7 +73,7 @@ export default function inputMethodTest() {
       async () => {
         try {
           await inputMethod.getController().detach();
-          console.info(`clsoe inputMethod success}`);
+          console.info(`clsoe inputMethod success`);
         } catch (error) {
           console.info(`clsoe inputMethod fial, error: [${error.code}, ${error.message}]`);
         }
@@ -489,6 +489,52 @@ export default function inputMethodTest() {
     });
 
     /**
+     * @tc.name   Sub_InputMethod_IMF_updateAttributePromise_1700
+     * @tc.number SUB_InputMethod_IMF_updateAttributePromise_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_updateAttributePromise_1700', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_updateAttributePromise_1700';
+      try {
+        await inputMethod.getController().updateAttribute({
+          textInputType: 14, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+        });
+        console.info(`${CASE_NAME} execution success`);
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_updateAttributePromise_1800
+     * @tc.number SUB_InputMethod_IMF_updateAttributePromise_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_updateAttributePromise_1800', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_updateAttributePromise_1800';
+      try {
+        await inputMethod.getController().updateAttribute({
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: 9
+        });
+        console.info(`${CASE_NAME} execution success`);
+        done();
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   Sub_InputMethod_IMF_updateAttributeCallback_0300
      * @tc.number Sub_InputMethod_IMF_updateAttributeCallback_0300
      * @tc.desc   Function test
@@ -844,6 +890,58 @@ export default function inputMethodTest() {
       try {
         inputMethod.getController().updateAttribute({
           textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+        }, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_updateAttributeCallback_1700
+     * @tc.number SUB_InputMethod_IMF_updateAttributeCallback_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_updateAttributeCallback_1700', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_updateAttributeCallback_1700';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+        console.info(`${CASE_NAME} CallBack success, error: ${error}`);
+        expect(error).assertEqual(undefined);
+        done();
+      };
+      try {
+        inputMethod.getController().updateAttribute({
+          textInputType: 14, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+        }, CallBack);
+      } catch (error) {
+        console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_updateAttributeCallback_1800
+     * @tc.number SUB_InputMethod_IMF_updateAttributeCallback_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_updateAttributeCallback_1800', Level.LEVEL3, async (done: Function) => {
+      const CASE_NAME = '====>Sub_InputMethod_IMF_updateAttributeCallback_1800';
+      let CallBack = (error: BusinessError, data: ESObject) => {
+        console.info(`${CASE_NAME} CallBack success, error: ${error}`);
+        expect(error).assertEqual(undefined);
+        done();
+      };
+      try {
+        inputMethod.getController().updateAttribute({
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: 9
         }, CallBack);
       } catch (error) {
         console.info(`${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);

@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
@@ -43,11 +41,6 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function ContextMenuOptionsTest(): void {
   describe('ContextMenuOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ContextMenuOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("ContextMenuOptionsTest beforeEach start");
       let options: router.RouterOptions = {
@@ -69,8 +62,12 @@ export default function ContextMenuOptionsTest(): void {
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
-      console.info("ContextMenuOptionsTest after each called");
+      try {
+        await Utils.sleep(SLEEP_TIME);
+        console.info("ContextMenuOptionsTest after each called");
+      } catch (err) {
+        console.info('ContextMenuOptions afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -86,6 +83,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuMask'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMask'));
@@ -123,6 +121,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuModalMode'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuModalMode'));
@@ -160,6 +159,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuPreviewScaleMode'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuPreviewScaleMode'));
@@ -197,6 +197,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuAvailableLayoutArea'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuAvailableLayoutArea'));
@@ -234,6 +235,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuAnchorPosition'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuAnchorPosition'));
@@ -271,6 +273,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuKeyboardAvoidMode'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuKeyboardAvoidMode'));
@@ -308,6 +311,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuMinKeyboardAvoidDistance'));
         expect(!!button).assertEqual(true);
         let buttonNode = JSON.parseJsonElement(inspector.getInspectorByKey('btnContextMenuMinKeyboardAvoidDistance'));
@@ -345,6 +349,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
         if(button){
@@ -379,6 +384,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
         if(button){
@@ -413,6 +419,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
         if(button){
@@ -447,6 +454,7 @@ export default function ContextMenuOptionsTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const button = await driver.findComponent(ON.id('btnContextMenuLifecycle'));
         expect(!!button).assertEqual(true);
         if(button){

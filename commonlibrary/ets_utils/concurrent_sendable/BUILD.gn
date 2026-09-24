@@ -24,7 +24,21 @@ group("concurrent_sendable") {
       "sendable_collections:ActsSendableCollectionsTest",
       "collections_array:ActsCollectionsArrayTest",
       "collections_map:ActsCollectionsMapTest",
-      "collections_set:ActsCollectionsSetTest"
+      "collections_set:ActsCollectionsSetTest",
+      "collections_bitvector:ActsCollectionsBitVectorTest",
+      "ArkTSUtils_ASON:ActsArkTSUtilsASONTest",
+      "ArkTSUtils_SendableLruCache:ActsArkTSUtilsSendableLruCacheTest",
+      "ArkTSUtils_ConditionVariable:ActsArkTSUtilsConditionVariableTest",
+      "ArkTSUtils_AsyncLock:ActsArkTSUtilsAsyncLockTest",
+      "collections_Int8Array:ActsCollectionsInt8ArrayTest",
+      "collections_Uint8Array:ActsCollectionsUint8ArrayTest",
+      "collections_Uint8ClampedArray:ActsCollectionsUint8ClampedArrayTest",
+      "collections_Int16Array:ActsCollectionsInt16ArrayTest",
+      "collections_Uint16Array:ActsCollectionsUint16ArrayTest",
+      "collections_Int32Array:ActsCollectionsInt32ArrayTest",
+      "collections_Uint32Array:ActsCollectionsUint32ArrayTest",
+      "collections_Float32Array:ActsCollectionsFloat32ArrayTest",
+      "collections_ArrayBuffer:ActsCollectionsArrayBufferTest"
     ]
   }
 }

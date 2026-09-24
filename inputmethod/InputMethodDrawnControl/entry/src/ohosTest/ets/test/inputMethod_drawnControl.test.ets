@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import commoneventmanager from '@ohos.commonEventManager';
 import inputMethod from '@ohos.inputMethod';
 import deviceinfo from '@ohos.deviceInfo';
@@ -1732,13 +1732,16 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      let onInsertTextCallback: Callback<string> = (text: string): void => {
+        console.info(`====>Succeeded in subscribing insertText: ${text}`);
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_insertText_Async_0300 insertText start');
         // only call twice off() success
-        inputMethod.getController().off('insertText');
-        inputMethod.getController().off('insertText');
+        inputMethod.getController().off('insertText', onInsertTextCallback);
+        inputMethod.getController().off('insertText', onInsertTextCallback);
         await inputMethod.getController().detach();
         expect(true).assertTrue();
         console.info('====>SUB_Misc_inputMethod_on_off_insertText_Async_0300 insertText call twice off success');
@@ -1881,13 +1884,16 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      let onDeleteLeftCallback: Callback<number> = (length: number): void => {
+        console.info(`====>Succeeded in subscribing deleteLeft, length: ${length}`);
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_deleteLeft_Async_0300 deleteLeft start');
         // only call twice off() success
-        inputMethod.getController().off('deleteLeft');
-        inputMethod.getController().off('deleteLeft');
+        inputMethod.getController().off('deleteLeft', onDeleteLeftCallback);
+        inputMethod.getController().off('deleteLeft', onDeleteLeftCallback);
         await inputMethod.getController().detach();
         expect(true).assertTrue();
         console.info('====>SUB_Misc_inputMethod_on_off_deleteLeft_Async_0300 deleteLeft call twice off success');
@@ -2030,13 +2036,16 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      let onDeleteRightCallback: Callback<number> = (length: number): void => {
+        console.info(`====>Succeeded in subscribing deleteRight, length: ${length}`);
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_deleteRight_Async_0300 deleteRight start');
         // only call twice off() success
-        inputMethod.getController().off('deleteRight');
-        inputMethod.getController().off('deleteRight');
+        inputMethod.getController().off('deleteRight', onDeleteRightCallback);
+        inputMethod.getController().off('deleteRight', onDeleteRightCallback);
         await inputMethod.getController().detach();
         expect(true).assertTrue();
         console.info('====>SUB_Misc_inputMethod_on_off_deleteRight_Async_0300 deleteRight call twice off success');
@@ -2159,13 +2168,16 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      let onSendKeyboardStatus: Callback<inputMethod.KeyboardStatus> = (keyboardStatus: inputMethod.KeyboardStatus): void => {
+        console.info(`====>Succeeded in subscribing sendKeyboardStatus, keyboardStatus: ${keyboardStatus}`);
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0300 sendKeyboardStatus start');
         // only call twice off() success
-        inputMethod.getController().off('sendKeyboardStatus');
-        inputMethod.getController().off('sendKeyboardStatus');
+        inputMethod.getController().off('sendKeyboardStatus', onSendKeyboardStatus);
+        inputMethod.getController().off('sendKeyboardStatus', onSendKeyboardStatus);
         await inputMethod.getController().detach();
         expect(true).assertTrue();
         console.info('====>SUB_Misc_inputMethod_on_off_sendKeyboardStatus_Async_0300 sendKeyboardStatus call twice off success');
@@ -2308,13 +2320,16 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      let onSendFunctionKey: Callback<inputMethod.FunctionKey> = (functionKey: inputMethod.FunctionKey): void => {
+        console.info(`====>Succeeded in subscribing sendFunctionKey, functionKey: ${functionKey.enterKeyType}`);
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0300 sendFunctionKey start');
         // only call twice off() success
-        inputMethod.getController().off('sendFunctionKey');
-        inputMethod.getController().off('sendFunctionKey');
+        inputMethod.getController().off('sendFunctionKey', onSendFunctionKey);
+        inputMethod.getController().off('sendFunctionKey', onSendFunctionKey);
         await inputMethod.getController().detach();
         expect(true).assertTrue();
         console.info('====>SUB_Misc_inputMethod_on_off_sendFunctionKey_Async_0300 sendFunctionKey call twice off success');
@@ -2457,13 +2472,16 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      let onMoveCursorCallback: Callback<inputMethod.Direction> = (direction: inputMethod.Direction): void => {
+        console.info(`====>Succeeded in subscribing moveCursor, direction: ${direction}`);
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_moveCursor_Async_0300 moveCursor start');
         // only call twice off() success
-        inputMethod.getController().off('moveCursor');
-        inputMethod.getController().off('moveCursor');
+        inputMethod.getController().off('moveCursor', onMoveCursorCallback);
+        inputMethod.getController().off('moveCursor', onMoveCursorCallback);
         await inputMethod.getController().detach();
         expect(true).assertTrue();
         console.info('====>SUB_Misc_inputMethod_on_off_moveCursor_Async_0300 moveCursor call twice off success');
@@ -2606,13 +2624,16 @@ export default function inputMethodDrawnControlJSUnit() {
         inputAttribute: {
           textInputType: 0, enterKeyType: 0
         }
-      }
+      };
+      let onHandleExtendActionCallback: Callback<inputMethod.ExtendAction> = (action: inputMethod.ExtendAction): void => {
+        console.info(`====>Succeeded in subscribing handleExtendAction, action: ${action}`);
+      };
       try {
         await inputMethod.getController().attach(true, ATTRIBUTE);
         console.info('====>SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0300 handleExtendAction start');
         // only call twice off() success
-        inputMethod.getController().off('handleExtendAction');
-        inputMethod.getController().off('handleExtendAction');
+        inputMethod.getController().off('handleExtendAction', onHandleExtendActionCallback);
+        inputMethod.getController().off('handleExtendAction', onHandleExtendActionCallback);
         await inputMethod.getController().detach();
         expect(true).assertTrue();
         console.info('====>SUB_Misc_inputMethod_on_off_handleExtendAction_Async_0300 handleExtendAction call twice off success');
@@ -4126,6 +4147,56 @@ export default function inputMethodDrawnControlJSUnit() {
       } catch (err) {
         console.info("====>SUB_Misc_inputMethod_showTextInput_Promise_0101 err:" + JSON.stringify(err));
         expect(err.code).assertEqual(12800009);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name SUB_inputmethod_test_getInputMethods_0030
+     * @tc.number SUB_inputmethod_test_getInputMethods_0030
+     * @tc.desc 401 Function test
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_inputmethod_test_getInputMethods_0030', Level.LEVEL2, async (done: Function) => {
+      try {
+        let inputMethodSetting = inputMethod.getSetting();
+        await inputMethodSetting.getInputMethods(null);
+        console.info("====>SUB_inputmethod_test_getInputMethods_0030 success")
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_inputmethod_test_getInputMethods_0030 catch err: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name SUB_inputmethod_test_getInputMethods_0040
+     * @tc.number SUB_inputmethod_test_getInputMethods_0040
+     * @tc.desc 401 Function test
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('SUB_inputmethod_test_getInputMethods_0040', Level.LEVEL2, async (done: Function) => {
+      try {
+        let inputMethodSetting = inputMethod.getSetting();
+        inputMethodSetting.getInputMethods(null, (err, data) => {
+          if (err) {
+            console.info("====>SUB_inputmethod_test_getInputMethods_0040 error:" + err);
+            expect(err.code).assertEqual(401);
+            done();
+          }
+          console.info("====>SUB_inputmethod_test_getInputMethods_0040 success")
+          expect().assertFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`====>SUB_inputmethod_test_getInputMethods_0040 catch err: ${JSON.stringify(err)}`)
+        expect(err.code).assertEqual(401);
         done();
       }
     });

@@ -361,6 +361,18 @@ struct WebOnPermissionRequest {
                   Utils.emitEvent('"grant"', 160920)
                 }
               }
+              case 'emitPermissionRequestConstructor001': {
+                Utils.emitEvent(true, 160950);
+                break;
+              }
+              case 'emitPermissionRequestConstructorReturn001': {
+                Utils.emitEvent(true, 160951);
+                break;
+              }
+              case 'emitPermissionRequestClass001': {
+                Utils.emitEvent(true, 160952);
+                break;
+              }
               case 'emitPermissionRequestGrant004': {
                 if (canIUse('SystemCapability.Multimedia.Camera.Core')) {
                   if (Utils.isPC(this.controller)||Utils.isWearable(this.controller)) {

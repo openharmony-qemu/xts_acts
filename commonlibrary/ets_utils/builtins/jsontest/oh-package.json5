@@ -15,7 +15,7 @@
 {
   "license": "",
   "devDependencies": {
-    "@ohos/hypium": "1.0.21"
+    "@ohos/hypium-dynamic": "file:../../../../../tools/hypium_prepare/hypium-dynamic.har"
   },
   "author": "",
   "modelVersion": "26.0.0",

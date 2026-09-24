@@ -14,7 +14,7 @@
  */
 
 import { photoAccessHelper, sendablePhotoAccessHelper } from '@kit.MediaLibraryKit';
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from "@ohos/hypium";
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from "@ohos/hypium-dynamic";
 import {
   photoKeys,
   photoFetchOption,

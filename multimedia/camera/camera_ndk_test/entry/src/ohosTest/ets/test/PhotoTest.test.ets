@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import cameraObj from 'libentry.so'
 import image from '@ohos.multimedia.image';
 import { Camera_PreconfigType, Camera_SceneMode, Camera_MediaType, Parameter_Setting, Camera_SmoothZoomMode } from './Constants';
@@ -4038,5 +4038,127 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG);
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_PHYSICAL_APERTURE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_PHYSICAL_APERTURE_0100
+     * @tc.desc   Test OH_CaptureSession_GetPhysicalAperture when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_PHYSICAL_APERTURE_0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetPhysicalAperture(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "oHgetPhysicalAperture ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.desc   Test OH_CaptureSession_GetSupportedExposureDurationRange when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "oHGetSupportedExposureDurationRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.desc   Test OH_CaptureSession_GetSupportedExposureDurationRange when the third paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.info(TAG + "oHgetSupportedExposureDurationRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100
+     * @tc.desc   Test OH_CaptureSession_GetExposureDuration when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetExposureDuration(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "oHgetExposureDuration ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the second paran null - 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.getWhiteBalanceRange(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "getWhiteBalanceRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalanceRange when the third paran null - 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_RANGE_0200', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.getWhiteBalanceRange(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.info(TAG + "getWhiteBalanceRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100
+     * @tc.desc   Test OH_CaptureSession_GetWhiteBalance when the second paran null - 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_CAMWEA_GET_WHITE_BALANCE_0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.getWhiteBalance(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "getWhiteBalance ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
   })
 }

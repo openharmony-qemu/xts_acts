@@ -16,20 +16,10 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, ExpectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, beforeAll, expect, afterEach } from '../../../../hypium/index';
+import { describe, expect, afterEach } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign, Position, $r } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function MarkAnchorTest() {
   //A list of components that support the position attribute, which is required.
@@ -110,11 +100,6 @@ export default function MarkAnchorTest() {
   ]
 
   describe('MarkAnchorTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("markAnchorTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-    });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Obtain the region information of the target component.

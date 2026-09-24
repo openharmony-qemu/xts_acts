@@ -81,6 +81,22 @@ function checkRoutingAndSkip(done: () => void): boolean {
     return false;
 }
 
+// 二次确认：指定设备是否支持空间音频（按设备粒度）。不支持或查询异常时走不支持逻辑（跳过）。
+function checkDeviceSpatializationSupportedAndSkip(mgr: audio.AudioSpatializationManager, desc: audio.AudioDeviceDescriptor, done: () => void): boolean {
+    try {
+        if (!mgr.isSpatializationSupportedForDevice(desc)) {
+            console.info("[AudioSpatializationManager2JsTest] device not support spatialization, skip");
+            done();
+            return true;
+        }
+    } catch (e) {
+        console.info("[AudioSpatializationManager2JsTest] isSpatializationSupportedForDevice failed: " + e);
+        done();
+        return true;
+    }
+    return false;
+}
+
 function cleanupFile(file: fileIo.File | null, filePath: string): void {
     if (file !== null) {
         fileIo.closeSync(file);
@@ -200,6 +216,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 let ret: boolean = mgr.isPersonalizedSpatializationEnabled(desc);
                 expect(ret).assertFalse();
@@ -262,6 +279,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, true);
                 let ret: boolean = mgr.isPersonalizedSpatializationEnabled(desc);
                 expect(ret).assertTrue();
@@ -290,6 +308,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 let ret: boolean = mgr.isPersonalizedSpatializationEnabled(desc);
                 expect(ret).assertFalse();
@@ -351,6 +370,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 cbTriggered = false;
                 mgr.onPersonalizedSpatializationEnabledChangeForAnyDevice((data: audio.AudioPersonalizedSpatialEnabledChangeForAnyDevice) => {
@@ -386,6 +406,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 let cbCount: number = 0;
                 let cb = (data: audio.AudioPersonalizedSpatialEnabledChangeForAnyDevice) => { cbCount++; };
@@ -423,6 +444,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 cbTriggered = false;
                 mgr.onPersonalizedSpatializationEnabledChangeForAnyDevice((data: audio.AudioPersonalizedSpatialEnabledChangeForAnyDevice) => {
@@ -458,6 +480,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 mgr.offPersonalizedSpatializationEnabledChangeForAnyDevice();
                 cbTriggered = false;
@@ -495,6 +518,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 let cb = (data: audio.AudioPersonalizedSpatialEnabledChangeForAnyDevice) => { console.info(`${TAG} callback fired`); cbTriggered = true; };
                 cbTriggered = false;
@@ -566,10 +590,16 @@ export default function audioSpatializationManager2(): void {
             let file: fileIo.File | null = null;
             try {
                 file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+                console.info(`${TAG} 3000 open ok fd=${file.fd} path=${filePath}`);
                 let buf = new ArrayBuffer(1024);
                 fileIo.writeSync(file.fd, buf);
+                console.info(`${TAG} 3000 write ok fd=${file.fd}`);
                 let stat: fileIo.Stat = fileIo.statSync(filePath);
-                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: file.fd.toInt(), length: stat.size.toLong() });
+                console.info(`${TAG} 3000 stat ok size=${stat.size} fd=${file.fd}`);
+                let desc: audio.AudioHRTFAnonymousDescriptor = { fd: file.fd, length: stat.size };
+                console.info(`${TAG} 3000 desc built fd=${desc.fd} length=${desc.length}`);
+                await getAudioSpatializationManager().downloadPersonalizedHRTF(desc);
+                console.info(`${TAG} 3000 download returned no throw`);
                 expect(stat.size).assertLarger(0);
             } catch (error) {
                 if (error.code === ERR_CODE_SYSTEM) {
@@ -579,6 +609,7 @@ export default function audioSpatializationManager2(): void {
                 } else if (error.code === ERR_CODE_UNAVAILABLE) {
                     expect(error.code).assertEqual(ERR_CODE_UNAVAILABLE);
                 } else {
+                    console.info(`${TAG} download unexpected error code=${error.code} name=${error.name} msg=${error.message} filePath=${filePath}`);
                     expect(false).assertTrue();
                 }
             } finally {
@@ -615,12 +646,20 @@ export default function audioSpatializationManager2(): void {
          * @tc.level  LEVEL1
          */
         it("testDownloadPersonalizedHRTFLengthZero3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
             if (checkSupportAndSkip(done)) return;
+            let filePath: string = testContext.cacheDir + '/test_hrtf_len_zero.bin';
+            let file: fileIo.File | null = null;
             try {
-                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: 0, length: 0 });
+                file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+                fileIo.writeSync(file.fd, new ArrayBuffer(1024));
+                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: file.fd, length: 0 });
                 expect().assertFail();
             } catch (error) {
+                console.info(`${TAG} LengthZero3500 returned code: ${error.code}`);
                 expect(error.code).assertEqual(ERR_CODE_INVALID_PARAM);
+            } finally {
+                cleanupFile(file, filePath);
             }
             done();
         });
@@ -634,12 +673,20 @@ export default function audioSpatializationManager2(): void {
          * @tc.level  LEVEL1
          */
         it("testDownloadPersonalizedHRTFLengthNegative3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
             if (checkSupportAndSkip(done)) return;
+            let filePath: string = testContext.cacheDir + '/test_hrtf_len_neg.bin';
+            let file: fileIo.File | null = null;
             try {
-                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: 1, length: -1 });
+                file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+                fileIo.writeSync(file.fd, new ArrayBuffer(1024));
+                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: file.fd, length: -1 });
                 expect().assertFail();
             } catch (error) {
+                console.info(`${TAG} LengthNegative3600 returned code: ${error.code}`);
                 expect(error.code).assertEqual(ERR_CODE_INVALID_PARAM);
+            } finally {
+                cleanupFile(file, filePath);
             }
             done();
         });
@@ -653,13 +700,21 @@ export default function audioSpatializationManager2(): void {
          * @tc.level  LEVEL1
          */
         it("testDownloadPersonalizedHRTFLengthExceed3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
             if (checkSupportAndSkip(done)) return;
+            let filePath: string = testContext.cacheDir + '/test_hrtf_len_exceed.bin';
+            let file: fileIo.File | null = null;
             try {
+                file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
+                fileIo.writeSync(file.fd, new ArrayBuffer(1024));
                 let exceedLength: number = 10 * 1024 * 1024 + 1;
-                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: 1, length: exceedLength.toLong() });
+                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: file.fd, length: exceedLength.toLong() });
                 expect().assertFail();
             } catch (error) {
+                console.info(`${TAG} LengthExceed3700 returned code: ${error.code}`);
                 expect(error.code).assertEqual(ERR_CODE_INVALID_PARAM);
+            } finally {
+                cleanupFile(file, filePath);
             }
             done();
         });
@@ -689,7 +744,7 @@ export default function audioSpatializationManager2(): void {
                 let buf = new ArrayBuffer(1024);
                 fileIo.writeSync(file.fd, buf);
                 let stat: fileIo.Stat = fileIo.statSync(filePath);
-                await mgr.downloadPersonalizedHRTF({ fd: file.fd.toInt(), length: stat.size.toLong() });
+                await mgr.downloadPersonalizedHRTF({ fd: file.fd, length: stat.size });
             } catch (error) {
                 console.info(`${TAG} downloadHRTF not supported - API may not exist on this device`);
             } finally {
@@ -717,6 +772,7 @@ export default function audioSpatializationManager2(): void {
             let file: fileIo.File | null = null;
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 let supported: boolean = mgr.isPersonalizedSpatializationSupported();
                 expect(supported).assertTrue();
                 if (!supported) { done(); return; }
@@ -728,7 +784,7 @@ export default function audioSpatializationManager2(): void {
                 fileIo.writeSync(file.fd, buf);
                 let stat: fileIo.Stat = fileIo.statSync(filePath);
                 try {
-                    await downloadWithTimeout(mgr, { fd: file.fd.toInt(), length: stat.size.toLong() });
+                    await downloadWithTimeout(mgr, { fd: file.fd, length: stat.size });
                 } catch (e) {
                     if (e.code === ERR_CODE_SYSTEM) {
                         expect(e.code).assertEqual(ERR_CODE_SYSTEM);
@@ -808,6 +864,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 cbTriggered = false;
                 let cb = (data: audio.AudioPersonalizedSpatialEnabledChangeForAnyDevice) => { console.info(`${TAG} callback fired`); cbTriggered = true; };
@@ -842,6 +899,7 @@ export default function audioSpatializationManager2(): void {
             let desc: audio.AudioDeviceDescriptor = getAudioDeviceDescriptor();
             try {
                 let mgr: audio.AudioSpatializationManager = getAudioSpatializationManager();
+                if (checkDeviceSpatializationSupportedAndSkip(mgr, desc, done)) return;
                 await mgr.setPersonalizedSpatializationEnabled(desc, false);
                 cbTriggered = false;
                 mgr.onPersonalizedSpatializationEnabledChangeForAnyDevice((data: audio.AudioPersonalizedSpatialEnabledChangeForAnyDevice) => {
@@ -883,7 +941,7 @@ export default function audioSpatializationManager2(): void {
                 fileIo.writeSync(file.fd, new ArrayBuffer(1));
                 let stat: fileIo.Stat = fileIo.statSync(filePath);
                 expect(stat.size).assertEqual(1);
-                await downloadWithTimeout(getAudioSpatializationManager(), { fd: file.fd.toInt(), length: 1 });
+                await downloadWithTimeout(getAudioSpatializationManager(), { fd: file.fd, length: 1 });
                 expect(true).assertTrue();
             } catch (error) {
                 if (error.code === ERR_CODE_SYSTEM) {
@@ -893,6 +951,7 @@ export default function audioSpatializationManager2(): void {
                 } else if (error.code === ERR_CODE_UNAVAILABLE) {
                     expect(error.code).assertEqual(ERR_CODE_UNAVAILABLE);
                 } else {
+                    console.info(`${TAG} download unexpected error code=${error.code} name=${error.name} msg=${error.message} filePath=${filePath}`);
                     expect(false).assertTrue();
                 }
             } finally {
@@ -918,7 +977,7 @@ export default function audioSpatializationManager2(): void {
                 file = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.READ_WRITE);
                 fileIo.writeSync(file.fd, new ArrayBuffer(128));
                 let maxLen: number = 10 * 1024 * 1024;
-                await downloadWithTimeout(getAudioSpatializationManager(), { fd: file.fd.toInt(), length: maxLen.toLong() });
+                await downloadWithTimeout(getAudioSpatializationManager(), { fd: file.fd, length: maxLen.toLong() });
                 expect(true).assertTrue();
             } catch (error) {
                 if (error.code === ERR_CODE_SYSTEM) {
@@ -928,6 +987,7 @@ export default function audioSpatializationManager2(): void {
                 } else if (error.code === ERR_CODE_UNAVAILABLE) {
                     expect(error.code).assertEqual(ERR_CODE_UNAVAILABLE);
                 } else {
+                    console.info(`${TAG} download unexpected error code=${error.code} name=${error.name} msg=${error.message} filePath=${filePath}`);
                     expect(false).assertTrue();
                 }
             } finally {
@@ -956,7 +1016,7 @@ export default function audioSpatializationManager2(): void {
                 let stat: fileIo.Stat = fileIo.statSync(filePath);
                 closedFd = file.fd;
                 fileIo.closeSync(file);
-                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: closedFd.toInt(), length: stat.size.toLong() });
+                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: closedFd.toInt(), length: stat.size });
                 expect().assertFail();
             } catch (error) {
                 expect(error.code).assertEqual(ERR_CODE_INVALID_PARAM);
@@ -986,7 +1046,7 @@ export default function audioSpatializationManager2(): void {
                 fileIo.closeSync(writeFile);
                 file = fileIo.openSync(filePath, fileIo.OpenMode.READ_ONLY);
                 let stat: fileIo.Stat = fileIo.statSync(filePath);
-                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: file.fd.toInt(), length: stat.size.toLong() });
+                await getAudioSpatializationManager().downloadPersonalizedHRTF({ fd: file.fd, length: stat.size });
                 expect(stat.size).assertLarger(0);
             } catch (error) {
                 if (error.code === ERR_CODE_SYSTEM) {
@@ -996,6 +1056,7 @@ export default function audioSpatializationManager2(): void {
                 } else if (error.code === ERR_CODE_UNAVAILABLE) {
                     expect(error.code).assertEqual(ERR_CODE_UNAVAILABLE);
                 } else {
+                    console.info(`${TAG} download unexpected error code=${error.code} name=${error.name} msg=${error.message} filePath=${filePath}`);
                     expect(false).assertTrue();
                 }
             } finally {

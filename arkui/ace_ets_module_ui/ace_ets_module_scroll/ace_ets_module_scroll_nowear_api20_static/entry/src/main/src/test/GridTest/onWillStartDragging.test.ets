@@ -1,7 +1,7 @@
 'use static';
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry, Driver, ON, MouseButton, MatchPattern, UiDirection, Rect } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
@@ -11,7 +11,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 import CommonFunc from '../common/Common';
 import Utils from '../common/Utils';
-import { startAbility, UtilsTest } from '../Util.test.ets';
 
 let want: Want;
 const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
@@ -20,10 +19,6 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 
 export default function onWillStartDraggingTest() {
   describe('ActsOnWillStartDraggingTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('TextLineSpacingTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility');
-    })
     beforeEach(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeEach start');
       let options: router.RouterOptions = {
@@ -37,6 +32,7 @@ export default function onWillStartDraggingTest() {
         if (!('TextLineSpacing' == pages.name)) {
           console.info('get TextLineSpacingTest state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push TextLineSpacingTest page error: ' + err);
@@ -51,23 +47,30 @@ export default function onWillStartDraggingTest() {
      * @tc.level    Level.LEVEL0
      */
     it('test_onWillStartDragging', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let dragScroll = await driver.findComponent(ON.id('grid_dragging'));
-      const rect = await (dragScroll?.getBounds() as Promise<Rect>);
-      let top = rect.top;
-      let right = rect.right;
-      let left = rect.left;
-      let bottom = rect.bottom;
-      let height = bottom -top;
-      let width = right - left;
-      await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
-      await CommonFunc.sleep(2000);
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onWillStartDragging' + '_onWillStartDragging'))
-        .getElement('$attrs')
-        .getString('content'))
-        .assertEqual('第1次拖拽开始');
-      done();
+      try {
+        await CommonFunc.sleep(500);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let dragScroll = await driver.findComponent(ON.id('grid_dragging'));
+        const rect = await (dragScroll?.getBounds() as Promise<Rect>);
+        let top = rect.top;
+        let right = rect.right;
+        let left = rect.left;
+        let bottom = rect.bottom;
+        let height = bottom -top;
+        let width = right - left;
+        await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
+        await CommonFunc.sleep(2000);
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onWillStartDragging' + '_onWillStartDragging'))
+            .getElement('$attrs')
+            .getString('content'))
+            .assertEqual('第1次拖拽开始');
+        done();
+      } catch (error) {
+        console.error('[test_onWillStartDragging] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

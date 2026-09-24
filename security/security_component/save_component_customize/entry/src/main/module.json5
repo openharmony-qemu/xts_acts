@@ -16,7 +16,7 @@
     "module": {
         "name": "entry",
         "type": "entry",
-        "srcEntrance": "./ets/Application/AbilityStage.ts",
+        "srcEntrance": "./ets/Application/AbilityStage.ets",
         "description": "$string:phone_entry_dsc",
         "mainElement": "MainAbility",
         "deviceTypes": [],
@@ -33,9 +33,11 @@
         "abilities": [
             {
                 "name": "com.example.savecomponent_customize.MainAbility",
-                "srcEntry": "./ets/MainAbility/MainAbility.ts",
+                "srcEntry": "./ets/MainAbility/MainAbility.ets",
                 "description": "$string:phone_entry_main",
                 "icon": "$media:icon",
+                "startWindowIcon": "$media:icon",
+                "startWindowBackground": "$color:start_window_background",
                 "label": "$string:entry_label",
                 "visible": true,
                 "orientation": "portrait",

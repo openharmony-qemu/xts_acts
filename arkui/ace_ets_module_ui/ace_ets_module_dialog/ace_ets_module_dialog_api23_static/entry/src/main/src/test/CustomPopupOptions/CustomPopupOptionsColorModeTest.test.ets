@@ -16,23 +16,18 @@
  */
 
 import router from '@ohos.router';
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
-import { UtilsTest } from '../Util.test';
 import { AnchoredColorMode } from '@kit.ArkUI';
 
 export default function CustomPopupOptionsColorModeTest() {
   describe('CustomPopupOptionsColorModeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CustomPopupOptionsColorModeTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api23.static", "EntryAbility");
-    });
     beforeEach(async (): Promise<void> => {
       console.info("CustomPopupOptionsColorMode beforeEach start");
       let options: router.RouterOptions = {
@@ -64,6 +59,7 @@ export default function CustomPopupOptionsColorModeTest() {
      * @tc.level  LEVEL2
      */
     it('CustomPopupOptionsColorModeTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('CustomPopupOptionsColorModeTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(2000);
@@ -73,6 +69,11 @@ export default function CustomPopupOptionsColorModeTest() {
 
       console.info('CustomPopupOptionsColorModeTest_0100 END');
       done();
+      } catch (err) {
+        console.info('CustomPopupOptionsColorModeTest_0100 err: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
   })

@@ -111,7 +111,8 @@ struct ExtensionErrorCode {
           let session: UIExtensionContentSession | undefined = storage.get < UIExtensionContentSession > ('session1');
           let extensionWindow: uiExtension.WindowProxy | undefined = session?.getUIExtensionWindowProxy();
           try {
-            extensionWindow?.off('avoidAreaChange');
+            let cb = (info: uiExtension.AvoidAreaInfo) => {}
+            extensionWindow?.off('avoidAreaChange', cb);
             console.log('success in page')
             this.message = 'success'
           } catch (err) {

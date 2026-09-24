@@ -17,7 +17,7 @@ import media from '@ohos.multimedia.media'
 import audio from '@ohos.multimedia.audio'
 import { playAudioSource } from './AudioPlayerTestBase';
 import MediaTestBase from './MediaTestBase';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import { resourceManager } from '@kit.LocalizationKit';
 
 let audioPlayer: media.AudioPlayer | null = media.createAudioPlayer();

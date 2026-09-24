@@ -91,6 +91,7 @@ import ImageReloadKeyTest from './ImageReloadKeyTest/ImageReloadKey.test';
 import DrawableDescriptorReleaseTest from './drawableDescriptor/DrawableDescriptorRelease.test';
 import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptor/PixelMapDrawableDescriptorConstructor.test';
 import PictureDrawableDescriptorSetHdrCompositionTest from './drawableDescriptor/PictureDrawableDescriptorSetHdrComposition.test';
+import GetMaskClipPathTest from './drawableDescriptor/GetMaskClipPathTest.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -172,4 +173,5 @@ export default function testsuite() {
   DrawableDescriptorReleaseTest();
   PixelMapDrawableDescriptorConstructorTest();
   PictureDrawableDescriptorSetHdrCompositionTest();
+  GetMaskClipPathTest();
 }

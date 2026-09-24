@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
@@ -32,25 +32,9 @@ import {
   TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test.ets';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function setGridEvent() {
   describe('setGridEvent', (): void => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("SearchTypeTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("TextClockApiTest beforeEach start");
@@ -85,54 +69,61 @@ export default function setGridEvent() {
      */
 it('setGridEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[setGridEvent_static_0100] START');
-      let driver = Driver.create()
-      let btnEvent: Component = await driver.findComponent(ON.id('Grid_addCommonEvent_01')) as Component;
-      await btnEvent.click();
-      await CommonFunc.sleep(1500);
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let btnEvent: Component = await driver.findComponent(ON.id('Grid_addCommonEvent_01')) as Component;
+        await btnEvent.click();
+        await CommonFunc.sleep(1500);
 
-      let swipeScroll = CommonFunc.getComponentRectOnScreen('key_gridItem_set');
-      let top = swipeScroll.top;
-      let right = swipeScroll.right;
-      let left = swipeScroll.left;
-      let bottom = swipeScroll.bottom;
-      console.info("setGridEvent_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.8)).toInt(),
-        (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt());
-      await CommonFunc.sleep(2000);
-      let btn: Component = await driver.findComponent(ON.id('Grid_setOnReach_01')) as Component;
-      await btn.click();
-      await CommonFunc.sleep(1500);
+        let swipeScroll = CommonFunc.getComponentRectOnScreen('key_gridItem_set');
+        let top = swipeScroll.top;
+        let right = swipeScroll.right;
+        let left = swipeScroll.left;
+        let bottom = swipeScroll.bottom;
+        console.info("setGridEvent_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.8)).toInt(),
+          (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt());
+        await CommonFunc.sleep(2000);
+        let btn: Component = await driver.findComponent(ON.id('Grid_setOnReach_01')) as Component;
+        await btn.click();
+        await CommonFunc.sleep(1500);
 
-      let btn1: Component = await driver.findComponent(ON.id('Grid_setOnWill_01')) as Component;
-      await btn1.click();
-      await CommonFunc.sleep(1500);
-      let strJson1 = inspector.getInspectorByKey('Grid_setOnWill_01');
-      console.info("[setGridEvent_static_0100] content1: " +
-      JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
-        .assertEqual('setOnWillScroll_setOnDidScroll');
+        let btn1: Component = await driver.findComponent(ON.id('Grid_setOnWill_01')) as Component;
+        await btn1.click();
+        await CommonFunc.sleep(1500);
+        let strJson1 = inspector.getInspectorByKey('Grid_setOnWill_01');
+        console.info("[setGridEvent_static_0100] content1: " +
+          JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'))
+          .assertEqual('setOnWillScroll_setOnDidScroll');
 
-      let btn2: Component = await driver.findComponent(ON.id('Grid_setOnScroll_01')) as Component;
-      await btn2.click();
-      await CommonFunc.sleep(1500);
-      let strJson2 = inspector.getInspectorByKey('Grid_setOnScroll_01');
-      console.info("[setGridEvent_static_0100] content2: " +
-      JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
-        .assertEqual('setOnScrollStart_setOnScrollStop');
+        let btn2: Component = await driver.findComponent(ON.id('Grid_setOnScroll_01')) as Component;
+        await btn2.click();
+        await CommonFunc.sleep(1500);
+        let strJson2 = inspector.getInspectorByKey('Grid_setOnScroll_01');
+        console.info("[setGridEvent_static_0100] content2: " +
+          JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'))
+          .assertEqual('setOnScrollStart_setOnScrollStop');
 
-      let btn3: Component = await driver.findComponent(ON.id('Grid_setOnScrollIndex_01')) as Component;
-      await btn3.click();
-      await CommonFunc.sleep(1500);
-      let strJson3 = inspector.getInspectorByKey('Grid_setOnScrollIndex_01');
-      console.info("[setGridEvent_static_0100] content3: " +
-      JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'))
-        .assertEqual('setOnScrollFrameBegin_setOnScrollIndex');
-      console.info('[setGridEvent_static_0100] END');
-      done();
+        let btn3: Component = await driver.findComponent(ON.id('Grid_setOnScrollIndex_01')) as Component;
+        await btn3.click();
+        await CommonFunc.sleep(1500);
+        let strJson3 = inspector.getInspectorByKey('Grid_setOnScrollIndex_01');
+        console.info("[setGridEvent_static_0100] content3: " +
+          JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'))
+          .assertEqual('setOnScrollFrameBegin_setOnScrollIndex');
+        console.info('[setGridEvent_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[setGridEvent_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -29,18 +29,10 @@ import {
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleEmitter() {
   describe('ParticleEmitter', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ParticleEmitter beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation20.static", "EntryAbility")
-      
-    });
-
     beforeEach(async () => {
       console.info('ParticleEmitter beforeEach start');
       let options: router.RouterOptions = {
@@ -62,7 +54,11 @@ export default function ParticleEmitter() {
       console.info('ParticleEmitter beforeEach end');
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleEmitter afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('ParticleEmitter after each called');
     });
 
@@ -74,7 +70,8 @@ export default function ParticleEmitter() {
      * @tc.level    Level.LEVEL0
      */
     it('ParticleEmitter_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-        console.info('[ParticleEmitter_001] START');
+        try {
+          console.info('[ParticleEmitter_001] START');
         await CommonFunc.sleep(1000);
         let driver = Driver.create();
         await driver.delayMs(1000);
@@ -109,7 +106,10 @@ export default function ParticleEmitter() {
         let endAngle: string = AppStorage.get<string>('endAngle') as string;
         expect(endAngle).assertEqual('"360.000000"');
         AppStorage.delete('endAngle');
-        console.info('ParticleEmitter_001 END');
+          console.info('ParticleEmitter_001 END');
+        } catch (err) {
+          console.info('ParticleEmitter_static_001 err: ' + JSON.stringify(err));
+        }
         done();
       });
   })

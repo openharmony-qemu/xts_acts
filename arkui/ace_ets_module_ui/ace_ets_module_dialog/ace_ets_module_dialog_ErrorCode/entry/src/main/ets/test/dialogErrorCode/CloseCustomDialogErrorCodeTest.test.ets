@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver } from '@ohos.UiTest';
 import ErrorCodeAssert from './ErrorCodeAssert';
 

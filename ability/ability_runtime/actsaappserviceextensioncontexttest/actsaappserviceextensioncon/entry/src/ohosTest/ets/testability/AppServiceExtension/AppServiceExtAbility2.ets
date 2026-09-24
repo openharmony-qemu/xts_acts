@@ -70,7 +70,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
 
   async onRequest(want: Want, startId: number) {
     hilog.info(0x0000, TAG, `AppService2 onRequest, want: ${JSON.stringify(want)}, startId: ${startId}`);
-    if (want.parameters?.TestFlag === 'startAppServiceDefault') {
+    if (want.parameters!.TestFlag === 'startAppServiceDefault') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'MyUIAbility2'
@@ -87,7 +87,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAppServiceDefault', 'AppServiceExtension_1900', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAppServiceErrorBundleName') {
+    } else if(want.parameters!.TestFlag === 'startAppServiceErrorBundleName') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionError',
         abilityName: 'MyUIAbility2'
@@ -101,7 +101,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
           errorReturn('startAppServiceErrorBundleName', 'AppServiceExtension_2000', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAppServiceUndefinedAbilityName') {
+    } else if(want.parameters!.TestFlag === 'startAppServiceUndefinedAbilityName') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: undefined
@@ -115,7 +115,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAppServiceUndefinedAbilityName', 'AppServiceExtension_2100', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAppServiceExportedFalse') {
+    } else if(want.parameters!.TestFlag === 'startAppServiceExportedFalse') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely',
         abilityName: 'MyUIAbility'
@@ -129,7 +129,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
           errorReturn('startAppServiceExportedFalse', 'AppServiceExtension_2200', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAppServiceErrorTypeAbility') {
+    } else if(want.parameters!.TestFlag === 'startAppServiceErrorTypeAbility') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'AppServiceExtAbility'
@@ -143,7 +143,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
           errorReturn('startAppServiceErrorTypeAbility', 'AppServiceExtension_2300', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAppServiceInternalError') {
+    } else if(want.parameters!.TestFlag === 'startAppServiceInternalError') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely',
         abilityName: 'MyUIAbility2',
@@ -160,7 +160,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAppServiceInternalError', 'AppServiceExtension_2400', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAppServiceNotPermission') {
+    } else if(want.parameters!.TestFlag === 'startAppServiceNotPermission') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely',
         abilityName: 'MyUIAbility3'
@@ -174,7 +174,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAppServiceNotPermission', 'AppServiceExtension_2500', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAppServiceForbidden') {
+    } else if(want.parameters!.TestFlag === 'startAppServiceForbidden') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'MyUIAbility2',
@@ -189,7 +189,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAppServiceForbidden', 'AppServiceExtension_2600', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityMultiInstance') {
+    } else if(want.parameters!.TestFlag === 'startAbilityMultiInstance') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'EntryAbility',
@@ -206,7 +206,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityMultiInstance', 'AppServiceExtension_3500', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityAppInstanceKeyError') {
+    } else if(want.parameters!.TestFlag === 'startAbilityAppInstanceKeyError') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely',
         abilityName: 'MainAbility',
@@ -224,7 +224,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityAppInstanceKeyError', 'AppServiceExtension_3600', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityMultiAppModeTypeError') {
+    } else if(want.parameters!.TestFlag === 'startAbilityMultiAppModeTypeError') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely2',
         abilityName: 'MainAbility',
@@ -241,7 +241,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityMultiAppModeTypeError', 'AppServiceExtension_3700', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityInstancesReachLimitError') {
+    } else if(want.parameters!.TestFlag === 'startAbilityInstancesReachLimitError') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely',
         abilityName: 'MainAbility',
@@ -270,7 +270,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityInstancesReachLimitError', 'AppServiceExtension_3800', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityAppInstanceKeyInvalid') {
+    } else if(want.parameters!.TestFlag === 'startAbilityAppInstanceKeyInvalid') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely',
         abilityName: 'MainAbility',
@@ -287,7 +287,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityAppInstanceKeyInvalid', 'AppServiceExtension_3900', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityAppCloneIndexInvalid') {
+    } else if(want.parameters!.TestFlag === 'startAbilityAppCloneIndexInvalid') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextensionrely2',
         abilityName: 'MainAbility',
@@ -304,7 +304,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityAppCloneIndexInvalid', 'AppServiceExtension_4000', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityMultiInstanceNotSupported') {
+    } else if(want.parameters!.TestFlag === 'startAbilityMultiInstanceNotSupported') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'EntryAbility',
@@ -321,7 +321,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityMultiInstanceNotSupported', 'AppServiceExtension_4100', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityAppCloneNotSupported') {
+    } else if(want.parameters!.TestFlag === 'startAbilityAppCloneNotSupported') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'EntryAbility',
@@ -338,7 +338,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityAppCloneNotSupported', 'AppServiceExtension_4200', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityNullWant') {
+    } else if(want.parameters!.TestFlag === 'startAbilityNullWant') {
       try {
         this.context.startAbility(null).then(() => {
           successReturn('startAbilityNullWant', 'AppServiceExtension_4300');
@@ -348,7 +348,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityNullWant', 'AppServiceExtension_4300', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityUndefinedWant') {
+    } else if(want.parameters!.TestFlag === 'startAbilityUndefinedWant') {
       try {
         this.context.startAbility(undefined).then(() => {
           successReturn('startAbilityUndefinedWant', 'AppServiceExtension_4400');
@@ -358,7 +358,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityUndefinedWant', 'AppServiceExtension_4400', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityNullOptions') {
+    } else if(want.parameters!.TestFlag === 'startAbilityNullOptions') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'MyUIAbility2'
@@ -372,7 +372,7 @@ export default class AppService2 extends AppServiceExtensionAbility {
       } catch (error) {
         errorReturn('startAbilityNullOptions', 'AppServiceExtension_5800', error);
       }
-    } else if(want.parameters?.TestFlag === 'startAbilityUndefinedOptions') {
+    } else if(want.parameters!.TestFlag === 'startAbilityUndefinedOptions') {
       let wantInfo: Want = {
         bundleName: 'com.acts.context.aappserviceextension',
         abilityName: 'MyUIAbility2'

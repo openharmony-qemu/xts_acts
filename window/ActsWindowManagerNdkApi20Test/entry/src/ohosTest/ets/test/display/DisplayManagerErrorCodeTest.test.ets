@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach,beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { afterEach,beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import Utils from '../common/Utils';
 import windowndkapi20 from 'libwindowndkapi20.so';
 import { display } from '@kit.ArkUI';

@@ -25,7 +25,7 @@
     "pages": "$profile:test_pages",
     "abilities": [
       {
-        "name": "TestAbility",
+        "name": "com.acts.actscallfunction.TestAbility",
         "srcEntry": "./ets/testability/TestAbility.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",

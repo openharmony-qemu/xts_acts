@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, TestType, Level, Size } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import backgroundTaskManager from '@ohos.resourceschedule.backgroundTaskManager';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';

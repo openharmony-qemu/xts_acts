@@ -16,28 +16,25 @@
      ],
      "type": "AppInstallKit",
      "cleanup-apps": true
-   },{
-     "type": "ShellKit",
-     "run-command": [
-       "mkdir -p /data/app/el2/100/base/com.example.actshevchwencodertest/files",
-       "chmod 777 -R /data/app/el2/100/base/com.example.actshevchwencodertest/files",
-       "power-shell wakeup",
-       "power-shell setmode 602"
-     ]
-   },{
+   },
+   {
      "type": "PushKit",
      "pre-push": [],
      "push": [
-       "./resource/media/codec/video_encoder/1080_1920_nv12.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/1280_720_nv.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/1280_720_yuv420p_01.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/1920_1080_nv21.yuv ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_01_sqr_buffer.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_01_sqr_surface.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_04_sqr_buffer.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_04_sqr_surface.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_07_sqr_buffer.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/",
-       "./resource/media/codec/video_encoder/xtscase_07_sqr_surface.txt ->/data/app/el2/100/base/com.example.actshevchwencodertest/files/"
+       "./resource/media/codec/video_encoder/1080_1920_nv12.yuv ->/data/local/tmp/",
+       "./resource/media/codec/video_encoder/1280_720_nv.yuv ->/data/local/tmp/",
+       "./resource/media/codec/video_encoder/1280_720_yuv420p_01.yuv ->/data/local/tmp/",
+       "./resource/media/codec/video_encoder/1920_1080_nv21.yuv ->/data/local/tmp/",
+       "./resource/media/codec/video_encoder/setup_hevchwencoder_test.sh ->/data/local/tmp/"
+     ]
+   },
+   {
+     "type": "ShellKit",
+     "run-command": [
+      "power-shell wakeup",
+      "power-shell setmode 602",
+      "chmod 755  /data/local/tmp/setup_hevchwencoder_test.sh",
+      "sh /data/local/tmp/setup_hevchwencoder_test.sh"
      ]
    }
  ]

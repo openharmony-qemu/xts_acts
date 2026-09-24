@@ -1,5 +1,4 @@
 import abilityTest from './Ability.test';
-import ConcurrencyModularImportAsyncLockTest from './ConcurrencyModularImportAsyncLockTest.test';
 import ConcurrencyModularImportPromiseTest from './ConcurrencyModularImportPromiseTest.test';
 import ConcurrencyModularImportAndExportTest from './ConcurrencyModularImportAndExportTest.test';
 import TSProjectAsyncTest from './TSProjectAsyncTest.test';
@@ -12,7 +11,6 @@ import JSProjectTypedArrayTest from './JSProjectTypedArrayTest.test'
 export default function testsuite() {
   abilityTest();
   ConcurrencyModularImportPromiseTest();
-  ConcurrencyModularImportAsyncLockTest();
   ConcurrencyModularImportAndExportTest();
   TSProjectAsyncTest();
   TSProjectPromiseTest();

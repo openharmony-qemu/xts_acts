@@ -21,7 +21,7 @@ import {
     it,
     Level,
     expect,
-} from "@ohos/hypium"
+} from "@ohos/hypium-dynamic"
 import router from "@ohos.router"
 import {
     UiComponent,

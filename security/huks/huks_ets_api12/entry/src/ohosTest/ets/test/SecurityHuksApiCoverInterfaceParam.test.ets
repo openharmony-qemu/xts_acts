@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { huks } from '@kit.UniversalKeystoreKit';
 import {
   GetAesGenerateOptions, GetEccGenerateOptions, GetEd25519GenerateOptions, GetMlKemGenerateOptions, GetX25519GenerateOptions,

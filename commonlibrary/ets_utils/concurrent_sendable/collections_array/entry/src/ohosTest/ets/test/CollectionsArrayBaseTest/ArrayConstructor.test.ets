@@ -14,7 +14,7 @@
  */
 // ArrayConstructor.test.ets
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { collections, lang } from '@kit.ArkTS';
 import {
   BasicTypeTestData,

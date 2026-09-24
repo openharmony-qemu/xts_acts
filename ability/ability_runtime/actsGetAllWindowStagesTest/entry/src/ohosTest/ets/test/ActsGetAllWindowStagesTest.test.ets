@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
-import { common , application, UIAbility, AbilityLifecycleCallback, contextConstant, StartOptions } from '@kit.AbilityKit';
+import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium-dynamic';
+import { common, application, UIAbility, AbilityLifecycleCallback, contextConstant,
+  StartOptions } from '@kit.AbilityKit';
+
 import { window } from '@kit.ArkUI';
 import Utils from '../common/Utils';
 
@@ -23,37 +25,54 @@ let context: common.UIAbilityContext;
 export default function ActsGetAllWindowStagesTest() {
   describe('ActsGetAllWindowStagesTest', () => {
     beforeAll(async () => {
-      context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+      context = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext;
     })
     afterEach(async () => {
       try{
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf();
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        try {
+          await TestAbility1_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
 
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
+        hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
       try{
-        let TestAbility2_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility2_UIAbilityContext") as common.UIAbilityContext;
-        await TestAbility2_UIAbilityContext.terminateSelf()
+        let TestAbility2_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility2_UIAbilityContext') as common.UIAbilityContext;
+        try {
+          await TestAbility2_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
+        hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
       try{
-        let TestAbility3_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility3_UIAbilityContext") as common.UIAbilityContext;
-        await TestAbility3_UIAbilityContext.terminateSelf()
+        let TestAbility3_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility3_UIAbilityContext') as common.UIAbilityContext;
+        try {
+          await TestAbility3_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
+        hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
       try{
-        let ApplicationModule_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("ApplicationModule_UIAbilityContext") as common.UIAbilityContext;
-        await ApplicationModule_UIAbilityContext.terminateSelf()
+        let ApplicationModule_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'ApplicationModule_UIAbilityContext') as common.UIAbilityContext;
+        try {
+          await ApplicationModule_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext.terminateSelf() failed:` +
+            `${JSON.stringify(e)}`);
+        }
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
+        hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, code: ${JSON.stringify(e)}`);
       }
 
     })
@@ -66,10 +85,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2600";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_2600';
+        let NAME = 'getAllWindowStages';
         let appContext = application.getApplicationContext();
         let wantInfo: Want = {
           deviceId: '',
@@ -80,8 +99,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -91,8 +109,12 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
               expect(data.length).assertEqual(2);
               let matchedInfos: string[] = [];
               for (let stage of data) {
@@ -105,14 +127,14 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -126,10 +148,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2700";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_2700';
+        let NAME = 'getAllWindowStages';
         let appContext = application.getApplicationContextInstance().getApplicationContext();
         let wantInfo: Want = {
           deviceId: '',
@@ -140,8 +162,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -151,8 +172,12 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
               expect(data.length).assertEqual(2);
               let matchedInfos: string[] = [];
               for (let stage of data) {
@@ -165,14 +190,14 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -186,10 +211,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2800";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_2800';
+        let NAME = 'getAllWindowStages';
         let appContext = context.createAreaModeContext(contextConstant.AreaMode.EL2).getApplicationContext();
         let wantInfo: Want = {
           deviceId: '',
@@ -200,8 +225,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -211,8 +235,12 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
               expect(data.length).assertEqual(2);
               let matchedInfos: string[] = [];
               for (let stage of data) {
@@ -225,14 +253,14 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -246,10 +274,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2900";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_2900';
+        let NAME = 'getAllWindowStages';
         let appContext = context.createDisplayContext(0).getApplicationContext();
         let wantInfo: Want = {
           deviceId: '',
@@ -260,8 +288,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -271,8 +298,12 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` +
+                (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                  .abilityInfo.name);
               expect(data.length).assertEqual(2);
               let matchedInfos: string[] = [];
               for (let stage of data) {
@@ -285,14 +316,14 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -306,10 +337,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0100";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0100';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -319,16 +350,21 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
-        let onCreate_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onCreate_WindowStage') as Array<window.WindowStage>
+        let onCreate_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+          'onCreate_WindowStage') as Array<window.WindowStage>
         try {
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] getAllWindowStages size ${onCreate_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] Data: ` + JSON.stringify(onCreate_WindowStage));
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] getAllWindowStages size` +
+            `${onCreate_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] Data: ` +
+            JSON.stringify(onCreate_WindowStage));
           for (let i = 0; i < onCreate_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onCreate_WindowStage] getAllWindowStages successfully. Data: ` + (onCreate_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [onCreate_WindowStage] getAllWindowStages successfully. Data: ` +
+              (onCreate_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(onCreate_WindowStage.length).assertEqual(2);
           let matchedInfos: string[] = [];
@@ -341,8 +377,8 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -356,10 +392,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0300";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0300';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -369,16 +405,23 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
-        let onWindowStageCreate_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onWindowStageCreate_WindowStage') as Array<window.WindowStage>
+        let onWindowStageCreate_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+          'onWindowStageCreate_WindowStage') as Array<window.WindowStage>
         try {
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] getAllWindowStages size ${onWindowStageCreate_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] Data: ` + JSON.stringify(onWindowStageCreate_WindowStage));
+          hilog.info(0x0000, 'testTag',
+            `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] getAllWindowStages size` +
+            `${onWindowStageCreate_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] Data: ` +
+            JSON.stringify(onWindowStageCreate_WindowStage));
           for (let i = 0; i < onWindowStageCreate_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] getAllWindowStages successfully. Data: ` + (onWindowStageCreate_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [onWindowStageCreate_WindowStage] getAllWindowStages successfully. Data: ` +
+              (onWindowStageCreate_WindowStage[i].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(onWindowStageCreate_WindowStage.length).assertEqual(2);
           let matchedInfos: string[] = [];
@@ -391,8 +434,8 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -406,10 +449,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0500";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0500';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -419,16 +462,22 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
-        let onForeground_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onForeground_WindowStage') as Array<window.WindowStage>
+        let onForeground_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+          'onForeground_WindowStage') as Array<window.WindowStage>
         try {
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] getAllWindowStages size ${onForeground_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] Data: ` + JSON.stringify(onForeground_WindowStage));
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] getAllWindowStages size` +
+            `${onForeground_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] Data: ` +
+            JSON.stringify(onForeground_WindowStage));
           for (let i = 0; i < onForeground_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onForeground_WindowStage] getAllWindowStages successfully. Data: ` + (onForeground_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [onForeground_WindowStage] getAllWindowStages successfully. Data: ` +
+              (onForeground_WindowStage[i].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(onForeground_WindowStage.length).assertEqual(2);
           let matchedInfos: string[] = [];
@@ -441,8 +490,8 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -456,10 +505,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0600";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0600';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -469,16 +518,22 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(2000);
-        let onBackground_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onBackground_WindowStage') as Array<window.WindowStage>
+        let onBackground_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+          'onBackground_WindowStage') as Array<window.WindowStage>
         try {
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] getAllWindowStages size ${onBackground_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] Data: ` + JSON.stringify(onBackground_WindowStage));
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] getAllWindowStages size` +
+            `${onBackground_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] Data: ` +
+            JSON.stringify(onBackground_WindowStage));
           for (let i = 0; i < onBackground_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] getAllWindowStages successfully. Data: ` + (onBackground_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [onBackground_WindowStage] getAllWindowStages successfully. Data: ` +
+              (onBackground_WindowStage[i].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(onBackground_WindowStage.length).assertEqual(2);
           let matchedInfos: string[] = [];
@@ -491,8 +546,8 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -506,10 +561,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0200";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0200';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -519,26 +574,37 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf()
-        await Utils.sleep(1000);
-        let onDestroy_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onDestroy_WindowStage') as Array<window.WindowStage>
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
         try {
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] getAllWindowStages size ${onDestroy_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] Data: ` + JSON.stringify(onDestroy_WindowStage));
+          await TestAbility1_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
+        await Utils.sleep(1000);
+        let onDestroy_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+          'onDestroy_WindowStage') as Array<window.WindowStage>
+        try {
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] getAllWindowStages size` +
+            `${onDestroy_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] Data: ` +
+            JSON.stringify(onDestroy_WindowStage));
           for (let i = 0; i < onDestroy_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onDestroy_WindowStage] getAllWindowStages successfully. Data: ` + (onDestroy_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [onDestroy_WindowStage] getAllWindowStages successfully. Data: ` +
+              (onDestroy_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(onDestroy_WindowStage.length).assertEqual(1);
-          expect((onDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+          expect((onDestroy_WindowStage[0].getMainWindowSync().getUIContext()
+            .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -552,10 +618,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0400";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0400';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -565,26 +631,39 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = await AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf()
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        try {
+          await TestAbility1_UIAbilityContext.terminateSelf()
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `terminateSelf TestAbility1 failed: ${JSON.stringify(e)}`);
+        }
         await Utils.sleep(1000);
         try {
-          let onWindowStageDestroy_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onWindowStageDestroy_WindowStage') as Array<window.WindowStage>
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] getAllWindowStages size ${onWindowStageDestroy_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] Data: ` + JSON.stringify(onWindowStageDestroy_WindowStage));
+          let onWindowStageDestroy_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+            'onWindowStageDestroy_WindowStage') as Array<window.WindowStage>
+          hilog.info(0x0000, 'testTag',
+            `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] getAllWindowStages size` +
+            `${onWindowStageDestroy_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] Data: ` +
+            JSON.stringify(onWindowStageDestroy_WindowStage));
           for (let i = 0; i < onWindowStageDestroy_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] getAllWindowStages successfully. Data: ` + (onWindowStageDestroy_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [onWindowStageDestroy_WindowStage] getAllWindowStages successfully. Data: ` +
+              (onWindowStageDestroy_WindowStage[i].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(onWindowStageDestroy_WindowStage.length).assertEqual(1);
-          expect((onWindowStageDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+          expect((onWindowStageDestroy_WindowStage[0].getMainWindowSync().getUIContext()
+            .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -598,10 +677,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0700";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0700';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -611,26 +690,39 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
-        let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-        await TestAbility1_UIAbilityContext.terminateSelf()
+        let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
+          'TestAbility1_UIAbilityContext') as common.UIAbilityContext;
+        try {
+          await TestAbility1_UIAbilityContext.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext.terminateSelf() failed: ${JSON.stringify(e)}`);
+        }
         await Utils.sleep(1000);
         try {
-          let onWindowStageWillDestroy_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onWindowStageWillDestroy_WindowStage') as Array<window.WindowStage>
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages size ${onWindowStageWillDestroy_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] Data: ` + JSON.stringify(onWindowStageWillDestroy_WindowStage));
+          let onWindowStageWillDestroy_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+            'onWindowStageWillDestroy_WindowStage') as Array<window.WindowStage>
+          hilog.info(0x0000, 'testTag',
+            `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages size` +
+            `${onWindowStageWillDestroy_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] Data: ` +
+            JSON.stringify(onWindowStageWillDestroy_WindowStage));
           for (let i = 0; i < onWindowStageWillDestroy_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages successfully. Data: ` + (onWindowStageWillDestroy_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages successfully. Data: ` +
+              (onWindowStageWillDestroy_WindowStage[i].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(onWindowStageWillDestroy_WindowStage.length).assertEqual(1);
-          expect((onWindowStageWillDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+          expect((onWindowStageWillDestroy_WindowStage[0].getMainWindowSync().getUIContext()
+            .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -644,22 +736,29 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_3700";
-        let NAME = "getAllWindowStages";
-        let AbilityStage_WindowStage =  AppStorage.get<Array<window.WindowStage>>('AbilityStage_WindowStage') as Array<window.WindowStage>
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_3700';
+        let NAME = 'getAllWindowStages';
+        let AbilityStage_WindowStage = AppStorage.get<Array<window.WindowStage>>(
+          'AbilityStage_WindowStage') as Array<window.WindowStage>
         try {
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [AbilityStage] getAllWindowStages size ${AbilityStage_WindowStage.length}`);
-          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] Data: ` + JSON.stringify(AbilityStage_WindowStage));
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [AbilityStage] getAllWindowStages size` +
+            `${AbilityStage_WindowStage.length}`);
+          hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] Data: ` +
+            JSON.stringify(AbilityStage_WindowStage));
           for (let i = 0; i < AbilityStage_WindowStage.length; i++) {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] getAllWindowStages successfully. Data: ` + (AbilityStage_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+            hilog.info(0x0000, 'testTag',
+              `${TESTCASE} ${NAME} [[AbilityStage]] getAllWindowStages successfully. Data: ` +
+              (AbilityStage_WindowStage[i].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext)
+                .abilityInfo.name);
           }
           expect(AbilityStage_WindowStage.length).assertEqual(0);
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -673,10 +772,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_1100";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_1100';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -698,7 +797,9 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
+                  (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                    .abilityInfo.name);
               }
               expect(data.length).assertEqual(2);
               let matchedInfos: string[] = [];
@@ -712,14 +813,14 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -733,10 +834,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2100";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_2100';
+        let NAME = 'getAllWindowStages';
         let appContext = context.getApplicationContext();
         let wantInfo: Want = {
           deviceId: '',
@@ -753,7 +854,8 @@ export default function ActsGetAllWindowStagesTest() {
             if(err?.code==801) {
               done()
             }else{
-              hilog.info(0x0000,'testTag',`startAbilitycccc, code is ${err?.code}, message is ${err?.message}`);
+              hilog.info(0x0000, 'testTag',
+                `startAbilitycccc, code is ${JSON.stringify(err)}, message is ${JSON.stringify(err)}`);
               done()
             }
           } else {
@@ -769,22 +871,26 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+                hilog.info(0x0000, 'testTag',
+                  `${TESTCASE} ${NAME} [[AbilityStage]] getAllWindowStages successfully. Data: ` +
+                  (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                    .abilityInfo.name);
               }
               expect(data.length).assertEqual(1);
-              expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+              expect((data[0].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
 
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -798,10 +904,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2200";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_2200';
+        let NAME = 'getAllWindowStages';
         let appContext = context.getApplicationContext();
         await Utils.sleep(1000);
         let wantInfo: Want = {
@@ -814,8 +920,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
 
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -826,7 +931,9 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
+                  (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                    .abilityInfo.name);
               }
               expect(data.length > 0).assertTrue();
               let matchedInfos: string[] = [];
@@ -839,14 +946,14 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -860,10 +967,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_3000";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_3000';
+        let NAME = 'getAllWindowStages';
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.GetAllWindowStages',
@@ -873,8 +980,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let appContext = (await application.createModuleContext(context,'entry')).getApplicationContext();
@@ -886,7 +992,9 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
+                  (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                    .abilityInfo.name);
               }
               expect(data.length).assertEqual(2);
               let matchedInfos: string[] = [];
@@ -900,14 +1008,14 @@ export default function ActsGetAllWindowStagesTest() {
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -921,10 +1029,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_1000";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_1000';
+        let NAME = 'getAllWindowStages';
         let appContext = context.getApplicationContext();
         let want: Want = {
           bundleName: 'com.example.GetAllWindowStages',
@@ -937,12 +1045,11 @@ export default function ActsGetAllWindowStagesTest() {
           await context.startAbility(want).then(() => {
             hilog.info(0x0000, 'testTag','startAbility succeed');
           }).catch((err: BusinessError) => {
-            hilog.error(0x0000, 'testTag',`startAbility failed, code is ${err.code}, message is ${err.message}`);
+            hilog.error(0x0000, 'testTag',
+              `startAbility failed, code is ${JSON.stringify(err)}, message is ${JSON.stringify(err)}`);
           });
         } catch (err) {
-          let code = (err as BusinessError).code;
-          let message = (err as BusinessError).message;
-          hilog.error(0x0000, 'testTag',`startAbility failed, code is ${code}, message is ${message}`);
+          hilog.error(0x0000, 'testTag',`startAbility failed: ${JSON.stringify(err)}`);
         }
         await Utils.sleep(1000);
         try {
@@ -953,27 +1060,30 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
               for (let i = 0; i < data.length; i++) {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` +
+                  (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext)
+                    .abilityInfo.name);
               }
               expect(data.length).assertEqual(1);
-              expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+              expect((data[0].getMainWindowSync().getUIContext()
+                .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
               done();
             })
             .catch((e: Error) => {
-              let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                `message: ${JSON.stringify(e)}`);
               expect().assertFail();
               done();
             });
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
       })
 
-      
+
    /**
      * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_1700
      * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_1700
@@ -982,10 +1092,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_1700";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_1700';
+        let NAME = 'getAllWindowStages';
         let appContext = context.getApplicationContext();
         let i = 0;
         let wantInfo: Want = {
@@ -997,8 +1107,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          let err = e as BusinessError
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -1020,8 +1129,8 @@ export default function ActsGetAllWindowStagesTest() {
                 expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               })
               .catch((e: Error) => {
-                let err = e as BusinessError;
-                hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+                hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${JSON.stringify(e)}, ` +
+                  `message: ${JSON.stringify(e)}`);
                 expect().assertFail();
                 done();
               });
@@ -1029,8 +1138,8 @@ export default function ActsGetAllWindowStagesTest() {
           expect(i).assertEqual(1000);
           done();
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
+            `message: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
         }
@@ -1044,10 +1153,10 @@ export default function ActsGetAllWindowStagesTest() {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0800";
-        let NAME = "getAllWindowStages";
+        let TESTCASE = 'SUB_Ability_AbilityRuntime_getAllWindowStages_0800';
+        let NAME = 'getAllWindowStages';
         let appContext = application.getApplicationContext();
         let wantSpecified1: Want = {
           deviceId: '',
@@ -1061,8 +1170,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantSpecified1).then(() => {
           hilog.info(0x0000, 'testTag', 'First: specified mode TestAbility3 (KEY_FIRST) started');
         }).catch((e: Error) => {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_FIRST): ${err.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_FIRST): ${JSON.stringify(e)}`);
         });
         await Utils.sleep(1000);
         let wantMultiton1: Want = {
@@ -1074,8 +1182,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantMultiton1).then(() => {
           hilog.info(0x0000, 'testTag', 'First: multiton mode TestAbility1 started');
         }).catch((e: Error) => {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1: ${JSON.stringify(e)}`);
         });
         await Utils.sleep(1500);
         try {
@@ -1094,8 +1201,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(matchedInfos1.includes('TestAbility3')).assertEqual(true);
           hilog.info(0x0000, 'testTag', 'First verification PASSED: 3 WindowStages');
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `First getAllWindowStages failed: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `First getAllWindowStages failed: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
         await Utils.sleep(1500);
@@ -1111,8 +1217,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantSpecified2).then(() => {
           hilog.info(0x0000, 'testTag', 'Second: specified mode TestAbility3 (KEY_SECOND) started');
         }).catch((e: Error) => {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_SECOND): ${err.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility3 (KEY_SECOND): ${JSON.stringify(e)}`);
         });
         await Utils.sleep(1000);
         let wantMultiton2: Want = {
@@ -1125,8 +1230,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantMultiton2).then(() => {
           hilog.info(0x0000, 'testTag', 'Second: multiton mode TestAbility1 (second instance) started');
         }).catch((e: Error) => {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1 (second): ${err.message}`);
+          hilog.error(0x0000, 'testTag', `Failed to start TestAbility1 (second): ${JSON.stringify(e)}`);
         });
 
         await Utils.sleep(1500);
@@ -1148,8 +1252,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(count1).assertEqual(2);
           expect(count2).assertEqual(2);
         } catch (e) {
-          let err = e as BusinessError;
-          hilog.error(0x0000, 'testTag', `Second getAllWindowStages failed: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `Second getAllWindowStages failed: ${JSON.stringify(e)}`);
           expect().assertFail();
         }
         done();

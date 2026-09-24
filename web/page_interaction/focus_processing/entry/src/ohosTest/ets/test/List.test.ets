@@ -22,6 +22,7 @@ import WebForceEnableZoom from './WebForceEnableZoom.test'
 import WebSetSoftKeyboardBehaviorMode from './WebSetSoftKeyboardBehaviorMode.test'
 import WebKeyBoardAvoidMode from './WebKeyBoardAvoidMode.test'
 import WebOnInputMethodAttached from './WebOnInputMethodAttached.test'
+import webBlankApiCoverage from './WebBlankApiCoverage.test'
 
 export default function testsuite() {
   webInitTest()
@@ -34,4 +35,5 @@ export default function testsuite() {
   WebSetSoftKeyboardBehaviorMode()
   WebKeyBoardAvoidMode()
   WebOnInputMethodAttached()
+  webBlankApiCoverage()
 }

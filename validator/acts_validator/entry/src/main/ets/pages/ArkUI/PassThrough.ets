@@ -24,7 +24,7 @@ import { matrix4 } from '@kit.ArkUI';
 @Entry
 @Component
 struct transform3DDemo {
-  @State name: string = 'passThrough';
+  @State name: string = 'PassThrough';
   @State stepTips: string = '操作步骤:\n' + '1.点击enable按钮,手指在空白处移动5秒,抓取此过程中的Trace,' +
     '查看DispatchTouchEvent和OnTouchEvent数量\n' +
     '2.点击disable按钮,手指在空白处移动5秒,抓取此过程中的Trace,查看DispatchTouchEvent和OnTouchEvent数量\n' +
@@ -39,10 +39,16 @@ struct transform3DDemo {
       Image($r('app.media.ic_public_pass'))
         .width('20vp')
         .height('20vp')
-    }.width('30%')
+    }
+    .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .opacity(this.isOk ? 1 : 0.4)
+    .enabled(this.isOk)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -66,6 +72,7 @@ struct transform3DDemo {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -102,6 +109,7 @@ struct transform3DDemo {
         .backgroundColor(Color.Black)
         .size({ width: '40vp', height: '30vp' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }
@@ -129,15 +137,24 @@ struct transform3DDemo {
             Row({ space: 10 }) {
               Button('enable')
                 .onClick(() => {
-                  let context = this.getUIContext();
-                  context.enableEventPassthrough(true, RawInputEventType.TOUCH);
-                  context.enableEventPassthrough(true, RawInputEventType.MOUSE);
+                  try {
+                    let context = this.getUIContext();
+                    context.enableEventPassthrough(true, RawInputEventType.TOUCH);
+                    context.enableEventPassthrough(true, RawInputEventType.MOUSE);
+                  } catch (e) {
+                    console.error('enableEventPassthrough not supported: ' + JSON.stringify(e));
+                  }
                 })
               Button('disable')
                 .onClick(() => {
-                  let context1 = this.getUIContext();
-                  context1.enableEventPassthrough(false, RawInputEventType.TOUCH);
-                  context1.enableEventPassthrough(false, RawInputEventType.MOUSE);
+                  try {
+                    let context1 = this.getUIContext();
+                    context1.enableEventPassthrough(false, RawInputEventType.TOUCH);
+                    context1.enableEventPassthrough(false, RawInputEventType.MOUSE);
+                  } catch (e) {
+                    console.error('enableEventPassthrough not supported: ' + JSON.stringify(e));
+                  }
+                  this.isOk = true
                 })
             }
 

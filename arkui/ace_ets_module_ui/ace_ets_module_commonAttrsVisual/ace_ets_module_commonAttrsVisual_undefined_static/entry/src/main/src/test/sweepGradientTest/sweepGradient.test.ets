@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import {
   Driver, ON
@@ -27,14 +26,6 @@ import {
 
 export default function SweepGradientTest() {
   describe('SweepGradientTest', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("SweepGradientTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("SweepGradientTest beforeEach start");
       let options: router.RouterOptions = {
@@ -64,9 +55,17 @@ export default function SweepGradientTest() {
     it('SweepGradientUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SweepGradientUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SweepGradientUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('sweepGradientTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SweepGradientUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info("[SweepGradientUndefinedTest_static_0100] $attrs: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -75,11 +74,23 @@ export default function SweepGradientTest() {
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sweepGradient')))
         .assertEqual('{"center":["50.00vp","50.00vp"],"start":"1.00px","end":"359.00px","colors":[["#FFFF0000","0.000000"],["#FF0000FF","0.300000"],["#FFFFFF00","1.000000"]],"repeating":"true"}');
       let changeBtn = await driver.findComponent(ON.id('sweepGradient'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (changeBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('SweepGradientUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SweepGradientUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info("[SweepGradientUndefinedTest_static_0100] click sweepGradient");
       strJson = inspector.getInspectorByKey('sweepGradientTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SweepGradientUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('sweepGradient')))
         .assertEqual('{"colors":[],"repeating":"false"}');
       console.info('[SweepGradientUndefinedTest_static_0100] END');

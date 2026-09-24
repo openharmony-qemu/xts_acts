@@ -16,7 +16,7 @@ import cameraObj from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
 import media from '@ohos.multimedia.media';
 import fs from '@ohos.file.fs';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { surfaceIds } from '../testability/pages/Index';
@@ -531,6 +531,7 @@ export default function cameraJSUnitOutput() {
           `Entering SUB_MULTIMEDIA_CAMERA_CREATE_VIDEO_OUTPUT_CALLBACK_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
       }
       videoOutput.release();
+      await AVRecorder!.release();
       await sleep(1000);
       done();
     })
@@ -719,6 +720,7 @@ export default function cameraJSUnitOutput() {
         }
       }
       videoOutput.release();
+      await AVRecorder!.release();
       await sleep(1000);
       done();
     })
@@ -1794,12 +1796,15 @@ export default function cameraJSUnitOutput() {
         console.info(`photo output start listen on captureReady failed: ${err.code}`);
       })
 
-      photoOutput.off('captureReady', async (err) => {
-        console.info(`photo output stop listen on captureReady failed: ${err.code}`);
-        expect(true).assertFalse()
-        done();
-      })
-      console.info(`photo output stop listen on captureReady success`);
+      try {
+        photoOutput.off('captureReady')
+        console.info(`photo output stop listen on captureReady success`);
+      } catch (err) {
+        console.error(`photo output stop listen on captureReady error, code: ${err.code}, message: ${err.message}`);
+        photoOutput.release()
+        expect().assertFail()
+      }
+      
       photoOutput.release()
       done();
     })
@@ -1947,11 +1952,14 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_PROMISE_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_PROMISE_0100 error`)
+        videoOutput.release();
+        await AVRecorder!.release();
       }
       done();
     })
@@ -1984,11 +1992,14 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_PROMISE_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_PROMISE_0100 error`);
+        videoOutput.release();
+        await AVRecorder!.release();
         done();
       }
     })
@@ -2181,11 +2192,14 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_CALLBACK_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput?.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_CALLBACK_0100 error`);
+        videoOutput?.release();
+        await AVRecorder!.release();
         done();
       }
     })
@@ -2227,11 +2241,14 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_CALLBACK_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_CALLBACK_0100 error`)
+        videoOutput?.release();
+        await AVRecorder!.release();
       }
       done();
     })
@@ -2303,11 +2320,15 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_START_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_START_0100 error`);
+        videoOutput.release();
+        await AVRecorder!.release();
+        done();
       }
     })
 
@@ -2346,6 +2367,7 @@ export default function cameraJSUnitOutput() {
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_END_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
       }
       videoOutput.release();
+      await AVRecorder!.release();
       await sleep(1000);
       done();
     })
@@ -3197,11 +3219,14 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0100 error`);
+        videoOutput.release();
+        await AVRecorder!.release();
       }
     })
 
@@ -3231,11 +3256,15 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_0200 error`);
         expect().assertFail()
+        videoOutput.release();
+        await AVRecorder!.release();
+        done();
       }
     })
 
@@ -3274,6 +3303,7 @@ export default function cameraJSUnitOutput() {
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
       }
       videoOutput.release();
+      await AVRecorder!.release();
       await sleep(1000);
       done();
     })
@@ -3310,6 +3340,7 @@ export default function cameraJSUnitOutput() {
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_END_0200 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
       }
       videoOutput.release();
+      await AVRecorder!.release();
       done();
     })
 
@@ -3342,6 +3373,7 @@ export default function cameraJSUnitOutput() {
       }
       await sleep(1000);
       await videoOutput.release();
+      await AVRecorder!.release();
       done();
     })
 
@@ -3383,11 +3415,14 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_ERROR_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_ERROR_0100 error`);
+        videoOutput.release();
+        await AVRecorder!.release();
         done();
       }
     })
@@ -3412,6 +3447,7 @@ export default function cameraJSUnitOutput() {
       expect(isEmpty(supportedFrameRates)).assertFalse()
       // 释放会话
       await videoOutput.release()
+      await AVRecorder!.release();
       await cameraSession.release();
       done()
     })
@@ -3445,6 +3481,7 @@ export default function cameraJSUnitOutput() {
         expect().assertFalse;
       }
       await videoOutput.release();
+      await AVRecorder!.release();
       await cameraSession.release();
       done()
     })
@@ -3518,6 +3555,7 @@ export default function cameraJSUnitOutput() {
       }
       cameraInput.close()
       videoOutput.release()
+      await AVRecorder!.release();
       await captureSession.release();
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_SET_FRAME_RATE_0200 PASS");
       await sleep(1000);
@@ -3580,6 +3618,7 @@ export default function cameraJSUnitOutput() {
         // expect(err.code == 7400110).assertTrue();
       }
       videoOutput2.release()
+      await AVRecorder!.release();
       stopCameraSession()
       done()
     })
@@ -3616,6 +3655,7 @@ export default function cameraJSUnitOutput() {
       expect(activeFrameRate["min"] == supportedFrameRates[0]['min']).assertTrue()
       // 关闭会话
       await videoOutput.release()
+      await AVRecorder!.release();
       await cameraSession.release();
       done()
     })
@@ -3656,11 +3696,14 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_ERROR_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         videoOutput.release();
+        await AVRecorder!.release();
         await sleep(1000);
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_ERROR_0100 error`);
+        videoOutput.release();
+        await AVRecorder!.release();
         done();
       }
 
@@ -3705,10 +3748,13 @@ export default function cameraJSUnitOutput() {
             `Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_RELEASE_CALLBACK_0100 createVideoOutput parse err + ${JSON.stringify(videoProfilesArray)} + ${videoSurfaceId}`)
         }
         await sleep(1000);
+        await AVRecorder!.release();
         done();
       } catch (err) {
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_RELEASE_CALLBACK_0100 error`);
+        await AVRecorder!.release();
+        done();
       }
     })
 
@@ -4005,16 +4051,16 @@ export default function cameraJSUnitOutput() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300
-     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900
      * @tc.desc   preview output set frame rate with errorCode 7400110
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300', Level.LEVEL2, async (done: Function) => {
-      let testNum: string = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300';
-      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300--------------");
+    it('SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900', Level.LEVEL2, async (done: Function) => {
+      let testNum: string = 'SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900';
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900--------------");
       let cameraOutputCap = cameraManager.getSupportedOutputCapability(cameraDevicesArray[0], cameraObj.SceneMode.NORMAL_VIDEO);
       let previewProfiles: cameraObj.Profile = cameraOutputCap.previewProfiles[0];
       console.info(`${testNum} cameraOutputCap.videoProfiles length is ${cameraOutputCap.videoProfiles.length}`);
@@ -4084,7 +4130,7 @@ export default function cameraJSUnitOutput() {
       videoOutput2.release()
       await stopCameraSession()
       await cameraSession.release();
-      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0300 PASS");
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PREVIEW_OUTPUT_SET_FRAME_RATE_0900 PASS");
       // 关闭previewOutput
       await previewOutput.release();
       await sleep(1000);

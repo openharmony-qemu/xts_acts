@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import {Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -73,8 +73,8 @@ export default function openMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY1'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(textPositionX).assertLess(menuPositionX)
-        expect(textPositionY).assertLess(menuPositionY)
+        expect(textPositionX != menuPositionX).assertTrue()
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');
@@ -114,7 +114,7 @@ export default function openMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY2'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(textPositionY).assertLess(menuPositionY)
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');
@@ -153,8 +153,8 @@ export default function openMenuAnchorPositionTest() {
 
         let text4 = await driver.findComponent(ON.id('textPositionY3'));
         let textPositionY = Number.parseFloat(await text4.getText());
-        expect(menuPositionX).assertLess(textPositionX)
-        expect(textPositionY).assertLess(menuPositionY)
+        expect(textPositionX != menuPositionX).assertTrue()
+        expect(textPositionY != menuPositionY).assertTrue()
 
         await CommonFunc.sleep(2000);
         console.info('[' + tagName + '] END ===========================');

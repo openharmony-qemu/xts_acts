@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import testNapi from 'libentry.so';
 
 class PromiseThenableVariant {
@@ -32,7 +32,7 @@ export default function abilityTest() {
      */
     it('testNapiCreatePromise0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiCreatePromise0001 begin');
-      let result = testNapi.testNapiCreatePromise_NormalParams();
+      let result: number = testNapi.testNapiCreatePromise_NormalParams();
       expect(result).assertTrue();
     })
 
@@ -46,7 +46,7 @@ export default function abilityTest() {
      */
     it('testNapiCreatePromise0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       console.info('testNapiCreatePromise0002 begin');
-      let result = testNapi.testNapiCreatePromise_NullEnv();
+      let result: number = testNapi.testNapiCreatePromise_NullEnv();
       expect(result).assertTrue();
     })
 
@@ -60,7 +60,7 @@ export default function abilityTest() {
      */
     it('testNapiCreatePromise0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       console.info('testNapiCreatePromise0003 begin');
-      let result = testNapi.testNapiCreatePromise_NullDeferred();
+      let result: number = testNapi.testNapiCreatePromise_NullDeferred();
       expect(result).assertTrue();
     })
 
@@ -74,7 +74,7 @@ export default function abilityTest() {
      */
     it('testNapiCreatePromise0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       console.info('testNapiCreatePromise0004 begin');
-      let result = testNapi.testNapiCreatePromise_NullPromise();
+      let result: number = testNapi.testNapiCreatePromise_NullPromise();
       expect(result).assertTrue();
     })
 
@@ -88,7 +88,7 @@ export default function abilityTest() {
      */
     it('testNapiCreateAsyncWork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testNapiCreateAsyncWork0001 begin');
-      let result = testNapi.testNapiCreateAsyncWork_NormalParams();
+      let result: number = testNapi.testNapiCreateAsyncWork_NormalParams();
       expect(result).assertTrue();
     })
 
@@ -102,7 +102,7 @@ export default function abilityTest() {
      */
     it('testNapiCreateAsyncWork0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiCreateAsyncWork0002 begin');
-      let result = testNapi.testNapiCreateAsyncWork_AsyncResourceNameNonString();
+      let result: number = testNapi.testNapiCreateAsyncWork_AsyncResourceNameNonString();
       expect(result).assertTrue();
     })
 
@@ -116,7 +116,7 @@ export default function abilityTest() {
      */
     it('testNapiCreateAsyncWork0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       console.info('testNapiCreateAsyncWork0003 begin');
-      let result = testNapi.testNapiCreateAsyncWork_NullExecuteAndComplete();
+      let result: number = testNapi.testNapiCreateAsyncWork_NullExecuteAndComplete();
       expect(result).assertTrue();
     })
 
@@ -130,7 +130,7 @@ export default function abilityTest() {
      */
     it('testNapiCreateAsyncWork0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       console.info('testNapiCreateAsyncWork0004 begin');
-      let result = testNapi.testNapiCreateAsyncWork_NullExecute();
+      let result: number = testNapi.testNapiCreateAsyncWork_NullExecute();
       expect(result).assertTrue();
     })
 
@@ -144,7 +144,7 @@ export default function abilityTest() {
      */
     it('testNapiCreateAsyncWork0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       console.info('testNapiCreateAsyncWork0006 begin');
-      let result = testNapi.testNapiCreateAsyncWork_NullResult();
+      let result: number = testNapi.testNapiCreateAsyncWork_NullResult();
       expect(result).assertTrue();
     })
 
@@ -158,7 +158,7 @@ export default function abilityTest() {
      */
     it('testNapiCreateAsyncWork0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       console.info('testNapiCreateAsyncWork0007 begin');
-      let result = testNapi.testNapiCreateAsyncWork_NullData();
+      let result: number = testNapi.testNapiCreateAsyncWork_NullData();
       expect(result).assertTrue();
     })
 
@@ -172,7 +172,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiQueueAsyncWork0001 begin');
-      let result = await testNapi.testNapiQueueAsyncWork_NormalParams();
+      let result: number = await testNapi.testNapiQueueAsyncWork_NormalParams();
       expect(result).assertTrue();
     })
 
@@ -186,7 +186,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiQueueAsyncWork0002 begin');
-      let result = await testNapi.testNapiQueueAsyncWork_ThreadValidation();
+      let result: number = await testNapi.testNapiQueueAsyncWork_ThreadValidation();
       expect(result).assertTrue();
     })
 
@@ -200,7 +200,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testNapiQueueAsyncWork0003 begin');
-      let result = testNapi.testNapiQueueAsyncWork_NullEnv();
+      let result: number = testNapi.testNapiQueueAsyncWork_NullEnv();
       expect(result).assertTrue();
     })
 
@@ -214,7 +214,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testNapiQueueAsyncWork0004 begin');
-      let result = testNapi.testNapiQueueAsyncWork_NullWork();
+      let result: number = testNapi.testNapiQueueAsyncWork_NullWork();
       expect(result).assertTrue();
     })
 
@@ -228,7 +228,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testNapiQueueAsyncWork0005 begin');
-      let result = testNapi.testNapiQueueAsyncWork_NullEnvAndWork();
+      let result: number = testNapi.testNapiQueueAsyncWork_NullEnvAndWork();
       expect(result).assertTrue();
     })
 
@@ -242,7 +242,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiQueueAsyncWork0006 begin');
-      let result = testNapi.testNapiQueueAsyncWork_QueuedWork();
+      let result: number = testNapi.testNapiQueueAsyncWork_QueuedWork();
       expect(result).assertTrue();
     })
 
@@ -256,7 +256,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiQueueAsyncWork0007 begin');
-      let result = await testNapi.testNapiQueueAsyncWork_ExecutedWork();
+      let result: number = await testNapi.testNapiQueueAsyncWork_ExecutedWork();
       expect(result).assertTrue();
     })
 
@@ -270,7 +270,7 @@ export default function abilityTest() {
      */
     it('testNapiQueueAsyncWork0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiQueueAsyncWork0008 begin');
-      let result = await testNapi.testNapiQueueAsyncWork_CanceledWork();
+      let result: number = await testNapi.testNapiQueueAsyncWork_CanceledWork();
       expect(result).assertTrue();
     })
 
@@ -284,7 +284,7 @@ export default function abilityTest() {
      */
     it('testNapiCancelAsyncWork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiCancelAsyncWork0001 begin');
-      let result = await testNapi.testNapiCancelAsyncWork_QueuedWork();
+      let result: number = await testNapi.testNapiCancelAsyncWork_QueuedWork();
       expect(result).assertTrue();
     })
 
@@ -298,7 +298,7 @@ export default function abilityTest() {
      */
     it('testNapiCancelAsyncWork0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiCancelAsyncWork0002 begin');
-      let result = testNapi.testNapiCancelAsyncWork_NotQueuedWork();
+      let result: number = testNapi.testNapiCancelAsyncWork_NotQueuedWork();
       expect(result).assertTrue();
     })
 
@@ -312,7 +312,7 @@ export default function abilityTest() {
      */
     it('testNapiCancelAsyncWork0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testNapiCancelAsyncWork0003 begin');
-      let result = testNapi.testNapiCancelAsyncWork_NullWork();
+      let result: number = testNapi.testNapiCancelAsyncWork_NullWork();
       expect(result).assertTrue();
     })
 
@@ -326,7 +326,7 @@ export default function abilityTest() {
      */
     it('testNapiCancelAsyncWork0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiCancelAsyncWork0005 begin');
-      let result = testNapi.testNapiCancelAsyncWork_ExecutingWork();
+      let result: number = testNapi.testNapiCancelAsyncWork_ExecutingWork();
       expect(result).assertTrue();
     })
 
@@ -340,7 +340,7 @@ export default function abilityTest() {
      */
     it('testNapiCancelAsyncWork0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiCancelAsyncWork0006 begin');
-      let result = await testNapi.testNapiCancelAsyncWork_CompletedWork();
+      let result: number = await testNapi.testNapiCancelAsyncWork_CompletedWork();
       expect(result).assertTrue();
     })
 
@@ -354,7 +354,7 @@ export default function abilityTest() {
      */
     it('testNapiCancelAsyncWork0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiCancelAsyncWork0007 begin');
-      let result = testNapi.testNapiCancelAsyncWork_DeletedWork();
+      let result: number = testNapi.testNapiCancelAsyncWork_DeletedWork();
       expect(result).assertTrue();
     })
 
@@ -368,7 +368,7 @@ export default function abilityTest() {
      */
     it('testNapiCancelAsyncWork0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiCancelAsyncWork0008 begin');
-      let result = await testNapi.testNapiCancelAsyncWork_CanceledWork();
+      let result: number = await testNapi.testNapiCancelAsyncWork_CanceledWork();
       expect(result).assertTrue();
     })
 
@@ -382,7 +382,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testNapiDeleteAsyncWork0001 begin');
-      let result = testNapi.testNapiDeleteAsyncWork_NormalParams();
+      let result: number = testNapi.testNapiDeleteAsyncWork_NormalParams();
       expect(result).assertTrue();
     })
 
@@ -396,7 +396,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiDeleteAsyncWork0002 begin');
-      let result = testNapi.testNapiDeleteAsyncWork_NotQueued();
+      let result: number = testNapi.testNapiDeleteAsyncWork_NotQueued();
       expect(result).assertTrue();
     })
 
@@ -410,7 +410,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiDeleteAsyncWork0003 begin');
-      let result = await testNapi.testNapiDeleteAsyncWork_QueuedNotExecuted();
+      let result: number = await testNapi.testNapiDeleteAsyncWork_QueuedNotExecuted();
       expect(result).assertTrue();
     })
 
@@ -424,7 +424,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiDeleteAsyncWork0004 begin');
-      let result = await testNapi.testNapiDeleteAsyncWork_Executing();
+      let result: number = await testNapi.testNapiDeleteAsyncWork_Executing();
       expect(result).assertTrue();
     })
 
@@ -438,7 +438,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiDeleteAsyncWork0005 begin');
-      let result = await testNapi.testNapiDeleteAsyncWork_Canceled();
+      let result: number = await testNapi.testNapiDeleteAsyncWork_Canceled();
       expect(result).assertTrue();
     })
 
@@ -452,7 +452,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiDeleteAsyncWork0006 begin');
-      let result = await testNapi.testNapiDeleteAsyncWork_Completed();
+      let result: number = await testNapi.testNapiDeleteAsyncWork_Completed();
       expect(result).assertTrue();
     })
 
@@ -466,7 +466,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.info('testNapiDeleteAsyncWork0007 begin');
-      let result = testNapi.testNapiDeleteAsyncWork_NullWork();
+      let result: number = testNapi.testNapiDeleteAsyncWork_NullWork();
       expect(result).assertTrue();
     })
 
@@ -480,7 +480,7 @@ export default function abilityTest() {
      */
     it('testNapiDeleteAsyncWork0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       console.info('testNapiDeleteAsyncWork0009 begin');
-      let result = testNapi.testNapiDeleteAsyncWork_DeletedWork();
+      let result: number = testNapi.testNapiDeleteAsyncWork_DeletedWork();
       expect(result).assertTrue();
     })
 
@@ -494,7 +494,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0001 begin');
-      let result = await testNapi.testNapiAsyncWork_NormalFunctionNoArgNoReturn();
+      let result: number = await testNapi.testNapiAsyncWork_NormalFunctionNoArgNoReturn();
       expect(result).assertTrue();
     })
 
@@ -508,7 +508,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0002 begin');
-      let result = await testNapi.testNapiAsyncWork_SyncFunctionWithArgNoReturn();
+      let result: number = await testNapi.testNapiAsyncWork_SyncFunctionWithArgNoReturn();
       expect(result).assertTrue();
     })
 
@@ -522,7 +522,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0003 begin');
-      let result = await testNapi.testNapiAsyncWork_NormalFunctionNoArgWithReturnContainer();
+      let result: number = await testNapi.testNapiAsyncWork_NormalFunctionNoArgWithReturnContainer();
       expect(result).assertTrue();
     })
 
@@ -537,7 +537,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0004 begin');
-      let result = await testNapi.testNapiAsyncWork_ClassMethodWithArgStringReturnFunction();
+      let result: number = await testNapi.testNapiAsyncWork_ClassMethodWithArgStringReturnFunction();
       expect(result).assertTrue();
     })
 
@@ -551,7 +551,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0005 begin');
-      let result = await testNapi.testNapiAsyncWork_ClassStaticWithArgReturnPromise();
+      let result: number = await testNapi.testNapiAsyncWork_ClassStaticWithArgReturnPromise();
       expect(result).assertTrue();
     })
 
@@ -565,7 +565,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0006 begin');
-      let result = await testNapi.testNapiAsyncWork_EtsNormalFunctionNoArgNoReturn();
+      let result: number = await testNapi.testNapiAsyncWork_EtsNormalFunctionNoArgNoReturn();
       expect(result).assertTrue();
     })
 
@@ -579,7 +579,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0007 begin');
-      let result = await testNapi.testNapiAsyncWork_EtsNormalFunctionWithArgNoReturn();
+      let result: number = await testNapi.testNapiAsyncWork_EtsNormalFunctionWithArgNoReturn();
       expect(result).assertTrue();
     })
 
@@ -593,7 +593,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0008 begin');
-      let result = await testNapi.testNapiAsyncWork_EtsNormalFunctionNoArgWithReturnContainer();
+      let result: number = await testNapi.testNapiAsyncWork_EtsNormalFunctionNoArgWithReturnContainer();
       expect(result).assertTrue();
     })
 
@@ -607,7 +607,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0009 begin');
-      let result = await testNapi.testNapiAsyncWork_EtsClassMethodWithArgStringReturnFunction();
+      let result: number = await testNapi.testNapiAsyncWork_EtsClassMethodWithArgStringReturnFunction();
       expect(result).assertTrue();
     })
 
@@ -621,7 +621,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0010 begin');
-      let result = await testNapi.testNapiAsyncWork_EtsClassStaticWithArgReturnPromise();
+      let result: number = await testNapi.testNapiAsyncWork_EtsClassStaticWithArgReturnPromise();
       expect(result).assertTrue();
     })
 
@@ -635,7 +635,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncWork0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncWork0011 begin');
-      let result = await testNapi.testNapiAsyncWork_EtsClassConstructor();
+      let result: number = await testNapi.testNapiAsyncWork_EtsClassConstructor();
       expect(result).assertTrue();
     })
 
@@ -649,7 +649,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0001 begin');
-      let result = await testNapi.testNapiAsyncComplete_NormalFunctionNoArgNoReturn();
+      let result: number = await testNapi.testNapiAsyncComplete_NormalFunctionNoArgNoReturn();
       expect(result).assertTrue();
     })
 
@@ -663,7 +663,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0002 begin');
-      let result = await testNapi.testNapiAsyncComplete_SyncFunctionWithArgReturn();
+      let result: number = await testNapi.testNapiAsyncComplete_SyncFunctionWithArgReturn();
       expect(result).assertTrue();
     })
 
@@ -677,7 +677,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0003 begin');
-      let result = await testNapi.testNapiAsyncComplete_NormalFunctionNoArgReturnContainer();
+      let result: number = await testNapi.testNapiAsyncComplete_NormalFunctionNoArgReturnContainer();
       expect(result).assertTrue();
     })
 
@@ -691,7 +691,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0004 begin');
-      let result = await testNapi.testNapiAsyncComplete_SyncFunctionWithArgReturnContainer();
+      let result: number = await testNapi.testNapiAsyncComplete_SyncFunctionWithArgReturnContainer();
       expect(result).assertTrue();
     })
 
@@ -705,7 +705,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0005 begin');
-      let result = await testNapi.testNapiAsyncComplete_NormalFunctionNoArgReturnString();
+      let result: number = await testNapi.testNapiAsyncComplete_NormalFunctionNoArgReturnString();
       expect(result).assertTrue();
     })
 
@@ -719,7 +719,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0006 begin');
-      let result = await testNapi.testNapiAsyncComplete_ClassMethodWithArgStringReturnFunction();
+      let result: number = await testNapi.testNapiAsyncComplete_ClassMethodWithArgStringReturnFunction();
       expect(result).assertTrue();
     })
 
@@ -733,7 +733,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0007 begin');
-      let result = await testNapi.testNapiAsyncComplete_ClassStaticWithArgReturnPromise();
+      let result: number = await testNapi.testNapiAsyncComplete_ClassStaticWithArgReturnPromise();
       expect(result).assertTrue();
     })
 
@@ -747,7 +747,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0008 begin');
-      let result = await testNapi.testNapiAsyncComplete_EtsNormalFunctionNoArgNoReturn();
+      let result: number = await testNapi.testNapiAsyncComplete_EtsNormalFunctionNoArgNoReturn();
       expect(result).assertTrue();
     })
 
@@ -761,7 +761,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0009 begin');
-      let result = await testNapi.testNapiAsyncComplete_EtsNormalFunctionWithArgNoReturn();
+      let result: number = await testNapi.testNapiAsyncComplete_EtsNormalFunctionWithArgNoReturn();
       expect(result).assertTrue();
     })
 
@@ -775,7 +775,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0010 begin');
-      let result = await testNapi.testNapiAsyncComplete_EtsNormalFunctionNoArgReturnContainer();
+      let result: number = await testNapi.testNapiAsyncComplete_EtsNormalFunctionNoArgReturnContainer();
       expect(result).assertTrue();
     })
 
@@ -789,7 +789,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0011 begin');
-      let result = await testNapi.testNapiAsyncComplete_EtsClassMethodWithArgStringReturnFunction();
+      let result: number = await testNapi.testNapiAsyncComplete_EtsClassMethodWithArgStringReturnFunction();
       expect(result).assertTrue();
     })
 
@@ -803,7 +803,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0012 begin');
-      let result = await testNapi.testNapiAsyncComplete_EtsClassStaticWithArgReturnPromise();
+      let result: number = await testNapi.testNapiAsyncComplete_EtsClassStaticWithArgReturnPromise();
       expect(result).assertTrue();
     })
 
@@ -817,7 +817,7 @@ export default function abilityTest() {
      */
     it('testNapiAsyncComplete0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiAsyncComplete0013 begin');
-      let result = await testNapi.testNapiAsyncComplete_EtsClassConstructor();
+      let result: number = await testNapi.testNapiAsyncComplete_EtsClassConstructor();
       expect(result).assertTrue();
     })
 
@@ -831,7 +831,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0003 begin');
-      let result = await testNapi.testNapiTaskContent_ExecuteWithLock();
+      let result: number = await testNapi.testNapiTaskContent_ExecuteWithLock();
       expect(result).assertTrue();
     })
 
@@ -845,7 +845,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0004 begin');
-      let result = await testNapi.testNapiTaskContent_ExecuteLongTime10s();
+      let result: number = await testNapi.testNapiTaskContent_ExecuteLongTime10s();
       expect(result).assertTrue();
     })
 
@@ -859,7 +859,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0005 begin');
-      let result = await testNapi.testNapiTaskContent_ExecuteLongTime3min();
+      let result: number = await testNapi.testNapiTaskContent_ExecuteLongTime3min();
       expect(result).assertTrue();
     })
 
@@ -873,7 +873,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0006 begin');
-      let result = await testNapi.testNapiTaskContent_ExecuteLongTime10min();
+      let result: number = await testNapi.testNapiTaskContent_ExecuteLongTime10min();
       expect(result).assertTrue();
     })
 
@@ -887,7 +887,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0007 begin');
-      let result = await testNapi.testNapiTaskContent_CompleteLongTime10s();
+      let result: number = await testNapi.testNapiTaskContent_CompleteLongTime10s();
       expect(result).assertTrue();
     })
 
@@ -901,7 +901,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0008 begin');
-      let result = await testNapi.testNapiTaskContent_CompleteLongTime3min();
+      let result: number = await testNapi.testNapiTaskContent_CompleteLongTime3min();
       expect(result).assertTrue();
     })
 
@@ -915,7 +915,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0009 begin');
-      let result = await testNapi.testNapiTaskContent_CompleteLongTime10min();
+      let result: number = await testNapi.testNapiTaskContent_CompleteLongTime10min();
       expect(result).assertTrue();
     })
 
@@ -929,7 +929,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0010 begin');
-      let result = await testNapi.testNapiTaskContent_ExecuteInfiniteLoop();
+      let result: number = await testNapi.testNapiTaskContent_ExecuteInfiniteLoop();
       expect(result).assertTrue();
     })
 
@@ -943,7 +943,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0011 begin');
-      let result = await testNapi.testNapiTaskContent_SameDataPointer();
+      let result: number = await testNapi.testNapiTaskContent_SameDataPointer();
       expect(result).assertTrue();
     })
 
@@ -957,7 +957,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0012 begin');
-      let result = await testNapi.testNapiTaskContent_ExecuteEmptyOperation();
+      let result: number = await testNapi.testNapiTaskContent_ExecuteEmptyOperation();
       expect(result).assertTrue();
     })
 
@@ -971,7 +971,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0013 begin');
-      let result = await testNapi.testNapiTaskContent_CompleteDeleteWork();
+      let result: number = await testNapi.testNapiTaskContent_CompleteDeleteWork();
       expect(result).assertTrue();
     })
 
@@ -985,7 +985,7 @@ export default function abilityTest() {
      */
     it('testNapiTaskContent0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiTaskContent0014 begin');
-      let result = await testNapi.testNapiTaskContent_CancelAndRequeue();
+      let result: number = await testNapi.testNapiTaskContent_CancelAndRequeue();
       expect(result).assertTrue();
     })
 
@@ -999,7 +999,7 @@ export default function abilityTest() {
      */
     it('testNapiNestedComplete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiNestedComplete0002 begin');
-      let result = await testNapi.testNapiNestedComplete_NestCreateMultipleAndCancel();
+      let result: number = await testNapi.testNapiNestedComplete_NestCreateMultipleAndCancel();
       expect(result).assertTrue();
     })
 
@@ -1013,7 +1013,7 @@ export default function abilityTest() {
      */
     it('testNapiNestedComplete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiNestedComplete0003 begin');
-      let result = await testNapi.testNapiNestedComplete_NestCreatePromise();
+      let result: number = await testNapi.testNapiNestedComplete_NestCreatePromise();
       expect(result).assertTrue();
     })
 
@@ -1027,7 +1027,7 @@ export default function abilityTest() {
      */
     it('testNapiNestedComplete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('testNapiNestedComplete0004 begin');
-      let result = await testNapi.testNapiNestedComplete_NestCreateAsyncTask();
+      let result: number = await testNapi.testNapiNestedComplete_NestCreateAsyncTask();
       expect(result).assertTrue();
     })
 
@@ -1041,7 +1041,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0001', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0001 begin');
-      let result = await testNapi.testNapiPerformance_SingleTaskCreateQueueDelete();
+      let result: number = await testNapi.testNapiPerformance_SingleTaskCreateQueueDelete();
       expect(result).assertTrue();
     })
 
@@ -1055,7 +1055,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0002', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0002 begin');
-      let result = await testNapi.testNapiPerformance_SingleTaskCreateQueueCancel();
+      let result: number = await testNapi.testNapiPerformance_SingleTaskCreateQueueCancel();
       expect(result).assertTrue();
     })
 
@@ -1069,7 +1069,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0003', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0003 begin');
-      let result = await testNapi.testNapiPerformance_SingleTaskWaitComplete();
+      let result: number = await testNapi.testNapiPerformance_SingleTaskWaitComplete();
       expect(result).assertTrue();
     })
 
@@ -1083,7 +1083,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0006', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, () => {
       console.info('testNapiPerformance0006 begin');
-      let result = testNapi.testNapiPerformance_RandomCancelTasks();
+      let result: number = testNapi.testNapiPerformance_RandomCancelTasks();
       expect(result).assertTrue();
     })
 
@@ -1097,7 +1097,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0007', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0007 begin');
-      let result = await testNapi.testNapiPerformance_Create10000TasksAndWaitComplete();
+      let result: number = await testNapi.testNapiPerformance_Create10000TasksAndWaitComplete();
       expect(result).assertTrue();
     })
 
@@ -1111,7 +1111,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0008', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0008 begin');
-      let result = await testNapi.testNapiPerformance_SingleTaskQueue10000Times();
+      let result: number = await testNapi.testNapiPerformance_SingleTaskQueue10000Times();
       expect(result).assertTrue();
     })
 
@@ -1125,7 +1125,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0009', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0009 begin');
-      let result = await testNapi.testNapiPerformance_LargeData10M();
+      let result: number = await testNapi.testNapiPerformance_LargeData10M();
       expect(result).assertTrue();
     })
 
@@ -1139,7 +1139,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0010', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0010 begin');
-      let result = await testNapi.testNapiPerformance_LargeDataMemoryLeak();
+      let result: number = await testNapi.testNapiPerformance_LargeDataMemoryLeak();
       expect(result).assertTrue();
     })
 
@@ -1153,7 +1153,7 @@ export default function abilityTest() {
      */
     it('testNapiPerformance0011', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, async () => {
       console.info('testNapiPerformance0011 begin');
-      let result = await testNapi.testNapiPerformance_CompleteCbReadData();
+      let result: number = await testNapi.testNapiPerformance_CompleteCbReadData();
       expect(result).assertTrue();
     })
 
@@ -1167,7 +1167,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseCreate0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiPromiseCreate0001 begin');
-      let result = testNapi.createPromise();
+      let result: number = testNapi.createPromise();
       expect(result).assertTrue();
     })
 
@@ -1181,7 +1181,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseCreate0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       console.info('testNapiPromiseCreate0002 begin');
-      let result = await testNapi.createPromiseAndResolve('resolved value from js');
+      let result: number = await testNapi.createPromiseAndResolve('resolved value from js');
       expect(`${result}`).assertEqual('resolved value from js');
     })
 
@@ -1193,9 +1193,9 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testNapiPromiseCreate0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testNapiPromiseCreate0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testNapiPromiseCreate0003 begin');
-      let result = await testNapi.createPromiseAndReject(new Error('promise rejected from js'))
+      let result: number = await testNapi.createPromiseAndReject(new Error('promise rejected from js'))
         .then(() => {
           return false;
         })
@@ -1203,6 +1203,7 @@ export default function abilityTest() {
           return err.message === 'promise rejected from js';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1215,7 +1216,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromise0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromise0001 begin');
-      let result = testNapi.isPromise(Promise.resolve(true));
+      let result: number = testNapi.isPromise(Promise.resolve(true));
       expect(result).assertTrue();
     })
 
@@ -1229,7 +1230,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseMultiThread0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiPromiseMultiThread0001 begin');
-      let result = await testNapi.testMultiThreadCreatePromise();
+      let result: number = await testNapi.testMultiThreadCreatePromise();
       expect(result).assertTrue();
     })
 
@@ -1243,7 +1244,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseMultiThread0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseMultiThread0002 begin');
-      let result = testNapi.testMultiThreadResolveSameDeferred();
+      let result: number = testNapi.testMultiThreadResolveSameDeferred();
       expect(result).assertTrue();
     })
 
@@ -1257,7 +1258,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseMultiThread0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseMultiThread0003 begin');
-      let result = testNapi.testMultiThreadRejectSameDeferred();
+      let result: number = testNapi.testMultiThreadRejectSameDeferred();
       expect(result).assertTrue();
     })
 
@@ -1271,7 +1272,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseMultiThread0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiPromiseMultiThread0004 begin');
-      let result = await testNapi.testThreadSafeResolve();
+      let result: number = await testNapi.testThreadSafeResolve();
       expect(result).assertTrue();
     })
 
@@ -1283,9 +1284,9 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testNapiPromiseMultiThread0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testNapiPromiseMultiThread0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testNapiPromiseMultiThread0005 begin');
-      let result = await testNapi.testThreadSafeReject()
+      let result: number = await testNapi.testThreadSafeReject()
         .then(() => {
           return false;
         })
@@ -1293,6 +1294,7 @@ export default function abilityTest() {
           return `${err}` === 'thread safe reject';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1305,7 +1307,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseMultiThread0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseMultiThread0006 begin');
-      let result = testNapi.testThreadIsPromise();
+      let result: number = testNapi.testThreadIsPromise();
       expect(result).assertTrue();
     })
 
@@ -1320,7 +1322,7 @@ export default function abilityTest() {
     it('testNapiDeferredResolve0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       console.info('testNapiDeferredResolve0001 begin');
       let value = 'resolve-from-js';
-      let result = await testNapi.resolvePromiseWithValue(value);
+      let result: number = await testNapi.resolvePromiseWithValue(value);
       expect(`${result}`).assertEqual(value);
     })
 
@@ -1332,9 +1334,9 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testNapiDeferredReject0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testNapiDeferredReject0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testNapiDeferredReject0001 begin');
-      let result = await testNapi.rejectPromiseWithValue(new Error('reject-from-js'))
+      let result: number = await testNapi.rejectPromiseWithValue(new Error('reject-from-js'))
         .then(() => {
           return false;
         })
@@ -1342,6 +1344,7 @@ export default function abilityTest() {
           return err.message === 'reject-from-js';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1360,7 +1363,7 @@ export default function abilityTest() {
         })
         .finally(() => {
         });
-      let result = await testNapi.createChainedPromise(chainedPromise)
+      let result: number = await testNapi.createChainedPromise(chainedPromise)
         .then((value: Object) => {
           return `${value}` === 'inner value';
         })
@@ -1377,9 +1380,9 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testNapiPromiseNested0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('testNapiPromiseNested0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testNapiPromiseNested0002 begin');
-      let result = await testNapi.createChainedTimeoutPromise()
+      let result: number = await testNapi.createChainedTimeoutPromise()
         .then((value: Object) => {
           return false;
         })
@@ -1389,6 +1392,7 @@ export default function abilityTest() {
         .finally(() => {
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1401,7 +1405,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNested0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       console.info('testNapiPromiseNested0003 begin');
-      let result = await testNapi.testPromiseNestedPromise();
+      let result: number = await testNapi.testPromiseNestedPromise();
       expect(`${result}`).assertEqual('nested value');
     })
 
@@ -1415,7 +1419,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNested0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseNested0004 begin');
-      let result = testNapi.testPromiseCallbackNested();
+      let result: number = testNapi.testPromiseCallbackNested();
       expect(result).assertTrue();
     })
 
@@ -1429,7 +1433,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNested0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseNested0005 begin');
-      let result = testNapi.testMultiLevelNestedPromise();
+      let result: number = testNapi.testMultiLevelNestedPromise();
       expect(result).assertTrue();
     })
 
@@ -1443,7 +1447,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNested0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseNested0006 begin');
-      let result = testNapi.testPromiseInAsyncWork();
+      let result: number = testNapi.testPromiseInAsyncWork();
       expect(result).assertTrue();
     })
 
@@ -1455,9 +1459,9 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testNapiPromiseNested0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('testNapiPromiseNested0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testNapiPromiseNested0007 begin');
-      let result = await testNapi.testRejectInNestedPromise()
+      let result: number = await testNapi.testRejectInNestedPromise()
         .then(() => {
           return false;
         })
@@ -1465,6 +1469,7 @@ export default function abilityTest() {
           return `${err}` === 'inner error';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1477,7 +1482,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredResolveLoop0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredResolveLoop0001 begin');
-      let result = testNapi.testLoopCreatePromise();
+      let result: number = testNapi.testLoopCreatePromise();
       expect(result).assertTrue();
     })
 
@@ -1491,7 +1496,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredResolveLoop0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredResolveLoop0002 begin');
-      let result = testNapi.testLoopCreatePromiseAndCheck();
+      let result: number = testNapi.testLoopCreatePromiseAndCheck();
       expect(result).assertTrue();
     })
 
@@ -1505,7 +1510,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredResolveLoop0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredResolveLoop0003 begin');
-      let result = testNapi.testResolveDeferredLoop();
+      let result: number = testNapi.testResolveDeferredLoop();
       expect(result).assertTrue();
     })
 
@@ -1519,7 +1524,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredRejectLoop0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredRejectLoop0001 begin');
-      let result = testNapi.testRejectDeferredLoop();
+      let result: number = testNapi.testRejectDeferredLoop();
       expect(result).assertTrue();
     })
 
@@ -1533,7 +1538,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseStability0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseStability0001 begin');
-      let result = testNapi.testLargeStringResolve();
+      let result: number = testNapi.testLargeStringResolve();
       expect(result).assertTrue();
     })
 
@@ -1547,7 +1552,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseStability0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseStability0002 begin');
-      let result = testNapi.testComplexObjectResolve();
+      let result: number = testNapi.testComplexObjectResolve();
       expect(result).assertTrue();
     })
 
@@ -1561,7 +1566,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseMultiThreadSafe0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseMultiThreadSafe0001 begin');
-      let result = testNapi.testLoopThreadSafePromise();
+      let result: number = testNapi.testLoopThreadSafePromise();
       expect(result).assertTrue();
     })
 
@@ -1575,7 +1580,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNormal0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNormal0001 begin');
-      let result = testNapi.testIsPromiseNormal();
+      let result: number = testNapi.testIsPromiseNormal();
       expect(result).assertTrue();
     })
 
@@ -1589,7 +1594,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNormal0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNormal0002 begin');
-      let result = testNapi.testIsPromiseWithNumber();
+      let result: number = testNapi.testIsPromiseWithNumber();
       expect(result).assertTrue();
     })
 
@@ -1603,7 +1608,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredResolveNormal0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredResolveNormal0001 begin');
-      let result = testNapi.testResolveDeferredNormal();
+      let result: number = testNapi.testResolveDeferredNormal();
       expect(result).assertTrue();
     })
 
@@ -1617,7 +1622,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredResolveNormal0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredResolveNormal0002 begin');
-      let result = testNapi.testResolveDeferredNullDeferred();
+      let result: number = testNapi.testResolveDeferredNullDeferred();
       expect(result).assertTrue();
     })
 
@@ -1631,7 +1636,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredResolveNormal0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredResolveNormal0003 begin');
-      let result = testNapi.testResolveDeferredTwice();
+      let result: number = testNapi.testResolveDeferredTwice();
       expect(result).assertTrue();
     })
 
@@ -1645,7 +1650,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredRejectNormal0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredRejectNormal0001 begin');
-      let result = testNapi.testRejectDeferredNormal();
+      let result: number = testNapi.testRejectDeferredNormal();
       expect(result).assertTrue();
     })
 
@@ -1659,7 +1664,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredRejectNormal0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredRejectNormal0002 begin');
-      let result = testNapi.testRejectDeferredNullDeferred();
+      let result: number = testNapi.testRejectDeferredNullDeferred();
       expect(result).assertTrue();
     })
 
@@ -1673,7 +1678,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredRejectNormal0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiDeferredRejectNormal0004 begin');
-      let result = testNapi.testLargeBufferResolve();
+      let result: number = testNapi.testLargeBufferResolve();
       expect(result).assertTrue();
     })
 
@@ -1687,7 +1692,7 @@ export default function abilityTest() {
      */
     it('testNapiCircularObjectResolve0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiCircularObjectResolve0001 begin');
-      let result = testNapi.testCircularObjectResolve();
+      let result: number = testNapi.testCircularObjectResolve();
       expect(result).assertTrue();
     })
 
@@ -1701,7 +1706,7 @@ export default function abilityTest() {
      */
     it('testNapiUnresolvedPromiseStability0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiUnresolvedPromiseStability0001 begin');
-      let result = testNapi.testUnresolvedPromisePressure();
+      let result: number = testNapi.testUnresolvedPromisePressure();
       expect(result).assertTrue();
     })
 
@@ -1715,7 +1720,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseFulFill0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       console.info('testNapiIsPromiseFulFill0001 begin');
-      let result = await testNapi.testIsPromiseWithFulfilled();
+      let result: number = await testNapi.testIsPromiseWithFulfilled();
       expect(result).assertEqual(true);
     })
 
@@ -1729,7 +1734,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseRejected0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseRejected0001 begin');
-      let result = testNapi.testIsPromiseWithRejected();
+      let result: number = testNapi.testIsPromiseWithRejected();
       expect(result).assertTrue();
     })
 
@@ -1743,7 +1748,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseString0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseString0001 begin');
-      let result = testNapi.testIsPromiseWithString();
+      let result: number = testNapi.testIsPromiseWithString();
       expect(result).assertTrue();
     })
 
@@ -1757,7 +1762,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseObject0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseObject0001 begin');
-      let result = testNapi.testIsPromiseWithObject();
+      let result: number = testNapi.testIsPromiseWithObject();
       expect(result).assertTrue();
     })
 
@@ -1771,7 +1776,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0001 begin');
-      let result = testNapi.testIsPromiseWithNull();
+      let result: number = testNapi.testIsPromiseWithNull();
       expect(result).assertTrue();
     })
 
@@ -1785,7 +1790,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0002 begin');
-      let result = testNapi.testResolveDeferredNullResolution();
+      let result: number = testNapi.testResolveDeferredNullResolution();
       expect(result).assertTrue();
     })
 
@@ -1799,7 +1804,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0003 begin');
-      let result = testNapi.testRejectDeferredNullRejection();
+      let result: number = testNapi.testRejectDeferredNullRejection();
       expect(result).assertTrue();
     })
 
@@ -1813,7 +1818,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0004 begin');
-      let result = testNapi.testIsPromiseNullEnv();
+      let result: number = testNapi.testIsPromiseNullEnv();
       expect(result).assertTrue();
     })
 
@@ -1827,7 +1832,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0005 begin');
-      let result = testNapi.testIsPromiseNullValue();
+      let result: number = testNapi.testIsPromiseNullValue();
       expect(result).assertTrue();
     })
 
@@ -1841,7 +1846,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0006 begin');
-      let result = testNapi.testIsPromiseNullResult();
+      let result: number = testNapi.testIsPromiseNullResult();
       expect(result).assertTrue();
     })
 
@@ -1855,7 +1860,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0007 begin');
-      let result = testNapi.testResolveDeferredNullEnv();
+      let result: number = testNapi.testResolveDeferredNullEnv();
       expect(result).assertTrue();
     })
 
@@ -1869,7 +1874,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0008 begin');
-      let result = testNapi.testResolveDeferredNullResolutionArg();
+      let result: number = testNapi.testResolveDeferredNullResolutionArg();
       expect(result).assertTrue();
     })
 
@@ -1883,7 +1888,7 @@ export default function abilityTest() {
      */
     it('testNapiIsPromiseNull0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiIsPromiseNull0009 begin');
-      let result = testNapi.testResolveDeferredDestroyedDeferred();
+      let result: number = testNapi.testResolveDeferredDestroyedDeferred();
       expect(result).assertTrue();
     })
 
@@ -1897,7 +1902,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredRejectNull0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredRejectNull0001 begin');
-      let result = testNapi.testRejectDeferredNullEnv();
+      let result: number = testNapi.testRejectDeferredNullEnv();
       expect(result).assertTrue();
     })
 
@@ -1911,7 +1916,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredRejectNull0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredRejectNull0002 begin');
-      let result = testNapi.testRejectDeferredNullRejectionArg();
+      let result: number = testNapi.testRejectDeferredNullRejectionArg();
       expect(result).assertTrue();
     })
 
@@ -1925,7 +1930,7 @@ export default function abilityTest() {
      */
     it('testNapiDeferredRejectNull0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       console.info('testNapiDeferredRejectNull0003 begin');
-      let result = testNapi.testRejectDeferredDestroyedDeferred();
+      let result: number = testNapi.testRejectDeferredDestroyedDeferred();
       expect(result).assertTrue();
     })
 
@@ -1939,7 +1944,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNestedRes0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       console.info('testNapiPromiseNestedRes0001 begin');
-      let result = await testNapi.testNestedResolvedPromise();
+      let result: number = await testNapi.testNestedResolvedPromise();
       expect(result).assertEqual(true);
     })
 
@@ -1953,7 +1958,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNestedRes0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseNestedRes0002 begin');
-      let result = testNapi.testCircularNestedPromise();
+      let result: number = testNapi.testCircularNestedPromise();
       expect(result).assertTrue();
     })
 
@@ -1967,7 +1972,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNestedRes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       console.info('testNapiPromiseNestedRes0005 begin');
-      let result = testNapi.testConcurrentResolveReject10000();
+      let result: number = testNapi.testConcurrentResolveReject10000();
       expect(result).assertTrue();
     })
 
@@ -1981,7 +1986,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseNestedRes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiPromiseNestedRes0006 begin');
-      let result = await testNapi.testThreadSafeLargeBuffer10000();
+      let result: number = await testNapi.testThreadSafeLargeBuffer10000();
       expect(result).assertTrue();
     })
 
@@ -1995,7 +2000,7 @@ export default function abilityTest() {
      */
     it('testNapiPromiseMultiThreadCreate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       console.info('testNapiPromiseMultiThreadCreate0001 begin');
-      let result = await testNapi.testHundredThreadsCreateResolvePromise();
+      let result: number = await testNapi.testHundredThreadsCreateResolvePromise();
       expect(result).assertTrue();
     })
 
@@ -2009,15 +2014,15 @@ export default function abilityTest() {
      */
     it('testNapiPromiseJsInterop0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
       console.info('testNapiPromiseJsInterop0001 begin');
-      let promiseA = testNapi.createPromiseAndResolve('native value A');
-      let promiseB = testNapi.createPromiseAndResolve('native value B');
+      let promiseA: Promise<string> = testNapi.createPromiseAndResolve('native value A');
+      let promiseB: Promise<string> = testNapi.createPromiseAndResolve('native value B');
       let promiseCombinations: Object[] = [
         Promise.all([promiseA, promiseB]),
         Promise.race([promiseA, promiseB]),
         Promise.any([promiseA, promiseB]),
         Promise.allSettled([promiseA, promiseB])
       ];
-      let result = testNapi.testJsPromiseCombinationResolve(promiseCombinations);
+      let result: number = testNapi.testJsPromiseCombinationResolve(promiseCombinations);
       expect(result).assertTrue();
       let settledResults = await Promise.all(promiseCombinations);
       expect(settledResults.length).assertEqual(4);
@@ -2039,7 +2044,7 @@ export default function abilityTest() {
         })
         .finally(() => {
         });
-      let result = await testNapi.testJsPromiseCatchFinallyReject(catchFinallyPromise)
+      let result: number = await testNapi.testJsPromiseCatchFinallyReject(catchFinallyPromise)
         .then(() => {
           return false;
         })
@@ -2077,7 +2082,7 @@ export default function abilityTest() {
         customPromise
       ];
       let nonPromiseVariants: Object[] = [new PromiseThenableVariant(), new PlainObjectVariant()];
-      let result = testNapi.testJsIsPromiseVariants(promiseVariants, nonPromiseVariants);
+      let result: number = testNapi.testJsIsPromiseVariants(promiseVariants, nonPromiseVariants);
       expect(result).assertTrue();
     })
   })

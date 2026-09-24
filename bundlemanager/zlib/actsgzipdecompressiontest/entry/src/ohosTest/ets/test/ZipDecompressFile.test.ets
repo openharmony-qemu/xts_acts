@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import zlib from '@ohos.zlib'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';
 let dir = "";

@@ -23,7 +23,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let testAbilityContext:common.UIAbilityContext;
 
 export default function WebSchemeHandlerRequest() {
-  describe('webSchemeHandlerRequest', (): void => {
+  describe('webSchemeHandlerRequest', () => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
     });
@@ -41,21 +41,27 @@ export default function WebSchemeHandlerRequest() {
     * @tc.level       LEVEL0
     */
     it('testWebSchemeHandlerRequestStatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const ASSERT_TOTAL = 8;
+      let assertCount = 0;
+      const finishWhenAll = (): void => {
+        assertCount++;
+        if (assertCount >= ASSERT_TOTAL) {
+          done();
+        }
+      };
       await Utils.msSleep(2000);
-      Utils.emitEvent("webSchemeHandlerRequest0100", 10)
+      await Utils.emitEvent("webSchemeHandlerRequest0100", 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent("webSchemeHandlerRequest_getRequestUrl", true, 142120, done);
-      Utils.registerEvent("webSchemeHandlerRequest_getRequestMethod", true, 142130, done);
-      Utils.registerEvent("webSchemeHandlerRequest_getReferrer", true, 142140, done);
-      Utils.registerEvent("webSchemeHandlerRequest_isMainFrame", true, 142150, done);
-      Utils.registerEvent("webSchemeHandlerRequest_hasGesture", true, 142160, done);
-      Utils.registerEvent("webSchemeHandlerRequest_getRequestResourceType", true, 142161, done);
-      Utils.registerEvent("webSchemeHandlerRequest_getHeader", true, 142110, done);
-      Utils.registerEvent("webSchemeHandlerRequest_didFail", true, 142190, done);
+      Utils.registerEvent("webSchemeHandlerRequest_getRequestUrl", true, 142120, finishWhenAll);
+      Utils.registerEvent("webSchemeHandlerRequest_getRequestMethod", true, 142130, finishWhenAll);
+      Utils.registerEvent("webSchemeHandlerRequest_getReferrer", true, 142140, finishWhenAll);
+      Utils.registerEvent("webSchemeHandlerRequest_isMainFrame", true, 142150, finishWhenAll);
+      Utils.registerEvent("webSchemeHandlerRequest_hasGesture", true, 142160, finishWhenAll);
+      Utils.registerEvent("webSchemeHandlerRequest_getRequestResourceType", true, 142161, finishWhenAll);
+      Utils.registerEvent("webSchemeHandlerRequest_getHeader", true, 142110, finishWhenAll);
+      Utils.registerEvent("webSchemeHandlerRequest_didFail", true, 142190, finishWhenAll);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webSchemeHandlerRequest', 10, '');
-      await Utils.msSleep(6000);
-      done();
     })
 
 

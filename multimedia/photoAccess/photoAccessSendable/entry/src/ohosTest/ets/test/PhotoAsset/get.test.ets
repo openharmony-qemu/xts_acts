@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
-import { describe, it, expect, beforeAll, Level } from "@ohos/hypium";
+import { describe, it, expect, beforeAll, Level } from "@ohos/hypium-dynamic";
 import { common } from '@kit.AbilityKit';
 import {
   photoKeys,

@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium'
-import { TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium-dynamic'
+import { TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 export default function EmptyTest() {
   describe('EmptyTest', () => {

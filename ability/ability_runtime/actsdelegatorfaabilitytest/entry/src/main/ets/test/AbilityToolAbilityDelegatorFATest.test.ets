@@ -22,7 +22,7 @@ const domain = 0x0000;
 const TEST_SUITE_NAME = 'ActsAbilityToolAbilityDelegatorFATest';
 const BUNDLE_NAME = 'com.ohos.abilitytoolabilitydelegatorfatest';
 const ABILITY_NAME = 'FirstAbility';
-let abilityDelegatorArguments = undefined;
+let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined;
 
 export default function abilityToolAbilityDelegatorFATest() {
   describe('ActsAbilityToolAbilityDelegatorFATestAdapt001', function () {
@@ -56,7 +56,7 @@ export default function abilityToolAbilityDelegatorFATest() {
         let timeout = 100
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`)
         let abilityProxy = AbilityDelegatorRegistry.getAbilityDelegator()
-        let user = delegatorArguments.parameters["-u"];
+        let user = delegatorArguments.parameters['-u'];
         if(user !== undefined){
             cmd += ' -u ' + user;
         }
@@ -64,7 +64,7 @@ export default function abilityToolAbilityDelegatorFATest() {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , err = ${JSON.stringify(err)} , data= ${JSON.stringify(data)}`);
           expect(delegatorArguments.bundleName).assertEqual(BUNDLE_NAME);
           expect(delegatorArguments.testRunnerClassName).assertEqual('OpenHarmonyTestRunner');
-          expect(delegatorArguments.parameters.test).assertEqual('refine');
+          expect(delegatorArguments.parameters?.test).assertEqual('refine');
           done();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
         })
@@ -183,7 +183,7 @@ export default function abilityToolAbilityDelegatorFATest() {
         let testAbilityName = abilityDelegatorArguments.parameters['-p'] + '.' + ABILITY_NAME
         let cmd = 'aa start -d 0 -a ' + testAbilityName + ' -b ' + abilityDelegatorArguments.bundleName
         let timeout = 1;
-        let user = abilityDelegatorArguments.parameters["-u"];
+        let user = abilityDelegatorArguments.parameters['-u'];
         if(user !== undefined){
             cmd += ' -u ' + user;
         }

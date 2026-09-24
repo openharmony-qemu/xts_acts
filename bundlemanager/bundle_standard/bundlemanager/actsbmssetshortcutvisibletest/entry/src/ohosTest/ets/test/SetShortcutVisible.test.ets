@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { shortcutManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -137,6 +137,54 @@ export default function setShortcutVisible() {
           let msg: string = `setShortcutVisibleForSelf(id_test1,false) failed: ${JSON.stringify(error)}`;
           hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
           expect().assertFail();
+          done();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700
+     * @tc.number SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700
+     * @tc.desc   Test setShortcutVisibleForSelf with visible parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700 begin');
+        try {
+          await shortcutManager.setShortcutVisibleForSelf('id_test1', null);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let msg: string = `setShortcutVisibleForSelf(id_test1,null) failed: ${JSON.stringify(error)}`;
+          hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
+          expect((error as BusinessError).code).assertEqual(401);
+          hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700 end');
+          done();
+        }
+    })
+
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800
+     * @tc.number SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800
+     * @tc.desc   Test setShortcutVisibleForSelf with visible parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800 begin');
+        try {
+          await shortcutManager.setShortcutVisibleForSelf('id_test1', undefined);
+          expect().assertFail();
+          done();
+        } catch (error) {
+          let msg: string = `setShortcutVisibleForSelf(id_test1,undefined) failed: ${JSON.stringify(error)}`;
+          hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
+          expect((error as BusinessError).code).assertEqual(401);
+          hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800 end');
           done();
         }
     })

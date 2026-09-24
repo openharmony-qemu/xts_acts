@@ -14,15 +14,13 @@
  * limitations under the License.
  */
 
-
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { promptAction } from '@kit.ArkUI';
 import inspector from '@ohos.arkui.inspector';
 
@@ -31,35 +29,17 @@ const DIALOG_ANIMATION_TIME = 3000;
 
 export default function PromptActionTest(): void {
   describe('PromptActionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("PromptActionTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.menu.static", "EntryAbility");
-
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/promptAction/promptAction',
-      };
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info("PromptActionTest state pages: " + JSON.stringify(pages));
-        console.info("PromptActionTest state pages.name: " + pages.name);
-        if (pages.name !== "promptAction") {
-          routerInstance.replaceUrl(options);
-        }
-      } catch (err) {
-        console.error("PromptActionTest replaceUrl error: " + err);
-        expect().assertFail();
-      }
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("PromptActionTest beforeEach start");
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
-      console.info("PromptActionTest after each called");
+      try {
+        await Utils.sleep(SLEEP_TIME);
+        console.info("PromptActionTest after each called");
+      } catch (err) {
+        console.info('PromptAction afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -75,6 +55,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const getStateButton = await driver.findComponent(ON.id('btnGetState'));
         expect(!!getStateButton).assertEqual(true);
         await (getStateButton?.click() as Promise<void>);
@@ -124,6 +105,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateAppearing START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -160,6 +142,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateAppeared START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -196,6 +179,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateDisappearing START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -233,6 +217,7 @@ export default function PromptActionTest(): void {
       console.info('PromptActionTest execute : dialogStateDisappeared START');
       try {
         const driver = Driver.create();
+        await Utils.sleep(500);
         const openDialogButton = await driver.findComponent(ON.id('btnOpenDialog'));
         expect(!!openDialogButton).assertEqual(true);
         await (openDialogButton?.click() as Promise<void>);
@@ -297,6 +282,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
@@ -329,6 +315,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
@@ -361,6 +348,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);
@@ -393,6 +381,7 @@ export default function PromptActionTest(): void {
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         const driver = Driver.create();
+        await Utils.sleep(500);
         const showMenuButton = await driver.findComponent(ON.id('btnShowActionMenu'));
         expect(!!showMenuButton).assertEqual(true);
         await (showMenuButton?.click() as Promise<void>);

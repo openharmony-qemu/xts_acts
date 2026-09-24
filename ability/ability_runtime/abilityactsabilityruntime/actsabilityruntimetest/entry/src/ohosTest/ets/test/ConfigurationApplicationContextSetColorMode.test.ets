@@ -15,7 +15,7 @@
 
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 
 let context:common.UIAbilityContext;
@@ -41,6 +41,27 @@ export default function AbilityRuntimeConfigrationApplicationContextSetColorMode
       const testNum = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0300';
       try {
         await context.getApplicationContext().setColorMode(undefined)
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
+        expect(err?.code).assertEqual(401)
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0400
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0400
+     * @tc.desc   Call the interface with null application parameters to set the color mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0400', Level.LEVEL0, async (done:Function) => {
+      const testNum = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0400';
+      try {
+        await context.getApplicationContext().setColorMode(null)
+        expect().assertFail()
+        done();
       } catch (err) {
         hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
         expect(err?.code).assertEqual(401)

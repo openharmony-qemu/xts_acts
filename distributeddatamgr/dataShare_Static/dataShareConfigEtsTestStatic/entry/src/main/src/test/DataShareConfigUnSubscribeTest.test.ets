@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
 import dataShare from '@ohos.data.dataShare';
 import { BusinessError } from '@ohos.base';
+import { ValueType, ValuesBucket} from '@ohos.data.ValuesBucket';
 
 let g_handle: dataShare.DataProxyHandle | undefined;
 let g_config: dataShare.DataProxyConfig = {
@@ -588,5 +589,35 @@ export default function dataShareConfigUnSubscribeTest() {
         expect().assertFail();
       }
     });
+
+    /**
+     * @tc.name   createDataProxyHandle024
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_3410
+     * @tc.desc   get 100k value when maxValueLength = MAX_LENGTH_100K
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('createDataProxyHandle024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let str: ValueType = "zhangSan";
+      let num: ValueType = 18 as long;
+      let bool: ValueType = true;
+      let vb: ValuesBucket = {
+        "name": str,
+        "age": num,
+        "isStudent": bool
+      }
+      await dataShare.createDataProxyHandle().then((handle: dataShare.DataProxyHandle) => {
+        if (handle == null || handle == undefined) {
+          console.log(TAG + "[DataShareProvider] createDataProxyHandle failed,handle is null");
+        } else {
+          g_handle = handle;
+          console.log(TAG + "[DataShareProvider] createDataProxyHandle success");
+        }
+      }).catch((err: Error) => {
+        console.error(TAG + `[DataShareProvider] createDataProxyHandle failed: code:${err.code},message:${err.message}`)
+      })
+    });
+
   })
 }

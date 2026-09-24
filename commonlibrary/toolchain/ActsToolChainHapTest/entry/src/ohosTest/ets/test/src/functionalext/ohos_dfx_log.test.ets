@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextOhosDfxLogTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_ohos_dfx_log", () => {
@@ -27,7 +27,7 @@ export default function FunctionalextOhosDfxLogTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("ohos_dfx_log", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ohos_dfx_log");
+      const result: number = await testNapi.runTest("ohos_dfx_log");
       expect(result).assertEqual(0);
       done();
     });

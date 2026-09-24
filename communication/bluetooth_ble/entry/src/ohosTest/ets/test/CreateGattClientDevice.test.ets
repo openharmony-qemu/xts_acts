@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium-dynamic';
 import ble from '@ohos.bluetooth.ble';
 import connection from '@ohos.bluetooth.connection';
 import {BusinessError} from '@ohos.base';

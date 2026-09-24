@@ -21,7 +21,12 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compileSdkVersion": "26.0.0",
+        "buildOption": {
+          "strictMode": {
+            "useNormalizedOHMUrl": true
+          }
+        },
+        "compileSdkVersion": "26.0.1",
         "compatibleSdkVersion": "26.0.0",
         "runtimeOS": "OpenHarmony"
       }

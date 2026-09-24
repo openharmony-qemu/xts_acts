@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
@@ -32,25 +32,10 @@ import {
   TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test.ets';
 
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function bindWaterFlowControllerTest() {
   describe('bindWaterFlowControllerTest', (): void => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info('SearchTypeTest beforeEach start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility');
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('BindWaterFlowControllerTest beforeEach start');
@@ -82,25 +67,32 @@ export default function bindWaterFlowControllerTest() {
      */
     it('bindWaterFlowControllerTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[bindWaterFlowControllerTest_static_0100] START');
-      let driver = Driver.create()
-      let bindWaterFlowController: Component = await driver.findComponent(ON.id('bindController')) as Component;
-      await (bindWaterFlowController?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      let setOn: Component = await driver.findComponent(ON.id('setOn')) as Component;
-      await (setOn?.click() as Promise<void>);
-      await CommonFunc.sleep(500);
-      let scrollerBy: Component = await driver.findComponent(ON.id('scrollerBy')) as Component;
-      await (scrollerBy?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let bindWaterFlowController: Component = await driver.findComponent(ON.id('bindController')) as Component;
+        await (bindWaterFlowController?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        let setOn: Component = await driver.findComponent(ON.id('setOn')) as Component;
+        await (setOn?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        let scrollerBy: Component = await driver.findComponent(ON.id('scrollerBy')) as Component;
+        await (scrollerBy?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
 
-      let strJson = inspector.getInspectorByKey('scrollOffset');
-      let content = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
-      await CommonFunc.sleep(1000);
-      console.info('[bindWaterFlowControllerTest_static_0100] content: ' + content);
-      expect(parseInt(content) > 0)
-        .assertEqual(true);
-      console.info('[bindWaterFlowControllerTest_static_0100] END');
-      done();
+        let strJson = inspector.getInspectorByKey('scrollOffset');
+        let content = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
+        await CommonFunc.sleep(1000);
+        console.info('[bindWaterFlowControllerTest_static_0100] content: ' + content);
+        expect(parseInt(content) > 0)
+          .assertEqual(true);
+        console.info('[bindWaterFlowControllerTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[bindWaterFlowControllerTest_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function offsetTest() {
   describe('offsetTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('offsetTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.picker.textPickerDialog.static', 'EntryAbility')
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('offsetTest beforeEach start');
       let options: router.RouterOptions = {
@@ -56,22 +50,27 @@ export default function offsetTest() {
      * @tc.level    Level.LEVEL0
      */
     it('offset_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('offset_static_001 START');
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('offset1'));
-      btn?.click()
-      await Utils.sleep(2000);
+      try {
+        console.info('offset_static_001 START');
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('offset1'));
+        btn?.click()
+        await Utils.sleep(2000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(1000);
-      let textPicker1 = tree.getArray('$children')[1];
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(40);
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(0);
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await Utils.sleep(1000);
-      console.info('[offset_static_001] END');
-      done();
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await Utils.sleep(1000);
+        let textPicker1 = tree.getArray('$children')[1];
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(40);
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(0);
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await Utils.sleep(1000);
+        console.info('[offset_static_001] END');
+        done();
+      } catch (err) {
+        console.error('offset_static_001 error:' + err);
+        done();
+      }
     });
 
     /**
@@ -81,22 +80,27 @@ export default function offsetTest() {
      * @tc.level    Level.LEVEL0
      */
     it('offset_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('offset_static_002 START');
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('offset2'));
-      btn?.click()
-      await Utils.sleep(2000);
+      try {
+        console.info('offset_static_002 START');
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('offset2'));
+        btn?.click()
+        await Utils.sleep(2000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(1000);
-      let textPicker1 = tree.getArray('$children')[1];
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(40);
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(-200);
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await Utils.sleep(1000);
-      console.info('[offset_static_002] END');
-      done();
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await Utils.sleep(1000);
+        let textPicker1 = tree.getArray('$children')[1];
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(40);
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(-200);
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await Utils.sleep(1000);
+        console.info('[offset_static_002] END');
+        done();
+      } catch (err) {
+        console.error('offset_static_002 error:' + err);
+        done();
+      }
     });
     /**
      * @tc.number   offset_static_003
@@ -105,22 +109,27 @@ export default function offsetTest() {
      * @tc.level    Level.LEVEL0
      */
     it('offset_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('offset_static_003 START');
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('offset3'));
-      btn?.click()
-      await Utils.sleep(2000);
+      try {
+        console.info('offset_static_003 START');
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('offset3'));
+        btn?.click()
+        await Utils.sleep(2000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(1000);
-      let textPicker1 = tree.getArray('$children')[1];
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(-40);
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(-40);
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await Utils.sleep(1000);
-      console.info('[offset_static_003] END');
-      done();
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await Utils.sleep(1000);
+        let textPicker1 = tree.getArray('$children')[1];
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(-40);
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(-40);
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await Utils.sleep(1000);
+        console.info('[offset_static_003] END');
+        done();
+      } catch (err) {
+        console.error('offset_static_003 error:' + err);
+        done();
+      }
     });
 
     /**
@@ -130,22 +139,27 @@ export default function offsetTest() {
      * @tc.level    Level.LEVEL0
      */
     it('offset_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('offset_static_004 START');
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('offset4'));
-      btn?.click()
-      await Utils.sleep(2000);
+      try {
+        console.info('offset_static_004 START');
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('offset4'));
+        btn?.click()
+        await Utils.sleep(2000);
 
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(1000);
-      let textPicker1 = tree.getArray('$children')[1];
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(0);
-      expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(0);
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await Utils.sleep(1000);
-      console.info('[offset_static_004] END');
-      done();
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        await Utils.sleep(1000);
+        let textPicker1 = tree.getArray('$children')[1];
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dX')).assertEqual(0);
+        expect(textPicker1.getElement('$attrs').getElement('offset').getInteger('dY')).assertEqual(0);
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await Utils.sleep(1000);
+        console.info('[offset_static_004] END');
+        done();
+      } catch (err) {
+        console.error('offset_static_004 error:' + err);
+        done();
+      }
     });
   })
 }

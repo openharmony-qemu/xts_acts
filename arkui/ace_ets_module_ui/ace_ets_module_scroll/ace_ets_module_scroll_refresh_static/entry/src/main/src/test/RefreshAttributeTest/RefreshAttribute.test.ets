@@ -166,6 +166,7 @@ export default function RefreshAttributeTest() {
       async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await Utils.sleep(1000);
         let t = await d.findComponent(ON.text('pull', MatchPattern.EQUALS));
         if (!t) {
           t = await d.findComponent(ON.text('pull', MatchPattern.CONTAINS));

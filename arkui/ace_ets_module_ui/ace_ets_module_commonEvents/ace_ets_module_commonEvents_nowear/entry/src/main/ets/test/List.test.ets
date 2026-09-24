@@ -45,6 +45,10 @@ import SwipeGestureExample01Test from './SwipeGesture/SwipeGestureExample01Test.
 import SwipeGestureExample02Test from './SwipeGesture/SwipeGestureExample02Test.test';
 import textAreaInputTest from './TextAreaTest/textAreaInputTest.test';
 import CursorControlSetCursorTest from './cursorControl/setCursorNullAndUndefinedTest.test';
+import gameCtrollerCallBackDataTest from './gameCtrollerCallBackData/GameCtrollerCallBackDataTest.test';
+import hoverMoveTest from './hoverMove/HoverMoveTest.test';
+import gestureListenerTest from './gestureListener/GestureListenerTest.test';
+import cancelTouchTest from './cancelTouch/CancelTouchTest.test';
 
 export default function testsuite() {
   textAreaInputTest()
@@ -78,4 +82,8 @@ export default function testsuite() {
   listMonopolize();
   gestureDefine6();
   CursorControlSetCursorTest();
+  gameCtrollerCallBackDataTest();
+  hoverMoveTest();
+  gestureListenerTest();
+  cancelTouchTest();
 }

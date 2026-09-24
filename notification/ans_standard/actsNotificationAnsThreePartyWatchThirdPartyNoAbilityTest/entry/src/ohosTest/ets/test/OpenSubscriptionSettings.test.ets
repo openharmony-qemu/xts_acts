@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { notificationExtensionSubscription, notificationManager } from '@kit.NotificationKit';
 import { abilityAccessCtrl, UIAbility } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
@@ -8,8 +8,8 @@ import Base, { BusinessError } from '@ohos.base';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
-let commonTag: string = "OpenSubscriptionSettings"
-let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdPartyNoAbility"
+let commonTag: string = 'OpenSubscriptionSettings'
+let bundleName:string = 'com.example.actsNotificationAnsThreePartyWatchThirdPartyNoAbility'
 export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
@@ -23,7 +23,7 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
       } catch (err) {
       }
     })
-   
+
     /**
       * @tc.number    Sub_Notification_Ans_ThreePartyWatch_1002
       * @tc.name      Sub_Notification_Ans_ThreePartyWatch_1002
@@ -33,15 +33,15 @@ export default function actsNotificationAnsThreePartyOpenSubscriptionSettingsTes
       * @tc.level     Level 2
       */
     it('Sub_Notification_Ans_ThreePartyWatch_1002', Level.LEVEL2, async (done: Function) => {
-      let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1002 ";
+      let TAG = commonTag + 'Sub_Notification_Ans_ThreePartyWatch_1002 ';
         const ability: UIAbility = await delegator.getCurrentTopAbility();
         let context :common.UIAbilityContext= ability.context;
         await notificationExtensionSubscription.openSubscriptionSettings(context).then(()=>{
-          console.info(TAG+"openSubscriptionSettings success ");
+          console.info(TAG+'openSubscriptionSettings success ');
           expect(false).assertTrue()
           done();
         }).catch((err: Base.BusinessError) => {
-          console.error(TAG+"openSubscriptionSettingseeeeeeeeee: " + JSON.stringify(err));
+          console.error(TAG+'openSubscriptionSettingseeeeeeeeee: ' + JSON.stringify(err));
           if (err.code == 201) {
             expect(err.code).assertEqual(201)
             done();

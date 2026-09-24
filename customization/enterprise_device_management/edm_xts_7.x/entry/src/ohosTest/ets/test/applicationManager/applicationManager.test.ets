@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, expect, it, Level } from '@ohos/hypium';
+import { describe, beforeAll, expect, it, Level } from '@ohos/hypium-dynamic';
 import {
   ENTINFO1,
   SELFWANT,
@@ -41,6 +41,7 @@ import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
 import { connection, statistics } from '@kit.NetworkKit';
 import restrictions from '@ohos.enterprise.restrictions';
+import { formHost, formInfo } from '@kit.FormKit';
 
 const APP_IDS_1: Array<string> = [
   "test_appid_1",
@@ -59,10 +60,26 @@ for (let i = 0; i < BUNDLE_NAME_501.length; i++) {
   }
 }
 
+let formInfos: formInfo.FormInfo[];
+
+async function getAllFormsInfo() {
+  try {
+    await formHost.getAllFormsInfo().then((data: formInfo.FormInfo[]) => {
+      console.info('formHost getAllFormsInfo success.');
+      formInfos = data;
+    }).catch((error: BusinessError) => {
+      console.error(`error, code: ${error.code}, message: ${error.message}`);
+    });
+  } catch (error) {
+    console.error(`catch error, code: ${error.code}, message: ${error.message}`);
+  }
+}
+
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
-    beforeAll((done: Function) => {
+    beforeAll(async (done: Function) => {
       bundleNamesInit();
+      await getAllFormsInfo();
       done();
     })
 
@@ -1929,6 +1946,1051 @@ export default function applicationManagerTest() {
         expect(Array.isArray(result)).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_0100
+     * @tc.desc   test publishFormToDesktop without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        let testFormInfo: applicationManager.FormInfo = {
+          bundleName: 'com.edm.acts.test7x',
+          moduleName: 'entry',
+          abilityName: 'com.example.myapplication.EnterpriseAdminAbility',
+          name: 'testForm',
+          dimension: formInfo.FormDimension.Dimension_1_2
+        }
+        applicationManager.publishFormToDesktop(testFormInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200001).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_0200
+     * @tc.desc   test publishFormToDesktop with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        let testFormInfo: applicationManager.FormInfo = {
+          bundleName: 'com.edm.acts.test7x',
+          moduleName: 'entry',
+          abilityName: 'com.example.myapplication.EnterpriseAdminAbility',
+          name: 'testForm',
+          dimension: formInfo.FormDimension.Dimension_1_2
+        }
+        applicationManager.publishFormToDesktop(testFormInfo);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_0600
+     * @tc.desc   test publishFormToDesktop with null formInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_0600", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.publishFormToDesktop(null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_0700
+     * @tc.desc   test publishFormToDesktop with undefined formInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_0700", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.publishFormToDesktop(undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_0800
+     * @tc.desc   test publishFormToDesktop with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let formInfoParam: applicationManager.FormInfo = {
+          bundleName: '',
+          moduleName: 'entry',
+          abilityName: 'com.example.myapplication.EnterpriseAdminAbility',
+          name: 'widget',
+          dimension: formInfo.FormDimension.Dimension_1_2
+        };
+        applicationManager.publishFormToDesktop(formInfoParam);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_0900
+     * @tc.desc   test publishFormToDesktop with empty moduleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_0900", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let formInfoParam: applicationManager.FormInfo = {
+          bundleName: 'com.edm.acts.test7x',
+          moduleName: '',
+          abilityName: 'com.example.myapplication.EnterpriseAdminAbility',
+          name: 'widget',
+          dimension: formInfo.FormDimension.Dimension_1_2
+        };
+        applicationManager.publishFormToDesktop(formInfoParam);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1000
+     * @tc.desc   test publishFormToDesktop with empty abilityName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_1000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let formInfoParam: applicationManager.FormInfo = {
+          bundleName: 'com.edm.acts.test7x',
+          moduleName: 'entry',
+          abilityName: '',
+          name: 'widget',
+          dimension: formInfo.FormDimension.Dimension_1_2
+        };
+        applicationManager.publishFormToDesktop(formInfoParam);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1100
+     * @tc.desc   test publishFormToDesktop with empty name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it("test_publishFormToDesktop_1100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let formInfoParam: applicationManager.FormInfo = {
+          bundleName: 'com.edm.acts.test7x',
+          moduleName: 'entry',
+          abilityName: 'com.example.myapplication.EnterpriseAdminAbility',
+          name: '',
+          dimension: formInfo.FormDimension.Dimension_1_2
+        };
+        applicationManager.publishFormToDesktop(formInfoParam);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200012).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1200
+     * @tc.desc   test publishFormToDesktop with dimension Dimension_1_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_publishFormToDesktop_1200", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if (formInfos.length === 0) {
+          return;
+        }
+        for (let data of formInfos) {
+          if (data.defaultDimension === formInfo.FormDimension.Dimension_1_2) {
+            let formInfoParam: applicationManager.FormInfo = {
+              bundleName: data.bundleName,
+              moduleName: data.moduleName,
+              abilityName: data.abilityName,
+              name: data.name,
+              dimension: formInfo.FormDimension.Dimension_1_2
+            };
+            let result: string = applicationManager.publishFormToDesktop(formInfoParam);
+            expect(result !== '').assertTrue();
+            break;
+          }
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1300
+     * @tc.desc   test publishFormToDesktop with dimension Dimension_2_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_publishFormToDesktop_1300", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if (formInfos.length === 0) {
+          return;
+        }
+        for (let data of formInfos) {
+          if (data.defaultDimension === formInfo.FormDimension.Dimension_2_2) {
+            let formInfoParam: applicationManager.FormInfo = {
+              bundleName: data.bundleName,
+              moduleName: data.moduleName,
+              abilityName: data.abilityName,
+              name: data.name,
+              dimension: formInfo.FormDimension.Dimension_2_2
+            };
+            let result: string = applicationManager.publishFormToDesktop(formInfoParam);
+            expect(result !== '').assertTrue();
+            break;
+          }
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1400
+     * @tc.desc   test publishFormToDesktop with dimension Dimension_2_4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_publishFormToDesktop_1400", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if (formInfos.length === 0) {
+          return;
+        }
+        for (let data of formInfos) {
+          if (data.defaultDimension === formInfo.FormDimension.Dimension_2_4) {
+            let formInfoParam: applicationManager.FormInfo = {
+              bundleName: data.bundleName,
+              moduleName: data.moduleName,
+              abilityName: data.abilityName,
+              name: data.name,
+              dimension: formInfo.FormDimension.Dimension_2_4
+            };
+            let result: string = applicationManager.publishFormToDesktop(formInfoParam);
+            expect(result !== '').assertTrue();
+            break;
+          }
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1500
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1500
+     * @tc.desc   test publishFormToDesktop with dimension Dimension_4_4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_publishFormToDesktop_1500", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if (formInfos.length === 0) {
+          return;
+        }
+        for (let data of formInfos) {
+          if (data.defaultDimension === formInfo.FormDimension.Dimension_4_4) {
+            let formInfoParam: applicationManager.FormInfo = {
+              bundleName: data.bundleName,
+              moduleName: data.moduleName,
+              abilityName: data.abilityName,
+              name: data.name,
+              dimension: formInfo.FormDimension.Dimension_4_4
+            };
+            let result: string = applicationManager.publishFormToDesktop(formInfoParam);
+            expect(result !== '').assertTrue();
+            break;
+          }
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1600
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1600
+     * @tc.desc   test publishFormToDesktop with dimension DIMENSION_1_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_publishFormToDesktop_1600", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if (formInfos.length === 0) {
+          return;
+        }
+        for (let data of formInfos) {
+          if (data.defaultDimension === formInfo.FormDimension.DIMENSION_1_1) {
+            let formInfoParam: applicationManager.FormInfo = {
+              bundleName: data.bundleName,
+              moduleName: data.moduleName,
+              abilityName: data.abilityName,
+              name: data.name,
+              dimension: formInfo.FormDimension.DIMENSION_1_1
+            };
+            applicationManager.publishFormToDesktop(formInfoParam);
+            expect(false).assertTrue();
+            break;
+          }
+        }
+      } catch (error) {
+        expect(error.code === 9201050).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1700
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1700
+     * @tc.desc   test publishFormToDesktop with dimension DIMENSION_6_4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_publishFormToDesktop_1700", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if (formInfos.length === 0) {
+          return;
+        }
+        for (let data of formInfos) {
+          if (data.defaultDimension === formInfo.FormDimension.DIMENSION_6_4) {
+            let formInfoParam: applicationManager.FormInfo = {
+              bundleName: data.bundleName,
+              moduleName: data.moduleName,
+              abilityName: data.abilityName,
+              name: data.name,
+              dimension: formInfo.FormDimension.DIMENSION_6_4
+            };
+            let result: string = applicationManager.publishFormToDesktop(formInfoParam);
+            expect(result !== '').assertTrue();
+            break;
+          }
+        }
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_publishFormToDesktop_1800
+     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1800
+     * @tc.desc   test publishFormToDesktop with error formInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("test_publishFormToDesktop_1800", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        if (formInfos.length === 0) {
+          return;
+        }
+        for (let data of formInfos) {
+          if (data.defaultDimension === formInfo.FormDimension.Dimension_1_2) {
+            let formInfoParam: applicationManager.FormInfo = {
+              bundleName: data.bundleName,
+              moduleName: data.moduleName,
+              abilityName: data.abilityName,
+              name: data.name,
+              dimension: formInfo.FormDimension.Dimension_2_2
+            };
+            applicationManager.publishFormToDesktop(formInfoParam);
+            expect(false).assertTrue();
+            break;
+          }
+        }
+      } catch (error) {
+        expect(error.code === 9201049).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+   /**
+     * @tc.name   test_requestExemptionResource_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0100
+     * @tc.desc   test requestExemptionResource without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200001);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0200
+     * @tc.desc   test requestExemptionResource with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200002);
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0300
+     * @tc.desc   test requestExemptionResource with null resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          null, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0400
+     * @tc.desc   test requestExemptionResource with undefined resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          undefined, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0500
+     * @tc.desc   test requestExemptionResource with invalid resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          99, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0600
+     * @tc.desc   test requestExemptionResource with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, null, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0700
+     * @tc.desc   test requestExemptionResource with undefined bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, undefined, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0800
+     * @tc.desc   test requestExemptionResource with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, '', 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_0900
+     * @tc.desc   test requestExemptionResource with null duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0900", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1000
+     * @tc.desc   test requestExemptionResource with undefined duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1000", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1100
+     * @tc.desc   test requestExemptionResource with zero duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 0);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1200
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1200
+     * @tc.desc   test requestExemptionResource with negative duration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, -1);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1300
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1300
+     * @tc.desc   test requestExemptionResource success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_requestExemptionResource_1300", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME, 3600);
+      } catch (error) {
+        expect(error.code).assertEqual(801);
+      } finally {
+        try {
+          applicationManager.releaseExemptionResource(
+            applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME);
+        } catch (err) {
+          expect(err.code).assertEqual(801);
+        }
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_requestExemptionResource_1400
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_JS_1400
+     * @tc.desc   test requestExemptionResource with not installed bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_1400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9201002);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0100
+     * @tc.desc   test releaseExemptionResource without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200001);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0200
+     * @tc.desc   test releaseExemptionResource with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200002);
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0300
+     * @tc.desc   test releaseExemptionResource with null resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0300", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          null, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0400
+     * @tc.desc   test releaseExemptionResource with undefined resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0400", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          undefined, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0500
+     * @tc.desc   test releaseExemptionResource with invalid resourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0500", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.releaseExemptionResource(
+          99, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0600
+     * @tc.desc   test releaseExemptionResource with null bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0700
+     * @tc.desc   test releaseExemptionResource with undefined bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0800
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0800
+     * @tc.desc   test releaseExemptionResource with empty bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, '');
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9200012);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0900
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_0900
+     * @tc.desc   test releaseExemptionResource success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_releaseExemptionResource_0900", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME, 3600);
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, SELFHAPNAME);
+      } catch (error) {
+        expect(error.code).assertEqual(801);
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_1000
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_JS_1000
+     * @tc.desc   test releaseExemptionResource with not installed bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_1000", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(9201002);
+        }
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

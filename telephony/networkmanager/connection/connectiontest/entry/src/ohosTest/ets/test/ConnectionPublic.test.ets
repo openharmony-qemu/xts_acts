@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType, beforeAll, beforeEach, afterAll, afterEach } from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 import { BusinessError } from '@ohos.base';
 import socket from '@ohos.net.socket';
@@ -1826,12 +1826,12 @@ export default function ConnectionPublicTest() {
       try {
         await connection.getDefaultNet((err: BusinessError<void>, data: connection.NetHandle) => {
           console.info(`${caseName} getDefaultNet callback: err->${JSON.stringify(err)} data->${JSON.stringify(data)}`);
-          if (err == undefined) {
-            ExpectTrue(true);
+          if (err) {
+            ExpectFail();
             console.info(`${caseName}---End`);
             done();
           } else {
-            ExpectFail();
+            ExpectTrue(typeof data.netId === 'number');
             console.info(`${caseName}---End`);
             done();
           }

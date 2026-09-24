@@ -1,5 +1,5 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level }
-    from '@ohos/hypium';
+    from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@kit.TestKit';
 import Utils from './Utils.test';
 import nativeFunc from 'libentry.so';
@@ -13,7 +13,7 @@ export default function native_jsTest() {
 
     /**
      * @tc.name TestNativeArkWeb_RunJavaScript
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_RUN_JAVA_SCRIPT_0020
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_NATIVE_ARK_WEB_RUN_JAVA_SCRIPT_5100
      * @tc.desc Test OH_NativeArkWeb_RunJavaScript
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

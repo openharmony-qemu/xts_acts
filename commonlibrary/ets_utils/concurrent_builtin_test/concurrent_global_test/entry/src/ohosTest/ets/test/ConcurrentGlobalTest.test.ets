@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { taskpool} from '@kit.ArkTS';
 import type { BusinessError } from '@ohos.base';
 import {test_Global_test_001,test_Global_test_002,test_Global_test_003,test_Global_test_004,test_Global_test_005,test_Global_test_006,test_Global_test_007,test_Global_test_008,test_Global_test_009,test_Global_test_010,

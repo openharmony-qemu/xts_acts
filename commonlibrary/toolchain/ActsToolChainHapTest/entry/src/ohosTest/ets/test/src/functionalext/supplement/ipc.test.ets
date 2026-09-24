@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function ipc_group_test() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_ipc", () => {
@@ -27,7 +27,7 @@ export default function ipc_group_test() {
      * @tc.level  LEVEL1
      */
     it("semtimedop", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("semtimedop");
+      const result: number = await testNapi.runTest("semtimedop");
       expect(result).assertEqual(0);
       done();
     });

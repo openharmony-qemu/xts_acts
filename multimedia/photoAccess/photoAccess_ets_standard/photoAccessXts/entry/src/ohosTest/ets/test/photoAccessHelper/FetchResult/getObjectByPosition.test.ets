@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
 import { fetchAllOption, getPermission, driveFn, fetchOption, photoKeys, photoType, LOG_TAG } from '../../common';
 import common from '@ohos.app.ability.common';
 import { ErrorCode } from '../../CommonErrorCode';
@@ -441,6 +441,34 @@ export default function getObjectByPositionTest() {
       let fetchOps: photoAccessHelper.FetchOptions = fetchOption(testName, photoKeys.PHOTO_TYPE, photoType.VIDEO);
       const index = await returnCount(fetchOps);
       await getObjectByPositionAbnormalCallbackTest(done, fetchOps, testName, index);
+    })
+    
+    /**
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_promise_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_FETCHRESULT_GETOBJECTBYPOSITION_PROMISE_0019
+     * @tc.desc   getObjectByPosition error 14000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fetchResult_getObjectByPosition_abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'fetchResult_getObjectByPosition_abnormal_promise_004';
+      const errorCode = 14000011;
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      try{
+        let fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOps);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getObjectByPosition(-1);
+        fetchResult.close();
+        expect(false).assertTrue();
+        done();
+      } catch (error){
+        console.info(`${testName} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(14000011));
+        done();
+      }
     })
   })
 }

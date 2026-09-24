@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import inputMethod from '@ohos.inputMethod';
 import subtype from '@ohos.InputMethodSubtype';
 import { BusinessError } from '@ohos.base';
@@ -53,7 +53,8 @@ export default function inputMethodAuthorityJSUnit() {
         methodId: inputM.methodId,
         name: inputM.packageName,
         id: inputM.methodId,
-        extra: {}
+        extra: {},
+        enabledState: 3
       }
       inputMethod.switchInputMethod(inputMethodProperty).then(data => {
         console.info("====>inputmethod_test_switchInputMethod_001 data:" + data)
@@ -84,7 +85,8 @@ export default function inputMethodAuthorityJSUnit() {
         methodId: inputM.methodId,
         name: inputM.packageName,
         id: inputM.methodId,
-        extra: {}
+        extra: {},
+        enabledState: 3
       }
       inputMethod.switchInputMethod(inputMethodProperty, (err, data) => {
         try {
@@ -234,7 +236,8 @@ export default function inputMethodAuthorityJSUnit() {
         labelId: 123,
         icon: "",
         iconId: 124,
-        extra: {}
+        extra: {},
+        enabledState: 3
       }
       let inputMS = inputMethod.getCurrentInputMethodSubtype()
       console.info("inputMethod_test_switchCurrentInputMethodAndSubtype_001 getCurrentInputMethodSubtype: " + JSON.stringify(inputMS));
@@ -290,7 +293,8 @@ export default function inputMethodAuthorityJSUnit() {
         labelId: 123,
         icon: "",
         iconId: 124,
-        extra: {}
+        extra: {},
+        enabledState: 3
       }
       let inputMS = inputMethod.getCurrentInputMethodSubtype()
       console.info("inputMethod_test_switchCurrentInputMethodAndSubtype_002 getCurrentInputMethodSubtype: " + JSON.stringify(inputMS));
@@ -626,6 +630,48 @@ export default function inputMethodAuthorityJSUnit() {
       }catch(err){
         console.info(`====>Sub_InputMethod_IMF_setSimpleKeyboardEnabled_0200 errCode:${err.code}, errMessage is ${err.message}`)
         expect().assertFail();
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0300
+     * @tc.number SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0300', Level.LEVEL2, async (done: Function) => {
+      try {
+        inputMethod.setSimpleKeyboardEnabled(null);
+        console.info("====>SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0300 setSimpleKeyboardEnabled is success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0300 errCode:${err.code}, errMessage is ${err.message}`)
+        expect(err.code).assertEqual(401);
+        done();
+      };
+    });
+
+    /**
+     * @tc.name   SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0400
+     * @tc.number SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0400', Level.LEVEL2, async (done: Function) => {
+      try {
+        inputMethod.setSimpleKeyboardEnabled(undefined);
+        console.info("====>SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0400 setSimpleKeyboardEnabled is success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_InputMethod_IMF_setSimpleKeyboardEnabled_0400 errCode:${err.code}, errMessage is ${err.message}`)
+        expect(err.code).assertEqual(401);
         done();
       };
     });

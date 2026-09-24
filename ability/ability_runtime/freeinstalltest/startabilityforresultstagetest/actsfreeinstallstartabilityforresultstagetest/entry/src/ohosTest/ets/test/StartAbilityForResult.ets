@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
 import wantConstant from '@ohos.ability.wantConstant'
 import ability from '@ohos.ability.ability';
 import base from '@ohos.base';

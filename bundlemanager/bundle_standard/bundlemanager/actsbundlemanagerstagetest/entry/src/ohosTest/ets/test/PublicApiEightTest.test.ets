@@ -16,7 +16,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import bundle from '@ohos.bundle';
 import image from '@ohos.multimedia.image';
 import bundleManager from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic";
 
 const BUNDLE_NAME = "ohos.acts.bundle.stage.test";
 const BUNDLE_NAME1 = "com.example.myapplication1";

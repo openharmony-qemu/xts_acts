@@ -21,17 +21,11 @@ import events_emitter from '@ohos.events.emitter';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { RecordData } from '@ohos.base';
 
 export default function gridItemOnSelectJsunit() {
   describe('gridItemOnSelectTest', () => {
     beforeAll(async () => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/gridItem/gridItem',

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach,beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { afterEach,beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import Utils from '../common/Utils';
 import nativexcomponent from 'libnativexcomponent.so';
 

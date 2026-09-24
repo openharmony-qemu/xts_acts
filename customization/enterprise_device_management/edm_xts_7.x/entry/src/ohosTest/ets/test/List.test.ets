@@ -14,6 +14,7 @@
  */
 import browserManagerTest from './browser/browser.test.ets'
 import bluetoothManagerTest from './bluetoothManager/bluetoothManager.test.ets'
+import commonTest from './common/Common.test.ets'
 import securityManagerTest from './securityManager/securityManager.test';
 import deviceSettingsTest from './deviceSettings/deviceSettings.test';
 import deviceInfoTest from './deviceInfo/deviceInfo.test';
@@ -46,4 +47,5 @@ export default function testsuite() {
   bundleManagerTest();
   restrictionsTest();
   telephonyManagerTest();
+  commonTest();
 }

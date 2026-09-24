@@ -15,7 +15,7 @@
 // ArrayTraversal.test.ets
 // 遍历方法组（7个）：forEach, entries, keys, values, map, filter, reduce
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,

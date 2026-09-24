@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
 

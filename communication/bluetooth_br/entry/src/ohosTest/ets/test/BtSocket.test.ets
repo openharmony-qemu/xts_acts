@@ -15,7 +15,7 @@
 import { BusinessError } from '@ohos.base';
 import bluetooth from '@ohos.bluetooth.socket';
 import btAccess from '@ohos.bluetooth.access';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 function sleep(delay : number) : Promise<void> {
@@ -2453,6 +2453,32 @@ export default function btSocketTest() {
                     expect(true).assertTrue();
                 } else {
                     expect(error.code).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_NOCALLBACK_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_NOCALLBACK_0100
+         * @tc.desc   Test off sppRead without callback param test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            let clientNumber = 1;
+            try {
+                bluetooth.off('sppRead', clientNumber);
+                console.info('[bluetooth_js]off sppRead without callback success');
+                expect().assertFail()
+            } catch (err) {
+                console.error("off sspRead errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === '801') {
+                    console.info('[bluetooth_js]sppReadOff is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    expect(err.code).assertEqual('401');
                 }
             }
             done();

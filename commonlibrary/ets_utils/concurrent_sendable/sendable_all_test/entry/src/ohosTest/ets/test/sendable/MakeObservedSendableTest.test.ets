@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { ArkTSUtils, lang } from '@kit.ArkTS'
 import { UIUtils } from '@kit.ArkUI'
 import taskpool from '@ohos.taskpool'

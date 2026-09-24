@@ -35,7 +35,7 @@ struct Ble {
   @State X: number = 0;
   @State name: string = 'BleBluetooth';
   @State StepTips: string = '操作步骤：\n1、点击右侧的按钮，开启ble蓝牙扫描' + '\n预期结果：能够搜索到周边的ble设备';
-  @State Vue: boolean = false;
+  @State isPassed: boolean = false;
   @State btnState: boolean = false;
   @State isOn: boolean = false
   @State isConnect: boolean = false;
@@ -66,6 +66,8 @@ struct Ble {
   async aboutToAppear() {
     if (isCore) {
       await FirstDialog.ChooseDialog(this.StepTips, this.name);
+      this.isPassed = false
+      this.availableDevices = []
     } else {
       setTimeout(() => {
         promptAction.showToast({
@@ -92,8 +94,8 @@ struct Ble {
 
   async onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.availableDevices.length > 0) {
-        this.Vue = true
+      if (this.isOn && this.availableDevices.length > 0) {
+        this.isPassed = true
       }
     }, 500)
 
@@ -108,7 +110,9 @@ struct Ble {
         if (this.data.toString() === 'undefined') {
           console.log('onPageShow =this.data.toString()==> ' + this.data.toString())
         } else {
-          this.Vue = true
+          if (this.isOn) {
+            this.isPassed = true
+          }
           promptAction.showToast({
             message: '收到数据为：' + this.data,
             duration: 1000
@@ -120,41 +124,26 @@ struct Ble {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.Vue == false) {
-      Button({ stateEffect: this.Vue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('20%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
+    Button({ stateEffect: this.isPassed }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
     }
-    else {
-      Button({ stateEffect: this.Vue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .margin({ bottom: '20vp' })
-      .width('20%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .onClick(() => {
-        router.back({
-          url: 'pages/Bluetooth/BlueTooth_index',
-          params: { result: 'true ', title: this.name, }
-        })
-        promptAction.showToast({
-          message: '通过', duration: 1000
-        });
+    .margin({ bottom: '20vp' })
+    .width('20%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .opacity(this.isPassed ? 1 : 0.4)
+    .enabled(this.isPassed)
+    .onClick(() => {
+      router.back({
+        url: 'pages/Bluetooth/BlueTooth_index',
+        params: { result: 'true ', title: this.name, }
       })
-    }
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
   }
 
   @Builder
@@ -248,8 +237,10 @@ struct Ble {
                 } else {
                   Logger.info(TAG, 'enter onChange isOn false')
                   this.isOn = false
+                  this.isPassed = false
                   this.deviceList = []
                   this.discoveryList = []
+                  this.availableDevices = []
                 }
               })
               .borderWidth(1)
@@ -288,8 +279,8 @@ struct Ble {
             }
             .padding({ left: 16, top: 16, right: 16, bottom: 0 })
             .width('100%')
-            .height('58%')
           }
+          .layoutWeight(1)
           .scrollBarWidth(10)
           .scrollBarColor(Color.White)
           .scrollBar(BarState.Auto)
@@ -344,7 +335,7 @@ struct Ble {
     router.replaceUrl({
       url: 'pages/Bluetooth/BlueTooth_index',
       params: {
-        'Vue': this.Vue
+        'isPassed': this.isPassed
       }
     })
   }

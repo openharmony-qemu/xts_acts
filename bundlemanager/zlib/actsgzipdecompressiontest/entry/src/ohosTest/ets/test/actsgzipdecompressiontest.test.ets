@@ -16,7 +16,7 @@
 import zlib from '@ohos.zlib'
 import base from '@ohos.base'
 import fileio from '@ohos.fileio'
-import { describe, it, expect, beforeAll, afterEach, beforeEach, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterEach, beforeEach, TestType, Size, Level } from '@ohos/hypium-dynamic'
 
 let filePath: string = "/my/test.gz";
 let allfilePath: string = "";
@@ -3144,5 +3144,38 @@ export default function ActsGzipDecompressionTest() {
             done();
             }
         })
+
+        /**
+         * @tc.name   SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910
+         * @tc.number SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910
+         * @tc.desc   test gzprintf with empty and non-empty args array coverage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.log("=====SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910 Start=====");
+            let gzip = zlib.createGZipSync();
+            await gzip.gzopen(allfilePath, "wb");
+            const format: string = "name is %s, age is %d";
+            const emptyArgs: Array<string | number> = [];
+            const nonEmptyArgs: Array<string | number> = ['Tom', 23];
+            try {
+                let emptyArgsLen = await gzip.gzprintf(format, ...emptyArgs);
+                expect(emptyArgsLen).assertEqual(21);
+            } catch (errData) {
+                expect().assertFail();
+            }
+            try {
+                let withArgsLen = await gzip.gzprintf(format, ...nonEmptyArgs);
+                expect(withArgsLen).assertEqual(22);
+            } catch (errData) {
+                expect().assertFail();
+            }
+            await gzip.gzclose();
+            done();
+            console.log("=====SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910 End=====");
+        })
+
     })
 }

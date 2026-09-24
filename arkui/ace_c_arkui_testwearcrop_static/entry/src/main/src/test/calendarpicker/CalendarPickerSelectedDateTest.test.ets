@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 
 const libUtil: LibUtil = new LibUtil();
@@ -26,11 +25,6 @@ const libUtil: LibUtil = new LibUtil();
 export default function calendarPickerSelectedDateTest() {
 
   describe('CalendarPickerSelectedDateTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
-      console.info("[ui] beforeAll end");
-    });
     beforeEach(async (): Promise<void> => {
       await Utils.sleep(100);
     });

@@ -13,7 +13,7 @@
  *  limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import http from '@ohos.net.http';
 import { BusinessError } from '@ohos.base';
 import connection from '@ohos.net.connection';
@@ -202,12 +202,12 @@ export default function HttpClientCertTest() {
               },
               (err: BusinessError, data: http.HttpResponse) => {
                 if (err) {
-                  console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
+                  console.info(`${caseName} httpRequest fail ${JSON.stringify(data)}`);
                   ExpectTrue(err?.code == 2300058);
                   httpRequest.destroy();
                   done();
                 } else {
-                  console.info(`${caseName} request failed err: ${JSON.stringify(err)}`);
+                  console.info(`${caseName} request success`);
                   ExpectFail();
                   httpRequest.destroy();
                   done();

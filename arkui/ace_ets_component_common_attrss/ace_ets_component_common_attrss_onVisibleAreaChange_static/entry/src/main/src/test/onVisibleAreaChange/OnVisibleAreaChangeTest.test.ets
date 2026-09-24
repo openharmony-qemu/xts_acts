@@ -18,19 +18,9 @@ import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,SetValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, expect,beforeAll } from '../../../../hypium/index';
-import {UtilsTest} from '../Util.test'
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+import { describe, expect } from '../../../../hypium/index';
 
 export default function onVisibleAreaChangeTest() {
   //Component to be tested
@@ -114,14 +104,7 @@ export default function onVisibleAreaChangeTest() {
     }]
 
   describe('OnVisibleAreaChangeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.log('++++++++++++++++++++++++1')
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      console.log('++++++++++++++++++++++++2')
-      await UtilsTest.msSleep(1000)
-    });
-    console.log('++++++++++++++++++++++++3')
-      CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
+    CommonTest.initTest(pageConfig, supportView, testValues,  async (data: BasePageConfig): Promise<void> => {
       //Get Information about the location of the target component before the change
         console.log('++++++++++++++++++++++++4')
       let targetRectBefore: RectValue = Utils.getComponentRect(data.pageConfig.componentKey??'');

@@ -16,7 +16,7 @@
 import overlay from '@ohos.bundle.overlay';
 import { BusinessError } from '@kit.BasicServicesKit';
 import Utils from "./Utils";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 
 const MODULE_NAME = "entry_test";
 const MODULE_NAME1 = "test1";
@@ -388,7 +388,6 @@ export default function setOverlayEnabled() {
       }
       done();
     })
-
 
   })
 }

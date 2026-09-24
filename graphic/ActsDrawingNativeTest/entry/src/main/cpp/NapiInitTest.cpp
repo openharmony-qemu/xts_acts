@@ -36,6 +36,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingRecordCmdUtilsBeginRecording),
     DECL_NAPI_DESC(DrawingRecordCmdUtilsDestroy),
     DECL_NAPI_DESC(DrawingRecordCmdUtilsFinishRecording),
+    DECL_NAPI_DESC(DrawingRecordCmdUtilsGetHeightOrWidth),
     DECL_NAPI_DESC(DrawingCanvasDrawSingleChaWithFeatures),
     DECL_NAPI_DESC(DrawingMemoryStream),
     DECL_NAPI_DESC(DrawingPointCreate),

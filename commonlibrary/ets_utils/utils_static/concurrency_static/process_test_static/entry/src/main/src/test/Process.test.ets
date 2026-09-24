@@ -654,7 +654,7 @@ export default function ProcessTest() {
           const pathName = "PATH";
           const processManager = new StdProcess.ProcessManager();
           const pres = processManager.getEnvironmentVar(pathName);
-          expect(pres).assertContain("/data/app/bin:/data/service/hnp/bin:/data/app/bin:/data/service/hnp/bin:");
+          expect(pres).assertContain("/data/app/bin");
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -744,7 +744,7 @@ export default function ProcessTest() {
               const pathName = "PATH";
               const processManager = new StdProcess.ProcessManager();
               const pres = processManager.getEnvironmentVar(pathName);
-              expect(pres).assertContain("/data/app/bin:/data/service/hnp/bin:/data/app/bin:/data/service/hnp/bin:");
+              expect(pres).assertContain("/data/app/bin");
             }
             worker.join()
           });

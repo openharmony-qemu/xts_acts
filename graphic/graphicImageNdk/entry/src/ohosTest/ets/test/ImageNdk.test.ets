@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterEach, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { describe, beforeAll, afterEach, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import ndkTest from 'libImageNdk.so'
 import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
@@ -1710,6 +1710,51 @@ export default function imageNdkTest() {
     it('testNativeImageDataConversionFailedErrorCode',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let result: number = ndkTest.testNativeImageDataConversionFailedErrorCode();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testGetAlphaTypeNullPtr
+     * @tc.number SUB_GRAPHIC_IMAGE_INIT_OPTIONS_GET_ALPHA_TYPE_NULLPTR_0100
+     * @tc.desc   test OH_PixelmapInitializationOptions_GetAlphaType with nullptr output pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetAlphaTypeNullPtr',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testGetAlphaTypeNullPtr();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testImageInfoGetWidthNullPtr
+     * @tc.number SUB_GRAPHIC_IMAGE_INFO_GET_WIDTH_NULLPTR_0100
+     * @tc.desc   test OH_PixelmapImageInfo_GetWidth with nullptr output pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageInfoGetWidthNullPtr',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testImageInfoGetWidthNullPtr();
+      expect(result).assertEqual(IMAGE_SUCCESS);
+      done();
+    })
+
+    /**
+     * @tc.name   testImageInfoGetHeightNullPtr
+     * @tc.number SUB_GRAPHIC_IMAGE_INFO_GET_HEIGHT_NULLPTR_0100
+     * @tc.desc   test OH_PixelmapImageInfo_GetHeight with nullptr output pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testImageInfoGetHeightNullPtr',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let result: number = ndkTest.testImageInfoGetHeightNullPtr();
       expect(result).assertEqual(IMAGE_SUCCESS);
       done();
     })

@@ -38,11 +38,13 @@ export default {
   navigateTo(subsystem) {
     let routes = {
       'ArkUI': 'pages/ArkUI/common/index/index',
-                  'PowerManager': 'pages/PowerManager/common/index/index',
+                  'PowerManager': 'pages/PowerManager/power/index',
       'FileManagement': 'pages/FileManagement/file/index',
       'DistributedData': 'pages/DistributedData/storage/index',
       'Startup': 'pages/Startup/deviceInfo/index',
-      'Communication': 'pages/Communication/nfc/index'
+      'Communication': 'pages/Communication/nfc/index',
+      'Sensors': 'pages/Sensors/index/index',
+      'Location': 'pages/Location/index/index'
     };
     let url = routes[subsystem] || 'pages/index/index';
     router.replace({ uri: url });
@@ -92,6 +94,6 @@ export default {
     let self = this;
     setTimeout(function() {
       self._outputReportLines(items, keys, index + 1, passCount, failCount, totalCount);
-    }, 500);
+    }, 100);
   },
 }

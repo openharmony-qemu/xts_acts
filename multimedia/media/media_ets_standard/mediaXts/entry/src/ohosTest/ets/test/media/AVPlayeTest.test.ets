@@ -16,7 +16,7 @@
 import MediaTestBase from './MediaTestBase';
 import media from '@ohos.multimedia.media';
 import { idle, offCallback, PlayTest, setSource, setSubtitle, testAVPlayerFun, } from './AVPlayerTestBase';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { BusinessError, Callback } from '@kit.BasicServicesKit';
 import drm from '@ohos.multimedia.drm';
 import {
@@ -5565,6 +5565,28 @@ export default function AVPlayerTest() {
       if (fileDescriptor) {
         testTimedMetaDataListening01(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_TIMEDMETADATA_ON_0200", avPlayer, timedMetaDataON, done);
       }
+    });
+
+    /**
+      * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100
+      * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100
+      * @tc.desc   Test off_mediaKeySystemInfoUpdate
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100', Level.LEVEL0, async (done:Function) => {
+        try {
+            let avPlayer = await media.createAVPlayer();
+            let callback = (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+                console.log("XX SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100 off_mediaKeySystemInfoUpdate callback called");
+            }
+            avPlayer!.off('mediaKeySystemInfoUpdate', callback);
+        } catch (err) {
+            console.log("XX SUB_MULTIMEDIA_MEDIA_VIDEO_OFF_MEDIAKEYSYSTEMINFOUPDATE_0100 off_mediaKeySystemInfoUpdate", err.message);
+            expect().assertFail();
+        }
+        done();
     });
   })
 }

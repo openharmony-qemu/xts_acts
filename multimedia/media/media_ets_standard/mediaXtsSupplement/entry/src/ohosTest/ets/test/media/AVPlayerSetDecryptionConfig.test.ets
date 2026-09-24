@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import media from '@ohos.multimedia.media'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { JSON } from '@kit.ArkTS';
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@ohos.base';
@@ -203,6 +203,55 @@ export default function AVPlayerSetDecryptionConfigSuppTest() {
         done();
       }
     })
-
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100
+     * @tc.desc   AVPlayer_setDecryptionConfig
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0100';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully");
+      try {
+        let keySession : drm.MediaKeySession = AppStorage.get('empty')as ESObject;
+        avPlayer.setDecryptionConfig(keySession, null);
+        console.info(TAG, testName, "AVPlayer setDecryptionConfig successfully");
+        avPlayer?.release();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, "Test failed:", JSON.stringify(err), err.code, err);
+        expect().assertFail();
+        avPlayer?.release();
+        done();
+      }
+    })
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200
+     * @tc.desc   AVPlayer_setDecryptionConfig
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_SET_setDecryptionConfig_0200';
+      avPlayer = await media.createAVPlayer();
+      console.info(TAG, testName, "AVPlayer created successfully");
+      try {
+        let keySession : drm.MediaKeySession = AppStorage.get('empty')as ESObject;
+        avPlayer.setDecryptionConfig(keySession, undefined);
+        console.info(TAG, testName, "AVPlayer setDecryptionConfig successfully");
+        avPlayer?.release();
+        done();
+      } catch (err) {
+        console.error(TAG, testName, "Test failed:", JSON.stringify(err), err.code, err);
+        expect().assertFail();
+        avPlayer?.release();
+        done();
+      }
+    })
   })
 }

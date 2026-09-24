@@ -103,6 +103,18 @@ struct Index {
               }
               break;
             }
+            case 'emitClearHostIPReturnValue001': {
+              try {
+                webView.WebviewController.clearHostIP('test.example.com');
+                let isVoid: boolean = true;
+                Utils.emitEvent(isVoid, 179840);
+              } catch (error) {
+                let e: BusinessError = error as BusinessError;
+                console.error(this.str + `ErrorCode: ${e.code},  Message: ${e.message}`);
+                Utils.emitEvent(false, 179840);
+              }
+              break;
+            }
             default:
               console.info('can not match case');
           }

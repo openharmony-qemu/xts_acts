@@ -16,7 +16,7 @@
 import { collections, ArkTSUtils, worker } from '@kit.ArkTS';
 import { taskpool } from '@kit.ArkTS';
 import { MessageEvents } from '@kit.ArkTS';
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 // ========== Sendable 辅助类 ==========
 

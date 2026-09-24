@@ -18,7 +18,7 @@
 import {
   describe, it, expect, TestType, Size, Level, beforeAll, afterEach, beforeEach,
   afterAll
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import {
   getOwnPropertySymbolsSingle001,
   getOwnPropertySymbolsSymbolFor002,

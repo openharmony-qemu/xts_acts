@@ -14,7 +14,7 @@
  */
 
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import hilog from '@ohos.hilog';
 // import testsuite from '../../test/List.test'
 import { SegmentButton, SegmentButtonOptions, SegmentButtonItemOptions} from '@ohos.arkui.advanced.SegmentButton'

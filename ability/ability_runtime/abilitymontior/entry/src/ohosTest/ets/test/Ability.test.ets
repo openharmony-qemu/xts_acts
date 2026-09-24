@@ -12,7 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
+import { Driver, ON } from '@ohos.UiTest';
+
 import Subscriber from '@ohos.commonEventManager';
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
 import abilityDelegatorRegistry2 from '@ohos.app.ability.abilityDelegatorRegistry'
@@ -31,6 +33,18 @@ export default function abilityTest() {
   let TAG = "";
 
   describe('ActsAbilityMonitor', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
     afterEach(async (done: Function) => {
       console.info(TAG + " afterEach each called");
       if (monitor) {

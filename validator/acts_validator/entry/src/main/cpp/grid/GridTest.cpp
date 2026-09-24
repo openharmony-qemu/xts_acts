@@ -65,8 +65,8 @@ std::shared_ptr<GridComponent> GridTest::CreatGrid()
 
 napi_value GridTest::CreateNativeNode(napi_env env, napi_callback_info info)
 {
-    size_t argc = 1;
-    napi_value args[1] = {nullptr};
+    size_t argc = 3;
+    napi_value args[3] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     size_t length = 64;
     size_t strLength = 0;
@@ -75,6 +75,20 @@ napi_value GridTest::CreateNativeNode(napi_env env, napi_callback_info info)
     if ((env == nullptr) || (info == nullptr)) {
         return nullptr;
     }
+
+    // Create threadsafe function from JS callback (args[2]) to notify ETS layer
+    napi_threadsafe_function tsfn = nullptr;
+    if (argc >= 3 && args[2] != nullptr) {
+        napi_value workName;
+        napi_create_string_utf8(env, "GridDragEnterCallback", NAPI_AUTO_LENGTH, &workName);
+        napi_create_threadsafe_function(env, args[2], nullptr, workName, 0, 1,
+            nullptr, nullptr, nullptr,
+            [](napi_env env, napi_value js_cb, void* context, void* data) {
+                napi_call_function(env, nullptr, js_cb, 0, nullptr, nullptr);
+            },
+            &tsfn);
+    }
+
     ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     auto grid = CreatGrid();
@@ -84,8 +98,11 @@ napi_value GridTest::CreateNativeNode(napi_env env, napi_callback_info info)
     grid->SetOnItemDragStart([grid](float x, float y, int32_t index) {
         grid->SetBackgroundColor(COLOR_RED);
     });
-    grid->SetOnItemDragEnter([text](float x, float y) {
+    grid->SetOnItemDragEnter([text, tsfn](float x, float y) {
         text->SetTextContent("pass");
+        if (tsfn) {
+            napi_call_threadsafe_function(tsfn, nullptr, napi_tsfn_nonblocking);
+        }
     });
     grid->SetOnItemDragMove([grid](float x, float y, int32_t index, int32_t insertIndex) {
         grid->SetBackgroundColor(COLOR_BLUE);

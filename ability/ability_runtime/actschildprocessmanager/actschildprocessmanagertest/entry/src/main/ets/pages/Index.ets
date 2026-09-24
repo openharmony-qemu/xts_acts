@@ -13,10 +13,16 @@
  * limitations under the License.
  */
 
+import InfosSpawnProcess from '../process/InfosSpawnProcess';
+
 @Entry
 @Component
 struct Index {
   @State message: string = 'Hello World'
+
+  aboutToAppear() {
+    InfosSpawnProcess.toString();
+  }
 
   build() {
     Row() {

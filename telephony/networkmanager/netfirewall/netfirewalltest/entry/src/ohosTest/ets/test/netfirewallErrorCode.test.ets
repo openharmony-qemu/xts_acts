@@ -1,4 +1,4 @@
-import { describe, it, expect, Level, TestType, Size, beforeAll, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, TestType, Size, beforeAll, afterAll } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@kit.BasicServicesKit';
 import netFirewall from '@ohos.net.netFirewall';
 import { JSON } from '@kit.ArkTS';

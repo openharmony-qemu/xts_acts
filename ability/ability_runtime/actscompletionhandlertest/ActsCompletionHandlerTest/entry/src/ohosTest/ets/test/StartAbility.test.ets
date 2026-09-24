@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import common from '@ohos.app.ability.common';
@@ -218,7 +218,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
         testContext = ability.context;
       } catch (err) {
-        hilog.info(DOMAIN, LOG_TAG, "get context failed: " + JSON.stringify(err));
+        hilog.info(DOMAIN, LOG_TAG, 'get context failed: ' + JSON.stringify(err));
         try { expect().assertFail(); } catch (err) {}
       }
       try {
@@ -287,8 +287,8 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
 
       try {
         await testContext.startAbility({
-          bundleName: "com.example.completionhandlerrely",
-          abilityName: "EntryAbility"
+          bundleName: 'com.example.completionhandlerrely',
+          abilityName: 'EntryAbility'
         }, {
           completionHandler: handler
         }).then(() => {
@@ -354,8 +354,8 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
 
       try {
         await testContext.startAbility({
-          bundleName: "com.example.completionhandlerrely",
-          abilityName: "EntryAbility"
+          bundleName: 'com.example.completionhandlerrely',
+          abilityName: 'EntryAbility'
         }, {
           completionHandler: handler
         }).then(() => {
@@ -432,7 +432,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){}else{
+          if(err.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -504,7 +504,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){
+          if(err.code == 16000050){
             done();
           }else{
             expect().assertFail();
@@ -638,7 +638,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){}else{
+          if(err.code == 16000050){}else{
             expect().assertFail();
             done();
           }
@@ -711,7 +711,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700 startAbility failed, err=${JSON.stringify(err)}`);
           isOpen = false;
-          if(err?.code == 16000050){}else{
+          if(err.code == 16000050){}else{
             expect().assertFail();
             done();
           }

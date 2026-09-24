@@ -68,8 +68,8 @@ ArkUI_NodeHandle CustomComponentHitTestBehaviorTest::CreateSubCustomComponentNod
     float customHeight = SIZE_60;
     float customBrotherWidth = SIZE_40;
     float customBrotherHeight = SIZE_40;
-    float columnWidth = SIZE_20;
-    float columnHeight = SIZE_20;
+    float columnWidth = SIZE_40;
+    float columnHeight = SIZE_40;
     uint32_t stackBackgroundColor = COLOR_GRAY;
     uint32_t customBackgroundColor = COLOR_RED;
     uint32_t customBrotherBackgroundColor = COLOR_GREEN;

@@ -4,6 +4,8 @@
         "MainAbility/pages/ColumnSplitRowSplit/ColumnSplit",
         "MainAbility/pages/ColumnSplitRowSplit/RowSplit",
         "MainAbility/pages/ColumnSplitRowSplit/columnSplitPage",
-        "MainAbility/pages/ColumnSplitRowSplit/ColumnSplitDividerNullUndefined"
+        "MainAbility/pages/ColumnSplitRowSplit/ColumnSplitDividerNullUndefined",
+        "MainAbility/pages/ColumnSplitRowSplit/ColumnSplitCommonApiNullUndefined",
+        "MainAbility/pages/ColumnSplitRowSplit/RowSplitCommonApiNullUndefined"
     ]
 }

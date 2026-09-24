@@ -951,5 +951,197 @@ export default function fscreateReadStream() {
         expect(false).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_025
+     * @tc.number SUB_DF_FILEIO_READSTREAM_2500
+     * @tc.desc   Test ReadStream.seek() interface. whence is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_ReadStream_025');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let ReadStream = fs.createReadStream(fpath);
+        let curoff = ReadStream.seek(5, null);
+        expect(curoff === 5).assertTrue();
+        fs.unlinkSync(fpath);
+        expect().assertFail();
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_025 has failed for ' + e.message + ', code: ' + e.code);
+        fs.unlinkSync(fpath);
+        expect(e.code === 13900020).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_026
+     * @tc.number SUB_DF_FILEIO_READSTREAM_2600
+     * @tc.desc   Test ReadStream.seek() interface. whence is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_ReadStream_026');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let ReadStream = fs.createReadStream(fpath);
+        let curoff = ReadStream.seek(5, undefined);
+        expect(curoff === 5).assertTrue();
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_026 has failed for ' + e.message + ', code: ' + e.code);
+        fs.unlinkSync(fpath);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_027
+     * @tc.number SUB_DF_FILEIO_READSTREAM_2700
+     * @tc.desc   Test ReadStream.seek() interface. whence=3 (out of WhenceType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_ReadStream_027');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let ReadStream = fs.createReadStream(fpath);
+        let curoff = ReadStream.seek(5, 3);
+        expect(curoff === 5).assertTrue();
+        fs.unlinkSync(fpath);
+        console.log('fileIO_test_ReadStream_030 run err');
+        expect().assertFail();
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_027 has failed for ' + e.message + ', code: ' + e.code);
+        fs.unlinkSync(fpath);
+        expect(e.code === 13900020).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_028
+     * @tc.number SUB_DF_FILEIO_READSTREAM_2800
+     * @tc.desc   Test WriteStream.seek() interface. whence is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_ReadStream_028');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let WriteStream = fs.createWriteStream(fpath);
+        let curOff = WriteStream.seek(5, null);
+        expect(curOff === 5).assertTrue();
+        fs.unlinkSync(fpath);
+        expect().assertFail();
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_028 has failed for ' + e.message + ', code: ' + e.code);
+        fs.unlinkSync(fpath);
+        expect(e.code === 13900020).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_029
+     * @tc.number SUB_DF_FILEIO_READSTREAM_2900
+     * @tc.desc   Test WriteStream.seek() interface. whence is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_ReadStream_029');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let WriteStream = fs.createWriteStream(fpath);
+        let curOff = WriteStream.seek(5, undefined);
+        expect(curOff === 5).assertTrue();
+        fs.unlinkSync(fpath);
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_029 has failed for ' + e.message + ', code: ' + e.code);
+        fs.unlinkSync(fpath);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_030
+     * @tc.number SUB_DF_FILEIO_READSTREAM_3000
+     * @tc.desc   Test WriteStream.seek() interface. whence=3 (out of WhenceType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+      let fpath = await nextFileName('fileIO_test_ReadStream_030');
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+
+      try {
+        let WriteStream = fs.createWriteStream(fpath);
+        let curOff = WriteStream.seek(5, 3);
+        expect(curOff === 5).assertTrue();
+        fs.unlinkSync(fpath);
+        console.log('fileIO_test_ReadStream_030 run err');
+        expect().assertFail();
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_030 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        fs.unlinkSync(fpath);
+      }
+    });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_031
+     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3100
+     * @tc.desc   Test Class ReadStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_031', Level.LEVEL3, async function (done) {
+      try {
+        console.log('fileIO_test_ReadStream_031 start');
+        let obj = new fileIO.ReadStream();
+        console.log('fileIO_test_ReadStream_031 obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_031 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.message).assertEqual('Constructor is false');
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   fileIO_test_ReadStream_032
+     * @tc.number SUB_DF_FILEIO_CREATE_CREATESTREAM_ASYNC_3200
+     * @tc.desc   Test WriteStream() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('fileIO_test_ReadStream_032', Level.LEVEL3, async function (done) {
+      try {
+        console.log('fileIO_test_ReadStream_032 start');
+        let obj = new fileIO.WriteStream();
+        console.log('fileIO_test_ReadStream_032 obj: ' + JSON.stringify(obj));
+        expect(obj).not().assertUndefined();
+      } catch (e) {
+        console.log('fileIO_test_ReadStream_032 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.message).assertEqual('Constructor is false');
+      }
+      done();
+    });
   })
 }

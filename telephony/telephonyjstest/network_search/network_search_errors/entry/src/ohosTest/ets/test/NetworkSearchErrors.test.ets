@@ -15,7 +15,7 @@
 
 import radio from '@ohos.telephony.radio';
 import observer from '@ohos.telephony.observer';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 export default function ActsNetworkSearchTest() {
 
 describe('ActsNetworkSearchTest',  () => {
@@ -65,6 +65,89 @@ describe('ActsNetworkSearchTest',  () => {
             console.info(`Telephony_NetworkSearch error`);
         }
         done();
+    });
+
+    /**
+     * @tc.name   Telephony_NetworkSearch_RegState_Async_0100
+     * @tc.number SUB_Telephony_NetworkSearch_RegState_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_NetworkSearch_RegState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+        let caseName: string = 'Telephony_NetworkSearch_RegState_Async_0100';
+        console.info(`${caseName} test start`);
+        try{
+            console.info(`${caseName}REG_STATE_NO_SERVICE result:` + radio.RegState.REG_STATE_NO_SERVICE);
+            expect(radio.RegState.REG_STATE_NO_SERVICE === 0).assertTrue();
+            console.info(`${caseName}REG_STATE_IN_SERVICE result:` + radio.RegState.REG_STATE_IN_SERVICE);
+            expect(radio.RegState.REG_STATE_IN_SERVICE === 1).assertTrue();
+            console.info(`${caseName}REG_STATE_EMERGENCY_CALL_ONLY result:` + radio.RegState.REG_STATE_EMERGENCY_CALL_ONLY);
+            expect(radio.RegState.REG_STATE_EMERGENCY_CALL_ONLY === 2).assertTrue();
+            console.info(`${caseName}REG_STATE_POWER_OFF result:` + radio.RegState.REG_STATE_POWER_OFF);
+            expect(radio.RegState.REG_STATE_POWER_OFF === 3).assertTrue();
+            done();
+        }catch(error){
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   Telephony_NetworkSearch_NetworkSelectionMode_Async_0100
+     * @tc.number SUB_Telephony_NetworkSearch_NetworkSelectionMode_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_NetworkSearch_NetworkSelectionMode_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+        let caseName: string = 'Telephony_NetworkSearch_NetworkSelectionMode_Async_0100';
+        console.info(`${caseName} test start`);
+        try{
+            console.info(`${caseName}NETWORK_SELECTION_UNKNOWN result:` + radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN);
+            expect(radio.NetworkSelectionMode.NETWORK_SELECTION_UNKNOWN === 0).assertTrue();
+            console.info(`${caseName}NETWORK_SELECTION_AUTOMATIC result:` + radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC);
+            expect(radio.NetworkSelectionMode.NETWORK_SELECTION_AUTOMATIC === 1).assertTrue();
+            console.info(`${caseName}NETWORK_SELECTION_MANUAL result:` + radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL);
+            expect(radio.NetworkSelectionMode.NETWORK_SELECTION_MANUAL === 2).assertTrue();
+            done();
+        }catch(error){
+            expect().assertFail();
+            done();
+        }
+    });
+
+    /**
+     * @tc.name   Telephony_NetworkSearch_NsaState_Async_0100
+     * @tc.number SUB_Telephony_NetworkSearch_NsaState_Async_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Telephony_NetworkSearch_NsaState_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>{
+        let caseName: string = 'Telephony_NetworkSearch_NetworkSelectionMode_Async_0100';
+        console.info(`${caseName} test start`);
+        try{
+            console.info(`${caseName}NSA_STATE_NOT_SUPPORT result:` + radio.NsaState.NSA_STATE_NOT_SUPPORT);
+            expect(radio.NsaState.NSA_STATE_NOT_SUPPORT === 1).assertTrue();
+            console.info(`${caseName}NSA_STATE_NO_DETECT result:` + radio.NsaState.NSA_STATE_NO_DETECT);
+            expect(radio.NsaState.NSA_STATE_NO_DETECT === 2).assertTrue();
+            console.info(`${caseName}NSA_STATE_CONNECTED_DETECT result:` + radio.NsaState.NSA_STATE_CONNECTED_DETECT);
+            expect(radio.NsaState.NSA_STATE_CONNECTED_DETECT === 3).assertTrue();
+            console.info(`${caseName}NSA_STATE_IDLE_DETECT result:` + radio.NsaState.NSA_STATE_IDLE_DETECT);
+            expect(radio.NsaState.NSA_STATE_IDLE_DETECT === 4).assertTrue();
+            console.info(`${caseName}NSA_STATE_DUAL_CONNECTED result:` + radio.NsaState.NSA_STATE_DUAL_CONNECTED);
+            expect(radio.NsaState.NSA_STATE_DUAL_CONNECTED === 5).assertTrue();
+            console.info(`${caseName}NSA_STATE_SA_ATTACHED result:` + radio.NsaState.NSA_STATE_SA_ATTACHED);
+            expect(radio.NsaState.NSA_STATE_SA_ATTACHED === 6).assertTrue();
+            done();
+        }catch(error){
+            expect().assertFail();
+            done();
+        }
     });
 
     /**

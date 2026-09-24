@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import http from '@ohos.net.http';
-import { describe, expect, it , Level, Size, TestType} from '@ohos/hypium';
+import { describe, expect, it , Level, Size, TestType} from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
@@ -286,6 +286,7 @@ export default function HttpHttpProtocolTest() {
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+              httpRequest.destroy();
               done();
             });
           }
@@ -547,6 +548,7 @@ export default function HttpHttpProtocolTest() {
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+              httpRequest.destroy();
               done();
             });
           }

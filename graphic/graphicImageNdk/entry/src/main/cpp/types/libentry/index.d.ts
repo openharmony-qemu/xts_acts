@@ -102,3 +102,6 @@ export const testNativeConvertAlphaTypeNullSrc: (pixelMap: image.PixelMap) => nu
 export const testNativeConvertAlphaTypeNullDst: (pixelMap: image.PixelMap) => number;
 export const testNativeConvertAlphaTypeUnsupportedDataFormat: () => number;
 export const testNativeImageDataConversionFailedErrorCode: () => number;
+export const testGetAlphaTypeNullPtr: () => number;
+export const testImageInfoGetWidthNullPtr: () => number;
+export const testImageInfoGetHeightNullPtr: () => number;

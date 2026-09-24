@@ -106,7 +106,7 @@ it('testVideoStatic02', Level.LEVEL1, async (done: () => void): Promise<void> =>
       } catch (err) {
         console.info('testVideo02 sleep err: ' + JSON.stringify(err));
       }
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      let strJsonNew = inspector.getInspectorByKey('video');
       console.info("[testVideo02] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo02] END');
       done();
@@ -141,7 +141,7 @@ it('testVideoStatic03', Level.LEVEL1, async (done: () => void): Promise<void> =>
       } catch (err) {
         console.info('testVideo03 sleep err: ' + JSON.stringify(err));
       }
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      let strJsonNew = inspector.getInspectorByKey('video');
       console.info("[testVideo03] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo03] END');
       done();
@@ -176,7 +176,7 @@ it('testVideoStatic04', Level.LEVEL1, async (done: () => void): Promise<void> =>
       } catch (err) {
         console.info('testVideo04 sleep err: ' + JSON.stringify(err));
       }
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      let strJsonNew = inspector.getInspectorByKey('video');
       console.info("[testVideo04] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo04] END');
       done();
@@ -211,7 +211,7 @@ it('testVideoStatic05', Level.LEVEL1, async (done: () => void): Promise<void> =>
       } catch (err) {
         console.info('testVideo05 sleep err: ' + JSON.stringify(err));
       }
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      let strJsonNew = inspector.getInspectorByKey('video');
 
       console.info("[testVideo05] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo05] END');
@@ -247,7 +247,7 @@ it('testVideoStatic06', Level.LEVEL1, async (done: () => void): Promise<void> =>
       } catch (err) {
         console.info('testVideo06 sleep err: ' + JSON.stringify(err));
       }
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      let strJsonNew = inspector.getInspectorByKey('video');
 
       console.info("[testVideo06] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo06] END');
@@ -283,7 +283,7 @@ it('testVideoStatic07', Level.LEVEL1, async (done: () => void): Promise<void> =>
       } catch (err) {
         console.info('testVideo07 sleep err: ' + JSON.stringify(err));
       }
-      let strJsonNew = inspector.getInspectorByKey('video2' + '_video');
+      let strJsonNew = inspector.getInspectorByKey('video');
 
       console.info("[testVideo07] component JSON.parseJsonElement(strJsonNew) is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)));
       console.info('[testVideo07] END');

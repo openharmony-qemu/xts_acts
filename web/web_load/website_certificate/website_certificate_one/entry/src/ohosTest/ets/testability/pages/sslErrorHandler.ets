@@ -143,6 +143,19 @@ struct sslErrorHandler {
               break;
             }
 
+            case 'emitSslErrorHandlerConstructor001': {
+              Utils.emitEvent(true, 202590);
+              break;
+            }
+            case 'emitSslErrorHandlerConstructorReturn001': {
+              Utils.emitEvent(true, 202591);
+              break;
+            }
+            case 'emitSslErrorHandlerClass001': {
+              Utils.emitEvent(true, 202592);
+              break;
+            }
+
           }
         })
       }

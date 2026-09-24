@@ -24,7 +24,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let testAbilityContext:common.UIAbilityContext;
 
 export default function WebHttpBodyStream() {
-  describe('WebHttpBodyStream', (): void => {
+  describe('WebHttpBodyStream', () => {
         beforeAll(async (): Promise<void> => {
           console.log('App start')
         });
@@ -75,7 +75,7 @@ export default function WebHttpBodyStream() {
         Utils.emitEvent('emitonSwitchNextPage', 10)
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebHttpBodyStream', 10, '');
-        await Utils.msSleep(2000);
+        await Utils.msSleep(4000);
         done();
       })
   })

@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, afterEach, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic';
+
 import abilityConstant from '@ohos.app.ability.AbilityConstant';
 import wantConstant from "@ohos.app.ability.wantConstant";
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import errorCode from '@ohos.ability.errorCode';
 import wantAgent from '@ohos.app.ability.wantAgent';
 import { ConfigurationConstant } from '@kit.AbilityKit';
@@ -35,6 +36,16 @@ let driver1:Driver;
 export default function ApiCoverTest() {
   describe('EnumerationTest', () => {
     beforeAll(async()=>{
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       try{
         driver1 = await Driver.create();
       }catch{
@@ -1090,6 +1101,84 @@ export default function ApiCoverTest() {
      */
     it('SUB_Ability_AbilityBase_QueryType_0200', Level.LEVEL0, async (done: Function) => {
       expect('byProperty').assertEqual(insightIntent.QueryType.BY_PROPERTY);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3200
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3200
+     * @tc.desc   Test abilityConstant OnSaveResult.ALL_AGREE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3200', Level.LEVEL0, async (done: Function) => {
+      expect(0).assertEqual(abilityConstant.OnSaveResult.ALL_AGREE);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3300
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3300
+     * @tc.desc   Test abilityConstant OnSaveResult.CONTINUATION_REJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3300', Level.LEVEL0, async (done: Function) => {
+      expect(1).assertEqual(abilityConstant.OnSaveResult.CONTINUATION_REJECT);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3400
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3400
+     * @tc.desc   Test abilityConstant OnSaveResult.CONTINUATION_MISMATCH.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3400', Level.LEVEL0, async (done: Function) => {
+      expect(2).assertEqual(abilityConstant.OnSaveResult.CONTINUATION_MISMATCH);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3500
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3500
+     * @tc.desc   Test abilityConstant OnSaveResult.RECOVERY_AGREE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3500', Level.LEVEL0, async (done: Function) => {
+      expect(3).assertEqual(abilityConstant.OnSaveResult.RECOVERY_AGREE);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3600
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3600
+     * @tc.desc   Test abilityConstant OnSaveResult.RECOVERY_REJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3600', Level.LEVEL0, async (done: Function) => {
+      expect(4).assertEqual(abilityConstant.OnSaveResult.RECOVERY_REJECT);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_3700
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_3700
+     * @tc.desc   Test abilityConstant OnSaveResult.ALL_REJECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_3700', Level.LEVEL0, async (done: Function) => {
+      expect(5).assertEqual(abilityConstant.OnSaveResult.ALL_REJECT);
       done();
     })
 

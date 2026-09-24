@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import ohosrouter from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
 import { SafeAreaType, DialogButtonStyle } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 const waitUiReadyMs = 1000;
 
 class MyParams {
@@ -43,12 +35,6 @@ class DataObj {
 
 export default function ApiCommponentAddJsunit() {
   describe('ApiCommponentAddJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ApiCommponentAddJsunit beforeEach start");
@@ -125,43 +111,50 @@ it('apiCommponentAddJsunit_static_0100', Level.LEVEL0, async (done: () => void):
      * @tc.level    Level.LEVEL0
      */
 it('apiCommponentAddJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('apiCommponentAddJsunit_static_0200 START');
-      const routerAlp = AppStorage.get<Router>("router") as Router
-      routerAlp.clear();
-      routerAlp.pushUrl({
-        url: 'MainAbility/pages/Scroll/list_add',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          }
-        } as MyParams
-      }).then(() => {
-        // success
-      }).catch((err: Error) => {
-        console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
-      })
-      await CommonFunc.sleep(1000);
-      let gridTop = CommonFunc.getComponentRectOnScreen('listadd');
-      let top = gridTop.top;
-      let gridBottom = CommonFunc.getComponentRectOnScreen('listadd');
-      let bottom = gridBottom.bottom;
-      let gridRight = CommonFunc.getComponentRectOnScreen('listadd');
-      let right = gridRight.right;
-      let left = gridRight.left;
-      let driver = Driver.create();
-      const uiContext = AppStorage.get<UIContext>('uiContext');
-      await driver.swipe((Math.round(left + Math.round(uiContext!.vp2px(30)))).toInt(),
-        (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt(),
-        (Math.round(left + Math.round(uiContext!.vp2px(20)))).toInt(),
-        (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt());
-      await CommonFunc.sleep(1000);
-      // judge whether the top
-      let onScrollStartText = await driver.findComponent(ON.id('4'));
-      let textAdd = await (onScrollStartText?.getText() as Promise<string>);
-      console.info("[apiCommponentAddJsunit_static_0200] onScrollStartText: " + textAdd);
-      expect(textAdd).assertEqual('4');
-      done();
+      try {
+        console.info('apiCommponentAddJsunit_static_0200 START');
+        const routerAlp = AppStorage.get<Router>("router") as Router
+        routerAlp.clear();
+        routerAlp.pushUrl({
+          url: 'MainAbility/pages/Scroll/list_add',
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as MyParams
+        }).then(() => {
+          // success
+        }).catch((err: Error) => {
+          console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
+        })
+        await CommonFunc.sleep(1000);
+        let gridTop = CommonFunc.getComponentRectOnScreen('listadd');
+        let top = gridTop.top;
+        let gridBottom = CommonFunc.getComponentRectOnScreen('listadd');
+        let bottom = gridBottom.bottom;
+        let gridRight = CommonFunc.getComponentRectOnScreen('listadd');
+        let right = gridRight.right;
+        let left = gridRight.left;
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        const uiContext = AppStorage.get<UIContext>('uiContext');
+        await driver.swipe((Math.round(left + Math.round(uiContext!.vp2px(30)))).toInt(),
+          (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt(),
+          (Math.round(left + Math.round(uiContext!.vp2px(20)))).toInt(),
+          (Math.round(top + Math.round(uiContext!.vp2px(30)))).toInt());
+        await CommonFunc.sleep(1000);
+        // judge whether the top
+        let onScrollStartText = await driver.findComponent(ON.id('4'));
+        let textAdd = await (onScrollStartText?.getText() as Promise<string>);
+        console.info("[apiCommponentAddJsunit_static_0200] onScrollStartText: " + textAdd);
+        expect(textAdd).assertEqual('4');
+        done();
+      } catch (error) {
+        console.error('[apiCommponentAddJsunit_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 

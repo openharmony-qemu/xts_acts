@@ -226,5 +226,42 @@ export default function ActsDlpNDKTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DlpEnum_0100
+     * @tc.number SUB_Security_DataSecurity_DlpEnum_0100
+     * @tc.desc   verify all enum definitions from dlp_permission_api.h
+     *             DLP_ErrCode: ERR_OH_SUCCESS=0,
+     *             OH_DLP_NOT_SUPPORTED=801,
+     *             ERR_OH_INVALID_PARAMETER=19100001,
+     *             ERR_OH_API_ONLY_FOR_SANDBOX=19100006,
+     *             ERR_OH_API_NOT_FOR_SANDBOX=19100007,
+     *             ERR_OH_SYSTEM_SERVICE_EXCEPTION=19100011,
+     *             ERR_OH_OUT_OF_MEMORY=19100012,
+     *             ERR_OH_APPLICATION_NOT_AUTHORIZED=19100018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Security_DataSecurity_DlpEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info('SUB_Security_DataSecurity_DlpEnum_0100 start');
+      try {
+        let enumValues = testNapi.ohDlpValidateEnumTest0100();
+        console.info('SUB_Security_DataSecurity_DlpEnum_0100 enumValues: ' + JSON.stringify(enumValues));
+
+        expect(enumValues.ERR_OH_SUCCESS).assertEqual(0);
+        expect(enumValues.OH_DLP_NOT_SUPPORTED).assertEqual(801);
+        expect(enumValues.ERR_OH_INVALID_PARAMETER).assertEqual(19100001);
+        expect(enumValues.ERR_OH_API_ONLY_FOR_SANDBOX).assertEqual(19100006);
+        expect(enumValues.ERR_OH_API_NOT_FOR_SANDBOX).assertEqual(19100007);
+        expect(enumValues.ERR_OH_SYSTEM_SERVICE_EXCEPTION).assertEqual(19100011);
+        expect(enumValues.ERR_OH_OUT_OF_MEMORY).assertEqual(19100012);
+        expect(enumValues.ERR_OH_APPLICATION_NOT_AUTHORIZED).assertEqual(19100018);
+      } catch (error) {
+        console.error("SUB_Security_DataSecurity_DlpEnum_0100: e.code " + error.code);
+        expect(null).assertFail();
+      }
+      done();
+    })
   })
 }

@@ -14,7 +14,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   UI_CONTEXT_IS_EASY_SPLIT_PAGE,
   UI_CONTEXT_IS_EASY_SPLIT_STATUS_KEY,

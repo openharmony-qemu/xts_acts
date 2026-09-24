@@ -275,6 +275,64 @@ export default function abilityTest() {
         }
 
         /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100
+         * @tc.desc   getoutputdevice
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            try{
+                let aVMediaDescription: avSession.AVMediaDescription = {
+                    assetId: 'media_001',
+                    mediaSize: 1024 * 1024,
+                    albumTitle: 'testalbumTitle',
+                    albumCoverUri: 'testalbumCoverUri',
+                    lyricContent: 'testlyricContent',
+                    lyricUri: 'testlyricUri',
+                    mediaUri: 'testmediaUri',
+                    startPosition: 0,
+                    creditsPosition: 170000,
+                    appName: 'testApp',
+                    displayTags:0
+                };
+                expect(aVMediaDescription.mediaSize).assertEqual(1024 * 1024);
+                expect(aVMediaDescription.albumTitle).assertEqual('testalbumTitle');
+                expect(aVMediaDescription.albumCoverUri).assertEqual('testalbumCoverUri');
+                expect(aVMediaDescription.lyricContent).assertEqual('testlyricContent');
+                expect(aVMediaDescription.lyricUri).assertEqual('testlyricUri');
+                expect(aVMediaDescription.mediaUri).assertEqual('testmediaUri');
+                expect(aVMediaDescription.startPosition).assertEqual(0);
+                expect(aVMediaDescription.creditsPosition).assertEqual(170000);
+                expect(aVMediaDescription.appName).assertEqual('testApp');
+                expect(aVMediaDescription.displayTags).assertEqual(0);
+                let callback1: avSession.VideoSizeEvent = (width: int, height: int) => {
+                    console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 callback1");
+                };
+                let callback2: avSession.KeyRequestCallback = (assetId: string, requestData: Uint8Array) => {
+                    console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 callback2");
+                };
+                controller!.getOutputDevice((error: BusinessError | null, deviceInfo: avSession.OutputDeviceInfo | undefined) => {
+                    if (error) {
+                        console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 fail" + error + error.code);
+                        expect().assertFalse();
+                        done();
+                        return;
+                    }
+                    console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 success" + JSON.stringify(deviceInfo));
+                    expect(deviceInfo).not().assertNull();
+                });
+                await Utils.msSleep(200);
+                done();
+            } catch (error) {
+                console.log(TAG + "SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_STATIC_0100 fail" + error + error.code);
+                expect().assertFalse();
+                done();
+            }
+        });
+
+        /**
          * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100
          * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_STATIC_0100
          * @tc.desc   bind one callback on sessionEvent event

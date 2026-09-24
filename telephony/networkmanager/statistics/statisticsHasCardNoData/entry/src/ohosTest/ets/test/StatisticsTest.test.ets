@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import statistics from '@ohos.net.statistics';
 import sim from '@ohos.telephony.sim';
 import radio from '@ohos.telephony.radio';
@@ -68,7 +68,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code== 8300003);
+              expectFalse();
               done();
             });
           }
@@ -110,7 +110,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code == 8300003);
+              expectFalse();
               done();
             });
           }
@@ -155,7 +155,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code == 8300003);
+              expectFalse();
               done();
             });
           }
@@ -196,7 +196,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code == 8300003);
+              expectFalse();
               done();
             });
           }

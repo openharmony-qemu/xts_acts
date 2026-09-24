@@ -15,7 +15,9 @@
  */
 
 import IsChildProcessSupportedStaticTest from './IsChildProcessSupportedStatic.test';
+import getChildProcessInfosStaticTest from './GetChildProcessInfosStatic.test';
 
 export default function testsuite() {
     IsChildProcessSupportedStaticTest();
+    getChildProcessInfosStaticTest();
 }

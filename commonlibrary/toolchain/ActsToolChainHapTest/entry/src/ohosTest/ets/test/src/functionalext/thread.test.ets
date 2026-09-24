@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextThreadTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_thread", () => {
@@ -27,7 +27,7 @@ export default function FunctionalextThreadTestGroupTest() {
      * @tc.desc   libc-test pthread_guard_size
      */
     it("pthread_guard_size", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("pthread_guard_size");
+      const result: number = await testNapi.runTest("pthread_guard_size");
       expect(result).assertEqual(0);
       done();
     });

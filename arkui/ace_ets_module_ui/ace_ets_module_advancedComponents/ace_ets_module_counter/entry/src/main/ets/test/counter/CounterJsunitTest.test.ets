@@ -14,7 +14,7 @@
  */
 
 
-import { afterEach, beforeEach, describe, expect,it, Level } from '@ohos/hypium';
+import { afterEach, beforeEach, describe, expect,it, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 
 function sleep(time: number) {

@@ -257,20 +257,20 @@ export default function ImageReceiver() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_1100
      * @tc.desc   getReceivingSurfaceId-callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       if (receiver != undefined) {
         globalReceiver1 = receiver;
         receiver.getReceivingSurfaceId((err, id) => {
           console.info(
-            "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100 getReceivingSurfaceId call back [" +
+            "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_1100 getReceivingSurfaceId call back [" +
               id +
               "]"
           );
@@ -279,7 +279,7 @@ export default function ImageReceiver() {
         });
       } else {
         expect(false).assertTrue();
-        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_0100 finished");
+        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_STATIC_1100 finished");
         done();
       }
     });
@@ -408,18 +408,18 @@ export default function ImageReceiver() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100
      * @tc.desc   readLatestImage-callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       let receiver2 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       if (receiver1 == undefined || receiver2 == undefined) {
-        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 failed! receiver is undefined!");
+        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
       } else {
@@ -428,29 +428,29 @@ export default function ImageReceiver() {
 
         try {
           let surfaceId1 = await receiver1.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100 surfaceId1[${surfaceId1}]`);
           let surfaceId2 = await receiver2.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100 surfaceId2[${surfaceId2}]`);
 
           receiver1.onImageArrival(() => {
-            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100 on [ENTER]!");
             let latestImage: image.Image | undefined;
             waitForCompletion(async () => {latestImage = await receiver1!.readLatestImage();})
             globalImg = latestImage;
             if (latestImage != undefined) {
-              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 latestImage size: (${latestImage!.size.width}, ${latestImage!.size.height})`);
+              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100 latestImage size: (${latestImage!.size.width}, ${latestImage!.size.height})`);
               expect(latestImage != undefined).assertTrue();
               done();
             } else {
-              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 readLatestImage failed");
+              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100 readLatestImage failed");
               expect(false).assertTrue();
               done();
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
-          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_1100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -458,18 +458,18 @@ export default function ImageReceiver() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100
      * @tc.desc   readLatestImage-callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       let receiver2 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       if (receiver1 == undefined || receiver2 == undefined) {
-        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 failed! receiver is undefined!");
+        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
       } else {
@@ -478,30 +478,30 @@ export default function ImageReceiver() {
 
         try {
           let surfaceId1 = await receiver1.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 surfaceId1[${surfaceId1}]`);
           let surfaceId2 = await receiver2.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 surfaceId2[${surfaceId2}]`);
 
           receiver1.onImageArrival(() => {
-            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 on [ENTER]!");
             receiver1.readLatestImage((err: BusinessError | null, latestImage: image.Image | undefined) => {
               globalImg = latestImage!;
-              console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 readLatestImage [ENTER]!");
+              console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 readLatestImage [ENTER]!");
               if ((err && err.code) || latestImage === undefined) {
-                console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 readLatestImage failed");
+                console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 readLatestImage failed");
                 expect(false).assertTrue();
                 done();
               } else {
-                console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
+                console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 latestImage size: (${latestImage.size.width}, ${latestImage.size.height})`);
                 expect(latestImage != undefined).assertTrue();
                 done();
               }
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
-          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_1100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -509,18 +509,18 @@ export default function ImageReceiver() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100
      * @tc.desc   readNextImage-callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       let receiver2 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       if (receiver1 == undefined || receiver2 == undefined) {
-        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 failed! receiver is undefined!");
+        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
       } else {
@@ -529,29 +529,29 @@ export default function ImageReceiver() {
 
         try {
           let surfaceId1 = await receiver1.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100 surfaceId1[${surfaceId1}]`);
           let surfaceId2 = await receiver2.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 surfaceId2[${surfaceId2}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100 surfaceId2[${surfaceId2}]`);
 
           receiver1.onImageArrival(() => {
-            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 on [ENTER]!");
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100 on [ENTER]!");
             let nextImage: image.Image | undefined;
             waitForCompletion(async () => {nextImage = await receiver1!.readNextImage();})
             globalImg = nextImage;
             if (nextImage != undefined) {
-              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 nextImage size: (${nextImage!.size.width}, ${nextImage!.size.height})`);
+              console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100 nextImage size: (${nextImage!.size.width}, ${nextImage!.size.height})`);
               expect(nextImage != undefined).assertTrue();
               done();
             } else {
-              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 readNextImage failed");
+              console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100 readNextImage failed");
               expect(false).assertTrue();
               done();
             }
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
-          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_1100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
         }
@@ -559,18 +559,18 @@ export default function ImageReceiver() {
     });
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100
      * @tc.desc   readNextImage-callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let receiver1 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       let receiver2 = image.createImageReceiver(globalSize, FORMATJPEG, CAPACITY);
       if (receiver1 == undefined || receiver2 == undefined) {
-        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 failed! receiver is undefined!");
+        console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 failed! receiver is undefined!");
         expect(false).assertTrue();
         done();
       } else {
@@ -579,30 +579,30 @@ export default function ImageReceiver() {
 
         try {
           let surfaceId1 = await receiver1.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 surfaceId1[${surfaceId1}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 surfaceId1[${surfaceId1}]`);
           let surfaceId2 = await receiver2.getReceivingSurfaceId();
-          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 surfaceId2[${surfaceId2}]`);
+          console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 surfaceId2[${surfaceId2}]`);
 
           receiver1.onImageArrival(() => {
-            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 on [ENTER]!");
+            console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 on [ENTER]!");
             receiver1.readNextImage((err: BusinessError | null, nextImage: image.Image | undefined) => {
-              console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 readNextImage [ENTER]!");
+              console.info("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 readNextImage [ENTER]!");
               if ((err && err.code) || nextImage === undefined) {
-                console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 readNextImage failed");
+                console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 readNextImage failed");
                 expect(false).assertTrue();
                 done();
               } else {
                 globalImg = nextImage;
-                console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
+                console.info(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 nextImage size: (${nextImage.size.width}, ${nextImage.size.height})`);
                 expect(nextImage != undefined).assertTrue();
                 done();
               }
             });
           });
 
-          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager!, surfaceId1, surfaceId2);
+          initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100', cameraManager!, surfaceId1, surfaceId2);
         } catch (error) {
-          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
+          console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_1100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
           expect(false).assertTrue();
           done();
         }

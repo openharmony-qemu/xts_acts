@@ -16,8 +16,10 @@
 import bluetooth from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import { BusinessError } from '@ohos.base';
+import { util } from '@kit.ArkTS'
+
 import connection from '@ohos.bluetooth.connection';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 let PERMISSION_TEXT:string = "允许";
@@ -123,7 +125,8 @@ export default function bluetoothAdvertisingTest() {
       await clickRequestPermission(PERMISSION_TEXT);
       try {
         let deviceName = connection.getLocalName()
-        nLength = deviceName.length
+        let textEncoder = new util.TextEncoder();
+        nLength = textEncoder.encodeInto(deviceName).length
         console.info(`deviceName.length = ${nLength}`)
       }catch (err){
         expect(Number(err.code)).assertEqual(801)
@@ -153,7 +156,7 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo: bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state01 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state01 = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -204,7 +207,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("01errCode:" + err.code + ",01errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -614,7 +617,7 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo: bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state13 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -648,7 +651,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("13errCode:" + err.code + ",13errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -667,7 +670,7 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state14 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -715,7 +718,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("14errCode:" + err.code + ",14errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -803,7 +806,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("16errCode:" + err.code + ",16errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         }
       }
       await sleep(2000);
@@ -960,6 +963,7 @@ export default function bluetoothAdvertisingTest() {
         duration: 0,
       }
       try {
+        await sleep(500);
         for (let count = 0; count < 17; count++) {
           await bluetooth.startAdvertising(advertisingParams).then((outAdvHandle) => {
             console.info('[bluetooth_js]startAdvertising return outAdvHandle:' + JSON.stringify(outAdvHandle));
@@ -1024,6 +1028,7 @@ export default function bluetoothAdvertisingTest() {
         });
       }
       try {
+        await sleep(500);
         for (let count = 0; count < 17; count++) {
           await startAdvertisingCallback().then((data) => {
             console.info('[bluetooth_js] startAdvertisingCallback result:' + JSON.stringify(data));
@@ -1789,7 +1794,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state11 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state11 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state11 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -1837,7 +1842,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state12 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state12 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state12 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -1885,7 +1890,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state13 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -1920,7 +1925,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state14 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -2077,7 +2082,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -2146,7 +2151,7 @@ export default function bluetoothAdvertisingTest() {
         console.info(`${caseName} [bluetooth_js] errCode:` + err.code + ",01errMessage:" + err.message);
         if (err.code === 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           if (nLength > 24) {
             expect(err.code === 2902054).assertTrue();
@@ -2171,7 +2176,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -2244,7 +2249,7 @@ export default function bluetoothAdvertisingTest() {
         console.info("01errCode:" + err.code + ",01errMessage:" + err.message);
         if (err.code == 801) {
           console.info('[bluetooth_js]api is not support');
-          expect(true).assertTrue();
+          expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
         }
@@ -2553,6 +2558,35 @@ export default function bluetoothAdvertisingTest() {
         }
       }
       await sleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off advertisingStateChange without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('[bluetooth_js] advertising state nocallback = ' + JSON.stringify(AdvertisingStateChangeInfo));
+      }
+      try {
+        bluetooth.on('advertisingStateChange', onReceiveEvent);
+        console.info('[bluetooth_js] on advertisingStateChange success');
+        bluetooth.off('advertisingStateChange');
+        console.info('[bluetooth_js] off advertisingStateChange without callback success');
+      } catch (err) {
+        console.info("offNoCallback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
       done();
     })
   })

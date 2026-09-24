@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import huks from '@ohos.security.huks';
 import { GenParam } from './utils/huks/HuksOptionsUtils';
 import { StringToUint8Array } from './utils/common/CommonUtils';
@@ -70,8 +70,8 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         ],
         inData: new Uint8Array()
       };
+      await huks.generateKeyItem(testNumber, genKeyOption);
       try {
-        await huks.generateKeyItem(testNumber, genKeyOption);
         await huks.deleteKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
@@ -166,8 +166,8 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         ],
         inData: new Uint8Array()
       };
+      await huks.generateKeyItem(testNumber, genKeyOption);
       try {
-        await huks.generateKeyItem(testNumber, genKeyOption);
         await huks.exportKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
@@ -196,8 +196,8 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         ],
         inData: new Uint8Array()
       };
+      await huks.generateKeyItem(testNumber, genKeyOption);
       try {
-        await huks.generateKeyItem(testNumber, genKeyOption);
         await huks.getKeyItemPropertiesAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
@@ -226,8 +226,8 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         ],
         inData: new Uint8Array()
       };
+      await huks.generateKeyItem(testNumber, genKeyOption);
       try {
-        await huks.generateKeyItem(testNumber, genKeyOption);
         await huks.hasKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
@@ -269,8 +269,8 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         ],
         inData: new Uint8Array()
       };
+      await huks.generateKeyItem(testNumber, genKeyOption);
       try {
-        await huks.generateKeyItem(testNumber, genKeyOption);
         await huks.initSessionAsUser(userid, testNumber, encryptOption);
         expect(null).assertFail();
       } catch (err) {
@@ -299,8 +299,8 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         ],
         inData: new Uint8Array()
       };
+      await huks.generateKeyItem(testNumber, genKeyOption);
       try {
-        await huks.generateKeyItem(testNumber, genKeyOption);
         await huks.attestKeyItemAsUser(userid, testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
@@ -342,8 +342,8 @@ export default function SecurityHUKSAccessControlAsUserTest() {
         ],
         inData: new Uint8Array()
       };
+      await huks.generateKeyItem(testNumber, genKeyOption);
       try {
-        await huks.generateKeyItem(testNumber, genKeyOption);
         await huks.anonAttestKeyItemAsUser(userid, testNumber, anonAttestOption);
         expect(null).assertFail();
       } catch (err) {

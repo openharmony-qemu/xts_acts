@@ -13,35 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import events_emitter from '@ohos.events.emitter';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../Util.test'
 import { RecordData } from '@ohos.base';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function cachedShowList() {
   describe('cachedShowList', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("cachedShowGrid beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("cachedShowList beforeEach start");
@@ -72,20 +55,27 @@ export default function cachedShowList() {
      * @tc.level    Level.LEVEL1
      */
 it('cachedShowList_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowList_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('cachedCount_show_list');
-      console.info("[cachedShowList_static_0100] component obj is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      console.info("[cachedShowList_static_0100] cachedCount: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')));
-      await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('List');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('cachedCount')).assertEqual('2');
-      await driver.assertComponentExist(ON.text('4'));
-      console.info('[cachedShowList_static_0100] END');
-      done();
+      try {
+        console.info('[cachedShowList_static_0100] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('cachedCount_show_list');
+        console.info("[cachedShowList_static_0100] component obj is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+        console.info("[cachedShowList_static_0100] cachedCount: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('cachedCount')));
+        await CommonFunc.sleep(1000);
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('List');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('cachedCount')).assertEqual('2');
+        await driver.assertComponentExist(ON.text('4'));
+        console.info('[cachedShowList_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowList_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -97,20 +87,27 @@ it('cachedShowList_static_0100', Level.LEVEL1, async (done: () => void): Promise
      * @tc.level    Level.LEVEL1
      */
 it('cachedShowList_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowList_static_0200] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', false);
-        AppStorage.setOrCreate<boolean>('show1', false);
-      } catch (err) {
-        console.log("[cachedShowList_static_0200] change component data error: " + err.message);
+        console.info('[cachedShowList_static_0200] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', false);
+          AppStorage.setOrCreate<boolean>('show1', false);
+        } catch (err) {
+          console.log("[cachedShowList_static_0200] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let onText: Component | null = await driver.findComponent(ON.id('show_list_4'));
+        console.info("[cachedShowList_static_0200] onText is: " + onText);
+        expect(onText).assertEqual(null);
+        console.info('[cachedShowList_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowList_static_0200] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText: Component | null = await driver.findComponent(ON.id('show_list_4'));
-      console.info("[cachedShowList_static_0200] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowList_static_0200] END');
-      done();
     });
 
 
@@ -132,6 +129,7 @@ it('cachedShowList_static_0400', Level.LEVEL1, async (done: () => void): Promise
           }
           await CommonFunc.sleep(2000);
           let driver = Driver.create()
+          await CommonFunc.sleep(1000);
           let onText = await driver.findComponent(ON.id('show_list_4')) as Component;
           let text = await onText.getText();
           console.info("[cachedShowList_static_0400'] text is: " + text);
@@ -152,20 +150,27 @@ it('cachedShowList_static_0400', Level.LEVEL1, async (done: () => void): Promise
      * @tc.level    Level.LEVEL1
      */
 it('cachedShowList_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowList_static_0300] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', true);
-        AppStorage.setOrCreate<boolean>('show1', false);
-      } catch (err) {
-        console.log("[cachedShowGrid_0300] change component data error: " + err.message);
+        console.info('[cachedShowList_static_0300] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', true);
+          AppStorage.setOrCreate<boolean>('show1', false);
+        } catch (err) {
+          console.log("[cachedShowGrid_0300] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let onText: Component | null = await driver.findComponent(ON.id('show_list_4'));
+        console.info("[cachedShowList_static_0300] onText is: " + onText);
+        expect(onText).assertEqual(null);
+        console.info('[cachedShowList_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowList_static_0300] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText: Component | null = await driver.findComponent(ON.id('show_list_4'));
-      console.info("[cachedShowList_static_0300] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowList_static_0300] END');
-      done();
     });
 
 
@@ -177,20 +182,27 @@ it('cachedShowList_static_0300', Level.LEVEL1, async (done: () => void): Promise
      * @tc.level    Level.LEVEL1
      */
 it('cachedShowList_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowList_static_0500] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', true);
-        AppStorage.setOrCreate<boolean | null>('show1', null);
-      } catch (err) {
-        console.log("[cachedShowList_static_0500] change component data error: " + err.message);
+        console.info('[cachedShowList_static_0500] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', true);
+          AppStorage.setOrCreate<boolean | null>('show1', null);
+        } catch (err) {
+          console.log("[cachedShowList_static_0500] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let onText: Component | null = await driver.findComponent(ON.id('show_list_4'));
+        console.info("[cachedShowList_static_0500] onText is: " + onText);
+        expect(onText).assertEqual(null);
+        console.info('[cachedShowList_static_0500] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowList_static_0500] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText: Component | null = await driver.findComponent(ON.id('show_list_4'));
-      console.info("[cachedShowList_static_0500] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowList_static_0500] END');
-      done();
     });
 
 
@@ -202,20 +214,27 @@ it('cachedShowList_static_0500', Level.LEVEL1, async (done: () => void): Promise
      * @tc.level    Level.LEVEL1
      */
 it('cachedShowList_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[cachedShowList_static_0600] START');
       try {
-        AppStorage.setOrCreate<boolean>('clip1', false);
-        AppStorage.setOrCreate<boolean | undefined>('show1', undefined);
-      } catch (err) {
-        console.log("[cachedShowList_static_0600] change component data error: " + err.message);
+        console.info('[cachedShowList_static_0600] START');
+        try {
+          AppStorage.setOrCreate<boolean>('clip1', false);
+          AppStorage.setOrCreate<boolean | undefined>('show1', undefined);
+        } catch (err) {
+          console.log("[cachedShowList_static_0600] change component data error: " + err.message);
+        }
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let onText = await driver.findComponent(ON.id('show_list_4'));
+        console.info("[cachedShowList_static_0600] onText is: " + onText);
+        expect(onText).assertEqual(null);
+        console.info('[cachedShowList_static_0600] END');
+        done();
+      } catch (error) {
+        console.error('[cachedShowList_static_0600] error:' + error);
+        expect().assertFail();
+        done();
       }
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let onText = await driver.findComponent(ON.id('show_list_4'));
-      console.info("[cachedShowList_static_0600] onText is: " + onText);
-      expect(onText).assertEqual(null);
-      console.info('[cachedShowList_static_0600] END');
-      done();
     });
   })
 }

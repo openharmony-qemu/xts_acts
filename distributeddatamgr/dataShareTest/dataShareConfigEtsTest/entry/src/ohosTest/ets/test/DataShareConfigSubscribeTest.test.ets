@@ -24,6 +24,10 @@ let testUri1 = "datashareproxy://com.acts.dataShare.config/test1";
 let testUri2 = "datashareproxy://com.acts.dataShare.config/test2";
 let TAG = "ttt ";
 
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export default function dataShareConfigSubscribeTest() {
   describe("dataShareConfigSubscribeTest", () => {
     beforeAll(async () => {
@@ -759,6 +763,7 @@ export default function dataShareConfigSubscribeTest() {
           console.log(TAG + "count:" + count);
           changeInfo.forEach((info) => {
             expect(info.uri).assertEqual(testUri);
+            console.log(TAG + "count:762:" + count);
             let infoType = count == 0 ? dataShare.ChangeType.DELETE : dataShare.ChangeType.INSERT;
             expect(info.type).assertEqual(infoType);
           });
@@ -774,6 +779,7 @@ export default function dataShareConfigSubscribeTest() {
       }
       try {
         await g_handle!.delete(uris, g_config);
+        await sleep(500);
         let proxyData: dataShare.ProxyData[] = [];
         let g_proxyDataAllowTest1: dataShare.ProxyData = {
           uri: testUri1,
@@ -781,7 +787,9 @@ export default function dataShareConfigSubscribeTest() {
           allowList: []
         }
         proxyData.push(g_proxyDataAllowTest1);
+        console.log(TAG + "count:785:" + count);
         count += 1;
+        console.log(TAG + "count:787:" + count);
         await g_handle?.publish(proxyData, g_config);
         g_handle!.off("dataChange", uris, g_config, null);
         done();
@@ -1073,5 +1081,151 @@ export default function dataShareConfigSubscribeTest() {
       }
     });
 
+    /**
+     * @tc.name   dataShareConfigSubscribeTest030
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0860
+     * @tc.desc   smaxValueLength不在4K范围内
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigSubscribeTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_on: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: 4097 as dataShare.DataProxyMaxValueLength.MAX_LENGTH_4K
+        }
+        await g_handle!.publish(proxyData, g_config);
+        let results = g_handle!.on('dataChange', uris, config_on, (err: BusinessError, changeInfo: dataShare.DataProxyChangeInfo[]) => {
+          console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest030 failed.code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual("15700014");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigSubscribeTest031
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0860
+     * @tc.desc   maxValueLength不在100K范围内
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigSubscribeTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_on: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: 102401 as dataShare.DataProxyMaxValueLength.MAX_LENGTH_100K
+        }
+        await g_handle!.publish(proxyData, g_config);
+        let results = g_handle!.on('dataChange', uris, config_on, (err: BusinessError, changeInfo: dataShare.DataProxyChangeInfo[]) => {
+          console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest031 failed.code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual("15700014");
+        done();
+      }
+    });
+
+
+    /**
+     * @tc.name   dataShareConfigSubscribeTest032
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0860
+     * @tc.desc   maxValueLength为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigSubscribeTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_on: dataShare.DataProxyConfig = {
+          type: 0 as dataShare.DataProxyType.SHARED_CONFIG,
+          maxValueLength: undefined
+        }
+        await g_handle!.publish(proxyData, g_config);
+        let results = g_handle!.on('dataChange', uris, config_on, (err: BusinessError, changeInfo: dataShare.DataProxyChangeInfo[]) => {
+          console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
+        });
+        results.forEach((result) => {
+          expect(result.result).assertEqual(dataShare.DataProxyErrorCode.SUCCESS);
+        });
+        g_handle!.off('dataChange', uris, config_on);
+        done();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest032 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+
+
+    /**
+     * @tc.name   dataShareConfigSubscribeTest033
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0860
+     * @tc.desc   type不在范围内
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigSubscribeTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let testUri = "datashareproxy://com.acts.dataShare.config/test1";
+      let uris = [testUri1];
+      try {
+        let proxyData: dataShare.ProxyData[] = [];
+        let g_proxyDataAllowTest1: dataShare.ProxyData = {
+          uri: testUri1,
+          value: "valueisokgoodddd".repeat(256),
+          allowList: []
+        }
+        proxyData.push(g_proxyDataAllowTest1);
+        let config_on: dataShare.DataProxyConfig = {
+          type: -1 as dataShare.DataProxyType.SHARED_CONFIG,
+        }
+        await g_handle!.publish(proxyData, g_config);
+        let results = g_handle!.on('dataChange', uris, config_on, (err: BusinessError, changeInfo: dataShare.DataProxyChangeInfo[]) => {
+          console.log(TAG + "[DataShareProvider] onProxyData receive change:" + JSON.stringify(changeInfo));
+        });
+        results.forEach((result) => {
+          expect(result.result).assertEqual(dataShare.DataProxyErrorCode.SUCCESS);
+        });
+        g_handle!.off('dataChange', uris, config_on);
+        done();
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigSubscribeTest033 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
   })
 }

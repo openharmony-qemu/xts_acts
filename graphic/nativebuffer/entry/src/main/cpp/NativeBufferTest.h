@@ -49,6 +49,9 @@
 #define NUMBER_32 32
 #define NUMBER_50 50
 #define NUMBER_60 60
+#define NUMBER_64 64
+#define NUMBER_65 65
+#define NUMBER_66 66
 #define NUMBER_100 100
 #define NUMBER_200 200
 #define NUMBER_256 256
@@ -194,4 +197,9 @@ napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferAllocFormatDiff(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferSetColorSpaceBt2020LogFull(napi_env env, napi_callback_info info);
 napi_value OHNativeBufferSetColorSpaceBt2020LogLimit(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferSetDmaBufferNameNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferSetDmaBufferNameNormal2(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferSetDmaBufferNameNull(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferSetDmaBufferNameAbnormal(napi_env env, napi_callback_info info);
+napi_value OHNativeBufferSetDmaBufferNameMultipleCalls(napi_env env, napi_callback_info info);
 #endif //NATIVEBUFFER_NATIVEBUFFER_H

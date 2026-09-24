@@ -23,6 +23,10 @@ group("concurrent_builtin_test") {
       "builtins_atomics_test:ActsBuiltinsAtomicsTest",
       "builtins_async_test:ActsBuiltinsAsyncTest",
       "builtins_promise_test:ActsBuiltinsPromiseTest",
+      "processtest:ActsProcessTest",
+      "promisetest:ActsPromiseTest",
+      "sharedarraybuffertest:ActsSharedArrayBufferTest",
+      "atomicstest:ActsAtomicsTest",
     ]
   }
 }

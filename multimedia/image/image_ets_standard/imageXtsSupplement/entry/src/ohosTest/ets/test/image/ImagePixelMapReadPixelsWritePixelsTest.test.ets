@@ -14,7 +14,7 @@
  */
 
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, afterEach, afterAll, beforeEach } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, afterEach, afterAll, beforeEach } from '@ohos/hypium-dynamic';
 const TAG = 'PixelMapReadPixelsWritePixels';
 
 async function PixelMapReadPixels(testName: string, done: Function, callback: (pixelMap: image.PixelMap) => void

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
  
-import repeatReusableFalse from './ReusableTest/repeatReusableFalse.test';
-import repeatReusableTrue from './ReusableTest/repeatReusableTrue.test';
+import RepeatReusableFalse1 from './ReusableTest/RepeatReusableFalse1.test';
+import RepeatReusableTrue1 from './ReusableTest/RepeatReusableTrue1.test';
 import SVDeepListenMakeObservedTest from './stateVariableDeepListen/SVDeepListenMakeObservedTest.test';
 import SVDeepListenMakeObservedFalseTest from './stateVariableDeepListen/SVDeepListenMakeObservedFalseTest.test';
 import SVDeepListenObservedAndObjectlinkTest
@@ -36,8 +36,8 @@ export default function testsuite(): void {
   StaticCoverageDecoratorTest();
   StaticCoverageStorageTest();
   StaticCoverageUtilsTest();
-  //repeatReusableFalse(); 
-  //repeatReusableTrue(); 
+  //RepeatReusableFalse1(); 
+  //RepeatReusableTrue1(); 
   GlobalReusePool004Test();
   SVDeepListenMakeObservedTest();
   SVDeepListenMakeObservedFalseTest();

@@ -16,32 +16,26 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test.nrw ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test.cr2 ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test_dng.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test.cr3 ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test.arw ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test.pef ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test.raf ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test.rw2 ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files"
+                "./resource/image/test.nrw ->/data/local/tmp/",
+                "./resource/image/test.cr2 ->/data/local/tmp/",
+                "./resource/image/test_dng.dng ->/data/local/tmp/",
+                "./resource/image/test.cr3 ->/data/local/tmp/",
+                "./resource/image/test.arw ->/data/local/tmp/",
+                "./resource/image/test.pef ->/data/local/tmp/",
+                "./resource/image/test.raf ->/data/local/tmp/",
+                "./resource/image/test.rw2 ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_rawJs_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod 777 /data/app/el2/100/base/ohos.acts.multimedia.image.Raw/haps/entry_test/files/*"
+                "chmod 755 /data/local/tmp/setup_image_rawJs_test.sh",
+                "sh /data/local/tmp/setup_image_rawJs_test.sh"
             ],
             "teardown-command": [
                 "rm -rf /data/app/el2/100/base/ohos.acts.multimedia.image.Raw/*"

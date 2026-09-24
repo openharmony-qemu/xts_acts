@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function termios_group_test() {
   describe("ActsToolChainHapTest_src_functionalext_supplement_termios", () => {
@@ -27,7 +27,7 @@ export default function termios_group_test() {
      * @tc.level  LEVEL1
      */
     it("cfgetispeed", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cfgetispeed");
+      const result: number = await testNapi.runTest("cfgetispeed");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function termios_group_test() {
      * @tc.level  LEVEL1
      */
     it("cfgetospeed", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cfgetospeed");
+      const result: number = await testNapi.runTest("cfgetospeed");
       expect(result).assertEqual(0);
       done();
     });
@@ -55,7 +55,7 @@ export default function termios_group_test() {
      * @tc.level  LEVEL1
      */
     it("cfmakeraw", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cfmakeraw");
+      const result: number = await testNapi.runTest("cfmakeraw");
       expect(result).assertEqual(0);
       done();
     });
@@ -69,7 +69,7 @@ export default function termios_group_test() {
      * @tc.level  LEVEL1
      */
     it("cfsetispeed", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cfsetispeed");
+      const result: number = await testNapi.runTest("cfsetispeed");
       expect(result).assertEqual(0);
       done();
     });
@@ -83,7 +83,7 @@ export default function termios_group_test() {
      * @tc.level  LEVEL1
      */
     it("cfsetospeed", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("cfsetospeed");
+      const result: number = await testNapi.runTest("cfsetospeed");
       expect(result).assertEqual(0);
       done();
     });

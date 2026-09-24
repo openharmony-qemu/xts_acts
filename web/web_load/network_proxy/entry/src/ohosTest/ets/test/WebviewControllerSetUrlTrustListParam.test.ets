@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, expect, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, expect, describe, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
@@ -111,6 +111,24 @@ export default function webviewControllerSetUrlTrustListParam() {
       Utils.registerBaseEvent('testSetUrlTrustListUndefined001', '401', 180830, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webviewControllerSetUrlTrustListParamButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testSetUrlTrustListInvalidFormat001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETURLTRUSTLIST_ERROR_5000
+     * @tc.desc   test WebviewController.setUrlTrustList invalid format error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetUrlTrustListInvalidFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitSetUrlTrustListInvalidFormat001', 180800);
+      Utils.registerBaseEvent('testSetUrlTrustListInvalidFormat001', '17100001', 180840, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(['401', '17100001']).assertContain(String(backData?.data?.ACTION));
         });
       sendEventByKey('webviewControllerSetUrlTrustListParamButton', 10, '');
     })

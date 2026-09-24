@@ -16,7 +16,7 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../test/List.test';
 import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
@@ -36,6 +36,8 @@ export default class TestAbility extends UIAbility {
     AppStorage.setOrCreate('testContext', this.context);
     let pathDir: string = this.context.filesDir;
     AppStorage.setOrCreate<string>('pathDir', pathDir);
+    let cacheDir: string = this.context.cacheDir;
+    AppStorage.setOrCreate<string>('cacheDir', cacheDir);
   }
 
   onDestroy() {

@@ -239,34 +239,8 @@ struct MyStateSample {
               }
               break;
             }
-            case "LoadDataNullStatic001": {
-              try {
-                let data: string | null = null;
-                let mime: string | null = null;
-                let enc: string | null = null;
-                let base: string | null = null;
-                this.webviewController.loadData(data as string, mime as string, enc as string, base as string);
-                Utils.emitEvent('success', 41021902)
-              } catch (error) {
-                error = error as BusinessError;
-                Utils.emitEvent(`${error.code}`, 41021902)
-              }
-              break;
-            }
-            case "LoadDataUndefinedStatic001": {
-              try {
-                let data: string | undefined = undefined;
-                let mime: string | undefined = undefined;
-                let enc: string | undefined = undefined;
-                let base: string | undefined = undefined;
-                this.webviewController.loadData(data as string, mime as string, enc as string, base as string);
-                Utils.emitEvent('success', 41021903)
-              } catch (error) {
-                error = error as BusinessError;
-                Utils.emitEvent(`${error.code}`, 41021903)
-              }
-              break;
-            }
+            
+            
             case "OriginalUrl": {
               try {
                 this.webviewController.loadUrl("resource://rawfile/second.html");

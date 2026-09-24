@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 import dlpPermission from '@ohos.dlpPermission';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import identifySensitiveContent from '@ohos.security.identifySensitiveContent';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 const TAG = "DLP_ENTERPRISE_SERVICE_PERMISSION_XTS ";
 
@@ -128,6 +129,28 @@ export default function DlpEnterpriseServicePermissionTest() {
             console.info(curTag, "processPluginCommand failed," + err.code + err.message);
             expect(err.code).assertEqual(201);
           }
+        }
+        done();
+      })
+
+    /**
+      * @tc.name   SUB_SECURITY_DLP_scanFile_permission_0400
+      * @tc.number SUB_SECURITY_DLP_scanFile_permission_0400
+      * @tc.desc   scanFile permission test, return 201 or 19110004.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+    it('SUB_SECURITY_DLP_scanFile_permission_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let curTag = TAG + "Test_scanFile_004";
+        console.info(curTag, "start");
+        try {
+          let matchResult = await identifySensitiveContent.scanFile(null, null);
+          console.info(curTag, "scanFile success, length:" + matchResult.length);
+        } catch (error) {
+          console.info('scanfileCaseSensitive:' + error.code);
+          expect(error.code === 201 || error.code === 19110004).assertTrue();
         }
         done();
       })

@@ -25,46 +25,51 @@ export default function coverageSupplementTest() {
   describe('CoverageSupplementTest', () => {
     beforeAll(async () => {
       try {
-        let dir = globalThis.abilityContext.filesDir + "/";
+        let dir = globalThis.abilityContext.filesDir + '/';
         await copyRawfileToSandbox(globalThis.context, dir,
-          ["ml_face_isface.ms", "ml_face_isface_0.input", "ml_ocr_cn.ms", "lenet_train.ms"]);
+          ['ml_face_isface.ms', 'ml_face_isface_0.input', 'ml_ocr_cn.ms', 'lenet_train.ms']);
       } catch (error) {
-        console.info("[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed" + error);
+        console.info('[rawfile_copy_to_sandbox] getRawFileDescriptor api run failed' + error);
       }
     });
 
     beforeEach(async () => {
-      let dir = globalThis.abilityContext.filesDir + "/";
+      try {
+      let dir = globalThis.abilityContext.filesDir + '/';
 
-      let ml_face_model = dir + "ml_face_isface.ms";
+      let ml_face_model = dir + 'ml_face_isface.ms';
       await fs.access(ml_face_model).then(async (res) => {
         if (res) {
-          console.info("ml_face_isface.ms file exists");
+          console.info('ml_face_isface.ms file exists');
         }
       }).catch((err: BusinessError) => {
-        console.info("ml_face_isface.ms file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('ml_face_isface.ms file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
 
-      let ml_ocr_model = dir + "ml_ocr_cn.ms";
+      let ml_ocr_model = dir + 'ml_ocr_cn.ms';
       await fs.access(ml_ocr_model).then(async (res) => {
         if (res) {
-          console.info("ml_ocr_cn.ms file exists");
+          console.info('ml_ocr_cn.ms file exists');
         }
       }).catch((err: BusinessError) => {
-        console.info("ml_ocr_cn.ms file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('ml_ocr_cn.ms file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
 
-      let lenet_train_model = dir + "lenet_train.ms";
+      let lenet_train_model = dir + 'lenet_train.ms';
       await fs.access(lenet_train_model).then(async (res) => {
         if (res) {
-          console.info("lenet_train.ms file exists");
+          console.info('lenet_train.ms file exists');
         }
       }).catch((err: BusinessError) => {
-        console.info("lenet_train.ms file does not exists! access failed with error message: " +
-        err.message + ", error code: " + err.code);
+        console.info('lenet_train.ms file does not exists! access failed with error message: ' +
+        err.message + ', error code: ' + err.code);
       });
+      } catch (error) {
+        console.error('beforeEach failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
     });
 
 
@@ -78,19 +83,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileLossNameEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplementTest: loadTrainModelFromFileLossNameEmptyArray001");
+      try {
+      console.log('CoverageSupplementTest: loadTrainModelFromFileLossNameEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.lossName = [];
 
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileLossNameEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileLossNameEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileLossNameEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -104,15 +114,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdFDModelNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplementTest: loadTrainModelFromFdFDModelNull001");
+      try {
+      console.log('CoverageSupplementTest: loadTrainModelFromFdFDModelNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(null, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdFDModelNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdFDModelNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdFDModelNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -126,19 +141,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelRunStepInputsNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplementTest: modelRunStepInputsNull001");
+      try {
+      console.log('CoverageSupplementTest: modelRunStepInputsNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.runStep(null);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelRunStepInputsNull001 error: " + JSON.stringify(error));
+        console.log('modelRunStepInputsNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelRunStepInputsNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -151,19 +171,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelRunStepInputsEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplementTest: modelRunStepInputsEmptyArray001");
+      try {
+      console.log('CoverageSupplementTest: modelRunStepInputsEmptyArray001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.runStep([]);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelRunStepInputsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('modelRunStepInputsEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelRunStepInputsEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -177,19 +202,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelUpdateWeightsWeightsNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplementTest: modelUpdateWeightsWeightsNull001");
+      try {
+      console.log('CoverageSupplementTest: modelUpdateWeightsWeightsNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.updateWeights(null);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelUpdateWeightsWeightsNull001 error: " + JSON.stringify(error));
+        console.log('modelUpdateWeightsWeightsNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelUpdateWeightsWeightsNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -202,19 +232,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelUpdateWeightsWeightsEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplementTest: modelUpdateWeightsWeightsEmptyArray001");
+      try {
+      console.log('CoverageSupplementTest: modelUpdateWeightsWeightsEmptyArray001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.updateWeights([]);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelUpdateWeightsWeightsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('modelUpdateWeightsWeightsEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelUpdateWeightsWeightsEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -228,11 +263,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelResizeInputsNull001', Level.LEVEL1, () => {
-      console.log("CoverageSupplementTest: modelResizeInputsNull001");
+      console.log('CoverageSupplementTest: modelResizeInputsNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
           if (msliteModel !== null) {
             let new_dim: number[][] = [[48, 48]];
@@ -241,7 +276,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("modelResizeInputsNull001 error: " + JSON.stringify(error));
+        console.log('modelResizeInputsNull001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -254,11 +289,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelResizeDimsNull001', Level.LEVEL1, () => {
-      console.log("CoverageSupplementTest: modelResizeDimsNull001");
+      console.log('CoverageSupplementTest: modelResizeDimsNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
           if (msliteModel !== null) {
             let modelInputs: mindSporeLite.MSTensor[] = msliteModel.getInputs();
@@ -269,7 +304,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("modelResizeDimsNull001 error: " + JSON.stringify(error));
+        console.log('modelResizeDimsNull001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -282,14 +317,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdModelNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadModelFromFdModelNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadModelFromFdModelNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadModelFromFd(null, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdModelNull001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdModelNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdModelNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -302,14 +342,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdModelUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadModelFromFdModelUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadModelFromFdModelUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadModelFromFd(undefined, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdModelUndefined001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdModelUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdModelUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -322,15 +367,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadModelFromFdContextNull001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement2Test: loadModelFromFdContextNull001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, null);
         fs.closeSync(file);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNull001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -343,15 +393,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadModelFromFdContextUndefined001");
       try {
-        let model_file = globalThis.abilityContext.filesDirDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement2Test: loadModelFromFdContextUndefined001');
+      try {
+        let model_file = globalThis.abilityContext.filesDirDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, undefined);
         fs.closeSync(file);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextUndefined001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -365,11 +420,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCallbackNormal001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement2Test: loadModelFromFdContextCallbackNormal001");
+      console.log('CoverageSupplement2Test: loadModelFromFdContextCallbackNormal001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
           fs.closeSync(file);
@@ -377,7 +432,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdContextCallbackNormal001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCallbackNormal001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -392,19 +447,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextPrecisionModeEmptyString001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFileContextPrecisionModeEmptyString001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFileContextPrecisionModeEmptyString001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
-        context.cpu.precisionMode = "";
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.cpu.precisionMode = '';
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).not().assertUndefined();
         expect(msliteModel).not().assertNull();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextPrecisionModeEmptyString001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextPrecisionModeEmptyString001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextPrecisionModeEmptyString001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -417,15 +477,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileModelNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFileModelNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFileModelNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(null, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileModelNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileModelNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileModelNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -438,15 +503,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileModelUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFileModelUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFileModelUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(undefined, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileModelUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileModelUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileModelUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -459,15 +529,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileTrainCfgNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFileTrainCfgNull001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+      console.log('CoverageSupplement2Test: loadTrainModelFromFileTrainCfgNull001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, null, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileTrainCfgNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileTrainCfgNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileTrainCfgNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -480,15 +555,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileTrainCfgUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFileTrainCfgUndefined001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+      console.log('CoverageSupplement2Test: loadTrainModelFromFileTrainCfgUndefined001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, undefined, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileTrainCfgUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileTrainCfgUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileTrainCfgUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -501,14 +581,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFileContextNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFileContextNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, null);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -521,14 +606,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFileContextUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFileContextUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, undefined);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -542,13 +632,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferContextPrecisionModeEmptyString001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromBufferContextPrecisionModeEmptyString001");
+      console.log('CoverageSupplement2Test: loadTrainModelFromBufferContextPrecisionModeEmptyString001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
-        context.cpu.precisionMode = "";
+        context.cpu.precisionMode = '';
         let syscontext: common.Context = globalThis.context;
         let modelName = 'lenet_train.ms';
         syscontext.resourceManager.getRawFileContent(modelName, (error: BusinessError, model_buffer: Uint8Array) => {
@@ -561,7 +651,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadTrainModelFromBufferContextPrecisionModeEmptyString001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferContextPrecisionModeEmptyString001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -574,15 +664,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferModelNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromBufferModelNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromBufferModelNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(null, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferModelNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferModelNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferModelNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -595,15 +690,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferModelUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromBufferModelUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromBufferModelUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(undefined, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferModelUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferModelUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferModelUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -616,16 +716,21 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromBufferTrainCfgNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromBufferTrainCfgNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let syscontext: common.Context = globalThis.context
-        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train.ms");
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train.ms');
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, null, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferTrainCfgNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -638,16 +743,21 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromBufferTrainCfgUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromBufferTrainCfgUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let syscontext: common.Context = globalThis.context
-        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train.ms");
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train.ms');
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, undefined, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferTrainCfgUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -660,15 +770,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferContextNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromBufferContextNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromBufferContextNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let syscontext: common.Context = globalThis.context
-        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train.ms");
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train.ms');
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, trainCfg, null);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferContextNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferContextNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferContextNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -681,15 +796,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFromContextUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFromContextUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFromContextUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let syscontext: common.Context = globalThis.context
-        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent("lenet_train.ms");
+        let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('lenet_train.ms');
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, trainCfg, undefined);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFromContextUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFromContextUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFromContextUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -703,21 +823,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextPrecisionModeEmptyString001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFdContextPrecisionModeEmptyString001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFdContextPrecisionModeEmptyString001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         context.cpu = {};
-        context.cpu.precisionMode = "";
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.cpu.precisionMode = '';
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
         fs.closeSync(file);
         expect(msliteModel).not().assertUndefined();
         expect(msliteModel).not().assertNull();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextPrecisionModeEmptyString001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextPrecisionModeEmptyString001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextPrecisionModeEmptyString001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -730,15 +855,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdModelNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFdModelNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFdModelNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(null, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdModelNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdModelNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdModelNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -751,15 +881,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdModelUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFdModelUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFdModelUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(undefined, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdModelUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdModelUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdModelUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -772,16 +907,21 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFdTrainCfgNull001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFdTrainCfgNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, null, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -794,16 +934,21 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFdTrainCfgUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFdTrainCfgUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, undefined, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -816,15 +961,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFdContextNull001001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFdContextNull001001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, null);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextNull001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -837,15 +987,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: loadTrainModelFromFdContextUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: loadTrainModelFromFdContextUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, undefined);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextUndefined001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -859,18 +1014,23 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelPredictPromiseInputsNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelPredictPromiseInputsNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelPredictPromiseInputsNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
         if (msliteModel !== null) {
           let modelOutputs = await msliteModel.predict(null);
           expect(modelOutputs).assertUndefined();
         }
       } catch (error) {
-        console.log("modelPredictPromiseInputsNull001 error: " + JSON.stringify(error));
+        console.log('modelPredictPromiseInputsNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelPredictPromiseInputsNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -883,18 +1043,23 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelPredictPromiseInputsUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelPredictPromiseInputsUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelPredictPromiseInputsUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
         if (msliteModel !== null) {
           let modelOutputs = await msliteModel.predict(undefined);
           expect(modelOutputs).assertUndefined();
         }
       } catch (error) {
-        console.log("modelPredictPromiseInputsUndefined001 error: " + JSON.stringify(error));
+        console.log('modelPredictPromiseInputsUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelPredictPromiseInputsUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -907,18 +1072,23 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelPredictPromiseInputsEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelPredictPromiseInputsEmptyArray001");
+      try {
+      console.log('CoverageSupplement2Test: modelPredictPromiseInputsEmptyArray001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
         if (msliteModel !== null) {
           let modelOutputs = await msliteModel.predict([]);
           expect(modelOutputs).assertUndefined();
         }
       } catch (error) {
-        console.log("modelPredictPromiseInputsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('modelPredictPromiseInputsEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelPredictPromiseInputsEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -932,11 +1102,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelResizeInputsUndefined001', Level.LEVEL1, () => {
-      console.log("CoverageSupplement2Test: modelResizeInputsUndefined001");
+      console.log('CoverageSupplement2Test: modelResizeInputsUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
           if (msliteModel !== null) {
             let new_dim: number[][] = [[48, 48]];
@@ -945,7 +1115,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("modelResizeInputsUndefined001 error: " + JSON.stringify(error));
+        console.log('modelResizeInputsUndefined001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -958,11 +1128,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelResizeDimsUndefined001', Level.LEVEL1, () => {
-      console.log("CoverageSupplement2Test: modelResizeDimsUndefined001");
+      console.log('CoverageSupplement2Test: modelResizeDimsUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (mslite: mindSporeLite.Model) => {
           if (mslite !== null) {
             let modelInputs: mindSporeLite.MSTensor[] = mslite.getInputs();
@@ -973,7 +1143,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("modelResizeDimsUndefined001 error: " + JSON.stringify(error));
+        console.log('modelResizeDimsUndefined001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -986,11 +1156,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelResizeInputsEmptyArray001', Level.LEVEL1, () => {
-      console.log("CoverageSupplement2Test: modelResizeInputsEmptyArray001");
+      console.log('CoverageSupplement2Test: modelResizeInputsEmptyArray001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (mslite: mindSporeLite.Model) => {
           if (mslite !== null) {
             let new_dim: number[][] = [[48, 48]];
@@ -999,7 +1169,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("modelResizeInputsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('modelResizeInputsEmptyArray001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -1012,11 +1182,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelResizeDimsEmptyArray001', Level.LEVEL1, () => {
-      console.log("CoverageSupplement2Test: modelResizeDimsEmptyArray001");
+      console.log('CoverageSupplement2Test: modelResizeDimsEmptyArray001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (mslite: mindSporeLite.Model) => {
           if (mslite !== null) {
             let modelInputs: mindSporeLite.MSTensor[] = mslite.getInputs();
@@ -1027,7 +1197,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("modelResizeDimsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('modelResizeDimsEmptyArray001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -1041,19 +1211,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelRunStepInputsUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelRunStepInputsUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelRunStepInputsUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.runStep(undefined);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelRunStepInputsUndefined001 error: " + JSON.stringify(error));
+        console.log('modelRunStepInputsUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelRunStepInputsUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1067,19 +1242,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelUpdateWeightsWeightsUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelUpdateWeightsWeightsUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelUpdateWeightsWeightsUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.updateWeights(undefined);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelUpdateWeightsWeightsUndefined001 error: " + JSON.stringify(error));
+        console.log('modelUpdateWeightsWeightsUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelUpdateWeightsWeightsUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1093,19 +1273,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelSetupVirtualBatchVirtualBatchMultiplierNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelSetupVirtualBatchVirtualBatchMultiplierNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelSetupVirtualBatchVirtualBatchMultiplierNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.setupVirtualBatch(null, -1, -1);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelSetupVirtualBatchVirtualBatchMultiplierNull001 error: " + JSON.stringify(error));
+        console.log('modelSetupVirtualBatchVirtualBatchMultiplierNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelSetupVirtualBatchVirtualBatchMultiplierNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1118,19 +1303,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelSetupVirtualBatchVirtualBatchMultiplierUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelSetupVirtualBatchVirtualBatchMultiplierUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelSetupVirtualBatchVirtualBatchMultiplierUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel) {
           let ret = msliteModel.setupVirtualBatch(undefined, -1, -1);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelSetupVirtualBatchVirtualBatchMultiplierUndefined001 error: " + JSON.stringify(error));
+        console.log('modelSetupVirtualBatchVirtualBatchMultiplierUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelSetupVirtualBatchVirtualBatchMultiplierUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1143,19 +1333,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelSetupVirtualBatchLrNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelSetupVirtualBatchLrNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelSetupVirtualBatchLrNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.setupVirtualBatch(2, null, -1);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelSetupVirtualBatchLrNull001 error: " + JSON.stringify(error));
+        console.log('modelSetupVirtualBatchLrNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelSetupVirtualBatchLrNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1168,19 +1363,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelSetupVirtualBatchLrUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelSetupVirtualBatchLrUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelSetupVirtualBatchLrUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.setupVirtualBatch(2, undefined, -1);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelSetupVirtualBatchLrUndefined001 error: " + JSON.stringify(error));
+        console.log('modelSetupVirtualBatchLrUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelSetupVirtualBatchLrUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1193,19 +1393,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelSetupVirtualBatchMomentumNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelSetupVirtualBatchMomentumNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelSetupVirtualBatchMomentumNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.setupVirtualBatch(2, -1, null);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelSetupVirtualBatchMomentumNull001 error: " + JSON.stringify(error));
+        console.log('modelSetupVirtualBatchMomentumNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelSetupVirtualBatchMomentumNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1218,19 +1423,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelSetupVirtualBatchMomentumUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelSetupVirtualBatchMomentumUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelSetupVirtualBatchMomentumUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.setupVirtualBatch(2, -1, undefined);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelSetupVirtualBatchMomentumUndefined001 error: " + JSON.stringify(error));
+        console.log('modelSetupVirtualBatchMomentumUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelSetupVirtualBatchMomentumUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1244,19 +1454,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelModelFileNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportModelModelFileNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportModelModelFileNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.exportModel(null, mindSporeLite.QuantizationType.NO_QUANT, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelModelFileNull001 error: " + JSON.stringify(error));
+        console.log('modelExportModelModelFileNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelModelFileNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1269,19 +1484,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelModelFileUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportModelModelFileUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportModelModelFileUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.exportModel(undefined, mindSporeLite.QuantizationType.NO_QUANT, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelModelFileUndefined001 error: " + JSON.stringify(error));
+        console.log('modelExportModelModelFileUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelModelFileUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1294,20 +1514,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelOutputTensorNameNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportModelOutputTensorNameNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportModelOutputTensorNameNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_model.ms';
           let ret = msliteModel.exportModel(path, mindSporeLite.QuantizationType.NO_QUANT, true, null);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelOutputTensorNameNull001 error: " + JSON.stringify(error));
+        console.log('modelExportModelOutputTensorNameNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelOutputTensorNameNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1320,20 +1545,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelOutputTensorNameUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportModelOutputTensorNameUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportModelOutputTensorNameUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_model.ms';
           let ret = msliteModel.exportModel(path, mindSporeLite.QuantizationType.NO_QUANT, true, undefined);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelOutputTensorNameUndefined001 error: " + JSON.stringify(error));
+        console.log('modelExportModelOutputTensorNameUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelOutputTensorNameUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1346,20 +1576,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelOutputTensorNameEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportModelOutputTensorNameEmptyArray001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportModelOutputTensorNameEmptyArray001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
+        context.target = ['cpu']
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_model.ms';
           let ret = msliteModel.exportModel(path, mindSporeLite.QuantizationType.NO_QUANT, true, []);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelOutputTensorNameEmptyArray001 error: " + JSON.stringify(error));
+        console.log('modelExportModelOutputTensorNameEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelOutputTensorNameEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1373,20 +1608,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroWeightFileNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroWeightFileNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroWeightFileNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.exportWeightsCollaborateWithMicro(null, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroWeightFileNull001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroWeightFileNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroWeightFileNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1399,20 +1639,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroWeightFileUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroWeightFileUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroWeightFileUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let ret = msliteModel.exportWeightsCollaborateWithMicro(undefined, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroWeightFileUndefined001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroWeightFileUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroWeightFileUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1425,21 +1670,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroChangeableWeightsNameNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroChangeableWeightsNameNull001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroChangeableWeightsNameNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, false, null);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroChangeableWeightsNameNull001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroChangeableWeightsNameNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroChangeableWeightsNameNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1452,21 +1702,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroChangeableWeightsNameUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroChangeableWeightsNameUndefined001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroChangeableWeightsNameUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, false, undefined);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroChangeableWeightsNameUndefined001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroChangeableWeightsNameUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroChangeableWeightsNameUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1479,21 +1734,26 @@ export default function coverageSupplementTest() {
      * @tc.level  1
      */
     it('modelExportWeightsCollaborateWithMicroChangeableWeightsNameEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroChangeableWeightsNameEmptyArray001");
+      try {
+      console.log('CoverageSupplement2Test: modelExportWeightsCollaborateWithMicroChangeableWeightsNameEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"]
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu']
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, false, []);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroChangeableWeightsNameEmptyArray001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroChangeableWeightsNameEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroChangeableWeightsNameEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
     
@@ -1507,18 +1767,23 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextCpuThreadAffinityCoreListEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFileContextCpuThreadAffinityCoreListEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextCpuThreadAffinityCoreListEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1531,16 +1796,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPerformanceModeExtreme001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeExtreme001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeExtreme001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_EXTREME;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -1548,7 +1814,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPerformanceModeExtreme001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPerformanceModeExtreme001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPerformanceModeExtreme001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1561,16 +1831,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPerformanceModeLow001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeLow001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_NONE;
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_LOW;
@@ -1579,7 +1850,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPerformanceModeLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPerformanceModeLow001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPerformanceModeLow001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1592,16 +1867,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPriorityLow001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPriorityLow001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPriorityLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_LOW;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -1609,7 +1885,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPriorityLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPriorityLow001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPriorityLow001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1622,16 +1902,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPriorityMedium001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPriorityMedium001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPriorityMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_MEDIUM;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -1639,7 +1920,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPriorityMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPriorityMedium001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPriorityMedium001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1652,16 +1937,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPriorityHigh001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPriorityHigh001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPriorityHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_HIGH;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -1669,7 +1955,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPriorityHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPriorityHigh001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPriorityHigh001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1682,16 +1972,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtExtensionsEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtExtensionsEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtExtensionsEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.deviceID = all_devices[0].deviceID();
         context.nnrt.extensions = [];
@@ -1699,7 +1990,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtExtensionsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtExtensionsEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtExtensionsEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1712,24 +2007,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtExtensionsNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtExtensionsNonEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtExtensionsNonEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.deviceID = all_devices[0].deviceID();
             let extension: mindSporeLite.Extension = {
-              name: "test_extension",
+              name: 'test_extension',
               value: model_buffer
             };
             context.nnrt.extensions = [extension];
@@ -1739,7 +2035,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtExtensionsNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtExtensionsNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtExtensionsNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -1752,11 +2052,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextCpuThreadAffinityModeAffinityMode001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityModeAffinityMode001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityModeAffinityMode001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
@@ -1765,7 +2065,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextCpuThreadAffinityModeAffinityMode001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextCpuThreadAffinityModeAffinityMode001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1779,11 +2079,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextCpuThreadAffinityModeBigLittle001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityModeBigLittle001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityModeBigLittle001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
@@ -1792,7 +2092,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextCpuThreadAffinityModeBigLittle001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextCpuThreadAffinityModeBigLittle001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1806,11 +2106,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextCpuThreadAffinityModeHybrid001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityModeHybrid001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityModeHybrid001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
@@ -1819,7 +2119,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextCpuThreadAffinityModeHybrid001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextCpuThreadAffinityModeHybrid001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1833,11 +2133,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityCoreListEmptyArray001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextCpuThreadAffinityCoreListEmptyArray001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
@@ -1846,7 +2146,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1860,7 +2160,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPerformanceModeNone001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeNone001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeNone001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -1868,9 +2168,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_NONE;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -1880,7 +2180,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPerformanceModeNone001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPerformanceModeNone001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1894,7 +2194,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPerformanceModeLow001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeLow001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -1902,9 +2202,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_NONE;
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_LOW;
@@ -1915,7 +2215,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPerformanceModeLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPerformanceModeLow001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1929,7 +2229,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPriorityLow001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPriorityLow001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPriorityLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -1937,9 +2237,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContextContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContextContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_LOW;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -1949,7 +2249,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPriorityLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPriorityLow001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1963,7 +2263,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPriorityMedium001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPriorityMedium001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPriorityMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -1971,9 +2271,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_MEDIUM;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -1983,7 +2283,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPriorityMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPriorityMedium001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -1997,7 +2297,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPriorityHigh001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPriorityHigh001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPriorityHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2005,9 +2305,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_HIGH;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2017,7 +2317,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPriorityHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPriorityHigh001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -2031,7 +2331,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtExtensionsEmptyArray001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtExtensionsEmptyArray001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtExtensionsEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2039,9 +2339,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.deviceID = all_devices[0].deviceID();
         context.nnrt.extensions = [];
@@ -2051,7 +2351,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtExtensionsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtExtensionsEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -2065,7 +2365,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtExtensionsNonEmptyArray001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtExtensionsNonEmptyArray001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtExtensionsNonEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2073,17 +2373,17 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.deviceID = all_devices[0].deviceID();
             let extension: mindSporeLite.Extension = {
-              name: "test_extension",
+              name: 'test_extension',
               value: model_buffer
             };
             context.nnrt.extensions = [extension];
@@ -2097,7 +2397,7 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtExtensionsNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtExtensionsNonEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -2111,14 +2411,15 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityModeAffinityMode001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityModeAffinityMode001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityModeAffinityMode001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["cpu"];
+            context.target = ['cpu'];
             context.cpu = {};
             context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
             let msliteModel = await mindSporeLite.loadModelFromBuffer(model_buffer.buffer, context);
@@ -2127,7 +2428,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityModeAffinityMode001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityModeAffinityMode001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextCpuThreadAffinityModeAffinityMode001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2140,14 +2445,15 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityModeBigLittle001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityModeBigLittle001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityModeBigLittle001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["cpu"];
+            context.target = ['cpu'];
             context.cpu = {};
             context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
             let msliteModel = await mindSporeLite.loadModelFromBuffer(model_buffer.buffer, context);
@@ -2156,7 +2462,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityModeBigLittle001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityModeBigLittle001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextCpuThreadAffinityModeBigLittle001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2169,14 +2479,15 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityModeHybrid001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityModeHybrid001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityModeHybrid001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["cpu"];
+            context.target = ['cpu'];
             context.cpu = {};
             context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
             let msliteModel = await mindSporeLite.loadModelFromBuffer(model_buffer.buffer, context);
@@ -2185,7 +2496,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityModeHybrid001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityModeHybrid001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextCpuThreadAffinityModeHybrid001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2198,14 +2513,15 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["cpu"];
+            context.target = ['cpu'];
             context.cpu = {};
             context.cpu.threadAffinityCoreList = [];
             let msliteModel = await mindSporeLite.loadModelFromBuffer(model_buffer.buffer, context);
@@ -2214,7 +2530,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2227,14 +2547,15 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["cpu"];
+            context.target = ['cpu'];
             context.cpu = {};
             context.cpu.threadAffinityCoreList = [0, 1];
             let msliteModel = await mindSporeLite.loadModelFromBuffer(model_buffer.buffer, context);
@@ -2243,7 +2564,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextCpuThreadAffinityCoreListNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2256,7 +2581,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPerformanceModeNone001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeNone001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeNone001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2268,7 +2594,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_NONE;
             context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2278,7 +2604,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPerformanceModeNone001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPerformanceModeNone001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPerformanceModeNone001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2291,7 +2621,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPerformanceModeLow001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeLow001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2303,7 +2634,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.priority = mindSporeLite.Priority.PRIORITY_NONE;
             context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_LOW;
@@ -2314,7 +2645,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPerformanceModeLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPerformanceModeLow001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPerformanceModeLow001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2327,7 +2662,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPriorityLow001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPriorityLow001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPriorityLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2339,7 +2675,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.priority = mindSporeLite.Priority.PRIORITY_LOW;
             context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2349,7 +2685,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPriorityLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPriorityLow001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPriorityLow001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2362,7 +2702,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPriorityMedium001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPriorityMedium001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPriorityMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2374,7 +2715,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.priority = mindSporeLite.Priority.PRIORITY_MEDIUM;
             context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2384,7 +2725,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPriorityMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPriorityMedium001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPriorityMedium001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2397,7 +2742,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPriorityHigh001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPriorityHigh001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPriorityHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2409,7 +2755,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.priority = mindSporeLite.Priority.PRIORITY_HIGH;
             context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2419,7 +2765,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPriorityHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPriorityHigh001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPriorityHigh001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2432,7 +2782,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtExtensionsEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtExtensionsEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtExtensionsEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2444,7 +2795,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.deviceID = all_devices[0].deviceID();
             context.nnrt.extensions = [];
@@ -2454,7 +2805,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtExtensionsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtExtensionsEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtExtensionsEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2467,7 +2822,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtExtensionsNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtExtensionsNonEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtExtensionsNonEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -2479,11 +2835,11 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.deviceID = all_devices[0].deviceID();
             let extension: mindSporeLite.Extension = {
-              name: "test_extension",
+              name: 'test_extension',
               value: model_buffer
             };
             context.nnrt.extensions = [extension];
@@ -2493,7 +2849,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtExtensionsNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtExtensionsNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtExtensionsNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2506,7 +2866,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNull001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNull001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
@@ -2517,7 +2878,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNull001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2530,7 +2895,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextUndefined001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextUndefined001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
@@ -2541,7 +2907,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextUndefined001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2554,12 +2924,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityModeBigLittle001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityModeBigLittle001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityModeBigLittle001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
@@ -2567,7 +2938,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityModeBigLittle001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityModeBigLittle001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextCpuThreadAffinityModeBigLittle001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2580,12 +2955,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityModeHybrid001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityModeHybrid001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityModeHybrid001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
@@ -2593,7 +2969,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityModeHybrid001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityModeHybrid001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextCpuThreadAffinityModeHybrid001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2606,12 +2986,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityCoreListEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityCoreListEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
@@ -2619,7 +3000,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextCpuThreadAffinityCoreListEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2632,12 +3017,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [0, 1];
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
@@ -2645,7 +3031,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2658,17 +3048,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPerformanceModeLow001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeLow001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_LOW;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2677,7 +3068,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPerformanceModeLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPerformanceModeLow001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPerformanceModeLow001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2690,17 +3085,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPerformanceModeNone001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeNone001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeNone001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_NONE;
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_NONE;
@@ -2710,7 +3106,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPerformanceModeNone001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPerformanceModeNone001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPerformanceModeNone001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2723,17 +3123,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPriorityLow001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPriorityLow001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPriorityLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_LOW;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2742,7 +3143,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPriorityLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPriorityLow001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPriorityLow001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2755,17 +3160,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPriorityMedium001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPriorityMedium001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPriorityMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_MEDIUM;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2774,7 +3180,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPriorityMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPriorityMedium001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPriorityMedium001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2787,17 +3197,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPriorityHigh001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPriorityHigh001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPriorityHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_HIGH;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -2806,7 +3217,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPriorityHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPriorityHigh001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPriorityHigh001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2819,17 +3234,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtExtensionsEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtExtensionsEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtExtensionsEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.deviceID = all_devices[0].deviceID();
         context.nnrt.extensions = [];
@@ -2838,7 +3254,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtExtensionsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtExtensionsEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtExtensionsEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2851,25 +3271,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtExtensionsNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtExtensionsNonEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtExtensionsNonEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.deviceID = all_devices[0].deviceID();
             let extension: mindSporeLite.Extension = {
-              name: "test_extension",
+              name: 'test_extension',
               value: model_buffer
             };
             context.nnrt.extensions = [extension];
@@ -2880,7 +3301,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtExtensionsNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtExtensionsNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtExtensionsNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2893,20 +3318,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextCpuThreadAffinityModeAffinityMode001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityModeAffinityMode001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityModeAffinityMode001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextCpuThreadAffinityModeAffinityMode001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextCpuThreadAffinityModeAffinityMode001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextCpuThreadAffinityModeAffinityMode001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2919,20 +3349,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextCpuThreadAffinityModeBigLittle001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityModeBigLittle001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityModeBigLittle001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextCpuThreadAffinityModeBigLittle001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextCpuThreadAffinityModeBigLittle001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextCpuThreadAffinityModeBigLittle001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2945,20 +3380,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextCpuThreadAffinityModeHybrid001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityModeHybrid001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityModeHybrid001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextCpuThreadAffinityModeHybrid001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextCpuThreadAffinityModeHybrid001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextCpuThreadAffinityModeHybrid001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2971,20 +3411,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextCpuThreadAffinityCoreListEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -2997,20 +3442,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [0, 1];
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextCpuThreadAffinityCoreListNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3023,12 +3473,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgOptimizationLevelO0001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelO0001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelO0001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [0, 1];
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
@@ -3042,7 +3493,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgOptimizationLevelO0001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgOptimizationLevelO0001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferTrainCfgOptimizationLevelO0001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3055,12 +3510,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgOptimizationLevelO2001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelO2001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelO2001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.O2;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
         let syscontext: common.Context = globalThis.context;
@@ -3073,7 +3529,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgOptimizationLevelO2001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgOptimizationLevelO2001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferTrainCfgOptimizationLevelO2001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
     
@@ -3086,21 +3546,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgOptimizationLevelO2001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelO2001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelO2001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.O2;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
         fs.closeSync(file);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgOptimizationLevelO2001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgOptimizationLevelO2001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgOptimizationLevelO2001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3113,21 +3578,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgOptimizationLevelO0001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelO0001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelO0001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.O0;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
         fs.closeSync(file);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgOptimizationLevelO0001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgOptimizationLevelO0001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgOptimizationLevelO0001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3140,16 +3610,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPerformanceModeNone001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeNone001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeNone001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_NONE;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3157,7 +3628,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPerformanceModeNone001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPerformanceModeNone001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPerformanceModeNone001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3170,16 +3645,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPerformanceModeMedium001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeMedium001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_MEDIUM;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3187,7 +3663,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPerformanceModeMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPerformanceModeMedium001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPerformanceModeMedium001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3200,16 +3680,17 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextNnrtPerformanceModeHigh001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeHigh001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileContextNnrtPerformanceModeHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_HIGH;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3217,7 +3698,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextNnrtPerformanceModeHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextNnrtPerformanceModeHigh001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextNnrtPerformanceModeHigh001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3230,7 +3715,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPerformanceModeMedium001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeMedium001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3238,9 +3723,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_MEDIUM;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3250,7 +3735,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPerformanceModeMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPerformanceModeMedium001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3264,7 +3749,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPerformanceModeHigh001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeHigh001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3272,9 +3757,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_HIGH;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3284,7 +3769,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPerformanceModeHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPerformanceModeHigh001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3298,7 +3783,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileCallbackContextNnrtPerformanceModeExtreme001', Level.LEVEL1, async (done: Function) => {
-      console.log("CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeExtreme001");
+      console.log('CoverageSupplement3Test: loadModelFromFileCallbackContextNnrtPerformanceModeExtreme001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3306,9 +3791,9 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_EXTREME;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3318,7 +3803,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFileCallbackContextNnrtPerformanceModeExtreme001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileCallbackContextNnrtPerformanceModeExtreme001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3332,7 +3817,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPerformanceModeMedium001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeMedium001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3344,7 +3830,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_MEDIUM;
             context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3354,7 +3840,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPerformanceModeMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPerformanceModeMedium001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPerformanceModeMedium001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3367,7 +3857,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPerformanceModeHigh001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeHigh001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3379,7 +3870,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_HIGH;
             context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3389,7 +3880,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPerformanceModeHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPerformanceModeHigh001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPerformanceModeHigh001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3402,7 +3897,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextNnrtPerformanceModeExtreme001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeExtreme001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextNnrtPerformanceModeExtreme001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3414,7 +3910,7 @@ export default function coverageSupplementTest() {
         syscontext.resourceManager.getRawFileContent(modelName, async (error: BusinessError, model_buffer: Uint8Array) => {
           if (error == null) {
             let context: mindSporeLite.Context = {};
-            context.target = ["nnrt"];
+            context.target = ['nnrt'];
             context.nnrt = {};
             context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_EXTREME;
             context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3424,7 +3920,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextNnrtPerformanceModeExtreme001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextNnrtPerformanceModeExtreme001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextNnrtPerformanceModeExtreme001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3437,17 +3937,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPerformanceModeMedium001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeMedium001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeMedium001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_MEDIUM;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3456,7 +3957,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPerformanceModeMedium001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPerformanceModeMedium001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPerformanceModeMedium001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3469,17 +3974,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPerformanceModeHigh001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeHigh001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_HIGH;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3488,7 +3994,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPerformanceModeHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPerformanceModeHigh001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPerformanceModeHigh001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3501,17 +4011,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPerformanceModeExtreme001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeExtreme001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFdContextNnrtPerformanceModeExtreme001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
           console.log('=========no NPU device,skip testcase==========');
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_EXTREME;
         context.nnrt.deviceID = all_devices[0].deviceID();
@@ -3520,7 +4031,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPerformanceModeExtreme001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPerformanceModeExtreme001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextNnrtPerformanceModeExtreme001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3533,12 +4048,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgOptimizationLevelO3001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelO3001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelO3001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.O3;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
         let syscontext: common.Context = globalThis.context;
@@ -3551,7 +4067,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgOptimizationLevelO3001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgOptimizationLevelO3001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferTrainCfgOptimizationLevelO3001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3564,12 +4084,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgOptimizationLevelAuto001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelAuto001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgOptimizationLevelAuto001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.AUTO;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
 
         let syscontext: common.Context = globalThis.context;
         let modelName = 'lenet_train.ms';
@@ -3581,7 +4102,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgOptimizationLevelAuto001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgOptimizationLevelAuto001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferTrainCfgOptimizationLevelAuto001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3594,21 +4119,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgOptimizationLevelO3001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelO3001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelO3001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.O3;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
         fs.closeSync(file);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgOptimizationLevelO3001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgOptimizationLevelO3001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgOptimizationLevelO3001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3621,21 +4151,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgOptimizationLevelAuto001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelAuto001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFdTrainCfgOptimizationLevelAuto001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.optimizationLevel = mindSporeLite.OptimizationLevel.AUTO;
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
 
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
         fs.closeSync(file);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgOptimizationLevelAuto001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgOptimizationLevelAuto001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgOptimizationLevelAuto001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -3648,12 +4183,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityModeBigCoresFirst001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromBufferContextCpuThreadAffinityModeBigCoresFirst001");
+      console.log('CoverageSupplement4Test: loadModelFromBufferContextCpuThreadAffinityModeBigCoresFirst001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
         mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
@@ -3662,7 +4197,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityModeBigCoresFirst001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityModeBigCoresFirst001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3676,12 +4211,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityModeLittleCoresFirst001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromBufferContextCpuThreadAffinityModeLittleCoresFirst001");
+      console.log('CoverageSupplement4Test: loadModelFromBufferContextCpuThreadAffinityModeLittleCoresFirst001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
         mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
@@ -3690,7 +4225,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityModeLittleCoresFirst001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityModeLittleCoresFirst001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3704,12 +4239,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextCpuThreadAffinityNoAffinities001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromBufferContextCpuThreadAffinityNoAffinities001");
+      console.log('CoverageSupplement4Test: loadModelFromBufferContextCpuThreadAffinityNoAffinities001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
         mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
@@ -3718,7 +4253,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextCpuThreadAffinityNoAffinities001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextCpuThreadAffinityNoAffinities001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3732,12 +4267,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferCallbackContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromBufferCallbackContextCpuThreadAffinityCoreListEmptyArray001");
+      console.log('CoverageSupplement4Test: loadModelFromBufferCallbackContextCpuThreadAffinityCoreListEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
         mindSporeLite.loadModelFromBuffer(modelBuffer.buffer, context, (msliteModel: mindSporeLite.Model) => {
@@ -3746,7 +4281,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromBufferCallbackContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferCallbackContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3760,7 +4295,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferCallbackContextNnrtExtensionsEmptyArray001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromBufferCallbackContextNnrtExtensionsEmptyArray001");
+      console.log('CoverageSupplement4Test: loadModelFromBufferCallbackContextNnrtExtensionsEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
@@ -3771,7 +4306,7 @@ export default function coverageSupplementTest() {
           return;
         }
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.deviceID = all_devices[0].deviceID();
         context.nnrt.extensions = [];
@@ -3781,7 +4316,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromBufferCallbackContextNnrtExtensionsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferCallbackContextNnrtExtensionsEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3795,12 +4330,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityModeBigCoresFirst001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdContextCpuThreadAffinityModeBigCoresFirst001");
+      console.log('CoverageSupplement4Test: loadModelFromFdContextCpuThreadAffinityModeBigCoresFirst001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
         mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
@@ -3810,7 +4345,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityModeBigCoresFirst001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityModeBigCoresFirst001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3824,12 +4359,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001");
+      console.log('CoverageSupplement4Test: loadModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
         mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
@@ -3839,7 +4374,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3853,12 +4388,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityNoAffinities001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdContextCpuThreadAffinityNoAffinities001");
+      console.log('CoverageSupplement4Test: loadModelFromFdContextCpuThreadAffinityNoAffinities001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
         mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
@@ -3868,7 +4403,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityNoAffinities001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityNoAffinities001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3882,12 +4417,12 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdCallbackContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, (done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdCallbackContextCpuThreadAffinityCoreListEmptyArray001");
+      console.log('CoverageSupplement4Test: loadModelFromFdCallbackContextCpuThreadAffinityCoreListEmptyArray001');
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
         mindSporeLite.loadModelFromFd(file.fd, context, (msliteModel: mindSporeLite.Model) => {
@@ -3897,7 +4432,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdCallbackContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdCallbackContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3911,7 +4446,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdCallbackContextNnrtPerformanceModeHigh001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtPerformanceModeHigh001");
+      console.log('CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtPerformanceModeHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3919,10 +4454,10 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_LOW;
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_HIGH;
@@ -3934,7 +4469,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdCallbackContextNnrtPerformanceModeHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdCallbackContextNnrtPerformanceModeHigh001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3948,7 +4483,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdCallbackContextNnrtPerformanceModeLow001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtPerformanceModeLow001");
+      console.log('CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtPerformanceModeLow001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3956,10 +4491,10 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_MEDIUM;
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_LOW;
@@ -3971,7 +4506,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdCallbackContextNnrtPerformanceModeLow001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdCallbackContextNnrtPerformanceModeLow001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -3985,7 +4520,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdCallbackContextNnrtPriorityHigh001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtPriorityHigh001");
+      console.log('CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtPriorityHigh001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -3993,10 +4528,10 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_NONE;
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_MEDIUM;
@@ -4009,7 +4544,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdCallbackContextNnrtPriorityHigh001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdCallbackContextNnrtPriorityHigh001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -4023,7 +4558,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextNnrtPriorityNone001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdContextNnrtPriorityNone001");
+      console.log('CoverageSupplement4Test: loadModelFromFdContextNnrtPriorityNone001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -4031,10 +4566,10 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.performanceMode = mindSporeLite.PerformanceMode.PERFORMANCE_EXTREME;
         context.nnrt.priority = mindSporeLite.Priority.PRIORITY_NONE;
@@ -4046,7 +4581,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdContextNnrtPriorityNone001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextNnrtPriorityNone001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -4060,7 +4595,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdCallbackContextNnrtExtensionsEmptyArray001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtExtensionsEmptyArray001");
+      console.log('CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtExtensionsEmptyArray001');
       try {
         let all_devices = await mindSporeLite.getAllNNRTDeviceDescriptions();
         if (all_devices == null || all_devices.length == 0) {
@@ -4068,10 +4603,10 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.deviceID = all_devices[0].deviceID();
         context.nnrt.extensions = [];
@@ -4082,7 +4617,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdCallbackContextNnrtExtensionsEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdCallbackContextNnrtExtensionsEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -4096,7 +4631,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdCallbackContextNnrtExtensionsNonEmptyArray001', Level.LEVEL1, async(done: Function) => {
-      console.log("CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtExtensionsNonEmptyArray001");
+      console.log('CoverageSupplement4Test: loadModelFromFdCallbackContextNnrtExtensionsNonEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
@@ -4106,14 +4641,14 @@ export default function coverageSupplementTest() {
           done();
           return;
         }
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["nnrt"];
+        context.target = ['nnrt'];
         context.nnrt = {};
         context.nnrt.deviceID = all_devices[0].deviceID();
         let extension: mindSporeLite.Extension = {
-          name: "test_extension",
+          name: 'test_extension',
           value: modelBuffer
         };
         context.nnrt.extensions = [extension];
@@ -4124,7 +4659,7 @@ export default function coverageSupplementTest() {
           done();
         });
       } catch (error) {
-        console.log("loadModelFromFdCallbackContextNnrtExtensionsNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdCallbackContextNnrtExtensionsNonEmptyArray001 error: ' + JSON.stringify(error));
         done();
       }
     });
@@ -4139,20 +4674,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement4Test: loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001");
+      try {
+      console.log('CoverageSupplement4Test: loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let cfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromBufferContextCpuThreadAffinityCoreListEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4166,9 +4706,10 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextTargetEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement4Test: loadTrainModelFromFdContextTargetEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement4Test: loadTrainModelFromFdContextTargetEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let cfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
@@ -4177,7 +4718,11 @@ export default function coverageSupplementTest() {
         fs.closeSync(file);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextTargetEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextTargetEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextTargetEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4190,13 +4735,14 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirst001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirst001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirst001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let cfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.BIG_CORES_FIRST;
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
@@ -4204,7 +4750,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirst001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirst001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextCpuThreadAffinityModeBigCoresFirst001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4217,13 +4767,14 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let cfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.LITTLE_CORES_FIRST;
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
@@ -4231,7 +4782,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextCpuThreadAffinityModeLittleCoresFirst001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4244,13 +4799,14 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextCpuThreadAffinityNoAffinities001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityNoAffinities001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityNoAffinities001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let cfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
@@ -4258,7 +4814,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextCpuThreadAffinityNoAffinities001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextCpuThreadAffinityNoAffinities001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextCpuThreadAffinityNoAffinities001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4271,13 +4831,14 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let cfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [];
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
@@ -4285,7 +4846,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextCpuThreadAffinityCoreListEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4298,13 +4863,14 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement4Test: loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let cfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityCoreList = [0];
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, cfg, context);
@@ -4312,7 +4878,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdContextCpuThreadAffinityCoreListNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4326,17 +4896,22 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileTrainCfgLossNameEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileTrainCfgLossNameEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileTrainCfgLossNameEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.lossName = [];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileTrainCfgLossNameEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileTrainCfgLossNameEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileTrainCfgLossNameEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4349,16 +4924,21 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileContextTargetEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileContextTargetEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileContextTargetEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
         context.target = [];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileContextTargetEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileContextTargetEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileContextTargetEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4371,15 +4951,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFileModelEmptyString001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFileModelEmptyString001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFileModelEmptyString001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let msliteModel = await mindSporeLite.loadTrainModelFromFile("", trainCfg, context);
+        context.target = ['cpu'];
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile('', trainCfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFileModelEmptyString001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFileModelEmptyString001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFileModelEmptyString001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4393,19 +4978,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgLossNameEmptyArray001', Level.LEVEL1, async (done:()=>void) => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgLossNameEmptyArray001");
+      console.log('CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgLossNameEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let cfg: mindSporeLite.TrainCfg = {};
-        cfg.lossName = [""];
+        cfg.lossName = [''];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgLossNameEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgLossNameEmptyArray001 error: ' + JSON.stringify(error));
       }
       done();
     });
@@ -4419,19 +5004,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001', Level.LEVEL1, async (done:()=>void) => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001");
+      console.log('CoverageSupplement3Test: loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
         let cfg: mindSporeLite.TrainCfg = {};
-        cfg.lossName = ["CrossEntropy"];
+        cfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferTrainCfgLossNameNonEmptyArray001 error: ' + JSON.stringify(error));
       }
       done();
     });
@@ -4445,7 +5030,7 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromBufferContextTargetEmptyArray001', Level.LEVEL1, async (done:()=>void) => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromBufferContextTargetEmptyArray001");
+      console.log('CoverageSupplement3Test: loadTrainModelFromBufferContextTargetEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelBuffer: Uint8Array = await syscontext.resourceManager.getRawFileContent('ml_face_isface.ms');
@@ -4455,7 +5040,7 @@ export default function coverageSupplementTest() {
         let msliteModel = await mindSporeLite.loadTrainModelFromBuffer(modelBuffer.buffer, cfg, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromBufferContextTargetEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromBufferContextTargetEmptyArray001 error: ' + JSON.stringify(error));
       }
       done();
     });
@@ -4470,19 +5055,24 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgLossNameEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgLossNameEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFdTrainCfgLossNameEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
         trainCfg.lossName = [];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
         fs.closeSync(file);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgLossNameEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgLossNameEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgLossNameEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4495,20 +5085,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let msliteModel = await mindSporeLite.loadTrainModelFromFd(file.fd, trainCfg, context);
         fs.closeSync(file);
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadTrainModelFromFdTrainCfgLossNameNonEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4521,15 +5116,20 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextTargetEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextTargetEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFileContextTargetEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let context: mindSporeLite.Context = {};
         context.target = [];
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextTargetEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextTargetEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextTargetEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4542,14 +5142,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileModelNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileModelNull001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileModelNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let msliteModel = await mindSporeLite.loadModelFromFile(null, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileModelNull001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileModelNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileModelNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4562,14 +5167,19 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileModelUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileModelUndefined001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromFileModelUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let msliteModel = await mindSporeLite.loadModelFromFile(undefined, context);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileModelUndefined001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileModelUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileModelUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4582,13 +5192,18 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFileContextUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFileContextUndefined001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFileContextUndefined001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let msliteModel = await mindSporeLite.loadModelFromFile(model_file, undefined);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFileContextUndefined001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFileContextUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFileContextUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
     
@@ -4602,7 +5217,8 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromBufferContextTargetEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromBufferContextTargetEmptyArray001");
+      try {
+      console.log('CoverageSupplement3Test: loadModelFromBufferContextTargetEmptyArray001');
       try {
         let syscontext: common.Context = globalThis.context;
         let modelName = 'ml_face_isface.ms';
@@ -4615,7 +5231,11 @@ export default function coverageSupplementTest() {
           }
         });
       } catch (error) {
-        console.log("loadModelFromBufferContextTargetEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromBufferContextTargetEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromBufferContextTargetEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4629,9 +5249,10 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextTargetEmptyArray001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextTargetEmptyArray001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFdContextTargetEmptyArray001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
         context.target = [];
@@ -4639,7 +5260,11 @@ export default function coverageSupplementTest() {
         fs.closeSync(file);
         expect(msliteModel).assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextTargetEmptyArray001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextTargetEmptyArray001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextTargetEmptyArray001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4652,12 +5277,13 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('loadModelFromFdContextCpuThreadAffinityModeAffinityMode001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityModeAffinityMode001");
       try {
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_face_isface.ms";
+      console.log('CoverageSupplement3Test: loadModelFromFdContextCpuThreadAffinityModeAffinityMode001');
+      try {
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_face_isface.ms';
         let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         context.cpu = {};
         context.cpu.threadAffinityMode = mindSporeLite.ThreadAffinityMode.NO_AFFINITIES;
         let msliteModel = await mindSporeLite.loadModelFromFd(file.fd, context);
@@ -4665,7 +5291,11 @@ export default function coverageSupplementTest() {
         expect(msliteModel).not().assertNull();
         expect(msliteModel).not().assertUndefined();
       } catch (error) {
-        console.log("loadModelFromFdContextCpuThreadAffinityModeAffinityMode001 error: " + JSON.stringify(error));
+        console.log('loadModelFromFdContextCpuThreadAffinityModeAffinityMode001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('loadModelFromFdContextCpuThreadAffinityModeAffinityMode001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4679,11 +5309,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('mstensorSetDataInputArrayNull001', Level.LEVEL1, () => {
-      console.log("CoverageSupplementTest: mstensorSetDataInputArrayNull001");
+      console.log('CoverageSupplementTest: mstensorSetDataInputArrayNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
           if (msliteModel !== null) {
             let modelInputs: mindSporeLite.MSTensor[] = msliteModel.getInputs();
@@ -4693,13 +5323,13 @@ export default function coverageSupplementTest() {
 
               } catch (error) {
                 expect(true).assertFalse();
-                console.log("mstensorSetDataInputArrayNull001 setData error: " + JSON.stringify(error));
+                console.log('mstensorSetDataInputArrayNull001 setData error: ' + JSON.stringify(error));
               }
             }
           }
         });
       } catch (error) {
-        console.log("mstensorSetDataInputArrayNull001 error: " + JSON.stringify(error));
+        console.log('mstensorSetDataInputArrayNull001 error: ' + JSON.stringify(error));
       }
     });
     
@@ -4713,11 +5343,11 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('mstensorSetDataInputArrayUndefined001', Level.LEVEL1, () => {
-      console.log("CoverageSupplement2Test: mstensorSetDataInputArrayUndefined001");
+      console.log('CoverageSupplement2Test: mstensorSetDataInputArrayUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "ml_ocr_cn.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'ml_ocr_cn.ms';
         mindSporeLite.loadModelFromFile(model_file, context, (msliteModel: mindSporeLite.Model) => {
           if (msliteModel !== null) {
             let modelInputs: mindSporeLite.MSTensor[] = msliteModel.getInputs();
@@ -4726,13 +5356,13 @@ export default function coverageSupplementTest() {
                 modelInputs[0].setData(undefined);
               } catch (error) {
                 expect(true).assertFalse();
-                console.log("mstensorSetDataInputArrayUndefined001 setData error: " + JSON.stringify(error));
+                console.log('mstensorSetDataInputArrayUndefined001 setData error: ' + JSON.stringify(error));
               }
             }
           }
         });
       } catch (error) {
-        console.log("mstensorSetDataInputArrayUndefined001 error: " + JSON.stringify(error));
+        console.log('mstensorSetDataInputArrayUndefined001 error: ' + JSON.stringify(error));
       }
     });
 
@@ -4745,21 +5375,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroEnableFp16True001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16True001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16True001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, true);
           expect(ret).assertTrue();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroEnableFp16True001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroEnableFp16True001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroEnableFp16True001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4772,21 +5407,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroIsInferenceNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroIsInferenceNull001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroIsInferenceNull001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, null, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroIsInferenceNull001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroIsInferenceNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroIsInferenceNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4799,21 +5439,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroIsInferenceUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroIsInferenceUndefined001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroIsInferenceUndefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, undefined, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroIsInferenceUndefined001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroIsInferenceUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroIsInferenceUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4826,21 +5471,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroEnableFp16Null001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16Null001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16Null001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, null);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroEnableFp16Null001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroEnableFp16Null001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroEnableFp16Null001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4853,21 +5503,26 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportWeightsCollaborateWithMicroEnableFp16Undefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16Undefined001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportWeightsCollaborateWithMicroEnableFp16Undefined001');
       try {
         let trainCfg: mindSporeLite.TrainCfg = {};
-        trainCfg.lossName = ["CrossEntropy"];
+        trainCfg.lossName = ['CrossEntropy'];
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        context.target = ['cpu'];
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_weights.bin";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_weights.bin';
           let ret = msliteModel.exportWeightsCollaborateWithMicro(path, true, undefined);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportWeightsCollaborateWithMicroEnableFp16Undefined001 error: " + JSON.stringify(error));
+        console.log('modelExportWeightsCollaborateWithMicroEnableFp16Undefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportWeightsCollaborateWithMicroEnableFp16Undefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4880,20 +5535,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelExportInferenceOnlyNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportModelExportInferenceOnlyNull001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportModelExportInferenceOnlyNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_model.ms';
           let ret = msliteModel.exportModel(path, mindSporeLite.QuantizationType.NO_QUANT, null);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelExportInferenceOnlyNull001 error: " + JSON.stringify(error));
+        console.log('modelExportModelExportInferenceOnlyNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelExportInferenceOnlyNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
     
@@ -4906,20 +5566,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelExportInferenceOnlyUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportModelExportInferenceOnlyUndefined001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportModelExportInferenceOnlyUndefined001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_model.ms';
           let ret = msliteModel.exportModel(path, mindSporeLite.QuantizationType.NO_QUANT, undefined);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelExportInferenceOnlyUndefined001 error: " + JSON.stringify(error));
+        console.log('modelExportModelExportInferenceOnlyUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelExportInferenceOnlyUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4932,20 +5597,25 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelQuantizationTypeNull001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportModelQuantizationTypeNull001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportModelQuantizationTypeNull001');
       try {
         let context: mindSporeLite.Context = {};
-        context.target = ["cpu"];
+        context.target = ['cpu'];
         let trainCfg: mindSporeLite.TrainCfg = {};
-        let model_file = globalThis.abilityContext.filesDir + "/" + "lenet_train.ms";
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
-          let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_model.ms';
           let ret = msliteModel.exportModel(path, null, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelQuantizationTypeNull001 error: " + JSON.stringify(error));
+        console.log('modelExportModelQuantizationTypeNull001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelQuantizationTypeNull001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
       }
     });
 
@@ -4958,7 +5628,38 @@ export default function coverageSupplementTest() {
      * @tc.level  LEVEL1
      */
     it('modelExportModelQuantizationTypeUndefined001', Level.LEVEL1, async () => {
-      console.log("CoverageSupplement3Test: modelExportModelQuantizationTypeUndefined001");
+      try {
+      console.log('CoverageSupplement3Test: modelExportModelQuantizationTypeUndefined001');
+      try {
+        let context: mindSporeLite.Context = {};
+        context.target = ['cpu'];
+        let trainCfg: mindSporeLite.TrainCfg = {};
+        let model_file = globalThis.abilityContext.filesDir + '/' + 'lenet_train.ms';
+        let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
+        if (msliteModel !== null) {
+          let path: string = globalThis.abilityContext.filesDir + '/test_export_model.ms';
+          let ret = msliteModel.exportModel(path, undefined, true);
+          expect(ret).assertFalse();
+        }
+      } catch (error) {
+        console.log('modelExportModelQuantizationTypeUndefined001 error: ' + JSON.stringify(error));
+      }
+      } catch (error) {
+        console.error('modelExportModelQuantizationTypeUndefined001 failed: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.name   modelExportModelQuantizationTypeInvalidEnum001
+     * @tc.number SUB_AI_mindspore_exportModel_quantization_0001
+     * @tc.desc   Model exportModel quantizationType invalid enum value test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('modelExportModelQuantizationTypeInvalidEnum001', Level.LEVEL1, async () => {
+      console.log("SUB_AI_mindspore_exportModel_quantization_0001: modelExportModelQuantizationTypeInvalidEnum001");
       try {
         let context: mindSporeLite.Context = {};
         context.target = ["cpu"];
@@ -4967,11 +5668,11 @@ export default function coverageSupplementTest() {
         let msliteModel = await mindSporeLite.loadTrainModelFromFile(model_file, trainCfg, context);
         if (msliteModel !== null) {
           let path: string = globalThis.abilityContext.filesDir + "/test_export_model.ms";
-          let ret = msliteModel.exportModel(path, undefined, true);
+          let ret = msliteModel.exportModel(path, 999, true);
           expect(ret).assertFalse();
         }
       } catch (error) {
-        console.log("modelExportModelQuantizationTypeUndefined001 error: " + JSON.stringify(error));
+        console.log("modelExportModelQuantizationTypeInvalidEnum001 error: " + JSON.stringify(error));
       }
     });
 

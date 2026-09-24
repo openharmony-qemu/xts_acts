@@ -35,7 +35,7 @@ struct NavRouterExample {
     Column() {
       Button("change value").onClick(() => {
         (this.customModifier as CustomModifier).onChange1();
-      }).key("navRouter_changeButton")
+      }).key("changeButton").id("changeButton")
 
       Column() {
         NavRouter() {

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { expect } from '@ohos/hypium'
+import { expect } from '@ohos/hypium-dynamic'
 import camera from '@ohos.multimedia.camera'
 import media from '@ohos.multimedia.media'
 import MediaTestBase from './MediaTestBase';

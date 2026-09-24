@@ -27,6 +27,8 @@ group("bundlemanager") {
       "actsbmsetsunpermissiontest:ActsBmsEtsUnPermissionTest",
       "actsbmsgetabilityinfotest:ActsBmsGetAbilityInfoTest",
       "actsbmsgetabilityresourcendkenterprisetest:ActsBmsGetAbilityResourceNdkEnterpriseTest",
+      "actsbmsgetbundleinstallstatusenterprisestatic:ActsBmsGetBundleInstallStatusStaticEnterpriseTest",
+      "actsbmsgetbundleinstallstatusenterprise:ActsBmsGetBundleInstallStatusEnterpriseTest",
       "actsbmsgetinfostest:ActsBmsGetInfosTest",
       "actsbmsgetinfoenterprisestest:ActsbmsGetInfoEnterPriseEtsTest",
       "actsbmsgetlauncherabilityinfo2test:ActsBmsGetLauncherAbilityInfo2Test",

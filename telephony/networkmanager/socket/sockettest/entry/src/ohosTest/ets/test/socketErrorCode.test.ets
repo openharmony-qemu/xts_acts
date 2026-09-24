@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import socket from '@ohos.net.socket';
 import { BusinessError } from '@ohos.base';
 
@@ -642,22 +642,44 @@ export default function SocketErrorCodeTest01() {
     it('testNetworkMgrSocketTLSSocketGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketGetSocketFd0100';
       console.info(`${caseName} test start`);
+      let tls: socket.TLSSocket | undefined = undefined;
       try {
-        let tls: socket.TLSSocket = socket.constructTLSSocketInstance();
-        tls.getSocketFd().then(() => {
-          console.info(`${caseName} get success`);
-          expect(true).assertTrue();
-          done();
+        tls = socket.constructTLSSocketInstance();
+        tls!.getSocketFd().then((fd: number) => {
+          console.info(`${caseName} get success, fd=` + fd);
+          if (fd !== undefined) {
+            expect(fd >= 0).assertTrue();
+          }
+          tls!.close().then(() => {
+            done();
+          }).catch((closeErr: Object) => {
+            console.info(`${caseName} close err: ${JSON.stringify(closeErr)}`);
+            done();
+          });
         }).catch((err: BusinessError) => {
           console.info(`${caseName} get err: ${JSON.stringify(err)}`);
           ExpectFail();
-          done();
+          tls!.close().then(() => {
+            done();
+          }).catch((closeErr: Object) => {
+            console.info(`${caseName} close err: ${JSON.stringify(closeErr)}`);
+            done();
+          });
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         console.info(`${caseName} test end`);
         ExpectFail();
-        done();
+        if (tls !== undefined) {
+          tls!.close().then(() => {
+            done();
+          }).catch((closeErr: Object) => {
+            console.info(`${caseName} close err: ${JSON.stringify(closeErr)}`);
+            done();
+          });
+        } else {
+          done();
+        }
       }
     });
 
@@ -2132,6 +2154,44 @@ export default function SocketErrorCodeTest01() {
           done();
         }).catch((err: Object) => {
           console.info(`${caseName} getState err: ${JSON.stringify(err)}`);
+          ExpectFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+    });
+    /**
+     * @tc.name   testNetworkMgrSocketProxyTypesNONE0100
+     * @tc.number SUB_NetworkMgr_Socket_ProxyTypes_NONE_0100
+     * @tc.desc   Test socket ProxyTypes NONE value equals 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketProxyTypesNONE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName: string = 'testNetworkMgrSocketProxyTypesNONE0100';
+      console.info(`${caseName}---Start`);
+      let tcpSocket: socket.TCPSocket | undefined = undefined;
+      try {
+        tcpSocket = socket.constructTCPSocketInstance();
+        console.info(`${caseName} constructTCPSocketInstance success`);
+        new Promise<void>((resolve) => {
+          setTimeout(() => {
+            tcpSocket!.close((err: BusinessError) => {
+              console.info(`${caseName} tcpSocket close callback, err: ${JSON.stringify(err)}`);
+            });
+            resolve();
+          }, 1000);
+        }).then(() => {
+          console.info(`${caseName} ProxyTypes.NONE value: ${socket.ProxyTypes.NONE}`);
+          expect(socket.ProxyTypes.NONE).assertEqual(0);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err: Object) => {
+          console.info(`${caseName} promise err: ${JSON.stringify(err)}`);
           ExpectFail();
           done();
         });

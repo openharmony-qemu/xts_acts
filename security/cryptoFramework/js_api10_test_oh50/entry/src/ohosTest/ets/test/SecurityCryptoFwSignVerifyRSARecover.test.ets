@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import cryptoFramework from '@ohos.security.cryptoFramework';
 import * as rsaTest from './utils/rsa/rsaSignRecoverUtils'
 import * as commonUtil from './utils/common/commonUtils';

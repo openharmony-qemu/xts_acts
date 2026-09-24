@@ -381,6 +381,150 @@ export default function transactionNdktest() {
       done()
     });
 
+    /**
+     * @tc.name   OH_RDB_TRANS_BUTT_TEST_0100
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RDB_TRANS_BUTT_0100
+     * @tc.desc   OH_RDB_TRANS_BUTT Unusual Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_RDB_TRANS_BUTT_TEST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testrdb.OH_RDB_TRANS_BUTT0100();
+      console.info(TAG + "OH_RDB_TRANS_BUTT_TEST_0100 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   OH_RdbTrans_UpdateWithConflictResolution0100
+     * @tc.number SUB_DistributedData_Rdb_SDK_NdkAPITest_OH_RdbTrans_UpdateWithConflictResolution_0200
+     * @tc.desc   OH_RdbTrans_UpdateWithConflictResolution0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('OH_RdbTrans_UpdateWithConflictResolution0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let res = testrdb.OH_RdbTrans_UpdateWithConflictResolution0100();
+      console.info(TAG + "OH_RdbTrans_UpdateWithConflictResolution0100 res=" + res );
+      expect(res).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   TestTransUpdateWithConflictResolutionDatabaseClosed_0100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600
+     * @tc.desc   Test TransUpdateWithConflictResolution RDB_CONFLICT_ROLLBACK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestTransUpdateWithConflictResolutionDatabaseClosed_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0100 start====");
+          let result: number = testrdb.TestTransUpdateWithConflictResolutionDatabaseClosed_0100();
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0100 result====", result);
+          expect(result).assertEqual(0);
+          done();
+        } catch (err) {
+          console.error("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0100 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   TestTransUpdateWithConflictResolutionDatabaseClosed_0200
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0200
+     * @tc.desc   Test TransUpdateWithConflictResolution RDB_CONFLICT_ABORT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestTransUpdateWithConflictResolutionDatabaseClosed_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0200 start====");
+          let result: number = testrdb.TestTransUpdateWithConflictResolutionDatabaseClosed_0200();
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0200 result====", result);
+          expect(result).assertEqual(0);
+          done();
+        } catch (err) {
+          console.error("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0200 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   TestTransUpdateWithConflictResolutionDatabaseClosed_0300
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0300
+     * @tc.desc   Test TransUpdateWithConflictResolution RDB_CONFLICT_FAIL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestTransUpdateWithConflictResolutionDatabaseClosed_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0300 start====");
+          let result: number = testrdb.TestTransUpdateWithConflictResolutionDatabaseClosed_0300();
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0300 result====", result);
+          expect(result).assertEqual(0);
+          done();
+        } catch (err) {
+          console.error("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0300 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   TestTransUpdateWithConflictResolutionDatabaseClosed_0400
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0400
+     * @tc.desc   Test TransUpdateWithConflictResolution RDB_CONFLICT_IGNORE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestTransUpdateWithConflictResolutionDatabaseClosed_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0400 start====");
+          let result: number = testrdb.TestTransUpdateWithConflictResolutionDatabaseClosed_0400();
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0400 result====", result);
+          expect(result).assertEqual(0);
+          done();
+        } catch (err) {
+          console.error("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0400 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   TestTransUpdateWithConflictResolutionDatabaseClosed_0500
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0500
+     * @tc.desc   Test TransUpdateWithConflictResolution RDB_CONFLICT_REPLACE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestTransUpdateWithConflictResolutionDatabaseClosed_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0500 start====");
+          let result: number = testrdb.TestTransUpdateWithConflictResolutionDatabaseClosed_0500();
+          console.info("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0500 result====", result);
+          expect(result).assertEqual(0);
+          done();
+        } catch (err) {
+          console.error("====>TestTransUpdateWithConflictResolutionDatabaseClosed_0500 catch err: " + err);
+          expect(err).assertFail();
+          done();
+        }
+      })
   })
 }
 

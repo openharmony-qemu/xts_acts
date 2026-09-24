@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import display from '@ohos.display';
 import events_emitter from '@ohos.events.emitter';
@@ -48,10 +48,23 @@ export default function saveCompCustomizeTest() {
       console.info('====>saveCompCustomizeTest after each called');
     });
 
+    let findSaveButton = async (testname: string, driver: Driver) => {
+      const retryCount = 20;
+      for (let retry = 0; retry < retryCount; retry++) {
+        let button = await driver.findComponent(ON.type('SaveButton'));
+        if (button !== null) {
+          return button;
+        }
+        console.info(`====>${testname} SaveButton is not visible, retry ${retry + 1}/${retryCount}`);
+        await Utils.sleep(500);
+      }
+      throw new Error(`${testname} SaveButton is not available after ${retryCount} retries`);
+    }
+
     let clickSecComponent = async (testname: string, expectText: string, driver: Driver) => {
       console.info(`====>${testname} clickSecComponent function Start====`);
       try {
-        let button = await driver.findComponent(ON.type('SaveButton'));
+        let button = await findSaveButton(testname, driver);
         await Utils.sleep(500);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
         let buttonText = await button.getText();

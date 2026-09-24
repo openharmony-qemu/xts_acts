@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
 
@@ -109,6 +109,20 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let audioRenderer: audio.AudioRenderer | undefined;
       try {
         audioRenderer = await createMovieRenderer();
@@ -134,6 +148,20 @@ export default function audioRendererTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       let audioRenderer: audio.AudioRenderer | undefined;
       try {
         audioRenderer = await createMovieRenderer();

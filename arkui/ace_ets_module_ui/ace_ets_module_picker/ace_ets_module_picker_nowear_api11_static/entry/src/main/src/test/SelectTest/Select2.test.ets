@@ -13,17 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index'
 import events_emitter from '@ohos.events.emitter';
 import Utils from "../../../ets/MainAbility/common/Utils";
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -32,19 +26,8 @@ import { $r } from '@ohos.arkui.component';
 import { ArrowPosition, Resource } from '@ohos.arkui.component';
 import { RecordData } from '@ohos.base';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function select() {
   describe('ActsAceSelectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ActsAceSelectTest beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility");
-
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Select/SelectIndex",

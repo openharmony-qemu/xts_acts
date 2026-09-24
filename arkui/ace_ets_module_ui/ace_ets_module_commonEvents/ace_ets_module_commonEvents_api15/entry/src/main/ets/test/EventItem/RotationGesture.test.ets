@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -70,8 +70,12 @@ export default function rotationGestureEventTest() {
       pointers.setPoint(0,1,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.top + areaHeight1/4) });
       pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) });
       pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) });
-      await driver.injectMultiPointerAction(pointers);
-      await CommonFunc.sleep(2000);
+      try {
+        await driver.injectMultiPointerAction(pointers,2400);
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error('RotationGesture1_0100 after each error: ' + err);
+      }
       let strJson = getInspectorByKey('RotationGesture1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RotationGesture1_0100] component obj is: ' + JSON.stringify(obj));

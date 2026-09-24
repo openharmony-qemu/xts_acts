@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { ArrayList, HashMap, HashSet, LinkedList, List, taskpool, TreeSet, worker } from '@kit.ArkTS';
 import {
   arrayListTask,

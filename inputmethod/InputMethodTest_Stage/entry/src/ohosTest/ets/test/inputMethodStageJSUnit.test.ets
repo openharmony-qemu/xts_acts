@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import inputMethod from '@ohos.inputMethod';
 import subtype from '@ohos.InputMethodSubtype';
 import { BusinessError } from '@ohos.base';
@@ -84,6 +84,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 
@@ -127,6 +128,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 
@@ -176,6 +178,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 
@@ -220,6 +223,7 @@ export default function inputMethodStageJSUnit() {
         label: "",
         icon: "",
         iconId: 124,
+        enabledState: 3,
         extra: {}
       }
 

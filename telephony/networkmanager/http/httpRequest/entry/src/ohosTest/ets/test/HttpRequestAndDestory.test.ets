@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@ohos.base';
 import http from '@ohos.net.http';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import connection from '@ohos.net.connection';
 
 export const ADDR_TEST_ILLEGAL: string = "abc";
@@ -338,7 +338,7 @@ export default function HttpRequestAndDestroyTest() {
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} httpRequest fail err: ${JSON.stringify(data)}`);
+              console.info(`${caseName} httpRequest fail err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300006);
               httpRequest.destroy();
               done();

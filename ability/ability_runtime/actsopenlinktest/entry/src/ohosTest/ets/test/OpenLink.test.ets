@@ -14,6 +14,8 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { Driver, ON } from '@ohos.UiTest';
+
 // 加载js测试框架
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import CommonEventManager from '@ohos.commonEventManager';
@@ -42,7 +44,17 @@ let paramOptions: OpenLinkOptions = {
 
 export default function openLinkTest() {
   describe('ActsOpenLinkTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       context = globalThis.context;
     });
     afterEach((done: Function) => {

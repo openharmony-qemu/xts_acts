@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import vibrator from '@ohos.vibrator';
 import resourceManager from "@ohos.resourceManager";
@@ -340,8 +340,7 @@ export default function vibrator_nop_Test() {
           type:"pattern",
           pattern:pattern
         }, {
-          usage:"alarm",
-          systemUsage:false
+          usage:"alarm"
         }, (error) => {
           if (error) {
             console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);

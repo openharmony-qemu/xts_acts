@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -61,7 +61,7 @@ export default function StartAndStop() {
     it('StartAndStop_0300',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[StartAndStop_0300] START');
-      let gridRect = CommonFunc.getComponentRect('StartandStop')
+      let gridRect = CommonFunc.getComponentRectOnScreen('StartandStop')
       let driver = Driver.create()
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),

@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 import { testHoistedCall } from './functionDeclarationTsHelper'
 
 function factorial(n: number): number {

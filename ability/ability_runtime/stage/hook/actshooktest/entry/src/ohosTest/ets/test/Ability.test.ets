@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { common, Want } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
@@ -83,6 +83,34 @@ export default function abilityTest() {
         expect(result.resultCode).assertEqual(16000065);
         done();
       })
+      hilog.info(0x0000, TAG, '%{public}s', '--end');
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HookAbility_0900
+     * @tc.number SUB_Ability_AbilityRuntime_HookAbility_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_HookAbility_0900', Level.LEVEL3, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_HookAbility_0900';
+      hilog.info(0x0000, TAG, '%{public}s', '--start');
+      if (!disable) {
+        done();
+        return;
+      }
+      let context: common.UIAbilityContext = getContext() as common.UIAbilityContext;
+      context.revokeDelegator().then(() => {
+        hilog.info(0x0000, TAG, '%{public}s', 'revokeDelegator success');
+        expect().assertFail();
+        done();
+      }).catch((err: BusinessError) => {
+        expect(err.code).assertEqual(801);
+        hilog.info(0x0000, TAG, '%{public}s revokeDelegator failed', JSON.stringify(err));
+        done();
+      });
       hilog.info(0x0000, TAG, '%{public}s', '--end');
     })
   })

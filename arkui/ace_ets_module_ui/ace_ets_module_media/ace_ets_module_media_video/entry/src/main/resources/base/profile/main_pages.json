@@ -33,6 +33,7 @@
         "MainAbility/pages/Video/VideoOneBoundary",
         "MainAbility/pages/Video/videoApiNullUndefined",
         "MainAbility/pages/Video/VideoSupportMoreNumberSpeed",
-        "MainAbility/pages/Video/videoControllerAsync"
+        "MainAbility/pages/Video/videoControllerAsync",
+        "MainAbility/pages/Video/VideoSevenApiNullUndefined"
     ]
 }

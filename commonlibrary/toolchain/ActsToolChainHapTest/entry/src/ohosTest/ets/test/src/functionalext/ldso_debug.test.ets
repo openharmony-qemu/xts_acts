@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextLdsoDebugTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_ldso_debug", () => {
@@ -27,7 +27,7 @@ export default function FunctionalextLdsoDebugTestGroupTest() {
      * @tc.desc   libc-test ldso_debug_test
      */
     it("ldso_debug_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ldso_debug_test");
+      const result: number = await testNapi.runTest("ldso_debug_test");
       expect(result).assertEqual(0);
       done();
     });
@@ -41,7 +41,7 @@ export default function FunctionalextLdsoDebugTestGroupTest() {
      * @tc.desc   libc-test ldso_memleak_check
      */
     it("ldso_memleak_check", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("ldso_memleak_check");
+      const result: number = await testNapi.runTest("ldso_memleak_check");
       expect(result).assertEqual(0);
       done();
     });

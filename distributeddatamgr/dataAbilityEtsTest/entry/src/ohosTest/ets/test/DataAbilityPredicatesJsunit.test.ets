@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import dataRdb from '@ohos.data.rdb';
 import dataAbility from '@ohos.data.dataAbility';
 import common from "@ohos.app.ability.common";
@@ -137,7 +137,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0001 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("booleanValue", true);
+            dataAbilityPredicates.equalTo("booleanValue", true as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result: dataRdb.ResultSet = await  rdbStore!.query(predicates);
@@ -159,7 +159,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0002 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("byteValue", -128).or().equalTo("byteValue", 1);
+            dataAbilityPredicates.equalTo("byteValue", -128 as dataAbility.ValueType).or().equalTo("byteValue", 1 as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -182,7 +182,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0003 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN");
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -205,7 +205,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0004 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("doubleValue", DOUBLE_MAX);
+            dataAbilityPredicates.equalTo("doubleValue", DOUBLE_MAX as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -228,7 +228,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0005 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("shortValue", -32768.0);
+            dataAbilityPredicates.equalTo("shortValue", -32768.0 as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -251,7 +251,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0006 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("integerValue", 1);
+            dataAbilityPredicates.equalTo("integerValue", 1 as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -274,7 +274,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0007 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("longValue", 1);
+            dataAbilityPredicates.equalTo("longValue", 1 as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -297,7 +297,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testEqualTo0008 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("floatValue", -0.123);
+            dataAbilityPredicates.equalTo("floatValue", -0.123 as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -1989,11 +1989,11 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testBeginWrap0001 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType)
                 .beginWrap()
-                .equalTo("integerValue", 1)
+                .equalTo("integerValue", 1 as dataAbility.ValueType)
                 .or()
-                .equalTo("integerValue", 2147483647)
+                .equalTo("integerValue", 2147483647 as dataAbility.ValueType)
                 .endWrap();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
@@ -2017,9 +2017,9 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testBeginWrap0002 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType)
                 .beginWrap()
-                .equalTo("characterValue", ' ')
+                .equalTo("characterValue", ' ' as dataAbility.ValueType)
                 .endWrap();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
@@ -2043,9 +2043,9 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testBeginWrap0003 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType)
                 .beginWrap()
-                .equalTo("characterValue", '中')
+                .equalTo("characterValue", '中' as dataAbility.ValueType)
                 .endWrap();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
@@ -2069,8 +2069,8 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testBeginWrap0004 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
-                .equalTo("characterValue", '中')
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType)
+                .equalTo("characterValue", '中' as dataAbility.ValueType)
                 .endWrap();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
@@ -2094,9 +2094,9 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testBeginWrap0005 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType)
                 .beginWrap()
-                .equalTo("characterValue", '中');
+                .equalTo("characterValue", '中' as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -2119,9 +2119,9 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testAnd0001 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType)
                 .and()
-                .equalTo("integerValue", 1);
+                .equalTo("integerValue", 1 as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -2144,11 +2144,11 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testAnd0002 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN")
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType)
                 .beginWrap()
-                .equalTo("integerValue", 1)
+                .equalTo("integerValue", 1 as dataAbility.ValueType)
                 .or()
-                .equalTo("integerValue", 2147483647)
+                .equalTo("integerValue", 2147483647 as dataAbility.ValueType)
                 .endWrap();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
@@ -2173,7 +2173,7 @@ describe('dataAbilityPredicatesTest', () => {
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
             let dataAbilityPredicatesInit = dataAbilityPredicates
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN").or().and().equalTo("integerValue", 1);
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType).or().and().equalTo("integerValue", 1 as dataAbility.ValueType);
             expect(dataAbilityPredicates == dataAbilityPredicatesInit).assertTrue();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
@@ -2196,7 +2196,7 @@ describe('dataAbilityPredicatesTest', () => {
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
             let dataAbilityPredicatesInit = dataAbilityPredicates
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN").or().or().equalTo("integerValue", 1);
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType).or().or().equalTo("integerValue", 1 as dataAbility.ValueType);
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
             expect(dataAbilityPredicates == dataAbilityPredicatesInit).assertTrue();
             console.info(TAG + "you are starting a sql request with predicate or or,"
@@ -2218,7 +2218,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testOrder0001 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN").orderByAsc("integerValue").distinct();
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType).orderByAsc("integerValue").distinct();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -2247,7 +2247,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testOrder0002 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN").orderByDesc("integerValue").distinct();
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType).orderByDesc("integerValue").distinct();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -2276,7 +2276,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testOrder0003 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN").orderByDesc("integerValueX").distinct();
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType).orderByDesc("integerValueX").distinct();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);
@@ -2299,7 +2299,7 @@ describe('dataAbilityPredicatesTest', () => {
         console.info(TAG + "************* testOrder0004 start *************");
         {
             let dataAbilityPredicates = await new dataAbility.DataAbilityPredicates();
-            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN").orderByAsc("integerValueX").distinct();
+            dataAbilityPredicates.equalTo("stringValue", "ABCDEFGHIJKLMN" as dataAbility.ValueType).orderByAsc("integerValueX").distinct();
             let predicates = dataAbility.createRdbPredicates("AllDataType", dataAbilityPredicates);
 
             let result = await  rdbStore!.query(predicates);

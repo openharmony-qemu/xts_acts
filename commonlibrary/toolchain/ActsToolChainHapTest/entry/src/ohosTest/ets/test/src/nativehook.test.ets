@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function NativehookTestGroupTest() {
   describe("ActsToolChainHapTest_src_nativehook", () => {
@@ -27,7 +27,7 @@ export default function NativehookTestGroupTest() {
      * @tc.level  LEVEL1
      */
     it("nativehook_test", Level.LEVEL1, async (done: Function) => {
-      const result = await testNapi.runTest("nativehook_test");
+      const result: number = await testNapi.runTest("nativehook_test");
       expect(result).assertEqual(0);
       done();
     });

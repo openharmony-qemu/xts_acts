@@ -81,6 +81,28 @@ struct WebSchemeHandlerResponse {
               }
               break;
             }
+            case "WebSchemeHandlerResponse_ctor": {
+              try {
+                let respCtor: web_webview.WebSchemeHandlerResponse = new web_webview.WebSchemeHandlerResponse();
+                let isDefined: boolean = respCtor !== undefined && respCtor !== null;
+                Utils.emitEvent(isDefined, 202940);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(false, 202940);
+              }
+              break;
+            }
+            case "WebSchemeHandlerResponse_class": {
+              try {
+                let resp: web_webview.WebSchemeHandlerResponse = new web_webview.WebSchemeHandlerResponse();
+                let isClass: boolean = resp instanceof web_webview.WebSchemeHandlerResponse;
+                Utils.emitEvent(isClass, 202941);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                Utils.emitEvent(false, 202941);
+              }
+              break;
+            }
           }
         })
       }

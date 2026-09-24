@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 
@@ -209,6 +209,33 @@ export default function applicationContextTest() {
         hilog.error(0x0000, 'applicationContextTag', '%{public}s',
           'TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0300 failed ' + JSON.stringify(error));
         expect(error.code).assertEqual(PARAMETER_ERROR);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0400
+     * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_SetColorMode_0400
+     * @tc.desc   Using setColorMode with COLOR_MODE_NOT_SET enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0400', Level.LEVEL0, async (done: Function) => {
+      hilog.info(0x0000, 'applicationContextTag', '%{public}s',
+        'TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0400 begin');
+      try {
+        let applicationContext: common.ApplicationContext = testAbilityContext?.getApplicationContext();
+        let originalColorMode = testAbilityContext.config.colorMode;
+        applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+        sleep(2000);
+        applicationContext.setColorMode(originalColorMode);
+        sleep(2000);
+        done();
+      } catch (error) {
+        hilog.error(0x0000, 'applicationContextTag', '%{public}s',
+          'TestAbilityAbilityRuntimeConfigrationApplicationContextSetColorMode0400 failed ' + JSON.stringify(error));
+        expect().assertFail();
         done();
       }
     });

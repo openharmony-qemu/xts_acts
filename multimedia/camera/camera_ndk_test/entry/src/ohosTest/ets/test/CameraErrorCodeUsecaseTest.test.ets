@@ -15,7 +15,7 @@
 
 import cameraObj from 'libentry.so';
 import image from '@ohos.multimedia.image';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   Camera_ErrorCode,
   Camera_ExposureMode,
@@ -1300,5 +1300,23 @@ export default function CameraErrorCodeUsecaseTest() {
         }
       }
     });
+
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_HOST_TYPE_C_0100
+      * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_HOST_TYPE_C_0100
+      * @tc.desc   test getCameraHostType api with error code CAMERA_OK
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_HOST_TYPE_C_0100', Level.LEVEL0, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_HOST_TYPE_C_0100--------------");
+      mCameraSession = cameraObj.createSession();
+      let ret = cameraObj.getCameraHostType();
+      console.info(TAG + "SUB_MULTIMEDIA_CAMERA_GET_CAMERA_HOST_TYPE_C_0100");
+      console.info(TAG + "ERRORCODE: " + ret);
+      expect(ret).assertEqual(Camera_ErrorCode.CAMERA_OK);
+    });
+
   })
 }

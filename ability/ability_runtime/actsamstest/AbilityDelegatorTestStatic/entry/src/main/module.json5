@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -47,6 +47,45 @@
             ]
           }
         ]
+      },
+      {
+        "name": "TestAbility",
+        "srcEntry": "./ets/testability/TestAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_desc",
+        "exported": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
+      },      {
+        "name": "AbilityA",
+        "srcEntry": "./ets/testability/AbilityA/AbilityA.ets",
+        "description": "$string:TestAbility_desc_A",
+        "icon": "$media:layered_image",
+        "label": "$string:TestAbility_label_A",
+        "visible": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
+      },
+      {
+        "name": "AbilityB",
+        "srcEntry": "./ets/testability/AbilityB/AbilityB.ets",
+        "description": "$string:TestAbility_desc_B",
+        "icon": "$media:layered_image",
+        "label": "$string:TestAbility_label_B",
+        "visible": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
+      },
+      {
+        "name": "AbilityC",
+        "srcEntry": "./ets/testability/AbilityC/AbilityC.ets",
+        "description": "$string:TestAbility_desc_C",
+        "icon": "$media:layered_image",
+        "label": "$string:TestAbility_label_C",
+        "visible": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
       },
       {
         "name": "EntryAbility1",

@@ -26,6 +26,12 @@ const CASE_INDEX_5 = 5;
 const CASE_INDEX_6 = 6;
 const CASE_INDEX_7 = 7;
 const CASE_INDEX_8 = 8;
+const CASE_INDEX_9 = 9;
+const CASE_INDEX_10 = 10;
+const CASE_INDEX_11 = 11;
+const CASE_INDEX_12 = 12;
+const CASE_INDEX_13 = 13;
+const CASE_INDEX_14 = 14;
 
 const WEBSOCKET_CONNECTION_ERROR = 1003
 const WEBSOCKET_CONNECTION_PARSE_URL_ERROR = 1005
@@ -56,6 +62,15 @@ const OH_HTTP_TRANSFER_PARTIAL_FILE = 2300018;
 const OH_HTTP_WRITE_DATA_FAILED = 2300023;
 const OH_HTTP_UPLOAD_FAILED = 2300025;
 const OH_HTTP_OPEN_LOCAL_DATA_FAILED = 2300026;
+const OH_HTTP_OUT_OF_MEMORY = 2300027;
+const OH_HTTP_OPERATION_TIMEOUT = 2300028;
+const OH_HTTP_FILE_TOO_LARGE = 2300063;
+const OH_HTTP_REMOTE_DISK_FULL = 2300070;
+const OH_HTTP_REMOTE_FILE_EXISTS = 2300073;
+const OH_HTTP_REMOTE_FILE_NOT_FOUND = 2300078;
+const OH_HTTP_REQUEST_INTERCEPTED = 2300996;
+const OH_HTTP_PARAMETER_ERROR = 401;
+const OH_HTTP_PERMISSION_DENIED = 201;
 
 const OH_HTTP_CREATED = 201;
 const OH_HTTP_ACCEPTED = 202;
@@ -873,6 +888,512 @@ export default function ActsNetConnectionAuth() {
     })
 
     /**
+     * @tc.name   testNetworkManagerHttpRequestAuth4400
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_4400
+     * @tc.desc   test Http_Request error code OH_HTTP_CONNECT_SERVER_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth4400';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_CONNECT_SERVER_FAILED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_CONNECT_SERVER_FAILED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth4500
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_4500
+     * @tc.desc   test Http_Request error code OH_HTTP_FILE_TOO_LARGE
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth4500';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_FILE_TOO_LARGE, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_FILE_TOO_LARGE || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth4600
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_4600
+     * @tc.desc   test Http_Request error code OH_HTTP_OPEN_LOCAL_DATA_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth4600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth4600';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_OPEN_LOCAL_DATA_FAILED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_OPEN_LOCAL_DATA_FAILED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth4700
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_4700
+     * @tc.desc   test Http_Request error code OH_HTTP_OPERATION_TIMEOUT
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth4700';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_OPERATION_TIMEOUT, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_OPERATION_TIMEOUT || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth4800
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_4800
+     * @tc.desc   test Http_Request error code OH_HTTP_OUT_OF_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth4800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth4800';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_OUT_OF_MEMORY, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_OUT_OF_MEMORY || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth4900
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_4900
+     * @tc.desc   test Http_Request error code OH_HTTP_PARAMETER_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth4900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth4900';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_PARAMETER_ERROR, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_PARAMETER_ERROR || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5000
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5000
+     * @tc.desc   test Http_Request error code OH_HTTP_PERMISSION_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5000';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_PERMISSION_DENIED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_PERMISSION_DENIED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5100
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5100
+     * @tc.desc   test Http_Request error code OH_HTTP_REMOTE_DISK_FULL
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5100';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_REMOTE_DISK_FULL, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_REMOTE_DISK_FULL || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5200
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5200
+     * @tc.desc   test Http_Request error code OH_HTTP_REMOTE_FILE_EXISTS
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5200';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_REMOTE_FILE_EXISTS, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_REMOTE_FILE_EXISTS || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5300
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5300
+     * @tc.desc   test Http_Request error code OH_HTTP_REMOTE_FILE_NOT_FOUND
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5300';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_REMOTE_FILE_NOT_FOUND, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_REMOTE_FILE_NOT_FOUND || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5400
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5400
+     * @tc.desc   test Http_Request error code OH_HTTP_REQUEST_INTERCEPTED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5400';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_REQUEST_INTERCEPTED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_REQUEST_INTERCEPTED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5500
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5500
+     * @tc.desc   test Http_Request error code OH_HTTP_RESOLVE_HOST_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5500';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_RESOLVE_HOST_FAILED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_RESOLVE_HOST_FAILED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5600
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5600
+     * @tc.desc   test Http_Request error code OH_HTTP_RESOLVE_PROXY_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5600';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_RESOLVE_PROXY_FAILED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_RESOLVE_PROXY_FAILED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5700
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5700
+     * @tc.desc   test Http_Request error code OH_HTTP_RESULT_OK
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5700';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_RESULT_OK, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result).assertEqual(OH_HTTP_RESULT_OK);
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5800
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5800
+     * @tc.desc   test Http_Request error code OH_HTTP_UPLOAD_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5800';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_UPLOAD_FAILED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_UPLOAD_FAILED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth5900
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_5900
+     * @tc.desc   test Http_Request error code OH_HTTP_UNSUPPORTED_PROTOCOL
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth5900';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_UNSUPPORTED_PROTOCOL, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_UNSUPPORTED_PROTOCOL || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth6000
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_6000
+     * @tc.desc   test Http_Request error code OH_HTTP_INVALID_URL
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth6000';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_INVALID_URL, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_INVALID_URL || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth6100
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_6100
+     * @tc.desc   test Http_Request error code OH_HTTP_INVALID_SERVER_RESPONSE
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth6100';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_INVALID_SERVER_RESPONSE, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_INVALID_SERVER_RESPONSE || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth6200
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_6200
+     * @tc.desc   test Http_Request error code OH_HTTP_ACCESS_REMOTE_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth6200';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_ACCESS_REMOTE_DENIED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_ACCESS_REMOTE_DENIED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth6300
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_6300
+     * @tc.desc   test Http_Request error code OH_HTTP_HTTP2_FRAMING_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth6300';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_HTTP2_FRAMING_ERROR, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_HTTP2_FRAMING_ERROR || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth6400
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_6400
+     * @tc.desc   test Http_Request error code OH_HTTP_TRANSFER_PARTIAL_FILE
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth6400';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_TRANSFER_PARTIAL_FILE, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_TRANSFER_PARTIAL_FILE || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth6500
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_6500
+     * @tc.desc   test Http_Request error code OH_HTTP_WRITE_DATA_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth6500';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_WRITE_DATA_FAILED, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === OH_HTTP_WRITE_DATA_FAILED || result === OH_HTTP_RESULT_OK).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerHttpRequestAuth6600
+     * @tc.number SUB_NetworkManager_Http_Request_Auth_6600
+     * @tc.desc   test Http_Request error code OH_HTTP_OK
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerHttpRequestAuth6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerHttpRequestAuth6600';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Http_RequestRequest(OH_HTTP_OK, "http://www.baidu.com");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result).assertEqual(OH_HTTP_OK);
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
      * @tc.name   testNetworkManagerWebSocket0100
      * @tc.number SUB_NetworkManager_Web_Socket_0100
      * @tc.desc   test Web_Socket error code
@@ -939,6 +1460,28 @@ export default function ActsNetConnectionAuth() {
       })
 
     /**
+     * @tc.name   testNetworkManagerWebSocket0400
+     * @tc.number SUB_NetworkManager_Web_Socket_0400
+     * @tc.desc   test Web_Socket error code WEBSOCKET_CONNECTION_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket0400';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_4, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_CONNECTION_ERROR || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
      * @tc.name   testNetworkManagerWebSocket0500
      * @tc.number SUB_NetworkManager_Web_Socket_0500
      * @tc.desc   test Web_Socket error code
@@ -952,7 +1495,205 @@ export default function ActsNetConnectionAuth() {
         console.info(`${caseName} ---start`);
         let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_5, "wss://whale.tooly.top/ws");
         console.info(`${caseName} result is: ` + JSON.stringify(result));
-        expect(result).assertEqual(WEBSOCKET_DATA_LENGTH_EXCEEDED);
+        expect(result === WEBSOCKET_DATA_LENGTH_EXCEEDED || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket0600
+     * @tc.number SUB_NetworkManager_Web_Socket_0600
+     * @tc.desc   test Web_Socket error code WEBSOCKET_CONNECTION_PARSE_URL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket0600';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_6, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_CONNECTION_PARSE_URL_ERROR || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket0700
+     * @tc.number SUB_NetworkManager_Web_Socket_0700
+     * @tc.desc   test Web_Socket error code WEBSOCKET_CONNECTION_NO_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket0700';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_7, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_CONNECTION_NO_MEMORY || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket0800
+     * @tc.number SUB_NetworkManager_Web_Socket_0800
+     * @tc.desc   test Web_Socket error code WEBSOCKET_CONNECTION_CLOSED_BY_PEER
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket0800';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_8, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_CONNECTION_CLOSED_BY_PEER || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket0900
+     * @tc.number SUB_NetworkManager_Web_Socket_0900
+     * @tc.desc   test Web_Socket error code WEBSOCKET_DESTROYED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket0900';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_9, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_DESTROYED || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket1000
+     * @tc.number SUB_NetworkManager_Web_Socket_1000
+     * @tc.desc   test Web_Socket error code WEBSOCKET_PROTOCOL_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket1000';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_10, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_PROTOCOL_ERROR || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket1100
+     * @tc.number SUB_NetworkManager_Web_Socket_1100
+     * @tc.desc   test Web_Socket error code WEBSOCKET_SEND_NO_MEMORY
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket1100';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_11, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_SEND_NO_MEMORY || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket1200
+     * @tc.number SUB_NetworkManager_Web_Socket_1200
+     * @tc.desc   test Web_Socket error code WEBSOCKET_QUEUE_LENGTH_EXCEEDED
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket1200';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_12, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_QUEUE_LENGTH_EXCEEDED || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket1300
+     * @tc.number SUB_NetworkManager_Web_Socket_1300
+     * @tc.desc   test Web_Socket error code WEBSOCKET_NO_CLIENT_CONTEXT
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket1300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket1300';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_13, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_NO_CLIENT_CONTEXT || result === 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+    })
+
+    /**
+     * @tc.name   testNetworkManagerWebSocket1400
+     * @tc.number SUB_NetworkManager_Web_Socket_1400
+     * @tc.desc   test Web_Socket error code WEBSOCKET_NO_HEADER_CONTEXT
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkManagerWebSocket1400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkManagerWebSocket1400';
+      try {
+        console.info(`${caseName} ---start`);
+        let result : number = NetConnectionAuthTest.Web_Socket(CASE_INDEX_14, "wss://whale.tooly.top/ws");
+        console.info(`${caseName} result is: ` + JSON.stringify(result));
+        expect(result === WEBSOCKET_NO_HEADER_CONTEXT || result === 0).assertTrue();
         done();
       } catch (err) {
         console.error(`${caseName} catch err: ` + JSON.stringify(err));

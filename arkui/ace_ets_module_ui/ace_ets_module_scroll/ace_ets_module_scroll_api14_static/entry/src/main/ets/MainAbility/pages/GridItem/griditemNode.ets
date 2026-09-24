@@ -107,7 +107,7 @@ export class MyNodeController extends NodeController {
 
 @Entry
 @Component
-struct grid {
+struct GridItemNodePage {
   @State numberIndex: number = 0;
   @State number1: String[] = ['0', '1', '2', '3', '4']
   private myNodeController: MyNodeController = new MyNodeController()

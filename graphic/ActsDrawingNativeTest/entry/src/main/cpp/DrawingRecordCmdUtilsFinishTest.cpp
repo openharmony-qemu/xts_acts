@@ -16,6 +16,7 @@
 #include "include/DrawingRecordCmdUtilsFinishTest.h"
 #include <random>
 #include "include/OhosCommonTest.h"
+#include "log_common.h"
 
 #define DRAWING_NUMBER_1 1
 
@@ -66,15 +67,14 @@ int TestRecordCmdUtilsFinishRecordingNull()
     EXPECT_NE(canvas, nullptr);
     OH_Drawing_Canvas** canvass = &canvas;
     OH_Drawing_RecordCmd* recordCmd = nullptr;
-    OH_Drawing_RecordCmd** recordCmds = &recordCmd;
-    OH_Drawing_RecordCmdUtils* recordcmdutil1 = OH_Drawing_RecordCmdUtilsCreate();
-    OH_Drawing_ErrorCode drawingErrorCode = OH_DRAWING_SUCCESS;
-    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
-    drawingErrorCode = OH_Drawing_RecordCmdUtilsFinishRecording(nullptr, recordCmds);
-    EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    OH_Drawing_RecordCmdUtilsBeginRecording(recordcmdutil1, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
-    drawingErrorCode = OH_Drawing_RecordCmdUtilsFinishRecording(recordcmdutil1, nullptr);
-    EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_RecordCmdUtils* recordCmdUtils = OH_Drawing_RecordCmdUtilsCreate();
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, &recordCmd);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_ALLOCATION_FAILED);
+    OH_Drawing_RecordCmdUtilsBeginRecording(recordCmdUtils, DRAWING_NUMBER_1, DRAWING_NUMBER_1, canvass);
+    errorCode = OH_Drawing_RecordCmdUtilsFinishRecording(nullptr, &recordCmd);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    errorCode = OH_Drawing_RecordCmdUtilsFinishRecording(recordCmdUtils, nullptr);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
     DrawingRecordCmdUtilsFinishRecordingTestTearDown();
     return OH_DRAWING_SUCCESS;
 }

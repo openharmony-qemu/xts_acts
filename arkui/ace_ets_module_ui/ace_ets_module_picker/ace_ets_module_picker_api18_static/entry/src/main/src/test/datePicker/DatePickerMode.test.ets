@@ -14,31 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 
 export default function datePickerMode() {
   describe('DatePickerMode', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DatePicker beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.api18.static", "EntryAbility")
-
-    });
-
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePicker/DatePickerMode',
@@ -51,7 +35,7 @@ export default function datePickerMode() {
         if (!('DatePickerMode' == pages.name)) {
           console.info('get DatePicker state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await UtilsTest.msSleep(2000)
+          await Utils.sleep(2000)
           // let result = await routerInstance.pushUrl(options)
           // console.info('push DatePickerMode page success ' + JSON.stringify(result));
         }
@@ -60,164 +44,136 @@ export default function datePickerMode() {
       }
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePicker_static_0100
-     * @tc.name     DatePicker_static_0100
-     * @tc.desc     DatePicker_static_0100
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100
      * @tc.level    Level.LEVEL1
      */
-it('DatePicker_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0100';
-      
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0100';
+
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_001');
       console.info('[' + tagName + '] Search end is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode'))
+        .assertEqual('DatePickerMode.DATE');
+
       done();
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePicker_static_0200
-     * @tc.name     DatePicker_static_0200
-     * @tc.desc     DatePicker_static_0200
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200
      * @tc.level    Level.LEVEL1
      */
-it('DatePicker_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0200';
-      
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0200';
+
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_002');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.YEAR_AND_MONTH');
-      
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode'))
+        .assertEqual('DatePickerMode.YEAR_AND_MONTH');
+
       done();
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePicker_static_0300
-     * @tc.name     DatePicker_static_0300
-     * @tc.desc     DatePicker_static_0300
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300
      * @tc.level    Level.LEVEL1
      */
-it('DatePicker_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0300';
-      
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0300';
+
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_003');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.MONTH_AND_DAY');
-      
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode'))
+        .assertEqual('DatePickerMode.MONTH_AND_DAY');
+
       done();
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePicker_static_0400
-     * @tc.name     DatePicker_static_0400
-     * @tc.desc     DatePicker_static_0400
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400
      * @tc.level    Level.LEVEL1
      */
-it('DatePicker_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0400';
-      
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0400';
+
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_004');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode'))
+        .assertEqual('DatePickerMode.DATE');
+
       done();
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePicker_static_0500
-     * @tc.name     DatePicker_static_0500
-     * @tc.desc     DatePicker_static_0500
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500
      * @tc.level    Level.LEVEL1
      */
-it('DatePicker_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0500';
-      
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0500';
+
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_005');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode'))
+        .assertEqual('DatePickerMode.DATE');
+
       done();
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePicker_static_0600
-     * @tc.name     DatePicker_static_0600
-     * @tc.desc     DatePicker_static_0600
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600
      * @tc.level    Level.LEVEL1
      */
-it('DatePicker_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0600';
-      
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0600';
+
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_006');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode'))
+        .assertEqual('DatePickerMode.DATE');
+
       done();
     });
 
-    
-    
-    
-    
-    
-/**
-     * @tc.number   DatePicker_static_0700
-     * @tc.name     DatePicker_static_0700
-     * @tc.desc     DatePicker_static_0700
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700
      * @tc.level    Level.LEVEL1
      */
-it('DatePicker_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.sleep(2000);
-      let tagName = 'DatePicker_static_0700';
-      
+      let tagName = 'SUB_ARKUI_ACE_ENGINE_DATEPICKER_MODE_0700';
+
       let strJsonNew = inspector.getInspectorByKey('key_DatePicker_007');
       console.info('[' + tagName + '] Search mode is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs').getElement('constructor').getString('mode')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode')).assertEqual('DatePickerMode.DATE');
-      
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getElement('constructor').getString('mode'))
+        .assertEqual('DatePickerMode.DATE');
+
       done();
     });
   })

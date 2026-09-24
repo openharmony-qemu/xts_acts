@@ -27,6 +27,7 @@
 #include "napi/native_api.h"
 #include "AbilityKit/native_child_process.h"
 #include "ChildProcess.h"
+#include "ChildProcessInfosNapi.h"
 #include "loghelper.h"
 #include <vector>
 
@@ -834,6 +835,7 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    RegisterChildProcessInfosNapi(env, exports);
     return exports;
 }
 EXTERN_C_END

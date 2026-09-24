@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, Size, beforeEach, afterEach, TestType, it, expect, Level } from '@ohos/hypium';
+import { describe, Size, beforeEach, afterEach, TestType, it, expect, Level } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 

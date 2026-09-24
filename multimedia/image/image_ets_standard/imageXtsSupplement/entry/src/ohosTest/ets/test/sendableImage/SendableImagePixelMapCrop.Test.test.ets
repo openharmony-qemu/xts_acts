@@ -14,7 +14,7 @@
  */
 
 import { image, sendableImage } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Size } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll, Size } from '@ohos/hypium-dynamic';
 import { LOG_TAG } from '../common';
 
 
