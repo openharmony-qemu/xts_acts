@@ -21,7 +21,9 @@ import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import fs, { Filter, ListFileOptions } from '@ohos.file.fs'
 import {
   sleep,
-  getPermission, driveFn
+  getPermission,
+  driveFn,
+  checkResourceFile
 } from '../common';
 import common from '@ohos.app.ability.common';
 
@@ -32,6 +34,7 @@ export default function getMovingPhotoTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      checkResourceFile(testContext);
     });
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -46,8 +49,8 @@ export default function getMovingPhotoTest() {
           subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
         };
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, displayName, createOption);
-        let photoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg";
-        let videoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.mp4";
+        let photoUri = testContext.filesDir + '/test_mov_1.jpg';
+        let videoUri = testContext.filesDir + '/test_mov_1.mp4';
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
         await phAccessHelper.applyChanges(assetChangeRequest);

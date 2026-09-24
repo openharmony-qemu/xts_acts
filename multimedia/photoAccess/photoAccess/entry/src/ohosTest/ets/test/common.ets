@@ -313,6 +313,62 @@ export async function getAllFileNameArray(context: common.UIAbilityContext): Pro
     console.error('getFileNameArray failed: ' + err);
   }
 }
+
+export function checkResourceFile(context: Context) {
+  try {
+    const sandboxPath = context.filesDir;
+    let resourcePath = context.resourceDir;
+    let resourcePathArray = fs.listFileSync(resourcePath);
+    for (let index = 0; index < resourcePathArray.length; index++) {
+      fs.copyFileSync((resourcePath + '/' + resourcePathArray[index]), (sandboxPath + '/' + resourcePathArray[index]));
+    }
+    let sandboxFileArray = fs.listFileSync(sandboxPath)
+    console.log(`sandbox fileList ==> ${sandboxFileArray}`)
+  } catch (error) {
+    console.error(`checkResourceFile failed, err is ${error}`);
+  }
+}
+
+export async function createResource(context: common.UIAbilityContext, fileNameList: Array<string>) {
+  try {
+    let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
+    let imageUri = context.filesDir + '/01.jpg';
+    console.info("imageUri: " + imageUri);
+    let videoUri = context.filesDir + '/01.mp4';
+    console.info("videoUri: " + imageUri);
+    for (let i = 0; i < fileNameList.length; i++) {
+      let fileName = fileNameList[i];
+      let displayName = fileName.substring(0, fileName.lastIndexOf("."));
+      console.log(`createResource :: displayName is ${displayName}`);
+      if (fileName.endsWith(".jpg")) {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'jpg';
+        let options: photoAccessHelper.CreateOptions = {
+          title: displayName
+        }
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUri);
+        await phAccessHelper.applyChanges(assetChangeRequest);
+        console.log(`createResource :: applyChange ${fileName} success !`);
+      }
+      if (fileName.endsWith(".mp4")) {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
+        let extension: string = 'mp4';
+        let options: photoAccessHelper.CreateOptions = {
+          title: displayName
+        }
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
+        await phAccessHelper.applyChanges(assetChangeRequest);
+        console.log(`createResource :: applyChange ${fileName} success !`);
+      }
+      console.log(`createResource :: create asset ${fileName} success !`);
+    }
+  } catch (error) {
+    console.log(`createResource :: run failed, message is ${error}`);
+  }
+}
+
 export async function pushCreateAsset(context: common.UIAbilityContext, names: Array<string>) {
   console.info('pushCreateAsset start')
   let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
