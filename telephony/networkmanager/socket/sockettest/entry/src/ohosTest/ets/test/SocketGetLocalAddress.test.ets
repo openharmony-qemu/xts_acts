@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, beforeEach, afterEach , Level, Size, TestType} from '@ohos/hypium';
+import { describe, beforeAll, afterAll, it, expect, beforeEach, afterEach , Level, Size, TestType} from '@ohos/hypium-dynamic';
 import netSocket from '@ohos.net.socket';
 import socket from '@ohos.net.socket';
 import { BusinessError, Callback, ErrorCallback } from '@ohos.base';
@@ -191,14 +191,14 @@ export default function SocketGetLocalSocketTest() {
   describe('SocketGetLocalSocketTest', () => {
 
     /**
-     * @tc.name   testNetworkMgrSocketGetLocalAdrressTest0100
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0100
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest0100
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0100
      * @tc.desc   test UDP GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketGetLocalAdrressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testNetworkMgrSocketGetLocalAddressTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = 'testNetworkMgrSocketGetLocalAddressTest0100';
       console.info(`${caseName}---Start`);
       let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
@@ -208,6 +208,7 @@ export default function SocketGetLocalSocketTest() {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
             ExpectFail();
             done();
+            return;
           }
           udp.getLocalAddress().then((localAddress: socket.NetAddress) => {
             expectTrue(localAddress != null);
@@ -232,7 +233,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0200
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0200
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0200
      * @tc.desc   test Multicast GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +273,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0300
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0300
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0300
      * @tc.desc   test TlsSocket GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -325,7 +326,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0400
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0400
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0400
      * @tc.desc   test TlsSocket GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -378,7 +379,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0500
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0500
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0500
      * @tc.desc   test TlsServer GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -445,7 +446,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0600
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0600
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0600
      * @tc.desc   test TcpSocket GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -486,7 +487,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0700
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0700
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0700
      * @tc.desc   test TcpServer GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -525,7 +526,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0800
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0800
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0800
      * @tc.desc   test LocalSocket GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -562,7 +563,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest0900
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_0900
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_0900
      * @tc.desc   test LocalServer GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -600,7 +601,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest1000
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_1000
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_1000
      * @tc.desc   test LocalConnection GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -653,7 +654,7 @@ export default function SocketGetLocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest1100
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_1100
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_1100
      * @tc.desc   test LocalConnection GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -671,7 +672,7 @@ export default function SocketGetLocalSocketTest() {
         }).catch((err: BusinessError) => {
           console.info(`${caseName}_1 fail err:${JSON.stringify(err)}`);
           console.info(`${caseName} fail err:${JSON.stringify(err)}`);
-          expectTrue(err.code == 2301009);
+          expectTrue(err.code === 2301009);
         }).finally(() => {
           console.info(`${caseName} test end`);
           done();
@@ -685,7 +686,7 @@ export default function SocketGetLocalSocketTest() {
     });
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest1200
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_1200
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_1200
      * @tc.desc   test TlsSocket GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -740,7 +741,7 @@ export default function SocketGetLocalSocketTest() {
     });
     /**
      * @tc.name   testNetworkMgrSocketGetLocalAddressTest9900
-     * @tc.number SUB_NetworkMgr_Socket GetLocalAddress_9900
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_9900
      * @tc.desc   test TcpServer GetLocalAddress function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -779,6 +780,284 @@ export default function SocketGetLocalSocketTest() {
         ExpectFail();
         done();
       }
+    });
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1300
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_1300
+     * @tc.desc   test LocalSocketServer listen with null address, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1300';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        await server.listen(null);
+        console.info(`${caseName} listen with null address success`);
+        ExpectFail();
+        server.close().catch(() => {});
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(err.code !== 401, 'error code should be 401');
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1400
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_1400
+     * @tc.desc   test LocalSocketServer setExtraOptions(promise) 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1400';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        await server.setExtraOptions(undefined);
+        console.info(`${caseName} setExtraOptions with undefined success`);
+        ExpectFail();
+        server.close().catch(() => {});
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(err.code !== 401, 'error code should be 401');
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1500
+     * @tc.number SUB_LocalSocketServer_Close_Return_0100
+     * @tc.desc   test LocalSocketServer close(promise) return value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1500';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let sandboxPath: string = getContext().filesDir + '/testSocketClose';
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        };
+        await server.listen(localAddr);
+        let closeResult: void = await server.close();
+        console.info(`${caseName} close success`);
+        expectTrue(closeResult === undefined, 'close() should resolve to void (undefined)');
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        ExpectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1600
+     * @tc.number SUB_LocalSocketServer_On_Return_0100
+     * @tc.desc   test LocalSocketServer on('connect') return value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1600';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let onResult: void = server.on('connect', (connection: socket.LocalSocketConnection) => {
+          console.info(`${caseName} connect event received`);
+        });
+        console.info(`${caseName} on(connect) success`);
+        expectTrue(onResult === undefined, 'on(connect) should return void (undefined)');
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        ExpectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1700
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_1700
+     * @tc.desc   test LocalSocketServer on('connect') 401 error when callback is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1700';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        server.on('connect', undefined);
+        console.info(`${caseName} on(connect, undefined) should have thrown 401`);
+        ExpectFail();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(err.code !== 401, 'error code should be 401');
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1800
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_1800
+     * @tc.desc   test LocalSocketServer off('connect') 401 error when callback is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1800';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        server.off('connect', undefined);
+        console.info(`${caseName} off(connect, undefined) should have thrown 401`);
+        ExpectFail();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(err.code !== 401, 'error code should be 401');
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest1900
+     * @tc.number SUB_LocalSocketServer_On_Error_Return_0100
+     * @tc.desc   test LocalSocketServer on('error') return value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest1900';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let errorCallback: ErrorCallback = (err: BusinessError): void => {
+          console.info(`${caseName} error event received`);
+        };
+        let onResult: void = server.on('error', errorCallback);
+        console.info(`${caseName} onResult: ${onResult}`);
+        expectTrue(onResult === undefined, 'return value should be undefined');
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(false, 'unexpected error: ' + JSON.stringify(err));
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest2000
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_2000
+     * @tc.desc   test LocalSocketServer on('error') 401 error when callback is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest2000';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        server.on('error', undefined);
+        console.info(`${caseName} on(error, undefined) should have thrown 401`);
+        ExpectFail();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(err.code !== 401, 'error code should be 401');
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest2100
+     * @tc.number SUB_LocalSocketServer_Off_Error_Return_0100
+     * @tc.desc   test LocalSocketServer off('error') return value without callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest2100';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let offResult: void = server.off('error');
+        console.info(`${caseName} offResult: ${offResult}`);
+        expectTrue(offResult === undefined, 'return value should be undefined when no callback');
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(false, 'unexpected error: ' + JSON.stringify(err));
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest2200
+     * @tc.number SUB_LocalSocketServer_Off_Error_Return_0200
+     * @tc.desc   test LocalSocketServer off('error') return value with valid callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest2200';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        let errorCallback: ErrorCallback = (err: BusinessError): void => {
+          console.info(`${caseName} error event received`);
+        };
+        let offResult: void = server.off('error', errorCallback);
+        console.info(`${caseName} offResult: ${offResult}`);
+        expectTrue(offResult === undefined, 'return value should be undefined with valid callback');
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(false, 'unexpected error: ' + JSON.stringify(err));
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketGetLocalAddressTest2300
+     * @tc.number SUB_NetworkMgr_Socket_getLocalAddress_2300
+     * @tc.desc   test LocalSocketServer off('error') 401 error when callback is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketGetLocalAddressTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketGetLocalAddressTest2300';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
+        server.off('error', undefined);
+        console.info(`${caseName} off(error, undefined) should have thrown 401`);
+        ExpectFail();
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectTrue(err.code !== 401, 'error code should be 401');
+      }
+      console.info(`${caseName} test end`);
+      done();
     });
   })
 }
