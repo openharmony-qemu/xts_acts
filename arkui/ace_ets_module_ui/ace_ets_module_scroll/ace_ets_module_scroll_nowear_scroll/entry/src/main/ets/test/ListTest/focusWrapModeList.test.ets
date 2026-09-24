@@ -15,8 +15,9 @@
 import { describe, beforeEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
-import { Driver, ON, UiDriver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 import { KeyCode } from '@kit.InputKit';
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function focusWrapModeList() {
   describe('focusWrapModeList', () => {
@@ -124,22 +125,21 @@ export default function focusWrapModeList() {
      */
     it('focusWrapModeList_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapModeList_0500] START');
-      let uiDriver: UiDriver = UiDriver.create();
       let driver: Driver = Driver.create();
 
-      let text3IsFocused: boolean = await (await driver.findComponent(ON.id('focusWrapModeList' + '_text3'))).isFocused();
+      let text3IsFocused: boolean = await (await driver.findComponent(ON.id('focusWrapModeList_text3'))).isFocused();
       expect(text3IsFocused).assertEqual(false);
       console.info('[focusWrapModeList_0500] value:' + text3IsFocused);
 
-      await uiDriver.triggerKey(KeyCode.KEYCODE_TAB);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID);
       await CommonFunc.sleep(2000);
-      let text3IsFocused2: boolean = await (await driver.findComponent(ON.id('focusWrapModeList' + '_text3'))).isFocused();
+      let text3IsFocused2: boolean = await (await driver.findComponent(ON.id('focusWrapModeList_text3'))).isFocused();
       expect(text3IsFocused2).assertEqual(false);
       console.info('[focusWrapModeList_0500] value:' + text3IsFocused2);
 
-      await uiDriver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
       await CommonFunc.sleep(2000);
-      let text3IsFocused3: boolean = await (await driver.findComponent(ON.id('focusWrapModeList' + '_text3'))).isFocused();
+      let text3IsFocused3: boolean = await (await driver.findComponent(ON.id('focusWrapModeList_text3'))).isFocused();
       expect(text3IsFocused3).assertEqual(true);
       console.info('[focusWrapModeList_0500] value: ' + text3IsFocused3);
       console.info('[focusWrapModeList_0500] END');

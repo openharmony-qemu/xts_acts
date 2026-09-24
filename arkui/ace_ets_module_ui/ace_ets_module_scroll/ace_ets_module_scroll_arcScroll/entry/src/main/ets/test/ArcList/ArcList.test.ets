@@ -217,26 +217,28 @@ export default function ArcListDemo() {
       console.info('[ArkUX_Stage_ArcList_ComponentTest_0400] START');
       
       // Verify onScroll function of arclist component
-      let gridTop = CommonFunc.getComponentRect('arclist03');
-      let top = gridTop.top
-      let gridBottom = CommonFunc.getComponentRect('arclist03');
-      let bottom = gridBottom.bottom
-      let gridRight = CommonFunc.getComponentRect('arclist03');
-      let right = gridRight.right
-      let left = gridRight.left;
-      let driver = await UiDriver.create()
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
+      let driver = Driver.create()
+      let arclistComponent = await driver.findComponent(ON.id('arclist03'));
+      let arclistRect = await arclistComponent.getBounds();
+      let displayId = await arclistComponent.getDisplayId();
+      let top = arclistRect.top
+      let bottom = arclistRect.bottom
+      let right = arclistRect.right
+      let left = arclistRect.left;
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left)/2), y: Math.round(top + (bottom - top)/2), displayId: displayId },
+        { x: Math.round(left + (right - left)/2 - vp2px(4)), y: Math.round(top + (bottom - top)/2),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
       
-      let onScrollIndexText = await driver.findComponent(BY.key('onScrollIndexText'));
+      let onScrollIndexText = await driver.findComponent(ON.id('onScrollIndexText'));
       let text1 = await onScrollIndexText.getText();
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0400] onScrollIndexText: " + text1);
       expect(text1).assertEqual('onScrollIndex:succ');
 
       // Verify the functions of onReachStart
       await CommonFunc.sleep(200);
-      let onReachStartText = await driver.findComponent(BY.key('onReachStartText'));
+      let onReachStartText = await driver.findComponent(ON.id('onReachStartText'));
       let text2 = await onReachStartText.getText();
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0400] onReachStartText: " + text2);
       expect(text2).assertEqual('onReachStart:succ');
@@ -244,7 +246,7 @@ export default function ArcListDemo() {
 	  
       // Verify the functions of onScrollStart
       await CommonFunc.sleep(200);
-      let onScrollStartText = await driver.findComponent(BY.key('onScrollStartText'));
+      let onScrollStartText = await driver.findComponent(ON.id('onScrollStartText'));
       let text4 = await onScrollStartText.getText();
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0400] onScrollStartText: " + text4);
       expect(text4).assertEqual('onScrollStart');
@@ -252,7 +254,7 @@ export default function ArcListDemo() {
 	  
       // Verify the functions of onWillScroll
       await CommonFunc.sleep(200);
-      let onWillScrollText = await driver.findComponent(BY.key('onWillScrollText'));
+      let onWillScrollText = await driver.findComponent(ON.id('onWillScrollText'));
       let text6 = await onWillScrollText.getText();
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0400] onWillScrollText: " + text6);
       expect(text6).assertEqual('onWillScroll');
@@ -260,7 +262,7 @@ export default function ArcListDemo() {
 	  
       // Verify the functions of onDidScroll
       await CommonFunc.sleep(200);
-      let onDidScrollText = await driver.findComponent(BY.key('onDidScrollText'));
+      let onDidScrollText = await driver.findComponent(ON.id('onDidScrollText'));
       let text7 = await onDidScrollText.getText();
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0400] onDidScrollText: " + text7);
       expect(text7).assertEqual('onDidScroll');
@@ -269,20 +271,35 @@ export default function ArcListDemo() {
 	  
       // Verify the functions of onScrollStop
       await CommonFunc.sleep(200);
-      let onScrollStopText = await driver.findComponent(BY.key('onScrollStopText'));
+      let onScrollStopText = await driver.findComponent(ON.id('onScrollStopText'));
       let text5 = await onScrollStopText.getText();
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0400] onScrollStopText: " + text5);
       expect(text5).assertEqual('onScrollStop');
 
       // Verify the functions of onReachEnd
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left)/2), y: Math.round(top + (bottom - top)/2), displayId: displayId },
+        { x: Math.round(left + (right - left)/2 - vp2px(4)), y: Math.round(top + (bottom - top)/2),
+          displayId: displayId });
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left)/2), y: Math.round(top + (bottom - top)/2), displayId: displayId },
+        { x: Math.round(left + (right - left)/2 - vp2px(4)), y: Math.round(top + (bottom - top)/2),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right - left)/2), Math.round(globalThis.winTop + top + (bottom - top)/2), Math.round(globalThis.winLeft + left + (right - left)/2 - vp2px(4)), Math.round(globalThis.winTop + top + (bottom - top)/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left)/2), y: Math.round(top + (bottom - top)/2), displayId: displayId },
+        { x: Math.round(left + (right - left)/2 - vp2px(4)), y: Math.round(top + (bottom - top)/2),
+          displayId: displayId });
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left)/2), y: Math.round(top + (bottom - top)/2), displayId: displayId },
+        { x: Math.round(left + (right - left)/2 - vp2px(4)), y: Math.round(top + (bottom - top)/2),
+          displayId: displayId });
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left)/2), y: Math.round(top + (bottom - top)/2), displayId: displayId },
+        { x: Math.round(left + (right - left)/2 - vp2px(4)), y: Math.round(top + (bottom - top)/2),
+          displayId: displayId });
       await CommonFunc.sleep(1000);
-      let onReachEndText = await driver.findComponent(BY.key('onReachEndText'));
+      let onReachEndText = await driver.findComponent(ON.id('onReachEndText'));
       let text= await onReachEndText.getText();
       console.info("[ArkUX_Stage_ArcList_ComponentTest_0400] onReachEndText: " + text);
       expect(text).assertEqual('onReachEnd:succ');

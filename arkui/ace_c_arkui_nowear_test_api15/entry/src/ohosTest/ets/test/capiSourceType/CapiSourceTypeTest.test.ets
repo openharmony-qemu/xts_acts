@@ -18,6 +18,8 @@ import { Driver } from '@ohos.UiTest';
 import nativeSourceType from 'libnativeSourceType.so';
 import Utils from '../common/Utils';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 const KEYCODE_TAB = 2048;
 const KEYCODE_ENTER = 2057;
 const KEYCODE_BUTTON_A = 2301;
@@ -55,9 +57,9 @@ export default function capiSourceTypeTest() {
     it('capiSourceType_keyboard_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[capiSourceType_keyboard_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_TAB);
+      await driver.triggerKey(KEYCODE_TAB, displayID);
       await Utils.sleep(500);
-      await driver.triggerKey(KEYCODE_ENTER);
+      await driver.triggerKey(KEYCODE_ENTER, displayID);
       await Utils.sleep(500);
       if (nativeSourceType && nativeSourceType.getLastSourceType) {
         let sourceType: number = nativeSourceType.getLastSourceType();
@@ -80,9 +82,9 @@ export default function capiSourceTypeTest() {
     it('capiSourceType_gamepad_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[capiSourceType_gamepad_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_TAB);
+      await driver.triggerKey(KEYCODE_TAB, displayID);
       await Utils.sleep(500);
-      await driver.triggerKey(KEYCODE_BUTTON_A);
+      await driver.triggerKey(KEYCODE_BUTTON_A, displayID);
       await Utils.sleep(500);
       if (nativeSourceType && nativeSourceType.getLastSourceType) {
         let sourceType: number = nativeSourceType.getLastSourceType();

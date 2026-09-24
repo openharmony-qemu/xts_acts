@@ -38,6 +38,13 @@ export default class MainAbility extends Ability {
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     globalThis.windowStage = windowStage;
     globalThis.context = this.context;
+    let mainWindow: window.Window = windowStage.getMainWindowSync();
+    let promise1 = mainWindow.getProperties();
+    promise1.then((data) => {
+      console.info('当前屏幕ID' + data.displayId);
+      AppStorage.SetOrCreate('displayID', data.displayId);
+    }).catch((err: BusinessError) => {
+    });
     windowStage.setUIContent(this.context, 'MainAbility/pages/XTSIndex', null);
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {

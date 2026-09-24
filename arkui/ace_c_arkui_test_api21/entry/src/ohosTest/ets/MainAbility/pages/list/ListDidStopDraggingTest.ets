@@ -17,15 +17,15 @@ import { CommonView } from '../../componet/CommonView';
 
 @Entry
 @Component
-struct ListDidStopFlingTest {
-  PAGE_TAG: string = 'ListDidStopFlingTest';
+struct ListDidStopDraggingTest {
+  PAGE_TAG: string = 'ListDidStopDraggingTest';
 
   build() {
     Column() {
       CommonView({
         pageTag: this.PAGE_TAG,
       }).onAppear(() => {
-        render.listDidStopFlingTest(this.PAGE_TAG);
+        render.listDidStopDraggingTest(this.PAGE_TAG);
       })
     }
   }
