@@ -159,7 +159,7 @@ export default function ListJsunit() {
 
       // Verify the functions of onScrollFrameBegin
       await CommonFunc.sleep(200);
-      let onScrollBeginText = await driver.findComponent(ON.id('listPage' + '_onScrollBeginText'));
+      let onScrollBeginText = await driver.findComponent(ON.id('listPage_onScrollBeginText'));
       let text3 = await onScrollBeginText.getText();
       console.info("[ListJsunit_0200] onScrollBeginText: " + text3);
       expect(text3).assertEqual('onScrollBegin');

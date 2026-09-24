@@ -79,14 +79,14 @@ export default function List_Padding() {
         name: 'addPadding', value: 20
       })
       await CommonFunc.sleep(3000);
-      let strJson = getInspectorByKey('List_Padding' + '_01');
+      let strJson = getInspectorByKey('List_Padding_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_Padding_011: RectValue = CommonFunc.getComponentRect('List_Padding' + '_011');
-      let List_Padding_012: RectValue = CommonFunc.getComponentRect('List_Padding' + '_012');
-      let List_Padding_013: RectValue = CommonFunc.getComponentRect('List_Padding' + '_013');
-      let List_Padding_014: RectValue = CommonFunc.getComponentRect('List_Padding' + '_014');
-      let List_Padding_01: RectValue = CommonFunc.getComponentRect('List_Padding' + '_01');
+      let List_Padding_011: RectValue = CommonFunc.getComponentRect('List_Padding_011');
+      let List_Padding_012: RectValue = CommonFunc.getComponentRect('List_Padding_012');
+      let List_Padding_013: RectValue = CommonFunc.getComponentRect('List_Padding_013');
+      let List_Padding_014: RectValue = CommonFunc.getComponentRect('List_Padding_014');
+      let List_Padding_01: RectValue = CommonFunc.getComponentRect('List_Padding_01');
 
       expect(Math.abs(Math.round(List_Padding_011.right - List_Padding_011.left) - Math.round(vp2px(300))) <= 1).assertTrue();
       expect(Math.abs(Math.round(List_Padding_012.right - List_Padding_012.left) - Math.round(vp2px(300))) <= 1).assertTrue();
@@ -116,7 +116,7 @@ export default function List_Padding() {
       let swipeComponent = await driver.findComponent(ON.id('List_Padding_01'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
-      let List_Padding_014Again: RectValue = CommonFunc.getComponentRect('List_Padding' + '_014');
+      let List_Padding_014Again: RectValue = CommonFunc.getComponentRect('List_Padding_014');
       expect(List_Padding_014.top).assertEqual(List_Padding_014Again.top);
       console.info('testListPaddingToTwenty END');
       done();

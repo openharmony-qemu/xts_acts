@@ -58,13 +58,17 @@ export default function groupStickyBoth() {
       console.info("[groupStickyBoth_0100] sticky: " + JSON.stringify(JSON.parse(strJson).$attrs.sticky));
       expect(JSON.parse(strJson).$type).assertEqual("List");
 
-      let listRect = CommonFunc.getComponentRectOnScreen('group_sticky_both');
+      let driver = Driver.create();
+      let listRectComp = await driver.findComponent(ON.id('group_sticky_both'));
+      let listRect = await listRectComp.getBounds();
       let top = listRect.top;
       let bottom = listRect.bottom;
       console.info("groupStickyBoth_0100 value is" + " top: " + top + "bottom: " + bottom);
 
-      let itemHead = CommonFunc.getComponentRectOnScreen('sticky_both_head');
-      let itemFoot = CommonFunc.getComponentRectOnScreen('sticky_both_foot');
+      let itemHeadComp = await driver.findComponent(ON.id('sticky_both_head'));
+      let itemHead = await itemHeadComp.getBounds();
+      let itemFootComp = await driver.findComponent(ON.id('sticky_both_foot'));
+      let itemFoot = await itemFootComp.getBounds();
       let itemTop = itemHead.top;
       let itemBottom = itemFoot.bottom;
       console.info("groupStickyBoth_0100 itemTop is" + itemTop);

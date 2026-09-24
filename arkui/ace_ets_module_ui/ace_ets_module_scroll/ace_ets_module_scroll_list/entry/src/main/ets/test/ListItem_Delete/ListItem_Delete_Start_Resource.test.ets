@@ -97,13 +97,13 @@ export default function ListItem_Delete_Start_Resource() {
         { x: Math.round(right - vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_Resource' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start_Resource_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_Resource' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start_Resource_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_Resource' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start_Resource_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('4');
       console.info('[SUB_ACE_ListItem_Delete_Start_Resource_0100] END');
       done();
@@ -146,13 +146,13 @@ export default function ListItem_Delete_Start_Resource() {
         { x: Math.round(left + vp2px(100)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_Start_Resource' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_Start_Resource_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_Start_Resource' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_Start_Resource_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_Start_Resource' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_Start_Resource_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
       console.info('[SUB_ACE_ListItem_Delete_Start_Resource_0200] END');
       done();

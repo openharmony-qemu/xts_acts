@@ -91,8 +91,7 @@ export default function refreshOffsetJsunit() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween(
-        {x: Math.round(left + width*0.2), y: Math.round(bottom - height/2), displayId: displayId},
+      await driver.swipeBetween({x: Math.round(left + width*0.2), y: Math.round(bottom - height/2), displayId: displayId},
         {x: Math.round(left + width*0.2), y: Math.round(bottom - height/4), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('refresh_mess');

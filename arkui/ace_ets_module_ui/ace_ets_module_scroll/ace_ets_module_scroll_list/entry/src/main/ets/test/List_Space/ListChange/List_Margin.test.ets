@@ -75,15 +75,15 @@ export default function List_Margin() {
     it('testListMargin',  Level.LEVEL0, async (done: Function) => {
       console.info('testListMargin START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_Margin' + '_01');
+      let strJson = getInspectorByKey('List_Margin_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_Margin_011: RectValue = CommonFunc.getComponentRect('List_Margin' + '_011');
-      let List_Margin_012: RectValue = CommonFunc.getComponentRect('List_Margin' + '_012');
-      let List_Margin_013: RectValue = CommonFunc.getComponentRect('List_Margin' + '_013');
-      let List_Margin_014: RectValue = CommonFunc.getComponentRect('List_Margin' + '_014');
-      let List_Margin_01: RectValue = CommonFunc.getComponentRect('List_Margin' + '_01');
-      let List_Margin_01_B0x: RectValue = CommonFunc.getComponentRect('List_Margin' + '_01_B0x');
+      let List_Margin_011: RectValue = CommonFunc.getComponentRect('List_Margin_011');
+      let List_Margin_012: RectValue = CommonFunc.getComponentRect('List_Margin_012');
+      let List_Margin_013: RectValue = CommonFunc.getComponentRect('List_Margin_013');
+      let List_Margin_014: RectValue = CommonFunc.getComponentRect('List_Margin_014');
+      let List_Margin_01: RectValue = CommonFunc.getComponentRect('List_Margin_01');
+      let List_Margin_01_B0x: RectValue = CommonFunc.getComponentRect('List_Margin_01_B0x');
 
       expect(Math.abs(List_Margin_011.left - List_Margin_01.left) <= 1).assertTrue();
       expect(Math.abs(List_Margin_012.left - List_Margin_01.left) <= 1).assertTrue();
@@ -113,7 +113,7 @@ export default function List_Margin() {
       let swipeComponent = await driver.findComponent(ON.id('List_Margin_01'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
-      let List_Margin_014Again: RectValue = CommonFunc.getComponentRect('List_Margin' + '_014');
+      let List_Margin_014Again: RectValue = CommonFunc.getComponentRect('List_Margin_014');
       expect(Math.abs(List_Margin_014.top - List_Margin_014Again.top) <= 1).assertTrue();
       console.info('testListMargin END');
       done();

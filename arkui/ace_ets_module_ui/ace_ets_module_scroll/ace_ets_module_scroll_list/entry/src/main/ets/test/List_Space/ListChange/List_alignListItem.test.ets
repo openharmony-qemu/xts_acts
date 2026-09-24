@@ -76,14 +76,14 @@ export default function List_alignListItem() {
     it('testListAlignListItemStart',  Level.LEVEL0, async (done: Function) => {
       console.info('testListAlignListItemStart START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_alignListItem' + '_01');
+      let strJson = getInspectorByKey('List_alignListItem_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_alignListItem_011 = CommonFunc.getComponentRect('List_alignListItem' + '_011');
-      let List_alignListItem_012 = CommonFunc.getComponentRect('List_alignListItem' + '_012');
-      let List_alignListItem_013 = CommonFunc.getComponentRect('List_alignListItem' + '_013');
-      let List_alignListItem_014 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
-      let List_alignListItem_01 = CommonFunc.getComponentRect('List_alignListItem' + '_01');
+      let List_alignListItem_011 = CommonFunc.getComponentRect('List_alignListItem_011');
+      let List_alignListItem_012 = CommonFunc.getComponentRect('List_alignListItem_012');
+      let List_alignListItem_013 = CommonFunc.getComponentRect('List_alignListItem_013');
+      let List_alignListItem_014 = CommonFunc.getComponentRect('List_alignListItem_014');
+      let List_alignListItem_01 = CommonFunc.getComponentRect('List_alignListItem_01');
       expect(Math.abs(List_alignListItem_011.left - List_alignListItem_01.left) <= 1).assertTrue();
       expect(Math.abs(List_alignListItem_012.left - List_alignListItem_01.left) <= 1).assertTrue();
       expect(Math.abs(List_alignListItem_013.left - List_alignListItem_01.left) <= 1).assertTrue();
@@ -119,7 +119,7 @@ export default function List_alignListItem() {
             ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
           y: Math.round(List_alignListItem_012.bottom), displayId: displayId });
       await CommonFunc.sleep(1000);
-      let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
+      let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem_014');
       expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(vp2px(60))) <= 1).assertTrue();
 
       console.info('testListAlignListItemStart END');
@@ -140,14 +140,14 @@ export default function List_alignListItem() {
         name: 'addAlignListItem', value: ListItemAlign.Center
       })
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_alignListItem' + '_01');
+      let strJson = getInspectorByKey('List_alignListItem_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_alignListItem_011 = CommonFunc.getComponentRect('List_alignListItem' + '_011');
-      let List_alignListItem_012 = CommonFunc.getComponentRect('List_alignListItem' + '_012');
-      let List_alignListItem_013 = CommonFunc.getComponentRect('List_alignListItem' + '_013');
-      let List_alignListItem_014 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
-      let List_alignListItem_01 = CommonFunc.getComponentRect('List_alignListItem' + '_01');
+      let List_alignListItem_011 = CommonFunc.getComponentRect('List_alignListItem_011');
+      let List_alignListItem_012 = CommonFunc.getComponentRect('List_alignListItem_012');
+      let List_alignListItem_013 = CommonFunc.getComponentRect('List_alignListItem_013');
+      let List_alignListItem_014 = CommonFunc.getComponentRect('List_alignListItem_014');
+      let List_alignListItem_01 = CommonFunc.getComponentRect('List_alignListItem_01');
       expect(Math.abs(Math.round(List_alignListItem_011.left - List_alignListItem_01.left) - Math.round(List_alignListItem_01.right - List_alignListItem_011.right)) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(List_alignListItem_012.left - List_alignListItem_01.left) - Math.round(List_alignListItem_01.right - List_alignListItem_012.right)) <= 1)
@@ -187,7 +187,7 @@ export default function List_alignListItem() {
             ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
           y: Math.round(List_alignListItem_012.bottom), displayId: displayId });
       await CommonFunc.sleep(1000);
-      let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
+      let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem_014');
       expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(vp2px(60))) <= 1).assertTrue();
 
       console.info('testListAlignListItemCenter END');
@@ -207,14 +207,14 @@ export default function List_alignListItem() {
         name: 'addAlignListItem', value: ListItemAlign.End
       })
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_alignListItem' + '_01');
+      let strJson = getInspectorByKey('List_alignListItem_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_alignListItem_011 = CommonFunc.getComponentRect('List_alignListItem' + '_011');
-      let List_alignListItem_012 = CommonFunc.getComponentRect('List_alignListItem' + '_012');
-      let List_alignListItem_013 = CommonFunc.getComponentRect('List_alignListItem' + '_013');
-      let List_alignListItem_014 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
-      let List_alignListItem_01 = CommonFunc.getComponentRect('List_alignListItem' + '_01');
+      let List_alignListItem_011 = CommonFunc.getComponentRect('List_alignListItem_011');
+      let List_alignListItem_012 = CommonFunc.getComponentRect('List_alignListItem_012');
+      let List_alignListItem_013 = CommonFunc.getComponentRect('List_alignListItem_013');
+      let List_alignListItem_014 = CommonFunc.getComponentRect('List_alignListItem_014');
+      let List_alignListItem_01 = CommonFunc.getComponentRect('List_alignListItem_01');
       expect(Math.abs(List_alignListItem_011.right - List_alignListItem_01.right) <= 1).assertTrue();
       expect(Math.abs(List_alignListItem_012.right - List_alignListItem_01.right) <= 1).assertTrue();
       expect(Math.abs(List_alignListItem_013.right - List_alignListItem_01.right) <= 1).assertTrue();
@@ -250,7 +250,7 @@ export default function List_alignListItem() {
             ((List_alignListItem_012.right - List_alignListItem_012.left) / 2)),
           y: Math.round(List_alignListItem_012.bottom), displayId: displayId });
       await CommonFunc.sleep(1000);
-      let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem' + '_014');
+      let List_alignListItem_024 = CommonFunc.getComponentRect('List_alignListItem_014');
       expect(Math.abs(Math.round(List_alignListItem_01.bottom - List_alignListItem_024.bottom) - Math.round(vp2px(60))) <= 1).assertTrue();
       console.info('testListAlignListItemEnd END');
       done();

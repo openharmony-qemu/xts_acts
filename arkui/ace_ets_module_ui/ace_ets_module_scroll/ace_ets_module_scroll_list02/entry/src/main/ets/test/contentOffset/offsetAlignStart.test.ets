@@ -60,8 +60,10 @@ export default function offsetAlignStart() {
       let btn: Component = await driver.findComponent(ON.id('scroll_align_offset_top'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let list = CommonFunc.getComponentRectOnScreen('align_startOffset_start');
-      let listItem = CommonFunc.getComponentRectOnScreen('align_startOffset_start_0');
+      let listComponent = await driver.findComponent(ON.id('align_startOffset_start'));
+      let list = await listComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('align_startOffset_start_0'));
+      let listItem = await listItemComponent.getBounds();
       console.info('[offsetAlignStart_0100] list.top: ' + list.top);
       console.info('[offsetAlignStart_0100] listItem.top: ' + listItem.top);
       await CommonFunc.sleep(1000);

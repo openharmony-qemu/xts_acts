@@ -60,8 +60,10 @@ export default function toIndexStartOffset() {
       let btn: Component = await driver.findComponent(ON.id('toIndex8_auto'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let list = CommonFunc.getComponentRectOnScreen('List_scrollToIndex8_List');
-      let listItem = CommonFunc.getComponentRectOnScreen('List_scrollToIndex8_ListItem_8');
+      let listComponent = await driver.findComponent(ON.id('List_scrollToIndex8_List'));
+      let list = await listComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('List_scrollToIndex8_ListItem_8'));
+      let listItem = await listItemComponent.getBounds();
       console.info('[toIndexStartOffset_0100] list.bottom: ' + list.bottom);
       console.info('[toIndexStartOffset_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);

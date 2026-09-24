@@ -61,11 +61,14 @@ export default function itemInGroupMin() {
       let button = await driver.findComponent(ON.id('itemInGroup_negative'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let list = CommonFunc.getComponentRectOnScreen('itemInGroup_min');
+      let listComponent = await driver.findComponent(ON.id('itemInGroup_min'));
+      let list = await listComponent.getBounds();
       console.info("[itemInGroupMin_0100] list_top is: " + list.top);
-      let listItem = CommonFunc.getComponentRectOnScreen('itemGroup_min_1');
+      let listItemComponent = await driver.findComponent(ON.id('itemGroup_min_1'));
+      let listItem = await listItemComponent.getBounds();
       console.info("[itemInGroupMin_0100] listItem_top is: " + listItem.top);
-      let header = CommonFunc.getComponentRectOnScreen('group_min_header');
+      let headerComponent = await driver.findComponent(ON.id('group_min_header'));
+      let header = await headerComponent.getBounds();
       let headerH = header.bottom - header.top
       console.info("[itemInGroupMin_0100] headerH is: " + headerH);
       expect(Math.floor(Math.abs(listItem.top - list.top - headerH)) <= 1).assertTrue();
@@ -93,9 +96,11 @@ export default function itemInGroupMin() {
       let button = await driver.findComponent(ON.id('itemInGroup_0'));
       await button.click();
       await CommonFunc.sleep(1500);
-      let list = CommonFunc.getComponentRectOnScreen('itemInGroup_min');
+      let listComponent = await driver.findComponent(ON.id('itemInGroup_min'));
+      let list = await listComponent.getBounds();
       console.info("[itemInGroupMin_0200] list_top is: " + list.top);
-      let listItem = CommonFunc.getComponentRectOnScreen('itemGroup_min_1');
+      let listItemComponent = await driver.findComponent(ON.id('itemGroup_min_1'));
+      let listItem = await listItemComponent.getBounds();
       console.info("[itemInGroupMin_0200] listItem_top is: " + listItem.top);
       expect(Math.floor(Math.abs(listItem.top - list.top)) <= 1).assertTrue();
       console.info('[itemInGroupMin_0200] END');

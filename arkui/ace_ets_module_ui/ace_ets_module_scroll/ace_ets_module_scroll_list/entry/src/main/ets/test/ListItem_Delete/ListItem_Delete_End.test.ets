@@ -99,18 +99,18 @@ export default function ListItem_Delete_End() {
         { x: Math.round(left + vp2px(5)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('4');
 
       console.log('get Initial ListItem_01 and List_1 value')
       let ListItem_01 = CommonFunc.getComponentRect('ListItem_Delete_End_ListItem_01');
-      let List_1 = CommonFunc.getComponentRect('ListItem_Delete_End' + '_List_1');
+      let List_1 = CommonFunc.getComponentRect('ListItem_Delete_End_List_1');
 
       console.log('assert position ')
       expect(ListItem_01.top).assertEqual(List_1.top);
@@ -160,13 +160,13 @@ export default function ListItem_Delete_End() {
         { x: Math.round(left + vp2px(30)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
       console.info('[SUB_ACE_ListItem_Delete_End_0300] END');
       done();
@@ -214,13 +214,13 @@ export default function ListItem_Delete_End() {
         { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
       console.info('[SUB_ACE_ListItem_Delete_End_0400] END');
       done();
@@ -269,13 +269,13 @@ export default function ListItem_Delete_End() {
         { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
       console.info('[SUB_ACE_ListItem_Delete_End_0500] END');
       done();
@@ -321,13 +321,13 @@ export default function ListItem_Delete_End() {
         { x: Math.round(left + vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
-      let text_011 = getInspectorByKey('ListItem_Delete_End' + '_text_01');
+      let text_011 = getInspectorByKey('ListItem_Delete_End_text_01');
       expect(JSON.parse(text_011).$attrs.content).assertEqual('not enterEndDeleteArea');
 
-      let text_022 = getInspectorByKey('ListItem_Delete_End' + '_text_02');
+      let text_022 = getInspectorByKey('ListItem_Delete_End_text_02');
       expect(JSON.parse(text_022).$attrs.content).assertEqual('not exitEndDeleteArea');
 
-      let text_033 = getInspectorByKey('ListItem_Delete_End' + '_text_03');
+      let text_033 = getInspectorByKey('ListItem_Delete_End_text_03');
       expect(JSON.parse(text_033).$attrs.content).assertEqual('5');
       console.info('[SUB_ACE_ListItem_Delete_End_0600] END');
       done();

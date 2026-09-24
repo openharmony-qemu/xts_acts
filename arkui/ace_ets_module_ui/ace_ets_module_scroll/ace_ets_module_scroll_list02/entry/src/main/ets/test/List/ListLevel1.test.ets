@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {UiComponent, Component, Driver, UiWindow, ON, BY, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 export default function listLevel1Test() {
   describe('listLevel1Test', () => {
