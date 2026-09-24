@@ -335,7 +335,7 @@ export async function createResource(context: common.UIAbilityContext, fileNameL
     let imageUri = context.filesDir + '/01.jpg';
     console.info("imageUri: " + imageUri);
     let videoUri = context.filesDir + '/01.mp4';
-    console.info("videoUri: " + imageUri);
+    console.info("videoUri: " + videoUri);
     for (let i = 0; i < fileNameList.length; i++) {
       let fileName = fileNameList[i];
       let displayName = fileName.substring(0, fileName.lastIndexOf("."));
@@ -509,8 +509,10 @@ export async function createMovingPhoto(testNum: string, context: Context, title
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
       photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
     console.log(`${testNum} :: create assetChangeRequest success`);
-    let photoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg";
-    let videoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.mp4";
+    let photoUri = context.filesDir + '/test_mov_1.jpg';
+    console.info("photoUri: " + photoUri);
+    let videoUri = context.filesDir + '/test_mov_1.mp4';
+    console.info("videoUri: " + videoUri);
     assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
     assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
     console.log(`${testNum} :: add resource success`);
