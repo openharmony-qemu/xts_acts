@@ -44,16 +44,16 @@ export default function InputMethodEditBoxAbility() {
     beforeAll(async (done: Function) => {
       console.info('====>beforeAll inputMethod_enable start!')
       try {
-        let cmd = 'ime -e com.acts.inputmethodeditbox.test -f';
-        let cmd1 = 'ime -s com.acts.inputmethodeditbox.test';
+        let enableCmd = 'ime -e com.acts.inputmethodeditbox.test -f';
+        let setCmd = 'ime -s com.acts.inputmethodeditbox.test';
         let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
         if(user !== undefined){
-          cmd = `ime -u ${user} -e com.acts.inputmethodeditbox.test -f`;
-          cmd1 = `ime -u ${user} -s com.acts.inputmethodeditbox.test`;
+          enableCmd = `ime -u ${user} -e com.acts.inputmethodeditbox.test -f`;
+          setCmd = `ime -u ${user} -s com.acts.inputmethodeditbox.test`;
         }
-        console.info(`====>beforeAll cmd:${cmd} ,cmd1:${cmd1}`);
-        await delegator.executeShellCommand(cmd);
-        await delegator.executeShellCommand(cmd1);
+        console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+        await delegator.executeShellCommand(enableCmd);
+        await delegator.executeShellCommand(setCmd);
         console.info('====>beforeAll inputMethod_enable success');
         await driver.delayMs(1000);
         let scroll = await driver.findComponent(ON.id('Column1'));

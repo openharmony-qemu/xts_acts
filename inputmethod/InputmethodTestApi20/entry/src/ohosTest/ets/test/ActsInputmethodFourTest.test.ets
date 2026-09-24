@@ -33,16 +33,16 @@ export default function ActsInputmethodFourTest() {
   describe('ActsInputmethodFourTest', () => {
     const delegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     beforeAll(async () => {
-      let cmd = 'ime -e com.acts.actsinputmethodtest -f';
-      let cmd1 = 'ime -s com.acts.actsinputmethodtest';
+      let enableCmd = 'ime -e com.acts.actsinputmethodtest -f';
+      let setCmd = 'ime -s com.acts.actsinputmethodtest';
       let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
       if(user !== undefined){
-        cmd = `ime -u ${user} -e com.acts.actsinputmethodtest -f`;
-        cmd1 = `ime -u ${user} -s com.acts.actsinputmethodtest`;
+        enableCmd = `ime -u ${user} -e com.acts.actsinputmethodtest -f`;
+        setCmd = `ime -u ${user} -s com.acts.actsinputmethodtest`;
       }
-      console.info(`====>beforeAll cmd:${cmd} ,cmd1:${cmd1}`);
-      await delegator.executeShellCommand(cmd);
-      await delegator.executeShellCommand(cmd1);
+      console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+      await delegator.executeShellCommand(enableCmd);
+      await delegator.executeShellCommand(setCmd);
     })
     /**
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_EXTEND_ACTION_SELECT_ALL_17800
