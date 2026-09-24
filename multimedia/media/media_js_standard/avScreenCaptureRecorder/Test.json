@@ -33,7 +33,7 @@
                 "power-shell timeout -o 2147483647",
                 "power-shell setmode 602",
                 "chmod 755 /data/local/tmp/",
-                "sh setup_media_js_standard_avScreenCaptureRecorder_test.sh"
+                "sh /data/local/tmp/setup_media_js_standard_avScreenCaptureRecorder_test.sh"
             ],
             "teardown-command": [
                 "power-shell setmode 600"

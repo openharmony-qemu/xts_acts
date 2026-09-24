@@ -97,7 +97,7 @@
             "run-command": [
                 "remount",
                 "chmod 755 /data/local/tmp/",
-                "sh setup_media_js_standard_avPlayer_test.sh",
+                "sh /data/local/tmp/setup_media_js_standard_avPlayer_test.sh",
                 "scanner",
                 "param set persist.ace.testmode.enabled 1"
             ]

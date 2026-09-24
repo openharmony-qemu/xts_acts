@@ -47,7 +47,7 @@
                 "uinput -T -m 300 2700 280 200",
                 "power-shell setmode 602",
                 "chmod 755 /data/local/tmp/",
-                "sh setup_media_ets_standard_mediaXtsSupplement_test.sh"
+                "sh /data/local/tmp/setup_media_ets_standard_mediaXtsSupplement_test.sh"
             ],
             "teardown-command": [
                 "power-shell setmode 600",

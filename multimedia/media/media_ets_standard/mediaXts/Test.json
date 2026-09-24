@@ -94,7 +94,7 @@
         "hilog -Q domainoff",
         "hilog -b D -D 0xD002b2b",
         "chmod 755 /data/local/tmp/",
-        "sh setup_media_ets_standard_mediaXts_test.sh"
+        "sh /data/local/tmp/setup_media_ets_standard_mediaXts_test.sh"
       ],
       "teardown-command": [
         "power-shell setmode 600",
