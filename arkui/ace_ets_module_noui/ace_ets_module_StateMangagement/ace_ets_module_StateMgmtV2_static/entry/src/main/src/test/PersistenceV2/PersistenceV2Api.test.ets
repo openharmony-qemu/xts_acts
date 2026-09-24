@@ -87,7 +87,7 @@ export default function PersistenceV2Api(): void {
       // Click button to change person name
       let changeBtn = await driver.findComponent(ON.id('button_change_person'));
       await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
+      await (changeBtn?.click());
       await CommonFunc.sleep(1000);
  
       // Get updated value
@@ -125,7 +125,7 @@ export default function PersistenceV2Api(): void {
       // Click button to change person2 name
       let changeBtn = await driver.findComponent(ON.id('button_change_person2'));
       await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
+      await (changeBtn?.click());
       await CommonFunc.sleep(1000);
  
       // Get updated value
@@ -156,7 +156,7 @@ export default function PersistenceV2Api(): void {
       // Click button to get keys
       let getKeysBtn = await driver.findComponent(ON.id('button_get_keys'));
       await CommonFunc.sleep(1000);
-      await (getKeysBtn?.click() as Promise<void>);
+      await (getKeysBtn?.click());
       await CommonFunc.sleep(1000);
  
       // Verify keys result in UI
@@ -193,7 +193,7 @@ export default function PersistenceV2Api(): void {
       // Click remove button
       let removeBtn = await driver.findComponent(ON.id('button_remove'));
       await CommonFunc.sleep(1000);
-      await (removeBtn?.click() as Promise<void>);
+      await (removeBtn?.click());
       await CommonFunc.sleep(1000);
  
       // Verify keys count decreased
@@ -221,14 +221,14 @@ export default function PersistenceV2Api(): void {
       // Click button to change person
       let changeBtn = await driver.findComponent(ON.id('button_change_person'));
       await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
+      await (changeBtn?.click());
       await CommonFunc.sleep(1000);
  
  
       // Click save button to persist data
       let saveBtn = await driver.findComponent(ON.id('button_save_person'));
       await CommonFunc.sleep(1000);
-      await (saveBtn?.click() as Promise<void>);
+      await (saveBtn?.click());
       await CommonFunc.sleep(1000);
  
       // Verify save succeeded (no error message)

@@ -80,7 +80,7 @@ export default function AddMonitorWildcard(): void {
       // Click button to change propA - this should trigger onClsChanged callback
       let changePropABtn = await driver.findComponent(ON.id('ButtonChangePropA'));
       await CommonFunc.sleep(1000);
-      await (changePropABtn?.click() as Promise<void>);
+      await (changePropABtn?.click());
       await CommonFunc.sleep(1000);
 
       // Get updated num value (should be incremented)
@@ -110,7 +110,7 @@ export default function AddMonitorWildcard(): void {
       // Click first button to change propB
       let changePropBBtn1 = await driver.findComponent(ON.id('ButtonChangePropB1'));
       await CommonFunc.sleep(1000);
-      await (changePropBBtn1?.click() as Promise<void>);
+      await (changePropBBtn1?.click());
       await CommonFunc.sleep(1000);
 
       // Get updated num value (should be incremented)
@@ -140,13 +140,13 @@ export default function AddMonitorWildcard(): void {
       // Click clear button to cancel monitoring
       let clearBtn = await driver.findComponent(ON.id('ButtonClear'));
       await CommonFunc.sleep(1000);
-      await (clearBtn?.click() as Promise<void>);
+      await (clearBtn?.click());
       await CommonFunc.sleep(1000);
 
       // Click button to change propB - callback should NOT trigger after clear
       let changePropBBtn2 = await driver.findComponent(ON.id('ButtonChangePropB2'));
       await CommonFunc.sleep(1000);
-      await (changePropBBtn2?.click() as Promise<void>);
+      await (changePropBBtn2?.click());
       await CommonFunc.sleep(1000);
 
       // Get num value - should remain 0 since monitor was cleared

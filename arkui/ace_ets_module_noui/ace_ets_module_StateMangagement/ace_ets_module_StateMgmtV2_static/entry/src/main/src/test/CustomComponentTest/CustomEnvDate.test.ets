@@ -91,7 +91,7 @@ export default function CustomEnvDate(): void {
 
         // Click the increase the year by 1 button
         let btn = await driver.findComponent(ON.id('customEnvDate_002'));
-        await (btn?.click() as Promise<void>);
+        await (btn?.click());
         await CommonFunc.sleep(1500);
 
         // Verify the year has been increased to 2022
@@ -126,7 +126,7 @@ export default function CustomEnvDate(): void {
 
         // Click the increase the month by 1 button
         let btn = await driver.findComponent(ON.id('customEnvDate_003'));
-        await (btn?.click() as Promise<void>);
+        await (btn?.click());
         await CommonFunc.sleep(1500);
 
         // Verify the month has been increased (from August to September)
@@ -163,7 +163,7 @@ export default function CustomEnvDate(): void {
 
         // Click the increase the day by 1 button
         let btn = await driver.findComponent(ON.id('customEnvDate_004'));
-        await (btn?.click() as Promise<void>);
+        await (btn?.click());
         await CommonFunc.sleep(1500);
 
         // Verify the day has been increased to 9

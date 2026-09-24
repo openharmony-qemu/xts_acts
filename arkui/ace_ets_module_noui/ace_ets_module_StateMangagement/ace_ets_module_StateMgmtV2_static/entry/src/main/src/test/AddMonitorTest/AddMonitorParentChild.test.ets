@@ -62,7 +62,7 @@ export default function AddMonitorParentChild(): void {
       try{
         let driver = await Driver.create();
         let btn_true = await driver.findComponent(ON.id('ParentButton'));
-        await (btn_true?.click() as Promise<void>);
+        await (btn_true?.click());
         await CommonFunc.sleep(1000);
         let strJsonNew = inspector.getInspectorByKey('ParentText');
         console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -70,9 +70,9 @@ export default function AddMonitorParentChild(): void {
           .getString('content')));
         expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] ParentComponent message changed from Hello from Parent to Parent Value: 2');
         let btn_true1 = await driver.findComponent(ON.id('ClearParentMonitor'));
-        await (btn_true1?.click() as Promise<void>);
+        await (btn_true1?.click());
         await CommonFunc.sleep(1000);
-        await (btn_true?.click() as Promise<void>);
+        await (btn_true?.click());
         await CommonFunc.sleep(1000);
         let strJsonNew1 = inspector.getInspectorByKey('ParentText');
         console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
@@ -100,7 +100,7 @@ export default function AddMonitorParentChild(): void {
       try{
         let driver = await Driver.create();
         let btn_true = await driver.findComponent(ON.id('ChildButton'));
-        await (btn_true?.click() as Promise<void>);
+        await (btn_true?.click());
         await CommonFunc.sleep(1000);
         let strJsonNew = inspector.getInspectorByKey('ChildText');
         console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
@@ -108,9 +108,9 @@ export default function AddMonitorParentChild(): void {
           .getString('content')));
         expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] ChildComponent childMsg changed from Parent Value: 3 to Message from Child');
         let btn_true1 = await driver.findComponent(ON.id('ClearChildMonitor'));
-        await (btn_true1?.click() as Promise<void>);
+        await (btn_true1?.click());
         await CommonFunc.sleep(1000);
-        await (btn_true?.click() as Promise<void>);
+        await (btn_true?.click());
         await CommonFunc.sleep(1000);
         let strJsonNew1 = inspector.getInspectorByKey('ChildText');
         console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
