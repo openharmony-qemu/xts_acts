@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,9 +13,13 @@
  * limitations under the License.
  */
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from '@ohos/hypium';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection,
+ WindowMode, PointerMatrix, MouseButton } from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function gestureEventTest() {
   describe('gestureEventTest', () => {
     beforeEach(async (done: Function) => {
@@ -59,7 +63,16 @@ export default function gestureEventTest() {
       let node: Component = await driver.findComponent(ON.id('gestureEventTest_node'));
       let point = await node.getBoundsCenter();
       console.info("[gestureEventTest_0100] getBoundsCenter point.x: " + point.x + ", point.y: " + point.y);
-      await driver.swipe(Math.round(point.x), Math.round(point.y), Math.round(point.x), Math.round(point.y + vp2px(50)));
+
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(point.x), y: Math.round(point.y), displayId: displayID },
+          { x: Math.round(point.x), y: Math.round(point.y + vp2px(50)), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
+
       console.info('gestureEventTest_0100 point x:=' + point.x + " y:=" + point.y);
       await CommonFunc.sleep(2000);
       let btn = await driver.findComponent(ON.id('getpanGestureInfo'));

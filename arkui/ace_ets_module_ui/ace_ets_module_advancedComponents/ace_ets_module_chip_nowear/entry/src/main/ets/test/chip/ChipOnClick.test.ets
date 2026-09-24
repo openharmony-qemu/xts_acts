@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,10 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import router from '@system.router';
 import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 interface optionsObj {
   uri: string
@@ -72,7 +75,7 @@ export default function ChipOnClick() {
             await CommonFunc.sleep(200);
             console.info('ChipOnClick_001 left' + left + 'top:' + top);
             let driver = Driver.create();
-            await driver.click(Math.round(left + globalThis.winLeft), Math.round(globalThis.winTop + top));
+            await driver.clickAt({x: Math.round(left + globalThis.winLeft) , y: Math.round(globalThis.winTop + top) , displayId: displayID});
             await CommonFunc.sleep(1000);
             console.info('ChipOnClick_001 click success');
 

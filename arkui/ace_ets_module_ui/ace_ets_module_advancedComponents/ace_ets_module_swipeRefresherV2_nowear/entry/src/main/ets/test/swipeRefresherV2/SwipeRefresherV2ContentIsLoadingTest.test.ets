@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../Utils.test';
@@ -60,7 +60,7 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
     it('SwipeRefresherV2ContentIsLoadingTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[SwipeRefresherV2ContentIsLoadingTest_0100] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(2000);
       
       let component = await driver.findComponent(ON.text('场景2: 带content属性 - isLoading为true'));
       expect(component !== null).assertTrue();
@@ -80,7 +80,7 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
     it('SwipeRefresherV2ContentIsLoadingTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[SwipeRefresherV2ContentIsLoadingTest_0200] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(2000);
       
       let component = await driver.findComponent(ON.text('场景3: content为空字符串'));
       expect(component !== null).assertTrue();
@@ -100,7 +100,7 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
     it('SwipeRefresherV2ContentIsLoadingTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[SwipeRefresherV2ContentIsLoadingTest_0300] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(2000);
       
       let component = await driver.findComponent(ON.text('场景1: 基本用法 - isLoading为false'));
       expect(component !== null).assertTrue();
@@ -120,13 +120,13 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
     it('SwipeRefresherV2ContentIsLoadingTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[SwipeRefresherV2ContentIsLoadingTest_0400] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(2000);
       
       let button = await driver.findComponent(ON.text('切换加载状态'));
       expect(button !== null).assertTrue();
       
       await button.click();
-      await driver.delayMs(1000);
+      await Utils.sleep(2000);
       
       console.info('[SwipeRefresherV2ContentIsLoadingTest_0400] END');
       done();
@@ -143,13 +143,13 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
     it('SwipeRefresherV2ContentIsLoadingTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[SwipeRefresherV2ContentIsLoadingTest_0500] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(2000);
       
       let button = await driver.findComponent(ON.text('触发加载'));
       expect(button !== null).assertTrue();
       
       await button.click();
-      await driver.delayMs(1000);
+      await Utils.sleep(2000);
       
       console.info('[SwipeRefresherV2ContentIsLoadingTest_0500] END');
       done();
