@@ -22,7 +22,9 @@ import {
   fetchOption,
   photoKeys,
   pushCreateAsset,
-  driveFn
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 
@@ -37,7 +39,8 @@ export default function handleCameraPhotoTest() {
       const fileNames: Array<string> = [
         "testSaveCameraPhoto02.jpg", "testSaveCameraPhoto03.jpg",
       ];
-      await pushCreateAsset(testContext, fileNames);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
