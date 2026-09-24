@@ -104,53 +104,53 @@ struct FrameNodeGetFrameNodeById {
   private myNodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Column() {
+    Column({space:3}) {
       NodeContainer(this.myNodeController)
         .borderWidth(1)
-        .width('90%')
-        .height('70%')
+        .width(200)
+        .height(120)
 
       Row() {
         Button('Valid')
           .id('GetFrameNodeById_testValidButton')
           .onClick(() => {
             this.myNodeController.setNodeBackgroundColor(this.myNodeController.testNodeId, 'rgb(39,135,217)');
-          })
+          }).height(15)
 
         Button('Empty')
           .id('GetFrameNodeById_testEmptyStringButton')
           .onClick(() => {
             this.myNodeController.testEmptyString();
-          })
-      }.height('10%')
+          }).height(15)
+      }
 
       Row() {
         Button('Null')
           .id('GetFrameNodeById_testNullButton')
           .onClick(() => {
             this.myNodeController.testNull();
-          })
+          }).height(15)
 
         Button('Undefined')
           .id('GetFrameNodeById_testUndefinedButton')
           .onClick(() => {
             this.myNodeController.testUndefined();
-          })
-      }.height('10%')
+          }).height(15)
+      }
 
       Row() {
         Button('Non Exist')
           .id('GetFrameNodeById_testNonExistentNodeButton')
           .onClick(() => {
             this.myNodeController.testNonExistentNode();
-          })
+          }).height(15)
 
         Button('Duplicate')
           .id('GetFrameNodeById_testDuplicateNodeButton')
           .onClick(() => {
             this.myNodeController.testDuplicateNodeId();
-          })
-      }.height('10%')
-    }.width('100%')
+          }).height(15)
+      }
+    }.width('100%').height('100%')
   }
 }

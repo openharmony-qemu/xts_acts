@@ -30,6 +30,13 @@ export default class MainAbility extends Ability {
         globalThis.windowStage = windowStage
         // globalThis.windowStage1 = windowStage.getMainWindowSync().getUIContext()
         globalThis.abilityContext = this.context
+        let mainWindow = windowStage.getMainWindowSync()
+        let promise = mainWindow.getProperties();
+        promise.then((data) => {
+            console.info('当前屏幕ID' + data.displayId);
+            AppStorage.setOrCreate('displayID', data.displayId);
+        }).catch((err) => {
+        });
         windowStage.loadContent("MainAbility/pages/index/index", (err, data) => {
             if (err.code) {
                 console.error('Failed to load the content. Cause:' + JSON.stringify(err));
