@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { UiComponent, Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function LifeCycleTest0510() {
   describe('LifeCycleTest0510', () => {
     beforeEach(async (done: Function) => {
@@ -75,7 +77,7 @@ export default function LifeCycleTest0510() {
       await CommonFunc.sleep(500);
       await btn2.click();
       await CommonFunc.sleep(1000);
-      await driver.pressBack();
+      await driver.pressBack(displayID);
       await CommonFunc.sleep(2000);
       let obj: ESObject = JSON.parse(getInspectorByKey('tvV1Num'));
       console.info("[LifeCycleTest0510_001] component obj is: " + JSON.stringify(obj));
@@ -89,7 +91,7 @@ export default function LifeCycleTest0510() {
       await CommonFunc.sleep(1000);
       await btn4.click();
       await CommonFunc.sleep(1000);
-      await driver.pressBack();
+      await driver.pressBack(displayID);
       await CommonFunc.sleep(1000);
       let btn5: Component = await driver.findComponent(ON.id("btnGoToV2"));
       await CommonFunc.sleep(1000);
@@ -105,7 +107,7 @@ export default function LifeCycleTest0510() {
       await CommonFunc.sleep(500);
       await btn7.click();
       await CommonFunc.sleep(1000);
-      await driver.pressBack();
+      await driver.pressBack(displayID);
       await CommonFunc.sleep(2000);
       let obj1: ESObject = JSON.parse(getInspectorByKey('tvV2Num'));
       console.info("[LifeCycleTest0510_001] component obj1 is: " + JSON.stringify(obj1));
