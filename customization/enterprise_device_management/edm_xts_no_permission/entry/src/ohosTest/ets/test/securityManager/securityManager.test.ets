@@ -25,6 +25,29 @@ import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
 import fs from '@ohos.file.fs';
 
+const WEAK_PIN_DATA: Uint8Array = new Uint8Array([
+  0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x30,
+  0x71, 0x77, 0x65, 0x72, 0x74, 0x79, 0x75, 0x69, 0x6f, 0x70
+]);
+ 
+function withWeakPinFile(callback: (fd: number) => void): void {
+  let file: fs.File | undefined = undefined;
+  let path = getContext().filesDir + '/weak_pin.txt';
+  try {
+    file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+    fs.writeSync(file.fd, WEAK_PIN_DATA.buffer);
+    callback(file.fd);
+  } finally {
+    if (file) {
+      try {
+        fs.closeSync(file);
+      } catch (closeErr) {
+        console.error('EDM_TEST_LOG: Failed to close weak pin file.');
+      }
+    }
+  }
+}
+
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
 const INT_VALID_ACCOUNTID = 100;
@@ -339,6 +362,9 @@ export default function securityManagerTest() {
     testRemoveAllowedPermissionBundle();
     testGetAllowedPermissionBundles();
     testGetWatermarkImageApps();
+
+    testSetWeakPinEnable();
+    testIsWeakPinEnabled();
   })
 }
 
@@ -1202,6 +1228,54 @@ function testGetDeviceSecurityLevelPolicy() {
       } else {
         expect(error.code).assertEqual(201);
       }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetWeakPinEnable() {
+  /**
+   * @tc.name   test_setWeakPinEnable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager setWeakPinEnable without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+ 
+function testIsWeakPinEnabled() {
+  /**
+   * @tc.name   test_isWeakPinEnabled_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager isWeakPinEnabled without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isWeakPinEnabled_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.isWeakPinEnabled();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
