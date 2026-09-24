@@ -3394,7 +3394,137 @@ export default function adminManagerTest() {
        } catch (error) { 
          expect(Number(error.code) === 401).assertTrue(); 
        }
-       done(); 
-     })
+        done();
+      })
+
+    /**
+     * @tc.name   test_getAdminInfos_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETADMININFOS_0100
+     * @tc.desc   test getAdminInfos without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAdminInfos_0100", Level.LEVEL2, async (done: Function) => {
+      try {
+        adminManager.getAdminInfos();
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAdminInfos_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETADMININFOS_0200
+     * @tc.desc   test getAdminInfos with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAdminInfos_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        adminManager.getAdminInfos();
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAdminInfos_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETADMININFOS_0300
+     * @tc.desc   test getAdminInfos success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_getAdminInfos_0300", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let adminInfos: Array<adminManager.AdminInfo> = adminManager.getAdminInfos();
+        expect(adminInfos.length > 0).assertTrue();
+        let found: boolean = false;
+        for (let i = 0; i < adminInfos.length; i++) {
+          if (adminInfos[i].bundleName === SELFWANT.bundleName &&
+            adminInfos[i].abilityName === SELFWANT.abilityName &&
+            adminInfos[i].type === adminManager.AdminType.ADMIN_TYPE_SUPER) {
+            found = true;
+            break;
+          }
+        }
+        expect(found).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isSelfSuperAdmin_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ISSELFSUPERADMIN_0100
+     * @tc.desc   test isSelfSuperAdmin without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_isSelfSuperAdmin_0100", Level.LEVEL0, async (done: Function) => {
+      try {
+        let ret: boolean = adminManager.isSelfSuperAdmin();
+        expect(ret === false).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isSelfSuperAdmin_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_ISSELFSUPERADMIN_0200
+     * @tc.desc   test isSelfSuperAdmin with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_isSelfSuperAdmin_0200", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        let ret: boolean = adminManager.isSelfSuperAdmin();
+        expect(ret === false).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_isSelfSuperAdmin_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_ISSELFSUPERADMIN_0300
+     * @tc.desc   test isSelfSuperAdmin with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("test_isSelfSuperAdmin_0300", Level.LEVEL0, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let ret: boolean = adminManager.isSelfSuperAdmin();
+        expect(ret === true).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
   })
 }
