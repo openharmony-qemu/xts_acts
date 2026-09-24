@@ -71,8 +71,8 @@ export default function getMovingPhotoTranscodeTest() {
           subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO
         };
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, displayName, createOption);
-        let photoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg";
-        let videoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_hdr_1.mp4";
+        let photoUri = testContext.filesDir + '/test_mov_1.jpg';
+        let videoUri = testContext.filesDir + '/test_hdr_1.mp4';
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
         await phAccessHelper.applyChanges(assetChangeRequest);
