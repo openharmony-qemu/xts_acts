@@ -18,6 +18,8 @@ import { UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, Display
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function DateTimeOptionsTest() {
   describe('DateTimeOptionsTest', () => {
     beforeEach(async (done: Function) => {
@@ -57,8 +59,11 @@ export default function DateTimeOptionsTest() {
       let Column = await driver.findComponent(ON.id('DateTimeOptions'));
       await Column.click();
       await CommonFunc.sleep(1000);
-
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('DateTimeOptionsValue');
