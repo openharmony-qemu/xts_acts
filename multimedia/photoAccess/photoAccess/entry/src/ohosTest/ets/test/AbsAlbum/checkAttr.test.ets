@@ -24,9 +24,10 @@ import {
   photoKeys,
   albumKeys,
   fetchAllOption,
-  pushCreateAsset,
   sleep,
-  getPermission
+  getPermission,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -34,13 +35,14 @@ export default function checkAlbumAttrTest () {
   describe('checkAlbumAttrTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext)
-    let fileNameList = ['checkAttr.jpg'];
+    let fileNameList = ['checkAttr.jpg', "albumImageVideoCount01.jpg", "albumImageVideoCount02.jpg", "albumImageVideoCount01.mp4"];
 
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
       await sleep(1000);
-      await pushCreateAsset(testContext, fileNameList);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
     });
 
     let checkAssetAttr =  async(done: Function, testNum: string) => {

@@ -23,7 +23,9 @@ import {
   getFileAsset,
   sleep,
   getPermission,
-  driveFn
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -37,6 +39,9 @@ export default function addAssetsTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let fileNameList = ["addCb01.jpg", "addCb03.jpg", "addCb01.mp4", "addPro01.jpg", "addCb04.jpg", "addPro01.mp4"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
     });
 
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext)

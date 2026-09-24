@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import {
   albumType,
   albumSubtype,
@@ -23,7 +23,12 @@ import {
   pushCreateAsset,
   getFileAsset,
   createMovingPhoto,
-  createShootingModeAssetBatch
+  createShootingModeAssetBatch,
+  getPermission,
+  sleep,
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { dataSharePredicates } from '@kit.ArkData'
@@ -32,6 +37,18 @@ export default function albumGetAssetsTest () {
   describe('albumGetAssetsTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext)
+
+    beforeAll(async () => {
+      let fileNameList = [
+        "albumGetAssetsCb01.mp4", "album_getAssets_callback_06.jpg", "album_getAssets_callback_08.jpg", "albumGetAssetsPro01.mp4"
+      ]
+      await getPermission();
+      await sleep(1000);
+      await driveFn();
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
+    })
+    
     let getAlbum = async (testNum: string, type: photoAccessHelper.AlbumType, subtype: photoAccessHelper.AlbumSubtype, key: string = '', value: string | number = '') => {
       let predicatesAlbum: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       if (key == '' && value == '') {
@@ -308,7 +325,6 @@ export default function albumGetAssetsTest () {
         let assetNames: Array<string> = [
           'album_getAssets_callback_06.jpg'
         ]
-        await pushCreateAsset(testContext, assetNames);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, assetNames[0]);
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo('display_name', assetNames[0])
@@ -402,7 +418,6 @@ export default function albumGetAssetsTest () {
         let assetNames: Array<string> = [
           'album_getAssets_callback_08.jpg'
         ]
-        await pushCreateAsset(testContext, assetNames);
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo('display_name', assetNames[0])
         .in('subtype', [0,10]);

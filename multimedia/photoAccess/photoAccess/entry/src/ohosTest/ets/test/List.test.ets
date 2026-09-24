@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import getPhotoAccessHelperTest from './getPhotoAccessHelper.test';
-import provisionResourcesTest from './provisionResources.test';
 import checkAlbumAttrTest from './AbsAlbum/checkAttr.test';
 import albumGetAssetsTest from './AbsAlbum/getAssets.test';
 import addAssetsTest from './Album/addAssets.test';
@@ -94,7 +93,6 @@ import checkPhotoUrisReadPermissionTest from './PhotoAccessHelper/checkPhotoUris
 import quickRequestImageTest from './MediaAssetManager/quickRequestImage.test';
 
 export default function testsuite() {
-  provisionResourcesTest();
   getPhotoAccessHelperTest();
   checkAlbumAttrTest();
   albumGetAssetsTest();

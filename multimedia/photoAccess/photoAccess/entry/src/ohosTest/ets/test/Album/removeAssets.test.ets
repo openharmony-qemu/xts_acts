@@ -26,7 +26,9 @@ import {
   pushCreateAsset,
   albumSubtype,
   albumType,
-  createMovingPhoto
+  createMovingPhoto,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 import { BusinessError } from '@ohos.base'
@@ -97,6 +99,9 @@ export default function removeAssetsTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      let fileNameList = ["removeCb01.jpg", "removeCb03.jpg", "removeCb01.mp4", "removeCb04.jpg", "removePro01.jpg", "removePro03.jpg", "removePro01.mp4", "removePro04.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
     });
 
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext)
