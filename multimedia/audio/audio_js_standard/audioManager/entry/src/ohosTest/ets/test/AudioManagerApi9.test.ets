@@ -621,7 +621,7 @@ export default function audioManagerApi9() {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
         } else if (maxVolume == maxVolDP) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
-        } else if (maxVolume == maxVolDP) {
+        } else if (maxVolume == maxVolCar) {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: PASS :' + maxVolume);
         } else {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: FAIL :' + maxVolume);
