@@ -21,7 +21,10 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { GetTime } from '../utils/utils';
 import {
   verifyDoubledNumericKeys, verifyCharKeys, verifyAlternatingKeys, verifyNestedNumericKeys,
-  verifyDictModeValueTypes, parseSendableInTask, modifyNumericKeyInTask, enumerateKeysInTask
+  verifyDictModeValueTypes, parseSendableInTask, modifyNumericKeyInTask, enumerateKeysInTask,
+  verifyNumericValueKeys, verifyNumericValueKeysAndModify, parseSendableExtractChild,
+  verifyMixedKeysInTask, writeBoundaryValuesInTask, verifyDuplicateKeysInTask,
+  verifySharedMapInTask, sharedMapSignatureInTask
 } from '../utils/arkTSUtilsCommon';
 
 function sleep(time: number) {
@@ -2403,6 +2406,649 @@ export default function arkTSUtilJSONTest() {
       expect(l4).assertEqual(1);
       let nullKey = JSON.parseSendable("{\"\\u0000\":1}") as RootRecord;
       expect((nullKey as object)?.["\u0000"]).assertEqual(1);
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0165
+     * @tc.number SUB_JSON_PARSE_SENDABLE_6500
+     * @tc.desc   Test named key wrapping many numeric keys with N greater than 2000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0165", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0165";
+      try {
+        let keyCount = 2001;
+        let parsed = JSON.parseSendable(buildNumbericKeyJson(keyCount)) as lang.ISendable;
+        let root: Record<string, Object> = parsed as Record<string, Object>;
+        let switches = root['Switch'] as lang.ISendable;
+        expect(ArkTSUtils.isSendable(parsed)).assertTrue();
+        expect(Object.keys(switches as Record<string, Object>).length).assertEqual(keyCount);
+        expect((switches as Record<string, Object>)['2000']).assertEqual('value-2000');
+        let code = await taskpool.execute(verifyNumericValueKeys, switches, keyCount) as number;
+        expect(code).assertEqual(-1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0166
+     * @tc.number SUB_JSON_PARSE_SENDABLE_6600
+     * @tc.desc   Test large scale boundary with N greater than 2000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0166", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0166";
+      try {
+        let keyCounts: number[] = [2001, 5001, 10001];
+        for (let c = 0; c < keyCounts.length; c++) {
+          let keyCount = keyCounts[c];
+          let parsed = JSON.parseSendable(buildNumbericKeyJson(keyCount)) as lang.ISendable;
+          let root: Record<string, Object> = parsed as Record<string, Object>;
+          let switches = root['Switch'] as lang.ISendable;
+          expect(Object.keys(switches as Record<string, Object>).length).assertEqual(keyCount);
+          expect((switches as Record<string, Object>)[`${keyCount - 1}`]).assertEqual(`value-${keyCount - 1}`);
+          let code = await taskpool.execute(verifyNumericValueKeys, switches, keyCount) as number;
+          expect(code).assertEqual(-1);
+        }
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0167
+     * @tc.number SUB_JSON_PARSE_SENDABLE_6700
+     * @tc.desc   Test mixed named and numeric keys at the top level.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0167", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0167";
+      try {
+        let keyCount = 2001;
+        let switches: string[] = [];
+        for (let i = 0; i < keyCount; i++) {
+          switches.push(`"${i}":"value-${i}"`);
+        }
+        let jsonText = `{"version":"1.0","switches":{${switches.join(',')}},"config":{"name":"app"},"0":"top-numeric"}`;
+        let parsed = JSON.parseSendable(jsonText) as lang.ISendable;
+        let root: Record<string, Object> = parsed as Record<string, Object>;
+        expect(root['version']).assertEqual('1.0');
+        let sw = root['switches'] as Record<string, Object>;
+        expect(Object.keys(sw).length).assertEqual(keyCount);
+        expect(sw['0']).assertEqual('value-0');
+        expect(sw['2000']).assertEqual('value-2000');
+        let cfg = root['config'] as Record<string, Object>;
+        expect(cfg['name']).assertEqual('app');
+        expect(root['0']).assertEqual('top-numeric');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0168
+     * @tc.number SUB_JSON_PARSE_SENDABLE_6800
+     * @tc.desc   Test named key wrapping numeric keys passed from main thread to task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0168", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0168";
+      try {
+        let keyCount = 2001;
+        let parsed = JSON.parseSendable(buildNumbericKeyJson(keyCount)) as lang.ISendable;
+        let root: Record<string, Object> = parsed as Record<string, Object>;
+        let switches = root['Switch'] as lang.ISendable;
+        let code = await taskpool.execute(verifyNumericValueKeys, switches, keyCount) as number;
+        expect(code).assertEqual(-1);
+        expect((switches as Record<string, Object>)['2000']).assertEqual('value-2000');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0169
+     * @tc.number SUB_JSON_PARSE_SENDABLE_6900
+     * @tc.desc   Test named key wrapping numeric keys parsed in task passed back to main thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0169", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0169";
+      try {
+        let keyCount = 2001;
+        let switches = await taskpool.execute(parseSendableExtractChild,
+          buildNumbericKeyJson(keyCount), 'Switch') as lang.ISendable;
+        let rec: Record<string, Object> = switches as Record<string, Object>;
+        expect(Object.keys(rec).length).assertEqual(keyCount);
+        expect(rec['0']).assertEqual('value-0');
+        expect(rec['2000']).assertEqual('value-2000');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0170
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7000
+     * @tc.desc   Test nested numeric key modification in task observable in main thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0170", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0170";
+      try {
+        let keyCount = 2001;
+        let parsed = JSON.parseSendable(buildNumbericKeyJson(keyCount)) as lang.ISendable;
+        let root: Record<string, Object> = parsed as Record<string, Object>;
+        let switches = root['Switch'] as lang.ISendable;
+        let code = await taskpool.execute(modifyNumericKeyInTask, switches) as number;
+        expect(code).assertEqual(0);
+        let after = root['Switch'] as Record<string, Object>;
+        expect(after['0']).assertEqual('modified');
+        expect(after['2000']).assertEqual('value-2000');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0171
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7100
+     * @tc.desc   Test parseSendable direct path and legacy workaround path are data equivalent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0171", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0171";
+      try {
+        let keyCount = 2001;
+        let text = buildNumbericKeyJson(keyCount);
+        let direct = JSON.parseSendable(text) as lang.ISendable;
+        let directSw = (direct as Record<string, Object>)['Switch'] as Record<string, Object>;
+        let legacy = JSON.parse(text) as Record<string, Object>;
+        let legacySw = legacy['Switch'] as Record<string, Object>;
+        let oldMap = new collections.Map<string, string>();
+        let keys = Object.keys(legacySw);
+        for (let i = 0; i < keys.length; i++) {
+          let single = JSON.parseSendable(`{"v":${JSON.stringify(legacySw[keys[i]])}}`) as Record<string, Object>;
+          oldMap.set(keys[i], single['v'] as string);
+        }
+        expect(oldMap.size).assertEqual(keyCount);
+        let mismatch = 0;
+        for (let i = 0; i < keyCount; i++) {
+          if ((directSw[`${i}`] as string) !== oldMap.get(`${i}`)) {
+            mismatch++;
+          }
+        }
+        expect(mismatch).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0172
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7200
+     * @tc.desc   Test MAP mode replaces the legacy workaround with equivalent data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0172", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0172";
+      try {
+        let keyCount = 2001;
+        let switches: string[] = [];
+        for (let i = 0; i < keyCount; i++) {
+          switches.push(`"${i}":"value-${i}"`);
+        }
+        let text = `{"switches":{${switches.join(',')}}}`;
+        let legacy = JSON.parse(text) as Record<string, Object>;
+        let legacySw = legacy['switches'] as Record<string, Object>;
+        let keys = Object.keys(legacySw);
+        let oldMap = new collections.Map<string, string>();
+        for (let i = 0; i < keys.length; i++) {
+          let single = JSON.parseSendable(`{"v":${JSON.stringify(legacySw[keys[i]])}}`) as Record<string, Object>;
+          oldMap.set(keys[i], single['v'] as string);
+        }
+        expect(oldMap.size).assertEqual(keyCount);
+        let options: JSON.ParseOptions = {
+          bigIntMode: JSON.BigIntMode.DEFAULT,
+          parseReturnType: JSON.ParseReturnType.MAP,
+        }
+        let newMap = JSON.parseSendable(text, undefined, options) as collections.Map<string, collections.Map<string, string>>;
+        expect(newMap.size).assertEqual(1);
+        let newSw = newMap.get('switches') as collections.Map<string, string>;
+        expect(newSw.size).assertEqual(keyCount);
+        expect(newSw.get('0')).assertEqual('value-0');
+        expect(newSw.get('2000')).assertEqual('value-2000');
+        let mismatch = 0;
+        for (let i = 0; i < keyCount; i++) {
+          if (newSw.get(`${i}`) !== oldMap.get(`${i}`)) {
+            mismatch++;
+          }
+        }
+        expect(mismatch).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0173
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7300
+     * @tc.desc   Test multiple named segments each holding many numeric keys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0173", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0173";
+      try {
+        let switches: string[] = [];
+        for (let i = 0; i < 2001; i++) {
+          switches.push(`"${i}":"value-${i}"`);
+        }
+        let features: string[] = [];
+        for (let i = 0; i < 1001; i++) {
+          features.push(`"${i}":"value-${i}"`);
+        }
+        let settings: string[] = [];
+        for (let i = 0; i < 501; i++) {
+          settings.push(`"${i}":"value-${i}"`);
+        }
+        let jsonText = `{"switches":{${switches.join(',')}},"features":{${features.join(',')}},"settings":{${settings.join(',')}}}`;
+        let parsed = JSON.parseSendable(jsonText) as lang.ISendable;
+        let root: Record<string, Object> = parsed as Record<string, Object>;
+        let sw = root['switches'] as lang.ISendable;
+        let fe = root['features'] as lang.ISendable;
+        let se = root['settings'] as lang.ISendable;
+        expect(Object.keys(sw as Record<string, Object>).length).assertEqual(2001);
+        expect(Object.keys(fe as Record<string, Object>).length).assertEqual(1001);
+        expect(Object.keys(se as Record<string, Object>).length).assertEqual(501);
+        expect(await taskpool.execute(verifyNumericValueKeys, sw, 2001) as number).assertEqual(-1);
+        expect(await taskpool.execute(verifyNumericValueKeys, fe, 1001) as number).assertEqual(-1);
+        expect(await taskpool.execute(verifyNumericValueKeys, se, 501) as number).assertEqual(-1);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0174
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7400
+     * @tc.desc   Test numeric keys whose values are business configuration objects.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0174", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0174";
+      try {
+        let entries: string[] = [];
+        for (let i = 0; i < 2001; i++) {
+          entries.push(`"${i}":{"enabled":${i % 2 === 0},"priority":${i + 1}}`);
+        }
+        let jsonText = `{"switches":{${entries.join(',')}}}`;
+        let parsed = JSON.parseSendable(jsonText) as lang.ISendable;
+        let root: Record<string, Object> = parsed as Record<string, Object>;
+        let sw = root['switches'] as Record<string, Object>;
+        expect(Object.keys(sw).length).assertEqual(2001);
+        let first = sw['0'] as Record<string, Object>;
+        expect(first['enabled']).assertEqual(true);
+        expect(first['priority']).assertEqual(1);
+        let last = sw['2000'] as Record<string, Object>;
+        expect(last['enabled']).assertEqual(true);
+        expect(last['priority']).assertEqual(2001);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0175
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7500
+     * @tc.desc   Test inline mode with mixed numeric and named keys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0175", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0175";
+      try {
+        let props: string[] = [];
+        for (let i = 0; i < 42; i++) {
+          props.push(`"${i}":"v${i}"`);
+          props.push(`"name${i}":"n${i}"`);
+        }
+        props.push('"tail":"t"');
+        let parsed = JSON.parseSendable(`{${props.join(',')}}`) as lang.ISendable;
+        let root: Record<string, Object> = parsed as Record<string, Object>;
+        expect(Object.keys(root).length).assertEqual(85);
+        expect(root['0']).assertEqual('v0');
+        expect(root['1']).assertEqual('v1');
+        expect(root['name0']).assertEqual('n0');
+        expect(root['name41']).assertEqual('n41');
+        expect(root['tail']).assertEqual('t');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0176
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7600
+     * @tc.desc   Test Sendable data content constraint across threads.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0176", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0176";
+      try {
+        let keyCount = 2000;
+        let props: string[] = [];
+        for (let i = 0; i < keyCount; i++) {
+          props.push(`"${i}":"value-${i}"`);
+        }
+        let parsed = JSON.parseSendable(`{${props.join(',')}}`) as lang.ISendable;
+        let code = await taskpool.execute(verifyNumericValueKeysAndModify, parsed, keyCount) as number;
+        expect(code).assertEqual(-1);
+        let rec = parsed as Record<string, Object>;
+        expect(rec['0']).assertEqual('modified');
+        expect(rec['1999']).assertEqual('value-1999');
+        expect(ArkTSUtils.isSendable(parsed)).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0177
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7700
+     * @tc.desc   Test mixed keys read across threads from main to task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0177", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0177";
+      try {
+        let keyCount = 2000;
+        let props: string[] = [];
+        for (let i = 0; i < keyCount; i++) {
+          props.push(`"${i}":"v${i}"`);
+          if (i === 0) {
+            props.push('"name":"app"');
+          }
+          if (i === 1) {
+            props.push('"version":"1.0"');
+          }
+        }
+        let parsed = JSON.parseSendable(`{${props.join(',')}}`) as lang.ISendable;
+        let code = await taskpool.execute(verifyMixedKeysInTask, parsed, keyCount,
+          'name', 'app', 'version', '1.0') as number;
+        expect(code).assertEqual(-1);
+        let rec = parsed as Record<string, Object>;
+        expect(rec['0']).assertEqual('v0');
+        expect(rec['1999']).assertEqual('v1999');
+        expect(rec['name']).assertEqual('app');
+        expect(rec['version']).assertEqual('1.0');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0178
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7800
+     * @tc.desc   Test boundary value write in task observable in main thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0178", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0178";
+      try {
+        let parsed = JSON.parseSendable('{"0":"v0","1":"v1","2":"v2","3":"v3","4":"v4"}') as lang.ISendable;
+        let code = await taskpool.execute(writeBoundaryValuesInTask, parsed) as number;
+        expect(code).assertEqual(0);
+        let rec = parsed as Record<string, Object>;
+        expect(rec['0']).assertEqual(0);
+        expect(rec['1']).assertEqual(-0);
+        let nanValue = rec['2'] as number;
+        expect(nanValue !== nanValue).assertTrue();
+        expect(rec['3']).assertEqual(Infinity);
+        expect(rec['4']).assertEqual(9007199254740991);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0179
+     * @tc.number SUB_JSON_PARSE_SENDABLE_7900
+     * @tc.desc   Test MAP mode method face remains available across threads.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0179", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0179";
+      try {
+        let keyCount = 101;
+        let props: string[] = [];
+        for (let i = 0; i < keyCount; i++) {
+          props.push(`"${i}":"v${i}"`);
+        }
+        let options: JSON.ParseOptions = {
+          bigIntMode: JSON.BigIntMode.DEFAULT,
+          parseReturnType: JSON.ParseReturnType.MAP,
+        }
+        let map = JSON.parseSendable(`{${props.join(',')}}`, undefined, options) as collections.Map<string, string>;
+        expect(map.size).assertEqual(keyCount);
+        expect(map.get('0')).assertEqual('v0');
+        let code = await taskpool.execute(verifySharedMapInTask, map, keyCount, '0', 'v0') as number;
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0180
+     * @tc.number SUB_JSON_PARSE_SENDABLE_8000
+     * @tc.desc   Test 86 numeric keys with duplicate key after dict conversion uses last value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0180", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0180";
+      try {
+        let props: string[] = [];
+        for (let i = 0; i < 85; i++) {
+          props.push(`"${i}":${i}`);
+        }
+        props.push('"85":"first"');
+        props.push('"85":"second"');
+        let parsed = JSON.parseSendable(`{${props.join(',')}}`) as lang.ISendable;
+        let rec = parsed as Record<string, Object>;
+        expect(Object.keys(rec).length).assertEqual(86);
+        expect(rec['0']).assertEqual(0);
+        expect(rec['84']).assertEqual(84);
+        expect(rec['85']).assertEqual('second');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0181
+     * @tc.number SUB_JSON_PARSE_SENDABLE_8100
+     * @tc.desc   Test 1021 numeric keys with duplicate key after large dict conversion uses last value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0181", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0181";
+      try {
+        let props: string[] = [];
+        for (let i = 0; i < 1020; i++) {
+          props.push(`"${i}":${i}`);
+        }
+        props.push('"1020":"first"');
+        props.push('"1020":"second"');
+        let parsed = JSON.parseSendable(`{${props.join(',')}}`) as lang.ISendable;
+        let rec = parsed as Record<string, Object>;
+        expect(Object.keys(rec).length).assertEqual(1021);
+        expect(rec['0']).assertEqual(0);
+        expect(rec['1019']).assertEqual(1019);
+        expect(rec['1020']).assertEqual('second');
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0182
+     * @tc.number SUB_JSON_PARSE_SENDABLE_8200
+     * @tc.desc   Test dict mode with no duplicate keys as the control baseline.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0182", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0182";
+      try {
+        let keyCount = 1021;
+        let props: string[] = [];
+        for (let i = 0; i < keyCount; i++) {
+          props.push(`"${i}":${i}`);
+        }
+        let parsed = JSON.parseSendable(`{${props.join(',')}}`) as lang.ISendable;
+        let rec = parsed as Record<string, Object>;
+        expect(Object.keys(rec).length).assertEqual(keyCount);
+        expect(rec['0']).assertEqual(0);
+        expect(rec['1020']).assertEqual(1020);
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0183
+     * @tc.number SUB_JSON_PARSE_SENDABLE_8300
+     * @tc.desc   Test Sendable data content constraint after parsing duplicate keys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0183", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0183";
+      try {
+        let parsed = JSON.parseSendable('{"0":1,"0":2,"1":"a","1":"b"}') as lang.ISendable;
+        let code = await taskpool.execute(verifyDuplicateKeysInTask, parsed) as number;
+        expect(code).assertEqual(-1);
+        let rec = parsed as Record<string, Object>;
+        expect(rec['0']).assertEqual(2);
+        expect(rec['1']).assertEqual('b');
+        let restored = JSON.stringify(rec);
+        let reparsed = JSON.parse(restored) as Record<string, Object>;
+        expect(reparsed['0']).assertEqual(2);
+        expect(reparsed['1']).assertEqual('b');
+        expect(ArkTSUtils.isSendable(parsed)).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name   testParseSendable0184
+     * @tc.number SUB_JSON_PARSE_SENDABLE_8400
+     * @tc.desc   Test MAP mode observable signature consistency across threads.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testParseSendable0184", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = "testParseSendable0184";
+      try {
+        let keyCount = 100;
+        let props: string[] = [];
+        for (let i = 0; i < keyCount; i++) {
+          props.push(`"key${i}":"value-${i}"`);
+        }
+        let options: JSON.ParseOptions = {
+          bigIntMode: JSON.BigIntMode.DEFAULT,
+          parseReturnType: JSON.ParseReturnType.MAP,
+        }
+        let map = JSON.parseSendable(`{${props.join(',')}}`, undefined, options) as collections.Map<string, string>;
+        expect(map.size).assertEqual(keyCount);
+        let mainSig: string = `${map.size}|${map.has('key0')}|${map.get('key0')}|${Object.keys(map).length}`;
+        let taskSig = await taskpool.execute(sharedMapSignatureInTask, map, 'key0') as string;
+        expect(taskSig).assertEqual(mainSig);
+        expect(map.get('key0')).assertEqual('value-0');
+        expect(map.get('key99')).assertEqual('value-99');
+        expect(map.has('key99')).assertTrue();
+        expect(ArkTSUtils.isSendable(map)).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect().assertFail();
+      }
       done()
     })
   })
