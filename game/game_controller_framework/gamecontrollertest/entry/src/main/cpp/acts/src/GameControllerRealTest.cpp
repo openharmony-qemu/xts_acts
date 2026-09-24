@@ -77,7 +77,14 @@ static bool ParseDeviceInfo(GameDevice_DeviceInfo *deviceInfo, int32_t oprType)
     }
     log.append(",name:").append(name);
     free(name);
-
+    
+    int vendor;
+    code = OH_GameDevice_DeviceInfo_GetVendor(deviceInfo, &vendor);
+    if (code != GAME_CONTROLLER_SUCCESS) {
+        return false;
+    }
+    log.append(",vendor:").append(std::to_string(vendor));
+    
     int product;
     code = OH_GameDevice_DeviceInfo_GetProduct(deviceInfo, &product);
     if (code != GAME_CONTROLLER_SUCCESS) {
