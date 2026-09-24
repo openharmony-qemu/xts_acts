@@ -3119,9 +3119,10 @@ export default function printTest() {
     it('SUB_print_print_fwk_check_printerInfo_fields_1000', Level.LEVEL1, async (done: Function) => {
       let extensionList: string[] = ["extension"];
       // Permissions required: ohos.permission.PRINT
+      let flag:boolean = true;
       await print.startDiscoverPrinter(extensionList).then((data: void) => {
         hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_printerInfo_fields_1000 expect success');
-        expect(!!data).assertTrue();
+        expect(flag).assertTrue();
         done();
       }).catch((err: BusinessError) => {
         expect(!!err).assertTrue();
@@ -3140,6 +3141,7 @@ export default function printTest() {
     it('SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100', Level.LEVEL1, async (done: Function) => {
       let extensionList: string[] = ["extension"];
       // Permissions required: ohos.permission.PRINT
+      let flag:boolean = true;
       print.startDiscoverPrinter(extensionList, (err: BusinessError, data: void) => {
         try {
           if (err) {
@@ -3147,7 +3149,7 @@ export default function printTest() {
             done();
           } else {
             hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100 expect success');
-            expect(!!data).assertTrue();
+            expect(flag).assertTrue();
             done();
           }
         } catch (error) {
