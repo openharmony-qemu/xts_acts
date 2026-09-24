@@ -552,17 +552,20 @@ static napi_value ActsGamePadRightThumbstickUnregisterAxisInputMonitor01(napi_en
 
 static napi_value ActsGamePadButtonNonstandardRegisterButtonInputMonitor01(napi_env env, napi_callback_info info)
 {
-    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonNonstandardRegisterButtonInputMonitor01, env, info);
+    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonNonstandardRegisterButtonInputMonitor01, 
+                              env, info);
 }
 
 static napi_value ActsGamePadButtonNonstandardRegisterButtonInputMonitor02(napi_env env, napi_callback_info info)
 {
-    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonNonstandardRegisterButtonInputMonitor02, env, info);
+    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonNonstandardRegisterButtonInputMonitor02, 
+                              env, info);
 }
 
 static napi_value ActsGamePadButtonNonstandardUnregisterButtonInputMonitor01(napi_env env, napi_callback_info info)
 {
-    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonNonstandardUnregisterButtonInputMonitor01, env, info);
+    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonNonstandardUnregisterButtonInputMonitor01, 
+                              env, info);
 }
 
 // game_pad_test end
