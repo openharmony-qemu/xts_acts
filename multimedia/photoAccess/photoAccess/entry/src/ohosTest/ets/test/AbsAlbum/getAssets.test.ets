@@ -39,14 +39,12 @@ export default function albumGetAssetsTest () {
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext)
 
     beforeAll(async () => {
-      let fileNameList = [
-        "albumGetAssetsCb01.mp4", "album_getAssets_callback_06.jpg", "album_getAssets_callback_08.jpg", "albumGetAssetsPro01.mp4"
-      ]
+      let fileNameList = ["albumGetAssetsCb01.mp4", "album_getAssets_callback_06.jpg", "album_getAssets_callback_08.jpg", "albumGetAssetsPro01.mp4"];
       await getPermission();
       await sleep(1000);
       await driveFn();
       checkResourceFile(testContext);
-      await createResource(testContext, fileNameList)
+      await createResource(testContext, fileNameList);
     })
     
     let getAlbum = async (testNum: string, type: photoAccessHelper.AlbumType, subtype: photoAccessHelper.AlbumSubtype, key: string = '', value: string | number = '') => {

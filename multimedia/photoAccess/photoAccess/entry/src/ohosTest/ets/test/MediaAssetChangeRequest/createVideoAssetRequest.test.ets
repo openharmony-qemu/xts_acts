@@ -65,7 +65,7 @@ export default function createVideoAssetRequestTest() {
     it('create_video_asset_request_001', Level.LEVEL2, async (done: Function) => {
       let testNum = 'create_video_asset_request_001';
       try {
-        let fileUri = 'file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.mp4';
+        let fileUri = testContext.filesDir + '/test_mov_1.mp4';
         let assetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createVideoAssetRequest(testContext, fileUri);
         await helper.applyChanges(assetChangeRequest);
         console.info(`${testNum} assetChangeRequest comment is: ${assetChangeRequest.comment}`);
