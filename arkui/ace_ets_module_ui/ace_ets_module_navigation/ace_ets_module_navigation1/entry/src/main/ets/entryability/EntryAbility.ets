@@ -35,13 +35,6 @@ export default class EntryAbility extends UIAbility {
 
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
-    let mainWindow: window.Window = windowStage.getMainWindowSync();
-    let promise1 = mainWindow.getProperties();
-    promise1.then((data) => {
-      console.info('当前屏幕ID' + data.displayId);
-      AppStorage.setOrCreate('displayID',data.displayId);
-    }).catch((err: BusinessError) => {
-    });
     windowStage.loadContent('MainAbility/pages/index/index', this.storage, (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

@@ -17,24 +17,6 @@ import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-async function findBaiInIndexerPopup(driver: Driver): Promise<Component> {
-  let indexer: Component = await driver.findComponent(ON.id('alphabet_alignStyle'));
-  let indexerRect = await indexer.getBounds();
-  console.log(`indexerRect :${JSON.stringify(indexerRect)}`);
-
-  let baiBtnList: Component[] = await driver.findComponents(ON.text('白'));
-  for (let bai of baiBtnList) {
-    let rect = await bai.getBounds();
-    let centerX = (rect.left + rect.right) / 2;
-    let centerY = (rect.top + rect.bottom) / 2;
-    if (centerX >= indexerRect.left && centerX <= indexerRect.right &&
-        centerY >= indexerRect.top && centerY <= indexerRect.bottom) {
-      return bai;
-    }
-  }
-  return baiBtnList[baiBtnList.length - 1];
-}
-
 export default function alphabetAlignStyleTest() {
    describe('alphabetAlignStyleTest', () => {
     beforeEach(async (done: Function) => {
@@ -83,7 +65,8 @@ export default function alphabetAlignStyleTest() {
       await autoBBtn.click();
       console.log(`${testName} autoBBtn click`);
       await driver.delayMs(1000);
-      let autoBaiBtn: Component = await findBaiInIndexerPopup(driver);
+      let autoBaiBtnList: Component[] =  await driver.findComponents(ON.text('白'));
+      let autoBaiBtn: Component = autoBaiBtnList[autoBaiBtnList.length - 1];
       let autoRect = await autoBaiBtn.getBounds();
       console.log(`${testName} autoRect :${JSON.stringify(autoRect)}`);
       await driver.delayMs(1000);
@@ -95,7 +78,8 @@ export default function alphabetAlignStyleTest() {
       await rtlBBtn.click();
       console.log(`${testName} rtlBBtn click`);
       await driver.delayMs(1000);
-      let rtlBaiBtn: Component = await findBaiInIndexerPopup(driver);
+      let rtlBaiBtnList: Component[] =  await driver.findComponents(ON.text('白'));
+      let rtlBaiBtn: Component = rtlBaiBtnList[rtlBaiBtnList.length - 1];
       let rtlRect = await rtlBaiBtn.getBounds();
       console.log(`${testName} rtlRect :${JSON.stringify(rtlRect)}`);
       await driver.delayMs(1000);
@@ -128,7 +112,8 @@ export default function alphabetAlignStyleTest() {
       await autoBBtn.click();
       console.log(`${testName} autoBBtn click`);
       await driver.delayMs(1000);
-      let autoBaiBtn: Component = await findBaiInIndexerPopup(driver);
+      let autoBaiBtnList: Component[] =  await driver.findComponents(ON.text('白'));
+      let autoBaiBtn: Component = autoBaiBtnList[autoBaiBtnList.length - 1];
       let autoRect = await autoBaiBtn.getBounds();
       console.log(`${testName} autoRect :${JSON.stringify(autoRect)}`);
       await driver.delayMs(1000);
@@ -140,7 +125,8 @@ export default function alphabetAlignStyleTest() {
       await rtlBBtn.click();
       console.log(`${testName} rtlBBtn click`);
       await driver.delayMs(1000);
-      let rtlBaiBtn: Component = await findBaiInIndexerPopup(driver);
+      let rtlBaiBtnList: Component[] =  await driver.findComponents(ON.text('白'));
+      let rtlBaiBtn: Component = rtlBaiBtnList[rtlBaiBtnList.length - 1];
       let rtlRect = await rtlBaiBtn.getBounds();
       console.log(`${testName} rtlRect :${JSON.stringify(rtlRect)}`);
       await driver.delayMs(1000);

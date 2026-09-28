@@ -23,7 +23,7 @@ export default function DotIndicatorNullUndefined() {
     beforeEach(async (done: Function) => {
       console.info("DotIndicatorNullUndefined beforeEach start");
         let driver: Driver = Driver.create();
-    let size = await driver.getDisplaySize(0);
+    let size = await driver.getDisplaySize();
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SwiperAttributeNullUndefined/DotIndicatorNullUndefined',
       };

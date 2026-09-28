@@ -73,7 +73,7 @@ export default function ObserverNavDestinationState() {
       console.info("[ObserverNavDestinationState_0100] btn2");
       await CommonFunc.sleep(1000);
 
-      await driver.pressBack(0)
+      await driver.pressBack()
       await CommonFunc.sleep(2000);
 
       let btn3 = await driver.findComponent(ON.id('ObserverNavDestinationState_get'));

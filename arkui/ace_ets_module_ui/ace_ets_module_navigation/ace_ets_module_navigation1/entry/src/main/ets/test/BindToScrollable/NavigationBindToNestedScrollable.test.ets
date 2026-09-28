@@ -18,8 +18,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function NavigationBindToNestedScrollable() {
   describe('NavigationBindToNestedScrollable', () => {
     beforeEach(async (done: Function) => {
@@ -86,7 +84,7 @@ export default function NavigationBindToNestedScrollable() {
       let right = scrollBarRect.right;
       let bottom = scrollBarRect.bottom;
       
-      await driver.swipeBetween({ x: Math.round(right - vp2px(11)), y: Math.round(top + vp2px(12)), displayId: displayID }, { x: Math.round(right - vp2px(11)), y: Math.round(bottom), displayId: displayID });
+      await driver.swipe(Math.round(right - vp2px(11)), Math.round(top + vp2px(12)), Math.round(right - vp2px(11)), Math.round(bottom));
       await driver.delayMs(500)
 
       await driver.assertComponentExist(ON.type('TitleBar'));
@@ -104,7 +102,7 @@ export default function NavigationBindToNestedScrollable() {
         console.info('NavigationBindToNestedScrollable_0100 test tooBarBottom1: ', tooBarBottom1);
       }
 
-      await driver.swipeBetween({ x: Math.round(right - vp2px(11)), y: Math.round(bottom - vp2px(12)), displayId: displayID }, { x: Math.round(right - vp2px(11)), y: Math.round(top), displayId: displayID });
+      await driver.swipe(Math.round(right - vp2px(11)), Math.round(bottom - vp2px(12)), Math.round(right - vp2px(11)), Math.round(top));
       await driver.delayMs(500)
       let list: Component = await driver.findComponent(ON.type('List'));
       
@@ -113,7 +111,7 @@ export default function NavigationBindToNestedScrollable() {
       let listRight = listRect.right;
       let listBottom = listRect.bottom;
 
-      await driver.swipeBetween({ x: Math.round(listRight - vp2px(11)), y: Math.round(listTop + vp2px(12)), displayId: displayID }, { x: Math.round(listRight - vp2px(11)), y: Math.round(listBottom), displayId: displayID });
+      await driver.swipe(Math.round(listRight - vp2px(11)), Math.round(listTop + vp2px(12)), Math.round(listRight - vp2px(11)), Math.round(listBottom));
       await driver.delayMs(500)
 
       let component1: Component = await driver.findComponent(ON.type('TitleBar').text('pageOne'));

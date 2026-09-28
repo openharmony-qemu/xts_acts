@@ -17,8 +17,6 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function SwiperLoop() {
   describe('SwiperLoop', () => {
     beforeEach(async (done: Function) => {
@@ -72,7 +70,7 @@ export default function SwiperLoop() {
       let button_Bottom = await driver.findComponent(ON.id('swiperLoopButton1'));
       await button_Bottom.click();
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(btRight - vp2px(10)), y: Math.round(btTop + height/2), displayId: displayID }, { x: Math.round(btLeft + vp2px(27)), y: Math.round(btTop + height/2), displayId: displayID });
+      await driver.swipe(Math.round(btRight - vp2px(10)), Math.round(btTop + height/2), Math.round(btLeft + vp2px(27)), Math.round(btTop + height/2));
       await CommonFunc.sleep(3500);
 
       let strJson = getInspectorByKey('SwiperLoopText10');
@@ -113,7 +111,7 @@ export default function SwiperLoop() {
       let button_Bottom = await driver.findComponent(ON.id('swiperLoopButton2'));
       await button_Bottom.click();
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(btLeft + width*0.3), y: Math.round(btTop + height/2), displayId: displayID }, { x: Math.round(btRight), y: Math.round(btTop + height/2), displayId: displayID });
+      await driver.swipe(Math.round(btLeft + width*0.3), Math.round(btTop + height/2), Math.round(btRight), Math.round(btTop + height/2));
       await CommonFunc.sleep(3500);
 
       let strJson = getInspectorByKey('SwiperLoopText10');
@@ -153,7 +151,7 @@ export default function SwiperLoop() {
       let button_Bottom = await driver.findComponent(ON.id('swiperLoopButton3'));
       await button_Bottom.click();
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(btRight - vp2px(50)), y: Math.round(btTop + height/2), displayId: displayID }, { x: Math.round(btLeft + Math.round(vp2px(27))), y: Math.round(btTop + height/2), displayId: displayID });
+      await driver.swipe(Math.round(btRight - vp2px(50)), Math.round(btTop + height/2), Math.round(btLeft + Math.round(vp2px(27))), Math.round(btTop + height/2));
       await CommonFunc.sleep(3500);
 
       let strJson = getInspectorByKey('SwiperLoopText6');
@@ -191,7 +189,7 @@ export default function SwiperLoop() {
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(btLeft + width*0.3), y: Math.round(btTop + height/2), displayId: displayID }, { x: Math.round(btRight), y: Math.round(btTop + height/2), displayId: displayID });
+      await driver.swipe(Math.round(btLeft + width*0.3), Math.round(btTop + height/2), Math.round(btRight), Math.round(btTop + height/2));
       await CommonFunc.sleep(3500);
 
       let strJson = getInspectorByKey('SwiperLoopText5');

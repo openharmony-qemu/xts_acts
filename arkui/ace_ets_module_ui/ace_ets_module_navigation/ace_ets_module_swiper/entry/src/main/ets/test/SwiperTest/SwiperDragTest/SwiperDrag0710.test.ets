@@ -17,8 +17,6 @@ import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/utils/Common';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function SwiperDrag0710() {
   describe('SwiperDrag0710', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +64,7 @@ export default function SwiperDrag0710() {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0710 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(top + height/2), displayId: displayID });
+      await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.1),Math.round(top + height/2));
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('swiper_drag_0710');
       let marq: ESObject =JSON.parse(strJson2).$attrs.content;

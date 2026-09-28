@@ -17,8 +17,6 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function SwiperVisibility() {
   describe('SwiperVisibility', () => {
     beforeEach(async (done: Function) => {
@@ -69,7 +67,7 @@ export default function SwiperVisibility() {
 
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(btRight - vp2px(20)), y: Math.round(btTop + height/2), displayId: displayID }, { x: Math.round(btLeft + vp2px(10)), y: Math.round(btTop + height/2), displayId: displayID });
+      await driver.swipe(Math.round(btRight - vp2px(20)), Math.round(btTop + height/2), Math.round(btLeft + vp2px(10)), Math.round(btTop + height/2));
       await CommonFunc.sleep(4800);
 
 

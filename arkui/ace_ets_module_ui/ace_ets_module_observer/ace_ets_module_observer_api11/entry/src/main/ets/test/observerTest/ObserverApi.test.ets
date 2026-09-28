@@ -132,7 +132,7 @@ export default function ObserverApi() {
       await CommonFunc.sleep(2000);
       console.info("[ObserverApi_002] btn2")
 
-      await driver.pressBack(0)
+      await driver.pressBack()
       await CommonFunc.sleep(2000);
       console.info("[ObserverApi_002] btn3")
 

@@ -25,7 +25,7 @@ export default function SideBarContainer_AttributeTest() {
     beforeEach(async (done: Function) => {
       console.info("SideBarContainer_Attribute beforeEach start");
         let driver: Driver = Driver.create();
-  let size = await driver.getDisplaySize(0);
+  let size = await driver.getDisplaySize();
   if (size.x != 466 && size.y != 466) {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SideBarContainer/SideBarContainer_attribute/SideBarContainer_Attribute',
