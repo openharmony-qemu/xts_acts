@@ -80,6 +80,13 @@ import SyncMonitor0020Test from './SyncMonitorTest/SyncMonitor0020Test.test';
 import appStorageV2NullUndefinedTest from './appstoragev2/AppStorageV2NullUndefinedTest.test';
 import persistenceV2NullUndefinedTest from './PersistenceV2Test/PersistenceV2NullUndefinedTest.test';
 import CustomEnvTest from './CustomEnvTest/CustomEnvTest.test';
+import CustomEnvWatchTest from './CustomEnvTest/CustomEnvWatchTest.test';
+import CustomEnvDeepWatchTest from './CustomEnvTest/CustomEnvDeepWatchTest.test';
+import CustomDefaultvalueTest from './CustomEnvTest/CustomDefaultvalueTest.test';
+import CustomEnvParamV2Test from './CustomEnvTest/CustomEnvParamV2Test.test';
+import CustomEnvObservedV2Test from './CustomEnvTest/CustomEnvObservedV2Test.test';
+import CustomEnvMultiTypeTest from './CustomEnvTest/CustomEnvMultiTypeTest.test';
+import CustomEnvNearTest from './CustomEnvTest/CustomEnvNearTest.test';
 
 export default function testsuite() {
 	ArrayLikeStringTest();
@@ -148,4 +155,11 @@ export default function testsuite() {
     persistenceV2NotifyOnErrorTest();
     persistenceV2TypeMismatchTest();
     CustomEnvTest();
+    CustomEnvWatchTest();
+    CustomEnvDeepWatchTest();
+    CustomDefaultvalueTest();
+    CustomEnvParamV2Test();
+    CustomEnvObservedV2Test();
+    CustomEnvMultiTypeTest();
+    CustomEnvNearTest();
 }

@@ -74,5 +74,7 @@ struct Child {
     }
     .justifyContent(FlexAlign.Start)
     .alignItems(HorizontalAlign.Start)
+    .padding(20)
+    .margin(20)
   }
 }
