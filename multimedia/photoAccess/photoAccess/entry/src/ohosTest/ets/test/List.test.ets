@@ -35,6 +35,8 @@ import createVideoAssetRequestTest from './MediaAssetChangeRequest/createVideoAs
 import deleteAssetsChangeRequestTest from './MediaAssetChangeRequest/deleteAssets.test';
 import getAssetChangeRequestTest from './MediaAssetChangeRequest/getAsset.test';
 import setTitleChangeRequestTest from './MediaAssetChangeRequest/setTitle.test';
+import setFavoriteChangeRequestTest from './MediaAssetChangeRequest/setFavorite.test';
+import batchSetFavoriteChangeRequestTest from './MediaAssetsChangeRequest/setFavorite.test';
 import addResourceChangeRequestTest from './MediaAssetChangeRequest/addResource.test';
 import getWriteCacheHandlerTest from './MediaAssetChangeRequest/getWriteCacheHandler.test';
 import handleCameraPhotoTest from './MediaAssetChangeRequest/handleCameraPhoto.test';
@@ -57,8 +59,6 @@ import unRegisterChangeTest from './PhotoAccessHelper/unRegisterChange.test';
 import registerChangeTest from './PhotoAccessHelper/registerChange.test';
 import releaseTest from './PhotoAccessHelper/release.test';
 import photoPickerTest from './PhotoAccessHelper/photoPicker.test';
-import PhotoAccessHelperCasesTest from  './PhotoAccessHelperCases/PhotoAccessHelperTest.test';
-//import photoAccessHelperTest from './photoAccessHelperTest/PhotoAccessHelper.test';
 import checkAttrTest from './PhotoAsset/checkAttr.test';
 import closeTest from './PhotoAsset/close.test';
 import commitModifyTest from './PhotoAsset/commitModify.test';
@@ -116,6 +116,8 @@ export default function testsuite() {
   deleteAssetsChangeRequestTest();
   getAssetChangeRequestTest();
   setTitleChangeRequestTest();
+  setFavoriteChangeRequestTest();
+  batchSetFavoriteChangeRequestTest();
   addResourceChangeRequestTest();
   getWriteCacheHandlerTest();
   handleCameraPhotoTest();
@@ -139,8 +141,6 @@ export default function testsuite() {
   registerChangeTest();
   releaseTest();
   photoPickerTest();
-  PhotoAccessHelperCasesTest();
-  //photoAccessHelperTest();
   checkAttrTest();
   closeTest();
   commitModifyTest();
