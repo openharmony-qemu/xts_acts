@@ -148,7 +148,10 @@ export default class Utils {
     let centerY = Number.parseInt(Number((modePosition.size.height) / 2 + modePosition.screenOffset.y).toFixed(0))
     let heightUnit = Math.ceil((modePosition.size.height) / 12)
     let pointers: PointerMatrix = PointerMatrix.create(2, 3);
-    let y = 0
+    let y = 0;
+
+    const component:Component=await driver.findComponent(ON.id(key));
+    const displayId:number=await component.getDisplayId();
 
     console.log("XXXXXXXX centerX: " + centerX)
     console.log("XXXXXXXX centerY: " + centerY)
@@ -166,22 +169,22 @@ export default class Utils {
     console.log("XXXXXXXX pointers2: " + y)
 
     pointers.setPoint(0, 0, {
-      x: centerX, y: centerY - (isOut ? heightUnit : heightUnit * 3)
+      x: centerX, y: centerY - (isOut ? heightUnit : heightUnit * 3),displayId:displayId
     });
     pointers.setPoint(0, 1, {
-      x: centerX, y: centerY - heightUnit * 2
+      x: centerX, y: centerY - heightUnit * 2,displayId:displayId
     });
     pointers.setPoint(0, 2, {
-      x: centerX, y: centerY - (isOut ? heightUnit * 3 : heightUnit)
+      x: centerX, y: centerY - (isOut ? heightUnit * 3 : heightUnit),displayId:displayId
     });
     pointers.setPoint(1, 0, {
-      x: centerX, y: centerY + (isOut ? heightUnit : heightUnit * 3)
+      x: centerX, y: centerY + (isOut ? heightUnit : heightUnit * 3),displayId:displayId
     });
     pointers.setPoint(1, 1, {
-      x: centerX, y: centerY + heightUnit * 2
+      x: centerX, y: centerY + heightUnit * 2,displayId:displayId
     });
     pointers.setPoint(1, 2, {
-      x: centerX, y: centerY + (isOut ? heightUnit * 3 : heightUnit)
+      x: centerX, y: centerY + (isOut ? heightUnit * 3 : heightUnit),displayId:displayId
     });
     await driver.injectMultiPointerAction(pointers);
   }

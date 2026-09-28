@@ -142,6 +142,7 @@ struct WebViewEnumAndFontLibrary {
           console.info("key==>" + this.str)
           await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
           await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          const displayId:number=await (await driver.findComponent(ON.id('buttonEnumAndFontLibrary'))).getDisplayId();
           switch (this.str) {
             case "emitWebContextMenuParamX": {
               let button = await driver.findComponent(ON.id('webCenter'));
@@ -243,7 +244,7 @@ struct WebViewEnumAndFontLibrary {
                 break;
               }
 
-              await driver.triggerCombineKeys(2047, 2099);
+              await driver.triggerCombineKeys(2047, 2099,undefined,displayId);
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.SourceTypeArr[this.SourceType], 183300)
               break;

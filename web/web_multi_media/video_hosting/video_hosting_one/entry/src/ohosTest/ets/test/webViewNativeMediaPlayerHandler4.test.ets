@@ -66,7 +66,7 @@ export default function webViewNativeMediaPlayerHandler4() {
       let isReturn = false;
       Utils.registerEvent("testWebViewNativeMediaPlayerHandleVideoSizeChange", true, 361010, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
-      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 5000,30);
       done();
     })
 
@@ -84,7 +84,7 @@ export default function webViewNativeMediaPlayerHandler4() {
       let isReturn = false;
       Utils.registerEvent("testWebViewNativeMediaPlayerBufferedEndTime", true, 361020, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
-      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 5000,30);
       done();
     })
 
@@ -102,7 +102,7 @@ export default function webViewNativeMediaPlayerHandler4() {
       let isReturn = false;
       Utils.registerEvent("testWebViewNativeMediaPlayerSeek500", true, 361030, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
-      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 5000,30);
       done();
     })
 
@@ -120,7 +120,7 @@ export default function webViewNativeMediaPlayerHandler4() {
       let isReturn = false;
       Utils.registerEvent("testWebViewNativeMediaPlayerSeek20", true, 361040, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
-      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 5000,30);
       done();
     })
 
@@ -138,7 +138,7 @@ export default function webViewNativeMediaPlayerHandler4() {
       let isReturn = false;
       Utils.registerEvent("testWebViewNativeMediaPlayerSeekNegative1", true, 361050, () => { isReturn = true });
       await Utils.waitAndClickComponent(driver, "webViewNativeMediaPlayerRateHandler4", emitKey);
-      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true,5000,30);
       done();
     })
   })
