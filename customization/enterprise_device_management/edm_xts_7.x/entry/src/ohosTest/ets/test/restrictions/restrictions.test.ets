@@ -475,6 +475,32 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_packet_filtering_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYPACKET_FILTERING_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with packet_filtering feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_disallowed_policy_packet_filtering_0100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING, false);
+      ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING);
+      expect(ret).assertFalse();
+    } catch (error) {
+      console.info('test_set_disallowed_policy_packet_filtering_0100 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedPolicy() {
