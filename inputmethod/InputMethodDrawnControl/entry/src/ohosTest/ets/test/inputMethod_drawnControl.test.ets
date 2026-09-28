@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import commoneventmanager from '@ohos.commonEventManager';
 import inputMethod from '@ohos.inputMethod';
 import deviceinfo from '@ohos.deviceInfo';
-import { Driver, ON, MatchPattern, Component, UiWindow, DisplayRotation, Rect } from '@ohos.UiTest'
+import { Driver, ON, MatchPattern, Component, UiWindow, DisplayRotation, Rect, Point } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base'
 import inputmethodengine from '@ohos.inputMethodEngine';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -35,17 +35,28 @@ export default function inputMethodDrawnControlJSUnit() {
     let driver = Driver.create();
     let textArea: Component;
     let rectInfo: Rect;
+    let id: number = 0;
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     beforeAll(async (done: Function) => {
       console.info('====>beforeAll inputMethod_enable start!')
       try {
-        await delegator.executeShellCommand('ime -e com.acts.inputmethoddrawncontrol.test -f');
-        await delegator.executeShellCommand('ime -s com.acts.inputmethoddrawncontrol.test');
+        let enableCmd = 'ime -e com.acts.inputmethoddrawncontrol.test -f';
+        let setCmd = 'ime -s com.acts.inputmethoddrawncontrol.test';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+          enableCmd = `ime -u ${user} -e com.acts.inputmethoddrawncontrol.test -f`;
+          setCmd = `ime -u ${user} -s com.acts.inputmethoddrawncontrol.test`;
+        }
+        console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+        await delegator.executeShellCommand(enableCmd);
+        await delegator.executeShellCommand(setCmd);
         console.info('====>beforeAll inputMethod_enable success');
         await driver.delayMs(1000);
         textArea = await driver.findComponent(ON.type('TextArea'));
         rectInfo = await textArea.getBounds();
+        id = await textArea.getDisplayId();
+        console.info(`====>beforeAll DisplayId:${id}`);
         await driver.delayMs(1000);
         await runCmd();
         await driver.delayMs(1000);
@@ -77,8 +88,9 @@ export default function inputMethodDrawnControlJSUnit() {
     let runCmd = async () => {
       let cursor_x: number = rectInfo.left + 20 + Math.floor(Math.random() * (rectInfo.right - rectInfo.left) * 0.7);
       let cursor_y: number = rectInfo.top + 20 + Math.floor(Math.random() * (rectInfo.bottom - rectInfo.top) * 0.7);
-      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`)
-      await driver.click(cursor_x, cursor_y)
+      let point: Point = {x: cursor_x, y: cursor_y, displayId: id};
+      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y} displayId: ${id}`);
+      await driver.clickAt(point);
     }
 
     /**
