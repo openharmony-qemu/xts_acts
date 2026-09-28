@@ -19,11 +19,7 @@ import mediaNative from "libentry.so";
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs';
 
-import {
-  photoKeys,
-  fetchOption,
-  createSandboxFileUri, getPermission, driveFn, sleep,
-} from '../common'
+import { photoKeys, fetchOption, createSandboxFileUri, getPermission, driveFn, sleep, checkResourceFile, createResource } from '../common'
 import common from '@ohos.app.ability.common';
 
 export default function requestVideoNativeTest() {
@@ -35,6 +31,9 @@ export default function requestVideoNativeTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = ["request_video_native.mp4", "native_request_mpeg.mpeg", "request_image_native.jpg", "native_request_error_mp4.mp4"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     afterAll(async () => {

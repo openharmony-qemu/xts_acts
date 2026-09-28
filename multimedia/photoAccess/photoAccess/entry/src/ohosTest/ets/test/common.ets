@@ -332,10 +332,11 @@ export function checkResourceFile(context: Context) {
 export async function createResource(context: common.UIAbilityContext, fileNameList: Array<string>) {
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-    let imageUri = context.filesDir + '/01.jpg';
-    console.info("imageUri: " + imageUri);
-    let videoUri = context.filesDir + '/01.mp4';
-    console.info("videoUri: " + videoUri);
+    let imageUri_jpg = context.filesDir + '/01.jpg';
+    let imageUri_png = context.filesDir + '/01.png';
+    let imageUri_gif = context.filesDir + '/01.gif';
+    let videoUri_mp4 = context.filesDir + '/01.mp4';
+    let videoUri_mpeg = context.filesDir + '/01.mpeg';
     for (let i = 0; i < fileNameList.length; i++) {
       let fileName = fileNameList[i];
       let displayName = fileName.substring(0, fileName.lastIndexOf("."));
@@ -347,7 +348,29 @@ export async function createResource(context: common.UIAbilityContext, fileNameL
           title: displayName
         }
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUri);
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUri_jpg);
+        await phAccessHelper.applyChanges(assetChangeRequest);
+        console.log(`createResource :: applyChange ${fileName} success !`);
+      }
+      if (fileName.endsWith(".gif")) {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'gif';
+        let options: photoAccessHelper.CreateOptions = {
+          title: displayName
+        }
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUri_gif);
+        await phAccessHelper.applyChanges(assetChangeRequest);
+        console.log(`createResource :: applyChange ${fileName} success !`);
+      }
+      if (fileName.endsWith(".png")) {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+        let extension: string = 'png';
+        let options: photoAccessHelper.CreateOptions = {
+          title: displayName
+        }
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageUri_png);
         await phAccessHelper.applyChanges(assetChangeRequest);
         console.log(`createResource :: applyChange ${fileName} success !`);
       }
@@ -358,7 +381,18 @@ export async function createResource(context: common.UIAbilityContext, fileNameL
           title: displayName
         }
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
-        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri_mp4);
+        await phAccessHelper.applyChanges(assetChangeRequest);
+        console.log(`createResource :: applyChange ${fileName} success !`);
+      }
+      if (fileName.endsWith(".mpeg")) {
+        let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.VIDEO;
+        let extension: string = 'mpeg';
+        let options: photoAccessHelper.CreateOptions = {
+          title: displayName
+        }
+        let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(context, photoType, extension, options);
+        assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri_mpeg);
         await phAccessHelper.applyChanges(assetChangeRequest);
         console.log(`createResource :: applyChange ${fileName} success !`);
       }
