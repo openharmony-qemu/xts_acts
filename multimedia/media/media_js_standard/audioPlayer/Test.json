@@ -51,6 +51,8 @@
             "type": "ShellKit",
             "run-command": [
                 "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.audio.audioplayer/haps/entry_test/files",
+                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.audio.audioplayer/haps/entry_test",
                 "chmod 755 /data/local/tmp/",
                 "sh /data/local/tmp/setup_media_js_standard_audioPlayer_test.sh"
             ],
