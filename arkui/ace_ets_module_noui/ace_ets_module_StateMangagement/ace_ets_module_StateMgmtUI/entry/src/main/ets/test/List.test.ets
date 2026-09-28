@@ -59,6 +59,7 @@ import ReusableChildState1Test from './Reusable/ReusableChildState1Test.test';
 import ReusableChildState2Test from './Reusable/ReusableChildState2Test.test';
 import ReusableChildState3Test from './Reusable/ReusableChildState3Test.test';
 import ReusableChildState4Test from './Reusable/ReusableChildState4Test.test';
+import ExtendableComponentApiTest from './ExtendableComponent/ExtendableComponentApi.test';
 
 export default function testsuite() {
     MutableBuilder001();
@@ -107,4 +108,5 @@ export default function testsuite() {
     ReusableChildState2Test();
     ReusableChildState3Test();
     ReusableChildState4Test();
+    ExtendableComponentApiTest();
 }
