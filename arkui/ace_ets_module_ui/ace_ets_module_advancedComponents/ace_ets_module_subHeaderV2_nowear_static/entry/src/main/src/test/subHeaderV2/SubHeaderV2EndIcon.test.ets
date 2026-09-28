@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -58,12 +58,12 @@ export default function subHeaderV2EndIcon() {
     })
 
     /**
-     * @tc.number   subHeaderV2EndIcon_static_0100
+     * @tc.number   SUB_ARKUI_SUBHEADERV2_ENDICON_0100
      * @tc.name     subHeaderV2EndIcon_static_0100
      * @tc.desc     Verify SubHeaderV2 with primaryTitle+secondaryTitle+endIcon(image) renders correctly
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level    LEVEL1
      */
-    it('subHeaderV2EndIcon_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('subHeaderV2EndIcon_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[subHeaderV2EndIcon_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
@@ -78,12 +78,12 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number   subHeaderV2EndIcon_static_0200
+     * @tc.number   SUB_ARKUI_SUBHEADERV2_ENDICON_0200
      * @tc.name     subHeaderV2EndIcon_static_0200
      * @tc.desc     Verify SubHeaderV2 with primaryTitle+endIcon(SymbolGlyphModifier) renders correctly
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level    LEVEL1
      */
-    it('subHeaderV2EndIcon_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('subHeaderV2EndIcon_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[subHeaderV2EndIcon_static_0200] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
@@ -96,12 +96,12 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number   subHeaderV2EndIcon_static_0300
+     * @tc.number   SUB_ARKUI_SUBHEADERV2_ENDICON_0300
      * @tc.name     subHeaderV2EndIcon_static_0300
      * @tc.desc     Verify SubHeaderV2 with endIcon+operationItems(BUTTON) coexistence renders correctly
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level    LEVEL1
      */
-    it('subHeaderV2EndIcon_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('subHeaderV2EndIcon_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[subHeaderV2EndIcon_static_0300] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
@@ -116,12 +116,12 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number   subHeaderV2EndIcon_static_0400
+     * @tc.number   SUB_ARKUI_SUBHEADERV2_ENDICON_0400
      * @tc.name     subHeaderV2EndIcon_static_0400
      * @tc.desc     Verify SubHeaderV2 list type with icon+secondaryTitle+endIcon(image) renders correctly
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level    LEVEL1
      */
-    it('subHeaderV2EndIcon_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('subHeaderV2EndIcon_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[subHeaderV2EndIcon_static_0400] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
@@ -134,12 +134,12 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number   subHeaderV2EndIcon_static_0500
+     * @tc.number   SUB_ARKUI_SUBHEADERV2_ENDICON_0500
      * @tc.name     subHeaderV2EndIcon_static_0500
      * @tc.desc     Verify SubHeaderV2 with endIcon renders correctly in RTL layout (Row>Column wrapping)
-     * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
+     * @tc.level    LEVEL1
      */
-    it('subHeaderV2EndIcon_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('subHeaderV2EndIcon_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[subHeaderV2EndIcon_static_0500] START');
       let driver = Driver.create();
       await driver.delayMs(2000);
