@@ -27,7 +27,9 @@ import {
   getPermission,
   driveFn,
   sleep,
-  createVideoBySandBoxUri
+  createVideoBySandBoxUri,
+  checkResourceFile,
+  createResource
 } from '../common'
 
 export default function requestVideoTest() {
@@ -36,7 +38,7 @@ export default function requestVideoTest() {
     let AVFileDescriptor: media.AVFileDescriptor;
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let helper = photoAccessHelper.getPhotoAccessHelper(testContext);
-    let hdrVideoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_hdr_1.mp4";
+    let hdrVideoUri = testContext.filesDir + '/test_hdr_1.mp4';
     let isSupportHdr: Boolean;
 
     beforeAll(async () => {
@@ -48,6 +50,9 @@ export default function requestVideoTest() {
       isSupportHdr =
         !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
           display.getDefaultDisplaySync().hdrFormats.length != 0;
+      const fileNames: Array<string> = ["request_image.jpg", "request_video.mp4"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     afterAll(async () => {
@@ -81,8 +86,8 @@ export default function requestVideoTest() {
         };
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
           photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, displayName, createOption);
-        let photoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg";
-        let videoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.mp4";
+        let photoUri = testContext.filesDir + '/test_mov_1.jpg';
+        let videoUri = testContext.filesDir + '/test_mov_1.mp4';
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
         await helper.applyChanges(assetChangeRequest);
@@ -111,7 +116,6 @@ export default function requestVideoTest() {
           async onDataPrepared(data: boolean) {
             console.info(`${testNum} succeed`);
             expect(data).assertTrue();
-            done();
           }
         }
 
@@ -136,7 +140,6 @@ export default function requestVideoTest() {
           async onDataPrepared(data: boolean) {
             console.info(`${testNum} succeed`);
             expect(data).assertTrue();
-            done();
           }
         }
 

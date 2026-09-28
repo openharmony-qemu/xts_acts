@@ -87,6 +87,7 @@ export default function showAssetsCreationDialogTest() {
         let selectPictureText = await driver?.waitForComponent(ON.text('完成'), 10000);
         if (selectPictureText) {
             console.log(testNum,' select “完成” button');
+            await selectPictureText.click();
             done();
         } else {
           let button: Component | undefined = await driver?.waitForComponent(ON.text(buttonText), 10000);
@@ -151,9 +152,7 @@ export default function showAssetsCreationDialogTest() {
      */
     it("show_asset_create_dialog_001", Level.LEVEL0, async (done: Function) => {
       const testNum = "show_asset_create_dialog_001";
-      let fileUriList: Array<string> = [
-        "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg"
-      ];
+      let fileUriList: Array<string> = [testContext.filesDir + '/test_mov_1.jpg'];
       let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
         {
           title: 'showAssetsCreationDialogTest',
@@ -175,9 +174,7 @@ export default function showAssetsCreationDialogTest() {
      */
     it("show_asset_create_dialog_002", Level.LEVEL0, async (done: Function) => {
       const testNum = "show_asset_create_dialog_002";
-      let fileUriList: Array<string> = [
-        "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg"
-      ];
+      let fileUriList: Array<string> = [testContext.filesDir + '/test_mov_1.jpg'];
       let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
         {
           title: 'showAssetsCreationDialogTest',
@@ -209,6 +206,112 @@ export default function showAssetsCreationDialogTest() {
         }
       ];
       await showAssetCreationDialogError(done, testNum, fileUriList, photoCreationConfigs, false);
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0040
+     * @tc.number SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0040
+     * @tc.desc   show dialog fileUriList is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0040", Level.LEVEL2, async (done: Function) => {
+      const testNum = "SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0040";
+      try {
+        let fileUriList: Array<string> = [];
+        let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
+          {
+            title: 'showAssetsCreationDialogTest',
+            fileNameExtension: 'jpg',
+            photoType: photoAccessHelper.PhotoType.IMAGE,
+            subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+          }
+        ];
+        await phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfigs)
+        expect(false).assertTrue();
+        done()
+      } catch (error) {
+        console.error(`${testNum} :: showAssetsCreationDialogPromise error, err is ${error} ${error.code}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0050
+     * @tc.number SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0050
+     * @tc.desc   show dialog fileUriList is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0050", Level.LEVEL2, async (done: Function) => {
+      const testNum = "SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0050";
+      try {
+        let fileUriList: ESObject = null;
+        let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [
+          {
+            title: 'showAssetsCreationDialogTest',
+            fileNameExtension: 'jpg',
+            photoType: photoAccessHelper.PhotoType.IMAGE,
+            subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
+          }
+        ];
+        await phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfigs)
+        expect(false).assertTrue();
+        done()
+      } catch (error) {
+        console.error(`${testNum} :: showAssetsCreationDialogPromise error, err is ${error} ${error.code}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0060
+     * @tc.number SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0060
+     * @tc.desc   show dialog photoCreationConfigs is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0060", Level.LEVEL2, async (done: Function) => {
+      const testNum = "SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0060";
+      try {
+        let fileUriList: Array<string> = [testContext.filesDir + '/test_mov_1.jpg'];
+        let photoCreationConfigs: Array<photoAccessHelper.PhotoCreationConfig> = [];
+        await phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfigs)
+        expect(false).assertTrue();
+        done()
+      } catch (error) {
+        console.error(`${testNum} :: showAssetsCreationDialogPromise error, err is ${error} ${error.code}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0070
+     * @tc.number SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0070
+     * @tc.desc   show dialog photoCreationConfigs is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0070", Level.LEVEL2, async (done: Function) => {
+      const testNum = "SUB_MULTIMEDIA_MEDIA_LIBRARY_SHOW_ASSET_CREATE_DIALOG_0070";
+      try {
+        let fileUriList: Array<string> = [testContext.filesDir + '/test_mov_1.jpg'];
+        let photoCreationConfigs: ESObject = null;
+        await phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfigs)
+        expect(false).assertTrue();
+        done()
+      } catch (error) {
+        console.error(`${testNum} :: showAssetsCreationDialogPromise error, err is ${error} ${error.code}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
     })
 
   })
