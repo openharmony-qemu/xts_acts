@@ -195,6 +195,10 @@
     "MainAbility/pages/RichEditorApi26/RichEditorStrokeJoinStyle",
     "MainAbility/pages/RichEditorApi26/RichEditorShaderStyle",
     "MainAbility/pages/RichEditorApi26/RichEditorScrollToVisible",
-    "MainAbility/pages/RichEditorApi26/RichEditorPunctuationOverflow"
-   ]
+    "MainAbility/pages/RichEditorApi26/RichEditorPunctuationOverflow",
+    "MainAbility/pages/RichEditorApi26/ImageSpanResizable",
+    "MainAbility/pages/RichEditorApi26/RichEditorImageSpanStyleResizable",
+    "MainAbility/pages/RichEditorApi26/ImageAttachmentResizable",
+    "MainAbility/pages/RichEditorApi26/RefreshOffset"
+  ]
 }
