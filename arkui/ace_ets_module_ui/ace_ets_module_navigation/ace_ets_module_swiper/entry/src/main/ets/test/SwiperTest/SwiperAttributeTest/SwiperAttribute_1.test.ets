@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import text from "@ohos.graphics.text"
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function SwiperAttribute_1() {
   describe('SwiperAttribute_1', () => {
     beforeEach(async (done: Function) => {
@@ -72,12 +74,7 @@ export default function SwiperAttribute_1() {
       let driver = await Driver.create()
       for (let i = 1; i <= 6; i++) {
         if (i > 1) {
-          await driver.swipe(
-            Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`),
-            Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`),
-            Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`),
-            Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`),
-            500);
+          await driver.swipeBetween({ x: Number.parseInt(`${(rect.right - rect.left) * 0.8 + rect.left}`), y: Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`), displayId: displayID }, { x: Number.parseInt(`${(rect.right - rect.left) * 0.1 + rect.left}`), y: Number.parseInt(`${(rect.bottom - rect.top) * 0.5 + rect.top}`), displayId: displayID }, 500);
           await CommonFunc.sleep(500);
         }
         let columnRect = CommonFunc.getComponentRectOnScreen('swiperAttributeColumn_10' + i);

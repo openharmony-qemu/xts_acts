@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/utils/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function SwiperImplicitanimation0070() {
   describe('SwiperImplicitanimation0070', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +64,7 @@ export default function SwiperImplicitanimation0070() {
       let bottom = swiperOffset.bottom;
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width*0.8),Math.round(bottom - height/2),Math.round(left + width*0.5),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.5), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(1000);
       let strIndex: string = getInspectorByKey('implicitanimation_0070_1')
       let jsonIndex: ESObject = JSON.parse(strIndex).$attrs.content;
@@ -75,9 +77,9 @@ export default function SwiperImplicitanimation0070() {
       let tarindex2: string = getInspectorByKey('implicitanimation_0070_2')
       let jsonIndex2: ESObject = JSON.parse(tarindex2).$attrs.content;
       expect(jsonIndex2 != 0).assertTrue();
-      await driver.swipe(Math.round(left + width*0.8),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(300);
-      await driver.swipe(Math.round(left + width*0.8),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(300);
       let strIndex3: string = getInspectorByKey('implicitanimation_0070_1')
       let jsonIndex3: ESObject = JSON.parse(strIndex3).$attrs.content;

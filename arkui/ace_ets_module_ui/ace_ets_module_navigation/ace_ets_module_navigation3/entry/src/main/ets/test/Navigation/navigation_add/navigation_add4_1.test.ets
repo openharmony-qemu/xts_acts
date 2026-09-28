@@ -19,6 +19,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function navigation_add4_1() {
   describe('navigation_add4_1', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +64,7 @@ export default function navigation_add4_1() {
       
       let navigation: RectValue = CommonFunc.getComponentRectOnScreen('navigation_add4_1_navigation');
       
-      await driver.swipe( Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3) ,Math.round(navigation.top + (navigation.bottom - navigation.top) / 2) ,Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1) ,Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2));
+      await driver.swipeBetween({ x: Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 3), y: Math.round(navigation.top + (navigation.bottom - navigation.top) / 2), displayId: displayID }, { x: Math.round(navigation.left + (navigation.right - navigation.left) / 4 * 1), y: Math.round(navigation.top + (navigation.bottom -  navigation.top) / 2), displayId: displayID });
       await CommonFunc.sleep(1000);
       
       let btn1 = await driver.findComponent(ON.id('navigation_add4_1_pageTwo_btn1'));

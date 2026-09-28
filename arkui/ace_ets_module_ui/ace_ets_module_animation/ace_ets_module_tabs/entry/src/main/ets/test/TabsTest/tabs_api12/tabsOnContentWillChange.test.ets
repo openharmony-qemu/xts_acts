@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function tabsOnContentWillChangeJsunitTest() {
   describe('tabsOnContentWillChangeJsunitTest', () => {
     beforeEach(async (done: Function) => {
@@ -61,8 +63,7 @@ export default function tabsOnContentWillChangeJsunitTest() {
       console.info("tabsOnContentWillChangeJsunitTest_0010  test rect value " + tabsRect.left + "," + tabsRect.right + "," +
       tabsRect.top + "," + tabsRect.bottom );
       // swipe index 0 -1  right swipe to left
-      await driver.swipe(globalThis.winLeft + Math.round((tabsRect.right-tabsRect.left)*0.8 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left),
-        Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top));
+      await driver.swipeBetween({ x: globalThis.winLeft + Math.round((tabsRect.right-tabsRect.left)*0.8 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID });
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('currentIndexId');
@@ -75,8 +76,7 @@ export default function tabsOnContentWillChangeJsunitTest() {
       expect(texContent).assertEqual("发现的内容");
 
       // swipe index 1 -2  right swipe to left
-      await driver.swipe(globalThis.winLeft + Math.round((tabsRect.right-tabsRect.left)*0.8 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left),
-        Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top));
+      await driver.swipeBetween({ x: globalThis.winLeft + Math.round((tabsRect.right-tabsRect.left)*0.8 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID });
       await CommonFunc.sleep(2000);
      
       let strJson2 = getInspectorByKey('currentIndexId')
@@ -89,8 +89,7 @@ export default function tabsOnContentWillChangeJsunitTest() {
       expect(texContent2).assertEqual("推荐的内容");
 
       // swipe index 2 -3  right swipe to left
-      await driver.swipe(Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.8 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left),
-        Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top));
+      await driver.swipeBetween({ x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.8 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID });
       await CommonFunc.sleep(2000);
     
       let strJson3 = getInspectorByKey('currentIndexId')

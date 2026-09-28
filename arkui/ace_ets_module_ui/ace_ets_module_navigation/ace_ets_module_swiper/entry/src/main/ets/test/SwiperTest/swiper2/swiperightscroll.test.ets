@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function swiperRightScrollTest() {
   describe('swiperRightScrollTest', () => {
     beforeEach(async (done: Function) => {
@@ -64,7 +66,7 @@ export default function swiperRightScrollTest() {
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0300] swiper width " + btWidth);
       // right scroll
       let driver = await Driver.create();
-      await driver.swipe(Math.round(btLeft + btWidth*0.3),Math.round(btTop + btHeight/2), Math.round(btRight), Math.round(btTop + btHeight/2));
+      await driver.swipeBetween({ x: Math.round(btLeft + btWidth*0.3), y: Math.round(btTop + btHeight/2), displayId: displayID }, { x: Math.round(btRight), y: Math.round(btTop + btHeight/2), displayId: displayID });
       await CommonFunc.sleep(3000);
       // get the component of text_10
       let text10:Component = await driver.findComponent(ON.text('10'));
