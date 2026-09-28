@@ -18,6 +18,8 @@ import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPatter
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function DatePickerDialogJsunit() {
   describe('DatePickerDialogJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -52,8 +54,8 @@ export default function DatePickerDialogJsunit() {
      */
     it('DatePickerDialogJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('DatePickerDialogJsunit_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('DatePickerDialog'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('DatePickerDialog'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -62,7 +64,11 @@ export default function DatePickerDialogJsunit() {
       console.info('[DatePickerDialogJsunit_0100] component obj is: ' + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual('DatePickerDialog');
       console.info('[DatePickerDialogJsunit_0100] END');
-      await driver.pressBack();
+      try {
+        await driver.pressBack(displayID);
+      } catch (err) {
+        console.log('pressBack error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1500);
       done();
     });

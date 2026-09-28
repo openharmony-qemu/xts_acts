@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function CalendarDialogAJsunit() {
   describe('CalendarDialogAJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -60,9 +62,17 @@ export default function CalendarDialogAJsunit() {
       console.info('[CalendarDialogAJsunit_0100] component obj is: ' + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual('CalendarPickerDialog按esc弹窗逐层退出');
       console.info('[CalendarDialogAJsunit_0100] END');
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       done();
     });
