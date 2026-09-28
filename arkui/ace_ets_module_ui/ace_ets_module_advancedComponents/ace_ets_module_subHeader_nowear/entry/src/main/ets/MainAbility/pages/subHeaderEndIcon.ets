@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { SubHeader, OperationType, Prompt } from '@kit.ArkUI';
+import { SubHeader, OperationType } from '@ohos.arkui.advanced.SubHeader';
+import promptAction from '@ohos.promptAction';
 
 @Entry
 @Component
@@ -70,7 +71,7 @@ struct SubHeaderEndIcon {
         operationItem: [{
           value: '操作',
           action: () => {
-            Prompt.showToast({ message: 'demo' });
+            promptAction.showToast({ message: 'demo' });
           }
         }]
       })
