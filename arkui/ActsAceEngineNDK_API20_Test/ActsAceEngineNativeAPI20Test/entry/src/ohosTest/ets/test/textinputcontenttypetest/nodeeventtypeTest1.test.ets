@@ -21,6 +21,8 @@ import Utils from '../common/Utils';
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function NodeEventTypeTest1() {
   describe('NodeEventTypeTest1', () => {
     const x1: number = Math.floor(globalThis.winWidth / 2 + globalThis.winLeft);
@@ -66,7 +68,7 @@ export default function NodeEventTypeTest1() {
       async (done: Function) => {
         try {
           console.info("====>testNODE_SWIPER_EVENT_ON_CONTENT_WILL_SCROLL0100 start====");
-          await Utils.driver.swipe(x1, y1, x2, y1)
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y1, displayId: displayID })
           let result: number = nativerenderndk.NodeEventTypeTest_013();
           console.info(`====>testNODE_SWIPER_EVENT_ON_CONTENT_WILL_SCROLL0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);

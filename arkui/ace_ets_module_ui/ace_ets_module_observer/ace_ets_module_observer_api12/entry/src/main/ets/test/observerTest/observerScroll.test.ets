@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function observerScrollTest() {
   describe('observerScrollTest', () => {
     beforeEach(async (done: Function) => {
@@ -65,7 +67,7 @@ export default function observerScrollTest() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(bottom - height/4),Math.round(left + width*0.2),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.2), y: Math.round(bottom - height/4), displayId: displayID }, { x: Math.round(left + width*0.2), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('scrollEvent_1');
       let strJson1 = getInspectorByKey('scrollEvent_2');

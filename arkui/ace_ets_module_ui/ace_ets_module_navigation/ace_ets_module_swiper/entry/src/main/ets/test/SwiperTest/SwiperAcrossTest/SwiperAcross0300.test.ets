@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/utils/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function SwiperAcross0300() {
   describe('SwiperAcross0300', () => {
     beforeEach(async (done: Function) => {
@@ -79,7 +81,7 @@ export default function SwiperAcross0300() {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_ACROSS_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('swiper_across_0300');
       let marq2: ESObject = JSON.parse(strJson2).$attrs.content;

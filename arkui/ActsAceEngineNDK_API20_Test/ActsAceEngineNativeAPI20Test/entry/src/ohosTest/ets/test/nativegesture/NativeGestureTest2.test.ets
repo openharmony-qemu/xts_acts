@@ -21,6 +21,8 @@ import { ON, Component, Point } from '@kit.TestKit'
 const ARKUI_ERROR_CODE_NO_ERROR = 0
 const ARKUI_ERROR_CODE_PARAM_INVALID = 401
 const ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED = 180102
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function NativeGestureTest2() {
   describe('NativeGestureTest2', () => {
     let Component: Component;
@@ -45,7 +47,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_repeat0100 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
           let result: number = nativegesturendk.GetGestureParam_repeat0100();
           console.info(`====>testGetGestureParam_repeat0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED).assertEqual(result);
@@ -92,7 +94,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_distance0100 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
           let result: number = nativegesturendk.GetGestureParam_distance0100();
           console.info(`====>testGetGestureParam_distance0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED).assertEqual(result);
@@ -140,7 +142,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_speed0100 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
           let result: number = nativegesturendk.GetGestureParam_speed0100();
           console.info(`====>testGetGestureParam_speed0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED).assertEqual(result);
@@ -164,7 +166,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_speed0200 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
           let result: number = nativegesturendk.GetGestureParam_speed0200();
           console.info(`====>testGetGestureParam_speed0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -187,7 +189,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_duration0100 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
           let result: number = nativegesturendk.GetGestureParam_duration0100();
           console.info(`====>testGetGestureParam_duration0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED).assertEqual(result);

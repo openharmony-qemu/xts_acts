@@ -18,6 +18,8 @@ import nativexcomponent from 'libnativexcomponent.so';
 import Utils from "../common/Utils";
 import { ON, Component, Point } from '@kit.TestKit';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function ListItemGroupAreaTest() {
   describe('ListItemGroupAreaTest', () => {
     let Component: Component;
@@ -51,11 +53,9 @@ export default function ListItemGroupAreaTest() {
       await Utils.sleep(1000);
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_GROUP_AREA_OUTSIDE_0100 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
-                           y1, 5000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y2, displayId: displayID }, { x: ComponentPoint.x, y: y1, displayId: displayID }, 5000);
         await Utils.sleep(1000);
-        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
-                           y2, 5000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y1, displayId: displayID }, { x: ComponentPoint.x, y: y2, displayId: displayID }, 5000);
         await Utils.sleep(1000);
         await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
@@ -81,11 +81,9 @@ export default function ListItemGroupAreaTest() {
       await Utils.sleep(1000);
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_NONE_0200 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
-                           y1, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y2, displayId: displayID }, { x: ComponentPoint.x, y: y1, displayId: displayID }, 8000);
         await Utils.sleep(1000);
-        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
-                           y2, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y1, displayId: displayID }, { x: ComponentPoint.x, y: y2, displayId: displayID }, 8000);
         await Utils.sleep(1000);
         await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
@@ -111,11 +109,9 @@ export default function ListItemGroupAreaTest() {
       await Utils.sleep(1000);
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_ITEM_0300 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
-                           y1, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y2, displayId: displayID }, { x: ComponentPoint.x, y: y1, displayId: displayID }, 8000);
         await Utils.sleep(1000);
-        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
-                           y2, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y1, displayId: displayID }, { x: ComponentPoint.x, y: y2, displayId: displayID }, 8000);
         await Utils.sleep(1000);
         await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
@@ -141,11 +137,9 @@ export default function ListItemGroupAreaTest() {
       await Utils.sleep(1000);
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_HEADER_0400 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
-                           y1, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y2, displayId: displayID }, { x: ComponentPoint.x, y: y1, displayId: displayID }, 8000);
         await Utils.sleep(1000);
-        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
-                           y2, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y1, displayId: displayID }, { x: ComponentPoint.x, y: y2, displayId: displayID }, 8000);
         await Utils.sleep(2000);
         await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
@@ -171,11 +165,9 @@ export default function ListItemGroupAreaTest() {
       await Utils.sleep(1000);
       try {
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_LIST_ITEM_SWIPE_AREA_FOOTER_0500 start<====`);
-        await Utils.driver.swipe(ComponentPoint.x, y2, ComponentPoint.x,
-                           y1, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y2, displayId: displayID }, { x: ComponentPoint.x, y: y1, displayId: displayID }, 8000);
         await Utils.sleep(1000);
-        await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
-                           y2, 8000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: y1, displayId: displayID }, { x: ComponentPoint.x, y: y2, displayId: displayID }, 8000);
         await Utils.sleep(1000);
         await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
