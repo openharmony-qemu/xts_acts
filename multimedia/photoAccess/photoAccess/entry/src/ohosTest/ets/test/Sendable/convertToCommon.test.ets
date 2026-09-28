@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 
-
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
@@ -24,8 +23,9 @@ import {
   genRadomStr,
   getPermission,
   albumFetchOption,
-  pushCreateAsset,
   driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 
@@ -41,7 +41,8 @@ export default function convertToCommonTest () {
       await driveFn();
       await sleep(1000);
       const fileNameList = [fileName];
-      await pushCreateAsset(testContext, fileNameList);
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNameList)
     })
 
     /**
