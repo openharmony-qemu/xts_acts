@@ -20,6 +20,7 @@ import subHeaderSelect from './subHeader/subHeaderSelect.test';
 import subHeaderTitleAccessibitText from './subHeader/subHeaderTitleAccessibitText.test';
 import SubHeaderIdFieldsTest from './SubHeaderIdFieldsTest/SubHeaderIdFields.test';
 import SubHeaderV2IdFieldsTest from './SubHeaderV2IdFieldsTest/SubHeaderV2IdFields.test';
+import SubHeaderV2EndIconTest from './SubHeaderV2EndIconTest/SubHeaderV2EndIcon.test';
 
 export default function testsuite() {
   subHeaderButton();
@@ -28,4 +29,5 @@ export default function testsuite() {
   subHeaderTitleAccessibitText()
   SubHeaderIdFieldsTest();
   SubHeaderV2IdFieldsTest();
+  SubHeaderV2EndIconTest();
 }
