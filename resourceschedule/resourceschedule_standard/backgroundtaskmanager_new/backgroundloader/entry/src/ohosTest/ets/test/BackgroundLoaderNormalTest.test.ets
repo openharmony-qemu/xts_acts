@@ -134,7 +134,7 @@ export default function BackgroundLoaderNormalTest() {
     /**
      * @tc.number SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400
      * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400
-     * @tc.desc   Test finishTask before the registered task starts returns error 9700004
+     * @tc.desc   Test finishTask normal call
      * @tc.level  LEVEL0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,31 +145,24 @@ export default function BackgroundLoaderNormalTest() {
         taskId: 4,
         abilityName: 'TestAbility'
       }
-      let finishErrorCode: number = 0;
-      let unexpectedError: boolean = false;
+      let callbackFlag = 0;
       try {
         backgroundLoader.registerTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 registerTask success');
-        try {
-          backgroundLoader.finishTask(taskInfo);
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          finishErrorCode = Number(e.code);
-          hilog.info(DOMAIN, TAG,
-            'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 finishTask failed. code: %{public}s, message: %{public}s',
-            `${e.code}`, `${e.message}`);
-        }
+        backgroundLoader.finishTask(taskInfo);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 finishTask success');
+        callbackFlag = callbackFlag + 1;
+        expect(callbackFlag).assertEqual(1);
         backgroundLoader.unregisterTask(taskInfo);
+        done();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
-        unexpectedError = true;
         hilog.info(DOMAIN, TAG,
-          'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 unexpected error. code: %{public}s, message: %{public}s',
+          'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 failed. code: %{public}s, message: %{public}s',
           `${e.code}`, `${e.message}`);
+        expect(false).assertTrue();
+        done();
       }
-      expect(unexpectedError).assertFalse();
-      expect(finishErrorCode).assertEqual(9700004);
-      done();
     })
 
     /**
@@ -623,7 +616,7 @@ export default function BackgroundLoaderNormalTest() {
     /**
      * @tc.number SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400
      * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400
-     * @tc.desc   Test registering, rejecting premature finishTask, and unregistering a task
+     * @tc.desc   Test registerTask then finishTask then unregisterTask combined call
      * @tc.level  LEVEL2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -634,36 +627,25 @@ export default function BackgroundLoaderNormalTest() {
         taskId: 27,
         abilityName: 'TestAbility'
       }
-      let callbackFlag: number = 0;
-      let finishErrorCode: number = 0;
-      let unexpectedError: boolean = false;
+      let callbackFlag = 0;
       try {
         callbackFlag = callbackFlag + 1;
         backgroundLoader.registerTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 registerTask success');
-        try {
-          backgroundLoader.finishTask(taskInfo);
-        } catch (error) {
-          let e: BusinessError = error as BusinessError;
-          finishErrorCode = Number(e.code);
-          hilog.info(DOMAIN, TAG,
-            'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 finishTask failed. code: %{public}s, message: %{public}s',
-            `${e.code}`, `${e.message}`);
-        }
+        backgroundLoader.finishTask(taskInfo);
+        hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 finishTask success');
         backgroundLoader.unregisterTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 unregisterTask success');
-        callbackFlag = callbackFlag + 1;
+        expect(callbackFlag).assertEqual(1);
+        done();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
-        unexpectedError = true;
         hilog.info(DOMAIN, TAG,
-          'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 unexpected error. code: %{public}s, message: %{public}s',
+          'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 failed. code: %{public}s, message: %{public}s',
           `${e.code}`, `${e.message}`);
+        expect(false).assertTrue();
+        done();
       }
-      expect(unexpectedError).assertFalse();
-      expect(finishErrorCode).assertEqual(9700004);
-      expect(callbackFlag).assertEqual(2);
-      done();
     })
 
     /**
