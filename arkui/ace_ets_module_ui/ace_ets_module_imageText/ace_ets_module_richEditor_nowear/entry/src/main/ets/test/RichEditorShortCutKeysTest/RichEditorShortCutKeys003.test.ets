@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorShortCutKeys003() {
   describe('RichEditorShortCutKeys003', () => {
     beforeEach(async (done: Function) => {
@@ -70,7 +72,7 @@ export default function RichEditorShortCutKeys003() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_MOVE_HOME);
+      driver.triggerKey(KeyCode.KEYCODE_MOVE_HOME, displayID);
       await CommonFunc.sleep(500);
 
       let get_position = await driver.findComponent(ON.id('get_position'));
@@ -82,28 +84,28 @@ export default function RichEditorShortCutKeys003() {
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:0');
 
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:1');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:2');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:4');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
@@ -134,28 +136,28 @@ export default function RichEditorShortCutKeys003() {
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:5');
 
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:4');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:2');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
       positionNumText = await positionNum.getText();
       await CommonFunc.sleep(500);
       expect(positionNumText).assertEqual('positionNum:1');
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
@@ -166,5 +168,6 @@ export default function RichEditorShortCutKeys003() {
     });
   })
 }
+
 
 

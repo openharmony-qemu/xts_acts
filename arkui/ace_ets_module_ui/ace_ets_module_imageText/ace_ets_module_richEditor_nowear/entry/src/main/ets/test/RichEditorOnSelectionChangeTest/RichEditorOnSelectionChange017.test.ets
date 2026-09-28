@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnSelectionChange017() {
   describe('RichEditorOnSelectionChange017', () => {
     beforeEach(async (done: Function) => {
@@ -103,10 +105,10 @@ export default function RichEditorOnSelectionChange017() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      driver.triggerKey(KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_B);
+      driver.triggerKey(KeyCode.KEYCODE_B, displayID);
       await CommonFunc.sleep(500);
 
       let onSelectCallBack = await driver.findComponent(ON.id('onSelectCallBack'));
@@ -124,5 +126,6 @@ export default function RichEditorOnSelectionChange017() {
 
   })
 }
+
 
 

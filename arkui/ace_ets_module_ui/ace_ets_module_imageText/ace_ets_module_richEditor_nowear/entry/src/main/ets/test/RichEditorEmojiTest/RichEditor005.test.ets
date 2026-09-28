@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditor005() {
   describe('RichEditor005', () => {
     beforeEach(async (done: Function) => {
@@ -79,7 +81,11 @@ export default function RichEditor005() {
       let beginPosition = await text.getText();
 
       //KEYCODE_FORWARD_DEL
-      await driver.triggerKey(2071);
+      try {
+        await driver.triggerKey(2071, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       await point.click();
@@ -92,5 +98,6 @@ export default function RichEditor005() {
 
   })
 }
+
 
 

@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnWillChange002() {
   describe('RichEditorOnWillChange002', () => {
     beforeEach(async (done: Function) => {
@@ -134,7 +136,11 @@ export default function RichEditorOnWillChange002() {
       //KEYCODE_DEL delete builder
       int_callback_status.click();
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onWillChange = await driver.findComponent(ON.id('onWillChange_callback'));
       let onDidChange = await driver.findComponent(ON.id('onDidChange_callback'));
@@ -147,7 +153,11 @@ export default function RichEditorOnWillChange002() {
       //KEYCODE_DEL delete symbol
       await int_callback_status.click();
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       onWillText = await onWillChange.getText();
       didText = await onDidChange.getText();
@@ -158,7 +168,11 @@ export default function RichEditorOnWillChange002() {
       //KEYCODE_DEL delete image
       await int_callback_status.click();
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       onWillText = await onWillChange.getText();
       didText = await onDidChange.getText();
@@ -169,5 +183,6 @@ export default function RichEditorOnWillChange002() {
     });
   })
 }
+
 
 

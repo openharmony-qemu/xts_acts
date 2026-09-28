@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function TextMenuItemIdEqualsTest() {
   describe('TextMenuItemIdEqualsTest', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +69,11 @@ export default function TextMenuItemIdEqualsTest() {
       await driver.delayMs(500)
       await Text2.longClick()
       await driver.delayMs(500)
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await driver.delayMs(500)
       expect(AppStorage.get('TextMenuItemIdEquals2')).assertFalse()
       console.info('[TextMenuItemIdEqualsTest_0100] END');
@@ -90,7 +96,11 @@ export default function TextMenuItemIdEqualsTest() {
       await driver.delayMs(500)
       await Text1.longClick()
       await driver.delayMs(500)
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await driver.delayMs(500)
       expect(AppStorage.get('TextMenuItemIdEquals1')).assertTrue()
       console.info('[TextMenuItemIdEqualsTest_0200] END');

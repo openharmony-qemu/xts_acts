@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, MouseButton, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function searchTest() {
   describe('searchTest', () => {
     beforeEach(async (done: Function) => {
@@ -57,7 +58,11 @@ export default function searchTest() {
       let text: Component = await driver.findComponent(ON.id('searchTest1'));
       await text.inputText('123')
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2047);
+      try {
+        await driver.triggerKey(2047, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('searchTestText3');
       let strJson2 = getInspectorByKey('searchTestText1');

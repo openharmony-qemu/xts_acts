@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function onSelectionChange2() {
   describe('onSelectionChange2', () => {
     beforeEach(async (done: Function) => {
@@ -63,7 +65,11 @@ export default function onSelectionChange2() {
       await richEditor.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2017);
+      try {
+        await driver.triggerKey(2017, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1 = getInspectorByKey('onSelectionChange2_text1');
       let Obj1: ESObject = JSON.parse(text1);

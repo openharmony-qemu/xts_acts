@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnWillChange020() {
   describe('RichEditorOnWillChange020', () => {
     beforeEach(async (done: Function) => {
@@ -84,7 +86,11 @@ export default function RichEditorOnWillChange020() {
       expect(replaceText).assertEqual('replacedSpans_callback:true');
       expect(didText).assertEqual('onDidChange_callback:true');
 
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let onWillChange_rangeBefore = await driver.findComponent(ON.id('onWillChange_rangeBefore'));
@@ -113,7 +119,11 @@ export default function RichEditorOnWillChange020() {
       await back.click();
       await CommonFunc.sleep(500);
 
-      await driver.triggerKey(KeyCode.KEYCODE_FORWARD_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_FORWARD_DEL, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       onWillBefore = await onWillChange_rangeBefore.getText();
@@ -137,5 +147,6 @@ export default function RichEditorOnWillChange020() {
 
   })
 }
+
 
 

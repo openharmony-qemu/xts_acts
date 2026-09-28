@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnSelectionChange009() {
   describe('RichEditorOnSelectionChange009', () => {
     beforeEach(async (done: Function) => {
@@ -74,13 +76,13 @@ export default function RichEditorOnSelectionChange009() {
       await setCaretOffset?.click();
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_UP);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_UP, displayID);
       await CommonFunc.sleep(500);
       let onSelectCallBack = await driver.findComponent(ON.id('onSelectCallBack'));
       let onSelectCallBackText = await onSelectCallBack.getText();
@@ -97,9 +99,9 @@ export default function RichEditorOnSelectionChange009() {
       let set1 = await driver.findComponent(ON.id('set1'))
       await set1?.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN, displayID);
       await CommonFunc.sleep(500);
       onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);
@@ -109,9 +111,9 @@ export default function RichEditorOnSelectionChange009() {
       await CommonFunc.sleep(500);
       await set1?.click();
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_LEFT, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DPAD_UP);
+      driver.triggerKey(KeyCode.KEYCODE_DPAD_UP, displayID);
       await CommonFunc.sleep(500);
       onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);
@@ -121,5 +123,6 @@ export default function RichEditorOnSelectionChange009() {
 
   })
 }
+
 
 

@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorAttributeStrings003() {
   describe('RichEditorAttributeStrings003', () => {
     beforeEach(async (done: Function) => {
@@ -72,11 +74,11 @@ export default function RichEditorAttributeStrings003() {
       let setCare = await driver.findComponent(ON.id('setCare'));
       await setCare.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
       await CommonFunc.sleep(500);
       await driver.click(getBounds.x, getBounds.y);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(500);
       let getSpans = await driver.findComponent(ON.id('getSpans'));
       await getSpans.click();
@@ -90,5 +92,6 @@ export default function RichEditorAttributeStrings003() {
 
   })
 }
+
 
 

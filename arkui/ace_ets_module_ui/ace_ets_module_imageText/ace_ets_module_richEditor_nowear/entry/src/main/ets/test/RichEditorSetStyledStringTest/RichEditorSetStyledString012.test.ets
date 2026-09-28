@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorSetStyledString012() {
   describe('RichEditorSetStyledString012', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +75,7 @@ export default function RichEditorSetStyledString012() {
       let image_top = await driver.findComponent(ON.id('image_top'));
       await image_top.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
       let onSelectionChangeCall = await driver.findComponent(ON.id('onSelectionChangeCall'));
       let onSelectionChangeCallText = await onSelectionChangeCall.getText();
@@ -102,7 +104,7 @@ export default function RichEditorSetStyledString012() {
       await CommonFunc.sleep(500);
       await driver.click(getBounds.x, getBounds.y);
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
       let onSelectCallBack = await driver.findComponent(ON.id('onSelectCallBack'));
       let onSelectCallBackText = await onSelectCallBack.getText();
@@ -126,7 +128,11 @@ export default function RichEditorSetStyledString012() {
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
       await driver.click(getBounds.x, getBounds.y);
-      await driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let aboutToIMEInputCall = await driver.findComponent(ON.id('aboutToIMEInputCall'));
       let aboutToIMEInputCallText = await aboutToIMEInputCall.getText();
@@ -146,7 +152,11 @@ export default function RichEditorSetStyledString012() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0035',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0035 START');
       let driver = Driver.create();
-      await driver.triggerKey(KeyCode.KEYCODE_B);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_B, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onIMEInputCompleteCall = await driver.findComponent(ON.id('onIMEInputCompleteCall'));
       let onIMEInputCompleteCallText = await onIMEInputCompleteCall.getText();
@@ -166,9 +176,17 @@ export default function RichEditorSetStyledString012() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0036',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0036 START');
       let driver = Driver.create();
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let aboutToDeleteCall = await driver.findComponent(ON.id('aboutToDeleteCall'));
       let aboutToDeleteCallText = await aboutToDeleteCall.getText();
@@ -188,9 +206,17 @@ export default function RichEditorSetStyledString012() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0037',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0037 START');
       let driver = Driver.create();
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let onDeleteCompleteCall = await driver.findComponent(ON.id('onDeleteCompleteCall'));
       let onDeleteCompleteCallText = await onDeleteCompleteCall.getText();
@@ -201,5 +227,6 @@ export default function RichEditorSetStyledString012() {
 
   })
 }
+
 
 

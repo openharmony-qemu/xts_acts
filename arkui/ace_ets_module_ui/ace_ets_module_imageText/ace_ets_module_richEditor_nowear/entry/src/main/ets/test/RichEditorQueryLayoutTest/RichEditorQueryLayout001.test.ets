@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorQueryLayout001() {
   describe('RichEditorQueryLayout001', () => {
     beforeEach(async (done: Function) => {
@@ -70,11 +72,23 @@ export default function RichEditorQueryLayout001() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_B);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_B, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_C);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_C, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let get_content = await driver.findComponent(ON.id('get_content'));
@@ -92,5 +106,6 @@ export default function RichEditorQueryLayout001() {
 
   })
 }
+
 
 

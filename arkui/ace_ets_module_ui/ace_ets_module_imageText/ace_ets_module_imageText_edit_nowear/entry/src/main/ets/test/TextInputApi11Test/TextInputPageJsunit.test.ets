@@ -14,13 +14,14 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton} from '@ohos.UiTest';
+import {UiComponent, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 import { resourceManager } from '@kit.LocalizationKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function TextInputPageJsunit() {
   describe('TextInputPageJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -191,29 +192,33 @@ export default function TextInputPageJsunit() {
       console.info('[TextInputPageJsunit_0400] START');
 
       // Verify change function of the TextInput component
-      let driver = await UiDriver.create()
-      let textComponent = await driver.findComponent(BY.key('textInput'));
+      let driver = await Driver.create()
+      let textComponent = await driver.findComponent(ON.id('textInput'));
       await textComponent.click()
       await CommonFunc.sleep(500);
       await textComponent.inputText("hello")
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2047)
-      let component = await driver.findComponent(BY.key('text'));
+      try {
+        await driver.triggerKey(2047, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
+      let component = await driver.findComponent(ON.id('text'));
       let text = await component.getText();
       expect(text).assertEqual('hello');
       console.info("[TextInputPageJsunit_0400] inputText hello succ !");
 
       // Verify submit function of TextInput component
-      let textComponent1 = await driver.findComponent(BY.key('TextInputPage' + '_submit'));
+      let textComponent1 = await driver.findComponent(ON.id('TextInputPage' + '_submit'));
       let text1 = await textComponent1.getText();
       expect(text1).assertEqual('onSubmit:');
       console.info("[TextInputPageJsunit_0400] Verify submit succ !");
 
       // Verify editChange function of TextInput component
-      let textComponent2 = await driver.findComponent(BY.key('editChange'));
+      let textComponent2 = await driver.findComponent(ON.id('editChange'));
       let text2 = await textComponent2.getText();
       expect(text2).assertEqual('onEditChange:true');
-      let password = await driver.findComponent(BY.key('password'));
+      let password = await driver.findComponent(ON.id('password'));
       await password.click()
       await CommonFunc.sleep(1000);
       let textFalse = await textComponent2.getText();
@@ -227,12 +232,12 @@ export default function TextInputPageJsunit() {
       let clickY = Math.round((textInputRect.bottom + textInputRect.top)/2)
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(3000);
-      let textComponent3 = await driver.findComponent(BY.text('全选'));
+      let textComponent3 = await driver.findComponent(ON.text('全选'));
       await textComponent3?.click()
       await CommonFunc.sleep(3000);
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let textComponent4 = await driver.findComponent(BY.text('复制'));
+      let textComponent4 = await driver.findComponent(ON.text('复制'));
       await textComponent4.click()
       await textComponent.click()
       await CommonFunc.sleep(3000);
@@ -246,12 +251,12 @@ export default function TextInputPageJsunit() {
       // Verify onCut function of TextInput component
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let textComponent5 = await driver.findComponent(BY.text('全选'));
+      let textComponent5 = await driver.findComponent(ON.text('全选'));
       await textComponent5?.click()
       await CommonFunc.sleep(3000);
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let textComponent6 = await driver.findComponent(BY.text('剪切'));
+      let textComponent6 = await driver.findComponent(ON.text('剪切'));
       await textComponent6.click()
       await CommonFunc.sleep(3000);
       let strJson1 = getInspectorByKey('cut_TextInputPage');
@@ -263,7 +268,7 @@ export default function TextInputPageJsunit() {
       // Verify onPaste function of TextInput component
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let textComponent7 = await driver.findComponent(BY.text('粘贴'));
+      let textComponent7 = await driver.findComponent(ON.text('粘贴'));
       await textComponent7.click()
       await CommonFunc.sleep(3000);
       let strJson2 = getInspectorByKey('TextInputPage' + '_paste');

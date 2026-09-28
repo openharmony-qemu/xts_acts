@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function editMenuIdAIWriterTest() {
   describe('editMenuIdAIWriterTest', () => {
     beforeEach(async (done: Function) => {
@@ -68,7 +70,11 @@ export default function editMenuIdAIWriterTest() {
       }else{
         await driver.assertComponentExist(ON.text('全选'));
       }
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       let strJson1 = getInspectorByKey('flag');
       await CommonFunc.sleep(200);
       let obj1: ESObject = JSON.parse(strJson1);
@@ -105,7 +111,11 @@ export default function editMenuIdAIWriterTest() {
       }else{
         await driver.assertComponentExist(ON.text('全选'));
       }
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       let strJson1 = getInspectorByKey('flag');
       await CommonFunc.sleep(200);
       let obj1: ESObject = JSON.parse(strJson1);

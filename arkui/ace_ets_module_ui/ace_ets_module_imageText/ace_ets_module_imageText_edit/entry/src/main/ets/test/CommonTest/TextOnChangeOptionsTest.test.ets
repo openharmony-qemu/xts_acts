@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function TextOnChangeOptionsTest() {
   describe('TextOnChangeOptionsTest', () => {
     beforeEach(async (done: Function) => {
@@ -127,7 +129,11 @@ export default function TextOnChangeOptionsTest() {
         await CommonFunc.sleep(500);
         search.click();
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2055);
+        try {
+          await driver.triggerKey(2055, displayID);
+        } catch (err) {
+          console.log('triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
 
         let oldContent = getInspectorByKey('oldContent');
@@ -255,7 +261,11 @@ export default function TextOnChangeOptionsTest() {
         await CommonFunc.sleep(500);
         textArea.click();
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2055);
+        try {
+          await driver.triggerKey(2055, displayID);
+        } catch (err) {
+          console.log('triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
 
         let oldContent = getInspectorByKey('oldContent');
@@ -383,7 +393,11 @@ export default function TextOnChangeOptionsTest() {
         await CommonFunc.sleep(500);
         textInput.click();
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2055);
+        try {
+          await driver.triggerKey(2055, displayID);
+        } catch (err) {
+          console.log('triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
 
         let oldContent = getInspectorByKey('oldContent');

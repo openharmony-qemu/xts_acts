@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function InputPresetTest() {
   describe('InputPresetTest', () => {
     beforeAll(async () => {
@@ -68,7 +70,11 @@ export default function InputPresetTest() {
         await CommonFunc.sleep(500);
         await button?.click();
         await CommonFunc.sleep(1000);
-        await driver.triggerKey(2070);
+        try {
+          await driver.triggerKey(2070, displayID);
+        } catch (err) {
+          console.log('triggerKey error: ' + JSON.stringify(err));
+        }
         await CommonFunc.sleep(500);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
@@ -128,7 +134,11 @@ export default function InputPresetTest() {
         let areaText = await textArea2.getText();
         await CommonFunc.sleep(500);
         if(areaText != 'aaa'){
-          await driver.triggerKey(2047)
+          try {
+            await driver.triggerKey(2047, displayID);
+          } catch (err) {
+            console.log('triggerKey error: ' + JSON.stringify(err));
+          }
         }
       }      
       let strJson = getInspectorByKey('InputPresetTextArea2');
