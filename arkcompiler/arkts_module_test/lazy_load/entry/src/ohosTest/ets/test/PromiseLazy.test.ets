@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { myAsyncSleep } from "../utils/SleepThread"
 
 import { msgExecutor, promiseExecutorLazy } from "../utils/promise/PromiseExecutorLazy"

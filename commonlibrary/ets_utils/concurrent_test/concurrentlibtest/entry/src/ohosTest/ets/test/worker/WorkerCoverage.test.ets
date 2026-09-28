@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { worker } from '@kit.ArkTS';
 import { Sleep } from '../utils/utils';
 import { TestObj } from '../utils/workerCommon';
