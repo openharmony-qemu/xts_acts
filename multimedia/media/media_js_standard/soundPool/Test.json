@@ -36,6 +36,8 @@
                 "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
                 "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files",
+                "chmod 777 -R /data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test",
                 "chmod 755 /data/local/tmp/",
                 "sh /data/local/tmp/setup_media_js_standard_soundPool_test.sh"
             ],
