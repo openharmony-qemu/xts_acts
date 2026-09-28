@@ -3971,7 +3971,7 @@ export default function JsvmJsunit() {
        Object.freeze(obj);
        setNamedProperty(obj, "message", "strValue");
    `;
-      expect(napitest.runJsVm(script).message).not().assetEqual('strValue');
+      expect(napitest.runJsVm(script).message).not().assertEqual('strValue');
     });
     /**
      * @tc.name   JsvmTest0256
@@ -14350,6 +14350,34 @@ export default function JsvmJsunit() {
       let rst: number = napitest.testThreshold();
       console.info('JsvmTest0960 testString result is:' + JSON.stringify(rst));
       expect(rst).assertEqual(0);
+    });
+    /**
+     * @tc.name   JsvmTest0961
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0961
+     * @tc.desc   test the function of threshold interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('JsvmTest0961', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let script: string = `
+      testErrorCode()
+   `;
+      expect(napitest.runJsVm(script)).assertEqual(true);
+    });
+    /**
+     * @tc.name   JsvmTest0962
+     * @tc.number SUB_ACE_BASIC_ETS_JSVM_0962
+     * @tc.desc   test the function of threshold interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('JsvmTest0962', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let script: string = `
+      testDeserialize()
+   `;
+      expect(napitest.runJsVm(script)).assertEqual(true);
     });
   });
 }
