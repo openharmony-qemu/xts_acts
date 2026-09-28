@@ -110,8 +110,10 @@ export default function childrenMainSizeNullUndefined() {
       expect(result).assertEqual("success");
       await CommonFunc.sleep(500);
 
-      let list = CommonFunc.getComponentRectOnScreen('list_childrenMainSize_nullUndefined');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('childrenMainSize_nullUndefined_1');
+      let listComponent = await driver.findComponent(ON.id('list_childrenMainSize_nullUndefined'));
+      let list = await listComponent.getBounds();
+      let listItem1Component = await driver.findComponent(ON.id('childrenMainSize_nullUndefined_1'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info(`[childrenMainSizeNullUndefined_0300] list.top = ${list.top}`);
       console.info(`[childrenMainSizeNullUndefined_0300] listItem1.top = ${listItem1.top}`);
       expect(Math.floor(Math.abs(listItem1.top - list.top)) <= 1).assertTrue();
@@ -140,8 +142,10 @@ export default function childrenMainSizeNullUndefined() {
       expect(result).assertEqual("success");
       await CommonFunc.sleep(500);
 
-      let list = CommonFunc.getComponentRectOnScreen('list_childrenMainSize_nullUndefined');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('childrenMainSize_nullUndefined_1');
+      let listComponent = await driver.findComponent(ON.id('list_childrenMainSize_nullUndefined'));
+      let list = await listComponent.getBounds();
+      let listItem1Component = await driver.findComponent(ON.id('childrenMainSize_nullUndefined_1'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info(`[childrenMainSizeNullUndefined_0400] list.top = ${list.top}`);
       console.info(`[childrenMainSizeNullUndefined_0400] listItem1.top = ${listItem1.top}`);
       expect(Math.floor(Math.abs(listItem1.top - list.top)) <= 1).assertTrue();
@@ -170,8 +174,10 @@ export default function childrenMainSizeNullUndefined() {
       expect(result).assertEqual("success");
       await CommonFunc.sleep(500);
 
-      let list = CommonFunc.getComponentRectOnScreen('list_childrenMainSize_nullUndefined');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('childrenMainSize_nullUndefined_1');
+      let listComponent = await driver.findComponent(ON.id('list_childrenMainSize_nullUndefined'));
+      let list = await listComponent.getBounds();
+      let listItem1Component = await driver.findComponent(ON.id('childrenMainSize_nullUndefined_1'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info(`[childrenMainSizeNullUndefined_0500] list.top = ${list.top}`);
       console.info(`[childrenMainSizeNullUndefined_0500] listItem1.top = ${listItem1.top}`);
       expect(Math.floor(Math.abs(listItem1.top - list.top)) <= 1).assertTrue();
@@ -200,8 +206,10 @@ export default function childrenMainSizeNullUndefined() {
       expect(result).assertEqual("success");
       await CommonFunc.sleep(500);
 
-      let list = CommonFunc.getComponentRectOnScreen('list_childrenMainSize_nullUndefined');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('childrenMainSize_nullUndefined_1');
+      let listComponent = await driver.findComponent(ON.id('list_childrenMainSize_nullUndefined'));
+      let list = await listComponent.getBounds();
+      let listItem1Component = await driver.findComponent(ON.id('childrenMainSize_nullUndefined_1'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info(`[childrenMainSizeNullUndefined_0600] list.top = ${list.top}`);
       console.info(`[childrenMainSizeNullUndefined_0600] listItem1.top = ${listItem1.top}`);
       expect(Math.floor(Math.abs(listItem1.top - list.top)) <= 1).assertTrue();
@@ -230,8 +238,10 @@ export default function childrenMainSizeNullUndefined() {
       expect(result).assertEqual("success");
       await CommonFunc.sleep(500);
 
-      let list = CommonFunc.getComponentRectOnScreen('list_childrenMainSize_nullUndefined');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('childrenMainSize_nullUndefined_1');
+      let listComponent = await driver.findComponent(ON.id('list_childrenMainSize_nullUndefined'));
+      let list = await listComponent.getBounds();
+      let listItem1Component = await driver.findComponent(ON.id('childrenMainSize_nullUndefined_1'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info(`[childrenMainSizeNullUndefined_0700] list.top = ${list.top}`);
       console.info(`[childrenMainSizeNullUndefined_0700] listItem1.top = ${listItem1.top}`);
       expect(Math.floor(Math.abs(listItem1.top - list.top)) <= 1).assertTrue();
@@ -308,8 +318,10 @@ export default function childrenMainSizeNullUndefined() {
       expect(result).assertEqual("success");
       await CommonFunc.sleep(500);
 
-      let list = CommonFunc.getComponentRectOnScreen('list_childrenMainSize_nullUndefined');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('childrenMainSize_nullUndefined_1');
+      let listComponent = await driver.findComponent(ON.id('list_childrenMainSize_nullUndefined'));
+      let list = await listComponent.getBounds();
+      let listItem1Component = await driver.findComponent(ON.id('childrenMainSize_nullUndefined_1'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info(`[childrenMainSizeNullUndefined_1000] list.top = ${list.top}`);
       console.info(`[childrenMainSizeNullUndefined_1000] listItem1.top = ${listItem1.top}`);
       expect(Math.floor(Math.abs(listItem1.top - list.top)) <= 1).assertTrue();
@@ -338,8 +350,10 @@ export default function childrenMainSizeNullUndefined() {
       expect(result).assertEqual("success");
       await CommonFunc.sleep(500);
 
-      let list = CommonFunc.getComponentRectOnScreen('list_childrenMainSize_nullUndefined');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('childrenMainSize_nullUndefined_1');
+      let listComponent = await driver.findComponent(ON.id('list_childrenMainSize_nullUndefined'));
+      let list = await listComponent.getBounds();
+      let listItem1Component = await driver.findComponent(ON.id('childrenMainSize_nullUndefined_1'));
+      let listItem1 = await listItem1Component.getBounds();
       console.info(`[childrenMainSizeNullUndefined_1100] list.top = ${list.top}`);
       console.info(`[childrenMainSizeNullUndefined_1100] listItem1.top = ${listItem1.top}`);
       expect(Math.floor(Math.abs(listItem1.top - list.top)) <= 1).assertTrue();

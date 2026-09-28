@@ -59,7 +59,9 @@ export default function RefreshingContent() {
       await CommonFunc.sleep(1000);
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('refresh_content');
+      let refreshComp = await driver.findComponent(ON.id('refresh_content'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -68,7 +70,8 @@ export default function RefreshingContent() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(top + height/10),Math.round(left + width*0.2),Math.round(bottom - height/10));
+      await driver.swipeBetween({x: Math.round(left + width*0.2), y: Math.round(top + height/10), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(bottom - height/10), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('RefreshingContent');
       let obj: ESObject = JSON.parse(strJson);

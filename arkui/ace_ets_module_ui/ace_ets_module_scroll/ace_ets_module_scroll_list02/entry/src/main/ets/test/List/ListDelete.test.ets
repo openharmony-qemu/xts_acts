@@ -69,10 +69,15 @@ export default function ListDeleteTest() {
       expect(JSON.parse(strJson).$attrs.startDeleteAreaDistance).assertEqual("0.00vp");
       expect(JSON.parse(strJson).$attrs.endDeleteAreaDistance).assertEqual("0.00vp");
 
-      let rectCenter: number[] = getRectCenter(JSON.parse(strJson).$rect)
       let driver: Driver = Driver.create()
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      await driver.swipe(Math.round(rectCenter[0] + globalThis.winLeft), Math.round(rectCenter[1] + globalThis.winTop), 0, Math.round(rectCenter[1]) + globalThis.winTop)
+      let itemComponent = await driver.findComponent(ON.id(baseKey));
+      let itemRect = await itemComponent.getBounds();
+      let displayId = await itemComponent.getDisplayId();
+      let height = itemRect.bottom - itemRect.top;
+      let centerY = Math.round(itemRect.top + height / 2);
+      await driver.swipeBetween(
+        { x: Math.round(itemRect.left + (itemRect.right - itemRect.left) * 0.75), y: centerY, displayId: displayId },
+        { x: 0, y: centerY, displayId: displayId })
       await sleep(3000);
       let strJsonButtonDel: string = getInspectorByKey(baseKey + '_Button_Del');
 
@@ -103,8 +108,9 @@ export default function ListDeleteTest() {
       expect(JSON.parse(strJson).$attrs.endDeleteAreaDistance).assertEqual("0.00vp");
 
       let driver: Driver = Driver.create()
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
-      let swipeRect = CommonFunc.getComponentRectOnScreen('MyList2_ListItem0');
+      let swipeRectComponent = await driver.findComponent(ON.id('MyList2_ListItem0'));
+      let swipeRect = await swipeRectComponent.getBounds();
+      let displayId = await swipeRectComponent.getDisplayId();
       let top = swipeRect.top;
       let right = swipeRect.right;
       let left = swipeRect.left;
@@ -112,7 +118,9 @@ export default function ListDeleteTest() {
       console.info("ArkUI_List_Delete_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width*0.4),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.4), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.9), y: Math.round(top + height/2), displayId: displayId });
       await sleep(3000);
       let strJsonButtonDel: string = getInspectorByKey(baseKey + '_Button_Del');
       expect(JSON.parse(strJsonButtonDel).$attrs.visibility).assertEqual("Visibility.Visible");
@@ -138,16 +146,20 @@ export default function ListDeleteTest() {
 
       let driver: Driver = Driver.create()
       await driver.delayMs(1000)
-      console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
       let baseKey: string = 'MyList5_ListItem0'
       let strJson: string = getInspectorByKey(baseKey);
 
       expect(JSON.parse(strJson).$attrs.startDeleteAreaDistance).assertEqual("0.00vp");
       expect(JSON.parse(strJson).$attrs.endDeleteAreaDistance).assertEqual("5.00vp");
 
-      let rectCenter: number[] = getRectCenter(JSON.parse(strJson).$rect)
-      await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] -rectCenter[2]) / 4), Math.round(globalThis.winTop + rectCenter[1]),
-        0, Math.round(globalThis.winTop + rectCenter[1]))
+      let itemComponent = await driver.findComponent(ON.id(baseKey));
+      let itemRect = await itemComponent.getBounds();
+      let displayId = await itemComponent.getDisplayId();
+      let height = itemRect.bottom - itemRect.top;
+      let centerY = Math.round(itemRect.top + height / 2);
+      await driver.swipeBetween(
+        { x: Math.round(itemRect.left + (itemRect.right - itemRect.left) * 0.75), y: centerY, displayId: displayId },
+        { x: 0, y: centerY, displayId: displayId })
       await sleep(3000);
       let strJson2: string = getInspectorByKey('MyList5ListItemOnDeleteH');
       expect(JSON.parse(strJson2).$attrs.content).assertEqual("action trigger");
@@ -165,24 +177,4 @@ async function sleep(time: number) {
   }).then(() => {
     console.info(`sleep ${time} over...`)
   })
-}
-
-function getRectCenter(rect: string) {
-  let regexp: RegExp = new RegExp('\\[', 'g');
-  let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
-  return [
-    Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2,
-    Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2,
-    Number.parseFloat(rtn[0].trim()),
-    Number.parseFloat(rtn[2].trim()),
-  ]
-}
-
-function getRectCenterVp(rect: string) {
-  let regexp: RegExp = new RegExp('\\[', 'g');
-  let rtn = rect.replace(regexp, '').replace(regexp, '').split(',')
-  return [
-    px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
-  ]
 }

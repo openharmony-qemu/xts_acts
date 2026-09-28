@@ -77,9 +77,11 @@ export default function listSwipeAction34Jsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0340 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(150)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe34Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(150)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionOffset
       let textSwipeOffset = getInspectorByKey('swipe34Offset');
@@ -87,9 +89,9 @@ export default function listSwipeAction34Jsunit() {
         .$attrs));
       expect(JSON.parse(textSwipeOffset).$attrs.content).assertEqual('160')
       // reset
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(20)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(20)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(right - vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(6500);
       let buttonReset2 = await driver.findComponent(ON.id('btreset34'));
       await driver.delayMs(300);
@@ -97,18 +99,18 @@ export default function listSwipeAction34Jsunit() {
       await CommonFunc.sleep(3000);
 
       // swipe to left
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(150)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(100)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(150)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(100)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(5000);
       let textSwipeOffset2 = getInspectorByKey('swipe34Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0340 json is ' + JSON.stringify(JSON.parse(textSwipeOffset2)
         .$attrs));
       expect(JSON.parse(textSwipeOffset2).$attrs.content).assertEqual('-160')
       // reset init the state
-      await driver.swipe(
-        Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(20)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver.swipeBetween(
+        { x: Math.round(right - vp2px(10)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(20)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(5000);
       done();
     });
@@ -135,9 +137,11 @@ export default function listSwipeAction34Jsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0350 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem to right
-      await driver35.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(10)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      let swipeComponent = await driver35.findComponent(ON.id('lSwipe34Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver35.swipeBetween(
+        { x: Math.round(left + vp2px(10)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(right - vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(5000);
       // judge the swipeActionOffset
       let textSwipeOffset = getInspectorByKey('swipe34Offset');
@@ -152,9 +156,9 @@ export default function listSwipeAction34Jsunit() {
       buttonReset2.click();
       await CommonFunc.sleep(3000);
       // swipe to left
-      await driver35.swipe(
-        Math.round(globalThis.winLeft + right - vp2px(10)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver35.swipeBetween(
+        { x: Math.round(right - vp2px(10)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(8000);
       let textSwipeOffset2 = getInspectorByKey('swipe34Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0350 json is ' + JSON.stringify(JSON.parse(textSwipeOffset2)

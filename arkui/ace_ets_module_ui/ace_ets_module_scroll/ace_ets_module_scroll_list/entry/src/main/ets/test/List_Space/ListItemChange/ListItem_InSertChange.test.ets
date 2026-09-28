@@ -123,7 +123,9 @@ export default function listItem_InSertChange() {
       expect(Math.abs(Math.round(TextTest1.right - TextTest1.left) - Math.round(vp2px(150))) <= 1).assertTrue();
       expect(Math.abs(Math.round(TextTest1.bottom - TextTest1.top) - Math.round(vp2px(50))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(360, 690, 360, 30);
+      let swipeComponent = await driver.findComponent(ON.id('ListItemInSertChange1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest74');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemInSertChangeFiftyPercent END');
@@ -188,7 +190,9 @@ export default function listItem_InSertChange() {
       expect(Math.abs(Math.round(TextTest1.right - TextTest1.left) - Math.round(vp2px(330))) <= 1).assertTrue();
       expect(Math.abs(Math.round(TextTest1.bottom - TextTest1.top) - Math.round(vp2px(110))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(360, 690, 360, 30);
+      let swipeComponent = await driver.findComponent(ON.id('ListItemInSertChange1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest74');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemInSertChangeOneHundredAndTenPercent END');

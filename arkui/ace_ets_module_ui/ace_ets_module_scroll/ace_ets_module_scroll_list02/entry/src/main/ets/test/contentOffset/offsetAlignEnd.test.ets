@@ -60,8 +60,10 @@ export default function offsetAlignEnd() {
       let btn: Component = await driver.findComponent(ON.id('scroll_align_offset_btm'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let list = CommonFunc.getComponentRectOnScreen('align_endOffset_end');
-      let listItem = CommonFunc.getComponentRectOnScreen('align_endOffset_end_9');
+      let listComponent = await driver.findComponent(ON.id('align_endOffset_end'));
+      let list = await listComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('align_endOffset_end_9'));
+      let listItem = await listItemComponent.getBounds();
       console.info('[offsetAlignEnd_0100] list.bottom: ' + list.bottom);
       console.info('[offsetAlignEnd_0100] listItem.bottom: ' + listItem.bottom);
       await CommonFunc.sleep(1000);

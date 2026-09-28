@@ -87,7 +87,9 @@ export default function ScrollSourceOther() {
     it('ScrollSourceOther_0200', Level.LEVEL2, async (done: Function) => {
       console.info('ScrollSourceOther_0200 START');
       let driver = Driver.create();
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
+      let scrollComp = await driver.findComponent(ON.id('scrollSourceOther'))
+      let swiperScroll = await scrollComp.getBounds()
+      let displayId = await scrollComp.getDisplayId()
       let top = swiperScroll.top;
       let right = swiperScroll.right;
       let left = swiperScroll.left;
@@ -96,7 +98,8 @@ export default function ScrollSourceOther() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2),2000);
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId}, 2000);
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('EDGE_EFFECT');
@@ -119,7 +122,9 @@ export default function ScrollSourceOther() {
     it('ScrollSourceOther_0300', Level.LEVEL2, async (done: Function) => {
       console.info('ScrollSourceOther_0300 START');
       let driver = Driver.create();
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
+      let scrollComp = await driver.findComponent(ON.id('scrollSourceOther'))
+      let swiperScroll = await scrollComp.getBounds()
+      let displayId = await scrollComp.getDisplayId()
       let top = swiperScroll.top;
       let right = swiperScroll.right;
       let left = swiperScroll.left;
@@ -128,9 +133,11 @@ export default function ScrollSourceOther() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      
-      await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height*0.3)}, false, 20)
-      await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height*0.3)}, true, 20)
+
+      await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height*0.3), displayId: displayId},
+        false, 20)
+      await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height*0.3), displayId: displayId},
+        true, 20)
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('SCROLLER_ANIMATION');

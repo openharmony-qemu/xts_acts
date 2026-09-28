@@ -57,8 +57,10 @@ export default function canOverList() {
       let btn_true = await driver.findComponent(ON.id('canOver_list_true'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let list = CommonFunc.getComponentRectOnScreen('canOverScroll_list');
-      let listItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_list_0');
+      let listComp = await driver.findComponent(ON.id('canOverScroll_list'));
+      let list = await listComp.getBounds();
+      let listItem0Comp = await driver.findComponent(ON.id('canOverScroll_list_0'));
+      let listItem0 = await listItem0Comp.getBounds();
 
       console.info(`[canOverList_0100] list.top=
         ${list.top}`);
@@ -86,8 +88,10 @@ export default function canOverList() {
       let btn_true = await driver.findComponent(ON.id('canOver_list_false'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let list = CommonFunc.getComponentRectOnScreen('canOverScroll_list');
-      let listItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_list_0');
+      let listComp = await driver.findComponent(ON.id('canOverScroll_list'));
+      let list = await listComp.getBounds();
+      let listItem0Comp = await driver.findComponent(ON.id('canOverScroll_list_0'));
+      let listItem0 = await listItem0Comp.getBounds();
 
       console.info(`[canOverList_0100] list.top=
         ${list.top}`);
@@ -113,8 +117,10 @@ export default function canOverList() {
       let btn_true = await driver.findComponent(ON.id('canOver_list_null'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let list = CommonFunc.getComponentRectOnScreen('canOverScroll_list');
-      let listItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_list_0');
+      let listComp = await driver.findComponent(ON.id('canOverScroll_list'));
+      let list = await listComp.getBounds();
+      let listItem0Comp = await driver.findComponent(ON.id('canOverScroll_list_0'));
+      let listItem0 = await listItem0Comp.getBounds();
 
       console.info(`[canOverList_0100] list.top=
         ${list.top}`);
@@ -140,8 +146,10 @@ export default function canOverList() {
       let btn_true = await driver.findComponent(ON.id('canOver_list_ude'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let list = CommonFunc.getComponentRectOnScreen('canOverScroll_list');
-      let listItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_list_0');
+      let listComp = await driver.findComponent(ON.id('canOverScroll_list'));
+      let list = await listComp.getBounds();
+      let listItem0Comp = await driver.findComponent(ON.id('canOverScroll_list_0'));
+      let listItem0 = await listItem0Comp.getBounds();
 
       console.info(`[canOverList_0100] list.top=
         ${list.top}`);

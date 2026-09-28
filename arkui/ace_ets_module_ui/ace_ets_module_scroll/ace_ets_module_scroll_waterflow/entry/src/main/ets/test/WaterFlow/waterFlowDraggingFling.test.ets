@@ -60,7 +60,9 @@ export default function waterFlowDraggingFling() {
     it('waterFlowDraggingFling_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[waterFlowDraggingFling_0100] START');
       let driver = await Driver.create()
-      let dragScroll = CommonFunc.getComponentRectOnScreen('waterFlow_dragging_fling');
+      let dragScrollComp = await driver.findComponent(ON.id('waterFlow_dragging_fling'));
+      let dragScroll = await dragScrollComp.getBounds();
+      let displayId = await dragScrollComp.getDisplayId();
       let top = dragScroll.top;
       let right = dragScroll.right;
       let left = dragScroll.left;
@@ -68,7 +70,9 @@ export default function waterFlowDraggingFling() {
       console.info("waterFlowDraggingFling_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.mouseScroll({x:Math.round(left + width/2), y:Math.round(top + height*0.4)}, true, 2);
+      await driver.mouseScroll({
+        x: Math.round(left + width / 2), y: Math.round(top + height * 0.4), displayId: displayId
+      }, true, 2);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('waterFlow_startDragging');
@@ -101,7 +105,9 @@ export default function waterFlowDraggingFling() {
     it('waterFlowDraggingFling_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[waterFlowDraggingFling_0200] START');
       let driver = await Driver.create()
-      let dragScroll = CommonFunc.getComponentRectOnScreen('waterFlow_dragging_fling');
+      let dragScrollComp = await driver.findComponent(ON.id('waterFlow_dragging_fling'));
+      let dragScroll = await dragScrollComp.getBounds();
+      let displayId = await dragScrollComp.getDisplayId();
       let top = dragScroll.top;
       let right = dragScroll.right;
       let left = dragScroll.left;
@@ -109,7 +115,9 @@ export default function waterFlowDraggingFling() {
       console.info("waterFlowDraggingFling_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2),1000);
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.8), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.2), displayId: displayId }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('waterFlow_startDragging');
