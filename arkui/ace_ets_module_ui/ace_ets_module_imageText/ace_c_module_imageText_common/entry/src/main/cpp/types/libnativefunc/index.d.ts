@@ -220,3 +220,22 @@ export const GetCharacterPositionAtCoordinateWithEncodingTest_007: () => number;
 export const GetCharacterPositionAtCoordinateWithEncodingTest_008: () => number;
 export const GetCharacterPositionAtCoordinateWithEncodingTest_009: () => number;
 export const GetCharacterPositionAtCoordinateWithEncodingTest_010: () => number;
+
+export const SetUiDvsyncSwitchTest_001: () => number;
+export const SetUiDvsyncSwitchTest_002: () => number;
+export const SetUiDvsyncSwitchTest_003: () => number;
+export const SetUiDvsyncSwitchTest_004: () => number;
+
+export const ImageSpanResizableTest_001: () => number;
+export const ImageSpanResizableTest_002: () => number;
+export const ImageSpanResizableTest_003: () => number;
+export const ImageSpanResizableTest_004: () => number;
+
+export const ImageAttachmentResizableTest_001: () => number;
+export const ImageAttachmentResizableTest_002: () => number;
+export const ImageAttachmentResizableTest_003: () => number;
+export const ImageAttachmentResizableTest_004: () => number;
+export const ImageAttachmentResizableTest_005: () => number;
+export const ImageAttachmentResizableTest_006: () => number;
+export const ImageAttachmentResizableTest_008: () => number;
+export const ImageAttachmentResizableTest_009: () => number;
