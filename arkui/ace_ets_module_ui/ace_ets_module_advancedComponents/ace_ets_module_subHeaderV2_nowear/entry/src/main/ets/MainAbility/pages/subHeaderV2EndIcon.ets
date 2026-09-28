@@ -16,19 +16,20 @@
 import {
   SubHeaderV2,
   SubHeaderV2Title,
+  SubHeaderV2IconType,
   SubHeaderV2OperationType,
   SubHeaderV2OperationItem,
+  SymbolGlyphModifier,
   Prompt
 } from '@kit.ArkUI';
 import { SubHeaderV2TitleOptions, SubHeaderV2OperationItemOptions } from '@ohos.arkui.advanced.SubHeaderV2';
-import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 
 @Entry
 @ComponentV2
 struct SubHeaderV2EndIconExample {
   @Local title: SubHeaderV2Title = new SubHeaderV2Title({ secondaryTitle: '二级标题' });
   @Local titlePrimary: SubHeaderV2Title = new SubHeaderV2Title({ primaryTitle: '我的音乐', secondaryTitle: '128 首' });
-  @Local endIcon: ResourceStr = $r('app.media.startIcon');
+  @Local endIcon: SubHeaderV2IconType = $r('app.media.startIcon');
   @Local endIconSymbol: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_lungs'));
   @Local v2OperationItems: SubHeaderV2OperationItem[] = [];
 
