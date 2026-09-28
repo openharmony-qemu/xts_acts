@@ -29,7 +29,8 @@ export default function ScrollStateTest() {
     let x2: number;
     const speed: number = 5000;
     beforeAll(async (done: Function) => {
-      await Utils.pushPage(`scrollstateTest/ScrollStateTest`, done);
+      await Utils.pushPage(`scrollstateTest/ScrollStateTest`);
+      await Utils.sleep(1000);
       let component = await Utils.driver.findComponent(ON.id('ScrollStateColumn'));
       let rect = await component.getBounds();
       displayId = await component.getDisplayId();
@@ -40,6 +41,7 @@ export default function ScrollStateTest() {
       x2 = Math.round(rect.left + width / 4);
       console.info("ScrollStateTest x1=" + x1 + ", y1=" + y1 +
         ", x2=" + x2 + ", displayId=" + displayId);
+      done();
     });
 
     /**
