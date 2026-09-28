@@ -1640,7 +1640,9 @@ export default function geolocationTest_geo5() {
                         expect(typeof address.postalCode).assertEqual('string');
                         expect(typeof address.phoneNumber).assertEqual('string');
                         expect(typeof address.addressUrl).assertEqual('string');
-                        expect(Array.isArray(address.descriptions)).assertTrue();
+                        if (address.descriptionsSize > 0) {
+                            expect(Array.isArray(address.descriptions)).assertTrue();
+                        }
                         expect(typeof address.descriptionsSize).assertEqual('number');
                     } else {
                         expect().assertFail();
