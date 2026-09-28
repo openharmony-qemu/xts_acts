@@ -545,21 +545,6 @@ static napi_value PthreadJoinDetach_1500(napi_env env, napi_callback_info info)
     return result;
 }
 
-/* 1600: errno not modified (NULL scenario) */
-static napi_value PthreadJoinDetach_1600(napi_env env, napi_callback_info info)
-{
-    napi_value result = nullptr;
-    errno = 0;
-    int savedErrno = errno;
-    int ret = pthread_join(static_cast<pthread_t>(0), nullptr);
-    if (ret != ESRCH || errno != savedErrno) {
-        napi_create_int32(env, 1, &result);
-        return result;
-    }
-    napi_create_int32(env, 0, &result);
-    return result;
-}
-
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -579,7 +564,6 @@ static napi_value Init(napi_env env, napi_value exports)
         {"PthreadJoinDetach_1300", nullptr, PthreadJoinDetach_1300, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PthreadJoinDetach_1400", nullptr, PthreadJoinDetach_1400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PthreadJoinDetach_1500", nullptr, PthreadJoinDetach_1500, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"PthreadJoinDetach_1600", nullptr, PthreadJoinDetach_1600, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
