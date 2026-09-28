@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { http, socket } from '@kit.NetworkKit';
 
