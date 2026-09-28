@@ -20,11 +20,19 @@ import RichEditorShaderStyleTest from './RichEditor26Test/RichEditorShaderStyle.
 import RichEditorStrokeJoinStyleTest from './RichEditor26Test/RichEditorStrokeJoinStyle.test';
 import RichEditorPunctuationOverflowTest from './RichEditor26Test/RichEditorPunctuationOverflow.test';
 import RichEditorScrollToVisibleTest from './RichEditor26Test/RichEditorScrollToVisible.test';
+import RichEditorBuilderSpanTest from './RichEditor26Test/RichEditorBuilderSpan.test';
+import AddFormMenuItemTest from './CoverageTest/AddFormMenuItem.test';
+import ParticleModifierTest from './CoverageTest/ParticleModifier.test';
+import RouterPushUrlErrTest from './CoverageTest/RouterPushUrlErr.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   RichEditorTest();
   RichTextSpanSymbolBatchTest();
   RichEditorStrokeJoinStyleTest();
   RichEditorPunctuationOverflowTest();
   RichEditorScrollToVisibleTest();
+  RichEditorBuilderSpanTest();
+  AddFormMenuItemTest();
+  ParticleModifierTest();
+  RouterPushUrlErrTest();
 }

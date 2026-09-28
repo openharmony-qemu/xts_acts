@@ -7,6 +7,10 @@
     "MainAbility/pages/RichEditor26/RichEditorShaderStyle",
     "MainAbility/pages/RichEditor26/RichEditorStrokeJoinStyle",
     "MainAbility/pages/RichEditor26/RichEditorPunctuationOverflow",
-    "MainAbility/pages/RichEditor26/RichEditorScrollToVisible"
+    "MainAbility/pages/RichEditor26/RichEditorScrollToVisible",
+    "MainAbility/pages/RichEditor26/RichEditorBuilderSpan",
+    "MainAbility/pages/Coverage/AddFormMenuItemPage",
+    "MainAbility/pages/Coverage/ParticleModifierPage",
+    "MainAbility/pages/Coverage/RouterPushUrlErr"
   ]
 }
