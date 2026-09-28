@@ -27,12 +27,6 @@
             "run-command": [
                 "aa start -a TestAbility -b com.acts.unzipotherownertest"
             ]
-        },
-        {
-            "type": "PushKit",
-            "push": [
-              "ActsUnZipOtherOwnerTest.hap->/data/app/el2/100/base/com.acts.unzipotherownertest/haps/entry_test/cache/ActsUnZipOtherOwnerTest.hap"
-            ]
         }
     ]
 }
