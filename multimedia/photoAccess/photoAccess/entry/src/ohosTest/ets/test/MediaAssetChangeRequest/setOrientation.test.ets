@@ -15,9 +15,9 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import common from '@ohos.app.ability.common';
-import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
-import { sleep, pushCreateAsset } from '../common';
+import { sleep, getPermission, driveFn, checkResourceFile, createResource } from '../common';
 
 export default function setOrientationChangeRequestTest() {
 
@@ -26,6 +26,12 @@ export default function setOrientationChangeRequestTest() {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     let helper = photoAccessHelper.getPhotoAccessHelper(testContext);
     let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+
+    beforeAll(async () => {
+      await getPermission();
+      await driveFn();
+      checkResourceFile(testContext);
+    })
 
     const isEqual = async (assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest, photoAsset: photoAccessHelper.PhotoAsset, orientation: number) => {
       try {
@@ -54,8 +60,8 @@ export default function setOrientationChangeRequestTest() {
         };
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
           photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, displayName, createOption);
-        let photoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.jpg";
-        let videoUri = "file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/photos/test_mov_1.mp4";
+        let photoUri = testContext.filesDir + '/test_mov_1.jpg'
+        let videoUri = testContext.filesDir + '/test_mov_1.mp4'
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, photoUri);
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.VIDEO_RESOURCE, videoUri);
         await helper.applyChanges(assetChangeRequest);
@@ -85,7 +91,7 @@ export default function setOrientationChangeRequestTest() {
       let testNum = 'set_orientation_change_request_000';
       try {
         const fileNames = ["set_orientation_change_request_000.jpg"];
-        await pushCreateAsset(testContext,fileNames);
+        await createResource(testContext, fileNames);
         predicates.equalTo(photoAccessHelper.PhotoKeys.TITLE, 'set_orientation_change_request_000');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: ['orientation'],
@@ -154,7 +160,7 @@ export default function setOrientationChangeRequestTest() {
       let testNum = 'set_orientation_change_request_001';
       try {
         const fileNames = ["set_orientation_change_request_001.jpg"];
-        await pushCreateAsset(testContext,fileNames);
+        await createResource(testContext, fileNames);
         predicates.equalTo(photoAccessHelper.PhotoKeys.TITLE, 'set_orientation_change_request_001');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: ['orientation'],
@@ -192,7 +198,7 @@ export default function setOrientationChangeRequestTest() {
       let testNum = 'set_orientation_change_request_002';
       try {
         const fileNames = ["set_orientation_change_request_002.jpg"];
-        await pushCreateAsset(testContext,fileNames);
+        await createResource(testContext, fileNames);
         predicates.equalTo(photoAccessHelper.PhotoKeys.TITLE, 'set_orientation_change_request_002');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: ['orientation'],
@@ -229,7 +235,7 @@ export default function setOrientationChangeRequestTest() {
       let testNum = 'set_orientation_change_request_003';
       try {
         const fileNames = ["set_orientation_change_request_003.mp4"];
-        await pushCreateAsset(testContext,fileNames);
+        await createResource(testContext, fileNames);
         predicates.equalTo(photoAccessHelper.PhotoKeys.TITLE, 'set_orientation_change_request_003');
         let fetchOptions: photoAccessHelper.FetchOptions = {
           fetchColumns: ['orientation'],
