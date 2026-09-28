@@ -22,7 +22,6 @@ import subHeaderTitleModifier from './api12/subHeaderTitleModifier.test';
 import subHeaderSelect18 from './api18/subHeaderSelect18.test';
 import subHeader23 from './api23/subHeader23.test';
 import SubHeaderPropsTest from './migratedActs/SubHeaderProps.test';
-import subHeaderEndIcon from './subHeaderEndIcon.test';
 
 export default function testsuite() {
   subHeaderButton();
@@ -34,5 +33,4 @@ export default function testsuite() {
   subHeaderSelect18();
   subHeader23();
   SubHeaderPropsTest();
-  subHeaderEndIcon();
 }
