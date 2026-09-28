@@ -367,6 +367,18 @@ int32_t ActsGameControllerGamePadAxisEventGetBrakeAxisValue03();
 int32_t ActsGameControllerGamePadAxisEventGetGasAxisValue03();
 
 int32_t ActsGameControllerGamePadAxisEventGetActionTime03();
+
+int32_t ActsGamePadButtonNonstandardRegisterButtonInputMonitor01();
+
+int32_t ActsGamePadButtonNonstandardRegisterButtonInputMonitor02();
+
+int32_t ActsGamePadButtonNonstandardUnregisterButtonInputMonitor01();
+
+int32_t ActsGameDeviceDeviceInfoGetVendor01();
+
+int32_t ActsGameDeviceDeviceInfoGetVendor02();
+
+int32_t ActsGameDeviceDeviceInfoGetVendor03();
 }
 }
 
