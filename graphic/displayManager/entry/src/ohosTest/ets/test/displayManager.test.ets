@@ -2377,7 +2377,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           y: 100
         };
         let param2: display.RelativePosition = {
-          displayId: 1,
+          displayId: 998,
           position: position
         }
         display.convertRelativeToGlobalCoordinate(param2);
