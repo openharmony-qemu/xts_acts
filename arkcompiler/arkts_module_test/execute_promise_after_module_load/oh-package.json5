@@ -18,6 +18,6 @@
   "description": "Please describe the basic information.",
   "dependencies": {},
   "devDependencies": {
-    "@ohos/hypium-dynamic": "file:../../../../tools/hypium_prepare/hypium-dynamic.har"
+    "@ohos/hypium": "1.0.26"
   }
 }

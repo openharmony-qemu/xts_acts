@@ -19,6 +19,6 @@
   "dependencies": {},
   "devDependencies": {
     "@ohos/hamock": "1.0.0-rc",
-    "@ohos/hypium-dynamic": "file:../../../../tools/hypium_prepare/hypium-dynamic.har"
+    "@ohos/hypium": "1.0.26"
   }
 }
