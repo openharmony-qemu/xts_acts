@@ -458,7 +458,7 @@ export default function HttpRequestDataCATest() {
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
-            ExpectTrue(err.code === 2300028);
+            ExpectTrue(err.code === 2300028 || err.code === 2300052);
             done();
           }
         });

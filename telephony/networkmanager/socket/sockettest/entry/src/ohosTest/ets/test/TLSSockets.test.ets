@@ -228,15 +228,15 @@ function expectTrue(exp: boolean, info: string = ''): void {
 export default function TLSSocketsTest() {
   describe('TLSSocketsTest', () => {
         /**
-         * @tc.name   testSocketTLSSocketSendCallback0100
-         * @tc.number SUB_Network_Socket_SendCallback_0100
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallback0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_0100
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketSendCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketSendCallback0100';
+        it('testNetworkMgrSocketTLSSocketSendCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallback0100';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -274,15 +274,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketSendCallback0200
-         * @tc.number SUB_Network_Socket_SendCallback_0200
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallback0200
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_0200
          * @tc.desc   Sending data through TLSSocket connection(data is 'hello word!') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketSendCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketSendCallback0200';
+        it('testNetworkMgrSocketTLSSocketSendCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallback0200';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -321,15 +321,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketSendCallback0300
-         * @tc.number SUB_Network_Socket_SendCallback_0300
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallback0300
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_0300
          * @tc.desc   Sending data through TLSSocket connection(send long message) Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketSendCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketSendCallback0300';
+        it('testNetworkMgrSocketTLSSocketSendCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallback0300';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -366,15 +366,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketSendCallback0400
-         * @tc.number SUB_Network_Socket_SendCallback_0400
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallback0400
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_0400
          * @tc.desc   Sending data through TLSSocket connection(Send the normal data again after the send content is empty) Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketSendCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketSendCallback0400';
+        it('testNetworkMgrSocketTLSSocketSendCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallback0400';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -424,15 +424,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketSendCallback0500
-         * @tc.number SUB_Network_Socket_SendCallback_0500
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallback0500
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_0500
          * @tc.desc   Sending data through TLSSocket connection(repetition send long message) Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketSendCallback0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketSendCallback0500';
+        it('testNetworkMgrSocketTLSSocketSendCallback0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallback0500';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -481,15 +481,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testTLSSocketSendPromise0100
-         * @tc.number SUB_Network_Socket_SendPromise_0100
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromise0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_0100
          * @tc.desc   Sending data through TLSSocket connection(data is 'hello word!') Use the promise method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTLSSocketSendPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testTLSSocketSendPromise0100';
+        it('testNetworkMgrSocketTLSSocketSendPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromise0100';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -521,15 +521,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testTLSSocketSendPromise0200
-         * @tc.number SUB_Network_Socket_SendPromise_0200
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromise0200
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_0200
          * @tc.desc   Sending data through TLSSocket connection(repetition send long message) Use the promise method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTLSSocketSendPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testTLSSocketSendPromise0200';
+        it('testNetworkMgrSocketTLSSocketSendPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromise0200';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -561,15 +561,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testTLSSocketSendPromise0300
-         * @tc.number SUB_Network_Socket_SendPromise_0300
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromise0300
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_0300
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the promise method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTLSSocketSendPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testTLSSocketSendPromise0300';
+        it('testNetworkMgrSocketTLSSocketSendPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromise0300';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -602,15 +602,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testTLSSocketSendPromise0400
-         * @tc.number SUB_Network_Socket_SendPromise_0400
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromise0400
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_0400
          * @tc.desc   Sending data through TLSSocket connection(Send the normal data again after the send content is empty) Use the promise method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTLSSocketSendPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testTLSSocketSendPromise0400';
+        it('testNetworkMgrSocketTLSSocketSendPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromise0400';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -645,15 +645,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testTLSSocketSendPromise0500
-         * @tc.number SUB_Network_Socket_SendPromise_0500
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromise0500
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_0500
          * @tc.desc   Sending data through TLSSocket connection(repetition send long message) Use the promise method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTLSSocketSendPromise0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testTLSSocketSendPromise0500';
+        it('testNetworkMgrSocketTLSSocketSendPromise0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromise0500';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -682,15 +682,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketSendCallback0600
-         * @tc.number SUB_Network_Socket_SendCallback_0600
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallback0600
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_0600
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketSendCallback0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketSendCallback0600';
+        it('testNetworkMgrSocketTLSSocketSendCallback0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallback0600';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -736,15 +736,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketSendCallback0700
-         * @tc.number SUB_Network_Socket_SendCallback_0700
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallback0700
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_0700
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketSendCallback0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketSendCallback0700';
+        it('testNetworkMgrSocketTLSSocketSendCallback0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallback0700';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -790,15 +790,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testTLSSocketSendPromise0600
-         * @tc.number SUB_Network_Socket_SendPromise_0600
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromise0600
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_0600
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the promise method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTLSSocketSendPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testTLSSocketSendPromise0600';
+        it('testNetworkMgrSocketTLSSocketSendPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromise0600';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -830,15 +830,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testTLSSocketSendPromise0700
-         * @tc.number SUB_Network_Socket_SendPromise_0700
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromise0700
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_0700
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the promise method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testTLSSocketSendPromise0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testTLSSocketSendPromise0700';
+        it('testNetworkMgrSocketTLSSocketSendPromise0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromise0700';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -870,15 +870,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketConnectPromise0100
-         * @tc.number SUB_Network_Socket_ConnectPromise_0100
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectPromise0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectPromise_0100
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketConnectPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketConnectPromise0100';
+        it('testNetworkMgrSocketTLSSocketConnectPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectPromise0100';
             console.info(`${caseName} test start`);
             try {
                 let tlsConnectOptions2: socket.TLSConnectOptions = {
@@ -934,15 +934,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketConnectPromise0200
-         * @tc.number SUB_Network_Socket_ConnectPromise_0200
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectPromise0200
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectPromise_0200
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketConnectPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketConnectPromise0200';
+        it('testNetworkMgrSocketTLSSocketConnectPromise0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectPromise0200';
             console.info(`${caseName} test start`);
             try {
                 let port: number = Math.round(1024 + Math.random() * 5000 + Math.random() * 4000);
@@ -1010,15 +1010,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketConnectPromise0300
-         * @tc.number SUB_Network_Socket_ConnectPromise_0300
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectPromise0300
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectPromise_0300
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketConnectPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketConnectPromise0300';
+        it('testNetworkMgrSocketTLSSocketConnectPromise0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectPromise0300';
             console.info(`${caseName} test start`);
             try {
                 let netAddress: socket.NetAddress = {
@@ -1094,15 +1094,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketConnectPromise0400
-         * @tc.number SUB_Network_Socket_ConnectPromise_0400
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectPromise0400
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectPromise_0400
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketConnectPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketConnectPromise0400';
+        it('testNetworkMgrSocketTLSSocketConnectPromise0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectPromise0400';
             console.info(`${caseName} test start`);
             try {
                 let netAddress: socket.NetAddress = {
@@ -1172,15 +1172,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketConnectPromise0500
-         * @tc.number SUB_Network_Socket_ConnectPromise_0500
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectPromise0500
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectPromise_0500
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketConnectPromise0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketConnectPromise0500';
+        it('testNetworkMgrSocketTLSSocketConnectPromise0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectPromise0500';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -1211,15 +1211,15 @@ export default function TLSSocketsTest() {
             }
         });
         /**
-         * @tc.name   testSocketTLSSocketConnectPromise0600
-         * @tc.number SUB_Network_Socket_ConnectPromise_0600
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectPromise0600
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectPromise_0600
          * @tc.desc   Sending data through TLSSocket connection(data is '') Use the callback method as the asynchronous method.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('testSocketTLSSocketConnectPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-            let caseName: string = 'testSocketTLSSocketConnectPromise0600';
+        it('testNetworkMgrSocketTLSSocketConnectPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectPromise0600';
             console.info(`${caseName} test start`);
             try {
                 await Promise.all([
@@ -1372,6 +1372,653 @@ export default function TLSSocketsTest() {
                 });
             }
             catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketOnConnectErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OnConnect_Err_0100
+         * @tc.desc   Test TLSSocket connect with invalid options returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketOnConnectErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketOnConnectErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                let connectFired: boolean = false;
+                tlsSocket.on('connect', () => {
+                    connectFired = true;
+                    console.info(`${caseName} on connect callback`);
+                });
+                let invalidConnectOptions: socket.TLSConnectOptions = {
+                    address: { address: '0.0.0.0', port: 0, family: 1 },
+                    secureOptions: { ca: ['invalid_cert'], cert: 'invalid', key: 'invalid', cipherSuite: 'INVALID' },
+                    ALPNProtocols: ['invalid/1']
+                };
+                try {
+                    await tlsSocket.connect(invalidConnectOptions);
+                    console.info(`${caseName} connect succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} connect err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                if (connectFired) {
+                    console.info(`${caseName} on(connect) was fired`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketOnCloseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OnClose_Err_0100
+         * @tc.desc   Test TLSSocket on('close') returns error code 2303600 when socket is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketOnCloseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketOnCloseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                await tlsSocket.close().catch((e: BusinessError) => {
+                    console.info(`${caseName} close err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                });
+                tlsSocket.on('close', () => {
+                    console.info(`${caseName} on close callback`);
+                });
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketOffCloseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OffClose_Err_0100
+         * @tc.desc   Test TLSSocket off('close') returns error code 2303600 when socket is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketOffCloseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketOffCloseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                await tlsSocket.close().catch((e: BusinessError) => {
+                    console.info(`${caseName} close err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                });
+                tlsSocket.off('close');
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketOnErrorErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OnError_Err_0100
+         * @tc.desc   Test TLSSocket on('error') returns error code 2303600 when socket is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketOnErrorErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketOnErrorErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                await tlsSocket.close().catch((e: BusinessError) => {
+                    console.info(`${caseName} close err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                });
+                tlsSocket.on('error', (err: BusinessError) => {
+                    console.info(`${caseName} on error callback: ${JSON.stringify(err)}`);
+                });
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketOffErrorErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_OffError_Err_0100
+         * @tc.desc   Test TLSSocket off('error') returns error code 2303600 when socket is closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketOffErrorErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketOffErrorErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                await tlsSocket.close().catch((e: BusinessError) => {
+                    console.info(`${caseName} close err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                });
+                tlsSocket.off('error');
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetCertificateCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetCertificateCallback_Err_0100
+         * @tc.desc   Test TLSSocket getCertificate(callback) returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetCertificateCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetCertificateCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                tlsSocket.getCertificate((err: BusinessError, data: socket.X509CertRawData) => {
+                    if (err) {
+                        console.info(`${caseName} getCertificate callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} getCertificate succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetCertificatePromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetCertificatePromise_Err_0100
+         * @tc.desc   Test TLSSocket getCertificate() promise returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetCertificatePromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetCertificatePromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                try {
+                    await tlsSocket.getCertificate();
+                    console.info(`${caseName} getCertificate succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} getCertificate promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetRemoteCertificateCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetRemoteCertificateCallback_Err_0100
+         * @tc.desc   Test TLSSocket getRemoteCertificate(callback) returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetRemoteCertificateCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetRemoteCertificateCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                tlsSocket.getRemoteCertificate((err: BusinessError, data: socket.X509CertRawData) => {
+                    if (err) {
+                        console.info(`${caseName} getRemoteCertificate callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} getRemoteCertificate succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetRemoteCertificatePromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetRemoteCertificatePromise_Err_0100
+         * @tc.desc   Test TLSSocket getRemoteCertificate() promise returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetRemoteCertificatePromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetRemoteCertificatePromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                try {
+                    await tlsSocket.getRemoteCertificate();
+                    console.info(`${caseName} getRemoteCertificate succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} getRemoteCertificate promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetProtocolCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetProtocolCallback_Err_0100
+         * @tc.desc   Test TLSSocket getProtocol(callback) returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetProtocolCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetProtocolCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                tlsSocket.getProtocol((err: BusinessError, data: string) => {
+                    if (err) {
+                        console.info(`${caseName} getProtocol callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} getProtocol succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetProtocolPromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetProtocolPromise_Err_0100
+         * @tc.desc   Test TLSSocket getProtocol() promise returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetProtocolPromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetProtocolPromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                try {
+                    await tlsSocket.getProtocol();
+                    console.info(`${caseName} getProtocol succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} getProtocol promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetCipherSuiteCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetCipherSuiteCallback_Err_0100
+         * @tc.desc   Test TLSSocket getCipherSuite(callback) returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetCipherSuiteCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetCipherSuiteCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                tlsSocket.getCipherSuite((err: BusinessError, data: Array<string>) => {
+                    if (err) {
+                        console.info(`${caseName} getCipherSuite callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} getCipherSuite succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetCipherSuitePromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetCipherSuitePromise_Err_0100
+         * @tc.desc   Test TLSSocket getCipherSuite() promise returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetCipherSuitePromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetCipherSuitePromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                try {
+                    await tlsSocket.getCipherSuite();
+                    console.info(`${caseName} getCipherSuite succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} getCipherSuite promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetSignatureAlgorithmsCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetSignatureAlgorithmsCallback_Err_0100
+         * @tc.desc   Test TLSSocket getSignatureAlgorithms(callback) returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetSignatureAlgorithmsCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetSignatureAlgorithmsCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                tlsSocket.getSignatureAlgorithms((err: BusinessError, data: Array<string>) => {
+                    if (err) {
+                        console.info(`${caseName} getSignatureAlgorithms callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} getSignatureAlgorithms succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketGetSignatureAlgorithmsPromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_GetSignatureAlgorithmsPromise_Err_0100
+         * @tc.desc   Test TLSSocket getSignatureAlgorithms() promise returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketGetSignatureAlgorithmsPromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketGetSignatureAlgorithmsPromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                try {
+                    await tlsSocket.getSignatureAlgorithms();
+                    console.info(`${caseName} getSignatureAlgorithms succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} getSignatureAlgorithms promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectCallback_Err_0100
+         * @tc.desc   Test TLSSocket connect(callback) returns error code 2303600 when connecting with invalid options.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketConnectCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                let invalidConnectOptions: socket.TLSConnectOptions = {
+                    address: { address: '0.0.0.0', port: 0, family: 1 },
+                    secureOptions: { ca: ['invalid_cert'], cert: 'invalid', key: 'invalid', cipherSuite: 'INVALID', },
+                    ALPNProtocols: ['invalid/1']
+                };
+                tlsSocket.connect(invalidConnectOptions, (err: BusinessError) => {
+                    if (err) {
+                        console.info(`${caseName} connect callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} connect succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketConnectPromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ConnectPromise_Err_0100
+         * @tc.desc   Test TLSSocket connect() promise returns error code 2303600 when connecting with invalid options.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketConnectPromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketConnectPromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                let invalidConnectOptions: socket.TLSConnectOptions = {
+                    address: { address: '0.0.0.0', port: 0, family: 1 },
+                    secureOptions: { ca: ['invalid_cert'], cert: 'invalid', key: 'invalid', cipherSuite: 'INVALID', },
+                    ALPNProtocols: ['invalid/1']
+                };
+                try {
+                    await tlsSocket.connect(invalidConnectOptions);
+                    console.info(`${caseName} connect succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} connect promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketSendCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendCallback_Err_0100
+         * @tc.desc   Test TLSSocket send(callback) returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketSendCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                tlsSocket.send('test data', (err: BusinessError) => {
+                    if (err) {
+                        console.info(`${caseName} send callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} send succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketSendPromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_SendPromise_Err_0100
+         * @tc.desc   Test TLSSocket send() promise returns error code 2303600 when socket is not connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketSendPromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketSendPromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                try {
+                    await tlsSocket.send('test data');
+                    console.info(`${caseName} send succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} send promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketCloseCallbackErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_CloseCallback_Err_0100
+         * @tc.desc   Test TLSSocket close(callback) returns error code 2303600 when socket is already closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketCloseCallbackErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketCloseCallbackErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                await tlsSocket.close().catch((e: BusinessError) => {
+                    console.info(`${caseName} initial close err: ${JSON.stringify(e)}`);
+                });
+                tlsSocket.close((err: BusinessError) => {
+                    if (err) {
+                        console.info(`${caseName} close callback err: ${JSON.stringify(err)}`);
+                        expectEqual(err.code, 2303600, `${caseName} error code mismatch`);
+                    } else {
+                        console.info(`${caseName} close succeeded unexpectedly`);
+                        expectFail(`${caseName} expected error 2303600 but succeeded`);
+                    }
+                    console.info(`${caseName} test end`);
+                    done();
+                });
+            } catch (err) {
+                console.info(`${caseName} err: ${JSON.stringify(err)}`);
+                console.info(`${caseName} test end`);
+                done();
+            }
+        });
+        /**
+         * @tc.name   testNetworkMgrSocketTLSSocketClosePromiseErr0100
+         * @tc.number SUB_NetworkMgr_Socket_TLSSocket_ClosePromise_Err_0100
+         * @tc.desc   Test TLSSocket close() promise returns error code 2303600 when socket is already closed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testNetworkMgrSocketTLSSocketClosePromiseErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+            let caseName: string = 'testNetworkMgrSocketTLSSocketClosePromiseErr0100';
+            console.info(`${caseName} test start`);
+            try {
+                let tlsSocket: socket.TLSSocket = socket.constructTLSSocketInstance();
+                await tlsSocket.close().catch((e: BusinessError) => {
+                    console.info(`${caseName} initial close err: ${JSON.stringify(e)}`);
+                });
+                try {
+                    await tlsSocket.close();
+                    console.info(`${caseName} close succeeded unexpectedly`);
+                    expectFail(`${caseName} expected error 2303600 but succeeded`);
+                } catch (err) {
+                    let e: BusinessError = err as BusinessError;
+                    console.info(`${caseName} close promise err: ${JSON.stringify(e)}`);
+                    expectEqual(e.code, 2303600, `${caseName} error code mismatch`);
+                }
+                console.info(`${caseName} test end`);
+                done();
+            } catch (err) {
                 console.info(`${caseName} err: ${JSON.stringify(err)}`);
                 console.info(`${caseName} test end`);
                 done();
