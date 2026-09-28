@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 import window from '@ohos.window';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function AlertDialog3() {
   describe('AlertDialog3', () => {
     beforeEach(async (done: Function) => {
@@ -60,7 +61,7 @@ export default function AlertDialog3() {
       await Column.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;

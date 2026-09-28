@@ -30,6 +30,7 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dialogTransitionTest() {
   describe('dialogTransitionTest', () => {
     beforeEach(async (done: Function) => {
@@ -79,7 +80,7 @@ export default function dialogTransitionTest() {
       await CommonFunc.sleep(2000);
       let text: string = AppStorage.get('text') as string
       expect(text).assertEqual('onWillAppear');
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(2000);
       let text1: string = AppStorage.get('text') as string
       expect(text1).assertEqual('onDidDisappear');

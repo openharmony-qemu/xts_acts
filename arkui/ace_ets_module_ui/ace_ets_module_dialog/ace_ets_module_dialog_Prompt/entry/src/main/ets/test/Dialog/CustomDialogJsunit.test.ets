@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function CustomDialogAJsunit() {
   describe('CustomDialogAJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -61,11 +62,11 @@ export default function CustomDialogAJsunit() {
       console.info("[CustomDialogAJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("CustomDialog按esc弹窗逐层退出");
       console.info('[CustomDialogAJsunit_0200] END');
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       done();
     });

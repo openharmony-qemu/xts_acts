@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function CloseCustomDialogTest() {
   describe('CloseCustomDialogTest', () => {
     beforeEach(async (done: Function) => {
@@ -65,7 +66,7 @@ export default function CloseCustomDialogTest() {
       console.info('return log-----' + JSON.parse(CloseCustomDialog).$attrs.content);
       expect(JSON.parse(CloseCustomDialog).$attrs.content).assertEqual('CloseCustomDialog');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
       console.info('[CloseCustomDialogTest_001] END');
       done();

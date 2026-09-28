@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function menuEnabledJsunit() {
   describe('menuEnabledJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -83,7 +84,7 @@ export default function menuEnabledJsunit() {
       let menuEnabled = await driver.findComponent(BY.key('menuEnabled'));
       await menuEnabled.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       let change = await driver.findComponent(BY.key('change'));
       await change.click();

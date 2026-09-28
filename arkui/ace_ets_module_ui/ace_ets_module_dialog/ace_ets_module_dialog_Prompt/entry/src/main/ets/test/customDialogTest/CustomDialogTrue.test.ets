@@ -23,6 +23,7 @@ import { BusinessError } from '@ohos.base';
 
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function CustomDialogTrue() {
   describe('CustomDialogTrue', () => {
     beforeEach(async (done: Function) => {
@@ -70,7 +71,7 @@ export default function CustomDialogTrue() {
       expect(properties.type).assertEqual(0)//0表示应用子窗口TYPE_APP
 
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       console.info('[CustomDialogTrue_0100] END');
       done();

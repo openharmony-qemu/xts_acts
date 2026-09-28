@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import {Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';;
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function CustomDialogRouter() {
   describe('CustomDialogRouter', () => {
     beforeEach(async (done: Function) => {
@@ -65,7 +66,7 @@ export default function CustomDialogRouter() {
       // api 11, dialog is closed, confirmButton is not exist
       let confirmButton = await driver.findComponent(ON.id('CustomDialogRouter' + '_CustomDialogConfirm'));
       expect(confirmButton != null).assertTrue();
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
         console.info('CustomDialogRouter1_0100 END');
       done();

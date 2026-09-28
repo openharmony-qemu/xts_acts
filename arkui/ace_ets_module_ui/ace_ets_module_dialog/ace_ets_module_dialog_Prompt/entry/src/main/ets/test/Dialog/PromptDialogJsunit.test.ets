@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PromptDialogAJsunit() {
   describe('PromptDialogAJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -63,9 +64,9 @@ export default function PromptDialogAJsunit() {
       expect(obj.$attrs.label).assertEqual("prompt按esc弹窗逐层退出");
       console.info('[PromptDialogAJsunit_0100] END');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       done();
     });
