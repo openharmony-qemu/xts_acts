@@ -252,10 +252,10 @@ export default function coverageStaticTest(): void {
       console.info(`${LOG_TAG} clickSoundFlag=${strJson.substring(0, 120)}`);
       expect(strJson.length > 2).assertTrue();
       expect(strJson.indexOf('ok') >= 0).assertTrue();
-      const strJson: string = inspector.getInspectorByKey('btnClick');
-      console.info(`${LOG_TAG} btnClick=${strJson.substring(0, 120)}`);
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('clickCb') >= 0).assertTrue();
+      const strJsonBtn: string = inspector.getInspectorByKey('btnClick');
+      console.info(`${LOG_TAG} btnClick=${strJsonBtn.substring(0, 120)}`);
+      expect(strJsonBtn.length > 2).assertTrue();
+      expect(strJsonBtn.indexOf('clickCb') >= 0).assertTrue();
     });
 
     /**
@@ -320,10 +320,10 @@ export default function coverageStaticTest(): void {
       console.info(`${LOG_TAG} interopFlag=${strJson.substring(0, 120)}`);
       expect(strJson.length > 2).assertTrue();
       expect(strJson.indexOf('ok') >= 0).assertTrue();
-      const strJson: string = inspector.getInspectorByKey('dialogGetStateFlag');
-      console.info(`${LOG_TAG} dialogGetStateFlag=${strJson.substring(0, 120)}`);
-      expect(strJson.length > 2).assertTrue();
-      expect(strJson.indexOf('ok') >= 0).assertTrue();
+      const strJsonDlg: string = inspector.getInspectorByKey('dialogGetStateFlag');
+      console.info(`${LOG_TAG} dialogGetStateFlag=${strJsonDlg.substring(0, 120)}`);
+      expect(strJsonDlg.length > 2).assertTrue();
+      expect(strJsonDlg.indexOf('ok') >= 0).assertTrue();
     });
 
     /**

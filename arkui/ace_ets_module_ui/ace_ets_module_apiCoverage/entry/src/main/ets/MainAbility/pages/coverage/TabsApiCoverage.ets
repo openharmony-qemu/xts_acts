@@ -93,11 +93,12 @@ struct TabsApiCoverage {
   private probeTabsCtrl(): void {
     try {
       const mode: TabBarDisplayMode = this.tabsController.getBarDisplayMode();
-      this.tabsCtrlFlag = (mode !== undefined) ? 'ok' : 'fail';
+      this.tabsCtrlFlag =
+        (mode === TabBarDisplayMode.BOTTOM_TABBAR || mode === TabBarDisplayMode.SIDEBAR) ?
+          'ok' : 'other';
     } catch (err) {
       console.info('[ARKUI_DYN] TabsApiCoverage getBarDisplayMode error ' + err);
-      this.tabsCtrlFlag =
-        (this.tabsController.getBarDisplayMode !== undefined) ? 'ok' : 'fail';
+      this.tabsCtrlFlag = 'fail';
     }
   }
 

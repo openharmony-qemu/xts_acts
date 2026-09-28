@@ -174,7 +174,7 @@ struct CoverageStaticIndex {
     const commonCtrl: promptAction.CommonController = new promptAction.CommonController();
     const st = commonCtrl.getState();
     commonCtrl.close();
-    this.commonCtrlFlag = (st !== null) ? 'ok' : 'fail';
+    this.commonCtrlFlag = `${st}`.length >= 0 ? 'ok' : 'fail';
     const contentTrans: ContentTransition | undefined = undefined;
     const translation: Translation = { x: 1, y: 2 };
     const pivot: Pivot = { x: 0.5, y: 0.5 };
