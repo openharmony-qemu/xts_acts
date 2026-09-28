@@ -77,38 +77,29 @@ static void SetAudioVividFormat()
 
 static void Init(int32_t mode, bool isCartesian)
 {
+    g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
+    g_objNum = OBJECT_ZERO;
+    g_objBitrate = BITRATE_ZERO;
     if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO) {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO;
-        g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
         g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_MONO;
         g_soundbedBitrate = BITRATE_44KBPS;
-        g_objNum = OBJECT_ZERO;
-        g_objBitrate = BITRATE_ZERO;
     } else if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO) {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO;
-        g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
         g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
         g_soundbedBitrate = BITRATE_44KBPS;
-        g_objNum = OBJECT_ZERO;
-        g_objBitrate = BITRATE_ZERO;
     } else if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_MC) {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_MC;
-        g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
         g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_5POINT1;
         g_soundbedBitrate = BITRATE_96KBPS;
-        g_objNum = OBJECT_ZERO;
-        g_objBitrate = BITRATE_ZERO;
     } else if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA) {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA;
-        g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
         g_sampleRate = SAMPLERATE_48000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_AMB_ORDER1_ACN_N3D;
         g_soundbedBitrate = BITRATE_128KBPS;
-        g_objNum = OBJECT_ZERO;
-        g_objBitrate = BITRATE_ZERO;
     } else {
         g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_MIX;
         g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
