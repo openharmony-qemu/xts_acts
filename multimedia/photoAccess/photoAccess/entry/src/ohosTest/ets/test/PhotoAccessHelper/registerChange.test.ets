@@ -23,7 +23,9 @@ import {
   fetchAllOption,
   sleep,
   getPermission,
-  driveFn
+  driveFn,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 
@@ -35,6 +37,9 @@ export default function registerChangeTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [ "on01.jpg", "on11.jpg", "on17.jpg"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -279,6 +284,29 @@ export default function registerChangeTest () {
         expect(error.code === '13900020' || error.code === '401').assertTrue();
         done();
       }
+    });
+
+    /**
+     * @tc.name   registerChange_callback_015
+     * @tc.number SUB_PHOTOACCESS_HELPER_REGISTERCHANGE_CALLBACK_1500
+     * @tc.desc   listening album removeAssets, type NOTIFY_ALBUM_REMOVE_ASSET,error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('registerChange_callback_015', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'registerChange_callback_015';
+      try {
+        let albumUri:ESObject = undefined;
+        helper.registerChange(albumUri, false, async (changeData) => {
+          expect(false).assertTrue();
+        });
+        done();
+      } catch (error) {
+        console.log(`${testNum}: tryError: ${error}`);
+        expect(error.code === '13900020').assertTrue();
+        done();
+      } 
     });
   })
 }

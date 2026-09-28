@@ -20,7 +20,9 @@ import {
   fetchOption,
   getPermission,
   driveFn,
-  sleep
+  sleep,
+  checkResourceFile,
+  createResource
 } from '../common'
 import common from '@ohos.app.ability.common'
 
@@ -36,6 +38,9 @@ export default function getAssetsTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [ "getAssetTest.jpg", "01.mp4"];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
 
     const getAssetsCallbackTest = async (done: Function, testNum: string, fetchOps: photoAccessHelper.FetchOptions, expectCount: number) => {
