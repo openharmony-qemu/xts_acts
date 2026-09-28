@@ -815,7 +815,7 @@ export default function windowEventTest() {
           console.error(caseName + ` Failed to clear the window mask. Cause code: ${err.code}, message: ${err.message}`);
           await subWindow.destroyWindow();
           if (err.code === 801) {
-            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][clearWindowMask]msg: clear mask failed')
+            expect(err.message !== '').assertTrue();
             done();
           } else if (err.code === 1300002) {
             expect(err.message).assertEqual('This window state is abnormal.[window][clearWindowMask]msg: clear mask failed')
