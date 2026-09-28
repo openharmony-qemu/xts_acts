@@ -48,7 +48,7 @@ export default function subHeaderEndIcon() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADER_ENDICON_0100
+     * @tc.number subHeaderEndIcon
      * @tc.name   subHeaderEndIcon_0100
      * @tc.desc   Test SubHeader icon + secondaryTitle + endIcon(image) — scenario 1
      * @tc.size   MediumTest
@@ -67,7 +67,7 @@ export default function subHeaderEndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADER_ENDICON_0200
+     * @tc.number subHeaderEndIcon
      * @tc.name   subHeaderEndIcon_0200
      * @tc.desc   Test SubHeader secondaryTitle + endIcon(Symbol) + endIconSymbolOptions — scenario 4
      * @tc.size   MediumTest
@@ -86,7 +86,7 @@ export default function subHeaderEndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADER_ENDICON_0300
+     * @tc.number subHeaderEndIcon
      * @tc.name   subHeaderEndIcon_0300
      * @tc.desc   Test SubHeader primaryTitle + endIcon(image) — scenario 2
      * @tc.size   MediumTest
@@ -105,7 +105,7 @@ export default function subHeaderEndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADER_ENDICON_0400
+     * @tc.number subHeaderEndIcon
      * @tc.name   subHeaderEndIcon_0400
      * @tc.desc   Test SubHeader primaryTitle + secondaryTitle + endIcon(image) — scenario 3
      * @tc.size   MediumTest
@@ -124,7 +124,7 @@ export default function subHeaderEndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADER_ENDICON_0500
+     * @tc.number subHeaderEndIcon
      * @tc.name   subHeaderEndIcon_0500
      * @tc.desc   Test SubHeader endIcon + operationItem coexist — scenario 7
      * @tc.size   MediumTest
@@ -143,7 +143,7 @@ export default function subHeaderEndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADER_ENDICON_0600
+     * @tc.number subHeaderEndIcon
      * @tc.name   subHeaderEndIcon_0600
      * @tc.desc   Test SubHeader without endIcon — scenario 8, verify endIcon is undefined
      * @tc.size   MediumTest
@@ -162,7 +162,7 @@ export default function subHeaderEndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADER_ENDICON_0700
+     * @tc.number subHeaderEndIcon
      * @tc.name   subHeaderEndIcon_0700
      * @tc.desc   Test SubHeader titleBuilder mode, endIcon not effective — scenario 9
      * @tc.size   MediumTest

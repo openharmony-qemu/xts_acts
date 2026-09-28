@@ -48,7 +48,7 @@ export default function subHeaderV2EndIcon() {
     })
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0100
+     * @tc.number subHeaderV2EndIcon
      * @tc.name   subHeaderV2EndIcon_0100
      * @tc.desc   Test SubHeaderV2 endIcon with image resource
      * @tc.size   MediumTest
@@ -67,7 +67,7 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0200
+     * @tc.number subHeaderV2EndIcon
      * @tc.name   subHeaderV2EndIcon_0200
      * @tc.desc   Test SubHeaderV2 endIcon with SymbolGlyphModifier
      * @tc.size   MediumTest
@@ -86,7 +86,7 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0300
+     * @tc.number subHeaderV2EndIcon
      * @tc.name   subHeaderV2EndIcon_0300
      * @tc.desc   Test SubHeaderV2 endIcon default value, verify endIcon is undefined when not set
      * @tc.size   MediumTest
@@ -105,7 +105,7 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0400
+     * @tc.number subHeaderV2EndIcon
      * @tc.name   subHeaderV2EndIcon_0400
      * @tc.desc   Test SubHeaderV2 primaryTitle + secondaryTitle + endIcon(image) — scenario 5
      * @tc.size   MediumTest
@@ -124,7 +124,7 @@ export default function subHeaderV2EndIcon() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0500
+     * @tc.number subHeaderV2EndIcon
      * @tc.name   subHeaderV2EndIcon_0500
      * @tc.desc   Test SubHeaderV2 endIcon + operationItems coexist
      * @tc.size   MediumTest

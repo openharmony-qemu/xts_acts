@@ -73,14 +73,14 @@ export default function SubHeaderV2EndIconTest() {
     // ========================================================================
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0100
-     * @tc.name SUB_ARKUI_SUBHEADERV2_ENDICON_0100
+     * @tc.number SUB_arkui_subheader_v2_end_icon_param_0100
+     * @tc.name SUB_arkui_subheader_v2_end_icon_param_0100
      * @tc.desc Test SubHeaderV2 endIcon with image resource, verify endIcon property is set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('SUB_ARKUI_SUBHEADERV2_ENDICON_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_arkui_subheader_v2_end_icon_param_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'endIcon_image_resource START');
       try {
         let strJson = inspector.getInspectorByKey('subheaderv2_endicon_image');
@@ -98,14 +98,14 @@ export default function SubHeaderV2EndIconTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0200
-     * @tc.name SUB_ARKUI_SUBHEADERV2_ENDICON_0200
+     * @tc.number SUB_arkui_subheader_v2_end_icon_param_0200
+     * @tc.name SUB_arkui_subheader_v2_end_icon_param_0200
      * @tc.desc Test SubHeaderV2 endIcon with SymbolGlyphModifier, verify endIcon property is set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('SUB_ARKUI_SUBHEADERV2_ENDICON_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_arkui_subheader_v2_end_icon_param_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'endIcon_symbol_modifier START');
       try {
         let strJson = inspector.getInspectorByKey('subheaderv2_endicon_symbol');
@@ -123,14 +123,14 @@ export default function SubHeaderV2EndIconTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0300
-     * @tc.name SUB_ARKUI_SUBHEADERV2_ENDICON_0300
+     * @tc.number SUB_arkui_subheader_v2_end_icon_param_0300
+     * @tc.name SUB_arkui_subheader_v2_end_icon_param_0300
      * @tc.desc Test SubHeaderV2 endIcon not set, verify endIcon is undefined by default
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('SUB_ARKUI_SUBHEADERV2_ENDICON_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_arkui_subheader_v2_end_icon_param_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'endIcon_default START');
       try {
         let strJson = inspector.getInspectorByKey('subheaderv2_endicon_default');
@@ -154,14 +154,14 @@ export default function SubHeaderV2EndIconTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0400
-     * @tc.name SUB_ARKUI_SUBHEADERV2_ENDICON_0400
+     * @tc.number SUB_arkui_subheader_v2_end_icon_param_0400
+     * @tc.name SUB_arkui_subheader_v2_end_icon_param_0400
      * @tc.desc Test SubHeaderV2 primaryTitle + secondaryTitle + endIcon(image) — scenario 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('SUB_ARKUI_SUBHEADERV2_ENDICON_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_arkui_subheader_v2_end_icon_param_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'endIcon_primary_secondary START');
       try {
         let strJson = inspector.getInspectorByKey('subheaderv2_endicon_primary_secondary');
@@ -179,14 +179,14 @@ export default function SubHeaderV2EndIconTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_SUBHEADERV2_ENDICON_0500
-     * @tc.name SUB_ARKUI_SUBHEADERV2_ENDICON_0500
+     * @tc.number SUB_arkui_subheader_v2_end_icon_param_0500
+     * @tc.name SUB_arkui_subheader_v2_end_icon_param_0500
      * @tc.desc Test SubHeaderV2 endIcon + operationItems coexist
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('SUB_ARKUI_SUBHEADERV2_ENDICON_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_arkui_subheader_v2_end_icon_param_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       arkuiNewLog(SUITE, 'execute', 'endIcon_operation_coexist START');
       try {
         let strJson = inspector.getInspectorByKey('subheaderv2_endicon_operation');
