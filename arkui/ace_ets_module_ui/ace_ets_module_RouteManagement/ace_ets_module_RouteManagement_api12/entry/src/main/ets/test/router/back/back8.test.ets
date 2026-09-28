@@ -70,7 +70,7 @@ export default function back8() {
       await CommonFunc.sleep(2000);
       console.info('[back8_0100] btn2');
 
-      await driver.pressBack()
+      await driver.pressBack(0)
       await CommonFunc.sleep(2000);
       console.info('[back8_0100] pressBack');
 

@@ -57,7 +57,7 @@ export default function ListItemGroupAreaTest() {
         await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
                            y2, 5000);
         await Utils.sleep(1000);
-        await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
+        await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
         let result: number = nativexcomponent.TestAreaOutside();
         expect(1).assertEqual(result);
@@ -87,7 +87,7 @@ export default function ListItemGroupAreaTest() {
         await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
                            y2, 8000);
         await Utils.sleep(1000);
-        await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
+        await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
         let result: number = nativexcomponent.TestAreaNone();
         expect(1).assertEqual(result);
@@ -117,7 +117,7 @@ export default function ListItemGroupAreaTest() {
         await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
                            y2, 8000);
         await Utils.sleep(1000);
-        await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
+        await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
         let result: number = nativexcomponent.TestAreaItem();
         expect(1).assertEqual(result);
@@ -147,7 +147,7 @@ export default function ListItemGroupAreaTest() {
         await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
                            y2, 8000);
         await Utils.sleep(2000);
-        await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
+        await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
         let result: number = nativexcomponent.TestAreaHeader();
         expect(1).assertEqual(result);
@@ -177,7 +177,7 @@ export default function ListItemGroupAreaTest() {
         await Utils.driver.swipe(ComponentPoint.x, y1, ComponentPoint.x,
                            y2, 8000);
         await Utils.sleep(1000);
-        await Utils.driver.click(ComponentPoint.x, ComponentPoint.y);
+        await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 });
         await Utils.sleep(1000);
         let result: number = nativexcomponent.TestAreaFooter();
         expect(1).assertEqual(result);

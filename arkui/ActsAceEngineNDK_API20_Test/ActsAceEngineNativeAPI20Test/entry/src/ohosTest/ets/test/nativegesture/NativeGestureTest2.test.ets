@@ -69,7 +69,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_repeat0200 start====");
-          await Utils.driver.longClick(ComponentPoint.x, ComponentPoint.y)
+          await Utils.driver.longClickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 })
           let result: number = nativegesturendk.GetGestureParam_repeat0200();
           console.info(`====>testGetGestureParam_repeat0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -211,7 +211,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_duration0200 start====");
-          await Utils.driver.longClick(ComponentPoint.x, ComponentPoint.y)
+          await Utils.driver.longClickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 })
           let result: number = nativegesturendk.GetGestureParam_duration0200();
           console.info(`====>testGetGestureParam_duration0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -234,7 +234,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_angle0100 start====");
-          await Utils.driver.longClick(ComponentPoint.x, ComponentPoint.y)
+          await Utils.driver.longClickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 })
           let result: number = nativegesturendk.GetGestureParam_angle0100();
           console.info(`====>testGetGestureParam_angle0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED).assertEqual(result);
@@ -257,7 +257,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_angle0200 start====");
-          await Utils.driver.longClick(ComponentPoint.x, ComponentPoint.y)
+          await Utils.driver.longClickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 })
           let result: number = nativegesturendk.GetGestureParam_angle0200();
           console.info(`====>testGetGestureParam_angle0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -302,7 +302,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_distanceThreshold0200 start====");
-          await Utils.driver.click(ComponentPoint.x, ComponentPoint.y)
+          await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 })
           let result: number = nativegesturendk.GetGestureParam_distanceThreshold0200();
           console.info(`====>testGetGestureParam_distanceThreshold0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -501,7 +501,7 @@ export default function NativeGestureTest2() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testPreventGestureRecognizerBegin0100 start====");
-          await Utils.driver.click(ComponentPoint.x, ComponentPoint.y)
+          await Utils.driver.clickAt({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: 0 })
           let result: number = nativegesturendk.PreventGestureRecognizerBegin0100();
           console.info(`====>testPreventGestureRecognizerBegin0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);

@@ -91,7 +91,7 @@ export default function sideBarWithGesture() {
       let height = barRect.bottom - barRect.top;
       console.info("showSideBarWithGesture_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("showSideBarWithGesture_0200 getBounds width: " + width + ", height: " + height);
-      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2)}, {x: Math.round(right), y: Math.round(top + height/2)}, 2, 20000);
+      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2), displayId: 0}, {x: Math.round(right), y: Math.round(top + height/2), displayId: 0}, 2, 20000);
       await CommonFunc.sleep(2000);
       let strJson2: string = getInspectorByKey('sideBar2_true_text');
       console.info("[showSideBarWithGesture_0200] content: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
@@ -131,7 +131,7 @@ export default function sideBarWithGesture() {
       let height = barRect.bottom - barRect.top;
       console.info("showSideBarWithGesture_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("showSideBarWithGesture_0300 getBounds width: " + width + ", height: " + height);
-      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2)}, {x: Math.round(right), y: Math.round(top + height/2)}, 2, 20000);
+      await driver.fling({x: Math.round(left + width/3), y: Math.round(top + height/2), displayId: 0}, {x: Math.round(right), y: Math.round(top + height/2), displayId: 0}, 2, 20000);
       await CommonFunc.sleep(2000);
       let content = await driver.findComponent(ON.id('sideBar3_false_text'));
       console.info("[showSideBarWithGesture_0300'] content is: " + content);

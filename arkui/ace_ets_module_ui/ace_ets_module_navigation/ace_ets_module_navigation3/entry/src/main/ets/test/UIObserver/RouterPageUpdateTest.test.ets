@@ -65,7 +65,7 @@ export default function RouterPageUpdateTest() {
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.pressBack();
+      await driver.pressBack(0);
       await CommonFunc.sleep(1000);
 
       expect(AppStorage.get('RouterPageUpdatePage_callBackFuncOnCount')).assertEqual(1);

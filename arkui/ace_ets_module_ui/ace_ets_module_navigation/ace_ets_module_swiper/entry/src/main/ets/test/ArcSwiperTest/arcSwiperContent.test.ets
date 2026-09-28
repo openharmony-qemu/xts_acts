@@ -61,7 +61,7 @@ export default function arcSwiperContent() {
       let height = bottom -top;
       let width = right - left;
       let driver = await Driver.create()
-      await driver.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(2000);
       await driver.assertComponentExist(ON.text('1'));
       let strJson = getInspectorByKey('onAnimationStart_arcs_content');

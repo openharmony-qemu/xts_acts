@@ -72,7 +72,7 @@ export default function SwiperImplicitanimation0060() {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_IMPLICITANIMATION_0060 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.drag(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.3), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.9), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(2000);
       let strIndex0: string = getInspectorByKey('implicitanimation_0060_1')
       let jsonIndex0: ESObject = JSON.parse(strIndex0).$attrs.content;
@@ -92,7 +92,7 @@ export default function SwiperImplicitanimation0060() {
       let showPrevious = await driver.findComponent(ON.id("btn_implicitanimation_0060"));
       await showPrevious.click();
       await CommonFunc.sleep(500);
-      await driver.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.1),Math.round(top + height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.1), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(500);
       let strIndex4: string = getInspectorByKey('implicitanimation_0060_1')
       let jsonIndex4: ESObject = JSON.parse(strIndex4).$attrs.content;

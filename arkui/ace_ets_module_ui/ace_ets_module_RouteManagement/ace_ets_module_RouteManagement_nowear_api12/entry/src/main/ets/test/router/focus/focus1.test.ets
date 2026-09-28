@@ -90,7 +90,7 @@ export default function focus() {
       expect(btn3_isFocusedValue).assertEqual(true);
       console.info('[focus_0100] btn3 isFocused');
 
-      await driver.pressBack();
+      await driver.pressBack(0);
       await CommonFunc.sleep(2000);
 
       let btn4 = await driver.findComponent(ON.id('focus1_btn2'));

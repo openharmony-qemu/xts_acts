@@ -67,7 +67,7 @@ export default function back6() {
       await CommonFunc.sleep(2000);
       console.info('[back6_0100] btn click');
 
-      await driver.pressBack()
+      await driver.pressBack(0)
       await CommonFunc.sleep(2000);
       console.info('[back6_0100] pressBack');
 

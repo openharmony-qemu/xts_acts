@@ -251,7 +251,7 @@ export default function swiperAnimationJsunit() {
       //  to press screen
       let driver3 = await Driver.create();
       await CommonFunc.sleep(200);
-      await driver3.longClick(Math.round(right/2),Math.round(bottom + height/2));
+      await driver3.longClickAt({ x: Math.round(right/2), y: Math.round(bottom + height/2), displayId: 0 });
       await CommonFunc.sleep(500);
        // check the onAnimation triggers
       let strJson = getInspectorByKey('animationEnd');
@@ -317,7 +317,7 @@ export default function swiperAnimationJsunit() {
       //  to press screen
       let driver = await Driver.create();
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(right/2),Math.round(bottom + height/2));
+      await driver.longClickAt({ x: Math.round(right/2), y: Math.round(bottom + height/2), displayId: 0 });
       await CommonFunc.sleep(500);
      // to swipe for duration
       let startx = Math.round(right - width * 0.4);
