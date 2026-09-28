@@ -6,7 +6,6 @@
     "MainAbility/pages/subHeader/subHeaderSelect",
     "MainAbility/pages/subHeader/subHeaderTitleAccessibitText",
     "MainAbility/pages/subHeaderIdFields/subHeaderIdFields",
-    "MainAbility/pages/subHeaderV2IdFields/subHeaderV2IdFields",
-    "MainAbility/pages/subHeaderV2EndIcon/subHeaderV2EndIcon"
+    "MainAbility/pages/subHeaderV2IdFields/subHeaderV2IdFields"
   ]
 }
