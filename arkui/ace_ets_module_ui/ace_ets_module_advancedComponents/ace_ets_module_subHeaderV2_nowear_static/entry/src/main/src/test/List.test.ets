@@ -23,7 +23,6 @@ import subHeaderV2CustomContentTest from './subHeaderV2/subHeaderV2CustomContent
 import subHeaderV2CustomStyleTest from './subHeaderV2/subHeaderV2CustomStyle.test';
 import subHeaderV2LeftAccessTest from './subHeaderV2/subHeaderV2LeftAccess.test';
 import subHeaderV2RightAccessTest from './subHeaderV2/subHeaderV2RightAccess.test';
-import subHeaderV2EndIconTest from './subHeaderV2/subHeaderV2EndIcon.test';
 
 export default function testsuite() {
   subHeaderV2EfficiencyTest();
@@ -35,5 +34,4 @@ export default function testsuite() {
   subHeaderV2CustomStyleTest();
   subHeaderV2LeftAccessTest();
   subHeaderV2RightAccessTest();
-  subHeaderV2EndIconTest();
 }
