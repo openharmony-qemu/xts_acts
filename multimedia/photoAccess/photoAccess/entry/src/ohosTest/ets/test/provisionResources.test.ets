@@ -21,8 +21,7 @@ import {
     getPermission,
     pushCreateAsset,
     pushCreateAssetSingle,
-    driveFn,
-    checkResourceFile
+    driveFn
 } from './common';
 import common from '@ohos.app.ability.common';
 
@@ -37,7 +36,7 @@ export default function provisionResourcesTest() {
             await getPermission();
             await driveFn();
             await sleep(1000)
-            checkResourceFile(testContext);
+            assetCount = await getAssetsCount('provisionResourcesTest');
         });
         beforeEach(async ()=>{
             await sleep(300);
@@ -311,6 +310,29 @@ export default function provisionResourcesTest() {
             ];
             await pushCreateAssetSingle(testContext,fileNames);
             await checkResourceAsset(done, testNum, fileNames);
+        });
+
+        /**
+         * @tc.name   check_provision_resource_count_001
+         * @tc.number SUB_MEDIA_PHOTOACCESS_CHECK_ASSETS_COUNT_001
+         * @tc.desc   check provisionResources count
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('check_provision_resource_count_001', Level.LEVEL0, async (done:Function)=> {
+            const testNum = 'check_provision_resource_count_001';
+            try {
+                await sleep(3000);
+                const count = await getAssetsCount(testNum);
+                console.log(`${testNum} :: expect resource num is ${assetCount}, actual is ${count}`);
+                expect(count).assertEqual(assetCount);
+                done();
+            } catch (error) {
+                console.log(`${testNum} :: check provisionResources count error :: ${error} !`);
+                expect(false).assertTrue();
+                done();
+            }
         });
 
     });
