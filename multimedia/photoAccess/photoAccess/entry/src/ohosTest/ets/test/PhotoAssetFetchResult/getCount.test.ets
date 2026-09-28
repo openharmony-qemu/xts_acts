@@ -18,7 +18,7 @@ import dataSharePredicates from '@ohos.data.dataSharePredicates'
 import {
   fetchOption,
   photoType,
-  photoKeys, getPermission, driveFn, sleep, albumSubtype, albumType
+  photoKeys, getPermission, driveFn, sleep, albumSubtype, albumType, checkResourceFile, createResource
 } from '../common'
 import common from '@ohos.app.ability.common';
 import { beforeAll, expect, Level } from '@ohos/hypium-dynamic';
@@ -65,6 +65,9 @@ export default function assetGetCountTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
+      const fileNames: Array<string> = [ "01.jpg", "01.mp4" ];
+      checkResourceFile(testContext);
+      await createResource(testContext, fileNames);
     });
     //image
     /**
