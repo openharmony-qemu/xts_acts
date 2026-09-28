@@ -61,7 +61,7 @@ static void SetAudioVividFormat()
         OH_AVFormat_SetIntValue(g_format, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, g_sampleFormat);
         if (g_mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_MONO || g_mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_STEREO) {
             OH_AVFormat_SetLongValue(g_format, OH_MD_KEY_BITRATE, g_soundbedBitrate);
-        } else if (g_mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_MC) {
+        } else if (g_mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_MC || g_mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA) {
             OH_AVFormat_SetLongValue(g_format, OH_MD_KEY_BITRATE, g_soundbedBitrate);
             OH_AVFormat_SetLongValue(g_format, OH_MD_KEY_CHANNEL_LAYOUT, g_soundbedChannelLayout);
         } else {
@@ -99,6 +99,14 @@ static void Init(int32_t mode, bool isCartesian)
         g_sampleRate = SAMPLERATE_32000;
         g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_5POINT1;
         g_soundbedBitrate = BITRATE_96KBPS;
+        g_objNum = OBJECT_ZERO;
+        g_objBitrate = BITRATE_ZERO;
+    } else if (mode == OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA) {
+        g_mode = OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA;
+        g_sampleFormat = OH_BitsPerSample::SAMPLE_S16LE;
+        g_sampleRate = SAMPLERATE_48000;
+        g_soundbedChannelLayout = OH_AudioChannelLayout::CH_LAYOUT_AMB_ORDER1_ACN_N3D;
+        g_soundbedBitrate = BITRATE_128KBPS;
         g_objNum = OBJECT_ZERO;
         g_objBitrate = BITRATE_ZERO;
     } else {
@@ -630,6 +638,148 @@ static napi_value MCModeBitrateCheck(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value HOAModeSampleRateCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA, true);
+    if (IsSupportAudioVivid()) {
+        g_format = OH_AVFormat_Create();
+        int32_t errNum = 0;
+        OH_AVErrCode ret;
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
+        // 32K
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_OK) {
+            errNum++;
+        }
+        // 44.1K
+        OH_AudioCodec_Reset(codec);
+        g_sampleRate = SAMPLERATE_44100;
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_OK) {
+            errNum++;
+        }
+        // 48K
+        OH_AudioCodec_Reset(codec);
+        g_sampleRate = SAMPLERATE_48000;
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_OK) {
+            errNum++;
+        }
+        // invalid
+        OH_AudioCodec_Reset(codec);
+        g_sampleRate = SAMPLERATE_INVALID;
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_INVALID_VAL) {
+            errNum++;
+        }
+        if (errNum == 0) {
+            backParam = SUCCESS;
+        }
+        OH_AudioCodec_Destroy(codec);
+        OH_AVFormat_Destroy(g_format);
+    } else {
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
+        if (codec == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value HOAModeSampleFormatCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA, true);
+    if (IsSupportAudioVivid()) {
+        g_format = OH_AVFormat_Create();
+        int32_t errNum = 0;
+        OH_AVErrCode ret;
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
+        // s16le
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_OK) {
+            errNum++;
+        }
+        // s24le
+        OH_AudioCodec_Reset(codec);
+        g_sampleFormat = OH_BitsPerSample::SAMPLE_S24LE;
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_OK) {
+            errNum++;
+        }
+        // invalid
+        OH_AudioCodec_Reset(codec);
+        g_sampleFormat = OH_BitsPerSample::SAMPLE_S32LE;
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_INVALID_VAL) {
+            errNum++;
+        }
+        if (errNum == 0) {
+            backParam = SUCCESS;
+        }
+        OH_AudioCodec_Destroy(codec);
+        OH_AVFormat_Destroy(g_format);
+    } else {
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
+        if (codec == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value HOAModeBitrateCheck(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA, true);
+    if (IsSupportAudioVivid()) {
+        g_format = OH_AVFormat_Create();
+        int32_t errNum = 0;
+        OH_AVErrCode ret;
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
+        // 32kbps
+        g_soundbedBitrate = BITRATE_32KBPS;
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_OK) {
+            errNum++;
+        }
+        // 900kbps
+        OH_AudioCodec_Reset(codec);
+        g_soundbedBitrate = BITRATE_900KBPS;
+        SetAudioVividFormat();
+        ret = OH_AudioCodec_Configure(codec, g_format);
+        if (ret != AV_ERR_OK) {
+            errNum++;
+        }
+        if (errNum == 0) {
+            backParam = SUCCESS;
+        }
+        OH_AudioCodec_Destroy(codec);
+        OH_AVFormat_Destroy(g_format);
+    } else {
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_VIVID, true);
+        if (codec == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
 static napi_value MixModeSampleRateCheck(napi_env env, napi_callback_info info)
 {
     int backParam = FAIL;
@@ -975,6 +1125,32 @@ static napi_value CreateMCMode(napi_env env, napi_callback_info info)
     OH_AudioVividMetaBuilder *builder = nullptr;
     OH_AVErrCode ret;
     Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_MC, true);
+    SetAudioVividFormat();
+    if (IsSupportAudioVivid()) {
+        ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        if (ret == AV_ERR_OK && builder != nullptr) {
+            backParam = SUCCESS;
+        }
+        OH_AudioVividMetaBuilder_Destroy(builder);
+    } else {
+        ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
+        if (ret == AV_ERR_UNSUPPORT && builder == nullptr) {
+            backParam = SUCCESS;
+        }
+    }
+    OH_AVFormat_Destroy(g_format);
+    napi_value result = nullptr;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value CreateHOAMode(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    g_format = OH_AVFormat_Create();
+    OH_AudioVividMetaBuilder *builder = nullptr;
+    OH_AVErrCode ret;
+    Init(OH_AUDIO_VIVID_SIGNAL_FORMAT_HOA, true);
     SetAudioVividFormat();
     if (IsSupportAudioVivid()) {
         ret = OH_AudioVividMetaBuilder_Create(&builder, g_format);
@@ -2103,6 +2279,9 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("MCModeSampleFormatCheck", MCModeSampleFormatCheck),
         DECLARE_NAPI_FUNCTION("MCModeChannelLayoutCheck", MCModeChannelLayoutCheck),
         DECLARE_NAPI_FUNCTION("MCModeBitrateCheck", MCModeBitrateCheck),
+        DECLARE_NAPI_FUNCTION("HOAModeSampleRateCheck", HOAModeSampleRateCheck),
+        DECLARE_NAPI_FUNCTION("HOAModeSampleFormatCheck", HOAModeSampleFormatCheck),
+        DECLARE_NAPI_FUNCTION("HOAModeBitrateCheck", HOAModeBitrateCheck),
         DECLARE_NAPI_FUNCTION("MixModeSampleRateCheck", MixModeSampleRateCheck),
         DECLARE_NAPI_FUNCTION("MixModeSampleFormatCheck", MixModeSampleFormatCheck),
         DECLARE_NAPI_FUNCTION("MixModeChannelLayoutCheck", MixModeChannelLayoutCheck),
@@ -2112,6 +2291,7 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("CreateMonoMode", CreateMonoMode),
         DECLARE_NAPI_FUNCTION("CreateStereoMode", CreateStereoMode),
         DECLARE_NAPI_FUNCTION("CreateMCMode", CreateMCMode),
+        DECLARE_NAPI_FUNCTION("CreateHOAMode", CreateHOAMode),
         DECLARE_NAPI_FUNCTION("CreateMixMode", CreateMixMode),
         DECLARE_NAPI_FUNCTION("CreateObjNumCheck", CreateObjNumCheck),
         DECLARE_NAPI_FUNCTION("UpdateObjectPosIndexCheck", UpdateObjectPosIndexCheck),
