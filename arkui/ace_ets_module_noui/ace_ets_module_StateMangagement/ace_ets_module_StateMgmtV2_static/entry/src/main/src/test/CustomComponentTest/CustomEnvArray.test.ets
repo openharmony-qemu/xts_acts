@@ -89,7 +89,7 @@ export default function CustomEnvArray(): void {
 
         // Click the Push element button to add cherry to array
         let btn = await driver.findComponent(ON.id('customEnvArray_002'));
-        await (btn?.click() as Promise<void>);
+        await (btn?.click());
         await CommonFunc.sleep(1500);
 
         // Verify the array now contains cherry (third element)
@@ -126,7 +126,7 @@ export default function CustomEnvArray(): void {
 
         // Click the Reverse array button
         let btn = await driver.findComponent(ON.id('customEnvArray_003'));
-        await (btn?.click() as Promise<void>);
+        await (btn?.click());
         await CommonFunc.sleep(1500);
 
         // After reverse, array is [banana, apple]
@@ -162,7 +162,7 @@ export default function CustomEnvArray(): void {
 
         // Click the Fill array button
         let btn = await driver.findComponent(ON.id('customEnvArray_004'));
-        await (btn?.click() as Promise<void>);
+        await (btn?.click());
         await CommonFunc.sleep(1500);
 
         // After fill, array is [apple, apple]
