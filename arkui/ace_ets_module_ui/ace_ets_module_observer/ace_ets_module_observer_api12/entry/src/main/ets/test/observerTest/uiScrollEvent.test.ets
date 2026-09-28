@@ -17,8 +17,6 @@ import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function uiScrollEvent() {
   describe('uiScrollEvent', () => {
     beforeEach(async (done: Function) => {
@@ -72,7 +70,7 @@ export default function uiScrollEvent() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(left + width*0.2), y: Math.round(bottom - height/5), displayId: displayID }, { x: Math.round(left + width*0.2), y: Math.round(bottom - height/2), displayId: displayID });
+      await driver.swipe(Math.round(left + width*0.2),Math.round(bottom - height/5),Math.round(left + width*0.2),Math.round(bottom - height/2));
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('scrollEvent_ui2');
       let obj: ESObject = JSON.parse(strJson);

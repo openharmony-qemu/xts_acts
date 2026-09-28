@@ -33,8 +33,6 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function swiperItemSize2() {
   describe('swiperItemSizeTest2', () => {
     beforeEach(async (done: Function) => {
@@ -96,9 +94,9 @@ export default function swiperItemSize2() {
     //      expect(itemSizekey2.bottom).assertEqual(itemSizekey2_01.bottom);
     //      // Flipping.
     //      let driver = Driver.create();
-    //      //await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
+    //      //await driver.swipe(250, 230, 200, 230);
     //      await CommonFunc.sleep(500);
-    //      await driver.swipeBetween({ x: vp2px(150), y: vp2px(100), displayId: displayID }, { x: vp2px(100), y: vp2px(100), displayId: displayID });
+    //      await driver.swipe(vp2px(150), vp2px(100), vp2px(100), vp2px(100));
     //      await CommonFunc.sleep(1000);
     //      // After flipping the page.
     //      itemSizekey2:RectValue = CommonFunc.getComponentRect('itemSizekey2');

@@ -33,8 +33,6 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function swiperLoopFalse() {
   describe('swiperLoopTestAdapt001', () => {
     beforeEach(async (done: Function) => {
@@ -76,10 +74,15 @@ export default function swiperLoopFalse() {
       await CommonFunc.sleep(2000);
       // Page turning.
       // let driver = Driver.create();
-      // await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
+      // await driver.swipe(250, 230, 200, 230);
       let driver = Driver.create()
       let gridRect:RectValue = CommonFunc.getComponentRectOnScreen('loopFalse')
-      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`), displayId: displayID }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`), displayId: displayID }, 1000);
+      await driver.swipe(
+        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        1000);
       await CommonFunc.sleep(3000);
       let loopFalse = CommonFunc.getComponentRect('loopFalse');
       let strJson = getInspectorByKey('loopFalse');

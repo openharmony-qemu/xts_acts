@@ -21,8 +21,6 @@ import { ON, Component, Point } from '@kit.TestKit';
 const ARKUI_ERROR_CODE_NO_ERROR = 0
 const ARKUI_ERROR_CODE_PARAM_INVALID = 401
 const ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED = 180102
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function NativeGestureTest4() {
   describe('NativeGestureTest4', () => {
     let Component: Component;
@@ -47,7 +45,7 @@ export default function NativeGestureTest4() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetDistanceByToolType0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetDistanceByToolType0100();
           console.info(`====>testGetDistanceByToolType0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED).assertEqual(result);
@@ -71,7 +69,7 @@ export default function NativeGestureTest4() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetDistanceByToolType0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetDistanceByToolType0200();
           console.info(`====>testGetDistanceByToolType0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);

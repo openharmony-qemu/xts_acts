@@ -33,8 +33,6 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function Tabs_barMode() {
   describe('Tabs_barMode', () => {
     beforeEach(async (done: Function) => {
@@ -92,11 +90,17 @@ export default function Tabs_barMode() {
       let Tabs_barMode_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_001');
       let Tabs_barMode_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_011');
       let driver = Driver.create();
-      await driver.swipeBetween({ x: Math.round((Tabs_barMode_011.right - ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))), y: Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2)), displayId: displayID }, { x: Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6)), y: Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2)), displayId: displayID });
+      await driver.swipe(Math.round((Tabs_barMode_011.right - ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))),
+        Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2)),
+        Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6)),
+        Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2)));
       await CommonFunc.sleep(1000);
       let Tabs_barMode_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_002');
       let Tabs_barMode_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_012');
-      await driver.swipeBetween({ x: Math.round(Tabs_barMode_012.right - ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6)), y: Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2)), displayId: displayID }, { x: Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6)), y: Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2)), displayId: displayID });
+      await driver.swipe(Math.round(Tabs_barMode_012.right - ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6)),
+        Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2)),
+        Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6)),
+        Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2)));
       await CommonFunc.sleep(1000);
       let Tabs_barMode_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_003');
       let Tabs_barMode_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_013');
@@ -187,7 +191,7 @@ export default function Tabs_barMode() {
     //      let Tabs_barMode_011:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_011');
     //      let subGreen:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_green');
     //      let driver = Driver.create();
-    //      await driver.swipeBetween({ x: 600, y: 80, displayId: displayID }, { x: 120, y: 80, displayId: displayID });
+    //      await driver.swipe(600,80,120,80);
     //      await CommonFunc.sleep(1000);
     //      let btn1 = await driver.findComponent(ON.text('blue'));
     //      await btn1.click()
@@ -195,7 +199,7 @@ export default function Tabs_barMode() {
     //      let Tabs_barMode_002:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_002');
     //      let Tabs_barMode_012:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_012');
     //      let subBlue:RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_blue');
-    //      await driver.swipeBetween({ x: 600, y: 80, displayId: displayID }, { x: 120, y: 80, displayId: displayID });
+    //      await driver.swipe(600,80,120,80);
     //      await CommonFunc.sleep(1000);
     //      let btn2 = await driver.findComponent(ON.text('yellow'));
     //      await btn2.click()

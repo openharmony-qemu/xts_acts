@@ -33,8 +33,6 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function swiperVertical() {
   describe('swiperVerticalTest', () => {
     beforeEach(async (done: Function) => {
@@ -95,8 +93,8 @@ export default function swiperVertical() {
     //      // Page turning.
     //      let driver = Driver.create();
     //      await CommonFunc.sleep(500);
-    //      await driver.swipeBetween({ x: vp2px(150), y: vp2px(100), displayId: displayID }, { x: vp2px(100), y: vp2px(100), displayId: displayID });
-    //      //await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
+    //      await driver.swipe(vp2px(150), vp2px(100), vp2px(100), vp2px(100));
+    //      //await driver.swipe(250, 230, 200, 230);
     //      await CommonFunc.sleep(1000);
     //      verticalkey01:RectValue = CommonFunc.getComponentRect('verticalkey01');
     //      verticalkey02:RectValue = CommonFunc.getComponentRect('verticalkey02');
@@ -157,8 +155,8 @@ export default function swiperVertical() {
     //      // Page turning.
     //      let driver = Driver.create();
     //      await CommonFunc.sleep(500);
-    //      await driver.swipeBetween({ x: vp2px(150), y: vp2px(100), displayId: displayID }, { x: vp2px(100), y: vp2px(100), displayId: displayID });
-    //      //await driver.swipeBetween({ x: 230, y: 250, displayId: displayID }, { x: 230, y: 200, displayId: displayID });
+    //      await driver.swipe(vp2px(150), vp2px(100), vp2px(100), vp2px(100));
+    //      //await driver.swipe(230, 250, 230, 200);
     //      await CommonFunc.sleep(1000);
     //      verticalkey01:RectValue = CommonFunc.getComponentRect('verticalkey01');
     //      verticalkey02:RectValue = CommonFunc.getComponentRect('verticalkey02');

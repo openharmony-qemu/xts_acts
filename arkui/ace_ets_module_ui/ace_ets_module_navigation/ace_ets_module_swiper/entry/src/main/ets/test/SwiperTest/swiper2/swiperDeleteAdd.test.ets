@@ -17,8 +17,6 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function swiperDelAddTest() {
   describe('swiperDelAddTest', () => {
     beforeEach(async (done: Function) => {
@@ -72,7 +70,7 @@ export default function swiperDelAddTest() {
       let btHeight = Math.round(btBottom - btTop);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0700] swiper width " + btWidth);
      
-      await driver.swipeBetween({ x: globalThis.winLeft + Math.round(btLeft + btWidth*0.3), y: globalThis.winTop + btTop + Math.round(btHeight/2), displayId: displayID }, { x: globalThis.winLeft + Math.round(btRight), y: globalThis.winTop + btTop + Math.round(btHeight/2), displayId: displayID });
+      await driver.swipe(globalThis.winLeft + Math.round(btLeft + btWidth*0.3), globalThis.winTop + btTop + Math.round(btHeight/2), globalThis.winLeft + Math.round(btRight), globalThis.winTop + btTop + Math.round(btHeight/2));
       await CommonFunc.sleep(3000);
 
 
@@ -122,7 +120,7 @@ export default function swiperDelAddTest() {
       let btHeight = Math.round(btBottom - btTop);
       console.info("[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0700] swiper width " + btWidth);
       // right scroll
-      await driver.swipeBetween({ x: Math.round(globalThis.winLeft + Math.round(btRight) - vp2px(10)), y: Math.round(globalThis.winTop + btTop + Math.round(btHeight/2)), displayId: displayID }, { x: Math.round(globalThis.winLeft + Math.round(btLeft) + Math.round(vp2px(20))), y: Math.round(globalThis.winTop  + btTop + Math.round(btHeight/2)), displayId: displayID });
+      await driver.swipe(Math.round(globalThis.winLeft + Math.round(btRight) - vp2px(10)), Math.round(globalThis.winTop + btTop + Math.round(btHeight/2)),  Math.round(globalThis.winLeft + Math.round(btLeft) + Math.round(vp2px(20))),  Math.round(globalThis.winTop  + btTop + Math.round(btHeight/2)));
       await CommonFunc.sleep(5000);
 
       // click the next button

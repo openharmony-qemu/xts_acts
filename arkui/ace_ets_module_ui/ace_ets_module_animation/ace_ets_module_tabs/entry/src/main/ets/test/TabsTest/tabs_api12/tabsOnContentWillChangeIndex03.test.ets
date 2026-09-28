@@ -18,8 +18,6 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function tabsOnContentWillChangeIndex03JsunitTest() {
   describe('tabsOnContentWillChangeIndex03JsunitTest', () => {
     beforeEach(async (done: Function) => {
@@ -64,7 +62,8 @@ export default function tabsOnContentWillChangeIndex03JsunitTest() {
       tabsRect.top + "," + tabsRect.bottom );
       // swipe index 3 to index 2  left swipe to right
 
-      await driver.swipeBetween({ x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.3 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.9 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID });
+      await driver.swipe(Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.3 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.9 + tabsRect.left),
+        Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top));
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('currentIndex2x');
@@ -78,7 +77,8 @@ export default function tabsOnContentWillChangeIndex03JsunitTest() {
 
       // swipe index 2 to index 3 right swipe to left
 
-      await driver.swipeBetween({ x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.8 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID });
+      await driver.swipe(Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.8 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left),
+        Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top));
       await CommonFunc.sleep(2000);
 
       let strJson2 = getInspectorByKey('currentIndex2x');
@@ -92,7 +92,8 @@ export default function tabsOnContentWillChangeIndex03JsunitTest() {
 
       // swipe index 3 to index 4 right swipe to left
 
-      await driver.swipeBetween({ x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.8 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top), displayId: displayID });
+      await driver.swipe(Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.8 + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right-tabsRect.left)*0.1 + tabsRect.left),
+        Math.round(globalThis.winTop + (tabsRect.bottom-tabsRect.top)/2 + tabsRect.top));
       await CommonFunc.sleep(2000);
 
       let strJson23 = getInspectorByKey('currentIndex2x');

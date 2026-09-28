@@ -22,8 +22,6 @@ const ARKUI_ERROR_CODE_NO_ERROR = 0
 const ARKUI_ERROR_CODE_PARAM_INVALID = 401
 const ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER = 180001
 const ARKUI_ERROR_CODE_BUFFER_SIZE_NOT_ENOUGH = 180002
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function NativeGestureTest1() {
   describe('NativeGestureTest1', () => {
     let Component: Component;
@@ -47,7 +45,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetTouchRecognizers0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetTouchRecognizers0200();
           console.info(`====>testGetTouchRecognizers0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -70,7 +68,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testCancelTouch0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.CancelTouch0200();
           console.info(`====>testCancelTouch0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -93,7 +91,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetFromInterruptInfo0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetFromInterruptInfo0200();
           console.info(`====>testGetFromInterruptInfo0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -116,7 +114,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testSetGestureRecognizerEnabled0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.SetGestureRecognizerEnabled0100();
           console.info(`====>testSetGestureRecognizerEnabled0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -139,7 +137,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testSetGestureRecognizerEnabled0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.SetGestureRecognizerEnabled0200();
           console.info(`====>testSetGestureRecognizerEnabled0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -162,7 +160,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testSetGestureRecognizerLimitFingerCount0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.SetGestureRecognizerLimitFingerCount0100();
           console.info(`====>testSetGestureRecognizerLimitFingerCount0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -185,7 +183,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureRecognizerState0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureRecognizerState0100();
           console.info(`====>testGetGestureRecognizerState0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -209,7 +207,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureRecognizerState0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureRecognizerState0200();
           console.info(`====>testGetGestureRecognizerState0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -232,7 +230,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureEventTargetInfo0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureEventTargetInfo0100();
           console.info(`====>testGetGestureEventTargetInfo0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -255,7 +253,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureEventTargetInfo0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureEventTargetInfo0200();
           console.info(`====>testGetGestureEventTargetInfo0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -278,7 +276,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGestureEventTargetInfo_IsScrollBegin0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GestureEventTargetInfo_IsScrollBegin0200();
           console.info(`====>testGestureEventTargetInfo_IsScrollBegin0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -301,7 +299,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGestureEventTargetInfo_IsScrollBegin0300 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GestureEventTargetInfo_IsScrollBegin0300();
           console.info(`====>testGestureEventTargetInfo_IsScrollBegin0300 result====${result}`);
           expect(ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER).assertEqual(result);
@@ -325,7 +323,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGestureEventTargetInfo_IsScrollEnd0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GestureEventTargetInfo_IsScrollEnd0200();
           console.info(`====>testGestureEventTargetInfo_IsScrollEnd0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -348,7 +346,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGestureEventTargetInfo_IsScrollEnd0300 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GestureEventTargetInfo_IsScrollEnd0300();
           console.info(`====>testGestureEventTargetInfo_IsScrollEnd0300 result====${result}`);
           expect(ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER).assertEqual(result);
@@ -371,7 +369,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetPanGestureDirectionMask0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetPanGestureDirectionMask0100();
           console.info(`====>testGetPanGestureDirectionMask0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -394,7 +392,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetPanGestureDirectionMask0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetPanGestureDirectionMask0200();
           console.info(`====>testGetPanGestureDirectionMask0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -417,7 +415,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureTag0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureTag0200();
           console.info(`====>testGetGestureTag0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -440,7 +438,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureBindNodeId0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureBindNodeId0100();
           console.info(`====>testGetGestureBindNodeId0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -464,7 +462,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureBindNodeId0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureBindNodeId0200();
           console.info(`====>testGetGestureBindNodeId0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -487,7 +485,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureBindNodeId0300 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureBindNodeId0300();
           console.info(`====>testGetGestureBindNodeId0300 result====${result}`);
           expect(ARKUI_ERROR_CODE_BUFFER_SIZE_NOT_ENOUGH).assertEqual(result);
@@ -510,7 +508,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetConflictRecognizers0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetConflictRecognizers0200();
           console.info(`====>testGetConflictRecognizers0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -533,7 +531,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testSetArkUIGestureRecognizerDisposeNotify0200 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.SetArkUIGestureRecognizerDisposeNotify0200();
           console.info(`====>testSetArkUIGestureRecognizerDisposeNotify0200 result====${result}`);
           expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(result);
@@ -556,7 +554,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_DirectMask0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureParam_DirectMask0100();
           console.info(`====>testGetGestureParam_DirectMask0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -579,7 +577,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_FingerCount0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureParam_FingerCount0100();
           console.info(`====>testGetGestureParam_FingerCount0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -602,7 +600,7 @@ export default function NativeGestureTest1() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGetGestureParam_limitFingerCount0100 start====");
-          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
+          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
           let result: number = nativegesturendk.GetGestureParam_limitFingerCount0100();
           console.info(`====>testGetGestureParam_limitFingerCount0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);

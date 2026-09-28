@@ -21,8 +21,6 @@ const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
 const ARKUI_ERROR_CODE_ERROR = 1;
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function KeyEventTest() {
   describe('KeyEventTest', () => {
     beforeAll(async (done: Function) => {
@@ -42,7 +40,7 @@ export default function KeyEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsNumLockOn0100 start====");
-          await Utils.driver.triggerKey(2022, displayID);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsNumLockOnTest_001()
           console.info(`====>testOHArkUIKeyEventIsNumLockOn0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);;
@@ -65,7 +63,7 @@ export default function KeyEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsNumLockOn0200 start====");
-          await Utils.driver.triggerKey(2022, displayID);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsNumLockOnTest_002()
           console.info(`====>testOHArkUIKeyEventIsNumLockOn0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);;
@@ -88,7 +86,7 @@ export default function KeyEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsCapsLockOn0100 start====");
-          await Utils.driver.triggerKey(2022, displayID);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsCapsLockOnTest_001()
           console.info(`====>testOHArkUIKeyEventIsCapsLockOn0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -111,7 +109,7 @@ export default function KeyEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsCapsLockOn0200 start====");
-          await Utils.driver.triggerKey(2022, displayID);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsCapsLockOnTest_002()
           console.info(`====>testOHArkUIKeyEventIsCapsLockOn0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -134,7 +132,7 @@ export default function KeyEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsScrollLockOn0100 start====");
-          await Utils.driver.triggerKey(2022, displayID);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsScrollLockOnTest_001()
           console.info(`====>testOHArkUIKeyEventIsScrollLockOn0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -158,7 +156,7 @@ export default function KeyEventTest() {
       async (done: Function) => {
         try {
           console.info("====>testOHArkUIKeyEventIsScrollLockOn0200 start====");
-          await Utils.driver.triggerKey(2022, displayID);
+          await Utils.driver.triggerKey(2022);
           let result: number = nativerenderndk.IsScrollLockOnTest_002()
           console.info(`====>testOHArkUIKeyEventIsScrollLockOn0200 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
