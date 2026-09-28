@@ -53,8 +53,8 @@ export default function DatePickerDialogUIPage() {
      */
     it('DatePickerDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('DatePickerDialogAJsunit_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('DatePicker_dialog_A'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('DatePicker_dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('DatePicker_dialog_A');

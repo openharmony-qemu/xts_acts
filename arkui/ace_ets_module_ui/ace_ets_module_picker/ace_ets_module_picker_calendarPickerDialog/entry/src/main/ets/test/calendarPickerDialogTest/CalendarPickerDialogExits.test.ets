@@ -53,8 +53,8 @@ export default function CalendarDialogAJsunit() {
      */
     it('CalendarDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CalendarDialogAJsunit_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('CalendarPickerDialogExits' + '_Calendar_dialog_A'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('CalendarPickerDialogExits' + '_Calendar_dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('CalendarPickerDialogExits' + '_Calendar_dialog_A');
