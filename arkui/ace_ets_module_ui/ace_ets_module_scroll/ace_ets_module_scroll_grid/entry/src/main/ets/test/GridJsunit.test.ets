@@ -295,7 +295,7 @@ export default function GridJsunit() {
 
       // Verify grid componentcan cannot scroll
       let driver = await UiDriver.create()
-      let grid_1 = await driver.findComponent(BY.key('GridPage_grid1'));
+      let grid_1 = await driver.findComponent(BY.key('GridPage' + '_grid1'));
       let result = await grid_1.isScrollable()
       expect(result).assertFalse();
       console.info('[GridJsunit_0600] END');
@@ -380,7 +380,7 @@ export default function GridJsunit() {
       await CommonFunc.sleep(1000);
       // Verify grid componentcan cannot scroll
       let driver = await UiDriver.create()
-      let grid_1 = await driver.findComponent(BY.key('GridPage_grid1'));
+      let grid_1 = await driver.findComponent(BY.key('GridPage' + '_grid1'));
       let result = await grid_1.isScrollable()
       expect(result).assertFalse();
       console.info('[GridJsunit_0900] END');

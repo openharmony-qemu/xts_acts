@@ -52,7 +52,7 @@ export default function ScrollSizeTest(){
       let centerX = Math.round(left + (right - left) / 2);
       let centerY = Math.round(top + (bottom - top) / 2);
       console.info("testGetScrollSizeTest001  centerX= " +  centerX  + ", centerY = " + centerY);
-      await driver.swipeBetween({ x: centerX, y: Math.round(centerY + vp2px(40)), displayId: displayId }, 
+      await driver.swipeBetween({ x: centerX, y: Math.round(centerY + vp2px(40)), displayId: displayId },
       { x: centerX, y: Math.round(centerY - vp2px(40)), displayId: displayId }, 800);
       await Utils.sleep(2000);
       console.info("testGetScrollSizeTest001  swipe");
