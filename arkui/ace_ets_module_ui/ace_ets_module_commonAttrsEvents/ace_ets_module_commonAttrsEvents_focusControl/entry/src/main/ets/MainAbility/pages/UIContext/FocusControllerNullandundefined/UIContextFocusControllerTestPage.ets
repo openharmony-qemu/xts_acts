@@ -201,7 +201,7 @@ struct UIContextFocusControllerTestPage {
         })
     }
     .width('100%')
-    .height('80%')
+    .height('70%')
     .padding('2%')
   }
 }

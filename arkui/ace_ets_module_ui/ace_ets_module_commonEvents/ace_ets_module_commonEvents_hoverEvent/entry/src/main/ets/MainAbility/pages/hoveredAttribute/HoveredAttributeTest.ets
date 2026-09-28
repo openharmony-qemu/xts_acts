@@ -114,7 +114,7 @@ struct HoveredAttributeTest {
           .width('90%')
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
-          .margin({ top: '5%' })
+          .margin({ top: '2%' })
 
         Text('StateStyles Hover')
           .id('stateHoverText')
@@ -130,17 +130,17 @@ struct HoveredAttributeTest {
           .width('90%')
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
-          .margin({ top: '5%' })
+          .margin({ top: '2%' })
 
         NodeContainer(this.myNodeController)
           .width('80%')
-          .height('30%')
+          .height('20%')
 
         Text('Area4: Move Out Button')
           .width('90%')
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
-          .margin({ top: '5%' })
+          .margin({ top: '2%' })
 
         Button('Move Mouse Out')
           .id('moveOutBtn')
@@ -150,13 +150,13 @@ struct HoveredAttributeTest {
           .borderWidth(1)
           .borderColor('#000000')
 
-        Blank().height('5%')
+        Blank().height('2%')
       }
       .width('100%')
       .padding({ left: '5%', right: '5%' })
     }
     .width('100%')
-    .height('80%')
+    .height('100%')
     .backgroundColor('#FFFFFF')
   }
 }
