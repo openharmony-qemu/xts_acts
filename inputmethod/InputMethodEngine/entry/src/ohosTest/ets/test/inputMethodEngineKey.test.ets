@@ -18,12 +18,13 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import subtype from '@ohos.InputMethodSubtype';
 import inputMethod from '@ohos.inputMethod';
 import display from '@ohos.display';
-import { Driver, ON, MatchPattern, Component } from '@ohos.UiTest'
+import { Driver, ON, MatchPattern, Component, Point } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base'
 
 export default function inputMethodEngineKeyJSUnit() {
   describe('inputMethodEngineKeyEvent', () => {
     let extra: ESObject = {};
+    let id: number = 0;
     let inputSever: ESObject = {
       packageName: '',
       methodId: '',
@@ -51,6 +52,10 @@ export default function inputMethodEngineKeyJSUnit() {
         extra: {}
       }
       try {
+        let textArea = await driver.findComponent(ON.type('TextArea'));
+        console.info(`====>beforeAll textArea:${textArea}`);
+        id = await textArea.getDisplayId();
+        console.info(`====>beforeAll DisplayId:${id}`);
         await inputMethod.switchCurrentInputMethodSubtype(InputKeyService);
         setTimeout(() => {
           console.info("====>beforeAll: inputMethodEngineJSUnit switchCurrentInputMethodSubtype success");
@@ -117,7 +122,7 @@ export default function inputMethodEngineKeyJSUnit() {
           JSON.stringify(err));
         } else {
           let t = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2045 -u 2045`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2045 -u 2045`);
             console.info("====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0010 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t);
           }, 200)
@@ -196,7 +201,7 @@ export default function inputMethodEngineKeyJSUnit() {
           JSON.stringify(err));
         } else {
           let t = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2017 -u 2017`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2017 -u 2017`);
             console.info("====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0020 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t);
           }, 200)
@@ -275,7 +280,7 @@ export default function inputMethodEngineKeyJSUnit() {
           JSON.stringify(err));
         } else {
           let t = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2072 -d 2017 -u 2017 -u 2072`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2072 -d 2017 -u 2017 -u 2072`);
             console.info("====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0030 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t);
           }, 200)
@@ -354,7 +359,7 @@ export default function inputMethodEngineKeyJSUnit() {
           JSON.stringify(err));
         } else {
           let t = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2017 -d 2047 -u 2047 -u 2017`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2017 -d 2047 -u 2047 -u 2017`);
             console.info("====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0040 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t);
           }, 200)
@@ -433,7 +438,7 @@ export default function inputMethodEngineKeyJSUnit() {
           JSON.stringify(err));
         } else {
           let t = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2047 -d 2017 -u 2017 -u 2047`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2047 -d 2017 -u 2017 -u 2047`);
             console.info("====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0050 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t);
           }, 200)
@@ -513,7 +518,7 @@ export default function inputMethodEngineKeyJSUnit() {
           JSON.stringify(err));
         } else {
           let t = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2047 -d 2001 -u 2001 -u 2047`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2047 -d 2001 -u 2001 -u 2047`);
             console.info("====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0060 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t);
           }, 200)
@@ -592,7 +597,7 @@ export default function inputMethodEngineKeyJSUnit() {
           JSON.stringify(err));
         } else {
           let t = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2047 -d 2062 -u 2062 -u 2047`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2047 -d 2062 -u 2062 -u 2047`);
             console.info("====>SUB_Misc_InputMethod_Manage_Physical_Buttons_0070 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t)
           }, 200)

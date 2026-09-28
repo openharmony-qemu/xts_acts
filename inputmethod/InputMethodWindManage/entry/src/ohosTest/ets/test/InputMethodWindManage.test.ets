@@ -21,7 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import display from '@ohos.display';
 import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
 import deviceinfo from '@ohos.deviceInfo';
-import { Driver, ON, MatchPattern, Component, UiWindow, DisplayRotation, Rect } from '@ohos.UiTest';
+import { Driver, ON, MatchPattern, Component, UiWindow, DisplayRotation, Rect, Point } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import { util } from '@kit.ArkTS';
 
@@ -30,6 +30,7 @@ export default function inputMethodWindManageAbility() {
     let driver = Driver.create();
     let textArea: Component;
     let rectInfo: Rect;
+    let id: number = 0;
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     beforeAll(async (done: Function) => {
@@ -51,6 +52,8 @@ export default function inputMethodWindManageAbility() {
         console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
         rectInfo = await textArea.getBounds();
         console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
+        id = await textArea.getDisplayId();
+        console.info(`====>beforeAll DisplayId:${id}`);
         await driver.delayMs(1000);
         await runCmd();
         await driver.delayMs(1000);
@@ -68,8 +71,9 @@ export default function inputMethodWindManageAbility() {
     let runCmd = async () => {
       let cursor_x: number = rectInfo.left + 20 + Math.floor(Math.random() * (rectInfo.right - rectInfo.left) * 0.7);
       let cursor_y: number = rectInfo.top + 20 + Math.floor(Math.random() * (rectInfo.bottom - rectInfo.top) * 0.7);
-      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`)
-      await driver.click(cursor_x, cursor_y)
+      let point: Point = {x: cursor_x, y: cursor_y, displayId: id};
+      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y} displayId: ${id}`);
+      await driver.clickAt(point);
     }
 
     let newArrayBuffer = (str:string|undefined): ArrayBuffer => {
