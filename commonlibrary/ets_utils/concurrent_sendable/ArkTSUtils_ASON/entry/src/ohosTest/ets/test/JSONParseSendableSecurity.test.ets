@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { JSON, collections, lang } from '@kit.ArkTS';
 
 const TAG: string = 'JSONParseSendableSecurity';
@@ -346,15 +346,16 @@ export default function JSONParseSendableSecurityTest() {
      */
     it("ParseSendableSecurity_DepthLimit_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let json: string = genNestedObjectJson(1000);
-      let hasError: boolean = false;
+      let parsed: lang.ISendable | null = null;
+      let errorMessage: string = '';
       try {
-        JSON.parseSendable(json);
+        parsed = JSON.parseSendable(json) as lang.ISendable;
       } catch (e) {
-        hasError = true;
+        errorMessage = (e as Error).message;
       }
       // Either parse successfully or throw an error — both are acceptable.
-      // The key assertion is that we reach here without crashing the process.
-      expect(true).assertEqual(true);
+      // The key assertion is that a controlled outcome is reached without crashing.
+      expect(parsed !== null || errorMessage.length > 0).assertTrue();
     })
 
     /**
@@ -367,14 +368,16 @@ export default function JSONParseSendableSecurityTest() {
      */
     it("ParseSendableSecurity_DepthLimit_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let json: string = genNestedArrayJson(5000);
-      let hasError: boolean = false;
+      let parsed: lang.ISendable | null = null;
+      let errorMessage: string = '';
       try {
-        JSON.parseSendable(json);
+        parsed = JSON.parseSendable(json) as lang.ISendable;
       } catch (e) {
-        hasError = true;
+        errorMessage = (e as Error).message;
       }
       // Either parse successfully or throw an error — both are acceptable.
-      expect(true).assertEqual(true);
+      // The key assertion is that a controlled outcome is reached without crashing.
+      expect(parsed !== null || errorMessage.length > 0).assertTrue();
     })
 
     // ====================================================================
