@@ -19,5 +19,5 @@
   "description": "Please describe the basic information.",
   "main": "",
   "version": "1.0.0",
-  "dependencies": {"@ohos/hypium-dynamic": "1.0.0"}
+  "dependencies": {}
 }
