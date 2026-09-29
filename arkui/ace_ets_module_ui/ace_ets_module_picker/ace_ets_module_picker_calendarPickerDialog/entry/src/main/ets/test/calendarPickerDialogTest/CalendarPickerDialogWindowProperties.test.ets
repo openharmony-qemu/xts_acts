@@ -21,6 +21,7 @@ import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function CalendarPickerDialog() {
   describe('CalendarPickerDialog', () => {
@@ -69,7 +70,11 @@ export default function CalendarPickerDialog() {
       expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(globalThis.winLeft + vp2px(100)), Math.round(globalThis.winTop + vp2px(100)));
+      await driver.clickAt({ 
+        x: Math.round(globalThis.winLeft + vp2px(100)), 
+        y: Math.round(globalThis.winTop + vp2px(100)), 
+        displayId: displayId 
+      });
       await CommonFunc.sleep(1000);
       console.info('[CalendarPickerDialog_0100] END');
       done();
