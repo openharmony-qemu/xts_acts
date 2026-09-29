@@ -20,9 +20,8 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "arkTSVersion": "1.2",
         "compileSdkVersion": "26.0.1",
-        "compatibleSdkVersion": "23",
+        "compatibleSdkVersion": 18,
         "runtimeOS": "OpenHarmony",
         "buildOption": {
           "strictMode": {
