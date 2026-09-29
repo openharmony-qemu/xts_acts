@@ -76,7 +76,10 @@ ArkUI_NodeHandle CreateColumnNodeForScroll(ArkUI_NativeNodeAPI_1 *nodeAPI)
     ArkUI_NumberValue value[] = {{ .u32 = 0xFFFF0000 }};
     ArkUI_AttributeItem coloritem = {.value = value, .size = 1};
     nodeAPI->setAttribute(column, NODE_BACKGROUND_COLOR, &coloritem);
-    
+
+    ArkUI_AttributeItem idItem = { .string = "ScrollStateColumn" };
+    nodeAPI->setAttribute(column, NODE_ID, &idItem);
+
     return column;
 }
 
