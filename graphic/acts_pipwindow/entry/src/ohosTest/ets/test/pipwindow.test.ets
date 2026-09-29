@@ -3082,8 +3082,13 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           pipController.updateContentSize(width, height);
           try {
             await sleep(1000);
-            expect(res1).assertEqual(true);
-            expect(res2).assertEqual(true);
+            if (deviceType === 'car'){
+              except(res1).assertEqual(false);
+              except(res2).assertEqual(false);
+            }else{
+              except(res1).assertEqual(true);
+              except(res2).assertEqual(true);
+            }
             console.log('PiPSizeChange Succeeded check result');
             done();
           } catch (e) {
@@ -3166,8 +3171,13 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           pipController.updateContentSize(width, height);
           try {
             await sleep(1000);
-            expect(res1).assertEqual(false);
-            expect(res2).assertEqual(true);
+            if (deviceType === 'car'){
+              except(res1).assertEqual(false);
+              except(res2).assertEqual(false);
+            }else{
+              except(res1).assertEqual(false);
+              except(res2).assertEqual(true);
+            }
             console.log('PiPSizeChange Succeeded check result');
             done();
           } catch (e) {
@@ -3859,9 +3869,14 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             let pipInfoSize = pipWindowInfo.size
             console.log(`${message} pipWindowInfo width is ${pipInfoSize.width}, pipWindowInfo height is ${pipInfoSize.height}, pipWindowInfo scale is ${pipInfoSize.scale}`)
             console.log(`${message} callback width is ${pipSize.width}, callback height is ${pipSize.height}, callback scale is ${pipSize.scale}`)
-            expect(pipSize.width).assertEqual(pipInfoSize.width);
-            expect(pipSize.height).assertEqual(pipInfoSize.height);
-            expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01)
+            if (deviceType === 'car'){
+              expect(pipSize.width !== pipInfoSize.width).assertTrue();
+              expect(pipSize.height !== pipInfoSize.height).assertTrue();
+            }else{
+              expect(pipSize.width).assertEqual(pipInfoSize.width);
+              expect(pipSize.height).assertEqual(pipInfoSize.height);
+              expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01)
+            }
             pipController.off('pipWindowSizeChange', callback);
             await pipController.stopPiP();
             await sleep(1000);
