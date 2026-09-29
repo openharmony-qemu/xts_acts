@@ -110,11 +110,14 @@ export default function webViewOnRequestStop() {
      */
     it('defaultOnRequestStop0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStop0200", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("defaultOnRequestStop0200", true, 203030, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('OnRequestStop', 10, '');
+      let isReturn = 0;
+      Utils.registerBaseEvent("defaultOnRequestStop0200", true, 203030, () => { isReturn = 1 }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      await Utils.waitAndClickComponent(driver, "OnRequestStop");
+      if (await Utils.waitForExist(() => isReturn, 'defaultOnRequestStop0200' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /**
@@ -127,11 +130,14 @@ export default function webViewOnRequestStop() {
      */
     it('defaultOnRequestStop0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStop0300", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("defaultOnRequestStop0300", true, 203040, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('OnRequestStop', 10, '');
+      let isReturn = 0;
+      Utils.registerBaseEvent("defaultOnRequestStop0300", true, 203040, () => { isReturn = 1 }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      await Utils.waitAndClickComponent(driver, "OnRequestStop");
+      if (await Utils.waitForExist(() => isReturn, 'defaultOnRequestStop0300' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
   })
 }

@@ -110,11 +110,14 @@ export default function webViewOnRequestStart() {
      */
     it('defaultOnRequestStart0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStart0200", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("defaultOnRequestStart0200", 'defaultOnRequestStart0200', 202980, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
-      sendEventByKey('OnRequestStart', 10, '');
+      let isReturn = 0;
+      Utils.registerBaseEvent("defaultOnRequestStart0200", 'defaultOnRequestStart0200', 202980, () => { isReturn = 1 }, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      await Utils.waitAndClickComponent(driver, "OnRequestStart");
+      if (await Utils.waitForExist(() => isReturn, 'defaultOnRequestStart0200' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
   })
 }
