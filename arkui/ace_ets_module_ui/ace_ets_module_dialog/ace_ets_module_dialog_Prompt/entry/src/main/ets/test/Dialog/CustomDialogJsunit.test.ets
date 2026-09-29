@@ -53,8 +53,8 @@ export default function CustomDialogAJsunit() {
      */
     it('CustomDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CustomDialogAJsunit_0200 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('Custom_Dialog_B'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('Custom_Dialog_B'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('Custom_Dialog_B');
