@@ -23,6 +23,7 @@ import RichEditorScrollToVisibleTest from './RichEditor26Test/RichEditorScrollTo
 import RichEditorBuilderSpanTest from './RichEditor26Test/RichEditorBuilderSpan.test';
 import AddFormMenuItemTest from './CoverageTest/AddFormMenuItem.test';
 import ParticleModifierTest from './CoverageTest/ParticleModifier.test';
+import ParticleTest from './CoverageTest/Particle.test';
 import RouterPushUrlErrTest from './CoverageTest/RouterPushUrlErr.test';
 
 export default function testsuite(): void {
@@ -34,5 +35,6 @@ export default function testsuite(): void {
   RichEditorBuilderSpanTest();
   AddFormMenuItemTest();
   ParticleModifierTest();
+  ParticleTest();
   RouterPushUrlErrTest();
 }

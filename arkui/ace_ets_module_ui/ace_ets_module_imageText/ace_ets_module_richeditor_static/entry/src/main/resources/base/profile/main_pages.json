@@ -11,6 +11,7 @@
     "MainAbility/pages/RichEditor26/RichEditorBuilderSpan",
     "MainAbility/pages/Coverage/AddFormMenuItemPage",
     "MainAbility/pages/Coverage/ParticleModifierPage",
+    "MainAbility/pages/Coverage/ParticlePage",
     "MainAbility/pages/Coverage/RouterPushUrlErr"
   ]
 }
