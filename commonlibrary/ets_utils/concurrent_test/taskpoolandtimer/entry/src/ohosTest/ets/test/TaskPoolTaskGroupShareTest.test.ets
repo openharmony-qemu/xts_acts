@@ -14,7 +14,7 @@
 */
 import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS';
 import { WorkerSrc, Worker3 } from '../testability/pages/WorkerSrc'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import {
   awaitAsync,
   awaitCatch,

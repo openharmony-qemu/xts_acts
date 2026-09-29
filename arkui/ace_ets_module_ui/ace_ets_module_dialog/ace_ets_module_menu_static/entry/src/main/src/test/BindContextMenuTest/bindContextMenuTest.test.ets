@@ -63,6 +63,7 @@ export default function bindContextMenuTest(): void {
     it('bindContextMenuTest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('bindContextMenu0'));
         await (btn?.longClick() as Promise<void>);
         await Utils.sleep(1000);
@@ -90,6 +91,7 @@ export default function bindContextMenuTest(): void {
     it('bindContextMenuTest_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('bindContextMenu1'));
         await (btn?.longClick() as Promise<void>);
         await Utils.sleep(1000);
@@ -117,6 +119,7 @@ export default function bindContextMenuTest(): void {
     it('bindContextMenuTest_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('bindContextMenu2'));
         await (btn?.longClick() as Promise<void>);
         await Utils.sleep(1000);

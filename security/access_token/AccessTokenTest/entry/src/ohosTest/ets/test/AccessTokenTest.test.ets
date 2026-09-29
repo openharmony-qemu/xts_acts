@@ -12,7 +12,7 @@
  * See the License for the specific language governing permission and
  * limitations under the License.
  */
-import { describe, beforeAll, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import bundleManager from '@ohos.bundle.bundleManager';
 import { abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';

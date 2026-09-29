@@ -253,7 +253,7 @@ export default function DateToISOStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToISOString0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(verifyDateInput(-9007199254740991)).assertTrue();
+      expect(verifyDateInput(-9007199254740991)).assertFalse();
     });
 
     /**
@@ -279,7 +279,7 @@ export default function DateToISOStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToISOString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(verifyDateInput(8640000000000001)).assertTrue();
+      expect(verifyDateInput(8640000000000001)).assertFalse();
     });
 
     /**
@@ -291,7 +291,7 @@ export default function DateToISOStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToISOString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(verifyDateInput(Long.MAX_VALUE)).assertTrue();
+      expect(verifyDateInput(Long.MAX_VALUE)).assertFalse();
     });
 
     /**
@@ -303,7 +303,7 @@ export default function DateToISOStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToISOString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(verifyDateInput(Long.MIN_VALUE)).assertTrue();
+      expect(verifyDateInput(Long.MIN_VALUE)).assertFalse();
     });
 
     /**
@@ -315,7 +315,7 @@ export default function DateToISOStringTest(): void {
      * @tc.level Level 2
      */
     it('testDateToISOString0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(verifyDateInput(-8640000000000001)).assertTrue();
+      expect(verifyDateInput(-8640000000000001)).assertFalse();
     });
 
     /**
@@ -733,7 +733,7 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(verifyDateMutation((date: Date): void => {
         date.setTime(8640000000000001);
-      })).assertTrue();
+      })).assertFalse();
     });
 
     /**
@@ -747,7 +747,7 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(verifyDateMutation((date: Date): void => {
         date.setTime(Long.MAX_VALUE);
-      })).assertTrue();
+      })).assertFalse();
     });
 
     /**
@@ -761,7 +761,7 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(verifyDateMutation((date: Date): void => {
         date.setMonth(Int.MAX_VALUE);
-      })).assertTrue();
+      })).assertFalse();
     });
 
     /**
@@ -775,7 +775,7 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(verifyDateMutation((date: Date): void => {
         date.setDate(Int.MAX_VALUE);
-      })).assertTrue();
+      })).assertFalse();
     });
 
     /**
@@ -855,7 +855,7 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let successCount = 0;
       for (let i = 0; i < 3; i++) {
-        expect(verifyDateInput(8640000000000001)).assertTrue();
+        expect(verifyDateInput(8640000000000001)).assertFalse();
         successCount++;
       }
       expect(successCount).assertEqual(3);
@@ -1249,7 +1249,7 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let date = new Date(1000);
       let newTimestamp = date.getTime() + 8640000000000000;
-      expect(verifyDateInput(newTimestamp)).assertTrue();
+      expect(verifyDateInput(newTimestamp)).assertFalse();
     });
 
     /**
@@ -1371,7 +1371,7 @@ export default function DateToISOStringTest(): void {
     it('testDateToISOString0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let invalidValues: long[] = [8640000000000001, Long.MAX_VALUE, Long.MIN_VALUE, 8640000000000002];
       for (let i = 0; i < invalidValues.length; i++) {
-        expect(verifyDateInput(invalidValues[i])).assertTrue();
+        expect(verifyDateInput(invalidValues[i])).assertFalse();
       }
     });
 

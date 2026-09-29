@@ -13,7 +13,7 @@
  * limitations under the License.
  * kdslahfahnja fsd skdfsf fsdsdffs
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   Component,

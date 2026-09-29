@@ -14,7 +14,7 @@
  */
 import window from '@ohos.window';
 import display from '@ohos.display';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import deviceInfo from '@ohos.deviceInfo';
@@ -3827,6 +3827,1341 @@ export default function windowPropertiesTest3() {
         if (exception.code === 1003) {
           console.info(`${message} Expected error 1003.`);
           expect(exception.code).assertEqual(1003);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowTouchable (callback/promise) 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowTouchable_callback_null
+     * @tc.number SUB_WINDOW_SETWINDOWTOUCHABLE_PARAM_0100
+     * @tc.desc   setWindowTouchable callback形式第一个入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTouchable_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowTouchable_callback_null';
+      try {
+        mainWindowClass.setWindowTouchable(null, (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${message} Callback error. Cause: ${err.code}, ${err.message}`);
+            if (errCode === 401) {
+              console.info(`${message} Expected error 401 in callback.`);
+              expect(errCode).assertEqual(401);
+            } else {
+              expect().assertFail();
+            }
+            done();
+          } else {
+            console.error(`${message} Should not succeed.`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowTouchable_callback_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWTOUCHABLE_PARAM_0200
+     * @tc.desc   setWindowTouchable callback形式第一个入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTouchable_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowTouchable_callback_undefined';
+      try {
+        mainWindowClass.setWindowTouchable(undefined, (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${message} Callback error. Cause: ${err.code}, ${err.message}`);
+            if (errCode === 401) {
+              console.info(`${message} Expected error 401 in callback.`);
+              expect(errCode).assertEqual(401);
+            } else {
+              expect().assertFail();
+            }
+            done();
+          } else {
+            console.error(`${message} Should not succeed.`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowTouchable_promise_null
+     * @tc.number SUB_WINDOW_SETWINDOWTOUCHABLE_PARAM_0300
+     * @tc.desc   setWindowTouchable promise形式入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTouchable_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowTouchable_promise_null';
+      try {
+        await mainWindowClass.setWindowTouchable(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowTouchable_promise_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWTOUCHABLE_PARAM_0400
+     * @tc.desc   setWindowTouchable promise形式入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTouchable_promise_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowTouchable_promise_undefined';
+      try {
+        await mainWindowClass.setWindowTouchable(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setTouchable (deprecated) callback/promise 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetTouchable_callback_null
+     * @tc.number SUB_WINDOW_SETTOUCHABLE_PARAM_0100
+     * @tc.desc   setTouchable(deprecated) callback形式第一个入参传null，验证抛出1003错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchable_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetTouchable_callback_null';
+      try {
+        mainWindowClass.setTouchable(null, (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${message} Callback error. Cause: ${err.code}, ${err.message}`);
+            if (errCode === 1003) {
+              console.info(`${message} Expected error 1003 in callback.`);
+              expect(errCode).assertEqual(1003);
+            } else {
+              expect().assertFail();
+            }
+            done();
+          } else {
+            console.error(`${message} Should not succeed.`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1003) {
+          console.info(`${message} Expected error 1003.`);
+          expect(exception.code).assertEqual(1003);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTouchable_callback_undefined
+     * @tc.number SUB_WINDOW_SETTOUCHABLE_PARAM_0200
+     * @tc.desc   setTouchable(deprecated) callback形式第一个入参传undefined，验证抛出1003错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchable_callback_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetTouchable_callback_undefined';
+      try {
+        mainWindowClass.setTouchable(undefined, (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${message} Callback error. Cause: ${err.code}, ${err.message}`);
+            if (errCode === 1003) {
+              console.info(`${message} Expected error 1003 in callback.`);
+              expect(errCode).assertEqual(1003);
+            } else {
+              expect().assertFail();
+            }
+            done();
+          } else {
+            console.error(`${message} Should not succeed.`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1003) {
+          console.info(`${message} Expected error 1003.`);
+          expect(exception.code).assertEqual(1003);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTouchable_promise_null
+     * @tc.number SUB_WINDOW_SETTOUCHABLE_PARAM_0300
+     * @tc.desc   setTouchable(deprecated) promise形式入参传null，验证抛出1003错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchable_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTouchable_promise_null';
+      try {
+        await mainWindowClass.setTouchable(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1003) {
+          console.info(`${message} Expected error 1003.`);
+          expect(exception.code).assertEqual(1003);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTouchable_promise_undefined
+     * @tc.number SUB_WINDOW_SETTOUCHABLE_PARAM_0400
+     * @tc.desc   setTouchable(deprecated) promise形式入参传undefined，验证抛出1003错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchable_promise_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTouchable_promise_undefined';
+      try {
+        await mainWindowClass.setTouchable(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 1003) {
+          console.info(`${message} Expected error 1003.`);
+          expect(exception.code).assertEqual(1003);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowDecorVisible 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowDecorVisible_null
+     * @tc.number SUB_WINDOW_SETWINDOWDECORVISIBLE_PARAM_0100
+     * @tc.desc   setWindowDecorVisible入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowDecorVisible_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowDecorVisible_null';
+      try {
+        mainWindowClass.setWindowDecorVisible(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowDecorVisible_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWDECORVISIBLE_PARAM_0200
+     * @tc.desc   setWindowDecorVisible入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowDecorVisible_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowDecorVisible_undefined';
+      try {
+        mainWindowClass.setWindowDecorVisible(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowTitleMoveEnabled 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowTitleMoveEnabled_null
+     * @tc.number SUB_WINDOW_SETWINDOWTITLEMOVEENABLED_PARAM_0100
+     * @tc.desc   setWindowTitleMoveEnabled入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTitleMoveEnabled_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowTitleMoveEnabled_null';
+      try {
+        mainWindowClass.setWindowTitleMoveEnabled(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowTitleMoveEnabled_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWTITLEMOVEENABLED_PARAM_0200
+     * @tc.desc   setWindowTitleMoveEnabled入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTitleMoveEnabled_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowTitleMoveEnabled_undefined';
+      try {
+        mainWindowClass.setWindowTitleMoveEnabled(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowTitleButtonVisible 第三个入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowTitleButtonVisible_thirdParamNull
+     * @tc.number SUB_WINDOW_SETWINDOWTITLEBUTTONVISIBLE_PARAM_0100
+     * @tc.desc   setWindowTitleButtonVisible第三个入参isCloseButtonVisible传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTitleButtonVisible_thirdParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowTitleButtonVisible_thirdParamNull';
+      try {
+        mainWindowClass.setWindowTitleButtonVisible(true, true, null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowTitleButtonVisible_thirdParamUndefined
+     * @tc.number SUB_WINDOW_SETWINDOWTITLEBUTTONVISIBLE_PARAM_0200
+     * @tc.desc   setWindowTitleButtonVisible第三个入参isCloseButtonVisible传undefined，验证使用默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowTitleButtonVisible_thirdParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowTitleButtonVisible_thirdParamUndefined';
+      try {
+        mainWindowClass.setWindowTitleButtonVisible(true, true, undefined);
+        console.info(`${message} Succeeded in setting window title button visible with undefined.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else if (exception.code === 401) {
+          console.info(`${message} Parameter verification failed.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== on/off('windowTitleButtonRectChange') 两个callback挨个取消注册 测试用例 ====================
+
+    /**
+     * @tc.name   testOnOffWindowTitleButtonRectChange_twoCallbacksOffOneByOne
+     * @tc.number SUB_WINDOW_ONOFFWINDOWTITLEBUTTONRECTCHANGE_FUNCTION_0100
+     * @tc.desc   注册两个callback监听windowTitleButtonRectChange事件，然后off挨个取消注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffWindowTitleButtonRectChange_twoCallbacksOffOneByOne', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOnOffWindowTitleButtonRectChange_twoCallbacksOffOneByOne';
+      const callbackA = (titleButtonRect: window.TitleButtonRect) => {
+        console.info(`${message} callbackA triggered. Data: ${JSON.stringify(titleButtonRect)}`);
+      };
+      const callbackB = (titleButtonRect: window.TitleButtonRect) => {
+        console.info(`${message} callbackB triggered. Data: ${JSON.stringify(titleButtonRect)}`);
+      };
+      try {
+        mainWindowClass.on('windowTitleButtonRectChange', callbackA);
+        console.info(`${message} Succeeded in registering callbackA.`);
+        mainWindowClass.on('windowTitleButtonRectChange', callbackB);
+        console.info(`${message} Succeeded in registering callbackB.`);
+        mainWindowClass.off('windowTitleButtonRectChange', callbackA);
+        console.info(`${message} Succeeded in unregistering callbackA.`);
+        mainWindowClass.off('windowTitleButtonRectChange', callbackB);
+        console.info(`${message} Succeeded in unregistering callbackB.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setImmersiveModeEnabledState 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetImmersiveModeEnabledState_null
+     * @tc.number SUB_WINDOW_SETIMMERSIVEMODEENABLEDSTATE_PARAM_0100
+     * @tc.desc   setImmersiveModeEnabledState入参传null，验证正常调用不报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetImmersiveModeEnabledState_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetImmersiveModeEnabledState_null';
+      try {
+        mainWindowClass.setImmersiveModeEnabledState(null);
+        console.info(`${message} Succeeded in setting immersive mode enabled state with null.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testSetImmersiveModeEnabledState_undefined
+     * @tc.number SUB_WINDOW_SETIMMERSIVEMODEENABLEDSTATE_PARAM_0200
+     * @tc.desc   setImmersiveModeEnabledState入参传undefined，验证正常调用不报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetImmersiveModeEnabledState_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetImmersiveModeEnabledState_undefined';
+      try {
+        mainWindowClass.setImmersiveModeEnabledState(undefined);
+        console.info(`${message} Succeeded in setting immersive mode enabled state with undefined.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    // ==================== setTitleAndDockHoverShown 两个入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetTitleAndDockHoverShown_firstParamNull
+     * @tc.number SUB_WINDOW_SETTITLENDDOCKHOVERSHOWN_PARAM_0100
+     * @tc.desc   setTitleAndDockHoverShown第一个入参isTitleHoverShown传null，在自由多窗上正常调用不报错，在非自由多窗报801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTitleAndDockHoverShown_firstParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTitleAndDockHoverShown_firstParamNull';
+      try {
+        await mainWindowClass.setTitleAndDockHoverShown(null, false);
+        console.info(`${message} Succeeded in setting title and dock hover shown with null.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTitleAndDockHoverShown_firstParamUndefined
+     * @tc.number SUB_WINDOW_SETTITLENDDOCKHOVERSHOWN_PARAM_0200
+     * @tc.desc   setTitleAndDockHoverShown第一个入参isTitleHoverShown传undefined，验证使用默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTitleAndDockHoverShown_firstParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTitleAndDockHoverShown_firstParamUndefined';
+      try {
+        await mainWindowClass.setTitleAndDockHoverShown(undefined, false);
+        console.info(`${message} Succeeded in setting title and dock hover shown with undefined.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTitleAndDockHoverShown_secondParamNull
+     * @tc.number SUB_WINDOW_SETTITLENDDOCKHOVERSHOWN_PARAM_0300
+     * @tc.desc   setTitleAndDockHoverShown第二个入参isDockHoverShown传null，在自由多窗上正常调用不报错，在非自由多窗报801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTitleAndDockHoverShown_secondParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTitleAndDockHoverShown_secondParamNull';
+      try {
+        await mainWindowClass.setTitleAndDockHoverShown(true, null);
+        console.info(`${message} Succeeded in setting title and dock hover shown with null.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTitleAndDockHoverShown_secondParamUndefined
+     * @tc.number SUB_WINDOW_SETTITLENDDOCKHOVERSHOWN_PARAM_0400
+     * @tc.desc   setTitleAndDockHoverShown第二个入参isDockHoverShown传undefined，验证使用默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTitleAndDockHoverShown_secondParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTitleAndDockHoverShown_secondParamUndefined';
+      try {
+        await mainWindowClass.setTitleAndDockHoverShown(true, undefined);
+        console.info(`${message} Succeeded in setting title and dock hover shown with undefined.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowDelayRaiseOnDrag 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowDelayRaiseOnDrag_null
+     * @tc.number SUB_WINDOW_SETWINDOWDELAYRAISEONDRAG_PARAM_0100
+     * @tc.desc   setWindowDelayRaiseOnDrag入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowDelayRaiseOnDrag_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowDelayRaiseOnDrag_null';
+      try {
+        mainWindowClass.setWindowDelayRaiseOnDrag(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowDelayRaiseOnDrag_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWDELAYRAISEONDRAG_PARAM_0200
+     * @tc.desc   setWindowDelayRaiseOnDrag入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowDelayRaiseOnDrag_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowDelayRaiseOnDrag_undefined';
+      try {
+        mainWindowClass.setWindowDelayRaiseOnDrag(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setSeparationTouchEnabled 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetSeparationTouchEnabled_null
+     * @tc.number SUB_WINDOW_SETSEPARATIONTOUCHENABLED_PARAM_0100
+     * @tc.desc   setSeparationTouchEnabled入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetSeparationTouchEnabled_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetSeparationTouchEnabled_null';
+      try {
+        await mainWindowClass.setSeparationTouchEnabled(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetSeparationTouchEnabled_undefined
+     * @tc.number SUB_WINDOW_SETSEPARATIONTOUCHENABLED_PARAM_0200
+     * @tc.desc   setSeparationTouchEnabled入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetSeparationTouchEnabled_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetSeparationTouchEnabled_undefined';
+      try {
+        await mainWindowClass.setSeparationTouchEnabled(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setReceiveDragEventEnabled 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetReceiveDragEventEnabled_null
+     * @tc.number SUB_WINDOW_SETRECEIVEDRAGEVENTENABLED_PARAM_0100
+     * @tc.desc   setReceiveDragEventEnabled入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetReceiveDragEventEnabled_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetReceiveDragEventEnabled_null';
+      try {
+        await mainWindowClass.setReceiveDragEventEnabled(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetReceiveDragEventEnabled_undefined
+     * @tc.number SUB_WINDOW_SETRECEIVEDRAGEVENTENABLED_PARAM_0200
+     * @tc.desc   setReceiveDragEventEnabled入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetReceiveDragEventEnabled_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetReceiveDragEventEnabled_undefined';
+      try {
+        await mainWindowClass.setReceiveDragEventEnabled(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== off('freeWindowModeChange') 注册一个callback后不传入入参默认取消全部 测试用例 ====================
+
+    /**
+     * @tc.name   testOffFreeWindowModeChange_offAllWithoutParam
+     * @tc.number SUB_WINDOW_OFFFREEWINDOWMODECHANGE_FUNCTION_0100
+     * @tc.desc   注册一个callback监听freeWindowModeChange事件，然后off不传入入参默认取消全部注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffFreeWindowModeChange_offAllWithoutParam', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testOffFreeWindowModeChange_offAllWithoutParam';
+      const callback = (isInFreeWindowMode: boolean) => {
+        console.info(`${message} callback triggered. isInFreeWindowMode: ${isInFreeWindowMode}`);
+      };
+      try {
+        mainWindowClass.on('freeWindowModeChange', callback);
+        console.info(`${message} Succeeded in registering callback.`);
+        mainWindowClass.off('freeWindowModeChange');
+        console.info(`${message} Succeeded in unregistering all callbacks.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    // ==================== setDefaultDensityEnabled (WindowStage) 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetDefaultDensityEnabled_null
+     * @tc.number SUB_WINDOW_SETDEFAULTDENSITYENABLED_PARAM_0100
+     * @tc.desc   setDefaultDensityEnabled入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDefaultDensityEnabled_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetDefaultDensityEnabled_null';
+      try {
+        windowStage.setDefaultDensityEnabled(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetDefaultDensityEnabled_undefined
+     * @tc.number SUB_WINDOW_SETDEFAULTDENSITYENABLED_PARAM_0200
+     * @tc.desc   setDefaultDensityEnabled入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetDefaultDensityEnabled_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetDefaultDensityEnabled_undefined';
+      try {
+        windowStage.setDefaultDensityEnabled(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setCustomDensity (v20) 第二个入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetCustomDensity_v20_secondParamNull
+     * @tc.number SUB_WINDOW_SETCUSTOMDENSITY_V20_PARAM_0100
+     * @tc.desc   setCustomDensity(v20)第二个入参applyToSubWindow传null，验证正常调用不报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetCustomDensity_v20_secondParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetCustomDensity_v20_secondParamNull';
+      try {
+        windowStage.setCustomDensity(2.0, null);
+        console.info(`${message} Succeeded in setting custom density with null second param.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetCustomDensity_v20_secondParamUndefined
+     * @tc.number SUB_WINDOW_SETCUSTOMDENSITY_V20_PARAM_0200
+     * @tc.desc   setCustomDensity(v20)第二个入参applyToSubWindow传undefined，验证使用默认值调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetCustomDensity_v20_secondParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetCustomDensity_v20_secondParamUndefined';
+      try {
+        windowStage.setCustomDensity(2.0, undefined);
+        console.info(`${message} Succeeded in setting custom density with undefined second param.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowRectAutoSave (v14) 入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowRectAutoSave_v14_null
+     * @tc.number SUB_WINDOW_SETWINDOWRECTAUTOSAVE_V14_PARAM_0100
+     * @tc.desc   setWindowRectAutoSave(v14)入参传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowRectAutoSave_v14_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowRectAutoSave_v14_null';
+      try {
+        await windowStage.setWindowRectAutoSave(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowRectAutoSave_v14_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWRECTAUTOSAVE_V14_PARAM_0200
+     * @tc.desc   setWindowRectAutoSave(v14)入参传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowRectAutoSave_v14_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowRectAutoSave_v14_undefined';
+      try {
+        await windowStage.setWindowRectAutoSave(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowRectAutoSave (v17) 两个入参null/undefined 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowRectAutoSave_v17_firstParamNull
+     * @tc.number SUB_WINDOW_SETWINDOWRECTAUTOSAVE_V17_PARAM_0100
+     * @tc.desc   setWindowRectAutoSave(v17)第一个入参enabled传null，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowRectAutoSave_v17_firstParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowRectAutoSave_v17_firstParamNull';
+      try {
+        await windowStage.setWindowRectAutoSave(null, true);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowRectAutoSave_v17_firstParamUndefined
+     * @tc.number SUB_WINDOW_SETWINDOWRECTAUTOSAVE_V17_PARAM_0200
+     * @tc.desc   setWindowRectAutoSave(v17)第一个入参enabled传undefined，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowRectAutoSave_v17_firstParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowRectAutoSave_v17_firstParamUndefined';
+      try {
+        await windowStage.setWindowRectAutoSave(undefined, true);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowRectAutoSave_v17_secondParamNull
+     * @tc.number SUB_WINDOW_SETWINDOWRECTAUTOSAVE_V17_PARAM_0300
+     * @tc.desc   setWindowRectAutoSave(v17)第二个入参isSaveBySpecifiedFlag传null，验证正常调用不报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowRectAutoSave_v17_secondParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowRectAutoSave_v17_secondParamNull';
+      try {
+        await windowStage.setWindowRectAutoSave(true, null);
+        console.info(`${message} Succeeded in setting window rect auto save with null second param.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowRectAutoSave_v17_secondParamUndefined
+     * @tc.number SUB_WINDOW_SETWINDOWRECTAUTOSAVE_V17_PARAM_0400
+     * @tc.desc   setWindowRectAutoSave(v17)第二个入参isSaveBySpecifiedFlag传undefined，验证正常调用不报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowRectAutoSave_v17_secondParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowRectAutoSave_v17_secondParamUndefined';
+      try {
+        await windowStage.setWindowRectAutoSave(true, undefined);
+        console.info(`${message} Succeeded in setting window rect auto save with undefined second param.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== off('occlusionStateChanged') 不传入入参取消全部监听 测试用例 ====================
+
+    /**
+     * @tc.name   testOffOcclusionStateChanged_twoCallbacksOffAll
+     * @tc.number SUB_WINDOW_OFFOCCLUSIONSTATECHANGED_FUNCTION_0100
+     * @tc.desc   注册两个callback监听occlusionStateChanged事件，然后off不传入入参一次性取消全部监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffOcclusionStateChanged_twoCallbacksOffAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testOffOcclusionStateChanged_twoCallbacksOffAll';
+      let callbackACalled = false;
+      let callbackBCalled = false;
+      let occlusionStatesA: number[] = [];
+      let occlusionStatesB: number[] = [];
+      const callbackA = (data: window.OcclusionState) => {
+        console.info(`${message} callbackA triggered. Data: ${JSON.stringify(data)}`);
+        callbackACalled = true;
+        occlusionStatesA.push(data);
+      };
+      const callbackB = (data: window.OcclusionState) => {
+        console.info(`${message} callbackB triggered. Data: ${JSON.stringify(data)}`);
+        callbackBCalled = true;
+        occlusionStatesB.push(data);
+      };
+      let subWindow: window.Window | undefined;
+      try {
+        mainWindowClass.on('occlusionStateChanged', callbackA);
+        console.info(`${message} Succeeded in registering callbackA.`);
+        mainWindowClass.on('occlusionStateChanged', callbackB);
+        console.info(`${message} Succeeded in registering callbackB.`);
+        mainWindowClass.off('occlusionStateChanged');
+        console.info(`${message} Succeeded in unregistering all callbacks.`);
+
+        const mainWindowProperties = mainWindowClass.getWindowProperties();
+        const mainWindowRect = mainWindowProperties.windowRect;
+        console.info(`${message} mainWindowRect: ${JSON.stringify(mainWindowRect)}`);
+        subWindow = await windowStage.createSubWindow('testOffOcclusionStateChanged_twoCallbacksOffAll');
+        console.info(`${message} Succeeded in creating subWindow.`);
+
+        // off后触发遮挡，验证监听不会被触发
+        console.info(`${message} Trigger occlusion by showing subwindow to occlude main window`);
+        await subWindow.resize(mainWindowRect.width / 2, mainWindowRect.height / 2);
+        await subWindow.moveWindowTo(mainWindowRect.left + mainWindowRect.width / 3,
+          mainWindowRect.top + mainWindowRect.height / 3);
+        await subWindow.setUIContent('testability/pages/First/index2');
+        await subWindow.showWindow();
+        await sleep(1000);
+        expect(callbackACalled).assertFalse();
+        expect(occlusionStatesA.length).assertEqual(0);
+        expect(callbackBCalled).assertFalse();
+        expect(occlusionStatesB.length).assertEqual(0);
+        console.info(`${message} Verified - callbacks not triggered after occlusion.`);
+
+        await subWindow.destroyWindow();
+        console.info(`${message} Subwindow destroyed successfully.`);
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        await subWindow?.destroyWindow();
+        if (exception.code === 801) {
+          console.info(`${message} Capability not supported.`);
+          expect(exception.message != null).assertTrue();
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== setWindowColorSpace callback 传入不存在的ColorSpace 测试用例 ====================
+
+    /**
+     * @tc.name   testSetWindowColorSpace_callback_invalidColorSpace
+     * @tc.number SUB_WINDOW_SETWINDOWCOLORSPACE_PARAM_0500
+     * @tc.desc   setWindowColorSpace callback形式传入不存在的ColorSpace值3，验证抛出401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowColorSpace_callback_invalidColorSpace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testSetWindowColorSpace_callback_invalidColorSpace';
+      try {
+        mainWindowClass.setWindowColorSpace(3, (err: BusinessError) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(`${message} Callback error. Cause: ${err.code}, ${err.message}`);
+            if (errCode === 401) {
+              console.info(`${message} Expected error 401 in callback.`);
+              expect(errCode).assertEqual(401);
+            } else {
+              expect().assertFail();
+            }
+            done();
+          } else {
+            console.error(`${message} Should not succeed.`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== getWindowTransitionAnimation 传入不存在的WindowTransitionType 测试用例 ====================
+
+    /**
+     * @tc.name   testGetWindowTransitionAnimation_invalidEnum3
+     * @tc.number SUB_WINDOW_GETWINDOWTRANSITIONANIMATION_PARAM_0500
+     * @tc.desc   getWindowTransitionAnimation传入不存在的WindowTransitionType值3，满足自由多窗条件报401，不满足报801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetWindowTransitionAnimation_invalidEnum3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let message = 'testGetWindowTransitionAnimation_invalidEnum3';
+      let isInFreeWindowMode = false;
+      try {
+        isInFreeWindowMode = mainWindowClass.isInFreeWindowMode();
+        console.info(`${message} isInFreeWindowMode: ${isInFreeWindowMode}`);
+      } catch (e) {
+        console.info(`${message} isInFreeWindowMode not supported.`);
+      }
+      try {
+        mainWindowClass.getWindowTransitionAnimation(3 as window.WindowTransitionType);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (isInFreeWindowMode && exception.code === 401) {
+          console.info(`${message} Expected error 401 on free window device.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else if (!isInFreeWindowMode && exception.code === 801) {
+          console.info(`${message} Expected error 801 on non-free window device.`);
+          expect(exception.code).assertEqual(801);
           done();
         } else {
           expect().assertFail();

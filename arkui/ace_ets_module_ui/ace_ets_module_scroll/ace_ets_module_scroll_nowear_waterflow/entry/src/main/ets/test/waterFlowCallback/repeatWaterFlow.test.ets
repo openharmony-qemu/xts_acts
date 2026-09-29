@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -88,15 +88,19 @@ export default function repeatWaterFlow() {
      */
     it('repeatWaterFlow_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[repeatWaterFlow_0200] START');
-      let waterFlowRect = CommonFunc.getComponentRectOnScreen('flowRepeat_event')
       let driver = Driver.create()
+      let waterFlowRectComponent = await driver.findComponent(ON.id('flowRepeat_event'))
+      let waterFlowRect = await waterFlowRectComponent.getBounds()
+      let displayId = await waterFlowRectComponent.getDisplayId()
       await driver.fling({
         x: Number.parseInt(`${(waterFlowRect.right - waterFlowRect.left) * 0.5 + waterFlowRect.left}`),
-        y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.6 + waterFlowRect.top}`)
+        y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.6 + waterFlowRect.top}`),
+        displayId: displayId
       },
         {
           x: Number.parseInt(`${(waterFlowRect.right - waterFlowRect.left) * 0.5 + waterFlowRect.left}`),
-          y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.2 + waterFlowRect.top}`)
+          y: Number.parseInt(`${(waterFlowRect.bottom - waterFlowRect.top) * 0.2 + waterFlowRect.top}`),
+          displayId: displayId
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import hilog from '@ohos.hilog';
 
 export class MyDataSource_1 implements IDataSource {

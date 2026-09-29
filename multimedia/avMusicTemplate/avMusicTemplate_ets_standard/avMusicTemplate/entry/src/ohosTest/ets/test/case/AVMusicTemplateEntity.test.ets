@@ -14,7 +14,7 @@
  */
 
 import avMusicTemplate from '@ohos.multimedia.avMusicTemplate';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { CommonUtils } from '../utils/CommonUtil.test';
 import { FakerDataUtil } from '../utils/FakerDataUtil.test';
 import { CommonConstants } from '../constants/CommonConstants.test';
@@ -634,6 +634,7 @@ export default function avMusicTemplateEntityTest() {
           expect(data.description?.length).assertLarger(0);
           expect(data.playMusicOnly).assertTrue();
           expect(data.playMode?.length).assertLarger(0);
+          expect(data.extras?.length).assertLarger(0);
           done();
         } catch (err) {
           CommonUtils.logError(TAG, "SEARCH_PLAY_MUSIC_INFO_2400 catch err: " + CommonUtils.getError(err));

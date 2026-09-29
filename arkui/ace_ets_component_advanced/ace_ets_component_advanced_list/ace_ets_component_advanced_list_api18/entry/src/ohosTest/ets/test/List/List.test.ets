@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,  Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,  Level } from '@ohos/hypium-dynamic';
 import router from '@system.router';
 import { BY, UiDriver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';

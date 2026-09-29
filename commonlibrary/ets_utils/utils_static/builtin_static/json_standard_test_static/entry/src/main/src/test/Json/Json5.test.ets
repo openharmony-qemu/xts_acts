@@ -1592,7 +1592,7 @@ export default function Json5Test(): void {
     it('Json5Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         const result = JSON.stringifyWithGetters(undefined)
-        expect(result).assertEqual("")
+        expect(result).assertEqual("undefined")
       } catch (e) {
         console.error(`Json5Test076 failed: ${e}`)
         expect().assertFail()

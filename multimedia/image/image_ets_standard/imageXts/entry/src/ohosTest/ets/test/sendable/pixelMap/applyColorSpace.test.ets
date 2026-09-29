@@ -16,7 +16,7 @@
 import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG } from '../../common';
 import { ErrorCode } from '../../CommonErrorCode';
 

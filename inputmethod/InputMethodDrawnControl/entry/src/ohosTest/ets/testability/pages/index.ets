@@ -28,6 +28,8 @@ struct Index {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
+        TextArea({ text: this.message })
+          .height('20%')
         Button() {
           Text('next page')
             .fontSize(20)

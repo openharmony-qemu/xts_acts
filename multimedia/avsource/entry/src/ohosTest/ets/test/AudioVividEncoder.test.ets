@@ -655,5 +655,57 @@ export default function audiovividEncoderTest() {
       expect(audiovividencoder.GetMetaWithoutStaticMeta()).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testHOAModeSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_5000
+     * @tc.desc   test HOAModeSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHOAModeSampleRateCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.HOAModeSampleRateCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testHOAModeSampleFormatCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_5100
+     * @tc.desc   test HOAModeSampleFormatCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHOAModeSampleFormatCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.HOAModeSampleFormatCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testHOAModeBitrateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_5200
+     * @tc.desc   test HOAModeBitrateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHOAModeBitrateCheck', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.HOAModeBitrateCheck()).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testCreateHOAMode
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOVIVID_ENCODER_INTERFACE_TEST_5300
+     * @tc.desc   test CreateHOAMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testCreateHOAMode', Level.LEVEL2, async (done: Function) => {
+      expect(audiovividencoder.CreateHOAMode()).assertEqual(0);
+      done();
+    });
   })
 }

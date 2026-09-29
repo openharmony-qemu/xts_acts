@@ -21,7 +21,7 @@ import {
   TestType,
   Size,
   Level
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 
 import {
   taskpool,

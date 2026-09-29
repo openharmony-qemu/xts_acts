@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { taskpool } from '@kit.ArkTS';
 import napicoveraddbatch3ndktest from 'libnapicoveraddbatch3ndktest.so';
 import Utils from '../../Utils';

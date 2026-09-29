@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { Hypium } from '@ohos/hypium'
+import { Hypium } from '@ohos/hypium-dynamic'
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview'
 import { waitForExist } from '../../test/WaitTest';

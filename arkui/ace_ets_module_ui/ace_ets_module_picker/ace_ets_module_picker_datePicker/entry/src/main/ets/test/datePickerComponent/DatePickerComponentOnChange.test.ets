@@ -14,7 +14,7 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
@@ -67,9 +67,14 @@ export default function DatePickerComponentOnChangeTest() {
       let datePickerComp: Component = await driver.findComponent(ON.id('datePickerComponent_onChange'));
       await CommonFunc.sleep(500);
       let bounds = await datePickerComp.getBounds();
+      let displayId = await datePickerComp.getDisplayId();
       let centerX: number = bounds.left + (bounds.right - bounds.left) / 2;
       let centerY: number = bounds.top + (bounds.bottom - bounds.top) / 2;
-      await driver.swipe(centerX, centerY, centerX, centerY + 50, 600);
+      await driver.swipeBetween(
+        { x: centerX, y: centerY, displayId: displayId },
+        { x: centerX, y: centerY + 100, displayId: displayId },
+        600
+      );
       await CommonFunc.sleep(1500);
 
       let strJson1 = getInspectorByKey('text_onChange_triggered');

@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
 import { getPermission, driveFn, LOG_TAG } from '../../common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import common from '@ohos.app.ability.common';

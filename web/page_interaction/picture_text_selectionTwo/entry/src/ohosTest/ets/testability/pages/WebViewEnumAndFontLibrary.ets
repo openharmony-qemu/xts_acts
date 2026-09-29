@@ -333,6 +333,18 @@ struct WebViewEnumAndFontLibrary {
               Utils.emitEvent(Boolean(this.onContextMenuShowState), 183380);
               break;
             }
+                          case 'emitWebContextMenuParamConstructor001': {
+                Utils.emitEvent(true, 183390);
+                break;
+              }
+                          case 'emitWebContextMenuParamConstructorReturn001': {
+                Utils.emitEvent(true, 183391);
+                break;
+              }
+                          case 'emitWebContextMenuParamClass001': {
+                Utils.emitEvent(true, 183392);
+                break;
+              }
 
           }
         })

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -54,8 +54,10 @@ export default function gridStopDrag() {
     it('gridStopDrag_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gridStopDrag_0100] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let swipeRect = CommonFunc.getComponentRectOnScreen('grid_stopDrag_hor');
+      let driver = await Driver.create();
+      let swipeRectComponent = await driver.findComponent(ON.id('grid_stopDrag_hor'));
+      let swipeRect = await swipeRectComponent.getBounds();
+      let displayId = await swipeRectComponent.getDisplayId();
       let top = swipeRect.top;
       let right = swipeRect.right;
       let left = swipeRect.left;
@@ -64,14 +66,18 @@ export default function gridStopDrag() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('grid_stopDrag_velocity');
       console.info("[gridStopDrag_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[gridStopDrag_0100] content1: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(Number(JSON.parse(strJson).$attrs.content) < 0).assertTrue();
 
-      await driver.swipe(Math.round(left + width*0.4),Math.round(top + height/2),Math.round(left + width*0.8),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.4), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson2 = getInspectorByKey('grid_stopDrag_velocity');
       console.info("[gridStopDrag_0100] content2: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
@@ -91,11 +97,13 @@ export default function gridStopDrag() {
     it('gridStopDrag_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[gridStopDrag_0200] START');
       await CommonFunc.sleep(1000);
-      let driver = Driver.create();
+      let driver = await Driver.create();
       let btn1: Component = await driver.findComponent(ON.id('grid_stopDrag_change'));
       await btn1.click();
       await CommonFunc.sleep(1500);
-      let swipeRect = CommonFunc.getComponentRectOnScreen('grid_stopDrag_ver');
+      let swipeRectComponent = await driver.findComponent(ON.id('grid_stopDrag_ver'));
+      let swipeRect = await swipeRectComponent.getBounds();
+      let displayId = await swipeRectComponent.getDisplayId();
       let top = swipeRect.top;
       let right = swipeRect.right;
       let left = swipeRect.left;
@@ -104,14 +112,18 @@ export default function gridStopDrag() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('grid_stopDrag_velocity');
       console.info("[gridStopDrag_0200] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[gridStopDrag_0200] content1: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(Number(JSON.parse(strJson).$attrs.content) < 0).assertTrue();
 
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.2),Math.round(left + width/2),Math.round(top + height*0.6));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson2 = getInspectorByKey('grid_stopDrag_velocity');
       console.info("[gridStopDrag_0200] content2: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));

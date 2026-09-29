@@ -63,6 +63,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton1'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -107,6 +108,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton2'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -151,6 +153,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton3'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -195,6 +198,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton4'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -239,6 +243,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton5'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -283,6 +288,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton6'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -327,6 +333,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton7'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -371,6 +378,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton8'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -415,6 +423,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton9'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -459,6 +468,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton10'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -503,6 +513,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton11'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -547,6 +558,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton12'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -591,6 +603,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton13'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);
@@ -635,6 +648,7 @@ export default function maskBackgroundBlurStyleTest(): void {
     it('maskBackgroundBlurStyleTest_static_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
+        await Utils.sleep(500);
         let btn = await driver.findComponent(ON.id('maskBackgroundBlurStyleButton14'));
         await (btn?.click() as Promise<void>);
         await Utils.sleep(1000);

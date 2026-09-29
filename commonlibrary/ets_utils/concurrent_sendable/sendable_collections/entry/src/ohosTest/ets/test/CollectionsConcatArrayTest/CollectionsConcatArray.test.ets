@@ -24,7 +24,7 @@ import {
   TestType,
   Size,
   Level
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 
 import { collections,taskpool, worker, MessageEvents } from '@kit.ArkTS';
 import { SendableData } from '../utils/TestUtils';

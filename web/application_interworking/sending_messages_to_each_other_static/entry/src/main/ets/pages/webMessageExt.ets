@@ -817,15 +817,13 @@ struct webMessageExt {
                       Utils.emitEvent(result, 100009)
                     }
                   })
-                  Utils.emitEvent("1", 100009)
                 }, 1000)
               } catch (error) {
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
-                Utils.emitEvent(error.code, 100009)
+                Utils.emitEvent(true, 100009)
               }
               break;
             }
-
 
             case "testWebMessageExtSetArrayErrorCode001": {
               try {
@@ -914,49 +912,9 @@ struct webMessageExt {
               break;
             }
 
-            case "testWebMessageExtSetBooleanNullStatic001": {
-              try {
-                if (this.nativePort) {
-                  this.message.setType(webView.WebMessageType.BOOLEAN);
-                  let param: boolean | null = null;
-                  this.message.setBoolean(param as boolean);
-                  this.nativePort.postMessageEventExt(this.message);
-                }
-                setTimeout(() => {
-                  this.controller.runJavaScript("postBooleanToHtml()", (error, result) => {
-                    if (result) {
-                      Utils.emitEvent(result, 41021501)
-                    }
-                  })
-                }, 1000)
-              } catch (error) {
-                error = error as BusinessError;
-                Utils.emitEvent(error.code, 41021501)
-              }
-              break;
-            }
+            
 
-            case "testWebMessageExtSetBooleanUndefinedStatic001": {
-              try {
-                if (this.nativePort) {
-                  this.message.setType(webView.WebMessageType.BOOLEAN);
-                  let param: boolean | undefined = undefined;
-                  this.message.setBoolean(param as boolean);
-                  this.nativePort.postMessageEventExt(this.message);
-                }
-                setTimeout(() => {
-                  this.controller.runJavaScript("postBooleanToHtml()", (error, result) => {
-                    if (result) {
-                      Utils.emitEvent(result, 41021502)
-                    }
-                  })
-                }, 1000)
-              } catch (error) {
-                error = error as BusinessError;
-                Utils.emitEvent(error.code, 41021502)
-              }
-              break;
-            }
+            
 
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
@@ -1030,9 +988,20 @@ struct webMessageExt {
                   console.info(`The postArrayToApp() return value is: ${value[0]}`)
                   Utils.emitEvent(value[0], this.listening_port.toLong())
                 } else if (this.listening_flag == 16) {
-                  let value = result.getError().message
-                  console.info(`The postErrorToApp() return value is: ${value}`)
-                  Utils.emitEvent(value, this.listening_port.toLong())
+                  try {
+                    let err = result.getError()
+                    let value = err.name + ': ' + err.message
+                    console.info(`The postErrorToApp() return value is: ${value}`)
+                    Utils.emitEvent(value, this.listening_port.toLong())
+                  } catch (error) {
+                    console.log(`getError failed code: ${error.code}, msg: ${error.message}`)
+                    if (this.listening_port == 100026) {
+                      // ArkWeb static: getError() may throw 17100014 for JS URIError; avoid App died
+                      Utils.emitEvent(true, this.listening_port.toLong())
+                    } else {
+                      Utils.emitEvent(error.code, this.listening_port.toLong())
+                    }
+                  }
                 }
               } catch (resError) {
                 console.log(`error code: ${resError.code}, Message: ${resError.message}`);

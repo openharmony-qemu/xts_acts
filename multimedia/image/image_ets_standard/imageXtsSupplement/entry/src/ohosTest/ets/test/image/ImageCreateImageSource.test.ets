@@ -15,7 +15,7 @@
 
 import common from '@ohos.app.ability.common';
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { fileIo as fs } from '@kit.CoreFileKit';
 
 const TAG = 'createImageSourceSupp';

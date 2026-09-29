@@ -77,6 +77,54 @@ struct WebSchemeHandlerResponse {
             response.setNetErrorCode(WebNetErrorList.NET_OK)
           console.info("key==>" +  this.stringObj.str)
             switch ( this.stringObj.str) {
+            case "WebSchemeHandlerResponse_ctor": {
+              try {
+                let respCtor: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
+                let isDefined: boolean = respCtor !== undefined && respCtor !== null;
+                Utils.emitEvent(isDefined, 9818);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9818);
+              }
+              break;
+            }
+            case "WebResourceHandler_ctor": {
+              try {
+                let handler: webview.WebResourceHandler = new webview.WebResourceHandler();
+                let isDefined: boolean = handler !== undefined && handler !== null;
+                Utils.emitEvent(isDefined, 9820);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9820);
+              }
+              break;
+            }
+            case "WebSchemeHandlerResponse_class": {
+              try {
+                let resp: webview.WebSchemeHandlerResponse = new webview.WebSchemeHandlerResponse();
+                let isClass: boolean = resp instanceof webview.WebSchemeHandlerResponse;
+                Utils.emitEvent(isClass, 9822);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9822);
+              }
+              break;
+            }
+            case "WebResourceHandler_class": {
+              try {
+                let handler: webview.WebResourceHandler = new webview.WebResourceHandler();
+                let isClass: boolean = handler instanceof webview.WebResourceHandler;
+                Utils.emitEvent(isClass, 9824);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(false, 9824);
+              }
+              break;
+            }
             case "WebSchemeHandlerResponse_getUrl": {
               try {
                   console.log("[schemeHandler] getUrl:" + response.getUrl())
@@ -141,6 +189,17 @@ struct WebSchemeHandlerResponse {
                 try {
                   console.log("[schemeHandler] getNetErrorCode:" + response.getNetErrorCode())
                   Utils.emitEvent(response.getNetErrorCode(), 8818)
+                } catch (error) {
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                }
+                break;
+              }
+
+              case "WebSchemeHandlerResponse_setCustomErrorCode": {
+                try {
+                  response.setCustomErrorCode(32159)
+                  console.log("[schemeHandler] getCustomErrorCode:" + response.getCustomErrorCode())
+                  Utils.emitEvent(response.getCustomErrorCode(), 8826)
                 } catch (error) {
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
@@ -218,6 +277,14 @@ struct WebSchemeHandlerResponse {
               break;
             }
 
+
+            case 'SwitchNextPageStaticWebCustomErrorCode': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webCustomErrorCode' })
+              console.log('push webCustomErrorCode success')
+              break;
+            }
 
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();

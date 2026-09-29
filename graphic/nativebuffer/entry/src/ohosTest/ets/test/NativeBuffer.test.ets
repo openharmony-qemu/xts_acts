@@ -1373,5 +1373,90 @@ export default function nativeBufferTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   testNativeBufferSetDmaBufferNameNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_SetDmaBufferName_0100
+     * @tc.desc   testNativeBufferSetDmaBufferNameNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeBufferSetDmaBufferNameNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferSetDmaBufferNameNormal();
+        console.info("testNativeBufferSetDmaBufferNameNormal result: " + result);
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeBufferSetDmaBufferNameNormal2
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_SetDmaBufferName_0200
+     * @tc.desc   testNativeBufferSetDmaBufferNameNormal2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeBufferSetDmaBufferNameNormal2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        if (deviceTypeInfo == "default") {
+          expect(0).assertEqual(0);
+          done();
+        } else {
+          let result: number = nativebuffer.oHNativeBufferSetDmaBufferNameNormal2();
+          console.info("testNativeBufferSetDmaBufferNameNormal2 result: " + result);
+          expect(result).assertEqual(0);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testNativeBufferSetDmaBufferNameNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_SetDmaBufferName_0300
+     * @tc.desc   testNativeBufferSetDmaBufferNameNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeBufferSetDmaBufferNameNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferSetDmaBufferNameNull();
+        console.info("testNativeBufferSetDmaBufferNameNull result: " + result);
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeBufferSetDmaBufferNameAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_SetDmaBufferName_0400
+     * @tc.desc   testNativeBufferSetDmaBufferNameAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeBufferSetDmaBufferNameAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferSetDmaBufferNameAbnormal();
+        console.info("testNativeBufferSetDmaBufferNameAbnormal result: " + result);
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.name   testNativeBufferSetDmaBufferNameMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_NATIVE_BUFFER_SetDmaBufferName_0500
+     * @tc.desc   testNativeBufferSetDmaBufferNameMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNativeBufferSetDmaBufferNameMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativebuffer.oHNativeBufferSetDmaBufferNameMultipleCalls();
+        console.info("testNativeBufferSetDmaBufferNameMultipleCalls result: " + result);
+        expect(result).assertEqual(0);
+        done();
+      });
   });
 }

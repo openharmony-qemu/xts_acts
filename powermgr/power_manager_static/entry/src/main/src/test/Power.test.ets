@@ -65,11 +65,17 @@ export default function PowerTest() {
         let TAG: string = 'testPowerTest_static_0200';
         hilog.info(domain, tag, `${TAG} start`);
         try {
+          let powerModeList: number[] = [
+            ohos_power.DevicePowerMode.MODE_NORMAL,
+            ohos_power.DevicePowerMode.MODE_POWER_SAVE,
+            ohos_power.DevicePowerMode.MODE_PERFORMANCE,
+            ohos_power.DevicePowerMode.MODE_EXTREME_POWER_SAVE,
+            ohos_power.DevicePowerMode.MODE_CUSTOM_POWER_SAVE
+          ];
           let powerMode: number = ohos_power.getPowerMode();
           hilog.info(domain, tag, `${TAG} powerMode: ${powerMode}`);
           hilog.info(domain, tag, `${TAG} powerMode type: ${typeof powerMode}`);
-          expect(powerMode).assertLargerOrEqual(ohos_power.DevicePowerMode.MODE_NORMAL);
-          expect(powerMode).assertLessOrEqual(ohos_power.DevicePowerMode.MODE_EXTREME_POWER_SAVE);
+          expect(powerModeList.includes(powerMode)).assertTrue();
           done();
         } catch (e) {
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);

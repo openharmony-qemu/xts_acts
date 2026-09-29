@@ -17,7 +17,7 @@ import { BusinessError } from '@kit.BasicServicesKit'
 import { backgroundProcessManager } from '@kit.BackgroundTasksKit'
 import { process } from '@kit.ArkTS'
 import hilog from '@ohos.hilog';
-import { describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium'
+import { describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium-dynamic'
 
 const TAG = "testTag";
 const DOMAIN: number = 0x0000;

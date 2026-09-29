@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '@ohos/hypium'
+import { describe, expect } from '@ohos/hypium-dynamic'
 import { AttrsManager } from '../../MainAbility/common/AttrsManager';
 import Utils from '../../MainAbility/common/Utils';
 import matrix4 from '@ohos.matrix4'

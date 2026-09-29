@@ -14,9 +14,11 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import CommonFunc from '../../MainAbility/common/Common'
 import { Driver, ON } from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function textAreaOnCaretAndKeyboardTest() {
   describe('textAreaOnCaretAndKeyboardTest', () => {
@@ -59,7 +61,11 @@ export default function textAreaOnCaretAndKeyboardTest() {
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));
       await textAreaComponent?.click();
       await CommonFunc.sleep(500);
-	  await driver.triggerKey(2070);
+	  try {
+	    await driver.triggerKey(2070, displayID);
+	  } catch (err) {
+	    console.log('triggerKey error: ' + JSON.stringify(err));
+	  }
 	  await CommonFunc.sleep(1000);
       let buttonComponent = await driver.findComponent(ON.id('button'));
       await buttonComponent?.click();
@@ -73,7 +79,11 @@ export default function textAreaOnCaretAndKeyboardTest() {
 
       await textAreaComponent.inputText('hello world');
       await CommonFunc.sleep(500);
-	  await driver.triggerKey(2070);
+	  try {
+	    await driver.triggerKey(2070, displayID);
+	  } catch (err) {
+	    console.log('triggerKey error: ' + JSON.stringify(err));
+	  }
 	  await CommonFunc.sleep(1000);
       await buttonComponent.click();
       await CommonFunc.sleep(500);
@@ -99,7 +109,11 @@ export default function textAreaOnCaretAndKeyboardTest() {
       let textAreaComponent = await driver.findComponent(ON.id('textAreaOnCaretAndKeyboard'));
       await textAreaComponent?.click();
       await CommonFunc.sleep(500);
-	  await driver.triggerKey(2070);
+	  try {
+	    await driver.triggerKey(2070, displayID);
+	  } catch (err) {
+	    console.log('triggerKey error: ' + JSON.stringify(err));
+	  }
 	  await CommonFunc.sleep(1000);
       let buttonComponent = await driver.findComponent(ON.id('button_1'));
       await buttonComponent.click();

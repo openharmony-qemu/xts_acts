@@ -19,7 +19,7 @@ import Common from './Common';
 import AVRecorderBase from './AVRecorderBase.test';
 import { BusinessError } from '@ohos.base';
 import { Permissions } from '@kit.AbilityKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 
 let mediaTestBase = new Common();
 let avRecorderBase = new AVRecorderBase();

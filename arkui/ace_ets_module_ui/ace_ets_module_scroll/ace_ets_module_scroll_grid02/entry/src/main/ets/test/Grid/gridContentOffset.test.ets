@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -79,7 +79,9 @@ export default function gridContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('grid_contentOffset_start'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('grid_contentOffset_num');
+      let listSwipeComponent = await driver.findComponent(ON.id('grid_contentOffset_num'));
+      let listSwipe = await listSwipeComponent.getBounds();
+      let displayId = await listSwipeComponent.getDisplayId();
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -87,16 +89,20 @@ export default function gridContentOffset() {
       console.info("gridContentOffset_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.2),Math.round(left + width/2),Math.round(top + height*0.6));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('grid_contentOffset_num');
       console.info("[gridContentOffset_0200] contentStartOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentStartOffset));
       expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("30.000000");
 
-      let grid = CommonFunc.getComponentRectOnScreen('grid_contentOffset_num');
+      let gridComponent = await driver.findComponent(ON.id('grid_contentOffset_num'));
+      let grid = await gridComponent.getBounds();
       console.info("[gridContentOffset_0200] grid_top is: " + grid.top);
-      let gridItem = CommonFunc.getComponentRectOnScreen('grid_item_0');
+      let gridItemComponent = await driver.findComponent(ON.id('grid_item_0'));
+      let gridItem = await gridItemComponent.getBounds();
       console.info("[gridContentOffset_0200] gridItem_top is: " + gridItem.top);
       let size_start = gridItem.top - grid.top
       console.info("[gridContentOffset_0200] size_start is: " + size_start);
@@ -123,7 +129,9 @@ export default function gridContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('grid_contentOffset_end'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('grid_contentOffset_num');
+      let listSwipeComponent = await driver.findComponent(ON.id('grid_contentOffset_num'));
+      let listSwipe = await listSwipeComponent.getBounds();
+      let displayId = await listSwipeComponent.getDisplayId();
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -131,16 +139,20 @@ export default function gridContentOffset() {
       console.info("gridContentOffset_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('grid_contentOffset_num');
       console.info("[gridContentOffset_0300] contentEndOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentEndOffset));
       expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("20.000000");
 
-      let grid = CommonFunc.getComponentRectOnScreen('grid_contentOffset_num');
+      let gridComponent = await driver.findComponent(ON.id('grid_contentOffset_num'));
+      let grid = await gridComponent.getBounds();
       console.info("[gridContentOffset_0300] grid_bottom is: " + grid.bottom);
-      let gridItem = CommonFunc.getComponentRectOnScreen('grid_item_15');
+      let gridItemComponent = await driver.findComponent(ON.id('grid_item_15'));
+      let gridItem = await gridItemComponent.getBounds();
       console.info("[gridContentOffset_0300] gridItem_bottom is: " + gridItem.bottom);
       let size_end = grid.bottom - gridItem.bottom
       console.info("[gridContentOffset_0300] size_end is: " + size_end);

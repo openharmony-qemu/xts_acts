@@ -34,7 +34,7 @@ let uiContent: UIContext | undefined = undefined;
 @Entry
 @Component
 struct OnAccessibilityActionIntercept {
-  @State name: string = 'OnAccessibilityStateDescription';
+  @State name: string = 'AccessiBilityStateDescription';
   @State stepTips: string = '不支持屏幕朗读直接按照失败处理走豁免\n' + '设备支持屏幕朗读时\n' +
     '测试内容:支持配置无障碍自定义状态播报文本\n' +
     '操作步骤: 开启屏幕朗读\n' +

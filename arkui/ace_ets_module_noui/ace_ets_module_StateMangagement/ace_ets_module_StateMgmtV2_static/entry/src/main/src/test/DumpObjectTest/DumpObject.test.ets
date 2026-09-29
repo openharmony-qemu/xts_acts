@@ -60,7 +60,7 @@ export default function DumpObject(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("DumpObjectButton_001"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 

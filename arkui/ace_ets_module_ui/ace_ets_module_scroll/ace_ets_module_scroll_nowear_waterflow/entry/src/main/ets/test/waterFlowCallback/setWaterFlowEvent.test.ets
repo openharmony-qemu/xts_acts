@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -56,7 +56,9 @@ export default function setWaterFlowEvent() {
       await btnEvent.click();
       await CommonFunc.sleep(1500)
 
-      let swipeScroll = CommonFunc.getComponentRectOnScreen('key_WaterFlow_set');
+      let swipeScrollComponent = await driver.findComponent(ON.id('key_WaterFlow_set'));
+      let swipeScroll = await swipeScrollComponent.getBounds();
+      let displayId = await swipeScrollComponent.getDisplayId();
       let top = swipeScroll.top;
       let right = swipeScroll.right;
       let left = swipeScroll.left;
@@ -64,7 +66,9 @@ export default function setWaterFlowEvent() {
       console.info("setWaterFlowEvent_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
       let btn: Component = await driver.findComponent(ON.id('WaterFlow_setOnReach_04'));
       await btn.click();

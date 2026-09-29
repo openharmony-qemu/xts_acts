@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium-dynamic'
 import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function textAreaObserverTest() {
   describe('textAreaObserverTest', () => {
@@ -66,7 +68,11 @@ export default function textAreaObserverTest() {
       await textArea.inputText('textAreaObserverTest_0010');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let globalOutputTextArea1: Component = await driver.findComponent(ON.id('globalOutputTextArea'));
@@ -81,7 +87,11 @@ export default function textAreaObserverTest() {
       await textArea.inputText('Add');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let globalOutputTextArea2: Component = await driver.findComponent(ON.id('globalOutputTextArea'));
@@ -114,7 +124,11 @@ export default function textAreaObserverTest() {
       await textArea.inputText('textAreaObserverTest_0011');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let localOutputTextArea1: Component = await driver.findComponent(ON.id('localOutputTextArea'));
@@ -129,7 +143,11 @@ export default function textAreaObserverTest() {
       await textArea.inputText('Add');
 
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let localOutputTextArea2: Component = await driver.findComponent(ON.id('localOutputTextArea'));

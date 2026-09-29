@@ -4951,3 +4951,40 @@ Camera_ErrorCode NDKCamera::OHgetExposureDuration(int useCaseCode)
     }
     return ret_;
 }
+
+Camera_ErrorCode NDKCamera::GetWhiteBalanceRange(int useCaseCode)
+{
+    LOG("GetWhiteBalanceRange useCaseCode: %{public}d", useCaseCode);
+    int32_t max = 0;
+    int32_t min = 0;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetWhiteBalanceRange(captureSession_, &min, &max);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetWhiteBalanceRange(nullptr, &min, &max);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetWhiteBalanceRange(captureSession_, nullptr, &max);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetWhiteBalanceRange(captureSession_, &min, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetWhiteBalanceRange failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::GetWhiteBalance(int useCaseCode)
+{
+    LOG("OHgetExposureDuration useCaseCode: %{public}d", useCaseCode);
+    int32_t colorTemperature;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetWhiteBalance(captureSession_, &colorTemperature);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetWhiteBalance(nullptr, &colorTemperature);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetWhiteBalance(captureSession_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetWhiteBalance failed.");
+    }
+    return ret_;
+}

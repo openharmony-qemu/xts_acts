@@ -49,6 +49,7 @@
 #include "napi_memorymanagementuse_test.h"
 #include "napi_promise_test.h"
 #include "napi_version_test.h"
+#include "napi_errorcode.h"
 #include <vector>
 #define LOG_DEMAIN 0x0202
 using namespace std;
@@ -9755,6 +9756,8 @@ static JSVM_CallbackStruct param[] = {
     {.callback = TestIsDateTest1, .data = nullptr},
     {.callback = TestDateCombinationTest1, .data = nullptr},
     {.callback = TestPumpMessageLoopTest1, .data = nullptr},
+    {.callback = TestErrorCode, .data = nullptr},
+    {.callback = TestDeserialize, .data = nullptr},
     {.callback = TestPerformMicrotaskCheckpointTest1, .data = nullptr},
     {.callback = TestExecuteTasksCombinationTest1, .data = nullptr},
     {.callback = TestJsonParseTest1, .data = nullptr},
@@ -10375,6 +10378,8 @@ static JSVM_PropertyDescriptor jsDescriptor[] = {
     {"testIsDateTest1", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testDateCombinationTest1", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testPumpMessageLoopTest1", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+    {"testErrorCode", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
+    {"testDeserialize", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testPerformMicrotaskCheckpointTest1", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testExecuteTasksCombinationTest1", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},
     {"testJsonParseTest1", nullptr, nullptr, nullptr, nullptr, nullptr, JSVM_DEFAULT},

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { PromiseRaceTest020 } from './promisejs';
 import {
   customThenable42_1,

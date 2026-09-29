@@ -14,7 +14,7 @@
  */
 
 import { LightWeightSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 interface NumberInvalidObject { marker: string; }
 const NUMBER_INVALID_OBJECT: NumberInvalidObject = { marker: 'invalid' };
 const VALID_VALUES: Array<number> = [100, -99, 0, NaN, Infinity, -0, Number.MAX_SAFE_INTEGER];

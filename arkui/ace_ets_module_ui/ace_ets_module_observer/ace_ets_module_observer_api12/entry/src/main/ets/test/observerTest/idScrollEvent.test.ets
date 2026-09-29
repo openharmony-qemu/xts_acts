@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,16 +57,21 @@ export default function idScrollEvent() {
       await btn1.click();
       await CommonFunc.sleep(1500);
 
-      let swipeScroll = CommonFunc.getComponentRectOnScreen('testScroll');
-      let top = swipeScroll.top;
-      let right = swipeScroll.right;
-      let left = swipeScroll.left;
-      let bottom = swipeScroll.bottom;
-      console.info("idScrollEvent_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom -top;
+      let scrollComponent = await driver.findComponent(ON.id('testScroll'));
+      let rect = await scrollComponent.getBounds();
+      let displayId = await scrollComponent.getDisplayId();
+      let top = rect.top;
+      let right = rect.right;
+      let left = rect.left;
+      let bottom = rect.bottom;
+      console.info("idScrollEvent_0100 value is" + left + " --" + right
+        + "--" + top + "--" + bottom + ", displayId = " + displayId);
+      let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.8), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('scroll_observer_id');

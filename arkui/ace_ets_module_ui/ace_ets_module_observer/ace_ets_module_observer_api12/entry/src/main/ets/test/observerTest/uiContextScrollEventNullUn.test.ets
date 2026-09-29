@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -23,6 +23,7 @@ export default function uiContextScrollEventNullUnTest() {
     let centerX: number;
     let y1: number;
     let y2: number;
+    let displayId: number = 0;
     beforeEach(async (done: Function) => {
       console.info("uiContextScrollEventNullUnTest beforeEach start");
       let options: router.RouterOptions = {
@@ -39,14 +40,17 @@ export default function uiContextScrollEventNullUnTest() {
           console.info("push uiContextScrollEventNullUnTest page result:" + JSON.stringify(result));
 
           let driver = await Driver.create()
-          let rect = CommonFunc.getComponentRect("getUIObserver_scrollEvent_default");
+          let rectComponent = await driver.findComponent(ON.id("getUIObserver_scrollEvent_default"));
+          let rect = await rectComponent.getBounds();
+          displayId = await rectComponent.getDisplayId();
           let width = rect.right - rect.left;
           let height = rect.bottom - rect.top;
           console.info("uiContextScrollEventNullUnTest width is" + width + ", height is" + height);
-          centerX = Math.round(globalThis.winLeft + rect.left + width/2);
-          y1 = Math.round(globalThis.winTop + rect.top + height*0.1);
-          y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
-          console.info("uiContextScrollEventNullUnTest  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
+          centerX = Math.round(rect.left + width/2);
+          y1 = Math.round(rect.top + height*0.1);
+          y2 = Math.round(rect.bottom - height*0.2);
+          console.info("uiContextScrollEventNullUnTest  centerX= " +  centerX
+            + ", y1 = " + y1 + ", y2 = " + y2 + ", displayId = " + displayId);
           await CommonFunc.sleep(2000);
           done();
         }
@@ -71,7 +75,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_on_null_0100 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000); // 等待回调执行完成
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_on_null'));
@@ -97,7 +103,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_off_null_0200 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_off_null'));
@@ -123,7 +131,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_on_undefined_0300 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_on_undefined'));
@@ -149,7 +159,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_off_undefined_0400 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_off_undefined'));
@@ -175,7 +187,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_on_null_id_0500 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_on_null_id'));
@@ -201,7 +215,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_off_null_id_0600 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_off_null_id'));
@@ -227,7 +243,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_on_undefined_id_0700 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_on_undefined_id'));
@@ -253,7 +271,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_off_undefined_id_0800 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_off_undefined_id'));
@@ -279,7 +299,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_on_id_empty_0900 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_on_id_empty'));
@@ -305,7 +327,9 @@ export default function uiContextScrollEventNullUnTest() {
       let driver = await Driver.create();
       // 模拟滚动操作
       console.info(`====>getUIObserver_scrollEvent_off_id_empty_1000 swipe<====`);
-      await driver.swipe(centerX, y2, centerX, y1, 2000);
+      await driver.swipeBetween(
+        { x: centerX, y: y2, displayId: displayId },
+        { x: centerX, y: y1, displayId: displayId }, 2000);
       await CommonFunc.sleep(2000);
 
       let result = JSON.stringify(AppStorage.get('scrollEvent_UIObserver_off_id_empty'));

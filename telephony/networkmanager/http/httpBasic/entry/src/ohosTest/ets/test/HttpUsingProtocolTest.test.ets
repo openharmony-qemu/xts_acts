@@ -14,7 +14,7 @@
  */
 
 import http from '@ohos.net.http';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 const ExpectFail = () => {
   try {

@@ -22,7 +22,7 @@ import { abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 // 测试框架导入
-import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { indexSurfaceId } from '../../testability/pages/Index';
 import { driveFn, getPermission ,sleep} from '../common';

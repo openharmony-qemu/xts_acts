@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import windowndkapi20 from 'libwindowndkapi20.so';
 import Utils from "../common/Utils";
 import { Driver, ON } from "@kit.TestKit";
@@ -468,27 +468,7 @@ export default function WindowTest() {
         done()
       }
     })
-    /**
-     * @tc.name   testWindowManagerErrorCodeInvalidWindowId
-     * @tc.number SUB_ARKUI_ACE_ENGINE_INVAILD_WINDOW_ID_0100
-     * @tc.desc   Test get WindowManagerErrorCodeInvalidWindowId's result.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testWindowManagerErrorCodeInvalidWindowId', TestType.FUNCTION |
-    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info(`====>SUB_ARKUI_ACE_ENGINE_INVAILD_WINDOW_ID_0100 start<====`);
-        let Result: number = windowndkapi20.WindowManagerErrorCodeInvalidWindowId();
-        expect(INVAILD_WINDOW_ID).assertEqual(Result);
-        done()
-      } catch (err) {
-        console.error(`====>SUB_ARKUI_ACE_ENGINE_INVAILD_WINDOW_ID_0100 catch err: ` + err);
-        expect(false).assertEqual(err);
-        done()
-      }
-    })
+    
     /**
      * @tc.name   testWindowManagerErrorCodeStateAbnormal
      * @tc.number SUB_ARKUI_ACE_ENGINE_WINDOW_MANAGER_ERRORCODE_STATE_ABNORMAL_0100
@@ -831,8 +811,8 @@ export default function WindowTest() {
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info(`====>SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0200 start<====`);
-        let Result: number = windowndkapi20.RegisterTouchEventFilterInvaildWindowId();
-        expect(1).assertEqual(Result);
+        let result: number = windowndkapi20.RegisterTouchEventFilterInvaildWindowId();
+        expect(result).assertEqual(INVAILD_WINDOW_ID);
         done()
       } catch (err) {
         console.error(`====>SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_REGISTERTOUCHEVENTFILTER_0200 catch err: ` + err);
@@ -1338,6 +1318,163 @@ export default function WindowTest() {
       } catch (err) {
         console.error(`====>${caseName} catch err: ` + JSON.stringify(err));
         expect().assertFail();
+        done()
+      }
+    })
+
+   /**
+     * @tc.name   testRegisterKeyEventFilterOkOrServiceError
+     * @tc.number SUB_WINDOW_REGISTER_KEY_EVENT_FILTER_OK_0100
+     * @tc.desc   Test testRegisterKeyEventFilterOkOrServiceError's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegisterKeyEventFilterOkOrServiceError', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>testRegisterKeyEventFilterOkOrServiceError start<====`);
+        let result: number = windowndkapi20.RegisterKeyEventFilterOkOrServiceError();
+        console.info(`====>testRegisterKeyEventFilterOkOrServiceError end,result:${result}`);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error(`====>testRegisterKeyEventFilterOkOrServiceError catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+   /**
+     * @tc.name   testRegisterKeyEventFilterInvalidWindowId
+     * @tc.number SUB_WINDOW_REGISTER_KEY_EVENT_FILTER_INVAILD_WINDOW_ID_0100
+     * @tc.desc   Test RegisterKeyEventFilter's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegisterKeyEventFilterInvalidWindowId', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>testRegisterKeyEventFilterInvalidWindowId start<====`);
+        let result: number = windowndkapi20.RegisterKeyEventFilterInvalidWindowId();
+        expect(result).assertEqual(INVAILD_WINDOW_ID);
+        done()
+      } catch (err) {
+        console.error(`====>testRegisterKeyEventFilterInvalidWindowId catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+   /**
+     * @tc.name   testRegisterKeyEventFilterInvalidParam
+     * @tc.number SUB_WINDOW_REGISTER_KEY_EVENT_FILTER_INVAILD_PARAM_0100
+     * @tc.desc   Test testRegisterKeyEventFilterInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegisterKeyEventFilterInvalidParam', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>testRegisterKeyEventFilterInvalidParam start<====`);
+        let result: number = windowndkapi20.RegisterKeyEventFilterInvalidParam();
+        expect(result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>testRegisterKeyEventFilterInvalidParam catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+   /**
+     * @tc.name   testUnregisterKeyEventFilterOkOrServiceError
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERKEYEVENTFILTER_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUnregisterKeyEventFilterOkOrServiceError', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>testUnregisterKeyEventFilterOkOrServiceError start<====`);
+        let result: number = windowndkapi20.UnregisterKeyEventFilterOkOrServiceError();
+        console.info(`====>testUnregisterKeyEventFilterOkOrServiceError end,result:${result}`);
+        expect(result).assertEqual(1);
+        done()
+      } catch (err) {
+        console.error(`====>testUnregisterKeyEventFilterOkOrServiceError catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+   /**
+     * @tc.name   testUnregisterKeyEventFilterInvaildWindowId
+     * @tc.number SUB_WINDOW_MANAGER_OH_NATIVEWINDOWMANAGER_UNREGISTERKEYEVENTFILTER_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testUnregisterKeyEventFilterInvaildWindowId', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>testUnregisterKeyEventFilterInvaildWindowId start<====`);
+        let result: number = windowndkapi20.UnregisterKeyEventFilterInvalidWindowId();
+        console.info(`====>testUnregisterKeyEventFilterInvaildWindowId end,result:${result}`);
+        expect(result).assertEqual(INVAILD_WINDOW_ID);
+        done()
+      } catch (err) {
+        console.error(`====>testUnregisterKeyEventFilterInvaildWindowId catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+   /**
+     * @tc.name   testRegisterMouseEventFilterInvalidParam
+     * @tc.number SUB_WINDOW_REGISTER_MOUSE_EVENT_FILTER_INVAILD_PARAM_0100
+     * @tc.desc   Test testRegisterMouseEventFilterInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegisterMouseEventFilterInvalidParam', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>testRegisterMouseEventFilterInvalidParam start<====`);
+        let result: number = windowndkapi20.RegisterMouseEventFilterInvalidParam();
+        expect(result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>testRegisterMouseEventFilterInvalidParam catch err: ` + err);
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+   /**
+     * @tc.name   testRegisterTouchEventFilterInvalidParam
+     * @tc.number SUB_WINDOW_REGISTER_TOUCH_EVENT_FILTER_INVAILD_PARAM_0100
+     * @tc.desc   Test testRegisterTouchEventFilterInvalidParam's result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testRegisterTouchEventFilterInvalidParam', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info(`====>testRegisterTouchEventFilterInvalidParam start<====`);
+        let result: number = windowndkapi20.RegisterTouchEventFilterInvalidParam();
+        expect(result).assertEqual(WINDOW_MANAGER_ERRORCODE_INVALID_PARAM);
+        done()
+      } catch (err) {
+        console.error(`====>testRegisterTouchEventFilterInvalidParam catch err: ` + err);
+        expect(false).assertEqual(err);
         done()
       }
     })

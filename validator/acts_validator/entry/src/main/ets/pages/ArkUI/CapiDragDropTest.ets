@@ -57,7 +57,11 @@ struct CapiDragDrop {
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .opacity(this.capiDragDropVue ? 1 : 0.4)
+    .enabled(this.capiDragDropVue)
     .onClick(() => {
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -82,6 +86,7 @@ struct CapiDragDrop {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -100,8 +105,13 @@ struct CapiDragDrop {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.text1 === '0' && this.text2 === '0') {
-        this.capiDragDropVue = true;
+      try {
+        if (nativeDragDrop && nativeDragDrop.isDragDropCompleted()) {
+          this.capiDragDropVue = true;
+        }
+      } catch (e) {
+        console.error('nativeDragDrop poll error: ' + JSON.stringify(e));
+        clearInterval(this.intervalNum);
       }
     }, 500)
   }
@@ -126,6 +136,7 @@ struct CapiDragDrop {
         .backgroundColor(Color.Black)
         .size({ width: '40vp', height: '30vp' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }
@@ -154,12 +165,18 @@ struct CapiDragDrop {
             libraryname: 'nativeDragDrop'
           })
             .onAppear(() => {
-              nativeDragDrop.nativeDragDrop('draganddrop', this.getUIContext());
-              this.text1 = '0';
-              this.text2 = '0';
+              if (nativeDragDrop && nativeDragDrop.nativeDragDrop) {
+                try {
+                  nativeDragDrop.nativeDragDrop('draganddrop', this.getUIContext());
+                } catch (e) {
+                  console.error('nativeDragDrop call error: ' + JSON.stringify(e));
+                }
+              } else {
+                console.error('nativeDragDrop module not available');
+              }
             })
             .width(`${this.width1}`)
-            .height(700)
+            .height('90%')
             .backgroundColor('#FFFAFA')
         }
       }.height('80%')

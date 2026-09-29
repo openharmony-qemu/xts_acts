@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function onSelectionChange9() {
   describe('onSelectionChange9', () => {
@@ -67,7 +69,11 @@ export default function onSelectionChange9() {
       let Obj0: ESObject = JSON.parse(text0);
       expect(Obj0.$attrs.content).assertEqual('1');
 
-      await driver.triggerKey(2049);
+      try {
+        await driver.triggerKey(2049, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let text1 = getInspectorByKey('onSelectionChange9_text1');
       let Obj1: ESObject = JSON.parse(text1);

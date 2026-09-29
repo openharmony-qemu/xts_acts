@@ -1398,9 +1398,9 @@ export default function AudioRendererInterruptUnitTest() {
             render1.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
                 console.log("42.eventAction=" + JSON.stringify(eventAction))
                 if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_PAUSE)
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
                 } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
-                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_RESUME)
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
                 } else { }
             })
             await start(render1, done)
@@ -1575,6 +1575,15 @@ export default function AudioRendererInterruptUnitTest() {
 
             let render2 = await createAudioRenderer(renderInfo['RINGTONE'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
             await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+            render2.onAudioInterrupt((eventAction: audio.InterruptEvent) => {
+                console.log("45_2.eventAction=" + JSON.stringify(eventAction))
+                if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_BEGIN) {
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_DUCK)
+                } else if (eventAction.eventType == audio.InterruptType.INTERRUPT_TYPE_END) {
+                    expect(eventAction.hintType).assertEqual(audio.InterruptHint.INTERRUPT_HINT_UNDUCK)
+                } else {
+                }
+            })
             await start(render2, done)
             await Utils.msSleep(500)
             await release(render1, done)

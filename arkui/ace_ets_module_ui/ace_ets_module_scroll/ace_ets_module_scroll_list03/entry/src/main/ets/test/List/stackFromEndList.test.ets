@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -58,9 +58,12 @@ export default function stackFromEndList() {
       console.info("[stackFromEndList_0100] stackFromEnd: " + JSON.stringify(JSON.parse(strJson).$attrs.stackFromEnd));
       expect(JSON.parse(strJson).$type).assertEqual('List');
 
-      let list1 = CommonFunc.getComponentRectOnScreen('list_stackFromEnd');
+      let driver = Driver.create();
+      let list1Comp = await driver.findComponent(ON.id('list_stackFromEnd'));
+      let list1 = await list1Comp.getBounds();
       console.info('[stackFromEndList_0100] list1.top: ' + list1.top);
-      let listItem1 = CommonFunc.getComponentRectOnScreen('stackFromEnd_1');
+      let listItem1Comp = await driver.findComponent(ON.id('stackFromEnd_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info('[stackFromEndList_0100] listItem1.top: ' + listItem1.top);
       await CommonFunc.sleep(1000);
       console.info(`[stackFromEndList_0100] listItem1.top - vp2px(2) - list1.top=
@@ -89,9 +92,11 @@ export default function stackFromEndList() {
       console.info("[stackFromEndList_0200] stackFromEnd: " + JSON.stringify(JSON.parse(strJson).$attrs.stackFromEnd));
       expect(JSON.parse(strJson).$type).assertEqual('List');
 
-      let list1 = CommonFunc.getComponentRectOnScreen('list_stackFromEnd');
+      let list1Comp = await driver.findComponent(ON.id('list_stackFromEnd'));
+      let list1 = await list1Comp.getBounds();
       console.info('[stackFromEndList_0200] list1.bottom: ' + list1.bottom);
-      let listItem5 = CommonFunc.getComponentRectOnScreen('stackFromEnd_5');
+      let listItem5Comp = await driver.findComponent(ON.id('stackFromEnd_5'));
+      let listItem5 = await listItem5Comp.getBounds();
       console.info('[stackFromEndList_0200] listItem5.bottom: ' + listItem5.bottom);
       await CommonFunc.sleep(1000);
       console.info('[stackFromEndList_0200] vp2px(2): ' + vp2px(2));

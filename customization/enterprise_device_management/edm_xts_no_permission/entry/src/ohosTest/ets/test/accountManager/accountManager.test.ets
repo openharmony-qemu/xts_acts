@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import { ENTINFO1, SELFWANT, SELFHAPNAME, DEFAULT_USER_ID, INVALID_USER_ID, appIdsInit } from "../commom.ets";
 
 import accountManager from '@ohos.enterprise.accountManager';
@@ -172,6 +172,7 @@ export default function accountManagerTest() {
         authenticationValidityPeriod: 120,
         passwordValidityPeriod: 90,
         passwordExpirationNotification: 60,
+        supportUKeyAuthentication: true,
       };
       try {
         await accountManager.setDomainAccountPolicy(SELFWANT, domainAccountInfo, policy);

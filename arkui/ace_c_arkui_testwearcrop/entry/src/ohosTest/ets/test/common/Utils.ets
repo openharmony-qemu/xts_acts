@@ -69,6 +69,16 @@ export default class Utils {
     }
   }
 
+  static async pickerComponent(key: string) {
+    let driver = Driver.create();
+    let Picker = await driver.findComponent(ON.id(key));
+    let displayId = await Picker.getDisplayId();
+    let rect = await Picker.getBounds(); 
+    let X =  Math.round(rect.right-vp2px(5));
+    let Y = Math.round(rect.bottom-vp2px(5));
+    await driver.clickAt({ x: X, y: Y, displayId: displayId });
+  }
+
   static async flingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
     let rect = Utils.getComponentRect(key);

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
@@ -66,15 +66,19 @@ export default function ScrollStartandStop4() {
     it('Grid_ScrollStartandStop4_0500',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[Grid_ScrollStartandStop4_0500] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ScrollStartandStop_grid')
       let driver = Driver.create()
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ScrollStartandStop_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        displayId: displayId
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`)
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`),
+          displayId: displayId
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

@@ -34,14 +34,18 @@ export default function SourceFlingEdgeTest() {
       await Utils.pushPage(`list/SourceDragTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_source");
+      let component = await driver.findComponent(ON.id('list_source'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("SourceFlingEdgeTest_0100 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
-      let y2 = Math.round(globalThis.winTop + rect.top + height*0.6);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.2);
+      let y2 = Math.round(rect.top + height*0.6);
       console.info("SourceFlingEdgeTest_0100  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.drag(centerX, y1, centerX, y2);
+      await driver.dragBetween(
+        { x: centerX, y: y1, displayId: displayId },
+        { x: centerX, y: y2, displayId: displayId });
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_source'); //ARKUI_SCROLL_SOURCE_DRAG
       console.info("[SourceFlingEdgeTest_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -64,17 +68,19 @@ export default function SourceFlingEdgeTest() {
       await Utils.pushPage(`list/SourceFlingTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_source");
+      let component = await driver.findComponent(ON.id('list_source'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("SourceFlingEdgeTest_0200 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.2);
-      let y2 = Math.round(globalThis.winTop + rect.bottom - height*0.2);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.2);
+      let y2 = Math.round(rect.bottom - height*0.2);
       console.info("SourceFlingEdgeTest_0200  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
       await driver.fling({
-        x: centerX, y: y2
+        x: centerX, y: y2, displayId: displayId
       }, {
-        x: centerX, y: y1
+        x: centerX, y: y1, displayId: displayId
       }, 5, 2000);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_source'); //ARKUI_SCROLL_SOURCE_FLING
@@ -98,17 +104,19 @@ export default function SourceFlingEdgeTest() {
       await Utils.pushPage(`list/SourceEdgeTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_source");
+      let component = await driver.findComponent(ON.id('list_source'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let height = rect.bottom - rect.top;
       console.info("SourceFlingEdgeTest_0300 height is" + height);
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y1 = Math.round(globalThis.winTop + rect.top + height*0.1);
-      let y2 = Math.round(globalThis.winTop + rect.top + height*0.7);
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let y1 = Math.round(rect.top + height*0.1);
+      let y2 = Math.round(rect.top + height*0.7);
       console.info("SourceFlingEdgeTest_0300  centerX= " +  centerX  + ", y1 = " + y1  + ", y2 = " + y2);
       await driver.fling({
-        x: centerX, y: y1
+        x: centerX, y: y1, displayId: displayId
       }, {
-        x: centerX, y: y2
+        x: centerX, y: y2, displayId: displayId
       }, 20, 4000);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_source'); //ARKUI_SCROLL_SOURCE_EDGE_EFFECT
@@ -132,11 +140,13 @@ export default function SourceFlingEdgeTest() {
       await Utils.pushPage(`list/SourceOtherTest`);
       await Utils.sleep(1000)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_source");
-      let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
+      let component = await driver.findComponent(ON.id('list_source'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
+      let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+      let centerY = Math.round(rect.top + (rect.bottom - rect.top) / 2);
       console.info("SourceFlingEdgeTest_0400  centerX= " +  centerX  + ", centerY = " + centerY);
-      await driver.mouseScroll({x:centerX, y:centerY}, true, 5)
+      await driver.mouseScroll({x:centerX, y:centerY, displayId:displayId}, true, 5)
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_source'); //ARKUI_SCROLL_SOURCE_OTHER_USER_INPUT
       console.info("[SourceFlingEdgeTest_0400] component obj is: " + JSON.stringify(JSON.parse(strJson)));

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import ohosWindow from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
@@ -1159,6 +1159,132 @@ export default function windowErrCode401_4() {
       try {
         windowClass.convertOrientationAndRotation(ohosWindow.RotationInfoType.WINDOW_ORIENTATION, ohosWindow.RotationInfoType.DISPLAY_ORIENTATION, undefined);
         console.info(msgStr + 'Succeeded2.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200
+     * @tc.number SUB_BASIC_WMS_testConvertOrientationAndRotation_0200  
+     * @tc.desc   SUB_BASIC_WMS_testConvertOrientationAndRotation_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_testConvertOrientationAndRotation_0200', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_BASIC_WMS_testConvertOrientationAndRotation_0200";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      if (!windowClass) {
+        console.error(msgStr + 'Failed to get main window.');
+        expect().assertFail();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(null, ohosWindow.RotationInfoType.DISPLAY_ORIENTATION, 0);
+        console.info(msgStr + 'Succeeded1 but unexpected');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(undefined, ohosWindow.RotationInfoType.DISPLAY_ORIENTATION, 0);
+        console.info(msgStr + 'Succeeded2 but unexpected.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_testConvertOrientationAndRotation_0300
+     * @tc.number SUB_BASIC_WMS_testConvertOrientationAndRotation_0300
+     * @tc.desc   SUB_BASIC_WMS_testConvertOrientationAndRotation_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_testConvertOrientationAndRotation_0300', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_BASIC_WMS_testConvertOrientationAndRotation_0300";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      if (!windowClass) {
+        console.error(msgStr + 'Failed to get main window.');
+        expect().assertFail();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(ohosWindow.RotationInfoType.WINDOW_ORIENTATION, null, 0);
+        console.info(msgStr + 'Succeeded1 but unexpected');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(ohosWindow.RotationInfoType.WINDOW_ORIENTATION, undefined, 0);
+        console.info(msgStr + 'Succeeded2 but unexpected.');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_BASIC_WMS_testConvertOrientationAndRotation_0400
+     * @tc.number SUB_BASIC_WMS_testConvertOrientationAndRotation_0400
+     * @tc.desc   SUB_BASIC_WMS_testConvertOrientationAndRotation_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_BASIC_WMS_testConvertOrientationAndRotation_0400', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_BASIC_WMS_testConvertOrientationAndRotation_0400";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClass = windowStage.getMainWindowSync()
+      if (!windowClass) {
+        console.error(msgStr + 'Failed to get main window.');
+        expect().assertFail();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(ohosWindow.RotationInfoType.WINDOW_ORIENTATION, 3, 0);
+        console.info(msgStr + 'Succeeded1 but unexpected');
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+        expect(exception.code).assertEqual(401);
+        expect(exception.message!=null).assertTrue();
+        done();
+      }
+      try {
+        windowClass.convertOrientationAndRotation(3, ohosWindow.RotationInfoType.DISPLAY_ORIENTATION, 0);
+        console.info(msgStr + 'Succeeded2 but unexpected.');
         expect().assertFail();
         done();
       } catch (exception) {

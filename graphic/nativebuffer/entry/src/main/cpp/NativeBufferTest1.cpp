@@ -161,6 +161,16 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"oHNativeBufferSetColorSpaceBt2020LogLimit", nullptr, OHNativeBufferSetColorSpaceBt2020LogLimit, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"oHNativeBufferSetDmaBufferNameNormal", nullptr, OHNativeBufferSetDmaBufferNameNormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferSetDmaBufferNameNormal2", nullptr, OHNativeBufferSetDmaBufferNameNormal2, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferSetDmaBufferNameNull", nullptr, OHNativeBufferSetDmaBufferNameNull, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferSetDmaBufferNameAbnormal", nullptr, OHNativeBufferSetDmaBufferNameAbnormal, nullptr, nullptr,
+     nullptr, napi_default, nullptr},
+    {"oHNativeBufferSetDmaBufferNameMultipleCalls", nullptr, OHNativeBufferSetDmaBufferNameMultipleCalls, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

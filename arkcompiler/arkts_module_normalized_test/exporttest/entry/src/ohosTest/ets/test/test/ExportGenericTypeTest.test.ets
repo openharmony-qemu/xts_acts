@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import { ConstraintBox, GenericDefaultBox, identity, convertToNumber, Container } from '../exports_generic/GenericExport';
 import DefaultBox from '../exports_generic/GenericExport';
 import { sleep } from "../utils/Utils";

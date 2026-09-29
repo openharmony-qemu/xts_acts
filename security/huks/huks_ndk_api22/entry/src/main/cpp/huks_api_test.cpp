@@ -50,6 +50,131 @@ napi_value OHHuksNativeApi22Type0200(napi_env env, napi_callback_info info)
 }
 
 
+static int CheckHuksParamMembers(void)
+{
+    uint8_t blobData[] = {0x68, 0x75, 0x6B, 0x73};
+    struct OH_Huks_Blob blob = {sizeof(blobData), blobData};
+    const uint32_t int32Tag = OH_HUKS_TAG_TYPE_INT | 201;
+    const uint32_t uint64Tag = OH_HUKS_TAG_TYPE_ULONG | 202;
+
+    struct OH_Huks_Param boolParam = {
+        .tag = OH_HUKS_TAG_ALL_USERS,
+        .boolParam = true,
+    };
+    struct OH_Huks_Param int32Param = {
+        .tag = int32Tag,
+        .int32Param = -123456789,
+    };
+    struct OH_Huks_Param uint32Param = {
+        .tag = OH_HUKS_TAG_ALGORITHM,
+        .uint32Param = OH_HUKS_ALG_RSA,
+    };
+    struct OH_Huks_Param uint64Param = {
+        .tag = uint64Tag,
+        .uint64Param = 0x123456789ABCDEF0ULL,
+    };
+    struct OH_Huks_Param blobParam = {
+        .tag = OH_HUKS_TAG_NONCE,
+        .blob = blob,
+    };
+
+    return (boolParam.tag == OH_HUKS_TAG_ALL_USERS && boolParam.boolParam) &&
+        (int32Param.tag == int32Tag && int32Param.int32Param == -123456789) &&
+        (uint32Param.tag == OH_HUKS_TAG_ALGORITHM &&
+            uint32Param.uint32Param == static_cast<uint32_t>(OH_HUKS_ALG_RSA)) &&
+        (uint64Param.tag == uint64Tag && uint64Param.uint64Param == 0x123456789ABCDEF0ULL) &&
+        (blobParam.tag == OH_HUKS_TAG_NONCE && blobParam.blob.size == sizeof(blobData) &&
+            blobParam.blob.data == blobData) ? TEST_SUCC : TEST_FAIL;
+}
+
+napi_value OHHuksNativeApi22Struct0100(napi_env env, napi_callback_info info)
+{
+    int res = CheckHuksParamMembers();
+    napi_value ret;
+    napi_create_int32(env, res, &ret);
+    return ret;
+}
+
+static int CheckExternalCryptoParamMembers(void)
+{
+    uint8_t blobData[] = {0x65, 0x78, 0x74, 0x22};
+    struct OH_Huks_Blob blob = {sizeof(blobData), blobData};
+    const uint32_t boolTag = OH_HUKS_TAG_TYPE_BOOL | 200007;
+    const uint32_t uint64Tag = OH_HUKS_TAG_TYPE_ULONG | 200008;
+
+    struct OH_Huks_ExternalCryptoParam boolParam = {
+        .tag = boolTag,
+        .boolParam = true,
+    };
+    struct OH_Huks_ExternalCryptoParam int32Param = {
+        .tag = OH_HUKS_EXT_CRYPTO_TAG_UID,
+        .int32Param = -123456,
+    };
+    struct OH_Huks_ExternalCryptoParam uint32Param = {
+        .tag = OH_HUKS_EXT_CRYPTO_TAG_TIMEOUT,
+        .uint32Param = 123456,
+    };
+    struct OH_Huks_ExternalCryptoParam uint64Param = {
+        .tag = uint64Tag,
+        .uint64Param = 0xFEDCBA9876543210ULL,
+    };
+    struct OH_Huks_ExternalCryptoParam blobParam = {
+        .tag = OH_HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
+        .blob = blob,
+    };
+
+    return (boolParam.tag == boolTag && boolParam.boolParam) &&
+        (int32Param.tag == OH_HUKS_EXT_CRYPTO_TAG_UID && int32Param.int32Param == -123456) &&
+        (uint32Param.tag == OH_HUKS_EXT_CRYPTO_TAG_TIMEOUT && uint32Param.uint32Param == 123456) &&
+        (uint64Param.tag == uint64Tag && uint64Param.uint64Param == 0xFEDCBA9876543210ULL) &&
+        (blobParam.tag == OH_HUKS_EXT_CRYPTO_TAG_ABILITY_NAME &&
+            blobParam.blob.size == sizeof(blobData) && blobParam.blob.data == blobData) ? TEST_SUCC : TEST_FAIL;
+}
+
+napi_value OHHuksNativeApi22Struct0200(napi_env env, napi_callback_info info)
+{
+    int res = CheckExternalCryptoParamMembers();
+    napi_value ret;
+    napi_create_int32(env, res, &ret);
+    return ret;
+}
+
+napi_value OHHuksNativeApi22KeyAlg0100(napi_env env, napi_callback_info info)
+{
+    static const struct {
+        enum OH_Huks_KeyAlg alg;
+        uint32_t value;
+    } keyAlgs[] = {
+        {OH_HUKS_ALG_RSA, 1},
+        {OH_HUKS_ALG_ECC, 2},
+        {OH_HUKS_ALG_DSA, 3},
+        {OH_HUKS_ALG_AES, 20},
+        {OH_HUKS_ALG_HMAC, 50},
+        {OH_HUKS_ALG_HKDF, 51},
+        {OH_HUKS_ALG_PBKDF2, 52},
+        {OH_HUKS_ALG_ECDH, 100},
+        {OH_HUKS_ALG_X25519, 101},
+        {OH_HUKS_ALG_ED25519, 102},
+        {OH_HUKS_ALG_DH, 103},
+        {OH_HUKS_ALG_SM2, 150},
+        {OH_HUKS_ALG_SM3, 151},
+        {OH_HUKS_ALG_SM4, 152},
+        {OH_HUKS_ALG_DES, 160},
+        {OH_HUKS_ALG_3DES, 161},
+        {OH_HUKS_ALG_CMAC, 162},
+    };
+    int res = TEST_SUCC;
+    for (size_t i = 0; i < sizeof(keyAlgs) / sizeof(keyAlgs[0]); ++i) {
+        if (static_cast<uint32_t>(keyAlgs[i].alg) != keyAlgs[i].value) {
+            res = TEST_FAIL;
+            break;
+        }
+    }
+    napi_value ret;
+    napi_create_int32(env, res, &ret);
+    return ret;
+}
+
 napi_value OHHuksNativeApi22Utils0100(napi_env env, napi_callback_info info)
 {
     int res = TEST_SUCC;

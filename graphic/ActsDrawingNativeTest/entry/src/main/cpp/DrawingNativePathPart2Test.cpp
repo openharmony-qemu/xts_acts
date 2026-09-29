@@ -15,6 +15,7 @@
 
 #include "include/DrawingNativePathTest.h"
 #include "include/OhosCommonTest.h"
+#include "log_common.h"
 
 #define DRAWING_NUMBER_1 1
 #define DRAWING_NUMBER_2 2
@@ -60,7 +61,7 @@ int TestPathAddArcNormal()
     // 5. Add an arc to the path using OH_Drawing_PathAddArc, which serves as the starting point of the new contour.
     OH_Drawing_PathAddArc(path, rect, 0.0f, 0.0f);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
@@ -82,12 +83,12 @@ int TestPathAddArcNull()
     // 3. Call OH_Drawing_PathAddArc with a nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code.
     OH_Drawing_PathAddArc(nullptr, rect, 0.0f, 0.0f);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddArc with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddArc(path, nullptr, 0.0f, 0.0f);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_PathAddArc with 0.0 as the third parameter, expecting failure without crash.
     OH_Drawing_PathAddArc(path, rect, 0.0f, 0.0f);
     // 6. Call OH_Drawing_PathAddArc with 0.0 as the fourth parameter, expecting failure without crash.
@@ -173,7 +174,7 @@ int TestPathAddPathNormal()
     // 5. Add the transformed source path to the current path using OH_Drawing_PathAddPath.
     OH_Drawing_PathAddPath(path, src, nullptr);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
@@ -198,12 +199,12 @@ int TestPathAddPathNull()
     OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_5, DRAWING_NUMBER_4, 0, 0, -DRAWING_NUMBER_1, 0, 0, 0,
         DRAWING_NUMBER_1);
     OH_Drawing_PathAddPath(nullptr, src, matrix);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddPath with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPath(path, nullptr, matrix);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_PathAddPath with a nullptr as the third parameter, expecting failure without crash.
     OH_Drawing_PathAddPath(path, src, nullptr);
     // 6. Free the memory.
@@ -242,7 +243,7 @@ int TestPathAddPathWithMatrixAndModeNormal()
             DRAWING_NUMBER_1);
         OH_Drawing_PathAddPathWithMatrixAndMode(path, src, matrix, modes[i]);
         // add assert
-        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
         OH_Drawing_MatrixDestroy(matrix);
     }
     // 6. Free the memory.
@@ -271,12 +272,12 @@ int TestPathAddPathWithMatrixAndModeNull()
     OH_Drawing_MatrixSetMatrix(matrix, DRAWING_NUMBER_5, DRAWING_NUMBER_4, 0, 0, -DRAWING_NUMBER_1, 0, 0, 0,
         DRAWING_NUMBER_1);
     OH_Drawing_PathAddPathWithMatrixAndMode(nullptr, src, matrix, PATH_ADD_MODE_APPEND);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddPathWithMatrixAndMode with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPathWithMatrixAndMode(path, nullptr, matrix, PATH_ADD_MODE_APPEND);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_PathAddPathWithMatrixAndMode with a nullptr as the third parameter, expecting failure without
     // crash.
     OH_Drawing_PathAddPathWithMatrixAndMode(path, src, nullptr, PATH_ADD_MODE_APPEND);
@@ -311,7 +312,7 @@ int TestPathAddPathWithModeNormal()
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_PathAddPathWithMode(path, src, modes[i]);
         // add assert
-        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     }
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -333,12 +334,12 @@ int TestPathAddPathWithModeNull()
     // 3. Call OH_Drawing_PathAddPathWithMode with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPathWithMode(nullptr, src, PATH_ADD_MODE_APPEND);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddPathWithMode with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPathWithMode(path, nullptr, PATH_ADD_MODE_APPEND);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
@@ -369,7 +370,7 @@ int TestPathAddPathWithOffsetAndModeNormal()
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 10.0f, 10.0f, modes[i]);
         // add assert
-        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     }
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -392,12 +393,12 @@ int TestPathAddPathWithOffsetAndModeNull()
     // 3. Call OH_Drawing_PathAddPathWithOffsetAndMode with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPathWithOffsetAndMode(nullptr, src, 10.0f, 10.0f, PATH_ADD_MODE_APPEND);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddPathWithOffsetAndMode with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPathWithOffsetAndMode(path, nullptr, 10.0f, 10.0f, PATH_ADD_MODE_APPEND);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Call OH_Drawing_PathAddPathWithOffsetAndMode with 0.00 as the third parameter, expecting failure without
     // crash.
     OH_Drawing_PathAddPathWithOffsetAndMode(path, src, 0.0f, 10.0f, PATH_ADD_MODE_APPEND);
@@ -488,7 +489,7 @@ int TestPathAddOvalNormal()
         OH_Drawing_ErrorCodeReset();
         OH_Drawing_PathAddOval(path, rect, directions[i]);
         // add assert
-        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     }
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -511,12 +512,12 @@ int TestPathAddOvalNull()
     // 3. Call OH_Drawing_PathAddOval with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddOval(nullptr, rect, PATH_DIRECTION_CW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddOval with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddOval(path, nullptr, PATH_DIRECTION_CW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
@@ -545,7 +546,7 @@ int TestPathAddPolygonNormal()
     OH_Drawing_Point2D points[DRAWING_NUMBER_4] = {point1, point2, point3, point4};
     OH_Drawing_PathAddPolygon(path, points, DRAWING_NUMBER_4, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -573,7 +574,7 @@ int TestPathAddPolygonNormal2()
     OH_Drawing_Point2D points[DRAWING_NUMBER_4] = {point1, point2, point3, point4};
     OH_Drawing_PathAddPolygon(path, points, DRAWING_NUMBER_4, false);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -595,17 +596,17 @@ int TestPathAddPolygonNull()
     // 2. Call OH_Drawing_PathAddPolygon with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPolygon(nullptr, points, DRAWING_NUMBER_4, true);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_PathAddPolygon with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddPolygon(path, nullptr, DRAWING_NUMBER_4, true);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathAddPolygon with the third parameter as 0, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code.
     OH_Drawing_PathAddPolygon(path, points, 0, true);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -632,16 +633,16 @@ int TestPathAddPolygonAbnormal()
     OH_Drawing_Point2D points[DRAWING_NUMBER_4] = {point1, point2, point3, point4};
     OH_Drawing_PathAddPolygon(path, points, DRAWING_NUMBER_4, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Add a polygon to the path with the second parameter's y-coordinate as an integer or character type, which will
     // succeed.
     OH_Drawing_PathAddPolygon(path, points, DRAWING_NUMBER_4, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Add a polygon to the path with the third parameter as a float or character type, which will succeed.
     OH_Drawing_PathAddPolygon(path, points, 4.0f, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -667,7 +668,7 @@ int TestPathAddPolygonMaximal()
     OH_Drawing_Point2D points[DRAWING_NUMBER_4] = {point1, point2, point3, point4};
     OH_Drawing_PathAddPolygon(path, points, DRAWING_NUMBER_4, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Add a polygon to the path with the second parameter's y-coordinate set to FLT_MAX + 1, no crash occurs.
     OH_Drawing_Point2D point5 = {0, FLT_MAX + DRAWING_NUMBER_1};
     OH_Drawing_Point2D point6 = {DRAWING_NUMBER_100, FLT_MAX + DRAWING_NUMBER_1};
@@ -676,7 +677,7 @@ int TestPathAddPolygonMaximal()
     OH_Drawing_Point2D points2[DRAWING_NUMBER_4] = {point5, point6, point7, point8};
     OH_Drawing_PathAddPolygon(path, points2, DRAWING_NUMBER_4, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -698,11 +699,11 @@ int TestPathAddCircleNormal()
     OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, DRAWING_NUMBER_50, DRAWING_NUMBER_10,
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, DRAWING_NUMBER_50, DRAWING_NUMBER_10,
         OH_Drawing_PathDirection::PATH_DIRECTION_CW);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -720,7 +721,7 @@ int TestPathAddCircleNull()
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathAddCircle(nullptr, DRAWING_NUMBER_50, DRAWING_NUMBER_50, DRAWING_NUMBER_10,
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_PathAddCircle with the second parameter as 0.00, which will fail without crashing.
     OH_Drawing_PathAddCircle(path, 0.00f, DRAWING_NUMBER_50, DRAWING_NUMBER_10,
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
@@ -731,7 +732,7 @@ int TestPathAddCircleNull()
     // OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE error code.
     OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, DRAWING_NUMBER_50, 0.00f,
         OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -748,19 +749,25 @@ int TestPathAddCircleAbnormal()
     // 2. Set the starting point of the path using OH_Drawing_PathMoveTo.
     OH_Drawing_PathMoveTo(path, 0, 0);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
     // 4. Add a circle to the path with the second parameter as an integer, which will succeed.
-    OH_Drawing_PathAddCircle(path, DRAWING_NUMBER_50, 50.0f, 10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
+    OH_Drawing_PathAddCircle(path, 50.0f, 50.0f, 10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Add a circle to the path with the third parameter as an integer, which will succeed.
-    OH_Drawing_PathAddCircle(path, 50.0f, DRAWING_NUMBER_50, 10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
+    OH_Drawing_PathAddCircle(path, 50.0f, 50.0f, 10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Add a circle to the path with the fourth parameter as an integer, which will succeed.
-    OH_Drawing_PathAddCircle(path, 50.0f, 50.0f, DRAWING_NUMBER_10, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
+    OH_Drawing_PathAddCircle(path, 50.0f, 50.0f, 10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CCW);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    // radius<0
+    OH_Drawing_PathAddCircle(path, 50.0f, 50.0f, -10.0f, OH_Drawing_PathDirection::PATH_DIRECTION_CW);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    // OH_Drawing_PathDirect超出范围
+    OH_Drawing_PathAddCircle(path, 50.0f, 50.0f, 10.0f, static_cast<OH_Drawing_PathDirection>(DRAWING_NUMBER_2));
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -810,7 +817,7 @@ int TestPathBuildFromSvgStringNormal()
     // add assert
     EXPECT_EQ(svgResult, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -827,14 +834,18 @@ int TestPathBuildFromSvgStringNull()
     // 2. Call OH_Drawing_PathBuildFromSvgString with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     bool svgResult = OH_Drawing_PathBuildFromSvgString(nullptr, "M 0 0 L 100 100");
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(svgResult, false);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_PathBuildFromSvgString with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     svgResult = OH_Drawing_PathBuildFromSvgString(path, nullptr);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(svgResult, false);
+    // 测试空字符串
+    svgResult = OH_Drawing_PathBuildFromSvgString(path, "");
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(svgResult, true);
     // 4. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -861,7 +872,7 @@ int TestPathContainsNormal()
     // 7. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains.
     EXPECT_EQ(OH_Drawing_PathContains(path, DRAWING_NUMBER_50, DRAWING_NUMBER_50), true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 8. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -879,7 +890,7 @@ int TestPathContainsNull()
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     bool ret = OH_Drawing_PathContains(nullptr, DRAWING_NUMBER_50, DRAWING_NUMBER_50);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
     // 3. Call OH_Drawing_PathContains with the second parameter as 0.00, the call fails without crashing.
     ret = OH_Drawing_PathContains(path, 0.0f, DRAWING_NUMBER_50);
@@ -972,7 +983,7 @@ int TestPathTransformNormal()
     // 5. Transform the path using OH_Drawing_PathTransform.
     OH_Drawing_PathTransform(path, matrix);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_MatrixDestroy(matrix);
@@ -995,12 +1006,12 @@ int TestPathTransformNull()
     // 3. Call OH_Drawing_PathTransform with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathTransform(nullptr, matrix);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathTransform with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathTransform(path, nullptr);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_MatrixDestroy(matrix);
@@ -1029,7 +1040,7 @@ int TestPathTransformWithPerspectiveClipNormal()
     // 6. Transform the path using OH_Drawing_PathTransformWithPerspectiveClip, with the fourth parameter set to true.
     OH_Drawing_PathTransformWithPerspectiveClip(src, matrix, dst, true);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(src);
     OH_Drawing_PathDestroy(dst);
@@ -1060,7 +1071,7 @@ int TestPathTransformWithPerspectiveClipNormal2()
     // 6. Transform the path using OH_Drawing_PathTransformWithPerspectiveClip, with the fourth parameter set to false.
     OH_Drawing_PathTransformWithPerspectiveClip(src, matrix, dst, false);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(src);
     OH_Drawing_PathDestroy(dst);
@@ -1087,12 +1098,12 @@ int TestPathTransformWithPerspectiveClipNull()
     // 4. Call OH_Drawing_PathTransformWithPerspectiveClip with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathTransformWithPerspectiveClip(nullptr, matrix, dst, true);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 5. Call OH_Drawing_PathTransformWithPerspectiveClip with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathTransformWithPerspectiveClip(src, nullptr, dst, true);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 6. Call OH_Drawing_PathTransformWithPerspectiveClip with a nullptr as the third parameter, no crash.
     OH_Drawing_PathTransformWithPerspectiveClip(src, matrix, nullptr, true);
     // 7. Free the memory.
@@ -1124,16 +1135,16 @@ int TestPathSetFillTypeNormal()
     // the enumeration.
     OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_WINDING);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_EVEN_ODD);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_INVERSE_WINDING);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_INVERSE_EVEN_ODD);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 8. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -1150,11 +1161,11 @@ int TestPathSetFillTypeNull()
     // 2. Call OH_Drawing_PathSetFillType with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathSetFillType(nullptr, OH_Drawing_PathFillType::PATH_FILL_TYPE_WINDING);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Call OH_Drawing_PathSetFillType with a value that is not within the enumeration range as the second parameter,
     // expecting OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE error code.
     OH_Drawing_PathSetFillType(path, static_cast<OH_Drawing_PathFillType>(-DRAWING_NUMBER_1));
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 4. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -1240,7 +1251,7 @@ int TestPathGetLengthNull()
     // 2. Call OH_Drawing_PathGetLength with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathGetLength(nullptr, true);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -1265,7 +1276,7 @@ int TestPathGetBoundsNormal()
     // 5. Get the minimum bounding box that contains the path by calling OH_Drawing_PathGetBounds.
     OH_Drawing_PathGetBounds(path, rect);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
@@ -1287,12 +1298,12 @@ int TestPathGetBoundsNull()
     // 3. Call OH_Drawing_PathGetBounds with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathGetBounds(nullptr, rect);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathGetBounds with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
     OH_Drawing_PathGetBounds(path, nullptr);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_RectDestroy(rect);
@@ -1316,7 +1327,7 @@ int TestPathCloseNormal()
     // 5. Close the path by adding a line segment from the last point of the path to the starting point.
     OH_Drawing_PathClose(path);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -1333,7 +1344,7 @@ int TestPathCloseNull()
     // 2. Call OH_Drawing_PathClose with nullptr as the parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error
     // code.
     OH_Drawing_PathClose(nullptr);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -1354,16 +1365,16 @@ int TestPathOffsetNormal()
     // 3. Set the starting point of the path using OH_Drawing_PathMoveTo.
     OH_Drawing_PathMoveTo(path, 0, 0);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Offset all points in the path by a certain distance along the x and y axes, and store the result in the
     // destination path object using OH_Drawing_PathOffset.
-    OH_Drawing_PathOffset(path, dst, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_PathOffset(path, dst, 10.0f, 10.0f);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(dst);
@@ -1384,14 +1395,20 @@ int TestPathOffsetNull()
     EXPECT_NE(dst, nullptr);
     // 3. Call OH_Drawing_PathOffset with a nullptr as the first parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER
     // error code.
-    OH_Drawing_PathOffset(nullptr, dst, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_PathOffset(nullptr, dst, 10.0f, 10.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
+    OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathOffset with a nullptr as the second parameter, expecting failure without crashing.
-    OH_Drawing_PathOffset(path, nullptr, DRAWING_NUMBER_10, DRAWING_NUMBER_10);
+    OH_Drawing_PathOffset(path, nullptr, 10.0f, 10.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    OH_Drawing_ErrorCodeReset();
     // 5. Call OH_Drawing_PathOffset with 0.00 as the third parameter, expecting failure without crashing.
-    OH_Drawing_PathOffset(path, dst, 0.00f, DRAWING_NUMBER_10);
+    OH_Drawing_PathOffset(path, dst, 0.0f, 10.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    OH_Drawing_ErrorCodeReset();
     // 6. Call OH_Drawing_PathOffset with 0.00 as the fourth parameter, expecting failure without crashing.
-    OH_Drawing_PathOffset(path, dst, DRAWING_NUMBER_10, 0.00f);
+    OH_Drawing_PathOffset(path, dst, 10.0f, 0.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(dst);
@@ -1413,11 +1430,13 @@ int TestPathOffsetAbnormal()
     // 3. Set the starting point of the path using OH_Drawing_PathMoveTo.
     OH_Drawing_PathMoveTo(path, 0, 0);
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
     // 5. Call OH_Drawing_PathOffset with an integer as the third parameter.
-    OH_Drawing_PathOffset(path, dst, DRAWING_NUMBER_10, 10.0f);
+    OH_Drawing_PathOffset(path, dst, 10.0f, 10.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Call OH_Drawing_PathOffset with an integer as the fourth parameter.
-    OH_Drawing_PathOffset(path, dst, 10.0f, DRAWING_NUMBER_10);
+    OH_Drawing_PathOffset(path, dst, 10.0f, 10.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(dst);
@@ -1439,11 +1458,13 @@ int TestPathOffsetMaximal()
     // 3. Set the starting point of the path using OH_Drawing_PathMoveTo.
     OH_Drawing_PathMoveTo(path, 0, 0);
     // 4. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
     // 5. Call OH_Drawing_PathOffset with the third parameter set to the maximum value FLT_MAX + 1.
-    OH_Drawing_PathOffset(path, dst, FLT_MAX + DRAWING_NUMBER_1, 10.0f);
+    OH_Drawing_PathOffset(path, dst, FLT_MAX, 10.0f);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 6. Call OH_Drawing_PathOffset with the fourth parameter set to the maximum value FLT_MAX + 1.
-    OH_Drawing_PathOffset(path, dst, 10.0f, FLT_MAX + DRAWING_NUMBER_1);
+    OH_Drawing_PathOffset(path, dst, 10.0f, FLT_MAX);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 7. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(dst);
@@ -1461,15 +1482,15 @@ int TestPathResetNormal()
     // 2. Set the starting point of the path using OH_Drawing_PathMoveTo.
     OH_Drawing_PathMoveTo(path, 0, 0);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo.
     OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 4. Reset the custom path data using OH_Drawing_PathReset.
     OH_Drawing_PathReset(path);
     // add assert
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();
@@ -1486,7 +1507,7 @@ int TestPathResetNull()
     // 2. Call OH_Drawing_PathReset with nullptr as the parameter, expecting OH_DRAWING_ERROR_INVALID_PARAMETER error
     // code.
     OH_Drawing_PathReset(nullptr);
-    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. Free the memory.
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart2TestTearDown();

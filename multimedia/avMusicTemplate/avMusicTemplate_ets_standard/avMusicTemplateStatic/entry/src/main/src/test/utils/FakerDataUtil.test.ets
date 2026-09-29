@@ -301,7 +301,8 @@ export class FakerDataUtil {
       displayName: 'you name',
       description: 'ha ahahda ',
       playMusicOnly: true,
-      playMode: 'goggoo'
+      playMode: 'goggoo',
+      extras: 'extra'
     }
   }
 

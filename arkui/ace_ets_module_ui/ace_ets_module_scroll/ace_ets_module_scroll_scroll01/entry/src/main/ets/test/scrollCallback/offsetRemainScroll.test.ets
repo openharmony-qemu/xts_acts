@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,7 +57,10 @@ export default function offsetRemainScroll() {
     it('offsetRemainScroll_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[offsetRemainScroll_0100] START');
       await CommonFunc.sleep(1000);
-      let swiperTabs: RectValue = CommonFunc.getComponentRectOnScreen('scroll_offsetRemain');
+      let driver = await Driver.create()
+      let scrollComp = await driver.findComponent(ON.id('scroll_offsetRemain'))
+      let swiperTabs = await scrollComp.getBounds()
+      let displayId = await scrollComp.getDisplayId()
       let top = swiperTabs.top;
       let right = swiperTabs.right;
       let left = swiperTabs.left;
@@ -65,9 +68,9 @@ export default function offsetRemainScroll() {
       console.info("waterFlow6Jsunit_001 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId});
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('scroll_offsetRemain_text');
       console.info("[offsetRemainScroll_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));

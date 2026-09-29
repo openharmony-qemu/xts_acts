@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import webview from '@ohos.web.webview'
 import router from '@ohos.router';
 import Utils from './Utils';
@@ -530,6 +531,86 @@ export default function webMessageExt() {
         console.info('setType(invalid) err=' + JSON.stringify(error));
       }
       done();
+    })
+
+    /**
+     * @tc.name   testWebMessageExtSetTypeParamSpec001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_SPEC_0400
+     * @tc.desc   setType param spec covers all WebMessageType enum values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetTypeParamSpec001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let types: Array<webview.WebMessageType> = [
+          webview.WebMessageType.NOT_SUPPORT,
+          webview.WebMessageType.STRING,
+          webview.WebMessageType.NUMBER,
+          webview.WebMessageType.BOOLEAN,
+          webview.WebMessageType.ARRAY_BUFFER,
+          webview.WebMessageType.ARRAY,
+          webview.WebMessageType.ERROR
+        ];
+        let successCount: number = 0;
+        for (let i = 0; i < types.length; i++) {
+          try {
+            let ext: webview.WebMessageExt = new webview.WebMessageExt();
+            ext.setType(types[i]);
+            successCount++;
+          } catch (error) {
+            console.info('setType paramSpec enum=' + types[i] + ' err=' + JSON.stringify(error));
+          }
+        }
+        // NOT_SUPPORT 为占位枚举，setType 预期失败，其余 6 种类型应成功
+        expect(successCount).assertEqual(6);
+        done();
+      })
+
+    /**
+     * @tc.name   testWebMessageExtSetTypeError401Direct
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_ERROR_401_0500
+     * @tc.desc   setType null/undefined/invalid enum returns 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebMessageExtSetTypeError401Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let ext: webview.WebMessageExt = new webview.WebMessageExt();
+      try {
+        ext.setType(null);
+        expect().assertFail();
+      } catch (error) {
+        expect(['401', '17100014']).assertContain(String((error as BusinessError).code));
+      }
+      try {
+        ext.setType(undefined);
+        expect().assertFail();
+      } catch (error) {
+        expect(['401', '17100014']).assertContain(String((error as BusinessError).code));
+      }
+      try {
+        ext.setType(999 as webview.WebMessageType);
+        expect().assertFail();
+      } catch (error) {
+        expect(['401', '17100014']).assertContain(String((error as BusinessError).code));
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testWebMessageExtSetTypeParam001
+     * @tc.number SUB_WEB_WEBMESSAGEEXT_SETTYPE_PARAM_0700
+     * @tc.desc   test WebMessageExt.setType param spec with getType return
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWebMessageExtSetTypeParam001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('testWebMessageExtSetTypeParam001', 170010);
+      Utils.registerEvent('testWebMessageExtSetTypeParam001', true, 170296, done);
+      sendEventByKey('WebMessageExtButton', 10, '');
     })
 
     /**

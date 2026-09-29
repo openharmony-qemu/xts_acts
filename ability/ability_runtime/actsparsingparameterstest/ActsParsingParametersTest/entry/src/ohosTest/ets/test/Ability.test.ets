@@ -15,7 +15,7 @@
 
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@ohos.base';
 
 function sleep(ms: number) {

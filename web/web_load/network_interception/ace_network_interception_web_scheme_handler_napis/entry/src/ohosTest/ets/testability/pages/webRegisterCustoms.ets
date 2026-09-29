@@ -81,7 +81,9 @@ struct webRegisterCustomsComponent {
             Row() {
                 Button("webHostingButton123").key('webHostingButton').onClick(async () => {
                     await Utils.waitForExist(()=>this.isReceive, this.str, 1);
-                    if (this.str != 'emitGetNativeAPI') {
+                    if (this.str != 'emitGetNativeAPI' && this.str != 'emitWebResourceRequestConstructor001' &&
+                      this.str != 'emitWebResourceRequestConstructorReturn001' &&
+                      this.str != 'emitWebResourceRequestClass001') {
                         await Utils.waitForExist(()=>testNapi.getRequestValue(), this.str, 1);
                     }
                     console.info("key==>" + this.str)
@@ -585,7 +587,19 @@ struct webRegisterCustomsComponent {
                             }
                             break;
                         }
-                        
+                                      case 'emitWebResourceRequestConstructor001': {
+                Utils.emitEvent(true, 142793);
+                break;
+              }
+                                      case 'emitWebResourceRequestConstructorReturn001': {
+                Utils.emitEvent(true, 142794);
+                break;
+              }
+                                      case 'emitWebResourceRequestClass001': {
+                Utils.emitEvent(true, 142795);
+                break;
+              }
+
                     }
                 })
             }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { getDSTBoundaries, isDaylightSavingTime } from './resources/date1';
 import ArrayList from '@ohos.util.ArrayList';
 function sleep(time: number): Promise<void> {

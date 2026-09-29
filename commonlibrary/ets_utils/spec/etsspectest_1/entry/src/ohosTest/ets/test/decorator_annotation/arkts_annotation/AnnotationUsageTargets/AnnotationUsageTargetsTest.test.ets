@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, beforeEach, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, beforeEach, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 @interface UsageTargetNote {
   name: string;

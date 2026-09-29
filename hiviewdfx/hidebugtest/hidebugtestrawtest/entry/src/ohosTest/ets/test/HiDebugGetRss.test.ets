@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { hilog , hidebug} from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { errorManager } from '@kit.AbilityKit';
 
 export default function HiDebugGetRss() {

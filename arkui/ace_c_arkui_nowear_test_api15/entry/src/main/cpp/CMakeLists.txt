@@ -34,7 +34,7 @@ add_library(nativefunc SHARED
 find_library(
     # Sets the name of the path variable.
     hilog-lib
-    # Specifies the name of the NDK library that
+    # Specifies the name of the hilog library that
     # you want CMake to locate.
     hilog_ndk.z
 )
@@ -42,7 +42,7 @@ find_library(
 find_library(
     # Sets the name of the path variable.
     libace-lib
-    # Specifies the name of the NDK library that
+    # Specifies the name of the ace library that
     # you want CMake to locate.
     ace_ndk.z
 )
@@ -50,7 +50,7 @@ find_library(
 find_library(
     # Sets the name of the path variable.
     libnapi-lib
-    # Specifies the name of the NDK library that
+    # Specifies the name of the napi library that
     # you want CMake to locate.
     ace_napi.z
 )
@@ -58,7 +58,7 @@ find_library(
 find_library(
     # Sets the name of the path variable.
     libuv-lib
-    # Specifies the name of the NDK library that
+    # Specifies the name of the uv library that
     # you want CMake to locate.
     uv
 )
@@ -67,3 +67,16 @@ target_link_libraries(nativerender PUBLIC
     libnative_drawing.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
 target_link_libraries(nativefunc PUBLIC
 libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
+
+add_library(keyeventlib SHARED
+    arkuikeyeventtest/ArkUIKeyEventTest.cpp
+    arkuikeyeventtest/ArkUIKeyIntensionTest.cpp
+    common/CommonTest.cpp)
+target_link_libraries(keyeventlib PUBLIC ${hilog-lib} ${libace-lib} ${libnapi-lib})
+
+add_library(nativeSourceType SHARED
+    sourceType/SourceTypeTest.cpp
+    sourceType/PluginManagerTest.cpp
+    NativeSourceTypeTest.cpp
+    common/CommonTest.cpp)
+target_link_libraries(nativeSourceType PUBLIC ${hilog-lib} ${libace-lib} ${libnapi-lib})

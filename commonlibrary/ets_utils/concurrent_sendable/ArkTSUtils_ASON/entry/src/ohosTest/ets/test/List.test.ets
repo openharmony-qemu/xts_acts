@@ -20,6 +20,12 @@ import asonParseCompareTest from './ASONParseCompare.test';
 import asonStringifyTest from './ASONStringify.test';
 import arkTSUtilsASONTest from './ArkTSUtilsASON.test';
 import arkTSUtilsIsSendableTest from './ArkTSUtilsIsSendable.test';
+import jsonParseSendableBasicTest from './JSONParseSendableBasic.test';
+import jsonParseSendableCompareTest from './JSONParseSendableCompare.test';
+import jsonParseSendableRoundTripTest from './JSONParseSendableRoundTrip.test';
+import jsonParseSendableTransformTest from './JSONParseSendableTransform.test';
+import jsonParseSendableSecurity from './JSONParseSendableSecurity.test';
+import arkTSUtilJSONTest from './ArkTSUtilJSON.test';
 
 export default function testsuite() {
   arkTSUtilsIsSendableTest()
@@ -29,4 +35,10 @@ export default function testsuite() {
   asonParseTransformTest();
   asonParseCompareTest();
   asonStringifyTest();
+  jsonParseSendableBasicTest();
+  jsonParseSendableCompareTest();
+  jsonParseSendableRoundTripTest();
+  jsonParseSendableTransformTest();
+  arkTSUtilJSONTest();
+  jsonParseSendableSecurity();
 }

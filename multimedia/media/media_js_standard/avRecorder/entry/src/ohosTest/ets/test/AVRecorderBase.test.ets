@@ -19,7 +19,7 @@ import { audio } from '@kit.AudioKit';
 import camera from '@ohos.multimedia.camera';
 import Common, { FdObject } from './Common';
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium-dynamic';
 
 let mediaTestBase = new Common();
 

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   UiComponent,
   Driver,
@@ -80,15 +80,16 @@ export default function datePickerOnChangeModifierTest() {
       let switchButton1 = await driver.findComponent(ON.id('LunarBtn'));
       await switchButton1.click();
       await Utils.sleep(1000);
-      let datePicker = Utils.getComponentRect('DatePicker');
-      let top = datePicker.top
-      let bottom = datePicker.bottom
-      let right = datePicker.right
-      let middle = (bottom - top) / 2 + top
-      let left = datePicker.left
-      await driver.swipe(Math.round(globalThis.winLeft + (right - left) / 2 + left),
-        Math.round(globalThis.winTop + middle), Math.round(globalThis.winLeft + (right - left) / 2 + left),
-        Math.round(0));
+      let datePickerComp: Component = await driver.findComponent(ON.id('DatePicker'));
+      await CommonFunc.sleep(500);
+      let bounds = await datePickerComp.getBounds();
+      let displayId = await datePickerComp.getDisplayId();
+      let centerX: number = bounds.left + (bounds.right - bounds.left) / 2;
+      let centerY: number = bounds.top + (bounds.bottom - bounds.top) / 2;
+      await driver.swipeBetween(
+        { x: centerX, y: centerY, displayId: displayId },
+        { x: centerX, y: 0, displayId: displayId }
+      );
       await Utils.sleep(5000);
       let strJsonNew: string = getInspectorByKey('onChangeOff');
       console.info("DatePicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
@@ -112,15 +113,16 @@ export default function datePickerOnChangeModifierTest() {
       let switchButton = await driver.findComponent(ON.id('LunarBtn'));
       await switchButton.click();
       await Utils.sleep(1000);
-      let datePicker = Utils.getComponentRect('DatePicker');
-      let top = datePicker.top
-      let bottom = datePicker.bottom
-      let right = datePicker.right
-      let middle = (bottom - top) / 2 + top
-      let left = datePicker.left
-      await driver.swipe(Math.round((right - left) / 2 + left), Math.round(middle),
-        Math.round((right - left) / 2 + left),
-        Math.round(0));
+      let datePickerComp: Component = await driver.findComponent(ON.id('DatePicker'));
+      await CommonFunc.sleep(500);
+      let bounds = await datePickerComp.getBounds();
+      let displayId = await datePickerComp.getDisplayId();
+      let centerX: number = bounds.left + (bounds.right - bounds.left) / 2;
+      let centerY: number = bounds.top + (bounds.bottom - bounds.top) / 2;
+      await driver.swipeBetween(
+        { x: centerX, y: centerY, displayId: displayId },
+        { x: centerX, y: 0, displayId: displayId }
+      );
       await Utils.sleep(5000);
       let strJsonNew: string = getInspectorByKey('onDateChangeOff');
       console.info("DatePicker_OnChange_Modifier_002 component  is: " + JSON.stringify(JSON.parse(strJsonNew)

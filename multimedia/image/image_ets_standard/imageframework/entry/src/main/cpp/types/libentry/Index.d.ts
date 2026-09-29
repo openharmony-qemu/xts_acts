@@ -231,6 +231,8 @@ export const AuxiliaryPictureInfoSetSizeSuccess: () => number;
 
 export const AuxiliaryPictureInfoGetRowStrideSuccess: () => number;
 
+export const AuxiliaryPictureInfoGetRowStrideBadParameter: () => number;
+
 export const AuxiliaryPictureInfoSetRowStrideSuccess: () => number;
 
 export const AuxiliaryPictureInfoGetPixelFormatSuccess: () => number;
@@ -659,6 +661,8 @@ export const jsPackingOptionsGetQuality: (packing: image.PackingOption) => numbe
 
 export const jsPackingOptionsGetQualityBadParameter: () => number;
 
+export const jSPackingOptionsGetQualityBadParameterQuality: (packing: image.PackingOption) => number;
+
 export const jsPackingOptionsSetQuality: (packing: image.PackingOption, mimeType: number) => number;
 
 export const jsPackingOptionsSetQualityBadParameter: () => number;
@@ -666,6 +670,8 @@ export const jsPackingOptionsSetQualityBadParameter: () => number;
 export const jsPackingOptionsGetDesiredDynamicRange: (packing: image.PackingOption) => number;
 
 export const jsPackingOptionsGetDesiredDynamicRangeBadParameter: () => number;
+
+export const jsPackingOptionsGetDesiredDynamicRangeBadParameterRange: (packing: image.PackingOption) => number;
 
 export const jsPackingOptionsSetDesiredDynamicRange: (packing: image.PackingOption, dynamicRange: number) => number;
 

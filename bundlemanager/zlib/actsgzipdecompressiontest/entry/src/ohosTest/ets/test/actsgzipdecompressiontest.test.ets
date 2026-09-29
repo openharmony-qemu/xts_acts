@@ -16,7 +16,7 @@
 import zlib from '@ohos.zlib'
 import base from '@ohos.base'
 import fileio from '@ohos.fileio'
-import { describe, it, expect, beforeAll, afterEach, beforeEach, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, afterEach, beforeEach, TestType, Size, Level } from '@ohos/hypium-dynamic'
 
 let filePath: string = "/my/test.gz";
 let allfilePath: string = "";
@@ -1990,27 +1990,41 @@ export default function ActsGzipDecompressionTest() {
         /**
          * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900
          * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900
-         * @tc.desc   test gzseek correct return value
+         * @tc.desc   test relative forward and backward gzseek in read mode
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+        it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900 Start=====");
-            let gzip = zlib.createGZipSync();
-            await gzip.gzopen(allfilePath, "wb");
-            try {
-                await gzip.gzseek(2, zlib.OffsetReferencePoint.SEEK_CUR).then((resulit) => {
-                    expect(resulit).assertEqual(2);
-                })
-                await gzip.gzseek(-2, zlib.OffsetReferencePoint.SEEK_CUR).then((resulit) => {
-                    expect(resulit).assertEqual(0);
-                })
-            } catch (errData) {
-                expect().assertFail();
+            let seekFilePath = allfilePath + '.seek';
+            let writeBuffer = new ArrayBuffer(4);
+            let writeView = new Uint8Array(writeBuffer);
+            for (let i = 0; i < writeView.length; i++) {
+                writeView[i] = i;
             }
-            await gzip.gzclose();
-            done();
+            let gzip = zlib.createGZipSync();
+            await gzip.gzopen(seekFilePath, "wb");
+            try {
+                expect(await gzip.gzwrite(writeBuffer, 4)).assertEqual(4);
+            } finally {
+                await gzip.gzclose();
+            }
+            // Backward seeking is supported in read mode.
+            await gzip.gzopen(seekFilePath, "rb");
+            try {
+                expect(await gzip.gzseek(2, zlib.OffsetReferencePoint.SEEK_CUR)).assertEqual(2);
+                expect(await gzip.gzseek(-2, zlib.OffsetReferencePoint.SEEK_CUR)).assertEqual(0);
+                let readBuffer = new ArrayBuffer(4);
+                expect(await gzip.gzread(readBuffer)).assertEqual(4);
+                let readView = new Uint8Array(readBuffer);
+                for (let i = 0; i < readView.length; i++) {
+                    expect(readView[i]).assertEqual(writeView[i]);
+                }
+            } finally {
+                await gzip.gzclose();
+                fileio.unlinkSync(seekFilePath);
+            }
             console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_6900 End=====");
         })
 

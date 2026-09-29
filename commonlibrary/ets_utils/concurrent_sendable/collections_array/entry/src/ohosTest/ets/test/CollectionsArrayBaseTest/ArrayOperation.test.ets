@@ -15,7 +15,7 @@
 // ArrayOperation.test.ets
 // 栈/队列操作方法组（4个）：push, pop, unshift, shift
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,

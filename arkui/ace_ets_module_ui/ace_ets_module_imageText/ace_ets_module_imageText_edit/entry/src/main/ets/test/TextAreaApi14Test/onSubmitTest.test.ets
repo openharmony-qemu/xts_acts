@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -21,6 +21,8 @@ import commoneventmanager from '@ohos.commonEventManager';
 import inputMethod from '@ohos.inputMethod';
 import { BusinessError } from '@ohos.base'
 
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function onSubmitTest() {
   describe('onSubmitTest', () => {
@@ -101,7 +103,11 @@ export default function onSubmitTest() {
       await CommonFunc.sleep(500);
       await TextArea.inputText('这是测试文本')
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn'));
       await CommonFunc.sleep(500);
@@ -155,7 +161,11 @@ export default function onSubmitTest() {
       let TextArea = await driver.findComponent(ON.id('TextArea_onSubmit'));
       await TextArea.inputText('这是测试文本')     
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn'));
       await CommonFunc.sleep(500);
@@ -206,7 +216,11 @@ export default function onSubmitTest() {
       let Search = await driver.findComponent(ON.id('Search'));
       await Search.inputText('这是测试文本')
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn'));
       await CommonFunc.sleep(500);
@@ -260,7 +274,11 @@ export default function onSubmitTest() {
       let Search = await driver.findComponent(ON.id('Search'));
       await Search.inputText('这是测试文本')
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn'));
       await CommonFunc.sleep(500);

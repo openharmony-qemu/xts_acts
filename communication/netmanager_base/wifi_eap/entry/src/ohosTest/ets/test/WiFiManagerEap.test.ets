@@ -1,4 +1,4 @@
-/*
+/*BASIS
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  */
 
 import eap from '@ohos.net.eap';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import {BusinessError,Callback} from '@ohos.base'
 
 function sleep(delay:number):Promise<void> {
@@ -80,8 +80,8 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0100 regCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_js_0100 eap register is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_js_0100 eap register error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0100 eap register permission denied`);
@@ -154,8 +154,8 @@ export default function wifiEapTest(){
                     expect(true).assertTrue();
                 }catch(error){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0200 unregCustomEapHandler failed,code is ${error.code}, message is ${error.message}`);
-                    if(error.code==801){
-                        console.error(`SUB_Communication_Netmanager_Eap_js_0200 eap unregister is not support`);
+                    if(error===undefined){
+                        console.error(`SUB_Communication_Netmanager_Eap_js_0200 eap unregister error is undefined`);
                         expect(true).assertTrue();
                     }else if(error.code==201){
                         console.error(`SUB_Communication_Netmanager_Eap_js_0200 eap unregister permission denied`);
@@ -210,8 +210,8 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0300 replyCustomEapData failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_js_0300 eap replyCustomEapData is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_js_0300 eap replyCustomEapData error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0300 eap replyCustomEapData permission denied`);
@@ -409,8 +409,8 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0500 startEthEap failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_js_0500 eap startEthEap is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_js_0500 eap startEthEap error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0500 eap startEthEap permission denied`);
@@ -462,8 +462,8 @@ export default function wifiEapTest(){
                 expect(true).assertTrue();
             }catch(error){
                 console.error(`SUB_Communication_Netmanager_Eap_js_0600 logOffEthEap failed,code is ${error.code}, message is ${error.message}`);
-                if(error.code==801){
-                    console.error(`SUB_Communication_Netmanager_Eap_js_0600 eap logOffEthEap is not support`);
+                if(error===undefined){
+                    console.error(`SUB_Communication_Netmanager_Eap_js_0600 eap logOffEthEap error is undefined`);
                     expect(true).assertTrue();
                 }else if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_js_0600 eap logOffEthEap permission denied`);

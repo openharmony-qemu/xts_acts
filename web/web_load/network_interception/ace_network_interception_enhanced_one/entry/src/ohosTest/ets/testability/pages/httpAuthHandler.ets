@@ -37,6 +37,7 @@ struct httpAuthHandler {
   @State HttpAuthHandlerIsHttpAuthInfoSavedCallBack: boolean = false
   @State Http_Error_Code: number = 0
   @State isReceive:number = -1;
+  private constructorCheckEventId: number = 0;
   @State isCancel:number = -1;
   @State isConfirm:number = -1;
   @State isSave:number = -1;
@@ -276,6 +277,28 @@ struct httpAuthHandler {
               break;
             }
 
+            case 'emitHttpAuthHandlerConstructor001': {
+              this.constructorCheckEventId = 142060;
+              this.HttpAuthHandlerCallBack = 'constructorCoverageCheck';
+              this.httpAuthResultEmitted = false;
+              this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL);
+              break;
+            }
+            case 'emitHttpAuthHandlerConstructorReturn001': {
+              this.constructorCheckEventId = 142061;
+              this.HttpAuthHandlerCallBack = 'constructorCoverageCheck';
+              this.httpAuthResultEmitted = false;
+              this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL);
+              break;
+            }
+            case 'emitHttpAuthHandlerClass001': {
+              this.constructorCheckEventId = 142062;
+              this.HttpAuthHandlerCallBack = 'constructorCoverageCheck';
+              this.httpAuthResultEmitted = false;
+              this.controller.loadUrl(BASIC_AUTH_PRIMARY_URL);
+              break;
+            }
+
           }
         })
       }
@@ -291,6 +314,20 @@ struct httpAuthHandler {
         })
         .onHttpAuthRequest((event) => {
           if (event) {
+            if (this.HttpAuthHandlerCallBack === 'constructorCoverageCheck') {
+              this.httpAuthResultEmitted = true
+              this.clearHttpAuthFallbackTimer()
+              this.pendingBasicAuthFallback = false
+              let handler = event.handler
+              let result = handler != null
+              if (this.constructorCheckEventId === 142061) {
+                result = result && typeof handler.confirm === 'function'
+              }
+              Utils.emitEvent(result, this.constructorCheckEventId)
+              this.HttpAuthHandlerCallBack = ''
+              event.handler.cancel()
+              return true
+            }
             if (this.HttpAuthHandlerCallBack == 'confirm') {
               this.httpAuthResultEmitted = true
               this.clearHttpAuthFallbackTimer()

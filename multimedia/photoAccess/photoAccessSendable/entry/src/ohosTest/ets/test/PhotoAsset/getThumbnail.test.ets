@@ -16,7 +16,7 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import sendablePhotoAccessHelper from '@ohos.file.sendablePhotoAccessHelper'
 import image from '@ohos.multimedia.image';
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit';
 
 import {

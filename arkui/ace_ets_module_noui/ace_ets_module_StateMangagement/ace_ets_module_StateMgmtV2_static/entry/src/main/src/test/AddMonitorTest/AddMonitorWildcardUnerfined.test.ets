@@ -80,7 +80,7 @@ export default function AddMonitorWildcardUnerfined(): void {
       // Click button to change propA - this should trigger onClsChanged callback
       let changePropABtn = await driver.findComponent(ON.id('ButtonPropA'));
       await CommonFunc.sleep(1000);
-      await (changePropABtn?.click() as Promise<void>);
+      await (changePropABtn?.click());
       await CommonFunc.sleep(1000);
 
       // Get updated num value (should be incremented)

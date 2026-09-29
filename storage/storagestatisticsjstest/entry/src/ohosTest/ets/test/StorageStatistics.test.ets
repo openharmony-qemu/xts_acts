@@ -14,7 +14,7 @@
  */
 
 import storageStatistics from "@ohos.file.storageStatistics";
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium"
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
 import { isIntNum, isNegativeNum } from "./Common";
 import { BusinessError } from '@kit.BasicServicesKit';
 

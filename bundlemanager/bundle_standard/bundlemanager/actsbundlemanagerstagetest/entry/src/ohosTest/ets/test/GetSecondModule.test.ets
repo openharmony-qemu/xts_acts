@@ -14,7 +14,7 @@
  */
 import { BusinessError } from '@kit.BasicServicesKit';
 import bundle from '@ohos.bundle.bundleManager';
-import { describe, beforeAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 
 export default function GetSecondModuleTest() {
   describe('getSecondModuleTest', () =>  {

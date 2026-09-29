@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -64,11 +64,18 @@ export default function listActionWithErrorTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       let list = await driver.findComponent(ON.id('list'));
       let rect = await list.getBounds();
+      let displayId = await list.getDisplayId();
       let y = Math.round(rect.right);
       let x = Math.round(rect.top);
-      driver.swipe(y, Math.round(x + 500), y, Math.round(x));
+      await driver.swipeBetween(
+        { x: y, y: Math.round(x + 500), displayId: displayId },
+        { x: y, y: Math.round(x), displayId: displayId }
+      );
       await CommonFunc.sleep(SLEEP_TIME);
-      driver.swipe(y, Math.round(x + 500), y, Math.round(x));
+      await driver.swipeBetween(
+        { x: y, y: Math.round(x + 500), displayId: displayId },
+        { x: y, y: Math.round(x), displayId: displayId }
+      );
       await CommonFunc.sleep(SLEEP_TIME_2000);
       let btn2 = await driver.findComponent(ON.id('expand inList'));
       await btn2.click();
@@ -177,11 +184,18 @@ export default function listActionWithErrorTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       let list = await driver.findComponent(ON.id('list'));
       let rect = await list.getBounds();
+      let displayId = await list.getDisplayId();
       let y = Math.round(rect.right);
       let x = Math.round(rect.top);
-      driver.swipe(y, Math.round(x + 500), y, Math.round(x));
+      await driver.swipeBetween(
+        { x: y, y: Math.round(x + 500), displayId: displayId },
+        { x: y, y: Math.round(x), displayId: displayId }
+      );
       await CommonFunc.sleep(SLEEP_TIME);
-      driver.swipe(y, Math.round(x + 500), y, Math.round(x));
+      await driver.swipeBetween(
+        { x: y, y: Math.round(x + 500), displayId: displayId },
+        { x: y, y: Math.round(x), displayId: displayId }
+      );
       await CommonFunc.sleep(SLEEP_TIME_2000);
       let btn8 = await driver.findComponent(ON.id('collapse inList'));
       await btn8.click();

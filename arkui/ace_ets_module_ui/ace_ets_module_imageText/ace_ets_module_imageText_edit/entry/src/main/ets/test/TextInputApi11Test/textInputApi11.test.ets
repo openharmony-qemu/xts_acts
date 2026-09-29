@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from "../../MainAbility/common/Common";
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
@@ -20,6 +20,8 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import commoneventmanager from '@ohos.commonEventManager';
 import inputMethod from '@ohos.inputMethod';
 import { BusinessError } from '@ohos.base'
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function textInputApi11() {
   describe('textInputApi11', () => {
@@ -109,7 +111,11 @@ export default function textInputApi11() {
       await text.inputText('9');
       await CommonFunc.sleep(1000);
       //回车点击
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let stopEditBtn = await driver.findComponent(ON.id('stopEditBtn_Api11'));
       await CommonFunc.sleep(500);

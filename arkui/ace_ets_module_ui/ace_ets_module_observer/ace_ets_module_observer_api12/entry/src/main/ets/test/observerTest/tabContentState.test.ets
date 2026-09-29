@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
@@ -56,17 +56,22 @@ export default function tabContentState() {
     it('tabContentState_001', Level.LEVEL0, async (done: Function) => {
       console.info('[tabContentState_001] START');
       await CommonFunc.sleep(1000);
-      let swiperTabs = CommonFunc.getComponentRectOnScreen('tabsId');
-      let top = swiperTabs.top;
-      let right = swiperTabs.right;
-      let left = swiperTabs.left;
-      let bottom = swiperTabs.bottom;
-      console.info("tabContentState_001 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom -top;
-      let width = right - left;
       let driver = await Driver.create()
+      let tabsComponent = await driver.findComponent(ON.id('tabsId'));
+      let rect = await tabsComponent.getBounds();
+      let displayId = await tabsComponent.getDisplayId();
+      let top = rect.top;
+      let right = rect.right;
+      let left = rect.left;
+      let bottom = rect.bottom;
+      console.info("tabContentState_001 value is" + left + " --" + right
+        + "--" + top + "--" + bottom + ", displayId = " + displayId);
+      let height = bottom - top;
+      let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.9),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width * 0.9), y: Math.round(bottom - height / 2), displayId: displayId },
+        { x: Math.round(left + width * 0.1), y: Math.round(bottom - height / 2), displayId: displayId });
       await CommonFunc.sleep(3000);
       let btn: Component = await driver.findComponent(ON.id('observer_getState'));
       await btn.click();

@@ -14,7 +14,7 @@
  */
 import { colorValuesKey } from '../../MainAbility/pages/index/index';
 import router from '@ohos.router';
-import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium';
+import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium-dynamic';
 import { brownCustomTheme, greenCustomTheme, redCustomTheme } from '../../MainAbility/themes/CustomTheme';
 import { frameTime, sleep } from '../Utils';
 import {

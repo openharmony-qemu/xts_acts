@@ -19,7 +19,7 @@ import ohosWantAgent from '@ohos.wantAgent'
 import { backgroundTaskManager } from '@kit.BackgroundTasksKit'
 import { abilityDelegatorRegistry } from '@kit.TestKit'
 import hilog from '@ohos.hilog';
-import { describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium'
+import { describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium-dynamic'
 
 const TAG = "testTag";
 const DOMAIN: number = 0x0000;

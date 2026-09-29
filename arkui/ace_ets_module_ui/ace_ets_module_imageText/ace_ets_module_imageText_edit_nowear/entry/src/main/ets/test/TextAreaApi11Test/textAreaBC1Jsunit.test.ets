@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
-import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton} from '@ohos.UiTest';
+import {UiComponent, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function textAreaBC1Jsunit() {
   describe('textAreaBC1Jsunit', () => {
     beforeEach(async (done: Function) => {
@@ -52,12 +53,12 @@ export default function textAreaBC1Jsunit() {
      */
     it('textAreaBC1Jsunit_0100', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0100 START');
-      let driver = await UiDriver.create()
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let Storage11Button1 = await driver.findComponent(BY.key('textArea1'));
+      let Storage11Button1 = await driver.findComponent(ON.id('textArea1'));
       await Storage11Button1.click();
       await CommonFunc.sleep(1000);
-      let Storage12Button1 = await driver.findComponent(BY.key('textArea2'));
+      let Storage12Button1 = await driver.findComponent(ON.id('textArea2'));
       await Storage12Button1.click();
       await CommonFunc.sleep(1000);
       console.info('textAreaBC1Jsunit_0100 Storage12Button1 clicked');
@@ -79,10 +80,10 @@ export default function textAreaBC1Jsunit() {
      */
     it('textAreaBC1Jsunit_0200', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0200 START');
-      let driver = UiDriver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       // 第一次设置文本
-      let text = await driver.findComponent(BY.key('textArea1'));
+      let text = await driver.findComponent(ON.id('textArea1'));
       await text.inputText('123');
       await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
@@ -117,9 +118,9 @@ export default function textAreaBC1Jsunit() {
      */
     it('textAreaBC1Jsunit_0300', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0300 START');
-      let driver = UiDriver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let text = await driver.findComponent(BY.key('textArea1'));
+      let text = await driver.findComponent(ON.id('textArea1'));
       await text.inputText('444');
       await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
@@ -159,15 +160,19 @@ export default function textAreaBC1Jsunit() {
      */
     it('textAreaBC1Jsunit_0400', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0400 START');
-      let driver = await UiDriver.create()
-      let Storage12Button1 = await driver.findComponent(BY.key('textArea1'));
+      let driver = await Driver.create()
+      let Storage12Button1 = await driver.findComponent(ON.id('textArea1'));
       await CommonFunc.sleep(1000);
       await Storage12Button1.click();
       await CommonFunc.sleep(1000);
-      let text = await driver.findComponent(BY.key('textArea1'));
+      let text = await driver.findComponent(ON.id('textArea1'));
       await text.inputText('rrr');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -191,8 +196,8 @@ export default function textAreaBC1Jsunit() {
      */
     it('textAreaBC1Jsunit_0500', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0500 START');
-      let driver = await UiDriver.create()
-      let Storage12Button1 = await driver.findComponent(BY.key('textArea1'));
+      let driver = await Driver.create()
+      let Storage12Button1 = await driver.findComponent(ON.id('textArea1'));
       await CommonFunc.sleep(1000);
       console.log('dududud',Storage12Button1)
       await Storage12Button1.click();
@@ -215,7 +220,7 @@ export default function textAreaBC1Jsunit() {
     it('textAreaBC1Jsunit_0600', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0600 START');
       await CommonFunc.sleep(1000);
-      let driver = UiDriver.create();
+      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
       let driverX = await Driver.create()
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea1')
@@ -223,7 +228,7 @@ export default function textAreaBC1Jsunit() {
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let allSelect = await driver.findComponent(BY.text('全选'));
+      let allSelect = await driver.findComponent(ON.text('全选'));
       await CommonFunc.sleep(1000);
       console.log('0600allSelectallSelect',allSelect)
       if (allSelect != null) {
@@ -233,7 +238,7 @@ export default function textAreaBC1Jsunit() {
       }
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let copy = await driver.findComponent(BY.text('复制'));
+      let copy = await driver.findComponent(ON.text('复制'));
       await CommonFunc.sleep(1000);
       console.log('0600allSelectallSelect复制',copy)
       if (copy != null) {
@@ -241,7 +246,7 @@ export default function textAreaBC1Jsunit() {
         await copy.click();
         await CommonFunc.sleep(1000);
       }
-      let textIn = await driver.findComponent(BY.key('textAreaBC1' + '_copy'));
+      let textIn = await driver.findComponent(ON.id('textAreaBC1' + '_copy'));
       await CommonFunc.sleep(1000);
       let txt = await textIn.getText();
       await CommonFunc.sleep(1000);
@@ -249,12 +254,12 @@ export default function textAreaBC1Jsunit() {
       expect(txt).assertEqual('copy');
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let paste = await driver.findComponent(BY.text('粘贴'));
+      let paste = await driver.findComponent(ON.text('粘贴'));
       if (paste != null) {
         await paste.click();
         await CommonFunc.sleep(1000);
       }
-      let textPaste = await driver.findComponent(BY.key('textAreaBC1' + '_paste'));
+      let textPaste = await driver.findComponent(ON.id('textAreaBC1' + '_paste'));
       let text1 = await textPaste.getText();
       console.info('textAreaJsunit_0900 text1: ' + text1);
       expect(text1).assertEqual('paste');
@@ -272,8 +277,8 @@ export default function textAreaBC1Jsunit() {
     it('textAreaBC1Jsunit_0700', Level.LEVEL3, async (done: Function) => {
       console.info('textAreaBC1Jsunit_0700 START');
       await CommonFunc.sleep(1000);
-      let driver = UiDriver.create();
-      let textArea = await driver.findComponent(BY.key('textArea1'));
+      let driver = await Driver.create()
+      let textArea = await driver.findComponent(ON.id('textArea1'));
       await textArea.inputText('123');
       await CommonFunc.sleep(1000);
       let driverX = await Driver.create()
@@ -282,7 +287,7 @@ export default function textAreaBC1Jsunit() {
       let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let allSelect = await driver.findComponent(BY.text('全选'));
+      let allSelect = await driver.findComponent(ON.text('全选'));
       await CommonFunc.sleep(2000);
       if (allSelect != null) {
         await allSelect.click();
@@ -290,13 +295,13 @@ export default function textAreaBC1Jsunit() {
       }
       await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let cutComponent = await driver.findComponent(BY.text('剪切'));
+      let cutComponent = await driver.findComponent(ON.text('剪切'));
       await CommonFunc.sleep(2000);
       if (cutComponent != null) {
         await cutComponent.click();
         await CommonFunc.sleep(1000);
       }
-      let textCut = await driver.findComponent(BY.key('cut_textAreaBC1'));
+      let textCut = await driver.findComponent(ON.id('cut_textAreaBC1'));
       let text = await textCut.getText();
       console.info('textAreaBC1Jsunit_0700 component obj is: ' + text);
       expect(text).assertEqual('cut');
@@ -311,18 +316,22 @@ export default function textAreaBC1Jsunit() {
      * @tc.level  LEVEL2
      */
     it('textAreaBC1Jsunit_0800', Level.LEVEL2, async (done: Function) => {
-      let driver = await UiDriver.create()
-      let text = await driver.findComponent(BY.key('textArea1'));
+      let driver = await Driver.create()
+      let text = await driver.findComponent(ON.id('textArea1'));
       await text.inputText('ee');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('textAreaBC1' + '_change');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('textAreaBC1Jsunit_0800 obj1 is: ' + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertEqual('ee');
       await CommonFunc.sleep(1000);
-      let y = await driver.findComponent(BY.key('button1'));
+      let y = await driver.findComponent(ON.id('button1'));
       await y.click();
       await CommonFunc.sleep(1000);
       let strJsont = getInspectorByKey('isEdit');
@@ -341,13 +350,17 @@ export default function textAreaBC1Jsunit() {
      * @tc.level  LEVEL3
      */
     it('textAreaBC1Jsunit_0900', Level.LEVEL3, async (done: Function) => {
-      let driver = await UiDriver.create()
-      let text = await driver.findComponent(BY.key('textArea2'));
+      let driver = await Driver.create()
+      let text = await driver.findComponent(ON.id('textArea2'));
       await text.inputText('yy');
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2047)
+      try {
+        await driver.triggerKey(2047, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      let y = await driver.findComponent(BY.key('button2'));
+      let y = await driver.findComponent(ON.id('button2'));
       await y.click();
       await CommonFunc.sleep(1000);
       let strJsont = getInspectorByKey('isEdit');

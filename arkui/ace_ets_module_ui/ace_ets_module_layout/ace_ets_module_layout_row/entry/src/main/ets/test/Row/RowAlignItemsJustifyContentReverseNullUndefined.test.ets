@@ -14,7 +14,7 @@
  */
 
 import CommonFunc, { RectValue } from '../../MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 
 export default function RowAlignItemsJustifyContentReverseNullUndefinedTest() {

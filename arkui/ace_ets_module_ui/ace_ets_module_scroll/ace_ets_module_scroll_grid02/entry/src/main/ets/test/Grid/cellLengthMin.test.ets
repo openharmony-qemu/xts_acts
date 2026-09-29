@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
+import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function cellLengthMin() {
@@ -57,10 +58,13 @@ export default function cellLengthMin() {
       console.info("[cellLengthMin_0100] cellLength: " + JSON.stringify(JSON.parse(strJson).$attrs.cellLength));
       expect(JSON.parse(strJson).$type).assertEqual("Grid");
 
-      let grid = CommonFunc.getComponentRectOnScreen('cellLength_0');
+      let driver = Driver.create();
+      let gridComponent = await driver.findComponent(ON.id('cellLength_0'));
+      let grid = await gridComponent.getBounds();
       let grid_height = grid.bottom - grid.top
       console.info("[cellLengthMin_0100] grid_height is: " + grid_height);
-      let gridItem = CommonFunc.getComponentRectOnScreen('gi_cellLength_0');
+      let gridItemComponent = await driver.findComponent(ON.id('gi_cellLength_0'));
+      let gridItem = await gridItemComponent.getBounds();
       let gridItem_height = gridItem.bottom - gridItem.top
       console.info("[cellLengthMin_0100] gridItem_height is: " + gridItem_height);
       expect(Math.floor(Math.abs(grid_height - gridItem_height)) <= 1).assertTrue();

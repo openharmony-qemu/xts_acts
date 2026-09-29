@@ -80,7 +80,7 @@ export default function AddMonitorWildcard2() {
       // Click button to change propA - this should trigger onClsChanged callback
       let changePropABtn = await driver.findComponent(ON.id('synchronous_monitoring_001'));
       await CommonFunc.sleep(1000);
-      await (changePropABtn?.click() as Promise<void>);
+      await (changePropABtn?.click());
       await CommonFunc.sleep(1000);
 
       // Get updated num value (should be incremented)
@@ -110,7 +110,7 @@ export default function AddMonitorWildcard2() {
       // Click first button to change propB
       let changePropBBtn1 = await driver.findComponent(ON.id('asynchronous_monitoring_001'));
       await CommonFunc.sleep(1000);
-      await (changePropBBtn1?.click() as Promise<void>);
+      await (changePropBBtn1?.click());
       await CommonFunc.sleep(1000);
 
       // Get updated num value (should be incremented)

@@ -23,7 +23,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 
 class Box<T> {
   public value: T

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -63,9 +63,11 @@ export default function WaterFlowFillPolicyModifier() {
       console.info("[WWaterFlowFillPolicyModifier_0100] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_DEFAULT");
 
-      let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
+      let flowItem1Comp = await driver.findComponent(ON.id('waterFlowType_1'));
+      let flowItem1 = await flowItem1Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0100] flowItem1.right: ' + flowItem1.right);
-      let flowItem2 = CommonFunc.getComponentRectOnScreen('waterFlowType_2');
+      let flowItem2Comp = await driver.findComponent(ON.id('waterFlowType_2'));
+      let flowItem2 = await flowItem2Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0100] flowItem2.left: ' + flowItem2.left);
       await CommonFunc.sleep(500);
       console.info("窗口偏移量 - Left: " + flowItem2.left + ", Top: " + flowItem1.right);
@@ -97,9 +99,11 @@ export default function WaterFlowFillPolicyModifier() {
       console.info("[WaterFlowFillPolicyModifier_0200] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM1MD2LG3");
 
-      let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
+      let flowItem1Comp = await driver.findComponent(ON.id('waterFlowType_1'));
+      let flowItem1 = await flowItem1Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0200] flowItem1.bottom: ' + flowItem1.bottom);
-      let flowItem2 = CommonFunc.getComponentRectOnScreen('waterFlowType_2');
+      let flowItem2Comp = await driver.findComponent(ON.id('waterFlowType_2'));
+      let flowItem2 = await flowItem2Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0200] flowItem2.top: ' + flowItem2.top);
       await CommonFunc.sleep(500);
       expect(Math.abs(Math.floor(flowItem2.top - flowItem1.bottom)) <= 1 ).assertTrue();
@@ -130,9 +134,11 @@ export default function WaterFlowFillPolicyModifier() {
       console.info("[WaterFlowFillPolicyModifier_0300] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM2MD3LG5");
 
-      let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
+      let flowItem1Comp = await driver.findComponent(ON.id('waterFlowType_1'));
+      let flowItem1 = await flowItem1Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0300] flowItem1.right: ' + flowItem1.right);
-      let flowItem2 = CommonFunc.getComponentRectOnScreen('waterFlowType_2');
+      let flowItem2Comp = await driver.findComponent(ON.id('waterFlowType_2'));
+      let flowItem2 = await flowItem2Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0300] flowItem2.left: ' + flowItem2.left);
       await CommonFunc.sleep(500);
       expect(Math.abs(Math.floor(flowItem2.left - flowItem1.right)) <= 1 ).assertTrue();
@@ -163,9 +169,11 @@ export default function WaterFlowFillPolicyModifier() {
       console.info("[WaterFlowFillPolicyModifier_0400] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_DEFAULT");
 
-      let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
+      let flowItem1Comp = await driver.findComponent(ON.id('waterFlowType_1'));
+      let flowItem1 = await flowItem1Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0400] flowItem1.right: ' + flowItem1.right);
-      let flowItem2 = CommonFunc.getComponentRectOnScreen('waterFlowType_2');
+      let flowItem2Comp = await driver.findComponent(ON.id('waterFlowType_2'));
+      let flowItem2 = await flowItem2Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0400] flowItem2.left: ' + flowItem2.left);
       await CommonFunc.sleep(500);
       expect(Math.abs(Math.floor(flowItem2.left - flowItem1.right)) <= 1 ).assertTrue();
@@ -196,9 +204,11 @@ export default function WaterFlowFillPolicyModifier() {
       console.info("[WaterFlowFillPolicyModifier_0500] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
       expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_DEFAULT");
 
-      let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
+      let flowItem1Comp = await driver.findComponent(ON.id('waterFlowType_1'));
+      let flowItem1 = await flowItem1Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0500] flowItem1.right: ' + flowItem1.right);
-      let flowItem2 = CommonFunc.getComponentRectOnScreen('waterFlowType_2');
+      let flowItem2Comp = await driver.findComponent(ON.id('waterFlowType_2'));
+      let flowItem2 = await flowItem2Comp.getBounds();
       console.info('[WaterFlowFillPolicyModifier_0500] flowItem2.left: ' + flowItem2.left);
       await CommonFunc.sleep(500);
       expect(Math.abs(Math.floor(flowItem2.left - flowItem1.right)) <= 1 ).assertTrue();

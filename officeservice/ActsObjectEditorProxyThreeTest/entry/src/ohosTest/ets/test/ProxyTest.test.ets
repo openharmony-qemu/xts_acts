@@ -176,6 +176,188 @@ export default function proxyTest() {
     })
 
     /**
+     * @tc.name   SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_NullInfo_0100
+     * @tc.number SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_NullInfo_0100
+     * @tc.desc   Test OH_ContentEmbed_DestroyContentEmbedInfo with null info
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_NullInfo_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_NullInfo_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyDestroyContentEmbedInfo_NullInfo();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_Normal_0100
+     * @tc.number SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_Normal_0100
+     * @tc.desc   Test OH_ContentEmbed_DestroyContentEmbedInfo with normal case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_Normal_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyDestroyContentEmbedInfo_Normal_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyDestroyContentEmbedInfo_Normal();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_OK;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyGetContentEmbedInfo_ParamInvalid_0100
+     * @tc.number SUB_Object_Editor_TestProxyGetContentEmbedInfo_ParamInvalid_0100
+     * @tc.desc   Test OH_ContentEmbed_GetContentEmbedInfo with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyGetContentEmbedInfo_ParamInvalid_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyGetContentEmbedInfo_ParamInvalid_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetContentEmbedInfo_ParamInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyGetFormatCountFromInfo_ParamInvalid_0100
+     * @tc.number SUB_Object_Editor_TestProxyGetFormatCountFromInfo_ParamInvalid_0100
+     * @tc.desc   Test OH_ContentEmbed_GetFormatCountFromInfo with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyGetFormatCountFromInfo_ParamInvalid_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyGetFormatCountFromInfo_ParamInvalid_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetFormatCountFromInfo_ParamInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyGetFormatFromInfo_ParamInvalid_0100
+     * @tc.number SUB_Object_Editor_TestProxyGetFormatFromInfo_ParamInvalid_0100
+     * @tc.desc   Test OH_ContentEmbed_GetFormatFromInfo with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyGetFormatFromInfo_ParamInvalid_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyGetFormatFromInfo_ParamInvalid_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetFormatFromInfo_ParamInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_ParamInvalid_0100
+     * @tc.number SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_ParamInvalid_0100
+     * @tc.desc   Test OH_ContentEmbed_DestroyContentEmbedFormat with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_ParamInvalid_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_ParamInvalid_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyDestroyContentEmbedFormat_ParamInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_Normal_0100
+     * @tc.number SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_Normal_0100
+     * @tc.desc   Test OH_ContentEmbed_DestroyContentEmbedFormat with normal case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_Normal_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyDestroyContentEmbedFormat_Normal_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyDestroyContentEmbedFormat_Normal();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_OK;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid_0100
+     * @tc.number SUB_Object_Editor_TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid_0100
+     * @tc.desc   Test OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid_0100',
+      Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetContentEmbedFormatByOEidAndLocale_ParamInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyGetOEidFromFormat_ParamInvalid_0100
+     * @tc.number SUB_Object_Editor_TestProxyGetOEidFromFormat_ParamInvalid_0100
+     * @tc.desc   Test OH_ContentEmbed_GetOEidFromFormat with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyGetOEidFromFormat_ParamInvalid_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyGetOEidFromFormat_ParamInvalid_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetOEidFromFormat_ParamInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestProxyGetNameAndDescriptionFromFormat_ParamInvalid_0100
+     * @tc.number SUB_Object_Editor_TestProxyGetNameAndDescriptionFromFormat_ParamInvalid_0100
+     * @tc.desc   Test OH_ContentEmbed_GetNameAndDescriptionFromFormat with invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestProxyGetNameAndDescriptionFromFormat_ParamInvalid_0100',
+      Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestProxyGetNameAndDescriptionFromFormat_ParamInvalid_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestProxyGetNameAndDescriptionFromFormat_ParamInvalid();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_PARAM_INVALID;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
      * @tc.name   SUB_Object_Editor_TestExtensionGetContent_Normal_0100
      * @tc.number SUB_Object_Editor_TestExtensionGetContent_Normal_0100
      * @tc.desc   Test OH_ContentEmbed_Extension_GetContext with normal case
@@ -749,6 +931,78 @@ export default function proxyTest() {
       let result = testNapi.TestProxyMultiExtension_Normal();
       hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
       let expectResult = result === CE_ERR_OK;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestStreamRead_StreamFailed_0100
+     * @tc.number SUB_Object_Editor_TestStreamRead_StreamFailed_0100
+     * @tc.desc   Test OH_ContentEmbed_Stream_Read with stream operation failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestStreamRead_StreamFailed_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestStreamRead_StreamFailed_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestStreamRead_StreamFailed();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_STREAM_OPERATION_FAILED;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestStreamWrite_StreamFailed_0100
+     * @tc.number SUB_Object_Editor_TestStreamWrite_StreamFailed_0100
+     * @tc.desc   Test OH_ContentEmbed_Stream_Write with stream operation failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestStreamWrite_StreamFailed_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestStreamWrite_StreamFailed_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestStreamWrite_StreamFailed();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_STREAM_OPERATION_FAILED;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestStreamGetPosition_StreamFailed_0100
+     * @tc.number SUB_Object_Editor_TestStreamGetPosition_StreamFailed_0100
+     * @tc.desc   Test OH_ContentEmbed_Stream_GetPosition with stream operation failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestStreamGetPosition_StreamFailed_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestStreamGetPosition_StreamFailed_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestStreamGetPosition_StreamFailed();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_STREAM_OPERATION_FAILED;
+      expect(expectResult).assertTrue();
+    })
+
+    /**
+     * @tc.name   SUB_Object_Editor_TestStreamGetSize_StreamFailed_0100
+     * @tc.number SUB_Object_Editor_TestStreamGetSize_StreamFailed_0100
+     * @tc.desc   Test OH_ContentEmbed_Stream_GetSize with stream operation failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Object_Editor_TestStreamGetSize_StreamFailed_0100', Level.LEVEL0, async () => {
+      await msSleep(1000);
+      let tag = 'SUB_Object_Editor_TestStreamGetSize_StreamFailed_0100';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let result = testNapi.TestStreamGetSize_StreamFailed();
+      hilog.info(0x0000, 'testTag', '%{public}s end, result: %{public}d', tag, result);
+      let expectResult = result === CE_ERR_STREAM_OPERATION_FAILED;
       expect(expectResult).assertTrue();
     })
   })

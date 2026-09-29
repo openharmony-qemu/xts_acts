@@ -799,6 +799,30 @@ struct NavigationPreload {
               })
             })
             .margin(1)
+
+          // ========== Parameter spec coverage - options = undefined (explicit) ==========
+          Button('OptUndef')
+            .id('btnPreloadOptionsUndefined')
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
+            .onClick((e: ClickEvent) => {
+              this.resetState()
+              this.stack.preloadPath(
+                new NavPathInfo('STANDARD_20', new NavParamTwo('OptUndef')),
+                undefined
+              ).then(() => {
+                this.preloadResult = 'success'
+                this.thenCalled = 'true'
+                this.stackNames = JSON.stringify(this.stack.getAllPathName())
+              }).catch((error: Error) => {
+                this.preloadResult = 'error'
+                this.catchCalled = 'true'
+                try { this.errorCode = String(error.code) } catch (_e) { this.errorCode = '' }
+                try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
+              })
+            })
+            .margin(1)
         }
       }
       .width('100%')

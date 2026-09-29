@@ -14,7 +14,7 @@
  */
 import bundleManager from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 const BUNDLE_NAME = 'ohos.acts.bundlemanagererrcode.test';
 const ERROR_MESSAGE_PERMISSION_DENIED =

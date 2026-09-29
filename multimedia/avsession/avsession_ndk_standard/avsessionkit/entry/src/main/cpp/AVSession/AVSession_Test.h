@@ -124,6 +124,7 @@ napi_value AVSessionErrCodeCommandInvalid(napi_env env, napi_callback_info info)
 napi_value AVSessionAcquireSessionSuccess(napi_env env, napi_callback_info info);
 napi_value AVSessionAcquireSessionInvalidParam(napi_env env, napi_callback_info info);
 napi_value AVSessionCreateAVCastControllerInvalidParam(napi_env env, napi_callback_info info);
+napi_value AVSessionCreateAVCastControllerSuccess(napi_env env, napi_callback_info info);
 napi_value AVSessionStopCastingSuccess(napi_env env, napi_callback_info info);
 napi_value AVSessionStopCastingInvalidParam(napi_env env, napi_callback_info info);
 napi_value AVSessionAcquireOutputDeviceSuccess(napi_env env, napi_callback_info info);

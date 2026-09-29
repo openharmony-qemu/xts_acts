@@ -76,9 +76,11 @@ export default function listSwipeAction36Jsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0360 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem to bottom
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(10)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(20))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe36Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(20)), displayId: displayId });
       await CommonFunc.sleep(5000);
       // judge the swipeActionOffset
       let textSwipeOffset = getInspectorByKey('swipe36Offset');
@@ -92,9 +94,9 @@ export default function listSwipeAction36Jsunit() {
       await CommonFunc.sleep(3000);
 
       // swipe to up
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(100)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(90))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(100)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(90)), displayId: displayId });
       await CommonFunc.sleep(5000);
       let textSwipeOffset2 = getInspectorByKey('swipe36Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0360 json is ' + JSON.stringify(JSON.parse(textSwipeOffset2)
@@ -130,9 +132,11 @@ export default function listSwipeAction36Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0380 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem to bottom
 
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(10)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(50))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe36Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(50)), displayId: displayId });
       await CommonFunc.sleep(5000);
       // judge the swipeActionOffset
       let textSwipeOffset = getInspectorByKey('swipe36Offset');
@@ -144,18 +148,18 @@ export default function listSwipeAction36Jsunit() {
       // [15.00, 87.00][360.00,387.00]
       expect(Math.abs(Math.round(Number(JSON.parse(textSwipeOffset).$attrs.content))-Math.round(px2vp(swipe_height)))<=1).assertTrue();
       // reset
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(10))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(50)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId });
       await CommonFunc.sleep(5000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset36'));
       await driver.delayMs(300);
       buttonReset2.click();
       await CommonFunc.sleep(3000);
       // swipe to up
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(50)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(10))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(50)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId });
       await CommonFunc.sleep(4000);
       let textSwipeOffset2 = getInspectorByKey('swipe36Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0380 json is ' + JSON.stringify(JSON.parse(textSwipeOffset2)
@@ -165,9 +169,9 @@ export default function listSwipeAction36Jsunit() {
       console.info('36 0380 json' + Math.round(px2vp(swipe_height2)));
       expect(Math.abs(Math.round(Number(JSON.parse(textSwipeOffset2).$attrs.content))-(-Math.round(px2vp(swipe_height2))))<=1).assertTrue();
       // reset
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(10)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(50))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(50)), displayId: displayId });
       await CommonFunc.sleep(2000);
       done();
 
@@ -199,9 +203,11 @@ export default function listSwipeAction36Jsunit() {
       let height = bottom - top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0390 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe to collapse state
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(10)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(20))
-      );
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe36Action0'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(20)), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionOffset
       let textSwipeOffset0 = getInspectorByKey('swipe36Offset');
@@ -210,9 +216,9 @@ export default function listSwipeAction36Jsunit() {
       expect(Math.abs(Math.round(Number(JSON.parse(textSwipeOffset0).$attrs.content)))<=1).assertTrue();
 
       // swipe the listItem to bottom
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(2)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + bottom - vp2px(2))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(2)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(bottom - vp2px(2)), displayId: displayId });
       await CommonFunc.sleep(6000);
 
       // judge the swipeActionOffset
@@ -228,9 +234,9 @@ export default function listSwipeAction36Jsunit() {
       buttonReset2.click();
       await CommonFunc.sleep(3000);
       // swipe to up
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + bottom - vp2px(2)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(2))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(bottom - vp2px(2)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(2)), displayId: displayId });
       await CommonFunc.sleep(5000);
       let textSwipeOffset2 = getInspectorByKey('swipe36Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0390 json is ' + JSON.stringify(JSON.parse(textSwipeOffset2)

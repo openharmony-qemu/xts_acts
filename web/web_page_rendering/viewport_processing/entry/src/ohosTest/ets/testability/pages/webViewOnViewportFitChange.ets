@@ -17,7 +17,7 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../../test/List.test';
 import { waitForExist } from '../../test/WaitTest.test';
 @Entry

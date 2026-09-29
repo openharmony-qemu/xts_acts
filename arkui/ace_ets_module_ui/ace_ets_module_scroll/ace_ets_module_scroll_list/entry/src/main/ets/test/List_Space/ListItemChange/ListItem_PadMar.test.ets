@@ -120,7 +120,9 @@ export default function listItem_PadMar() {
       expect(Math.abs(Math.round(locationText1.right - TextTest1.right) - Math.round(vp2px(10))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationText1.bottom - TextTest1.bottom) - Math.round(vp2px(10))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(360, 690, 360, 30);
+      let swipeComponent = await driver.findComponent(ON.id('ListItemPadMar1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest34');
       expect(Math.abs(locationText4.top - locationText4Again.top) <= 1).assertTrue();
       console.info('new testListItemPadMar END');

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, TestType, Size, Level, expect, beforeAll } from '@ohos/hypium';
+import { describe, it, TestType, Size, Level, expect, beforeAll } from '@ohos/hypium-dynamic';
 import { huks } from '@kit.UniversalKeystoreKit';
 import * as huksCallback from './utils/huks/HuksCallbackUtils';
 

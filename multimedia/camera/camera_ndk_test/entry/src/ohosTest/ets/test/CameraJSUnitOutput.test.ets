@@ -18,7 +18,7 @@ import MediaUtils from './MediaUtils';
 import image from '@ohos.multimedia.image';
 import media from '@ohos.multimedia.media';
 import fs from '@ohos.file.fs';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { GlobalThis } from './Constants';
 import { Context } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';

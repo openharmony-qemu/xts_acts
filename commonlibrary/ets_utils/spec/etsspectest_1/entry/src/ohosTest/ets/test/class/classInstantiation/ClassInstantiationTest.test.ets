@@ -23,7 +23,7 @@ import {
   Level,
   Size,
   TestType
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 
 class DefaultCtor {
   public x: number = 0

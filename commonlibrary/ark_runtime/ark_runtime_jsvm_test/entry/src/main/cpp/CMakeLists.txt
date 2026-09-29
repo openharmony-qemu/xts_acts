@@ -78,7 +78,8 @@ add_library(entry2 SHARED ${src_sec}
     napi/napi_lifecycle_test.cpp
     napi/napi_memorymanagementuse_test.cpp
     napi/napi_version_test.cpp
-    napi/napi_promise_test.cpp)
+    napi/napi_promise_test.cpp
+    napi/napi_errorcode.cpp)
 target_link_libraries(entry2 PUBLIC libace_napi.z.so libjsvm.so)
 target_link_directories(entry2 PUBLIC ${OPENHARMONY_ROOT_PATH}/out/generic_generic_arm_64only/general_all_phone_standard/gen/foundation/arkui/napi/jsvm/)
 

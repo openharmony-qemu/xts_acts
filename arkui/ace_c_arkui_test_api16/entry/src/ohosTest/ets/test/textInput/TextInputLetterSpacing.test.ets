@@ -17,6 +17,8 @@ import { beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function TextInputLetterSpacing(){
 
   describe('TextInputLetterSpacing', () => {
@@ -46,17 +48,41 @@ export default function TextInputLetterSpacing(){
       await Utils.sleep(500);
       await textinput.click();
       await Utils.sleep(500);
-      await driver.triggerKey(2017);
+      try {
+        await driver.triggerKey(2017, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await Utils.sleep(500);
-      await driver.triggerKey(2047);
+      try {
+        await driver.triggerKey(2047, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await Utils.sleep(500);
-      await driver.triggerKey(2017);
+      try {
+        await driver.triggerKey(2017, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await Utils.sleep(500);
-      await driver.triggerKey(2047);
+      try {
+        await driver.triggerKey(2047, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await Utils.sleep(500);
-      await driver.triggerKey(2024);
+      try {
+        await driver.triggerKey(2024, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await Utils.sleep(500);
-      await driver.triggerKey(2047);
+      try {
+        await driver.triggerKey(2047, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await Utils.sleep(500);
       let strJson2 = getInspectorByKey('text6');
       await Utils.sleep(200);

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import { ToolBarModifier, ItemState } from '@ohos.arkui.advanced.ToolBar';
 
 export default function TabsNavCommonSupplement() {

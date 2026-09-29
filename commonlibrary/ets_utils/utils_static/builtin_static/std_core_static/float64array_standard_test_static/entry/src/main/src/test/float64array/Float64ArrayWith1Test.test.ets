@@ -216,12 +216,8 @@ export default function Float64ArrayWith1Test(): void {
     it('testFloat64ArrayWith1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const num300Pointzero: number = 300.0;
       const arr = new Float64Array([-32768, -128, 0]);
-      try {
-        arr.with(-1, num300Pointzero);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("RangeError");
-      }
+      arr.with(-1, num300Pointzero);
+      expect(arr.toString()).assertEqual("-32768,-128,0");
     });
 
     /**

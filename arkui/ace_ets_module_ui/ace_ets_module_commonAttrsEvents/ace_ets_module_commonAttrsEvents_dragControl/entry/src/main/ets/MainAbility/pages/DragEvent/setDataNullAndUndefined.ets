@@ -157,7 +157,7 @@ struct DragEventSetData {
         })
     }
     .width('100%')
-    .height('90%')
+    .height('80%')
     .padding(20)
   }
 

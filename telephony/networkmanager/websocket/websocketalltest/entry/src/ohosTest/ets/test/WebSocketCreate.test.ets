@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import webSocket from '@ohos.net.webSocket';
 
 
@@ -50,7 +50,7 @@ export default function WebSocketCreateTest() {
       try {
         let ws: webSocket.WebSocket = webSocket.createWebSocket();
         console.info(`${caseName} --> ${ws}`);
-        ExpectTrue(ws != null);
+        ExpectTrue(ws !== null);
         done();
         console.info(`${caseName} test end`);
       } catch (err) {
@@ -77,7 +77,7 @@ export default function WebSocketCreateTest() {
         let wsTwo: webSocket.WebSocket = webSocket.createWebSocket();
         console.info(`${caseName} --> ${wsOne}`);
         console.info(`${caseName} --> ${wsTwo}`);
-        ExpectTrue(wsOne != wsTwo);
+        ExpectTrue(wsOne !== wsTwo);
         done();
         console.info(`${caseName} test end`);
       } catch (err) {

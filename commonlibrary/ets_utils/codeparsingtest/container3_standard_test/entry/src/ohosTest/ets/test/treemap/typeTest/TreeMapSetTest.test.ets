@@ -14,7 +14,7 @@
  */
 
 import { TreeMap } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 const SET_A: Set<number> = new Set<number>([1]);
 const SET_B: Set<number> = new Set<number>([2]);
 const SET_C: Set<number> = new Set<number>([3]);

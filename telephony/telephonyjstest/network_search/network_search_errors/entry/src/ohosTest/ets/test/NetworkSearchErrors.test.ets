@@ -15,7 +15,7 @@
 
 import radio from '@ohos.telephony.radio';
 import observer from '@ohos.telephony.observer';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 export default function ActsNetworkSearchTest() {
 
 describe('ActsNetworkSearchTest',  () => {

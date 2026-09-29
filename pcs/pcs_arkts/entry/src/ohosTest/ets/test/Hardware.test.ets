@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import wifiManager from '@ohos.wifiManager';
 import camera from '@ohos.multimedia.camera';
 import List from '@ohos.util.List';

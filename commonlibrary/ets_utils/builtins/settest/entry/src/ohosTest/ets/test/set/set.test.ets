@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,TestType, Level,Size} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,TestType, Level,Size} from '@ohos/hypium-dynamic';
 import { MapSetTest007, MapSetTest009, MapSetTest010, MapSetTest016, MapSetTest017, MapSetTest021,
   MapSetTest022,
   MapSetTest038,

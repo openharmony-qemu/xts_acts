@@ -1,6 +1,6 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { afterAll, afterEach, beforeAll, beforeEach, describe,
- expect, it, TestType, Size, Level } from '@ohos/hypium';
+ expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import audiocapturerplaybacktest from 'libaudiocapturerplaybacktest.so';
 
 enum TEST_RESULT {

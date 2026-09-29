@@ -14,7 +14,7 @@
  */
 
 import { HashMap } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 const VALID_VALUES: Array<Array<number>> = [
   [1, 2, 3], [0, -1], [NaN, Infinity], new Array<number>(3), [],

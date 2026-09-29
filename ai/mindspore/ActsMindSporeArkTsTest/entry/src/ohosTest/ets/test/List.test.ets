@@ -19,7 +19,7 @@ import resizeTest from './Resize.test'
 import supplementTest from './Supplement.test';
 
 export default function testsuite() {
-  if (canIUse("SystemCapability.AI.MindSporeLite")){
+  if (canIUse('SystemCapability.AI.MindSporeLite')){
     abilityTest();
     coverageSupplementTest();
     resizeTest();

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { router } from '@kit.ArkUI';
@@ -65,14 +65,15 @@ export default function timePickerOnChangeModifierTest() {
         let clock12Button = await driver.findComponent(ON.id('12hour'));
         await clock12Button.click();
         await Utils.sleep(1000);
-        let timePicker = Utils.getComponentRect('timePicker');
-        let top = timePicker.top
-        let bottom = timePicker.bottom
-        let right = timePicker.right
-        let middle = (bottom-top) / 2 + top
-        let left =timePicker.left
-        await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
-        Math.round(0));
+        let timePickerComp: Component = await driver.findComponent(ON.id('timePicker'));
+        let rect = await timePickerComp.getBounds();
+        let displayId = await timePickerComp.getDisplayId();
+        let centerX = rect.left + (rect.right - rect.left) / 2;
+        let centerY = rect.top + (rect.bottom - rect.top) / 2;
+        await driver.swipeBetween(
+          { x: centerX, y: centerY, displayId: displayId },
+          { x: centerX, y: 0, displayId: displayId }
+        );
         await Utils.sleep(5000);
         let strJsonNew:string = getInspectorByKey('onChangeOff');
         console.info("TimePicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)
@@ -96,14 +97,15 @@ export default function timePickerOnChangeModifierTest() {
         let clock24Button = await driver.findComponent(ON.id('24hour'));
         await clock24Button.click();
         await Utils.sleep(1000);
-        let timePicker = Utils.getComponentRect('timePicker');
-        let top = timePicker.top
-        let bottom = timePicker.bottom
-        let right = timePicker.right
-        let middle = (bottom-top) / 2 + top
-        let left =timePicker.left
-        await driver.swipe(Math.round((right-left)/2+left), Math.round(middle), Math.round((right-left)/2+left),
-          Math.round(0));
+        let timePickerComp: Component = await driver.findComponent(ON.id('timePicker'));
+        let rect = await timePickerComp.getBounds();
+        let displayId = await timePickerComp.getDisplayId();
+        let centerX = rect.left + (rect.right - rect.left) / 2;
+        let centerY = rect.top + (rect.bottom - rect.top) / 2;
+        await driver.swipeBetween(
+          { x: centerX, y: centerY, displayId: displayId },
+          { x: centerX, y: 0, displayId: displayId }
+        );
         await Utils.sleep(5000);
         let strJsonNew:string = getInspectorByKey('onChangeOff');
         console.info("TimePicker_OnChange_Modifier_002 component  is: " + JSON.stringify(JSON.parse(strJsonNew)

@@ -102,5 +102,18 @@ export default function TestSetForceDarkConfig(){
       expect(nativeFunc.TestSetForceDarkConfigNodeTypeGrid()).assertEqual(0)
       done();
     })
+
+    /**
+     * @tc.name   TestGetNodeTypeParam_040
+     * @tc.number SUB_ARKUI_CAPI_TestGetNodeTypeParam_0400
+     * @tc.desc   Test Sets the inverse color algorithm with ARKUI_NODE_TEXT_EDITOR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestGetNodeTypeParam_040', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestGetNodeTypeParam()).assertEqual(0)
+      done();
+    })
   })
 }

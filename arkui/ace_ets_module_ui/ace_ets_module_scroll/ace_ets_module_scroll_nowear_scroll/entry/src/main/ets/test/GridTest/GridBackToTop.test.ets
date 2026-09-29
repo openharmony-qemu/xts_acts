@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { router } from '@kit.ArkUI';
 import { Component, Driver, On, ON, MouseButton } from '@kit.TestKit';
 
@@ -51,6 +51,7 @@ export default function GridBackToTopTest() {
       let driverGrid: Driver = Driver.create();
       let grid: Component = await driverGrid.findComponent(ON.id('gridScroll_4'));
       let rect = await grid.getBounds();
+      let displayId = await grid.getDisplayId();
       let top = rect.top;
       let left = rect.left;
       let right = rect.right;
@@ -64,11 +65,17 @@ export default function GridBackToTopTest() {
       let switchButton: Component = await driverSwitch.findComponent(ON.id('Switch'))
       await sleep(1500);
 
-      await driverGrid.swipe(
-      Math.round(left + width * 0.2),
-      Math.round(bottom - height / 4),
-      Math.round(left + width * 0.2),
-      Math.round(bottom - height / 2)
+      await driverGrid.swipeBetween(
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 4),
+          displayId: displayId
+        },
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 2),
+          displayId: displayId
+        }
       );
       await sleep(2000);
       await topButton.click();
@@ -81,11 +88,17 @@ export default function GridBackToTopTest() {
       await topButton.click();
       await sleep(1500)
 
-      await driverGrid.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
+      await driverGrid.swipeBetween(
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 4),
+          displayId: displayId
+        },
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 2),
+          displayId: displayId
+        }
       );
       await sleep(2000);
       await switchButton.click();
@@ -93,11 +106,17 @@ export default function GridBackToTopTest() {
       await topButton.click();
       await sleep(1500)
 
-      await driverGrid.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
+      await driverGrid.swipeBetween(
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 4),
+          displayId: displayId
+        },
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 2),
+          displayId: displayId
+        }
       );
       await sleep(2000);
       await switchButton.click();

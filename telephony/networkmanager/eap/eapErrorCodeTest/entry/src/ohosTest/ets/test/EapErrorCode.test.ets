@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 import { BusinessError } from '@kit.BasicServicesKit';
 import eap from '@ohos.net.eap';
@@ -502,6 +502,36 @@ export default function EapErrorCodeTest() {
       try {
         eap.replyCustomEapData(1, null);
         console.info(`${caseName } unregCustomEapHandler success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 33200099);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0700
+     * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0700
+     * @tc.desc   test verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapReplyCustomEapDataErrorCode0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0700";
+      console.info(`${caseName}---start`);
+      try {
+        let eapData:eap.EapData= {
+          msgId: 1,
+          eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+          bufferLen: 5,
+        };
+        eap.replyCustomEapData(null, eapData);
+        console.info(`${caseName } replyCustomEapData success`);
         ExpectFail();
         console.info(`${caseName}---End`);
         done();

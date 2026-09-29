@@ -15,7 +15,7 @@
 
 import NewMediaTestBase from './MediaTestBase';
 import { playAudioSource } from './AudioPlayerTestBase';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 
 const PLAY_TIME = 3000;
 let isToSeek = false;

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium"
+import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium-dynamic"
 import { Driver, ON } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import { image } from '@kit.ImageKit';
@@ -1713,6 +1713,107 @@ export default function imagePixelMapErrorCodeTest() {
         console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
         console.error(`www data Failed to getMetaData. code is ${err.code}`, typeof(err.code));
         expect(Number(err.code)).assertEqual(62980104);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    writeBufferToPixelsSync_0100
+     * @tc.number  SUB_GRAPHIC_PixelMap_writeBufferToPixelsSync_0100
+     * @tc.desc    Test writeBufferToPixelsSync throws error 501 when pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('writeBufferToPixelsSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const msgStr = 'www data writeBufferToPixelsSync_0100 ';
+      try {
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        const opts: image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: { height: 4, width: 6 },
+        };
+        const pixelMap = image.createPixelMapSync(color, opts);
+        taskpoolTest(pixelMap);
+        try {
+          const buffer: ArrayBuffer = new ArrayBuffer(96);
+          pixelMap.writeBufferToPixelsSync(buffer);
+          console.info(msgStr + ' writeBufferToPixelsSync_0100 success');
+          expect().assertFail();
+        } catch(err) {
+          console.error(`${msgStr} writeBufferToPixelsSync_0100 failed: ${err}`);
+          console.error(`${msgStr} writeBufferToPixelsSync_0100 failed: ${err.code}`, typeof(err.code));
+          expect(Number(err.code)).assertEqual(501);
+        }
+        done();
+      } catch (error) {
+        console.error(`${msgStr} writeBufferToPixelsSync_0100 failed: ${error}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    getMetadata_0500
+     * @tc.number  SUB_GRAPHIC_PixelMap_getMetadata_0500
+     * @tc.desc    Test getMetadata throws error 62980302 when DMA pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("getMetadata_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+      };
+      console.info('www data Succeeded to getMetaData', 111);
+      let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+      try {
+        console.info('www data Succeeded to getMetaData', 222);
+        pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
+        console.info('www data Succeeded to getMetaData', 333);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err.message}`);
+        console.error(`www data Failed to getMetaData. code is ` + typeof(err.code));
+        expect(Number(err.code)).assertEqual(62980302);
+        await pixelMap.release();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    getMetadata_0600
+     * @tc.number  SUB_GRAPHIC_PixelMap_getMetadata_0600
+     * @tc.desc    Test getMetadata throws error 401 when DMA pixelMap is transferred to taskpool
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it("getMetadata_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      const color: ArrayBuffer = new ArrayBuffer(96);
+      const opts: image.InitializationOptions = {
+        editable: true,
+        srcPixelFormat: image.PixelMapFormat.RGBA_8888,
+        pixelFormat: image.PixelMapFormat.RGBA_8888,
+        size: { height: 4, width: 6 },
+      };
+      let pixelMap = image.createPixelMapUsingAllocatorSync(color, opts, image.AllocatorType.DMA);
+      try {
+        await pixelMap.release();
+        pixelMap.getMetadata(image.HdrMetadataKey.HDR_DYNAMIC_METADATA);
+        expect().assertFail();
+        done();
+      } catch(err){
+        console.error(`www data Failed to getMetaData. code is ${err.code}, message is ${err}`);
+        console.error(`www data Failed to getMetaData. code is ` + typeof(err.code));
+        expect(Number(err.code)).assertEqual(401);
+        await pixelMap.release();
         done();
       }
     });

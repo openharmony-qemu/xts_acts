@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test2019_01_ans } from './test2019_01'
 import { test2019_03_ans } from './test2019_03'
 import { test2019_06_ans } from './test2019_06'

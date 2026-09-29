@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorLineMetrics012() {
   describe('RichEditorLineMetrics012', () => {
@@ -69,9 +71,9 @@ export default function RichEditorLineMetrics012() {
       let pointCenter = await rich.getBoundsCenter();
       await driver.longClick(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, displayID);
       await CommonFunc.sleep(500);
       let getFirst = await driver.findComponent(ON.id('getFirst'));
       await getFirst.click();
@@ -87,7 +89,7 @@ export default function RichEditorLineMetrics012() {
       let pointCenter1 = await rich.getBoundsCenter();
       await driver.longClick(pointCenter1.x, pointCenter1.y);
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(500);
       await getFirst.click();
       await CommonFunc.sleep(500);
@@ -103,5 +105,6 @@ export default function RichEditorLineMetrics012() {
 
   })
 }
+
 
 

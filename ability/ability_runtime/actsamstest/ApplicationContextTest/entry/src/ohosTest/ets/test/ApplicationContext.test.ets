@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 

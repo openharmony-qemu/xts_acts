@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from "@ohos/hypium-dynamic";
 import { media } from "@kit.MediaKit";
 import { BusinessError } from "@kit.BasicServicesKit";
 import { LOG_TAG, SLEEP_TIME_20, SLEEP_TIME_200, SLEEP_TIME_2000, SLEEP_TIME_500 } from "../Constants";

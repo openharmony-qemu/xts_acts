@@ -15,7 +15,7 @@
 
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import image from '@ohos.multimedia.image';
 import fileIo from '@ohos.file.fs';
 import fs from '@ohos.file.fs';

@@ -14,7 +14,7 @@
  */
 
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import hilog from '@ohos.hilog';
 import { CounterType, CounterComponent, CounterOptions, DateData } from '@ohos.arkui.advanced.Counter';
 

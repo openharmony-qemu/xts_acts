@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import taskpool from '@ohos.taskpool'
 import { ArkTSUtils } from '@kit.ArkTS'
 import Utils from '../utils'

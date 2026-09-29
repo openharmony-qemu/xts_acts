@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import napiCoverAddBatch4 from 'libnapicoveraddbatch4ndktest.so';
 import Utils from '../../Utils';
 

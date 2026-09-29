@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, expect, it, afterEach, TestType, Size, Level, beforeAll, beforeEach, afterAll } from '@ohos/hypium';
+import { describe, expect, it, afterEach, TestType, Size, Level, beforeAll, beforeEach, afterAll } from '@ohos/hypium-dynamic';
 import { taskpool } from '@kit.ArkTS';
 import { attemptClearTimer, createTimer, mainTimer, Timer } from '../testability/pages/TaskMethodTest1';
 import { sleep } from '../testability/pages/Utils';

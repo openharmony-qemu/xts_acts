@@ -319,6 +319,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
     it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_1000 begin---');
+        await Utils.msSleep(1500);
 
         try {
           let type: int = backgroundTaskManager.ContinuousTaskDetailedCancelReason.SYSTEM_CANCEL_NOT_USE_MULTI_DEVICE;
@@ -612,6 +613,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
     it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2200 begin---');
+        await Utils.msSleep(1500);
         try {
           wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
             let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -1026,6 +1028,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
     it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_2800 begin---');
+        await Utils.msSleep(1500);
         try {
           wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
             let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();

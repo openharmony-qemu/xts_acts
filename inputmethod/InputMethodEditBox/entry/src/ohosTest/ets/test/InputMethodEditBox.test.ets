@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import inputMethod from '@ohos.inputMethod';
 import inputMethodEngine from '@ohos.inputMethodEngine';
 import subtype from '@ohos.InputMethodSubtype';
@@ -44,8 +44,16 @@ export default function InputMethodEditBoxAbility() {
     beforeAll(async (done: Function) => {
       console.info('====>beforeAll inputMethod_enable start!')
       try {
-        await delegator.executeShellCommand('ime -e com.acts.inputmethodeditbox.test -f');
-        await delegator.executeShellCommand('ime -s com.acts.inputmethodeditbox.test');
+        let enableCmd = 'ime -e com.acts.inputmethodeditbox.test -f';
+        let setCmd = 'ime -s com.acts.inputmethodeditbox.test';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+          enableCmd = `ime -u ${user} -e com.acts.inputmethodeditbox.test -f`;
+          setCmd = `ime -u ${user} -s com.acts.inputmethodeditbox.test`;
+        }
+        console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+        await delegator.executeShellCommand(enableCmd);
+        await delegator.executeShellCommand(setCmd);
         console.info('====>beforeAll inputMethod_enable success');
         await driver.delayMs(1000);
         let scroll = await driver.findComponent(ON.id('Column1'));

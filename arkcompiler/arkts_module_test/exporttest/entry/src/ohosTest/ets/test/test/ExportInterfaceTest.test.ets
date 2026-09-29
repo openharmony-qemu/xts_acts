@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Size, Level, TestType } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Size, Level, TestType } from "@ohos/hypium-dynamic";
 import User from "../Interface/InterfaceExport";
 import User1 from "../Interface/InterfaceExport1";
 import User2 from "../Interface/InterfaceExport2";

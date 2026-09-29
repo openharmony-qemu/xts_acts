@@ -156,6 +156,45 @@ export default function nfcTagABFVTest() {
             done();
         })
 
+        /**
+         * @tc.name   SUB_Communication_NFC_nfctage_js_0400
+         * @tc.number SUB_Communication_NFC_nfctage_js_0400
+         * @tc.desc   This interface registerForegroundDispatch.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_Communication_NFC_nfctage_js_0400', Level.LEVEL0, function ()  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+            let discTech = [1, 2, 4];
+            try {
+                let recvNfcTagFunc = tagInfo => {
+                    console.info("[NFC_test] controller1 nfc state receive state ->" + tagInfo);
+                    let uid = tagInfo.uid;
+                    let technology = tagInfo.technology;
+                    console.info('[NFC_test] uid readable unexoectedly -> ' + uid);
+                    console.info('[NFC_test] technology readable unexoectedly -> ' + technology);
+                    expect().assertFail();
+                }
+                tag.registerForegroundDispatch(elementName, discTech, recvNfcTagFunc);
+                console.info('[NFC_test] nfc registerForegroundDispatch pass')
+                tag.unregisterForegroundDispatch(elementName);
+                console.info('[NFC_test] nfc unregisterForegroundDispatch pass')
+            } catch (error) {
+                if (error.code === 201) {
+                    console.info('nfc registerForegroundDispatch error' + error + "/" + error.code);
+                    expect(201).assertEqual(error.code)
+                } else {
+                    console.info('nfc registerForegroundDispatch failed');
+                    expect().assertFail();
+                }
+            }
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }

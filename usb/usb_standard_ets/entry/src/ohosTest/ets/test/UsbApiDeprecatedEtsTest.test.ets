@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base'
 import CheckEmptyUtils from './CheckEmptyUtils.js';
 import EventConstants from './EventConstants.js';
 import parameter from '@ohos.systemparameter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { isFilteredDevice } from './FilterUtils';
 
 let gDeviceList: Array<usb.USBDevice>;

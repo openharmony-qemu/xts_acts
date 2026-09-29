@@ -30,6 +30,8 @@ import ConcurrentSetForEachTest from './ConcurrentSetForEachTest.test'
 import ConcurrentSetToStringTest from './ConcurrentSetToStringTest.test'
 import ConcurrentSetSizeTest from './ConcurrentSetSizeTest.test'
 import ConcurrentSetHighConcurrencyTest from './ConcurrentSetHighConcurrencyTest.test'
+import ConcurrentSetRarHighConcurrencyTest from './ConcurrentSetRarHighConcurrencyTest.test'
+import ConcurrentSetTest from './ConcurrentSet.test'
 
 export default function testsuite(): void {
   ConcurrentSetConstructorEmptyTest()
@@ -48,5 +50,6 @@ export default function testsuite(): void {
   ConcurrentSetToStringTest()
   ConcurrentSetSizeTest()
   ConcurrentSetHighConcurrencyTest()
-
+  ConcurrentSetRarHighConcurrencyTest()
+  ConcurrentSetTest()
 }

@@ -117,7 +117,13 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemSizeChange1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4.top - locationText4Again.top)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight120Width300 END');
@@ -180,7 +186,13 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemSizeChangeHeight160Width300 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)*0.4 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemSizeChange1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
@@ -241,7 +253,13 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemSizeChange1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(2000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4.top - locationText4Again.top)) <= 1).assertTrue();
@@ -301,7 +319,13 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop ));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemSizeChange1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(2000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4.top - locationText4Again.top)) <= 1).assertTrue();
@@ -365,7 +389,13 @@ export default function listItem_SizeChange() {
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemSizeChangeHeight160Width380 444');
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)*0.4 + top + globalThis.winTop), Math.round( globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop ));
+      let swipeComponent = await driver.findComponent(ON.id('ListItemSizeChange1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
+          displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       let locationText4Again = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();

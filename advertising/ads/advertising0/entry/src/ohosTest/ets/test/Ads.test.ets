@@ -16,7 +16,7 @@ import hilog from '@ohos.hilog';
 import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
 import router from '@ohos.router';
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import advertising from '@ohos.advertising';
 
 const TAG: string = 'AdTestTag';

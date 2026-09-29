@@ -11,7 +11,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   COMMON_METHOD_INPUT_PAGE,
   COMMON_METHOD_INPUT_ROUTE_PARAM,

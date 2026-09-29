@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, expect, describe, it, TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, expect, describe, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
@@ -109,6 +109,24 @@ export default function webviewControllerClearHostIPParam() {
     it('testClearHostIPHostNameUndefined001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent('emitClearHostIPHostNameUndefined001', 179800);
       Utils.registerBaseEvent('testClearHostIPHostNameUndefined001', '401', 179830, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webviewControllerClearHostIPParamButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testClearHostIPReturnValue001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARHOSTIP_RETURN_4700
+     * @tc.desc   test WebviewController.clearHostIP void return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testClearHostIPReturnValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitClearHostIPReturnValue001', 179800);
+      Utils.registerBaseEvent('testClearHostIPReturnValue001', true, 179840, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

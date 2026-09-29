@@ -25,7 +25,7 @@ const TAG = '[CapiHandDetect]';
 struct CapiHandDetect {
   @State FillColor: string = '#FF000000';
   @State name: string = 'CapiHandDetect';
-  @State StepTips: string =  '提示：单一手势左右手识别接口，返回值hand1与hand2为:未知=0，左手=1，右手=2当前仅在当前旗舰手机机型上能正确识别，其它设备均识别为0，下面所有预期结果打印，需要在hilog日志中，搜索关键字handEvent，查看最后一组hand1与hand2的值\n' +
+  @State StepTips: string =  '提示：单一手势左右手识别接口，返回值hand1与hand2为:未知=0，左手=1，右手=2当前仅在当前旗舰手机机型上能正确识别，其它设备均识别为0，下面所有预期结果，查看页面下方Text显示的最后一组hand1与hand2的值\n' +
     '操作步骤：1、左手拿手机，左手长按‘单一手势+onTouch’按钮\n'+'\n'+
     '预期结果：旗舰手机hand1与hand2打印1，其它设备均打印0“\n'+
     '操作步骤：左手拿手机，右手长按‘单一手势+onTouch’按钮\n' + '预期结果：旗舰手机hand1与hand2打印2，其它设备均打印0“\n' +
@@ -75,6 +75,7 @@ struct CapiHandDetect {
     '操作步骤：右手拿手机，右手长按+拖动‘顺序手势组’按钮\n' + '预期结果：旗舰手机hand1与hand2打印2，其它设备均打印0“\n' +
     '操作步骤：双指长按+拖动‘顺序手势组’按钮\n' + '预期结果：hand1与hand2打印0“\n';
   @State CapiHandDetectVue: boolean = false;
+  @State handLog: string = '等待手势操作...';
   @State active: boolean = false;
   @State intervalNum: number = 0;
   @State yesEnable: boolean = false
@@ -89,39 +90,30 @@ struct CapiHandDetect {
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
-    if (this.CapiHandDetectVue == false) {
-      Button({ stateEffect: this.CapiHandDetectVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }
-      .width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .opacity(0.4)
-      .onClick(() => {
-
-      })
-    } else {
-      Button({ stateEffect: this.CapiHandDetectVue }) {
-        Image($r('app.media.ic_public_pass'))
-          .width('20vp')
-          .height('20vp')
-      }.width('30%')
-      .height('30vp')
-      .backgroundColor(Color.Grey)
-      .onClick(() => {
-        router.back({
-          url: 'pages/ArkUI/ArkUI_index',
-          params: {
-            result: 'true ', title: this.name,
-          }
-        })
-        promptAction.showToast({
-          message: '通过', duration: 1000
-        });
-      })
+    Button({ stateEffect: this.CapiHandDetectVue }) {
+      Image($r('app.media.ic_public_pass'))
+        .width('20vp')
+        .height('20vp')
     }
+    .width('30%')
+    .height('30vp')
+    .backgroundColor(Color.Grey)
+    .opacity(this.CapiHandDetectVue ? 1 : 0.4)
+    .enabled(this.CapiHandDetectVue)
+    .onClick(() => {
+      globalThis.arkTitle = this.name;
+      globalThis.arkResult = 'true ';
+      globalThis.arkTitle = this.name;
+      router.back({
+        url: 'pages/ArkUI/ArkUI_index',
+        params: {
+          result: 'true ', title: this.name,
+        }
+      })
+      promptAction.showToast({
+        message: '通过', duration: 1000
+      });
+    })
   }
 
   @Builder
@@ -135,6 +127,7 @@ struct CapiHandDetect {
     .height('30vp')
     .backgroundColor(Color.Grey)
     .onClick(() => {
+      globalThis.arkTitle = this.name;
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
         params: {
@@ -153,7 +146,8 @@ struct CapiHandDetect {
 
   onPageShow() {
     this.intervalNum = setInterval(() => {
-      if (this.text1 === 'HOVER_ENTER' && this.text2 === 'HOVER_MOVE' && this.text3 === 'HOVER_EXIT' &&this.text4 === 'HOVER_CANCEL') {
+      this.handLog = nativeNode.getLastHandLog();
+      if (nativeNode.isHandDetectCompleted()) {
         this.CapiHandDetectVue = true;
       }
     }, 500)
@@ -179,6 +173,7 @@ struct CapiHandDetect {
         .backgroundColor(Color.Black)
         .size({ width: '40vp', height: '30vp' })
         .onClick(() => {
+          globalThis.arkTitle = this.name;
           router.back({
             url: 'pages/ArkUI/ArkUI_index',
             params: { result: 'None' }
@@ -206,14 +201,20 @@ struct CapiHandDetect {
         }).backgroundColor(Color.White)
           .onAppear(() => {
             nativeNode.createNativeNode("xcomponentId", this.getUIContext());
-            this.CapiHandDetectVue = true;
           })
-          .height("70%")
-          .width("100%")
-          .id("xcomponent")
-      }
+           .height("70%")
+           .width("100%")
+           .id("xcomponent")
+       }
 
-      Row() {
+       Text(this.handLog)
+         .width('90%')
+         .fontSize(14)
+         .fontColor(Color.Black)
+         .margin({ top: 5, bottom: 5 })
+         .textAlign(TextAlign.Center)
+
+       Row() {
         this.PassBtn($r('app.string.btn_fullscreen'), true);
         Button() {
           Image($r('app.media.ic_public_help'))

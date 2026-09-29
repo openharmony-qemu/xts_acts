@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import {
   albumType,
   albumSubtype,
@@ -32,6 +32,7 @@ export default function albumCommitModifyTest () {
   describe('albumCommitModifyTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext)
+    const invalidArgErrorCode = 13900020;
 
     beforeAll(async () => {
       console.info('beforeAll case');
@@ -642,6 +643,130 @@ export default function albumCommitModifyTest () {
       } catch (error) {
         console.info(`${testNum} failed; error: ${error}`);
         expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   album_commitModify_promise_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0500
+     * @tc.desc   album commitModify with system album camera album,errorCode:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('album_commitModify_promise_005', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'album_commitModify_promise_005';
+      let fetchResult: ESObject = await helper.getAlbums(albumType.SYSTEM, albumSubtype.CAMERA);
+      console.info(`${testNum} fetchResult count is ${fetchResult.getCount()}`);
+      let album: photoAccessHelper.Album = await fetchResult.getLastObject();
+      fetchResult.close();
+      let newName = '123abc';
+      try {
+        album.albumName = newName;
+        await album.commitModify();
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   album_commitModify_promise_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0600
+     * @tc.desc   album commitModify with album albumNmaes to '?',errorCode:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('album_commitModify_promise_006', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'album_commitModify_promise_006';
+      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      let invalidName = '?';
+      try {
+        album.albumName = invalidName;
+        await album.commitModify();
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0700
+     * @tc.desc   commitModify with source album source generic album,errorCode:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_007', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_007';
+      let fetchResult: ESObject = await helper.getAlbums(albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
+      console.info(`${testNum} fetchResult count is ${fetchResult.getCount()}`);
+      let album: photoAccessHelper.Album = await fetchResult.getLastObject();
+      fetchResult.close();
+      let newName = '123987';
+      try {
+        album.albumName = newName;
+        await album.commitModify();
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed1, error: ${error.code}, ${error.message}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    })
+
+        /**
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0800
+     * @tc.desc   album commitModify with album albumNmaes to '',errorCode:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_008';
+      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      try {
+        album.albumName = '';
+        await album.commitModify();
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009
+     * @tc.number SUB_PHOTOACCESS_HELPER_RPOMISE_ALBUM_COMMITMODIFY_0900
+     * @tc.desc   commitModify with album name lenght is 256,errorCode:13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'SUB_MULTIMEDIA_ALBUM_COMMITMODIFY_PROMISE_009';
+      let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+      try {
+        album.albumName = 'm'.repeat(256);
+        await album.commitModify();
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed, error: ${error.code}`);
+        expect(error.code).assertEqual(String(invalidArgErrorCode));
         done();
       }
     })

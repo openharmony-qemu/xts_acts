@@ -20,7 +20,7 @@ import { camera } from "@kit.CameraKit";
 import fs from '@ohos.file.fs';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import { sendablePhotoAccessHelper } from "@kit.MediaLibraryKit";
 
 export const LOG_TAG = '[PhotoAccessXts].';

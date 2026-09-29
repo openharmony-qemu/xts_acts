@@ -9,6 +9,7 @@
     "MainAbility/pages/RichEditor26/RichEditorPunctuationOverflow",
     "MainAbility/pages/RichEditor26/RichEditorScrollToVisible",
     "MainAbility/pages/RichEditor26/RichEditorBuilderSpan",
+    "MainAbility/pages/RichEditor26/RichEditorEnableSelectedDataDetector",
     "MainAbility/pages/Coverage/AddFormMenuItemPage",
     "MainAbility/pages/Coverage/ParticleModifierPage",
     "MainAbility/pages/Coverage/ParticlePage",

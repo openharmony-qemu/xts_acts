@@ -35,8 +35,10 @@ struct AccessibilityFocusDrawLevel {
     '2、依次播报 “文本1”,界面无绿框聚焦; “文本2”,界面有绿框聚焦在最上层文本6上; “文本3”,界面无绿框聚焦; “文本4”,界面无绿框聚焦;\n' +
     '“文本5”,界面有绿框聚焦在文本5上; “文本6”,界面有绿框聚焦在文本6上;\n';
   @State vueStatus: boolean = false;
+  @State stepCount: number = 0;
   @State testResult1: boolean = false;
   @State yesEnable: boolean = false;
+  @State intervalNum: number = 0;
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
@@ -106,6 +108,22 @@ struct AccessibilityFocusDrawLevel {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
   }
 
+  onPageShow() {
+    this.intervalNum = setInterval(() => {
+      if (this.stepCount >= 6) {
+        this.vueStatus = true;
+      }
+    }, 500)
+  }
+
+  onPageHide() {
+    clearInterval(this.intervalNum)
+  }
+
+  aboutToDisappear() {
+    clearInterval(this.intervalNum)
+  }
+
   build() {
     Column() {
       Row() {
@@ -162,7 +180,7 @@ struct AccessibilityFocusDrawLevel {
             .backgroundColor(0x317aff)
             .width('30%')
             .onClick(async () => {
-              this.vueStatus = true;
+              this.yesEnable = true;
             })
         }
       }
@@ -178,11 +196,21 @@ struct AccessibilityFocusDrawLevel {
                   .fontColor('#2D2D2D')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(FocusDrawLevel.SELF)
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 0) {
+                      this.stepCount = 1
+                    }
+                  })
                 Text('文本2')
                   .fontSize(18)
                   .fontColor('#2D2D2D')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(FocusDrawLevel.TOP)
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 1) {
+                      this.stepCount = 2
+                    }
+                  })
               }
               .padding({ top: 8, bottom: 8 })
 
@@ -192,11 +220,21 @@ struct AccessibilityFocusDrawLevel {
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(null)
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 2) {
+                      this.stepCount = 3
+                    }
+                  })
                 Text('文本4')
                   .fontSize(18)
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
                   .accessibilityFocusDrawLevel(undefined)
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 3) {
+                      this.stepCount = 4
+                    }
+                  })
               }
               .padding({ top: 8, bottom: 8 })
 
@@ -205,10 +243,20 @@ struct AccessibilityFocusDrawLevel {
                   .fontSize(18)
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 4) {
+                      this.stepCount = 5
+                    }
+                  })
                 Text('文本6')
                   .fontSize(18)
                   .fontColor('#FFFFFF')
                   .fontWeight(FontWeight.Medium)
+                  .onAccessibilityFocus((isFocus: boolean) => {
+                    if (isFocus && this.stepCount === 5) {
+                      this.stepCount = 6
+                    }
+                  })
               }
               .backgroundColor('#4A90E2')
               .padding({

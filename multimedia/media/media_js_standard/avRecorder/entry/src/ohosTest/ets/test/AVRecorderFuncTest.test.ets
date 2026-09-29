@@ -14,7 +14,7 @@
  */
 
 import media from '@ohos.multimedia.media'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import eventEmitter from '@ohos.events.emitter';
 import { Permissions } from '@ohos.abilityAccessCtrl';
 import { BusinessError } from '@ohos.base';

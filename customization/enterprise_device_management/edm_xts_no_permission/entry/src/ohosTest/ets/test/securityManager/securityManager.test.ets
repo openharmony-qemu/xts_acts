@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, beforeAll, Level } from '@ohos/hypium';
+import { describe, expect, it, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIPBOARD_POLICY,
   WATERMARK_BUNDLE_NAME, DEFAULT_USER_ID, getPixelMap, PIXEL_MAP, getCurrentUserId,
   CURRENT_USER_ID, TEST_APP_INSTANCE, TEST_PERMISSION_MANAGED_STATE_GRANTED,
@@ -24,6 +24,29 @@ import securityManager from '@ohos.enterprise.securityManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
 import fs from '@ohos.file.fs';
+
+const WEAK_PIN_DATA: Uint8Array = new Uint8Array([
+  0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x30,
+  0x71, 0x77, 0x65, 0x72, 0x74, 0x79, 0x75, 0x69, 0x6f, 0x70
+]);
+ 
+function withWeakPinFile(callback: (fd: number) => void): void {
+  let file: fs.File | undefined = undefined;
+  let path = getContext().filesDir + '/weak_pin.txt';
+  try {
+    file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+    fs.writeSync(file.fd, WEAK_PIN_DATA.buffer);
+    callback(file.fd);
+  } finally {
+    if (file) {
+      try {
+        fs.closeSync(file);
+      } catch (closeErr) {
+        console.error('EDM_TEST_LOG: Failed to close weak pin file.');
+      }
+    }
+  }
+}
 
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
@@ -330,12 +353,18 @@ export default function securityManagerTest() {
     testInstallEnterpriseReSignatureCertificate();
     testUninstallEnterpriseReSignatureCertificate();
 
+    testSetDeviceSecurityLevelPolicy();
+    testGetDeviceSecurityLevelPolicy();
+
     testSetDisallowedPermission();
     testGetDisallowedPermissions();
     testAddAllowedPermissionBundle();
     testRemoveAllowedPermissionBundle();
     testGetAllowedPermissionBundles();
     testGetWatermarkImageApps();
+
+    testSetWeakPinEnable();
+    testIsWeakPinEnabled();
   })
 }
 
@@ -1145,6 +1174,110 @@ function testGetWatermarkImageApps() {
       expect(error.code === 201).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetDeviceSecurityLevelPolicy() {
+  /**
+   * @tc.name   test_set_device_security_level_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DEVICE_SECURITY_LEVEL_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager setDeviceSecurityLevelPolicy without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_device_security_level_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setDeviceSecurityLevelPolicy(securityManager.DeviceSecurityLevelPolicy.DEFAULT_ENFORCED);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_device_security_level_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetDeviceSecurityLevelPolicy() {
+  /**
+   * @tc.name   test_get_device_security_level_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_SECURITY_LEVEL_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getDeviceSecurityLevelPolicy without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_device_security_level_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.getDeviceSecurityLevelPolicy();
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_device_security_level_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetWeakPinEnable() {
+  /**
+   * @tc.name   test_setWeakPinEnable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager setWeakPinEnable without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+ 
+function testIsWeakPinEnabled() {
+  /**
+   * @tc.name   test_isWeakPinEnabled_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager isWeakPinEnabled without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isWeakPinEnabled_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.isWeakPinEnabled();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { appManager } from '@kit.AbilityKit';
 import { Driver, ON } from '@kit.TestKit';

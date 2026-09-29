@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorShortCutKeys013() {
   describe('RichEditorShortCutKeys013', () => {
@@ -81,7 +83,7 @@ export default function RichEditorShortCutKeys013() {
       let setSelect = await driver.findComponent(ON.id('setSelect'));
       await setSelect.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U, displayID);
       await CommonFunc.sleep(500);
       await getSpans.click();
       await CommonFunc.sleep(500);
@@ -93,5 +95,6 @@ export default function RichEditorShortCutKeys013() {
 
   })
 }
+
 
 

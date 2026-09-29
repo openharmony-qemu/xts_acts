@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterAll, afterEach, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, afterAll, afterEach, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import vpnExtension from '@ohos.net.vpnExtension';
@@ -647,6 +647,57 @@ export default function NetworkManagerVpnTest() {
         expect(config1.addresses[0] != undefined).assertTrue();
         expect(config1.addresses[0].address.address === '10.0.0.10').assertTrue();
         expect(typeof config1.addresses[0].prefixLength === 'number').assertTrue();
+        done();
+      }
+      catch (error) {
+        console.log(`${caseName} fail ${JSON.stringify(error)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+      * @tc.name   testNetworkManagerVPNcreatePromise0900
+      * @tc.number SUB_NetworkManager_VPN_create_Promise_0900
+      * @tc.desc   Function test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level   LEVEL3
+      */
+    it('testNetworkManagerVPNcreatePromise0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testNetworkManagerVPNcreatePromise0900';
+      try {
+        let config2: vpn.VpnConfig = {
+          addresses: [address],
+          routes: [routeInfo],
+          dnsAddresses: ["114.114.114.114"],
+          searchDomains: [],
+          mtu: 1400,
+          isIPv4Accepted: true,
+          isIPv6Accepted: false,
+          isBlocking: false,
+          trustedApplications: [],
+          blockedApplications: []
+        }
+        console.log(`${caseName} config2 is ${JSON.stringify(config2)}`);
+        if (config2.routes !== null && config2.routes !== undefined && config2.routes.length > 0) {
+          expect(config2.routes[0] !== undefined).assertTrue();
+          expect(config2.routes[0].interface === '').assertTrue();
+          expect(config2.routes[0].destination !== undefined).assertTrue();
+          expect(config2.routes[0].destination.address !== undefined).assertTrue();
+          expect(config2.routes[0].destination.address.address === '10.0.0.10').assertTrue();
+          expect(config2.routes[0].destination.address.family === 1).assertTrue();
+          expect(typeof config2.routes[0].destination.prefixLength === 'number').assertTrue();
+          expect(config2.routes[0].gateway !== undefined).assertTrue();
+          expect(config2.routes[0].gateway.address === '192.168.0.1').assertTrue();
+          expect(config2.routes[0].gateway.family === 1).assertTrue();
+          expect(config2.routes[0].gateway.port === 8080).assertTrue();
+          expect(config2.routes[0].hasGateway === true).assertTrue();
+          expect(config2.routes[0].isDefaultRoute === true).assertTrue();
+        } else {
+          console.log(`${caseName} config2.routes is null or undefined`);
+          expect().assertFail();
+        }
         done();
       }
       catch (error) {

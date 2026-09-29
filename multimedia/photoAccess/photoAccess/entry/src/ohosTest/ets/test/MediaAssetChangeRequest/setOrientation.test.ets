@@ -15,7 +15,7 @@
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import common from '@ohos.app.ability.common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import dataSharePredicates from '@ohos.data.dataSharePredicates'
 import { sleep, pushCreateAsset } from '../common';
 

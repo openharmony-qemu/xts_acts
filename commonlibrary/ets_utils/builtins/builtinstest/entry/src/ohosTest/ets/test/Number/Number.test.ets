@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 
 function expo(x: number, f: number) {
   return Number(x).toExponential(f);

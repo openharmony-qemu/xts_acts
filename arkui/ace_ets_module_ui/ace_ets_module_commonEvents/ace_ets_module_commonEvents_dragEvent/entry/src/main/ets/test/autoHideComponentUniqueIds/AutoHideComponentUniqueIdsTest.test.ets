@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, describe, expect, it, Level, afterEach } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level, afterEach } from '@ohos/hypium-dynamic';
 import Utils from '../common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 

@@ -661,6 +661,61 @@ export default function webviewApi() {
       await Utils.waitForExist(()=>isReturn, "testGetNativeAPI", 1, 1000);
       done();
     })
-    
+
+    /**
+     * @tc.name   testWebResourceRequestConstructor001
+     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CONSTRUCTOR_4000
+     * @tc.desc   test WebResourceRequest class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebResourceRequestConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      hilog.info(0x0000, 'testTag', '%{public}s', 'testWebResourceRequestConstructor001 PASS');
+      Utils.emitEvent('emitWebResourceRequestConstructor001', EVENT_ID_SET_EIMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent('testWebResourceRequestConstructor001', true, 142793, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, 'webHostingButton');
+      await Utils.waitForExist(() => isReturn, 'testWebResourceRequestConstructor001', 1, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebResourceRequestConstructorReturn001
+     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CONSTRUCTOR_RETURN_4100
+     * @tc.desc   test WebResourceRequest constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebResourceRequestConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebResourceRequestConstructorReturn001', EVENT_ID_SET_EIMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent('testWebResourceRequestConstructorReturn001', true, 142794, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, 'webHostingButton');
+      await Utils.waitForExist(() => isReturn, 'testWebResourceRequestConstructorReturn001', 1, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebResourceRequestClass001
+     * @tc.number SUB_WEB_WEBRESOURCEREQUEST_CLASS_4200
+     * @tc.desc   test WebResourceRequest class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebResourceRequestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+      Utils.emitEvent('emitWebResourceRequestClass001', EVENT_ID_SET_EIMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent('testWebResourceRequestClass001', true, 142795, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, 'webHostingButton');
+      await Utils.waitForExist(() => isReturn, 'testWebResourceRequestClass001', 1, 1000);
+      done();
+    })
+
   })
 }

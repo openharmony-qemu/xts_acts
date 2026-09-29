@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import ohosWindow from '@ohos.window';
@@ -2575,6 +2575,65 @@ export default function windowImmersiveTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   test_setSystemAvoidAreaEnabled_UNDEFINED
+     * @tc.number SUB_BASIC_WMS_setSystemAvoidAreaEnabled_ErrorCode_0600
+     * @tc.desc   setSystemAvoidAreaEnabled接口验证401_传入undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setSystemAvoidAreaEnabled_UNDEFINED', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'test_setSystemAvoidAreaEnabled_UNDEFINED!'
+      let config: window.Configuration = {
+        name: message,
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      }
+      try {
+        let promise = window.createWindow(config)
+        promise.then(async (data) => {
+          console.info(`${message} succeed createWindow`);
+          let dialogWindowClass = data;
+          await data.setUIContent("testability/pages/First/index2");
+          await sleep(1000)
+          await data.showWindow();
+          await sleep(1000)
+          try {
+            let promise1 = dialogWindowClass.setSystemAvoidAreaEnabled(undefined);
+            promise1.then(async () => {
+              console.info(`${message} succeed setSystemAvoidAreaEnabled`);
+              await dialogWindowClass?.destroyWindow();
+              await sleep(1000);
+              expect().assertFail();
+              done();
+            }).catch(async (err: BusinessError) => {
+              console.error(`${message} promise promise Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
+              await dialogWindowClass?.destroyWindow();
+              await sleep(1000);
+              expect(err.code).assertEqual(801);
+              done();
+            })
+          } catch (err) {
+            console.error(`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
+            await dialogWindowClass?.destroyWindow();
+            await sleep(1000);
+            expect(err.code).assertEqual(401);
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.error(`${message} promise Failed to createWindow, Cause code ${err.code}, message ${err.message}`);
+          expect(err.code).assertEqual(801);
+          done();
+        })
+      } catch (err) {
+        console.error(`${message} Failed to test setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
 
     /**
      * @tc.name   test_setSystemAvoidAreaEnabled_ErrorCode_401

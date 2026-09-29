@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import nearlinkConstant from '@ohos.nearlink.constant';
 import { clickRequestPermission } from './ClickRequestPermission';
 import { sleep } from './Sleep';

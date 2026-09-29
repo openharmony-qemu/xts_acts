@@ -16,6 +16,8 @@
 
 import avRecorderTest from './AVRecorderFuncTest.test'
 import {avVideoRecorderTestOne,executeAVVideoRecorder} from './AvVideoRecorderFuncTestOne.test'
+import avRecorderSqrFactorTest from './AVRecorderSqrFactorTest.test'
+
 let isExecuteAVVideoRecorder = executeAVVideoRecorder();
 
 export default function testsuite() {
@@ -23,4 +25,5 @@ export default function testsuite() {
   if(isExecuteAVVideoRecorder){
      avVideoRecorderTestOne();
   }
+  avRecorderSqrFactorTest();
 }

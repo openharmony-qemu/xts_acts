@@ -14,7 +14,7 @@
  */
 
 import { HashMap } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 interface StringInvalidObject { marker: string; }
 const STRING_INVALID_OBJECT: StringInvalidObject = { marker: 'invalid' };

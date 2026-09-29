@@ -14,7 +14,7 @@
  */
 
 import { HashSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 const DATE_A: Date = new Date('2026-03-01T00:00:00.000Z');
 const DATE_B: Date = new Date('2026-03-02T00:00:00.000Z');
 const DATE_C: Date = new Date('1970-01-01T00:00:00.000Z');

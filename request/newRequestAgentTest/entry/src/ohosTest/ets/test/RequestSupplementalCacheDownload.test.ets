@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic';
 import { cacheDownload, BusinessError } from '@kit.BasicServicesKit';
 
 export default function requestSupplementalCacheDownloadTest() {

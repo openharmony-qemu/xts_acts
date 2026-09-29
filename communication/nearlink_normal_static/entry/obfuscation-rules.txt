@@ -1,0 +1,3 @@
+# Obfuscation rules for release mode
+-keep
+-entry/src/main/ets/**

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, Level, expect } from "@ohos/hypium"
+import { describe, it, Level, expect } from "@ohos/hypium-dynamic"
 import app, { ScreenOnVisibleOptions } from '@system.app';
 export default function systemAppJsunit() {
   describe('appInfoTest_four_9', () => {

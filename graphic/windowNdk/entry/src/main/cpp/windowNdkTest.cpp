@@ -45,6 +45,7 @@
 #define PARAM_1300011 1300011
 #define PARAM_1300012 1300012
 #define PARAM_1300015 1300015
+#define PARAM_1300014 1300014
 #define NAPI_ERR_INVALID_PARAM 1300016
 
 #define MAX_DENSITY_CALLBACKS 10
@@ -653,6 +654,24 @@ static napi_value getKeyEventFilter(napi_env env, napi_callback_info info){
     napi_set_named_property(env, retValue, "hasFilter", filter);
     
     return retValue;
+}
+
+static napi_value getWindowAvoidAreaNullParam(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t windowId;
+    napi_get_value_int32(env, args[0], &windowId);
+
+    auto res = OH_WindowManager_GetWindowAvoidArea(
+        windowId,
+        WindowManager_AvoidAreaType::WINDOW_MANAGER_AVOID_AREA_TYPE_SYSTEM,
+        nullptr);
+    napi_value resultValue;
+    napi_create_int32(env, res, &resultValue);
+    return resultValue;
 }
 
 static napi_value getKeyEventFilterNullParam(napi_env env, napi_callback_info info){
@@ -1878,6 +1897,7 @@ napi_value TestWindowManager_ErrorCode_enum(napi_env env, napi_callback_info inf
     napi_value retValue;
     if (WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_DESTROY_FAILED == PARAM_1300011 &&
         WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_STATE_ABNORMAL == PARAM_1300012 &&
+        WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_INTERNAL_ERROR == PARAM_1300014 &&
         WindowManager_ErrorCode::WINDOW_MANAGER_ERRORCODE_PIP_REPEATED_OPERATION == PARAM_1300015) {
         napi_create_int32(env, 0, &retValue);
     } else {
@@ -2567,6 +2587,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getKeyEventFilter", nullptr, getKeyEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getKeyEventFilterNullParam", nullptr, getKeyEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getWindowAvoidAreaNullParam", nullptr, getWindowAvoidAreaNullParam,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilter", nullptr, getMouseEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getMouseEventFilterNullParam", nullptr, getMouseEventFilterNullParam, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getTouchEventFilter", nullptr, getTouchEventFilter, nullptr, nullptr, nullptr, napi_default, nullptr},

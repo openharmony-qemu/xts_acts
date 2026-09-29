@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { fileIo, picker } from '@kit.CoreFileKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc, { ClickInfo } from '../MainAbility/common/Common';
 import { EventType } from '../MainAbility/common/Common';
@@ -381,6 +381,22 @@ async function closePickerModel(driver: Driver, time ?: number) {
   await CommonFunc.sleep(time ?? 500);
 }
 
+async function closePickerModelWithNoResult(driver: Driver, time ?: number) {
+  await CommonFunc.sleep(time ?? 500);
+  const checkbox: Component | null = await driver.findComponent(ON.id('Selector_0'));
+  if (!checkbox) {
+    const button: Component | null = await driver.findComponent(ON.id('Complete'));
+    await button?.click();
+  } else {
+    expect(false).assertTrue();
+    console.error(
+      `closePickerModelWithNoResult failed, expect no item in grid view`);
+    const closeBtn: Component | null = await driver.findComponent(ON.id('Third_Select_PickerClose'));
+    await closeBtn?.click();
+  }
+  await CommonFunc.sleep(time ?? 500);
+}
+
 async function savePhoto() {
   console.log('savePhoto start');
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
@@ -434,6 +450,43 @@ function readWriteFile(srcUri: string, dstUri: string) {
   fs.closeSync(destFile);
 }
 
+async function waitForUnselectableInfo(code: number, trigger: () => Promise<void>): Promise<UnselectableItemInfo> {
+  let receivedData: UnselectableItemInfo | null = null;
+  const event: events_emitter.InnerEvent = {
+    eventId: code,
+    priority: events_emitter.EventPriority.LOW
+  };
+  const callback = (eventData: events_emitter.EventData): void => {
+    const msgData: Object | undefined = eventData?.data?.msg;
+    if (msgData !== undefined && msgData !== null) {
+      receivedData = msgData as UnselectableItemInfo;
+    }
+  };
+
+  events_emitter.on(event, callback);
+  try {
+    await trigger();
+    for (let attempt = 0; attempt < 50; attempt++) {
+      if (receivedData !== null) {
+        return receivedData;
+      }
+      await CommonFunc.sleep(100);
+    }
+    throw new Error('onUnselectableItemClicked callback was not received within 5 seconds');
+  } finally {
+    events_emitter.off(code, callback);
+  }
+}
+
+function assertUnselectableInfo(info: UnselectableItemInfo): void {
+  console.info('UnselectableItemInfo: ' + JSON.stringify(info));
+
+  const mimeType: string | undefined = info.mimeType;
+  const photoSubType: photoAccessHelper.PhotoSubtype | undefined = info.photoSubType;
+
+  expect(mimeType === undefined || (typeof mimeType === 'string' && mimeType.startsWith('image/'))).assertTrue();
+  expect(photoSubType === undefined || typeof photoSubType === 'number').assertTrue();
+}
 
 export default function TextPicker() {
   describe('testPicker', () => {
@@ -5318,32 +5371,75 @@ export default function TextPicker() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-     it('SUB_PHOTO_PICKER_TEST_0800', Level.LEVEL0, async (done: Function) => {
+    it('SUB_PHOTO_PICKER_TEST_0800', Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
         return;
       }
-      let pickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
-      pickerOptions.pickerColorMode = photoAccessHelper.PickerColorMode.LIGHT;
-      const photoPicker = new photoAccessHelper.PhotoViewPicker();
-      try{
-        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0800, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-          JSON.stringify(PhotoSelectResult));
-        })
-        await closePickerModel(driver);
-      } catch(err) {
-        expect(false).assertTrue();
-        console.error(`SUB_PHOTO_PICKER_TEST_0800, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      expect(photoAccessHelper.PickerColorMode.AUTO).assertEqual(0);
+      expect(photoAccessHelper.PickerColorMode.LIGHT).assertEqual(1);
+      expect(photoAccessHelper.PickerColorMode.DARK).assertEqual(2);
+      const colorModes: photoAccessHelper.PickerColorMode[] = [
+        photoAccessHelper.PickerColorMode.AUTO,
+        photoAccessHelper.PickerColorMode.LIGHT,
+        photoAccessHelper.PickerColorMode.DARK
+      ];
+      for (const colorMode of colorModes) {
+        const pickerOptions: photoAccessHelper.PhotoSelectOptions = getSheetPickerOptions();
+        pickerOptions.pickerColorMode = colorMode;
+        const photoPicker = new photoAccessHelper.PhotoViewPicker();
+        let receivedError: BusinessError | undefined = undefined;
+        let selectFinished: boolean = false;
+        console.info(`SUB_PHOTO_PICKER_TEST_0800 start colorMode=${colorMode}`);
+        const selectPromise = photoPicker.select(pickerOptions).then((result) => {
+          selectFinished = true;
+          return result;
+        }).catch((error: BusinessError) => {
+          receivedError = error;
+          selectFinished = true;
+          console.error(`SUB_PHOTO_PICKER_TEST_0800 colorMode=${colorMode}, code=${error.code}, message=${error.message}`);
+          return undefined;
+        });
+
+        const checkbox = await driver.waitForComponent(ON.id('Selector_0'), 5000);
+        if (checkbox === undefined || checkbox === null) {
+          throw new Error(`SUB_PHOTO_PICKER_TEST_0800: Selector_0 not found, colorMode=${colorMode}`);
+        }
+        await checkbox.click();
+        console.info(`SUB_PHOTO_PICKER_TEST_0800 selected photo colorMode=${colorMode}`);
+        const completeButton = await driver.waitForComponent(ON.id('Complete'), 5000);
+        if (completeButton === undefined || completeButton === null) {
+          throw new Error(`SUB_PHOTO_PICKER_TEST_0800: Complete not found, colorMode=${colorMode}`);
+        }
+        await completeButton.click();
+        console.info(`SUB_PHOTO_PICKER_TEST_0800 clicked Complete colorMode=${colorMode}`);
+
+        for (let attempt = 0; attempt < 50 && !selectFinished; attempt++) {
+          await CommonFunc.sleep(100);
+        }
+        if (!selectFinished) {
+          throw new Error(`SUB_PHOTO_PICKER_TEST_0800: select result not received after Complete, colorMode=${colorMode}`);
+        }
+        const result = await selectPromise;
+        if (receivedError !== undefined) {
+          const err = receivedError as BusinessError;
+          throw new Error(`SUB_PHOTO_PICKER_TEST_0800: colorMode=${colorMode}, code=${err.code}, message=${err.message}`);
+        }
+        if (result === undefined) {
+          throw new Error(`SUB_PHOTO_PICKER_TEST_0800: result is undefined, colorMode=${colorMode}`);
+        }
+        expect(result.photoUris.length > 0).assertTrue();
+        console.info(`SUB_PHOTO_PICKER_TEST_0800 completed colorMode=${colorMode}`);
+        await CommonFunc.sleep(500);
       }
-      console.info("SUB_PHOTO_PICKER_TEST_0800 finish");
+      console.info('SUB_PHOTO_PICKER_TEST_0800 finish');
       done();
     });
 
     /**
      * @tc.name   SUB_PHOTO_PICKER_TEST_0900
      * @tc.number SUB_PHOTO_PICKER_TEST_0900
-     * @tc.desc   Test onUnselectableAssetClicked callback in Grid View (Thumbnail)
+     * @tc.desc   Test onUnselectableItemClicked and UnselectableItemInfo in grid view
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -5353,70 +5449,57 @@ export default function TextPicker() {
         done();
         return;
       }
-
-      console.info('SUB_PHOTO_PICKER_TEST_0900 start');
-      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      await savePhoto();
+      const pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
       pickerOptions.maxSelectNumber = 1;
       pickerOptions.maxSelectedReminderMode = ReminderMode.MASK;
-      let code: number = EventType.UNSELECTABLE_EVENT_CODE;
-      let receivedData: UnselectableItemInfo | null = null;
-      let callback = (event: events_emitter.EventData) => {
-        let msgData: Object | undefined = event?.data?.msg;
-        if (checkUnselectedItemInfo(msgData)) {
-          receivedData = msgData as UnselectableItemInfo;
-          console.info('SUB_PHOTO_PICKER_TEST_0900 received callback data:', JSON.stringify(receivedData));
-        }
-      };
-
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      };
-      events_emitter.on(event, callback);
-
-      let options: router.RouterOptions = {
+      pickerOptions.preferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.CURRENT;
+      const code: number = EventType.UNSELECTABLE_EVENT_CODE;
+      const options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
           eventId: code,
-          pickerOptions: pickerOptions,
+          pickerOptions: pickerOptions
         }
       };
 
       await routeToUrl(options);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+        const strJson: string = getInspectorByKey('PhotoPickerComponent');
+        expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
 
-      let strJson: string = getInspectorByKey('PhotoPickerComponent');
-      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+        const checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        if (!checkBoxes || checkBoxes.length < 2) {
+          throw new Error('SUB_PHOTO_PICKER_TEST_0900 requires at least two photos');
+        }
 
-      // Select first item by clicking
-      let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
-      if (!checkBoxes || checkBoxes.length < 2) {
-        console.info('SUB_PHOTO_PICKER_TEST_0900: not enough checkboxes to test');
-        events_emitter.off(event.eventId);
+        await checkBoxes[0].click();
+        await CommonFunc.sleep(1000);
+
+        const receivedData: UnselectableItemInfo = await waitForUnselectableInfo(code, async () => {
+          const currentCheckBoxes: Array<Component> =
+            await driver.findComponents(ON.type('Checkbox'));
+          if (!currentCheckBoxes || currentCheckBoxes.length < 2) {
+            throw new Error('SUB_PHOTO_PICKER_TEST_0900 cannot find the second checkbox');
+          }
+          await currentCheckBoxes[1].click();
+        });
+
+        assertUnselectableInfo(receivedData);
+      } finally {
         router.back();
-        done();
-        return;
       }
 
-      await checkBoxes[0].click();
-      await CommonFunc.sleep(1000);
-      console.info('SUB_PHOTO_PICKER_TEST_0900: first checkbox clicked');
-
-      await checkBoxes[1].click();
-      await CommonFunc.sleep(1000);
-
-      expect(receivedData).not().assertUndefined();
       console.info('SUB_PHOTO_PICKER_TEST_0900 finish');
-
-      router.back();
-      events_emitter.off(event.eventId);
       done();
     });
 
     /**
      * @tc.name   SUB_PHOTO_PICKER_TEST_0901
      * @tc.number SUB_PHOTO_PICKER_TEST_0901
-     * @tc.desc   Test onUnselectableAssetClicked callback in Browser View
+     * @tc.desc   Test onUnselectableItemClicked and UnselectableItemInfo in browser view
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -5428,82 +5511,281 @@ export default function TextPicker() {
       }
 
       console.info('SUB_PHOTO_PICKER_TEST_0901 start');
-      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      await savePhoto();
+      const pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
       pickerOptions.maxSelectNumber = 1;
       pickerOptions.maxSelectedReminderMode = ReminderMode.MASK;
-      let code: number = EventType.UNSELECTABLE_EVENT_CODE;
-      let receivedData: UnselectableItemInfo | null = null;
-      let callback = (event: events_emitter.EventData) => {
-        let msgData: Object | undefined = event?.data?.msg;
-        if (checkUnselectedItemInfo(msgData)) {
-          receivedData = msgData as UnselectableItemInfo;
-          console.info('SUB_PHOTO_PICKER_TEST_0900 received callback data:', JSON.stringify(receivedData));
-        }
-      };
-
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      };
-      events_emitter.on(event, callback);
-
-      let options: router.RouterOptions = {
+      pickerOptions.preferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.CURRENT;
+      const code: number = EventType.UNSELECTABLE_EVENT_CODE;
+      const options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
-        params: {
-          eventId: code,
-          pickerOptions: pickerOptions,
-        }
+        params: { eventId: code, pickerOptions: pickerOptions }
       };
-
+      let browserOpenAttempted: boolean = false;
       await routeToUrl(options);
-      await CommonFunc.sleep(2000);
-
-      let strJson: string = getInspectorByKey('PhotoPickerComponent');
-      expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
-
-      // Select one item in the grid first
-      let checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
-      if (!checkBoxes || checkBoxes.length < 1) {
-        console.info('SUB_PHOTO_PICKER_TEST_0901: no checkboxes found');
-        events_emitter.off(event.eventId);
-        router.back();
-        done();
-        return;
-      }
-
-      await checkBoxes[0].click();
-      await CommonFunc.sleep(1000);
-      console.info('SUB_PHOTO_PICKER_TEST_0901: first checkbox clicked in grid');
-
-      // Enter browser view by clicking an image
-      let gridImages: Array<Component> = await driver.findComponents(ON.type('Image'));
-      if (!gridImages || gridImages.length < 1) {
-        console.info('SUB_PHOTO_PICKER_TEST_0901: no images found to enter browser');
-        events_emitter.off(event.eventId);
-        router.back();
-        done();
-        return;
-      }
-
-      await gridImages[0].click();
-      await CommonFunc.sleep(1500);
-
-      await driver.swipe(800, 500, 200, 500, 200);
-      await CommonFunc.sleep(1000);
-
-      let browserCheckboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
-      if (browserCheckboxes && browserCheckboxes.length > 0) {
-        await browserCheckboxes[0].click();
+      try {
+        await CommonFunc.sleep(2000);
+        const strJson: string = getInspectorByKey('PhotoPickerComponent');
+        if (strJson.trim().length === 0) {
+          throw new Error('0901: PhotoPickerComponent inspector is empty');
+        }
+        expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
+        const checkBoxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+        if (!checkBoxes || checkBoxes.length < 2) {
+          throw new Error('0901: at least two photos are required');
+        }
+        await checkBoxes[0].click();
         await CommonFunc.sleep(1000);
+        console.info('0901: first photo selected');
+        const previewButton = await driver.waitForComponent(ON.id('previewButton'), 5000);
+        if (previewButton === null || previewButton === undefined) {
+          throw new Error('0901: previewButton not found');
+        }
+        await previewButton.click();
+        browserOpenAttempted = true;
+        await CommonFunc.sleep(1500);
+        const pickerArea = await driver.findComponent(ON.id('PhotoPickerComponent'));
+        if (pickerArea === null || pickerArea === undefined) {
+          throw new Error('0901: picker area not found');
+        }
+        const bounds = await pickerArea.getBounds();
+        const width: number = bounds.right - bounds.left;
+        const height: number = bounds.bottom - bounds.top;
+        if (width <= 0 || height <= 0) {
+          throw new Error('0901: invalid picker bounds');
+        }
+        const startX: number = Math.floor(bounds.left + width * 0.8);
+        const endX: number = Math.floor(bounds.left + width * 0.2);
+        const swipeY: number = Math.floor(bounds.top + height * 0.5);
+        await driver.swipe(startX, swipeY, endX, swipeY, 400);
+        await CommonFunc.sleep(1000);
+        console.info('0901: swipe completed');
+        const receivedData: UnselectableItemInfo = await waitForUnselectableInfo(code, async () => {
+          const browserCheckboxes: Array<Component> = await driver.findComponents(ON.type('Checkbox'));
+          if (!browserCheckboxes || browserCheckboxes.length === 0) {
+            throw new Error('0901: browser checkbox not found');
+          }
+          await browserCheckboxes[0].click();
+        });
+        assertUnselectableInfo(receivedData);
+      } finally {
+        try {
+          if (browserOpenAttempted) {
+            await clickExitBrowserButton(driver);
+          }
+        } finally {
+          router.back();
+        }
       }
-
-      expect(receivedData).not().assertUndefined();
       console.info('SUB_PHOTO_PICKER_TEST_0901 finish');
-
-      await clickExitBrowserButton(driver);
-      router.back();
-      events_emitter.off(event.eventId);
       done();
     });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_1100
+     * @tc.number SUB_PHOTO_PICKER_TEST_1100
+     * @tc.desc   Test setMovingPhotoState with null and undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_1100', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_1100 start');
+      const storageKey: string = 'movingPhotoTestController';
+      let pageOpened: boolean = false;
+      AppStorage.delete(storageKey);
+      try {
+        await savePhoto();
+        const pickerOptions: PickerOptions = getDefaultPickerOptions();
+        pickerOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+        pickerOptions.isMovingPhotoBadgeShown = false;
+        await router.pushUrl({
+          url: 'MainAbility/pages/PickerComponent',
+          params: { pickerOptions: pickerOptions }
+        });
+        pageOpened = true;
+        let controller: PickerController | undefined = undefined;
+        for (let attempt = 0; attempt < 50; attempt++) {
+          controller = AppStorage.get<PickerController>(storageKey);
+          if (controller !== undefined) {
+            break;
+          }
+          await CommonFunc.sleep(100);
+        }
+        if (controller === undefined) {
+          throw new Error('SUB_PHOTO_PICKER_TEST_1100: picker controller is not ready');
+        }
+        const pickerController: PickerController = controller;
+        const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 5000);
+        if (checkbox === undefined || checkbox === null) {
+          throw new Error('SUB_PHOTO_PICKER_TEST_1100: no photo available');
+        }
+        await checkbox.click();
+        await CommonFunc.sleep(500);
+        const previewButton = await driver.waitForComponent(ON.id('previewButton'), 5000);
+        if (previewButton === undefined || previewButton === null) {
+          throw new Error('SUB_PHOTO_PICKER_TEST_1100: previewButton not found');
+        }
+        await previewButton.click();
+        await CommonFunc.sleep(1000);
+        await pickerController.setMovingPhotoState(photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED);
+        console.info('SUB_PHOTO_PICKER_TEST_1100: valid call succeeded');
+    
+        const invalidStates: Array<photoAccessHelper.MovingPhotoBadgeStateType | null | undefined> = [null, undefined];
+        for (let index = 0; index < invalidStates.length; index++) {
+          const label: string = index === 0 ? 'null' : 'undefined';
+          let receivedError: BusinessError | undefined = undefined;
+          try {
+            await pickerController.setMovingPhotoState(invalidStates[index] as photoAccessHelper.MovingPhotoBadgeStateType);
+          } catch (error) {
+            receivedError = error as BusinessError;
+          }
+          if (receivedError === undefined) {
+            throw new Error('SUB_PHOTO_PICKER_TEST_1100: ' + label + ' unexpectedly succeeded');
+          }
+          console.info('SUB_PHOTO_PICKER_TEST_1100: ' + label + ', code=' + receivedError.code + ', message=' + receivedError.message);
+          expect(receivedError.code).assertEqual(23800151);
+        }
+      } finally {
+        if (pageOpened) {
+          router.back();
+        }
+        AppStorage.delete(storageKey);
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_1100 finish');
+      done();
+    });
+    
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_1200
+     * @tc.number SUB_PHOTO_PICKER_TEST_1200
+     * @tc.desc   Test createAssetWithShortTermPermissionEx with invalid photoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_1200', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      const phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+      const creationSetting: photoAccessHelper.CreationSetting = {
+        title: 'invalid_photo_type',
+        fileNameExtension: 'jpg',
+        photoType: -1 as photoAccessHelper.PhotoType
+      };
+      let receivedError: BusinessError | undefined = undefined;
+      try {
+        await phAccessHelper.createAssetWithShortTermPermissionEx(creationSetting);
+      } catch (error) {
+        receivedError = error as BusinessError;
+        console.info(`SUB_PHOTO_PICKER_TEST_1200 code=${receivedError.code}, message=${receivedError.message}`);
+      }
+      expect(receivedError).not().assertUndefined();
+      console.info('SUB_PHOTO_PICKER_TEST_1200 finish');
+      done();
+    });
+    
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_1300
+     * @tc.number SUB_PHOTO_PICKER_TEST_1300
+     * @tc.desc   Test saveTrustedPhotoAssetsEx with null and undefined trustedUris
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_1300', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_1300 start');
+      const storageKey: string = 'movingPhotoTestController';
+      let pageOpened: boolean = false;
+      AppStorage.delete(storageKey);
+      try {
+        await router.pushUrl({
+          url: 'MainAbility/pages/PickerComponent',
+          params: { pickerOptions: getDefaultPickerOptions() }
+        });
+        pageOpened = true;
+        let controller: PickerController | undefined = undefined;
+        for (let attempt = 0; attempt < 50; attempt++) {
+          controller = AppStorage.get<PickerController>(storageKey);
+          if (controller !== undefined) {
+            break;
+          }
+          await CommonFunc.sleep(100);
+        }
+        if (controller === undefined) {
+          throw new Error('SUB_PHOTO_PICKER_TEST_1300: picker controller is not ready');
+        }
+        const pickerController: PickerController = controller;
+        const uriValues: Array<Array<string> | null | undefined> = [null, undefined];
+        for (let index = 0; index < uriValues.length; index++) {
+          const label: string = index === 0 ? 'null' : 'undefined';
+          let receivedError: BusinessError | undefined = undefined;
+          try {
+            await pickerController.saveTrustedPhotoAssetsEx(uriValues[index] as Array<string>);
+          } catch (error) {
+            receivedError = error as BusinessError;
+          }
+          if (receivedError === undefined) {
+            throw new Error('SUB_PHOTO_PICKER_TEST_1300: trustedUris=' + label + ' unexpectedly succeeded');
+          }
+          console.info('SUB_PHOTO_PICKER_TEST_1300: trustedUris=' + label + ', code=' + receivedError.code + ', message=' + receivedError.message);
+          expect(receivedError.code).assertEqual(14000002);
+        }
+      } finally {
+        if (pageOpened) {
+          router.back();
+        }
+        AppStorage.delete(storageKey);
+      }
+      console.info('SUB_PHOTO_PICKER_TEST_1300 finish');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_PHOTO_PICKER_TEST_1000
+     * @tc.number SUB_PHOTO_PICKER_TEST_1000
+     * @tc.desc   Testing mimeTypeFilter without supporting heif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_PHOTO_PICKER_TEST_1000', Level.LEVEL0, async (done: Function) => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      pickerOptions.mimeTypeFilter = {
+        mimeTypeArray: ['image/heic']
+      }
+      pickerOptions.preferredCompatibleMode = photoAccessHelper.PreferredCompatibleMode.DEFAULT;
+      pickerOptions.assetCompatibleCapability = { supportedHighResolution: false, supportedMimeType: ['image/jpeg'] };
+      try {
+        let photoPicker = new photoAccessHelper.PhotoViewPicker();
+        photoPicker.select(pickerOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
+          console.info('SUB_PHOTO_PICKER_TEST_1000, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+            JSON.stringify(PhotoSelectResult));
+        })
+        await closePickerModelWithNoResult(driver);
+      } catch (err) {
+        expect(false).assertTrue();
+        console.error(
+          `SUB_PHOTO_PICKER_TEST_1000, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+      }
+      console.info("SUB_PHOTO_PICKER_TEST_1000 finish");
+      done();
+    });
+
   })
 }

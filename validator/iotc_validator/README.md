@@ -124,6 +124,10 @@ pip install setuptools==50.0.0
 1. 广播参数格式可参考[https://www.giiconsortium.org/2025/post/2506/](https://www.giiconsortium.org/2025/post/2506/) 6.1.2 BLE设备发现章节中，关于AD Structure2字段的格式要求。
 2. “启用WiFi配置”与“上报信息配置”需至少支持一项，配置页面已按照该规则进行限制。
 
+广播信息与各配置字段的对应关系示例如下：
+
+例如广播信息为 `Oh-HiSiliconS-10001Ht001a`，则广播前缀为 `Oh`，广播设备名称为 `HiSiliconS`，PID 为 `0001H`，SN 码为 `t001`。
+
 配置完成后，点击“保存并进入用例”按钮，进入测试主页面。
 
 应用根据以下配置规则自动过滤测试用例列表：

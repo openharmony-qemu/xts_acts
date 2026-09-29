@@ -16,7 +16,7 @@
 import { AttrsManager } from '../../MainAbility/common/AttrsManager';
 import Utils, { RectValue } from '../../MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { describe, expect } from '@ohos/hypium'
+import { describe, expect } from '@ohos/hypium-dynamic'
 
 class PageConfig {
   testName: string = '';

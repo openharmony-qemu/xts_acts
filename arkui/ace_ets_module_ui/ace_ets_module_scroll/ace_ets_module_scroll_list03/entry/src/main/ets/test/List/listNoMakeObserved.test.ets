@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -76,8 +76,10 @@ export default function listNoMakeObserved() {
       let btn: Component = await driver.findComponent(ON.id('no_observed_splice'));
       await btn.click();
       await CommonFunc.sleep(1500);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('no_observed_2');
-      let listItem3 = CommonFunc.getComponentRectOnScreen('no_observed_3');
+      let listItem2Comp = await driver.findComponent(ON.id('no_observed_2'));
+      let listItem2 = await listItem2Comp.getBounds();
+      let listItem3Comp = await driver.findComponent(ON.id('no_observed_3'));
+      let listItem3 = await listItem3Comp.getBounds();
       await CommonFunc.sleep(500);
       let size_splice = listItem3.bottom - listItem2.bottom
       console.info("[listNoMakeObserved_0200] size_splice is: " + size_splice);
@@ -101,8 +103,10 @@ export default function listNoMakeObserved() {
       let btn: Component = await driver.findComponent(ON.id('no_observed_update'));
       await btn.click();
       await CommonFunc.sleep(1500);
-      let listItem0 = CommonFunc.getComponentRectOnScreen('no_observed_0');
-      let listItem1 = CommonFunc.getComponentRectOnScreen('no_observed_1');
+      let listItem0Comp = await driver.findComponent(ON.id('no_observed_0'));
+      let listItem0 = await listItem0Comp.getBounds();
+      let listItem1Comp = await driver.findComponent(ON.id('no_observed_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       await CommonFunc.sleep(500);
       let size_update = listItem1.bottom - listItem0.bottom
       console.info("[listNoMakeObserved_0300] size_update is: " + size_update);

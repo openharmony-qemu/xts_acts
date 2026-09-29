@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/common/Common';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function TextOnWillCopyTest() {
   describe('TextOnWillCopyTest', () => {
@@ -62,9 +64,17 @@ export default function TextOnWillCopyTest() {
       await CommonFunc.sleep(500);
       await Text.longClick()
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2019);
+      try {
+        await driver.triggerCombineKeys(2072,2019, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(AppStorage.get('TextAllowCopyResult')).assertEqual('onWillCopyAllowCopy');
       console.info('[textOnWillCopy_allow_0100] END');
@@ -86,9 +96,17 @@ export default function TextOnWillCopyTest() {
       await CommonFunc.sleep(500);
       await Text.longClick()
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2019);
+      try {
+        await driver.triggerCombineKeys(2072,2019, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(AppStorage.get('TextBlockCopyResult')).assertEqual('onWillCopyBlockCopy');
       console.info('[textOnWillCopy_block_0100] END');

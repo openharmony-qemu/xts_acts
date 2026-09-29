@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorSetStyledString011() {
   describe('RichEditorSetStyledString011', () => {
@@ -73,9 +75,9 @@ export default function RichEditorSetStyledString011() {
       let image_top = await driver.findComponent(ON.id('image_top'));
       await image_top.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
       await CommonFunc.sleep(500);
       let onCopyCall = await driver.findComponent(ON.id('onCopyCall'));
       let onCopyCallText = await onCopyCall.getText();
@@ -95,7 +97,7 @@ export default function RichEditorSetStyledString011() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0021',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0021 START');
       let driver = Driver.create();
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
       await CommonFunc.sleep(500);
       let onPasteCall = await driver.findComponent(ON.id('onPasteCall'));
       let onPasteCallText = await onPasteCall.getText();
@@ -115,9 +117,9 @@ export default function RichEditorSetStyledString011() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0023',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0023 START');
       let driver = Driver.create();
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, displayID);
       await CommonFunc.sleep(500);
       let onCut = await driver.findComponent(ON.id('onCut'));
       let onCutText = await onCut.getText();
@@ -127,5 +129,6 @@ export default function RichEditorSetStyledString011() {
     });
   })
 }
+
 
 

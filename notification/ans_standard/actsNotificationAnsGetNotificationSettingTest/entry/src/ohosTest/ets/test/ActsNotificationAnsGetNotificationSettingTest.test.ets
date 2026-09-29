@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@kit.TestKit';

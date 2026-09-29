@@ -14,7 +14,7 @@
  */
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect} from '@ohos/hypium-dynamic'
 
 @Entry
 @Component

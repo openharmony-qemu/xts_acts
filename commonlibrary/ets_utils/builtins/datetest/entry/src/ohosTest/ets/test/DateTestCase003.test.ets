@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Level, Size, beforeEach } from '@ohos/hypium';
+import { describe, it, expect, TestType, Level, Size, beforeEach } from '@ohos/hypium-dynamic';
 function sleep(time: number): Promise<void> {
   return new Promise((re, je) => {
     setTimeout(() => {

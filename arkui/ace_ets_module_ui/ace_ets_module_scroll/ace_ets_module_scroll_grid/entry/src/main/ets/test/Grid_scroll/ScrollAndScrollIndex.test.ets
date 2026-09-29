@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
@@ -81,14 +81,21 @@ export default function ScrollAndScrollIndex() {
      */
     it('Grid_ScrollAndScrollIndex_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollAndScrollIndex_0200] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_grid')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.2 + gridRect.top}`),
-        1000);
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ScrollAndScrollIndex_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.2 + gridRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('Grid_ScrollAndScrollIndex_tex2')
@@ -110,14 +117,21 @@ export default function ScrollAndScrollIndex() {
      */
     it('Grid_ScrollAndScrollIndex_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollAndScrollIndex_0300] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_grid')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
-        1000); //grid滑到底部会再触发两次onScrollIndex事件
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ScrollAndScrollIndex_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+          displayId: displayId
+        }, 1000); //grid滑到底部会再触发两次onScrollIndex事件
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('Grid_ScrollAndScrollIndex_tex1')
@@ -139,14 +153,21 @@ export default function ScrollAndScrollIndex() {
      */
     it('Grid_ScrollAndScrollIndex_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollAndScrollIndex_0400] START');
-      let scrollBarRect = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_scrollBar')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`),
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`),
-        1000); //scrollBar滑到底部，会再触发两次onScrollIndex事件
+      let scrollBarRectComponent = await driver.findComponent(ON.id('Grid_ScrollAndScrollIndex_scrollBar'))
+      let scrollBarRect = await scrollBarRectComponent.getBounds()
+      let displayId = await scrollBarRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`),
+          displayId: displayId
+        }, 1000); //scrollBar滑到底部，会再触发两次onScrollIndex事件
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('Grid_ScrollAndScrollIndex_tex1')

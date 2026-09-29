@@ -15,7 +15,7 @@
 import zlib from '@ohos.zlib'
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 
 let infos = "";
 let SRC_FILE_INVALID = 900001;

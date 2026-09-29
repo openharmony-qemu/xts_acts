@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from "../../MainAbility/common/Common";
@@ -60,9 +60,13 @@ export default function TimePickerAddApi() {
       let bottom = rect.bottom
       let right = rect.right
       let middle = (top + bottom) / 2
+      let displayId = await timePicker.getDisplayId();
 
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(left + (right - left) / 6), Math.round(top + (bottom - top) / 2),Math.round(left + (right - left) / 6), Math.round(top));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 6), y: Math.round(top + (bottom - top) / 2), displayId: displayId },
+        { x: Math.round(left + (right - left) / 6), y: Math.round(top), displayId: displayId }
+      );
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);

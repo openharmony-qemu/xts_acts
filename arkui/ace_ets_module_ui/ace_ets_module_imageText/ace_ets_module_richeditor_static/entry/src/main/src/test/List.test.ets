@@ -21,6 +21,7 @@ import RichEditorStrokeJoinStyleTest from './RichEditor26Test/RichEditorStrokeJo
 import RichEditorPunctuationOverflowTest from './RichEditor26Test/RichEditorPunctuationOverflow.test';
 import RichEditorScrollToVisibleTest from './RichEditor26Test/RichEditorScrollToVisible.test';
 import RichEditorBuilderSpanTest from './RichEditor26Test/RichEditorBuilderSpan.test';
+import RichEditorEnableSelectedDataDetectorTest from './RichEditor26Test/RichEditorEnableSelectedDataDetector.test';
 import ParticleModifierTest from './CoverageTest/ParticleModifier.test';
 import ParticleTest from './CoverageTest/Particle.test';
 import RouterPushUrlErrTest from './CoverageTest/RouterPushUrlErr.test';
@@ -32,6 +33,7 @@ export default function testsuite(): void {
   RichEditorPunctuationOverflowTest();
   RichEditorScrollToVisibleTest();
   RichEditorBuilderSpanTest();
+  RichEditorEnableSelectedDataDetectorTest();
   ParticleModifierTest();
   ParticleTest();
   RouterPushUrlErrTest();

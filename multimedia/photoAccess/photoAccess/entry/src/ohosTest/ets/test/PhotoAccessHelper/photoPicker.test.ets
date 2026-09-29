@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect, beforeAll, Level } from "@ohos/hypium";
+import { describe, afterEach, it, expect, beforeAll, Level } from "@ohos/hypium-dynamic";
 import { driveFn, getPermission, sleep, startAbility, stopAbility } from "../common"
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import { CustomTheme, CustomColors } from '@ohos.arkui.theme';

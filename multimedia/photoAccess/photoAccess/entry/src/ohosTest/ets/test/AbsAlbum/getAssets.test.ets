@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import {
   albumType,
   albumSubtype,
@@ -681,6 +681,36 @@ export default function albumGetAssetsTest () {
       } catch (error) {
         console.info(`${testNum} failed; error: ${error.code}`);
         expect(error.code === '14000011').assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   album_getAssets_promise_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_ASSETS_0300
+     * @tc.desc   album getAssets fetchColumns Invalid argument,error code is 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('album_getAssets_promise_003', Level.LEVEL2, async (done: Function) => {
+      const testNum = 'album_getAssets_promise_003';
+      const errorCode = 13900020
+      let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      let fetchOps: photoAccessHelper.FetchOptions = {
+        fetchColumns: ['Invalid argument'],
+        predicates: predicates
+      }
+      const fetchResult = await helper.getAlbums(albumType.SYSTEM, albumSubtype.IMAGE);
+      const album = await fetchResult.getFirstObject();
+      fetchResult.close();
+      try {
+        album.getAssets(fetchOps);
+        expect(false).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code}`);
+        expect(error.code).assertEqual(String(errorCode));
         done();
       }
     });

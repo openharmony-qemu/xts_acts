@@ -14,7 +14,7 @@
  */
 
 import { HashSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 const MAP_A: Map<string, number> = new Map<string, number>();
 const MAP_B: Map<string, number> = new Map<string, number>();
 const MAP_C: Map<string, number> = new Map<string, number>();

@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
+import { WebNetErrorList } from '@ohos.web.netErrorList';
 import {waitForExist} from '../../test/WaitTest';
 
 @Entry
@@ -28,8 +29,11 @@ struct webResourceError {
     "(KHTML, like Gecko) Chrome/99.0.4844.88 Mobile Safari/537.36";
   @State errorInfo: string = ''
   @State errorCode: number = 0
+  @State customErrorCode: number = -1
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+  schemeHandler: webView.WebSchemeHandler = new webView.WebSchemeHandler();
+  testUrl: string = 'ht' + 'tps://w' + 'ww.example.c' + 'om/';
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -79,6 +83,28 @@ struct webResourceError {
               }
               break;
             }
+            case "testGetCustomErrorCode001": {
+              try {
+                this.customErrorCode = -1;
+                this.schemeHandler = new webView.WebSchemeHandler();
+                this.schemeHandler.onRequestStart((
+                  request: webView.WebSchemeHandlerRequest,
+                  resourceHandler: webView.WebResourceHandler) => {
+                  try {
+                    resourceHandler.didFail(WebNetErrorList.ERR_FAILED, true, 32159);
+                  } catch (error) {
+                    console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  }
+                  return true;
+                });
+                this.controller.clearWebSchemeHandler();
+                this.controller.setWebSchemeHandler('https', this.schemeHandler);
+                this.controller.loadUrl(`${this.testUrl}?t=${Date.now()}`);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
           }
         })
       }
@@ -93,6 +119,11 @@ struct webResourceError {
             console.log(`errorInfo is: ${this.errorInfo}`);
             this.errorCode = event.error.getErrorCode();
             console.log(`errorCode is: ${this.errorCode}`);
+            this.customErrorCode = event.error.getCustomErrorCode();
+            console.log(`customErrorCode is: ${this.customErrorCode}`);
+            if (this.str === 'testGetCustomErrorCode001') {
+              Utils.emitEvent(this.customErrorCode, 120025);
+            }
           }
         })
         .onPageEnd(()=>{

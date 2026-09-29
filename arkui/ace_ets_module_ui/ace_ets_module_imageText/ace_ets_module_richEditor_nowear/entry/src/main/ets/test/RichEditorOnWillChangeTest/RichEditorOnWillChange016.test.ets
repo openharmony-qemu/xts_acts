@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorOnWillChange016() {
   describe('RichEditorOnWillChange016', () => {
@@ -70,13 +72,25 @@ export default function RichEditorOnWillChange016() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(KeyCode.KEYCODE_A);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_B);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_B, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       //撤销输入
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
+      try {
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let onDidChange_rangeBefore = await driver.findComponent(ON.id('onDidChange_rangeBefore'));
@@ -93,7 +107,11 @@ export default function RichEditorOnWillChange016() {
       expect(ondidRangeAfter).assertEqual('ondid rangeAfter:{"start":1,"end":1}');
 
       //还原输入
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y);
+      try {
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       replaceCall = await replacedSpansCallback.getText();
@@ -113,5 +131,6 @@ export default function RichEditorOnWillChange016() {
 
   })
 }
+
 
 

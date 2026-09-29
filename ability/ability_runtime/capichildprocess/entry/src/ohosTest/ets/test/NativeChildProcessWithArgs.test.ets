@@ -195,7 +195,7 @@ export default function nativeProcessTest() {
       let tag = `StartNativeChildProcess_0400`;
       try {
         console.log(`${tag} startNativeChildProcess before`);
-        let ret = testNapi.startChildIsolated();
+        let ret: number = testNapi.startChildIsolated();
         console.log(`${tag} startNativeChildProcess ret:${ret}, mpEnable:${mpEnable}`);
         if (ret == 0) {
           await sleep(3000);
@@ -228,7 +228,7 @@ export default function nativeProcessTest() {
       let tag = `StartNativeChildProcess_0500`;
       try {
         console.log(`${tag} startNativeChildProcess before`);
-        let ret = testNapi.startChildIsolated();
+        let ret: number = testNapi.startChildIsolated();
         console.log(`${tag} startNativeChildProcess ret:${ret}`);
         if (ret == 0) {
           await sleep(3000);
@@ -261,7 +261,7 @@ export default function nativeProcessTest() {
       let tag = `StartNativeChildProcess_0600`;
       try {
         console.log(`${tag} startNativeChildProcess before`);
-        let ret = testNapi.startChildNoArgs();
+        let ret: number = testNapi.startChildNoArgs();
         console.log(`${tag} startNativeChildProcess ret:${ret}`);
         await sleep(1000);
         if (ret == 0) {

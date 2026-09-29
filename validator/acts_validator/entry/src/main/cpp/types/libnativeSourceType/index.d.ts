@@ -12,5 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Window from '@ohos.window';
-import { type UIAbility } from '@kit.AbilityKit';
+
+export const nativeSourceType: (id: string, uiContext: UIContext) => void;
+
+export const isSourceTypeCompleted: () => boolean;
+
+export const getLastSourceType: () => number;

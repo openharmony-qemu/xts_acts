@@ -38,13 +38,6 @@ struct CapiGrid {
     '预期结果：\n' +
     '1.grid组件下方文字变成: pass\n'
   @State capiGridVue: boolean = false;
-  @State active: boolean = false;
-  @State intervalNum: number = 0;
-  @State yesEnable: boolean = false
-  @State color: Color = Color.Blue;
-  @State text1: string = ''
-  @State text2: string = ''
-  @State text: string = ''
 
   @Builder
   PassBtn(text: Resource, isFullScreen: boolean) {
@@ -57,6 +50,8 @@ struct CapiGrid {
     .width('30%')
     .height('30vp')
     .backgroundColor(Color.Grey)
+    .enabled(this.capiGridVue)
+    .opacity(this.capiGridVue ? 1 : 0.6)
     .onClick(() => {
       router.back({
         url: 'pages/ArkUI/ArkUI_index',
@@ -98,22 +93,6 @@ struct CapiGrid {
     FirstDialog.ChooseDialog(this.stepTips, this.name);
   }
 
-  onPageShow() {
-    this.intervalNum = setInterval(() => {
-      if (this.text1 === '0' && this.text2 === '0') {
-        this.capiGridVue = true;
-      }
-    }, 500)
-  }
-
-  onPageHide() {
-    clearInterval(this.intervalNum)
-  }
-
-  aboutToDisappear() {
-    clearInterval(this.intervalNum)
-  }
-
   build() {
     Column() {
       Row() {
@@ -153,9 +132,9 @@ struct CapiGrid {
             libraryname: 'nativeGrid'
           })
             .onAppear(() => {
-              nativeGrid.nativeGrid('gridTest', this.getUIContext());
-              this.text1 = '0';
-              this.text2 = '0';
+              nativeGrid.nativeGrid('gridTest', this.getUIContext(), () => {
+                this.capiGridVue = true;
+              });
             })
             .width(`${this.width1}`)
             .backgroundColor('#FFFAFA')
