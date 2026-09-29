@@ -692,7 +692,7 @@ export default function workerErrorCodeTest() {
       const caseName = "testThreadWorkerErrorCode0025";
       let bool = false;
       try {
-        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker("../workers/ErrorCode/WorkerData");
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker("../../workers/ErrorCode/WorkerData");
         workerInstance.postMessage(10);
         workerInstance.onmessage = (e) => {
           workerInstance.terminate();

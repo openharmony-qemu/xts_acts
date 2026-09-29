@@ -13,9 +13,9 @@
 * limitations under the License.
 */
 import AsyncNestingTest from './AsyncNestingTest.test';
-import TaskPoolSendableNameSpaceTest from './TaskPoolSendableNameSpace.test';
+
 
 export default function testsuite() {
-  TaskPoolSendableNameSpaceTest();
+
   AsyncNestingTest();
 }

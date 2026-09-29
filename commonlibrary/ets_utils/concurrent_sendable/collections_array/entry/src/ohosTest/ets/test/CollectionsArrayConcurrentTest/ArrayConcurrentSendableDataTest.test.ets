@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic";
+import { describe, beforeEach, it, expect, TestType, Size, Level } from "@ohos/hypium";
 import { collections, taskpool, ArkTSUtils } from "@kit.ArkTS";
 import { SendableWrapper } from "./SendableWrapper";
 

@@ -24,7 +24,7 @@ import {
   Size,
   Level,
   TestType
-} from '@ohos/hypium-dynamic';
+} from '@ohos/hypium';
 import { ConcurrentFunc, delay, printArgs1,
   printArgs12,
   printArgs15,

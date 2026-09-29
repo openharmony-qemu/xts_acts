@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { util } from '@kit.ArkTS';
 import { sleep } from '../async/utils';
 import defaultExportedAsync, {

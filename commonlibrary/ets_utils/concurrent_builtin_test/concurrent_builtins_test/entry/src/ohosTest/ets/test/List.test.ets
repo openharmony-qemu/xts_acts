@@ -20,6 +20,7 @@ import BuiltinsMultilineStringLiteralTest from './BuiltinsMultilineStringLiteral
 import BuiltinsNullLiteralTest from './BuiltinsNullLiteralTest.test';
 import builtinsNumberConstructorTest from './BuiltinsNumberConstructorTest.test';
 import BuiltinsPartialUtilityType from './BuiltinsPartialUtilityType.test';
+import ConcurrentGlobal from './ConcurrentGlobalTest.test'
 
 export default function testsuite() {
   abilityTest();
@@ -44,4 +45,5 @@ export default function testsuite() {
   BuiltinsNullLiteralTest();
   builtinsNumberConstructorTest();
   BuiltinsPartialUtilityType();
+  ConcurrentGlobal();
 }

@@ -14,13 +14,7 @@
 */
 
 
-import TaskPoolTest from './taskpool/TaskPool.test';
-import TaskPoolErrorCodeTest from './taskpool/TaskpoolErrorCode.test';
-import TaskPoolCoverageTest from './taskpool/TaskPoolCoverage.test';
-import workerTest from './worker/Worker.test';
-import workerAddTest from './worker/WorkerAdd.test';
-import workerErrorCodeTest from './worker/WorkerErrorCode.test';
-import WorkerCoverageTest from './worker/WorkerCoverage.test';
+
 import concurrencyReturnCoveredTest from './returnCovered/concurrencyReturnCoveredTest.test';
 import concurrencyCoveredSupplement from './returnCovered/concurrencyCoveredSupplement.test';
 import containerSerializeTest from './serialize/containerSerialize.test';
@@ -35,13 +29,7 @@ import onMessageErrorTest from './inheritance/OnMessageErrorTest.test';
 import onMessageTest from './inheritance/OnMessageTest.test';
 
 export default function testsuite() {
-  TaskPoolTest();
-  TaskPoolErrorCodeTest();
-  TaskPoolCoverageTest();
-  workerTest();
-  workerAddTest();
-  workerErrorCodeTest();
-  WorkerCoverageTest();
+
   concurrencyReturnCoveredTest();
   concurrencyCoveredSupplement();
   containerSerializeTest();

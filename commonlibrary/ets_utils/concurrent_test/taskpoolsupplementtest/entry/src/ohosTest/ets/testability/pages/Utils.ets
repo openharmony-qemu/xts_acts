@@ -25,7 +25,7 @@ export function sleep(time: number): Promise<void> {
 
 
 export class  WorkThread {
-  static workerStageModel = new worker.ThreadWorker('../workers/Worker');
+  static workerStageModel = new worker.ThreadWorker('./workers/Worker');
 }
 
 

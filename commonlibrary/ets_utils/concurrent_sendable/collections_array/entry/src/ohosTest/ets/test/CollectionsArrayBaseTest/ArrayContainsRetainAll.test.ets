@@ -15,7 +15,7 @@
 // ArrayContainsRetainAll.test.ets
 // containsAll(Array), containsAll(Array), retainAll(Array), retainAll(Array), retainAll(predicate)
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,

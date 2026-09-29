@@ -15,7 +15,7 @@
 // ArrayQuery.test.ets
 // 查询方法组（8个）：at, indexOf, lastIndexOf, includes, find, findIndex, some, every
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,

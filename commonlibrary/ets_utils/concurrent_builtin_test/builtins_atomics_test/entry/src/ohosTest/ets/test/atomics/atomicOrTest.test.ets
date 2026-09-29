@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { typeOr26, typeOr52, typeOr60, typeOr75, typeOr80, typeOr87, typeOr97 } from './atomics';
 import { sleep } from './utils';
 
