@@ -1611,7 +1611,7 @@ export default function windowErrCode401_3() {
         expect(exception.message!=null).assertTrue();
       }
       try {
-        await ohosWindow.getWindowsByCoordinate(1, null, 1, 1);
+        await ohosWindow.getWindowsByCoordinate(-1, null, 1, 1);
         console.info(msgStr + 'Succeeded2');
         expect().assertFail();
         done();
@@ -1626,7 +1626,7 @@ export default function windowErrCode401_3() {
         }
       }
       try {
-        await ohosWindow.getWindowsByCoordinate(1, 1, null, 1);
+        await ohosWindow.getWindowsByCoordinate(-1, 1, null, 1);
         console.info(msgStr + 'Succeeded3');
         expect().assertFail();
         done();
@@ -1640,7 +1640,7 @@ export default function windowErrCode401_3() {
         }
       }
       try {
-        await ohosWindow.getWindowsByCoordinate(1, 1, 1, null);
+        await ohosWindow.getWindowsByCoordinate(-1, 1, 1, null);
         console.info(msgStr + 'Succeeded4');
         expect().assertFail();
         done();
@@ -1664,7 +1664,7 @@ export default function windowErrCode401_3() {
         expect(exception.message!=null).assertTrue();
       }
       try {
-        await ohosWindow.getWindowsByCoordinate(1, undefined, 1, 1);
+        await ohosWindow.getWindowsByCoordinate(-1, undefined, 1, 1);
         console.info(msgStr + 'Succeeded6.');
         expect().assertFail();
         done();
@@ -1678,7 +1678,7 @@ export default function windowErrCode401_3() {
         }
       }
       try {
-        await ohosWindow.getWindowsByCoordinate(1, 1, undefined, 1);
+        await ohosWindow.getWindowsByCoordinate(-1, 1, undefined, 1);
         console.info(msgStr + 'Succeeded7.');
         expect().assertFail();
         done();
@@ -1692,7 +1692,7 @@ export default function windowErrCode401_3() {
         }
       }
       try {
-        await ohosWindow.getWindowsByCoordinate(1, 1, 1, undefined);
+        await ohosWindow.getWindowsByCoordinate(-1, 1, 1, undefined);
         console.info(msgStr + 'Succeeded8.');
         expect().assertFail();
         done();
