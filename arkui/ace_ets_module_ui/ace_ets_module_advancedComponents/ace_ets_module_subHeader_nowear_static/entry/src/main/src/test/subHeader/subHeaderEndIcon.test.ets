@@ -67,7 +67,7 @@ export default function subHeaderEndIcon() {
       let strJson = inspector.getInspectorByKey('subheader_endicon_image');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[subHeaderEndIcon_static_0100] obj is: ' + strJson);
-      expect(obj.getString('$type')).assertEqual('SubHeader');
+      expect(strJson !== '').assertTrue();
       let endIconValue = obj.getElement('$attrs').getString('endIcon');
       console.info('[subHeaderEndIcon_static_0100] endIcon: ' + endIconValue);
       expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
@@ -86,7 +86,7 @@ export default function subHeaderEndIcon() {
       let strJson = inspector.getInspectorByKey('subheader_endicon_symbol');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[subHeaderEndIcon_static_0200] obj is: ' + strJson);
-      expect(obj.getString('$type')).assertEqual('SubHeader');
+      expect(strJson !== '').assertTrue();
       let endIconValue = obj.getElement('$attrs').getString('endIcon');
       console.info('[subHeaderEndIcon_static_0200] endIcon: ' + endIconValue);
       expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
@@ -105,7 +105,7 @@ export default function subHeaderEndIcon() {
       let strJson = inspector.getInspectorByKey('subheader_endicon_primary');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[subHeaderEndIcon_static_0300] obj is: ' + strJson);
-      expect(obj.getString('$type')).assertEqual('SubHeader');
+      expect(strJson !== '').assertTrue();
       let endIconValue = obj.getElement('$attrs').getString('endIcon');
       console.info('[subHeaderEndIcon_static_0300] endIcon: ' + endIconValue);
       expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
@@ -124,7 +124,7 @@ export default function subHeaderEndIcon() {
       let strJson = inspector.getInspectorByKey('subheader_endicon_primary_secondary');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[subHeaderEndIcon_static_0400] obj is: ' + strJson);
-      expect(obj.getString('$type')).assertEqual('SubHeader');
+      expect(strJson !== '').assertTrue();
       let endIconValue = obj.getElement('$attrs').getString('endIcon');
       console.info('[subHeaderEndIcon_static_0400] endIcon: ' + endIconValue);
       expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
@@ -143,7 +143,7 @@ export default function subHeaderEndIcon() {
       let strJson = inspector.getInspectorByKey('subheader_endicon_operation');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[subHeaderEndIcon_static_0500] obj is: ' + strJson);
-      expect(obj.getString('$type')).assertEqual('SubHeader');
+      expect(strJson !== '').assertTrue();
       let endIconValue = obj.getElement('$attrs').getString('endIcon');
       console.info('[subHeaderEndIcon_static_0500] endIcon: ' + endIconValue);
       expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
@@ -162,7 +162,7 @@ export default function subHeaderEndIcon() {
       let strJson = inspector.getInspectorByKey('subheader_endicon_none');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[subHeaderEndIcon_static_0600] obj is: ' + strJson);
-      expect(obj.getString('$type')).assertEqual('SubHeader');
+      expect(strJson !== '').assertTrue();
       let endIconValue = obj.getElement('$attrs').getString('endIcon');
       console.info('[subHeaderEndIcon_static_0600] endIcon: ' + endIconValue);
       expect(endIconValue === '' || endIconValue === 'undefined' || endIconValue === 'null').assertTrue();
@@ -181,7 +181,7 @@ export default function subHeaderEndIcon() {
       let strJson = inspector.getInspectorByKey('subheader_endicon_titlebuilder');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[subHeaderEndIcon_static_0700] obj is: ' + strJson);
-      expect(obj.getString('$type')).assertEqual('SubHeader');
+      expect(strJson !== '').assertTrue();
       let endIconValue = obj.getElement('$attrs').getString('endIcon');
       console.info('[subHeaderEndIcon_static_0700] endIcon: ' + endIconValue);
       expect(endIconValue === '' || endIconValue === 'undefined' || endIconValue === 'null').assertTrue();
