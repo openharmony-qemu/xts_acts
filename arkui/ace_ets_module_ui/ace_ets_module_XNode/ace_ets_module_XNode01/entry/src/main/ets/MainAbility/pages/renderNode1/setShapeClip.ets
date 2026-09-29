@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { RenderNode, FrameNode, NodeController, ShapeMask, ShapeClip } from '@ohos.arkui.node';
 
 const clip = new ShapeClip();
@@ -50,11 +51,11 @@ struct SetShapeClip {
   @State myShapeClip: string = 'Init'
 
   build() {
-    Column() {
+    Column({space:3}) {
       NodeContainer(this.myNodeController)
         .borderWidth(1)
-        .height('70%')
-      TextArea({ text:'Set and Get ShapeClip:' + this.myShapeClip}).height('20%')
+        .height('40%')
+      TextArea({ text:'Set and Get ShapeClip:' + this.myShapeClip}).height('15%').width('85%')
       Row() {
         Button(this.myShapeClip).id('SetShapeClip_id').width('20%')
           .onClick(() => {
@@ -91,6 +92,9 @@ struct SetShapeClip {
             renderNode.shapeClip = renderNode.shapeClip;
 
           })
+      }
+      .height('7%')
+      Row() {
         Button('setOvalShape').width('20%')
           .onClick(() => {
             renderNode.shapeClip.setOvalShape({
@@ -107,7 +111,7 @@ struct SetShapeClip {
             renderNode.shapeClip = renderNode.shapeClip;
           })
       }
-      .height('10%')
-    }
+      .height('7%')
+    }.width('100%').height('100%')
   }
 }

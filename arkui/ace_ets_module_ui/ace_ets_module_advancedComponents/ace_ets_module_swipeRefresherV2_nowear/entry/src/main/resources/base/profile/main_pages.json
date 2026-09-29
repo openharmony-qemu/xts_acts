@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/Index",
     "MainAbility/pages/swipeRefresherV2/SwipeRefresherV2Page",
-    "MainAbility/pages/swipeRefresherV2/SwipeRefresherV2ContentIsLoading"
+    "MainAbility/pages/swipeRefresherV2/SwipeRefresherV2ContentIsLoading",
+    "MainAbility/pages/progressButtonV2/progressButtonV2Page"
   ]
 }

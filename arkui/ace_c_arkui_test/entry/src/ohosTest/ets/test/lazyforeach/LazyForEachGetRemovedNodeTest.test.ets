@@ -39,7 +39,7 @@ export default function lazyForEachGetRemovedNodeTest() {
      */
     it('testLazyForEachGetRemovedNode001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachGetRemovedNodeTest`)
-      await Utils.clickComponent('btn')
+      await Utils.clickComponentNew('btn')
       await Utils.sleep(SleepTime)
       expect(Utils.getComponentInfoByKey('gridGetRemovedNode').$attrs.backgroundColor).assertEqual(ColorGreen)
       done()

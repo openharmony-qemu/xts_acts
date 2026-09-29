@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
   ChipV2,
   ChipV2Options,
@@ -56,6 +57,6 @@ struct ChipV2OnClick {
         })
       }.width(120).borderWidth(1).id('ChipV2OnClickCol')
       Text(this.text).id('tvChipV2OnClickText')
-    }
+    }.width('100%').height('100%')
   }
 }

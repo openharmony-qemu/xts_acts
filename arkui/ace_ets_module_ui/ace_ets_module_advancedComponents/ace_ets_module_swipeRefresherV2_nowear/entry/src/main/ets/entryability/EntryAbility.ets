@@ -27,17 +27,45 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
   
-  onWindowStageCreate(windowStage: window.WindowStage):void{
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
+
+    let mainWindow: window.Window = windowStage.getMainWindowSync();
+    let promise1 = mainWindow.getProperties();
+    promise1.then((data) => {
+      console.info('当前屏幕ID' + data.displayId);
+      AppStorage.setOrCreate('displayID',data.displayId);
+    }).catch((err: BusinessError) => {
+    });
+    
     windowStage.loadContent('MainAbility/pages/index/Index', (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
+      let windowClass: window.Window | undefined = undefined;
+      windowStage.getMainWindow((err: BusinessError, data) => {
+        let errCode: number = err.code;
+        if (errCode) {
+          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          return;
+        }
+        windowClass = data;
+        hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
+        try {
+          let properties: window.WindowProperties = windowClass.getWindowProperties();
+          let wRect: window.Rect = properties.windowRect;
+          globalThis.winLeft = wRect.left;
+          globalThis.winTop = wRect.top;
+          hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop);
+        } catch (exception) {
+          hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+        }
+      })
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
   }

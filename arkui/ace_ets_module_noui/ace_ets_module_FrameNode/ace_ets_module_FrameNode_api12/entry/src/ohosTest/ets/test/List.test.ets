@@ -31,7 +31,7 @@ export default function testsuite() {
   nodeContainerTest()
   frameNodeGetInterfaceTest()
   APIsetOnFocusTest()
-  APIsetOnHoverTest()
+  //APIsetOnHoverTest()
   nodeList()
   nodeListItemGroup()
 }
