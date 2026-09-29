@@ -7300,6 +7300,8 @@ export default function windowPropertiesTest() {
         contentHeight: 500
       };
       let isMaximized = false;
+      let isDestroyWindow = false;
+      let isStopPip = false;
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
       try {
@@ -7312,7 +7314,7 @@ export default function windowPropertiesTest() {
           console.info(`${caseName} pipController.isPiPSupported(). data: ${pipController.isPiPSupported()}`);
           done();
         } else {
-          if (!properties.isFullScreen) {
+          if (isFreeWindowMode) {
             await mainWindow.maximize();
             isMaximized = true;
             await sleep(200);
@@ -7328,7 +7330,9 @@ export default function windowPropertiesTest() {
             console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
             expect(data).assertEqual(13);
             await pipController?.stopPiP();
+            isStopPip = true;
             await subWindowClass?.destroyWindow();
+            isDestroyWindow = true;
             console.error(`${caseName} isMaximized: ${isMaximized}`);
             if (isMaximized) {
               await mainWindow.recover();
@@ -7336,9 +7340,15 @@ export default function windowPropertiesTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-            await pipController?.stopPiP();
-	    await subWindowClass?.destroyWindow();
-	    if (err.code === 801) {
+            if (!isDestroyWindow) {
+              await subWindowClass?.destroyWindow();
+              isDestroyWindow = true;
+            }
+            if (!isStopPip) {
+              await pipController?.stopPiP();
+              isStopPip = true;
+            }
+	          if (err.code === 801) {
               expect(err.message != null).assertTrue();
               done();
             } else {
@@ -7352,7 +7362,12 @@ export default function windowPropertiesTest() {
         }
       } catch (error) {
         console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-        await subWindowClass?.destroyWindow();
+        if (!isDestroyWindow) {
+          await subWindowClass?.destroyWindow();
+        }
+        if (!isStopPip) {
+          await pipController?.stopPiP();
+        }
         if (isMaximized) {
           await mainWindow.recover();
         }
