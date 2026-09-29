@@ -25,7 +25,7 @@ export default class CommonFunc {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static sleep(time: int) {
+  static sleep(time: int): Promise<void> {
     return new Promise<string>((resolve, reject) => {
       setTimeout(() => {
         resolve("ok")
