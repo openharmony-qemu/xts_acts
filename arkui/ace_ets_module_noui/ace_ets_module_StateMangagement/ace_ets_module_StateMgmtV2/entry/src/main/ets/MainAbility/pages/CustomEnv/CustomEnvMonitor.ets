@@ -61,7 +61,6 @@ struct MonitorChild {
       Text(`message${this.num1}:` + this.message)
         .id('customEnvMonitor_dynamic_001')
         .height('5%')
-        .fontSize(22);
     }
     .height('100%')
     .width('100%')

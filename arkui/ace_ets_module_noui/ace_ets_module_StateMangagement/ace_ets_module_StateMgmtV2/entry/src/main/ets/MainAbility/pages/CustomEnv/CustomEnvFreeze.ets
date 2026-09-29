@@ -68,7 +68,6 @@ struct FreezeChild {
       Text(`message${this.num1}:${this.message}, index: ${this.index}`)
         .id(`customEnvFreeze_dynamic_00${this.index + 1}`)
         .height('5%')
-        .fontSize(22);
     }
     .height('100%')
     .width('100%')

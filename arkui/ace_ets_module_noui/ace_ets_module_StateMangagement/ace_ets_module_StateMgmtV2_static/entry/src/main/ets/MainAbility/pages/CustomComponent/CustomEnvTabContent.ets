@@ -62,7 +62,6 @@ struct FreezeChild {
     Text('message' + `${this.message}, index: ${this.index}`)
       .id('customEnvTabContent_002')
       .height('5%')
-      .fontSize(50)
       .fontWeight(FontWeight.Bold)
   }
 }

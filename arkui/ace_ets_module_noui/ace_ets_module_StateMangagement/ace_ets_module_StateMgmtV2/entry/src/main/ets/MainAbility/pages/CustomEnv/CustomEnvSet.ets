@@ -27,8 +27,7 @@ struct CustomEnvSet {
         Text(`${item[0]}`)
           .id('customEnvSet_dynamic_001')
           .height('5%')
-          .fontSize(20)
-          .margin(10)
+          .margin(5)
       })
 
       Button('Add element')

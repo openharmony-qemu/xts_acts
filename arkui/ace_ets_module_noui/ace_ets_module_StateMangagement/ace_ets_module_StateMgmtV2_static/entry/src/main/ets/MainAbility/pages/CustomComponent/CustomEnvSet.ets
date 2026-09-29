@@ -30,7 +30,6 @@ struct CustomEnvSet {
           Text(`${item}`)
             .id('customEnvSet_001')
             .height('5%')
-            .fontSize(20)
         })
         // 新增元素，触发UI刷新
         Button('Add element')

@@ -57,7 +57,6 @@ struct WatchChild {
       Text(`parentVal${this.num1} is: ` + this.parentVal)
         .id('customEnvWatch_dynamic_001')
         .height('5%')
-        .fontSize(22);
     }
     .height('100%')
     .width('100%')

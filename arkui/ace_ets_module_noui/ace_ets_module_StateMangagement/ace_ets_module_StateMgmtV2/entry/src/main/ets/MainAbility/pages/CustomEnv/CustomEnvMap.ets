@@ -27,8 +27,7 @@ struct CustomEnvMap {
         Text(`key: ${item[0]}, value: ${item[1]}`)
           .id('customEnvMap_dynamic_001')
           .height('5%')
-          .fontSize(20)
-          .margin(10)
+          .margin(5)
       })
 
       Button('Set entry cherry')

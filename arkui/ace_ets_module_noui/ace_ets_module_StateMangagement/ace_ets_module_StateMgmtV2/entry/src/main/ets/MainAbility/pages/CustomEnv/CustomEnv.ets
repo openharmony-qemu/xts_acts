@@ -69,7 +69,6 @@ struct Index {
     Column() {
       Button('update')
         .id('CustomEnvBtn')
-        .fontSize(10)
         .onClick(()=> {
           this.undefValue = undefined;
           this.unionVal = this.isFirstState ?'union pass': '更新后的联合值';
@@ -147,40 +146,28 @@ struct Child {
     Column() {
       Text('string：' + this.correctType)
         .id('text1')
-        .fontSize(10)
       Text('number：' + this.numType)
         .id('text2')
-        .fontSize(10)
       Text('boolean：' + this.boolType)
         .id('text3')
-        .fontSize(10)
       Text('undefined：' + this.undefType)
         .id('text4')
-        .fontSize(10)
       Text('null：' + this.nullType)
         .id('text5')
-        .fontSize(10)
       Text('0：' + this.zeroType)
         .id('text6')
-        .fontSize(10)
       Text('负数：' + this.negativeType)
         .id('text7')
-        .fontSize(10)
       Text('enum：' + this.enumType)
         .id('text8')
-        .fontSize(10)
       Text('联合：' + this.unionType)
         .id('text9')
-        .fontSize(10)
       Text('build in：' + this.arrayType.join(','))
         .id('text10')
-        .fontSize(10)
       Text('class：id=' + this.classType.id + ', username=' + this.classType.username)
         .id('text11')
-        .fontSize(10)
       Text('object：' + this.objType.aa)
         .id('text12')
-        .fontSize(10)
     }
   }
 }

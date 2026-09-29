@@ -60,7 +60,6 @@ struct Child {
       Text(`message:${this.message},${this.num1}`)
         .id('customenvMonitor_002')
         .height('5%')
-        .fontSize(50)
     }
   }
 }
