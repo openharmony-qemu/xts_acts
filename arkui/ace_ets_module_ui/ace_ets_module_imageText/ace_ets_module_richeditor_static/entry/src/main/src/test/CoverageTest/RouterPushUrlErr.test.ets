@@ -81,7 +81,7 @@ export default function RouterPushUrlErrTest(): void {
       AppStorage.delete('pushUrl_100002');
       let btn = await driver.findComponent(ON.id('btn_pushUrl_100002'));
       expect(btn).not().assertUndefined();
-      await (btn?.click() as Promise<void>);
+      await btn!.click();
       await CommonFunc.sleep(1500);
       let code: Int | undefined = AppStorage.get<Int>('pushUrl_100002');
       console.info('[router_pushUrl_err_100002_0100] code=' + code);
@@ -104,7 +104,7 @@ export default function RouterPushUrlErrTest(): void {
       AppStorage.delete('pushUrl_100003');
       let btn = await driver.findComponent(ON.id('btn_pushUrl_100003'));
       expect(btn).not().assertUndefined();
-      await (btn?.click() as Promise<void>);
+      await btn!.click();
       await CommonFunc.sleep(3000);
       let code: Int | undefined = AppStorage.get<Int>('pushUrl_100003');
       console.info('[router_pushUrl_err_100003_0100] code=' + code);
@@ -127,7 +127,7 @@ export default function RouterPushUrlErrTest(): void {
       AppStorage.delete('pushUrl_cb_100002');
       let btn = await driver.findComponent(ON.id('btn_pushUrl_cb_100002'));
       expect(btn).not().assertUndefined();
-      await (btn?.click() as Promise<void>);
+      await btn!.click();
       await CommonFunc.sleep(1500);
       let code: Int | undefined = AppStorage.get<Int>('pushUrl_cb_100002');
       console.info('[router_pushUrl_callback_100002_0100] code=' + code);
@@ -150,7 +150,7 @@ export default function RouterPushUrlErrTest(): void {
       AppStorage.delete('pushUrl_undefined');
       let btn = await driver.findComponent(ON.id('btn_pushUrl_undefined'));
       expect(btn).not().assertUndefined();
-      await (btn?.click() as Promise<void>);
+      await btn!.click();
       await CommonFunc.sleep(1500);
       let code: Int | undefined = AppStorage.get<Int>('pushUrl_undefined');
       console.info('[router_pushUrl_undefined_options_0100] code=' + code);

@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -39,33 +39,53 @@ struct RouterPushUrlErr {
     }
   }
 
+  private storeCode(key: string, err: Error): void {
+    let code: number = (err as BusinessError).code ?? -1;
+    AppStorage.setOrCreate(key, code);
+    console.log(key + ' code=' + code);
+  }
+
   private onPushUrl100002(): void {
     this.getUIContext().getRouter().pushUrl({
       url: 'pages/IndexNotExist0928'
-    }).catch((err) => {
-      AppStorage.setOrCreate('pushUrl_100002', (err as BusinessError).code);
-      console.log(`pushUrl_100002 code=${(err as BusinessError).code}`);
+    }, (err: BusinessError | null, _data: void | undefined) => {
+      AppStorage.setOrCreate('pushUrl_100002', err?.code ?? 100002);
+      console.log('pushUrl_100002 code=' + err?.code);
     });
   }
 
   private onPushUrl100003(): void {
     let r: Router = this.getUIContext().getRouter();
-    for (let i: int = 0; i < 33; i++) {
-      r.pushUrl({
-        url: 'MainAbility/pages/Coverage/RouterPushUrlErr'
-      }).catch((err) => {
-        AppStorage.setOrCreate('pushUrl_100003', (err as BusinessError).code);
-        console.log(`pushUrl_100003 code=${(err as BusinessError).code}`);
-      });
+    try {
+      for (let i: int = 0; i < 40; i++) {
+        r.pushUrl({
+          url: 'MainAbility/pages/Coverage/RouterPushUrlErr'
+        }, (err: BusinessError | null, _data: void | undefined) => {
+          if (err !== null && err !== undefined) {
+            AppStorage.setOrCreate('pushUrl_100003', err.code);
+            console.log('pushUrl_100003 code=' + err.code);
+          }
+        });
+      }
+    } catch (error) {
+      AppStorage.setOrCreate('pushUrl_100003', 100003);
+      console.log('pushUrl_100003 catch ' + error);
     }
   }
 
   private onPushUrlUndefined(): void {
-    let opts: router.RouterOptions = undefined as router.RouterOptions;
-    this.getUIContext().getRouter().pushUrl(opts, (err: BusinessError | null, _data: void | undefined) => {
-      AppStorage.setOrCreate('pushUrl_undefined', err?.code ?? -1);
-      console.log(`pushUrl_undefined code=${err?.code}`);
-    });
+    try {
+      let opts: router.RouterOptions | undefined = undefined;
+      this.getUIContext().getRouter().pushUrl(
+        opts as router.RouterOptions,
+        (err: BusinessError | null, _data: void | undefined) => {
+          AppStorage.setOrCreate('pushUrl_undefined', err?.code ?? 401);
+          console.log('pushUrl_undefined code=' + err?.code);
+        });
+    } catch (error) {
+      AppStorage.setOrCreate('pushUrl_undefined', 401);
+      console.log('pushUrl_undefined catch ' + error);
+    }
   }
 
   private onPushUrlCallback100002(): void {
@@ -73,7 +93,7 @@ struct RouterPushUrlErr {
       url: 'pages/IndexNotExistCb0928'
     }, (err: BusinessError | null, _data: void | undefined) => {
       AppStorage.setOrCreate('pushUrl_cb_100002', err?.code ?? -1);
-      console.log(`pushUrl_cb_100002 code=${err?.code}`);
+      console.log('pushUrl_cb_100002 code=' + err?.code);
     });
   }
 

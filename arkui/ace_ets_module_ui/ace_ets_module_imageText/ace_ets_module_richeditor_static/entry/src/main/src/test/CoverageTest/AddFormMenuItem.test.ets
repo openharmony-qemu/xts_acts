@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +23,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-const SLEEP_TIME = 500;
+const SLEEP_TIME = 800;
 
 export default function AddFormMenuItemTest(): void {
   describe('AddFormMenuItemTest', () => {
@@ -39,11 +39,8 @@ export default function AddFormMenuItemTest(): void {
       };
       try {
         const routerInstance: Router = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        let pages: router.RouterState = routerInstance.getState();
-        if (pages.name !== 'AddFormMenuItemPage') {
-          routerInstance.replaceUrl(options);
-        }
+        routerInstance.replaceUrl(options);
+        await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
         console.error('AddFormMenuItemTest replaceUrl error: ' + err);
         expect().assertFail();
@@ -53,14 +50,12 @@ export default function AddFormMenuItemTest(): void {
     afterAll(() => {
       AppStorage.delete('formMenu_page_ready');
       AppStorage.delete('formMenu_built');
-      AppStorage.delete('formMenu_callback_code');
-      AppStorage.delete('formMenu_callback_id');
     });
 
     /**
      * @tc.name   SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0100
      * @tc.number SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0100
-     * @tc.desc   Test AddFormMenuItem page loads and marks ready
+     * @tc.desc   Test AddFormMenuItem page loads (no AddFormOptions type on device)
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
@@ -68,8 +63,7 @@ export default function AddFormMenuItemTest(): void {
     it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[addFormMenuItem_page_ready_0100] START');
       await CommonFunc.sleep(SLEEP_TIME);
-      let ready: string | undefined = AppStorage.get<string>('formMenu_page_ready');
-      expect(ready).assertEqual('ready');
+      expect(AppStorage.get<string>('formMenu_page_ready')).assertEqual('ready');
       let strJson = inspector.getInspectorByKey('formMenu_title');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('AddFormMenuItem');
@@ -79,42 +73,22 @@ export default function AddFormMenuItemTest(): void {
     /**
      * @tc.name   SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0200
      * @tc.number SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0200
-     * @tc.desc   Test AddFormMenuItem bindMenu with AddFormOptions
+     * @tc.desc   Test AddFormMenuItem(undefined options) via bindMenu
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
     it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0200', Level.LEVEL2, async (): Promise<void> => {
-      console.info('[addFormMenuItem_with_options_0100] START');
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      let btn = await driver.findComponent(ON.id('btn_formMenu_with_options'));
-      expect(btn).not().assertUndefined();
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME);
-      let strJson = inspector.getInspectorByKey('btn_formMenu_with_options');
-      expect(strJson.length > 0).assertTrue();
-      console.info('[addFormMenuItem_with_options_0100] END');
-    });
-
-    /**
-     * @tc.name   SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0300
-     * @tc.number SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0300
-     * @tc.desc   Test AddFormMenuItem with undefined AddFormOptions
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0300', Level.LEVEL2, async (): Promise<void> => {
       console.info('[addFormMenuItem_undefined_options_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
       let btn = await driver.findComponent(ON.id('btn_formMenu_undefined_options'));
       expect(btn).not().assertUndefined();
-      await (btn?.click() as Promise<void>);
+      await btn!.click();
       await CommonFunc.sleep(SLEEP_TIME);
       let markBtn = await driver.findComponent(ON.id('btn_formMenu_mark_built'));
-      await (markBtn?.click() as Promise<void>);
+      expect(markBtn).not().assertUndefined();
+      await markBtn!.click();
       await CommonFunc.sleep(SLEEP_TIME);
       expect(AppStorage.get<string>('formMenu_built')).assertEqual('ok');
       console.info('[addFormMenuItem_undefined_options_0100] END');

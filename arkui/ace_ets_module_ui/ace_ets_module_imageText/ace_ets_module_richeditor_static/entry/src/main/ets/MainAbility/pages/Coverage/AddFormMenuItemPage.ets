@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,10 +25,8 @@ import {
 } from '@ohos.arkui.component';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
-import { AddFormMenuItem, AddFormOptions } from '@ohos.arkui.advanced.FormMenu';
+import { AddFormMenuItem } from '@ohos.arkui.advanced.FormMenu';
 import Want from '@ohos.app.ability.Want';
-import formBindingData from '@ohos.app.form.formBindingData';
-import { BusinessError } from '@ohos.base';
 
 @Entry
 @Component
@@ -36,43 +34,18 @@ struct AddFormMenuItemPage {
   @State readyText: string = 'init';
   private formWant: Want = {
     bundleName: 'com.arkui.ace.richeditor.static',
-    abilityName: 'EntryFormAbility',
+    abilityName: 'EntryAbility',
     parameters: {
       'ohos.extra.param.key.form_dimension': 2,
       'ohos.extra.param.key.form_name': 'widget',
       'ohos.extra.param.key.module_name': 'entry'
     }
   };
-  private formOptions: AddFormOptions = {
-    formBindingData: formBindingData.createFormBindingData({}),
-    callback: (err: BusinessError | null, formId: string | undefined): void => {
-      AppStorage.setOrCreate('formMenu_callback_code', String(err?.code ?? 0));
-      AppStorage.setOrCreate('formMenu_callback_id', formId ?? 'none');
-    },
-    style: {
-      options: {
-        content: 'AddToDesktop'
-      }
-    }
-  };
 
   aboutToAppear(): void {
-    try {
-      AppStorage.setOrCreate<Router>('router', this.getUIContext().getRouter());
-      AppStorage.setOrCreate('formMenu_page_ready', 'ready');
-      this.readyText = 'ready';
-    } catch (error) {
-      AppStorage.setOrCreate('formMenu_page_ready', 'failed');
-      this.readyText = 'failed';
-      console.log('AddFormMenuItemPage error ' + error);
-    }
-  }
-
-  @Builder
-  menuWithOptions(): void {
-    Menu() {
-      AddFormMenuItem(this.formWant, 'form_menu_comp_opts', this.formOptions)
-    }
+    AppStorage.setOrCreate<Router>('router', this.getUIContext().getRouter());
+    AppStorage.setOrCreate('formMenu_page_ready', 'ready');
+    this.readyText = 'ready';
   }
 
   @Builder
@@ -90,10 +63,6 @@ struct AddFormMenuItemPage {
       Text(this.readyText)
         .id('formMenu_ready_text')
         .fontSize(14)
-      Button('WithOptions')
-        .id('btn_formMenu_with_options')
-        .width('80%')
-        .bindMenu(this.menuWithOptions)
       Button('UndefinedOptions')
         .id('btn_formMenu_undefined_options')
         .width('80%')
@@ -107,5 +76,6 @@ struct AddFormMenuItemPage {
     }
     .width('100%')
     .height('100%')
+    .padding(10)
   }
 }
