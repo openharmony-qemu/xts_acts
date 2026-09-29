@@ -41,8 +41,9 @@ export default function HasAxisTest(){
        let driver = await Driver.create();
       let button = await driver.findComponent(ON.id('button'));
       let center = await button.getBoundsCenter();
+      let displayId = await button.getDisplayId();
       await Utils.sleep(1000);
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayId }, true, 30);
       await Utils.sleep(1000);
       console.info('HasAxisTest_001 5NavigationExample_0100 START');
       let strJson1: string = getInspectorByKey('has1');

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { taskpool, collections } from '@kit.ArkTS';
 import { DataItem } from './TaskpoolSharedData';
 

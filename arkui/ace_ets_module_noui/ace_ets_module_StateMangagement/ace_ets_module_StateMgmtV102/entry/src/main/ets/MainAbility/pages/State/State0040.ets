@@ -36,5 +36,9 @@ struct State0040 {
           this.count += 1
         })
     }
+    .justifyContent(FlexAlign.Center)
+    .alignItems(HorizontalAlign.Center)
+    .margin(20)
+    .padding(20)
   }
 }

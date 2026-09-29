@@ -133,6 +133,8 @@ import RegisterPrintfSpecifierTest from './RegisterPrintfSpecifier.test';
 import RegisterPrintftypeTest from './RegisterPrintftype.test';
 import RegisterPrintfModifierTest from './RegisterPrintfModifier.test';
 import abilityPthreadJoinTest from './PthreadJoinDetach.test';
+import pthreadSetcanceltypeTest from './PthreadSetcanceltype.test';
+import pthreadYieldTest from './PthreadYield.test';
 import GroupIpcTest from './GroupIpc.test';
 
 
@@ -248,4 +250,6 @@ export default function testsuite() {
   
   abilityPthreadJoinTest();
   GroupIpcTest();
+  pthreadSetcanceltypeTest();
+  pthreadYieldTest();
 }

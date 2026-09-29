@@ -15,7 +15,7 @@
 
 import app from '@system.app'
 import worker from "@ohos.worker"
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium-dynamic'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 export default function threadWorkerTest() {
 describe('threadWorkerTest', function () {
 

@@ -61,6 +61,8 @@ struct LifeCycle0510ChildV21 {
           this.isFlag = !this.isFlag
         })
     }
+    .padding(20)
+    .margin(20)
   }
 }
 

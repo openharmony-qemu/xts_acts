@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { taskpool } from '@kit.ArkTS';
 
 // 测试函数定义

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { expect } from '@ohos/hypium-dynamic';
+import { expect } from '@ohos/hypium';
 import testNapi from 'libentry.so';
 
 'use shared'

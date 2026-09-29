@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function ASV20010Test() {
   describe('ASV20010Test', () => {
@@ -85,7 +86,7 @@ export default function ASV20010Test() {
       console.info("[ASV20010Test_001] component obj3 is: " + JSON.stringify(obj3.$attrs.content));
       expect(obj3.$attrs.content).assertEqual('1');
       await CommonFunc.sleep(1000);
-      await driver.pressBack();
+      await driver.pressBack(displayID);
       let btn4: Component = await driver.findComponent(ON.id("btnPage1Remove"));
       await CommonFunc.sleep(1000);
       await btn4.click();

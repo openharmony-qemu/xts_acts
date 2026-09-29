@@ -57,11 +57,14 @@ export default function gridNestedScrollJsunit() {
       await Utils.sleep(500)
       let columnRect = await driver.findComponent(ON.id('gridNestedScroll_ColumnSize'));
       let rect = await columnRect.getBounds();
+      let displayId = await columnRect.getDisplayId();
       console.info(`ArkUI_Stage_gridNestedScroll01 get webRect is:` + JSON.stringify(rect));
       let top = rect.top
       let bottom = rect.bottom
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round(bottom - (bottom - top)/10),
-        Math.round((rect.left + rect.right) / 2), Math.round(top + (bottom - top)/6));
+      let centerX = Math.round((rect.left + rect.right) / 2);
+      await driver.swipeBetween(
+        { x: centerX, y: Math.round(bottom - (bottom - top) / 10), displayId: displayId },
+        { x: centerX, y: Math.round(top + (bottom - top) / 6), displayId: displayId });
       console.info('[ArkUI_Stage_gridNestedScroll01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

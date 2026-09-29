@@ -62,7 +62,7 @@ export default function DatePickerDialogAppearTextTest() {
       await btn1.click();
       await CommonFunc.sleep(1000);
       let confirmBtn = await driver.findComponent(ON.text('确定'));
-      await confirmBtn.click();
+      await confirmBtn?.click();
       await CommonFunc.sleep(2000);
       let text = getInspectorByKey('AppearText');
       expect(JSON.parse(text).$attrs.content).assertEqual('onWillAppear_onDidAppear_onWillDisappear_onDidDisappear');

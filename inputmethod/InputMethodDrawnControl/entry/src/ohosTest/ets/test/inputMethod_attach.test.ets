@@ -57,6 +57,13 @@ export default function inputMethodTest() {
 
     afterEach(async () => {
       clearTimeout(st);
+      try {
+        await inputMethod.getController().detach();
+        console.info(`detach inputMethod success`);
+      } catch (error) {
+        console.info(`detach inputMethod fail, error: [${error.code}, ${error.message}]`);
+      }
+      await sleep(100);
     });
 
     /**

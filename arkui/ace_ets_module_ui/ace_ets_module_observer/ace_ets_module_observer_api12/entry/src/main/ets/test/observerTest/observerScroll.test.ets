@@ -58,16 +58,21 @@ export default function observerScrollTest() {
       await btn.click();
       console.log('observerScrollTest_0100 000')
       await CommonFunc.sleep(1000);
-      let swiperAnimation = CommonFunc.getComponentRectOnScreen('scrollEvent_4');
-      let top = swiperAnimation.top;
-      let right = swiperAnimation.right;
-      let left = swiperAnimation.left;
-      let bottom = swiperAnimation.bottom;
-      console.info("observerScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom -top;
+      let scrollComponent = await driver.findComponent(ON.id('scrollEvent_4'));
+      let rect = await scrollComponent.getBounds();
+      let displayId = await scrollComponent.getDisplayId();
+      let top = rect.top;
+      let right = rect.right;
+      let left = rect.left;
+      let bottom = rect.bottom;
+      console.info("observerScrollTest_0100 value is" + left + " --" + right
+        + "--" + top + "--" + bottom + ", displayId = " + displayId);
+      let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipeBetween({ x: Math.round(left + width*0.2), y: Math.round(bottom - height/4), displayId: displayID }, { x: Math.round(left + width*0.2), y: Math.round(bottom - height/2), displayId: displayID });
+      await driver.swipeBetween(
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 4), displayId: displayId },
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 2), displayId: displayId });
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('scrollEvent_1');
       let strJson1 = getInspectorByKey('scrollEvent_2');

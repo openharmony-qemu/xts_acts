@@ -63,7 +63,7 @@ export default function SyncMonitorNotWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
  
  
@@ -85,7 +85,7 @@ export default function SyncMonitorNotWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("observedV2Button"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
  
  
@@ -107,7 +107,7 @@ export default function SyncMonitorNotWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButton"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
  
  

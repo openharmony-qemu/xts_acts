@@ -27,7 +27,7 @@ struct SwipeGesture1 {
       }
       .key('SwipeGesture1')
       .height("90%")
-      .width("100%")
+      .width("50%")
       .backgroundColor(0x008000)
       .rotate({ angle: this.angle })
       .gesture(
@@ -43,7 +43,7 @@ struct SwipeGesture1 {
       }
       .key('SwipeGesture4')
       .height("90%")
-      .width("100%")
+      .width("50%")
       .backgroundColor(0x008000)
       .rotate({ angle: this.angle })
       .gesture(

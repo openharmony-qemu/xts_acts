@@ -66,14 +66,21 @@ export default function ScrollStartandStop2() {
     it('Grid_ScrollStartandStop2_0300',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[Grid_ScrollStartandStop2_0300] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ScrollStartandStop_grid')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
-        1000);
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ScrollStartandStop_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('Grid_ScrollStartandStop_tex1')

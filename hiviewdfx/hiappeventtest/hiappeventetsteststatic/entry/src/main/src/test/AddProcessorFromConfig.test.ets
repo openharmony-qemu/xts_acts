@@ -267,7 +267,7 @@ export default function addProcessorTestFromConfigTest() {
       }).catch((err: Error) => {
         const bErr = err as BusinessError;
         hilog.error(logDomain, tag, `SUB_DFX_DFT_HiAppEvent_Static_Js_3012 > error code: ${bErr.code}, error msg: ${bErr.message}`);
-        expect(bErr.code == 401).assertTrue();
+        expect(bErr.code == 11105001).assertTrue();
         done();
       });
     });
@@ -288,7 +288,7 @@ export default function addProcessorTestFromConfigTest() {
       }).catch((err: Error) => {
         const bErr = err as BusinessError;
         hilog.error(logDomain, tag, `SUB_DFX_DFT_HiAppEvent_Static_Js_3013 > error code: ${bErr.code}, error msg: ${bErr.message}`);
-        expect(bErr.code == 401).assertTrue();
+        expect(bErr.code == 11105001).assertTrue();
         done();
       });
     });

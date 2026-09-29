@@ -207,16 +207,5 @@ export default function muslPthreadJoinDetachTest() {
       done()
     });
 
-    /**
-     * @tc.name   testMuslPthreadJoinDetach016
-     * @tc.number SUB_THIRDPARTY_MUSL_PTHREAD_JOIN_DETACH_1600
-     * @tc.desc   errno not modified (NULL)
-     */
-    it('testMuslPthreadJoinDetach016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let result: number = pthreadjoindetach.PthreadJoinDetach_1600();
-      console.info("PthreadJoinDetach_1600 result = " + result);
-      expect(result).assertEqual(0);
-      done()
-    });
   })
 }

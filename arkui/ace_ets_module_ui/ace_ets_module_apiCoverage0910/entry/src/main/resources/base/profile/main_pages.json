@@ -1,7 +1,0 @@
-{
-  "src": [
-    "MainAbility/pages/index/index",
-    "MainAbility/pages/coverage/CoverageTypes",
-    "MainAbility/pages/coverage/Coverage0917Batch"
-  ]
-}
