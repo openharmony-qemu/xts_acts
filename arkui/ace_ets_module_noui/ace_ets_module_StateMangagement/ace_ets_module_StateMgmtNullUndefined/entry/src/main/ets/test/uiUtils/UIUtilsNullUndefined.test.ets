@@ -548,13 +548,9 @@ export default function uiUtilsNullUndefinedTest() {
      */
     it('UIUtils_applySync_task_undefined_001', Level.LEVEL2, () => {
       console.info('[UIUtils_applySync_task_undefined_001] START');
-      try {
+      assertExpectedError(() => {
         UIUtils.applySync<number>(undefined);
-        assertCallCompleted();
-      } catch (err) {
-        console.error('[UIUtils_applySync_task_undefined_001] Error: ' + JSON.stringify(err));
-        assertUnexpectedError();
-      }
+      }, 'UIUtils_applySync_task_undefined_001');
       console.info('[UIUtils_applySync_task_undefined_001] END');
     });
     /**

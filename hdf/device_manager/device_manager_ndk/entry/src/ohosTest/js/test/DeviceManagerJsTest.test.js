@@ -1330,7 +1330,6 @@ describe("DeviceManagerJsTest", function () {
         try {
             if (deviceId == null) {
                 console.log('Device ID has not been set.');
-                expect(true).assertTrue();
                 done();
                 return;
             }

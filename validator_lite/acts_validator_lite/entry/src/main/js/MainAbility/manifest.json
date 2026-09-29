@@ -18,6 +18,11 @@
     "pages/Startup/deviceInfo/index",
     "pages/Sensors/index/index",
     "pages/Location/index/index",
+    "pages/RouterTransition/index/index",
+    "pages/RouterTransition/normal/index",
+    "pages/RouterTransition/edge_api/index",
+    "pages/RouterTransition/edge_duration/index",
+    "pages/RouterTransition/target/index",
     "pages/common/help/index"
   ],
   "deviceType": [

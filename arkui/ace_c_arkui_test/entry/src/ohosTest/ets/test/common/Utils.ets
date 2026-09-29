@@ -162,6 +162,16 @@ export default class Utils {
     await component.click();
   }
 
+  static async clickComponentNew(id: string, displayId?: number) {
+    let curDisplayID: number = displayId != undefined ? displayId : (AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0);
+    let driver = await Driver.create();
+    let component = await driver.findComponent(ON.id(id));
+    let rect = await component.getBounds();
+    let centerX = Math.round(rect.left + (rect.right - rect.left) / 2);
+    let centerY = Math.round(rect.top + (rect.bottom - rect.top) / 2);
+    await driver.clickAt({ x: centerX, y: centerY, displayId: curDisplayID });
+  }
+
   static async doubleClickComponent(id: string) {
     let driver = Driver.create();
     let component = await driver.findComponent(ON.id(id));

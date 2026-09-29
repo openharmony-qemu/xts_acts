@@ -15,12 +15,17 @@
 | DistributedData | `DistributedData/storage/index` | 1（storage） | list-item 单项 |
 | FileManagement | `FileManagement/file/index` | 1（file） | list-item 单项 |
 | Startup | `Startup/deviceInfo/index` | 1（deviceinfo） | list-item 单项 |
+| RouterTransition | 子菜单 `RouterTransition/index/index` → `normal` / `edge_api` / `edge_duration`（各配 `target` 探针页） | 25（`normal` 10：10 种动效类型；`edge_api` 6：animation/type 非法与 `replaceUrl` 别名；`edge_duration` 9：duration 取值） | 拆 3 页 + 子菜单，见「ACE Lite 注意事项」 |
 
 > marquee 因动画在 `<list-item>` 内不生效，保留原始 div 布局，仅 pass/fail 改为 toggle 变色。
+>
+> RouterTransition：从首页进入 `RouterTransition/index`（子菜单），再进 `normal` / `edge_api` / `edge_duration` 三个分组页；每个测试项点“播放”=`router.replace` 携带对应 `animation` 参数（正常用例 duration 800ms；`router_edge_replace_url` 走 `router.replaceUrl` 别名）跳转到 `target` 页，操作员观察真实页切换动效后返回本页点 pass/fail；`target` 在动效结束后才允许返回（引擎会忽略动效进行中的 replace）。分组页的“back”回子菜单，子菜单的“返回首页”回 `pages/index/index`。
+>
+> 异常边界用例的判定靠「请求值 → 引擎生效值」：`5000` 与 `5001` 的动效都是约 5s、`0`/`-1`/`0.5` 都是瞬间切换，**靠时长分不出降级方式**，所以 `target` 页会把该轮用例的预期处理分支（截断仍播放 / 归一为无动效 / 取默认值 / 降级无动效）直接显示成判定语。
 
 ## testItems 数据结构
 
-在 `app.js` 的 `testItems` 中注册用例（当前 38 项）：
+在 `app.js` 的 `testItems` 中注册用例（当前 61 项）：
 
 ```javascript
 testItems: {
@@ -235,7 +240,7 @@ HML 中每个测试点 list-item 内加独立 tip：
 [report] text_largeColor pass
 [report] api_file fail writeText error: TypeError
 [report] api_battery untested unsupported: SystemCapability.PowerManager.BatteryManager.Lite
-[total] 38 5 2
+[total] 61 5 2
 [report_end]
 [end] run suites end
 ```
@@ -265,4 +270,5 @@ HML 中每个测试点 list-item 内加独立 tip：
 - Help 页在 `onShow` 中读 `getApp().data.helpData`
 - **`<list-item>` 内 `<marquee>` 不生效**：marquee 页面保留原始 div 布局
 - **合并页面 list-item 不宜过多**：18 项合并页在 ipcamera 设备上闪退（内存/view 节点上限），拆为 `ui_basic`（7 项）+ `ui_advanced`（11 项）两个页面
+- **单页 view 节点数以 ~110 为上界**：RouterTransition 25 项合并成一页时达 **206 个 view 节点**，是已知可用上限（`ui_advanced` 107 个）的 1.9 倍，点击进入即在 `init state -> ready state` 之后报 `[JS Exception]: JS HEAP OOM` 并闪退——**崩在建组件树这一步，不是用例逻辑**。故按用例性质拆为 `normal`（10 项 / 86 节点）、`edge_api`（6 项 / 54 节点）、`edge_duration`（9 项 / 78 节点）三页，由子菜单页 `RouterTransition/index`（5 节点）串联。**新增合并页前先数节点数**：`grep -o '<[a-z-]*[ >]' xxx.hml | wc -l`
 - **`show` 属性在 `<marquee>` 上不可靠**：不要用 `show` 切换 marquee 元素

@@ -15,7 +15,11 @@
 import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection,
+ WindowMode, PointerMatrix, MouseButton } from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function commonEventTest1() {
   describe('commonEventTest1', () => {
     beforeEach(async (done: Function) => {
@@ -58,7 +62,8 @@ export default function commonEventTest1() {
       await CommonFunc.sleep(1000);
       let node: Component = await driver.findComponent(ON.id('commonEventTest1_node'));
       let point = await node.getBoundsCenter();
-      await driver.mouseClick({x:Math.round(point.x), y:Math.round(point.y)}, MouseButton.MOUSE_BUTTON_LEFT);
+
+      await driver.mouseClick({x:Math.round(point.x), y:Math.round(point.y), displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(2000);
       let btn1 = await driver.findComponent(ON.id('commonEventTest1_getOnMouse'));
       await btn1.click()

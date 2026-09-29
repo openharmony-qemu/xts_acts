@@ -1067,23 +1067,19 @@ export default function i18nStageTest() {
     /**
      * @tc.name   relativeTimeFormatAdapt_test_static_0110
      * @tc.number SUB_GLOBAL_Localization_foramtAdapt_static_0110
-     * @tc.desc   format the timeStyle is null
+     * @tc.desc   format the timeStyle is short
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('relativeTimeFormatAdapt_test_static_0110', Level.LEVEL1, async (): Promise<void> => {
       console.log('relativeTimeFormatAdapt_test_static_0110:' + 'start');
-      let relativeTimeFmt = new Intl.RelativeTimeFormat("en");
+      let relativeTimeFmt = new Intl.RelativeTimeFormat("en", {
+        style: 'short'
+      });
       let value = relativeTimeFmt.format(100, 'second');
       console.log('relativeTimeFormatAdapt_test_static_0110' + value);
-      let devTyp = deviceInfo.deviceType;
-      console.log('relativeTimeFormatAdapt_test_static_0110 device' + devTyp);
-      if (devTyp == '2in1' || devTyp == 'tablet' || devTyp == 'phone' || devTyp == 'default') {
-        expect(value).assertEqual('in 100 seconds');
-      } else {
-        expect(value).assertEqual('in 100 sec.');
-      }
+      expect(value).assertEqual('in 100 sec.');
     })
 
 

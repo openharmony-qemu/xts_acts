@@ -736,7 +736,6 @@ export default function usbDdkTest() {
       } else {
         if (usbDdk.usbHasTransferEndpoint(dev) !== 2) {
           console.info("Device has no OUT endpoint, skip pipe transfer test");
-          expect(true).assertTrue();
           done()
           return;
         }
@@ -892,7 +891,6 @@ export default function usbDdkTest() {
         }
         if (usbDdk.usbHasTransferEndpoint(dev) !== 2) {
           console.info("Device has no OUT endpoint, skip pipe transfer test");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1092,7 +1090,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1120,7 +1117,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1148,7 +1144,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1176,7 +1171,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1205,7 +1199,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1234,7 +1227,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1263,7 +1255,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1292,7 +1283,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1321,7 +1311,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1350,7 +1339,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1379,7 +1367,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1408,7 +1395,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1437,7 +1423,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1466,7 +1451,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1495,7 +1479,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1524,7 +1507,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1553,7 +1535,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1582,7 +1563,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1611,7 +1591,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1640,7 +1619,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1669,7 +1647,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1698,7 +1675,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1727,7 +1703,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1756,7 +1731,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1785,7 +1759,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1814,7 +1787,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1843,7 +1815,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1872,7 +1843,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1901,7 +1871,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1930,7 +1899,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1959,7 +1927,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -1988,7 +1955,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2017,7 +1983,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2046,7 +2011,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2075,7 +2039,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2104,7 +2067,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2133,7 +2095,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2162,7 +2123,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2191,7 +2151,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2220,7 +2179,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2249,7 +2207,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2278,7 +2235,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2307,7 +2263,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2336,7 +2291,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2365,7 +2319,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2394,7 +2347,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2424,7 +2376,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2453,7 +2404,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2482,7 +2432,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2511,7 +2460,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2540,7 +2488,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2569,7 +2516,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2598,7 +2544,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2627,7 +2572,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2656,7 +2600,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2685,7 +2628,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2715,7 +2657,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2744,7 +2685,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2773,7 +2713,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2802,7 +2741,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2831,7 +2769,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2859,7 +2796,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2887,7 +2823,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2915,7 +2850,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2943,7 +2877,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2971,7 +2904,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -2999,7 +2931,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3028,7 +2959,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3056,7 +2986,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3084,7 +3013,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test SCSI device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3112,7 +3040,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3141,7 +3068,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3170,7 +3096,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3199,7 +3124,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3228,7 +3152,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3257,7 +3180,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3286,7 +3208,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3315,7 +3236,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3344,7 +3264,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3373,7 +3292,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3401,7 +3319,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3429,7 +3346,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3458,7 +3374,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3487,7 +3402,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3516,7 +3430,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3545,7 +3458,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3574,7 +3486,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3603,7 +3514,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3632,7 +3542,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3661,7 +3570,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3690,7 +3598,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3719,7 +3626,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3748,7 +3654,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3777,7 +3682,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3806,7 +3710,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3835,7 +3738,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3864,7 +3766,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3893,7 +3794,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3922,7 +3822,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3951,7 +3850,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -3980,7 +3878,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4009,7 +3906,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4038,7 +3934,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4067,7 +3962,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4096,7 +3990,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4125,7 +4018,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4154,7 +4046,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4183,7 +4074,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4212,7 +4102,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4241,7 +4130,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4270,7 +4158,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4299,7 +4186,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4328,7 +4214,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }
@@ -4357,7 +4242,6 @@ export default function usbDdkTest() {
       try {
         if (deviceId < 0) {
           console.info("Test USB SERIAL device not connected");
-          expect(true).assertTrue();
           done();
           return;
         }

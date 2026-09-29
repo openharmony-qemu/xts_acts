@@ -53,7 +53,8 @@ export default class MainAbility extends Ability {
         let wRect : window.Rect =  properties.windowRect;
         globalThis.winLeft = wRect.left;
         globalThis.winTop = wRect.top;
-        hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop );
+        AppStorage.setOrCreate('displayID', properties.displayId);
+        hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop + ',displayId:' + properties.displayId);
       } catch (exception) {
         hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
       }

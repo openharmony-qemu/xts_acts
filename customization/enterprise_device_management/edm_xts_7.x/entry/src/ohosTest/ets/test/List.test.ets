@@ -29,8 +29,10 @@ import deviceControlTest from './deviceControl/deviceControl.test.ets';
 import locationManagerTest from './locationManager/locationManager.test.ets';
 import usbManagerTest from './usbManager/usbManager.test.ets';
 import telephonyManagerTest from './telephonyManager/telephonyManager.test.ets';
+import beforeAllTest from './beforeAll/BeforeAll.test.ets';
 
 export default function testsuite() {
+  beforeAllTest();
   accountManagerTest();
   systemManagerTest();
   wifiManagerTest();
