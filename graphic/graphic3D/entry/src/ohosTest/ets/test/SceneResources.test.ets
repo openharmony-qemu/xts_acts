@@ -1984,6 +1984,34 @@ export default function sceneResourcesTest() {
       }
     })
     /**
+     * @tc.name   testOcclusionMaterialDistinct
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1052
+     * @tc.desc   erify MaterialType.OCCLUSION is distinct from other material types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVELO
+     */
+    it('testOcclusionMaterialDistinct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testOcclusionMaterialDistinct";
+      console.info(msg + ' begin ');
+      try {
+        const rt = new OcclusionMaterial();
+        expect(rt).not().assertUndefined();
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+        let occlusionaterial = await rf.createllaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
+        expect(occlusionMaterial != null).assertTrue();
+        expect(occlusionMaterial?.materialType).assertEqual(MaterialType.OCCLUSION);
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testOcclusionMaterialDistinct" + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   testMat4x4Properties
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1019
      * @tc.desc   Test Mat4x4 properties: x, y, z, w columns
