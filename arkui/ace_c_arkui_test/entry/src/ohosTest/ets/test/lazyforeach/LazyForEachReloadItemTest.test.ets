@@ -39,7 +39,7 @@ export default function lazyForEachReloadItemTest() {
      */
     it('testLazyForEachReloadItem001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachReloadItemTest`)
-      await Utils.clickComponent('btn')
+      await Utils.clickComponentNew('btn')
       await Utils.sleep(SleepTime)
       expect(Utils.getComponentInfoByKey('col').$attrs.backgroundColor).assertEqual(ColorGreen)
       done()
