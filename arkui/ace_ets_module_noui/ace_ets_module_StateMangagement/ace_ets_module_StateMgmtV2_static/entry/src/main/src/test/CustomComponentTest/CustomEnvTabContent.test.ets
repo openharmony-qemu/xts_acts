@@ -50,15 +50,15 @@ export default function CustomEnvTabContent(): void {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvTabContent_0100
-     * @tc.number SUB_ARKUI_CustomEnvTabContent_0100
+     * @tc.name   SUB_ARKUI_CUSTOMENV_TABCONTENT_0100
+     * @tc.number SUB_ARKUI_CUSTOMENV_TABCONTENT_0100
      * @tc.desc   test @CustomEnv and @Monitor decorator combination in Tabs - verify initial state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvTabContent_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvTabContent_0100] START');
+    it('SUB_ARKUI_CUSTOMENV_TABCONTENT_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_TABCONTENT_0100] START');
       await CommonFunc.sleep(1500);
       try{
         // Verify initial state - FreezeChild component shows initial message and index value
@@ -67,23 +67,23 @@ export default function CustomEnvTabContent(): void {
         let obj = JSON.parseJsonElement(strJson);
         expect(obj.getElement('$attrs').getString('content')).assertEqual('message0, index: 0');
       } catch (err) {
-        console.error("SUB_ARKUI_CustomEnvTabContent_0100 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_TABCONTENT_0100 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvTabContent_0100] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_TABCONTENT_0100] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvTabContent_0200
-     * @tc.number SUB_ARKUI_CustomEnvTabContent_0200
+     * @tc.name   SUB_ARKUI_CUSTOMENV_TABCONTENT_0200
+     * @tc.number SUB_ARKUI_CUSTOMENV_TABCONTENT_0200
      * @tc.desc   test @CustomEnv and @Monitor decorator in Tabs - verify message update triggers Monitor callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvTabContent_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvTabContent_0200] START');
+    it('SUB_ARKUI_CUSTOMENV_TABCONTENT_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_TABCONTENT_0200] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -97,17 +97,17 @@ export default function CustomEnvTabContent(): void {
         // After clicking, the message increments from 0 to 1, which triggers @Monitor in FreezeChild
         let strJson = inspector.getInspectorByKey('customEnvTabContent_002');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvTabContent_0200] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_TABCONTENT_0200] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvTabContent_0200] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_TABCONTENT_0200] content is: ' + content);
 
         // After clicking, the message increments to 1
         expect(content).assertEqual('message1, index: 0');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvTabContent_0200 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_TABCONTENT_0200 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvTabContent_0200] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_TABCONTENT_0200] END')
       done();
     });
 

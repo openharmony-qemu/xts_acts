@@ -50,41 +50,41 @@ export default function CustomEnvWatch(): void {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvWatch_0100
-     * @tc.number SUB_ARKUI_CustomEnvWatch_0100
+     * @tc.name   SUB_ARKUI_CUSTOMENV_WATCH_0100
+     * @tc.number SUB_ARKUI_CUSTOMENV_WATCH_0100
      * @tc.desc   test @CustomEnv and @Watch decorator combination - verify initial state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvWatch_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvWatch_0100] START');
+    it('SUB_ARKUI_CUSTOMENV_WATCH_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_WATCH_0100] START');
       await CommonFunc.sleep(1500);
       try{
         // Verify initial state - Index message shows initial defaultMessage value
         let strJson = inspector.getInspectorByKey('customenvWatch_003');
         let obj = JSON.parseJsonElement(strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvWatch_0100] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_WATCH_0100] content is: ' + content);
         expect(content).assertEqual('Index message is : the nearest WithEnv');
       } catch (err) {
-        console.error("SUB_ARKUI_CustomEnvWatch_0100 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_WATCH_0100 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvWatch_0100] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_WATCH_0100] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvWatch_0200
-     * @tc.number SUB_ARKUI_CustomEnvWatch_0200
+     * @tc.name   SUB_ARKUI_CUSTOMENV_WATCH_0200
+     * @tc.number SUB_ARKUI_CUSTOMENV_WATCH_0200
      * @tc.desc   test @CustomEnv and @Watch decorator - verify Watch callback triggers on value change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvWatch_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvWatch_0200] START');
+    it('SUB_ARKUI_CUSTOMENV_WATCH_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_WATCH_0200] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -97,18 +97,18 @@ export default function CustomEnvWatch(): void {
         // Verify the Child component's message has been updated via @CustomEnv and @Watch
         let strJson = inspector.getInspectorByKey('customenvWatch_002');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvWatch_0200] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_WATCH_0200] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvWatch_0200] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_WATCH_0200] content is: ' + content);
 
         // After clicking, the defaultMessage changes to 'Hello World', which triggers @Watch in Child
         // The Child message should reflect this change
         expect(content).assertEqual('Child message is :Hello World;num1:3');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvWatch_0200 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_WATCH_0200 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvWatch_0200] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_WATCH_0200] END')
       done();
     });
 

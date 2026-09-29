@@ -50,15 +50,15 @@ export default function CustomEnvMonitor(): void {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvMonitor_0100
-     * @tc.number SUB_ARKUI_CustomEnvMonitor_0100
+     * @tc.name   SUB_ARKUI_CUSTOMENV_MONITOR_0100
+     * @tc.number SUB_ARKUI_CUSTOMENV_MONITOR_0100
      * @tc.desc   test @CustomEnv and @Monitor decorator combination - verify initial state
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvMonitor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvMonitor_0100] START');
+    it('SUB_ARKUI_CUSTOMENV_MONITOR_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_MONITOR_0100] START');
       await CommonFunc.sleep(1500);
       try{
         // Verify initial state - Child component shows initial message and num1 value
@@ -67,23 +67,23 @@ export default function CustomEnvMonitor(): void {
         let obj = JSON.parseJsonElement(strJson);
         expect(obj.getElement('$attrs').getString('content')).assertEqual('message:Hello,2');
       } catch (err) {
-        console.error("SUB_ARKUI_CustomEnvMonitor_0100 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_MONITOR_0100 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvMonitor_0100] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_MONITOR_0100] END')
       done();
     });
 
     /**
-     * @tc.name   SUB_ARKUI_CustomEnvMonitor_0200
-     * @tc.number SUB_ARKUI_CustomEnvMonitor_0200
+     * @tc.name   SUB_ARKUI_CUSTOMENV_MONITOR_0200
+     * @tc.number SUB_ARKUI_CUSTOMENV_MONITOR_0200
      * @tc.desc   test @CustomEnv and @Monitor decorator - verify Watch callback triggers on value change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_CustomEnvMonitor_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARKUI_CustomEnvMonitor_0200] START');
+    it('SUB_ARKUI_CUSTOMENV_MONITOR_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_CUSTOMENV_MONITOR_0200] START');
       try{
         let driver: Driver = await Driver.create();
         await CommonFunc.sleep(1500);
@@ -98,18 +98,18 @@ export default function CustomEnvMonitor(): void {
         // The Child message should reflect this change, and num1 should increment from 2 to 3
         let strJson = inspector.getInspectorByKey('customenvMonitor_002');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[SUB_ARKUI_CustomEnvMonitor_0200] strJson is: ' + strJson);
+        console.info('[SUB_ARKUI_CUSTOMENV_MONITOR_0200] strJson is: ' + strJson);
         let content = obj.getElement('$attrs').getString('content');
-        console.info('[SUB_ARKUI_CustomEnvMonitor_0200] content is: ' + content);
+        console.info('[SUB_ARKUI_CUSTOMENV_MONITOR_0200] content is: ' + content);
 
         // After clicking, the message changes to 'Hello World', triggering @Monitor callback
         // num1 increments from 2 to 3
         expect(content).assertEqual('message:Hello World,4');
       } catch (err){
-        console.error("SUB_ARKUI_CustomEnvMonitor_0200 error:" + err);
+        console.error("SUB_ARKUI_CUSTOMENV_MONITOR_0200 error:" + err);
         expect(true).assertEqual(false);
       }
-      console.info('[SUB_ARKUI_CustomEnvMonitor_0200] END')
+      console.info('[SUB_ARKUI_CUSTOMENV_MONITOR_0200] END')
       done();
     });
 
