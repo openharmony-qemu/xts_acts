@@ -58,7 +58,6 @@ export default function AbilityMonitorTest() {
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500" ||
-        TAG === "ACTS_ADD_ABILITY_MONITOR_PROMISE_0200" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0400" ||
@@ -66,9 +65,7 @@ export default function AbilityMonitorTest() {
         TAG === "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0300" ||
         TAG === "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500" ||
         TAG === "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_1000" ||
-        TAG === "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0200" ||
-        TAG === "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0300" ||
-        TAG === "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0400") {
+        TAG === "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0200") {
         if (globalThis.main2AbilityContext) {
           console.info(LABLE + TAG + "AbilityMonitorTest afterEach terminateSelf main2 called");
           globalThis.main2AbilityContext.terminateSelf();
@@ -296,7 +293,6 @@ export default function AbilityMonitorTest() {
       };
       await abilityDelegator.addAbilityMonitor(monitor);
       await abilityDelegator.addAbilityMonitor(monitor);
-      await sleep(2000);
       await abilityDelegator.startAbility(want);
     });
 
@@ -1392,7 +1388,6 @@ export default function AbilityMonitorTest() {
           expect().assertFail();
           done();
         });
-      await sleep(2000);
       console.log(LABLE + TAG + " startAbility start");
       await abilityDelegator.startAbility(want);
     });
