@@ -16,9 +16,11 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import testNapi from 'libentry.so';
 import { BusinessError } from '@kit.BasicServicesKit';
+import usbManager from '@ohos.usbManager';
 
 const DOMAIN: number = 0xFF00;
 const TAG: string = 'UsbManagerCapiTest';
+const SKIP_TAG: string = '[SKIP]';
 const ERR_CODE_SUCCESS: number = 0;
 const ERR_CODE_INVALID_PARAMETER: number = 14400014;
 const ERROR_CODE_ENUM: number[] = [0, 14400001, 14400004, 14400008, 14400009, 14400012, 14400014];
@@ -30,12 +32,28 @@ export default function usbManagerCapiTest() {
      * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_0100
      * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_0100
      * @tc.desc          Verify OH_UsbManager_GetUsbDeviceList returns an empty list without a peripheral.
+     *                   Skips (precondition not met) when a peripheral is attached.
      * @tc.size          MediumTest
      * @tc.type          Function
      * @tc.level         Level0
      */
     it('SUB_USB_USBMANAGER_CAPI_TEST_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
+        let attachedCount: number = -1;
+        try {
+          attachedCount = usbManager.getDevices().length;
+        } catch (err) {
+          let errMsg = (err as BusinessError).message;
+          hilog.error(DOMAIN, TAG, 'getDevices failed: ' + errMsg);
+          hilog.info(DOMAIN, TAG, SKIP_TAG + ' SUB_USB_USBMANAGER_CAPI_TEST_0100, cannot detect peripheral, skip');
+          done();
+          return;
+        }
+        if (attachedCount > 0) {
+          hilog.info(DOMAIN, TAG, SKIP_TAG + ' SUB_USB_USBMANAGER_CAPI_TEST_0100, peripheral attached, skip');
+          done();
+          return;
+        }
         try {
           let deviceCount: number = testNapi.getUsbDeviceListNoDevice();
           hilog.info(DOMAIN, TAG, 'getUsbDeviceListNoDevice deviceCount: ' + deviceCount);
