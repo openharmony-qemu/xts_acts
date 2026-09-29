@@ -1760,7 +1760,7 @@ export default function sceneResourcesTest() {
     })
     /**
      * @tc.name   testOcclusionMaterialCreate
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1810
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1811
      * @tc.desc   Verify that OCCLUSION material can be created and its materialType is correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
