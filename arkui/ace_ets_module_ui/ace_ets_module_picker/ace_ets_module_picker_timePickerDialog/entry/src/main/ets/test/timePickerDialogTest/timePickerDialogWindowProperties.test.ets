@@ -73,7 +73,7 @@ export default function TimePickerDialogWindowPropertiesTest() {
       await driver.clickAt({ 
         x: Math.round(globalThis.winLeft + vp2px(100)), 
         y: Math.round(globalThis.winTop + vp2px(100)), 
-        displayId: displayId 
+        displayId: displayID 
       });
       await CommonFunc.sleep(1000);
       console.info('[TimePickerDialogWindowPropertiesTest_0100] END');
