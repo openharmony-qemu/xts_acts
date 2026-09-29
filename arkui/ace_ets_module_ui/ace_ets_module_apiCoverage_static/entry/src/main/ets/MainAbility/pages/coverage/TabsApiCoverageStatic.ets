@@ -144,7 +144,7 @@ struct TabsApiCoverageStatic {
         .onAppear((): void => {
           this.probeTabsCtrl();
         })
-        .barStyle(TabBarStyle.SIDEBAR_ADAPTABLE)
+        .barStyle(TabBarStyle.SIDEBAR)
         .sidebarPosition(BarPosition.Start)
         .sidebarHeader(undefined)
         .sidebarSearchable({

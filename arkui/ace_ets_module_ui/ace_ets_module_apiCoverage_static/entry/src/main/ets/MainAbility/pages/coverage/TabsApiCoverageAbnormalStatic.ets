@@ -100,7 +100,7 @@ struct TabsApiCoverageAbnormalStatic {
           TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
         }
         .id('tabs_barDisplayModeBreakpoint_undefined')
-        .barStyle(TabBarStyle.SIDEBAR_ADAPTABLE)
+        .barStyle(TabBarStyle.SIDEBAR)
         .barDisplayModeBreakpoint(undefined)
         .width('100%').height(80)
 
@@ -110,7 +110,7 @@ struct TabsApiCoverageAbnormalStatic {
           TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
         }
         .id('tabs_onBarDisplayModeChange_undefined')
-        .barStyle(TabBarStyle.SIDEBAR_ADAPTABLE)
+        .barStyle(TabBarStyle.SIDEBAR)
         .onBarDisplayModeChange(undefined)
         .width('100%').height(80)
 
