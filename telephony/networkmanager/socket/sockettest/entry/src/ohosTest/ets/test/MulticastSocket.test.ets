@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it , Level, Size, expect, TestType} from '@ohos/hypium-dynamic';
+import { describe, it , Level, Size, expect, TestType} from '@ohos/hypium';
 import socket from '@ohos.net.socket';
 import { BusinessError, Callback } from '@ohos.base';
 import {
@@ -2769,6 +2769,39 @@ export default function MulticastSocket() {
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketMulticastSocketAddMembership0402
+     * @tc.number SUB_NetworkMgr_Socket_MulticastSocket_AddMembership_0402
+     * @tc.desc   AddMembership with null address parameter (promise), expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketMulticastSocketAddMembership0402', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketAddMembership0402';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
+        multicast.addMembership(paramNull).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
         expect(err.code !== 401).assertTrue();
         console.info(`${caseName} test end`);
         done();
