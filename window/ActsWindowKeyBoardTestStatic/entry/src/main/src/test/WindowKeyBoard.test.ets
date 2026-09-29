@@ -856,7 +856,7 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillHide success: ');
                 done();
             } catch (err) {
-                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));\
+                hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
                 expect(true).assertFalse();
                 done();
             }
