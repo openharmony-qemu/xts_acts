@@ -69,15 +69,15 @@ export default function WebSocketTest() {
                 try {
                     let ws: webSocket.WebSocket = webSocket.createWebSocket();
                     hilog.info(domain, tag, '%{public}s', caseName + '---test ');
-                    ws.connect(availableWebSocketAddress, {}, (err: BusinessError<void> | null, value: boolean | undefined) => {
-                        waitForCompletion(async () => {
+                    ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+                        waitForCompletion<void>(async () => {
                             if (err && err.code != 0) {
                                 hilog.info(domain, tag, '%{public}s', caseName + '  connect fail  error  is ' + JSON.stringify(err));
                                 ExpectFail();
                                 await ws.close();
                                 done();
                                 hilog.info(domain, tag, '%{public}s', caseName + '---test end');
-                            } catch (err) {
+                            } else {
                                 hilog.info(domain, tag, '%{public}s', caseName + ': test connect success and value is ->' + value);
                                 ExpectTrue(value!);
                                 done();
@@ -1716,11 +1716,10 @@ export default function WebSocketTest() {
                         }, 5000);
                     });
                     let client: webSocket.WebSocket = webSocket.createWebSocket();
-                    client.connect('ws://127.0.0.1:8099', async (err: BusinessError<void> | null, value: boolean | undefined) => {
+                    client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
                         if (value) {
                             hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-                            try {
-                                let connection = await Promise.race([connectionPromise, timeoutPromise]);
+                            Promise.race([connectionPromise, timeoutPromise]).then((connection: webSocket.WebSocketConnection) => {
                                 hilog.info(domain, tag, '%{public}s', caseName + JSON.stringify(connection) + ' connections');
                                 try {
                                     server.send("hello client", connection).then((sendValue: boolean | undefined) => {
@@ -1751,11 +1750,11 @@ export default function WebSocketTest() {
                                     hilog.info(domain, tag, '%{public}s', caseName + 'send fail err code is : ' + err.code);
                                     done();
                                 }
-                            } catch (err) {
+                            }).catch((err: Error) => {
                                 ExpectFail();
                                 server.stop();
                                 done();
-                            }
+                            });
                         } else {
                             ExpectFail();
                             server.stop();
