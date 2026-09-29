@@ -2160,42 +2160,6 @@ export default function applicationManagerTest() {
     });
 
     /**
-     * @tc.name   test_publishFormToDesktop_1600
-     * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1600
-     * @tc.desc   test publishFormToDesktop with dimension DIMENSION_1_1
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level   LEVEL0
-     */
-    it("test_publishFormToDesktop_1600", Level.LEVEL0, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-      try {
-        if (formInfos.length === 0) {
-          return;
-        }
-        for (let data of formInfos) {
-          if (data.defaultDimension === formInfo.FormDimension.DIMENSION_1_1) {
-            let formInfoParam: applicationManager.FormInfo = {
-              bundleName: data.bundleName,
-              moduleName: data.moduleName,
-              abilityName: data.abilityName,
-              name: data.name,
-              dimension: formInfo.FormDimension.DIMENSION_1_1
-            };
-            applicationManager.publishFormToDesktop(formInfoParam);
-            expect(false).assertTrue();
-            break;
-          }
-        }
-      } catch (error) {
-        expect(error.code === 9201050).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    });
-
-    /**
      * @tc.name   test_publishFormToDesktop_1800
      * @tc.number SUB_CUSTOMIZATION_EDM_PUBLISHFORMTODESKTOP_JS_1800
      * @tc.desc   test publishFormToDesktop with error formInfo
