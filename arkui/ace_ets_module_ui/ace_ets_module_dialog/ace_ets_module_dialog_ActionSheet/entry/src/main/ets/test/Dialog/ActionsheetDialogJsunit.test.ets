@@ -54,8 +54,8 @@ export default function ActionsheetDialogAJsunit() {
     it('ActionsheetDialogAJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ActionsheetDialogAJsunit_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('Actionsheet_dialog_A'));
+      let driver = Driver.create()
+      let button = await driver.findComponent(ON.id('Actionsheet_dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('Actionsheet_dialog_A');
@@ -63,9 +63,9 @@ export default function ActionsheetDialogAJsunit() {
       console.info("[ActionsheetDialogAJsunit_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("ActionSheet按esc弹窗逐层退出");
       console.info('[ActionsheetDialogAJsunit_0100] END');
-      await driver.triggerKey(2070,displayID)
+      await driver.triggerKey(2070, displayID)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070,displayID)
+      await driver.triggerKey(2070, displayID)
       await CommonFunc.sleep(1000);
       done();
     });
