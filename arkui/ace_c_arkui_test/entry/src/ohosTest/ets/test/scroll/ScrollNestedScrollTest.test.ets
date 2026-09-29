@@ -15,22 +15,28 @@
 
 import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 
 async function doIt(pageTag: string, testType: number, X: number, Y: number) {
   Utils.emitEvent(pageTag, testType, 6600)
-  Utils.clickComponent('resetButton')
+  await Utils.clickComponent('resetButton')
   await Utils.sleep(2000)
-  Utils.clickComponent('clearDataButton')
+  await Utils.clickComponent('clearDataButton')
   await Utils.sleep(2000)
   let driver = Driver.create();
+  let component = await driver.findComponent(ON.id('nestedScrollRoot'));
+  let displayId = await component.getDisplayId();
   if (testType > 4) {
-    await driver.swipe(Math.round(globalThis.winLeft + X), Math.round(globalThis.winTop + Y - vp2px(33.33)), Math.round(globalThis.winLeft + X), Math.round(globalThis.winTop + Y + vp2px(33.33)));
+    await driver.swipeBetween(
+      { x: Math.round(X), y: Math.round(Y - vp2px(33.33)), displayId: displayId },
+      { x: Math.round(X), y: Math.round(Y + vp2px(33.33)), displayId: displayId });
   } else {
-    await driver.swipe(Math.round(globalThis.winLeft + X), Math.round(globalThis.winTop + Y + vp2px(33.33)), Math.round(globalThis.winLeft + X), Math.round(globalThis.winTop + Y - vp2px(33.33)));
+    await driver.swipeBetween(
+      { x: Math.round(X), y: Math.round(Y + vp2px(33.33)), displayId: displayId },
+      { x: Math.round(X), y: Math.round(Y - vp2px(33.33)), displayId: displayId });
   }
   await Utils.sleep(2000)
-  Utils.clickComponent('compareButton')
+  await Utils.clickComponent('compareButton')
   await Utils.sleep(2000)
 }
 

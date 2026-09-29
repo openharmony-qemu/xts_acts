@@ -22,8 +22,11 @@ async function fling_p(id: string) {
   let driver = Driver.create();
   let refresh = await driver.findComponent(ON.id(id));
   let rect = await refresh.getBounds();
-  await driver.fling({x: Math.round(rect.left + vp2px(40)), y: Math.round(rect.top + vp2px(70))},
-    {x: Math.round(rect.left + vp2px(40)), y: Math.round(rect.top + vp2px(10))},5,600);
+  let displayId = await refresh.getDisplayId();
+  await driver.fling(
+    {x: Math.round(rect.left + vp2px(40)), y: Math.round(rect.top + vp2px(70)), displayId: displayId},
+    {x: Math.round(rect.left + vp2px(40)), y: Math.round(rect.top + vp2px(10)), displayId: displayId},
+    5, 600);
 
 }
 
@@ -200,7 +203,7 @@ export default function scrollScrollEventTest() {
       let PAGE_TAG = 'ScrollScrollEventOnWillDidScrollTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
       await fling_p('OnWillDidScroll')
-      Utils.sleep(5000)
+      await Utils.sleep(5000)
       let dataArray: number[][] = nativeRender.getOnWillDidDataTest();
       let OnScrollStart: number[] = dataArray[0];
       let OnScrollEnd: number[] = dataArray[1];

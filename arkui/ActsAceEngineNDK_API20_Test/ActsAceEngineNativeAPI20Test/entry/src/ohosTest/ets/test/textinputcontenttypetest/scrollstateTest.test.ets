@@ -16,18 +16,32 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-dynamic'
 import nativerenderndk from 'libnoderenderndk.so'
 import Utils from '../common/Utils';
+import { Driver, ON } from '@ohos.UiTest';
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
 
 export default function ScrollStateTest() {
   describe('ScrollStateTest', () => {
-    const x1: number = Math.floor(globalThis.winWidth / 2 + globalThis.winLeft);
-    const y1: number = Math.floor(globalThis.winHeight / 2 + globalThis.winTop);
-    const x2: number = Math.floor(globalThis.winWidth / 4 + globalThis.winLeft);
+    let displayId: number;
+    let x1: number;
+    let y1: number;
+    let x2: number;
     const speed: number = 5000;
     beforeAll(async (done: Function) => {
-      await Utils.pushPage(`scrollstateTest/ScrollStateTest`, done);
+      await Utils.pushPage(`scrollstateTest/ScrollStateTest`);
+      await Utils.sleep(1000);
+      let component = await Utils.driver.findComponent(ON.id('ScrollStateColumn'));
+      let rect = await component.getBounds();
+      displayId = await component.getDisplayId();
+      let width = rect.right - rect.left;
+      let height = rect.bottom - rect.top;
+      x1 = Math.round(rect.left + width / 2);
+      y1 = Math.round(rect.top + height / 2);
+      x2 = Math.round(rect.left + width / 4);
+      console.info("ScrollStateTest x1=" + x1 + ", y1=" + y1 +
+        ", x2=" + x2 + ", displayId=" + displayId);
+      done();
     });
 
     /**
@@ -42,8 +56,10 @@ export default function ScrollStateTest() {
       async (done: Function) => {
         try {
           console.info("====>testARKUI_SCROLL_STATE_IDLE0100 start====");
-          await Utils.driver.swipeBetween({ x: x1, y: y1 }, { x: x2, y: y1 }, speed);
-          await Utils.driver.click(x2, y1);
+          await Utils.driver.swipeBetween(
+            { x: x1, y: y1, displayId: displayId },
+            { x: x2, y: y1, displayId: displayId }, speed);
+          await Utils.driver.clickAt({ x: x2, y: y1, displayId: displayId });
           let result: number = nativerenderndk.ScrollStateTest_001();
           console.info(`====>testARKUI_SCROLL_STATE_IDLE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -66,8 +82,10 @@ export default function ScrollStateTest() {
       async (done: Function) => {
         try {
           console.info("====>testARKUI_SCROLL_STATE_SCROLL0100 start====");
-          await Utils.driver.swipeBetween({ x: x1, y: y1 }, { x: x2, y: y1 }, speed);
-          await Utils.driver.click(x2, y1);
+          await Utils.driver.swipeBetween(
+            { x: x1, y: y1, displayId: displayId },
+            { x: x2, y: y1, displayId: displayId }, speed);
+          await Utils.driver.clickAt({ x: x2, y: y1, displayId: displayId });
           let result: number = nativerenderndk.ScrollStateTest_002();
           console.info(`====>testARKUI_SCROLL_STATE_SCROLL0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -90,10 +108,14 @@ export default function ScrollStateTest() {
       async (done: Function) => {
         try {
           console.info("====>testARKUI_SCROLL_STATE_FLING0100 start====");
-          await Utils.driver.swipeBetween({ x: x1, y: y1 }, { x: x2, y: y1 }, speed);
-          await Utils.driver.click(x2, y1);
-          await Utils.driver.swipeBetween({ x: x1, y: y1 }, { x: x2, y: y1 }, speed);
-          await Utils.driver.click(x2, y1);
+          await Utils.driver.swipeBetween(
+            { x: x1, y: y1, displayId: displayId },
+            { x: x2, y: y1, displayId: displayId }, speed);
+          await Utils.driver.clickAt({ x: x2, y: y1, displayId: displayId });
+          await Utils.driver.swipeBetween(
+            { x: x1, y: y1, displayId: displayId },
+            { x: x2, y: y1, displayId: displayId }, speed);
+          await Utils.driver.clickAt({ x: x2, y: y1, displayId: displayId });
           let result: number = nativerenderndk.ScrollStateTest_003();
           console.info(`====>testARKUI_SCROLL_STATE_FLING0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
