@@ -69,6 +69,7 @@ struct Index {
     Column() {
       Button('update')
         .id('CustomEnvBtn')
+        .height('5%')
         .onClick(()=> {
           this.undefValue = undefined;
           this.unionVal = this.isFirstState ?'union pass': '更新后的联合值';
