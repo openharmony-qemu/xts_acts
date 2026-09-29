@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector';
 const SLEEP_TIME = 500;
 
 export default function particleTest(): void {
-  describe('particleTest', () => {
+  describe('ParticleTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info('particleTest beforeAll start');
       await UtilsTest.startAbility('com.arkui.ace.richeditor.static', 'EntryAbility');

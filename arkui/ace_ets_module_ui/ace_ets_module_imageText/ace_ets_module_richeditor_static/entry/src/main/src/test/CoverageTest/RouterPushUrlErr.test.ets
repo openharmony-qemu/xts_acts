@@ -74,7 +74,7 @@ export default function RouterPushUrlErrTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_100002_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_100002_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[router_pushUrl_err_100002_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -87,7 +87,6 @@ export default function RouterPushUrlErrTest(): void {
       console.info('[router_pushUrl_err_100002_0100] code=' + code);
       expect(code).assertEqual(100002);
       console.info('[router_pushUrl_err_100002_0100] END');
-      done();
     });
 
     /**
@@ -98,7 +97,7 @@ export default function RouterPushUrlErrTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_100003_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_100003_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[router_pushUrl_err_100003_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -111,7 +110,6 @@ export default function RouterPushUrlErrTest(): void {
       console.info('[router_pushUrl_err_100003_0100] code=' + code);
       expect(code).assertEqual(100003);
       console.info('[router_pushUrl_err_100003_0100] END');
-      done();
     });
 
     /**
@@ -122,7 +120,7 @@ export default function RouterPushUrlErrTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_CB_100002_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_CB_100002_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[router_pushUrl_callback_100002_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -135,7 +133,6 @@ export default function RouterPushUrlErrTest(): void {
       console.info('[router_pushUrl_callback_100002_0100] code=' + code);
       expect(code).assertEqual(100002);
       console.info('[router_pushUrl_callback_100002_0100] END');
-      done();
     });
 
     /**
@@ -146,7 +143,7 @@ export default function RouterPushUrlErrTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_UNDEF_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ROUTER_PUSHURL_ERR_UNDEF_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[router_pushUrl_undefined_options_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -159,7 +156,6 @@ export default function RouterPushUrlErrTest(): void {
       console.info('[router_pushUrl_undefined_options_0100] code=' + code);
       expect(code).assertEqual(401);
       console.info('[router_pushUrl_undefined_options_0100] END');
-      done();
     });
   });
 }

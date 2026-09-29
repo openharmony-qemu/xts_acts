@@ -61,7 +61,7 @@ export default function ParticleModifierTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_PARTICLE_MODIFIER_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_PARTICLE_MODIFIER_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[particle_modifier_background_0100] START');
       await CommonFunc.sleep(SLEEP_TIME);
       expect(AppStorage.get<string>('particle_page_ready')).assertEqual('ready');
@@ -70,7 +70,6 @@ export default function ParticleModifierTest(): void {
       console.info('[particle_modifier_background_0100] bg=' + bg);
       expect(bg === '#EEEEA500' || bg.toUpperCase() === '#EEEEA500').assertTrue();
       console.info('[particle_modifier_background_0100] END');
-      done();
     });
 
     /**
@@ -81,7 +80,7 @@ export default function ParticleModifierTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_PARTICLE_MODIFIER_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_PARTICLE_MODIFIER_0200', Level.LEVEL2, async (): Promise<void> => {
       console.info('[particle_undefined_modifier_0100] START');
       await CommonFunc.sleep(SLEEP_TIME);
       let strJson = inspector.getInspectorByKey('particle_undefined_modifier');
@@ -90,7 +89,6 @@ export default function ParticleModifierTest(): void {
       console.info('[particle_undefined_modifier_0100] type=' + typeStr);
       expect(typeStr.length > 0).assertTrue();
       console.info('[particle_undefined_modifier_0100] END');
-      done();
     });
   });
 }

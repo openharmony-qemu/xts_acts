@@ -65,7 +65,7 @@ export default function AddFormMenuItemTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[addFormMenuItem_page_ready_0100] START');
       await CommonFunc.sleep(SLEEP_TIME);
       let ready: string | undefined = AppStorage.get<string>('formMenu_page_ready');
@@ -74,7 +74,6 @@ export default function AddFormMenuItemTest(): void {
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('AddFormMenuItem');
       console.info('[addFormMenuItem_page_ready_0100] END');
-      done();
     });
 
     /**
@@ -85,7 +84,7 @@ export default function AddFormMenuItemTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0200', Level.LEVEL2, async (): Promise<void> => {
       console.info('[addFormMenuItem_with_options_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -96,7 +95,6 @@ export default function AddFormMenuItemTest(): void {
       let strJson = inspector.getInspectorByKey('btn_formMenu_with_options');
       expect(strJson.length > 0).assertTrue();
       console.info('[addFormMenuItem_with_options_0100] END');
-      done();
     });
 
     /**
@@ -107,7 +105,7 @@ export default function AddFormMenuItemTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_FORMMENU_ADDFORMMENUITEM_0300', Level.LEVEL2, async (): Promise<void> => {
       console.info('[addFormMenuItem_undefined_options_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -120,7 +118,6 @@ export default function AddFormMenuItemTest(): void {
       await CommonFunc.sleep(SLEEP_TIME);
       expect(AppStorage.get<string>('formMenu_built')).assertEqual('ok');
       console.info('[addFormMenuItem_undefined_options_0100] END');
-      done();
     });
   });
 }

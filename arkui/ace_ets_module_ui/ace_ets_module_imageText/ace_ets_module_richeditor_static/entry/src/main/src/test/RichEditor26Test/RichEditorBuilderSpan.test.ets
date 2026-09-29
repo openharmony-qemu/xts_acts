@@ -74,7 +74,7 @@ export default function richEditorBuilderSpanTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_ADD_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_ADD_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[richEditorBuilderSpan_add_with_info_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -86,7 +86,6 @@ export default function richEditorBuilderSpanTest(): void {
       expect(idx !== undefined && idx !== 'failed').assertTrue();
       expect(AppStorage.get<string>('builderSpan_info_onAttach_id')).assertEqual('span_a');
       console.info('[richEditorBuilderSpan_add_with_info_0100] END');
-      done();
     });
 
     /**
@@ -97,7 +96,7 @@ export default function richEditorBuilderSpanTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_ADD_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_ADD_0200', Level.LEVEL2, async (): Promise<void> => {
       console.info('[richEditorBuilderSpan_add_undefined_info_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -108,7 +107,6 @@ export default function richEditorBuilderSpanTest(): void {
       let idx: string | undefined = AppStorage.get<string>('builderSpan_add_undefined_info');
       expect(idx !== undefined && idx !== 'failed').assertTrue();
       console.info('[richEditorBuilderSpan_add_undefined_info_0100] END');
-      done();
     });
 
     /**
@@ -119,7 +117,7 @@ export default function richEditorBuilderSpanTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GET_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GET_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[richEditorBuilderSpan_get_all_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -133,7 +131,6 @@ export default function richEditorBuilderSpanTest(): void {
       expect(result !== undefined && result !== 'failed' && result !== 'undefined').assertTrue();
       expect((result as string).includes('span_a')).assertTrue();
       console.info('[richEditorBuilderSpan_get_all_0100] END');
-      done();
     });
 
     /**
@@ -144,7 +141,7 @@ export default function richEditorBuilderSpanTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GET_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GET_0200', Level.LEVEL2, async (): Promise<void> => {
       console.info('[richEditorBuilderSpan_get_range_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -157,7 +154,6 @@ export default function richEditorBuilderSpanTest(): void {
       let result: string | undefined = AppStorage.get<string>('builderSpan_get_range');
       expect(result !== undefined && result !== 'failed').assertTrue();
       console.info('[richEditorBuilderSpan_get_range_0100] END');
-      done();
     });
 
     /**
@@ -168,7 +164,7 @@ export default function richEditorBuilderSpanTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GET_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GET_0300', Level.LEVEL2, async (): Promise<void> => {
       console.info('[richEditorBuilderSpan_get_undefined_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -181,7 +177,6 @@ export default function richEditorBuilderSpanTest(): void {
       let result: string | undefined = AppStorage.get<string>('builderSpan_get_undefined');
       expect(result !== undefined && result !== 'failed').assertTrue();
       console.info('[richEditorBuilderSpan_get_undefined_0100] END');
-      done();
     });
 
     /**
@@ -192,7 +187,7 @@ export default function richEditorBuilderSpanTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_DETACH_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_DETACH_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[richEditorBuilderSpan_onDetach_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -205,7 +200,6 @@ export default function richEditorBuilderSpanTest(): void {
       expect(AppStorage.get<string>('builderSpan_delete')).assertEqual('success');
       expect(AppStorage.get<string>('builderSpan_info_onDetach_id')).assertEqual('span_a');
       console.info('[richEditorBuilderSpan_onDetach_0100] END');
-      done();
     });
 
     /**
@@ -216,7 +210,7 @@ export default function richEditorBuilderSpanTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GLOBAL_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_RICHEDITOR_BUILDERSPAN_GLOBAL_0100', Level.LEVEL2, async (): Promise<void> => {
       console.info('[richEditorBuilderSpan_global_controller_0100] START');
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(SLEEP_TIME);
@@ -228,7 +222,6 @@ export default function richEditorBuilderSpanTest(): void {
       expect(count !== undefined && count !== 'failed').assertTrue();
       expect(Number(count as string) > 0).assertTrue();
       console.info('[richEditorBuilderSpan_global_controller_0100] END');
-      done();
     });
   });
 }
