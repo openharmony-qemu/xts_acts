@@ -50,6 +50,7 @@ export default function WaterFlowBackToTopTest() {
       let driverWaterFlow: Driver = Driver.create();
       let waterFlow: Component = await driverWaterFlow.findComponent(ON.id('WaterFlowScroll_4'));
       let rect = await waterFlow.getBounds();
+      let displayId = await waterFlow.getDisplayId();
       let top = rect.top;
       let left = rect.left;
       let right = rect.right;
@@ -64,12 +65,9 @@ export default function WaterFlowBackToTopTest() {
       let switchButton: Component = await driverSwitch.findComponent(ON.id('Switch'))
       await sleep(1000);
       // apply the swipe action to the WaterFlow component
-      await driverWaterFlow.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
-      );
+      await driverWaterFlow.swipeBetween(
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 4), displayId: displayId },
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 2), displayId: displayId });
       await sleep(2000);  // wait for the scroll to complete
       await topButton.click();
       await sleep(1500)
@@ -81,24 +79,18 @@ export default function WaterFlowBackToTopTest() {
       await topButton.click();
       await sleep(1500)
 
-      await driverWaterFlow.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
-      );
+      await driverWaterFlow.swipeBetween(
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 4), displayId: displayId },
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 2), displayId: displayId });
       await sleep(2000);
       await switchButton.click();
       await sleep(500)
       await topButton.click();
       await sleep(1500)
       
-      await driverWaterFlow.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
-      );
+      await driverWaterFlow.swipeBetween(
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 4), displayId: displayId },
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 2), displayId: displayId });
       await sleep(2000);
       await switchButton.click();
       await sleep(500)

@@ -63,18 +63,25 @@ export default function getListItemRect6() {
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItem_4 = CommonFunc.getComponentRect('getListItemRect6_listItem_4');
+      let driver = await Driver.create();
+      let listItem_4Component = await driver.findComponent(ON.id('getListItemRect6_listItem_4'));
+      let listItem_4 = await listItem_4Component.getBounds();
+      let displayId = await listItem_4Component.getDisplayId();
 
-
-      let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
       console.log('delete')
-      await driver.swipe(
-        Math.round((listItem_4.right-listItem_4.left)*0.9+listItem_4.left + globalThis.winLeft),
-        Math.round((listItem_4.bottom-listItem_4.top)*0.5+listItem_4.top + globalThis.winTop),
-        Math.round((listItem_4.right-listItem_4.left)*0.1+listItem_4.left + globalThis.winLeft),
-        Math.round((listItem_4.bottom-listItem_4.top)*0.5+listItem_4.top + globalThis.winTop)
+      await driver.swipeBetween(
+        {
+          x: Math.round((listItem_4.right - listItem_4.left) * 0.9 + listItem_4.left),
+          y: Math.round((listItem_4.bottom - listItem_4.top) * 0.5 + listItem_4.top),
+          displayId: displayId
+        },
+        {
+          x: Math.round((listItem_4.right - listItem_4.left) * 0.1 + listItem_4.left),
+          y: Math.round((listItem_4.bottom - listItem_4.top) * 0.5 + listItem_4.top),
+          displayId: displayId
+        }
       )
       await CommonFunc.sleep(1000);
 

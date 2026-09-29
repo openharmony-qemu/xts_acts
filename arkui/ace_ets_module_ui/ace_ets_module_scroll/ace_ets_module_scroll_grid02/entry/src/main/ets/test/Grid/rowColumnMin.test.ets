@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
+import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function rowColumnMin() {
@@ -64,9 +65,12 @@ export default function rowColumnMin() {
       expect(JSON.parse(strJson).$attrs.columnStart).assertEqual("0");
       expect(JSON.parse(strJson).$attrs.columnEnd).assertEqual("0");
 
-      let gridItem4 = CommonFunc.getComponentRectOnScreen('row_column_0');
+      let driver = Driver.create();
+      let gridItem4Component = await driver.findComponent(ON.id('row_column_0'));
+      let gridItem4 = await gridItem4Component.getBounds();
       console.info("[rowColumnMin_0100] gridItem4 right is: " + gridItem4.right);
-      let gridItem0 = CommonFunc.getComponentRectOnScreen('item_rc_0');
+      let gridItem0Component = await driver.findComponent(ON.id('item_rc_0'));
+      let gridItem0 = await gridItem0Component.getBounds();
       console.info("[rowColumnMin_0100] gridItem0 left is: " + gridItem0.left);
       expect(Math.floor(Math.abs(gridItem0.left - gridItem4.right)) <= 1).assertTrue();
       console.info('[rowColumnMin_0100] END');
@@ -93,9 +97,12 @@ export default function rowColumnMin() {
       console.info("[rowColumnMin_0200] columnEnd: " + JSON.stringify(JSON.parse(strJson).$attrs.columnEnd));
       expect(JSON.parse(strJson).$type).assertEqual("GridItem");
 
-      let gridItem5 = CommonFunc.getComponentRectOnScreen('row_column_negative');
+      let driver = Driver.create();
+      let gridItem5Component = await driver.findComponent(ON.id('row_column_negative'));
+      let gridItem5 = await gridItem5Component.getBounds();
       console.info("[rowColumnMin_0100] gridItem5 left is: " + gridItem5.left);
-      let gridItem10 = CommonFunc.getComponentRectOnScreen('item_rc_10');
+      let gridItem10Component = await driver.findComponent(ON.id('item_rc_10'));
+      let gridItem10 = await gridItem10Component.getBounds();
       console.info("[rowColumnMin_0100] gridItem10 right is: " + gridItem10.right);
       expect(Math.floor(Math.abs(gridItem5.left - gridItem10.right)) <= 1).assertTrue();
       console.info('[rowColumnMin_0200] END');

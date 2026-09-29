@@ -53,12 +53,16 @@ export default function scrollEnablePagingJsunit() {
     it('ArkUI_Stage_scrollEnablePaging01', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_scrollEnablePaging01] START');
       await Utils.sleep(2000)
-      let scrollRect = Utils.getComponentRect('ScrollTest');
-      console.info(`ArkUI_Stage_scrollEnablePaging01 get scrollRect is:` + JSON.stringify(scrollRect));
-      let x = Utils.getRectHorizontalCenterX(scrollRect)
-      let y = Utils.getRectVerticalCenterY(scrollRect)
       let driver = Driver.create();
-      await driver.swipe(Math.floor(x), Math.floor(scrollRect['bottom']) - 50, Math.floor(x), Math.floor(scrollRect['top']) + 50);
+      let scrollComponent = await driver.findComponent(ON.id('ScrollTest'));
+      let scrollRect = await scrollComponent.getBounds();
+      let displayId = await scrollComponent.getDisplayId();
+      console.info(`ArkUI_Stage_scrollEnablePaging01 get scrollRect is:` + JSON.stringify(scrollRect));
+      let x = Math.floor((scrollRect.left + scrollRect.right) / 2);
+      let y = Math.floor((scrollRect.top + scrollRect.bottom) / 2);
+      await driver.swipeBetween(
+        { x: Math.floor(x), y: Math.floor(scrollRect.bottom) - 50, displayId: displayId },
+        { x: Math.floor(x), y: Math.floor(scrollRect.top) + 50, displayId: displayId });
       console.info('[ArkUI_Stage_scrollEnablePaging01] driver.swipe end');
       await Utils.sleep(2000)
       try {

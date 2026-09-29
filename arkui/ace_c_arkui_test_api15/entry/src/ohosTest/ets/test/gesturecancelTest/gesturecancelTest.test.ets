@@ -62,12 +62,16 @@ export default function gesturecancelTest() {
       let driver = Driver.create();
       await Utils.sleep(500);
       // inner list scroll
-      let rect = Utils.getComponentRect("inner");
-      let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
+      let innerComponent = await driver.findComponent(ON.id('inner'));
+      let rect = await innerComponent.getBounds();
+      let displayId = await innerComponent.getDisplayId();
+      let x = Math.round(Utils.getRectHorizontalCenterX(rect));
       // the visual list height is vp2px(200)
-      let y = Math.round(globalThis.winTop + rect.top + vp2px(100));
+      let y = Math.round(rect.top + vp2px(100));
       console.info("testGestureCancelTest001  x= " +  x  + ", y = " + y);
-      await driver.swipe(x, y, x, Math.round(y - vp2px(200)));
+      await driver.swipeBetween(
+        { x: x, y: y, displayId: displayId },
+        { x: x, y: Math.round(y - vp2px(200)), displayId: displayId });
       await Utils.sleep(2000);
        // test the callbackData;
       let object1:ESObject = nativeRender.GetTouchEventData();

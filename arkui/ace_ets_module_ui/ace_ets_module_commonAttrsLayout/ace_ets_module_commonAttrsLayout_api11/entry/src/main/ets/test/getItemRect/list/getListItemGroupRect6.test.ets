@@ -83,17 +83,25 @@ export default function getListItemGroupRect6() {
       await CommonFunc.sleep(1000);
 
       console.log('get Initial value')
-      let listItemGroup_3 = CommonFunc.getComponentRect('getListItemGroupRect6_listItemGroup_3');
+      let driver = await Driver.create();
+      let listItemGroup_3Component = await driver.findComponent(ON.id('getListItemGroupRect6_listItemGroup_3'));
+      let listItemGroup_3 = await listItemGroup_3Component.getBounds();
+      let displayId = await listItemGroup_3Component.getDisplayId();
 
-      let driver = Driver.create();
       await CommonFunc.sleep(2000);
 
       console.log('delete')
-      await driver.swipe(
-        Math.round((listItemGroup_3.right - listItemGroup_3.left) * 0.9 + listItemGroup_3.left + globalThis.winLeft),
-        Math.round((listItemGroup_3.bottom - listItemGroup_3.top) * 0.5 + listItemGroup_3.top + globalThis.winTop),
-        Math.round((listItemGroup_3.right - listItemGroup_3.left) * 0.1 + listItemGroup_3.left + globalThis.winLeft),
-        Math.round((listItemGroup_3.bottom - listItemGroup_3.top) * 0.5 + listItemGroup_3.top + globalThis.winTop)
+      await driver.swipeBetween(
+        {
+          x: Math.round((listItemGroup_3.right - listItemGroup_3.left) * 0.9 + listItemGroup_3.left),
+          y: Math.round((listItemGroup_3.bottom - listItemGroup_3.top) * 0.5 + listItemGroup_3.top),
+          displayId: displayId
+        },
+        {
+          x: Math.round((listItemGroup_3.right - listItemGroup_3.left) * 0.1 + listItemGroup_3.left),
+          y: Math.round((listItemGroup_3.bottom - listItemGroup_3.top) * 0.5 + listItemGroup_3.top),
+          displayId: displayId
+        }
       )
       await CommonFunc.sleep(1000);
 

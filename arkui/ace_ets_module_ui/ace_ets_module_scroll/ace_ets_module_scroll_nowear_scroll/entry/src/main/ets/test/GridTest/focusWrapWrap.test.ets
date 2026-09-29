@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function focusWrapWrap() {
   describe('focusWrapWrap', () => {
@@ -62,13 +63,13 @@ export default function focusWrapWrap() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       //await driver.triggerKey(KeyCode.KEYCODE_DPAD_RIGHT);
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015, displayID);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015, displayID);
       await CommonFunc.sleep(1000);
 
       let btn: Component = await driver.findComponent(ON.id('wrap_focused_c'));

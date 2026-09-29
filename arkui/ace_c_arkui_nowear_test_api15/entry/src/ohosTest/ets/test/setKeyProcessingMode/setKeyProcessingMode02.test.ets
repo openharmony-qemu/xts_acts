@@ -17,6 +17,8 @@ import { beforeEach, describe, expect, it,  Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function setKeyProcessingMode02(){
 
   describe('setKeyProcessingMode02', () => {
@@ -42,11 +44,11 @@ export default function setKeyProcessingMode02(){
       let driver = await Driver.create();
       await Utils.sleep(500);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(500);
       let strJson = getInspectorByKey('text21');
       await Utils.sleep(200);
