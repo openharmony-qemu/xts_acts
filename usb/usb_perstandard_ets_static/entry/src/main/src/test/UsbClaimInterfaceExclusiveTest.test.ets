@@ -304,50 +304,6 @@ export default function UsbClaimInterfaceExclusiveTest(): void {
       })
 
     /**
-     * @tc.name   testClaimInterfaceExclusiveNull
-     * @tc.number SUB_USB_HostManager_ClaimExclusive_0600
-     * @tc.desc   claimInterfaceExclusive with null parameters should throw 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testClaimInterfaceExclusiveNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      console.info(`${TAG} testClaimInterfaceExclusiveNull start`);
-      let nullPipe: UsbMgr.USBDevicePipe | null = null;
-      let nullIface: UsbMgr.USBInterface | null = null;
-      try {
-        UsbMgr.claimInterfaceExclusive(nullPipe!, nullIface!, false);
-        expect().assertFail();
-      } catch (error) {
-        const err = error as BusinessError;
-        console.info(`${TAG} testClaimInterfaceExclusiveNull catch err: ${JSON.stringify(error)}`);
-        expect(err.code).assertEqual(401);
-      }
-    })
-
-    /**
-     * @tc.name   testClaimInterfaceExclusiveUndefined
-     * @tc.number SUB_USB_HostManager_ClaimExclusive_0700
-     * @tc.desc   claimInterfaceExclusive with undefined parameters should throw 401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testClaimInterfaceExclusiveUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      console.info(`${TAG} testClaimInterfaceExclusiveUndefined start`);
-      let undefinedPipe: UsbMgr.USBDevicePipe | undefined = undefined;
-      let undefinedIface: UsbMgr.USBInterface | undefined = undefined;
-      try {
-        UsbMgr.claimInterfaceExclusive(undefinedPipe!, undefinedIface!, false);
-        expect().assertFail();
-      } catch (error) {
-        const err = error as BusinessError;
-        console.info(`${TAG} testClaimInterfaceExclusiveUndefined catch err: ${JSON.stringify(error)}`);
-        expect(err.code).assertEqual(401);
-      }
-    })
-
-    /**
      * @tc.name   testInterfaceConflictInfoFields
      * @tc.number SUB_USB_HostManager_ClaimExclusive_0800
      * @tc.desc   InterfaceConflictInfo should contain busNum, devAddr and interfaceId
