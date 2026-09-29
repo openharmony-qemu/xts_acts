@@ -3875,7 +3875,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
             }else{
               expect(pipSize.width).assertEqual(pipInfoSize.width);
               expect(pipSize.height).assertEqual(pipInfoSize.height);
-              expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01)
+              expect(Math.abs(pipSize.scale - pipInfoSize.scale)).assertLessOrEqual(0.01);
             }
             pipController.off('pipWindowSizeChange', callback);
             await pipController.stopPiP();
