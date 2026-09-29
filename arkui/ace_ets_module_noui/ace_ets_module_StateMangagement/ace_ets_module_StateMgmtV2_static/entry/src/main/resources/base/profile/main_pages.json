@@ -33,10 +33,14 @@
     "MainAbility/pages/CustomComponent/CustomEnvArray",
     "MainAbility/pages/CustomComponent/CustomEnvDate",
     "MainAbility/pages/CustomComponent/CustomEnvMap",
+    "MainAbility/pages/CustomComponent/CustomEnvMonitor",
     "MainAbility/pages/CustomComponent/CustomEnvSet",
+    "MainAbility/pages/CustomComponent/CustomEnvTabContent",
     "MainAbility/pages/CustomComponent/CustomEnvV1ToV2",
     "MainAbility/pages/CustomComponent/CustomEnvV2ToV1",
-    "MainAbility/pages/CustomComponent/CustomEnvMultipleTypes"
+    "MainAbility/pages/CustomComponent/CustomEnvWatch",
+    "MainAbility/pages/CustomComponent/CustomEnvMultipleTypes",
+    "MainAbility/pages/CustomComponent/CustomEnvNearest"
 
     
   ]
