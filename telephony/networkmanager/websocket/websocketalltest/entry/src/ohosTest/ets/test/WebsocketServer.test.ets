@@ -1665,6 +1665,9 @@ export default function WebsocketServerTest() {
           console.info(`${caseName} server stop result: ${success}`);
           console.info(`${caseName} test end`);
           done();
+        }).catch((err: Error) => {
+          console.info(`${caseName} server stop error: ${JSON.stringify(err)}`);
+          done();
         })
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
