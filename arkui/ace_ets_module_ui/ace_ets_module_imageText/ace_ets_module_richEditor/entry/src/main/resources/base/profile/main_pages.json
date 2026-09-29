@@ -199,6 +199,8 @@
     "MainAbility/pages/RichEditorApi26/ImageSpanResizable",
     "MainAbility/pages/RichEditorApi26/RichEditorImageSpanStyleResizable",
     "MainAbility/pages/RichEditorApi26/ImageAttachmentResizable",
-    "MainAbility/pages/RichEditorApi26/RefreshOffset"
+    "MainAbility/pages/RichEditorApi26/RefreshOffset",
+    "MainAbility/pages/RichEditorApi26/RichEditorBuilderSpan",
+    "MainAbility/pages/RichEditorApi26/StylesVersionDecorator"
   ]
 }
