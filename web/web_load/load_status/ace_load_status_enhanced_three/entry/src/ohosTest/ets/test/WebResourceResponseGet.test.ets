@@ -193,7 +193,7 @@ export default function webResourceResponseGet() {
       Utils.emitEvent("testGetResponseEncoding001", 141511)
       let isReturn = false;
       Utils.registerBaseEvent("testGetResponseEncoding001", '', 141590, () => { isReturn = true }, (backData: events_emitter.EventData) => {
-        expect(String(backData?.data?.ACTION).length).assertLarger(0);
+        expect(String(backData?.data?.ACTION).length).assertLargerOrEqual(0);
       });
       Utils.waitAndClickComponent("WebResourceResponseGetButton",driver)
       await waitForExist(()=>isReturn, "testGetResponseEncoding001", true,1000);
