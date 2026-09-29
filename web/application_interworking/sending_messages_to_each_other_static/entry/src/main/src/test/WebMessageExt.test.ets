@@ -648,7 +648,7 @@ export default function webMessageExt() {
     it('testWebMessageExtGetErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetError001", 10)
       await Utils.msSleep(2000);
-      Utils.registerBaseEvent("testWebMessageExtGetError001", true, 100026, done,
+      Utils.registerBaseEvent("testWebMessageExtGetError001", 'URIError: URI seq 0222', 100026, done,
         (backData: events_emitter.EventData, expected: Object) => {
           const data = backData?.data as Record<string, RecordData>;
           const action = data['ACTION'];
@@ -657,6 +657,7 @@ export default function webMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
+      done()
     })
 
     /**
