@@ -203,7 +203,7 @@ export default function StartChildProcessTestStatic() {
     it('SUB_Ability_AbilityBase_startChildProcess_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_static_0400`;
       console.log(`${tag}, it begin`);
-      if(mpEnable === 'true' allowchildprocess === 'true'){
+      if(mpEnable === 'true' || allowchildprocess === 'true'){
         try {
           childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, (err, data)=>{
             if(err?.code){
