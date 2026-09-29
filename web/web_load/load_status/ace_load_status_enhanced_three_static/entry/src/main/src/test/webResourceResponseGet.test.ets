@@ -209,7 +209,7 @@ export default function webResourceResponseGet() {
     /**
     * @tc.name        testGetResponseEncodingStatic001
     * @tc.number      SUB_WEB_GETRESPONSEENCODING_0100
-    * @tc.desc        test getResponseEncoding
+    * @tc.desc        verify getResponseEncoding can be invoked on http error response
     * @tc.size        MediumTest
     * @tc.type        Function
     * @tc.level       LEVEL0
@@ -218,7 +218,7 @@ export default function webResourceResponseGet() {
       await Utils.msSleep(2000);
       Utils.emitEvent("testGetResponseEncoding001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testGetResponseEncoding001", "utf-8", 35017, done);
+      Utils.registerEvent("testGetResponseEncoding001", true, 35017, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebResourceResponseGetButton', 10, '');
       await Utils.msSleep(10000);

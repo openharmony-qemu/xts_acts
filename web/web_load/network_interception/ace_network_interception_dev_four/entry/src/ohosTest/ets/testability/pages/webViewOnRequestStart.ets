@@ -65,7 +65,6 @@ struct webViewOnRequestStart {
       Row() {
         Button("OnRequestStart").id('OnRequestStart').onClick(async () => {
           await Utils.waitForExist(()=>this.isReceive, 'OnRequestStartIsReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, 'OnRequestStartIsPageEnd', 1, 1000);
           console.info("key==>" + this.str);
           this.isReceive = -1;
           switch (this.str) {

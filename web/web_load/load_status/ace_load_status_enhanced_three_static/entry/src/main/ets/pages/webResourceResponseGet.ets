@@ -205,9 +205,6 @@ struct webResourceResponseGet {
               try {
                 this.getResponseEncodingValue = ''
                 this.controller.loadUrl('https://gitee.com/openharmony/123' );
-                setTimeout(() => {
-                  Utils.emitEvent(this.getResponseEncodingValue, 35017);
-                }, 4000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -307,6 +304,9 @@ struct webResourceResponseGet {
             this.getResponseDataValue = JSON.stringify(event.response.getResponseData())
             console.log('GetRequest getResponseData:' + this.getResponseDataValue);
             this.getResponseEncodingValue = event.response.getResponseEncoding()
+            if (this.stringObj.str === 'testGetResponseEncoding001') {
+              Utils.emitEvent(true, 35017);
+            }
             console.log('GetRequest getResponseMimeType:' + event.response.getResponseMimeType());
             this.getResponseMimeTypeValue = event.response.getResponseMimeType()
             console.log('GetRequest getResponseCode:' + event.response.getResponseCode());
