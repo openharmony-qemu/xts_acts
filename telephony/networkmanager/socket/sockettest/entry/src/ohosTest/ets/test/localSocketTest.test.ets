@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
+import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
 import socket from '@ohos.net.socket';
 import { BusinessError, Callback} from '@ohos.base';
 import { JSON } from '@kit.ArkTS';
@@ -2315,8 +2315,10 @@ export default function LocalSocketTest() {
           console.info(`${caseName} error callback2 triggered`);
         };
         expectTrue(typeof callback1 === 'function' && typeof callback2 === 'function', 'multiple callbacks are valid');
-        client.on('error', callback1);
-        client.on('error', callback2);
+        let ret1: void = client.on('error', callback1);
+        let ret2: void = client.on('error', callback2);
+        expectTrue(ret1 === undefined, `${caseName} first on('error') should return undefined`);
+        expectTrue(ret2 === undefined, `${caseName} second on('error') should return undefined`);
         console.info(`${caseName} on('error', callback) with multiple callbacks success`)
         client.close()
         server.close()
@@ -2557,4 +2559,3 @@ export default function LocalSocketTest() {
 
   });
 }
-
