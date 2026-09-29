@@ -102,7 +102,7 @@ export default class Utils {
         await driver.fling({
           x: centerX, y: Y2, displayId
         }, {
-          x: centerX, y: Y1. displayId
+          x: centerX, y: Y1, displayId
         }, stepLen, speed);
       } else {
         await driver.fling({
