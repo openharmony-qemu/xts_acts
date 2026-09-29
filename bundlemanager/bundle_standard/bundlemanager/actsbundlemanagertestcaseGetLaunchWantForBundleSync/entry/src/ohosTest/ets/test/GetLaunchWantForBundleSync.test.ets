@@ -15,6 +15,7 @@
 import bundleMgr from '@ohos.bundle.bundleManager';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import hilog from '@ohos.hilog';
+import osAccount from '@ohos.account.osAccount';
 
 const NAME1 = "ohos.acts.bundlemanager.test.getLaunchWantForBundleSync";
 const ABILITYNAME_1 = "TestAbility";
@@ -43,7 +44,10 @@ export default function testGetLaunchWantForBundleSync() {
       const TEST_CASE_NAME = 'Sub_Bms_Framework_Query_AbilityInfo_7300';
       try {
         hilog.info(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
-        let res = bundleMgr.getLaunchWantForBundleSync(NAME1, 100);
+        let accountManager = osAccount.getAccountManager();
+        let userId = await accountManager.getOsAccountLocalId();
+        hilog.info(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'getOsAccountLocalId: ' + userId);
+        let res = bundleMgr.getLaunchWantForBundleSync(NAME1, userId);
         hilog.info(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'get LaunchWantForBundle success, LaunchWant is: %{public}s', JSON.stringify(res));
         expect(res.bundleName).assertEqual(NAME1);
         expect(res.deviceId).assertEqual('');
