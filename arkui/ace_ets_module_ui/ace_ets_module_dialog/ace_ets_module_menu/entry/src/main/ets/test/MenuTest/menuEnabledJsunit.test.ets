@@ -77,16 +77,16 @@ export default function menuEnabledJsunit() {
     it('menuEnabledJsunit_0200', Level.LEVEL2, async (done: Function) => {
 
       console.info('menuEnabledJsunit_0200 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('cmEnd'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('cmEnd'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let menuEnabled = await driver.findComponent(BY.key('menuEnabled'));
+      let menuEnabled = await driver.findComponent(ON.id('menuEnabled'));
       await menuEnabled.click();
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
-      let change = await driver.findComponent(BY.key('change'));
+      let change = await driver.findComponent(ON.id('change'));
       await change.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('menuEnabled' + '_text');

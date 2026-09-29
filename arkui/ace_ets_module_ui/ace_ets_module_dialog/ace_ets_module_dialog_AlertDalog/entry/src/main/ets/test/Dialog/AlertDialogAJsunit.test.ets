@@ -54,8 +54,8 @@ export default function AlertDialogAJsunit() {
     it('AlertDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('AlertDialogAJsunit_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('Alert_Dialog_A'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('Alert_Dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('Alert_Dialog_A');

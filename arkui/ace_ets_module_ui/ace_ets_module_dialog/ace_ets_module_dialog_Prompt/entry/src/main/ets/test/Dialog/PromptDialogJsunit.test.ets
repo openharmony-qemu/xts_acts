@@ -54,8 +54,8 @@ export default function PromptDialogAJsunit() {
     it('PromptDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('PromptDialogAJsunit_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('Prompt_Dialog_A'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('Prompt_Dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('Prompt_Dialog_A');
