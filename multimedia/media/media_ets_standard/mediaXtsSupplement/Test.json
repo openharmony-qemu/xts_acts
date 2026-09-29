@@ -10,6 +10,34 @@
     },
     "kits": [
         {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/media/1vp9_320x240_30.mp4 ->/data/local/tmp/",
+                "./resource/media/audioplayer/aac/aac_48ksr_16kbr_1ch.aac ->/data/local/tmp/",
+                "./resource/media/1h264_320x240_60.3gp ->/data/local/tmp/",
+                "./resource/media/h261_352x288_30.mov ->/data/local/tmp/",
+                "./resource/media/h261_352x288_30.mkv ->/data/local/tmp/",
+                "./resource/media/h264_320x240_60.m4v ->/data/local/tmp/",
+                "./resource/media/1h264_720x480_30.3g2 ->/data/local/tmp/",
+                "./resource/media/audio_2video.avi ->/data/local/tmp/",
+                "./resource/media/h264_720x480_60.f4v ->/data/local/tmp/",
+                "./resource/media/MP3_48000_32_1.mp3 ->/data/local/tmp/",
+                "./resource/media/OGG_48000_1.ogg ->/data/local/tmp/",
+                "./resource/media/libvpx-vp9_1280x720_30.mkv ->/data/local/tmp/",
+                "./resource/media/audioplayer/flac/flac_48ksr_16kbr_1ch.flac ->/data/local/tmp/",
+                "./resource/media/audioplayer/wav/pcm_48ksr_16kbr_1ch.wav ->/data/local/tmp/",
+                "./resource/media/AVPlayer/amrnb_4.75k_8000.amr ->/data/local/tmp/",
+                "./resource/media/h263_352x288_30.mov ->/data/local/tmp/",
+                "./resource/media/videoplayer/mpeg_ts/mpeg4_mp3_480p_25r.ts ->/data/local/tmp/",
+                "./resource/media/1libvpx_720x480_60.ts ->/data/local/tmp/",
+                "./resource/media/H264_AAC.mp4 ->/data/local/tmp/",
+                "./resource/media/1libvpx_720x480_60.ts ->/data/local/tmp/",
+                "./resource/media/H264_AAC.mp4 ->/data/local/tmp/",
+                "./resource/media/setup_media_ets_standard_mediaXtsSupplement_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
             "type": "ShellKit",
             "run-command": [
                 "hilog -Q pidoff",
@@ -18,8 +46,10 @@
                 "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
                 "power-shell setmode 602",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files/*"
+                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
+                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test",
+                "chmod 755 /data/local/tmp/",
+                "sh /data/local/tmp/setup_media_ets_standard_mediaXtsSupplement_test.sh"
             ],
             "teardown-command": [
                 "power-shell setmode 600",
@@ -27,33 +57,6 @@
                 "kill -9 `pidof ohos.acts.multimedia.media.supp.xts`",
                 "scanner",
                 "sleep 5"
-            ]
-        },
-        {
-            "type": "PushKit",
-            "pre-push": [],
-            "push": [
-                "./resource/media/1vp9_320x240_30.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/audioplayer/aac/aac_48ksr_16kbr_1ch.aac ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/1h264_320x240_60.3gp ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/h261_352x288_30.mov ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/h261_352x288_30.mkv ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/h264_320x240_60.m4v ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/1h264_720x480_30.3g2 ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/audio_2video.avi ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/h264_720x480_60.f4v ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/MP3_48000_32_1.mp3 ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/OGG_48000_1.ogg ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/libvpx-vp9_1280x720_30.mkv ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/audioplayer/flac/flac_48ksr_16kbr_1ch.flac ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/audioplayer/wav/pcm_48ksr_16kbr_1ch.wav ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/AVPlayer/amrnb_4.75k_8000.amr ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/h263_352x288_30.mov ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/videoplayer/mpeg_ts/mpeg4_mp3_480p_25r.ts ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/1libvpx_720x480_60.ts ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/H264_AAC.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/1libvpx_720x480_60.ts ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files",
-                "./resource/media/H264_AAC.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.media.supp.xts/haps/entry_test/files"
             ]
         },
         {
