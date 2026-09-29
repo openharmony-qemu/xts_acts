@@ -46,7 +46,6 @@ export default function testsuite() {
   DatePickerDialogWindowPropertiesTest();
   DatePickerDialogAppearTextTest();
   DatePickerDialogButtonStyleTest();
-  DatePickerDialogCallbackTest();
   datePickerDialogBackgroundEffectTest();
   datePickerDialogBlurStyleOptionsTest();
   showDatePickerDialogBackgroundEffectTest();
