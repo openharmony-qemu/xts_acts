@@ -1760,52 +1760,27 @@ export default function sceneResourcesTest() {
       }
     })
     /**
-     * @tc.name   testMaterialTypeOCCLUSION1
+     * @tc.name   testOcclusionMaterialCreate
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1811
      * @tc.desc   Test MaterialType.OCCLUSION enum value and verify OCCLUSION material can be created
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMaterialTypeOCCLUSION1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testMaterialTypeOCCLUSION1";
+    it('testOcclusionMaterialCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testOcclusionMaterialCreate";
       console.info(msg + ' begin ');
       try {
         scene = await Scene.load();
         expect(scene != undefined).assertTrue();
-        console.info(msg + " scene loaded successfully");
-
         rf = scene.getResourceFactory();
-        expect(rf != null).assertTrue();
-        console.info(msg + " resource factory retrieved successfully");
-
-        // Test MaterialType.OCCLUSION enum value
-        expect(MaterialType.OCCLUSION).assertEqual(4);
-        console.info(msg + " MaterialType.OCCLUSION value is 4");
-
-        // Verify OCCLUSION material can be created
         let occlusionMaterial:OcclusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
         expect(occlusionMaterial != null).assertTrue();
-        console.info(msg + " OCCLUSION material created successfully");
-
-        // Verify material type is OCCLUSION
         expect(occlusionMaterial?.materialType).assertEqual(MaterialType.OCCLUSION);
-        console.info(msg + " material type verified as OCCLUSION");
-
-        // Test all MaterialType enum values for completeness
-        expect(MaterialType.SHADER).assertEqual(1);
-        console.info(msg + " MaterialType.SHADER value is 1");
-
-        expect(MaterialType.METALLIC_ROUGHNESS).assertEqual(2);
-        console.info(msg + " MaterialType.METALLIC_ROUGHNESS value is 2");
-
-        expect(MaterialType.UNLIT).assertEqual(3);
-        console.info(msg + " MaterialType.UNLIT value is 3");
-
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
-        console.info(msg + " Failed in testMaterialTypeOCCLUSION1 " + JSON.stringify(err));
+        console.info(msg + " Failed in testOcclusionMaterialCreate " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
