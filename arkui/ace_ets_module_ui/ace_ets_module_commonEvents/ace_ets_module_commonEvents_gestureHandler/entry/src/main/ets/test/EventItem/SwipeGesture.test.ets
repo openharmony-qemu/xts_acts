@@ -18,6 +18,7 @@ import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayR
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function swipeGestureEventTest() {
   describe('swipeGestureEvent', () => {
     beforeEach(async (done: Function) => {
@@ -62,13 +63,13 @@ export default function swipeGestureEventTest() {
       console.info(
         `[SwipeGesture1_0100] swipe screen (${startX},${startY}) -> (${endX},${endY}) rect=${JSON.stringify(rect)}`
       );
-      await driver.swipe(startX, startY, endX, endY, 600);
+      await driver.swipeBetween({x:startX,y:startY,displayId:displayID},{x:endX,y:endY,displayId:displayID}, 600);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SwipeGesture' + '_value');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[SwipeGesture1_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[SwipeGesture1_0100] title: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('0');
+      expect(obj.$attrs.content).assertEqual(displayID + '');
       console.info('[SwipeGesture1_0100] END');
       done();
     });

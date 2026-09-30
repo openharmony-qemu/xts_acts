@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function APIPreDragStatusTest() {
   describe('APIPreDragStatusTest', () => {
     beforeEach(async (done: Function) => {
@@ -146,7 +147,8 @@ export default function APIPreDragStatusTest() {
       await obj.click();
       await CommonFunc.sleep(2000);
       let obj1 = await scrollBar.scrollSearch(ON.id('APIPreDragStatusColumn'));
-      await obj1.longClick();
+      let point = await obj1.getBoundsCenter();
+      await driver.longClickAt({ x: point.x, y: point.y, displayId: displayID }, 2000);
       await CommonFunc.sleep(2000);
 
       let text2 = getInspectorByKey('APIPreDragStatusText04');

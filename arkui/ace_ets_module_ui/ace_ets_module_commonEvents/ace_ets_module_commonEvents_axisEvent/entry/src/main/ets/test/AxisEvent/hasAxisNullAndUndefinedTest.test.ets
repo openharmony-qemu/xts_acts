@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function hasAxisNullAndUndefinedTest() {
   describe('hasAxisNullAndUndefinedTest', () => {
     beforeEach(async (done: Function) => {
@@ -64,7 +65,7 @@ export default function hasAxisNullAndUndefinedTest() {
       let center = await button.getBoundsCenter();
       await CommonFunc.sleep(500);
       // 垂直滚动鼠标滚轮触发事件
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayID }, true, 30);
       await CommonFunc.sleep(1000);
       
       // 验证null参数处理
@@ -91,7 +92,7 @@ export default function hasAxisNullAndUndefinedTest() {
       let center = await button.getBoundsCenter();
       await CommonFunc.sleep(500);
       // 垂直滚动鼠标滚轮触发事件
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayID }, true, 30);
       await CommonFunc.sleep(1000);
       
       // 验证undefined参数处理

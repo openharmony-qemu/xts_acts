@@ -22,7 +22,6 @@ import router from '@ohos.router';
 declare function getInspectorByKey(key: string): string;
 
 let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function SourceTypeTest() {
   describe('SourceTypeTest', () => {
     beforeEach(async (done: Function) => {

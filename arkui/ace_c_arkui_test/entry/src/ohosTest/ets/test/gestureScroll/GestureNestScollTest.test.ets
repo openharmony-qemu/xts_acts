@@ -19,6 +19,7 @@ import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 import router from '@ohos.router';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function gestureNestScrollTest() {
 
   describe('gestureNestScrollTest', () => {
@@ -67,7 +68,7 @@ export default function gestureNestScrollTest() {
       // the visual list height is vp2px(200)
       let y = Math.round(globalThis.winTop + rect.top);
       console.info("gestureNestScrollTest  x= " +  x  + ", y = " + y);
-      await driver.swipe(x, Math.round(y+(rect.bottom-rect.top)/40), x, y);
+      await driver.swipeBetween({x: x, y: Math.round(y+(rect.bottom-rect.top)/40), displayId: displayID}, {x: x, y: y, displayId: displayID});
       await Utils.sleep(3000);
       console.info("test");
       let button = await driver.findComponent(ON.text('flowItem8'));
@@ -77,7 +78,7 @@ export default function gestureNestScrollTest() {
       let x0 = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(recto));
       let y0 = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(recto));
       console.info("gestureNestScrollTest  xo= " +  x0  + ", y = " + y0);
-      await driver.swipe(x0, Math.round(y0+(recto.bottom-recto.top)/10), x0 , y0);
+      await driver.swipeBetween({x: x0, y: Math.round(y0+(recto.bottom-recto.top)/10), displayId: displayID}, {x: x0, y: y0, displayId: displayID});
       await Utils.sleep(3000);
       let button2 = await driver.findComponent(ON.text('flowItem11'));
       expect(button2 != null).assertTrue();

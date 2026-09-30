@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function UIObserverEventTest() {
 
   describe('UIObserverEventTest', () => {
@@ -137,7 +138,7 @@ export default function UIObserverEventTest() {
       let Pan = await driver.findComponent(ON.id('Pan'));
       let rect = await Pan.getBounds();
       let rectCenter = await Pan.getBoundsCenter();
-      await driver.swipe(rect.right,rectCenter.y,rectCenter.x,rectCenter.y)
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID})
       await CommonFunc.sleep(1000);
       let beforePanStart = JSON.stringify(AppStorage.get('beforePanStart'))
       console.log('UIObserverEventTest_0400,beforePanStart:',beforePanStart)

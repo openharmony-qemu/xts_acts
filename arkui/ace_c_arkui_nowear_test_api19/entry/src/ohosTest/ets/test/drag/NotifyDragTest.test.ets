@@ -17,6 +17,8 @@ import { expect, describe, it, Level, afterEach } from '@ohos/hypium';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function NotifyDragTest(){
 
   describe('NotifyDragTest', () => {
@@ -48,7 +50,7 @@ export default function NotifyDragTest(){
       let upX = Math.round(globalThis.winLeft + rectOne.left + (rectOne.right - rectOne.left) / 2);
       let upY = Math.round(globalThis.winTop + rectOne.top + (rectOne.bottom - rectOne.top) / 2);
       let driver: Driver = Driver.create();
-      await driver.drag(downX, downY, upX, upY, 10);
+      await driver.dragBetween({x:downX,y:downY,displayId:displayID},{x:upX,y:upY,displayId:displayID},10);
       await Utils.sleep(2000);
       expect(Utils.getComponentInfoByKey('text1_id').$attrs.backgroundColor).assertEqual('#FF00FF00');
       expect(Utils.getComponentInfoByKey('text2_id').$attrs.backgroundColor).assertEqual('#FF00FF00');

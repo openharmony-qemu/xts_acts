@@ -24,6 +24,5 @@ export default function testsuite() {
   NodeAdoptedTest();
   TestErrorCodeTest();
   touchTestInfoTest();
-  focusScopeTest();
   AccessibilityValueTest();
 }

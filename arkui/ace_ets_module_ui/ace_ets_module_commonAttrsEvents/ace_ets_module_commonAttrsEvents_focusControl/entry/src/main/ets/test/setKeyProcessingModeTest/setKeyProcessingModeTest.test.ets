@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function setKeyProcessingModeTest() {
   describe('setKeyProcessingModeTest', () => {
     beforeEach(async (done: Function) => {
@@ -63,11 +64,11 @@ export default function setKeyProcessingModeTest() {
       let btn = await driver.findComponent(ON.id('FOCUS_NAVIGATION'));
       await btn.click()
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let obj = getInspectorByKey('focus');
       let focus:string = JSON.parse(obj).$attrs.content;
@@ -92,11 +93,11 @@ export default function setKeyProcessingModeTest() {
       let btn = await driver.findComponent(ON.id('ANCESTOR_EVENT'));
       await btn.click()
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let obj = getInspectorByKey('focus');
       let focus:string = JSON.parse(obj).$attrs.content;
@@ -124,11 +125,11 @@ export default function setKeyProcessingModeTest() {
       let btn2 = await driver.findComponent(ON.id('undefined'));
       await btn2.click()
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
       let obj = getInspectorByKey('focus');
       let focus:string = JSON.parse(obj).$attrs.content;

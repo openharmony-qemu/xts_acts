@@ -18,6 +18,8 @@ import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayR
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function longPressEventTest() {
   describe('longPressEvent', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +64,7 @@ export default function longPressEventTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info('[LongPressGesture1_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[LongPressGesture1_0100] title: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual('0');
+      expect(obj.$attrs.content).assertEqual(displayID + '');
       console.info('[LongPressGesture1_0100] END');
       done();
     });
