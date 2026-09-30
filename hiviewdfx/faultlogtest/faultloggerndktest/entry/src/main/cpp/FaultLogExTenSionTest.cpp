@@ -17,6 +17,7 @@
 #include <pthread.h>
 #include <sys/wait.h>
 #include "hilog/log.h"
+#include "hiappevent/hiappevent.h"
 #include <hiappevent/hiappevent_event.h>
 #include <sys/prctl.h>
 
