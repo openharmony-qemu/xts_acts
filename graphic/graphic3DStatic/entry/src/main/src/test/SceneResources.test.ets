@@ -1767,11 +1767,11 @@ export default function sceneResourcesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOcclusionMaterialCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
+    it('testOcclusionMaterialCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let msg = "============================testOcclusionMaterialCreate";
       console.info(msg + ' begin ');
       try {
-        scene = await Scene.load();
+        let scene = await Scene.load();
         expect(scene != undefined).assertTrue();
         rf = scene.getResourceFactory();
         let occlusionMaterial:OcclusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
