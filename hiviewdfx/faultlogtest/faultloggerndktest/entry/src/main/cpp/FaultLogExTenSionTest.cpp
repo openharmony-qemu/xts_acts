@@ -20,6 +20,8 @@
 #include "hiappevent/hiappevent.h"
 #include <hiappevent/hiappevent_event.h>
 #include <sys/prctl.h>
+#include <cstring>
+
 
 #define PARAM_1 5
 #define PARAM_2 6
