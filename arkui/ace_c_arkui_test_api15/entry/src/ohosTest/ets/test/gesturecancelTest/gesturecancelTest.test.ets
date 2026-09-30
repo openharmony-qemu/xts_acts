@@ -19,6 +19,8 @@ import Utils from '../common/Utils';
 import router from '@ohos.router';
 import nativeRender from 'libnativerender.so';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function gesturecancelTest() {
 
   describe('gesturecancelTest', () => {

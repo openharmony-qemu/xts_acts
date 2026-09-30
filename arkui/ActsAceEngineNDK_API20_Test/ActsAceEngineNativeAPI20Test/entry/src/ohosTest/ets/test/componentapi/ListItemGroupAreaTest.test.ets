@@ -18,6 +18,8 @@ import nativexcomponent from 'libnativexcomponent.so';
 import Utils from "../common/Utils";
 import { ON, Component, Point } from '@kit.TestKit';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function ListItemGroupAreaTest() {
   describe('ListItemGroupAreaTest', () => {
     let Component: Component;

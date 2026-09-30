@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function scrollEventNullUndefinedTest() {
   describe('scrollEventNullUndefinedTest', () => {
 

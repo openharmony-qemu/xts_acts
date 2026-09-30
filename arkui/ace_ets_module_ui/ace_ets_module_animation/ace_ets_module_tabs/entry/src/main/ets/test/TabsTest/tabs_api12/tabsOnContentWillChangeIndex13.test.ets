@@ -18,6 +18,8 @@ import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function tabsOnContentWillChangeIndex13JsunitTest() {
   describe('tabsOnContentWillChangeIndex13JsunitTest', () => {
     beforeEach(async (done: Function) => {
@@ -62,10 +64,7 @@ export default function tabsOnContentWillChangeIndex13JsunitTest() {
       tabsRect.top + "," + tabsRect.bottom );
 
       // swipe index  0 -1   swipe direction top to bottom
-      await driver.swipe(globalThis.winLeft + Math.round((tabsRect.right - tabsRect.left)/2  + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.8 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left),
-
-
-        Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.05 + tabsRect.top));
+      await driver.swipeBetween({ x: globalThis.winLeft + Math.round((tabsRect.right - tabsRect.left)/2  + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.8 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.05 + tabsRect.top), displayId: displayID });
 
       await CommonFunc.sleep(2000);
 
@@ -74,10 +73,7 @@ export default function tabsOnContentWillChangeIndex13JsunitTest() {
       expect(texContent).assertEqual("发现的内容");
 
       // swipe index  1 -2   swipe direction top to bottom
-      await driver.swipe(globalThis.winLeft + Math.round((tabsRect.right - tabsRect.left)/2  + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.8 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left),
-
-
-        Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.05 + tabsRect.top));
+      await driver.swipeBetween({ x: globalThis.winLeft + Math.round((tabsRect.right - tabsRect.left)/2  + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.8 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.05 + tabsRect.top), displayId: displayID });
 
       await CommonFunc.sleep(2000);
 
@@ -87,10 +83,7 @@ export default function tabsOnContentWillChangeIndex13JsunitTest() {
 
 
       // swipe index  2 -3   swipe direction top to bottom
-      await driver.swipe(Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left),Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.8 + tabsRect.top),Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left),
-
-
-        Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.05 + tabsRect.top));
+      await driver.swipeBetween({ x: Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.8 + tabsRect.top), displayId: displayID }, { x: Math.round(globalThis.winLeft + (tabsRect.right - tabsRect.left)/2  + tabsRect.left), y: Math.round(globalThis.winTop + (tabsRect.bottom - tabsRect.top) *0.05 + tabsRect.top), displayId: displayID });
 
       await CommonFunc.sleep(2000);
 

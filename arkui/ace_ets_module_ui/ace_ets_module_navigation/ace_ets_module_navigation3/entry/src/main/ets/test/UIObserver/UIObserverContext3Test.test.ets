@@ -61,7 +61,7 @@ export default function UIObserverContext3Test() {
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.pressBack();
+      await driver.pressBack(0);
       await CommonFunc.sleep(1000);
 
       button = await driver.findComponent(ON.id("UIObserverContext3_btn_off"));

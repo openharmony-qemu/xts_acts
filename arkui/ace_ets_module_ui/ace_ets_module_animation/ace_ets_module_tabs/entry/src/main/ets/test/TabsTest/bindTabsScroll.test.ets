@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function bindTabsScroll() {
   describe('bindTabsScroll', () => {
     beforeEach(async (done: Function) => {
@@ -70,8 +72,8 @@ export default function bindTabsScroll() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2));
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.2),Math.round(left + width/2),Math.round(top + height*0.8));
+      await driver.swipeBetween({ x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayID }, { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayID });
+      await driver.swipeBetween({ x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayID }, { x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayID });
       await CommonFunc.sleep(6000);
       let text02: Component = await driver.findComponent(ON.text("nested_scroller"))
       let textContent02:string = await text02.getText();

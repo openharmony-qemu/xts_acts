@@ -18,6 +18,8 @@ import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayR
 import CommonFunc from '../../MainAbility/utils/Common';
 import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function swiperCustomJsunit() {
   describe('swiperCustomJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +69,7 @@ export default function swiperCustomJsunit() {
       let width = right - left;
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.8),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('Swiper_Length');
       let strJson1 = getInspectorByKey('swiper_mess');

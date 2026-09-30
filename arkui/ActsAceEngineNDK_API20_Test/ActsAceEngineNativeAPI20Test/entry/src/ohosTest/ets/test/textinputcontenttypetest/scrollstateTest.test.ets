@@ -21,6 +21,8 @@ import { Driver, ON } from '@ohos.UiTest';
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function ScrollStateTest() {
   describe('ScrollStateTest', () => {
     let displayId: number;

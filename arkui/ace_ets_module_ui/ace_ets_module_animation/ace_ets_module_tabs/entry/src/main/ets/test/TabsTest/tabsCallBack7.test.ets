@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function tabsCallBack7() {
   describe('tabsCallBack7', () => {
     beforeEach(async (done: Function) => {
@@ -60,7 +62,7 @@ export default function tabsCallBack7() {
       let height = bottom -top;
       let width = right - left;
       let driver = await Driver.create()
-      await driver.swipe(Math.round(left + width*0.9),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.9), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('tabs_onGestureSwipe_7');
       console.info("[tabsCallBack7_0100] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
