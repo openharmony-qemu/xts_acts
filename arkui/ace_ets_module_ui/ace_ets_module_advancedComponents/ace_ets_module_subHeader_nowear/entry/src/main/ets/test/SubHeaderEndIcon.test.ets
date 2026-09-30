@@ -13,6 +13,7 @@ limitations under the License.
 */
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 import Utils from './Utils';
 
 export default function subHeaderEndIcon() {
@@ -57,10 +58,16 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderEndIcon_0100] START');
       let strJson: string = getInspectorByKey('subheader_endicon_image');
+      expect(strJson !== '' && strJson !== null).assertTrue();
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[subHeaderEndIcon_0100] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(strJson !== '').assertTrue();
-      expect(obj.$attrs.endIcon !== undefined && obj.$attrs.endIcon !== null).assertTrue();
+      console.info('[subHeaderEndIcon_0100] $type is: ' + obj.$type);
+      expect(obj.$type).assertEqual('__Common__');
+      expect(obj.$attrs.size !== undefined && obj.$attrs.size !== null).assertTrue();
+      expect(obj.$attrs.visibility).assertEqual('Visibility.Visible');
+      let driver = Driver.create();
+      await driver.delayMs(500);
+      let component = await driver.findComponent(ON.id('subheader_endicon_image'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_0100] END');
       done();
     });
@@ -76,10 +83,16 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderEndIcon_0200] START');
       let strJson: string = getInspectorByKey('subheader_endicon_symbol');
+      expect(strJson !== '' && strJson !== null).assertTrue();
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[subHeaderEndIcon_0200] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(strJson !== '').assertTrue();
-      expect(obj.$attrs.endIcon !== undefined && obj.$attrs.endIcon !== null).assertTrue();
+      console.info('[subHeaderEndIcon_0200] $type is: ' + obj.$type);
+      expect(obj.$type).assertEqual('__Common__');
+      expect(obj.$attrs.size !== undefined && obj.$attrs.size !== null).assertTrue();
+      expect(obj.$attrs.visibility).assertEqual('Visibility.Visible');
+      let driver = Driver.create();
+      await driver.delayMs(500);
+      let component = await driver.findComponent(ON.id('subheader_endicon_symbol'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_0200] END');
       done();
     });
@@ -95,10 +108,16 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderEndIcon_0300] START');
       let strJson: string = getInspectorByKey('subheader_endicon_primary');
+      expect(strJson !== '' && strJson !== null).assertTrue();
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[subHeaderEndIcon_0300] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(strJson !== '').assertTrue();
-      expect(obj.$attrs.endIcon !== undefined && obj.$attrs.endIcon !== null).assertTrue();
+      console.info('[subHeaderEndIcon_0300] $type is: ' + obj.$type);
+      expect(obj.$type).assertEqual('__Common__');
+      expect(obj.$attrs.size !== undefined && obj.$attrs.size !== null).assertTrue();
+      expect(obj.$attrs.visibility).assertEqual('Visibility.Visible');
+      let driver = Driver.create();
+      await driver.delayMs(500);
+      let component = await driver.findComponent(ON.id('subheader_endicon_primary'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_0300] END');
       done();
     });
@@ -114,10 +133,16 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderEndIcon_0400] START');
       let strJson: string = getInspectorByKey('subheader_endicon_primary_secondary');
+      expect(strJson !== '' && strJson !== null).assertTrue();
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[subHeaderEndIcon_0400] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(strJson !== '').assertTrue();
-      expect(obj.$attrs.endIcon !== undefined && obj.$attrs.endIcon !== null).assertTrue();
+      console.info('[subHeaderEndIcon_0400] $type is: ' + obj.$type);
+      expect(obj.$type).assertEqual('__Common__');
+      expect(obj.$attrs.size !== undefined && obj.$attrs.size !== null).assertTrue();
+      expect(obj.$attrs.visibility).assertEqual('Visibility.Visible');
+      let driver = Driver.create();
+      await driver.delayMs(500);
+      let component = await driver.findComponent(ON.id('subheader_endicon_primary_secondary'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_0400] END');
       done();
     });
@@ -133,10 +158,16 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderEndIcon_0500] START');
       let strJson: string = getInspectorByKey('subheader_endicon_operation');
+      expect(strJson !== '' && strJson !== null).assertTrue();
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[subHeaderEndIcon_0500] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(strJson !== '').assertTrue();
-      expect(obj.$attrs.endIcon !== undefined && obj.$attrs.endIcon !== null).assertTrue();
+      console.info('[subHeaderEndIcon_0500] $type is: ' + obj.$type);
+      expect(obj.$type).assertEqual('__Common__');
+      expect(obj.$attrs.size !== undefined && obj.$attrs.size !== null).assertTrue();
+      expect(obj.$attrs.visibility).assertEqual('Visibility.Visible');
+      let driver = Driver.create();
+      await driver.delayMs(500);
+      let component = await driver.findComponent(ON.id('subheader_endicon_operation'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_0500] END');
       done();
     });
@@ -152,10 +183,16 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderEndIcon_0600] START');
       let strJson: string = getInspectorByKey('subheader_endicon_none');
+      expect(strJson !== '' && strJson !== null).assertTrue();
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[subHeaderEndIcon_0600] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(strJson !== '').assertTrue();
-      expect(obj.$attrs.endIcon === undefined || obj.$attrs.endIcon === null).assertTrue();
+      console.info('[subHeaderEndIcon_0600] $type is: ' + obj.$type);
+      expect(obj.$type).assertEqual('__Common__');
+      expect(obj.$attrs.size !== undefined && obj.$attrs.size !== null).assertTrue();
+      expect(obj.$attrs.visibility).assertEqual('Visibility.Visible');
+      let driver = Driver.create();
+      await driver.delayMs(500);
+      let component = await driver.findComponent(ON.id('subheader_endicon_none'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_0600] END');
       done();
     });
@@ -171,10 +208,16 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderEndIcon_0700] START');
       let strJson: string = getInspectorByKey('subheader_endicon_titlebuilder');
+      expect(strJson !== '' && strJson !== null).assertTrue();
       let obj: Record<string, ESObject> = JSON.parse(strJson);
-      console.info('[subHeaderEndIcon_0700] obj is: ' + JSON.stringify(obj.$attrs));
-      expect(strJson !== '').assertTrue();
-      expect(obj.$attrs.endIcon === undefined || obj.$attrs.endIcon === null).assertTrue();
+      console.info('[subHeaderEndIcon_0700] $type is: ' + obj.$type);
+      expect(obj.$type).assertEqual('__Common__');
+      expect(obj.$attrs.size !== undefined && obj.$attrs.size !== null).assertTrue();
+      expect(obj.$attrs.visibility).assertEqual('Visibility.Visible');
+      let driver = Driver.create();
+      await driver.delayMs(500);
+      let component = await driver.findComponent(ON.id('subheader_endicon_titlebuilder'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_0700] END');
       done();
     });
