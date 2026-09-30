@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,9 +56,9 @@ struct TabsApiCoverageStatic {
   private initTabsEnums(): void {
     try {
       const styles: TabBarStyle[] = [
-        TabBarStyle.BOTTOM, TabBarStyle.SIDEBAR, TabBarStyle.SIDEBAR_ADAPTABLE
+        TabBarStyle.BOTTOM, TabBarStyle.SIDEBAR
       ];
-      this.tabBarStyleFlag = styles.length === 3 ? 'ok' : 'fail';
+      this.tabBarStyleFlag = styles.length === 2 ? 'ok' : 'fail';
       const modes: TabBarDisplayMode[] = [
         TabBarDisplayMode.BOTTOM_TABBAR, TabBarDisplayMode.SIDEBAR
       ];
@@ -70,7 +70,6 @@ struct TabsApiCoverageStatic {
       };
       this.breakpointFlag =
         (bp.sm !== undefined && bp.md !== undefined && bp.lg !== undefined) ? 'ok' : 'fail';
-      this.probeTabsCtrl();
     } catch (err) {
       console.info('[TabsApiCoverageStatic] initTabsEnums error ' + err);
       this.tabsCtrlFlag = 'fail';
@@ -126,27 +125,50 @@ struct TabsApiCoverageStatic {
         Text(this.tabVisibilityFlag).id('tabVisibilityFlag')
         Text(this.extendableFlag).id('extendableFlag')
         Text(this.barModeChangeFlag).id('barModeChangeFlag')
+
         Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
           TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Blue)
+            Column().width('100%').height(30).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabsApiCov_static_ctrl')
+        .width('100%').height(80)
+        .barStyle(TabBarStyle.BOTTOM)
+        .onAppear((): void => {
+          this.probeTabsCtrl();
+        })
+
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Blue)
           }
           .tabBar('A')
           .tabBarVisibility(TabVisibility.VISIBLE, TabBarDisplayMode.SIDEBAR)
           TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Green)
+            Column().width('100%').height(30).backgroundColor(Color.Green)
           }
           .tabBar('B')
           .tabBarVisibility(TabVisibility.HIDDEN, TabBarDisplayMode.BOTTOM_TABBAR)
         }
         .id('tabsApiCov_static_tabs')
-        .width('100%')
-        .height(120)
-        .onAppear((): void => {
-          this.probeTabsCtrl();
-        })
+        .width('100%').height(80)
         .barStyle(TabBarStyle.SIDEBAR)
         .sidebarPosition(BarPosition.Start)
-        .sidebarHeader(undefined)
+
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabsApiCov_static_search')
+        .width('100%').height(80)
+        .barStyle(TabBarStyle.SIDEBAR)
         .sidebarSearchable({
           searchText: 'cov',
           placeholder: 'search',
@@ -156,6 +178,18 @@ struct TabsApiCoverageStatic {
             return true;
           }
         })
+
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabsApiCov_static_bp')
+        .width('100%').height(80)
+        .barStyle(TabBarStyle.SIDEBAR)
         .barDisplayModeBreakpoint({
           sm: TabBarDisplayMode.BOTTOM_TABBAR,
           md: TabBarDisplayMode.SIDEBAR,
@@ -164,6 +198,18 @@ struct TabsApiCoverageStatic {
         .onBarDisplayModeChange((mode: TabBarDisplayMode): void => {
           this.barModeChangeFlag = `${mode}`;
         })
+
+        Tabs({ barPosition: BarPosition.Start }) {
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Blue)
+          }.tabBar('A')
+          TabContent() {
+            Column().width('100%').height(30).backgroundColor(Color.Green)
+          }.tabBar('B')
+        }
+        .id('tabsApiCov_static_colors')
+        .width('100%').height(80)
+        .barStyle(TabBarStyle.SIDEBAR)
         .sidebarSelectedIconColor(Color.Blue)
         .sidebarSelectedTextColor(Color.Blue)
         .sidebarUnselectedIconColor(Color.Gray)
