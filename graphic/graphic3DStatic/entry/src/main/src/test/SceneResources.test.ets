@@ -42,7 +42,8 @@ import {
   ShaderMaterial,
   SubMesh,
   Vec2,
-  Vec4
+  Vec4,
+  OcclusionMaterial
 } from '@ohos.graphics.scene'
 import * as scene3d from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
@@ -1759,29 +1760,52 @@ export default function sceneResourcesTest() {
       }
     })
     /**
-     * @tc.name   testOcclusionMaterialCreate
+     * @tc.name   testMaterialTypeOCCLUSION
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1811
-     * @tc.desc   Verify that OCCLUSION material can be created and its materialType is correct
+     * @tc.desc   Test MaterialType.OCCLUSION enum value and verify OCCLUSION material can be created
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOcclusionMaterialCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testOcclusionMaterialCreate";
+    it('testMaterialTypeOCCLUSION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testMaterialTypeOCCLUSION";
       console.info(msg + ' begin ');
       try {
-        const rt = new OcclusionMaterial();
-        expect(rt).not().assertUndefined();
         scene = await Scene.load();
-        expect(scene != null).assertTrue();
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
         rf = scene.getResourceFactory();
-        let occlusionaterial = await rf.createllaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
+        expect(rf != null).assertTrue();
+        console.info(msg + " resource factory retrieved successfully");
+
+        // Test MaterialType.OCCLUSION enum value
+        expect(MaterialType.OCCLUSION).assertEqual(4);
+        console.info(msg + " MaterialType.OCCLUSION value is 4");
+
+        // Verify OCCLUSION material can be created
+        let occlusionMaterial:OcclusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
         expect(occlusionMaterial != null).assertTrue();
+        console.info(msg + " OCCLUSION material created successfully");
+
+        // Verify material type is OCCLUSION
         expect(occlusionMaterial?.materialType).assertEqual(MaterialType.OCCLUSION);
+        console.info(msg + " material type verified as OCCLUSION");
+
+        // Test all MaterialType enum values for completeness
+        expect(MaterialType.SHADER).assertEqual(1);
+        console.info(msg + " MaterialType.SHADER value is 1");
+
+        expect(MaterialType.METALLIC_ROUGHNESS).assertEqual(2);
+        console.info(msg + " MaterialType.METALLIC_ROUGHNESS value is 2");
+
+        expect(MaterialType.UNLIT).assertEqual(3);
+        console.info(msg + " MaterialType.UNLIT value is 3");
+
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
-        console.info(msg + " Failed in testOcclusionMaterialCreate" + JSON.stringify(err));
+        console.info(msg + " Failed in testMaterialTypeOCCLUSION " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
