@@ -3083,11 +3083,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           try {
             await sleep(1000);
             if (deviceType === 'car'){
-              except(res1).assertEqual(false);
-              except(res2).assertEqual(false);
+              expect(res1).assertEqual(false);
+              expect(res2).assertEqual(false);
             }else{
-              except(res1).assertEqual(true);
-              except(res2).assertEqual(true);
+              expect(res1).assertEqual(true);
+              expect(res2).assertEqual(true);
             }
             console.log('PiPSizeChange Succeeded check result');
             done();
@@ -3172,11 +3172,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
           try {
             await sleep(1000);
             if (deviceType === 'car'){
-              except(res1).assertEqual(false);
-              except(res2).assertEqual(false);
+              expect(res1).assertEqual(false);
+              expect(res2).assertEqual(false);
             }else{
-              except(res1).assertEqual(false);
-              except(res2).assertEqual(true);
+              expect(res1).assertEqual(false);
+              expect(res2).assertEqual(true);
             }
             console.log('PiPSizeChange Succeeded check result');
             done();
