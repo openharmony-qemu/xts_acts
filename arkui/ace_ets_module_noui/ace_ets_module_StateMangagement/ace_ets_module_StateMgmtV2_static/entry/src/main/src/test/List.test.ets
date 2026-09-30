@@ -52,7 +52,7 @@ import CustomEnvV1ToV2 from './CustomComponentTest/CustomEnvV1ToV2.test';
 import CustomEnvMultipleTypes from './CustomComponentTest/CustomEnvMultipleTypes.test';
  
  
-export default function testsuite() {
+export default function testsuite(): void {
   AddMonitorSetPath();
   ArrayLikeStringTest();
   //ReuseV2Test0030(); 
