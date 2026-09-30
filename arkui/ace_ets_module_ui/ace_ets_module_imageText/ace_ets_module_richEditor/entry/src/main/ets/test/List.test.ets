@@ -144,7 +144,7 @@ import RichEditorCustomSpan012 from './RichEditorCustomSpanTest/RichEditorCustom
 import RichEditorCustomSpan013 from './RichEditorCustomSpanTest/RichEditorCustomSpan013.test'
 import RichEditorCustomSpan014 from './RichEditorCustomSpanTest/RichEditorCustomSpan014.test'
 import RichEditorCustomSpan015 from './RichEditorCustomSpanTest/RichEditorCustomSpan015.test'
-import RichEditorFromStyledStringTest from "./RichEditor/RichEditorFromStyledString.test";
+import RichEditorFromStyledStringTest from './RichEditor/RichEditorFromStyledString.test';
 
 import RichEditorApi from './RichEditorApi11Test/RichEditorApi.test';
 import SXrenderingStrategyJsunit from './RichEditorApi11Test/SXrenderingStrategyJsunit.test';
@@ -210,11 +210,17 @@ import RichEditorControllerMethodsNullTest from './RichEditor/RichEditorControll
 import RichEditorSpanMethodsNullTest from './RichEditor/RichEditorSpanMethodsNull.test';
 import RichEditorControllerMethodsNull2Test from './RichEditor/RichEditorControllerMethodsNull2.test';
 import RichEditorStyledStringControllerNullTest from './RichEditor/RichEditorStyledStringControllerNull.test';
-import RichEditorBaseControllerSetStyledPlaceholderTest from './RichEditorApi24Test/RichEditorBaseControllerSetStyledPlaceholder.test';
+import SetStyledPlaceholderTest from './RichEditorApi24Test/RichEditorBaseControllerSetStyledPlaceholder.test';
 import RichEditorHorizontalScrollingTest from './RichEditorApi26Test/RichEditorHorizontalScrolling.test';
 import RichEditorStrokeJoinStyleTest from './RichEditorApi26Test/RichEditorStrokeJoinStyle.test';
 import RichEditorShaderStyleTest from './RichEditorApi26Test/RichEditorShaderStyle.test';
 import RichEditorScrollToVisibleTest from './RichEditorApi26Test/RichEditorScrollToVisible.test';
+import ImageSpanResizableTest from './RichEditorApi26Test/ImageSpanResizable.test';
+import RichEditorImageSpanStyleResizableTest from './RichEditorApi26Test/RichEditorImageSpanStyleResizable.test';
+import ImageAttachmentResizableTest from './RichEditorApi26Test/ImageAttachmentResizable.test';
+import RefreshOffsetTest from './RichEditorApi26Test/RefreshOffset.test';
+import richEditorBuilderSpanApi26Test from './RichEditorApi26Test/RichEditorBuilderSpan.test';
+import stylesVersionDecoratorTest from './RichEditorApi26Test/StylesVersionDecorator.test';
 
 export default function testsuite() {
   ActsRichEditorTest();
@@ -416,9 +422,15 @@ export default function testsuite() {
   RichEditorControllerMethodsNull2Test()
   RichEditorStyledStringControllerNullTest()
 
-  RichEditorBaseControllerSetStyledPlaceholderTest()  // Api24
+  SetStyledPlaceholderTest()  // Api24
   RichEditorHorizontalScrollingTest()
   RichEditorStrokeJoinStyleTest()
   RichEditorShaderStyleTest()
-   RichEditorScrollToVisibleTest()
+  RichEditorScrollToVisibleTest()
+  ImageSpanResizableTest()
+  RichEditorImageSpanStyleResizableTest()
+  ImageAttachmentResizableTest()
+  RefreshOffsetTest()
+  richEditorBuilderSpanApi26Test()
+  stylesVersionDecoratorTest()
 }
