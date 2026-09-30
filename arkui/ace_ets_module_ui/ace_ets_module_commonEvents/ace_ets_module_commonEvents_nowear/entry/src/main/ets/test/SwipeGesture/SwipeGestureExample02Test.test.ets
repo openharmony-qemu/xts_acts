@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function SwipeGestureExample02Test() {
   describe('SwipeGestureExample02Test', () => {
     beforeEach(async (done: Function) => {
@@ -69,7 +70,7 @@ export default function SwipeGestureExample02Test() {
       let driver = Driver.create();
       let speed = Math.floor(areaHeight1 * 1.7 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1/2),Math.round(areaObj1.top + areaHeight1 * 0.2),Math.round(areaObj1.left + areaWidth1/2),Math.round(areaObj1.bottom + areaHeight1 * 0.9),speed)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1/2),y:Math.round(areaObj1.top + areaHeight1 * 0.2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1/2),y:Math.round(areaObj1.bottom + areaHeight1 * 0.9),displayId:displayID},speed)
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('SwipeGestureExample02' + '_Father');

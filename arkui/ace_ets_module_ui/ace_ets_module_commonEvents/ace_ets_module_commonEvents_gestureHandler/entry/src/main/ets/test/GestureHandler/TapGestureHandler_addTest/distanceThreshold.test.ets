@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function distanceThresholdTest() {
 
   describe('distanceThresholdTest', () => {
@@ -65,7 +66,7 @@ export default function distanceThresholdTest() {
       console.info('distanceThreshold_0020 column1 width = ' + width + ',height = ' + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('test_Column'));
-      await driver.doubleClick(Math.round(column1.left + vp2px(8)),Math.round(column1.top + vp2px(8)));
+      await driver.doubleClickAt({x:Math.round(column1.left + vp2px(8)),y:Math.round(column1.top + vp2px(8)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let button1= await driver.findComponent(ON.id('onClick'));
       await button1.click();
@@ -103,7 +104,7 @@ export default function distanceThresholdTest() {
       console.info('distanceThreshold_0020 column1 width = ' + width + ',height = ' + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('test_Column'));
-      await driver.doubleClick(Math.round(column1.left + vp2px(11)),Math.round(column1.top + vp2px(11)));
+      await driver.doubleClickAt({x:Math.round(column1.left + vp2px(11)),y:Math.round(column1.top + vp2px(11)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let button1= await driver.findComponent(ON.id('onClick'));
       await button1.click();
@@ -141,7 +142,7 @@ export default function distanceThresholdTest() {
       console.info('distanceThreshold_0030 column1 width = ' + width + ',height = ' + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('test_Column'));
-      await driver.doubleClick(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.doubleClickAt({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let button1= await driver.findComponent(ON.id('onClick'));
       await button1.click();
@@ -179,7 +180,7 @@ export default function distanceThresholdTest() {
       console.info('distanceThreshold_0020 column1 width = ' + width + ',height = ' + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('test_Column'));
-      await driver.doubleClick(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.doubleClickAt({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let button1= await driver.findComponent(ON.id('onClick'));
       await button1.click();
@@ -217,7 +218,7 @@ export default function distanceThresholdTest() {
       console.info('distanceThreshold_0020 column1 width = ' + width + ',height = ' + height);
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('test_Column'));
-      await driver.doubleClick(Math.round(column1.left + vp2px(10)),Math.round(column1.top + vp2px(10)));
+      await driver.doubleClickAt({x:Math.round(column1.left + vp2px(10)),y:Math.round(column1.top + vp2px(10)),displayId:displayID});
       await CommonFunc.sleep(3000)
       let button1= await driver.findComponent(ON.id('onClick'));
       await button1.click();

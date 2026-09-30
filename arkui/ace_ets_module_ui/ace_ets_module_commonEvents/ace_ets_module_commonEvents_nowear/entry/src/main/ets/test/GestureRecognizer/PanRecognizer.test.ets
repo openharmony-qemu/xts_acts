@@ -30,6 +30,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function PanRecognizerTest() {
   describe('PanRecognizerTest', () => {
     beforeEach(async (done: Function) => {
@@ -84,9 +85,9 @@ export default function PanRecognizerTest() {
       await CommonFunc.sleep(2000);
       let pointers: PointerMatrix = PointerMatrix.create(1, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj.left + areaWidth * 0.1), y: Math.round(areaObj.top + areaHeight * 0.5) });
+        { x: Math.round(areaObj.left + areaWidth * 0.1), y: Math.round(areaObj.top + areaHeight * 0.5), displayId: displayID });
       pointers.setPoint(0, 1,
-        { x: Math.round(areaObj.left + areaWidth * 0.3), y: Math.round(areaObj.top + areaHeight * 0.5) });
+        { x: Math.round(areaObj.left + areaWidth * 0.3), y: Math.round(areaObj.top + areaHeight * 0.5), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       let strJson = getInspectorByKey('PanRecognizer' + '_PanRecognizer_01');
@@ -113,9 +114,8 @@ export default function PanRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Horizontal'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.bottom + rect.top) / 2),
-        Math.round(rect.right),
-        Math.round((rect.bottom + rect.top) / 2))
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID},
+        {x:Math.round(rect.right),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID})
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Horizontal')).assertEqual(3);
       console.info('[PanRecognizer_0200] END');
@@ -135,9 +135,8 @@ export default function PanRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Left'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.bottom + rect.top) / 2),
-        Math.round(rect.left),
-        Math.round((rect.bottom + rect.top) / 2))
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID},
+        {x:Math.round(rect.left),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID})
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Left')).assertEqual(1);
       console.info('[PanRecognizer_0300] END');
@@ -157,9 +156,8 @@ export default function PanRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Right'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.bottom + rect.top) / 2),
-        Math.round(rect.right),
-        Math.round((rect.bottom + rect.top) / 2))
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID},
+        {x:Math.round(rect.right),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID})
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Right')).assertEqual(2);
       console.info('[PanRecognizer_0400] END');
@@ -179,9 +177,8 @@ export default function PanRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Vertical'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.top)),
-        Math.round((rect.left + rect.right) / 2),
-        Math.round((rect.bottom)))
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.top)),displayId:displayID},
+        {x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom)),displayId:displayID})
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Vertical')).assertEqual(12);
       console.info('[PanRecognizer_0500] END');
@@ -201,9 +198,8 @@ export default function PanRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Up'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.bottom)),
-        Math.round((rect.left + rect.right) / 2),
-        Math.round((rect.top)))
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom)),displayId:displayID},
+        {x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.top)),displayId:displayID})
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Up')).assertEqual(4);
       console.info('[PanRecognizer_0600] END');
@@ -223,9 +219,8 @@ export default function PanRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Down'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.top)),
-        Math.round((rect.left + rect.right) / 2),
-        Math.round((rect.bottom)))
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.top)),displayId:displayID},
+        {x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom)),displayId:displayID})
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Down')).assertEqual(8);
       console.info('[PanRecognizer_0700] END');
@@ -245,9 +240,8 @@ export default function PanRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('None'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.bottom + rect.top) / 2),
-        Math.round(rect.left),
-        Math.round((rect.bottom + rect.top) / 2))
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID},
+        {x:Math.round(rect.left),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID})
       await CommonFunc.sleep(300);
       expect(AppStorage.get('None')).assertEqual(0);
       console.info('[PanRecognizer_0800] END');

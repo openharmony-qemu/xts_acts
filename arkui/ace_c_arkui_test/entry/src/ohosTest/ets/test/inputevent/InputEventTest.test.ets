@@ -27,7 +27,7 @@ async function MouseClickComponent(id: string, mouseButton: MouseButton , done?:
   let driver = Driver.create();
   let button = await driver.findComponent(ON.id(id));
   let point = await button.getBounds();
-  await driver.mouseClick({x:point.left+10, y:point.top+10}, mouseButton);
+  await driver.mouseClick({x:point.left+10, y:point.top+10, displayId:displayID}, mouseButton);
 }
 
 async function mouseButtonInputEventTest(testCase: string, funcName: string, mouseButton: MouseButton,
@@ -58,7 +58,7 @@ async function axisInputEventTest(testCase: string, funcName: string, isAssertEq
   let rect = Utils.getComponentRect("AxisID");
   let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
   let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
-  await driver.mouseScroll({x:x, y:y}, true, 30); 
+  await driver.mouseScroll({x:x, y:y, displayId:displayID}, true, 30);
   await Utils.sleep(1000);
   let state = nativeRender.getEventState();
   console.log('InputEventTest mouseButtonInputEventTest testCase:',testCase, 'funcName:', funcName, 'state:', state,'expectedValue:',expectedValue);  
@@ -78,10 +78,10 @@ async function fingerTouchInputEventTest(testCase: string, funcName: string, isA
   let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
   let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
   let pointers: PointerMatrix = PointerMatrix.create(2,2);
-  pointers.setPoint(0,0,{x: Math.round(x),y: Math.round(y)});
-  pointers.setPoint(0,1,{x: Math.round(x),y: Math.round(y + vp2px(20))});
-  pointers.setPoint(1,0,{x: Math.round(x),y: Math.round(y)});
-  pointers.setPoint(1,1,{x: Math.round(x),y: Math.round(y + vp2px(20))}); 
+  pointers.setPoint(0,0,{x: Math.round(x),y: Math.round(y), displayId: displayID});
+  pointers.setPoint(0,1,{x: Math.round(x),y: Math.round(y + vp2px(20)), displayId: displayID});
+  pointers.setPoint(1,0,{x: Math.round(x),y: Math.round(y), displayId: displayID});
+  pointers.setPoint(1,1,{x: Math.round(x),y: Math.round(y + vp2px(20)), displayId: displayID});
   await driver.injectMultiPointerAction(pointers);
   await Utils.sleep(300);
   let state = nativeRender.getEventState();
@@ -89,6 +89,7 @@ async function fingerTouchInputEventTest(testCase: string, funcName: string, isA
   expect(state).assertEqual(expectedValue);
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function InputEventTest() {
 
   describe('InputEventTest', () => {

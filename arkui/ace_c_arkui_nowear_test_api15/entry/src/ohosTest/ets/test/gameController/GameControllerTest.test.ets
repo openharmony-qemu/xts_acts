@@ -18,8 +18,6 @@ import { Driver } from '@ohos.UiTest';
 import keyeventlib from 'libkeyeventlib.so';
 import Utils from '../common/Utils';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
-
 const KEYCODE_BUTTON_A = 2301;
 const KEYCODE_BUTTON_B = 2302;
 const KEYCODE_BUTTON_X = 2304;
@@ -62,6 +60,8 @@ function assertAllAxisInRange(tag: string): void {
   expect(absGas >= 0 && absGas <= 1).assertTrue();
   expect(absBrake >= 0 && absBrake <= 1).assertTrue();
 }
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function gameControllerTest() {
   describe('GameControllerTest', () => {

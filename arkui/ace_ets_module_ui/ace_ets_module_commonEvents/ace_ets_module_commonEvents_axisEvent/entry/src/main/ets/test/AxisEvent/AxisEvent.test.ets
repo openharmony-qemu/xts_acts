@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent,MouseButton, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function AxisEvent() {
   describe('AxisEvent', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +74,7 @@ export default function AxisEvent() {
 
       let driver:Driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.mouseScroll({x:Math.round(areaObj.left + areaWidth/2), y:Math.round(areaObj.top + areaHeight/2)}, true, 30, 2072,20)
+      await driver.mouseScroll({x:Math.round(areaObj.left + areaWidth/2), y:Math.round(areaObj.top + areaHeight/2), displayId:displayID}, true, 30, 2072,20)
       await CommonFunc.sleep(3000);
       let text1 = getInspectorByKey('x');
       let obj1: ESObject = JSON.parse(text1);

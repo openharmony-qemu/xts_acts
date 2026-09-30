@@ -19,6 +19,7 @@ import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopeId018() {
   describe('FocusScopeId018', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +68,7 @@ export default function FocusScopeId018() {
       await CommonFunc.sleep(1000);
       console.info('[FocusScopeId018_0100] clearFocus click');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_1 = await driver.findComponent(ON.id('FocusScopeId018_btn1_1'));
@@ -75,10 +76,10 @@ export default function FocusScopeId018() {
       expect(btn1_1_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId018_0100] btn1_1 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_2 = await driver.findComponent(ON.id('FocusScopeId018_btn1_2'));
@@ -86,7 +87,7 @@ export default function FocusScopeId018() {
       expect(btn1_2_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId018_0100] btn1_2 isFocused');
 
-      await driver.triggerKey(2013);
+      await driver.triggerKey(2013, displayID);
       await CommonFunc.sleep(1000);
 
       let btn2_2 = await driver.findComponent(ON.id('FocusScopeId018_btn2_2'));
@@ -99,23 +100,23 @@ export default function FocusScopeId018() {
       await CommonFunc.sleep(1000);
       console.info('[FocusScopeId018_0100] changFocusId click');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_1_isFocusedValue2 = await btn1_1.isFocused()
       expect(btn1_1_isFocusedValue2).assertEqual(true);
       console.info('[FocusScopeId018_0100] btn1_1 isFocused 2');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn2_1 = await driver.findComponent(ON.id('FocusScopeId018_btn2_1'));

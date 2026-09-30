@@ -20,6 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 import input from '@ohos.multimodalInput.keyCode';
 import { BusinessError } from '@ohos.base';
 import CommonFunc from '../../MainAbility/common/Common';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ShortcutKeyTABTest() {
   describe('ShortcutKeyTABTest', () => {
     beforeEach(async () => {
@@ -65,7 +66,7 @@ export default function ShortcutKeyTABTest() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_TAB)
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_TAB, 0, displayID)
       console.info(`ShortcutKeyTABTest_0100 END`);
     });
   })

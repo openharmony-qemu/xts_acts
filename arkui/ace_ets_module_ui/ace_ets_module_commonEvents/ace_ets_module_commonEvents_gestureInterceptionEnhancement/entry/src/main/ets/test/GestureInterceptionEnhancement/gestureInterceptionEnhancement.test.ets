@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function gestureInterceptionEnhancementTest() {
   describe('gestureInterceptionEnhancementTest', () => {
     beforeEach(async (done: Function) => {
@@ -69,19 +70,19 @@ export default function gestureInterceptionEnhancementTest() {
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
         let text01: Component = await driver.findComponent(ON.text("BlueTest"))
         let textContent01:string = await text01.getText();
         expect(textContent01).assertEqual("BlueTest");
 
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
         let text02: Component = await driver.findComponent(ON.text("PinkTest"))
         let textContent02:string = await text02.getText();
         expect(textContent02).assertEqual("PinkTest");
 
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
         let text03: Component = await driver.findComponent(ON.text("blue and pink test"))
         let textContent03:string = await text03.getText();
@@ -117,19 +118,19 @@ export default function gestureInterceptionEnhancementTest() {
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
         let text01: Component = await driver.findComponent(ON.text("BlueTest"));
         let textContent01:string = await text01.getText();
         expect(textContent01).assertEqual("BlueTest");
 
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
         let text02: Component = await driver.findComponent(ON.text("PinkTest"))
         let textContent02:string = await text02.getText();
         expect(textContent02).assertEqual("PinkTest");
 
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
         let text03: Component = await driver.findComponent(ON.text("PinkTest"))
         let textContent03:string = await text03.getText();
@@ -164,11 +165,11 @@ export default function gestureInterceptionEnhancementTest() {
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(2500);
         let strJson = getInspectorByKey('callBackS');
         let obj: ESObject = JSON.parse(strJson);

@@ -20,6 +20,7 @@ import nativeFunc from 'libnativefunc.so'
 import router from '@ohos.router';
 import nativeRender from 'libnativerender.so'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function gestureTest() {
 
   describe('GestureTest', () => {
@@ -66,7 +67,7 @@ export default function gestureTest() {
       let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
       let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
       console.info("testSwipeGesture001  x= " +  x  + ", y = " + y);
-      await driver.mouseScroll({x:x, y:y}, true, 30);
+      await driver.mouseScroll({x:x, y:y, displayId:displayID}, true, 30);
       let dataArray: number[][] = nativeRender.GetGestureDataAxis();
       let router: number[] = dataArray[0];
       console.log("time:"+router[0]+",sourceType:"+router[1]+",toolType:"+router[2]+",pointerCount:"+router[3]+",pointerId:"+router[4]+
@@ -112,7 +113,7 @@ export default function gestureTest() {
       let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
       let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
       console.info("testSwipeGesture001  x= " +  x  + ", y = " + y);
-      await driver.swipe(x, y, x, Math.round(y + vp2px(30)));
+      await driver.swipeBetween({x: x, y: y, displayId: displayID}, {x: x, y: Math.round(y + vp2px(30)), displayId: displayID});
       await Utils.sleep(3000);
       expect(Utils.getComponentInfoByKey('swipeID').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done();
@@ -134,7 +135,7 @@ export default function gestureTest() {
       let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
       let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
       console.info("testSwipeGesture001  x= " +  x  + ", y = " + y);
-      await driver.drag(x, y, Math.round(x + vp2px(30)), y);
+      await driver.dragBetween({x: x, y: y, displayId: displayID}, {x: Math.round(x + vp2px(30)), y: y, displayId: displayID});
       await Utils.sleep(2500);
       expect(Utils.getComponentInfoByKey('panID').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done();
@@ -179,10 +180,10 @@ export default function gestureTest() {
     console.info("gestureNestScrollTest  x= " +  x  + ", y = " + y);
     // Simulate the rotate gesture
     let pointers: PointerMatrix = PointerMatrix.create(2,2);
-    pointers.setPoint(0,0,{x: Math.round(x),y: Math.round(y)});
-    pointers.setPoint(0,1,{x: Math.round(y),y: Math.round(y + vp2px(20))});
-    pointers.setPoint(1,0,{x: Math.round(x),y: Math.round(y)});
-    pointers.setPoint(1,1,{x: Math.round(x),y: Math.round(y + vp2px(20))});
+    pointers.setPoint(0,0,{x: Math.round(x),y: Math.round(y), displayId: displayID});
+    pointers.setPoint(0,1,{x: Math.round(y),y: Math.round(y + vp2px(20)), displayId: displayID});
+    pointers.setPoint(1,0,{x: Math.round(x),y: Math.round(y), displayId: displayID});
+    pointers.setPoint(1,1,{x: Math.round(x),y: Math.round(y + vp2px(20)), displayId: displayID});
     await driver.injectMultiPointerAction(pointers);
     await Utils.sleep(3000);
     expect(Utils.getComponentInfoByKey('rotateID').$attrs.backgroundColor).assertEqual('#FF00FF00')
@@ -205,7 +206,7 @@ export default function gestureTest() {
       let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
       let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
       console.info("testInterruptGesture001  x= " +  x  + ", y = " + y);
-      await driver.drag(x, y, x, Math.round(y + vp2px(30)));
+      await driver.dragBetween({x: x, y: y, displayId: displayID}, {x: x, y: Math.round(y + vp2px(30)), displayId: displayID});
       // change page to interrupt Gesture
       try {
         let options: router.RouterOptions = {

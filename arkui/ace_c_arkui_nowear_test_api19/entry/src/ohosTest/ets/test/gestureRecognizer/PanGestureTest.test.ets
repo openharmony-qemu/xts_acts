@@ -18,6 +18,8 @@ import { Driver, ON } from '@ohos.UiTest'
 import Utils from '../common/Utils'
 import nativeRender from 'libnativerender.so'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function PanGestureTest(){
 
   describe('PanGestureTest', () => {
@@ -44,7 +46,7 @@ export default function PanGestureTest(){
       await Utils.sleep(500);
       let rect = await Column.getBounds();
       await Utils.sleep(500);
-      await driver.swipe(Math.round(rect.left+200),Math.round(rect.top+200),Math.round(rect.left+1),Math.round(rect.top+1),600);
+      await driver.swipeBetween({x:Math.round(rect.left+200),y:Math.round(rect.top+200),displayId:displayID},{x:Math.round(rect.left+1),y:Math.round(rect.top+1),displayId:displayID},600);
       await Utils.sleep(1000)
       let object1:ESObject = nativeRender.GetPanGestureData();
       console.info("PanGestureSetDistanceMapCode" + object1.PanGestureSetDistanceMapCode);
@@ -81,7 +83,7 @@ export default function PanGestureTest(){
       await Utils.sleep(500);
       let rect = await Column.getBounds();
       await Utils.sleep(500);
-      await driver.swipe(Math.round(rect.left+200),Math.round(rect.top+200),Math.round(rect.left+1),Math.round(rect.top+1),600);
+      await driver.swipeBetween({x:Math.round(rect.left+200),y:Math.round(rect.top+200),displayId:displayID},{x:Math.round(rect.left+1),y:Math.round(rect.top+1),displayId:displayID},600);
       await Utils.sleep(1000)
       let object1:ESObject = nativeRender.GetPanGestureData();
       console.info("PanGestureSetDistanceMapCode" + object1.PanGestureSetDistanceMapCode);
@@ -118,7 +120,7 @@ export default function PanGestureTest(){
       await Utils.sleep(500);
       let rect = await Column.getBounds();
       await Utils.sleep(500);
-      await driver.swipe(Math.round(rect.left+200),Math.round(rect.top+200),Math.round(rect.left+1),Math.round(rect.top+1),600);
+      await driver.swipeBetween({x:Math.round(rect.left+200),y:Math.round(rect.top+200),displayId:displayID},{x:Math.round(rect.left+1),y:Math.round(rect.top+1),displayId:displayID},600);
       await Utils.sleep(1000)
       let object1:ESObject = nativeRender.GetPanGestureData();
       console.info("PanGestureSetDistanceMapCode" + object1.PanGestureSetDistanceMapCode);
@@ -156,7 +158,7 @@ export default function PanGestureTest(){
       await Utils.sleep(500);
       let rect = await Column.getBounds();
       await Utils.sleep(500);
-      await driver.swipe(Math.round(rect.left+200),Math.round(rect.top+200),Math.round(rect.left+1),Math.round(rect.top+1),600);
+      await driver.swipeBetween({x:Math.round(rect.left+200),y:Math.round(rect.top+200),displayId:displayID},{x:Math.round(rect.left+1),y:Math.round(rect.top+1),displayId:displayID},600);
       await Utils.sleep(1000)
       let object1:ESObject = nativeRender.GetPanGestureData();
       console.info("PanGestureSetDistanceMapCode" + object1.PanGestureSetDistanceMapCode);

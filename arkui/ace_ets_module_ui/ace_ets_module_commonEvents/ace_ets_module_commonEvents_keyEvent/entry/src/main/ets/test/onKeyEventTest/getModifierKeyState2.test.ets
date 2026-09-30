@@ -34,6 +34,7 @@ import { MouseButton } from '@kit.TestKit';
 import Utils from '../../MainAbility/common/Utils';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function getModifierKeyState2Test() {
   describe('getModifierKeyState2Test', () => {
     beforeEach(async (done: Function) => {
@@ -70,8 +71,8 @@ export default function getModifierKeyState2Test() {
       console.info('getModifierKeyState2Test_0020 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB)
-      await driver.triggerKey(KeyCode.KEYCODE_CTRL_LEFT)
+      await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
+      await driver.triggerKey(KeyCode.KEYCODE_CTRL_LEFT, displayID)
       await CommonFunc.sleep(500);
       expect(AppStorage.get('KeyEventCtrl')).assertEqual(true);
       expect(AppStorage.get('KeyEventShift')).assertEqual(false);

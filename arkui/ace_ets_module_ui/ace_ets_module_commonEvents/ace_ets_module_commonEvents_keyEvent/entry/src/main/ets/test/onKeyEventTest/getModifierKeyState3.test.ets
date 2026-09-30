@@ -33,6 +33,7 @@ import { KeyCode } from '@kit.InputKit';
 import Utils from '../../MainAbility/common/Utils';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function getModifierKeyState3Test() {
   describe('getModifierKeyState3Test', () => {
     beforeEach(async (done: Function) => {
@@ -69,8 +70,8 @@ export default function getModifierKeyState3Test() {
       console.info('getModifierKeyState3Test_0030 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB)
-      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
+      await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
       let button: Component = await driver.findComponent(ON.id('getModifierKeyState_DragEvent'));
       let button1: Component = await driver.findComponent(ON.id('getModifierKeyState_KeyEvent'));
       const ctrlPromise = async () => {

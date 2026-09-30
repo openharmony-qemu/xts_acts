@@ -30,7 +30,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function responseRegionListTest() {
   describe('responseRegionListTest', () => {
     beforeEach(async (done: Function) => {
@@ -89,8 +89,7 @@ export default function responseRegionListTest() {
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('button2'));
       let rect = await button.getBounds();
-      await driver.click(Math.round(rect.right + (rect.right - rect.left) / 2),
-        Math.round(rect.top + (rect.bottom - rect.top) / 2))
+      await driver.clickAt({ x: Math.round(rect.right + (rect.right - rect.left) / 2), y: Math.round(rect.top + (rect.bottom - rect.top) / 2), displayId: displayID })
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('click2')).assertEqual('button2 clicked');
       expect(ResponseRegionSupportedTool.FINGER).assertEqual(1);

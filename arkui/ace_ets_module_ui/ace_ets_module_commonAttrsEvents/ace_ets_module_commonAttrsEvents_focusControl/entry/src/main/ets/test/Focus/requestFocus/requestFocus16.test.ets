@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function requestFocus16() {
   describe('requestFocus16', () => {
     beforeEach(async (done: Function) => {
@@ -71,7 +72,7 @@ export default function requestFocus16() {
       expect(JSON.stringify(JSON.parse(textInput1).$attrs.text)).assertEqual('"TextInput_1"');
       await CommonFunc.sleep(1000);
 
-      await driver.clickAt({ x: center.x, y: center.y});
+      await driver.clickAt({ x: center.x, y: center.y, displayId: displayID});
       await CommonFunc.sleep(1000);
       console.info('requestFocus16_0100 END');
       done();

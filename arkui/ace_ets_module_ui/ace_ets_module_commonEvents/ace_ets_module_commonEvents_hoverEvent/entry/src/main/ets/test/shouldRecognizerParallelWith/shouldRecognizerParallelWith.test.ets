@@ -31,6 +31,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function shouldRecognizerParallelWith() {
   describe('shouldRecognizerParallelWith', () => {
     beforeEach(async (done: Function) => {
@@ -80,12 +81,15 @@ export default function shouldRecognizerParallelWith() {
 
   // 子控件滚动（仅保留这一步）
   let driver = Driver.create();
-  await driver.swipe(
-    Math.round(areaObj1.left + areaWidth / 2),
-    Math.round(areaObj1.bottom - areaHeight * 0.2),
-    Math.round(areaObj1.left + areaWidth / 2),
-    Math.round(areaObj1.top)
-  );
+  await driver.swipeBetween({
+    x: Math.round(areaObj1.left + areaWidth / 2),
+    y: Math.round(areaObj1.bottom - areaHeight * 0.2),
+    displayId: displayID
+  }, {
+    x: Math.round(areaObj1.left + areaWidth / 2),
+    y: Math.round(areaObj1.top),
+    displayId: displayID
+  });
   await CommonFunc.sleep(3000);
 
   // 校验手势识别生效

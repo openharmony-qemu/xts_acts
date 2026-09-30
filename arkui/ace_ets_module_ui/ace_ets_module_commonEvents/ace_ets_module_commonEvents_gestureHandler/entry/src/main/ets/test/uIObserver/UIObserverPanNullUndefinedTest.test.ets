@@ -18,6 +18,7 @@ import { Driver, ON } from '@ohos.UiTest';
 import { router } from '@kit.ArkUI';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function uIObserverPanNullUndefinedTest() {
   describe('UIObserverPanNullUndefinedTest', () => {
     beforeEach(async (done: Function) => {
@@ -61,7 +62,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_on_null'));
       console.info('[UIObserver_beforePanStart_on_null_001] result: ' + JSON.stringify(result));
@@ -84,7 +85,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_on_undefined'));
       console.info('[UIObserver_beforePanStart_on_undefined_001] result: ' + JSON.stringify(result));
@@ -107,7 +108,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_off_null'));
       console.info('[UIObserver_beforePanStart_off_null_001] result: ' + JSON.stringify(result));
@@ -130,7 +131,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanStart_off_undefined'));
       console.info('[UIObserver_beforePanStart_off_undefined_001] result: ' + JSON.stringify(result));
@@ -153,7 +154,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_on_null'));
       console.info('[UIObserver_beforePanEnd_on_null_001] result: ' + JSON.stringify(result));
@@ -176,7 +177,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_on_undefined'));
       console.info('[UIObserver_beforePanEnd_on_undefined_001] result: ' + JSON.stringify(result));
@@ -199,7 +200,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_off_null'));
       console.info('[UIObserver_beforePanEnd_off_null_001] result: ' + JSON.stringify(result));
@@ -222,7 +223,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('beforePanEnd_off_undefined'));
       console.info('[UIObserver_beforePanEnd_off_undefined_001] result: ' + JSON.stringify(result));
@@ -245,7 +246,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_on_null'));
       console.info('[UIObserver_afterPanStart_on_null_001] result: ' + JSON.stringify(result));
@@ -268,7 +269,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_on_undefined'));
       console.info('[UIObserver_afterPanStart_on_undefined_001] result: ' + JSON.stringify(result));
@@ -291,7 +292,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_off_null'));
       console.info('[UIObserver_afterPanStart_off_null_001] result: ' + JSON.stringify(result));
@@ -314,7 +315,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanStart_off_undefined'));
       console.info('[UIObserver_afterPanStart_off_undefined_001] result: ' + JSON.stringify(result));
@@ -337,7 +338,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_on_null'));
       console.info('[UIObserver_afterPanEnd_on_null_001] result: ' + JSON.stringify(result));
@@ -360,7 +361,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_on_undefined'));
       console.info('[UIObserver_afterPanEnd_on_undefined_001] result: ' + JSON.stringify(result));
@@ -383,7 +384,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_off_null'));
       console.info('[UIObserver_afterPanEnd_off_null_001] result: ' + JSON.stringify(result));
@@ -406,7 +407,7 @@ export default function uIObserverPanNullUndefinedTest() {
       let panArea = await driver.findComponent(ON.id('pan_area'));
       let rect = await panArea.getBounds();
       let rectCenter = await panArea.getBoundsCenter();
-      await driver.swipe(rect.right, rectCenter.y, rectCenter.x, rectCenter.y);
+      await driver.swipeBetween({x:rect.right,y:rectCenter.y,displayId:displayID},{x:rectCenter.x,y:rectCenter.y,displayId:displayID});
       await CommonFunc.sleep(500);
       let result = JSON.stringify(AppStorage.get('afterPanEnd_off_undefined'));
       console.info('[UIObserver_afterPanEnd_off_undefined_001] result: ' + JSON.stringify(result));

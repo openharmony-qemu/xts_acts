@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function HoverJsunit11() {
   describe('HoverJsunit11', () => {
     beforeEach(async (done: Function) => {
@@ -57,7 +58,7 @@ export default function HoverJsunit11() {
       console.info('HoverJsunit_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({x: Math.round(globalThis.winLeft + vp2px(100)), y: Math.round(globalThis.winTop + vp2px(100))})
+      await driver.mouseMoveTo({x: Math.round(globalThis.winLeft + vp2px(100)), y: Math.round(globalThis.winTop + vp2px(100)), displayId: displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('hover11');
       let obj: ESObject = JSON.parse(strJson);
@@ -83,7 +84,7 @@ export default function HoverJsunit11() {
       let buttonCl = await driver.findComponent(ON.id('columnB11'));
       await CommonFunc.sleep(500);
       let point = await buttonCl.getBoundsCenter();
-      await driver.mouseMoveTo({x: Math.round(point.x + vp2px(100)), y: Math.round(point.y  + vp2px(100))})
+      await driver.mouseMoveTo({x: Math.round(point.x + vp2px(100)), y: Math.round(point.y  + vp2px(100)), displayId: displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('hover11');
       let obj: ESObject = JSON.parse(strJson);
@@ -112,7 +113,7 @@ export default function HoverJsunit11() {
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.mouseMoveTo({x:Math.round((left + right) / 2), y:Math.round((top + bottom) / 2)})
+      await driver.mouseMoveTo({x:Math.round((left + right) / 2), y:Math.round((top + bottom) / 2), displayId: displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('hover11');
       let obj: ESObject = JSON.parse(strJson);
