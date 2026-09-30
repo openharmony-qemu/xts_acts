@@ -38,7 +38,7 @@ export default function getAssetsTest () {
       await getPermission();
       await driveFn();
       await sleep(1000);
-      const fileNames: Array<string> = [ "getAssetTest.jpg", "01.mp4"];
+      const fileNames: Array<string> = [ "getAssetTest.jpg", "getAssetTest777.mp4"];
       checkResourceFile(testContext);
       await createResource(testContext, fileNames);
     });
@@ -249,7 +249,7 @@ export default function getAssetsTest () {
      */
     it('getAssets_callback_004', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAssets_callback_004';
-      const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.mp4');
+      const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'getAssetTest777.mp4');
       const expectCount = 1;
       await getAssetsCallbackTest(done, testNum, fetchOps, expectCount);
     });
@@ -264,7 +264,7 @@ export default function getAssetsTest () {
      */
     it('getAssets_promise_004', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getAssets_promise_004';
-      const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.mp4');
+      const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'getAssetTest777.mp4');
       const expectCount = 1;
       await getAssetsPromiseTest(done, testNum, fetchOps, expectCount);
     });
