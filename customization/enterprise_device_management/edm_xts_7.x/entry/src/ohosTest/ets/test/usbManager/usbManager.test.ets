@@ -17,6 +17,7 @@ import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, DEFAULT_USER_ID } from '../commom.test.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import common from '@ohos.enterprise.common';
 import { usbManager } from '@kit.MDMKit';
 import restrictions from '@ohos.enterprise.restrictions';
 
@@ -49,6 +50,10 @@ export default function usbManagerTest() {
     testRemoveDisallowedPermissiveUsbDevices();
     testGetDisallowedPermissiveUsbDevices();
     testGetUsbSerialNumber();
+    testSetExternalStorageInterceptEnable();
+    testIsExternalStorageInterceptEnable();
+    testSetExternalStorageDeviceMountPolicy();
+    testGetExternalStorageDeviceInfos();
   })
 }
 
@@ -916,6 +921,710 @@ function testGetUsbSerialNumber() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetExternalStorageInterceptEnable() {
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0100
+   * @tc.desc   test setExternalStorageInterceptEnable without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0200
+   * @tc.desc   test setExternalStorageInterceptEnable with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0300
+   * @tc.desc   test setExternalStorageInterceptEnable with null enable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageInterceptEnable(null);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(401);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0400
+   * @tc.desc   test setExternalStorageInterceptEnable with undefined enable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageInterceptEnable(undefined);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(401);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0500
+   * @tc.desc   test setExternalStorageInterceptEnable with setDisallowedPolicy usb conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB, true);
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200010);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0600
+   * @tc.desc   test setExternalStorageInterceptEnable with addAllowedUsbDevices conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.addAllowedUsbDevices(SELFWANT, USB_ALLOWED_DEVICES);
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200010);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0700
+   * @tc.desc   test setExternalStorageInterceptEnable with addDisallowedUsbDevices conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.addDisallowedUsbDevices(SELFWANT, USB_DISALLOWED_DEVICES);
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200010);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0800
+   * @tc.desc   test setExternalStorageInterceptEnable with addDisallowedPermissiveUsbDevices conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.addDisallowedPermissiveUsbDevices(SELFWANT, PERMISSIVE_USB_DEVICES);
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200010);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0900
+   * @tc.desc   test setExternalStorageInterceptEnable with setUsbStorageDeviceAccessPolicy DISABLED conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.DISABLED);
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200010);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_1000
+   * @tc.desc   test setExternalStorageInterceptEnable with setDisallowedPolicyForAccount usbStorageDeviceWrite conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_USB_STORAGE_WRITE, true, DEFAULT_USER_ID);
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === '801') {
+        expect(error.code).assertEqual('801');
+      } else {
+        expect(error.code).assertEqual(9200010);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_1100
+   * @tc.desc   test setExternalStorageInterceptEnable success with enable true
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageInterceptEnable(true);
+      let result = usbManager.isExternalStorageInterceptEnable();
+      expect(result).assertEqual(true);
+      usbManager.setExternalStorageInterceptEnable(false);
+      result = usbManager.isExternalStorageInterceptEnable();
+      expect(result).assertEqual(false);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageInterceptEnable_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_1200
+   * @tc.desc   test setExternalStorageInterceptEnable success with enable false
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageInterceptEnable_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageInterceptEnable(false);
+      let result = usbManager.isExternalStorageInterceptEnable();
+      expect(result).assertEqual(false);
+      usbManager.setExternalStorageInterceptEnable(true);
+      result = usbManager.isExternalStorageInterceptEnable();
+      expect(result).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testIsExternalStorageInterceptEnable() {
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0100
+   * @tc.desc   test isExternalStorageInterceptEnable without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.SELF);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0200
+   * @tc.desc   test isExternalStorageInterceptEnable with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.SELF);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0300
+   * @tc.desc   test isExternalStorageInterceptEnable success with null queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = usbManager.isExternalStorageInterceptEnable(null);
+      expect(typeof result === 'boolean').assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0400
+   * @tc.desc   test isExternalStorageInterceptEnable success with undefined queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = usbManager.isExternalStorageInterceptEnable(undefined);
+      expect(typeof result === 'boolean').assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0500
+   * @tc.desc   test isExternalStorageInterceptEnable success with invalid queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = usbManager.isExternalStorageInterceptEnable(2);
+      expect(typeof result === 'boolean').assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0600
+   * @tc.desc   test isExternalStorageInterceptEnable success with QueryPolicy.SELF
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.SELF);
+      expect(typeof result === 'boolean').assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0700
+   * @tc.desc   test isExternalStorageInterceptEnable success with QueryPolicy.ALL
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.ALL);
+      expect(typeof result === 'boolean').assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0800
+   * @tc.desc   test isExternalStorageInterceptEnable without queryPolicy and without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      usbManager.isExternalStorageInterceptEnable();
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_0900
+   * @tc.desc   test isExternalStorageInterceptEnable without queryPolicy and with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      usbManager.isExternalStorageInterceptEnable();
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_isExternalStorageInterceptEnable_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_JS_1000
+   * @tc.desc   test isExternalStorageInterceptEnable success without queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isExternalStorageInterceptEnable_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = usbManager.isExternalStorageInterceptEnable();
+      expect(typeof result === 'boolean').assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetExternalStorageDeviceMountPolicy() {
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0100
+   * @tc.desc   test setExternalStorageDeviceMountPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('testVolumeId', usbManager.MountPolicy.MOUNT_READ_WRITE);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0200
+   * @tc.desc   test setExternalStorageDeviceMountPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('testVolumeId', usbManager.MountPolicy.MOUNT_READ_WRITE);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0300
+   * @tc.desc   test setExternalStorageDeviceMountPolicy with null volumeId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy(null, usbManager.MountPolicy.MOUNT_READ_WRITE);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(401);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0400
+   * @tc.desc   test setExternalStorageDeviceMountPolicy with undefined volumeId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy(undefined, usbManager.MountPolicy.MOUNT_READ_WRITE);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(401);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0500
+   * @tc.desc   test setExternalStorageDeviceMountPolicy with empty volumeId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('', usbManager.MountPolicy.MOUNT_READ_WRITE);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200012);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0600
+   * @tc.desc   test setExternalStorageDeviceMountPolicy with null policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('testVolumeId', null);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(401);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0700
+   * @tc.desc   test setExternalStorageDeviceMountPolicy with undefined policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('testVolumeId', undefined);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(401);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_setExternalStorageDeviceMountPolicy_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_JS_0800
+   * @tc.desc   test setExternalStorageDeviceMountPolicy with invalid policy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setExternalStorageDeviceMountPolicy_0800", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('testVolumeId', 999);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200012);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetExternalStorageDeviceInfos() {
+  /**
+   * @tc.name   test_getExternalStorageDeviceInfos_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_STORAGE_DEVICE_INFOS_JS_0100
+   * @tc.desc   test getExternalStorageDeviceInfos without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getExternalStorageDeviceInfos_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      usbManager.getExternalStorageDeviceInfos();
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getExternalStorageDeviceInfos_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_STORAGE_DEVICE_INFOS_JS_0200
+   * @tc.desc   test getExternalStorageDeviceInfos with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getExternalStorageDeviceInfos_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      usbManager.getExternalStorageDeviceInfos();
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getExternalStorageDeviceInfos_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_STORAGE_DEVICE_INFOS_JS_0300
+   * @tc.desc   test getExternalStorageDeviceInfos success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getExternalStorageDeviceInfos_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = usbManager.getExternalStorageDeviceInfos();
+      expect(Array.isArray(result)).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
