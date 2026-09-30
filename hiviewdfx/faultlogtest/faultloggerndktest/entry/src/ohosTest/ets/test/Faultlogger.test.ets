@@ -91,11 +91,9 @@ export default function faultloggerTest() {
       try {
         let ret1 = await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.NO_SPECIFIC);
         console.info("SUB_DFX_DFR_Faultlogger_Interface_0200 ret1 == " + ret1.length);
-        expect(ret1).assertEqual(ret1);
 
         let ret2 = await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH);
         console.info("SUB_DFX_DFR_Faultlogger_Interface_0200 ret2 == " + ret2.length);
-        expect(ret2).assertEqual(ret2);
 
         let ret3 = await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.APP_FREEZE);
         console.info("SUB_DFX_DFR_Faultlogger_Interface_0200 ret3 == " + ret3.length);
