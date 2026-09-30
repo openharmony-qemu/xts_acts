@@ -99,7 +99,6 @@ export default function faultloggerTest() {
 
         let ret3 = await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.APP_FREEZE);
         console.info("SUB_DFX_DFR_Faultlogger_Interface_0200 ret3 == " + ret3.length);
-        expect(ret3).assertEqual(ret3);
         done();
         return;
       } catch (err) {
