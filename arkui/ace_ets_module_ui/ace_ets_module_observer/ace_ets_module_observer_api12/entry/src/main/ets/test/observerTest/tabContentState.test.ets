@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function tabContentState() {
   describe('tabContentState', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +68,7 @@ export default function tabContentState() {
       let width = right - left;
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.9),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.9), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(3000);
       let btn: Component = await driver.findComponent(ON.id('observer_getState'));
       await btn.click();

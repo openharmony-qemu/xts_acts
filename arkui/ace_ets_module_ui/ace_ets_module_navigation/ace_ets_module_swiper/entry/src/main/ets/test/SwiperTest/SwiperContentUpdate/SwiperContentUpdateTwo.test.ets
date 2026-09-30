@@ -30,6 +30,8 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function SwiperContentUpdateTwo() {
   describe('SwiperContentUpdateTwo', () => {
     beforeEach(async (done: Function) => {
@@ -81,7 +83,7 @@ export default function SwiperContentUpdateTwo() {
       let height = bottom -top;
       let width = right - left;
       console.info("SwiperContentUpdateTwo_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(right - vp2px(20)),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.3), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(right - vp2px(20)), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       let value: SwiperContentInfo = AppStorage.get('swiperContentInfo') as SwiperContentInfo
       expect(value?.id === 'swiperId').assertTrue();

@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function verticalTrue() {
   describe('verticalTrue', () => {
     beforeEach(async (done: Function) => {
@@ -60,7 +62,7 @@ export default function verticalTrue() {
       let height = bottom -top;
       let width = right - left;
       let driver = await Driver.create()
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.9),Math.round(left + width/2),Math.round(top + height*0.1));
+      await driver.swipeBetween({ x: Math.round(left + width/2), y: Math.round(top + height*0.9), displayId: displayID }, { x: Math.round(left + width/2), y: Math.round(top + height*0.1), displayId: displayID });
       await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('portrait_onGestureSwipe');
       console.info("[verticalTrue_0100] component obj is: " + JSON.stringify(JSON.parse(strJson1)));

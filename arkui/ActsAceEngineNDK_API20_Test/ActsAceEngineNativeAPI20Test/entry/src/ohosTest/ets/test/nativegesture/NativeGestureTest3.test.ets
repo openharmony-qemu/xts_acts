@@ -20,6 +20,8 @@ import { ON, Component, Point } from '@kit.TestKit';
 
 const ARKUI_ERROR_CODE_NO_ERROR = 0
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function NativeGestureTest3() {
   describe('NativeGestureTest3', () => {
     let Component: Component;
@@ -44,7 +46,7 @@ export default function NativeGestureTest3() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGestureEventTargetInfo_IsScrollBegin0100 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
           let result: number = nativegesturendk.GestureEventTargetInfo_IsScrollBegin0100();
           console.info(`====>testGestureEventTargetInfo_IsScrollBegin0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);
@@ -67,7 +69,7 @@ export default function NativeGestureTest3() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
           console.info("====>testGestureEventTargetInfo_IsScrollEnd0100 start====");
-          await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+          await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
           let result: number = nativegesturendk.GestureEventTargetInfo_IsScrollEnd0100();
           console.info(`====>testGestureEventTargetInfo_IsScrollEnd0100 result====${result}`);
           expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(result);

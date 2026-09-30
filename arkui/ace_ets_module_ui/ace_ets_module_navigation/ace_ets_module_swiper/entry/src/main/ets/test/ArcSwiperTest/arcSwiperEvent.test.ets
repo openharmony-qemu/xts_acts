@@ -61,7 +61,7 @@ export default function arcSwiperEvent() {
       console.info("arcSwiperEvent value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('arcSwiper_onChange');
       console.info("[arcSwiperEvent_0100] content: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
@@ -104,7 +104,7 @@ export default function arcSwiperEvent() {
       console.info("arcSwiperEvent value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('arcSwiper_onGestureSwipe');
       console.info("[arcSwiperEvent_0200] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)));

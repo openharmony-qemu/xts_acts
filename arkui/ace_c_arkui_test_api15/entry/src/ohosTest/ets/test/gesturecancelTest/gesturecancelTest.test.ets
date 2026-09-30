@@ -19,6 +19,8 @@ import Utils from '../common/Utils';
 import router from '@ohos.router';
 import nativeRender from 'libnativerender.so';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function gesturecancelTest() {
 
   describe('gesturecancelTest', () => {
@@ -67,7 +69,7 @@ export default function gesturecancelTest() {
       // the visual list height is vp2px(200)
       let y = Math.round(globalThis.winTop + rect.top + vp2px(100));
       console.info("testGestureCancelTest001  x= " +  x  + ", y = " + y);
-      await driver.swipe(x, y, x, Math.round(y - vp2px(200)));
+      await driver.swipeBetween({ x: x, y: y, displayId: displayID }, { x: x, y: Math.round(y - vp2px(200)), displayId: displayID });
       await Utils.sleep(2000);
        // test the callbackData;
       let object1:ESObject = nativeRender.GetTouchEventData();
