@@ -80,7 +80,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0200
-     * @tc.number test_0200
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0200
      * @tc.desc   检验函数参数输入错误时程序是否会崩溃
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -111,7 +111,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0400
-     * @tc.number test_0400
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0400
      * @tc.desc   检验promise同步方式获取faultlog CPP_CRASH日志
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -156,7 +156,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0500
-     * @tc.number test_0500
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0500
      * @tc.desc   检验promise同步方式获取faultlog JS_CRASH日志（仅覆盖接口调用）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0300
-     * @tc.number test_0300
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0300
      * @tc.desc   检验promise同步方式获取faultlog APP_FREEZE日志
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -213,7 +213,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0100
-     * @tc.number test_0100
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0100
      * @tc.desc   检验通过回调方式获取faultlog CPP_CRASH日志
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -248,7 +248,7 @@ export default function faultloggerTest() {
     
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0700
-     * @tc.number test_0700
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0700
      * @tc.desc   检验query函数入参数量为2时程序是否会崩溃
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -270,7 +270,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0800
-     * @tc.number test_0800
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0800
      * @tc.desc   检验query函数入参为空时程序是否会崩溃
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_0900
-     * @tc.number test_0900
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_0900
      * @tc.desc   检验promise同步方式获取faultlog JS_CRASH日志（仅覆盖接口调用）
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -326,7 +326,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1000
-     * @tc.number test_1000
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1000
      * @tc.desc   检验promise同步方式获取faultlog APP_FREEZE日志
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -351,7 +351,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1100
-     * @tc.number test_1100
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1100
      * @tc.desc   检验通过回调方式获取faultlog CPP_CRASH日志
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -382,7 +382,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1200
-     * @tc.number test_1200
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1200
      * @tc.desc   检验query函数入参为空时程序是否会崩溃,校验错误码返回801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function faultloggerTest() {
 
     /**
      * @tc.name   SUB_DFX_DFR_Faultlogger_Interface_1300
-     * @tc.number test_1300
+     * @tc.number SUB_DFX_DFR_Faultlogger_Interface_1300
      * @tc.desc   检验query回调方式获取CPP_CRASH日志,校验错误码返回801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
