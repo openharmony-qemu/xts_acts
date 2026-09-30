@@ -18,6 +18,7 @@ import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayR
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function symbolIcon() {
   describe('symbolIcon',  () =>{
     beforeEach(async (done:Function) =>{
@@ -66,7 +67,7 @@ export default function symbolIcon() {
       console.info("[symbolIcon_0100] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[symbolIcon_0100] title: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(JSON.parse(strJson).$attrs.content).assertEqual("set symbolIcon success");
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
       console.info('[symbolIcon_0100] END');
       done();

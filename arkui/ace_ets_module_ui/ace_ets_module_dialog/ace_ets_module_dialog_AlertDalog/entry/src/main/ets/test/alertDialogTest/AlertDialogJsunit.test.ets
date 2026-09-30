@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function AlertDialogJsunit() {
   describe('AlertDialogJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +74,7 @@ export default function AlertDialogJsunit() {
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[AlertDialogJsunit_0100] component obj2 is: " + JSON.stringify(obj2));
       expect(obj2.$attrs.label).assertEqual("two button dialog");
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       console.info('[AlertDialogJsunit_0100] END');
       done();

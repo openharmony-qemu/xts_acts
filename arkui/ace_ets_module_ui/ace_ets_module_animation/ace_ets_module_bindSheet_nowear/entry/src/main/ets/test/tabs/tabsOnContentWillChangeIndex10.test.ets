@@ -18,6 +18,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function tabsOnContentWillChangeIndex10JsunitTest() {
   describe('tabsOnContentWillChangeIndex10JsunitTest', () => {
     beforeEach(async (done: Function) => {
@@ -55,10 +56,10 @@ export default function tabsOnContentWillChangeIndex10JsunitTest() {
 
       // simulate the "tab"
       let driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049,displayID);
       await CommonFunc.sleep(1000);
       // -> 2015
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015,displayID);
       await CommonFunc.sleep(1000);
 
       let strJson1 = getInspectorByKey('currentIndex10x');
@@ -67,7 +68,7 @@ export default function tabsOnContentWillChangeIndex10JsunitTest() {
       expect(obj1.$attrs.content).assertEqual('1');
 
       // -> 2015
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015,displayID);
       await CommonFunc.sleep(1000);
 
       let strJson2 = getInspectorByKey('currentIndex10x');
@@ -78,7 +79,7 @@ export default function tabsOnContentWillChangeIndex10JsunitTest() {
       // it can not response when ->
 
       // -> 2015
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015,displayID);
       await CommonFunc.sleep(1000);
 
       let strJson3 = getInspectorByKey('currentIndex10x');
