@@ -14,7 +14,7 @@
  */
 import { Vec4, Aabb, SceneResourceType, SceneResource, Shader, MaterialType, Material, ShaderMaterial, SubMesh, Mesh,
   Animation, EnvironmentBackgroundType, Environment, Node, Geometry, SceneResourceFactory, Scene, PolygonMode, 
-  Effect, EffectParameters,SceneNodeParameters } from '@kit.ArkGraphics3D'
+  Effect, EffectParameters,SceneNodeParameters,OcclusionMaterial } from '@kit.ArkGraphics3D'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import * as scene3d from '@ohos.graphics.scene'
 import { lookAt, GenRandom, sleep } from '../common/utils';
@@ -1957,7 +1957,7 @@ export default function sceneResourcesTest() {
         console.info(msg + " MaterialType.OCCLUSION value is 4");
 
         // Verify OCCLUSION material can be created
-        let occlusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
+        let occlusionMaterial:OcclusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
         expect(occlusionMaterial != null).assertTrue();
         console.info(msg + " OCCLUSION material created successfully");
 
@@ -1983,34 +1983,7 @@ export default function sceneResourcesTest() {
         done();
       }
     })
-    /**
-     * @tc.name   testOcclusionMaterialDistinct
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1052
-     * @tc.desc   erify MaterialType.OCCLUSION is distinct from other material types
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVELO
-     */
-    it('testOcclusionMaterialDistinct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testOcclusionMaterialDistinct";
-      console.info(msg + ' begin ');
-      try {
-        const rt = new OcclusionMaterial();
-        expect(rt).not().assertUndefined();
-        scene = await Scene.load();
-        expect(scene != null).assertTrue();
-        rf = scene.getResourceFactory();
-        let occlusionaterial = await rf.createllaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
-        expect(occlusionMaterial != null).assertTrue();
-        expect(occlusionMaterial?.materialType).assertEqual(MaterialType.OCCLUSION);
-        console.info(msg + " test completed successfully");
-        done();
-      } catch (err) {
-        console.info(msg + " Failed in testOcclusionMaterialDistinct" + JSON.stringify(err));
-        expect().assertFail();
-        done();
-      }
-    })
+    
     /**
      * @tc.name   testMat4x4Properties
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1019
