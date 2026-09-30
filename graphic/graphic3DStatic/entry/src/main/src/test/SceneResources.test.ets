@@ -1767,7 +1767,7 @@ export default function sceneResourcesTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testOcclusionMaterialCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+    it('testOcclusionMaterialCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void) => {
       let msg = "============================testOcclusionMaterialCreate";
       console.info(msg + ' begin ');
       try {
