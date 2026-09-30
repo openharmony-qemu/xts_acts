@@ -21,6 +21,7 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let mpEnable = '';
+let allowchildprocess = '';
 const PARAM_INVALID = 401;
 
 export default function StartChildProcessTestStatic() {
@@ -30,6 +31,7 @@ export default function StartChildProcessTestStatic() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
+        allowchildprocess = systemParameterEnhance.getSync('const.sys.abilityms.allow_child_process_in_multi_process_feature_app');
       } catch (err) {
         console.error(`ACTS_NativeStartChildProcess Get system parameter error: ${JSON.stringify(err)}`);
       }
@@ -151,7 +153,7 @@ export default function StartChildProcessTestStatic() {
     it('SUB_Ability_AbilityBase_startChildProcess_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_static_0300`;
       console.log(`${tag}, it begin`);
-      if(mpEnable === 'true'){
+      if(mpEnable === 'true' || allowchildprocess === 'true'){
         try {
           childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK).then((pid)=>{
             console.log(`${tag} startChildProcess success, pid: ${pid}`);
@@ -201,7 +203,7 @@ export default function StartChildProcessTestStatic() {
     it('SUB_Ability_AbilityBase_startChildProcess_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_startChildProcess_static_0400`;
       console.log(`${tag}, it begin`);
-      if(mpEnable === 'true'){
+      if(mpEnable === 'true' || allowchildprocess === 'true'){
         try {
           childProcessManager.startChildProcess('', childProcessManager.StartMode.APP_SPAWN_FORK, (err, data)=>{
             if(err?.code){
