@@ -16,7 +16,7 @@
 
 import { Entry, Component, Column, Row, Text, $r, SymbolRenderingStrategy, Color, Builder } from '@ohos.arkui.component';
 import { SubHeader, OperationType } from '@ohos.arkui.advanced.SubHeader';
-import promptAction from '@ohos.promptAction';
+
 
 @Entry
 @Component
@@ -73,7 +73,7 @@ struct SubHeaderEndIcon {
         operationItem: [{
           value: '操作',
           action: () => {
-            promptAction.showToast({ message: 'demo' });
+
           }
         }]
       })
