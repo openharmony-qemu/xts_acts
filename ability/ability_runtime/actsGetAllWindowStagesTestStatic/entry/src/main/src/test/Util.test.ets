@@ -21,4 +21,34 @@ export default class Utils{
       }, count)
     })
   }
+
+  /**
+   * Read BusinessError.code from a catch payload without ESObject / BusinessError casts
+   * (static ArkTS rejects (e as ESObject).code with ESE0087).
+   */
+  static errorCode(e: Object): number {
+    let text: string = JSON.stringify(e);
+    let key: string = '"code":';
+    let at: number = text.indexOf(key);
+    if (at < 0) {
+      return 0;
+    }
+    let i: number = at + key.length;
+    while (i < text.length && text.charAt(i) === ' ') {
+      i++;
+    }
+    let digits: string = '';
+    while (i < text.length) {
+      let ch: string = text.charAt(i);
+      if (ch < '0' || ch > '9') {
+        break;
+      }
+      digits += ch;
+      i++;
+    }
+    if (digits.length === 0) {
+      return 0;
+    }
+    return Number.parseInt(digits);
+  }
 }

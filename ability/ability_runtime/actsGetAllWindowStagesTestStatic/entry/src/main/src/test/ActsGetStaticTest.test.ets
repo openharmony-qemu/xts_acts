@@ -126,7 +126,7 @@ async function startWithRetry(want: Want, testCase: string,
       hilog.info(0x0000, 'testTag', `${testCase} startAbility success.`);
       return true;
     } catch (e) {
-      lastCode = (e as ESObject).code as number;
+      lastCode = Utils.errorCode(e as Object);
       hilog.error(0x0000, 'testTag', `${testCase} startAbility attempt ${i} rejected: ${JSON.stringify(e)}`);
       if (lastCode !== 16000017) {
         return false;
