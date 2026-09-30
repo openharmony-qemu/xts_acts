@@ -25,30 +25,33 @@ export default class Utils{
   /**
    * Read BusinessError.code from a catch payload without ESObject / BusinessError casts
    * (static ArkTS rejects (e as ESObject).code with ESE0087).
+   * Indices must be int: charAt(number) fails ESE0127/ESE0046 on CI static.
    */
   static errorCode(e: Object): number {
     let text: string = JSON.stringify(e);
     let key: string = '"code":';
-    let at: number = text.indexOf(key);
+    let at: int = text.indexOf(key);
     if (at < 0) {
       return 0;
     }
-    let i: number = at + key.length;
+    let i: int = at + key.length;
     while (i < text.length && text.charAt(i) === ' ') {
       i++;
     }
-    let digits: string = '';
+    let code: number = 0;
+    let hasDigit: boolean = false;
     while (i < text.length) {
       let ch: string = text.charAt(i);
       if (ch < '0' || ch > '9') {
         break;
       }
-      digits += ch;
+      hasDigit = true;
+      code = code * 10 + Number(ch);
       i++;
     }
-    if (digits.length === 0) {
+    if (!hasDigit) {
       return 0;
     }
-    return Number.parseInt(digits);
+    return code;
   }
 }
