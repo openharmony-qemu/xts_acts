@@ -1654,5 +1654,53 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_0500 end---');
       })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3300
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3300
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_NOT_USE_USB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3300 begin---');
+        try {
+          let type: int = backgroundTaskManager.ContinuousTaskDetailedCancelReason.SYSTEM_CANCEL_NOT_USE_USB;
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3300 ContinuousTaskDetailedCancelReason: ' + type);
+          expect(type).assertEqual(16);
+          done();
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3300 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3300 end---');
+    })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3400
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3400
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_USB_NOT_USED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3400 begin---');
+        try {
+          let type: int = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_USB_NOT_USED;
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3400 backgroundTaskManager ContinuousTaskSuspendReason: ' + type);
+          expect(type).assertEqual(20);
+          done();
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3400 aa error: %{public}s', JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3400 end---');
+    })
+
   })
 }
