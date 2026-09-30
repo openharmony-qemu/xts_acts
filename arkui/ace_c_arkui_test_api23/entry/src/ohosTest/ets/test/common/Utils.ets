@@ -72,6 +72,7 @@ export default class Utils {
   static async pickerFlingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
     let Picker = await driver.findComponent(ON.id(key));
+    let displayId = await Picker.getDisplayId();
     let rect = await Picker.getBounds();
     let centerX = Math.round(Utils.getRectHorizontalCenterX(rect))
     let centerY = Math.round(Utils.getRectVerticalCenterY(rect))
@@ -85,29 +86,29 @@ export default class Utils {
     if (isHorizontal) {
       if (isForward) {
         await driver.fling({
-          x: X2, y: centerY
+          x: X2, y: centerY, displayId
         }, {
-          x: X1, y: centerY
+          x: X1, y: centerY, displayId
         }, stepLen, speed);
       } else {
         await driver.fling({
-          x: X1, y: centerY
+          x: X1, y: centerY, displayId
         }, {
-          x: X2, y: centerY
+          x: X2, y: centerY, displayId
         }, stepLen, speed);
       }
     } else {
       if (isForward) {
         await driver.fling({
-          x: centerX, y: Y2
+          x: centerX, y: Y2, displayId
         }, {
-          x: centerX, y: Y1
+          x: centerX, y: Y1, displayId
         }, stepLen, speed);
       } else {
         await driver.fling({
-          x: centerX, y: Y1
+          x: centerX, y: Y1, displayId
         }, {
-          x: centerX, y: Y2
+          x: centerX, y: Y2, displayId
         }, stepLen, speed);
       }
     }
