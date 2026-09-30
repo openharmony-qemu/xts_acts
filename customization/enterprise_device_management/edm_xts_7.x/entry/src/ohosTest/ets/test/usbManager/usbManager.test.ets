@@ -2,7 +2,7 @@
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
- * You may not obtain a copy of the License at
+ * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -43,13 +43,28 @@ const USB_DISALLOWED_DEVICES: Array<usbManager.UsbDeviceType> = [
 const LABEL_USB = 'usb';
 const LABEL_USB_STORAGE_WRITE = 'usbStorageDeviceWrite';
 
+const OPTICAL_DISC_BURN_USB_DEVICES: Array<usbManager.UsbDevice> = [
+  { vendorId: 1, productId: 1, serial: 'serial001' }
+];
+
+let OPTICAL_DISC_BURN_USB_DEVICES_10001: Array<usbManager.UsbDevice> = new Array(10001);
+function opticalDiscBurnUsbDevicesInit() {
+  for (let i = 0; i < OPTICAL_DISC_BURN_USB_DEVICES_10001.length; i++) {
+    OPTICAL_DISC_BURN_USB_DEVICES_10001[i] = { vendorId: i, productId: i, serial: 'serial' + i };
+  }
+}
+
 export default function usbManagerTest() {
   describe('usbManager_test', () => {
     permissiveUsbDevicesInit();
+    opticalDiscBurnUsbDevicesInit();
     testAddDisallowedPermissiveUsbDevices();
     testRemoveDisallowedPermissiveUsbDevices();
     testGetDisallowedPermissiveUsbDevices();
     testGetUsbSerialNumber();
+    testAddAllowedOpticalDiscDriveBurnUsbDevices();
+    testRemoveAllowedOpticalDiscDriveBurnUsbDevices();
+    testGetAllowedOpticalDiscDriveBurnUsbDevices();
     testSetExternalStorageInterceptEnable();
     testIsExternalStorageInterceptEnable();
     testSetExternalStorageDeviceMountPolicy();
@@ -921,6 +936,556 @@ function testGetUsbSerialNumber() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testAddAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_addAllowedOpticalDiscDriveBurnUsbDevices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0100
+   * @tc.desc   test addAllowedOpticalDiscDriveBurnUsbDevices without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedOpticalDiscDriveBurnUsbDevices_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_addAllowedOpticalDiscDriveBurnUsbDevices_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0200
+   * @tc.desc   test addAllowedOpticalDiscDriveBurnUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedOpticalDiscDriveBurnUsbDevices_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_addAllowedOpticalDiscDriveBurnUsbDevices_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0300
+   * @tc.desc   test addAllowedOpticalDiscDriveBurnUsbDevices with null usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedOpticalDiscDriveBurnUsbDevices_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_addAllowedOpticalDiscDriveBurnUsbDevices_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0400
+   * @tc.desc   test addAllowedOpticalDiscDriveBurnUsbDevices with undefined usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedOpticalDiscDriveBurnUsbDevices_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_addAllowedOpticalDiscDriveBurnUsbDevices_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0500
+   * @tc.desc   test addAllowedOpticalDiscDriveBurnUsbDevices with empty usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedOpticalDiscDriveBurnUsbDevices_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices([]);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_addAllowedOpticalDiscDriveBurnUsbDevices_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0600
+   * @tc.desc   test addAllowedOpticalDiscDriveBurnUsbDevices with usbDevices exceeding limit
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedOpticalDiscDriveBurnUsbDevices_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES_10001);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200019);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_addAllowedOpticalDiscDriveBurnUsbDevices_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0700
+   * @tc.desc   test addAllowedOpticalDiscDriveBurnUsbDevices success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_addAllowedOpticalDiscDriveBurnUsbDevices_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
+      expect(result.length > 0).assertEqual(true);
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+    } catch (error) {
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testRemoveAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_removeAllowedOpticalDiscDriveBurnUsbDevices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0100
+   * @tc.desc   test removeAllowedOpticalDiscDriveBurnUsbDevices without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedOpticalDiscDriveBurnUsbDevices_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_removeAllowedOpticalDiscDriveBurnUsbDevices_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0200
+   * @tc.desc   test removeAllowedOpticalDiscDriveBurnUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedOpticalDiscDriveBurnUsbDevices_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_removeAllowedOpticalDiscDriveBurnUsbDevices_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0300
+   * @tc.desc   test removeAllowedOpticalDiscDriveBurnUsbDevices with null usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedOpticalDiscDriveBurnUsbDevices_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_removeAllowedOpticalDiscDriveBurnUsbDevices_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0400
+   * @tc.desc   test removeAllowedOpticalDiscDriveBurnUsbDevices with undefined usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedOpticalDiscDriveBurnUsbDevices_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_removeAllowedOpticalDiscDriveBurnUsbDevices_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0500
+   * @tc.desc   test removeAllowedOpticalDiscDriveBurnUsbDevices with empty usbDevices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedOpticalDiscDriveBurnUsbDevices_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices([]);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_removeAllowedOpticalDiscDriveBurnUsbDevices_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0600
+   * @tc.desc   test removeAllowedOpticalDiscDriveBurnUsbDevices with usbDevices exceeding limit
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedOpticalDiscDriveBurnUsbDevices_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES_10001);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200019);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_removeAllowedOpticalDiscDriveBurnUsbDevices_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0700
+   * @tc.desc   test removeAllowedOpticalDiscDriveBurnUsbDevices success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_removeAllowedOpticalDiscDriveBurnUsbDevices_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
+      expect(result.length === 0).assertEqual(true);
+    } catch (error) {
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0100
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0200
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0300
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices success with null queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(null);
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0400
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices success with undefined queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(undefined);
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0500
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices success with invalid queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(2);
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0600
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices success with QueryPolicy.SELF
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.SELF);
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0700
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices success with QueryPolicy.ALL
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices(common.QueryPolicy.ALL);
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0800
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices without queryPolicy and without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0800", Level.LEVEL2, async (done: Function) => {
+    try {
+      await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(9200001);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_0900
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices without queryPolicy and with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect(error.code).assertEqual(9200002);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_getAllowedOpticalDiscDriveBurnUsbDevices_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_JS_1000
+   * @tc.desc   test getAllowedOpticalDiscDriveBurnUsbDevices success without queryPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_getAllowedOpticalDiscDriveBurnUsbDevices_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect().assertFail();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
