@@ -1760,15 +1760,15 @@ export default function sceneResourcesTest() {
       }
     })
     /**
-     * @tc.name   testMaterialTypeOCCLUSION
+     * @tc.name   testMaterialTypeOCCLUSION1
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1811
      * @tc.desc   Test MaterialType.OCCLUSION enum value and verify OCCLUSION material can be created
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testMaterialTypeOCCLUSION', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let msg = "============================testMaterialTypeOCCLUSION";
+    it('testMaterialTypeOCCLUSION1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testMaterialTypeOCCLUSION1";
       console.info(msg + ' begin ');
       try {
         scene = await Scene.load();
@@ -1805,7 +1805,7 @@ export default function sceneResourcesTest() {
         console.info(msg + " test completed successfully");
         done();
       } catch (err) {
-        console.info(msg + " Failed in testMaterialTypeOCCLUSION " + JSON.stringify(err));
+        console.info(msg + " Failed in testMaterialTypeOCCLUSION1 " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
