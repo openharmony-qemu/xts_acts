@@ -62,7 +62,7 @@ export default function CustomEnvMonitorTest() {
         let text_1 = await (await driver.findComponent(ON.id('customEnvMonitor_dynamic_001'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVMONITOR_0100] component text_1: ' + text_1);
-        expect(text_1).assertEqual('message1:20');
+        expect(text_1).assertEqual('message2:20');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVMONITOR_0100 error:" + err);
         expect(true).assertEqual(false);
@@ -94,7 +94,7 @@ export default function CustomEnvMonitorTest() {
         let text_2 = await (await driver.findComponent(ON.id('customEnvMonitor_dynamic_001'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVMONITOR_0200] component text_2: ' + text_2);
-        expect(text_2).assertEqual('message2:21');
+        expect(text_2).assertEqual('message3:21');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVMONITOR_0200 error:" + err);
         expect(true).assertEqual(false);

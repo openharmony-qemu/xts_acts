@@ -62,7 +62,7 @@ export default function CustomEnvFreezeTest() {
         let text_1 = await (await driver.findComponent(ON.id('customEnvFreeze_dynamic_001'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0100] component text_1: ' + text_1);
-        expect(text_1).assertEqual('message1:20, index: 0');
+        expect(text_1).assertEqual('message2:20, index: 0');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0100 error:" + err);
         expect(true).assertEqual(false);
@@ -94,7 +94,7 @@ export default function CustomEnvFreezeTest() {
         let text_2 = await (await driver.findComponent(ON.id('customEnvFreeze_dynamic_001'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0200] component text_2: ' + text_2);
-        expect(text_2).assertEqual('message2:21, index: 0');
+        expect(text_2).assertEqual('message3:21, index: 0');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0200 error:" + err);
         expect(true).assertEqual(false);
@@ -132,7 +132,7 @@ export default function CustomEnvFreezeTest() {
         let text_3 = await (await driver.findComponent(ON.id('customEnvFreeze_dynamic_002'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0300] component text_3: ' + text_3);
-        expect(text_3).assertEqual('message2:22, index: 1');
+        expect(text_3).assertEqual('message3:22, index: 1');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0300 error:" + err);
         expect(true).assertEqual(false);
@@ -170,7 +170,7 @@ export default function CustomEnvFreezeTest() {
         let text_4 = await (await driver.findComponent(ON.id('customEnvFreeze_dynamic_001'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0400] component text_4: ' + text_4);
-        expect(text_4).assertEqual('message4:23, index: 0');
+        expect(text_4).assertEqual('message5:23, index: 0');
 
         // Switch back to tab0 to verify it was frozen (did not receive the change while inactive)
         let tab1 = await driver.findComponent(ON.text('tab1'));
@@ -183,7 +183,7 @@ export default function CustomEnvFreezeTest() {
         let text_5 = await (await driver.findComponent(ON.id('customEnvFreeze_dynamic_002'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0400] component text_5: ' + text_5);
-        expect(text_5).assertEqual('message3:23, index: 1');
+        expect(text_5).assertEqual('message4:23, index: 1');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVFREEZE_0400 error:" + err);
         expect(true).assertEqual(false);
