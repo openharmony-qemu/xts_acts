@@ -841,8 +841,8 @@ export default function ActsBackgroundProcessManagerNewTest() {
                         done();
                     }).catch((error: BusinessError) => {
                         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800 has failed for' + error.message + 'code:' + error.code);
-                        if (error.code == 202){
-                            expect(error.code == 202).assertTrue();
+                        if (error.code === 202){
+                            expect(error.code === 202).assertTrue();
                             done();
                         }else{
                             expect(false).assertTrue();
@@ -851,8 +851,8 @@ export default function ActsBackgroundProcessManagerNewTest() {
                     })
                 }catch(error){
                     hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_XTS_2800 has failed for' + error.message + 'code:' + error.code);
-                    if (error.code == 202){
-                        expect(error.code == 202).assertTrue();
+                    if (error.code === 202){
+                        expect(error.code === 202).assertTrue();
                         done();
                     }else{
                         expect(false).assertTrue();
