@@ -31,7 +31,15 @@ import { BusinessError } from '@ohos.base';
 export default function ProvideConsume0050TestJsunit() {
   describe('ProvideConsume0050TestJsunit', () => {
 
-        beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ProvideConsume0050TestJsunit beforeEach start");
+
+
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
+
+    });
+
+    beforeEach(async (): Promise<void> => {
       console.info("ProvideConsume0050TestJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/provide_consume/ProvideConsume0050",
