@@ -76,7 +76,7 @@ export default function RichEditorLineMetrics023() {
       await select.click();
       await CommonFunc.sleep(500);
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
       await CommonFunc.sleep(500);
 
       let set_end = await driver.findComponent(ON.id('set_end'));
@@ -86,7 +86,7 @@ export default function RichEditorLineMetrics023() {
       await driver.longClick(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);
 
       let lineMetricsOnCut = await driver.findComponent(ON.id('lineMetricsOnCut'));

@@ -110,7 +110,7 @@ export default function RichEditorOnWillChange014() {
       expect(replaceCall).assertEqual('replacedSpans Callback:[]');
 
       //撤销删除
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, 0, displayID);
       await CommonFunc.sleep(500);
 
       onDidBefore = await onDidChange_rangeBefore.getText();
@@ -125,7 +125,7 @@ export default function RichEditorOnWillChange014() {
       await CommonFunc.sleep(500);
       expect(replaceCall.indexOf('"value":"ab"') > 0).assertEqual(true);
       //还原删除
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y, 0, displayID);
       await CommonFunc.sleep(500);
 
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
