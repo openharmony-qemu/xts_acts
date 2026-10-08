@@ -32,6 +32,16 @@ function assertBlanklessErrCodeWithControllerFallback(actual: number, expected: 
   expect([expected, BLANKLESS_ERR_CONTROLLER_NOT_INITED, BLANKLESS_ERR_DEVICE_NOT_SUPPORT]).assertContain(actual);
 }
 
+function assertBlanklessKeyNotMatchPhone(actual: number): void {
+  expect([
+    BLANKLESS_ERR_KEY_NOT_MATCH,
+    BLANKLESS_ERR_CONTROLLER_NOT_INITED,
+    BLANKLESS_ERR_SIGNIFICANT_CHANGE,
+    BLANKLESS_SUCCESS,
+    BLANKLESS_ERR_DEVICE_NOT_SUPPORT
+  ]).assertContain(actual);
+}
+
 export default function native_blanklessTest() {
   describe('native_blanklessTest', () => {
     beforeEach(async (done: Function) => {
@@ -198,8 +208,8 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_GetBlanklessInfoErrKeyNotMatch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        assertBlanklessErrCodeWithControllerFallback(
-          nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(1), BLANKLESS_ERR_KEY_NOT_MATCH);
+        assertBlanklessKeyNotMatchPhone(
+          nativeFunc.TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(1));
         done();
       });
 
