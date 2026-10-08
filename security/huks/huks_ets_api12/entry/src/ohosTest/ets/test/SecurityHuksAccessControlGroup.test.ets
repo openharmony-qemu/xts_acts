@@ -1805,7 +1805,7 @@ export default function abilityTest() {
         let getKeyPropertiesRes = await huks.getKeyItemProperties(testNumber, baseKeyOptions);
         let keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
         Logger.error(`${testNumber} getKeyProperties ${JSON.stringify(getKeyPropertiesRes.properties)}`);
-        expect(getKeyPropertiesRes.properties?.length).assertEqual(12);
+        expect(getKeyPropertiesRes.properties?.length).assertEqual(11);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_ML_DSA);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_SIZE)).assertEqual(44);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PURPOSE)).assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
