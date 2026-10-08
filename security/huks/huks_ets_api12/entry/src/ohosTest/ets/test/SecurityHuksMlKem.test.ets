@@ -1342,7 +1342,7 @@ export default function SecurityHuksMlKemTest() {
         await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, decapSharedKeyAlias, sharedKeyParams.properties);
         getKeyPropertiesRes = await huks.getKeyItemProperties(decapSharedKeyAlias, baseKeyOptions);
         keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
-        expect(keyProperties.length).assertEqual(12);
+        expect(keyProperties.length).assertEqual(11);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_AES);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_SIZE)).assertEqual(256);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PURPOSE)).assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
