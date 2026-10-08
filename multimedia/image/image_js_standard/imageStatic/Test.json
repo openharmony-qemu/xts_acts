@@ -17,45 +17,41 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files/*",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.123 ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/moving_test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.ico ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.svg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/moving_test.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test_large.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test_large.svg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_jpg.jpeg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_jpeg.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_png.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_gif.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_webp.ico ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_ico.svg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_svg.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_bmp.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/wrongSuffixImage/wrong_suffix_dng.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files"
+                "./resource/image/test.bmp ->/data/local/tmp/",
+                "./resource/image/test.png ->/data/local/tmp/",
+                "./resource/image/test.123 ->/data/local/tmp/",
+                "./resource/image/test.gif ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./resource/image/moving_test.gif ->/data/local/tmp/",
+                "./resource/image/test.ico ->/data/local/tmp/",
+                "./resource/image/test.svg ->/data/local/tmp/",
+                "./resource/image/test.dng ->/data/local/tmp/",
+                "./resource/image/test.jpeg ->/data/local/tmp/",
+                "./resource/image/moving_test.webp ->/data/local/tmp/",
+                "./resource/image/test_large.webp ->/data/local/tmp/",
+                "./resource/image/test_large.svg ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_jpg.jpeg ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_jpeg.png ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_png.gif ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_gif.tiff ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_webp.ico ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_ico.svg ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_svg.bmp ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_bmp.dng ->/data/local/tmp/",
+                "./resource/wrongSuffixImage/wrong_suffix_dng.jpg ->/data/local/tmp/",
+                "./setup_image_image_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
-            "run-command": []
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_image_static_test.sh",
+                "sh /data/local/tmp/setup_image_image_static_test.sh"
+            ],
+            "teardown-command": []
         }
     ]
 }

@@ -17,34 +17,34 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files/*",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test_tree_400.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_tree_411.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_tree_420.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_tree_422.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_tree_440.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_tree_444.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_treeodd_400.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_treeodd_411.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_treeodd_420.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_treeodd_422.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_treeodd_440.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test_treeodd_444.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/test2.arw ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/JPG-480360-YUV311.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/JPG-480361-YUV311.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/JPG-481360-YUV311.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files",
-                "./resource/image/JPG-481361-YUV311.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageDecodeOptionsYuvRaw.Static/haps/entry/files"
+                "./resource/image/test_tree_400.jpg ->/data/local/tmp/",
+                "./resource/image/test_tree_411.jpg ->/data/local/tmp/",
+                "./resource/image/test_tree_420.jpg ->/data/local/tmp/",
+                "./resource/image/test_tree_422.jpg ->/data/local/tmp/",
+                "./resource/image/test_tree_440.jpg ->/data/local/tmp/",
+                "./resource/image/test_tree_444.jpg ->/data/local/tmp/",
+                "./resource/image/test_treeodd_400.jpg ->/data/local/tmp/",
+                "./resource/image/test_treeodd_411.jpg ->/data/local/tmp/",
+                "./resource/image/test_treeodd_420.jpg ->/data/local/tmp/",
+                "./resource/image/test_treeodd_422.jpg ->/data/local/tmp/",
+                "./resource/image/test_treeodd_440.jpg ->/data/local/tmp/",
+                "./resource/image/test_treeodd_444.jpg ->/data/local/tmp/",
+                "./resource/image/test2.arw ->/data/local/tmp/",
+                "./resource/image/JPG-480360-YUV311.jpg ->/data/local/tmp/",
+                "./resource/image/JPG-481360-YUV311.jpg ->/data/local/tmp/",
+                "./resource/image/JPG-481361-YUV311.jpg ->/data/local/tmp/",
+                "./resource/image/JPG-480361-YUV311.jpg ->/data/local/tmp/",
+                "./setup_image_decodeOptionsYuvRaw_static_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_decodeOptionsYuvRaw_static_test.sh",
+                "sh /data/local/tmp/setup_image_decodeOptionsYuvRaw_static_test.sh"
             ]
         }
     ]

@@ -17,26 +17,19 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.Webp.Static/haps/entry/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.Webp.Static/haps/entry/files/*",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.Webp.Static/haps/entry/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "push": [
-                "./resource/image/test_large.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Webp.Static/haps/entry/files",
-                "./resource/image/moving_test.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Webp.Static/haps/entry/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Webp.Static/haps/entry/files"
+                "./resource/image/test_large.webp ->/data/local/tmp/",
+                "./resource/image/moving_test.webp ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./setup_image_webpJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.Webp.Static/haps/entry/*"
+                "chmod 755 /data/local/tmp/setup_image_webpJs_static_test.sh",
+                "sh /data/local/tmp/setup_image_webpJs_static_test.sh"
             ]
         }
     ]

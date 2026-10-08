@@ -16,27 +16,21 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files/",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test_exif.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files",
-                "./resource/image/test.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files",
-                "./resource/image/moving_test_loop1.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files",
-                "./resource/image/modifyBuffer.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files"
+                "./resource/image/test_exif.jpg ->/data/local/tmp/",
+                "./resource/image/test.tiff ->/data/local/tmp/",
+                "./resource/image/moving_test_loop1.gif ->/data/local/tmp/",
+                "./resource/image/modifyBuffer.jpg ->/data/local/tmp/",
+                "./setup_image_modifyPropertyJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/*"
+                "chmod 755 /data/local/tmp/setup_image_modifyPropertyJs_static_test.sh",
+                "sh /data/local/tmp/setup_image_modifyPropertyJs_static_test.sh"
             ],
             "teardown-command": [
                 "rm -rf /data/app/el2/100/base/ohos.acts.multimedia.image.ModifyProperty.Static/haps/entry/files/*"

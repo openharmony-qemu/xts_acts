@@ -16,32 +16,26 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/incomplete_test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/0801_sdr2.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test_dng.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/fake_large_size_test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/moving_test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/files"
+                "./resource/image/incomplete_test.gif ->/data/local/tmp/",
+                "./resource/image/0801_sdr2.heic ->/data/local/tmp/",
+                "./resource/image/test_dng.dng ->/data/local/tmp/",
+                "./resource/image/test.png ->/data/local/tmp/",
+                "./resource/image/test.bmp ->/data/local/tmp/",
+                "./resource/image/fake_large_size_test.gif ->/data/local/tmp/",
+                "./resource/image/moving_test.gif ->/data/local/tmp/",
+                "./resource/image/test.gif ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./setup_image_gifJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.Static/haps/entry/*"
+                "chmod 755 /data/local/tmp/setup_image_gifJs_static_test.sh",
+                "sh /data/local/tmp/setup_image_gifJs_static_test.sh"
             ],
             "teardown-command": [
                 "rm -rf /data/app/el2/100/base/ohos.acts.multimedia.image.Static/*"
