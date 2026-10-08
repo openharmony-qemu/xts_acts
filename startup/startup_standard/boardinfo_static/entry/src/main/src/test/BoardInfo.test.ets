@@ -19,7 +19,7 @@ import boardInfo from '@ohos.boardInfo'
 
 export default function BoardInfoTest() {
   describe("BoardInfoTest", (): void => {
-    const hasSysCap: boolean = true;
+    const hasSysCap: boolean = canIUse('SystemCapability.Startup.BoardInfo');
 
     beforeAll((): void => {
       console.info('BoardInfoTest beforeAll');
@@ -43,7 +43,7 @@ export default function BoardInfoTest() {
       }
       let cpuId = boardInfo.cpuId;
       console.info('the value of boardInfo.cpuId is :' + cpuId);
-      expect(cpuId).assertInstanceOf('String');
+      expect(typeof cpuId).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0100 : end');
     })
@@ -66,7 +66,7 @@ export default function BoardInfoTest() {
       }
       let cpuArch = boardInfo.cpuArch;
       console.info('the value of boardInfo.cpuArch is :' + cpuArch);
-      expect(cpuArch).assertInstanceOf('String');
+      expect(typeof cpuArch).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0200 : end');
     })
@@ -89,7 +89,7 @@ export default function BoardInfoTest() {
       }
       let cpuVendor = boardInfo.cpuVendor;
       console.info('the value of boardInfo.cpuVendor is :' + cpuVendor);
-      expect(cpuVendor).assertInstanceOf('String');
+      expect(typeof cpuVendor).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0300 : end');
     })
@@ -97,7 +97,7 @@ export default function BoardInfoTest() {
     /**
      * @tc.name   boardinfo_test_static_0400
      * @tc.number SUB_STARTUP_JS_BOARDINFO_0400
-     * @tc.desc   Get the boardSn
+     * @tc.desc   Get the boardSn with permission, expect success or permission denied error 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -113,7 +113,7 @@ export default function BoardInfoTest() {
       try {
         let boardSn = boardInfo.boardSn;
         console.info('the value of boardInfo.boardSn is :' + boardSn);
-        expect(boardSn).assertInstanceOf('String');
+        expect(typeof boardSn).assertEqual('string');
       } catch (err) {
         console.info('boardInfo.boardSn permission denied, code: ' + err.code);
         expect(err.code).assertEqual(201);
@@ -140,7 +140,7 @@ export default function BoardInfoTest() {
       }
       let boardVendor = boardInfo.boardVendor;
       console.info('the value of boardInfo.boardVendor is :' + boardVendor);
-      expect(boardVendor).assertInstanceOf('String');
+      expect(typeof boardVendor).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0500 : end');
     })
@@ -163,7 +163,7 @@ export default function BoardInfoTest() {
       }
       let boardName = boardInfo.boardName;
       console.info('the value of boardInfo.boardName is :' + boardName);
-      expect(boardName).assertInstanceOf('String');
+      expect(typeof boardName).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0600 : end');
     })
@@ -186,7 +186,7 @@ export default function BoardInfoTest() {
       }
       let biosVendor = boardInfo.biosVendor;
       console.info('the value of boardInfo.biosVendor is :' + biosVendor);
-      expect(biosVendor).assertInstanceOf('String');
+      expect(typeof biosVendor).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0700 : end');
     })
@@ -209,7 +209,7 @@ export default function BoardInfoTest() {
       }
       let biosVersion = boardInfo.biosVersion;
       console.info('the value of boardInfo.biosVersion is :' + biosVersion);
-      expect(biosVersion).assertInstanceOf('String');
+      expect(typeof biosVersion).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0800 : end');
     })
@@ -232,7 +232,7 @@ export default function BoardInfoTest() {
       }
       let biosDate = boardInfo.biosDate;
       console.info('the value of boardInfo.biosDate is :' + biosDate);
-      expect(biosDate).assertInstanceOf('String');
+      expect(typeof biosDate).assertEqual('string');
       done();
       console.info('boardinfo_test_static_0900 : end');
     })
