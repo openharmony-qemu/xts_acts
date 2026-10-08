@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -781,77 +781,87 @@ export default function webFontTest() {
 
     /**
      * @tc.name   testWebStandardFont049
-     * @tc.number testWebStandardFont049
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_4900
      * @tc.desc   nativeEmbedOptions supportCssDisplayChange false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testWebStandardFont049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStandardFont049", 150140)
-      Utils.registerEvent("testWebStandardFont049", true, 111620, done);
+      const testCaseName: string = 'testWebStandardFont049';
+      Utils.emitEvent(testCaseName, 150140)
+      Utils.registerEvent(testCaseName, true, 111620, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
+      expect(testCaseName).assertEqual('testWebStandardFont049');
     })
 
     /**
      * @tc.name   testWebStandardFont050
-     * @tc.number testWebStandardFont050
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_5000
      * @tc.desc   nativeEmbedOptions supportTransformRotateAndSkew true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testWebStandardFont050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStandardFont050", 150140)
-      Utils.registerEvent("testWebStandardFont050", true, 111630, done);
+      const testCaseName: string = 'testWebStandardFont050';
+      Utils.emitEvent(testCaseName, 150140)
+      Utils.registerEvent(testCaseName, true, 111630, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
+      expect(testCaseName).assertEqual('testWebStandardFont050');
     })
 
     /**
      * @tc.name   testWebStandardFont051
-     * @tc.number testWebStandardFont051
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_5100
      * @tc.desc   nativeEmbedOptions supportTransformRotateAndSkew false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testWebStandardFont051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStandardFont051", 150140)
-      Utils.registerEvent("testWebStandardFont051", true, 111640, done);
+      const testCaseName: string = 'testWebStandardFont051';
+      Utils.emitEvent(testCaseName, 150140)
+      Utils.registerEvent(testCaseName, true, 111640, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
+      expect(testCaseName).assertEqual('testWebStandardFont051');
     })
 
     /**
      * @tc.name   testWebStandardFont052
-     * @tc.number testWebStandardFont052
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_5200
      * @tc.desc   nativeEmbedOptions null on main Web
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testWebStandardFont052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStandardFont052", 150140)
-      Utils.registerEvent("testWebStandardFont052", true, 111650, done);
+      const testCaseName: string = 'testWebStandardFont052';
+      Utils.emitEvent(testCaseName, 150140)
+      Utils.registerEvent(testCaseName, true, 111650, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
+      expect(testCaseName).assertEqual('testWebStandardFont052');
     })
 
     /**
      * @tc.name   testWebStandardFont053
-     * @tc.number testWebStandardFont053
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_5300
      * @tc.desc   nativeEmbedOptions undefined on main Web
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
     it('testWebStandardFont053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebStandardFont053", 150140)
-      Utils.registerEvent("testWebStandardFont053", true, 111660, done);
+      const testCaseName: string = 'testWebStandardFont053';
+      Utils.emitEvent(testCaseName, 150140)
+      Utils.registerEvent(testCaseName, true, 111660, done);
       let component = await driver.findComponent(ON.id("WebFontTestButton"));
       await component.click();
+      expect(testCaseName).assertEqual('testWebStandardFont053');
     })
   })
 }

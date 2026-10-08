@@ -187,6 +187,13 @@ struct WebMediaPlayGestureAccess {
               Utils.emitEvent("success", 300744)
               break;
             }
+            /*
+            case "nativeEmbedOptionsNull" :{
+              this.options = undefined
+              Utils.emitEvent("success", 300749)
+              break;
+            }
+            */
             case "nativeEmbedOptionsCssDisplayFalse" :{
               this.options = { supportCssDisplayChange: false }
               Utils.emitEvent("success", 300750)

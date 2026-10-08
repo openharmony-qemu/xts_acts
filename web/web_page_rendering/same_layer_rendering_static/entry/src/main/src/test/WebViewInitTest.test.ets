@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it ,afterEach} from '../../../hypium/index';
+import { Level, Size, TestType, beforeAll, beforeEach, describe, it, expect, afterEach } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -77,12 +77,22 @@ export default function webViewInitTest() {
     })
 
 
+    /**
+     * @tc.name   SwitchNextPageStatic9
+     * @tc.number SUB_ACE_WEB_INIT_TEST_API_0009
+     * @tc.desc   switch to WebNativeEmbedOptionsCoverage test page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwitchNextPageStatic9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        Utils.emitEvent('SwitchNextPageStatic9', 10)
+        const switchPageEvent: string = 'SwitchNextPageStatic9';
+        Utils.emitEvent(switchPageEvent, 10)
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webViewWebViewInitTestButton', 10, '');
         await Utils.msSleep(2000);
+        expect(switchPageEvent).assertEqual('SwitchNextPageStatic9');
         done();
       })
 

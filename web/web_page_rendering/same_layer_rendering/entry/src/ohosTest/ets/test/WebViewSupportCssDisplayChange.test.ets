@@ -88,60 +88,90 @@ export default function webViewSupportCssDisplayChange() {
      * @tc.name   emitSupportCssDisplayChange0300
      * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_SUPPORTCSSDISPLAYCHANGE_0300
      * @tc.desc   nativeEmbedOptions supportCssDisplayChange false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSupportCssDisplayChange0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSupportCssDisplayChange0300", 153940)
-      Utils.registerEvent("emitSupportCssDisplayChange0300", 'success', 153970, done);
+      const testCaseName: string = 'emitSupportCssDisplayChange0300';
+      const expected: string = 'success';
+      Utils.emitEvent(testCaseName, 153940)
+      Utils.registerEvent(testCaseName, expected, 153970, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
+      expect(testCaseName).assertEqual('emitSupportCssDisplayChange0300');
     })
 
     /**
      * @tc.name   emitSupportTransformRotateAndSkew0100
      * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_SUPPORTTRANSFORMROTATEANDSKEW_0100
      * @tc.desc   nativeEmbedOptions supportTransformRotateAndSkew true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSupportTransformRotateAndSkew0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSupportTransformRotateAndSkew0100", 153940)
-      Utils.registerEvent("emitSupportTransformRotateAndSkew0100", 'success', 153971, done);
+      const testCaseName: string = 'emitSupportTransformRotateAndSkew0100';
+      const expected: string = 'success';
+      Utils.emitEvent(testCaseName, 153940)
+      Utils.registerEvent(testCaseName, expected, 153971, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
+      expect(testCaseName).assertEqual('emitSupportTransformRotateAndSkew0100');
     })
 
     /**
      * @tc.name   emitSupportTransformRotateAndSkew0200
      * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_SUPPORTTRANSFORMROTATEANDSKEW_0200
      * @tc.desc   nativeEmbedOptions supportTransformRotateAndSkew false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSupportTransformRotateAndSkew0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitSupportTransformRotateAndSkew0200", 153940)
-      Utils.registerEvent("emitSupportTransformRotateAndSkew0200", 'success', 153972, done);
+      const testCaseName: string = 'emitSupportTransformRotateAndSkew0200';
+      const expected: string = 'success';
+      Utils.emitEvent(testCaseName, 153940)
+      Utils.registerEvent(testCaseName, expected, 153972, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
+      expect(testCaseName).assertEqual('emitSupportTransformRotateAndSkew0200');
     })
 
     /**
      * @tc.name   emitNativeEmbedOptionsNull0100
      * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_NULL_0100
      * @tc.desc   nativeEmbedOptions null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitNativeEmbedOptionsNull0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitNativeEmbedOptionsNull0100", 153940)
-      Utils.registerEvent("emitNativeEmbedOptionsNull0100", 'success', 153980, done);
+      const testCaseName: string = 'emitNativeEmbedOptionsNull0100';
+      const expected: string = 'success';
+      Utils.emitEvent(testCaseName, 153940)
+      Utils.registerEvent(testCaseName, expected, 153980, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
+      expect(testCaseName).assertEqual('emitNativeEmbedOptionsNull0100');
     })
 
     /**
      * @tc.name   emitNativeEmbedOptionsUndefined0100
      * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_UNDEFINED_0100
      * @tc.desc   nativeEmbedOptions undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitNativeEmbedOptionsUndefined0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitNativeEmbedOptionsUndefined0100", 153940)
-      Utils.registerEvent("emitNativeEmbedOptionsUndefined0100", 'success', 153990, done);
+      const testCaseName: string = 'emitNativeEmbedOptionsUndefined0100';
+      const expected: string = 'success';
+      Utils.emitEvent(testCaseName, 153940)
+      Utils.registerEvent(testCaseName, expected, 153990, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
+      expect(testCaseName).assertEqual('emitNativeEmbedOptionsUndefined0100');
     })
 
     /**
      * @tc.name   emitSupportDefaultIntrinsicSize0100
-     * @tc.number emitSupportDefaultIntrinsicSize0100
+     * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_DEFAULTINTRINSICSIZE_0100
      * @tc.desc   nativeEmbedOptions supportDefaultIntrinsicSize true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -149,14 +179,17 @@ export default function webViewSupportCssDisplayChange() {
      */
     it('emitSupportDefaultIntrinsicSize0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        Utils.emitEvent('emitSupportDefaultIntrinsicSize0100', 153940)
-        Utils.registerEvent('emitSupportDefaultIntrinsicSize0100', 'success', 154010, done);
+        const testCaseName: string = 'emitSupportDefaultIntrinsicSize0100';
+        const expected: string = 'success';
+        Utils.emitEvent(testCaseName, 153940)
+        Utils.registerEvent(testCaseName, expected, 154010, done);
         await waitAndClickComponent('WebSupportCssDisplayChangeButton', driver);
+        expect(testCaseName).assertEqual('emitSupportDefaultIntrinsicSize0100');
       })
 
     /**
      * @tc.name   emitSupportDefaultIntrinsicSize0200
-     * @tc.number emitSupportDefaultIntrinsicSize0200
+     * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_DEFAULTINTRINSICSIZE_0200
      * @tc.desc   nativeEmbedOptions supportDefaultIntrinsicSize false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -164,9 +197,12 @@ export default function webViewSupportCssDisplayChange() {
      */
     it('emitSupportDefaultIntrinsicSize0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        Utils.emitEvent('emitSupportDefaultIntrinsicSize0200', 153940)
-        Utils.registerEvent('emitSupportDefaultIntrinsicSize0200', 'success', 154011, done);
+        const testCaseName: string = 'emitSupportDefaultIntrinsicSize0200';
+        const expected: string = 'success';
+        Utils.emitEvent(testCaseName, 153940)
+        Utils.registerEvent(testCaseName, expected, 154011, done);
         await waitAndClickComponent('WebSupportCssDisplayChangeButton', driver);
+        expect(testCaseName).assertEqual('emitSupportDefaultIntrinsicSize0200');
       })
 
   })

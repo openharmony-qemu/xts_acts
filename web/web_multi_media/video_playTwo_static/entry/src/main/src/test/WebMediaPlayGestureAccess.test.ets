@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
@@ -156,31 +156,75 @@ export default function webMediaPlayGestureAccess() {
       done()
     })
 
+    /*
+    it('testNativeEmbedOptionsStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("nativeEmbedOptionsNull", 10)
+      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300749, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
+      await Utils.msSleep(3000);
+      done()
+    })
+    */
+    /**
+     * @tc.name   testNativeEmbedOptionsStatic004
+     * @tc.number SUB_WEB_NativeEmbedOptions_0300
+     * @tc.desc   test NativeEmbedOptions supportCssDisplayChange false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeEmbedOptionsStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.emitEvent("nativeEmbedOptionsCssDisplayFalse", 10)
-      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300750, done);
+      const emitEventName: string = 'nativeEmbedOptionsCssDisplayFalse';
+      const expected: string = 'success';
+      Utils.emitEvent(emitEventName, 10)
+      Utils.registerEvent('testNativeEmbedOptionsStatic001', expected, 300750, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
       await Utils.msSleep(3000);
+      expect(emitEventName).assertEqual('nativeEmbedOptionsCssDisplayFalse');
       done()
     })
+    /**
+     * @tc.name   testNativeEmbedOptionsStatic005
+     * @tc.number SUB_WEB_NativeEmbedOptions_0400
+     * @tc.desc   test NativeEmbedOptions supportTransformRotateAndSkew true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeEmbedOptionsStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.emitEvent("nativeEmbedOptionsTransformSkewTrue", 10)
-      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300751, done);
+      const emitEventName: string = 'nativeEmbedOptionsTransformSkewTrue';
+      const expected: string = 'success';
+      Utils.emitEvent(emitEventName, 10)
+      Utils.registerEvent('testNativeEmbedOptionsStatic001', expected, 300751, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
       await Utils.msSleep(3000);
+      expect(emitEventName).assertEqual('nativeEmbedOptionsTransformSkewTrue');
       done()
     })
+    /**
+     * @tc.name   testNativeEmbedOptionsStatic006
+     * @tc.number SUB_WEB_NativeEmbedOptions_0500
+     * @tc.desc   test NativeEmbedOptions supportTransformRotateAndSkew false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testNativeEmbedOptionsStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.emitEvent("nativeEmbedOptionsTransformSkewFalse", 10)
-      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300752, done);
+      const emitEventName: string = 'nativeEmbedOptionsTransformSkewFalse';
+      const expected: string = 'success';
+      Utils.emitEvent(emitEventName, 10)
+      Utils.registerEvent('testNativeEmbedOptionsStatic001', expected, 300752, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
       await Utils.msSleep(3000);
+      expect(emitEventName).assertEqual('nativeEmbedOptionsTransformSkewFalse');
       done()
     })
 

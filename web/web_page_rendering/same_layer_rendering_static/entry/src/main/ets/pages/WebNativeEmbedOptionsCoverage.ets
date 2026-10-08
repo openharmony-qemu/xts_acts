@@ -74,6 +74,15 @@ struct WebNativeEmbedOptionsCoverage {
               Utils.emitEvent('success', 37103);
               break;
             }
+            /*
+            case 'testNativeEmbedOptionsNull': {
+              this.embedOptions = undefined;
+              this.isPageEnd = -1;
+              this.controller.refresh();
+              Utils.emitEvent('success', 37104);
+              break;
+            }
+            */
             case 'testNativeEmbedOptionsUndefined': {
               this.embedOptions = undefined;
               this.isPageEnd = -1;
