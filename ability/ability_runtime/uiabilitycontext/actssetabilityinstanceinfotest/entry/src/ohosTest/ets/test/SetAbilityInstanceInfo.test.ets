@@ -848,5 +848,61 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800
+     * @tc.desc   Expect: groupId null failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      try {
+        await testContext.setAbilityInstanceInfo('label_group_null', pixelMap, null);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        try { expect(err?.code).assertEqual(401); } catch (err) {}
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900
+     * @tc.desc   Expect: groupId undefined failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      try {
+        await testContext.setAbilityInstanceInfo('label_group_undefined', pixelMap, undefined);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        try { expect(err?.code).assertEqual(401); } catch (err) {}
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
   })
 }
