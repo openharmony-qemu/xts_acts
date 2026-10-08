@@ -156,20 +156,9 @@ export default function webMediaPlayGestureAccess() {
       done()
     })
 
-    /*
-    it('testNativeEmbedOptionsStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(2000);
-      Utils.emitEvent("nativeEmbedOptionsNull", 10)
-      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300749, done);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
-      await Utils.msSleep(3000);
-      done()
-    })
-    */
     /**
      * @tc.name   testNativeEmbedOptionsStatic004
-     * @tc.number SUB_WEB_NativeEmbedOptions_0300
+     * @tc.number SUB_WEB_MEDIAPLAYGESTUREACCESS_NATIVEEMBED_CSSDISPLAY_0600
      * @tc.desc   test NativeEmbedOptions supportCssDisplayChange false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -189,7 +178,7 @@ export default function webMediaPlayGestureAccess() {
     })
     /**
      * @tc.name   testNativeEmbedOptionsStatic005
-     * @tc.number SUB_WEB_NativeEmbedOptions_0400
+     * @tc.number SUB_WEB_MEDIAPLAYGESTUREACCESS_NATIVEEMBED_TRANSFORMSKEW_TRUE_0700
      * @tc.desc   test NativeEmbedOptions supportTransformRotateAndSkew true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +198,7 @@ export default function webMediaPlayGestureAccess() {
     })
     /**
      * @tc.name   testNativeEmbedOptionsStatic006
-     * @tc.number SUB_WEB_NativeEmbedOptions_0500
+     * @tc.number SUB_WEB_MEDIAPLAYGESTUREACCESS_NATIVEEMBED_TRANSFORMSKEW_FALSE_0800
      * @tc.desc   test NativeEmbedOptions supportTransformRotateAndSkew false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

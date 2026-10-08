@@ -105,19 +105,6 @@ export default function webNativeEmbedOptionsCoverage() {
         done();
       })
 
-    // 静态 API 不接受 null 字面量；null 语义暂不测，先保编译通过
-    /*
-    it('testNativeEmbedOptionsNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent('testNativeEmbedOptionsNull', 10)
-        Utils.registerEvent('testNativeEmbedOptionsNull', 'success', 37104, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('WebNativeEmbedOptionsCoverageButton', 10, '');
-        await Utils.msSleep(2000);
-        done();
-      })
-    */
-
     /**
      * @tc.name   testNativeEmbedOptionsUndefined
      * @tc.number SUB_WEB_NATIVEEMBEDOPTIONS_COVERAGE_0400

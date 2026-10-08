@@ -781,7 +781,7 @@ export default function webFontTest() {
 
     /**
      * @tc.name   testWebStandardFont049
-     * @tc.number SUB_WEB_WEBSTANDARDFONT_4900
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_NATIVEEMBED_CSSDISPLAY_0490
      * @tc.desc   nativeEmbedOptions supportCssDisplayChange false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -798,7 +798,7 @@ export default function webFontTest() {
 
     /**
      * @tc.name   testWebStandardFont050
-     * @tc.number SUB_WEB_WEBSTANDARDFONT_5000
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_NATIVEEMBED_TRANSFORMSKEW_TRUE_0501
      * @tc.desc   nativeEmbedOptions supportTransformRotateAndSkew true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -815,7 +815,7 @@ export default function webFontTest() {
 
     /**
      * @tc.name   testWebStandardFont051
-     * @tc.number SUB_WEB_WEBSTANDARDFONT_5100
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_NATIVEEMBED_TRANSFORMSKEW_FALSE_0511
      * @tc.desc   nativeEmbedOptions supportTransformRotateAndSkew false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -832,7 +832,7 @@ export default function webFontTest() {
 
     /**
      * @tc.name   testWebStandardFont052
-     * @tc.number SUB_WEB_WEBSTANDARDFONT_5200
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_NATIVEEMBED_NULL_0521
      * @tc.desc   nativeEmbedOptions null on main Web
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -849,7 +849,7 @@ export default function webFontTest() {
 
     /**
      * @tc.name   testWebStandardFont053
-     * @tc.number SUB_WEB_WEBSTANDARDFONT_5300
+     * @tc.number SUB_WEB_WEBSTANDARDFONT_NATIVEEMBED_UNDEFINED_0531
      * @tc.desc   nativeEmbedOptions undefined on main Web
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
