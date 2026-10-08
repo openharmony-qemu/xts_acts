@@ -76,5 +76,15 @@ export default function webViewInitTest() {
       done();
     })
 
+
+    it('SwitchNextPageStatic9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('SwitchNextPageStatic9', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('webViewWebViewInitTestButton', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
   })
 }
