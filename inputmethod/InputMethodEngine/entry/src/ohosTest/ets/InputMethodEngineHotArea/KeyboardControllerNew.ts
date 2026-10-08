@@ -224,7 +224,6 @@ export class KeyboardControllerNew {
         let length: number = 4;
         let text = await this.InputClient.getForward(length);
         console.info(TAG + `====>Sub_InputMethod_IME_HotAreaTest_0200 getForward success text:${text}`);
-        await this.InputClient.deleteForward(length);
         if (text === '1234') {
           commonEventPublishData = {
             data: 'SUCCESS'
