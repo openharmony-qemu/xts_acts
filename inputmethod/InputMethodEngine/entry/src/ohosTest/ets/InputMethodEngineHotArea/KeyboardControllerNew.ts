@@ -217,8 +217,10 @@ export class KeyboardControllerNew {
         console.info(TAG + `====>panelFlag ${panelFlag}, panelRect ${JSON.stringify(panelRect1)}`);
         await this.softKeyboardPanel.adjustPanelRect(panelFlag, panelRect1);
         console.info(TAG + `====>adjustPanelRect success`);
-      }
-      setTimeout(async () => {
+      };
+      let count: number = 0;
+      let t = setInterval(async () => {
+        count += 1;
         let length: number = 4;
         let text = await this.InputClient.getForward(length);
         console.info(TAG + `====>Sub_InputMethod_IME_HotAreaTest_0200 getForward success text:${text}`);
@@ -227,9 +229,13 @@ export class KeyboardControllerNew {
           commonEventPublishData = {
             data: 'SUCCESS'
           };
+          commoneventmanager.publish('Sub_InputMethod_IME_HotAreaTest_0200', commonEventPublishData, this.publishCallback);
+        };
+        if (count >= 5) {
+          clearInterval(t);
+          commoneventmanager.publish('Sub_InputMethod_IME_HotAreaTest_0200', commonEventPublishData, this.publishCallback);
         }
-        commoneventmanager.publish('Sub_InputMethod_IME_HotAreaTest_0200', commonEventPublishData, this.publishCallback);
-      }, 8000);
+      }, 3000);
       
     } catch (err) {
       console.info(TAG + `====>Sub_InputMethod_IME_HotAreaTest_0200 catch code: ${err.code}, message: ${err.message}`);
