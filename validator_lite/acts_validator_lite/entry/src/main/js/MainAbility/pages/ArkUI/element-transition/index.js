@@ -16,7 +16,7 @@ export default {
     },
 
     getItem() {
-        return getApp().data.testItems['element_transition'];
+        return getApp().data.testItems.element_transition;
     },
 
     recordError(msg) {
@@ -27,10 +27,10 @@ export default {
     // 约定：必须先调用 startTransition，成功后再更新状态变量；
     // 面板可见性由转场引擎统一落地，JS 状态仅作记录，不驱动视图
     switchDual(showKey, stageRef, aRef, bRef) {
-        var next = (this[showKey] === 'a') ? 'b' : 'a';
+        const next = (this[showKey] === 'a') ? 'b' : 'a';
         try {
-            var incomingRef = (next === 'a') ? aRef : bRef;
-            var incoming = this.$refs[incomingRef];
+            const incomingRef = (next === 'a') ? aRef : bRef;
+            const incoming = this.$refs[incomingRef];
             this.$refs[stageRef].startTransition(incoming);
             this[showKey] = next;
         } catch (e) {
@@ -58,9 +58,9 @@ export default {
     },
 
     switchShared() {
-        var rectA = { x: 30, y: 30, w: 40, h: 40 };
-        var rectB = { x: 130, y: 20, w: 80, h: 80 };
-        var toB = (this.sharedShow === 'a');
+        const rectA = { x: 30, y: 30, w: 40, h: 40 };
+        const rectB = { x: 130, y: 20, w: 80, h: 80 };
+        const toB = (this.sharedShow === 'a');
         try {
             this.$refs.sharedStage.startTransition({
                 incoming: this.$refs[toB ? 'sharedB' : 'sharedA'],
