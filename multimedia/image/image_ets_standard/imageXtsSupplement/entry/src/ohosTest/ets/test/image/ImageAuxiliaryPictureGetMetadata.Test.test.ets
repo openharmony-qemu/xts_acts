@@ -193,8 +193,8 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
     })
 
     /**
-     * @tc.number    : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
      * @tc.name      : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
+     * @tc.number    : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
      * @tc.desc      : AuxiliaryPicture.getMetadata request EXIF_METADATA on GAINMAP auxiliary picture, expect 7600202
      * @tc.size      : MEDIUM
      * @tc.type      : Function
@@ -231,8 +231,8 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
     });
 
     /**
-     * @tc.number    : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
      * @tc.name      : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
+     * @tc.number    : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
      * @tc.desc      : AuxiliaryPicture.getMetadata request FRAGMENT_METADATA on GAINMAP (non-FRAGMENT_MAP) auxiliary picture, expect 7600202
      * @tc.size      : MEDIUM
      * @tc.type      : Function
