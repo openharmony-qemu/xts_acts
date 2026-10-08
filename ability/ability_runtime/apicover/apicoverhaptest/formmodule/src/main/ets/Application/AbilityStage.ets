@@ -24,6 +24,10 @@ export default class MyAbilityStage extends AbilityStage {
 
   onAcceptWant(want: Want): string {
     console.log('[Demo] MyAbilityStage onAcceptWant called want:' + JSON.stringify(want));
+    if ((want.parameters == undefined) || (want.parameters.startId == undefined)) {
+      console.log('[Demo] MyAbilityStage onAcceptWant param err');
+      return '';
+    }
     let abilityId: string = want.parameters.startId.toString();
     return abilityId;
   }
