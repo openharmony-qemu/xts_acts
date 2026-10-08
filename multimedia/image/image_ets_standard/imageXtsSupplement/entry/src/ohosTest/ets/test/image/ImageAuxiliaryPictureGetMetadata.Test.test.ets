@@ -193,15 +193,15 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
     })
 
     /**
-     * @tc.name      : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
-     * @tc.number    : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
-     * @tc.desc      : AuxiliaryPicture.getMetadata request EXIF_METADATA on GAINMAP auxiliary picture, expect 7600202
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUBB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
+     * @tc.number SUBB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
+     * @tc.desc   AuxiliaryPicture.getMetadata request EXIF_METADATA on GAINMAP auxiliary picture, expect 7600202
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
-    it('SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100';
+    it('SUBB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUBB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100';
       const fixture = createPictureWithGAINMAPAux();
       try {
         if (fixture.auxiliary == null) {
@@ -231,15 +231,15 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
     });
 
     /**
-     * @tc.name      : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
-     * @tc.number    : SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
-     * @tc.desc      : AuxiliaryPicture.getMetadata request FRAGMENT_METADATA on GAINMAP (non-FRAGMENT_MAP) auxiliary picture, expect 7600202
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
+     * @tc.desc   AuxiliaryPicture.getMetadata request FRAGMENT_METADATA on GAINMAP (non-FRAGMENT_MAP) auxiliary picture, expect 7600202
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
      */
-    it('SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200';
+    it('SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200';
       const fixture = createPictureWithGAINMAPAux();
       try {
         if (fixture.auxiliary == null) {
