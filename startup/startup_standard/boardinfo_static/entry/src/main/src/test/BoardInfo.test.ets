@@ -19,8 +19,6 @@ import boardInfo from '@ohos.boardInfo'
 
 export default function BoardInfoTest() {
   describe("BoardInfoTest", (): void => {
-    const hasSysCap: boolean = canIUse('SystemCapability.Startup.BoardInfo');
-
     beforeAll((): void => {
       console.info('BoardInfoTest beforeAll');
     })
@@ -35,12 +33,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0100 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let cpuId = boardInfo.cpuId;
       console.info('the value of boardInfo.cpuId is :' + cpuId);
       expect(typeof cpuId).assertEqual('string');
@@ -58,12 +50,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0200 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let cpuArch = boardInfo.cpuArch;
       console.info('the value of boardInfo.cpuArch is :' + cpuArch);
       expect(typeof cpuArch).assertEqual('string');
@@ -81,12 +67,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0300 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let cpuVendor = boardInfo.cpuVendor;
       console.info('the value of boardInfo.cpuVendor is :' + cpuVendor);
       expect(typeof cpuVendor).assertEqual('string');
@@ -104,12 +84,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0400 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       try {
         let boardSn = boardInfo.boardSn;
         console.info('the value of boardInfo.boardSn is :' + boardSn);
@@ -132,12 +106,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0500 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let boardVendor = boardInfo.boardVendor;
       console.info('the value of boardInfo.boardVendor is :' + boardVendor);
       expect(typeof boardVendor).assertEqual('string');
@@ -155,12 +123,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0600 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let boardName = boardInfo.boardName;
       console.info('the value of boardInfo.boardName is :' + boardName);
       expect(typeof boardName).assertEqual('string');
@@ -178,12 +140,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0700 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let biosVendor = boardInfo.biosVendor;
       console.info('the value of boardInfo.biosVendor is :' + biosVendor);
       expect(typeof biosVendor).assertEqual('string');
@@ -201,12 +157,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0800 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let biosVersion = boardInfo.biosVersion;
       console.info('the value of boardInfo.biosVersion is :' + biosVersion);
       expect(typeof biosVersion).assertEqual('string');
@@ -224,12 +174,6 @@ export default function BoardInfoTest() {
      */
     it('boardinfo_test_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('boardinfo_test_static_0900 start');
-      if (!hasSysCap) {
-        console.info('not supported, skip');
-        expect(true).assertTrue();
-        done();
-        return;
-      }
       let biosDate = boardInfo.biosDate;
       console.info('the value of boardInfo.biosDate is :' + biosDate);
       expect(typeof biosDate).assertEqual('string');
