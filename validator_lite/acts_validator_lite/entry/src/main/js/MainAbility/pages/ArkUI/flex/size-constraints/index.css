@@ -1,0 +1,167 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24px;
+    background-color: #20242b;
+}
+
+.content-title {
+    width: 90%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page-title {
+    width: 300px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.help-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+}
+
+.case-list {
+    width: 92%;
+    height: 65%;
+    scrollbar: on;
+}
+
+.case {
+    width: 100%;
+    height: 170px;
+    flex-direction: column;
+}
+
+.case-fixed {
+    height: 190px;
+}
+
+.case-title {
+    width: 100%;
+    height: 32px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.hint {
+    width: 100%;
+    height: 36px;
+    color: #d6e2f0;
+    font-size: 13px;
+}
+
+.stage {
+    width: 600px;
+    background-color: #3d4652;
+    align-items: center;
+}
+
+.stage-fixed {
+    height: 120px;
+    flex-direction: row;
+    padding-left: 20px;
+}
+
+.stage-row {
+    height: 88px;
+    flex-direction: row;
+}
+
+.stage-ratio {
+    height: 130px;
+    flex-direction: row;
+    padding-left: 20px;
+}
+
+.stage text {
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.fixed-box {
+    width: 240px;
+    height: 100px;
+    background-color: #2f80ed;
+}
+
+.shrink-limited {
+    width: 360px;
+    height: 70px;
+    min-width: 300px;
+    flex-shrink: 1;
+    background-color: #27ae60;
+}
+
+.shrink-normal {
+    width: 360px;
+    height: 70px;
+    flex-shrink: 1;
+    background-color: #e67e22;
+}
+
+.grow-limited {
+    width: 100px;
+    height: 70px;
+    max-width: 300px;
+    flex-grow: 1;
+    background-color: #9b51e0;
+}
+
+.grow-fixed {
+    width: 100px;
+    height: 70px;
+    background-color: #eb5757;
+}
+
+.min-height-box {
+    width: 280px;
+    height: 40px;
+    min-height: 100px;
+    background-color: #219653;
+}
+
+.ratio-box {
+    width: 180px;
+    background-color: #2d9cdb;
+}
+
+.ratio-integer {
+    aspect-ratio: 2;
+}
+
+.ratio-decimal {
+    aspect-ratio: 1.5;
+    background-color: #f2994a;
+}
+
+.bottom-bt {
+    width: 60%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.button {
+    width: 31%;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.button:active {
+    background-color: blueviolet;
+}

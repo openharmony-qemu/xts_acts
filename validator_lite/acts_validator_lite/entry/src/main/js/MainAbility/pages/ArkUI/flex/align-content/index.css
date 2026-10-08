@@ -1,0 +1,272 @@
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+.header {
+    width: 100%;
+    height: 56px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 40px;
+}
+
+.header-title {
+    color: #333333;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.help-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 60px;
+}
+
+.card {
+    width: 100%;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 10px;
+}
+
+.card-default {
+    height: 420px;
+}
+
+.card-values {
+    height: 760px;
+}
+
+.card-column {
+    height: 360px;
+}
+
+.card-head {
+    width: 100%;
+    height: 38px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    font-size: 17px;
+    color: #333333;
+}
+
+.case-row {
+    width: 100%;
+    height: 185px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.case-row-small {
+    width: 100%;
+    height: 330px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.case-block {
+    width: 170px;
+    height: 180px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.case-block-small {
+    width: 150px;
+    height: 160px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.case-title {
+    width: 100%;
+    height: 26px;
+    font-size: 13px;
+    color: #0f3460;
+    text-align: center;
+}
+
+.demo {
+    width: 190px;
+    height: 120px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #e8edf3;
+    border: 2px solid #ffcc00;
+}
+
+.demo-small {
+    width: 130px;
+    height: 120px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #e8edf3;
+    border: 2px solid #ffcc00;
+}
+
+.ac-start {
+    align-content: flex-start;
+}
+
+.ac-center {
+    align-content: center;
+}
+
+.ac-end {
+    align-content: flex-end;
+}
+
+.ac-between {
+    align-content: space-between;
+}
+
+.ac-stretch {
+    align-content: stretch;
+}
+
+.box {
+    width: 60px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.stretch-box {
+    width: 60px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.num {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.expect {
+    width: 100%;
+    font-size: 13px;
+    color: #666666;
+    margin-top: 6px;
+}
+
+.column-demo {
+    width: 300px;
+    height: 180px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: flex-start;
+    background-color: #d8ddf0;
+    border: 2px solid #ffcc00;
+    margin-top: 4px;
+}
+
+.column-item {
+    height: 50px;
+    align-self: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.column-wide {
+    width: 100px;
+}
+
+.r {
+    background-color: #e74c3c;
+}
+
+.g {
+    background-color: #2ecc71;
+}
+
+.b {
+    background-color: #3498db;
+}
+
+.o {
+    background-color: #e67e22;
+}
+
+.p {
+    background-color: #9b59b6;
+}
+
+.t {
+    background-color: #1abc9c;
+}
+
+.y {
+    background-color: #f1c40f;
+}
+
+.m {
+    background-color: #e91e63;
+}
+
+.k {
+    background-color: #795548;
+}
+
+.bottom-card {
+    width: 100%;
+    height: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.bottom-bt {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    width: 31%;
+    height: 50px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.button:active {
+    background-color: blueviolet;
+}
+
+.help-btn:active {
+    background-color: blueviolet;
+}
