@@ -155,6 +155,35 @@ export default function webMediaPlayGestureAccess() {
       await Utils.msSleep(3000);
       done()
     })
+
+    it('testNativeEmbedOptionsStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("nativeEmbedOptionsCssDisplayFalse", 10)
+      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300750, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
+      await Utils.msSleep(3000);
+      done()
+    })
+    it('testNativeEmbedOptionsStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("nativeEmbedOptionsTransformSkewTrue", 10)
+      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300751, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
+      await Utils.msSleep(3000);
+      done()
+    })
+    it('testNativeEmbedOptionsStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("nativeEmbedOptionsTransformSkewFalse", 10)
+      Utils.registerEvent('testNativeEmbedOptionsStatic001', "success", 300752, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebMediaPlayGestureAccessTestButton', 10, '');
+      await Utils.msSleep(3000);
+      done()
+    })
+
     /**
      * @tc.name   testNativeMediaPlayerConfigStatic001
      * @tc.number SUB_WEB_NativeMediaPlayerConfig_0100
