@@ -13,20 +13,22 @@
  * limitations under the License.
  */
 
-import AbilityStage from "@ohos.app.ability.AbilityStage";
+import AbilityStage from '@ohos.app.ability.AbilityStage';
+import Want from '@ohos.app.ability.Want';
+import { Configuration } from '@ohos.app.ability.Configuration';
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
-    console.log("[Demo] MyAbilityStage onCreate");
+    console.log('[Demo] MyAbilityStage onCreate');
   }
 
-  onAcceptWant(want) {
-    console.log("[Demo] MyAbilityStage onAcceptWant called want:" + JSON.stringify(want));
-    let abilityId = want.parameters.startId.toString();
+  onAcceptWant(want: Want): string {
+    console.log('[Demo] MyAbilityStage onAcceptWant called want:' + JSON.stringify(want));
+    let abilityId: string = want.parameters.startId.toString();
     return abilityId;
   }
 
-  onConfigurationUpdate(configuration) {
-    console.log('[Demo] MyAbilityStage onConfigurationUpdate:' + JSON.stringify(configuration));
+  onConfigurationUpdate(config: Configuration) {
+    console.log('[Demo] MyAbilityStage onConfigurationUpdate:' + JSON.stringify(config));
   }
 }

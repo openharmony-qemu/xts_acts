@@ -17,53 +17,49 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
+import { Configuration } from '@ohos.app.ability.Configuration';
 
 export default class ModuleAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    console.log("[Demo] MainAbility onCreate");
+    console.log('[Demo] MainAbility onCreate');
   }
 
   onDestroy() {
-    console.log("[Demo] MainAbility onDestroy");
+    console.log('[Demo] MainAbility onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
-    // Main window is created, set main page for this ability
-    console.log("[Demo] MainAbility onWindowStageCreate");
-
-    windowStage.loadContent("pages/index", null);
+    console.log('[Demo] MainAbility onWindowStageCreate');
+    windowStage.loadContent('pages/index', null);
   }
 
   onWindowStageDestroy() {
-    // Main window is destroyed, release UI related resources
-    console.log("[Demo] MainAbility onWindowStageDestroy");
+    console.log('[Demo] MainAbility onWindowStageDestroy');
   }
 
-  onWindowStageRestore(windowStage) {
-    console.log("[Demo] MainAbility onWindowStageRestore");
+  onWindowStageRestore(windowStage: window.WindowStage) {
+    console.log('[Demo] MainAbility onWindowStageRestore');
   }
 
   onForeground() {
-    // Ability has brought to foreground
-    console.log("[Demo] MainAbility onForeground");
+    console.log('[Demo] MainAbility onForeground');
   }
 
   onBackground() {
-    // Ability has back to background
-    console.log("[Demo] MainAbility onBackground");
+    console.log('[Demo] MainAbility onBackground');
   }
 
-  onContinue(wantParam) {
-    console.log("[Demo] MainAbility onContinue");
+  onContinue(wantParam: Record<string, Object>): AbilityConstant.OnContinueResult {
+    console.log('[Demo] MainAbility onContinue');
     return AbilityConstant.OnContinueResult.AGREE;
   }
 
-  onConfigurationUpdate(configuration) {
-    console.log('[Demo] MainAbility onConfigurationUpdate: ' + JSON.stringify(configuration));
+  onConfigurationUpdate(config: Configuration) {
+    console.log('[Demo] MainAbility onConfigurationUpdate: ' + JSON.stringify(config));
   }
 
-  onDump(param) {
-    console.log("[Demo] MainAbility onDump: " + JSON.stringify(param));
-    return ["MainAbility"];
+  onDump(param: Array<string>): Array<string> {
+    console.log('[Demo] MainAbility onDump: ' + JSON.stringify(param));
+    return ['MainAbility'];
   }
 }

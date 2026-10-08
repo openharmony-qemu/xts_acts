@@ -45,7 +45,7 @@ export default class FormAbility extends FormExtension {
       abilityName: 'SecondAbility'
     };
     this.context.startAbility(startWant)
-      .then((data: Object) => {
+      .then((_data: void) => {
         console.info('FormAbility startAbility success');
       })
       .catch((err: BusinessError) => {

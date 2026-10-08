@@ -38,14 +38,15 @@ export default class MainAbility extends Ability {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
         hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-        windowStage.loadContent('pages/index', (err: BusinessError, data: Object) => {
+        windowStage.loadContent('pages/index', (err: BusinessError) => {
             if (err.code) {
                 hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
-                hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+                hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s',
+                    JSON.stringify(err) ?? '');
                 return;
             }
             hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-            hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+            hilog.info(0x0000, 'testTag', '%{public}s', 'Succeeded in loading the content.');
         });
     }
 

@@ -35,7 +35,7 @@ export default class MainAbility extends Ability {
     windowStage.loadContent("MainAbility/pages/MainAbility_pages", null);
   }
 
-  onWindowStageRestore(windowStage) {
+  onWindowStageRestore(windowStage: window.WindowStage) {
     console.log("[Demo] MainAbility onWindowStageRestore");
   }
 
@@ -54,9 +54,9 @@ export default class MainAbility extends Ability {
     console.log("[Demo] MainAbility onBackground");
   }
 
-  onContinue(wantParam) {
+  onContinue(wantParam: Record<string, Object>): AbilityConstant.OnContinueResult {
     console.log("[Demo] MainAbility onContinue");
-    return undefined;
+    return AbilityConstant.OnContinueResult.AGREE;
   }
 
   onBackPressed() {
