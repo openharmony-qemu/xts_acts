@@ -25,8 +25,8 @@ import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: int = 0x0000; //鏃ュ織鏍囪瘑,0x0000浣滀负娴嬭瘯妗嗘灦鐨勪笟鍔℃爣璇?
-let tag: string = 'testTag'; //鏃ュ織鏍囪瘑瀛楃涓?浣滀负tag鏍囪瘑褰撳墠runner绫讳笅鐨勬祴璇曡涓?
+let domain: int = 0x0000;
+let tag: string = 'testTag';
 
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
