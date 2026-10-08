@@ -46,12 +46,12 @@ export default class SecondAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log("[Demo] SecondAbility onForeground");
-    let CommonEventPublishData = {
+    let commonEventPublishData = {
       parameters: {
         "Life": "onForeground"
       }
     }
-    commonEvent.publish("Form_StartAbility", CommonEventPublishData, (err) => {
+    commonEvent.publish("Form_StartAbility", commonEventPublishData, (err) => {
       console.info("Form_StartAbility onCreate");
     });
   }
@@ -61,7 +61,7 @@ export default class SecondAbility extends Ability {
     console.log("[Demo] SecondAbility onBackground");
   }
 
-  onDump(Param) {
+  onDump(param) {
     return null;
   }
 
