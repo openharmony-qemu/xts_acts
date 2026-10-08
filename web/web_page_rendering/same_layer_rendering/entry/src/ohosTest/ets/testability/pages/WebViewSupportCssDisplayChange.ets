@@ -9,6 +9,10 @@ import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { waitForExist,waitForComponent } from '../../test/WaitTest.test';
+
+interface EmbedOptionsCoverage extends EmbedOptions {
+  supportTransformRotateAndSkew?: boolean;
+}
 @Observed
 declare class Params{
   elementId: string
@@ -130,11 +134,11 @@ struct WebIndex {
   @State componentIdArr: Array<string> = []
   @State widthMap: Map<string, number> = new Map();
   @State heightMap: Map<string, number> = new Map();
-  @State positionMap: Map<string, Edges> = new Map();olean = true
+  @State positionMap: Map<string, Edges> = new Map();
   @State edges: Edges = {};
   @State flag : boolean = true
   @State emitKey: string = '';
-  options:EmbedOptions = {
+  @State options: EmbedOptions | null | undefined = {
     supportCssDisplayChange: true
   }
   @State isReceive: number = -1;
@@ -209,6 +213,90 @@ struct WebIndex {
                 await Utils.sleep(2000);
                 let ButtonOne1 = await driver.findComponent(ON.text('changeDisplay'));
                 await ButtonOne1.click();
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+            case "emitSupportCssDisplayChange0300": {
+              try {
+                this.options = { supportCssDisplayChange: false };
+                this.isComplete = -1;
+                this.browserTabController.refresh();
+                await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent('success', 153970);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+            case "emitSupportTransformRotateAndSkew0100": {
+              try {
+                this.options = { supportTransformRotateAndSkew: true } as EmbedOptionsCoverage;
+                this.isComplete = -1;
+                this.browserTabController.refresh();
+                await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent('success', 153971);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+            case "emitSupportTransformRotateAndSkew0200": {
+              try {
+                this.options = { supportTransformRotateAndSkew: false } as EmbedOptionsCoverage;
+                this.isComplete = -1;
+                this.browserTabController.refresh();
+                await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent('success', 153972);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+            case "emitNativeEmbedOptionsNull0100": {
+              try {
+                this.options = null;
+                this.isComplete = -1;
+                this.browserTabController.refresh();
+                await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent('success', 153980);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+            case "emitNativeEmbedOptionsUndefined0100": {
+              try {
+                this.options = undefined;
+                this.isComplete = -1;
+                this.browserTabController.refresh();
+                await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent('success', 153990);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+            case "emitSupportDefaultIntrinsicSize0100": {
+              try {
+                this.options = { supportDefaultIntrinsicSize: true };
+                this.isComplete = -1;
+                this.browserTabController.refresh();
+                await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent('success', 154010);
+              } catch (error) {
+                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+              }
+              break;
+            }
+            case "emitSupportDefaultIntrinsicSize0200": {
+              try {
+                this.options = { supportDefaultIntrinsicSize: false };
+                this.isComplete = -1;
+                this.browserTabController.refresh();
+                await waitForExist(() => this.isComplete, this.str, 0);
+                Utils.emitEvent('success', 154011);
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -313,6 +401,18 @@ struct WebIndex {
             .border({ width: 2, color: Color.Red })
         }
       }.height("100%")
+      Web({ src: $rawfile("testDisplay_embed.html"), controller: new webview.WebviewController() })
+        .nativeEmbedOptions()
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile("testDisplay_embed.html"), controller: new webview.WebviewController() })
+        .nativeEmbedOptions(null)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile("testDisplay_embed.html"), controller: new webview.WebviewController() })
+        .nativeEmbedOptions(undefined)
+        .height(1)
+        .width(1)
     }
 
   }

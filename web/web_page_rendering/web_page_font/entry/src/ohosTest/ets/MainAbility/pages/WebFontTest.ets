@@ -1353,6 +1353,76 @@ struct WebFontTest {
                 break;
               }
 
+              case "testWebStandardFont049": {
+                try {
+                  this.embedOptions = { supportCssDisplayChange: false };
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(true, 111620)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent('', 111620)
+                }
+                break;
+              }
+
+              case "testWebStandardFont050": {
+                try {
+                  this.embedOptions = { supportTransformRotateAndSkew: true } as EmbedOptions;
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(true, 111630)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent('', 111630)
+                }
+                break;
+              }
+
+              case "testWebStandardFont051": {
+                try {
+                  this.embedOptions = { supportTransformRotateAndSkew: false } as EmbedOptions;
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(true, 111640)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent('', 111640)
+                }
+                break;
+              }
+
+              case "testWebStandardFont052": {
+                try {
+                  this.embedOptions = null;
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(true, 111650)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent('', 111650)
+                }
+                break;
+              }
+
+              case "testWebStandardFont053": {
+                try {
+                  this.embedOptions = undefined;
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(() => this.isPageEnd, this.str, 0);
+                  Utils.emitEvent(true, 111660)
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent('', 111660)
+                }
+                break;
+              }
+
 
             }
           })
@@ -1413,6 +1483,15 @@ struct WebFontTest {
         Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
           .rotateRenderEffect(undefined)
           .zoomControlAccess(undefined)
+          .nativeEmbedOptions()
+          .height(1)
+          .width(1)
+        Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+          .nativeEmbedOptions(null)
+          .height(1)
+          .width(1)
+        Web({ src: $rawfile('index.html'), controller: new webView.WebviewController() })
+          .nativeEmbedOptions(undefined)
           .height(1)
           .width(1)
       }
