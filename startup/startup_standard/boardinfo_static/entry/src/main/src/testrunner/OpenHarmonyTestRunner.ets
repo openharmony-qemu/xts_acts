@@ -1,6 +1,6 @@
-'use static';
+﻿'use static';
 /*
- * Copyright (c) 2023-2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,8 +25,8 @@ import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000; //鏃ュ織鏍囪瘑,0x0000浣滀负娴嬭瘯妗嗘灦鐨勪笟鍔℃爣璇?
+let tag: string = 'testTag'; //鏃ュ織鏍囪瘑瀛楃涓?浣滀负tag鏍囪瘑褰撳墠runner绫讳笅鐨勬祴璇曡涓?
 
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
