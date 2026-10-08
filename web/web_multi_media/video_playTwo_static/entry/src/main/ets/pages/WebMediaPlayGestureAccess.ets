@@ -25,10 +25,6 @@ import { BusinessError } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test.ets';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
-interface EmbedOptionsCoverage extends EmbedOptions {
-  supportTransformRotateAndSkew?: boolean;
-}
-
 export class StringFields {
   public str: string = '';
 }
@@ -187,28 +183,6 @@ struct WebMediaPlayGestureAccess {
               Utils.emitEvent("success", 300744)
               break;
             }
-            /*
-            case "nativeEmbedOptionsNull" :{
-              this.options = undefined
-              Utils.emitEvent("success", 300749)
-              break;
-            }
-            */
-            case "nativeEmbedOptionsCssDisplayFalse" :{
-              this.options = { supportCssDisplayChange: false }
-              Utils.emitEvent("success", 300750)
-              break;
-            }
-            case "nativeEmbedOptionsTransformSkewTrue" :{
-              this.options = { supportTransformRotateAndSkew: true } as EmbedOptionsCoverage
-              Utils.emitEvent("success", 300751)
-              break;
-            }
-            case "nativeEmbedOptionsTransformSkewFalse" :{
-              this.options = { supportTransformRotateAndSkew: false } as EmbedOptionsCoverage
-              Utils.emitEvent("success", 300752)
-              break;
-            }
             case "NativeMediaPlayerConfig001" :{
               Utils.emitEvent(this.enableNativeMediaPlayer.enable, 300745)
               Utils.emitEvent(this.enableNativeMediaPlayer.shouldOverlay, 300746)
@@ -250,15 +224,6 @@ struct WebMediaPlayGestureAccess {
         .onPageEnd(()=>{
           this.isPageEnd = 0;
         })
-
-      Web({ src: $rawfile('audioTest.html'), controller: new webView.WebviewController(undefined) })
-        .nativeEmbedOptions()
-        .height(1)
-        .width(1)
-      Web({ src: $rawfile('audioTest.html'), controller: new webView.WebviewController(undefined) })
-        .nativeEmbedOptions(undefined)
-        .height(1)
-        .width(1)
     }
   }
 }

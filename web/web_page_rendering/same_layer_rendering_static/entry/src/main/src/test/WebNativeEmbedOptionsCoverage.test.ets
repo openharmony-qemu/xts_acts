@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -52,14 +52,11 @@ export default function webNativeEmbedOptionsCoverage() {
      */
     it('testNativeEmbedOptionsCssDisplayFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const testCaseName: string = 'testNativeEmbedOptionsCssDisplayFalse';
-        const expected: string = 'success';
-        Utils.emitEvent(testCaseName, 10)
-        Utils.registerEvent(testCaseName, expected, 37101, done);
+        Utils.emitEvent('testNativeEmbedOptionsCssDisplayFalse', 10)
+        Utils.registerEvent('testNativeEmbedOptionsCssDisplayFalse', 'success', 37101, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('WebNativeEmbedOptionsCoverageButton', 10, '');
         await Utils.msSleep(2000);
-        expect(testCaseName).assertEqual('testNativeEmbedOptionsCssDisplayFalse');
         done();
       })
 
@@ -73,14 +70,11 @@ export default function webNativeEmbedOptionsCoverage() {
      */
     it('testNativeEmbedOptionsTransformSkewTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const testCaseName: string = 'testNativeEmbedOptionsTransformSkewTrue';
-        const expected: string = 'success';
-        Utils.emitEvent(testCaseName, 10)
-        Utils.registerEvent(testCaseName, expected, 37102, done);
+        Utils.emitEvent('testNativeEmbedOptionsTransformSkewTrue', 10)
+        Utils.registerEvent('testNativeEmbedOptionsTransformSkewTrue', 'success', 37102, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('WebNativeEmbedOptionsCoverageButton', 10, '');
         await Utils.msSleep(2000);
-        expect(testCaseName).assertEqual('testNativeEmbedOptionsTransformSkewTrue');
         done();
       })
 
@@ -94,14 +88,11 @@ export default function webNativeEmbedOptionsCoverage() {
      */
     it('testNativeEmbedOptionsTransformSkewFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const testCaseName: string = 'testNativeEmbedOptionsTransformSkewFalse';
-        const expected: string = 'success';
-        Utils.emitEvent(testCaseName, 10)
-        Utils.registerEvent(testCaseName, expected, 37103, done);
+        Utils.emitEvent('testNativeEmbedOptionsTransformSkewFalse', 10)
+        Utils.registerEvent('testNativeEmbedOptionsTransformSkewFalse', 'success', 37103, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('WebNativeEmbedOptionsCoverageButton', 10, '');
         await Utils.msSleep(2000);
-        expect(testCaseName).assertEqual('testNativeEmbedOptionsTransformSkewFalse');
         done();
       })
 
@@ -115,14 +106,11 @@ export default function webNativeEmbedOptionsCoverage() {
      */
     it('testNativeEmbedOptionsUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const testCaseName: string = 'testNativeEmbedOptionsUndefined';
-        const expected: string = 'success';
-        Utils.emitEvent(testCaseName, 10)
-        Utils.registerEvent(testCaseName, expected, 37105, done);
+        Utils.emitEvent('testNativeEmbedOptionsUndefined', 10)
+        Utils.registerEvent('testNativeEmbedOptionsUndefined', 'success', 37105, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('WebNativeEmbedOptionsCoverageButton', 10, '');
         await Utils.msSleep(2000);
-        expect(testCaseName).assertEqual('testNativeEmbedOptionsUndefined');
         done();
       })
   })

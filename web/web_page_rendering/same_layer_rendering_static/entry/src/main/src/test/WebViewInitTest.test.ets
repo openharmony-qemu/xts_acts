@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, expect, afterEach } from '../../../hypium/index';
+import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -87,12 +87,10 @@ export default function webViewInitTest() {
      */
     it('SwitchNextPageStatic9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const switchPageEvent: string = 'SwitchNextPageStatic9';
-        Utils.emitEvent(switchPageEvent, 10)
+        Utils.emitEvent('SwitchNextPageStatic9', 10)
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webViewWebViewInitTestButton', 10, '');
         await Utils.msSleep(2000);
-        expect(switchPageEvent).assertEqual('SwitchNextPageStatic9');
         done();
       })
 

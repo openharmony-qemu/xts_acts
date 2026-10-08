@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
@@ -93,12 +93,9 @@ export default function webViewSupportCssDisplayChange() {
      * @tc.level  LEVEL0
      */
     it('emitSupportCssDisplayChange0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testCaseName: string = 'emitSupportCssDisplayChange0300';
-      const expected: string = 'success';
-      Utils.emitEvent(testCaseName, 153940)
-      Utils.registerEvent(testCaseName, expected, 153970, done);
+      Utils.emitEvent("emitSupportCssDisplayChange0300", 153940)
+      Utils.registerEvent("emitSupportCssDisplayChange0300", 'success', 153970, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
-      expect(testCaseName).assertEqual('emitSupportCssDisplayChange0300');
     })
 
     /**
@@ -110,12 +107,9 @@ export default function webViewSupportCssDisplayChange() {
      * @tc.level  LEVEL0
      */
     it('emitSupportTransformRotateAndSkew0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testCaseName: string = 'emitSupportTransformRotateAndSkew0100';
-      const expected: string = 'success';
-      Utils.emitEvent(testCaseName, 153940)
-      Utils.registerEvent(testCaseName, expected, 153971, done);
+      Utils.emitEvent("emitSupportTransformRotateAndSkew0100", 153940)
+      Utils.registerEvent("emitSupportTransformRotateAndSkew0100", 'success', 153971, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
-      expect(testCaseName).assertEqual('emitSupportTransformRotateAndSkew0100');
     })
 
     /**
@@ -127,12 +121,9 @@ export default function webViewSupportCssDisplayChange() {
      * @tc.level  LEVEL0
      */
     it('emitSupportTransformRotateAndSkew0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testCaseName: string = 'emitSupportTransformRotateAndSkew0200';
-      const expected: string = 'success';
-      Utils.emitEvent(testCaseName, 153940)
-      Utils.registerEvent(testCaseName, expected, 153972, done);
+      Utils.emitEvent("emitSupportTransformRotateAndSkew0200", 153940)
+      Utils.registerEvent("emitSupportTransformRotateAndSkew0200", 'success', 153972, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
-      expect(testCaseName).assertEqual('emitSupportTransformRotateAndSkew0200');
     })
 
     /**
@@ -144,12 +135,9 @@ export default function webViewSupportCssDisplayChange() {
      * @tc.level  LEVEL0
      */
     it('emitNativeEmbedOptionsNull0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testCaseName: string = 'emitNativeEmbedOptionsNull0100';
-      const expected: string = 'success';
-      Utils.emitEvent(testCaseName, 153940)
-      Utils.registerEvent(testCaseName, expected, 153980, done);
+      Utils.emitEvent("emitNativeEmbedOptionsNull0100", 153940)
+      Utils.registerEvent("emitNativeEmbedOptionsNull0100", 'success', 153980, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
-      expect(testCaseName).assertEqual('emitNativeEmbedOptionsNull0100');
     })
 
     /**
@@ -161,12 +149,9 @@ export default function webViewSupportCssDisplayChange() {
      * @tc.level  LEVEL0
      */
     it('emitNativeEmbedOptionsUndefined0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      const testCaseName: string = 'emitNativeEmbedOptionsUndefined0100';
-      const expected: string = 'success';
-      Utils.emitEvent(testCaseName, 153940)
-      Utils.registerEvent(testCaseName, expected, 153990, done);
+      Utils.emitEvent("emitNativeEmbedOptionsUndefined0100", 153940)
+      Utils.registerEvent("emitNativeEmbedOptionsUndefined0100", 'success', 153990, done);
       await waitAndClickComponent("WebSupportCssDisplayChangeButton",driver);
-      expect(testCaseName).assertEqual('emitNativeEmbedOptionsUndefined0100');
     })
 
     /**
@@ -179,12 +164,9 @@ export default function webViewSupportCssDisplayChange() {
      */
     it('emitSupportDefaultIntrinsicSize0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        const testCaseName: string = 'emitSupportDefaultIntrinsicSize0100';
-        const expected: string = 'success';
-        Utils.emitEvent(testCaseName, 153940)
-        Utils.registerEvent(testCaseName, expected, 154010, done);
+        Utils.emitEvent('emitSupportDefaultIntrinsicSize0100', 153940)
+        Utils.registerEvent('emitSupportDefaultIntrinsicSize0100', 'success', 154010, done);
         await waitAndClickComponent('WebSupportCssDisplayChangeButton', driver);
-        expect(testCaseName).assertEqual('emitSupportDefaultIntrinsicSize0100');
       })
 
     /**
@@ -197,12 +179,9 @@ export default function webViewSupportCssDisplayChange() {
      */
     it('emitSupportDefaultIntrinsicSize0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        const testCaseName: string = 'emitSupportDefaultIntrinsicSize0200';
-        const expected: string = 'success';
-        Utils.emitEvent(testCaseName, 153940)
-        Utils.registerEvent(testCaseName, expected, 154011, done);
+        Utils.emitEvent('emitSupportDefaultIntrinsicSize0200', 153940)
+        Utils.registerEvent('emitSupportDefaultIntrinsicSize0200', 'success', 154011, done);
         await waitAndClickComponent('WebSupportCssDisplayChangeButton', driver);
-        expect(testCaseName).assertEqual('emitSupportDefaultIntrinsicSize0200');
       })
 
   })

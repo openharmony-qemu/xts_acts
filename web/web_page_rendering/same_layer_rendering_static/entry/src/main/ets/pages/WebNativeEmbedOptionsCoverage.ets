@@ -30,7 +30,7 @@ interface EmbedOptionsCoverage extends EmbedOptions {
 struct WebNativeEmbedOptionsCoverage {
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   @State str: string = ''
-  embedOptions: EmbedOptionsCoverage | undefined = { supportCssDisplayChange: true } as EmbedOptionsCoverage
+  @State options: EmbedOptionsCoverage | undefined = { supportCssDisplayChange: true } as EmbedOptionsCoverage
   @State isPageEnd: number = -1;
 
   aboutToAppear() {
@@ -54,37 +54,28 @@ struct WebNativeEmbedOptionsCoverage {
         Button('WebNativeEmbedOptionsCoverage').key('WebNativeEmbedOptionsCoverageButton').onClick((e: ClickEvent) => {
           switch (this.str) {
             case 'testNativeEmbedOptionsCssDisplayFalse': {
-              this.embedOptions = { supportCssDisplayChange: false } as EmbedOptionsCoverage;
+              this.options = { supportCssDisplayChange: false } as EmbedOptionsCoverage;
               this.isPageEnd = -1;
               this.controller.refresh();
               Utils.emitEvent('success', 37101);
               break;
             }
             case 'testNativeEmbedOptionsTransformSkewTrue': {
-              this.embedOptions = { supportTransformRotateAndSkew: true } as EmbedOptionsCoverage;
+              this.options = { supportTransformRotateAndSkew: true } as EmbedOptionsCoverage;
               this.isPageEnd = -1;
               this.controller.refresh();
               Utils.emitEvent('success', 37102);
               break;
             }
             case 'testNativeEmbedOptionsTransformSkewFalse': {
-              this.embedOptions = { supportTransformRotateAndSkew: false } as EmbedOptionsCoverage;
+              this.options = { supportTransformRotateAndSkew: false } as EmbedOptionsCoverage;
               this.isPageEnd = -1;
               this.controller.refresh();
               Utils.emitEvent('success', 37103);
               break;
             }
-            /*
-            case 'testNativeEmbedOptionsNull': {
-              this.embedOptions = undefined;
-              this.isPageEnd = -1;
-              this.controller.refresh();
-              Utils.emitEvent('success', 37104);
-              break;
-            }
-            */
             case 'testNativeEmbedOptionsUndefined': {
-              this.embedOptions = undefined;
+              this.options = undefined;
               this.isPageEnd = -1;
               this.controller.refresh();
               Utils.emitEvent('success', 37105);
@@ -98,7 +89,7 @@ struct WebNativeEmbedOptionsCoverage {
 
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .enableNativeEmbedMode(true)
-        .nativeEmbedOptions(this.embedOptions)
+        .nativeEmbedOptions(this.options)
         .onPageEnd(() => {
           this.isPageEnd = 0;
         })
