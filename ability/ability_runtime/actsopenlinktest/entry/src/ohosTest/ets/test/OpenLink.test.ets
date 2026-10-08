@@ -14,6 +14,8 @@
  */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
+import { Driver, ON } from '@ohos.UiTest';
+
 // 加载js测试框架
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import CommonEventManager from '@ohos.commonEventManager';
@@ -42,7 +44,17 @@ let paramOptions: OpenLinkOptions = {
 
 export default function openLinkTest() {
   describe('ActsOpenLinkTest', () => {
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       context = globalThis.context;
     });
     afterEach((done: Function) => {
@@ -68,10 +80,10 @@ export default function openLinkTest() {
       try {
         context.openLink('').then(() => {
           console.info(`#${tag}# open link successful`);
+          expect().assertFail();
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
-          expect().assertFail();
           // expect(error.code == undefined).assertFalse();
           // expect(error.code).assertEqual(-1);
           done();
@@ -98,9 +110,11 @@ export default function openLinkTest() {
       try {
         context.openLink('illegalUri').then(() => {
           console.info(`#${tag}# open link successful`);
+          expect().assertFail();
           done();
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
+          expect().assertFail();
           done();
         })
       } catch (err) {
@@ -266,10 +280,7 @@ export default function openLinkTest() {
 
       try {
         context.openLink(link, paramOptions, (err, result) => {
-                            if (err) {
-                              console.info(`callback err: ${JSON.stringify(err)}`);
-                              return;
-                            }
+                            console.info(`openLink callback err: ${JSON.stringify(err)}`);
                             console.info(`openLink callback result: ${JSON.stringify(result.resultCode)}`);
                             console.info(`openLink callback result data: ${JSON.stringify(result.want)}`);
                             expect(result.resultCode).assertEqual(resultCode);
@@ -279,10 +290,12 @@ export default function openLinkTest() {
           console.info(`#${tag}# open link successful`);
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
+          expect().assertFail();
           done();
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });
@@ -301,10 +314,7 @@ export default function openLinkTest() {
 
       try {
         context.openLink(link, trueParamOptions, (err, result) => {
-                            if (err) {
-                              console.info(`callback err: ${JSON.stringify(err)}`);
-                              return;
-                            }
+                            console.info(`openLink callback err: ${JSON.stringify(err)}`);
                             console.info(`openLink callback result: ${JSON.stringify(result.resultCode)}`);
                             console.info(`openLink callback result data: ${JSON.stringify(result.want)}`);
                             expect(result.resultCode).assertEqual(resultCode);
@@ -320,6 +330,7 @@ export default function openLinkTest() {
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });
@@ -338,10 +349,7 @@ export default function openLinkTest() {
 
       try {
         context.openLink(link, falseParamOptions, (err, result) => {
-                            if (err) {
-                              console.info(`callback err: ${JSON.stringify(err)}`);
-                              return;
-                            }
+                            console.info(`openLink callback err: ${JSON.stringify(err)}`);
                             console.info(`openLink callback result: ${JSON.stringify(result.resultCode)}`);
                             console.info(`openLink callback result data: ${JSON.stringify(result.want)}`);
                             expect(result.resultCode).assertEqual(resultCode);
@@ -351,10 +359,12 @@ export default function openLinkTest() {
           console.info(`#${tag}# open link successful`);
         }).catch((error: BusinessError) => {
           console.info(`#${tag}# open link err : ${error}`);
+          expect().assertFail();
           done();
         })
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
+        expect().assertFail();
         done();
       }
     });
