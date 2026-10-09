@@ -50,8 +50,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0100
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0100
-     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as -1, and return 
-       401
+     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as -1, and return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -80,8 +79,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('401');
@@ -117,8 +115,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0200
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0200
-     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as 0, and return s
-       uccess
+     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as 0, and return success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -148,8 +145,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('0');
@@ -217,8 +213,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('2');
@@ -258,8 +253,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0400
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0400
-     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass parameter fontSize as 9999999, return suc
-       cess
+     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass parameter fontSize as 9999999, return success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -288,8 +282,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('9999999');
@@ -359,8 +352,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('401');
@@ -396,8 +388,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0600
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0600
-     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as undefined, and 
-       return 401
+     * @tc.desc   Call context.getApplicationcontext().setFontSizeScale, pass the parameter fontSize as undefined, and return 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -426,8 +417,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('401');
@@ -493,8 +483,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('401');
@@ -532,8 +521,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0800
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0800
-     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return success when the pa
-       rameter fontSize is 0
+     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return success when the parameter fontSize is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -562,8 +550,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('0');
@@ -602,8 +589,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_0900
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_0900
-     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return success when the pa
-       rameter fontSize is 2
+     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return success when the parameter fontSize is 2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -632,8 +618,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('2');
@@ -672,8 +657,7 @@ export default function abilityTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1000
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1000
-     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return success when the pa
-       rameter fontSize is 9999999
+     * @tc.desc   Call application to get the applicationcontext, call setFontSizeScale, and return success when the parameter fontSize is 9999999
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -702,8 +686,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('9999999');
@@ -771,8 +754,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('401');
@@ -837,8 +819,7 @@ export default function abilityTest() {
             commonEventManager.subscribe(subscriber, (err: BusinessError, data: commonEventManager.CommonEventData) => {
               console.log(caseName + ' subscribe__' + JSON.stringify(data));
               if (err) {
-                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code},
-                  message is ${err.message}`);
+                console.error(`${caseName} Failed to subscribe common event. Code is ${err.code}, message is ${err.message}`);
               } else {
                 console.info(`${caseName} CommenEventData.data is ${data.data}`);
                 expect(data.data).assertEqual('401');
@@ -869,6 +850,29 @@ export default function abilityTest() {
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
       }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300
+     * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300
+     * @tc.desc   Directly call setFontSizeScale with null parameter, expect error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300', Level.LEVEL3, async (done:Function) => {
+      let caseName = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300';
+      console.log(`${caseName} starts.`);
+      try {
+        let applicationContext = context.getApplicationContext();
+        applicationContext.setFontSizeScale(null);
+        expect().assertFail();
+      } catch (e) {
+        console.error(`${caseName}, e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+      console.log(`${caseName} ends.`);
+      done();
     });
   })
 }
