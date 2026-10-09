@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorKeyBoard006() {
   describe('RichEditorKeyBoard006', () => {
     beforeEach(async (done: Function) => {
@@ -70,7 +72,7 @@ export default function RichEditorKeyBoard006() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_ENTER);
+      driver.triggerKey(KeyCode.KEYCODE_ENTER, displayID);
       await CommonFunc.sleep(1000);
 
       let isEditingFlag = await driver.findComponent(ON.id('isEditingFlag'));
@@ -82,5 +84,6 @@ export default function RichEditorKeyBoard006() {
 
   })
 }
+
 
 

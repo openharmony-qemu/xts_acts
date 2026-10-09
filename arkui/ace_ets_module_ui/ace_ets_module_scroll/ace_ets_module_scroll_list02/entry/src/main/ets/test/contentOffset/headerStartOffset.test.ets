@@ -60,9 +60,12 @@ export default function headerStartOffset() {
       let btn: Component = await driver.findComponent(ON.id('startOffset_itemInGroup'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let groupHeader = CommonFunc.getComponentRectOnScreen('group_head_startOffset_2');
-      let listItem = CommonFunc.getComponentRectOnScreen('group_item_startOffset_2_3');
-      let list = CommonFunc.getComponentRectOnScreen('group_list_startOffset');
+      let groupHeaderComponent = await driver.findComponent(ON.id('group_head_startOffset_2'));
+      let groupHeader = await groupHeaderComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('group_item_startOffset_2_3'));
+      let listItem = await listItemComponent.getBounds();
+      let listComponent = await driver.findComponent(ON.id('group_list_startOffset'));
+      let list = await listComponent.getBounds();
       console.info('[headerStartOffset_0100] groupHeader.top: ' + groupHeader.top);
       console.info('[headerStartOffset_0100] groupHeader.bottom: ' + groupHeader.bottom);
       console.info('[headerStartOffset_0100] listItem.top: ' + listItem.top);

@@ -19,6 +19,7 @@ import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopeId016() {
   describe('FocusScopeId016', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +68,7 @@ export default function FocusScopeId016() {
       await CommonFunc.sleep(2000);
       console.info('[FocusScopeId016_0100] btnOpen click');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('FocusScopeId016_btn1'));
@@ -75,7 +76,7 @@ export default function FocusScopeId016() {
       expect(btn1_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId016_0100] btn1 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn4 = await driver.findComponent(ON.id('FocusScopeId016_btn4'));

@@ -65,14 +65,21 @@ export default function ReachStartAndEnd2() {
      */
     it('Grid_ReachStartAndEnd2_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd2_0200] START');
-      let scrollBarRect = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_scrollBar')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`),
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`),
-        1000);
+      let scrollBarRectComponent = await driver.findComponent(ON.id('Grid_ReachStartAndEnd_scrollBar'))
+      let scrollBarRect = await scrollBarRectComponent.getBounds()
+      let displayId = await scrollBarRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('Grid_ReachStartAndEnd_tex2')
@@ -80,12 +87,17 @@ export default function ReachStartAndEnd2() {
       console.info("[Grid_ReachStartAndEnd2_0200] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)))
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('onReachEnd');
 
-      await driver.swipe(
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`),
-        Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
-        Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`),
-        1000);
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`),
+          y: Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson2 = getInspectorByKey('Grid_ReachStartAndEnd_tex1')

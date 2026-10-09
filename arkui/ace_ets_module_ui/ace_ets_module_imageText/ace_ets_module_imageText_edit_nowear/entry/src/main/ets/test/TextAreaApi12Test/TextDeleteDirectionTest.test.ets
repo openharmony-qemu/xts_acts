@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function TextDeleteDirectionTest() {
   describe('TextDeleteDirectionTest', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +67,11 @@ export default function TextDeleteDirectionTest() {
       await CommonFunc.sleep(500);
       await caretPosition.click()
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2071)
+      try {
+        await driver.triggerKey(2071, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get('deleteValue')).assertEqual('这');
       expect(''+AppStorage.get('deleteOffset')).assertEqual('0');
@@ -98,7 +103,11 @@ export default function TextDeleteDirectionTest() {
       await CommonFunc.sleep(500);
       await allSelect.click()
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2071)
+      try {
+        await driver.triggerKey(2071, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get('deleteValue')).assertEqual('这是测试删除回调文本');
       expect(''+AppStorage.get('deleteOffset')).assertEqual('0');
@@ -130,7 +139,11 @@ export default function TextDeleteDirectionTest() {
       await CommonFunc.sleep(500);
       await caretPosition.click()
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055)
+      try {
+        await driver.triggerKey(2055, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get('deleteValue')).assertEqual('除');
       expect(''+AppStorage.get('deleteOffset')).assertEqual('5');
@@ -162,7 +175,11 @@ export default function TextDeleteDirectionTest() {
       await CommonFunc.sleep(500);
       await allSelect.click()
       await CommonFunc.sleep(500);
-      await driver.triggerKey(2055)
+      try {
+        await driver.triggerKey(2055, displayID)
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get('deleteValue')).assertEqual('这是测试删除回调文本');
       expect(''+AppStorage.get('deleteOffset')).assertEqual('0');

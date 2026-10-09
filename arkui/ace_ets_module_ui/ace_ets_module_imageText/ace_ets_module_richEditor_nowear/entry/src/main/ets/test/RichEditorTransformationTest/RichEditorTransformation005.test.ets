@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorTransformation005() {
   describe('RichEditorTransformation005', () => {
     beforeEach(async (done: Function) => {
@@ -75,16 +77,16 @@ export default function RichEditorTransformation005() {
       let length = await driver.findComponent(ON.id('length'));
       let lengthText = await length.getText();
       expect(lengthText.length).assertLarger(7);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
       await CommonFunc.sleep(500);
       let setTypingStyle = await driver.findComponent(ON.id('setTypingStyle'));
       await setTypingStyle.click();
       await CommonFunc.sleep(500);
       await driver.longClick(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);
       await CommonFunc.sleep(500);
       let getTypingStyle = await driver.findComponent(ON.id('getTypingStyle'));
@@ -103,5 +105,6 @@ export default function RichEditorTransformation005() {
 
   })
 }
+
 
 

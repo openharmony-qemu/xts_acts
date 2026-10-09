@@ -44,6 +44,8 @@ struct Index {
           AppStorageV2.remove(LifeClass)
         })
     }
+    .padding(20)
+    .margin(20)
   }
 }
 
@@ -68,5 +70,7 @@ struct Child {
     }
     .justifyContent(FlexAlign.Start)
     .alignItems(HorizontalAlign.Start)
+    .padding(10)
+    .margin(10)
   }
 }

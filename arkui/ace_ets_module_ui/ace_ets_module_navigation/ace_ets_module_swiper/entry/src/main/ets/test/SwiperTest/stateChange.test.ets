@@ -18,6 +18,8 @@ import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function stateChange() {
   describe('stateChange', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +64,7 @@ export default function stateChange() {
       console.info("stateChange_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('stateChange_test');

@@ -22,7 +22,8 @@ import {
   UpdatablePickerConfigs,
   MovingPhotoBadgeStateChangedCallback,
   PickerError,
-  CompletedResult
+  CompletedResult,
+  UnselectableItemInfo
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -146,7 +147,9 @@ struct PickerComponent {
   }
 
   private onEnterPhotoBrowser(photoBrowserInfo: PhotoBrowserInfo): boolean {
-    this.sendEvent(photoBrowserInfo, this.eventId);
+    if (this.eventId !== EventType.UNSELECTABLE_EVENT_CODE) {
+      this.sendEvent(photoBrowserInfo, this.eventId);
+    }
     console.info('onEnterPhotoBrowser' + JSON.stringify(photoBrowserInfo));
     return false;
   }
@@ -167,7 +170,9 @@ struct PickerComponent {
     let elements: number[] = [PhotoBrowserUIElement.CHECKBOX, PhotoBrowserUIElement.BACK_BUTTON];
     this.pickerController.setPhotoBrowserUIElementVisibility([], true);
     this.pickerController.setPhotoBrowserUIElementVisibility(elements, true);
-    this.pickerController.setPhotoBrowserUIElementVisibility(elements, false);
+    this.pickerController.setPhotoBrowserUIElementVisibility(elements,
+      this.eventId === EventType.UNSELECTABLE_EVENT_CODE);
+    AppStorage.setOrCreate<PickerController>('movingPhotoTestController', this.pickerController);
   }
 
   private onSelectedItemsDeleted(baseItemInfos: Array<BaseItemInfo>): void {
@@ -317,6 +322,9 @@ struct PickerComponent {
     if (parameter['albumOptions'] != undefined) {
       this.albumOptions = parameter['albumOptions'];
     }
+    if (parameter['isOnPhotoBrowserZoomSet'] != undefined) {
+      this.isOnPhotoBrowserZoomSet = parameter['isOnPhotoBrowserZoomSet'];
+    }
     console.info('eventId=' + this.eventId);
   }
 
@@ -464,8 +472,12 @@ struct PickerComponent {
         onPhotoBrowserChangeStart: (itemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
         onError: (pickerError: PickerError): void => this.onError(pickerError),
         onPhotoBrowserZoom: this.isOnPhotoBrowserZoomSet
-            ? (scale: number): void => this.onPhotoBrowserZoom(scale)
-            : undefined,
+          ? (scale: number): void => this.onPhotoBrowserZoom(scale)
+          : undefined,
+        onUnselectableItemClicked: this.eventId === EventType.UNSELECTABLE_EVENT_CODE ?
+          (itemInfo: UnselectableItemInfo): void => {
+            this.sendEvent(itemInfo, EventType.UNSELECTABLE_EVENT_CODE);
+          } : undefined,
       })
         .height('70%')
         .width('100%')
@@ -480,8 +492,15 @@ struct PickerComponent {
       Button('预览')
         .onClick(() => {
           if (this.selectedUris.length > 0) {
-            this.pickerController.setPhotoBrowserItem(this.selectedUris[0], PhotoBrowserRange.SELECTED_ONLY);
+            const range: PhotoBrowserRange =
+              this.eventId === EventType.UNSELECTABLE_EVENT_CODE
+                ? PhotoBrowserRange.ALL
+                : PhotoBrowserRange.SELECTED_ONLY;
+            console.info('previewButton uri: ' + this.selectedUris[0]);
+            this.pickerController.setPhotoBrowserItem(this.selectedUris[0], range);
             this.isBrowserShow = true;
+          } else {
+            console.error('previewButton: selectedUris is empty');
           }
         })
         .id('previewButton')

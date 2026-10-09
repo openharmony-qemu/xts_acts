@@ -17,7 +17,7 @@
 struct ScrollTest {
   scroller: Scroller = new Scroller;
   private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-  @State scrollText: string = ''
+  @State scrollText: string = 'init'
   @State text: string = ''
 
   build() {

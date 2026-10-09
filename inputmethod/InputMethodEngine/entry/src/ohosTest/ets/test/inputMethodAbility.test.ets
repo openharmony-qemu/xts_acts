@@ -18,7 +18,7 @@ import inputMethodEngine from '@ohos.inputMethodEngine';
 import subtype from '@ohos.InputMethodSubtype';
 import commonEventManager from '@ohos.commonEventManager';
 import display from '@ohos.display';
-import { Driver, ON, MatchPattern, Component, Rect } from '@ohos.UiTest'
+import { Driver, ON, MatchPattern, Component, Rect, Point } from '@ohos.UiTest'
 import { BusinessError } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { InputMethodSubtype } from '@kit.IMEKit';
@@ -40,6 +40,7 @@ export default function inputMethodAbility() {
     let dis = display.getDefaultDisplaySync();
     let inputDemoService: subtype;
     let inputMethodController = inputMethod.getController();
+    let id: number = 0;
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     beforeAll(async (done: Function) => {
@@ -64,6 +65,8 @@ export default function inputMethodAbility() {
       try {
         await inputMethod.switchCurrentInputMethodSubtype(inputDemoService);
         textArea = await driver.findComponent(ON.type('TextArea'));
+        id = await textArea.getDisplayId();
+        console.info(`====>beforeAll DisplayId:${id}`);
         rectInfo = await textArea.getBounds();
         console.info('====>beforeAll inputMethodSwitch textArea rectInfo: ' + JSON.stringify(rectInfo));
         setTimeout(() => {
@@ -83,8 +86,9 @@ export default function inputMethodAbility() {
     let runCmd = async () => {
       let cursor_x = rectInfo.left + 20 + Math.floor(Math.random() * (rectInfo.right - rectInfo.left) * 0.9);
       let cursor_y = rectInfo.top + 20 + Math.floor(Math.random() * (rectInfo.bottom - rectInfo.top) * 0.9);
-      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`)
-      await driver.click(cursor_x, cursor_y)
+      let point: Point = {x: cursor_x, y: cursor_y, displayId: id};
+      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y} displayId: ${id}`);
+      await driver.clickAt(point);
     }
 
     /**
@@ -501,6 +505,9 @@ export default function inputMethodAbility() {
       let one_time_code: number = inputMethodEngine.PATTERN_ONE_TIME_CODE;
       console.info("====>inputMethodEngine_test_027 result:" + one_time_code);
       expect(one_time_code).assertEqual(13);
+      let one_time_code_number: number = inputMethodEngine.PATTERN_ONE_TIME_CODE_NUMBER;
+      console.info("====>inputMethodEngine_test_027 result:" + one_time_code_number);
+      expect(one_time_code_number).assertEqual(15);
       done();
     });
 

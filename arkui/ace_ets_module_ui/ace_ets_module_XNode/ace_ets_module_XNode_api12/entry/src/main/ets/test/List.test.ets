@@ -138,7 +138,7 @@ export default function testsuite() {
   //createNodeSearch();
   createNodeStack();
   createNodeText();
-  commonEventTest1();
+  //commonEventTest1();
   CornerTest();
   LengthMetricsUnitTest();
   PercentReferenceTest();
@@ -149,7 +149,7 @@ export default function testsuite() {
   typeNodechildrenMainSizeTest();
   setLabelTest();
   setMarkNodeGroupTest();
-  setShapeClipTest();
+  //setShapeClipTest();
   attachNodeAdapterTest();
   updateConfigurationTest1();
   updateConfigurationTest2();

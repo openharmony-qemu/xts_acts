@@ -60,7 +60,7 @@ export default function swipeRefresherV2PageTest() {
     it('swipeRefresherV2PageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[swipeRefresherV2PageTest_0100] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(1000);
       
       let component = await driver.findComponent(ON.text('场景2: 带content属性 - isLoading为true'));
       expect(component !== null).assertTrue();
@@ -80,7 +80,7 @@ export default function swipeRefresherV2PageTest() {
     it('swipeRefresherV2PageTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[swipeRefresherV2PageTest_0200] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(1000);
       
       let component = await driver.findComponent(ON.text('场景3: content为空字符串'));
       expect(component !== null).assertTrue();
@@ -100,7 +100,7 @@ export default function swipeRefresherV2PageTest() {
     it('swipeRefresherV2PageTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[swipeRefresherV2PageTest_0300] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(1000);
       
       let component = await driver.findComponent(ON.text('场景1: 基本用法 - isLoading为false'));
       expect(component !== null).assertTrue();
@@ -120,13 +120,13 @@ export default function swipeRefresherV2PageTest() {
     it('swipeRefresherV2PageTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[swipeRefresherV2PageTest_0300] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(1000);
       
       let button = await driver.findComponent(ON.text('切换加载状态'));
       expect(button !== null).assertTrue();
       
       await button.click();
-      await driver.delayMs(500);
+      await Utils.sleep(1000);
       
       console.info('[swipeRefresherV2PageTest_0300] END');
       done();
@@ -143,18 +143,18 @@ export default function swipeRefresherV2PageTest() {
     it('swipeRefresherV2PageTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('[swipeRefresherV2PageTest_0400] START');
       let driver = await Driver.create();
-      await driver.delayMs(2000);
+      await Utils.sleep(1000);
       let scene3Text = await driver.findComponent(ON.text('场景3: content为空字符串'));
       if (scene3Text !== null) {
       await driver.swipe(0, 500, 0, 0, 500);  // 向上滑动使下方内容可见
-      await driver.delayMs(1000);
+      await Utils.sleep(1000);
       }
       
       let button = await driver.findComponent(ON.text('触发加载'));
       expect(button !== null).assertTrue();
       
       await button.click();
-      await driver.delayMs(500);
+      await Utils.sleep(1000);
       
       console.info('[swipeRefresherV2PageTest_0400] END');
       done();

@@ -18,6 +18,7 @@ import Utils from '../../MainAbility/common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import inputEventClient from '@ohos.multimodalInput.inputEventClient';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function RatingAdvancedTest() {
   describe('RatingAdvancedTest', () => {
 
@@ -60,7 +61,7 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049,displayID);
       let strJson1 = getInspectorByKey('ratingFocusText01');
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);
@@ -83,7 +84,7 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049,displayID);
       let strJson1 = getInspectorByKey('ratingFocusText02');
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);
@@ -107,7 +108,7 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049,displayID);
       let strJson1 = getInspectorByKey('ratingFocusText03');
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);
@@ -130,7 +131,7 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049,displayID);
       let strJson1 = getInspectorByKey('ratingFocusText04');
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);
@@ -153,7 +154,7 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049,displayID);
       let strJson1 = getInspectorByKey('ratingFocusText05');
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);
@@ -176,7 +177,7 @@ export default function RatingAdvancedTest() {
       await Utils.sleep(2000);
       let driver = Driver.create();
       await Utils.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049,displayID);
       let strJson1 = getInspectorByKey('ratingFocusText06');
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);

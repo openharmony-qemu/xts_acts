@@ -60,9 +60,13 @@ export default function TimePickerAddApi() {
       let bottom = rect.bottom
       let right = rect.right
       let middle = (top + bottom) / 2
+      let displayId = await timePicker.getDisplayId();
 
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(left + (right - left) / 6), Math.round(top + (bottom - top) / 2),Math.round(left + (right - left) / 6), Math.round(top));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 6), y: Math.round(top + (bottom - top) / 2), displayId: displayId },
+        { x: Math.round(left + (right - left) / 6), y: Math.round(top), displayId: displayId }
+      );
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);

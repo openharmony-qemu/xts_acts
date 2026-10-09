@@ -36,6 +36,13 @@ export default class EntryAbility extends UIAbility {
 
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
+    let mainWindow: window.Window = windowStage.getMainWindowSync();
+    let promise1 = mainWindow.getProperties();
+    promise1.then((data) => {
+      console.info('当前屏幕ID' + data.displayId);
+      AppStorage.setOrCreate('displayID',data.displayId);
+    }).catch((err: BusinessError) => {
+    });
 
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {

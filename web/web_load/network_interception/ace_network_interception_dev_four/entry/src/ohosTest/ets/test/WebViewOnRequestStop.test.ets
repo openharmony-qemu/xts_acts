@@ -93,14 +93,11 @@ export default function webViewOnRequestStop() {
      */
     it('defaultOnRequestStop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStop0100", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = 0;
-      Utils.registerBaseEvent("defaultOnRequestStop0100", true, 203020, () => { isReturn = 1 }, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(expected);
-      });
-      await Utils.waitAndClickComponent(driver, "OnRequestStop");
-      if (await Utils.waitForExist(() => isReturn, 'defaultOnRequestStop0100' + '_returnCheck', 1, 1000)) {
-        done();
-      }
+      Utils.registerBaseEvent("defaultOnRequestStop0100", true, 203020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('OnRequestStop', 10, '');
     })
 
     /**

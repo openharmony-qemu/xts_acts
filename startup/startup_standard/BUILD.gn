@@ -24,6 +24,7 @@ group("startup_standard") {
       "syscap_ndk:startup_syscapability_js_test",
       "deviceinfo_static:ActsStartupInitDeviceInfoStaticTest",
       "boardinfo:startup_boardinfo_js_test",
+      "boardinfo_static:ActsStartupInitBoardInfoStaticTest",
     ]
   }
 }

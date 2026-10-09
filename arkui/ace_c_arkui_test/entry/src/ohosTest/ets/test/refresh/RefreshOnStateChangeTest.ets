@@ -15,7 +15,7 @@
 
 import { describe, it, expect, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function refreshOnStateChangeTest() {
 
@@ -34,13 +34,18 @@ export default function refreshOnStateChangeTest() {
       await Utils.pushPage(`refresh/${PAGE_TAG}`);
       await Utils.sleep(1000)
       let driver = Driver.create();
-      let rect = Utils.getComponentRect("RefreshOnStateChange");
-      let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
+      let component = await driver.findComponent(ON.id("RefreshOnStateChange"));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
+      let x = Math.round(Utils.getRectHorizontalCenterX(rect));
+      let y = Math.round(Utils.getRectVerticalCenterY(rect));
       console.info("RefreshOnStateChangeTest  x= " +  x  + ", y = " + y);
-      await driver.swipe(Math.round(x - vp2px(30)), Math.round(y - vp2px(100)), Math.round(x + vp2px(30)), Math.round(y + vp2px(150)));
+      await driver.swipeBetween(
+        { x: Math.round(x - vp2px(30)), y: Math.round(y - vp2px(100)), displayId: displayId },
+        { x: Math.round(x + vp2px(30)), y: Math.round(y + vp2px(150)), displayId: displayId });
       await Utils.sleep(2000);
-      expect(Utils.getComponentInfoByKey('RefreshOnStateChange').$attrs.backgroundColor).assertEqual('#FFFFFF00');
+      expect(Utils.getComponentInfoByKey('RefreshOnStateChange').$attrs.backgroundColor)
+        .assertEqual('#FFFFFF00');
       done();
     })
   })

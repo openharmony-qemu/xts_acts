@@ -14,7 +14,7 @@
  */
 
 import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
-import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID } from '../commom';
+import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, UPDATE_VERSION, INVALID_UPDATE_VERSION, DEFAULT_USER_ID, IP_LIST_1 } from '../commom';
 import { BusinessError } from '@ohos.base';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -53,6 +53,7 @@ export default function systemManagerTest() {
     testStartExactTimer();
     testStopExactTimer();
     testDestroyExactTimer();
+    testAllowedPrinterIPAddressessPolicy();
   })
 }
 
@@ -872,6 +873,150 @@ function testDestroyExactTimer() {
       } else {
         expect(error.code).assertEqual(201);
       }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testAllowedPrinterIPAddressessPolicy() {
+  /**
+  * @tc.name   test_add_allowed_printer_ip_addresses_for_device_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0100
+  * @tc.desc   test systemManager addAllowedPrinterIPAddressesForDevice with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_addresses_for_device_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await systemManager.addAllowedPrinterIPAddressesForDevice(IP_LIST_1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_remove_allowed_printer_ip_addresses_for_device_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0100
+  * @tc.desc   test systemManager removeAllowedPrinterIPAddressesForDevice with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_remove_allowed_printer_ip_addresses_for_device_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await systemManager.removeAllowedPrinterIPAddressesForDevice(IP_LIST_1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_allowed_printer_ip_addresses_for_device_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_PRINTER_IP_ADDRESSES_FOR_DEVICE_JS_0100
+  * @tc.desc   test systemManager getAllowedPrinterIPAddressesForDevice with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_allowed_printer_ip_addresses_for_device_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForDevice();
+      expect(result.length).assertEqual(0);
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_add_allowed_printer_ip_addresses_for_account_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0100
+  * @tc.desc   test systemManager addAllowedPrinterIPAddressesForAccount with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_add_allowed_printer_ip_addresses_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await systemManager.addAllowedPrinterIPAddressesForAccount(IP_LIST_1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_remove_allowed_printer_ip_addresses_for_account_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0100
+  * @tc.desc   test systemManager removeAllowedPrinterIPAddressesForAccount with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_remove_allowed_printer_ip_addresses_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await systemManager.removeAllowedPrinterIPAddressesForAccount(IP_LIST_1);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+  /**
+  * @tc.name   test_get_allowed_printer_ip_addresses_for_account_0100
+  * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_PRINTER_IP_ADDRESSES_FOR_ACCOUNT_JS_0100
+  * @tc.desc   test systemManager getAllowedPrinterIPAddressesForAccount with normal admin
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL2
+  */
+  it("test_get_allowed_printer_ip_addresses_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let result: Array<string> = systemManager.getAllowedPrinterIPAddressesForAccount();
+      expect(result.length).assertEqual(0);
+    } catch (error) {
+      expect(error.code).assertEqual(201);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

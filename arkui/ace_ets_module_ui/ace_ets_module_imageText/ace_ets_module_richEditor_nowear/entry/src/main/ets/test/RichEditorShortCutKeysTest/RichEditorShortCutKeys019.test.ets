@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorShortCutKeys019() {
   describe('RichEditorShortCutKeys019', () => {
     beforeEach(async (done: Function) => {
@@ -70,15 +72,15 @@ export default function RichEditorShortCutKeys019() {
       await CommonFunc.sleep(500);
       await driver.longClick(getBounds.x, getBounds.y );
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, 0, displayID);
       await CommonFunc.sleep(500);
       await driver.click(getBounds.x, getBounds.y);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT, 0, displayID);
       await CommonFunc.sleep(500);
       let getStyles = await driver.findComponent(ON.id('getStyles'));
       await getStyles.click();
@@ -95,5 +97,6 @@ export default function RichEditorShortCutKeys019() {
 
   })
 }
+
 
 

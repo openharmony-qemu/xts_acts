@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="content-title">
+        <text style="width:200px;height:50px;text-align:center;font-size:16px;">Element Transition</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <list class="content-list">
+        <list-item class="section">
+            <text style="width:100%;height:30px;text-align:left;font-size:14px;">1. Fade</text>
+            <div ref="fadeStage" class="stage fade-stage">
+                <div ref="fadeA" class="panel panel-a"><text class="panel-text">A</text></div>
+                <div ref="fadeB" class="panel panel-b"><text class="panel-text">B</text></div>
+            </div>
+            <input type="button" value="Switch" class="small-btn" onclick="switchFade" />
+        </list-item>
+        <list-item class="section">
+            <text style="width:100%;height:30px;text-align:left;font-size:14px;">2. Slide Left</text>
+            <div ref="slideLStage" class="stage slide-left-stage">
+                <div ref="slideLA" class="panel panel-a"><text class="panel-text">A</text></div>
+                <div ref="slideLB" class="panel panel-b"><text class="panel-text">B</text></div>
+            </div>
+            <input type="button" value="Switch" class="small-btn" onclick="switchSlideLeft" />
+        </list-item>
+        <list-item class="section">
+            <text style="width:100%;height:30px;text-align:left;font-size:14px;">3. Slide Right</text>
+            <div ref="slideRStage" class="stage slide-right-stage">
+                <div ref="slideRA" class="panel panel-a"><text class="panel-text">A</text></div>
+                <div ref="slideRB" class="panel panel-b"><text class="panel-text">B</text></div>
+            </div>
+            <input type="button" value="Switch" class="small-btn" onclick="switchSlideRight" />
+        </list-item>
+        <list-item class="section">
+            <text style="width:100%;height:30px;text-align:left;font-size:14px;">4. Slide Up</text>
+            <div ref="slideUStage" class="stage slide-up-stage">
+                <div ref="slideUA" class="panel panel-a"><text class="panel-text">A</text></div>
+                <div ref="slideUB" class="panel panel-b"><text class="panel-text">B</text></div>
+            </div>
+            <input type="button" value="Switch" class="small-btn" onclick="switchSlideUp" />
+        </list-item>
+        <list-item class="section">
+            <text style="width:100%;height:30px;text-align:left;font-size:14px;">5. Slide Down</text>
+            <div ref="slideDStage" class="stage slide-down-stage">
+                <div ref="slideDA" class="panel panel-a"><text class="panel-text">A</text></div>
+                <div ref="slideDB" class="panel panel-b"><text class="panel-text">B</text></div>
+            </div>
+            <input type="button" value="Switch" class="small-btn" onclick="switchSlideDown" />
+        </list-item>
+        <list-item class="section">
+            <text style="width:100%;height:30px;text-align:left;font-size:14px;">6. Scale</text>
+            <div ref="scaleStage" class="stage scale-stage">
+                <div ref="scaleA" class="panel panel-a"><text class="panel-text">A</text></div>
+                <div ref="scaleB" class="panel panel-b"><text class="panel-text">B</text></div>
+            </div>
+            <input type="button" value="Switch" class="small-btn" onclick="switchScale" />
+        </list-item>
+        <list-item class="section">
+            <text style="width:100%;height:30px;text-align:left;font-size:14px;">7. Shared Element</text>
+            <div ref="sharedStage" class="stage shared-stage">
+                <div ref="sharedA" class="panel panel-a"><text class="panel-text">A</text></div>
+                <div ref="sharedB" class="panel panel-b"><text class="panel-text">B</text></div>
+                <div ref="sharedStar" class="shared-star"></div>
+            </div>
+            <input type="button" value="Switch" class="small-btn" onclick="switchShared" />
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

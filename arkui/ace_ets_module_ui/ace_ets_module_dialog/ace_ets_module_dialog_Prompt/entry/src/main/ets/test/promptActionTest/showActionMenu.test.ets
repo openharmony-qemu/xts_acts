@@ -23,6 +23,7 @@ import { BusinessError } from '@ohos.base';
 
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function showActionMenu() {
   describe('showActionMenu', () => {
     beforeEach(async (done: Function) => {
@@ -70,7 +71,7 @@ export default function showActionMenu() {
       expect(properties.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
 
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       console.info('[showActionMenu_0100] END');
       done();

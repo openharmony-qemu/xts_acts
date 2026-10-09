@@ -32,6 +32,7 @@ import render from 'libnativerender.so';
 import native from 'libnativefunc.so'
 import { NodeContent } from '@kit.ArkUI';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dragEventFuncTest() {
 
   describe('dragEventFuncTest', () => {
@@ -60,7 +61,7 @@ export default function dragEventFuncTest() {
       await Utils.sleep(500);
       let point = await g_Node.getBoundsCenter();
       await Utils.sleep(500);
-      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2017);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT, 2017);
       await Utils.sleep(1000);
 
       let strJson = getInspectorByKey('keyevent');
@@ -587,8 +588,8 @@ export default function dragEventFuncTest() {
       await Utils.sleep(500);
       let rect = await Column.getBounds();
       await Utils.sleep(500);
-      await driver.swipe(Math.round(rect.left + 200), Math.round(rect.top + 200), Math.round(rect.left + 1),
-        Math.round(rect.top + 1), 600);
+      await driver.swipeBetween({x: Math.round(rect.left + 200), y: Math.round(rect.top + 200), displayId: displayID}, {x: Math.round(rect.left + 1),
+        y: Math.round(rect.top + 1), displayId: displayID}, 600);
       await Utils.sleep(1000);
 
       expect(render.GetPanGesture036Ret()).assertEqual(0)
@@ -609,8 +610,8 @@ export default function dragEventFuncTest() {
       await Utils.pushPage(`dragEvent/${PAGE_TAG}`);
       await Utils.sleep(1000);
       let driver = await Driver.create();
-      await driver.triggerCombineKeys(2072, 2047, 2035);
-      await driver.triggerKey(2017);
+      await driver.triggerCombineKeys(2072, 2047, 2035, displayID);
+      await driver.triggerKey(2017, displayID);
       await Utils.sleep(1000);
 
       let strJson = getInspectorByKey('keyevent');

@@ -22,7 +22,7 @@ async function mouseMoveToCommonEvent(id: string) {
   let component = await driver.findComponent(ON.id(id));
   let point = await component.getBounds();
   await driver.mouseMoveTo({
-    x: point.left + 10, y: point.bottom - 10
+    x: point.left + 10, y: point.bottom - 10, displayId: displayID
   });
 }
 
@@ -30,9 +30,10 @@ async function MouseClickComponent(id: string, mouseButton: MouseButton , done?:
   let driver = Driver.create();
   let button = await driver.findComponent(ON.id(id));
   let point = await button.getBounds();
-  await driver.mouseClick({x:point.left+10, y:point.top+10}, mouseButton);
+  await driver.mouseClick({x:point.left+10, y:point.top+10, displayId:displayID}, mouseButton);
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function commonEventEventTest() {
 
   describe('CommonEventEventTest', () => {

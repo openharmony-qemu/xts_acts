@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -83,10 +83,9 @@ struct commonEventTest1 {
 
 
   build() {
-    Column({space:10}) {
-
-      Text(this.str1).id('commonEventTest1_text1')
-      Text(this.str2).id('commonEventTest1_text2')
+    Column({space:5}) {
+      Text(this.str1).id('commonEventTest1_text1').height(15)
+      Text(this.str2).id('commonEventTest1_text2').height(15)
 
       Row() {
         Button('getOnMouse')
@@ -94,21 +93,22 @@ struct commonEventTest1 {
             this.str1 = this.myNodeController.text1
           })
           .id('commonEventTest1_getOnMouse')
-          .width('30%')
+          .height(15)
 
         Button('getOnSizeChange')
           .onClick(()=>{
             this.str2 = this.myNodeController.text2
           })
           .id('commonEventTest1_getOnSizeChange')
-          .width('30%')
-
+          .height(15)
+      }
+      Row(){
         Button('changeSize')
           .onClick(()=>{
             this.myNodeController.changeNode()
           })
           .id('commonEventTest1_changeSize')
-          .width('30%')
+          .height(15)
       }
 
       NodeContainer(this.myNodeController)
@@ -117,6 +117,6 @@ struct commonEventTest1 {
         .width(100)
         .height(100)
 
-    }.width("100%")
+    }.width("100%").height('100%')
   }
 }

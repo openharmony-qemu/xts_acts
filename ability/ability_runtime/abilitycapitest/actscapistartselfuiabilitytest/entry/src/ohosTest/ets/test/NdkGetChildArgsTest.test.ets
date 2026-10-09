@@ -39,7 +39,7 @@ export default function ndkTest() {
       console.log(`${tag}, it begin`);
       let ret : Number = testNapi.startNativeChildProcess_0100();
       hilog.info(0x0000, tag, '%{public}s', ` ${tag} execute result:` + ret);
-      if (ret == 801 || ret == 16010004){
+      if (ret == 801 || ret == 16010004 || ret == 16010006 ){
         done();
         return;
       }

@@ -60,8 +60,10 @@ export default function lanesItemGroup() {
       let btn: Component = await driver.findComponent(ON.id('itemInGroup_ver_item'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let list = CommonFunc.getComponentRectOnScreen('group_ver_list');
-      let listItem = CommonFunc.getComponentRectOnScreen('group_ver_2_3');
+      let listComponent = await driver.findComponent(ON.id('group_ver_list'));
+      let list = await listComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('group_ver_2_3'));
+      let listItem = await listItemComponent.getBounds();
       await CommonFunc.sleep(1000);
       console.info('[lanesItemGroup_0100] listItem.top' + listItem.top);
       console.info('[lanesItemGroup_0100] list.top' + list.top);

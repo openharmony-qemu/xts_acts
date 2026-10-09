@@ -18,6 +18,7 @@ import { UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest'
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dragSpringLoadingTest() {
   describe('dragSpringLoadingTest', () => {
     beforeEach(async (done: Function) => {
@@ -71,8 +72,8 @@ export default function dragSpringLoadingTest() {
       let imageRect = await image1.getBounds();
       let buttonRect = await button1.getBounds();
       await CommonFunc.sleep(500);
-      await driver.drag(imageRect.left, imageRect.bottom,
-        imageRect.left, buttonRect.bottom, 200)
+      await driver.dragBetween({x:imageRect.left,y:imageRect.bottom,displayId:displayID},
+        {x:imageRect.left,y:buttonRect.bottom,displayId:displayID}, 200)
       await CommonFunc.sleep(1000);
       let strJson1 = getInspectorByKey('currentNotifySequence');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -162,8 +163,8 @@ export default function dragSpringLoadingTest() {
       let imageRect = await image1.getBounds();
       let buttonRect = await button1.getBounds();
       await CommonFunc.sleep(500);
-      await driver.drag(imageRect.left, imageRect.bottom,
-        imageRect.left, buttonRect.bottom, 200)
+      await driver.dragBetween({x:imageRect.left,y:imageRect.bottom,displayId:displayID},
+        {x:imageRect.left,y:buttonRect.bottom,displayId:displayID}, 200)
       await CommonFunc.sleep(1000);
 
       let strJson5 = getInspectorByKey('endConfig');

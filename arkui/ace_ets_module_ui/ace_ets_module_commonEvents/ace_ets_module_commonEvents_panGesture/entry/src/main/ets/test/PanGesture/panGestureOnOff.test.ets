@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function panGestureOnOffTest() {
 
   describe('panGestureOnOffTest', () => {
@@ -71,7 +72,7 @@ export default function panGestureOnOffTest() {
       let width = right - left;
       await CommonFunc.sleep(1000);
       
-      await driver.swipe(Math.round(left + width*0.5),Math.round(bottom - height*0.08),Math.round(left + width*0.5),Math.round(top + height*0.08));
+      await driver.swipeBetween({x:Math.round(left + width*0.5),y:Math.round(bottom - height*0.08),displayId:displayID},{x:Math.round(left + width*0.5),y:Math.round(top + height*0.08),displayId:displayID});
       await CommonFunc.sleep(3000);
       // 验证监听是否按顺序触发回调      
       expect(AppStorage.get('callbackFunc')).assertEqual('callbackFunc_afterPanCallBack_beforeEndCallBack_afterEndCallBack');

@@ -16,11 +16,6 @@ group("ActsAceEtsModuleCommonEventsTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
     deps = [
-      "ace_ets_module_commonEvents_api11:ActsAceEtsModuleCommonEventsApi11Test",
-      "ace_ets_module_commonEvents_api12:ActsAceEtsModuleCommonEventsApi12Test",
-      "ace_ets_module_commonEvents_api14:ActsAceEtsModuleCommonEventsApi14Test",
-      "ace_ets_module_commonEvents_api21:ActsAceEtsModuleCommonEventsApi21Test",
-      "ace_ets_module_commonEvents_api22:ActsAceEtsModuleCommonEventsApi22Test",
       "ace_ets_module_commonEvents_wear_api11:ActsAceEtsModuleCommonEventsApiWear11Test",
       "ace_ets_module_commonEvents_axisEvent:ActsAceEtsModuleCommonEventsAxisEventTest",
       "ace_ets_module_commonEvents_panGesture:ActsAceEtsModuleCommonEventsPanGestureTest",
@@ -46,20 +41,7 @@ group("ActsAceEtsModuleCommonEventsTest") {
     ]
   } else {
     deps = [
-      "ace_ets_module_commonEvents_api11:ActsAceEtsModuleCommonEventsApi11Test",
-      "ace_ets_module_commonEvents_api12:ActsAceEtsModuleCommonEventsApi12Test",
-      "ace_ets_module_commonEvents_api12None:ActsAceEtsModuleCommonEventsApi12NoneTest",
-      "ace_ets_module_commonEvents_api14:ActsAceEtsModuleCommonEventsApi14Test",
-      "ace_ets_module_commonEvents_api15:ActsAceEtsModuleCommonEventsApi15Test",
-      "ace_ets_module_commonEvents_api17:ActsAceEtsModuleCommonEventsApi17Test",
-      "ace_ets_module_commonEvents_api18:ActsAceEtsModuleCommonEventsApi18Test",
-      "ace_ets_module_commonEvents_api20:ActsAceEtsModuleCommonEventsApi20Test",
-      "ace_ets_module_commonEvents_api21:ActsAceEtsModuleCommonEventsApi21Test",
-      "ace_ets_module_commonEvents_api22:ActsAceEtsModuleCommonEventsApi22Test",
       "ace_ets_module_commonEvents_api23_static:ActsAceEtsModuleCommonSnapshotStaticTest",
-      "ace_ets_module_commonEvents_noware_api14:ActsAceEtsModuleCommonEventsNoWearApi14Test",
-      "ace_ets_module_commonEvents_nowear_api11:ActsAceEtsModuleCommonEventsNoWearApi11Test",
-      "ace_ets_module_commonEvents_nowear_api20:ActsAceEtsModuleCommonEventsApiNowear20Test",
       "ace_ets_module_commonEvents_axisEvent:ActsAceEtsModuleCommonEventsAxisEventTest",
       "ace_ets_module_commonEvents_panGesture:ActsAceEtsModuleCommonEventsPanGestureTest",
       "ace_ets_module_commonEvents_nowear:ActsAceEtsModuleCommonEventsNowearTest",

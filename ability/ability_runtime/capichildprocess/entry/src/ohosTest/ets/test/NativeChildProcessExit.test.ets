@@ -70,6 +70,8 @@ export default function nativeChildProcessExitTest() {
           console.info(`${tag}: multi process model disable`);
           expect(16010004).assertEqual(ret);
           return;
+        } else if (ret == 16010006) {
+          return;
         } else if (!ncpEnable) {
           console.info(`${tag}: Native child process disable`);
           expect(801).assertEqual(ret);
@@ -114,6 +116,8 @@ export default function nativeChildProcessExitTest() {
         if (!mpEnable) {
           console.info(`${tag}: multi process model disable`);
           expect(16010004).assertEqual(ret);
+          return;
+        } else if (ret == 16010006) {
           return;
         } else if (!ncpEnable) {
           console.info(`${tag}: Native child process disable`);

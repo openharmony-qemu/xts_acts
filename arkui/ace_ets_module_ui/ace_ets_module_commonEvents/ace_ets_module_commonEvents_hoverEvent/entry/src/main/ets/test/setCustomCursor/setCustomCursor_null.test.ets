@@ -17,7 +17,8 @@
  	 import router from '@ohos.router';
  	 import CommonFunc from '../../MainAbility/common/Common';
  	 
- 	 export default function setCustomCursornull() {
+ 	 let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+export default function setCustomCursornull() {
  	   describe('setCustomCursornull', () => {
  	     beforeEach(async (done: Function) => {
  	       console.info('getCurrentLocalPositionTest beforeEach start');
@@ -58,13 +59,13 @@
   let rect = await btn.getBounds();
   let centerX = Math.round((rect.left + rect.right) / 2);
   let centerY = Math.round((rect.top + rect.bottom) / 2);
-  await driver.mouseClick({ x: centerX, y: centerY }, MouseButton.MOUSE_BUTTON_LEFT);
+  await driver.mouseClick({ x: centerX, y: centerY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
 
   btn = await driver.findComponent(ON.id('button02'));
   rect = await btn.getBounds();
   centerX = Math.round((rect.left + rect.right) / 2);
   centerY = Math.round((rect.top + rect.bottom) / 2);
-  await driver.mouseClick({ x: centerX, y: centerY }, MouseButton.MOUSE_BUTTON_LEFT);
+  await driver.mouseClick({ x: centerX, y: centerY, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
 
   let strJsonX = getInspectorByKey('getHistoricalPointsX');
   let objX: ESObject = JSON.parse(strJsonX);

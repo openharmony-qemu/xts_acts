@@ -234,4 +234,40 @@ export default class Utils {
       }
     }
   }
+
+  static async closeNearLink(): Promise<void> {
+    try {
+      let state = manager.getState();
+      let TIME_SLEEP = 2000;
+      switch (state) {
+        case manager.NearlinkState.STATE_TURNING_OFF:
+          await Utils.msSleep(TIME_SLEEP);
+          let state0 = manager.getState();
+          hilog.info(0x0000, 'testTag', 'nearLink state: %{public}s', JSON.stringify(state0));
+          break;
+        case manager.NearlinkState.STATE_OFF:
+          hilog.info(0x0000, 'testTag', 'nearLink state: %{public}s', JSON.stringify(state));
+          break;
+        case manager.NearlinkState.STATE_TURNING_ON: 
+          await Utils.msSleep(TIME_SLEEP);
+          await Utils.clickCloseNearLinkSwitch();
+          await Utils.msSleep(TIME_SLEEP);
+          let state2 = manager.getState();
+          hilog.info(0x0000, 'testTag', 'nearLink state: %{public}s', JSON.stringify(state2));
+          break;
+        case manager.NearlinkState.STATE_ON:
+          await Utils.clickCloseNearLinkSwitch();
+          await Utils.msSleep(TIME_SLEEP);
+          let state3 = manager.getState();
+          hilog.info(0x0000, 'testTag', 'nearLink state: %{public}s', JSON.stringify(state3));
+          break;
+        default:
+          hilog.info(0x0000, 'testTag', 'enable success');
+      }
+    } catch (error) {
+      if (error.code === 801) {
+        return;
+      }
+    }
+  }
 }

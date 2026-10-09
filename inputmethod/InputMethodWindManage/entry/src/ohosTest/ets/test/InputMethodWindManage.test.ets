@@ -21,7 +21,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import display from '@ohos.display';
 import { PanelInfo, PanelFlag, PanelType } from '@ohos.inputMethod.Panel';
 import deviceinfo from '@ohos.deviceInfo';
-import { Driver, ON, MatchPattern, Component, UiWindow, DisplayRotation, Rect } from '@ohos.UiTest';
+import { Driver, ON, MatchPattern, Component, UiWindow, DisplayRotation, Rect, Point } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import { util } from '@kit.ArkTS';
 
@@ -30,19 +30,30 @@ export default function inputMethodWindManageAbility() {
     let driver = Driver.create();
     let textArea: Component;
     let rectInfo: Rect;
+    let id: number = 0;
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     beforeAll(async (done: Function) => {
       console.info('====>beforeAll inputMethod_enable start!')
       try {
-        await delegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test -f');
-        await delegator.executeShellCommand('ime -s com.acts.inputmethodwidmanage.test');
+        let enableCmd = 'ime -e com.acts.inputmethodwidmanage.test -f';
+        let setCmd = 'ime -s com.acts.inputmethodwidmanage.test';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+          enableCmd = `ime -u ${user} -e com.acts.inputmethodwidmanage.test -f`;
+          setCmd = `ime -u ${user} -s com.acts.inputmethodwidmanage.test`;
+        }
+        console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+        await delegator.executeShellCommand(enableCmd);
+        await delegator.executeShellCommand(setCmd);
         console.info('====>beforeAll inputMethod_enable success');
         await driver.delayMs(1000);
         textArea = await driver.findComponent(ON.type('TextArea'));
         console.info('====>beforeAll inputMethodSwitch window textArea:' + JSON.stringify(textArea));
         rectInfo = await textArea.getBounds();
         console.info('====>beforeAll inputMethodSwitch textArea rectInfo:' + JSON.stringify(rectInfo));
+        id = await textArea.getDisplayId();
+        console.info(`====>beforeAll DisplayId:${id}`);
         await driver.delayMs(1000);
         await runCmd();
         await driver.delayMs(1000);
@@ -60,8 +71,9 @@ export default function inputMethodWindManageAbility() {
     let runCmd = async () => {
       let cursor_x: number = rectInfo.left + 20 + Math.floor(Math.random() * (rectInfo.right - rectInfo.left) * 0.7);
       let cursor_y: number = rectInfo.top + 20 + Math.floor(Math.random() * (rectInfo.bottom - rectInfo.top) * 0.7);
-      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`)
-      await driver.click(cursor_x, cursor_y)
+      let point: Point = {x: cursor_x, y: cursor_y, displayId: id};
+      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y} displayId: ${id}`);
+      await driver.clickAt(point);
     }
 
     let newArrayBuffer = (str:string|undefined): ArrayBuffer => {
@@ -8870,13 +8882,21 @@ export default function inputMethodWindManageAbility() {
      */
     it('Sub_InputMethod_IME_InputMethodState_0901', Level.LEVEL3, async (done: Function) => {
       try{
-        await delegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test -b');
+        let enableForceCmd = 'ime -e com.acts.inputmethodwidmanage.test -f';
+        let enableBasicCmd = 'ime -e com.acts.inputmethodwidmanage.test -b';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+          enableForceCmd = `ime -u ${user} -e com.acts.inputmethodwidmanage.test -f`;
+          enableBasicCmd = `ime -u ${user} -e com.acts.inputmethodwidmanage.test -b`;
+        }
+        console.info(`====>beforeAll enableForceCmd:${enableForceCmd} ,enableBasicCmd:${enableBasicCmd}`);
+        await delegator.executeShellCommand(enableBasicCmd);
         let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
         console.info("====>Sub_InputMethod_IME_InputMethodState_0901 getSetting success");
         let state =  await inputMethodSetting.getInputMethodState();
         console.info(`====>Sub_InputMethod_IME_InputMethodState_0901 state is: ${state}`);
         await driver.delayMs(1000);
-        await delegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test -f');
+        await delegator.executeShellCommand(enableForceCmd);
         await driver.delayMs(1000);
         expect(state).assertEqual(inputMethod.EnabledState.BASIC_MODE);
         done();
@@ -8897,15 +8917,25 @@ export default function inputMethodWindManageAbility() {
      */
     it('Sub_InputMethod_IME_InputMethodState_0902', Level.LEVEL3, async (done: Function) => {
       try{
-        await delegator.executeShellCommand('ime -d com.acts.inputmethodwidmanage.test');
+        let enableCmd = 'ime -e com.acts.inputmethodwidmanage.test -f';
+        let disableCmd = 'ime -d com.acts.inputmethodwidmanage.test';
+        let setCmd = 'ime -s com.acts.inputmethodwidmanage.test';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+          enableCmd = `ime -u ${user} -e com.acts.inputmethodwidmanage.test -f`;
+          disableCmd = `ime -u ${user} -d com.acts.inputmethodwidmanage.test`;
+          setCmd = `ime -u ${user} -s com.acts.inputmethodwidmanage.test`;
+        }
+        console.info(`====>beforeAll enableCmd:${enableCmd} ,disableCmd:${disableCmd},setCmd:${setCmd}`);
+        await delegator.executeShellCommand(disableCmd);
         await driver.delayMs(1000);
         let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
         console.info("====>Sub_InputMethod_IME_InputMethodState_0902 getSetting success");
         let state =  await inputMethodSetting.getInputMethodState();
         console.info(`====>Sub_InputMethod_IME_InputMethodState_0902 state is: ${state}`);
-        await delegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test -f');
+        await delegator.executeShellCommand(enableCmd);
         await driver.delayMs(1000);
-        await delegator.executeShellCommand('ime -s com.acts.inputmethodwidmanage.test');
+        await delegator.executeShellCommand(setCmd);
         await driver.delayMs(1000);
         expect(state).assertEqual(inputMethod.EnabledState.DISABLED);
         done();

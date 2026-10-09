@@ -1,0 +1,30 @@
+<!-- gradient Button 方向渐变：验证 button 元素支持背景渐变 -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">Button 方向渐变</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <list-item class="card">
+      <text class="label">019 Button 水平 to right</text>
+      <input type="button" value="红→蓝" class="btn-gradient btn-right" />
+      <text class="expect">预期：按钮背景左侧红 → 右侧蓝，水平方向平滑渐变</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">020 Button 垂直 to bottom</text>
+      <input type="button" value="红→蓝" class="btn-gradient btn-bottom" />
+      <text class="expect">预期：按钮背景顶部红 → 底部蓝，垂直方向平滑渐变</text>
+    </list-item>
+
+    <!-- 底部 pass/fail/back 按钮 -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

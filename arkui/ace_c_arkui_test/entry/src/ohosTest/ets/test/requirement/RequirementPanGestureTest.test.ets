@@ -25,15 +25,16 @@ async function panGesture(id: string, x1: number, y1: number, x2: number, y2: nu
   let rect = await refresh.getBounds();
   const p1: Point = {
     x: Math.round(rect.left + vp2px(x1)),
-    y: Math.round(rect.top + vp2px(y1))
+    y: Math.round(rect.top + vp2px(y1)), displayId: displayID
   };
   const p2: Point = {
     x: Math.round(rect.left + vp2px(x2)),
-    y: Math.round(rect.top + vp2px(y2))
+    y: Math.round(rect.top + vp2px(y2)), displayId: displayID
   };
   await driver.fling(p1, p2, 5, 200)
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function requirementPanGestureTest() {
 
   describe('RequirementPanGestureTest', () => {

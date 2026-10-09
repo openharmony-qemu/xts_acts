@@ -60,8 +60,10 @@ export default function singleHozDiff() {
       let btn: Component = await driver.findComponent(ON.id('scroller_group_hoz_diff'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let list = CommonFunc.getComponentRectOnScreen('group_hoz_diff_list');
-      let listItem = CommonFunc.getComponentRectOnScreen('group_hoz_diff_item');
+      let listComponent = await driver.findComponent(ON.id('group_hoz_diff_list'));
+      let list = await listComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('group_hoz_diff_item'));
+      let listItem = await listItemComponent.getBounds();
       await CommonFunc.sleep(1000);
       expect(Math.abs(listItem.top - list.top) <= 1).assertEqual(true);
       console.info('[singleHozDiff_0100] END');

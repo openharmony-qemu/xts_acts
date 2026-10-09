@@ -52,7 +52,10 @@ export default function swipeActionArcList() {
      */
     it('swipeActionArcList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[swipeActionArcList_0100] START');
-      let swipeList = CommonFunc.getComponentRectOnScreen('arcListItem_0');
+      let driver = await Driver.create()
+      let swipeListComponent = await driver.findComponent(ON.id('arcListItem_0'));
+      let swipeList = await swipeListComponent.getBounds();
+      let displayId = await swipeListComponent.getDisplayId();
       let top = swipeList.top;
       let right = swipeList.right;
       let left = swipeList.left;
@@ -60,8 +63,9 @@ export default function swipeActionArcList() {
       console.info("swipeActionArcList_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
-      await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('arcList_listItemOffset');
       console.info("[swipeActionArcList_0100] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -73,7 +77,9 @@ export default function swipeActionArcList() {
       console.info("[swipeActionArcList_0100] content2: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('end EXPANDED');
 
-      await driver.swipe(Math.round(left + width*0.4),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.4), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.9), y: Math.round(top + height/2), displayId: displayId });
       await CommonFunc.sleep(2000);
       console.info('[swipeActionArcList_0100] END');
       done();
@@ -89,7 +95,10 @@ export default function swipeActionArcList() {
      */
     it('swipeActionArcList_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[swipeActionArcList_0200] START');
-      let swipeList = CommonFunc.getComponentRectOnScreen('arcListItem_0');
+      let driver = await Driver.create()
+      let swipeListComponent = await driver.findComponent(ON.id('arcListItem_0'));
+      let swipeList = await swipeListComponent.getBounds();
+      let displayId = await swipeListComponent.getDisplayId();
       let top = swipeList.top;
       let right = swipeList.right;
       let left = swipeList.left;
@@ -97,8 +106,9 @@ export default function swipeActionArcList() {
       console.info("swipeActionArcList_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
-      await driver.swipe(Math.round(left + width*0.4),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.4), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.9), y: Math.round(top + height/2), displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson1 = getInspectorByKey('arcList_listItemOffset');
       console.info("[swipeActionArcList_0200] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -110,7 +120,9 @@ export default function swipeActionArcList() {
       console.info("[swipeActionArcList_0200] content2: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('start EXPANDED');
 
-      await driver.swipe(Math.round(left + width*0.7),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width*0.7), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: displayId });
       await CommonFunc.sleep(2000);
       console.info('[swipeActionArcList_0200] END');
       done();

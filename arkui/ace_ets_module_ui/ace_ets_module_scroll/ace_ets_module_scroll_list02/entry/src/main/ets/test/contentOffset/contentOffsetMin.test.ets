@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
+import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 export default function contentOffsetMin() {
@@ -83,9 +84,12 @@ export default function contentOffsetMin() {
       await CommonFunc.sleep(1000);
       expect(JSON.parse(strJson).$type).assertEqual("List");
 
-      let list = CommonFunc.getComponentRectOnScreen('contentOffset_negative');
+      let driver = Driver.create();
+      let listComponent = await driver.findComponent(ON.id('contentOffset_negative'));
+      let list = await listComponent.getBounds();
       console.info("[contentOffsetMin_0200] list_top is: " + list.top);
-      let listItem = CommonFunc.getComponentRectOnScreen('item_min_ne_1');
+      let listItemComponent = await driver.findComponent(ON.id('item_min_ne_1'));
+      let listItem = await listItemComponent.getBounds();
       console.info("[contentOffsetMin_0200] listItem_top is: " + listItem.top);
       expect(Math.floor(Math.abs(listItem.top - list.top)) <= 1).assertTrue();
       console.info('[contentOffsetMin_0200] END');

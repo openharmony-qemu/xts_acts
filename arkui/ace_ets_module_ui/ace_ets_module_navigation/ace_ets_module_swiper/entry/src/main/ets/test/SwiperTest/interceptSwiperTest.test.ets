@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function interceptSwiperTest() {
   describe('interceptSwiperTest', () => {
     beforeEach(async (done: Function) => {
@@ -64,7 +66,7 @@ export default function interceptSwiperTest() {
       let height = bottom -top;
       console.info("interceptSwiperTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let driver = await Driver.create()
-      await driver.swipe(Math.round(right - vp2px(20)),Math.round(top + height/2),Math.round(left + vp2px(20)),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(right - vp2px(20)), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(left + vp2px(20)), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       let swiperContent = await driver.findComponent(ON.id('swiper_intercept_text'));
       let text1 = await swiperContent.getText();
@@ -93,7 +95,7 @@ export default function interceptSwiperTest() {
       let width = right - left;
       console.info("interceptSwiperTest_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let driver = await Driver.create()
-      await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(right - vp2px(20)),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.3), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(right - vp2px(20)), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       let swiperContent = await driver.findComponent(ON.id('swiper_intercept_text'));
       let text1 = await swiperContent.getText();

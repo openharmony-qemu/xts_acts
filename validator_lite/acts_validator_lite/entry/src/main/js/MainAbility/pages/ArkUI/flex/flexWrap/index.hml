@@ -1,0 +1,83 @@
+<!-- flex-wrap: basic nowrap/wrap demos for row and column, integrated into one page with two cards -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">flex-wrap</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 row direction: nowrap / wrap -->
+    <list-item class="card card-1">
+      <div class="card-head">
+        <text class="label">001 row 换行表现</text>
+      </div>
+
+      <text class="v-label">1. nowrap 不换行（6×70px &gt; 300px容器 → 5,6溢出显示）</text>
+      <div class="demo-now">
+        <div class="wb r"><text class="wt">1</text></div>
+        <div class="wb g"><text class="wt">2</text></div>
+        <div class="wb b"><text class="wt">3</text></div>
+        <div class="wb o"><text class="wt">4</text></div>
+        <div class="wb p"><text class="wt">5</text></div>
+        <div class="wb t"><text class="wt">6</text></div>
+      </div>
+
+      <text class="v-label">2. wrap 换行（1-4 上行, 5-8 下行）</text>
+      <div class="demo-wrap">
+        <div class="wb r"><text class="wt">1</text></div>
+        <div class="wb g"><text class="wt">2</text></div>
+        <div class="wb b"><text class="wt">3</text></div>
+        <div class="wb o"><text class="wt">4</text></div>
+        <div class="wb p"><text class="wt">5</text></div>
+        <div class="wb t"><text class="wt">6</text></div>
+        <div class="wb g2"><text class="wt">7</text></div>
+        <div class="wb b2"><text class="wt">8</text></div>
+      </div>
+
+      <text class="expect">预期：1 不换行，超出部分溢出显示；2 分两行排列（1-4 上行, 5-8 下行）</text>
+    </list-item>
+
+    <!-- 002 column direction: 2 strips evenly distributed (nowrap / wrap) -->
+    <list-item class="card card-2">
+      <div class="card-head">
+        <text class="label">002 column 换列表现</text>
+      </div>
+
+      <div class="strips">
+        <div class="strip">
+          <text class="s-label">nowrap</text>
+          <div class="strip-demo now-nowrap">
+            <div class="cb r"><text class="wt">1</text></div>
+            <div class="cb g"><text class="wt">2</text></div>
+            <div class="cb b"><text class="wt">3</text></div>
+            <div class="cb o"><text class="wt">4</text></div>
+            <div class="cb p"><text class="wt">5</text></div>
+            <div class="cb t"><text class="wt">6</text></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">wrap</text>
+          <div class="strip-demo now-wrap">
+            <div class="cb r"><text class="wt">1</text></div>
+            <div class="cb g"><text class="wt">2</text></div>
+            <div class="cb b"><text class="wt">3</text></div>
+            <div class="cb o"><text class="wt">4</text></div>
+            <div class="cb p"><text class="wt">5</text></div>
+            <div class="cb t"><text class="wt">6</text></div>
+          </div>
+        </div>
+      </div>
+
+      <text class="expect">预期：nowrap 不换列，第5块起溢出灰框显示（半截在框内）；wrap 左列4块右列2块</text>
+    </list-item>
+
+    <!-- bottom pass/fail/back buttons, as the last list item so they scroll into view -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

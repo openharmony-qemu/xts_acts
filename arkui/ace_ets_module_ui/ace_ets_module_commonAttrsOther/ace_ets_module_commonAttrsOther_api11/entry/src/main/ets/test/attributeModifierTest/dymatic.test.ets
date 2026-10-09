@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dymaticTest() {
   describe('dymaticTest', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +67,7 @@ export default function dymaticTest() {
       let ymiddle = Math.round(top + (bottom - top)/2)
 
       let driver = await Driver.create()
-      driver.longClick(xmiddle,ymiddle);
+      driver.longClickAt({x: xmiddle, y: ymiddle, displayId: displayID});
       await CommonFunc.sleep(2000);
       let json = getInspectorByKey('pressedBt');
       let Obj1: ESObject = JSON.parse(json);

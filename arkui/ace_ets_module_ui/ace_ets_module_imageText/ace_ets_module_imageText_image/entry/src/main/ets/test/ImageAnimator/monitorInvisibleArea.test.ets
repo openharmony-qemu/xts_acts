@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function monitorInvisibleAreaTest() {
   describe('monitorInvisibleAreaTest', () => {
     beforeEach(async (done: Function) => {
@@ -66,12 +67,14 @@ export default function monitorInvisibleAreaTest() {
       let right = rect.right;
       let bottom = rect.bottom;
 
-      await driver.swipe(
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.75),
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.25)
-      );
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.75), displayId: displayID },
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.25), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let strJson = getInspectorByKey('ImageAnimatorFlag');
@@ -108,23 +111,27 @@ export default function monitorInvisibleAreaTest() {
       let right = rect.right;
       let bottom = rect.bottom;
 
-      await driver.swipe(
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.25),
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.75)
-      );
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.25), displayId: displayID },
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.75), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let btnFalse = await driver.findComponent(ON.id('falseFlag'));
       await btnFalse.click()
       await CommonFunc.sleep(2000);
-      await driver.swipe(
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.75),
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.25)
-      );
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.75), displayId: displayID },
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.25), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let strJson = getInspectorByKey('ImageAnimatorFlag');
@@ -159,23 +166,27 @@ export default function monitorInvisibleAreaTest() {
       let right = rect.right;
       let bottom = rect.bottom;
 
-      await driver.swipe(
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.25),
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.75)
-      );
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.25), displayId: displayID },
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.75), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let btnUndefined = await driver.findComponent(ON.id('undefinedFlag'));
       await btnUndefined.click()
       await CommonFunc.sleep(2000);
-      await driver.swipe(
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.75),
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.25)
-      );
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.75), displayId: displayID },
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.25), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
       let strJson = getInspectorByKey('ImageAnimatorFlag');
       let obj: ESObject = JSON.parse(strJson);
@@ -210,23 +221,27 @@ export default function monitorInvisibleAreaTest() {
       let bottom = rect.bottom;
       let middle = (top + bottom) / 2
 
-      await driver.swipe(
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.25),
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.75)
-      );
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.25), displayId: displayID },
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.75), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
 
       let btnNull = await driver.findComponent(ON.id('nullFlag'));
       await btnNull.click()
       await CommonFunc.sleep(2000);
-      await driver.swipe(
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.75),
-        Math.round(left + (right - left) * 0.5),
-        Math.round(top + (bottom - top) * 0.25)
-      );
+      try {
+        await driver.swipeBetween(
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.75), displayId: displayID },
+          { x: Math.round(left + (right - left) * 0.5), y: Math.round(top + (bottom - top) * 0.25), displayId: displayID }
+        );
+      } catch (err) {
+        console.log('swipeBetween error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(6000);
       let strJson = getInspectorByKey('ImageAnimatorFlag');
       let obj: ESObject = JSON.parse(strJson);

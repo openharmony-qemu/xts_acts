@@ -159,6 +159,63 @@ export default function advertisingTest(): void {
     })
 
     /**
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_Enum_static_0100
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_Enum_0100
+     * @tc.desc TxPowerMode enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Advertising_Enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLinkPub_Advertising_Enum_static_0100';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let ADV_TX_POWER_LOW: advertising.TxPowerMode = advertising.TxPowerMode.ADV_TX_POWER_LOW;
+          hilog.info(0x0000, 'testTag', '%{public}s ADV_TX_POWER_LOW result: %{public}d', caseName, ADV_TX_POWER_LOW);
+          expect(ADV_TX_POWER_LOW).assertEqual(1);
+          let ADV_TX_POWER_MEDIUM: advertising.TxPowerMode = advertising.TxPowerMode.ADV_TX_POWER_MEDIUM;
+          hilog.info(0x0000, 'testTag', '%{public}s ADV_TX_POWER_MEDIUM result: %{public}d', caseName, ADV_TX_POWER_MEDIUM);
+          expect(ADV_TX_POWER_MEDIUM).assertEqual(2);
+          let ADV_TX_POWER_HIGH: advertising.TxPowerMode = advertising.TxPowerMode.ADV_TX_POWER_HIGH;
+          hilog.info(0x0000, 'testTag', '%{public}s ADV_TX_POWER_HIGH result: %{public}d', caseName, ADV_TX_POWER_HIGH);
+          expect(ADV_TX_POWER_HIGH).assertEqual(3);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s TxPowerMode error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_Enum_static_0200
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_Enum_0200
+     * @tc.desc AdvertisingState enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Advertising_Enum_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLinkPub_Advertising_Enum_static_0200';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let STARTED: advertising.AdvertisingState = advertising.AdvertisingState.STARTED;
+          hilog.info(0x0000, 'testTag', '%{public}s STARTED result: %{public}d', caseName, STARTED);
+          expect(STARTED).assertEqual(1);
+          let STOPPED: advertising.AdvertisingState = advertising.AdvertisingState.STOPPED;
+          hilog.info(0x0000, 'testTag', '%{public}s STOPPED result: %{public}d', caseName, STOPPED);
+          expect(STOPPED).assertEqual(2);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s AdvertisingState error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLinkPub_Advertising_ON_static_0100
      * @tc.number SUB_Communication_XTS_NearLinkPub_Advertising_ON_0100
      * @tc.desc 不触发回调仅调用

@@ -112,7 +112,7 @@ struct TextInputPage {
         .showPasswordIcon(this.showPasswordIcon)
         .style(this.style)
         .textAlign(this.textAlign)
-        .key('textInput')
+        .id('textInput')
         .width(400)
         .height('5%')
         .fontSize(14)
@@ -135,9 +135,9 @@ struct TextInputPage {
         .onPaste((value: string) => {
           this.onPaste = value
         })
-      Text(this.text).fontSize(10).key('text').height('5%')
+      Text(this.text).fontSize(10).id('text').height('5%')
       Button('Set caretPosition 1')
-        .key('TextInputPage_button')
+        .id('TextInputPage_button')
         .onClick(() => {
           // 将光标移动至第一个字符后
           this.controller.caretPosition(1)
@@ -145,7 +145,7 @@ struct TextInputPage {
         .height('5%')
       // 密码输入框
       TextInput({ placeholder: 'input your password...' })
-        .key('password')
+        .id('password')
         .width(400)
         .height('5%')
         .type(InputType.Password)
@@ -153,16 +153,16 @@ struct TextInputPage {
         .showPasswordIcon(true)
       // 内联风格输入框
       TextInput({ placeholder: 'inline style' })
-        .key('input')
+        .id('input')
         .width(400)
         .height('5%')
         .borderRadius(0)
         .style(TextInputStyle.Inline)
-      Text('onSubmit:' + this.onSubmit).fontSize(10).margin(1).key('TextInputPage_submit').height('5%')
-      Text('onEditChange:' + this.onEditChange).fontSize(10).margin(1).key('editChange').height('5%')
-      Text('onCopy:' + this.onCopy).fontSize(10).margin(1).key('TextInputPage_copy').height('5%')
-      Text('onCut:' + this.onCut).fontSize(10).margin(1).key('cut_TextInputPage').height('5%')
-      Text('onPaste:' + this.onPaste).fontSize(10).margin(1).key('TextInputPage_paste').height('5%')
+      Text('onSubmit:' + this.onSubmit).fontSize(10).margin(1).id('TextInputPage_submit').height('5%')
+      Text('onEditChange:' + this.onEditChange).fontSize(10).margin(1).id('editChange').height('5%')
+      Text('onCopy:' + this.onCopy).fontSize(10).margin(1).id('TextInputPage_copy').height('5%')
+      Text('onCut:' + this.onCut).fontSize(10).margin(1).id('cut_TextInputPage').height('5%')
+      Text('onPaste:' + this.onPaste).fontSize(10).margin(1).id('TextInputPage_paste').height('5%')
     }.width('100%')
   }
 }

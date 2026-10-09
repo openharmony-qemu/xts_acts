@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { NodeController, FrameNode, UIContext, typeNode, ExpandMode } from '@kit.ArkUI';
 
 class MyNodeController extends NodeController {
@@ -27,7 +28,7 @@ class MyNodeController extends NodeController {
 
     this.frameNode = new FrameNode(uiContext);
     this.frameNode.commonAttribute.backgroundColor(Color.Pink);
-    this.frameNode.commonAttribute.size({ width: 100, height: 100 });
+    this.frameNode.commonAttribute.size({ width: 100, height: 70 });
     this.addCommonEvent(this.frameNode)
     this.rootNode.appendChild(this.frameNode);
     this.childrenCount = this.childrenCount + 1;
@@ -50,7 +51,7 @@ class MyNodeController extends NodeController {
   createFrameNode() {
     let frameNode = new FrameNode(this.uiContext!);
     frameNode.commonAttribute.backgroundColor(Color.Pink);
-    frameNode.commonAttribute.size({ width: 100, height: 100 });
+    frameNode.commonAttribute.size({ width: 100, height: 70 });
     frameNode.commonAttribute.position({ x: this.childrenCount * 120, y: 0 });
     frameNode.commonAttribute.visibility(Visibility.Hidden);
 
@@ -112,58 +113,52 @@ struct GetFrameNodeMethodNullIndex {
   private myNodeController: MyNodeController = new MyNodeController();
 
   build() {
-    Column({ space: 8 }) {
+    Column({ space: 3 }) {
       Column() {
         NodeContainer(this.myNodeController)
           .borderWidth(1)
-          .width(300)
-          .height(100)
-      }.height('50%')
+          .width(200)
+          .height(70)
+      }
 
       Button('test null')
         .id('btn_getMethodReturnNull')
-        .height('5%')
-        .width(300)
+        .height(15)
         .onClick(() => {
           this.myNodeController.getMethodReturnNull();
         })
 
       Button('getRenderNode null')
         .id('btn_getRenderNodeNull')
-        .height('5%')
-        .width(300)
+        .height(15)
         .onClick(() => {
           this.myNodeController.getRenderNodeNull();
         })
 
       Button('isVisible boolean')
         .id('btn_isVisibleBoolean')
-        .height('5%')
-        .width(300)
+        .height(15)
         .onClick(() => {
           this.myNodeController.isVisibleBoolean();
         })
 
       Button('isClipToFrame boolean')
         .id('btn_isClipToFrameBoolean')
-        .height('5%')
-        .width(300)
+        .height(15)
         .onClick(() => {
           this.myNodeController.isClipToFrameBoolean();
         })
 
       Button('isAttached boolean')
         .id('btn_isAttachedBoolean')
-        .height('5%')
-        .width(300)
+        .height(15)
         .onClick(() => {
           this.myNodeController.isAttachedBoolean();
         })
 
       Button('getCustomProperty undefined')
         .id('btn_getCustomProperty')
-        .height('5%')
-        .width(300)
+        .height(15)
         .onClick(() => {
           const uiContext: UIContext = this.getUIContext();
           if (uiContext) {
@@ -175,6 +170,6 @@ struct GetFrameNodeMethodNullIndex {
           }
         })
     }
-    .width('100%')
+    .width('100%').height('100%')
   }
 }

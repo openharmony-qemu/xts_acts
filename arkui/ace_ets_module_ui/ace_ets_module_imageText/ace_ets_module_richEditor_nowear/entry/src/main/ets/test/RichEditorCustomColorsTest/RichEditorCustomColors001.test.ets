@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorCustomColors001() {
   describe('RichEditorCustomColors001', () => {
     beforeEach(async (done: Function) => {
@@ -74,7 +76,11 @@ export default function RichEditorCustomColors001() {
       await CommonFunc.sleep(500);
 
       //KEYCODE_DEL
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       let strJson = getInspectorByKey('rich_struct');
       await CommonFunc.sleep(200);
@@ -87,5 +93,6 @@ export default function RichEditorCustomColors001() {
     });
   })
 }
+
 
 

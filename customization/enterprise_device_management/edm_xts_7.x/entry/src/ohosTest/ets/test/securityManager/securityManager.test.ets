@@ -22,11 +22,40 @@ import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import common from '@ohos.enterprise.common';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import fs from '@ohos.file.fs';
 
 const VALID_PROPERTIES: securityManager.WatermarkProperties = {
   intervalsRow: 10,
   intervalsCol: 10
 };
+
+const WEAK_PIN_DATA: Uint8Array = new Uint8Array([
+  0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x30,
+  0x71, 0x77, 0x65, 0x72, 0x74, 0x79, 0x75, 0x69, 0x6f, 0x70
+]);
+const WEAK_PIN_MAX_SIZE: number = 16 * 1024 * 1024;
+ 
+function withWeakPinFile(callback: (fd: number) => void, fileSetup?: (fd: number) => void): void {
+  let file: fs.File | undefined = undefined;
+  let path = getContext().filesDir + '/weak_pin.txt';
+  try {
+    file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+    if (fileSetup) {
+      fileSetup(file.fd);
+    } else {
+      fs.writeSync(file.fd, WEAK_PIN_DATA.buffer);
+    }
+    callback(file.fd);
+  } finally {
+    if (file) {
+      try {
+        fs.closeSync(file);
+      } catch (closeErr) {
+        console.error('EDM_TEST_LOG: Failed to close weak pin file.');
+      }
+    }
+  }
+}
 
 export default function securityManagerTest() {
   describe('securityManager_test', () => {
@@ -51,6 +80,8 @@ export default function securityManagerTest() {
     testUKeyGetUnlockPolicy();
     testUKeySessionLifecycle();
     testUKeyFullLifecycle();
+    testSetWeakPinEnable();
+    testIsWeakPinEnabled();
   })
 }
 
@@ -3465,6 +3496,33 @@ function testUKeyAddUserExtCredential() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_user_ext_credential_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USER_EXT_CREDENTIAL_JS_1000
+   * @tc.desc   test addUserExtendCredential with authToken
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_add_user_ext_credential_1000", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.AddCredentialInfo = { pluginInfo: UKEY_PLUGIN_INFO, authToken: UKEY_AUTH_TOKEN };
+    try {
+      await securityManager.openSession(UKEY_ACCOUNT_ID);
+      await securityManager.addUserExtendCredential(info, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testUKeyRemoveUserExtCredential() {
@@ -3577,6 +3635,33 @@ function testUKeyRemoveUserExtCredential() {
     done();
   });
 
+  /**
+   * @tc.name   test_remove_user_ext_credential_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_USER_EXT_CREDENTIAL_JS_0500
+   * @tc.desc   test removeUserExtendCredential with authToken
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_user_ext_credential_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.RemoveCredentialInfo = { credentialId: UKEY_CREDENTIAL_ID, authToken: UKEY_AUTH_TOKEN };
+    try {
+      await securityManager.openSession(UKEY_ACCOUNT_ID);
+      securityManager.removeUserExtendCredential(info, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testUKeyGetUserExtCredential() {
@@ -3668,6 +3753,46 @@ function testUKeyGetUserExtCredential() {
       expect(Array.isArray(credentials)).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_user_ext_credential_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_EXT_CREDENTIAL_JS_0500
+   * @tc.desc   test getUserExtendCredential with credentialId and pluginInfo
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_get_user_ext_credential_0500", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let localCredential: securityManager.UserExtCredentialInfo = { credentialId: UKEY_CREDENTIAL_ID, pluginInfo: UKEY_PLUGIN_INFO };
+    let addInfo: securityManager.AddCredentialInfo = { pluginInfo: localCredential.pluginInfo, authToken: UKEY_AUTH_TOKEN };
+    let removeInfo: securityManager.RemoveCredentialInfo = { credentialId: localCredential.credentialId, authToken: UKEY_AUTH_TOKEN };
+    try {
+      let credentials: Array<securityManager.UserExtCredentialInfo> = await securityManager.getUserExtendCredential(UKEY_ACCOUNT_ID);
+      expect(Array.isArray(credentials)).assertTrue();
+      for (let i = 0; i < credentials.length; i++) {
+        expect(credentials[i].credentialId instanceof Uint8Array).assertTrue();
+        expect(credentials[i].pluginInfo.length > 0).assertTrue();
+      }
+      await securityManager.openSession(UKEY_ACCOUNT_ID);
+      try {
+        await securityManager.addUserExtendCredential(addInfo, UKEY_ACCOUNT_ID);
+      } catch (e) {
+        // XTS 环境无 ukey 认证插件，add 失败不影响继续消费 credentialId 属性
+      }
+      securityManager.removeUserExtendCredential(removeInfo, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -4367,6 +4492,385 @@ function testUKeyFullLifecycle() {
       } else {
         expect(error.code).assertEqual(9200012);
       }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetWeakPinEnable() {
+  /**
+   * @tc.name   test_setWeakPinEnable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0100
+   * @tc.desc   test setWeakPinEnable without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0200
+   * @tc.desc   test setWeakPinEnable with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0300
+   * @tc.desc   test setWeakPinEnable with null isEnable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(null, fd);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0400
+   * @tc.desc   test setWeakPinEnable with undefined isEnable
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(undefined, fd);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0500
+   * @tc.desc   test setWeakPinEnable with null fd
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setWeakPinEnable(true, null);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0600
+   * @tc.desc   test setWeakPinEnable with undefined fd
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setWeakPinEnable(true, undefined);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0700
+   * @tc.desc   test setWeakPinEnable with invalid fd
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setWeakPinEnable(true, -1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0800
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0800
+   * @tc.desc   test setWeakPinEnable enable success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setWeakPinEnable_0800", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+      });
+      let result: boolean = securityManager.isWeakPinEnabled();
+      expect(result).assertEqual(true);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      try {
+        securityManager.setWeakPinEnable(false);
+      } catch (err) {
+        console.error('EDM_TEST_LOG: Failed to clean up weak pin policy.');
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_0900
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_0900
+   * @tc.desc   test setWeakPinEnable with oversized file
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_setWeakPinEnable_0900", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+        expect(false).assertTrue();
+      }, (fd: number) => {
+        fs.truncateSync(fd, WEAK_PIN_MAX_SIZE + 1);
+      });
+    } catch (error) {
+      expect(error.code === 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_1000
+   * @tc.desc   test setWeakPinEnable disable success
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+      });
+      let resultBefore: boolean = securityManager.isWeakPinEnabled();
+      expect(resultBefore).assertEqual(true);
+      securityManager.setWeakPinEnable(false);
+      let resultAfter: boolean = securityManager.isWeakPinEnabled();
+      expect(resultAfter).assertEqual(false);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      try {
+        securityManager.setWeakPinEnable(false);
+      } catch (err) {
+        console.error('EDM_TEST_LOG: Failed to clean up weak pin policy.');
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_setWeakPinEnable_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_JS_1100
+   * @tc.desc   test setWeakPinEnable disable without fd
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setWeakPinEnable(false);
+      let result: boolean = securityManager.isWeakPinEnabled();
+      expect(result).assertEqual(false);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+ 
+function testIsWeakPinEnabled() {
+  /**
+   * @tc.name   test_isWeakPinEnabled_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_JS_0100
+   * @tc.desc   test isWeakPinEnabled without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isWeakPinEnabled_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.isWeakPinEnabled();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200001).assertTrue();
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_isWeakPinEnabled_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_JS_0200
+   * @tc.desc   test isWeakPinEnabled with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isWeakPinEnabled_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      securityManager.isWeakPinEnabled();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_isWeakPinEnabled_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_JS_0300
+   * @tc.desc   test isWeakPinEnabled returns false when not set
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isWeakPinEnabled_0300", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setWeakPinEnable(false);
+      let result: boolean = securityManager.isWeakPinEnabled();
+      expect(result).assertEqual(false);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_isWeakPinEnabled_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_JS_0400
+   * @tc.desc   test isWeakPinEnabled returns true when set
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_isWeakPinEnabled_0400", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+      });
+      let result: boolean = securityManager.isWeakPinEnabled();
+      expect(result).assertEqual(true);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      try {
+        securityManager.setWeakPinEnable(false);
+      } catch (err) {
+        console.error('EDM_TEST_LOG: Failed to clean up weak pin policy.');
+      }
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+ 
+  /**
+   * @tc.name   test_isWeakPinEnabled_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_JS_0500
+   * @tc.desc   test isWeakPinEnabled returns false after cancelled
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isWeakPinEnabled_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+      });
+      securityManager.setWeakPinEnable(false);
+      let result: boolean = securityManager.isWeakPinEnabled();
+      expect(result).assertEqual(false);
+    } catch (error) {
+      expect(false).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

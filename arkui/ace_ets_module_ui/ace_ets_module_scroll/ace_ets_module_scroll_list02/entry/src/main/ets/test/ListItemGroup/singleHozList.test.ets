@@ -60,8 +60,10 @@ export default function singleHozList() {
       let btn: Component = await driver.findComponent(ON.id('scroller_group_hoz'));
       await btn.click();
       await CommonFunc.sleep(2000);
-      let list = CommonFunc.getComponentRectOnScreen('group_hoz_list');
-      let listItem = CommonFunc.getComponentRectOnScreen('group_hoz_item');
+      let listComponent = await driver.findComponent(ON.id('group_hoz_list'));
+      let list = await listComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('group_hoz_item'));
+      let listItem = await listItemComponent.getBounds();
       await CommonFunc.sleep(1000);
       expect(Math.abs(listItem.top - list.top) <= 1).assertEqual(true);
       console.info('[singleHozList_0100] END');

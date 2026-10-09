@@ -33,6 +33,8 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function swiperItemPadding() {
   describe('swiperItemPadMarTest2', () => {
     beforeEach(async (done: Function) => {
@@ -101,7 +103,7 @@ export default function swiperItemPadding() {
     //      expect(swiperItemPadding.bottom).assertEqual(swiperItemPadding01.bottom);
     //      // Page turning.
     //      let driver = Driver.create();
-    //      await driver.swipe(250, 230, 200, 230);
+    //      await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
     //      await CommonFunc.sleep(1000);
     //      swiperItemPadding:RectValue = CommonFunc.getComponentRect('swiperItemPadding');
     //      swiperItemPadding01:RectValue = CommonFunc.getComponentRect('swiperItemPadding01');

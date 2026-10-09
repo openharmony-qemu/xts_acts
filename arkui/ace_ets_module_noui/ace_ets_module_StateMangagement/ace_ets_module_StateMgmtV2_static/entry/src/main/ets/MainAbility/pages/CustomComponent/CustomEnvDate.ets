@@ -29,8 +29,7 @@ struct CustomEnvDate {
         Text('Selected Date: ' + `${this.selectedDate.toLocaleDateString()}`)
           .id('customEnvDate_001')
           .height('5%')
-          .fontSize(20)
-          .margin(10)
+          .margin(5)
         // 调用Date的setFullYear接口修改年份，触发UI刷新
         Button('increase the year by 1')
           .id('customEnvDate_002')
@@ -38,8 +37,7 @@ struct CustomEnvDate {
           .onClick(() => {
             this.selectedDate.setFullYear(this.selectedDate.getFullYear() + 1);
           })
-          .margin(10)
-          .width(300)
+          .margin(5)
         // 调用Date的setMonth接口修改月份，触发UI刷新
         Button('increase the month by 1')
           .id('customEnvDate_003')
@@ -47,8 +45,7 @@ struct CustomEnvDate {
           .onClick(() => {
             this.selectedDate.setMonth(this.selectedDate.getMonth() + 1);
           })
-          .margin(10)
-          .width(300)
+          .margin(5)
         // 调用Date的setDate接口修改日期，触发UI刷新
         Button('increase the day by 1')
           .id('customEnvDate_004')
@@ -56,16 +53,15 @@ struct CustomEnvDate {
           .onClick(() => {
             this.selectedDate.setDate(this.selectedDate.getDate() + 1);
           })
-          .margin(10)
-          .width(300)
+          .margin(5)
         DatePicker({
           start: new Date('1970-1-1'),
           end: new Date('2100-1-1'),
           selected: this.selectedDate
         })
           .id('customEnvDate_005')
-          .height('40%')
-          .margin(20)
+          .height('5%')
+          .margin(5)
       }
       .width('100%')
     }

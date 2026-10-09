@@ -1,0 +1,129 @@
+<!-- justify-content: six main-axis alignments for row and column, integrated into one page with two cards -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">justify-content</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 row main axis (horizontal), 6 alignments -->
+    <list-item class="card card-1">
+      <div class="card-head">
+        <text class="label">001 row 主轴（水平）6种对齐</text>
+      </div>
+
+      <text class="v-label">1. flex-start 靠左</text>
+      <div class="demo jc-start">
+        <div class="box r"><text class="box-text">1</text></div>
+        <div class="box g"><text class="box-text">2</text></div>
+        <div class="box b"><text class="box-text">3</text></div>
+      </div>
+
+      <text class="v-label">2. flex-end 靠右</text>
+      <div class="demo jc-end">
+        <div class="box r"><text class="box-text">1</text></div>
+        <div class="box g"><text class="box-text">2</text></div>
+        <div class="box b"><text class="box-text">3</text></div>
+      </div>
+
+      <text class="v-label">3. center 居中</text>
+      <div class="demo jc-center">
+        <div class="box r"><text class="box-text">1</text></div>
+        <div class="box g"><text class="box-text">2</text></div>
+        <div class="box b"><text class="box-text">3</text></div>
+      </div>
+
+      <text class="v-label">4. space-between 两端对齐间距均分</text>
+      <div class="demo jc-between">
+        <div class="box r"><text class="box-text">1</text></div>
+        <div class="box g"><text class="box-text">2</text></div>
+        <div class="box b"><text class="box-text">3</text></div>
+      </div>
+
+      <text class="v-label">5. space-around 边距是中间距一半</text>
+      <div class="demo jc-around">
+        <div class="box r"><text class="box-text">1</text></div>
+        <div class="box g"><text class="box-text">2</text></div>
+        <div class="box b"><text class="box-text">3</text></div>
+      </div>
+
+      <text class="v-label">6. space-evenly 所有间距相等</text>
+      <div class="demo jc-evenly">
+        <div class="box r"><text class="box-text">1</text></div>
+        <div class="box g"><text class="box-text">2</text></div>
+        <div class="box b"><text class="box-text">3</text></div>
+      </div>
+
+      <text class="expect">预期：1 2 3 依次呈现 靠左/靠右/居中/两端对齐/环绕分布/间距全等</text>
+    </list-item>
+
+    <!-- 002 column main axis (vertical), 6 alignments as side-by-side strips -->
+    <list-item class="card card-2">
+      <div class="card-head">
+        <text class="label">002 column 主轴（垂直）6种对齐</text>
+      </div>
+
+      <div class="strips">
+        <div class="strip">
+          <text class="s-label">start</text>
+          <div class="strip-demo jc-start">
+            <div class="sbox r"><text class="sbox-text">1</text></div>
+            <div class="sbox g"><text class="sbox-text">2</text></div>
+            <div class="sbox b"><text class="sbox-text">3</text></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">end</text>
+          <div class="strip-demo jc-end">
+            <div class="sbox r"><text class="sbox-text">1</text></div>
+            <div class="sbox g"><text class="sbox-text">2</text></div>
+            <div class="sbox b"><text class="sbox-text">3</text></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">center</text>
+          <div class="strip-demo jc-center">
+            <div class="sbox r"><text class="sbox-text">1</text></div>
+            <div class="sbox g"><text class="sbox-text">2</text></div>
+            <div class="sbox b"><text class="sbox-text">3</text></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">between</text>
+          <div class="strip-demo jc-between">
+            <div class="sbox r"><text class="sbox-text">1</text></div>
+            <div class="sbox g"><text class="sbox-text">2</text></div>
+            <div class="sbox b"><text class="sbox-text">3</text></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">around</text>
+          <div class="strip-demo jc-around">
+            <div class="sbox r"><text class="sbox-text">1</text></div>
+            <div class="sbox g"><text class="sbox-text">2</text></div>
+            <div class="sbox b"><text class="sbox-text">3</text></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">evenly</text>
+          <div class="strip-demo jc-evenly">
+            <div class="sbox r"><text class="sbox-text">1</text></div>
+            <div class="sbox g"><text class="sbox-text">2</text></div>
+            <div class="sbox b"><text class="sbox-text">3</text></div>
+          </div>
+        </div>
+      </div>
+
+      <text class="expect">预期：6 个竖条自上而下依次为 靠上/靠下/居中/两端对齐/环绕分布/间距全等</text>
+    </list-item>
+
+    <!-- bottom pass/fail/back buttons, as the last list item so they scroll into view -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

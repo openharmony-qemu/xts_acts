@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function hoverMoveTest() {
   describe('HoverMoveTest', () => {
     beforeEach(async (done: Function) => {
@@ -58,7 +60,7 @@ export default function hoverMoveTest() {
       let midY = Math.round(rect.top + h / 2);
       console.info('[hoverMove_0100] rect left=' + rect.left + ' right=' + rect.right + ' top=' + rect.top + ' bottom=' + rect.bottom);
       console.info('[hoverMove_0100] penSwipe from(' + startX + ',' + midY + ') to(' + endX + ',' + midY + ')');
-      await driver.penSwipe({ x: startX, y: midY }, { x: endX, y: midY }, 600, 0.5);
+      await driver.penSwipe({ x: startX, y: midY, displayId: displayID }, { x: endX, y: midY, displayId: displayID }, 600, 0.5);
       await CommonFunc.sleep(1000);
       let hoverX: number = AppStorage.get<number>('hoverX') ?? -1;
       let hoverY: number = AppStorage.get<number>('hoverY') ?? -1;

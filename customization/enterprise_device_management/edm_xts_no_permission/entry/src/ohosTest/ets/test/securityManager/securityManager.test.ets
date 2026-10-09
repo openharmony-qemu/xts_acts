@@ -25,11 +25,38 @@ import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
 import fs from '@ohos.file.fs';
 
+const WEAK_PIN_DATA: Uint8Array = new Uint8Array([
+  0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39, 0x30,
+  0x71, 0x77, 0x65, 0x72, 0x74, 0x79, 0x75, 0x69, 0x6f, 0x70
+]);
+ 
+function withWeakPinFile(callback: (fd: number) => void): void {
+  let file: fs.File | undefined = undefined;
+  let path = getContext().filesDir + '/weak_pin.txt';
+  try {
+    file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+    fs.writeSync(file.fd, WEAK_PIN_DATA.buffer);
+    callback(file.fd);
+  } finally {
+    if (file) {
+      try {
+        fs.closeSync(file);
+      } catch (closeErr) {
+        console.error('EDM_TEST_LOG: Failed to close weak pin file.');
+      }
+    }
+  }
+}
+
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
 const INT_VALID_ACCOUNTID = 100;
 const INT_INVALID_ACCOUNTID = 0xFFFFFFFF;
 const STRING_VALID_CERTIFICATEALIAS = 'test_cert_0.cer';
+const UKEY_ACCOUNT_ID: number = 100;
+const UKEY_PLUGIN_INFO: string = 'com.example.ukey_plugin';
+const UKEY_CREDENTIAL_ID: Uint8Array = new Uint8Array([1, 2, 3, 4, 5]);
+const UKEY_AUTH_TOKEN: Uint8Array = new Uint8Array([10, 20, 30, 40]);
 
 const PASSWORD_POLICY: securityManager.PasswordPolicy = {
   complexityRegex: 'g',
@@ -339,6 +366,17 @@ export default function securityManagerTest() {
     testRemoveAllowedPermissionBundle();
     testGetAllowedPermissionBundles();
     testGetWatermarkImageApps();
+
+    testSetWeakPinEnable();
+    testIsWeakPinEnabled();
+
+    testOpenSession();
+    testCloseSession();
+    testAddUserExtCredential();
+    testRemoveUserExtCredential();
+    testGetUserExtCredential();
+    testSetUnlockPolicy();
+    testGetUnlockPolicy();
   })
 }
 
@@ -1197,6 +1235,253 @@ function testGetDeviceSecurityLevelPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_device_security_level_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetWeakPinEnable() {
+  /**
+   * @tc.name   test_setWeakPinEnable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WEAK_PIN_ENABLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager setWeakPinEnable without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_setWeakPinEnable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      withWeakPinFile((fd: number) => {
+        securityManager.setWeakPinEnable(true, fd);
+        expect(false).assertTrue();
+      });
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+ 
+function testIsWeakPinEnabled() {
+  /**
+   * @tc.name   test_isWeakPinEnabled_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WEAK_PIN_ENABLED_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager isWeakPinEnabled without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_isWeakPinEnabled_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.isWeakPinEnabled();
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testOpenSession() {
+  /**
+   * @tc.name   test_open_session_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPEN_SESSION_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager openSession with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_open_session_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await securityManager.openSession(UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_open_session_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testCloseSession() {
+  /**
+   * @tc.name   test_close_session_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_CLOSE_SESSION_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager closeSession with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_close_session_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.closeSession(UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_close_session_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testAddUserExtCredential() {
+  /**
+   * @tc.name   test_add_user_ext_credential_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USER_EXT_CREDENTIAL_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager addUserExtendCredential with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_user_ext_credential_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    let info: securityManager.AddCredentialInfo = { pluginInfo: UKEY_PLUGIN_INFO, authToken: UKEY_AUTH_TOKEN };
+    try {
+      await securityManager.addUserExtendCredential(info, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_add_user_ext_credential_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveUserExtCredential() {
+  /**
+   * @tc.name   test_remove_user_ext_credential_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_USER_EXT_CREDENTIAL_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager removeUserExtendCredential with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_user_ext_credential_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    let info: securityManager.RemoveCredentialInfo =
+      { credentialId: UKEY_CREDENTIAL_ID, authToken: UKEY_AUTH_TOKEN };
+    try {
+      securityManager.removeUserExtendCredential(info, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_remove_user_ext_credential_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetUserExtCredential() {
+  /**
+   * @tc.name   test_get_user_ext_credential_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_EXT_CREDENTIAL_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getUserExtendCredential with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_ext_credential_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await securityManager.getUserExtendCredential(UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_user_ext_credential_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetUnlockPolicy() {
+  /**
+   * @tc.name   test_set_unlock_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_UNLOCK_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager setUnlockPolicy with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_unlock_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setUnlockPolicy(securityManager.UnlockPolicy.DEFAULT, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_set_unlock_policy_0100 error.code = ' + error.code);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetUnlockPolicy() {
+  /**
+   * @tc.name   test_get_unlock_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UNLOCK_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test securityManager getUnlockPolicy with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_unlock_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.getUnlockPolicy(UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_unlock_policy_0100 error.code = ' + error.code);
       if (error.code === 801) {
         expect(error.code).assertEqual(801);
       } else {

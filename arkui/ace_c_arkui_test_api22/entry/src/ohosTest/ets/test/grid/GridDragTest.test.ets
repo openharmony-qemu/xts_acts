@@ -49,6 +49,7 @@ export default function GridDragTest() {
       let rectGrid = await grid.getBounds();
       let gridLeft = rectGrid.left
       let rectItem = await gridItem.getBounds();
+      let displayId = await gridItem.getDisplayId();
       let top = rectItem.top;
       let left = rectItem.left;
       let right = rectItem.right;
@@ -59,7 +60,10 @@ export default function GridDragTest() {
       let startY = Math.round(top + height / 2);
       let outX = Math.round(gridLeft - width/10);
       let outY = startY;
-      driver.mouseDrag({x:startX,y:startY},{x:outX,y:outY}, 200)
+      await driver.mouseDrag(
+        {x:startX, y:startY, displayId: displayId},
+        {x:outX,   y:outY,   displayId: displayId},
+        200);
       await Utils.sleep(4000);
       let DragStart = await driver.findComponent(ON.id("DragStart"));
       let DragMove = await driver.findComponent(ON.id("DragMove"));
@@ -92,11 +96,15 @@ export default function GridDragTest() {
       await Utils.sleep(SLEEP_TIME_1000)
       let driver = Driver.create();
       let gridItem_2 = await driver.findComponent(ON.id('DraggableItem_2'));
+      let displayId = await gridItem_2.getDisplayId();
       let bottom_2 = (await gridItem_2.getBounds()).bottom+1;
       let right_2 = (await gridItem_2.getBounds()).right+1;
       let top_2 = (await gridItem_2.getBounds()).top;
       let left_2 = (await gridItem_2.getBounds()).left;
-      driver.mouseDrag({x:right_2,y:bottom_2},{x:left_2,y:top_2},200)
+      await driver.mouseDrag(
+        {x:right_2, y:bottom_2, displayId: displayId},
+        {x:left_2,  y:top_2,    displayId: displayId},
+        200);
       await Utils.sleep(4000);
       let Select = await driver.findComponent(ON.id("Select"));
       let SelectTest = await Select.getText()

@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorGetNumber007() {
   describe('RichEditorGetNumber007', () => {
     beforeEach(async (done: Function) => {
@@ -70,11 +72,11 @@ export default function RichEditorGetNumber007() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_DEL);
+      driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
       await CommonFunc.sleep(500);
 
       let getLineCount = await driver.findComponent(ON.id('getLineCount'));
@@ -90,5 +92,6 @@ export default function RichEditorGetNumber007() {
 
   })
 }
+
 
 

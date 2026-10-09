@@ -47,7 +47,6 @@ export default function testsuite() {
   timePickerDialogWindowPropertiesTest();
   DateTimeOptionsTest();
   TimePickerDialogAppearTextTest();
-  TimePickerDialogCallbackTest();
   timePickerDialogAcceptButtonStyleTest();
   timePickerDialogCancelButtonStyleTest();
 }

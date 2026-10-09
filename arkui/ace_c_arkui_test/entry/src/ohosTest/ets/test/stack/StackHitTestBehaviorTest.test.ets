@@ -35,7 +35,7 @@ export default function stackHitTestBehaviorTest() {
      * @tc.level  LEVEL1
      */
     it('testStackHitTestBehavior001', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTestStackBrotherDefault')
+      await Utils.clickComponentNew('OnTouchTestStackBrotherDefault')
       await Utils.sleep(1000)
       expect(Utils.getComponentInfoByKey('OnTouchStackDefault').$attrs.backgroundColor).assertEqual('#FFFF0000')
       expect(Utils.getComponentInfoByKey('OnTouchTestStackBrotherDefault').$attrs.backgroundColor)
@@ -52,7 +52,7 @@ export default function stackHitTestBehaviorTest() {
      * @tc.level  LEVEL1
      */
     it('testStackHitTestBehavior002', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTestStackBrotherBlock')
+      await Utils.clickComponentNew('OnTouchTestStackBrotherBlock')
       await Utils.sleep(1000)
       expect(Utils.getComponentInfoByKey('OnTouchTestStackBlock').$attrs.backgroundColor).assertEqual('#FFFF0000')
       expect(Utils.getComponentInfoByKey('OnTouchTestStackBrotherBlock').$attrs.backgroundColor)
@@ -69,7 +69,7 @@ export default function stackHitTestBehaviorTest() {
      * @tc.level  LEVEL1
      */
     it('testStackHitTestBehavior003', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTestStackBrotherTransparent')
+      await Utils.clickComponentNew('OnTouchTestStackBrotherTransparent')
       await Utils.sleep(1000)
       expect(Utils.getComponentInfoByKey('OnTouchTestStackTransparent').$attrs.backgroundColor)
         .assertEqual('#FF0000FF')
@@ -87,7 +87,7 @@ export default function stackHitTestBehaviorTest() {
      * @tc.level  LEVEL1
      */
     it('testStackHitTestBehavior004', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTestStackBrotherNone')
+      await Utils.clickComponentNew('OnTouchTestStackBrotherNone')
       await Utils.sleep(1000)
       expect(Utils.getComponentInfoByKey('OnTouchTestStackNone').$attrs.backgroundColor)
         .assertEqual('#FF0000FF')
@@ -105,7 +105,7 @@ export default function stackHitTestBehaviorTest() {
      * @tc.level  LEVEL1
      */
     it('testStackHitTestBehavior005', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTestStackBrotherExceptBelow')
+      await Utils.clickComponentNew('OnTouchTestStackBrotherExceptBelow')
       await Utils.sleep(1000)
       expect(Utils.getComponentInfoByKey('OnTouchTestStackExceptBelow').$attrs.backgroundColor)
         .assertEqual('#FFFF0000')
@@ -123,7 +123,7 @@ export default function stackHitTestBehaviorTest() {
      * @tc.level  LEVEL1
      */
     it('testStackHitTestBehavior006', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTestStackBrotherExceptAbove')
+      await Utils.clickComponentNew('OnTouchTestStackBrotherExceptAbove')
       await Utils.sleep(1000)
       expect(Utils.getComponentInfoByKey('OnTouchTestStackExceptAbove').$attrs.backgroundColor)
         .assertEqual('#FFFF0000')

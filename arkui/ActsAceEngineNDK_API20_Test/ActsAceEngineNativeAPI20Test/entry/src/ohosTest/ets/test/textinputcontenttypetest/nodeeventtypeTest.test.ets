@@ -22,6 +22,8 @@ import { inputMethod } from '@kit.IMEKit';
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function NodeEventTypeTest() {
   describe('NodeEventTypeTest', () => {
     beforeEach(async (done: Function) => {
@@ -132,7 +134,7 @@ export default function NodeEventTypeTest() {
           let com = await Utils.driver.findComponent(ON.id('textinput8'));
           await com.inputText('aaaaa');
           await Utils.sleep(500);
-          await Utils.driver.triggerKey(2047)
+          await Utils.driver.triggerKey(2047, displayID)
           await Utils.sleep(500);
           await inputMethod.getController().stopInputSession();
           let result: number = nativerenderndk.NodeEventTypeTest_008();
@@ -161,7 +163,7 @@ export default function NodeEventTypeTest() {
           let com = await Utils.driver.findComponent(ON.id('textarea9'));
           await com.inputText('a');
           await Utils.sleep(500);
-          await Utils.driver.triggerKey(2047)
+          await Utils.driver.triggerKey(2047, displayID)
           await Utils.sleep(500);
           await inputMethod.getController().stopInputSession();
           let result: number = nativerenderndk.NodeEventTypeTest_009();

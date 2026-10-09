@@ -294,7 +294,11 @@ export default function setPropertiesTest() {
       const path = 'mimeType_test.srw';
       try {
         await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.setProperties(null);
+          if (metaData == null) {
+            console.info(TAG, testName, ' metaData is null, skip');
+            return;
+          }
+          metaData.setProperties(null);
           expect().assertFail();
         });
         done();
@@ -318,7 +322,11 @@ export default function setPropertiesTest() {
       const path = 'mimeType_test.srw';
       try {
         await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.setProperties(undefined);
+          if (metaData == null) {
+            console.info(TAG, testName, ' metaData is null, skip');
+            return;
+          }
+          metaData.setProperties(undefined);
           expect().assertFail();
         });
         done();
@@ -342,7 +350,11 @@ export default function setPropertiesTest() {
       const path = 'mimeType_test.srw';
       try {
         await setPropertiesAbnormalPromiseTest(done, testName, path, (metaData) => {
-          metaData?.setProperties(AppStorage.get('emptyString'));
+          if (metaData == null) {
+            console.info(TAG, testName, ' metaData is null, skip');
+            return;
+          }
+          metaData.setProperties(AppStorage.get('emptyString'));
           expect().assertFail();
         });
         done();

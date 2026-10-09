@@ -42,15 +42,21 @@ import AddMonitorWildcard2 from './AddMonitorTest/AddMonitorWildcard2.test';
 import EnvBreakpoint from './Env/EnvBreakpoint.test';
 import EnvBreakpoint2 from './Env/EnvBreakpoint2.test';
 import CustomEnvIndex from './CustomComponentTest/CustomEnvIndex.test';
+
 import CustomEnvArray from './CustomComponentTest/CustomEnvArray.test';
 import CustomEnvDate from './CustomComponentTest/CustomEnvDate.test';
+import CustomEnvMap from './CustomComponentTest/CustomEnvMap.test';
+import CustomEnvSet from './CustomComponentTest/CustomEnvSet.test';
+import CustomEnvV2ToV1 from './CustomComponentTest/CustomEnvV2ToV1.test';
+import CustomEnvV1ToV2 from './CustomComponentTest/CustomEnvV1ToV2.test';
+import CustomEnvMultipleTypes from './CustomComponentTest/CustomEnvMultipleTypes.test';
  
  
-export default function testsuite() {
+export default function testsuite(): void {
+  AddMonitorSetPath();
   ArrayLikeStringTest();
   //ReuseV2Test0030(); 
-  AddMonitorNoPath(); 
-  AddMonitorSetPath(); 
+  AddMonitorNoPath();
   AddMonitorObservedV2Int(); 
   AddMonitorObservedV2Boolean(); 
   AddMonitorObservedV2String(); 
@@ -77,4 +83,9 @@ export default function testsuite() {
   CustomEnvIndex();
   CustomEnvArray();
   CustomEnvDate();
+  CustomEnvMap();
+  CustomEnvSet();
+  CustomEnvV2ToV1();
+  CustomEnvV1ToV2();
+  CustomEnvMultipleTypes();
 }

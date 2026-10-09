@@ -18,6 +18,8 @@ import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function TextPickerDialogCallback() {
   describe('TextPickerDialogCallback', () => {
     beforeEach(async (done: Function) => {
@@ -102,8 +104,11 @@ export default function TextPickerDialogCallback() {
       events_emitter.on(event3, callback3);
       console.info('TextPickerDialogCallback_0100 START');
       await CommonFunc.sleep(3000)
-      await driver1.pressBack();
-
+      try {
+        await driver1.pressBack(displayID);
+      } catch (err) {
+        console.log('pressBack error: ' + JSON.stringify(err));
+      }
     });
   })
 }

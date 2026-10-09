@@ -44,7 +44,7 @@ export default function nearlinkswitchoffNormalTest(): void {
     })
     beforeEach(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach start');
-      await Utils.clickCloseNearLinkSwitch();
+      await Utils.closeNearLink();
       try {
         let state: manager.NearlinkState = manager.getState();
         hilog.info(0x0000, 'state', '%{public}s', "state status:" + state);
@@ -59,7 +59,7 @@ export default function nearlinkswitchoffNormalTest(): void {
     })
     afterAll(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach start');
-      await Utils.clickOpenNearLinkSwitch();
+      await Utils.openNearLink();
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeEach end');
       done();
     })
@@ -430,6 +430,53 @@ export default function nearlinkswitchoffNormalTest(): void {
       done();
     })
 
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_Normal_0200
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_Normal_static_0200
+     * @tc.desc createServer
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_Normal_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        ssapServer = ssap.createServer();
+        hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink Test] createServer = ' + JSON.stringify(ssapServer));
+        expect().assertFail();
+      }catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink Test] fail %s %s', JSON.stringify(error.code), JSON.stringify(error.message));
+        if (error.code === 801) {
+          expect(return_boolean === false).assertTrue();
+        } else {
+          expect(error.code).assertEqual(36100003);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_Normal_0100
+     * @tc.name SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_static_0100
+     * @tc.desc getConnectionState
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_Ssap_SwitchOff_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        ssapClient = ssap.createClient(ADDRESS);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink Test] createClient success ');
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '[NearLink Test] fail %{public}s%{public}s', JSON.stringify(error.code), JSON.stringify(error.message));
+        if (error.code === 801) {
+          expect(return_boolean === false).assertTrue();
+        } else {
+          expect(error.code).assertEqual(36100003);
+        }
+      }
+      done();
+    })
 
   })
 }

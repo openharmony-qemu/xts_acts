@@ -14,6 +14,7 @@
  */
 
 import { ArkTSUtils } from '@kit.ArkTS';
+import { lang, JSON, collections } from '@kit.ArkTS';
 import { GetTime, Sleep } from './utils';
 
 export function loadCase(): Promise<void | Object> {
@@ -158,4 +159,256 @@ export class SendableClass {
       this.count_ = count;
     })
   }
+}
+
+@Concurrent
+export function verifyDoubledNumericKeys(obj: lang.ISendable, keyCount: number): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  for (let i = 0; i < keyCount; i++) {
+    if ((record[`${i}`] as number) !== i * 2) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+@Concurrent
+export function verifyCharKeys(obj: lang.ISendable, keyCount: number): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  for (let i = 0; i < keyCount; i++) {
+    if ((record[`key-${i}`] as string) !== `value-${i}`) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+@Concurrent
+export function verifyAlternatingKeys(obj: lang.ISendable, keyCount: number): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  let numericCount = Math.ceil(keyCount / 2);
+  for (let i = 0; i < numericCount; i++) {
+    if ((record[`${i}`] as string) !== `numeric-${i}`) {
+      return i;
+    }
+  }
+  let charCount = Math.floor(keyCount / 2);
+  for (let i = 0; i < charCount; i++) {
+    if ((record[`str-${i}`] as string) !== `char-${i}`) {
+      return 10000 + i;
+    }
+  }
+  return -1;
+}
+
+@Concurrent
+export function verifyNestedNumericKeys(obj: lang.ISendable): number {
+  let root: Record<string, Object> = obj as Record<string, Object>;
+  for (let i = 0; i < 1025; i++) {
+    let child = root[`${i}`];
+    if (typeof child !== 'object' || child === null) {
+      return 10000 + i;
+    }
+  }
+  let shallow: Record<string, Object> = root['1'] as Record<string, Object>;
+  if ((shallow['m1'] as string) !== 'm1-1') {
+    return 1;
+  }
+  let middle: Record<string, Object> = root['0'] as Record<string, Object>;
+  for (let i = 0; i < 1025; i++) {
+    let child = middle[`${i}`];
+    if (typeof child !== 'object' || child === null) {
+      return 20000 + i;
+    }
+  }
+  let middleShallow: Record<string, Object> = middle['1'] as Record<string, Object>;
+  if ((middleShallow['m2'] as string) !== 'm2-1') {
+    return 2;
+  }
+  let deepest: Record<string, Object> = middle['0'] as Record<string, Object>;
+  for (let i = 0; i < 1025; i++) {
+    if ((deepest[`char-key-${i}`] as string) !== `leaf-${i}`) {
+      return 30000 + i;
+    }
+  }
+  return -1;
+}
+
+@Concurrent
+export function verifyDictModeValueTypes(obj: lang.ISendable, keyCount: number): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  for (let i = 0; i < keyCount; i++) {
+    let kind = Math.floor(i / 10) % 6;
+    let value = record[`${i}`];
+    if (kind === 0 && (value as string) !== `v-${i}`) {
+      return i;
+    }
+    if (kind === 1 && (value as number) !== i) {
+      return 10000 + i;
+    }
+    if (kind === 2 && (value as boolean) !== (i % 2 === 0)) {
+      return 20000 + i;
+    }
+    if (kind === 3 && value !== null) {
+      return 30000 + i;
+    }
+    if (kind === 4) {
+      let sub: Record<string, Object> = value as Record<string, Object>;
+      if ((sub['sub'] as string) !== `sub-${i}`) {
+        return 40000 + i;
+      }
+    }
+    if (kind === 5) {
+      let arr: collections.Array<number> = value as collections.Array<number>;
+      if (arr.at(0) !== i || arr.at(1) !== i + 1) {
+        return 50000 + i;
+      }
+    }
+  }
+  return -1;
+}
+
+@Concurrent
+export function parseSendableInTask(text: string): lang.ISendable {
+  return JSON.parseSendable(text) as lang.ISendable;
+}
+
+@Concurrent
+export function modifyNumericKeyInTask(obj: lang.ISendable): number {
+  try {
+    let record: Record<string, Object> = obj as Record<string, Object>;
+    record['0'] = 'modified';
+    return 0;
+  } catch (err) {
+    return -1;
+  }
+}
+
+@Concurrent
+export function enumerateKeysInTask(obj: lang.ISendable, expectedCount: number): number {
+  try {
+    let record: Record<string, Object> = obj as Record<string, Object>;
+    let keys: string[] = Object.keys(record);
+    if (keys.length !== expectedCount) {
+      return 10000 + keys.length;
+    }
+    if (!keys.includes('0')) {
+      return 20000;
+    }
+    if (!keys.includes(`${expectedCount - 1}`)) {
+      return 30000;
+    }
+    return 0;
+  } catch (err) {
+    return -1;
+  }
+}
+
+@Concurrent
+export function verifyNumericValueKeys(obj: lang.ISendable, keyCount: number): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  for (let i = 0; i < keyCount; i++) {
+    if ((record[`${i}`] as string) !== `value-${i}`) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+@Concurrent
+export function verifyNumericValueKeysAndModify(obj: lang.ISendable, keyCount: number): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  for (let i = 0; i < keyCount; i++) {
+    if ((record[`${i}`] as string) !== `value-${i}`) {
+      return i;
+    }
+  }
+  record['0'] = 'modified';
+  return -1;
+}
+
+@Concurrent
+export function parseSendableExtractChild(text: string, childKey: string): lang.ISendable {
+  let root: Record<string, Object> = JSON.parseSendable(text) as Record<string, Object>;
+  return root[childKey] as lang.ISendable;
+}
+
+@Concurrent
+export function verifyMixedKeysInTask(obj: lang.ISendable, numericCount: number,
+  namedKey: string, namedValue: string, namedKey2: string, namedValue2: string): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  for (let i = 0; i < numericCount; i++) {
+    if ((record[`${i}`] as string) !== `v${i}`) {
+      return i;
+    }
+  }
+  if ((record[namedKey] as string) !== namedValue) {
+    return 90000;
+  }
+  if ((record[namedKey2] as string) !== namedValue2) {
+    return 90001;
+  }
+  return -1;
+}
+
+@Concurrent
+export function writeBoundaryValuesInTask(obj: lang.ISendable): number {
+  try {
+    let record: Record<string, Object> = obj as Record<string, Object>;
+    record['0'] = 0;
+    record['1'] = -0;
+    record['2'] = NaN;
+    record['3'] = Infinity;
+    record['4'] = 9007199254740991;
+    return 0;
+  } catch (err) {
+    return -1;
+  }
+}
+
+@Concurrent
+export function verifyDuplicateKeysInTask(obj: lang.ISendable): number {
+  let record: Record<string, Object> = obj as Record<string, Object>;
+  if (record['0'] !== 2) {
+    return 1;
+  }
+  if ((record['1'] as string) !== 'b') {
+    return 2;
+  }
+  return -1;
+}
+
+@Concurrent
+export function verifySharedMapInTask(map: collections.Map<string, string>, expectedSize: number,
+  probeKey: string, probeValue: string): number {
+  try {
+    if (map.size !== expectedSize) {
+      return 10000 + map.size;
+    }
+    if ((map.get(probeKey) as string) !== probeValue) {
+      return 20000;
+    }
+    let forEachCount = 0;
+    map.forEach((value: string, key: string) => {
+      forEachCount++;
+    });
+    if (forEachCount !== expectedSize) {
+      return 30000 + forEachCount;
+    }
+    let entryCount = 0;
+    for (let entry of map.entries()) {
+      entryCount++;
+    }
+    if (entryCount !== expectedSize) {
+      return 40000 + entryCount;
+    }
+    return 0;
+  } catch (err) {
+    return -1;
+  }
+}
+
+@Concurrent
+export function sharedMapSignatureInTask(map: collections.Map<string, string>, probeKey: string): string {
+  return `${map.size}|${map.has(probeKey)}|${map.get(probeKey)}|${Object.keys(map).length}`;
 }

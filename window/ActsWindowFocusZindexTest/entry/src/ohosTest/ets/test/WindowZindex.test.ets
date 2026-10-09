@@ -14,6 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import display from '@ohos.display';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level} from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -33,6 +34,8 @@ export default function windowZindexTest() {
     let driver: Driver;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let displayId = display.getDefaultDisplaySync().id;
+    console.info(`Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -395,7 +398,7 @@ export default function windowZindexTest() {
             let promise4 = subWindow1.setRaiseByClickEnabled(true);
             promise4.then(async () => {
               console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
-              await driver.click(minWidth+150, minHeight+150);
+              await driver.clickAt({x: minWidth+150, y: minHeight+150, displayId: displayId});
               let lastWindowClass = await window.getLastWindow(context);
               let properties = lastWindowClass.getWindowProperties();
               console.log(msgStr + 'properties:'+JSON.stringify(properties));
@@ -486,7 +489,7 @@ export default function windowZindexTest() {
             let promise4 = subWindow1.setRaiseByClickEnabled(false);
             promise4.then(async () => {
               console.info(msgStr + 'Succeeded in setRaiseByClickEnabled the window to app top.');
-              await driver.click(minWidth+150, minHeight+150);
+              await driver.clickAt({x: minWidth+150, y: minHeight+150, displayId: displayId});
               let lastWindowClass = await window.getLastWindow(context);
               let properties = lastWindowClass.getWindowProperties();
               console.log(msgStr + 'properties:'+JSON.stringify(properties));

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,16 +12,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import UIAbility from '@ohos.app.ability.UIAbility';
+
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
-import Want from '@ohos.app.ability.Want';
 import hilog from '@ohos.hilog';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
+import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 
 export default class EntryAbility extends UIAbility {
+  private instanceWindowStage: window.WindowStage | undefined = undefined;
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    AppStorage.setOrCreate<common.UIAbilityContext>('EntryAbilityContext', this.context);
   }
 
   onDestroy(): void {
@@ -31,7 +35,7 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
+    this.instanceWindowStage = windowStage;
     windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
@@ -54,5 +58,16 @@ export default class EntryAbility extends UIAbility {
   onBackground(): void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
+  }
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    if (this.instanceWindowStage != undefined) {
+      this.instanceWindowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
+        if (err.code) {
+          hilog.error(0x0000, 'testTag', 'onNewWant Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+          return;
+        }
+        hilog.info(0x0000, 'testTag', 'onNewWant Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+      });
+    }
   }
 }

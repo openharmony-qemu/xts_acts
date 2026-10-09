@@ -61,7 +61,10 @@ export default function waterFlow6Jsunit() {
       expect(obj.$attrs.content).assertEqual('onReachText: onReachStart:succ');
       await CommonFunc.sleep(1000);
 
-      let swiperFlow = CommonFunc.getComponentRectOnScreen('water_event');
+      let driver = await Driver.create()
+      let swiperFlowComponent = await driver.findComponent(ON.id('water_event'));
+      let swiperFlow = await swiperFlowComponent.getBounds();
+      let displayId = await swiperFlowComponent.getDisplayId();
       let top = swiperFlow.top;
       let right = swiperFlow.right;
       let left = swiperFlow.left;
@@ -69,9 +72,10 @@ export default function waterFlow6Jsunit() {
       console.info("waterFlow6Jsunit_001 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.9),Math.round(left + width/2),Math.round(top + height*0.1));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.9), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.1), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('waterFlow_onScrollText');

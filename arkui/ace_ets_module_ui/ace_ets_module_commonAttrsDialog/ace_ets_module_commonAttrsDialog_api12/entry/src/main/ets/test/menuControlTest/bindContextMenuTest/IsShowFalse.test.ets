@@ -21,6 +21,7 @@ import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function IsShowFalse() {
   describe('IsShowFalse',  () =>{
     beforeEach(async (done:Function) =>{
@@ -119,7 +120,7 @@ export default function IsShowFalse() {
       console.info("[IsShowFalse_0300] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(0)
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
       console.info('[IsShowFalse_0300] END');
       done();

@@ -59,59 +59,47 @@ static const std::unordered_map<int32_t, std::string> BUTTON_CODE_NAME_TRANSFORM
     {GamePadButtonTypeEnum::DPAD_LEFT_BUTTON, "Dpad_LeftButton"},
     {GamePadButtonTypeEnum::DPAD_RIGHT_BUTTON, "Dpad_RightButton"}};
 
+static bool AppendStringField(std::string &log, const GameDevice_DeviceInfo *deviceInfo,
+    GameController_ErrorCode (*getter)(const GameDevice_DeviceInfo *, char **), const std::string &label)
+{
+    char *value = nullptr;
+    if (getter(deviceInfo, &value) != GAME_CONTROLLER_SUCCESS) {
+        return false;
+    }
+    log.append(label).append(value);
+    free(value);
+    return true;
+}
+
+static bool AppendIntField(std::string &log, const GameDevice_DeviceInfo *deviceInfo,
+    GameController_ErrorCode (*getter)(const GameDevice_DeviceInfo *, int32_t *), const std::string &label)
+{
+    int32_t value = 0;
+    if (getter(deviceInfo, &value) != GAME_CONTROLLER_SUCCESS) {
+        return false;
+    }
+    log.append(label).append(std::to_string(value));
+    return true;
+}
+
 static bool ParseDeviceInfo(GameDevice_DeviceInfo *deviceInfo, int32_t oprType)
 {
     std::string log;
-    char *deviceId = nullptr;
-    GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetDeviceId(deviceInfo, &deviceId);
-    if (code != GAME_CONTROLLER_SUCCESS) {
+    if (!AppendStringField(log, deviceInfo, OH_GameDevice_DeviceInfo_GetDeviceId, "deviceId:") ||
+        !AppendStringField(log, deviceInfo, OH_GameDevice_DeviceInfo_GetName, ",name:") ||
+        !AppendIntField(log, deviceInfo, OH_GameDevice_DeviceInfo_GetVendor, ",vendor:") ||
+        !AppendIntField(log, deviceInfo, OH_GameDevice_DeviceInfo_GetProduct, ",product:") ||
+        !AppendIntField(log, deviceInfo, OH_GameDevice_DeviceInfo_GetVersion, ",version:") ||
+        !AppendStringField(log, deviceInfo, OH_GameDevice_DeviceInfo_GetPhysicalAddress, ",phys:")) {
         return false;
     }
-    log.append("deviceId:").append(deviceId);
-    free(deviceId);
-
-    char *name = nullptr;
-    code = OH_GameDevice_DeviceInfo_GetName(deviceInfo, &name);
-    if (code != GAME_CONTROLLER_SUCCESS) {
-        return false;
-    }
-    log.append(",name:").append(name);
-    free(name);
-
-    int product;
-    code = OH_GameDevice_DeviceInfo_GetProduct(deviceInfo, &product);
-    if (code != GAME_CONTROLLER_SUCCESS) {
-        return false;
-    }
-    log.append(",product:").append(std::to_string(product));
-
-    int version;
-    code = OH_GameDevice_DeviceInfo_GetVersion(deviceInfo, &version);
-    if (code != GAME_CONTROLLER_SUCCESS) {
-        return false;
-    }
-    log.append(",version:").append(std::to_string(version));
-
-    char *physicalAddress = nullptr;
-    code = OH_GameDevice_DeviceInfo_GetPhysicalAddress(deviceInfo, &physicalAddress);
-    if (code != GAME_CONTROLLER_SUCCESS) {
-        return false;
-    }
-    log.append(",phys:").append(physicalAddress);
-    free(physicalAddress);
-
     GameDevice_DeviceType type;
-    code = OH_GameDevice_DeviceInfo_GetDeviceType(deviceInfo, &type);
-    if (code != GAME_CONTROLLER_SUCCESS) {
+    if (OH_GameDevice_DeviceInfo_GetDeviceType(deviceInfo, &type) != GAME_CONTROLLER_SUCCESS) {
         return false;
     }
     log.append(",type:").append(std::to_string(type));
-    if (oprType == 0) {
-        OH_LOG_INFO(LOG_APP, "[ActsRealDeviceTest][GetAllDeviceInfo]DeviceInfo: %{public}s", log.c_str());
-    } else {
-        OH_LOG_INFO(LOG_APP, "[ActsRealDeviceTest][DeviceEvent]DeviceInfo: %{public}s", log.c_str());
-    }
-
+    const char *scene = (oprType == 0) ? "[GetAllDeviceInfo]" : "[DeviceEvent]";
+    OH_LOG_INFO(LOG_APP, "[ActsRealDeviceTest]%{public}sDeviceInfo: %{public}s", scene, log.c_str());
     return true;
 }
 

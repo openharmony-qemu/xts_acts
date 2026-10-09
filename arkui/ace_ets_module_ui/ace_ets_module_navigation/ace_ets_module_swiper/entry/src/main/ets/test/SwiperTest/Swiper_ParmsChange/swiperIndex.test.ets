@@ -33,6 +33,8 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function swiperIndex() {
   describe('swiperIndexTest', () => {
     beforeEach(async (done: Function) => {
@@ -92,8 +94,8 @@ export default function swiperIndex() {
     //      // Page turning.
     //      let driver = Driver.create();
     //      await CommonFunc.sleep(500);
-    //      await driver.swipe(vp2px(150), vp2px(100), vp2px(100), vp2px(100));
-    //      //await driver.swipe(250, 230, 200, 230);
+    //      await driver.swipeBetween({ x: vp2px(150), y: vp2px(100), displayId: displayID }, { x: vp2px(100), y: vp2px(100), displayId: displayID });
+    //      //await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
     //      await CommonFunc.sleep(1000);
     //      ckey04:RectValue = CommonFunc.getComponentRect('ckey04');
     //      ckey05:RectValue = CommonFunc.getComponentRect('ckey05');
@@ -149,7 +151,7 @@ export default function swiperIndex() {
     //      expect(swiperkey.bottom).assertEqual(ckey01.bottom)
     //      // Page turning.
     //      let driver = Driver.create();
-    //      await driver.swipe(250, 230, 200, 230);
+    //      await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
     //      await CommonFunc.sleep(1000);
     //      ckey01:RectValue = CommonFunc.getComponentRect('ckey01');
     //      ckey02:RectValue = CommonFunc.getComponentRect('ckey02');
@@ -207,8 +209,8 @@ export default function swiperIndex() {
     //      expect(swiperkey.bottom).assertEqual(ckey01.bottom);
     //      // Page turning.
     //      let driver = Driver.create();
-    //      await driver.swipe(250, 230, 200, 230);
-    //      await driver.swipe(250, 230, 200, 230);
+    //      await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
+    //      await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
     //      await CommonFunc.sleep(1000);
     //      ckey01:RectValue = CommonFunc.getComponentRect('ckey01');
     //      ckey02:RectValue = CommonFunc.getComponentRect('ckey02');

@@ -45,8 +45,8 @@ class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
   private builderNode: ReactiveBuilderNode<[text: string, uiContext: UIContext]> | null = null;
 
-  private wrapBuilder: WrappedBuilder<[text: string, uiContext: UIContext]> = 
-  wrapBuilder<[text: string, uiContext: UIContext]>(buttonBuilder);
+  private wrapBuilder: WrappedBuilder<[text: string, uiContext: UIContext]> =
+    wrapBuilder<[text: string, uiContext: UIContext]>(buttonBuilder);
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(uiContext);
     this.builderNode = new ReactiveBuilderNode(uiContext);
@@ -112,6 +112,6 @@ struct MyComponent {
             this.nodeController.postInputEvent(event, this.getUIContext());
           }
         })
-    }.offset({top: 100})
+    }.offset({top: 50}).width('100%')
   }
 }

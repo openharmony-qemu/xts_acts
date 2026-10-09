@@ -79,14 +79,14 @@ export default function List_lanes() {
         name: 'addLanes', value: 2
       })
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_lanes' + '_01');
+      let strJson = getInspectorByKey('List_lanes_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_lanes_011 = CommonFunc.getComponentRect('List_lanes' + '_011');
-      let List_lanes_012 = CommonFunc.getComponentRect('List_lanes' + '_012');
-      let List_lanes_013 = CommonFunc.getComponentRect('List_lanes' + '_013');
-      let List_lanes_014 = CommonFunc.getComponentRect('List_lanes' + '_014');
-      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes' + '_01');
+      let List_lanes_011 = CommonFunc.getComponentRect('List_lanes_011');
+      let List_lanes_012 = CommonFunc.getComponentRect('List_lanes_012');
+      let List_lanes_013 = CommonFunc.getComponentRect('List_lanes_013');
+      let List_lanes_014 = CommonFunc.getComponentRect('List_lanes_014');
+      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes_01');
       expect(Math.abs(List_lanes_011.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_012.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(Math.floor((List_lanes_013.top - List_lanes_011.bottom) - vp2px(20))) <= 1).assertTrue();
@@ -110,9 +110,11 @@ export default function List_lanes() {
       expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(100, 120, 100, 0);
+      let swipeComponent = await driver.findComponent(ON.id('List_lanes_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 100, y: 120, displayId: displayId }, { x: 100, y: 0, displayId: displayId });
       await CommonFunc.sleep(1000);
-      let List_lanes_024 = CommonFunc.getComponentRect('List_lanes' + '_013');
+      let List_lanes_024 = CommonFunc.getComponentRect('List_lanes_013');
       expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - vp2px(120))) <= 1).assertTrue();
       console.info('testListLanesToTwo END');
       done();
@@ -134,14 +136,14 @@ export default function List_lanes() {
         }
       })
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('List_lanes' + '_01');
+      let strJson = getInspectorByKey('List_lanes_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_lanes_011 = CommonFunc.getComponentRect('List_lanes' + '_011');
-      let List_lanes_012 = CommonFunc.getComponentRect('List_lanes' + '_012');
-      let List_lanes_013 = CommonFunc.getComponentRect('List_lanes' + '_013');
-      let List_lanes_014 = CommonFunc.getComponentRect('List_lanes' + '_014');
-      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes' + '_01');
+      let List_lanes_011 = CommonFunc.getComponentRect('List_lanes_011');
+      let List_lanes_012 = CommonFunc.getComponentRect('List_lanes_012');
+      let List_lanes_013 = CommonFunc.getComponentRect('List_lanes_013');
+      let List_lanes_014 = CommonFunc.getComponentRect('List_lanes_014');
+      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes_01');
       expect(Math.abs(List_lanes_011.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_012.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_013.top - List_lanes_01.top) <= 1).assertTrue();
@@ -165,9 +167,11 @@ export default function List_lanes() {
       expect(Math.abs(Math.round(List_lanes_014.bottom - List_lanes_014.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(100, 120, 100, 0);
+      let swipeComponent = await driver.findComponent(ON.id('List_lanes_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 100, y: 120, displayId: displayId }, { x: 100, y: 0, displayId: displayId });
       await CommonFunc.sleep(1000);
-      let List_lanes_024 = CommonFunc.getComponentRect('List_lanes' + '_014');
+      let List_lanes_024 = CommonFunc.getComponentRect('List_lanes_014');
       expect(Math.abs(List_lanes_024.top - List_lanes_01.top - Math.round(vp2px(120))) <= 1).assertTrue();
       console.info('testListLanesToRange01 END');
       done();
@@ -188,14 +192,14 @@ export default function List_lanes() {
         }
       })
       await CommonFunc.sleep(3000);
-      let strJson = getInspectorByKey('List_lanes' + '_01');
+      let strJson = getInspectorByKey('List_lanes_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
-      let List_lanes_011 = CommonFunc.getComponentRect('List_lanes' + '_011');
-      let List_lanes_012 = CommonFunc.getComponentRect('List_lanes' + '_012');
-      let List_lanes_013 = CommonFunc.getComponentRect('List_lanes' + '_013');
-      let List_lanes_014 = CommonFunc.getComponentRect('List_lanes' + '_014');
-      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes' + '_01');
+      let List_lanes_011 = CommonFunc.getComponentRect('List_lanes_011');
+      let List_lanes_012 = CommonFunc.getComponentRect('List_lanes_012');
+      let List_lanes_013 = CommonFunc.getComponentRect('List_lanes_013');
+      let List_lanes_014 = CommonFunc.getComponentRect('List_lanes_014');
+      let List_lanes_01 = CommonFunc.getComponentRect('List_lanes_01');
       expect(Math.abs(List_lanes_011.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(List_lanes_012.top - List_lanes_01.top) <= 1).assertTrue();
       expect(Math.abs(Math.floor((List_lanes_013.top - List_lanes_011.bottom) - vp2px(20))) <= 1).assertTrue();
@@ -219,9 +223,11 @@ export default function List_lanes() {
       expect(Math.abs(Math.floor((List_lanes_014.bottom - List_lanes_014.top) - vp2px(100))) <= 1).assertTrue();
 
       let driver = Driver.create();
-      await driver.swipe(100, 120, 100, 0);
+      let swipeComponent = await driver.findComponent(ON.id('List_lanes_01'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 100, y: 120, displayId: displayId }, { x: 100, y: 0, displayId: displayId });
       await CommonFunc.sleep(1000);
-      let List_lanes_024 = CommonFunc.getComponentRect('List_lanes' + '_013');
+      let List_lanes_024 = CommonFunc.getComponentRect('List_lanes_013');
       expect(Math.abs(Math.floor((List_lanes_024.top - List_lanes_01.top) - vp2px(120))) <= 1).assertTrue();
       console.info('testListLanesToRange02 END');
       done();

@@ -6807,6 +6807,8 @@ export default function windowPropertiesTest() {
       let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Subwindow';
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       try {
         if (isFreeWindowMode == true) {
           await mainWindow.maximize();
@@ -6820,7 +6822,7 @@ export default function windowPropertiesTest() {
         await sleep(200);
         await subWindowClass.showWindow();
         await sleep(200);
-        window.getGlobalWindowMode(0).then(async (data: number) => {
+        window.getGlobalWindowMode(displayId).then(async (data: number) => {
           console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
           expect(data).assertEqual(5);
           await mainWindow.recover();
@@ -6863,6 +6865,8 @@ export default function windowPropertiesTest() {
       let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Float';
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       try {
         if (isFreeWindowMode === false) {
           console.info(`${caseName}: this device is not pc or autowindow is false.`)
@@ -6883,7 +6887,7 @@ export default function windowPropertiesTest() {
           await sleep(200);
           await subWindowClass.showWindow();
           await sleep(200);
-          window.getGlobalWindowMode(0).then(async (data: number) => {
+          window.getGlobalWindowMode(displayId).then(async (data: number) => {
             console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
             expect(data).assertEqual(5);
             await mainWindow.recover();
@@ -6991,6 +6995,8 @@ export default function windowPropertiesTest() {
     it('testGetGlobalWindowMode_Fullscreen_And_Pip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Pip';
       let mainWindow = windowStage.getMainWindowSync();
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       let isMaximize = false;
       try {
         let pipController: pipWindow.PiPController | undefined = undefined;
@@ -7017,7 +7023,7 @@ export default function windowPropertiesTest() {
           }
           await pipController.startPiP();
           await sleep(200);
-          window.getGlobalWindowMode(0).then(async (data: number) => {
+          window.getGlobalWindowMode(displayId).then(async (data: number) => {
             console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
             expect(data).assertEqual(9);
             if (isMaximize) {
@@ -7030,6 +7036,7 @@ export default function windowPropertiesTest() {
             if (isMaximize) {
               await mainWindow.recover();
             }
+            await pipController?.stopPiP();
             if (err.code === 801) {
               expect(err.message != null).assertTrue();
               done();
@@ -7066,6 +7073,8 @@ export default function windowPropertiesTest() {
       let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Dialog';
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       try {
         if (isFreeWindowMode === true) {
           await mainWindow.maximize();
@@ -7086,7 +7095,7 @@ export default function windowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(200);
         console.info(`${caseName} Succeeded in showWindow`);
-        window.getGlobalWindowMode(0).then(async (data: number) => {
+        window.getGlobalWindowMode(displayId).then(async (data: number) => {
           console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
           expect(data).assertEqual(5);
           await subWindowClass?.destroyWindow();
@@ -7136,13 +7145,15 @@ export default function windowPropertiesTest() {
     it('testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float';
       let windowStageStart = await startAbility3(caseName, context);
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       try {
         if (isFreeWindowMode === true) {
           await sleep(200);
           let subWindow = windowStageStart.getMainWindowSync();
           await subWindow.maximize();
           await sleep(200);
-          window.getGlobalWindowMode(0).then(async (data: number) => {
+          window.getGlobalWindowMode(displayId).then(async (data: number) => {
             console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
             expect(data).assertEqual(5);
             await terminateAbility3(caseName);
@@ -7218,6 +7229,8 @@ export default function windowPropertiesTest() {
     it('testGetGlobalWindowMode_Pip_And_Float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetGlobalWindowMode_Pip_And_Float';
       let pipController: pipWindow.PiPController | undefined = undefined;
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       let mXComponentController = new XComponentController();
       let config: pipWindow.PiPConfiguration = {
         context: context,
@@ -7235,7 +7248,7 @@ export default function windowPropertiesTest() {
         } else {
           await pipController.startPiP();
           await sleep(200);
-          window.getGlobalWindowMode(0).then(async (data: number) => {
+          window.getGlobalWindowMode(displayId).then(async (data: number) => {
             console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
             if (isFreeWindowMode === true) {
               expect(data).assertEqual(12);
@@ -7277,6 +7290,8 @@ export default function windowPropertiesTest() {
     it('testGetGlobalWindowMode_FullScreeen_Pip_And_Float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetGlobalWindowMode_FullScreeen_Pip_And_Float';
       let pipController: pipWindow.PiPController | undefined = undefined;
+      let displayId = display.getDefaultDisplaySync().id;
+      console.info(`${caseName} Succeeded in getDefaultDisplaySync. displayId: ${displayId}`);
       let mXComponentController = new XComponentController();
       let config: pipWindow.PiPConfiguration = {
         context: context,
@@ -7285,6 +7300,8 @@ export default function windowPropertiesTest() {
         contentHeight: 500
       };
       let isMaximized = false;
+      let isDestroyWindow = false;
+      let isStopPip = false;
       let subWindowClass: window.Window | undefined;
       let mainWindow = windowStage.getMainWindowSync();
       try {
@@ -7297,7 +7314,7 @@ export default function windowPropertiesTest() {
           console.info(`${caseName} pipController.isPiPSupported(). data: ${pipController.isPiPSupported()}`);
           done();
         } else {
-          if (!properties.isFullScreen) {
+          if (isFreeWindowMode) {
             await mainWindow.maximize();
             isMaximized = true;
             await sleep(200);
@@ -7309,11 +7326,13 @@ export default function windowPropertiesTest() {
           await sleep(200);
           await subWindowClass.showWindow();
           await sleep(200);
-          window.getGlobalWindowMode(0).then(async (data: number) => {
+          window.getGlobalWindowMode(displayId).then(async (data: number) => {
             console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
             expect(data).assertEqual(13);
             await pipController?.stopPiP();
+            isStopPip = true;
             await subWindowClass?.destroyWindow();
+            isDestroyWindow = true;
             console.error(`${caseName} isMaximized: ${isMaximized}`);
             if (isMaximized) {
               await mainWindow.recover();
@@ -7321,7 +7340,15 @@ export default function windowPropertiesTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-            if (err.code === 801) {
+            if (!isDestroyWindow) {
+              await subWindowClass?.destroyWindow();
+              isDestroyWindow = true;
+            }
+            if (!isStopPip) {
+              await pipController?.stopPiP();
+              isStopPip = true;
+            }
+	          if (err.code === 801) {
               expect(err.message != null).assertTrue();
               done();
             } else {
@@ -7335,7 +7362,12 @@ export default function windowPropertiesTest() {
         }
       } catch (error) {
         console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-        await subWindowClass?.destroyWindow();
+        if (!isDestroyWindow) {
+          await subWindowClass?.destroyWindow();
+        }
+        if (!isStopPip) {
+          await pipController?.stopPiP();
+        }
         if (isMaximized) {
           await mainWindow.recover();
         }
@@ -7931,36 +7963,27 @@ export default function windowPropertiesTest() {
         windowClass.on('frameMetricsMeasured', callback1);
         let windowProperties = windowClass.getWindowProperties();
         console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-        let driver: Driver = Driver.create();
-        let dragFromX = Math.round(windowProperties.windowRect.width / 4 + windowProperties.windowRect.left);
-        console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-        let dragToX = Math.round(windowProperties.windowRect.width / 2 + windowProperties.windowRect.left);
-        console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-        let dragFromY = Math.round(windowProperties.windowRect.height / 4 + windowProperties.windowRect.top);
-        console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-        let dragToY = Math.round(windowProperties.windowRect.height / 2 + windowProperties.windowRect.top);
-        console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
-        await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-        await sleep(3000);
+        windowStage.setCustomDensity(2.1);
+        await sleep(500);
         expect(callbackIndex1).assertLarger(0)
         callbackIndex1 = 0;
         windowClass.on('frameMetricsMeasured', callback2);
-        await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-        await sleep(3000);
+        windowStage.setCustomDensity(2.0);
+        await sleep(500);
         expect(callbackIndex1).assertLarger(0);
         expect(callbackIndex2).assertLarger(0);
         windowClass.off('frameMetricsMeasured', callback1);
         callbackIndex1 = 0;
         callbackIndex2 = 0;
-        await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-        await sleep(3000);
+        windowStage.setCustomDensity(1.0);
+        await sleep(500);
         expect(callbackIndex1).assertEqual(0);
         expect(callbackIndex2).assertLarger(0);
         callbackIndex1 = 0;
         callbackIndex2 = 0;
         windowClass.off('frameMetricsMeasured');
-        await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-        await sleep(3000);
+        windowStage.setCustomDensity(-1.0);
+        await sleep(500);
         expect(callbackIndex1).assertEqual(0);
         expect(callbackIndex2).assertEqual(0);
         done();
@@ -8004,20 +8027,11 @@ export default function windowPropertiesTest() {
           await windowClass?.destroyWindow()
           done();
         }
+        windowStage.setCustomDensity(3.0, true);
+        await sleep(500)
         windowClass.on('frameMetricsMeasured', callback1);
-        let windowProperties = windowClass.getWindowProperties();
-        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-        let driver: Driver = Driver.create();
-        let dragFromX = Math.round(windowProperties.windowRect.width / 4 + windowProperties.windowRect.left);
-        console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-        let dragToX = Math.round(windowProperties.windowRect.width / 2 + windowProperties.windowRect.left);
-        console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-        let dragFromY = Math.round(windowProperties.windowRect.height / 4 + windowProperties.windowRect.top);
-        console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-        let dragToY = Math.round(windowProperties.windowRect.height / 2 + windowProperties.windowRect.top);
-        console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
-        await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-        await sleep(3000)
+        windowStage.setCustomDensity(-1.0, true);
+        await sleep(500)
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         await windowClass?.destroyWindow()
@@ -8122,19 +8136,11 @@ export default function windowPropertiesTest() {
           await windowClass?.destroyWindow()
           done();
         }
+        windowStage.setCustomDensity(4.0, true);
+        await sleep(500)
         windowClass.on('frameMetricsMeasured', callback1);
-        let windowProperties = windowClass.getWindowProperties();
-        console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-        let dragFromX = Math.round(windowProperties.windowRect.width / 4 + windowProperties.windowRect.left);
-        console.log(`${caseName} dragFromX: ${JSON.stringify(dragFromX)}`);
-        let dragToX = Math.round(windowProperties.windowRect.width / 2 + windowProperties.windowRect.left);
-        console.log(`${caseName} dragToX: ${JSON.stringify(dragToX)}`);
-        let dragFromY = Math.round(windowProperties.windowRect.height / 4 + windowProperties.windowRect.top);
-        console.log(`${caseName} dragFromY: ${JSON.stringify(dragFromY)}`);
-        let dragToY = Math.round(windowProperties.windowRect.height / 2 + windowProperties.windowRect.top);
-        console.log(`${caseName} dragToY: ${JSON.stringify(dragToY)}`);
-        await driver.drag(dragFromX, dragFromY, dragToX, dragToY);
-        await sleep(3000)
+        windowStage.setCustomDensity(-1.0, true);
+        await sleep(500)
       } catch (exception) {
         console.error(`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
         await windowClass?.destroyWindow()
@@ -8590,4 +8596,3 @@ export default function windowPropertiesTest() {
 
   })
 }
-

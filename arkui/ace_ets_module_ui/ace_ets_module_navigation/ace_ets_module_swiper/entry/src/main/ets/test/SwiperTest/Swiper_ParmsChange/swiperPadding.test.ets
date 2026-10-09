@@ -33,6 +33,8 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function swiperPadding() {
   describe('swiperMarPadTest2', () => {
     beforeEach(async (done: Function) => {
@@ -89,16 +91,11 @@ export default function swiperPadding() {
       // Page turning.
       let driver = Driver.create();
       // await CommonFunc.sleep(500);
-      // await driver.swipe(vp2px(180), vp2px(100), vp2px(20), vp2px(100));
-      // //await driver.swipe(250, 230, 200, 230);
+      // await driver.swipeBetween({ x: vp2px(180), y: vp2px(100), displayId: displayID }, { x: vp2px(20), y: vp2px(100), displayId: displayID });
+      // //await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
       // await CommonFunc.sleep(1000);
       let gridRect:RectValue = CommonFunc.getComponentRectOnScreen('swiperPadding')
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
-        1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.8 + gridRect.left}`), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`), displayId: displayID }, { x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.1 + gridRect.left}`), y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`), displayId: displayID }, 1000);
       await CommonFunc.sleep(3000);
       swiperPadding = CommonFunc.getComponentRectOnScreen('swiperPadding');
       swiperPadding01 = CommonFunc.getComponentRectOnScreen('swiperPadding01');

@@ -624,7 +624,12 @@ export default function btBaseProfileTest() {
         PanProfile.off('connectionStateChange', onReceiveEvent);
       } catch (err) {
         console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
+        if (err.code === '801') {
+          console.info('[bluetooth_js]getConnectionState is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -648,7 +653,12 @@ export default function btBaseProfileTest() {
         PanProfile.off('connectionStateChange');
       } catch (err) {
         console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
+        if (err.code === '801') {
+          console.info('[bluetooth_js]getConnectionState is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        };
       }
       done();
     });

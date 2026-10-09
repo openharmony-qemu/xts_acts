@@ -20,6 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 import input from '@ohos.multimodalInput.keyCode';
 import { BusinessError } from '@ohos.base';
 import CommonFunc from '../../MainAbility/common/Common';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ShortcutKeyDPADUPTest() {
   describe('ShortcutKeyDPADUPTest', () => {
     beforeEach(async () => {
@@ -65,7 +66,7 @@ export default function ShortcutKeyDPADUPTest() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_DPAD_UP)
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_DPAD_UP, 0, displayID)
       console.info(`ShortcutKeyDPADUPTest_0100 END`);
     });
   })

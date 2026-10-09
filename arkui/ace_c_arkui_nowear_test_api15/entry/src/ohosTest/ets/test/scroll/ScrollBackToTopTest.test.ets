@@ -46,11 +46,13 @@ export default function scrollBackToTopTest() {
       let grid: Component = await driverGrid.findComponent(ON.id('Grid1'));
       console.info('grid1 id find success');
       let rect = await grid.getBounds();
+      let displayId = await grid.getDisplayId();
       let top = rect.top;
       let left = rect.left;
       let right = rect.right;
       let bottom = rect.bottom;
-      console.info("GridScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      console.info("GridScrollTest_0100 value is" + left + " --" + right
+        + "--" + top + "--" + bottom + ", displayId = " + displayId);
       let height = bottom - top;
       let width = right - left;
       let topButton: Component = await driver.findComponent(ON.id('Top'));
@@ -64,11 +66,9 @@ export default function scrollBackToTopTest() {
       await Utils.sleep(2000)
       console.info('qwer5');
       // await driverGrid.swipe event
-      await driverGrid.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
+      await driverGrid.swipeBetween(
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 4), displayId: displayId },
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 2), displayId: displayId }
       );
       await Utils.sleep(1500)
       await ListButton.click();

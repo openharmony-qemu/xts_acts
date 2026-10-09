@@ -1006,9 +1006,12 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
             var AccountManager = osaccount.getAccountManager();
             console.info("====>get os AccountManager finish====");
             try {
+                // 动态获取所在用户的localId
+                var expectLocalId = await AccountManager.getOsAccountLocalId();
+                console.info("====>getOsAccountLocalId expectLocalId:" + expectLocalId);
                 var data = await AccountManager.queryCurrentOsAccount();
                 console.info("====>queryCurrentOsAccount data:" + JSON.stringify(data));
-                expect(data.localId).assertEqual(100);
+                expect(data.localId).assertEqual(expectLocalId);
                 expect(data.type).assertEqual(0);
                 var serialNumberStr = data.serialNumber.toString();
                 var serialIntercept = serialNumberStr.substring(8);

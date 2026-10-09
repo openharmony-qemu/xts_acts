@@ -803,6 +803,31 @@ static napi_value KeyCode28(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value KeyCode29(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t keyCode1 = 3235;
+    int32_t keyCode2 = 3236;
+    int32_t keyCode3 = 3237;
+    int32_t keyCode4 = 3238;
+    int32_t keyCode5 = 3239;
+    int32_t keyCode6 = 3240;
+    int32_t keyCode7 = 3241;
+    int32_t keyCode8 = 3242;
+    int32_t keyCode9 = 3243;
+    napi_create_int32(env,
+                      (Input_KeyCode::OH_INPUT_KEYCODE_PTZ_CLICK == keyCode1 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_FOCUS_LEFT == keyCode2 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_FOCUS_RIGHT == keyCode3 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_EXPOSURE_LEFT == keyCode4 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_EXPOSURE_RIGHT == keyCode5 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_SHUTTER_LEFT == keyCode6 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_SHUTTER_RIGHT == keyCode7 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_APERTURE_LEFT == keyCode8 &&
+                      Input_KeyCode::OH_INPUT_KEYCODE_PTZ_APERTURE_RIGHT == keyCode9) ? 1 : 0, &result);
+    return result;
+}
+
 static napi_value PointerStyle1(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -1398,6 +1423,7 @@ static napi_property_descriptor desc_part1[] = {
     {"KeyCode26", nullptr, KeyCode26, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"KeyCode27", nullptr, KeyCode27, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"KeyCode28", nullptr, KeyCode28, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"KeyCode29", nullptr, KeyCode29, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 static napi_property_descriptor desc_part2[] = {

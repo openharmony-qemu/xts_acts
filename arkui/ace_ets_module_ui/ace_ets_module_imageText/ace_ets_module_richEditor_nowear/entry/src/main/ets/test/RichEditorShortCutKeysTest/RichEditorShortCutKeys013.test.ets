@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorShortCutKeys013() {
   describe('RichEditorShortCutKeys013', () => {
     beforeEach(async (done: Function) => {
@@ -81,7 +83,7 @@ export default function RichEditorShortCutKeys013() {
       let setSelect = await driver.findComponent(ON.id('setSelect'));
       await setSelect.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U, 0, displayID);
       await CommonFunc.sleep(500);
       await getSpans.click();
       await CommonFunc.sleep(500);
@@ -93,5 +95,6 @@ export default function RichEditorShortCutKeys013() {
 
   })
 }
+
 
 

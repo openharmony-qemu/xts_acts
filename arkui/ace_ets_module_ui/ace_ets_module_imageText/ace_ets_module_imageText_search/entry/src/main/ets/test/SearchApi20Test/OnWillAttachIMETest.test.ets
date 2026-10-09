@@ -18,6 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function OnWillAttachIMETest() {
   describe('OnWillAttachIMETest', () => {
     beforeEach(async (done: Function) => {
@@ -63,7 +65,11 @@ export default function OnWillAttachIMETest() {
       await search.click()
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get('SearchClient')).assertContain('"nodeId":');
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       AppStorage.delete('SearchClient')
       console.info("[OnWillAttachIMETest0001] end");
       done();
@@ -85,7 +91,11 @@ export default function OnWillAttachIMETest() {
       await textInput.click()
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get('TextInputClient')).assertContain('"nodeId":');
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       AppStorage.delete('TextInputClient')
       console.info("[OnWillAttachIMETest0002] end");
       done();

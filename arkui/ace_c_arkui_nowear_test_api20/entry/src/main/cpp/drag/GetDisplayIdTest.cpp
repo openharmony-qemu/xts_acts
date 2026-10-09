@@ -28,7 +28,7 @@ namespace ArkUICapiTest {
                 int displayIdValue = -1;
                 ArkUI_ErrorCode errorCode = OH_ArkUI_DragEvent_GetDisplayId(dragEvent, &displayIdValue);
                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager", "displayId:%{public}d;", displayIdValue);
-                if (displayIdValue == 0) {
+                if (displayIdValue >= 0) {
                     ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
                     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
                     auto nodeHandler = OH_ArkUI_NodeEvent_GetNodeHandle(event);

@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function nextFocus() {
   describe('ButtonAdapt001', () => {
     beforeEach(async (done: Function) => {
@@ -52,9 +53,9 @@ export default function nextFocus() {
     it('Button_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[Button_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2012);
+      await driver.triggerKey(2012, displayID);
       await CommonFunc.sleep(2000);
 
       // test the child component response

@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 import { MouseButton } from '@kit.TestKit';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function getModifierKeyStateNullAndUndefinedTest() {
   describe('getModifierKeyStateNullAndUndefinedTest', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +63,7 @@ export default function getModifierKeyStateNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       let button: Component = await driver.findComponent(ON.id('getModifierKeyStateNullAndUndefined' + '_testNull'));
       let point = await button.getBoundsCenter();
-      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
       await CommonFunc.sleep(200);
       
       console.info('[SUB_ARKUI_KEYEVENT_GETMODIFIERKEYSTATE_PARAM_001] getModifierKeyStateNullResult: ' + AppStorage.get('getModifierKeyStateNullResult'));
@@ -86,7 +87,7 @@ export default function getModifierKeyStateNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       let button: Component = await driver.findComponent(ON.id('getModifierKeyStateNullAndUndefined' + '_testUndefined'));
       let point = await button.getBoundsCenter();
-      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
       await CommonFunc.sleep(200);
       
       console.info('[SUB_ARKUI_KEYEVENT_GETMODIFIERKEYSTATE_PARAM_002] getModifierKeyStateUndefinedResult: ' + AppStorage.get('getModifierKeyStateUndefinedResult'));
@@ -110,7 +111,7 @@ export default function getModifierKeyStateNullAndUndefinedTest() {
       await CommonFunc.sleep(1000);
       let button: Component = await driver.findComponent(ON.id('testEmpty'));
       let point = await button.getBoundsCenter();
-      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
       await CommonFunc.sleep(200);
       
       console.info('[SUB_ARKUI_KEYEVENT_GETMODIFIERKEYSTATE_PARAM_003] getModifierKeyStateEmptyResult: ' + AppStorage.get('getModifierKeyStateEmptyResult'));

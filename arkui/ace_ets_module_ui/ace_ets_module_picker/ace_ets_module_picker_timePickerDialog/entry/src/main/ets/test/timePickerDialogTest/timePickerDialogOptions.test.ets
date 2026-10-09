@@ -18,6 +18,7 @@ import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPatter
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function TimePickerDialogOptionsTest() {
   describe('TimePickerDialogOptionsTest', () => {
@@ -53,8 +54,8 @@ export default function TimePickerDialogOptionsTest() {
      */
     it('TimePickerDialogOptionsTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TimePickerDialogOptionsTest_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('TimePickerDialogOptions'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('TimePickerDialogOptions'));
       await button.click();
       await CommonFunc.sleep(1000);
 
@@ -62,7 +63,11 @@ export default function TimePickerDialogOptionsTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[TimePickerDialogOptionsTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("TimePickerDialog");
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       console.info('[TimePickerDialogOptionsTest_0100] END');
       done();

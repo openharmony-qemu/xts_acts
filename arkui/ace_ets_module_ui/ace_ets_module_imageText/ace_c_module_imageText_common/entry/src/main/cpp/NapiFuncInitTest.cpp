@@ -28,7 +28,10 @@
 #include "StyledString/LinearGradientTest.cpp"
 #include "StyledString/RadialGradientTest.cpp"
 #include "StyledString/LineSpacingOptionsTest.cpp"
+#include "StyledString/ImageAttachmentResizableTest.cpp"
 #include "TextCommon/TextLayoutManagerWithEncodingTest.cpp"
+#include "TextCommon/SetUiDvsyncSwitchTest.cpp"
+#include "TextCommon/ImageSpanResizableTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -247,6 +250,41 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetCharacterPositionAtCoordinateWithEncodingTest_008", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetCharacterPositionAtCoordinateWithEncodingTest_009", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetCharacterPositionAtCoordinateWithEncodingTest_010", nullptr, GetCharacterPositionAtCoordinateWithEncodingTest_010, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"SetUiDvsyncSwitchTest_001", nullptr,
+            SetUiDvsyncSwitchTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetUiDvsyncSwitchTest_002", nullptr,
+            SetUiDvsyncSwitchTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetUiDvsyncSwitchTest_003", nullptr,
+            SetUiDvsyncSwitchTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetUiDvsyncSwitchTest_004", nullptr,
+            SetUiDvsyncSwitchTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"ImageSpanResizableTest_001", nullptr,
+            ImageSpanResizableTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageSpanResizableTest_002", nullptr,
+            ImageSpanResizableTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageSpanResizableTest_003", nullptr,
+            ImageSpanResizableTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageSpanResizableTest_004", nullptr,
+            ImageSpanResizableTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"ImageAttachmentResizableTest_001", nullptr,
+            ImageAttachmentResizableTest_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_002", nullptr,
+            ImageAttachmentResizableTest_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_003", nullptr,
+            ImageAttachmentResizableTest_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_004", nullptr,
+            ImageAttachmentResizableTest_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_005", nullptr,
+            ImageAttachmentResizableTest_005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_006", nullptr,
+            ImageAttachmentResizableTest_006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_008", nullptr,
+            ImageAttachmentResizableTest_008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ImageAttachmentResizableTest_009", nullptr,
+            ImageAttachmentResizableTest_009, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

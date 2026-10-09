@@ -83,6 +83,6 @@ struct WebComponent {
           }
           return undefined
         })
-    }.height('100%').width('100%')
+    }.height('80%').width('100%')
   }
 }

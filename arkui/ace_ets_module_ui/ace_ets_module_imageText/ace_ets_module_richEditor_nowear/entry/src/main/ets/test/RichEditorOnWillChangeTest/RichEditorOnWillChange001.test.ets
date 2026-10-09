@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnWillChange001() {
   describe('RichEditorOnWillChange001', () => {
     beforeEach(async (done: Function) => {
@@ -100,7 +102,11 @@ export default function RichEditorOnWillChange001() {
       await CommonFunc.sleep(500);
 
       //KEYCODE_DEL
-      await driver.triggerKey(2055);
+      try {
+        await driver.triggerKey(2055, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let replacedSpansCallback = await driver.findComponent(ON.id('replacedSpansCallback'));
@@ -121,5 +127,6 @@ export default function RichEditorOnWillChange001() {
     });
   })
 }
+
 
 

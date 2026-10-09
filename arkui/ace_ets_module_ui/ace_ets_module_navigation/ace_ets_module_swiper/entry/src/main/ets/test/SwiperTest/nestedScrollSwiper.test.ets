@@ -18,6 +18,8 @@ import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function nestedScrollSwiper() {
   describe('nestedScrollSwiper', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +75,7 @@ export default function nestedScrollSwiper() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.1),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       await driver.assertComponentExist(ON.text('3'));
 
@@ -112,7 +114,7 @@ export default function nestedScrollSwiper() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.1),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       await driver.assertComponentExist(ON.text('3'));
 

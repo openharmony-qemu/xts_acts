@@ -67,7 +67,7 @@ export default function nestedScrollTest() {
       let height = bottom -top;
       let width = right - left;
       let driver = await Driver.create()
-      await driver.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson = getInspectorByKey('text01');
       console.info("[nestedScroll_0010] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -100,7 +100,7 @@ export default function nestedScrollTest() {
       console.info("nestedScroll_0020 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-       await driver1.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+       await driver1.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('text02');
       console.info("[nestedScroll_0020] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -133,7 +133,7 @@ export default function nestedScrollTest() {
       console.info("nestedScroll_0030 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver1.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver1.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('text01');
       console.info("[nestedScroll_0030] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -166,7 +166,7 @@ export default function nestedScrollTest() {
       console.info("nestedScroll_0040 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver1.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver1.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('text02');
       console.info("[nestedScroll_0040] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -199,7 +199,7 @@ export default function nestedScrollTest() {
       console.info("nestedScroll_0050 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver1.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver1.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('text01');
       console.info("[nestedScroll_0050] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -232,7 +232,7 @@ export default function nestedScrollTest() {
       console.info("nestedScroll_0060 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver1.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver1.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('text01');
       console.info("[nestedScroll_0060] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -265,7 +265,7 @@ export default function nestedScrollTest() {
       console.info("nestedScroll_0070 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver1.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver1.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('text01');
       console.info("[nestedScroll_0070] component obj is: " + JSON.stringify(JSON.parse(strJson1)));
@@ -298,7 +298,7 @@ export default function nestedScrollTest() {
       console.info("nestedScroll_0080 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver1.drag(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left + width*0.2),Math.round(top + height/2));
+      await driver1.dragBetween({ x: Math.round(left + width*0.8), y: Math.round(top + height/2), displayId: 0 }, { x: Math.round(left + width*0.2), y: Math.round(top + height/2), displayId: 0 });
       await CommonFunc.sleep(1500);
       let strJson1 = getInspectorByKey('text01');
       console.info("[nestedScroll_0080] component obj is: " + JSON.stringify(JSON.parse(strJson1)));

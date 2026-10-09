@@ -79,7 +79,9 @@ export default function scrollContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('scroll_contentOffset_start'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('scroll_contentOffset_num');
+      let listSwipeComp = await driver.findComponent(ON.id('scroll_contentOffset_num'))
+      let listSwipe = await listSwipeComp.getBounds()
+      let displayId = await listSwipeComp.getDisplayId()
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -87,16 +89,18 @@ export default function scrollContentOffset() {
       console.info("scrollContentOffset_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.2),Math.round(left + width/2),Math.round(top + height*0.6));
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId});
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('scroll_contentOffset_num');
       console.info("[scrollContentOffset_0200] contentStartOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentStartOffset));
       expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("30.000000");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroll_contentOffset_num');
+      let scroll = await listSwipeComp.getBounds()
       console.info("[scrollContentOffset_0200] scroll_top is: " + scroll.top);
-      let scrollItem = CommonFunc.getComponentRectOnScreen('text_content_0');
+      let scrollItemComp = await driver.findComponent(ON.id('text_content_0'))
+      let scrollItem = await scrollItemComp.getBounds()
       console.info("[scrollContentOffset_0200] scrollItem_top is: " + scrollItem.top);
       let size_start = scrollItem.top - scroll.top
       console.info("[scrollContentOffset_0200] size_start is: " + size_start);
@@ -123,7 +127,9 @@ export default function scrollContentOffset() {
       let btn: Component = await driver.findComponent(ON.id('scroll_contentOffset_end'));
       await btn.click();
       await CommonFunc.sleep(1000);
-      let listSwipe = CommonFunc.getComponentRectOnScreen('scroll_contentOffset_num');
+      let listSwipeComp = await driver.findComponent(ON.id('scroll_contentOffset_num'))
+      let listSwipe = await listSwipeComp.getBounds()
+      let displayId = await listSwipeComp.getDisplayId()
       let top = listSwipe.top;
       let right = listSwipe.right;
       let left = listSwipe.left;
@@ -131,16 +137,18 @@ export default function scrollContentOffset() {
       console.info("scrollContentOffset_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween({x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId});
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('scroll_contentOffset_num');
       console.info("[scrollContentOffset_0300] contentEndOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentEndOffset));
       expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("20.000000");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroll_contentOffset_num');
+      let scroll = await listSwipeComp.getBounds()
       console.info("[scrollContentOffset_0300] scroll_bottom is: " + scroll.bottom);
-      let scrollItem = CommonFunc.getComponentRectOnScreen('text_content_9');
+      let scrollItemComp = await driver.findComponent(ON.id('text_content_9'))
+      let scrollItem = await scrollItemComp.getBounds()
       console.info("[scrollContentOffset_0300] scrollItem_bottom is: " + scrollItem.bottom);
       let size_end = scroll.bottom - scrollItem.bottom
       console.info("[scrollContentOffset_0300] size_end is: " + size_end);

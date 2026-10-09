@@ -34,6 +34,7 @@ import { MouseButton } from '@kit.TestKit';
 import Utils from '../../MainAbility/common/Utils';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function getModifierKeyStateTest() {
   describe('getModifierKeyStateTest', () => {
     beforeEach(async (done: Function) => {
@@ -70,10 +71,10 @@ export default function getModifierKeyStateTest() {
       console.info('getModifierKeyStateTest_0010 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
-      await driver.triggerKey(KeyCode.KEYCODE_TAB)
+      await driver.triggerKey(KeyCode.KEYCODE_TAB, displayID)
       let button: Component = await driver.findComponent(ON.id('getModifierKeyState_BaseEvent'));
       let point = await button.getBoundsCenter();
-      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT, 2072);
       await CommonFunc.sleep(200);
       expect(AppStorage.get('BaseEventCtrl')).assertEqual(true);
       expect(AppStorage.get('BaseEventShift')).assertEqual(false);

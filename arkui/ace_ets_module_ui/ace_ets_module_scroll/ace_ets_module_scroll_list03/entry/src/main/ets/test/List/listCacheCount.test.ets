@@ -53,15 +53,20 @@ export default function listCacheCount() {
     it('listCacheCount_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[listCacheCount_0100] START');
       await CommonFunc.sleep(1000);
-      let listItem4 = CommonFunc.getComponentRectOnScreen('countInfo_4');
+      let driver = Driver.create();
+      let listItem4Comp = await driver.findComponent(ON.id('countInfo_4'));
+      let listItem4 = await listItem4Comp.getBounds();
       console.info('[listCacheCount_0100] listItem4.bottom: ' + listItem4.bottom);
-      let listItem5 = CommonFunc.getComponentRectOnScreen('countInfo_5');
+      let listItem5Comp = await driver.findComponent(ON.id('countInfo_5'));
+      let listItem5 = await listItem5Comp.getBounds();
       console.info('[listCacheCount_0100] listItem5.top: ' + listItem5.top);
       expect(Math.floor(Math.abs(listItem5.top - listItem4.bottom)) <= 1 ).assertTrue();
- 
-      let listItem6 = CommonFunc.getComponentRectOnScreen('countInfo_6');
+
+      let listItem6Comp = await driver.findComponent(ON.id('countInfo_6'));
+      let listItem6 = await listItem6Comp.getBounds();
       console.info('[listCacheCount_0100] listItem6.bottom: ' + listItem6.bottom);
-      let listItem7 = CommonFunc.getComponentRectOnScreen('countInfo_7');
+      let listItem7Comp = await driver.findComponent(ON.id('countInfo_7'));
+      let listItem7 = await listItem7Comp.getBounds();
       console.info('[listCacheCount_0100] listItem7.top: ' + listItem7.top);
       expect(Math.floor(Math.abs(listItem7.top - listItem6.bottom)) <= 1 ).assertTrue();
       await CommonFunc.sleep(500);
@@ -81,7 +86,9 @@ export default function listCacheCount() {
       console.info('[listCacheCount_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      let swipeList = CommonFunc.getComponentRectOnScreen('list_countInfo');
+      let swipeListComponent = await driver.findComponent(ON.id('list_countInfo'));
+      let swipeList = await swipeListComponent.getBounds();
+      let displayId = await swipeListComponent.getDisplayId();
       let top = swipeList.top;
       let right = swipeList.right;
       let left = swipeList.left;
@@ -89,12 +96,16 @@ export default function listCacheCount() {
       console.info("listCacheCount_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.5),300);
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.6), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + height * 0.5), displayId: displayId }, 300);
       await CommonFunc.sleep(2000);
- 
-      let listItem7 = CommonFunc.getComponentRectOnScreen('countInfo_7');
+
+      let listItem7Comp = await driver.findComponent(ON.id('countInfo_7'));
+      let listItem7 = await listItem7Comp.getBounds();
       console.info('[listCacheCount_0200] listItem7.bottom: ' + listItem7.bottom);
-      let listItem8 = CommonFunc.getComponentRectOnScreen('countInfo_8');
+      let listItem8Comp = await driver.findComponent(ON.id('countInfo_8'));
+      let listItem8 = await listItem8Comp.getBounds();
       console.info('[listCacheCount_0200] listItem8.top: ' + listItem8.top);
       await CommonFunc.sleep(500);
       expect(Math.floor(Math.abs(listItem8.top - listItem7.bottom)) <= 1 ).assertTrue();

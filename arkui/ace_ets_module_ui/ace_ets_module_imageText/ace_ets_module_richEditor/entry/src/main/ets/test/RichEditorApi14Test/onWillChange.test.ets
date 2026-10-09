@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnWillChangeTest() {
   describe('RichEditorOnWillChangeTest', () => {
     beforeEach(async (done: Function) => {
@@ -58,7 +60,11 @@ export default function RichEditorOnWillChangeTest() {
       await CommonFunc.sleep(500);
       await driver.click(point.x, point.y);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054);
+      try {
+        await driver.triggerKey(2054, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       let onWillChangeRange = await driver.findComponent(ON.id('onWillChange_range'));
       let range = await onWillChangeRange.getText();
       expect(range).assertEqual('[0, 0]');

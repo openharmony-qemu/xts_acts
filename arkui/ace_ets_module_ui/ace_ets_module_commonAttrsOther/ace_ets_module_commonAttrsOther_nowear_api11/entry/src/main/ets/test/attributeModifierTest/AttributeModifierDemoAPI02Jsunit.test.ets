@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function AttributeModifierDemoAPI02Jsunit() {
   describe('AttributeModifierDemoAPI02Jsunit', () => {
     beforeEach(async (done: Function) => {
@@ -54,7 +55,7 @@ export default function AttributeModifierDemoAPI02Jsunit() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049)
+      await driver.triggerKey(2049,displayID)
       await CommonFunc.sleep(1000);
 
       let strcontent = getInspectorByKey('AttributeModifierDemoAPI02ButtonFocus');

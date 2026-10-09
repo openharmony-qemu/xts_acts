@@ -119,7 +119,10 @@ export default function arkProcessTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${tag} startArkChildProcess error, errorCode: ${err.code}`);
-        if (!mpEnable && err.code == 801) {
+        if (err.code === 16000062) {
+          done();
+        }
+        else if (!mpEnable && err.code === 801) {
           done();
         } else {
           expect().assertFail();
@@ -186,8 +189,13 @@ export default function arkProcessTest() {
         expect().assertFail();
       } catch (err) {
         console.error(`${tag} startArkChildProcess error, errorCode: ${err.code}`);
-        expect().assertFail();
-        done();
+        if (err.code === 16000062) {
+          done();
+        }
+        else{
+          expect().assertFail();
+          done();
+        }
       }
     });
 

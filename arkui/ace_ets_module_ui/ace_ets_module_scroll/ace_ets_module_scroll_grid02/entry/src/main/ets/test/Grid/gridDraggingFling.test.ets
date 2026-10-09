@@ -60,7 +60,9 @@ export default function gridDraggingFling() {
     it('gridDraggingFling_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[gridDraggingFling_0100] START');
       let driver = await Driver.create()
-      let dragScroll = CommonFunc.getComponentRectOnScreen('grid_dragging_fling');
+      let dragScrollComponent = await driver.findComponent(ON.id('grid_dragging_fling'));
+      let dragScroll = await dragScrollComponent.getBounds();
+      let displayId = await dragScrollComponent.getDisplayId();
       let top = dragScroll.top;
       let right = dragScroll.right;
       let left = dragScroll.left;
@@ -68,7 +70,8 @@ export default function gridDraggingFling() {
       console.info("gridDraggingFling_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.mouseScroll({x:Math.round(left + width/2), y:Math.round(top + height*0.4)}, true, 2);
+      await driver.mouseScroll(
+        {x:Math.round(left + width/2), y:Math.round(top + height*0.4), displayId: displayId}, true, 2);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('grid_startDragging');
@@ -101,7 +104,9 @@ export default function gridDraggingFling() {
     it('gridDraggingFling_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[gridDraggingFling_0200] START');
       let driver = await Driver.create()
-      let dragScroll = CommonFunc.getComponentRectOnScreen('grid_dragging_fling');
+      let dragScrollComponent = await driver.findComponent(ON.id('grid_dragging_fling'));
+      let dragScroll = await dragScrollComponent.getBounds();
+      let displayId = await dragScrollComponent.getDisplayId();
       let top = dragScroll.top;
       let right = dragScroll.right;
       let left = dragScroll.left;
@@ -109,7 +114,9 @@ export default function gridDraggingFling() {
       console.info("gridDraggingFling_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2),1000);
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('grid_startDragging');

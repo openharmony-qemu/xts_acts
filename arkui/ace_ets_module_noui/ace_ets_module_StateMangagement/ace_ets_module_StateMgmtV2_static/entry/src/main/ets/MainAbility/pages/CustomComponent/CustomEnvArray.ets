@@ -36,9 +36,8 @@ struct CustomEnvArray {
         ForEach(this.fruits, (item: Fruit) => {
           Text(`${item.name}`)
             .id('customEnvArray_001')
-            .fontSize(20)
             .height('5%')
-            .margin(10)
+            .margin(5)
         })
         // 新增数组元素，触发UI刷新
         Button('Push element')
@@ -47,8 +46,6 @@ struct CustomEnvArray {
           .onClick(() => {
             this.fruits.push(new Fruit('cherry'));
           })
-          .width(300)
-          .margin(10)
         // 翻转数组元素，触发UI刷新
         Button('Reverse array')
           .id('customEnvArray_003')
@@ -56,8 +53,7 @@ struct CustomEnvArray {
           .onClick(() => {
             this.fruits.reverse();
           })
-          .width(300)
-          .margin(10)
+          .margin(5)
         // 使用同一元素填充数组，触发UI刷新
         Button('Fill array')
           .id('customEnvArray_004')
@@ -65,8 +61,7 @@ struct CustomEnvArray {
           .onClick(() => {
             this.fruits.fill(new Fruit('apple'));
           })
-          .width(300)
-          .margin(10)
+          .margin(5)
       }
       .width('100%')
     }

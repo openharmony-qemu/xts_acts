@@ -32,5 +32,7 @@ struct LifeCycle0510 {
           router.pushUrl({ url: 'MainAbility/pages/lifecycle/LifeCycle0510ChildV2' })
         })
     }
+    .padding(20)
+    .margin(20)
   }
 }

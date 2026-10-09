@@ -52,8 +52,8 @@ static int g_event10 = 10;
 static int g_event11 = 11;
 static int g_event12 = 12;
 static int g_event13 = 13;
-static float g_height = 0.5;
-static float g_width = 0.6;
+static float g_height = 0.3;
+static float g_width = 0.4;
 
 void SetNodeWidth(ArkUI_NodeHandle &node, float width)
 {
@@ -154,8 +154,8 @@ ArkUI_NodeHandle SetButtonNode(std::string id, int32_t targetId)
 
 ArkUI_NodeHandle CreateTestNode()
 {
-    float mHeight = 0.4;
-    float mWidth = 0.8;
+    float mHeight = 0.3;
+    float mWidth = 0.5;
     float mMargin = 10;
     ArkUI_NativeNodeAPI_1 *nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));

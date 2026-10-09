@@ -66,9 +66,13 @@ export default function pickerOnScrollStopTest() {
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('picker1'));
       let rect = await btn1.getBounds();
+      let displayId = await btn1.getDisplayId();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.top + rect.bottom) / 2),
-        Math.round((rect.left + rect.right) / 2), Math.round((rect.top + rect.bottom) / 4), 600);
+      await driver.swipeBetween(
+        { x: Math.round((rect.left + rect.right) / 2), y: Math.round((rect.top + rect.bottom) / 2), displayId: displayId },
+        { x: Math.round((rect.left + rect.right) / 2), y: Math.round((rect.top + rect.bottom) / 4), displayId: displayId },
+        600
+      );
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('picker1');
       console.info('[pickerOnScrollStopTest_0100] pickerOnScrollStopTest JSON.parse(strJson) is: ' +

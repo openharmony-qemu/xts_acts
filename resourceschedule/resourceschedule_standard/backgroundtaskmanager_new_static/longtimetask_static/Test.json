@@ -2,11 +2,11 @@
     "description": "Configuration for resourceschedule filefs Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "600000",
+        "test-timeout": "300000",
         "bundle-name": "com.acts.actslongtimetasktest.static",
         "module-name": "entry",
-        "shell-timeout": "600000",
-        "testcase-timeout": "180000"
+        "shell-timeout": "300000",
+        "testcase-timeout": "100000"
     },
     "kits": [
         {

@@ -52,7 +52,9 @@ export default function ScrollSourceBar() {
     it('ScrollSourceBar_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ScrollSourceBar_0100 START');
       let driver = Driver.create();
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('scroller_scrollbar_bar');
+      let scrollComp = await driver.findComponent(ON.id('scroller_scrollbar_bar'))
+      let swiperScroll = await scrollComp.getBounds()
+      let displayId = await scrollComp.getDisplayId()
       let top = swiperScroll.top;
       let right = swiperScroll.right;
       let left = swiperScroll.left;
@@ -61,11 +63,9 @@ export default function ScrollSourceBar() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(
-        Math.round(left + width/2),
-        Math.round(top + height*0.1),
-        Math.round(left + width/2),
-        Math.round(top + height*0.6),
+      await driver.swipeBetween(
+        {x: Math.round(left + width/2), y: Math.round(top + height*0.1), displayId: displayId},
+        {x: Math.round(left + width/2), y: Math.round(top + height*0.6), displayId: displayId},
         600);
       await CommonFunc.sleep(2000);
 

@@ -62,16 +62,15 @@ export default function timePickerDialogSelectedAreaTest() {
       let right = rect.right;
       let bottom = rect.bottom;
       let middle = (top + bottom) / 2
+      let displayId = await timePickerDialog.getDisplayId();
 
       console.info('rect'+ Math.round(left + (right - left) / 2),
         Math.round(top + (bottom - top) / 2),
         Math.round(left + (right - left) / 2),
         Math.round(top))
-      await driver.swipe(
-        Math.round(left + (right - left) / 2),
-        Math.round(top + (bottom - top) / 2),
-        Math.round(left + (right - left) / 2),
-        Math.round(top)
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2), displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top), displayId: displayId }
       );
       await Utils.sleep(6000);
 

@@ -33,6 +33,8 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function Tabs_itemSize() {
   describe('Tabs_itemSize', () => {
     beforeEach(async (done: Function) => {
@@ -90,17 +92,11 @@ export default function Tabs_itemSize() {
       let Tabs_itemSize_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_001');
       let Tabs_itemSize_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_011');
       let driver = Driver.create();
-      await driver.swipe(Math.round(Tabs_itemSize_011.right - ((Tabs_itemSize_011.right - Tabs_itemSize_011.left) / 6)),
-        Math.round(Tabs_itemSize_011.top + ((Tabs_itemSize_011.bottom - Tabs_itemSize_011.top) / 2)),
-        Math.round(Tabs_itemSize_011.left + ((Tabs_itemSize_011.right - Tabs_itemSize_011.left) / 6)),
-        Math.round(Tabs_itemSize_011.top + ((Tabs_itemSize_011.bottom - Tabs_itemSize_011.top) / 2)));
+      await driver.swipeBetween({ x: Math.round(Tabs_itemSize_011.right - ((Tabs_itemSize_011.right - Tabs_itemSize_011.left) / 6)), y: Math.round(Tabs_itemSize_011.top + ((Tabs_itemSize_011.bottom - Tabs_itemSize_011.top) / 2)), displayId: displayID }, { x: Math.round(Tabs_itemSize_011.left + ((Tabs_itemSize_011.right - Tabs_itemSize_011.left) / 6)), y: Math.round(Tabs_itemSize_011.top + ((Tabs_itemSize_011.bottom - Tabs_itemSize_011.top) / 2)), displayId: displayID });
       await CommonFunc.sleep(1000);
       let Tabs_itemSize_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_002');
       let Tabs_itemSize_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_012');
-      await driver.swipe(Math.round(Tabs_itemSize_012.right - ((Tabs_itemSize_012.right - Tabs_itemSize_012.left) / 6)),
-        Math.round(Tabs_itemSize_012.top + ((Tabs_itemSize_012.bottom - Tabs_itemSize_012.top) / 2)),
-        Math.round(Tabs_itemSize_012.left + ((Tabs_itemSize_012.right - Tabs_itemSize_012.left) / 6)),
-        Math.round(Tabs_itemSize_012.top + ((Tabs_itemSize_012.bottom - Tabs_itemSize_012.top) / 2)));
+      await driver.swipeBetween({ x: Math.round(Tabs_itemSize_012.right - ((Tabs_itemSize_012.right - Tabs_itemSize_012.left) / 6)), y: Math.round(Tabs_itemSize_012.top + ((Tabs_itemSize_012.bottom - Tabs_itemSize_012.top) / 2)), displayId: displayID }, { x: Math.round(Tabs_itemSize_012.left + ((Tabs_itemSize_012.right - Tabs_itemSize_012.left) / 6)), y: Math.round(Tabs_itemSize_012.top + ((Tabs_itemSize_012.bottom - Tabs_itemSize_012.top) / 2)), displayId: displayID });
       await CommonFunc.sleep(1000);
       let Tabs_itemSize_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_003');
       let Tabs_itemSize_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_itemSize_013');

@@ -74,7 +74,24 @@ struct onErrorReceive03 {
             Utils.emitEvent(requestGesture, 202050);
             let requestHeader = event.request.getRequestHeader()
             console.log(`requestHeader is: ${JSON.stringify(requestHeader)}`);
-            Utils.emitEvent(JSON.stringify(requestHeader), 202060);
+            let headersValid = true;
+            if (!requestHeader || requestHeader.length === 0) {
+              headersValid = false;
+            } else {
+              for (let i = 0; i < requestHeader.length; i++) {
+                let item = requestHeader[i];
+                if (!item.headerKey || item.headerKey === '') {
+                  headersValid = false;
+                  break;
+                }
+                if (!item.headerValue || item.headerValue === '') {
+                  headersValid = false;
+                  break;
+                }
+              }
+            }
+            console.log(`requestHeader headersValid is: ${headersValid}`);
+            Utils.emitEvent(headersValid, 202060);
           }
         })
         .javaScriptAccess(this.javaScriptAccess)

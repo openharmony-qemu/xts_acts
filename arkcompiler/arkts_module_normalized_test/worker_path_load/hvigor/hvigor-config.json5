@@ -18,8 +18,5 @@
   "dependencies": {},
   "execution": {
     "incremental": false
-  },
-  "properties": {
-    "ohos.byteCodeHar.integratedOptimization": true
   }
 }

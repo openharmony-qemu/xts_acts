@@ -15,7 +15,7 @@
 
 import { expect, describe, it, afterEach, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function refreshOffsetEventTest() {
 
@@ -39,13 +39,18 @@ export default function refreshOffsetEventTest() {
       await Utils.pushPage(`refresh/${PAGE_TAG}`);
       await Utils.sleep(1000)
       let driver = Driver.create();
-      let rect = Utils.getComponentRect("RefreshOffsetChangeLessThanOffset");
-      let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
+      let component = await driver.findComponent(ON.id("RefreshOffsetChangeLessThanOffset"));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
+      let x = Math.round(Utils.getRectHorizontalCenterX(rect));
+      let y = Math.round(Utils.getRectVerticalCenterY(rect));
       console.info("RefreshLessOffsetTest  x= " +  x  + ", y = " + y);
-      await driver.swipe(Math.round(x - vp2px(30)), Math.round(y - vp2px(100)), Math.round(x + vp2px(30)), Math.round(y + vp2px(90)));
+      await driver.swipeBetween(
+        { x: Math.round(x - vp2px(30)), y: Math.round(y - vp2px(100)), displayId: displayId },
+        { x: Math.round(x + vp2px(30)), y: Math.round(y + vp2px(90)), displayId: displayId });
       await Utils.sleep(2000);
-      expect(Utils.getComponentInfoByKey('RefreshOffsetChangeLessThanOffset').$attrs.backgroundColor).assertEqual('#FF0000FF');
+      expect(Utils.getComponentInfoByKey('RefreshOffsetChangeLessThanOffset').$attrs.backgroundColor)
+        .assertEqual('#FF0000FF');
       done();
     })
 
@@ -62,14 +67,19 @@ export default function refreshOffsetEventTest() {
       await Utils.pushPage(`refresh/${PAGE_TAG}`);
       await Utils.sleep(1000)
       let driver = Driver.create();
-      let rect = Utils.getComponentRect("RefreshOffsetChangeBigThanOffset");
-      let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
+      let component = await driver.findComponent(ON.id("RefreshOffsetChangeBigThanOffset"));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
+      let x = Math.round(Utils.getRectHorizontalCenterX(rect));
+      let y = Math.round(Utils.getRectVerticalCenterY(rect));
       console.info("RefreshOverOffsetTest  x= " +  x  + ", y = " + y);
-      await driver.swipe(Math.round(x - vp2px(30)), Math.round(y - vp2px(100)), Math.round(x + vp2px(30)), Math.round(y + vp2px(130)));
+      await driver.swipeBetween(
+        { x: Math.round(x - vp2px(30)), y: Math.round(y - vp2px(100)), displayId: displayId },
+        { x: Math.round(x + vp2px(30)), y: Math.round(y + vp2px(130)), displayId: displayId });
 
       await Utils.sleep(2000);
-      expect(Utils.getComponentInfoByKey('RefreshOffsetChangeBigThanOffset').$attrs.backgroundColor).assertEqual('#FFFFFF00');
+      expect(Utils.getComponentInfoByKey('RefreshOffsetChangeBigThanOffset').$attrs.backgroundColor)
+        .assertEqual('#FFFFFF00');
       done();
     })
   })

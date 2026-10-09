@@ -19,6 +19,8 @@ import events_emitter from '@ohos.events.emitter';
 import input from '@ohos.multimodalInput.keyCode';
 import { BusinessError } from '@ohos.base';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function shortcutKeyJsunit() {
 
   const SUITE = 'ShortcutKey'
@@ -67,7 +69,7 @@ export default function shortcutKeyJsunit() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create();
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_B);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_B, undefined, displayID);
       done();
     });
   })

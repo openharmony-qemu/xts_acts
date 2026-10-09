@@ -31,6 +31,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function columnMonopolizeFalse() {
   describe('columnMonopolizeFalse', () => {
     beforeEach(async (done: Function) => {
@@ -80,7 +81,7 @@ export default function columnMonopolizeFalse() {
       let driver = Driver.create();
       let column2 = await driver.findComponent(ON.id('columnClick2'));
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(CommonFunc.rect_left + vp2px(33.33)), Math.round(CommonFunc.rect_top + vp2px(26.66)));
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + vp2px(33.33)), y: Math.round(CommonFunc.rect_top + vp2px(26.66)), displayId: displayID});
       await CommonFunc.sleep(1000);
       await column2.click();
       await CommonFunc.sleep(500);
@@ -92,7 +93,7 @@ export default function columnMonopolizeFalse() {
       // change the status of monopolize Attribute
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(CommonFunc.rect_left + vp2px(33.33)), Math.round(CommonFunc.rect_top + vp2px(26.66)));
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + vp2px(33.33)), y: Math.round(CommonFunc.rect_top + vp2px(26.66)), displayId: displayID});
       await CommonFunc.sleep(1000);
       await column2.click();
       let strJson2 = getInspectorByKey('columnTextFalse');

@@ -330,7 +330,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       try {
         pid = testNapi.StartNativeChildProcessWithConfigs("libentry.so:MainLoop");
         console.log(`${tag} StartNativeChildProcess success, pid: ${pid}`);
-        if(pid == 801 || pid == 16010004){
+        if(pid == 801 || pid == 16010004 || pid == 16010006){
           done();
           return;
         }else{

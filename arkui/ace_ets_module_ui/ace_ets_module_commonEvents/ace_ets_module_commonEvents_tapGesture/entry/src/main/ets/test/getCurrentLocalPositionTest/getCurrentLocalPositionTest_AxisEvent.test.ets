@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function getCurrentLocalPositionTest_AxisEvent() {
   describe('getCurrentLocalPositionTest_AxisEvent', () => {
     beforeEach(async (done: Function) => {
@@ -56,7 +57,7 @@ export default function getCurrentLocalPositionTest_AxisEvent() {
 
       let button = await driver.findComponent(ON.id('Button01'));
       let point = await button.getBoundsCenter();
-      await driver.mouseScroll({x:point.x, y:point.y}, true, 120);
+      await driver.mouseScroll({x:point.x, y:point.y, displayId: displayID}, true, 120);
       await CommonFunc.sleep(1500);
 
       let strJson = getInspectorByKey('text01');

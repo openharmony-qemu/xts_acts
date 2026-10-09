@@ -33,7 +33,7 @@
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"
@@ -87,7 +87,7 @@
     },
     {
       "name": "sharedHarOne",
-      "srcPath": "./sharedHarOne",
+      "srcPath": "./sharedHarOne"
     },
     {
       "name": "sharedHspOne",

@@ -35,7 +35,7 @@ export default function stackOnTouchTest() {
      * @tc.level  LEVEL1
      */
     it('testStackOnTouch001', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTest');
+      await Utils.clickComponentNew('OnTouchTest');
       await Utils.sleep(1000);
       expect(Utils.getComponentInfoByKey('OnTouchTest').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done();
@@ -50,7 +50,7 @@ export default function stackOnTouchTest() {
      * @tc.level  LEVEL1
      */
     it('testStackOnTouch002', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnTouchTestDisable');
+      await Utils.clickComponentNew('OnTouchTestDisable');
       await Utils.sleep(1000);
       expect(Utils.getComponentInfoByKey('OnTouchTestDisable').$attrs.backgroundColor).assertEqual('#FFFF0000')
       done();

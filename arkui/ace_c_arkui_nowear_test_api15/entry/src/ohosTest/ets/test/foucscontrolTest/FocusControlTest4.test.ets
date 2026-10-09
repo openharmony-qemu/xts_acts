@@ -19,6 +19,8 @@ import router from '@ohos.router';
 import nativeRender from 'libnativerender.so'
 import Utils from '../common/Utils';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function FocusControlTest4(){
   describe('FocusControlTest4',  () =>{
     beforeEach(async (done:Function) =>{
@@ -76,15 +78,15 @@ export default function FocusControlTest4(){
       await Utils.sleep(1000); 
       
       // tab key
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await Utils.sleep(1000);
 
       expect(Utils.getComponentInfoByKey('button4x').$attrs.backgroundColor).assertEqual('#FF00FF00');
 
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070, displayID);
       await Utils.sleep(1000);
       done();
     })

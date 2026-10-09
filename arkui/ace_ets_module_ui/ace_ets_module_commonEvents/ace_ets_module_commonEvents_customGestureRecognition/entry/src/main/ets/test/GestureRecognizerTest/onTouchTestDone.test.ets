@@ -27,14 +27,15 @@ async function clickAt(tap1: string, tap2?: string) {
     let tap2Object = await driver.findComponent(ON.id(tap2));
     let tapRect2 = await tap2Object.getBounds();
     console.info('tap1 click at: ' + Math.round(tapRect.left + (tapRect.right - tapRect.left)/2), Math.round(tapRect2.bottom + (tapRect.bottom - tapRect2.bottom)/2));
-    await driver.click(Math.round(tapRect.left + (tapRect.right - tapRect.left)/2), Math.round(tapRect2.bottom + (tapRect.bottom - tapRect2.bottom)/2));
+    await driver.clickAt({x: Math.round(tapRect.left + (tapRect.right - tapRect.left)/2), y: Math.round(tapRect2.bottom + (tapRect.bottom - tapRect2.bottom)/2), displayId: displayID});
   } else {
     console.info('tap1 click at: ' + Math.round(tapRect.left + (tapRect.right - tapRect.left)/2), Math.round(tapRect.top + (tapRect.bottom - tapRect.top)/2));
-    await driver.click(Math.round(tapRect.left + (tapRect.right - tapRect.left)/2), Math.round(tapRect.top + (tapRect.bottom - tapRect.top)/2));
+    await driver.clickAt({x: Math.round(tapRect.left + (tapRect.right - tapRect.left)/2), y: Math.round(tapRect.top + (tapRect.bottom - tapRect.top)/2), displayId: displayID});
   }
   await CommonFunc.sleep(500);
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function onTouchTestDoneTest() {
   describe('onTouchTestDoneTest', () => {
     beforeEach(async (done: Function) => {

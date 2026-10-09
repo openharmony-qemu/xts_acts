@@ -17,20 +17,21 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imageFormatTranscoding/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.imageFormatTranscoding/haps/entry_test/files/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/JPG_800500.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageFormatTranscoding/haps/entry_test/files",
-                "./resource/image/JPG_800501.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageFormatTranscoding/haps/entry_test/files",
-                "./resource/image/JPG_801500.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageFormatTranscoding/haps/entry_test/files",
-                "./resource/image/JPG_801501.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imageFormatTranscoding/haps/entry_test/files"
+                "./resource/image/JPG_800500.jpg ->/data/local/tmp/",
+                "./resource/image/JPG_800501.jpg ->/data/local/tmp/",
+                "./resource/image/JPG_801500.jpg ->/data/local/tmp/",
+                "./resource/image/JPG_801501.jpg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_formatTranscoding_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "chmod 755 /data/local/tmp/setup_image_formatTranscoding_test.sh",
+                "sh /data/local/tmp/setup_image_formatTranscoding_test.sh"
             ]
         }
     ]

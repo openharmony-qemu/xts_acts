@@ -67,6 +67,19 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/SyncMonitor/SyncMonitor0010",
     "MainAbility/pages/SyncMonitor/SyncMonitor0020",
-    "MainAbility/pages/CustomEnv/CustomEnv"
+    "MainAbility/pages/CustomEnv/CustomEnv",
+    "MainAbility/pages/CustomEnv/CustomEnvWatch",
+    "MainAbility/pages/CustomEnv/CustomEnvDeepWatch",
+    "MainAbility/pages/CustomEnv/CustomEnvMonitor",
+    "MainAbility/pages/CustomEnv/CustomEnvFreeze",
+    "MainAbility/pages/CustomEnv/CustomDefaultvalue",
+    "MainAbility/pages/CustomEnv/CustomEnvParamV2",
+    "MainAbility/pages/CustomEnv/CustomEnvObservedV2",
+    "MainAbility/pages/CustomEnv/CustomEnvArray",
+    "MainAbility/pages/CustomEnv/CustomEnvMultiType",
+    "MainAbility/pages/CustomEnv/CustomEnvDate",
+    "MainAbility/pages/CustomEnv/CustomEnvMap",
+    "MainAbility/pages/CustomEnv/CustomEnvNear",
+    "MainAbility/pages/CustomEnv/CustomEnvSet"
   ]
 }

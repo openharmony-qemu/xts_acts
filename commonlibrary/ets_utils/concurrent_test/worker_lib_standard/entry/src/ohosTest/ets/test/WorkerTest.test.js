@@ -15,7 +15,7 @@
 
 import worker from '@ohos.worker'
 import TreeSet from "@ohos.util.TreeSet";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium"
 
 export default function WorkerTest() {
     describe('WorkerTest', function () {

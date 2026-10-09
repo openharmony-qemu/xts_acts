@@ -1687,7 +1687,7 @@ export default function actsNotificationAnsCovered() {
 	            expect(NotificationSlot.sound).assertEqual('file://system/etc/Light.ogg');
  	            expect(NotificationSlot.lightEnabled).assertEqual(false);
  	            expect(NotificationSlot.enabled).assertEqual(true);
- 	            expect(NotificationSlot.vibrationValues).assertContain([200]);
+ 	            expect(NotificationSlot.vibrationValues?.[0]).assertEqual(200);
  	            expect(NotificationSlot.lightColor).assertEqual(0);
               console.info(TAG + 'Acts_NotificationSlot_0100 END');
               done();

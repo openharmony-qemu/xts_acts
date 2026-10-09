@@ -53,12 +53,16 @@ export default function scrollNestedScrollJsunit() {
     it('ArkUI_Stage_scrollNestedScroll01', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_scrollNestedScroll01] START');
       await Utils.sleep(2000)
-      let webRect = Utils.getComponentRect('scrollNestedScroll' + '_ColumnSize');
-      console.info(`ArkUI_Stage_scrollNestedScroll01 get webRect is:` + JSON.stringify(webRect));
-      let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
-      let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      await driver.swipe(Math.round(x), Math.round(y + vp2px(60)), Math.round(x), Math.round(y - vp2px(60)));
+      let columnRect = await driver.findComponent(ON.id('scrollNestedScroll_ColumnSize'));
+      let webRect = await columnRect.getBounds();
+      let displayId = await columnRect.getDisplayId();
+      console.info(`ArkUI_Stage_scrollNestedScroll01 get webRect is:` + JSON.stringify(webRect));
+      let x = Math.floor((webRect.left + webRect.right) / 2)
+      let y = Math.floor((webRect.top + webRect.bottom) / 2)
+      await driver.swipeBetween(
+        { x: Math.round(x), y: Math.round(y + vp2px(60)), displayId: displayId },
+        { x: Math.round(x), y: Math.round(y - vp2px(60)), displayId: displayId });
       console.info('[ArkUI_Stage_scrollNestedScroll01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

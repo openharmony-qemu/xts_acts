@@ -18,6 +18,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent,MouseButton, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PanGestureAllowedTypesTest() {
   describe('PanGestureAllowedTypesTest', () => {
     beforeEach(async (done: Function) => {
@@ -71,7 +72,7 @@ export default function PanGestureAllowedTypesTest() {
       // trigger gesture with finger
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.4),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID})
       await CommonFunc.sleep(3000);
       let text1 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj1: ESObject = JSON.parse(text1);
@@ -80,7 +81,7 @@ export default function PanGestureAllowedTypesTest() {
 
       // trigger gesture with mouse
       await CommonFunc.sleep(1000);
-      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2)}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2)})
+      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2), displayId:displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2), displayId:displayID})
       await CommonFunc.sleep(3000);
       let text2 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj2: ESObject = JSON.parse(text2);
@@ -98,7 +99,7 @@ export default function PanGestureAllowedTypesTest() {
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.4),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID})
       await CommonFunc.sleep(3000);
       let text4 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj4: ESObject = JSON.parse(text4);
@@ -107,7 +108,7 @@ export default function PanGestureAllowedTypesTest() {
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2)}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2)})
+      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2), displayId:displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2), displayId:displayID})
       await CommonFunc.sleep(3000);
       let text5 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj5: ESObject = JSON.parse(text5);
@@ -125,7 +126,7 @@ export default function PanGestureAllowedTypesTest() {
 
       // trigger gesture again with mouse
       await CommonFunc.sleep(1000);
-      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2)}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2)})
+      await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.8),y: Math.round(areaObj1.top + areaHeight1/2), displayId:displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.4), y: Math.round(areaObj1.top + areaHeight1/2), displayId:displayID})
       await CommonFunc.sleep(3000);
       let text7 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj7: ESObject = JSON.parse(text7);
@@ -134,7 +135,7 @@ export default function PanGestureAllowedTypesTest() {
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.4),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID})
       await CommonFunc.sleep(3000);
       let text8 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj8: ESObject = JSON.parse(text8);
@@ -153,7 +154,7 @@ export default function PanGestureAllowedTypesTest() {
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.4),Math.round(areaObj1.top + areaHeight1/2))
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.4),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID})
       await CommonFunc.sleep(3000);
       let text10 = getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj10: ESObject = JSON.parse(text10);

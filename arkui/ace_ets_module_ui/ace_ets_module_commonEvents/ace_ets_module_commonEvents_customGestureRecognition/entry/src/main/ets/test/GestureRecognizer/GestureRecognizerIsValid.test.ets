@@ -31,6 +31,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function GestureRecognizerIsValid() {
   describe('GestureRecognizerIsValid', () => {
     beforeEach(async (done: Function) => {
@@ -76,7 +77,7 @@ export default function GestureRecognizerIsValid() {
       console.log('GestureRecognizerIsValid_001 item height and width',areaHeight, areaWidth)
       // child scroll
       let driver = Driver.create();
-      await driver.swipe(Math.round(areaObj1.left + areaWidth/2), Math.round(areaObj1.bottom - areaHeight * 0.2) , Math.round(areaObj1.left + areaWidth/2), Math.round(areaObj1.top));
+      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth/2), y: Math.round(areaObj1.bottom - areaHeight * 0.2), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth/2), y: Math.round(areaObj1.top), displayId: displayID});
       await CommonFunc.sleep(3000);
       let strJson1 = getInspectorByKey('recognizer_text');
       console.info('[GestureRecognizerIsValid_001] component strJson1 is: ' + JSON.stringify(JSON.parse(strJson1)));
@@ -94,7 +95,7 @@ export default function GestureRecognizerIsValid() {
       console.log('GestureRecognizerIsValid_001 text height and width',areaHeight2, areaWidth2)
 
       // parent scroll
-      await driver.swipe(Math.round(areaObj2.left + areaWidth2 / 2), Math.round(areaObj1.bottom - areaHeight2 * 0.1) , Math.round(areaObj2.left + areaWidth2 / 2), Math.round(areaObj1.top - areaHeight2 * 0.3));
+      await driver.swipeBetween({x: Math.round(areaObj2.left + areaWidth2 / 2), y: Math.round(areaObj1.bottom - areaHeight2 * 0.1), displayId: displayID}, {x: Math.round(areaObj2.left + areaWidth2 / 2), y: Math.round(areaObj1.top - areaHeight2 * 0.3), displayId: displayID});
 
       await CommonFunc.sleep(3000);
       let strJson2 = getInspectorByKey('recognizer_text');

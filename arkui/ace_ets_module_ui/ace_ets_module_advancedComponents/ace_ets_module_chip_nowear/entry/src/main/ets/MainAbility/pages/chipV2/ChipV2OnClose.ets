@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
   ChipV2,
   ChipV2Options,
@@ -54,6 +55,6 @@ struct ChipV2OnClose {
         })
       }.width(120).borderWidth(1).id('ChipV2OnCloseCol')
       Text(this.text).id('ChipV2OnClose')
-    }
+    }.width('100%').height('100%')
   }
 }

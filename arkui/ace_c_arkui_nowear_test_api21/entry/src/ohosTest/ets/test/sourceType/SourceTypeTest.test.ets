@@ -21,6 +21,7 @@ import router from '@ohos.router';
 
 declare function getInspectorByKey(key: string): string;
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function SourceTypeTest() {
   describe('SourceTypeTest', () => {
     beforeEach(async (done: Function) => {
@@ -66,13 +67,13 @@ export default function SourceTypeTest() {
         await keyBtn1.click();
         await CommonFunc.sleep(500);
 
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
         await CommonFunc.sleep(500);
 
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
         await CommonFunc.sleep(500);
 
-        await driver.triggerKey(2054);
+        await driver.triggerKey(2054, displayID);
         await Utils.sleep(1000);
         console.info('[SourceType_001] KEY');
 

@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function rotationGestureTest() {
   describe('RotationGestureTest', () => {
     beforeEach(async (done: Function) => {
@@ -70,10 +71,10 @@ export default function rotationGestureTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(2000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj.left + areaWidth/4),y: Math.round(areaObj.top + areaHeight/4) });
-      pointers.setPoint(0,1,{x: Math.round(areaObj.right - areaWidth/2),y: Math.round(areaObj.top + areaHeight/4) });
-      pointers.setPoint(1,0,{x: Math.round(areaObj.right - areaWidth/2),y: Math.round(areaObj.bottom - areaHeight/4) });
-      pointers.setPoint(1,1,{x: Math.round(areaObj.left + areaWidth/4),y: Math.round(areaObj.bottom - areaHeight/4) });
+      pointers.setPoint(0,0,{x: Math.round(areaObj.left + areaWidth/4),y: Math.round(areaObj.top + areaHeight/4), displayId: displayID});
+      pointers.setPoint(0,1,{x: Math.round(areaObj.right - areaWidth/2),y: Math.round(areaObj.top + areaHeight/4), displayId: displayID});
+      pointers.setPoint(1,0,{x: Math.round(areaObj.right - areaWidth/2),y: Math.round(areaObj.bottom - areaHeight/4), displayId: displayID});
+      pointers.setPoint(1,1,{x: Math.round(areaObj.left + areaWidth/4),y: Math.round(areaObj.bottom - areaHeight/4), displayId: displayID});
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('RotationRecognizer');

@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorShortCutKeys024() {
   describe('RichEditorShortCutKeys024', () => {
     beforeEach(async (done: Function) => {
@@ -71,7 +73,7 @@ export default function RichEditorShortCutKeys024() {
       let builder = await driver.findComponent(ON.id('builder'));
       await builder.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_MOVE_HOME);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_MOVE_HOME, 0, displayID);
       await CommonFunc.sleep(500);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
       await getPosition.click();
@@ -94,7 +96,7 @@ export default function RichEditorShortCutKeys024() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_0038',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_0038 START');
       let driver = Driver.create();
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_MOVE_END);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_MOVE_END, 0, displayID);
       await CommonFunc.sleep(500);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
       await getPosition.click();
@@ -111,7 +113,7 @@ export default function RichEditorShortCutKeys024() {
       carePositionText = await carePosition.getText();
       await CommonFunc.sleep(500);
       expect(carePositionText).assertContain('carePosition:3');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_MOVE_END);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_MOVE_END, 0, displayID);
       await CommonFunc.sleep(500);
       await getPosition.click();
       await CommonFunc.sleep(500);
@@ -123,5 +125,6 @@ export default function RichEditorShortCutKeys024() {
 
   })
 }
+
 
 

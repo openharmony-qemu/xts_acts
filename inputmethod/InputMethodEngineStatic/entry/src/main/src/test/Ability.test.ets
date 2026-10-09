@@ -173,6 +173,7 @@ export default function inputMethodEngineStatic() {
             };
             try {
                 let uiContext:UIContext = UIContext.getCallingScopeUIContext()!;
+                console.info(`${CASE_NAME} getCallingScopeUIContext success`);
                 await inputMethod.getController().attachWithUIContext(uiContext, ATTRIBUTE, attachOptions);
                 console.info(`${CASE_NAME} attach success`);
                 done();
@@ -246,6 +247,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0900 attach success');
             let msgHandler: inputMethod.MessageHandler = {
                 onTerminated(): void {
                     console.info("====>Sub_InputMethod_IME_Custom_static_0900 onTerminated");
@@ -263,6 +265,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             inputMethod.getController().recvMessage(msgHandler);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0900 recvMessage success');
             testTemplate('Sub_InputMethod_IME_Custom_static_0900', 5, done);
         });
 
@@ -281,6 +284,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0200 attach success');
             let msgHandler: inputMethod.MessageHandler = {
                 onTerminated(): void {
                     console.info("====>Sub_InputMethod_IME_Custom_static_0200 onTerminated");
@@ -298,6 +302,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             inputMethod.getController().recvMessage(msgHandler);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0200 recvMessage success');
             testTemplate('Sub_InputMethod_IME_Custom_static_0200', 6, done);
         });
 
@@ -316,6 +321,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0800 attach success');
             let msgHandler: inputMethod.MessageHandler = {
                 onTerminated(): void {
                     console.info("====>Sub_InputMethod_IME_Custom_static_0800 onTerminated");
@@ -333,6 +339,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             inputMethod.getController().recvMessage(msgHandler);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0800 recvMessage success');
             testTemplate('Sub_InputMethod_IME_Custom_static_0800', 7, done);
         });
 
@@ -351,6 +358,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0400 attach success');
             let msgHandler: inputMethod.MessageHandler = {
                 onTerminated(): void {
                     console.info("====>Sub_InputMethod_IME_Custom_static_0400 onTerminated");
@@ -363,6 +371,7 @@ export default function inputMethodEngineStatic() {
                 }
             }
             inputMethod.getController().recvMessage(msgHandler);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0400 recvMessage success');
             testTemplate('Sub_InputMethod_IME_Custom_static_0400', 8, done);
         });
 
@@ -381,7 +390,8 @@ export default function inputMethodEngineStatic() {
                 }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
-            
+            console.info('====>Sub_InputMethod_IME_Custom_static_0300 attach success');
+
             let msgHandler: inputMethod.MessageHandler = {
                 onTerminated(): void {
                     console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0300 onTerminated`);
@@ -394,6 +404,7 @@ export default function inputMethodEngineStatic() {
                 }
             };
             inputMethod.getController().recvMessage(msgHandler);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0300 recvMessage success');
 
             testTemplate('Sub_InputMethod_IME_Custom_static_0300', 9, done);
         });
@@ -413,7 +424,8 @@ export default function inputMethodEngineStatic() {
             }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
-            
+            console.info('====>Sub_InputMethod_IME_Custom_static_1100 attach success');
+
             let msgHandler: inputMethod.MessageHandler = {
                 onTerminated(): void {
                     console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_1100 onTerminated`);
@@ -430,6 +442,7 @@ export default function inputMethodEngineStatic() {
                 }
             };
             inputMethod.getController().recvMessage(msgHandler);
+            console.info('====>Sub_InputMethod_IME_Custom_static_1100 recvMessage success');
 
             testTemplate('Sub_InputMethod_IME_Custom_static_1100', 10, done);
         });
@@ -449,15 +462,17 @@ export default function inputMethodEngineStatic() {
                 }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0901 attach success');
             await inputMethod.getController().hideTextInput();
-            
+            console.info('====>Sub_InputMethod_IME_Custom_static_0901 hideTextInput success');
+
             let msgHandler: inputMethod.MessageHandler = {
                 onTerminated(): void {
                     console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0901 onTerminated`);
                 },
                 onMessage(msgId: string, msgParam?: ArrayBuffer): void {
                     console.info(`${tag} ====>Sub_InputMethod_IME_Custom_static_0901 onMessage msgId: ${msgId}, msgParam: ${GetArrayBufferString(msgParam!)}`);   
-                        
+
                 }
             };
             inputMethod.getController().recvMessage(msgHandler);
@@ -483,6 +498,7 @@ export default function inputMethodEngineStatic() {
                             expect(data?.data).assertEqual("SUCCESS");
                             console.info(`====>${testName} end`);
                             inputMethod.getController().recvMessage();
+                            console.info(`====>${testName} recvMessage success`);
                             done();
                         } catch (err) {
                             console.info(`====>${testName} err: ${JSON.stringify(err)}`);
@@ -533,6 +549,7 @@ export default function inputMethodEngineStatic() {
             }
             }
             await inputMethod.getController().attach(true, ATTRIBUTE);
+            console.info('====>Sub_InputMethod_IME_Custom_static_0902 attach success');
             testTemplate('Sub_InputMethod_IME_Custom_static_0902', 12, done)
         });
 
@@ -546,6 +563,7 @@ export default function inputMethodEngineStatic() {
          */
         it('Sub_InputMethod_IMF_consumeKeyEvents_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
             await inputMethod.getController().detach();
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_static_0300 detach success');
             let testName:string = 'Sub_InputMethod_IMF_consumeKeyEvents_static_0300';
             let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
             let unSubscriberCallback = (err: BusinessError | null) => {
@@ -566,6 +584,7 @@ export default function inputMethodEngineStatic() {
                             expect(data?.data).assertEqual("SUCCESS");
                             console.info(`====>${testName} end`);
                             inputMethod.getController().recvMessage();
+                            console.info(`====>${testName} recvMessage success`);
                             done();
                         } catch (err) {
                             console.info(`====>${testName} err: ${JSON.stringify(err)}`);
@@ -600,6 +619,7 @@ export default function inputMethodEngineStatic() {
                     };
                     setTimeout(() => {
                         inputMethod.getController().attach(true, ATTRIBUTE);
+                        console.info(`====>${testName} attach success`);
                     }, 100);
                     console.info(`====>${testName} publishCallback start`);
                     if (err) {
@@ -619,6 +639,7 @@ export default function inputMethodEngineStatic() {
          */
         it('Sub_InputMethod_IMF_consumeKeyEvents_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
             await inputMethod.getController().detach();
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_static_0100 detach success');
             let testName:string = 'Sub_InputMethod_IMF_consumeKeyEvents_static_0100';
             let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
             let unSubscriberCallback = (err: BusinessError | null) => {
@@ -639,6 +660,7 @@ export default function inputMethodEngineStatic() {
                             expect(data?.data).assertEqual("SUCCESS");
                             console.info(`====>${testName} end`);
                             inputMethod.getController().recvMessage();
+                            console.info(`====>${testName} recvMessage success`);
                             done();
                         } catch (err) {
                             console.info(`====>${testName} err: ${JSON.stringify(err)}`);
@@ -673,6 +695,7 @@ export default function inputMethodEngineStatic() {
                     };
                     setTimeout(() => {
                         inputMethod.getController().attach(true, ATTRIBUTE);
+                        console.info(`====>${testName} attach success`);
                     }, 100);
                     console.info(`====>${testName} publishCallback start`);
                     if (err) {
@@ -692,6 +715,7 @@ export default function inputMethodEngineStatic() {
          */
         it('Sub_InputMethod_IMF_consumeKeyEvents_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
             await inputMethod.getController().detach();
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_static_0200 detach success');
             let testName:string = 'Sub_InputMethod_IMF_consumeKeyEvents_static_0200';
             let subscriber: commonEventManager.CommonEventSubscriber | null | undefined = null;
             let unSubscriberCallback = (err: BusinessError | null) => {
@@ -712,6 +736,7 @@ export default function inputMethodEngineStatic() {
                             expect(data?.data).assertEqual("SUCCESS");
                             console.info(`====>${testName} end`);
                             inputMethod.getController().recvMessage();
+                            console.info(`====>${testName} recvMessage success`);
                             done();
                         } catch (err) {
                             console.info(`====>${testName} err: ${JSON.stringify(err)}`);
@@ -746,6 +771,7 @@ export default function inputMethodEngineStatic() {
                     };
                     setTimeout(() => {
                         inputMethod.getController().attach(true, ATTRIBUTE);
+                        console.info(`====>${testName} attach success`);
                     }, 100);
                     console.info(`====>${testName} publishCallback start`);
                     if (err) {
@@ -779,7 +805,8 @@ export default function inputMethodEngineStatic() {
                 done(); 
             } catch (err) { 
                 console.info(`====>${testName} errCode:${err.code}, errMessage is ${err.message}`) 
-                await inputMethod.getController().detach(); 
+                await inputMethod.getController().detach();
+                console.info(`====>${testName} detach success.`);
                 expect().assertFail();
                 done(); 
             }; 
@@ -807,6 +834,7 @@ export default function inputMethodEngineStatic() {
             ATTRIBUTE.inputAttribute.abilityName = abilityNameValue;
             try {
                 await inputMethod.getController().attach(false, ATTRIBUTE);
+                console.info(`====>${testName} attach success`);
                 expect(true).assertTrue();
                 done();
             } catch (err) {
@@ -835,6 +863,7 @@ export default function inputMethodEngineStatic() {
             };
             try {
                 let uiContext:UIContext = UIContext.getCallingScopeUIContext()!;
+                console.info(`${CASE_NAME} getCallingScopeUIContext success`);
                 await inputMethod.getController().attachWithUIContext(uiContext, ATTRIBUTE);
                 console.info(`${CASE_NAME} attach success`);
                 done();
@@ -880,12 +909,14 @@ export default function inputMethodEngineStatic() {
             try {
                 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
                 await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -b');
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0901 executeShellCommand ime -b success');
                 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0901 getSetting success');
                 let state =  await inputMethodSetting.getInputMethodState();
                 console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0901 state is: ${state}`);
                 await Utils.msSleep(1000);
                 await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0901 executeShellCommand ime -f success');
                 await Utils.msSleep(1000);
                 expect(state).assertEqual(inputMethod.EnabledState.BASIC_MODE);
                 done();
@@ -908,14 +939,17 @@ export default function inputMethodEngineStatic() {
             try {
                 let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
                 await abilityDelegator.executeShellCommand('ime -d com.acts.inputmethodEngine.test.static');
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 executeShellCommand ime -d success');
                 await Utils.msSleep(1000);
                 let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
                 console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 getSetting success');
                 let state =  await inputMethodSetting.getInputMethodState();
                 console.info(`====>Sub_InputMethod_IME_InputMethodState_static_0902 state is: ${state}`);
                 await abilityDelegator.executeShellCommand('ime -e com.acts.inputmethodEngine.test.static -f');
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 executeShellCommand ime -f success');
                 await Utils.msSleep(1000);
                 await abilityDelegator.executeShellCommand('ime -s com.acts.inputmethodEngine.test.static');
+                console.info('====>Sub_InputMethod_IME_InputMethodState_static_0902 executeShellCommand ime -s success');
                 await Utils.msSleep(1000);
                 expect(state).assertEqual(inputMethod.EnabledState.DISABLED);
                 done();

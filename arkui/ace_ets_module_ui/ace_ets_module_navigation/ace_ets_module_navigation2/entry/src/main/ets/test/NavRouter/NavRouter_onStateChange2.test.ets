@@ -30,6 +30,8 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function NavRouter_onStateChange2() {
   describe('NavRouter_onStateChange2', () => {
     beforeEach(async (done: Function) => {
@@ -77,7 +79,7 @@ export default function NavRouter_onStateChange2() {
       await btn1.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2);
+      await driver.triggerKey(2, displayID);
       await CommonFunc.sleep(300);
       let text1 = getInspectorByKey('NavRouter_onStateChange2' + '_text1');
       expect(JSON.parse(text1).$attrs.content).assertEqual('false');

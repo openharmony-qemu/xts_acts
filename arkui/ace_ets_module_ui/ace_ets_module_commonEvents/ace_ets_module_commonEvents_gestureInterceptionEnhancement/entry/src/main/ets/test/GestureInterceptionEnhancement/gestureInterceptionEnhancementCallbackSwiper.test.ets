@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function gestureInterceptionEnhancementCallbackSwiperTest() {
   describe('gestureInterceptionEnhancementCallbackSwiperTest', () => {
     beforeEach(async (done: Function) => {
@@ -69,10 +70,10 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(3000);
       
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(3000);
 
          // check the GestureRecognizerJudgeBegin trigger
@@ -109,10 +110,10 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(3000);
       
-        await driver.swipe(Math.round(left + width*0.8),Math.round(top + height/2),Math.round(left),Math.round(top + height/2));
+        await driver.swipeBetween({x: Math.round(left + width*0.8),y: Math.round(top + height/2),displayId: displayID}, {x: Math.round(left),y: Math.round(top + height/2),displayId: displayID});
         await CommonFunc.sleep(3000);
 
          // check the GestureRecognizerJudgeBegin trigger

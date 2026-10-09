@@ -22,9 +22,11 @@ export default function ActsOsAccountTest() {
             console.info("====>afterEach start====");
             let osAccountManager = osAccount.getAccountManager();
             let accounts = await osAccountManager.queryAllCreatedOsAccounts();
+            let expectLocalId = await osAccountManager.getOsAccountLocalId();
+            console.info("====>afterEach expectLocalId:" + expectLocalId);
             for (let i = 0; i < accounts.length; i++) {
                 let localId = accounts[i].localId
-                if (localId != 100) {
+                if (localId != 100 && localId != expectLocalId) {
                     await RemoveAccount(localId);
                 }
             }
