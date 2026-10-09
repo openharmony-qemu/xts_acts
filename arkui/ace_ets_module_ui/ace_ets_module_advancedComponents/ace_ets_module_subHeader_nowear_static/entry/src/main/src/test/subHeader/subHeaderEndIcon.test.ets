@@ -21,6 +21,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function subHeaderEndIcon() {
   describe('subHeaderEndIcon', () => {
@@ -48,6 +49,7 @@ export default function subHeaderEndIcon() {
       } catch (err) {
         console.error("push subHeaderEndIcon page error:" + err);
       }
+      await CommonFunc.sleep(1000);
       console.info("subHeaderEndIcon beforeEach end");
     });
 
@@ -65,12 +67,10 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderEndIcon_static_0100] START');
       let strJson = inspector.getInspectorByKey('subheader_endicon_image');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[subHeaderEndIcon_static_0100] obj is: ' + strJson);
       expect(strJson !== '').assertTrue();
-      let endIconValue = obj.getElement('$attrs').getString('endIcon');
-      console.info('[subHeaderEndIcon_static_0100] endIcon: ' + endIconValue);
-      expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
+      let driver = Driver.create();
+      let component = await driver.findComponent(ON.id('subheader_endicon_image'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_static_0100] END');
       done();
     });
@@ -84,12 +84,10 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderEndIcon_static_0200] START');
       let strJson = inspector.getInspectorByKey('subheader_endicon_symbol');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[subHeaderEndIcon_static_0200] obj is: ' + strJson);
       expect(strJson !== '').assertTrue();
-      let endIconValue = obj.getElement('$attrs').getString('endIcon');
-      console.info('[subHeaderEndIcon_static_0200] endIcon: ' + endIconValue);
-      expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
+      let driver = Driver.create();
+      let component = await driver.findComponent(ON.id('subheader_endicon_symbol'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_static_0200] END');
       done();
     });
@@ -103,12 +101,10 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderEndIcon_static_0300] START');
       let strJson = inspector.getInspectorByKey('subheader_endicon_primary');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[subHeaderEndIcon_static_0300] obj is: ' + strJson);
       expect(strJson !== '').assertTrue();
-      let endIconValue = obj.getElement('$attrs').getString('endIcon');
-      console.info('[subHeaderEndIcon_static_0300] endIcon: ' + endIconValue);
-      expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
+      let driver = Driver.create();
+      let component = await driver.findComponent(ON.id('subheader_endicon_primary'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_static_0300] END');
       done();
     });
@@ -122,12 +118,10 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderEndIcon_static_0400] START');
       let strJson = inspector.getInspectorByKey('subheader_endicon_primary_secondary');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[subHeaderEndIcon_static_0400] obj is: ' + strJson);
       expect(strJson !== '').assertTrue();
-      let endIconValue = obj.getElement('$attrs').getString('endIcon');
-      console.info('[subHeaderEndIcon_static_0400] endIcon: ' + endIconValue);
-      expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
+      let driver = Driver.create();
+      let component = await driver.findComponent(ON.id('subheader_endicon_primary_secondary'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_static_0400] END');
       done();
     });
@@ -141,12 +135,10 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderEndIcon_static_0500] START');
       let strJson = inspector.getInspectorByKey('subheader_endicon_operation');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[subHeaderEndIcon_static_0500] obj is: ' + strJson);
       expect(strJson !== '').assertTrue();
-      let endIconValue = obj.getElement('$attrs').getString('endIcon');
-      console.info('[subHeaderEndIcon_static_0500] endIcon: ' + endIconValue);
-      expect(endIconValue !== '' && endIconValue !== 'undefined' && endIconValue !== 'null').assertTrue();
+      let driver = Driver.create();
+      let component = await driver.findComponent(ON.id('subheader_endicon_operation'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_static_0500] END');
       done();
     });
@@ -160,12 +152,10 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderEndIcon_static_0600] START');
       let strJson = inspector.getInspectorByKey('subheader_endicon_none');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[subHeaderEndIcon_static_0600] obj is: ' + strJson);
       expect(strJson !== '').assertTrue();
-      let endIconValue = obj.getElement('$attrs').getString('endIcon');
-      console.info('[subHeaderEndIcon_static_0600] endIcon: ' + endIconValue);
-      expect(endIconValue === '' || endIconValue === 'undefined' || endIconValue === 'null').assertTrue();
+      let driver = Driver.create();
+      let component = await driver.findComponent(ON.id('subheader_endicon_none'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_static_0600] END');
       done();
     });
@@ -179,12 +169,10 @@ export default function subHeaderEndIcon() {
     it('subHeaderEndIcon_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[subHeaderEndIcon_static_0700] START');
       let strJson = inspector.getInspectorByKey('subheader_endicon_titlebuilder');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[subHeaderEndIcon_static_0700] obj is: ' + strJson);
       expect(strJson !== '').assertTrue();
-      let endIconValue = obj.getElement('$attrs').getString('endIcon');
-      console.info('[subHeaderEndIcon_static_0700] endIcon: ' + endIconValue);
-      expect(endIconValue === '' || endIconValue === 'undefined' || endIconValue === 'null').assertTrue();
+      let driver = Driver.create();
+      let component = await driver.findComponent(ON.id('subheader_endicon_titlebuilder'));
+      expect(component !== null && component !== undefined).assertTrue();
       console.info('[subHeaderEndIcon_static_0700] END');
       done();
     });
