@@ -66,6 +66,7 @@ static napi_value RequestSuspendDelaySuccess(napi_env env, napi_callback_info in
     napi_value result;
     int32_t res = OH_BackgroundTaskManager_RequestSuspendDelay("test", OnCallbackCompleted, &delaySuspendInfo);
     napi_create_int32(env, res == ERR_TRANSIENT_TASK_OK ? 0 : -1, &result);
+    OH_BackgroundTaskManager_CancelSuspendDelay(delaySuspendInfo.requestId);
     return result;
 }
 
@@ -87,8 +88,6 @@ static napi_value RequestSuspendDelaySVFailed(napi_env env, napi_callback_info i
             OH_BackgroundTaskManager_RequestSuspendDelay("Quota Test", OnCallbackCompleted, &delaySuspendInfo);
         if (res == ERR_TRANSIENT_TASK_OK) {
             successCount++;
-            int32_t intTime = 15;
-            sleep(intTime);
             OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "BackgroundTask",
                          "=======  RequestSuspendDelay requestId = %{public}d", delaySuspendInfo.requestId);
             napi_create_int32(env, -1, &result);
