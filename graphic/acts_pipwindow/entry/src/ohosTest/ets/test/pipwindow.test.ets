@@ -3838,7 +3838,11 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       let pipController: pipWindow.PiPController | undefined = undefined;
       let mXComponentController = new XComponentController();
       let navId = "";
-      let pipSize: pipWindow.PiPWindowSize;
+      let pipSize: pipWindow.PiPWindowSize = {
+        width: 500,
+        height: 500,
+        scale: 1,
+      };
       let config: pipWindow.PiPConfiguration = {
         context: context1,
         componentController: mXComponentController,
