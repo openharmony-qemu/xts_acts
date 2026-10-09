@@ -9,6 +9,10 @@ import sendableGroupWithAllocTest from './SendablesGroupWithAlloc.test';
 import sendablesTest from './SendablesTest.test';
 import sendablesTestWithAlloc from './SendablesTestWithAlloc.test';
 
+
+import concurrencyReturnCoveredTest from './returnCovered/concurrencyReturnCoveredTest.test';
+import concurrencyCoveredSupplement from './returnCovered/concurrencyCoveredSupplement.test';
+
 export default function testsuite() {
   builtinContainerSendableObjectTest();
   baselibContainerSendableObjectTest();
@@ -20,4 +24,7 @@ export default function testsuite() {
   sendableGroupWithAllocTest();
   sendablesTest();
   sendablesTestWithAlloc();
+
+  concurrencyReturnCoveredTest();
+  concurrencyCoveredSupplement();
 }

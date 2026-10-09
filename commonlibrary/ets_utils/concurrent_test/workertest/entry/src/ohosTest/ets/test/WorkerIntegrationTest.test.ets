@@ -18,7 +18,7 @@ import worker, { ErrorEvent, MessageEvents } from '@ohos.worker'
 import { ArkTSUtils } from '@kit.ArkTS'
 import { SharedWorkerData } from '../workers/Sendable'
 
-const WORKER_PATH = '../../workers/SharedModuleWorker.ets'
+const WORKER_PATH = '../workers/SharedModuleWorker.ets'
 // Stress-robust wait budget. Under sustained 20/100-round stress a ThreadWorker
 // instance may transiently never echo (startup/attach loss observed on rk3568:
 // no ack within 5s/9s budgets while sibling workers respond in ~50ms). Echo

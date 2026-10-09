@@ -24,7 +24,7 @@ parentPort.onmessage = function(e) {
   let data = e.data;
   switch(data.type) {
     case "new":
-      ss = new worker.Worker("entry/ets/workers/worker_0121.js");
+      ss = new worker.Worker("entry/ets/workers/works1/worker_0121.js");
       ss.onmessage = function(ee) {
         backValue = ee.data;
         flag = true;

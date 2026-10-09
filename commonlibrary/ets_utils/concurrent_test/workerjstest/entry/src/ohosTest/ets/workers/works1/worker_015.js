@@ -24,7 +24,7 @@ parentPort.onmessage = function(e) {
   var data = e.data;
   switch(data.type) {
     case "new":
-      ss = new worker.Worker("entry/ets/workers/worker_0151.js");
+      ss = new worker.Worker("entry/ets/workers/works1/worker_0151.js");
       ss.onexit = function() {
         parentPort.postMessage(backValue); // 16
       }

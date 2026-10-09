@@ -16,20 +16,21 @@ import("//test/xts/tools/build/suite.gni")
 group("concurrent_test") {
   testonly = true
   if (is_standard_system) {
-    deps = [      "concurrenterrormessagetest:ActsConcurrentErrMessageTest",
-      "concurrentlibtest:ActsConcurrentLibTest",
+    deps = [      
+      "concurrenterrormessagetest:ActsConcurrentErrMessageTest",
       "concurrent_guide:ActsConcurrentGuideTest",
       "concurrentmoduletest:ActsConcurrentModuleTest",     
       "taskpoolasyncrunnertest:ActsTaskpoolAsyncrunnerTest",
       "taskpoolexecutedelayedtest:ActsTaskPoolExecuteDelayedTest",
       "taskpoolsequencerunnertest:ActsTaskPoolSequenceRunnerTest",
-      "taskpoolsupplementtest:ActsTaskPoolSupplementTest",
-      "taskpooltaskgrouptest:ActsTaskPoolTaskGroupTest",      
+      "taskpooltaskgrouptest:ActsTaskPoolTaskGroupTest",
+      "taskpoolSendableTest:ActsTaskpoolSendableTest",
+      "taskpooltest:ActsTaskpoolTest",      
       "workerjstest:ActsWorkerJsTest",
-      "workermaxtest:ActsWorkerMixTest",
+      "threadworkerjstest:ActsThreadWorkerJsTest",
+      "workermaxtest:ActsWorkerMaxTest",
       "workertest:ActsWorkerTest",
-      "taskpooltasktest:ActsTaskPoolTaskTest",
-      "taskpooltest:ActsTaskpoolTest",
+      "concurrentSerializeTest:ActsConcurrentSerializeTest",
     ]
   }
 }

@@ -26,7 +26,16 @@
         './src/ohosTest/ets/workers/worker.ts',
         './src/ohosTest/ets/workers/worker1.ets',
         './src/ohosTest/ets/workers/worker2.ets',
-      ]
+        "./src/ohosTest/ets/workers/workers1/Worker.ets",
+        "./src/ohosTest/ets/workers/workers1/Worker1.ets",
+        "./src/ohosTest/ets/workers/workers1/Worker2.ets",
+        "./src/ohosTest/ets/workers/workers1/WorkerOne.ets",
+        "./src/ohosTest/ets/workers/workers1/WorkerThree.ets",
+        "./src/ohosTest/ets/workers/workers1/WorkerTwo.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker1.ets",
+        "./src/ohosTest/ets/testability/pages/workers/Worker2.ets",
+        "./src/ohosTest/ets/testability/pages/workers/CalculatorWorker1.ets",
+        "./src/ohosTest/ets/testability/pages/workers/CalculatorWorker2.ets"]
     }
   },
   "buildOptionSet": [

@@ -29,6 +29,17 @@ import WorkerConfigTest from './WorkerConfigTest.test';
 import WorkerIntegrationTest from './WorkerIntegrationTest.test';
 import WorkerTaskPoolGCTest from './WorkerTaskPoolGCTest.test';
 
+
+import threadWorkerInheritanceTest from './inheritance/ThreadWorkerInheritanceTest.test';
+import errorEventInheritanceTest from './inheritance/ErrorEventInheritanceTest.test';
+import messageEventsInheritanceTest from './inheritance/MessageEventsInheritanceTest.test';
+import onAllErrorsTest from './inheritance/OnAllErrorsTest.test';
+import onErrorTest from './inheritance/OnErrorTest.test';
+import onExitTest from './inheritance/OnExitTest.test';
+import onMessageErrorTest from './inheritance/OnMessageErrorTest.test';
+import onMessageTest from './inheritance/OnMessageTest.test';
+import workerConcurrentTest from './worker/Worker.test';
+
 export default function testsuite() {
   ActsWorkerTestContainer();
   ActsWorkerTest();
@@ -46,4 +57,14 @@ export default function testsuite() {
   WorkerConfigTest();
   WorkerIntegrationTest();
   WorkerTaskPoolGCTest();
+
+  threadWorkerInheritanceTest();
+  errorEventInheritanceTest();
+  messageEventsInheritanceTest();
+  onAllErrorsTest();
+  onErrorTest();
+  onExitTest();
+  onMessageErrorTest();
+  onMessageTest();
+  workerConcurrentTest();
 }

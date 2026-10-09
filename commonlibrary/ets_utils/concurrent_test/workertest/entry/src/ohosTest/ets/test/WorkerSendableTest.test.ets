@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import { worker, MessageEvents, ErrorEvent } from '@kit.ArkTS'
 import { SendableCounter } from '../workers/Sendable'
 
-const WORKER_PATH = '../../workers/SendableWorker.ets'
+const WORKER_PATH = '../workers/SendableWorker.ets'
 const MESSAGE_TIMEOUT_MS: number = 5000
 
 function waitWorkerMessage<T>(workerInstance: worker.ThreadWorker): Promise<T> {

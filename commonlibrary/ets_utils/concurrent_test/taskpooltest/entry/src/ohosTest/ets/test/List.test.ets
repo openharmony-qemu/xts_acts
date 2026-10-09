@@ -15,45 +15,38 @@
 
 
 
-import TaskPoolSendableNameSpaceTest from './TaskPoolSendableNameSpace.test';
-
-import TaskPoolSendableTest from './TaskPoolSendable.test'
 
 import taskpoolTest from './Taskpool.test';
 import taskpoolTestState from './TaskpoolTestState.test';
-import taskpoolTestContainer from './TaskpoolTestContainer.test';
 
 import TaskPoolTest1 from './TaskPool1.test';
 import TaskPoolErrorCodeTest from './TaskpoolErrorCode.test';
 import TaskPoolCoverageTest from './TaskPoolCoverage.test';
 
 import TaskPoolTest2 from './TaskPoolTest.test.ets'
-import TaskPoolIntegrationTest from './TaskPoolIntegrationTest.test';
-import TaskPoolSendableTest2 from './TaskPoolSendableTest.test';
 
 import abilityTest from './Ability.test';
 import cancelTest from './Cancel.test';
 
+import taskPoolTaskDynamicsTest from './TaskPoolTaskGroupDynamicsTest.test';
+import taskPoolTaskGroupShareTest from './TaskPoolTaskGroupShareTest.test';
+import taskpoolTestTask from './TaskpoolTestTask.test';
+
 export default function testsuite() {
 
   
-  
-  TaskPoolSendableNameSpaceTest();
-    
-  TaskPoolSendableTest();
-  
-  taskpoolTestContainer();
   taskpoolTestState();
   taskpoolTest();
-  
   TaskPoolTest1();
-  TaskPoolErrorCodeTest();
-  TaskPoolCoverageTest();
-  TaskPoolTest2();
+  cancelTest();
   
-  TaskPoolIntegrationTest();
-  TaskPoolSendableTest2();
+  
+  TaskPoolCoverageTest();
+  TaskPoolErrorCodeTest();
+  TaskPoolTest2();
 
   abilityTest();
-  cancelTest();
+  taskPoolTaskDynamicsTest();
+  taskPoolTaskGroupShareTest();
+  taskpoolTestTask();
 }

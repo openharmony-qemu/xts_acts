@@ -12,42 +12,40 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
 import { ErrorEvent, MessageEvents, ThreadWorkerGlobalScope, worker } from '@kit.ArkTS';
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
-/**
- * Defines the event handler to be called when the worker thread receives a message sent by the host thread.
- * The event handler is executed in the worker thread.
- *
- * @param event message data
- */
-workerPort.onmessage = (event: MessageEvents) => {
-  console.info('=====event.data', event.data)
-  if (event.data === '1') {
-    workerPort.postMessage(event.data)
-  } else if (event.data === '2') {
-    let s: string[] = []
-    s[0].split('')[1].toString()
-    workerPort.postMessage(event.data)
+workerPort.onmessage = async (event: MessageEvents): Promise<void> => {
+  const index: number = event.data;
+
+  try {
+    // 使用await new promise调用动态导入中的async计算函数
+    const result1 = await new Promise<number>((resolve) => {
+      // 模拟动态导入
+      import('../TaskPoolMethod').then((module) => {
+        module.asyncCalculate1(index).then((res) => {
+          resolve(res);
+        });
+      });
+    });
+    workerPort.postMessage(result1);
+    // 使用promise回调
+    new Promise<void>((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 100);
+    });
+  } catch (error) {
+    console.log(`worker.ets error: ${error.message}`);
   }
 };
 
-/**
- * Defines the event handler to be called when the worker receives a message that cannot be deserialized.
- * The event handler is executed in the worker thread.
- *
- * @param event message data
- */
+
 workerPort.onmessageerror = (event: MessageEvents) => {
 };
 
-/**
- * Defines the event handler to be called when an exception occurs during worker execution.
- * The event handler is executed in the worker thread.
- *
- * @param event error message
- */
+
 workerPort.onerror = (event: ErrorEvent) => {
+  console.log(`worker.ets onerror: ${event.message}`);
 };

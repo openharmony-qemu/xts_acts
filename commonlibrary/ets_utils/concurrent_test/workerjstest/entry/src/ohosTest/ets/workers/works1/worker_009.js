@@ -23,7 +23,7 @@ parentPort.onmessage = function(e) {
   let data = e.data;
   switch(data.type) {
     case "new":
-      ss = new worker.Worker("entry/ets/workers/worker_0091.js");
+      ss = new worker.Worker("entry/ets/workers/works1/worker_0091.js");
       console.log("worker:: workerxx");
       ss.onexit = function() {
         flag = true;

@@ -1908,7 +1908,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0001';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         const message = 'message';
         const transfer = [];
         workerInstance.postMessageWithSharedSendable(message, transfer);
@@ -1942,7 +1942,7 @@ export default function workerTest1() {
     it('testPostMessageWithSharedSendable0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testPostMessageWithSharedSendable0002';
       try {
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         const message = 'message';
         const transfer = null;
         try {
@@ -1974,7 +1974,7 @@ export default function workerTest1() {
     it('testPostMessageWithSharedSendable0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testPostMessageWithSharedSendable0003';
       try {
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         const message = 'message';
         const transfer = undefined;
         try {
@@ -2007,7 +2007,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0004';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         let buffer = new ArrayBuffer(8);
         let view1 = new Uint8Array(buffer);
         view1[0] = 2;
@@ -2046,7 +2046,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0006';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         let value: number = 1;
         let num: Int8Array = new Int8Array(1);
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2082,7 +2082,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0007';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         let value: boolean = false;
         let num: Uint8Array = new Uint8Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2118,7 +2118,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0008';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         let value: undefined = undefined;
         let num: Uint8ClampedArray = new Uint8ClampedArray();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2154,7 +2154,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0009';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         let value: null = null;
         let num: Int16Array = new Int16Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2190,7 +2190,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0010';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessage.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessage.ets");
         let value: bigint = 1n;
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2228,7 +2228,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0011';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageDate.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageDate.ets");
         let assertRes: Date = new Date(1630273545222);
         let value: Date = new Date(1630316745222);
         let num: Int32Array = new Int32Array();
@@ -2266,7 +2266,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0012';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessage.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessage.ets');
         let assertRes: String = '11';
         let value: String = '1';
         let num: Uint32Array = new Uint32Array();
@@ -2304,7 +2304,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0013';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageRegExp.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageRegExp.ets');
         let assertRes: RegExp = /b/;
         let value: RegExp = /a/;
         let num: Float32Array = new Float32Array();
@@ -2342,7 +2342,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0014';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageArray.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageArray.ets');
         let assertRes: number[] = [1, 2, 3];
         let value: number[] = [1, 2];
         let num: Float64Array = new Float64Array();
@@ -2380,7 +2380,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0015';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageMap.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageMap.ets');
         let value: Map<string, number> = new Map();
         value.set('a', 1)
         let num: Int16Array = new Int16Array();
@@ -2418,7 +2418,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0016';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageSet.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageSet.ets');
         let value: Set<string> = new Set();
         value.add('a');
         let num: Uint16Array = new Uint16Array();
@@ -2456,7 +2456,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0017';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageObj.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageObj.ets');
         let value: Obj = {
           x: 1
         };
@@ -2495,7 +2495,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0018';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageObj.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageObj.ets');
         let value: Object = new Object({
           "x": 1
         });
@@ -2534,7 +2534,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0019';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageArrayBuffer.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageArrayBuffer.ets');
         let value: ArrayBuffer = new ArrayBuffer(16);
         let num: Float64Array = new Float64Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2571,7 +2571,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0020';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageInt8Array.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageInt8Array.ets');
         let value: Int8Array = new Int8Array(8);
         let num: Float32Array = new Float32Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2608,7 +2608,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0021';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageUint8Array.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageUint8Array.ets');
         let value: Uint8Array = new Uint8Array(8);
         let num: Uint32Array = new Uint32Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2646,7 +2646,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageUint8ClampedArray.ets');
+          new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageUint8ClampedArray.ets');
         let value: Uint8ClampedArray = new Uint8ClampedArray(8);
         let num: Uint8ClampedArray = new Uint8ClampedArray();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2683,7 +2683,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0023';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageInt16Array.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageInt16Array.ets');
         let value: Int16Array = new Int16Array(8);
         let num: Int8Array = new Int8Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2720,7 +2720,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0024';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageUint16Array.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageUint16Array.ets');
         let value: Uint16Array = new Uint16Array(8);
         let num: Uint8Array = new Uint8Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2757,7 +2757,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0025';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageInt32Array.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageInt32Array.ets');
         let value: Int32Array = new Int32Array(8);
         let num: Float64Array = new Float64Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2793,7 +2793,7 @@ export default function workerTest1() {
     it('testPostMessageWithSharedSendable0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testPostMessageWithSharedSendable0026';
       try {
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFunction.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFunction.ets');
         let value: Function = () => 1;
         let num: Int8Array = new Int8Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2821,7 +2821,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0027';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageUint32Array.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageUint32Array.ets');
         let value: Uint32Array = new Uint32Array(8);
         let num: Float32Array = new Float32Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2857,7 +2857,7 @@ export default function workerTest1() {
     it('testPostMessageWithSharedSendable0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testPostMessageWithSharedSendable0028';
       try {
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFunction.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFunction.ets');
         let value: TestClass = new TestClass();
         let num: Int16Array = new Int16Array();
         workerInstance.postMessageWithSharedSendable(value.getA, [num.buffer]);
@@ -2885,7 +2885,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0029';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessage.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessage.ets');
         let value: TestClass = new TestClass();
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(value.a, [num.buffer]);
@@ -2920,7 +2920,7 @@ export default function workerTest1() {
     it('testPostMessageWithSharedSendable0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testPostMessageWithSharedSendable0030';
       try {
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFunction.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFunction.ets');
         let num: Uint8Array = new Uint8Array();
         workerInstance.postMessageWithSharedSendable(TestClass.getB, [num.buffer]);
         workerInstance.onmessage = (e) => {
@@ -2948,7 +2948,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFloat32Array.ets');
+          new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFloat32Array.ets');
         let value: Float32Array = new Float32Array(8);
         let num: Uint32Array = new Uint32Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -2986,7 +2986,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFloat64Array.ets');
+          new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFloat64Array.ets');
         let value: Float64Array = new Float64Array(8);
         let num: Int32Array = new Int32Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3023,7 +3023,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0033';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessage.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessage.ets');
         let num: Uint8ClampedArray = new Uint8ClampedArray();
         workerInstance.postMessageWithSharedSendable(TestClass.b, [num.buffer]);
         workerInstance.onmessage = (e) => {
@@ -3059,7 +3059,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0034';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageConcatArray.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageConcatArray.ets");
         let value: collections.ConcatArray<string> = new collections.Array<string>('a', 'b');
         let num: Int32Array = new Int32Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3097,7 +3097,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageCollectionsArray.ets");
+          new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageCollectionsArray.ets");
         let value: collections.Array<string> = new collections.Array<string>('a', 'b');
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3135,7 +3135,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageCollectionsMap.ets");
+          new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageCollectionsMap.ets");
         let value: collections.Map<string, number> = new collections.Map<string, number>();
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3173,7 +3173,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageCollectionsSet.ets");
+          new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageCollectionsSet.ets");
         let value: collections.Set<string> = new collections.Set<string>();
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3211,7 +3211,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageCollectionsBitVector.ets");
+          new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageCollectionsBitVector.ets");
         let value: collections.BitVector = new collections.BitVector(8);
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3248,7 +3248,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0039';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageAsyncLock.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageAsyncLock.ets");
         let value: ArkTSUtils.locks.AsyncLock = ArkTSUtils.locks.AsyncLock.request(caseName);
         let num: Uint16Array = new Uint16Array();
         ArkTools.forceFullGC();
@@ -3285,7 +3285,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0040';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/WorkerPostMessageAson.ets");
+        const workerInstance = new worker.ThreadWorker("../workers/sharedSendable/SS_WorkerPostMessageAson.ets");
         let jsonText = '{"name": "John", "age": 30, "city": "ChangKing"}';
         let value: lang.ISendable = ArkTSUtils.ASON.parse(jsonText) as lang.ISendable;
         let num: Uint16Array = new Uint16Array();
@@ -3323,7 +3323,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0041';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessage.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessage.ets');
         let value: TestSendableClass = new TestSendableClass();
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(value.a, [num.buffer]);
@@ -3359,7 +3359,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0042';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFunction.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFunction.ets');
         let num: Int16Array = new Int16Array();
         workerInstance.postMessageWithSharedSendable(testSendableFunction, [num.buffer]);
         workerInstance.onmessage = (e) => {
@@ -3394,7 +3394,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0043';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFunction.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFunction.ets');
         let value: TestSendableClass = new TestSendableClass();
         let num: Int16Array = new Int16Array();
         workerInstance.postMessageWithSharedSendable(value.getA, [num.buffer]);
@@ -3431,7 +3431,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageSendableClass.ets');
+          new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageSendableClass.ets');
         let value: TestSendableClass = new TestSendableClass();
         let num: Uint8Array = new Uint8Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3467,7 +3467,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0046';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessage.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessage.ets');
         let num: Uint16Array = new Uint16Array();
         workerInstance.postMessageWithSharedSendable(TestSendableClass.b, [num.buffer]);
         workerInstance.onmessage = (e) => {
@@ -3502,7 +3502,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0047';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageFunction.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageFunction.ets');
         let num: Int16Array = new Int16Array();
         workerInstance.postMessageWithSharedSendable(TestSendableClass.getB, [num.buffer]);
         workerInstance.onmessage = (e) => {
@@ -3538,7 +3538,7 @@ export default function workerTest1() {
       try {
         let state: boolean = false;
         const workerInstance =
-          new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageImplSendableClass.ets');
+          new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageImplSendableClass.ets');
         let value: ImplISendableClass = new ImplISendableClass();
         let num: Int8Array = new Int8Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3574,7 +3574,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0049';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessage.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessage.ets');
         let value: testUnionType = 1;
         let num: Int8Array = new Int8Array();
         workerInstance.postMessageWithSharedSendable(value, [num.buffer]);
@@ -3611,7 +3611,7 @@ export default function workerTest1() {
       const caseName: string = 'testPostMessageWithSharedSendable0050';
       try {
         let state: boolean = false;
-        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/WorkerPostMessageArrayBuffer.ets');
+        const workerInstance = new worker.ThreadWorker('../workers/sharedSendable/SS_WorkerPostMessageArrayBuffer.ets');
         let value: ArrayBuffer = new ArrayBuffer(16);
         workerInstance.postMessageWithSharedSendable(value, [value]);
         workerInstance.onmessage = (e) => {

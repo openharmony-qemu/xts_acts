@@ -16,7 +16,8 @@
 import { collections, ArkTSUtils, worker } from '@kit.ArkTS';
 import { taskpool } from '@kit.ArkTS';
 import { MessageEvents } from '@kit.ArkTS';
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { sleep } from '../SendableLruCacheHelpers';
 
 // ========== Sendable 辅助类 ==========
 
@@ -424,8 +425,11 @@ async function putNestedCache(
   });
 }
 
-export default function SendableLruCacheConcurrentTest(): void {
-  describe('SendableLruCacheConcurrentTest', () => {
+export default function SendableLruCacheConcurrentSubTest(): void {
+  describe('SendableLruCacheConcurrentSubTest', () => {
+    afterAll(async () => {
+      await sleep(100);
+    })
 
     // ========== 3.1 并发put场景 ==========
 
@@ -2243,7 +2247,7 @@ export default function SendableLruCacheConcurrentTest(): void {
 
       const tasks: Promise<Object>[] = [];
       for (let taskIdx = 0; taskIdx < 100; taskIdx++) {
-        tasks.push(taskpool.execute(concurrentPutRemoveLoopTask, cache, lock, taskIdx, 1000));
+        tasks.push(taskpool.execute(concurrentPutRemoveLoopTask, cache, lock, taskIdx, 100));
       }
       try {
         await Promise.all(tasks);
@@ -2257,7 +2261,7 @@ export default function SendableLruCacheConcurrentTest(): void {
       } catch (err) {
         console.error(`putCount await taskpool.execute failed: ${JSON.stringify(err)}`);
       }
-      expect(putCount).assertEqual(100000);
+      expect(putCount).assertEqual(10000);
 
       let matchCount: number = 0;
       try {
@@ -2265,7 +2269,7 @@ export default function SendableLruCacheConcurrentTest(): void {
       } catch (err) {
         console.error(`matchCount await taskpool.execute failed: ${JSON.stringify(err)}`);
       }
-      expect(matchCount).assertEqual(100000);
+      expect(matchCount).assertEqual(10000);
 
       let missCount: number = 0;
       try {

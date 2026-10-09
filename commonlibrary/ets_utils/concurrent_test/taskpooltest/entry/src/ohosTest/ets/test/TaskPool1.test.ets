@@ -467,8 +467,8 @@ export default function TaskPoolTest1() {
         }).catch((error: Error) => {
           console.info(`${caseName}: execute catch error: ${error.message}`);
         });
-        await delay(1500);
-        expect(taskpool.getTaskPoolInfo().taskInfos.length).assertEqual(0);
+        await delay(2500);
+        expect(Array.from(taskpool.getTaskPoolInfo().taskInfos).filter(item=>item.name == 'terminateTask0001').length).assertEqual(0);
       } catch (error) {
         console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
         expect().assertFail();

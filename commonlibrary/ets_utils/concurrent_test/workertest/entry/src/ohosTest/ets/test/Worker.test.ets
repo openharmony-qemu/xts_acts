@@ -129,7 +129,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass2 = new MySendAbleClass2(false,1,'');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -171,7 +171,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: B = new B('');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_002.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_002.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -213,7 +213,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: Car = new Car();
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_003.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_003.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -255,7 +255,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass = new MySendAbleClass(true,1,'');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_004.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_004.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -297,7 +297,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass = new MySendAbleClass(false,1,'bbbb');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_005.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_005.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -339,7 +339,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass = new MySendAbleClass(false,1,'bbbb');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_006.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_006.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -382,7 +382,7 @@ export default function WorkerEtsTest() {
       const anotherBigInt = BigInt("12345678912345678");
       let sendableObject: MySendAbleClassB = new MySendAbleClassB(anotherBigInt);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_007.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_007.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -427,7 +427,7 @@ export default function WorkerEtsTest() {
       arr1.push(num);
       let sendableObject: MySendAbleClassC = new MySendAbleClassC(arr1);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_008.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_008.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -472,7 +472,7 @@ export default function WorkerEtsTest() {
       arr1.push(num);
       let sendableObject: MySendAbleClassD = new MySendAbleClassD(arr1);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_009.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_009.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -514,7 +514,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let a1: D = new SendableA() as D;
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_010.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_010.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -560,7 +560,7 @@ export default function WorkerEtsTest() {
         [3, "three"],
       ]);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_011.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_011.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -603,7 +603,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass2 = new MySendAbleClass2(false,1,'');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -645,7 +645,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: B = new B('');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_002.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_002.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -687,7 +687,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: Car = new Car();
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_003.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_003.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -729,7 +729,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass = new MySendAbleClass(true,1,'bbbb');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_004.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_004.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -771,7 +771,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass = new MySendAbleClass(false,1,'bbbb');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_005.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_005.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -813,7 +813,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let sendableObject: MySendAbleClass = new MySendAbleClass(false,1,'bbbb');
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_006.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_006.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -856,7 +856,7 @@ export default function WorkerEtsTest() {
       const anotherBigInt = BigInt("12345678912345678");
       let sendableObject: MySendAbleClassB = new MySendAbleClassB(anotherBigInt);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_007.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_007.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -901,7 +901,7 @@ export default function WorkerEtsTest() {
       arr1.push(num);
       let sendableObject: MySendAbleClassC = new MySendAbleClassC(arr1);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_008.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_008.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -946,7 +946,7 @@ export default function WorkerEtsTest() {
       arr1.push(num);
       let sendableObject: MySendAbleClassD = new MySendAbleClassD(arr1);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_009.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_009.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -988,7 +988,7 @@ export default function WorkerEtsTest() {
       console.info(`${caseName} test start`);
       let a1: D = new SendableA() as D;
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_010.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_010.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {
@@ -1034,7 +1034,7 @@ export default function WorkerEtsTest() {
         [3, "three"],
       ]);
       try {
-        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/worker_011.ts');
+        const workerInstance_1: worker.ThreadWorker = new worker.ThreadWorker('../workers/workers2/w2_worker_011.ts');
         let flag_1: boolean = false;
         let isTerminate_1: boolean = false;
         workerInstance_1.onexit = (): void => {

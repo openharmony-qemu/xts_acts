@@ -10,7 +10,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsWorkerMixTest.hap",
+                "ActsWorkerMaxTest.hap",
                 "ActsWorkerMainTest.hap"
             ],
             "type": "AppInstallKit",

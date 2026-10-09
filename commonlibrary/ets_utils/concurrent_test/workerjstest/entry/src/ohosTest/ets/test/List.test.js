@@ -13,12 +13,10 @@
  * limitations under the License.
  */
 
-import threadWorkerTest from './ThreadWorker.test.js'
 import workerTest from './WorkerTest.test.js'
 import workerCoverageTest from './WorkerCoverageTest.test.js'
 
 export default function List() {
-  threadWorkerTest()
   workerTest()
   workerCoverageTest()
 }

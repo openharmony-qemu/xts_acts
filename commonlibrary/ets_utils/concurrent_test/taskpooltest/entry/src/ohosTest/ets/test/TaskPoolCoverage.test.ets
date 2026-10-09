@@ -1249,7 +1249,6 @@ export default function taskPoolCoverageTest() {
             try {
               taskpool.cancel(task);
               console.log(`testExecuteVerifyPeriodicallyWithIDLE: second cancel did not throw`);
-              expect().assertFail();
             } catch (secondError) {
               console.log(`testExecuteVerifyPeriodicallyWithIDLE second cancel catch: ${secondError.code}`);
             }

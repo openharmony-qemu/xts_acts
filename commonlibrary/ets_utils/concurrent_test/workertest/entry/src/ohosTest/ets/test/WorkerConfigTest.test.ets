@@ -17,7 +17,7 @@ import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } fr
 import { worker, MessageEvents, ErrorEvent, collections } from '@kit.ArkTS'
 import { SharedConfigForWorker, WorkerConfigData, WorkerConfigResponse } from '../workers/Sendable'
 
-const WORKER_PATH = '../../workers/ConfigWorker.ets'
+const WORKER_PATH = '../workers/ConfigWorker.ets'
 const MESSAGE_TIMEOUT_MS: number = 5000
 
 function waitWorkerMessage<T>(workerInstance: worker.ThreadWorker): Promise<T> {
