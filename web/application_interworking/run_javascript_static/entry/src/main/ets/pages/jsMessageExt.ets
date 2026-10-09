@@ -807,6 +807,14 @@ struct jsMessageExt {
               console.log('push URL success')
             }
 
+            case 'GoSetResponseBodyPageStatic': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webResourceResponseSetResponseBodyParam' })
+              console.log('push setResponseBody page success')
+              break;
+            }
+
           }
         })
       }
