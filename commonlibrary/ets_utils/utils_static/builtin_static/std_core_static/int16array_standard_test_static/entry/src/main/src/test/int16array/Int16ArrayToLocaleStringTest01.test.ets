@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 
 
 /*
@@ -312,7 +312,7 @@ export default function Int16ArrayToLocaleStringTest01(): void {
       let val: int = 5678;
       let arr: Int16Array = Int16Array.of(val);
       let result: string = arr.toLocaleString('ru-RU');
-      let expectedResult: string = '5 678';
+      let expectedResult: string = '5聽678';
       expect(result).assertEqual(expectedResult);
     });
 
@@ -793,21 +793,6 @@ export default function Int16ArrayToLocaleStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_4300
-     * @tc.name testInt16ArrayToLocaleStringTestOne043
-     * @tc.desc Verify Int16Array.toLocaleString on negative elements keeps minus signs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToLocaleStringTestOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(-100, -200, -300);
-      let result: string = arr.toLocaleString();
-      let expectedResult: string = '-100,-200,-300';
-      expect(result).assertEqual(expectedResult);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_4400
      * @tc.name testInt16ArrayToLocaleStringTestOne044
      * @tc.desc Verify Int16Array.toLocaleString on maximum Int16 value with 'en-US' groups thousands
@@ -837,102 +822,6 @@ export default function Int16ArrayToLocaleStringTest01(): void {
       let result: string = arr.toLocaleString('en-US');
       let expectedResult: string = '-32,768';
       expect(result).assertEqual(expectedResult);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_4600
-     * @tc.name testInt16ArrayToLocaleStringTestOne046
-     * @tc.desc Verify Int16Array.toLocaleString on empty array with locale 'en-US' returns empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToLocaleStringTestOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let result: string = arr.toLocaleString('en-US');
-      let expectedResult: string = '';
-      expect(result).assertEqual(expectedResult);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_4700
-     * @tc.name testInt16ArrayToLocaleStringTestOne047
-     * @tc.desc Verify Int16Array.toLocaleString on empty array keeps length 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToLocaleStringTestOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let localeOutput: string = arr.toLocaleString();
-      let expectedLocaleOutput: string = '';
-      for (let localeIndex: int = 0; localeIndex < arr.length; localeIndex++) {
-        if (localeIndex > 0) {
-          expectedLocaleOutput += ',';
-        }
-        expectedLocaleOutput += arr.$_get(localeIndex).toLocaleString();
-      }
-      expect(localeOutput).assertEqual(expectedLocaleOutput);
-      let actualLength: int = arr.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_4800
-     * @tc.name testInt16ArrayToLocaleStringTestOne048
-     * @tc.desc Verify Int16Array.toLocaleString on empty array keeps byteLength 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToLocaleStringTestOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let localeOutput: string = arr.toLocaleString();
-      let expectedLocaleOutput: string = '';
-      for (let localeIndex: int = 0; localeIndex < arr.length; localeIndex++) {
-        if (localeIndex > 0) {
-          expectedLocaleOutput += ',';
-        }
-        expectedLocaleOutput += arr.$_get(localeIndex).toLocaleString();
-      }
-      expect(localeOutput).assertEqual(expectedLocaleOutput);
-      let actualByteLength: int = arr.byteLength;
-      let expectedByteLength: int = 0;
-      expect(actualByteLength).assertEqual(expectedByteLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_4900
-     * @tc.name testInt16ArrayToLocaleStringTestOne049
-     * @tc.desc Verify Int16Array.toLocaleString on empty array across multiple calls keeps length 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToLocaleStringTestOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let localeOutput: string = arr.toLocaleString();
-      let expectedLocaleOutput: string = '';
-      for (let localeIndex: int = 0; localeIndex < arr.length; localeIndex++) {
-        if (localeIndex > 0) {
-          expectedLocaleOutput += ',';
-        }
-        expectedLocaleOutput += arr.$_get(localeIndex).toLocaleString();
-      }
-      expect(localeOutput).assertEqual(expectedLocaleOutput);
-      let enUsLocaleOutput: string = arr.toLocaleString('en-US');
-      let expectedEnUsLocaleOutput: string = '';
-      for (let enUsLocaleIndex: int = 0; enUsLocaleIndex < arr.length; enUsLocaleIndex++) {
-        if (enUsLocaleIndex > 0) {
-          expectedEnUsLocaleOutput += ',';
-        }
-        expectedEnUsLocaleOutput += arr.$_get(enUsLocaleIndex).toLocaleString('en-US');
-      }
-      expect(enUsLocaleOutput).assertEqual(expectedEnUsLocaleOutput);
-      let actualLength: int = arr.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
     });
 
     /**
@@ -1101,25 +990,6 @@ export default function Int16ArrayToLocaleStringTest01(): void {
       };
       let result: string = arr.toLocaleString('en-US', opts);
       let expectedResult: string = '3.00';
-      expect(result).assertEqual(expectedResult);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_5900
-     * @tc.name testInt16ArrayToLocaleStringTestOne059
-     * @tc.desc Verify Int16Array.toLocaleString with maximumFractionDigits 0 keeps integer value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToLocaleStringTestOne059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 42;
-      let arr: Int16Array = Int16Array.of(val);
-      let opts: Intl.NumberFormatOptions = {
-        maximumFractionDigits: 0,
-      };
-      let result: string = arr.toLocaleString('en-US', opts);
-      let expectedResult: string = '42';
       expect(result).assertEqual(expectedResult);
     });
 

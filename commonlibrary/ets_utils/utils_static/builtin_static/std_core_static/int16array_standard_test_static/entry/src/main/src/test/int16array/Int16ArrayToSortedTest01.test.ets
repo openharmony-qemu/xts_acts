@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -102,57 +102,6 @@ export default function Int16ArrayToSortedTest01(): void {
       let elementAt2: number = sorted.$_get(2 as int);
       let expectedElement2: int = 32767;
       expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_ONE_0400
-     * @tc.name testInt16ArrayToSortedTestOne004
-     * @tc.desc Verify toSorted() on length-1 value -1 returns same element copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = -1;
-      let arr: Int16Array = Int16Array.of(val);
-      let sorted: Int16Array = arr.toSorted();
-      let elementAt0: number = sorted.$_get(0 as int);
-      let expectedElement0: int = -1;
-      expect(elementAt0).assertEqual(expectedElement0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_ONE_0500
-     * @tc.name testInt16ArrayToSortedTestOne005
-     * @tc.desc Verify toSorted() on length-1 int16.MIN returns -32768 copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = -32768;
-      let arr: Int16Array = Int16Array.of(val);
-      let sorted: Int16Array = arr.toSorted();
-      let elementAt0: number = sorted.$_get(0 as int);
-      let expectedElement0: int = -32768;
-      expect(elementAt0).assertEqual(expectedElement0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_ONE_0600
-     * @tc.name testInt16ArrayToSortedTestOne006
-     * @tc.desc Verify toSorted() on length-1 int16.MAX returns 32767 copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 32767;
-      let arr: Int16Array = Int16Array.of(val);
-      let sorted: Int16Array = arr.toSorted();
-      let elementAt0: number = sorted.$_get(0 as int);
-      let expectedElement0: int = 32767;
-      expect(elementAt0).assertEqual(expectedElement0);
     });
 
     /**

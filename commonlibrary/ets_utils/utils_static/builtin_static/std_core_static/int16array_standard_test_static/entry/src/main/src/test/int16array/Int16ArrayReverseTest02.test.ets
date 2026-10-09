@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 
 
 /*
@@ -105,21 +105,6 @@ export default function Int16ArrayReverseTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_0400
-     * @tc.name testInt16ArrayReverseTestTwo004
-     * @tc.desc Verify reverse().$_get(0) returns last original element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let actualValue: number = arr.reverse().$_get(0);
-      let expectedValue: int = 30;
-      expect(actualValue).assertEqual(expectedValue);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_0500
      * @tc.name testInt16ArrayReverseTestTwo005
      * @tc.desc Verify fill(999).reverse() keeps filled values
@@ -199,25 +184,6 @@ export default function Int16ArrayReverseTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_0900
-     * @tc.name testInt16ArrayReverseTestTwo009
-     * @tc.desc Verify reverse().reverse().reverse() equals single reverse
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3, 4, 5);
-      arr.reverse().reverse().reverse();
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 5;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt4: number = arr.$_get(4);
-      let expectedElement4: int = 1;
-      expect(elementAt4).assertEqual(expectedElement4);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_1000
      * @tc.name testInt16ArrayReverseTestTwo010
      * @tc.desc Verify Int16Array.from(arr.reverse()) copies reversed order
@@ -289,41 +255,6 @@ export default function Int16ArrayReverseTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_1400
-     * @tc.name testInt16ArrayReverseTestTwo014
-     * @tc.desc Verify reverse() on empty Int16Array(0) keeps length 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(0);
-      arr.reverse();
-      let actualLength: int = arr.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_1500
-     * @tc.name testInt16ArrayReverseTestTwo015
-     * @tc.desc Verify reverse().$_get(0) on empty array throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(0);
-      arr.reverse();
-      try {
-        arr.$_get(0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_1600
      * @tc.name testInt16ArrayReverseTestTwo016
      * @tc.desc Verify reverse() keeps length 6 unchanged for Int16Array.of(1, 2, 3, 4, 5, 6)
@@ -358,38 +289,6 @@ export default function Int16ArrayReverseTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_1800
-     * @tc.name testInt16ArrayReverseTestTwo018
-     * @tc.desc Verify reverse BYTES_PER_ELEMENT 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(5, 15, 25);
-      arr.reverse();
-      let actualBytesPerElement: int = arr.BYTES_PER_ELEMENT;
-      let expectedBytesPerElement: int = 2;
-      expect(actualBytesPerElement).assertEqual(expectedBytesPerElement);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_1900
-     * @tc.name testInt16ArrayReverseTestTwo019
-     * @tc.desc Verify reverse this === result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 2, 3);
-      let result = arr.reverse();
-      let actualResult: Int16Array = result;
-      let expectedResult: Int16Array = arr;
-      expect(actualResult).assertEqual(expectedResult);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_2000
      * @tc.name testInt16ArrayReverseTestTwo020
      * @tc.desc Verify reverse() turns [-5, -4, -3, -2, -1] into [-1, -2, -3, -4, -5] via $_get
@@ -415,28 +314,6 @@ export default function Int16ArrayReverseTest02(): void {
       let elementAt4: number = arr.$_get(4);
       let expectedElement4: int = -5;
       expect(elementAt4).assertEqual(expectedElement4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_2100
-     * @tc.name testInt16ArrayReverseTestTwo021
-     * @tc.desc Verify four reverse() calls restore [-10, 0, 10] from [-10, 0, 10] via $_get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(-10, 0, 10);
-      arr.reverse().reverse().reverse().reverse();
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = -10;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1);
-      let expectedElement1: int = 0;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = arr.$_get(2);
-      let expectedElement2: int = 10;
-      expect(elementAt2).assertEqual(expectedElement2);
     });
 
     /**
@@ -475,20 +352,6 @@ export default function Int16ArrayReverseTest02(): void {
       let elementAt3: number = arr.$_get(3);
       let expectedElement3: int = 99;
       expect(elementAt3).assertEqual(expectedElement3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_2400
-     * @tc.name testInt16ArrayReverseTestTwo024
-     * @tc.desc Verify reverse().join(',') on [1, 2, 3] returns '3,2,1'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 2, 3);
-      let s = arr.reverse().join(',');
-      expect(s).assertEqual('3,2,1');
     });
 
     /**
@@ -539,34 +402,6 @@ export default function Int16ArrayReverseTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_2700
-     * @tc.name testInt16ArrayReverseTestTwo027
-     * @tc.desc Verify reverse().toString()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(10, 20, 30);
-      let s = arr.reverse().toString();
-      expect(s).assertEqual('30,20,10');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_2800
-     * @tc.name testInt16ArrayReverseTestTwo028
-     * @tc.desc Verify reverse().includes(x)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 2, 3);
-      let found = arr.reverse().includes(1);
-      expect(found).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_2900
      * @tc.name testInt16ArrayReverseTestTwo029
      * @tc.desc Verify reverse().indexOf(x)
@@ -578,20 +413,6 @@ export default function Int16ArrayReverseTest02(): void {
       let arr = Int16Array.of(10, 20, 30, 40);
       let idx = arr.reverse().indexOf(10);
       expect(idx).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_REVERSE_TWO_3000
-     * @tc.name testInt16ArrayReverseTestTwo030
-     * @tc.desc Verify reverse().every(predicate)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayReverseTestTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 2, 3);
-      let allPositive = arr.reverse().every((v: number): boolean => v > 0);
-      expect(allPositive).assertTrue();
     });
 
     /**

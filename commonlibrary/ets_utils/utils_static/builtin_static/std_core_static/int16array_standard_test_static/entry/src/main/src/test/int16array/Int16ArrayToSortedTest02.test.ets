@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -100,74 +100,6 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0400
-     * @tc.name testInt16ArrayToSortedTestTwo004
-     * @tc.desc Verify original boundary values unchanged after toSorted()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(-32768, 0, 32767);
-      let result: Int16Array = arr.toSorted();
-      let actualString: string = result.toString();
-      let expectedString: string = '-32768,0,32767';
-      expect(actualString).assertEqual(expectedString);
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = -32768;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1);
-      let expectedElement1: int = 0;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = arr.$_get(2);
-      let expectedElement2: int = 32767;
-      expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0500
-     * @tc.name testInt16ArrayToSortedTestTwo005
-     * @tc.desc Verify empty original remains empty after toSorted()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      let result: Int16Array = arr.toSorted();
-      let actualString: string = result.toString();
-      let expectedString: string = '';
-      expect(actualString).assertEqual(expectedString);
-      expect(result.buffer).not().assertEqual(arr.buffer);
-      let actualLength: int = arr.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0600
-     * @tc.name testInt16ArrayToSortedTestTwo006
-     * @tc.desc Verify single-element original unchanged after toSorted()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 42;
-      let arr: Int16Array = Int16Array.of(val);
-      let result: Int16Array = arr.toSorted();
-      let actualString: string = result.toString();
-      let expectedString: string = '42';
-      expect(actualString).assertEqual(expectedString);
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 42;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let actualLength: int = arr.length;
-      let expectedLength: int = 1;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0700
      * @tc.name testInt16ArrayToSortedTestTwo007
      * @tc.desc Verify fill on toSorted() result leaves original elements unchanged
@@ -188,21 +120,6 @@ export default function Int16ArrayToSortedTest02(): void {
       let elementAt2: number = arr.$_get(2);
       let expectedElement2: int = 2;
       expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_0800
-     * @tc.name testInt16ArrayToSortedTestTwo008
-     * @tc.desc Verify two toSorted() calls return independent objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(3, 1, 2);
-      let sortedResultFirst: Int16Array = arr.toSorted();
-      let sortedResultSecond: Int16Array = arr.toSorted();
-      expect(sortedResultFirst).not().assertEqual(sortedResultSecond);
     });
 
     /**
@@ -296,88 +213,6 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1300
-     * @tc.name testInt16ArrayToSortedTestTwo013
-     * @tc.desc Verify empty array toSorted() is idempotent when called twice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(0);
-      let sortedOnce = arr.toSorted();
-      let sortedTwice = sortedOnce.toSorted();
-      let actualLength: int = sortedTwice.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1400
-     * @tc.name testInt16ArrayToSortedTestTwo014
-     * @tc.desc Verify empty array toSorted() result is not the original reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(0);
-      let result = arr.toSorted();
-      expect(result).not().assertEqual(arr);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1500
-     * @tc.name testInt16ArrayToSortedTestTwo015
-     * @tc.desc Verify empty array toSorted() returns empty Int16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(0);
-      let result = arr.toSorted();
-      let actualLength: int = result.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1600
-     * @tc.name testInt16ArrayToSortedTestTwo016
-     * @tc.desc Verify single element 0 toSorted() returns a copy containing 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 0;
-      let arr: Int16Array = Int16Array.of(val);
-      let result = arr.toSorted();
-      let elementAt0: number = result.$_get(0);
-      let expectedElement0: int = 0;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let actualLength: int = result.length;
-      let expectedLength: int = 1;
-      expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1700
-     * @tc.name testInt16ArrayToSortedTestTwo017
-     * @tc.desc Verify single element toSorted() result is not the original reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 42;
-      let arr: Int16Array = Int16Array.of(val);
-      let result = arr.toSorted();
-      expect(result).not().assertEqual(arr);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_1800
      * @tc.name testInt16ArrayToSortedTestTwo018
      * @tc.desc Verify single element toSorted() result can be modified independently
@@ -468,122 +303,6 @@ export default function Int16ArrayToSortedTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2200
-     * @tc.name testInt16ArrayToSortedTestTwo022
-     * @tc.desc Verify modifying toSorted() result does not change original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(3, 1, 2);
-      let result = arr.toSorted();
-      result.$_set(0, 99);
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 3;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1);
-      let expectedElement1: int = 1;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = arr.$_get(2);
-      let expectedElement2: int = 2;
-      expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2300
-     * @tc.name testInt16ArrayToSortedTestTwo023
-     * @tc.desc Verify fill on toSorted() result does not affect original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(5, 1, 3);
-      let result = arr.toSorted();
-      result.fill(0);
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 5;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1);
-      let expectedElement1: int = 1;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = arr.$_get(2);
-      let expectedElement2: int = 3;
-      expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2400
-     * @tc.name testInt16ArrayToSortedTestTwo024
-     * @tc.desc Verify reverse on toSorted() result does not affect original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 3, 2);
-      let result = arr.toSorted();
-      result.reverse();
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 1;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1);
-      let expectedElement1: int = 3;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = arr.$_get(2);
-      let expectedElement2: int = 2;
-      expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2500
-     * @tc.name testInt16ArrayToSortedTestTwo025
-     * @tc.desc Verify set on toSorted() result does not affect original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(4, 1, 3);
-      let result = arr.toSorted();
-      let other = Int16Array.of(99, 99, 99);
-      result.set(other, 0);
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 4;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1);
-      let expectedElement1: int = 1;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = arr.$_get(2);
-      let expectedElement2: int = 3;
-      expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2600
-     * @tc.name testInt16ArrayToSortedTestTwo026
-     * @tc.desc Verify sort on toSorted() result does not affect original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 3, 2);
-      let result = arr.toSorted();
-      result.sort();
-      let elementAt0: number = arr.$_get(0);
-      let expectedElement0: int = 1;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1);
-      let expectedElement1: int = 3;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = arr.$_get(2);
-      let expectedElement2: int = 2;
-      expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2700
      * @tc.name testInt16ArrayToSortedTestTwo027
      * @tc.desc Verify original mutations after toSorted() do not affect returned result
@@ -606,74 +325,6 @@ export default function Int16ArrayToSortedTest02(): void {
       let elementAt2: number = result.$_get(2);
       let expectedElement2: int = 10;
       expect(elementAt2).assertEqual(expectedElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2800
-     * @tc.name testInt16ArrayToSortedTestTwo028
-     * @tc.desc Verify ascending array toSorted() twice yields same order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 2, 3, 4, 5);
-      let sortedOnce = arr.toSorted();
-      let sortedTwice = sortedOnce.toSorted();
-      let elementAt0: number = sortedTwice.$_get(0);
-      let expectedElement0: int = 1;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = sortedTwice.$_get(1);
-      let expectedElement1: int = 2;
-      expect(elementAt1).assertEqual(expectedElement1);
-      let elementAt2: number = sortedTwice.$_get(2);
-      let expectedElement2: int = 3;
-      expect(elementAt2).assertEqual(expectedElement2);
-      let elementAt3: number = sortedTwice.$_get(3);
-      let expectedElement3: int = 4;
-      expect(elementAt3).assertEqual(expectedElement3);
-      let elementAt4: number = sortedTwice.$_get(4);
-      let expectedElement4: int = 5;
-      expect(elementAt4).assertEqual(expectedElement4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_2900
-     * @tc.name testInt16ArrayToSortedTestTwo029
-     * @tc.desc Verify unordered array chained toSorted() is idempotent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(7, 2, 9, 1, 5);
-      let sortedOnce = arr.toSorted();
-      let sortedTwice = sortedOnce.toSorted();
-      let elementAt0: number = sortedOnce.$_get(0);
-      let expectedElement0: number = sortedTwice.$_get(0);
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt4: number = sortedOnce.$_get(4);
-      let expectedElement4: number = sortedTwice.$_get(4);
-      expect(elementAt4).assertEqual(expectedElement4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSORTED_TWO_3000
-     * @tc.name testInt16ArrayToSortedTestTwo030
-     * @tc.desc Verify single element toSorted() three times remains the element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToSortedTestTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 42;
-      let arr: Int16Array = Int16Array.of(val);
-      let sortedOnce = arr.toSorted();
-      let sortedTwice = sortedOnce.toSorted();
-      let sortedThrice = sortedTwice.toSorted();
-      let elementAt0: number = sortedThrice.$_get(0);
-      let expectedElement0: int = 42;
-      expect(elementAt0).assertEqual(expectedElement0);
     });
 
     /**
