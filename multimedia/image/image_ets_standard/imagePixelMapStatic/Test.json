@@ -48,7 +48,7 @@
                 "./resource/image/generateThumbnailFailed.jpg ->/data/local/tmp/",
                 "./resource/image/empty_image.jpg ->/data/local/tmp/",
                 "./resource/image/jpeg_exif_thumbnail_too_large.jpg ->/data/local/tmp/",
-                "./setup_image_imagePixelmap_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_imagePixelmap_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
