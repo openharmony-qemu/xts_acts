@@ -36,7 +36,9 @@ export default function tabsApiCoverageStaticTest(): void {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         const pages = routerInstance.getState();
         if (pages.name !== 'TabsApiCoverageStatic') {
-          routerInstance.replaceUrl(options);
+          routerInstance.clear();
+          await Utils.sleep(400);
+          await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
       } catch (err) {

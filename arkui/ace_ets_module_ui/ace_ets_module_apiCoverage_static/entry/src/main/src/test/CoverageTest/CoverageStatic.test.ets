@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
@@ -22,7 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const LOG_TAG = '[coverageStaticTest]';
-
+const PAGE_URL = 'MainAbility/pages/coverage/CoverageStaticIndex';
 
 export default function coverageStaticTest(): void {
   describe('coverageStaticTest', () => {
@@ -32,19 +32,30 @@ export default function coverageStaticTest(): void {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         const pages = routerInstance.getState();
         if (pages.name !== 'CoverageStaticIndex') {
-          const options: router.RouterOptions = {
-            url: 'MainAbility/pages/coverage/CoverageStaticIndex',
-          };
-          routerInstance.replaceUrl(options);
-          await Utils.sleep(2500);
+          routerInstance.clear();
+          await Utils.sleep(500);
+          const options: router.RouterOptions = { url: PAGE_URL };
+          await routerInstance.pushUrl(options);
+          await Utils.sleep(3000);
         }
       } catch (err) {
         console.info(`${LOG_TAG} beforeEach navigate soft-fail: ${err}`);
       }
     });
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} afterEach`);
+      await Utils.sleep(200);
+    });
+
+    afterAll(async (): Promise<void> => {
+      try {
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.clear();
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info(`${LOG_TAG} afterAll soft-fail: ${err}`);
+      }
     });
 
     /**

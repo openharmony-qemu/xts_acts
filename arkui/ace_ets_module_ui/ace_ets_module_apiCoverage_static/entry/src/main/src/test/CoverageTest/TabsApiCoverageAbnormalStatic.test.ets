@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
@@ -35,7 +35,9 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         const pages = routerInstance.getState();
         if (pages.name !== 'TabsApiCoverageAbnormalStatic') {
-          routerInstance.replaceUrl(options);
+          routerInstance.clear();
+          await Utils.sleep(400);
+          await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
       } catch (err) {
@@ -46,6 +48,16 @@ export default function tabsApiCoverageAbnormalStaticTest(): void {
     afterEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} afterEach`);
       await Utils.sleep(300);
+    });
+
+    afterAll(async (): Promise<void> => {
+      try {
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.clear();
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info(`${LOG_TAG} afterAll soft-fail: ${err}`);
+      }
     });
 
     /**

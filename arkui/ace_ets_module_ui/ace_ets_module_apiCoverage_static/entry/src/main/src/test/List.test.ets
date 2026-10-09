@@ -5,8 +5,8 @@ import TabsApiCoverageStaticTest from './CoverageTest/TabsApiCoverageStatic.test
 import TabsApiCoverageAbnormalStaticTest from './CoverageTest/TabsApiCoverageAbnormalStatic.test';
 
 export default function testsuite(): void {
-  TabsApiCoverageStaticTest();
-  TabsApiCoverageAbnormalStaticTest();
   CoverageStaticTest();
   Coverage0917StaticTest();
+  TabsApiCoverageStaticTest();
+  TabsApiCoverageAbnormalStaticTest();
 }
