@@ -158,6 +158,9 @@ struct CoverageStaticIndex {
     this.clickFlag = 'bound';
     this.pulseFlag = 'ok';
     this.clickSoundFlag = 'ok';
+    const te: TransitionEffect = TransitionEffect.OPACITY;
+    this.finishCb(false);
+    console.info('[CoverageStatic] transition effect ' + `${te}`);
     new PulseSymbolEffect();
     this.initToolBarItems();
     this.initCommonCtrlAndAliases();
@@ -376,7 +379,6 @@ struct CoverageStaticIndex {
           .onClick((): void => {
             this.clickCb(1, 2);
           })
-          .transition(TransitionEffect.OPACITY, this.finishCb)
 
         Radio({ value: 'r1', group: 'g1' })
           .id('radioCoverage')

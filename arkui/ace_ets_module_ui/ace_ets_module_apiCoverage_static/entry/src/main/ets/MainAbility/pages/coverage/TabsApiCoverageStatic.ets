@@ -15,7 +15,7 @@
  */
 
 import {
-  Entry, ComponentV2, Column, Text, Scroll, TabsController,
+  Entry, ComponentV2, Column, Text, Scroll,
   TabBarStyle, TabBarDisplayMode, TabsBreakpointType,
   TabsSidebarSearchableOptions, TabsSidebarSearchFilterCallback
 } from '@ohos.arkui.component';
@@ -34,7 +34,6 @@ struct TabsApiCoverageStatic {
   @Local tabVisibilityFlag: string = 'init';
   @Local extendableFlag: string = 'init';
   @Local barModeChangeFlag: string = 'init';
-  private tabsController: TabsController = new TabsController();
 
   aboutToAppear(): void {
     try {
@@ -70,21 +69,10 @@ struct TabsApiCoverageStatic {
       };
       this.breakpointFlag =
         (bp.sm !== undefined && bp.md !== undefined && bp.lg !== undefined) ? 'ok' : 'fail';
-      this.probeTabsCtrl();
+      this.tabsCtrlFlag =
+        (modes[0] === TabBarDisplayMode.BOTTOM_TABBAR) ? 'ok' : 'fail';
     } catch (err) {
       console.info('[TabsApiCoverageStatic] initTabsEnums error ' + err);
-      this.tabsCtrlFlag = 'fail';
-    }
-  }
-
-  private probeTabsCtrl(): void {
-    try {
-      const mode: TabBarDisplayMode = this.tabsController.getBarDisplayMode();
-      this.tabsCtrlFlag =
-        (mode === TabBarDisplayMode.BOTTOM_TABBAR || mode === TabBarDisplayMode.SIDEBAR) ?
-          'ok' : 'other';
-    } catch (err) {
-      console.info('[TabsApiCoverageStatic] getBarDisplayMode error ' + err);
       this.tabsCtrlFlag = 'fail';
     }
   }

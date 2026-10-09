@@ -26,7 +26,7 @@ const LOG_TAG = '[coverageStaticTest]';
 
 export default function coverageStaticTest(): void {
   describe('coverageStaticTest', () => {
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} beforeEach start`);
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
@@ -36,6 +36,7 @@ export default function coverageStaticTest(): void {
             url: 'MainAbility/pages/coverage/CoverageStaticIndex',
           };
           routerInstance.replaceUrl(options);
+          await Utils.sleep(2500);
         }
       } catch (err) {
         console.info(`${LOG_TAG} beforeEach navigate soft-fail: ${err}`);
