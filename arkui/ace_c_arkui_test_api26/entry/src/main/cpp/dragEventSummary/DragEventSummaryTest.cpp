@@ -28,7 +28,6 @@
 #include <cstring>
 #include <cstdio>
 #include <sstream>
-#include <securec.h>
 
 namespace ArkUICapiTest {
 
@@ -36,12 +35,6 @@ static ArkUI_NativeNodeAPI_1 *g_nodeAPI = nullptr;
 static ArkUI_NodeHandle g_dragImage = nullptr;
 static ArkUI_NodeHandle g_dropArea = nullptr;
 static ArkUI_NodeHandle g_resultText = nullptr;
-
-static const int32_t ARKUI_ERROR_CODE_NO_ERROR = 0;
-static const int32_t ARKUI_ERROR_CODE_PARAM_INVALID = 401;
-static const int32_t ARKUI_ERROR_CODE_INTERNAL_ERROR = 100001;
-
-static char g_resultStr[1024] = {0};
 
 static void UpdateResultText(const char *text)
 {
@@ -113,11 +106,7 @@ static void OnDragEnter(ArkUI_NodeEvent *event)
     }
 
     std::string result = ss.str();
-    int32_t snRet = snprintf_s(g_resultStr, sizeof(g_resultStr), sizeof(g_resultStr) - 1, "%s", result.c_str());
-    if (snRet < 0) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "DragSummary", "snprintf_s failed");
-    }
-    UpdateResultText(g_resultStr);
+    UpdateResultText(result.c_str());
 }
 
 static void NodeEventReceiver(ArkUI_NodeEvent *event)
