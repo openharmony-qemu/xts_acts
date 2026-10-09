@@ -18,6 +18,7 @@
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include "videoenc_sample.h"
+#include "videoenc_api11_sample.h"
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include "avcodec_codec_name.h"
 #include <multimedia/player_framework/native_avcapability.h>
@@ -159,6 +160,62 @@ static int TestProfileConfig(const char *mimeType, int32_t pixelFormat,
     format = nullptr;
     OH_VideoEncoder_Destroy(venc_);
     venc_ = nullptr;
+    return 0;
+}
+ 
+const std::vector<std::string> &GetDmabufSuffixCat1()
+{
+    static const std::vector<std::string> cat1 = {
+        "!", "abc123", "a_b-c!a1bcX2YZ3!@#$%^&*",
+    };
+    return cat1;
+}
+ 
+const std::vector<std::string> &GetDmabufSuffixCat2()
+{
+    static const std::vector<std::string> cat2 = {
+        "测试 / cafe /  ", "12 3a", "abc\n \t \r \0", "0123456789", "\n \t",
+    };
+    return cat2;
+}
+ 
+static void ResetDmabufTestState(const std::shared_ptr<VEncAPI11Sample> &vEncSample)
+{
+    vEncSample->Flush_buffer();
+    vEncSample->errCount = 0;
+    vEncSample->frameCount = 0;
+    vEncSample->outCount = 0;
+}
+ 
+static int RunDmabufSuffixCat1(const std::shared_ptr<VEncAPI11Sample> &vEncSample)
+{
+    const auto &cat1 = GetDmabufSuffixCat1();
+    for (size_t i = 0; i < cat1.size(); i++) {
+        if (i > 0) {
+            if (vEncSample->Reset() != AV_ERR_OK) { return -1; }
+            ResetDmabufTestState(vEncSample);
+        }
+        vEncSample->dmabufNameSuffix = cat1[i];
+        if (vEncSample->ConfigureVideoEncoder() != AV_ERR_OK) { return -1; }
+        if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return -1; }
+        vEncSample->WaitForEOS();
+        if (vEncSample->errCount != AV_ERR_OK) { return -1; }
+    }
+    return 0;
+}
+ 
+static int RunDmabufSuffixCat2(const std::shared_ptr<VEncAPI11Sample> &vEncSample)
+{
+    const auto &cat2 = GetDmabufSuffixCat2();
+    for (size_t i = 0; i < cat2.size(); i++) {
+        if (vEncSample->Reset() != AV_ERR_OK) { return -1; }
+        ResetDmabufTestState(vEncSample);
+        vEncSample->dmabufNameSuffix = cat2[i];
+        int32_t ret = vEncSample->ConfigureVideoEncoder();
+        if (ret != AV_ERR_INVALID_VAL) {
+            return -1;
+        }
+    }
     return 0;
 }
 
@@ -1254,6 +1311,60 @@ napi_value VideoEncodeFunction0200Test(napi_env env, napi_callback_info info)
     } else {
         return CreateIntInt32Result(env, 0);
     }
+}
+
+napi_value VideoEncoder264DmabufSuffix0010(napi_env env, napi_callback_info info)
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0) && InitAVCCodecName()) {
+        auto vEncSample = make_shared<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+        vEncSample->enableDmabufNameSuffix = true;
+        if (vEncSample->CreateVideoEncoder(g_codecName) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (RunDmabufSuffixCat1(vEncSample) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (RunDmabufSuffixCat2(vEncSample) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoEncoder265DmabufSuffix0010(napi_env env, napi_callback_info info)
+{
+    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
+    if (cap != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0) && InitAVCCodecName()) {
+        auto vEncSample = make_shared<VEncAPI11Sample>();
+        vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
+        vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
+        vEncSample->DEFAULT_HEIGHT = DEFAULT_HEIGHT;
+        vEncSample->DEFAULT_FRAME_RATE = DEFAULT_FRAME_RATE;
+        vEncSample->enableDmabufNameSuffix = true;
+        if (vEncSample->CreateVideoEncoder(g_codecNameHEVC) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (vEncSample->SetVideoEncoderCallback() != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (RunDmabufSuffixCat1(vEncSample) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        if (RunDmabufSuffixCat2(vEncSample) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
 }
 
 void InitFuncTest()

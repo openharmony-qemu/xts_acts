@@ -333,6 +333,9 @@ static void InitPush7(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("OutputDecsFunc005Test", OutputDecsFunc005Test));
     desc.push_back(XL("OutputDecsFunc006Test", OutputDecsFunc006Test));
     desc.push_back(XL("OutputDecsFunc007Test", OutputDecsFunc007Test));
+    desc.push_back(XL("VideoDecodeH264DmabufSuffix0010", VideoDecodeH264DmabufSuffix0010));
+    desc.push_back(XL("VideoDecodeH265DmabufSuffix0010", VideoDecodeH265DmabufSuffix0010));
+    desc.push_back(XL("VideoDecodeH266DmabufSuffix0010", VideoDecodeH266DmabufSuffix0010));
     desc.push_back(XL("VideoHwdecState0100Test", VideoHwdecState0100Test));
     desc.push_back(XL("VideoHwdecState0101Test", VideoHwdecState0101Test));
     desc.push_back(XL("VideoHwdecState0200Test", VideoHwdecState0200Test));
