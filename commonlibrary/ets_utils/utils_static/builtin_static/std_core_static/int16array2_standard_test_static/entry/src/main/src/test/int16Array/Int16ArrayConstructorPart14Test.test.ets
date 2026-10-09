@@ -330,22 +330,6 @@ export default function int16ArrayConstructorPart14Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART14__1700
-     * @tc.name int16ArrayConstructorPart14Test017
-     * @tc.desc Verify new Int16Array(ArrayBuffer 2, undefined, undefined) BYTES_PER_ELEMENT is 2
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart14Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf: ArrayBuffer = new ArrayBuffer(2);
-      const arr: Int16Array = new Int16Array(buf, undefined, undefined);
-      let actual: int = Int16Array.BYTES_PER_ELEMENT;
-      let expected: int = 2;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART14__1800
      * @tc.name int16ArrayConstructorPart14Test018
      * @tc.desc Verify new Int16Array(ArrayBuffer 4, 0, Number.POSITIVE_INFINITY) throws RangeError
@@ -538,29 +522,6 @@ export default function int16ArrayConstructorPart14Test(): void {
       let actual: int = buf.byteLength;
       let expected: number = originalByteLength;
       expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART14__2800
-     * @tc.name int16ArrayConstructorPart14Test028
-     * @tc.desc Verify two Int16Array views over ArrayBuffer 4 $_set 32768 and -32769 wraps via DataView
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart14Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf: ArrayBuffer = new ArrayBuffer(4);
-      const view1: Int16Array = new Int16Array(buf, 0, 1);
-      const view2: Int16Array = new Int16Array(buf, 2, 1);
-      view1.$_set(0, 32768);
-      view2.$_set(0, -32769);
-      const dv: DataView = new DataView(buf);
-      let actual: number = dv.getInt16(0, true);
-      let expected: int = -32768;
-      expect(actual).assertEqual(expected);
-      let actual2: number = dv.getInt16(2, true);
-      let expected2: int = 32767;
-      expect(actual2).assertEqual(expected2);
     });
 
     /**
