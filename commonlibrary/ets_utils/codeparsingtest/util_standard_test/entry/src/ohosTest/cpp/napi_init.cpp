@@ -14,12 +14,649 @@
  */
 
 #include "napi/native_api.h"
+#include <algorithm>
 #include <atomic>
+#include <map>
+#include <mutex>
 #include <pthread.h>
+#include <vector>
 
 static napi_env g_mainEnv = nullptr;
 static napi_env g_testEnv = nullptr;
 static std::atomic<bool> g_testEnvReady{false};
+
+static constexpr size_t ARGC_TWO = 2;
+
+// Strong references created per napi_env, so the main VM and each worker VM keep
+// independent reference stores. References are deleted from the end (stack order).
+static std::mutex g_strongRefMutex;
+static std::map<napi_env, std::vector<napi_strong_ref>> g_strongRefStore;
+
+// Sendable strong references, only creatable on the main env. Keyed by napi_env so
+// a call from a wrong env can never release references owned by another VM.
+static std::mutex g_sendableRefMutex;
+static std::map<napi_env, std::vector<napi_sendable_ref>> g_sendableRefStore;
+
+// napi_ref instances created by napi_create_reference, stored per napi_env.
+// refcount 0 entries are weak and must be turned strong by napi_reference_ref before use.
+static std::mutex g_napiRefMutex;
+static std::map<napi_env, std::vector<napi_ref>> g_napiRefStore;
+
+// Wrap references returned by napi_wrap, kept only so a failed test can still
+// clean up. napi_remove_wrap deletes the reference itself, entries are dropped then.
+static std::mutex g_wrapRefMutex;
+static std::map<napi_env, std::vector<napi_ref>> g_wrapRefStore;
+
+// Deferreds of promises created by napi_create_promise, keyed by napi_env so a
+// deferred can only be settled by the env that created it. Resolved on cleanup (never rejected).
+static std::mutex g_deferredMutex;
+static std::map<napi_env, std::vector<napi_deferred>> g_deferredStore;
+
+// Threadsafe functions, keyed by napi_env so a function can only be acquired or
+// released by the env that created it. Release(abort) finalizes them asynchronously
+// on the JS event loop, so the vector is cleared right after release and never touched again.
+static std::mutex g_tsfnMutex;
+static std::map<napi_env, std::vector<napi_threadsafe_function>> g_tsfnStore;
+
+static napi_value CreateStrongRefs(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "CreateStrongRefs: count is required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[0], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "CreateStrongRefs: invalid count");
+        return nullptr;
+    }
+    for (int32_t i = 0; i < count; i++) {
+        napi_value obj = nullptr;
+        if (napi_create_object(env, &obj) != napi_ok) {
+            napi_throw_error(env, nullptr, "CreateStrongRefs: create object failed");
+            return nullptr;
+        }
+        napi_strong_ref ref = nullptr;
+        if (napi_create_strong_reference(env, obj, &ref) != napi_ok) {
+            napi_throw_error(env, nullptr, "CreateStrongRefs: create strong ref failed");
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(g_strongRefMutex);
+        g_strongRefStore[env].push_back(ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value DeleteStrongRefs(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "DeleteStrongRefs: count is required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[0], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "DeleteStrongRefs: invalid count");
+        return nullptr;
+    }
+    std::vector<napi_strong_ref> refsToDelete;
+    {
+        std::lock_guard<std::mutex> lock(g_strongRefMutex);
+        auto it = g_strongRefStore.find(env);
+        if (it == g_strongRefStore.end() || it->second.empty()) {
+            napi_throw_error(env, nullptr, "DeleteStrongRefs: no refs stored for this env");
+            return nullptr;
+        }
+        int32_t toDelete = std::min<int32_t>(count, static_cast<int32_t>(it->second.size()));
+        for (int32_t i = 0; i < toDelete; i++) {
+            refsToDelete.push_back(it->second.back());
+            it->second.pop_back();
+        }
+    }
+    for (napi_strong_ref ref : refsToDelete) {
+        napi_delete_strong_reference(env, ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value ClearStrongRefs(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_strong_ref> refsToDelete;
+    {
+        std::lock_guard<std::mutex> lock(g_strongRefMutex);
+        auto it = g_strongRefStore.find(env);
+        if (it != g_strongRefStore.end()) {
+            refsToDelete = std::move(it->second);
+            g_strongRefStore.erase(it);
+        }
+    }
+    for (napi_strong_ref ref : refsToDelete) {
+        napi_delete_strong_reference(env, ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value CreateStrongSendableRefs(napi_env env, napi_callback_info info)
+{
+    size_t argc = ARGC_TWO;
+    napi_value args[ARGC_TWO] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < ARGC_TWO || args[0] == nullptr || args[1] == nullptr) {
+        napi_throw_error(env, nullptr, "CreateStrongSendableRefs: value and count are required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[1], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "CreateStrongSendableRefs: invalid count");
+        return nullptr;
+    }
+    for (int32_t i = 0; i < count; i++) {
+        napi_sendable_ref ref = nullptr;
+        if (napi_create_strong_sendable_reference(env, args[0], &ref) != napi_ok) {
+            napi_throw_error(env, nullptr, "CreateStrongSendableRefs: create sendable ref failed");
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(g_sendableRefMutex);
+        g_sendableRefStore[env].push_back(ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value ClearStrongSendableRefs(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_sendable_ref> refsToDelete;
+    {
+        std::lock_guard<std::mutex> lock(g_sendableRefMutex);
+        auto it = g_sendableRefStore.find(env);
+        if (it != g_sendableRefStore.end()) {
+            refsToDelete = std::move(it->second);
+            g_sendableRefStore.erase(it);
+        }
+    }
+    for (napi_sendable_ref ref : refsToDelete) {
+        napi_delete_strong_sendable_reference(env, ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static std::vector<napi_ref> TakeNapiRefs(napi_env env, int32_t count, bool remove)
+{
+    std::vector<napi_ref> refs;
+    std::lock_guard<std::mutex> lock(g_napiRefMutex);
+    auto it = g_napiRefStore.find(env);
+    if (it == g_napiRefStore.end()) {
+        return refs;
+    }
+    int32_t toTake = std::min<int32_t>(count, static_cast<int32_t>(it->second.size()));
+    for (int32_t i = 0; i < toTake; i++) {
+        refs.push_back(it->second[it->second.size() - toTake + i]);
+    }
+    if (remove) {
+        it->second.resize(it->second.size() - toTake);
+    }
+    return refs;
+}
+
+static napi_value CreateNapiRefs(napi_env env, napi_callback_info info)
+{
+    size_t argc = ARGC_TWO;
+    napi_value args[ARGC_TWO] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < ARGC_TWO || args[0] == nullptr || args[1] == nullptr) {
+        napi_throw_error(env, nullptr, "CreateNapiRefs: count and refcount are required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    uint32_t refcount = 0;
+    if (napi_get_value_int32(env, args[0], &count) != napi_ok || count <= 0 ||
+        napi_get_value_uint32(env, args[1], &refcount) != napi_ok) {
+        napi_throw_error(env, nullptr, "CreateNapiRefs: invalid arguments");
+        return nullptr;
+    }
+    for (int32_t i = 0; i < count; i++) {
+        napi_value obj = nullptr;
+        if (napi_create_object(env, &obj) != napi_ok) {
+            napi_throw_error(env, nullptr, "CreateNapiRefs: create object failed");
+            return nullptr;
+        }
+        napi_ref ref = nullptr;
+        if (napi_create_reference(env, obj, refcount, &ref) != napi_ok) {
+            napi_throw_error(env, nullptr, "CreateNapiRefs: create reference failed");
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(g_napiRefMutex);
+        g_napiRefStore[env].push_back(ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value RefNapiRefs(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "RefNapiRefs: count is required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[0], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "RefNapiRefs: invalid count");
+        return nullptr;
+    }
+    std::vector<napi_ref> refs = TakeNapiRefs(env, count, false);
+    if (refs.empty()) {
+        napi_throw_error(env, nullptr, "RefNapiRefs: no refs stored for this env");
+        return nullptr;
+    }
+    for (napi_ref ref : refs) {
+        uint32_t refcount = 0;
+        if (napi_reference_ref(env, ref, &refcount) != napi_ok) {
+            napi_throw_error(env, nullptr, "RefNapiRefs: reference ref failed");
+            return nullptr;
+        }
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value UnrefNapiRefs(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "UnrefNapiRefs: count is required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[0], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "UnrefNapiRefs: invalid count");
+        return nullptr;
+    }
+    std::vector<napi_ref> refs = TakeNapiRefs(env, count, false);
+    if (refs.empty()) {
+        napi_throw_error(env, nullptr, "UnrefNapiRefs: no refs stored for this env");
+        return nullptr;
+    }
+    for (napi_ref ref : refs) {
+        uint32_t refcount = 0;
+        if (napi_reference_unref(env, ref, &refcount) != napi_ok) {
+            napi_throw_error(env, nullptr, "UnrefNapiRefs: reference unref failed");
+            return nullptr;
+        }
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value DeleteNapiRefs(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "DeleteNapiRefs: count is required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[0], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "DeleteNapiRefs: invalid count");
+        return nullptr;
+    }
+    std::vector<napi_ref> refs = TakeNapiRefs(env, count, true);
+    if (refs.empty()) {
+        napi_throw_error(env, nullptr, "DeleteNapiRefs: no refs stored for this env");
+        return nullptr;
+    }
+    for (napi_ref ref : refs) {
+        napi_delete_reference(env, ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value ClearNapiRefs(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_ref> refs;
+    {
+        std::lock_guard<std::mutex> lock(g_napiRefMutex);
+        auto it = g_napiRefStore.find(env);
+        if (it != g_napiRefStore.end()) {
+            refs = std::move(it->second);
+            g_napiRefStore.erase(it);
+        }
+    }
+    for (napi_ref ref : refs) {
+        napi_delete_reference(env, ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static void NoopFinalize(napi_env env, void* data, void* hint)
+{
+    (void)env;
+    (void)data;
+    (void)hint;
+}
+
+static napi_value WrapObjects(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "WrapObjects: objects array is required");
+        return nullptr;
+    }
+    bool isArray = false;
+    if (napi_is_array(env, args[0], &isArray) != napi_ok || !isArray) {
+        napi_throw_error(env, nullptr, "WrapObjects: argument must be an array");
+        return nullptr;
+    }
+    uint32_t length = 0;
+    napi_get_array_length(env, args[0], &length);
+    for (uint32_t i = 0; i < length; i++) {
+        napi_value obj = nullptr;
+        if (napi_get_element(env, args[0], i, &obj) != napi_ok || obj == nullptr) {
+            napi_throw_error(env, nullptr, "WrapObjects: get element failed");
+            return nullptr;
+        }
+        static int dummyNativeData = 0;
+        napi_ref ref = nullptr;
+        if (napi_wrap(env, obj, &dummyNativeData, NoopFinalize, nullptr, &ref) != napi_ok) {
+            napi_throw_error(env, nullptr, "WrapObjects: napi_wrap failed");
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(g_wrapRefMutex);
+        g_wrapRefStore[env].push_back(ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value RemoveWraps(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "RemoveWraps: objects array is required");
+        return nullptr;
+    }
+    bool isArray = false;
+    if (napi_is_array(env, args[0], &isArray) != napi_ok || !isArray) {
+        napi_throw_error(env, nullptr, "RemoveWraps: argument must be an array");
+        return nullptr;
+    }
+    uint32_t length = 0;
+    napi_get_array_length(env, args[0], &length);
+    {
+        std::lock_guard<std::mutex> lock(g_wrapRefMutex);
+        auto it = g_wrapRefStore.find(env);
+        if (it == g_wrapRefStore.end() || it->second.size() != length) {
+            // The store maps refs by creation order only, so partial removal cannot be
+            // tracked. Require the exact same full array that was passed to WrapObjects.
+            napi_throw_error(env, nullptr,
+                "RemoveWraps: requires the same full array of objects passed to WrapObjects");
+            return nullptr;
+        }
+    }
+    for (uint32_t i = 0; i < length; i++) {
+        napi_value obj = nullptr;
+        if (napi_get_element(env, args[0], i, &obj) != napi_ok || obj == nullptr) {
+            napi_throw_error(env, nullptr, "RemoveWraps: get element failed");
+            return nullptr;
+        }
+        void* nativeData = nullptr;
+        if (napi_remove_wrap(env, obj, &nativeData) != napi_ok) {
+            napi_throw_error(env, nullptr, "RemoveWraps: napi_remove_wrap failed");
+            return nullptr;
+        }
+    }
+    std::lock_guard<std::mutex> lock(g_wrapRefMutex);
+    g_wrapRefStore.erase(env);
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value ClearWrapRefs(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_ref> refs;
+    {
+        std::lock_guard<std::mutex> lock(g_wrapRefMutex);
+        auto it = g_wrapRefStore.find(env);
+        if (it != g_wrapRefStore.end()) {
+            refs = std::move(it->second);
+            g_wrapRefStore.erase(it);
+        }
+    }
+    for (napi_ref ref : refs) {
+        napi_delete_reference(env, ref);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value CreatePromises(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1 || args[0] == nullptr) {
+        napi_throw_error(env, nullptr, "CreatePromises: count is required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[0], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "CreatePromises: invalid count");
+        return nullptr;
+    }
+    napi_value promiseArray = nullptr;
+    if (napi_create_array(env, &promiseArray) != napi_ok) {
+        napi_throw_error(env, nullptr, "CreatePromises: create array failed");
+        return nullptr;
+    }
+    for (int32_t i = 0; i < count; i++) {
+        napi_deferred deferred = nullptr;
+        napi_value promise = nullptr;
+        if (napi_create_promise(env, &deferred, &promise) != napi_ok) {
+            napi_throw_error(env, nullptr, "CreatePromises: napi_create_promise failed");
+            return nullptr;
+        }
+        if (napi_set_element(env, promiseArray, i, promise) != napi_ok) {
+            napi_throw_error(env, nullptr, "CreatePromises: set element failed");
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(g_deferredMutex);
+        g_deferredStore[env].push_back(deferred);
+    }
+    return promiseArray;
+}
+
+static napi_value SettlePromises(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_deferred> deferreds;
+    {
+        std::lock_guard<std::mutex> lock(g_deferredMutex);
+        auto it = g_deferredStore.find(env);
+        if (it != g_deferredStore.end()) {
+            deferreds = std::move(it->second);
+            g_deferredStore.erase(it);
+        }
+    }
+    napi_value value = nullptr;
+    napi_get_undefined(env, &value);
+    bool resolveNext = true;
+    for (napi_deferred deferred : deferreds) {
+        if (resolveNext) {
+            napi_resolve_deferred(env, deferred, value);
+        } else {
+            napi_reject_deferred(env, deferred, value);
+        }
+        resolveNext = !resolveNext;
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value ClearDeferreds(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_deferred> deferreds;
+    {
+        std::lock_guard<std::mutex> lock(g_deferredMutex);
+        auto it = g_deferredStore.find(env);
+        if (it != g_deferredStore.end()) {
+            deferreds = std::move(it->second);
+            g_deferredStore.erase(it);
+        }
+    }
+    napi_value value = nullptr;
+    napi_get_undefined(env, &value);
+    for (napi_deferred deferred : deferreds) {
+        napi_resolve_deferred(env, deferred, value);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static void TsfnCallJs(napi_env env, napi_value jsCallback, void* context, void* data)
+{
+    (void)env;
+    (void)jsCallback;
+    (void)context;
+    (void)data;
+}
+
+static void TsfnFinalize(napi_env env, void* data, void* hint)
+{
+    (void)env;
+    (void)data;
+    (void)hint;
+}
+
+static napi_value CreateThreadsafeFunctions(napi_env env, napi_callback_info info)
+{
+    size_t argc = ARGC_TWO;
+    napi_value args[ARGC_TWO] = {nullptr, nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < ARGC_TWO || args[0] == nullptr || args[1] == nullptr) {
+        napi_throw_error(env, nullptr, "CreateThreadsafeFunctions: callback and count are required");
+        return nullptr;
+    }
+    int32_t count = 0;
+    if (napi_get_value_int32(env, args[1], &count) != napi_ok || count <= 0) {
+        napi_throw_error(env, nullptr, "CreateThreadsafeFunctions: invalid count");
+        return nullptr;
+    }
+    {
+        std::lock_guard<std::mutex> lock(g_tsfnMutex);
+        auto it = g_tsfnStore.find(env);
+        if (it != g_tsfnStore.end() && !it->second.empty()) {
+            napi_throw_error(env, nullptr, "CreateThreadsafeFunctions: previous functions not released");
+            return nullptr;
+        }
+    }
+    napi_value resourceName = nullptr;
+    if (napi_create_string_utf8(env, "GetGlobalHandleCountTsfn", NAPI_AUTO_LENGTH, &resourceName) != napi_ok) {
+        napi_throw_error(env, nullptr, "CreateThreadsafeFunctions: create resource name failed");
+        return nullptr;
+    }
+    for (int32_t i = 0; i < count; i++) {
+        napi_threadsafe_function tsfn = nullptr;
+        napi_status status = napi_create_threadsafe_function(env, args[0], nullptr, resourceName, 0, 1,
+            nullptr, TsfnFinalize, nullptr, TsfnCallJs, &tsfn);
+        if (status != napi_ok) {
+            napi_throw_error(env, nullptr, "CreateThreadsafeFunctions: create threadsafe function failed");
+            return nullptr;
+        }
+        std::lock_guard<std::mutex> lock(g_tsfnMutex);
+        g_tsfnStore[env].push_back(tsfn);
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value AcquireThreadsafeFunctions(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_threadsafe_function> funcs;
+    {
+        std::lock_guard<std::mutex> lock(g_tsfnMutex);
+        auto it = g_tsfnStore.find(env);
+        if (it != g_tsfnStore.end()) {
+            funcs = it->second;
+        }
+    }
+    if (funcs.empty()) {
+        napi_throw_error(env, nullptr, "AcquireThreadsafeFunctions: no threadsafe functions stored");
+        return nullptr;
+    }
+    for (napi_threadsafe_function func : funcs) {
+        if (napi_acquire_threadsafe_function(func) != napi_ok) {
+            napi_throw_error(env, nullptr, "AcquireThreadsafeFunctions: acquire failed");
+            return nullptr;
+        }
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value ReleaseThreadsafeFunctions(napi_env env, napi_callback_info info)
+{
+    std::vector<napi_threadsafe_function> funcs;
+    {
+        std::lock_guard<std::mutex> lock(g_tsfnMutex);
+        auto it = g_tsfnStore.find(env);
+        if (it != g_tsfnStore.end()) {
+            funcs = std::move(it->second);
+            g_tsfnStore.erase(it);
+        }
+    }
+    for (napi_threadsafe_function func : funcs) {
+        // The acquire in AcquireThreadsafeFunctions leaves threadCount_ above zero, which
+        // per the Node.js contract would keep the function alive until every thread calls
+        // release. This code intentionally relies on the OpenHarmony-specific semantics:
+        // napi_release_threadsafe_function with napi_tsfn_abort forces finalization
+        // regardless of the remaining thread count (native_safe_async_work.cpp).
+        napi_status status = napi_release_threadsafe_function(func, napi_tsfn_abort);
+        // napi_generic_failure means the function is already closing or closed.
+        if (status != napi_ok && status != napi_generic_failure) {
+            napi_throw_error(env, nullptr, "ReleaseThreadsafeFunctions: release failed");
+            return nullptr;
+        }
+    }
+    napi_value result = nullptr;
+    napi_get_boolean(env, true, &result);
+    return result;
+}
 
 static void *CreateSubEnvFunc(void *arg)
 {
@@ -91,6 +728,29 @@ static napi_value Init(napi_env env, napi_value exports)
         {"add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"saveMainEnv", nullptr, SaveMainEnv, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"destroyEnv", nullptr, DestroyEnv, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createStrongRefs", nullptr, CreateStrongRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"deleteStrongRefs", nullptr, DeleteStrongRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clearStrongRefs", nullptr, ClearStrongRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createStrongSendableRefs", nullptr, CreateStrongSendableRefs,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clearStrongSendableRefs", nullptr, ClearStrongSendableRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createNapiRefs", nullptr, CreateNapiRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"refNapiRefs", nullptr, RefNapiRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"unrefNapiRefs", nullptr, UnrefNapiRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"deleteNapiRefs", nullptr, DeleteNapiRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clearNapiRefs", nullptr, ClearNapiRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"wrapObjects", nullptr, WrapObjects, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"removeWraps", nullptr, RemoveWraps, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clearWrapRefs", nullptr, ClearWrapRefs, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createPromises", nullptr, CreatePromises, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"settlePromises", nullptr, SettlePromises, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clearDeferreds", nullptr, ClearDeferreds, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"createThreadsafeFunctions", nullptr, CreateThreadsafeFunctions,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"acquireThreadsafeFunctions", nullptr, AcquireThreadsafeFunctions,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"releaseThreadsafeFunctions", nullptr, ReleaseThreadsafeFunctions,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
