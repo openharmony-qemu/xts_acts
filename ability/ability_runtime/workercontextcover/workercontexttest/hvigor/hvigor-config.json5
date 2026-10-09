@@ -19,8 +19,5 @@
   "execution": {},
   "logging": {},
   "debugging": {},
-  "nodeOptions": {},
-  "properties": {
-    "ohos.byteCodeHar.integratedOptimization": true
-  }
+  "nodeOptions": {}
 }

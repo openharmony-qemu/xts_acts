@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
-import { Hypium, Level } from '@ohos/hypium-dynamic'
+import { Hypium, Level } from '@ohos/hypium'
 import testsuite from '../../test/List.test'
 
 @Entry
