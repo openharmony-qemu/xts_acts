@@ -58,7 +58,7 @@
                 "./resource/image/1.webp ->/data/local/tmp/",
                 "./resource/image/loop_count_9.webp ->/data/local/tmp/",
                 "./resource/image/test_webp_exif.webp ->/data/local/tmp/",
-                "./setup_image_exifGetModify_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_exifGetModify_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
