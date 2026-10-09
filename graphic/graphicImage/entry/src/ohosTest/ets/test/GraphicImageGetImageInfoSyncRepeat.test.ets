@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium-dynamic"
+import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium"
 import { BusinessError } from '@ohos.base';
 import image from '@ohos.multimedia.image';
 
