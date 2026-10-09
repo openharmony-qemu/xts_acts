@@ -36,7 +36,8 @@ static napi_value BackgroundProcessManagerInvalidParam(napi_env env, napi_callba
     napi_value result;
     int ret = 0;
     int pid = 12;
-    BackgroundProcessManager_ProcessPriority priority;
+    BackgroundProcessManager_ProcessPriority priority =
+        static_cast<BackgroundProcessManager_ProcessPriority>(0);
     ret = OH_BackgroundProcessManager_SetProcessPriority(pid, priority);
     napi_create_int32(env, ret == ERR_BACKGROUND_PROCESS_MANAGER_INVALID_PARAM ? 0 : -1, &result);
     return result;
@@ -47,7 +48,8 @@ static napi_value SetProcessPriorityInvalidParam(napi_env env, napi_callback_inf
     napi_value result;
     int ret = 0;
     int pid = 12;
-    BackgroundProcessManager_ProcessPriority priority;
+    BackgroundProcessManager_ProcessPriority priority =
+        static_cast<BackgroundProcessManager_ProcessPriority>(0);
     ret = OH_BackgroundProcessManager_SetProcessPriority(pid, priority);
     napi_create_int32(env, ret == ERR_BACKGROUND_PROCESS_MANAGER_INVALID_PARAM ? 0 : -1, &result);
     return result;
