@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,7 +45,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackNormal';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let len = font.countText(text);
         let points: common2D.Point[] = [];
@@ -79,7 +79,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackChineseText';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = '你好世界';
         let len = font.countText(text);
         let points: common2D.Point[] = [];
@@ -90,6 +90,10 @@ export default function DrawingTsTextBlobPart4Test() {
         console.info(msg + ' makeFromPosTextWithFallback with Chinese text succeeded');
         expect(Array.isArray(textBlobs)).assertTrue();
         expect(textBlobs.length > 0).assertTrue();
+        for (let blob of textBlobs) {
+          expect(blob != null && blob != undefined).assertTrue();
+          expect(blob.uniqueID() > 0).assertTrue();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
@@ -109,7 +113,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackMixedText';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'Hello你好World世界';
         let len = font.countText(text);
         let points: common2D.Point[] = [];
@@ -120,6 +124,10 @@ export default function DrawingTsTextBlobPart4Test() {
         console.info(msg + ' makeFromPosTextWithFallback with mixed text succeeded');
         expect(Array.isArray(textBlobs)).assertTrue();
         expect(textBlobs.length > 0).assertTrue();
+        for (let blob of textBlobs) {
+          expect(blob != null && blob != undefined).assertTrue();
+          expect(blob.uniqueID() > 0).assertTrue();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
@@ -139,7 +147,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackReturnType';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let len = font.countText(text);
         let points: common2D.Point[] = [];
@@ -166,44 +174,149 @@ export default function DrawingTsTextBlobPart4Test() {
     });
 
     /**
-     * @tc.name   testMakeFromPosTextWithFallbackEmptyText
+     * @tc.name   testMakeFromPosTextWithFallbackReturnEmptyArray
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0500
-     * @tc.desc   test makeFromPosTextWithFallback with empty text.
+     * @tc.desc   test makeFromPosTextWithFallback return empty array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testMakeFromPosTextWithFallbackEmptyText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testMakeFromPosTextWithFallbackEmptyText';
+    it('testMakeFromPosTextWithFallbackReturnEmptyArray', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+      const msg = 'testMakeFromPosTextWithFallbackReturnEmptyArray';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = '';
-        let len = 0;
+        let len = font.countText(text);
         let points: common2D.Point[] = [];
         let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        console.info(msg + ' makeFromPosTextWithFallback with empty text succeeded');
-        expect().assertFail();
+        console.info(msg + ' makeFromPosTextWithFallback return empty array succeeded');
+        expect(Array.isArray(textBlobs)).assertTrue();
+        expect(textBlobs.length === 0).assertTrue();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testMakeFromPosTextWithFallbackLongText
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0600
+     * @tc.desc   test makeFromPosTextWithFallback with text length about 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMakeFromPosTextWithFallbackLongText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+      const msg = 'testMakeFromPosTextWithFallbackLongText';
+      try {
+        let font = new drawing.Font();
+        font.setSize(50);
+        let text = 'drawing'.repeat(15);
+        console.info(msg + ` text length: ${text.length}`);
+        let len = font.countText(text);
+        console.info(msg + ` glyph count: ${len}`);
+        let points: common2D.Point[] = [];
+        for (let i = 0; i < len; i++) {
+          points.push({x: i * 20, y: 50});
+        }
+        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
+        console.info(msg + ' makeFromPosTextWithFallback with long text succeeded');
+        expect(Array.isArray(textBlobs)).assertTrue();
+        expect(textBlobs.length > 0).assertTrue();
+        for (let blob of textBlobs) {
+          expect(blob != null && blob != undefined).assertTrue();
+          expect(blob.uniqueID() > 0).assertTrue();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testMakeFromPosTextWithFallbackKoreanText
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0700
+     * @tc.desc   test makeFromPosTextWithFallback with Korean text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMakeFromPosTextWithFallbackKoreanText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+      const msg = 'testMakeFromPosTextWithFallbackKoreanText';
+      try {
+        let font = new drawing.Font();
+        font.setSize(50);
+        let text = '안녕하세요 세계';
+        let len = font.countText(text);
+        let points: common2D.Point[] = [];
+        for (let i = 0; i < len; i++) {
+          points.push({x: i * 30, y: 50});
+        }
+        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
+        console.info(msg + ' makeFromPosTextWithFallback with Korean text succeeded');
+        expect(Array.isArray(textBlobs)).assertTrue();
+        expect(textBlobs.length > 0).assertTrue();
+        for (let blob of textBlobs) {
+          expect(blob != null && blob != undefined).assertTrue();
+          expect(blob.uniqueID() > 0).assertTrue();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testMakeFromPosTextWithFallbackSpecialCharacters
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0800
+     * @tc.desc   test makeFromPosTextWithFallback with special characters and emoji.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testMakeFromPosTextWithFallbackSpecialCharacters', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+      const msg = 'testMakeFromPosTextWithFallbackSpecialCharacters';
+      try {
+        let font = new drawing.Font();
+        font.setSize(50);
+        let text = 'Hello🌍世界';
+        let len = font.countText(text);
+        let points: common2D.Point[] = [];
+        for (let i = 0; i < len; i++) {
+          points.push({x: i * 30, y: 50});
+        }
+        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
+        console.info(msg + ' makeFromPosTextWithFallback with special characters succeeded');
+        expect(Array.isArray(textBlobs)).assertTrue();
+        expect(textBlobs.length > 0).assertTrue();
+        for (let blob of textBlobs) {
+          expect(blob != null && blob != undefined).assertTrue();
+          expect(blob.uniqueID() > 0).assertTrue();
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
+        expect().assertFail();
       }
     });
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackLenFloat
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0600
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0900
      * @tc.desc   test makeFromPosTextWithFallback with float len.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL2
      */
-    it('testMakeFromPosTextWithFallbackLenFloat', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testMakeFromPosTextWithFallbackLenFloat', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testMakeFromPosTextWithFallbackLenFloat';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let len = font.countText(text);
         let points: common2D.Point[] = [];
@@ -224,32 +337,33 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackLenZero
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0700
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1000
      * @tc.desc   test makeFromPosTextWithFallback with zero len.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL2
      */
-    it('testMakeFromPosTextWithFallbackLenZero', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testMakeFromPosTextWithFallbackLenZero', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       const msg = 'testMakeFromPosTextWithFallbackLenZero';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let points: common2D.Point[] = [];
         let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, 0, points, font);
         console.info(msg + ' makeFromPosTextWithFallback with zero len succeeded');
-        expect().assertFail();
+        expect(Array.isArray(textBlobs)).assertTrue();
+        expect(textBlobs.length === 0).assertTrue();
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
     });
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackLenNegative
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0800
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1100
      * @tc.desc   test makeFromPosTextWithFallback with negative len. error code 25900001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +373,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackLenNegative';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let points: common2D.Point[] = [{x: 100, y: 100}];
         drawing.TextBlob.makeFromPosTextWithFallback(text, -1, points, font);
@@ -274,7 +388,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackLenExceed
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_0900
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1200
      * @tc.desc   test makeFromPosTextWithFallback with len exceeding text length. error code 25900001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -284,7 +398,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackLenExceed';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let len = font.countText(text);
         let points: common2D.Point[] = [];
@@ -303,8 +417,8 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsEmpty
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1000
-     * @tc.desc   test makeFromPosTextWithFallback with empty points array. error code 25900001 test.
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1300
+     * @tc.desc   test makeFromPosTextWithFallback with empty points array but non-empty text. error code 25900001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -313,7 +427,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackPointsEmpty';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let len = font.countText(text);
         let points: common2D.Point[] = [];
@@ -323,13 +437,13 @@ export default function DrawingTsTextBlobPart4Test() {
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual(25900001);
       }
     });
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsLengthMismatch
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1400
      * @tc.desc   test makeFromPosTextWithFallback with points length mismatch. error code 25900001 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -339,7 +453,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackPointsLengthMismatch';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let text = 'drawing';
         let len = font.countText(text);
         let points: common2D.Point[] = [{x: 100, y: 100}];
@@ -355,7 +469,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsMaxValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1500
      * @tc.desc   test makeFromPosTextWithFallback with points of MAX_VALUE coordinates.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +479,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackPointsMaxValue';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let points: common2D.Point[] = [{x: Number.MAX_VALUE, y: Number.MAX_VALUE}];
         let len = font.countText('A');
         let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback('A', len, points, font);
@@ -381,7 +495,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsMinValue
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1600
      * @tc.desc   test makeFromPosTextWithFallback with points of MIN_VALUE coordinates.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -391,7 +505,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackPointsMinValue';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let points: common2D.Point[] = [{x: Number.MIN_VALUE, y: Number.MIN_VALUE}];
         let len = font.countText('A');
         let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback('A', len, points, font);
@@ -407,17 +521,17 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsNegative
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1400
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1700
      * @tc.desc   test makeFromPosTextWithFallback with negative coordinate values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testMakeFromPosTextWithFallbackPointsNegative', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testMakeFromPosTextWithFallbackPointsNegative', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMakeFromPosTextWithFallbackPointsNegative';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let points: common2D.Point[] = [{x: -100, y: -100}];
         let len = font.countText('A');
         let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback('A', len, points, font);
@@ -433,17 +547,17 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsFloat
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1500
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1800
      * @tc.desc   test makeFromPosTextWithFallback with float coordinate values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('testMakeFromPosTextWithFallbackPointsFloat', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
+    it('testMakeFromPosTextWithFallbackPointsFloat', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testMakeFromPosTextWithFallbackPointsFloat';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let points: common2D.Point[] = [{x: 10.5, y: 20.5}];
         let len = font.countText('A');
         let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback('A', len, points, font);
@@ -458,34 +572,8 @@ export default function DrawingTsTextBlobPart4Test() {
     });
 
     /**
-     * @tc.name   testMakeFromPosTextWithFallbackPointsZero
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1600
-     * @tc.desc   test makeFromPosTextWithFallback with zero coordinate values.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testMakeFromPosTextWithFallbackPointsZero', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testMakeFromPosTextWithFallbackPointsZero';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let points: common2D.Point[] = [{x: 0, y: 0}];
-        let len = font.countText('A');
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback('A', len, points, font);
-        console.info(msg + ' makeFromPosTextWithFallback with zero coordinates succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.name   testMakeFromPosTextWithFallbackTextNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1700
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1900
      * @tc.desc   test makeFromPosTextWithFallback with text null. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -495,9 +583,10 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackTextNull';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
+        let len = font.countText('A');
         let points: common2D.Point[] = [{x: 100, y: 100}];
-        drawing.TextBlob.makeFromPosTextWithFallback(null, 1, points, font);
+        drawing.TextBlob.makeFromPosTextWithFallback(null, len, points, font);
         console.info(msg + ' makeFromPosTextWithFallback with null text succeeded');
         expect().assertFail();
       } catch (e) {
@@ -509,7 +598,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackLenNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1800
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2000
      * @tc.desc   test makeFromPosTextWithFallback with len null. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -519,7 +608,8 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackLenNull';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
+        let len = font.countText('A');
         let points: common2D.Point[] = [{x: 100, y: 100}];
         drawing.TextBlob.makeFromPosTextWithFallback('A', null, points, font);
         console.info(msg + ' makeFromPosTextWithFallback with null len succeeded');
@@ -533,7 +623,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_1900
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2100
      * @tc.desc   test makeFromPosTextWithFallback with points null. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -543,7 +633,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackPointsNull';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let len = font.countText('A');
         drawing.TextBlob.makeFromPosTextWithFallback('A', len, null, font);
         console.info(msg + ' makeFromPosTextWithFallback with null points succeeded');
@@ -557,7 +647,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackFontNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2000
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2200
      * @tc.desc   test makeFromPosTextWithFallback with font null. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -567,7 +657,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackFontNull';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let len = font.countText('A');
         let points: common2D.Point[] = [{x: 100, y: 100}];
         drawing.TextBlob.makeFromPosTextWithFallback('A', len, points, null);
@@ -582,7 +672,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackTextUndefined
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2100
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2300
      * @tc.desc   test makeFromPosTextWithFallback with text undefined. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -592,9 +682,10 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackTextUndefined';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
+        let len = font.countText('A');
         let points: common2D.Point[] = [{x: 100, y: 100}];
-        drawing.TextBlob.makeFromPosTextWithFallback(undefined, 1, points, font);
+        drawing.TextBlob.makeFromPosTextWithFallback(undefined, len, points, font);
         console.info(msg + ' makeFromPosTextWithFallback with undefined text succeeded');
         expect().assertFail();
       } catch (e) {
@@ -606,7 +697,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackLenUndefined
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2200
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2400
      * @tc.desc   test makeFromPosTextWithFallback with len undefined. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -616,7 +707,8 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackLenUndefined';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
+        let len = font.countText('A');
         let points: common2D.Point[] = [{x: 100, y: 100}];
         drawing.TextBlob.makeFromPosTextWithFallback('A', undefined, points, font);
         console.info(msg + ' makeFromPosTextWithFallback with undefined len succeeded');
@@ -630,7 +722,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackPointsUndefined
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2300
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2500
      * @tc.desc   test makeFromPosTextWithFallback with points undefined. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -640,7 +732,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackPointsUndefined';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let len = font.countText('A');
         drawing.TextBlob.makeFromPosTextWithFallback('A', len, undefined, font);
         console.info(msg + ' makeFromPosTextWithFallback with undefined points succeeded');
@@ -654,7 +746,7 @@ export default function DrawingTsTextBlobPart4Test() {
 
     /**
      * @tc.name   testMakeFromPosTextWithFallbackFontUndefined
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2400
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2600
      * @tc.desc   test makeFromPosTextWithFallback with font undefined. error code 401 test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -664,7 +756,7 @@ export default function DrawingTsTextBlobPart4Test() {
       const msg = 'testMakeFromPosTextWithFallbackFontUndefined';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
+        font.setSize(50);
         let len = font.countText('A');
         let points: common2D.Point[] = [{x: 100, y: 100}];
         drawing.TextBlob.makeFromPosTextWithFallback('A', len, points, undefined);
@@ -674,77 +766,6 @@ export default function DrawingTsTextBlobPart4Test() {
         e = e as BusinessError;
         console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
         expect(e.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromPosTextWithFallbackMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2500
-     * @tc.desc   test makeFromPosTextWithFallback multiple calls return different objects.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMakeFromPosTextWithFallbackMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromPosTextWithFallbackMultipleCalls';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let text = 'drawing';
-        let len = font.countText(text);
-        let points: common2D.Point[] = [];
-        for (let i = 0; i < len; i++) {
-          points.push({x: i * 20, y: 50});
-        }
-        let textBlobs1: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        let textBlobs2: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        console.info(msg + ' multiple calls succeeded');
-        expect(Array.isArray(textBlobs1)).assertTrue();
-        expect(Array.isArray(textBlobs2)).assertTrue();
-        expect(textBlobs1.length > 0).assertTrue();
-        expect(textBlobs2.length > 0).assertTrue();
-        if (textBlobs1.length > 0 && textBlobs2.length > 0) {
-          let id1 = textBlobs1[0].uniqueID();
-          let id2 = textBlobs2[0].uniqueID();
-          console.info(msg + ` id1: ${id1}, id2: ${id2}`);
-          expect(id1 != id2).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromPosTextWithFallbackWithCanvas
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2600
-     * @tc.desc   test makeFromPosTextWithFallback with Canvas drawTextBlob joint call.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMakeFromPosTextWithFallbackWithCanvas', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromPosTextWithFallbackWithCanvas';
-      try {
-        let canvas = new drawing.Canvas(pixelMap);
-        let font = new drawing.Font();
-        font.setSize(20);
-        let text = 'drawing';
-        let len = font.countText(text);
-        let points: common2D.Point[] = [];
-        for (let i = 0; i < len; i++) {
-          points.push({x: i * 20, y: 50});
-        }
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        for (let blob of textBlobs) {
-          canvas.drawTextBlob(blob, 10, 10);
-        }
-        console.info(msg + ' makeFromPosTextWithFallback with Canvas succeeded');
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
       }
     });
 
@@ -785,493 +806,26 @@ export default function DrawingTsTextBlobPart4Test() {
     });
 
     /**
-     * @tc.name   testMakeFromPosTextWithFallbackSpecialCharacters
+     * @tc.name   testMakeFromPosTextWithFallbackMultipleCalls
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2800
-     * @tc.desc   test makeFromPosTextWithFallback with special characters and emoji.
+     * @tc.desc   test makeFromPosTextWithFallback multiple calls return different objects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testMakeFromPosTextWithFallbackSpecialCharacters', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromPosTextWithFallbackSpecialCharacters';
+    it('testMakeFromPosTextWithFallbackMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testMakeFromPosTextWithFallbackMultipleCalls';
       try {
         let font = new drawing.Font();
-        font.setSize(20);
-        let text = 'Hello🌍世界';
+        font.setSize(50);
+        let text = 'drawing';
         let len = font.countText(text);
-        let points: common2D.Point[] = [];
-        for (let i = 0; i < len; i++) {
-          points.push({x: i * 30, y: 50});
-        }
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        console.info(msg + ' makeFromPosTextWithFallback with special characters succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromPosTextWithFallbackLongText
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2900
-     * @tc.desc   test makeFromPosTextWithFallback with text length about 100.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testMakeFromPosTextWithFallbackLongText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testMakeFromPosTextWithFallbackLongText';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let text = 'drawing'.repeat(15);
-        console.info(msg + ` text length: ${text.length}`);
-        let len = font.countText(text);
-        console.info(msg + ` glyph count: ${len}`);
         let points: common2D.Point[] = [];
         for (let i = 0; i < len; i++) {
           points.push({x: i * 20, y: 50});
         }
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        console.info(msg + ' makeFromPosTextWithFallback with long text succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromPosTextWithFallbackKoreanText
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3000
-     * @tc.desc   test makeFromPosTextWithFallback with Korean text.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMakeFromPosTextWithFallbackKoreanText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromPosTextWithFallbackKoreanText';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let text = '안녕하세요 세계';
-        let len = font.countText(text);
-        console.info(msg + ` Korean text glyph count: ${len}`);
-        let points: common2D.Point[] = [];
-        for (let i = 0; i < len; i++) {
-          points.push({x: i * 30, y: 50});
-        }
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        console.info(msg + ' makeFromPosTextWithFallback with Korean text succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromPosTextWithFallbackReturnEmptyArray
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3100
-     * @tc.desc   test makeFromPosTextWithFallback return empty array.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testMakeFromPosTextWithFallbackReturnEmptyArray', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testMakeFromPosTextWithFallbackReturnEmptyArray';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let text = '';
-        let len = font.countText(text);
-        let points: common2D.Point[] = [];
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
-        console.info(msg + ' makeFromPosTextWithFallback return empty array succeeded');
-        expect().assertFail();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3200
-     * @tc.desc   test makeFromStringWithFallback with normal English text.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMakeFromStringWithFallbackNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testMakeFromStringWithFallbackNormal';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
-        console.info(msg + ' makeFromStringWithFallback succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackChineseText
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3300
-     * @tc.desc   test makeFromStringWithFallback with Chinese text.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMakeFromStringWithFallbackChineseText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testMakeFromStringWithFallbackChineseText';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('你好世界', font);
-        console.info(msg + ' makeFromStringWithFallback with Chinese text succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackMixedText
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3400
-     * @tc.desc   test makeFromStringWithFallback with mixed Chinese and English text.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMakeFromStringWithFallbackMixedText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testMakeFromStringWithFallbackMixedText';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('Hello你好World世界', font);
-        console.info(msg + ' makeFromStringWithFallback with mixed text succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackReturnType
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3500
-     * @tc.desc   test makeFromStringWithFallback return type validation.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testMakeFromStringWithFallbackReturnType', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testMakeFromStringWithFallbackReturnType';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
-        console.info(msg + ' makeFromStringWithFallback succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          let id = blob.uniqueID();
-          expect(id != null && id != undefined).assertTrue();
-          expect(id > 0).assertTrue();
-          let bounds = blob.bounds();
-          expect(bounds != null && bounds != undefined).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackEmptyText
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3600
-     * @tc.desc   test makeFromStringWithFallback with empty text.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testMakeFromStringWithFallbackEmptyText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testMakeFromStringWithFallbackEmptyText';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('', font);
-        console.info(msg + ' makeFromStringWithFallback with empty text succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length === 0).assertTrue();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackLongText
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3700
-     * @tc.desc   test makeFromStringWithFallback with text length about 100.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testMakeFromStringWithFallbackLongText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
-      const msg = 'testMakeFromStringWithFallbackLongText';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let text = 'drawing'.repeat(15);
-        console.info(msg + ` text length: ${text.length}`);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback(text, font);
-        console.info(msg + ' makeFromStringWithFallback with long text succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackKoreanText
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3800
-     * @tc.desc   test makeFromStringWithFallback with Korean text.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMakeFromStringWithFallbackKoreanText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromStringWithFallbackKoreanText';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('안녕하세요 세계', font);
-        console.info(msg + ' makeFromStringWithFallback with Korean text succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackSpecialCharacters
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3900
-     * @tc.desc   test makeFromStringWithFallback with special characters and emoji.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMakeFromStringWithFallbackSpecialCharacters', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromStringWithFallbackSpecialCharacters';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('Hello🌍世界', font);
-        console.info(msg + ' makeFromStringWithFallback with special characters succeeded');
-        expect(Array.isArray(textBlobs)).assertTrue();
-        expect(textBlobs.length > 0).assertTrue();
-        for (let blob of textBlobs) {
-          expect(blob != null && blob != undefined).assertTrue();
-          expect(blob.uniqueID() > 0).assertTrue();
-        }
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackTextNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_4000
-     * @tc.desc   test makeFromStringWithFallback with text null. error code 401 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testMakeFromStringWithFallbackTextNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
-      const msg = 'testMakeFromStringWithFallbackTextNull';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        drawing.TextBlob.makeFromStringWithFallback(null, font);
-        console.info(msg + ' makeFromStringWithFallback with null text succeeded');
-        expect().assertFail();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackFontNull
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_4100
-     * @tc.desc   test makeFromStringWithFallback with font null. error code 401 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testMakeFromStringWithFallbackFontNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
-      const msg = 'testMakeFromStringWithFallbackFontNull';
-      try {
-        drawing.TextBlob.makeFromStringWithFallback('drawing', null);
-        console.info(msg + ' makeFromStringWithFallback with null font succeeded');
-        expect().assertFail();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackTextUndefined
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_4200
-     * @tc.desc   test makeFromStringWithFallback with text undefined. error code 401 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testMakeFromStringWithFallbackTextUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
-      const msg = 'testMakeFromStringWithFallbackTextUndefined';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        drawing.TextBlob.makeFromStringWithFallback(undefined, font);
-        console.info(msg + ' makeFromStringWithFallback with undefined text succeeded');
-        expect().assertFail();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackFontUndefined
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_4300
-     * @tc.desc   test makeFromStringWithFallback with font undefined. error code 401 test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('testMakeFromStringWithFallbackFontUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
-      const msg = 'testMakeFromStringWithFallbackFontUndefined';
-      try {
-        drawing.TextBlob.makeFromStringWithFallback('drawing', undefined);
-        console.info(msg + ' makeFromStringWithFallback with undefined font succeeded');
-        expect().assertFail();
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect(e.code).assertEqual(401);
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackDifferentFontSize
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_4400
-     * @tc.desc   test makeFromStringWithFallback with different font sizes.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testMakeFromStringWithFallbackDifferentFontSize', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testMakeFromStringWithFallbackDifferentFontSize';
-      try {
-        let font = new drawing.Font();
-        font.setSize(10);
-        let textBlobs1: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
-        expect(Array.isArray(textBlobs1)).assertTrue();
-        expect(textBlobs1.length > 0).assertTrue();
-        font.setSize(50);
-        let textBlobs2: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
-        expect(Array.isArray(textBlobs2)).assertTrue();
-        expect(textBlobs2.length > 0).assertTrue();
-        font.setSize(100);
-        let textBlobs3: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
-        expect(Array.isArray(textBlobs3)).assertTrue();
-        expect(textBlobs3.length > 0).assertTrue();
-        console.info(msg + ' makeFromStringWithFallback with different font sizes succeeded');
-      } catch (e) {
-        e = e as BusinessError;
-        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   testMakeFromStringWithFallbackMultipleCalls
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_4500
-     * @tc.desc   test makeFromStringWithFallback multiple calls return different objects.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testMakeFromStringWithFallbackMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromStringWithFallbackMultipleCalls';
-      try {
-        let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs1: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
-        let textBlobs2: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
+        let textBlobs1: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
+        let textBlobs2: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
         console.info(msg + ' multiple calls succeeded');
         expect(Array.isArray(textBlobs1)).assertTrue();
         expect(Array.isArray(textBlobs2)).assertTrue();
@@ -1291,24 +845,68 @@ export default function DrawingTsTextBlobPart4Test() {
     });
 
     /**
-     * @tc.name   testMakeFromStringWithFallbackWithCanvas
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_4600
-     * @tc.desc   test makeFromStringWithFallback with Canvas drawTextBlob joint call.
+     * @tc.name   testMakeFromPosTextWithFallbackWithCanvas
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_2900
+     * @tc.desc   test makeFromPosTextWithFallback with Canvas drawTextBlob joint call.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testMakeFromStringWithFallbackWithCanvas', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testMakeFromStringWithFallbackWithCanvas';
+    it('testMakeFromPosTextWithFallbackWithCanvas', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testMakeFromPosTextWithFallbackWithCanvas';
       try {
         let canvas = new drawing.Canvas(pixelMap);
         let font = new drawing.Font();
-        font.setSize(20);
-        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromStringWithFallback('drawing', font);
-        for (let blob of textBlobs) {
-          canvas.drawTextBlob(blob, 20, 20);
+        font.setSize(50);
+        let text = 'drawing';
+        let len = font.countText(text);
+        let points: common2D.Point[] = [];
+        for (let i = 0; i < len; i++) {
+          points.push({x: i * 20, y: 50});
         }
-        console.info(msg + ' makeFromStringWithFallback with Canvas succeeded');
+        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
+        for (let blob of textBlobs) {
+          canvas.drawTextBlob(blob, 10, 10);
+        }
+        console.info(msg + ' makeFromPosTextWithFallback with Canvas succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.name   testMakeFromPosTextWithFallbackWithMeasureText
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_AI_TEXTBLOB_FALLBACK_3000
+     * @tc.desc   test makeFromPosTextWithFallback with measureTextWithFallback joint call.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testMakeFromPosTextWithFallbackWithMeasureText', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testMakeFromPosTextWithFallbackWithMeasureText';
+      try {
+        let font = new drawing.Font();
+        font.setSize(50);
+        let text = 'drawing';
+        let width = font.measureTextWithFallback(text, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+        console.info(msg + ` measureTextWithFallback succeeded, width: ${width}`);
+        expect(typeof width === 'number').assertTrue();
+        expect(width >= 0).assertTrue();
+        let len = font.countText(text);
+        let points: common2D.Point[] = [];
+        for (let i = 0; i < len; i++) {
+          points.push({x: i * 20, y: 50});
+        }
+        let textBlobs: Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, len, points, font);
+        console.info(msg + ' joint call with measureTextWithFallback succeeded');
+        expect(Array.isArray(textBlobs)).assertTrue();
+        expect(textBlobs.length > 0).assertTrue();
+        for (let blob of textBlobs) {
+          expect(blob != null && blob != undefined).assertTrue();
+          expect(blob.uniqueID() > 0).assertTrue();
+        }
       } catch (e) {
         e = e as BusinessError;
         console.info(msg + ` errorCode: ${e.code}, errorMsg: ${e.message}`);
