@@ -20,7 +20,7 @@
             "pre-push": [],
             "push": [
                 "./resource/image/test_large.svg ->/data/local/tmp/",
-                "./setup_image_svgJs_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_svgJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
