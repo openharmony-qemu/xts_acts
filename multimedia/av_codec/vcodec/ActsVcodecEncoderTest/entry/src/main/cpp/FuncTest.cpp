@@ -1342,8 +1342,8 @@ napi_value VideoEncoder264DmabufSuffix0010(napi_env env, napi_callback_info info
 
 napi_value VideoEncoder265DmabufSuffix0010(napi_env env, napi_callback_info info)
 {
-    cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    if (cap != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0) && InitAVCCodecName()) {
+    cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap_hevc != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0) && InitHEVCCodecName()) {
         auto vEncSample = make_shared<VEncAPI11Sample>();
         vEncSample->INP_DIR = "/data/storage/el2/base/files/media/1280_720_nv.yuv";
         vEncSample->DEFAULT_WIDTH = DEFAULT_WIDTH;
