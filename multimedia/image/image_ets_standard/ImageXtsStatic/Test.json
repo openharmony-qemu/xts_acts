@@ -80,7 +80,7 @@
                 "./resource/image/test_exif_v2.jpg ->/data/local/tmp/",
                 "./resource/image/test.webp ->/data/local/tmp/",
                 "./resource/image/test.png ->/data/local/tmp/",
-                "./setup_image_xtsStatic_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_xtsStatic_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
