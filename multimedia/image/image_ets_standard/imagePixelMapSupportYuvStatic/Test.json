@@ -24,7 +24,7 @@
                 "./resource/image/yuv_test_ote.jpg ->/data/local/tmp/",
                 "./resource/image/yuv_test_eto.jpg ->/data/local/tmp/",
                 "./resource/image/yuv_test_oto.jpeg ->/data/local/tmp/",
-                "./setup_image_pixelMapSupportYuv_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_pixelMapSupportYuv_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
