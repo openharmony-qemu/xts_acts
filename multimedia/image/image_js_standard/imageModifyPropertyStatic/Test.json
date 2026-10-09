@@ -23,7 +23,7 @@
                 "./resource/image/test.tiff ->/data/local/tmp/",
                 "./resource/image/moving_test_loop1.gif ->/data/local/tmp/",
                 "./resource/image/modifyBuffer.jpg ->/data/local/tmp/",
-                "./setup_image_modifyPropertyJs_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_modifyPropertyJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
