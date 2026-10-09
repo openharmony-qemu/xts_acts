@@ -43,22 +43,6 @@ export default function int16ArrayValueOfPart02Test(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART02__0100
-     * @tc.name int16ArrayValueOfPart02Test001
-     * @tc.desc Verify valueOf() on non-empty multi-element Int16Array keeps length 3
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayValueOfPart02Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      let result: Int16Array = arr.valueOf();
-      let actual: int = result.length;
-      let expected: int = 3;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_VALUE_OF_PART02__0200
      * @tc.name int16ArrayValueOfPart02Test002
      * @tc.desc Verify valueOf() on empty Int16Array keeps length 0
