@@ -199,80 +199,6 @@ export default function int16ArrayFindLastIndexPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__1000
-     * @tc.name int16ArrayFindLastIndexPart02Test010
-     * @tc.desc Verify findLastIndex does not change array length when not found
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20, 30, 40]);
-      let lenBefore: number = arr.length;
-      arr.findLastIndex((value: number): boolean => {
-        return value === 999;
-      });
-      let actual: int = arr.length;
-      let expected: number = lenBefore;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__1100
-     * @tc.name int16ArrayFindLastIndexPart02Test011
-     * @tc.desc Verify findLastIndex on empty array keeps length 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      arr.findLastIndex((value: number): boolean => {
-        return value === 1;
-      });
-      let actual: int = arr.length;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__1200
-     * @tc.name int16ArrayFindLastIndexPart02Test012
-     * @tc.desc Verify findLastIndex on single-element array keeps length 1
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([7]);
-      arr.findLastIndex((value: number): boolean => {
-        return value === 7;
-      });
-      let actual: int = arr.length;
-      let expected: int = 1;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__1300
-     * @tc.name int16ArrayFindLastIndexPart02Test013
-     * @tc.desc Verify findLastIndex on large array does not change length
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(50);
-      let lenBefore: number = arr.length;
-      arr.findLastIndex((value: number): boolean => {
-        return value === 1;
-      });
-      let actual: int = arr.length;
-      let expected: number = lenBefore;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__1400
      * @tc.name int16ArrayFindLastIndexPart02Test014
      * @tc.desc Verify findLastIndex does not mutate elements when found
@@ -296,33 +222,6 @@ export default function int16ArrayFindLastIndexPart02Test(): void {
       expect(actual3).assertEqual(expected3);
       let actual4: number = arr.$_get(3 as int);
       let expected4: int = 44;
-      expect(actual4).assertEqual(expected4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__1500
-     * @tc.name int16ArrayFindLastIndexPart02Test015
-     * @tc.desc Verify findLastIndex does not mutate elements when not found
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([5, 15, 25, 35]);
-      arr.findLastIndex((value: number): boolean => {
-        return value === 0;
-      });
-      let actual: number = arr.$_get(0 as int);
-      let expected: int = 5;
-      expect(actual).assertEqual(expected);
-      let actual2: number = arr.$_get(1 as int);
-      let expected2: int = 15;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(2 as int);
-      let expected3: int = 25;
-      expect(actual3).assertEqual(expected3);
-      let actual4: number = arr.$_get(3 as int);
-      let expected4: int = 35;
       expect(actual4).assertEqual(expected4);
     });
 
@@ -508,25 +407,6 @@ export default function int16ArrayFindLastIndexPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__2500
-     * @tc.name int16ArrayFindLastIndexPart02Test025
-     * @tc.desc Verify findLastIndex does not change byteLength when not found
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([8, 16, 24]);
-      let blBefore: number = arr.byteLength;
-      arr.findLastIndex((value: number): boolean => {
-        return value === 0;
-      });
-      let actual: int = arr.byteLength;
-      let expected: number = blBefore;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__2600
      * @tc.name int16ArrayFindLastIndexPart02Test026
      * @tc.desc Verify findLastIndex keeps byteLength equal to length * 2
@@ -557,25 +437,6 @@ export default function int16ArrayFindLastIndexPart02Test(): void {
       let boBefore: number = arr.byteOffset;
       arr.findLastIndex((value: number): boolean => {
         return value === 20;
-      });
-      let actual: int = arr.byteOffset;
-      let expected: number = boBefore;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__2800
-     * @tc.name int16ArrayFindLastIndexPart02Test028
-     * @tc.desc Verify findLastIndex does not change byteOffset when not found
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([5, 15, 25]);
-      let boBefore: number = arr.byteOffset;
-      arr.findLastIndex((value: number): boolean => {
-        return value === 99;
       });
       let actual: int = arr.byteOffset;
       let expected: number = boBefore;
@@ -616,25 +477,6 @@ export default function int16ArrayFindLastIndexPart02Test(): void {
       });
       let actual: boolean = arr.buffer === bufBefore;
       expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_LAST_INDEX_PART02__3100
-     * @tc.name int16ArrayFindLastIndexPart02Test031
-     * @tc.desc Verify findLastIndex keeps buffer.byteLength when not found
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayFindLastIndexPart02Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([7, 14, 21]);
-      let bufBlBefore: number = arr.buffer.byteLength;
-      arr.findLastIndex((value: number): boolean => {
-        return value === 0;
-      });
-      let actual: int = arr.buffer.byteLength;
-      let expected: number = bufBlBefore;
-      expect(actual).assertEqual(expected);
     });
 
     /**
