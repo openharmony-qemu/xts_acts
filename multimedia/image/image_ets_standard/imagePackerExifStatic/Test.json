@@ -29,7 +29,7 @@
                 "./resource/image/test_exif_v3.jpg ->/data/local/tmp/",
                 "./resource/image/test_exif_v3.png ->/data/local/tmp/",
                 "./resource/image/test_exif_v3.webp ->/data/local/tmp/",
-                "./setup_image_packerExif_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_packerExif_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
