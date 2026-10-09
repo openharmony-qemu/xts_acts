@@ -23,7 +23,7 @@
                 "./resource/image/test.jpg ->/data/local/tmp/",
                 "./resource/image/test.bmp ->/data/local/tmp/",
                 "./resource/image/test.png ->/data/local/tmp/",
-                "./setup_image_qualityEnhancement_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_qualityEnhancement_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
