@@ -38,7 +38,7 @@
                 "./resource/image/LHDR.jpg ->/data/local/tmp/",
                 "./resource/image/LHDR.heic ->/data/local/tmp/",
                 "./resource/image/test_aisr.dng ->/data/local/tmp/",
-                "./setup_image_picture_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_picture_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
