@@ -42,25 +42,6 @@ export default function Int16ArraySliceTest02(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_0100
-     * @tc.name testInt16ArraySliceTestTwo001
-     * @tc.desc Verify slice(-2) copy contains last two elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(11, 22, 33, 44, 55);
-      let result: Int16Array = arr.slice(-2);
-      let r1: number = result.$_get(0 as int);
-      let e1: int = 44;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1 as int);
-      let e2: int = 55;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_0200
      * @tc.name testInt16ArraySliceTestTwo002
      * @tc.desc Verify slice(-3, -1) copy contains third-last and second-last
@@ -77,64 +58,6 @@ export default function Int16ArraySliceTest02(): void {
       let r2: number = result.$_get(1 as int);
       let e2: int = 44;
       expect(r2).assertEqual(e2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_0300
-     * @tc.name testInt16ArraySliceTestTwo003
-     * @tc.desc Verify slice(1) copy contains elements from index 1 to end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(11, 22, 33, 44, 55);
-      let result: Int16Array = arr.slice(1);
-      let r1: number = result.$_get(0 as int);
-      let e1: int = 22;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(1 as int);
-      let e2: int = 33;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(2 as int);
-      let e3: int = 44;
-      expect(r3).assertEqual(e3);
-      let r4: number = result.$_get(3 as int);
-      let e4: int = 55;
-      expect(r4).assertEqual(e4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_0400
-     * @tc.name testInt16ArraySliceTestTwo004
-     * @tc.desc Verify slice(0, length) join equals no-arg slice join
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(11, 22, 33, 44, 55);
-      let result: Int16Array = arr.slice(0, arr.length);
-      let full: Int16Array = arr.slice();
-      let r1: string = result.join();
-      let e1: string = full.join();
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_0500
-     * @tc.name testInt16ArraySliceTestTwo005
-     * @tc.desc Verify slice(0, 1) copy contains only first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(100, 200, 300, 400, 500);
-      let result: Int16Array = arr.slice(0, 1);
-      let r1: number = result.$_get(0 as int);
-      let e1: int = 100;
-      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -182,22 +105,6 @@ export default function Int16ArraySliceTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_0800
-     * @tc.name testInt16ArraySliceTestTwo008
-     * @tc.desc Verify slice() on single-element array copies that value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(42);
-      let result: Int16Array = arr.slice();
-      let r1: number = result.$_get(0 as int);
-      let e1: int = 42;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_0900
      * @tc.name testInt16ArraySliceTestTwo009
      * @tc.desc Verify slice() on empty array join equals empty string
@@ -210,38 +117,6 @@ export default function Int16ArraySliceTest02(): void {
       let result: Int16Array = arr.slice();
       let r1: string = result.join();
       let e1: string = '';
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_1000
-     * @tc.name testInt16ArraySliceTestTwo010
-     * @tc.desc Verify no-arg slice() copy length equals original length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice();
-      let r1: int = result.length;
-      let e1: number = arr.length;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_1100
-     * @tc.name testInt16ArraySliceTestTwo011
-     * @tc.desc Verify slice() on empty array yields length 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      let result: Int16Array = arr.slice();
-      let r1: int = result.length;
-      let e1: int = 0;
       expect(r1).assertEqual(e1);
     });
 
@@ -278,38 +153,6 @@ export default function Int16ArraySliceTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_1400
-     * @tc.name testInt16ArraySliceTestTwo014
-     * @tc.desc Verify slice(0, 0) empty copy byteLength equals 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice(0, 0);
-      let r1: int = result.byteLength;
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_1500
-     * @tc.name testInt16ArraySliceTestTwo015
-     * @tc.desc Verify slice() on empty array copy byteLength equals 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array();
-      let result: Int16Array = arr.slice();
-      let r1: int = result.byteLength;
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_1600
      * @tc.name testInt16ArraySliceTestTwo016
      * @tc.desc Verify slice() copy byteOffset is 0
@@ -320,22 +163,6 @@ export default function Int16ArraySliceTest02(): void {
     it('testInt16ArraySliceTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
       let result: Int16Array = arr.slice();
-      let r1: int = result.byteOffset;
-      let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_1700
-     * @tc.name testInt16ArraySliceTestTwo017
-     * @tc.desc Verify slice(-2) copy byteOffset is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice(-2);
       let r1: int = result.byteOffset;
       let e1: int = 0;
       expect(r1).assertEqual(e1);
@@ -426,89 +253,6 @@ export default function Int16ArraySliceTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_2300
-     * @tc.name testInt16ArraySliceTestTwo023
-     * @tc.desc Verify original length unchanged after slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice();
-      let r1: int = arr.length;
-      let e1: int = 5;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_2400
-     * @tc.name testInt16ArraySliceTestTwo024
-     * @tc.desc Verify original byteLength unchanged after slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let origByteLen: int = arr.byteLength;
-      let result: Int16Array = arr.slice();
-      let r1: int = arr.byteLength;
-      let e1: number = origByteLen;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_2500
-     * @tc.name testInt16ArraySliceTestTwo025
-     * @tc.desc Verify original BYTES_PER_ELEMENT unchanged after slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice();
-      let r1: int = arr.BYTES_PER_ELEMENT;
-      let e1: int = 2;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_2600
-     * @tc.name testInt16ArraySliceTestTwo026
-     * @tc.desc Verify original byteOffset unchanged after slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let origOffset: int = arr.byteOffset;
-      let result: Int16Array = arr.slice();
-      let r1: int = arr.byteOffset;
-      let e1: number = origOffset;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_2700
-     * @tc.name testInt16ArraySliceTestTwo027
-     * @tc.desc Verify original join result unchanged after slice()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let origJoin: string = arr.join(',');
-      let result: Int16Array = arr.slice();
-      let r1: string = arr.join(',');
-      let e1: string = origJoin;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_2800
      * @tc.name testInt16ArraySliceTestTwo028
      * @tc.desc Verify modifying slice() copy with fill does not change original
@@ -532,47 +276,6 @@ export default function Int16ArraySliceTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_2900
-     * @tc.name testInt16ArraySliceTestTwo029
-     * @tc.desc Verify copyWithin on slice() copy does not change original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice();
-      result.copyWithin(0, 1);
-      let r1: number = arr.$_get(0 as int);
-      let e1: int = 10;
-      expect(r1).assertEqual(e1);
-      let r2: number = arr.$_get(1 as int);
-      let e2: int = 20;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_3000
-     * @tc.name testInt16ArraySliceTestTwo030
-     * @tc.desc Verify set on slice() copy does not change original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice();
-      let src: Int16Array = Int16Array.of(99, 88);
-      result.set(src, 0);
-      let r1: number = arr.$_get(0 as int);
-      let e1: int = 10;
-      expect(r1).assertEqual(e1);
-      let r2: number = arr.$_get(1 as int);
-      let e2: int = 20;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_3100
      * @tc.name testInt16ArraySliceTestTwo031
      * @tc.desc Verify $_set on original after slice() does not change returned copy
@@ -586,63 +289,6 @@ export default function Int16ArraySliceTest02(): void {
       arr.$_set(0 as int, 777);
       let r1: number = result.$_get(0 as int);
       let e1: int = 10;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_3200
-     * @tc.name testInt16ArraySliceTestTwo032
-     * @tc.desc Verify original fill after slice() does not change returned copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice();
-      arr.fill(0);
-      let r1: number = result.$_get(0 as int);
-      let e1: int = 10;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(2 as int);
-      let e2: int = 30;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_3300
-     * @tc.name testInt16ArraySliceTestTwo033
-     * @tc.desc Verify reverse on original after slice() does not change returned copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.slice();
-      arr.reverse();
-      let r1: number = result.$_get(0 as int);
-      let e1: int = 10;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(4 as int);
-      let e2: int = 50;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_3400
-     * @tc.name testInt16ArraySliceTestTwo034
-     * @tc.desc Verify sort on original after slice() does not change returned copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(50, 10, 40, 20, 30);
-      let result: Int16Array = arr.slice();
-      arr.sort();
-      let r1: number = result.$_get(0 as int);
-      let e1: int = 50;
       expect(r1).assertEqual(e1);
     });
 
@@ -1278,47 +924,6 @@ export default function Int16ArraySliceTest02(): void {
       let r3: number = result.$_get(2 as int);
       let e3: int = 0;
       expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_6900
-     * @tc.name testInt16ArraySliceTestTwo069
-     * @tc.desc Verify slice(-3, -1) preserves all-zero values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Int16Array = Int16Array.of(0, 0, 0, 0, 0);
-      let result: Int16Array = source.slice(-3, -1);
-      let r1: int = result.length;
-      let e1: int = 2;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(0 as int);
-      let e2: int = 0;
-      expect(r2).assertEqual(e2);
-      let r3: number = result.$_get(1 as int);
-      let e3: int = 0;
-      expect(r3).assertEqual(e3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SLICE_TWO_7000
-     * @tc.name testInt16ArraySliceTestTwo070
-     * @tc.desc Verify slice(-1) preserves all-zero values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySliceTestTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let source: Int16Array = Int16Array.of(0, 0, 0, 0, 0);
-      let result: Int16Array = source.slice(-1);
-      let r1: int = result.length;
-      let e1: int = 1;
-      expect(r1).assertEqual(e1);
-      let r2: number = result.$_get(0 as int);
-      let e2: int = 0;
-      expect(r2).assertEqual(e2);
     });
 
     /**
