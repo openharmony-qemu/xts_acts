@@ -30,7 +30,7 @@
                 "./resource/image/test.jpeg ->/data/local/tmp/",
                 "./resource/image/test.webp ->/data/local/tmp/",
                 "./resource/image/HDRVividSingleLayer.heic ->/data/local/tmp/",
-                "./setup_image_packToFileGif_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_packToFileGif_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
