@@ -29,7 +29,7 @@
                 "./resource/image/test.raf ->/data/local/tmp/",
                 "./resource/image/test.rw2 ->/data/local/tmp/",
                 "./resource/image/test.jpg ->/data/local/tmp/",
-                "./setup_image_rawJs_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_rawJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
