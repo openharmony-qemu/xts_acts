@@ -148,12 +148,12 @@ export async function taskFunction3(index: number): Promise<number> {
             resolve(calculationResult);
           })
           .catch((error: BusinessError) => {
-            console.error(`¼ÆËãº¯ÊýÖ´ÐÐ³ö´í: ${error}`);
+            console.error(`ï¿½ï¿½ï¿½ãº¯ï¿½ï¿½Ö´ï¿½Ð³ï¿½ï¿½ï¿½: ${error}`);
             reject(error);
           });
       })
       .catch((error: BusinessError) => {
-        console.error(`¶¯Ì¬µ¼ÈëÄ£¿é³ö´í: ${error}`);
+        console.error(`ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½: ${error}`);
         reject(error);
       });
   });
@@ -197,7 +197,7 @@ export async function taskFunction5(index: number): Promise<number> {
 
     const shouldFail = Math.random() < 1;
     if (shouldFail) {
-      reject(new Error('Ä£ÄâÒì²½²Ù×÷Ê§°Ü'));
+      reject(new Error('Ä£ï¿½ï¿½ï¿½ì²½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½'));
     } else {
       setTimeout(() => {
         resolve();
@@ -238,7 +238,7 @@ export async function taskFunction6(index: number): Promise<number> {
     calculationResult = await calculate(index);
 
   } catch (error) {
-    console.error(`ÈÎÎñÖ´ÐÐ³ö´í: ${error}`);
+    console.error(`ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ð³ï¿½ï¿½ï¿½: ${error}`);
   }
 
   return calculationResult;
@@ -262,7 +262,7 @@ export async function taskFunction7(index: number): Promise<number> {
     calculationResult = await asyncCalculate1(index);
 
   } catch (error) {
-    console.error(`Ö´ÐÐÈÎÎñÊ±³ö´í: ${error}`);
+    console.error(`Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½: ${error}`);
   }
 
   return calculationResult;
@@ -289,7 +289,7 @@ export async function taskFunction8(index: number): Promise<number> {
     calculationResult = await calculationPromise;
 
   } catch (error) {
-    console.error(`ÈÎÎñÖ´ÐÐ³ö´í: ${error}`);
+    console.error(`ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ð³ï¿½ï¿½ï¿½: ${error}`);
   }
 
 
@@ -338,7 +338,7 @@ export class CustomError implements BusinessError {
   data?: void | undefined
   name: string
   message: string
-  stack?: string | undefined
+  public stack?: string | undefined
 
   constructor(code: number, name: string, message: string) {
     this.code = code;

@@ -18,6 +18,6 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 
 workerPort.onmessage = (e: MessageEvents) => {
   console.info(`worker: worker receive data ${e.data.bigintItem}`);
-  e.data.bigintItem = BigInt("12345678912399999");
+  e.data.bigintItem = BigInt('12345678912399999');
   workerPort.postMessage(e.data.bigintItem);
 }

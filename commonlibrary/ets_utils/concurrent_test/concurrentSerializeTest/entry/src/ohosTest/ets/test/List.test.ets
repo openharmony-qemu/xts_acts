@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import containerSerializeTest from './serialize/containerSerialize.test';
+import containerSerializeTest from './serialize/ContainerSerialize.test';
 
 export default function testsuite() {
   containerSerializeTest();

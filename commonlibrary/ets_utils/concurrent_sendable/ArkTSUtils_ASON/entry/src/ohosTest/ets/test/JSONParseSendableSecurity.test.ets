@@ -374,7 +374,6 @@ export default function JSONParseSendableSecurityTest() {
         hasError = true;
       }
       // Either parse successfully or throw an error — both are acceptable.
-      expect(true).assertEqual(true);
     })
 
     // ====================================================================

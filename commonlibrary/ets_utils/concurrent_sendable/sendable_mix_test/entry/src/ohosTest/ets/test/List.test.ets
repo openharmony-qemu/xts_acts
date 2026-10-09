@@ -10,8 +10,8 @@ import sendablesTest from './SendablesTest.test';
 import sendablesTestWithAlloc from './SendablesTestWithAlloc.test';
 
 
-import concurrencyReturnCoveredTest from './returnCovered/concurrencyReturnCoveredTest.test';
-import concurrencyCoveredSupplement from './returnCovered/concurrencyCoveredSupplement.test';
+import concurrencyReturnCoveredTest from './returnCovered/ConcurrencyReturnCoveredTest.test';
+import concurrencyCoveredSupplement from './returnCovered/ConcurrencyCoveredSupplement.test';
 
 export default function testsuite() {
   builtinContainerSendableObjectTest();

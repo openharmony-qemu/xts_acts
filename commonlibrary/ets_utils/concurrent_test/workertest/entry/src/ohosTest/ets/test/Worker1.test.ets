@@ -42,7 +42,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_0100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_0100
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_0200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_0200
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_0600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_0600
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_0700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_0700
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -124,7 +124,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_1100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_1100
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -147,7 +147,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_1300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_1300
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_1400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_1400
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -193,7 +193,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0016
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_1600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_1600
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0017
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_1700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_1700
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testThreadWorker0018
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_CONSTRUCTOR_1800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_CONSTRUCTOR_1800
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -261,7 +261,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0100
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -296,7 +296,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0200
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -327,7 +327,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0300
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -358,7 +358,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0400
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -397,7 +397,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0600
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -433,7 +433,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0700
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0800
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -505,7 +505,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_0900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_0900
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -541,7 +541,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0010
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1000
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -578,7 +578,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1100
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -614,7 +614,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0012
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1200
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -651,7 +651,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1300
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -688,7 +688,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1400
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -725,7 +725,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0015
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1500
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -762,7 +762,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0016
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1600
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -799,7 +799,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0017
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1700
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -837,7 +837,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0018
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1800
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -875,7 +875,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0019
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_1900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_1900
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -911,7 +911,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0020
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2000
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -947,7 +947,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0021
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2100
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -983,7 +983,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0022
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2200
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1020,7 +1020,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0023
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2300
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1056,7 +1056,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0024
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2400
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1092,7 +1092,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0025
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2500
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1128,7 +1128,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0026
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2600
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1155,7 +1155,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0027
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2700
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1191,7 +1191,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0028
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2800
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1218,7 +1218,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0029
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_2900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_2900
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1254,7 +1254,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0030
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3000
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1280,7 +1280,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0031
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3100
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1316,7 +1316,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0032
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3200
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1352,7 +1352,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0033
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3300
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1387,7 +1387,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0034
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3400
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1423,7 +1423,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0035
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3500
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1461,7 +1461,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0036
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3600
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1497,7 +1497,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0037
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_3700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_3700
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1533,7 +1533,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0040
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4000
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1571,7 +1571,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0041
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4100
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1607,7 +1607,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0042
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4200
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1642,7 +1642,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0043
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4300
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1678,7 +1678,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0044
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4400
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1714,7 +1714,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0046
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4600
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1749,7 +1749,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0047
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4700
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1784,7 +1784,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0048
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4800
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1820,7 +1820,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0049
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_4900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_4900
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1856,7 +1856,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessage0050
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_5000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_5000
      * @tc.desc   Test the function of the interface PostMessage.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1898,7 +1898,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0100
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1933,7 +1933,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0200
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1965,7 +1965,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0300
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1997,7 +1997,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0400
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2036,7 +2036,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0600
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2072,7 +2072,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0700
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2108,7 +2108,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0800
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2144,7 +2144,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_0900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_0900
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2180,7 +2180,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0010
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1000
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2218,7 +2218,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1100
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2256,7 +2256,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0012
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1200
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2294,7 +2294,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1300
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2332,7 +2332,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1400
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2370,7 +2370,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0015
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1500
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2408,7 +2408,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0016
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1600
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2446,7 +2446,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0017
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1700
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2485,7 +2485,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0018
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1800
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2524,7 +2524,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0019
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_1900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_1900
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2561,7 +2561,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0020
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2000
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2598,7 +2598,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0021
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2100
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2635,7 +2635,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0022
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2200
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2673,7 +2673,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0023
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2300
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2710,7 +2710,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0024
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2400
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2747,7 +2747,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0025
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2500
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2784,7 +2784,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0026
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2600
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2811,7 +2811,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0027
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2700
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2848,7 +2848,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0028
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2800
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2875,7 +2875,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0029
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_2900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_2900
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2911,7 +2911,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0030
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3000
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2937,7 +2937,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0031
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3100
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2975,7 +2975,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0032
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3200
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3013,7 +3013,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0033
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3300
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3049,7 +3049,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0034
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3400
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3086,7 +3086,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0035
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3500
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3124,7 +3124,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0036
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3600
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3162,7 +3162,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0037
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3700
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3200,7 +3200,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0038
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3800
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3238,7 +3238,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0039
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_3900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_3900
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3275,7 +3275,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0040
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4000
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3313,7 +3313,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0041
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4100
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3349,7 +3349,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0042
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4200
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3384,7 +3384,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0043
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4300
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3420,7 +3420,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0044
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4400
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3457,7 +3457,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0046
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4600
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3492,7 +3492,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0047
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4700
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3527,7 +3527,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0048
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4800
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3564,7 +3564,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0049
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_4900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_4900
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3601,7 +3601,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testPostMessageWithSharedSendable0050
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_POST_MESSAGE_WITH_SHARED_SENDABLE_5000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_POST_MESSAGE_WITH_SHARED_SENDABLE_5000
      * @tc.desc   Test the function of the interface PostMessageWithSharedSendable.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3644,7 +3644,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0100
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3677,7 +3677,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0200
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3710,7 +3710,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0300
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3743,7 +3743,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0400
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3776,7 +3776,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0500
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3809,7 +3809,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0600
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3842,7 +3842,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0700
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3876,7 +3876,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0800
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3909,7 +3909,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_0900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_0900
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3942,7 +3942,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0010
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_1000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_1000
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3975,7 +3975,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_1100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_1100
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4008,7 +4008,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0012
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_1200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_1200
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4041,7 +4041,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_1300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_1300
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4074,7 +4074,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_1400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_1400
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4107,7 +4107,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOn0015
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ON_1500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ON_1500
      * @tc.desc   Test the function of the interface ThreadWorker.on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4140,7 +4140,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOnce0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0100
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4174,7 +4174,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0200
      * @tc.desc   testOnce0002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4207,7 +4207,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0300
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4240,7 +4240,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0400
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4273,7 +4273,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0500
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4306,7 +4306,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0600
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4338,7 +4338,7 @@ export default function workerTest1() {
     })
     /**
      * @tc.name   testOnce0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0700
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4371,7 +4371,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0800
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4404,7 +4404,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_0900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_0900
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4436,7 +4436,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0010
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_1000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_1000
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4469,7 +4469,7 @@ export default function workerTest1() {
     });
     /**
      * @tc.name   testOnce0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_1100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_1100
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4501,7 +4501,7 @@ export default function workerTest1() {
     })
     /**
      * @tc.name   testOnce0012
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_1200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_1200
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4533,7 +4533,7 @@ export default function workerTest1() {
     })
     /**
      * @tc.name   testOnce0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_1300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_1300
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4565,7 +4565,7 @@ export default function workerTest1() {
     })
     /**
      * @tc.name   testOnce0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_1400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_1400
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4597,7 +4597,7 @@ export default function workerTest1() {
     })
     /**
      * @tc.name   testOnce0015
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_ONCE_1500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_ONCE_1500
      * @tc.desc   Add an event listener to the Worker. The event listener is executed only once and is
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4630,7 +4630,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0001
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4665,7 +4665,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0002
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4700,7 +4700,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0003
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4735,7 +4735,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0004
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4770,7 +4770,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0005
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4805,7 +4805,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0006
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4840,7 +4840,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0007
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4875,7 +4875,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0008
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4910,7 +4910,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0009
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0009
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4945,7 +4945,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0010
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0010
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0010
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4980,7 +4980,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0011
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0011
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5015,7 +5015,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0012
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0012
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0012
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5050,7 +5050,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0013
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0013
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5085,7 +5085,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0014
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0014
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5120,7 +5120,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0015
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0015
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0015
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5155,7 +5155,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0016
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0016
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0016
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5190,7 +5190,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOff0017
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_OFF_0017
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_OFF_0017
      * @tc.desc   Test the function of the interface off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5225,7 +5225,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRegisterGlobalCallObject0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0100
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5261,7 +5261,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRegisterGlobalCallObject0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0200
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5291,7 +5291,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRegisterGlobalCallObject0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0300
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5321,7 +5321,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRegisterGlobalCallObject0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0400
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5357,7 +5357,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRegisterGlobalCallObject0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0500
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5393,7 +5393,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRegisterGlobalCallObject0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0600
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5433,7 +5433,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRegisterGlobalCallObject0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0700
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0700
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5469,7 +5469,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0800
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0800
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5509,7 +5509,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_0900
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_0900
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5543,7 +5543,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_1000
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_1000
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5577,7 +5577,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_1100
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_1100
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5617,7 +5617,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_1200
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_1200
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5657,7 +5657,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_1300
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_1300
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5701,7 +5701,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_1400
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_1400
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5741,7 +5741,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_1500
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_1500
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5781,7 +5781,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testUnRegisterGlobalCallObject0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_CALL_OBJECT_1600
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_CALL_OBJECT_1600
      * @tc.desc   Test the callGlobalCallObjectMethod interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5832,7 +5832,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testTerminate0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_TERMINATE_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_TERMINATE_0001
      * @tc.desc   Test the terminate interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5855,7 +5855,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testTerminate0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_TERMINATE_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_TERMINATE_0002
      * @tc.desc   Test the terminate interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5879,7 +5879,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testTerminate0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_TERMINATE_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_TERMINATE_0003
      * @tc.desc   Test the terminate interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5903,7 +5903,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOnexit0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_ONEXIT_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_ONEXIT_0001
      * @tc.desc   Test the onexit interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5932,7 +5932,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOnexit0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_ONEXIT_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_ONEXIT_0002
      * @tc.desc   Test the onexit interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5961,7 +5961,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testOnerror0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_ONERROR_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_ONERROR_0001
      * @tc.desc   Test the onexit interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5998,7 +5998,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testAddEventListener0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_ADD_EVENT_LISTENER_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_ADD_EVENT_LISTENER_0001
      * @tc.desc   Test the addEventListener interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6031,7 +6031,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testAddEventListener0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_ADD_EVENT_LISTENER_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_ADD_EVENT_LISTENER_0002
      * @tc.desc   Test the addEventListener interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6064,7 +6064,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveEventListener0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK_REMOVE_EVENT_LISTENER_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORK1_REMOVE_EVENT_LISTENER_0001
      * @tc.desc   Test the removeEventListener interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6099,7 +6099,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0001
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6134,7 +6134,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0002
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6169,7 +6169,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0003
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0003
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0003
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6204,7 +6204,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0004
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0004
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0004
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6239,7 +6239,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0005
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0005
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0005
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6274,7 +6274,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0006
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0006
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0006
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6309,7 +6309,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0007
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0007
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0007
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6344,7 +6344,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0008
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0008
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0008
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6379,7 +6379,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0009
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0009
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0009
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6414,7 +6414,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0010
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0010
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0010
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6449,7 +6449,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0011
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0011
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0011
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6484,7 +6484,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0012
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0012
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0012
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6519,7 +6519,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0013
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0013
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0013
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6554,7 +6554,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0014
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0014
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0014
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6589,7 +6589,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0015
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0015
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0015
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6624,7 +6624,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0016
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0016
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0016
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6659,7 +6659,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testRemoveAllListener0017
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_REMOVE_ALL_LISTENER_0017
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_REMOVE_ALL_LISTENER_0017
      * @tc.desc   Test the function of the interface removeAllListener.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6694,7 +6694,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testGlobalScope0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_GLOBAL_SCOPE_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_GLOBAL_SCOPE_0001
      * @tc.desc   Test the function of the interface GlobalScope.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6730,7 +6730,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testGlobalScope0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_GLOBAL_SCOPE_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_GLOBAL_SCOPE_0002
      * @tc.desc   Test the function of the interface GlobalScope.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6766,7 +6766,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testComposite0001
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_COMPOSITE_0001
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_COMPOSITE_0001
      * @tc.desc   Worker Combination Test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6799,7 +6799,7 @@ export default function workerTest1() {
 
     /**
      * @tc.name   testComposite0002
-     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER_COMPOSITE_0002
+     * @tc.number SUB_RUNTIME_LANGUAGE_BACKEND_WORKER1_COMPOSITE_0002
      * @tc.desc   Worker Combination Test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

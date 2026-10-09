@@ -49,7 +49,7 @@ export default function concurrencyReturnCoveredTest() {
 
     /**
      * @tc.name   concurrencyReturnCoveredTest003
-     * @tc.number .number SUB_CONCURRENCY_RETURN_COVERED_TEST_0103
+     * @tc.number SUB_CONCURRENCY_RETURN_COVERED_TEST_0103
      * @tc.desc   test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -981,7 +981,7 @@ export default function concurrencyReturnCoveredTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('concurrencyReturnCoveredTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('concurrencyReturnCoveredTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(printArgs, 100); // 100: test number
       await taskpool.execute(task).then((res: Object) => {
         console.info("taskpool test result: " + res);
@@ -990,6 +990,7 @@ export default function concurrencyReturnCoveredTest() {
       });
       const result = taskpool.Task.isCanceled();
       expect(result).assertEqual(false);
+      done();
     });
 
     /**
@@ -1000,7 +1001,7 @@ export default function concurrencyReturnCoveredTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('concurrencyReturnCoveredTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('concurrencyReturnCoveredTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let task: taskpool.Task = new taskpool.Task(printArgs, 1000); // 100: test number
       let isCanceled = false
       let pro = taskpool.execute(task).then((res: Object) => {
@@ -1011,6 +1012,7 @@ export default function concurrencyReturnCoveredTest() {
       taskpool.cancel(task)
       await pro
       expect(isCanceled).assertEqual(true);
+      done();
     });
 
 

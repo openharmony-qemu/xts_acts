@@ -478,7 +478,6 @@ export default function TaskPoolSendableTest() {
         try {
           const e = await taskpool.execute(task2);
           console.info(`${caseName} task2 then ${JSON.stringify(e)}`);
-          expect('').assertEqual('');
           console.info(`${caseName} dddaaa`);
         } catch (e) {
           console.info(`${caseName} task2 catch ${JSON.stringify(e)}`);
@@ -961,7 +960,6 @@ export default function TaskPoolSendableTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
-        expect(true).assertTrue();
         done();
       }
       console.log(`${caseName} test end `);
