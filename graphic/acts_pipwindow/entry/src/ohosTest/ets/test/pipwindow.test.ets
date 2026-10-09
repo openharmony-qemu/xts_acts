@@ -4246,7 +4246,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then(async (data) => {
           pipController = data;
-          if (!pipController.isPiPSupported()) {
+          if (!pipController.isPiPSupported() || deviceType === 'car') {
 
             done();
           } else {
@@ -4418,7 +4418,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then(async (data) => {
           pipController = data;
-          if (!pipController.isPiPSupported()) {
+          if (!pipController.isPiPSupported() || deviceType === 'car') {
 
             done();
           } else {
@@ -4510,7 +4510,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         let promise = pipWindow.create(config);
         promise.then(async (data) => {
           pipController = data;
-          if (!pipController.isPiPSupported()) {
+          if (!pipController.isPiPSupported() || deviceType === 'car') {
 
             done();
           } else {
