@@ -59,6 +59,7 @@ export default function abilityTest() {
                 commonEvent.subscribe(subscriber, async (err, data) => {
                 if (err) {
                   console.info(`callback err: ${JSON.stringify(err)}`);
+                  expect().assertFail();
                   return;
                 }
                 console.log('ACTS_GetCurrentTopAbility_0100====>Subscribe CallBack data:====>'
@@ -72,6 +73,7 @@ export default function abilityTest() {
                     abilityDelegator.getCurrentTopAbility((err, data) => {
                         if (err) {
                           console.info(`callback err: ${JSON.stringify(err)}`);
+                          expect().assertFail();
                           return;
                         }
                         console.log('ACTS_GetCurrentTopAbility_0100 and');

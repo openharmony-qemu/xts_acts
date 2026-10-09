@@ -349,6 +349,7 @@ export default function startAbilityOpenLink() {
                 }, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -404,6 +405,7 @@ export default function startAbilityOpenLink() {
                 }, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -456,6 +458,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptionsService, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:', JSON.stringify(data));
@@ -508,6 +511,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptionsService, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -560,6 +564,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptions, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -612,6 +617,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptionsFalse, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -666,6 +672,7 @@ export default function startAbilityOpenLink() {
                 }, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -718,6 +725,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptionsOnlyParam, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -770,6 +778,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, undefined, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -822,6 +831,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, null, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -875,6 +885,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, {}, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -927,6 +938,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptions, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -983,6 +995,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptions, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -1038,6 +1051,7 @@ export default function startAbilityOpenLink() {
               context.openLink(link, openLinkOptions, (err, data) => {
                 if (err) {
                   console.info(`callback err: ${JSON.stringify(err)}`);
+                  expect().assertFail();
                   return;
                 }
                 console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
@@ -1325,6 +1339,7 @@ export default function startAbilityOpenLink() {
                 context.openLink(link, openLinkOptions, (err, data) => {
                   if (err) {
                     console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
                     return;
                   }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));

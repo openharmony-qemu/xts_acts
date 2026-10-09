@@ -46,6 +46,7 @@ export default function appTest() {
         commonEvent.subscribe(subscriber, (err, data) => {
           if (err) {
             console.info(`callback err: ${JSON.stringify(err)}`);
+            expect().assertFail();
             return;
           }
           expect(data.event == 'ACTS_GetAppContext').assertTrue();

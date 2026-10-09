@@ -45,6 +45,7 @@ export default function abilityTest() {
         commonEvent.subscribe(subscriber, (err, data) => {
           if (err) {
             console.info(`callback err: ${JSON.stringify(err)}`);
+            expect().assertFail();
             return;
           }
           expect(data.event == 'ACTS_GetAppContext').assertTrue();

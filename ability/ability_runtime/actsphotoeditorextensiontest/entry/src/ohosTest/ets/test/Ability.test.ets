@@ -65,6 +65,7 @@ export default function abilityTest() {
  	                commonEventManager.subscribe(globalscribe, async (err, data) => {
  	                    if (err) {
  	                      console.info(`callback err: ${JSON.stringify(err)}`);
+ 	                      expect().assertFail();
  	                      return;
  	                    }
  	                    console.log(newTag + 'SubscribeInfoCallback : ' + JSON.stringify(data));
