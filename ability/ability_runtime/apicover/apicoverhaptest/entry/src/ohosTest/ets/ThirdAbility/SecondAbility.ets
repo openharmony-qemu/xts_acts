@@ -15,11 +15,28 @@
 
 import Ability from '@ohos.app.ability.UIAbility';
 import commonEvent from '@ohos.commonEvent';
+import CommonEventManager from '@ohos.commonEventManager';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
+
+interface FormLifeParams {
+  Life: string;
+}
+
+interface ShareTitleParam {
+  title: string;
+}
+
+interface ShareAbstractParam {
+  Abstract: string;
+}
+
+interface ShareUrlParam {
+  uri: string;
+}
 
 export default class SecondAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -46,10 +63,10 @@ export default class SecondAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log("[Demo] SecondAbility onForeground");
-    const lifeParams: Record<string, Object> = {
+    const lifeParams: FormLifeParams = {
       Life: 'onForeground'
     };
-    const commonEventPublishData: commonEvent.CommonEventPublishData = {
+    const commonEventPublishData: CommonEventManager.CommonEventPublishData = {
       parameters: lifeParams
     };
     commonEvent.publish("Form_StartAbility", commonEventPublishData, (err) => {
@@ -67,13 +84,13 @@ export default class SecondAbility extends Ability {
   }
 
   onShare(wantParam: Record<string, Object>): void {
-    const titleObj: Record<string, Object> = {
+    const titleObj: ShareTitleParam = {
       title: 'baidu'
     };
-    const abstractObj: Record<string, Object> = {
+    const abstractObj: ShareAbstractParam = {
       Abstract: 'share data'
     };
-    const urlObj: Record<string, Object> = {
+    const urlObj: ShareUrlParam = {
       uri: 'www.baidu.com'
     };
     wantParam[wantConstant.Params.CONTENT_TITLE_KEY] = titleObj;
