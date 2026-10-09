@@ -72,39 +72,6 @@ export default function int16ArrayKeysTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_0300
-     * @tc.name testInt16ArrayKeysTestOne003
-     * @tc.desc Verify new Int16Array keys() next done true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: int[] = [];
-      let arr: Int16Array = new Int16Array(src);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: boolean = result.done;
-      expect(actual1).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_0400
-     * @tc.name testInt16ArrayKeysTestOne004
-     * @tc.desc Verify keys() first value is 0 for length 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(1);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_0500
      * @tc.name testInt16ArrayKeysTestOne005
      * @tc.desc Verify keys() first done is false for length 1
@@ -135,22 +102,6 @@ export default function int16ArrayKeysTestOneTest(): void {
       let result: IteratorResult<int> = iter.next();
       let actual1: boolean = result.done;
       expect(actual1).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_0700
-     * @tc.name testInt16ArrayKeysTestOne007
-     * @tc.desc Verify keys() first value is 0 for length 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(2);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
     });
 
     /**
@@ -202,22 +153,6 @@ export default function int16ArrayKeysTestOneTest(): void {
       let result: IteratorResult<int> = iter.next();
       let actual1: boolean = result.done;
       expect(actual1).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_1100
-     * @tc.name testInt16ArrayKeysTestOne011
-     * @tc.desc Verify keys() next values are 0 1 2 for length 3 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20, 30]);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
     });
 
     /**
@@ -297,22 +232,6 @@ export default function int16ArrayKeysTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_1600
-     * @tc.name testInt16ArrayKeysTestOne016
-     * @tc.desc Verify keys() next value 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(100);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_1700
      * @tc.name testInt16ArrayKeysTestOne017
      * @tc.desc Verify keys() next value 1
@@ -351,22 +270,6 @@ export default function int16ArrayKeysTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_1900
-     * @tc.name testInt16ArrayKeysTestOne019
-     * @tc.desc Verify new Int16Array keys() next value 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([5, 6, 7, 8]);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_2000
      * @tc.name testInt16ArrayKeysTestOne020
      * @tc.desc Verify new Int16Array keys() next value 1
@@ -386,23 +289,6 @@ export default function int16ArrayKeysTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_2100
-     * @tc.name testInt16ArrayKeysTestOne021
-     * @tc.desc Verify new Int16Array(other) keys() next value 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let original: Int16Array = new Int16Array([4, 5, 6]);
-      let arr: Int16Array = new Int16Array(original);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_2200
      * @tc.name testInt16ArrayKeysTestOne022
      * @tc.desc Verify new Int16Array(other) keys() next value 1
@@ -419,23 +305,6 @@ export default function int16ArrayKeysTestOneTest(): void {
       let result: IteratorResult<int> = iter.next();
       let actual1: int | undefined = result.value;
       expect(actual1).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_2300
-     * @tc.name testInt16ArrayKeysTestOne023
-     * @tc.desc Verify Buffer keys() next value 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(6);
-      let arr: Int16Array = new Int16Array(buf, 0, 3);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
     });
 
     /**
@@ -614,44 +483,6 @@ export default function int16ArrayKeysTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_3300
-     * @tc.name testInt16ArrayKeysTestOne033
-     * @tc.desc Verify keys() next value 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([-32768, -1, 0]);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_3400
-     * @tc.name testInt16ArrayKeysTestOne034
-     * @tc.desc Verify keys() next returns expected index sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([-32768, 32767, 0]);
-      let iter: IterableIterator<int> = arr.keys();
-      let r0: IteratorResult<int> = iter.next();
-      let r1: IteratorResult<int> = iter.next();
-      let r2: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = r0.value;
-      expect(actual1).assertEqual(0);
-      let actual2: int | undefined = r1.value;
-      expect(actual2).assertEqual(1);
-      let actual3: int | undefined = r2.value;
-      expect(actual3).assertEqual(2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_3500
      * @tc.name testInt16ArrayKeysTestOne035
      * @tc.desc Verify keys() next returns expected index sequence
@@ -667,38 +498,6 @@ export default function int16ArrayKeysTestOneTest(): void {
       expect(actual1).assertEqual(0);
       let actual2: boolean = r.done;
       expect(actual2).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_3600
-     * @tc.name testInt16ArrayKeysTestOne036
-     * @tc.desc Verify keys() next returns expected index sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([32767]);
-      let iter: IterableIterator<int> = arr.keys();
-      let r: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = r.value;
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_3700
-     * @tc.name testInt16ArrayKeysTestOne037
-     * @tc.desc Verify keys() next returns expected index sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([-32768]);
-      let iter: IterableIterator<int> = arr.keys();
-      let r: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = r.value;
-      expect(actual1).assertEqual(0);
     });
 
     /**
@@ -734,22 +533,6 @@ export default function int16ArrayKeysTestOneTest(): void {
       let result: IteratorResult<int> = iter.next();
       let actual1: int | undefined = result.value;
       expect(actual1).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_4000
-     * @tc.name testInt16ArrayKeysTestOne040
-     * @tc.desc Verify 1 new Int16Array keys() next value 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([-1]);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = result.value;
-      expect(actual1).assertEqual(0);
     });
 
     /**
@@ -840,25 +623,6 @@ export default function int16ArrayKeysTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_4500
-     * @tc.name testInt16ArrayKeysTestOne045
-     * @tc.desc Verify keys() next values are 0 1 2 for length 3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([100, 200, 300]);
-      let iter: IterableIterator<int> = arr.keys();
-      let firstValue: int | undefined = iter.next().value;
-      let secondValue: int | undefined = iter.next().value;
-      let thirdValue: int | undefined = iter.next().value;
-      expect(firstValue).assertEqual(0);
-      expect(secondValue).assertEqual(1);
-      expect(thirdValue).assertEqual(2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_4600
      * @tc.name testInt16ArrayKeysTestOne046
      * @tc.desc Verify keys() for-of iteration count equals length
@@ -873,36 +637,6 @@ export default function int16ArrayKeysTestOneTest(): void {
         count = count + 1;
       }
       expect(count).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_4700
-     * @tc.name testInt16ArrayKeysTestOne047
-     * @tc.desc Verify keys() next() value is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2]);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      expect(result.value!).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_4800
-     * @tc.name testInt16ArrayKeysTestOne048
-     * @tc.desc Verify keys() next done boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([0]);
-      let iter: IterableIterator<int> = arr.keys();
-      let result: IteratorResult<int> = iter.next();
-      expect(result.done).assertFalse();
     });
 
     /**
@@ -974,31 +708,6 @@ export default function int16ArrayKeysTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_5200
-     * @tc.name testInt16ArrayKeysTestOne052
-     * @tc.desc Verify keys() next returns expected index sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(3);
-      arr.$_set(0, 42);
-      arr.$_set(1, 42);
-      arr.$_set(2, 42);
-      let iter: IterableIterator<int> = arr.keys();
-      let r0: IteratorResult<int> = iter.next();
-      let r1: IteratorResult<int> = iter.next();
-      let r2: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = r0.value;
-      expect(actual1).assertEqual(0);
-      let actual2: int | undefined = r1.value;
-      expect(actual2).assertEqual(1);
-      let actual3: int | undefined = r2.value;
-      expect(actual3).assertEqual(2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_5300
      * @tc.name testInt16ArrayKeysTestOne053
      * @tc.desc Verify keys() index sequence after element mutation
@@ -1014,58 +723,6 @@ export default function int16ArrayKeysTestOneTest(): void {
       let r: IteratorResult<int> = iter.next();
       let actual1: int | undefined = r.value;
       expect(actual1).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_5400
-     * @tc.name testInt16ArrayKeysTestOne054
-     * @tc.desc Verify keys() next returns expected index sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3]);
-      arr.$_set(0, 3);
-      arr.$_set(1, 2);
-      arr.$_set(2, 1);
-      let iter: IterableIterator<int> = arr.keys();
-      let r0: IteratorResult<int> = iter.next();
-      let r1: IteratorResult<int> = iter.next();
-      let r2: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = r0.value;
-      expect(actual1).assertEqual(0);
-      let actual2: int | undefined = r1.value;
-      expect(actual2).assertEqual(1);
-      let actual3: int | undefined = r2.value;
-      expect(actual3).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_5500
-     * @tc.name testInt16ArrayKeysTestOne055
-     * @tc.desc Verify keys() next returns expected index sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
-      arr.$_set(0, 3);
-      arr.$_set(1, 4);
-      let iter: IterableIterator<int> = arr.keys();
-      let r0: IteratorResult<int> = iter.next();
-      let r1: IteratorResult<int> = iter.next();
-      let r2: IteratorResult<int> = iter.next();
-      let r3: IteratorResult<int> = iter.next();
-      let actual1: int | undefined = r0.value;
-      expect(actual1).assertEqual(0);
-      let actual2: int | undefined = r1.value;
-      expect(actual2).assertEqual(1);
-      let actual3: int | undefined = r2.value;
-      expect(actual3).assertEqual(2);
-      let actual4: int | undefined = r3.value;
-      expect(actual4).assertEqual(3);
     });
 
     /**
@@ -1086,27 +743,6 @@ export default function int16ArrayKeysTestOneTest(): void {
       expect(actual1).assertEqual(0);
       let actual2: int | undefined = r1.value;
       expect(actual2).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_ONE_5700
-     * @tc.name testInt16ArrayKeysTestOne057
-     * @tc.desc Verify keys() next returns expected index sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrA: Int16Array = new Int16Array([1, 2, 3]);
-      let arrB: Int16Array = new Int16Array([9, 8, 7]);
-      let iterA: IterableIterator<int> = arrA.keys();
-      let iterB: IterableIterator<int> = arrB.keys();
-      let a1: IteratorResult<int> = iterA.next();
-      let b1: IteratorResult<int> = iterB.next();
-      let actual1: int | undefined = a1.value;
-      expect(actual1).assertEqual(0);
-      let actual2: int | undefined = b1.value;
-      expect(actual2).assertEqual(0);
     });
 
     /**
