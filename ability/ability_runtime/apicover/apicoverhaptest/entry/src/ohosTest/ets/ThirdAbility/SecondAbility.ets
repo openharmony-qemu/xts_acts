@@ -46,11 +46,12 @@ export default class SecondAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log("[Demo] SecondAbility onForeground");
-    let commonEventPublishData = {
-      parameters: {
-        "Life": "onForeground"
-      }
-    }
+    const lifeParams: Record<string, Object> = {
+      Life: 'onForeground'
+    };
+    const commonEventPublishData: commonEvent.CommonEventPublishData = {
+      parameters: lifeParams
+    };
     commonEvent.publish("Form_StartAbility", commonEventPublishData, (err) => {
       console.info("Form_StartAbility onCreate");
     });
@@ -61,20 +62,23 @@ export default class SecondAbility extends Ability {
     console.log("[Demo] SecondAbility onBackground");
   }
 
-  onDump(param) {
-    return null;
+  onDump(param: Array<string>): Array<string> {
+    return [];
   }
 
-  onShare(wantParam) {
-    wantParam[wantConstant.Params.CONTENT_TITLE_KEY] = {
-      title: "baidu"
-    },
-    wantParam[wantConstant.Params.SHARE_ABSTRACT_KEY] = {
-      Abstract: "share data"
-    },
-    wantParam[wantConstant.Params.SHARE_URL_KEY] = {
-      uri: "www.baidu.com"
-    }
+  onShare(wantParam: Record<string, Object>): void {
+    const titleObj: Record<string, Object> = {
+      title: 'baidu'
+    };
+    const abstractObj: Record<string, Object> = {
+      Abstract: 'share data'
+    };
+    const urlObj: Record<string, Object> = {
+      uri: 'www.baidu.com'
+    };
+    wantParam[wantConstant.Params.CONTENT_TITLE_KEY] = titleObj;
+    wantParam[wantConstant.Params.SHARE_ABSTRACT_KEY] = abstractObj;
+    wantParam[wantConstant.Params.SHARE_URL_KEY] = urlObj;
   }
 
   onPrepareToTerminate() {

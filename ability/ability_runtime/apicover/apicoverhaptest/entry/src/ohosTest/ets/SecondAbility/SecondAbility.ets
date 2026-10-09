@@ -45,11 +45,12 @@ export default class SecondAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log("[Demo] SecondAbility onForeground");
-    let commonEventPublishData = {
-      parameters: {
-        "Life": "onForeground"
-      }
-    }
+    const lifeParams: Record<string, Object> = {
+      Life: 'onForeground'
+    };
+    const commonEventPublishData: commonEvent.CommonEventPublishData = {
+      parameters: lifeParams
+    };
     commonEvent.publish("Form_StartAbility", commonEventPublishData, (err) => {
       console.info("Form_StartAbility onCreate");
     });

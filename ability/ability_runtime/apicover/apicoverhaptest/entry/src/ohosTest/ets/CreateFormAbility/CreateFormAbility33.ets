@@ -22,7 +22,11 @@ import window from '@ohos.window';
 export default class CreateFormAbility33 extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.log(`[Demo] CreateFormAbility33 onCreate`);
-    AppStorage.setOrCreate('isCreateForm', want.parameters.createForm);
+    const params = want.parameters;
+    if (params == undefined) {
+      return;
+    }
+    AppStorage.setOrCreate('isCreateForm', params.createForm);
   }
 
   onDestroy() {

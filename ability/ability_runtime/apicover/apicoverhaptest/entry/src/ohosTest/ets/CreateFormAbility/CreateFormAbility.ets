@@ -23,7 +23,11 @@ export default class CreateFormAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.log("[Demo] CreateFormAbility onCreate");
     AppStorage.setOrCreate<common.ApplicationContext>("applicationContext", this.context.getApplicationContext());
-    AppStorage.setOrCreate("isCreateForm", want.parameters["createForm"]);
+    const params = want.parameters;
+    if (params == undefined) {
+      return;
+    }
+    AppStorage.setOrCreate("isCreateForm", params["createForm"]);
   }
 
   onDestroy() {
