@@ -73,19 +73,19 @@ export default function RichEditorOnWillChange015() {
       await CommonFunc.sleep(1000);
 
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
       await CommonFunc.sleep(500);
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
       await CommonFunc.sleep(500);
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
@@ -120,7 +120,7 @@ export default function RichEditorOnWillChange015() {
 
       //撤销粘贴
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }

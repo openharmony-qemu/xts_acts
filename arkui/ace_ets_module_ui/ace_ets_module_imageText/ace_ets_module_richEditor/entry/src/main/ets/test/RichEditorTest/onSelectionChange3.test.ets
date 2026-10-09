@@ -75,7 +75,7 @@ export default function onSelectionChange3() {
       expect(Obj1_1.$attrs.content).assertEqual('1');
 
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
@@ -88,7 +88,7 @@ export default function onSelectionChange3() {
       await richEditor.longClick();
       await CommonFunc.sleep(1000);
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }

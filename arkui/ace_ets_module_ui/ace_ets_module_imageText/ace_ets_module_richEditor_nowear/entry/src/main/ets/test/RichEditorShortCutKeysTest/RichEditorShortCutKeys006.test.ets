@@ -81,7 +81,7 @@ export default function RichEditorShortCutKeys006() {
       let selectAll = await driver.findComponent(ON.text('全选'));
       await selectAll.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, 0, displayID);
       await CommonFunc.sleep(2000);
       try {
         await driver.triggerKey(2070, displayID);
@@ -97,7 +97,7 @@ export default function RichEditorShortCutKeys006() {
       let select = await driver.findComponent(ON.id('select'));
       await select.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, 0, displayID);
       await CommonFunc.sleep(2000);
       try {
         await driver.triggerKey(2070, displayID);
