@@ -66,7 +66,8 @@ export default function listSwipeAction29Jsunit() {
       await CommonFunc.sleep(500);
       // get the rect of listItem
       let strJson = getInspectorByKey('lSwipe29Action0');
-      let Swipe29Action: RectValue = CommonFunc.getComponentRect('lSwipe29Action0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe29Action0'));
+      let Swipe29Action = await swipeComponent.getBounds();
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0290] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       let right: number = Swipe29Action.right;
       let left: number = Swipe29Action.left;
@@ -76,7 +77,6 @@ export default function listSwipeAction29Jsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0290 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem to right
-      let swipeComponent = await driver.findComponent(ON.id('lSwipe29Action0'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId },
@@ -120,7 +120,8 @@ export default function listSwipeAction29Jsunit() {
       let strJson = getInspectorByKey('lSwipe29Action0');
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0310] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
-      let Swipe29Action: RectValue = CommonFunc.getComponentRect('lSwipe29Action0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe29Action0'));
+      let Swipe29Action = await swipeComponent.getBounds();
       let right: number = Swipe29Action.right;
       let left: number = Swipe29Action.left;
       let top: number = Swipe29Action.top;
@@ -135,7 +136,6 @@ export default function listSwipeAction29Jsunit() {
         .width));
 
       // swipe the listItem to right
-      let swipeComponent = await driver.findComponent(ON.id('lSwipe29Action0'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId },

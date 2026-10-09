@@ -76,7 +76,9 @@ export default function ListItem_Delete_Start_String() {
     it('SUB_ACE_ListItem_Delete_Start_String_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_String_0100] START');
       await CommonFunc.sleep(1000);
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_00');
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
+      let ListItem_00 = await swipeComponent.getBounds();
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_01');
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
@@ -86,8 +88,6 @@ export default function ListItem_Delete_Start_String() {
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_String_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + vp2px(60)), y: Math.round(top + height / 2), displayId: displayId },
@@ -132,7 +132,8 @@ export default function ListItem_Delete_Start_String() {
       await btn.click();
       await CommonFunc.sleep(2000);
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_00');
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
+      let ListItem_00 = await swipeComponent.getBounds();
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_String_ListItem_01');
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
@@ -142,7 +143,6 @@ export default function ListItem_Delete_Start_String() {
       let height = bottom -top;
       console.info("SUB_ACE_ListItem_Delete_Start_String_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_Start_String_ListItem_00'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + vp2px(60)), y: Math.round(top + height / 2), displayId: displayId },
