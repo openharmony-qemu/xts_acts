@@ -28,7 +28,7 @@
                 "./resource/image/moving_test.gif ->/data/local/tmp/",
                 "./resource/image/test.gif ->/data/local/tmp/",
                 "./resource/image/test.jpg ->/data/local/tmp/",
-                "./setup_image_gifJs_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_gifJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
