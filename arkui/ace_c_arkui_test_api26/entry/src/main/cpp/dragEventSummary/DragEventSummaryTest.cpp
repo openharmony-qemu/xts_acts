@@ -233,7 +233,8 @@ napi_value DragEventSummaryTest::CreateNativeNode(napi_env env, napi_callback_in
 
     g_nodeAPI->registerNodeEventReceiver(NodeEventReceiver);
 
-    OH_NativeXComponent_AttachNativeRootNode(PluginManager::GetInstance()->GetNativeXComponent(idStr), root);
+    std::string idString(idStr);
+    OH_NativeXComponent_AttachNativeRootNode(PluginManager::GetInstance()->GetNativeXComponent(idString), root);
     return nullptr;
 }
 
