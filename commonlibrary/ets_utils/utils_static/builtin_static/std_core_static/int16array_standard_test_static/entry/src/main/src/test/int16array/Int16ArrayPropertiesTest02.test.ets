@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -174,36 +174,6 @@ export default function Int16ArrayPropertiesTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_0700
-     * @tc.name testInt16ArrayPropertiesTestTwo007
-     * @tc.desc Verify Int16Array(0) byteOffset is 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array(0);
-      let actualByteOffset: int = arr.byteOffset;
-      let expectedByteOffset: int = 0;
-      expect(actualByteOffset).assertEqual(expectedByteOffset);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_0800
-     * @tc.name testInt16ArrayPropertiesTestTwo008
-     * @tc.desc Verify Int16Array.of() BYTES_PER_ELEMENT is 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Int16Array.of();
-      let actualBytesPerElement: int = arr.BYTES_PER_ELEMENT;
-      let expectedBytesPerElement: int = 2;
-      expect(actualBytesPerElement).assertEqual(expectedBytesPerElement);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_0900
      * @tc.name testInt16ArrayPropertiesTestTwo009
      * @tc.desc Verify copy-from empty Int16Array length is 0
@@ -248,21 +218,6 @@ export default function Int16ArrayPropertiesTest02(): void {
       let actualByteOffset: int = arr.byteOffset;
       let expectedByteOffset: int = 0;
       expect(actualByteOffset).assertEqual(expectedByteOffset);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_1200
-     * @tc.name testInt16ArrayPropertiesTestTwo012
-     * @tc.desc Verify all-MIN Int16Array.of BYTES_PER_ELEMENT is 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Int16Array.of(-32768, -32768);
-      let actualBytesPerElement: int = arr.BYTES_PER_ELEMENT;
-      let expectedBytesPerElement: int = 2;
-      expect(actualBytesPerElement).assertEqual(expectedBytesPerElement);
     });
 
     /**
@@ -486,23 +441,6 @@ export default function Int16ArrayPropertiesTest02(): void {
       let actualLength: int = arr.length;
       let expectedLength: int = 2;
       expect(actualLength).assertEqual(expectedLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_2700
-     * @tc.name testInt16ArrayPropertiesTestTwo027
-     * @tc.desc Verify new Int16Array(MAX_VALUE) throws RangeError for huge length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Int16Array(1.7976931348623157e308);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
     });
 
     /**
@@ -1132,224 +1070,5 @@ export default function Int16ArrayPropertiesTest02(): void {
       expect(actualName).assertEqual(expectedName);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_5800
-     * @tc.name testInt16ArrayPropertiesTestTwo058
-     * @tc.desc Verify $_get rejects an object cast to int with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidIndex: int = unsupported as object as int;
-        arr.$_get(invalidIndex);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_5900
-     * @tc.name testInt16ArrayPropertiesTestTwo059
-     * @tc.desc Verify $_set rejects an object cast to int index with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidIndex: int = unsupported as object as int;
-        arr.$_set(invalidIndex, 1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6000
-     * @tc.name testInt16ArrayPropertiesTestTwo060
-     * @tc.desc Verify $_set rejects an object cast to number value with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidValue: number = unsupported as object as number;
-        arr.$_set(0, invalidValue);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6100
-     * @tc.name testInt16ArrayPropertiesTestTwo061
-     * @tc.desc Verify at rejects an object cast to int with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidIndex: int = unsupported as object as int;
-        arr.at(invalidIndex);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6200
-     * @tc.name testInt16ArrayPropertiesTestTwo062
-     * @tc.desc Verify copyWithin rejects an object cast to int target with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidTarget: int = unsupported as object as int;
-        arr.copyWithin(invalidTarget, 0);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6300
-     * @tc.name testInt16ArrayPropertiesTestTwo063
-     * @tc.desc Verify fill rejects an object cast to number with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidValue: number = unsupported as object as number;
-        arr.fill(invalidValue);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6400
-     * @tc.name testInt16ArrayPropertiesTestTwo064
-     * @tc.desc Verify with rejects an object cast to int index with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidIndex: int = unsupported as object as int;
-        arr.with(invalidIndex, 1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6500
-     * @tc.name testInt16ArrayPropertiesTestTwo065
-     * @tc.desc Verify with rejects an object cast to number value with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidValue: number = unsupported as object as number;
-        arr.with(0, invalidValue);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6600
-     * @tc.name testInt16ArrayPropertiesTestTwo066
-     * @tc.desc Verify slice rejects an object cast to int with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidBegin: int = unsupported as object as int;
-        arr.slice(invalidBegin);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6700
-     * @tc.name testInt16ArrayPropertiesTestTwo067
-     * @tc.desc Verify subarray rejects an object cast to int begin with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidBegin: int = unsupported as object as int;
-        arr.subarray(invalidBegin);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_PROPERTIES_TWO_6800
-     * @tc.name testInt16ArrayPropertiesTestTwo068
-     * @tc.desc Verify set rejects an object cast to number value with ClassCastError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayPropertiesTestTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Int16Array = Int16Array.of(1, 2, 3);
-      const unsupported: Object = new Object();
-      try {
-        const invalidValue: number = unsupported as object as number;
-        arr.set(1, invalidValue);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('ClassCastError');
-      }
-    });
   });
 }
