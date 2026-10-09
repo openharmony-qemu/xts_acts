@@ -70,14 +70,11 @@ export default function list_ListInitialIndex1Test() {
      */
     it('testListInitialIndexToTwoWithOneLane',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListInitialIndexToTwoWithOneLane] START');
-      let driver = Driver.create();
       let firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_1');
       let secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_2');
-      let thirdListItemComp = await driver.findComponent(ON.id('List_ListInitialIndex1_3'));
-      let thirdListItem = await thirdListItemComp.getBounds();
+      let thirdListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_3');
       let fourthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_4');
-      let fifthListItemComp = await driver.findComponent(ON.id('List_ListInitialIndex1_5'));
-      let fifthListItem = await fifthListItemComp.getBounds();
+      let fifthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_5');
       let sixthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_6');
       let seventhListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_7');
       let eighthListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_8');
@@ -135,13 +132,15 @@ export default function list_ListInitialIndex1Test() {
       expect(Math.round(twelfthListItem.right - twelfthListItem.left)).assertEqual(vp2px(0));
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(vp2px(0));
 
+      let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex1_Container01'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
-        { x: Math.round(thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2)),
-          y: Math.round(thirdListItem.bottom), displayId: displayId },
-        { x: Math.round(fifthListItem.left + (fifthListItem.right - fifthListItem.left) / 2),
-          y: Math.round(fifthListItem.bottom), displayId: displayId });
+        { x: Math.round(sizeList.left + ((sizeList.right - sizeList.left) / 2)),
+          y: Math.round(sizeList.top + ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId },
+        { x: Math.round(sizeList.left + (sizeList.right - sizeList.left) / 2),
+          y: Math.round(sizeList.bottom - ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId });
       await CommonFunc.sleep(2000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_2');

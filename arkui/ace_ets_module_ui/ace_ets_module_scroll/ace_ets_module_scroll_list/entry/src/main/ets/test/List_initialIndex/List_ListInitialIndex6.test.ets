@@ -70,7 +70,6 @@ export default function list_ListInitialIndex6Test() {
      */
     it('testListInitialIndexToThreeWithTwoLane',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListInitialIndexToThreeWithTwoLane] START');
-      let driver = Driver.create();
       let firstListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex6_1');
       let secondListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex6_2');
       let thirdListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex6_3');
@@ -83,8 +82,7 @@ export default function list_ListInitialIndex6Test() {
       let tenthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex6_10');
       let eleventhListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex6_11');
       let twelfthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex6_12');
-      let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex6_Container01'));
-      let listContainer = await swipeComponent.getBounds();
+      let listContainer: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex6_Container01');
       let listContainerStrJson = getInspectorByKey('List_ListInitialIndex6_Container01');
       
       let listContainer_width = listContainer.right - listContainer.left
@@ -151,12 +149,15 @@ export default function list_ListInitialIndex6Test() {
       expect(Math.abs(Math.round(twelfthListItem.bottom - twelfthListItem.top) - Math.round(vp2px(100))) <= 1).assertTrue();
 
 
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex6_Container01'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
-        { x: Math.round(listContainer.left + listContainer_width / 2),
-          y: Math.round(listContainer.top + listContainer_height / 6), displayId: displayId },
-        { x: Math.round(listContainer.left + listContainer_width / 2),
-          y: Math.round(listContainer.bottom - listContainer_height / 6), displayId: displayId });
+        { x: Math.round(sizeList.left + ((sizeList.right - sizeList.left) / 2)),
+          y: Math.round(sizeList.top + ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId },
+        { x: Math.round(sizeList.left + (sizeList.right - sizeList.left) / 2),
+          y: Math.round(sizeList.bottom - ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId });
       await CommonFunc.sleep(2000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex6_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex6_2');
