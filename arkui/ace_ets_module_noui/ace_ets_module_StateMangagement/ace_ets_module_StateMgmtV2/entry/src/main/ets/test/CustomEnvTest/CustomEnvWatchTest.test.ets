@@ -62,7 +62,7 @@ export default function CustomEnvWatchTest() {
         let text_1 = await (await driver.findComponent(ON.id('customEnvWatch_dynamic_001'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVWATCH_0100] component text_1: ' + text_1);
-        expect(text_1).assertEqual('parentVal1 is: 1');
+        expect(text_1).assertEqual('parentVal2 is: 1');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVWATCH_0100 error:" + err);
         expect(true).assertEqual(false);
@@ -94,7 +94,7 @@ export default function CustomEnvWatchTest() {
         let text_2 = await (await driver.findComponent(ON.id('customEnvWatch_dynamic_001'))).getText();
         await CommonFunc.sleep(1000);
         console.info('[SUB_ARKUI_COMPONENT_STATE_CUSTOMENVWATCH_0200] component text_2: ' + text_2);
-        expect(text_2).assertEqual('parentVal2 is: 2');
+        expect(text_2).assertEqual('parentVal3 is: 2');
       } catch (err){
         console.error("SUB_ARKUI_COMPONENT_STATE_CUSTOMENVWATCH_0200 error:" + err);
         expect(true).assertEqual(false);

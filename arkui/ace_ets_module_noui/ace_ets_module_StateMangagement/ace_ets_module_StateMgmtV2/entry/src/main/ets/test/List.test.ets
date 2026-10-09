@@ -82,9 +82,15 @@ import persistenceV2NullUndefinedTest from './PersistenceV2Test/PersistenceV2Nul
 import CustomEnvTest from './CustomEnvTest/CustomEnvTest.test';
 import CustomEnvWatchTest from './CustomEnvTest/CustomEnvWatchTest.test';
 import CustomEnvDeepWatchTest from './CustomEnvTest/CustomEnvDeepWatchTest.test';
+import CustomEnvMonitorTest from './CustomEnvTest/CustomEnvMonitorTest.test';
+import CustomEnvFreezeTest from './CustomEnvTest/CustomEnvFreezeTest.test';
 import CustomDefaultvalueTest from './CustomEnvTest/CustomDefaultvalueTest.test';
 import CustomEnvParamV2Test from './CustomEnvTest/CustomEnvParamV2Test.test';
 import CustomEnvObservedV2Test from './CustomEnvTest/CustomEnvObservedV2Test.test';
+import CustomEnvArrayTest from './CustomEnvTest/CustomEnvArrayTest.test';
+import CustomEnvDateTest from './CustomEnvTest/CustomEnvDateTest.test';
+import CustomEnvMapTest from './CustomEnvTest/CustomEnvMapTest.test';
+import CustomEnvSetTest from './CustomEnvTest/CustomEnvSetTest.test';
 import CustomEnvMultiTypeTest from './CustomEnvTest/CustomEnvMultiTypeTest.test';
 import CustomEnvNearTest from './CustomEnvTest/CustomEnvNearTest.test';
 
@@ -157,9 +163,15 @@ export default function testsuite() {
     CustomEnvTest();
     CustomEnvWatchTest();
     CustomEnvDeepWatchTest();
+    CustomEnvMonitorTest();
+    CustomEnvFreezeTest();
     CustomDefaultvalueTest();
     CustomEnvParamV2Test();
     CustomEnvObservedV2Test();
+    CustomEnvArrayTest();
+    CustomEnvDateTest();
+    CustomEnvMapTest();
+    CustomEnvSetTest();
     CustomEnvMultiTypeTest();
     CustomEnvNearTest();
 }

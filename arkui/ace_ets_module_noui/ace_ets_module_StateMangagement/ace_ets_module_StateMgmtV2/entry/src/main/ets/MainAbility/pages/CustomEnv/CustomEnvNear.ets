@@ -48,8 +48,7 @@ struct NearChild {
         Text(`Child: ${this.customMessage}`)
           .id('customEnvNear_dynamic_001')
           .height('5%')
-          .fontSize(20)
-          .margin(10)
+          .margin(5)
       }
       .width('100%')
     }

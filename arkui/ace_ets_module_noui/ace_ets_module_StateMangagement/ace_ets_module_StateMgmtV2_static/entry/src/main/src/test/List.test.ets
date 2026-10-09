@@ -53,10 +53,10 @@ import CustomEnvMultipleTypes from './CustomComponentTest/CustomEnvMultipleTypes
  
  
 export default function testsuite(): void {
-  AddMonitorSetPath(); 
+  AddMonitorSetPath();
   ArrayLikeStringTest();
   //ReuseV2Test0030(); 
-  AddMonitorNoPath(); 
+  AddMonitorNoPath();
   AddMonitorObservedV2Int(); 
   AddMonitorObservedV2Boolean(); 
   AddMonitorObservedV2String(); 
