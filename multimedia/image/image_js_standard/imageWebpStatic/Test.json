@@ -22,7 +22,7 @@
                 "./resource/image/test_large.webp ->/data/local/tmp/",
                 "./resource/image/moving_test.webp ->/data/local/tmp/",
                 "./resource/image/test.jpg ->/data/local/tmp/",
-                "./setup_image_webpJs_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_webpJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
