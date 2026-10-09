@@ -25,6 +25,9 @@ async function doIt(pageTag: string, testType: number, X: number, Y: number) {
   await Utils.sleep(2000)
   let driver = Driver.create();
   let component = await driver.findComponent(ON.id('nestedScrollRoot'));
+  let webRect = await component.getBounds();
+  X = Utils.getRectHorizontalCenterX(webRect)
+  Y = Utils.getRectVerticalCenterY(webRect)
   let displayId = await component.getDisplayId();
   if (testType > 4) {
     await driver.swipeBetween(
@@ -50,9 +53,6 @@ export default function scrollNestedScrollTest() {
 
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`scroll/${PAGE_TAG}`, done);
-      let webRect = Utils.getComponentRect('nestedScrollRoot');
-      X = Utils.getRectHorizontalCenterX(webRect)
-      Y = Utils.getRectVerticalCenterY(webRect)
     });
 
     /**

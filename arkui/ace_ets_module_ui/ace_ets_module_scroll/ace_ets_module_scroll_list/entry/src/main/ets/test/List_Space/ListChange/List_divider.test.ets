@@ -82,11 +82,14 @@ export default function List_divider() {
       let strJson = getInspectorByKey('List_divider_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
+      let driver = Driver.create();
       let List_divider_011 = CommonFunc.getComponentRect('List_divider_011');
       let List_divider_012 = CommonFunc.getComponentRect('List_divider_012');
       let List_divider_013 = CommonFunc.getComponentRect('List_divider_013');
       let List_divider_014 = CommonFunc.getComponentRect('List_divider_014');
-      let List_divider_01 = CommonFunc.getComponentRect('List_divider_01');
+      let swipeComponent = await driver.findComponent(ON.id('List_divider_01'));
+      let List_divider_01 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let left = List_divider_01.left;
       let top = List_divider_01.top;
       let right = List_divider_01.right;
@@ -112,9 +115,6 @@ export default function List_divider() {
       expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_014.bottom) - vp2px(40))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - vp2px(500))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('List_divider_01'));
-      let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
           displayId: displayId },
@@ -144,11 +144,14 @@ export default function List_divider() {
       let strJson = getInspectorByKey('List_divider_01');
 
       expect(JSON.parse(strJson).$type).assertEqual('List');
+      let driver = Driver.create();
       let List_divider_011 = CommonFunc.getComponentRect('List_divider_011');
       let List_divider_012 = CommonFunc.getComponentRect('List_divider_012');
       let List_divider_013 = CommonFunc.getComponentRect('List_divider_013');
       let List_divider_014 = CommonFunc.getComponentRect('List_divider_014');
-      let List_divider_01 = CommonFunc.getComponentRect('List_divider_01');
+      let swipeComponent = await driver.findComponent(ON.id('List_divider_01'));
+      let List_divider_01 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let left = List_divider_01.left;
       let top = List_divider_01.top;
       let right = List_divider_01.right;
@@ -178,9 +181,6 @@ export default function List_divider() {
       expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - vp2px(500))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - vp2px(350))) <= 1).assertTrue();
       console.info('testListDividerStrokeWidthToForty 444');
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('List_divider_01'));
-      let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
           displayId: displayId },

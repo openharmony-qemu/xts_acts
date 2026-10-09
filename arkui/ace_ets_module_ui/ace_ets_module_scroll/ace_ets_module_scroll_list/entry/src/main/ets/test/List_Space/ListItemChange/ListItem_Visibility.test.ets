@@ -90,7 +90,10 @@ export default function listItem_Visibility() {
       let locationText2 = CommonFunc.getComponentRect('ListItemTest42');
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
-      let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let locationList = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let left = locationList.left;
       let top = locationList.top;
       let right = locationList.right;
@@ -120,9 +123,6 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(vp2px(80))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
-      let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
           displayId: displayId },
@@ -160,7 +160,10 @@ export default function listItem_Visibility() {
       let locationText2 = CommonFunc.getComponentRect('ListItemTest42');
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
-      let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let locationList = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let left = locationList.left;
       let top = locationList.top;
       let right = locationList.right;
@@ -190,9 +193,6 @@ export default function listItem_Visibility() {
 
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
-      let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
           displayId: displayId },
@@ -230,7 +230,10 @@ export default function listItem_Visibility() {
       let locationText2 = CommonFunc.getComponentRect('ListItemTest42');
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
-      let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let locationList = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
 
       let left = locationList.left;
       let top = locationList.top;
@@ -263,9 +266,6 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemVisibilityFirstHidden 444');
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
-      let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
           displayId: displayId },
@@ -312,7 +312,10 @@ export default function listItem_Visibility() {
       let locationText2 = CommonFunc.getComponentRect('ListItemTest42');
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
-      let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let locationList = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let left = locationList.left;
       let top = locationList.top;
       let right = locationList.right;
@@ -343,9 +346,6 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemVisibilityFirstVisibile 444');
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
-      let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
           displayId: displayId },

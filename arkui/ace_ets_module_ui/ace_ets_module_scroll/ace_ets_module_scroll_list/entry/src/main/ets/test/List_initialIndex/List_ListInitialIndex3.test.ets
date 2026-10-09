@@ -70,10 +70,13 @@ export default function list_ListInitialIndex3Test() {
      */
     it('testListInitialIndexToNegativeWithOneLane',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListInitialIndexToNegativeWithOneLane] START');
-      let firstListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_1');
+      let driver = Driver.create();
+      let firstListItemComp = await driver.findComponent(ON.id('List_ListInitialIndex3_1'));
+      let firstListItem = await firstListItemComp.getBounds();
       let secondListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_2');
       let thirdListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_3');
-      let fourthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_4');
+      let fourthListItemComp = await driver.findComponent(ON.id('List_ListInitialIndex3_4'));
+      let fourthListItem = await fourthListItemComp.getBounds();
       let fifthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_5');
       let sixthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_6');
       let seventhListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex3_7');
@@ -133,7 +136,6 @@ export default function list_ListInitialIndex3Test() {
       expect(Math.round(twelfthListItem.right - twelfthListItem.left)).assertEqual(vp2px(0));
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(vp2px(0));
 
-      let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex3_Container01'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
