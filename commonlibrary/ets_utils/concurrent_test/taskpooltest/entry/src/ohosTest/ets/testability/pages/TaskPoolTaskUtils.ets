@@ -326,7 +326,7 @@ export class WorkThread1 {
 }
 
 export class WorkThread2 {
-  workerStageModel = new worker.ThreadWorker('./workers/CalculatorWorker2.ets');
+  public workerStageModel = new worker.ThreadWorker('./workers/CalculatorWorker2.ets');
 }
 
 export function test3(block: () => void) {

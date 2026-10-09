@@ -302,7 +302,7 @@ export default function AsyncNestingTest() {
           setTimeout(() => {
             console.log('setTimeout', result);
           }, 500);
-        }).catch((e: BusinessError) => {})
+        }).catch((e: BusinessError) => {console.info(`${e}`);})
       await new Promise<void>((resolve) => {
         setTimeout(() => {
           resolve();
