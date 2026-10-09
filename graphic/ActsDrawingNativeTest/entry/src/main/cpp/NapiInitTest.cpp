@@ -136,6 +136,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingFontTextToGlyphs),
     DECL_NAPI_DESC(DrawingFontGetWidths),
     DECL_NAPI_DESC(DrawingFontGetTextPathWithFallback),
+    DECL_NAPI_DESC(DrawingFontWithFallback),
     DECL_NAPI_DESC(DrawingFontSetLinearText),
     DECL_NAPI_DESC(DrawingFontSetTextSkewX),
     DECL_NAPI_DESC(DrawingFontSetFakeBoldText),
@@ -208,6 +209,7 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingTextBlobBuilder),
     DECL_NAPI_DESC(DrawingTextBlobCreate),
     DECL_NAPI_DESC(DrawingTextBlobOther),
+    DECL_NAPI_DESC(DrawingTextBlobWithFallback),
     DECL_NAPI_DESC(DrawingTypefaceCreate),
     // need fixed
     DECL_NAPI_DESC(DrawingRegionAdvancedOperations),

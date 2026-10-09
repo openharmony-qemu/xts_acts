@@ -202,6 +202,26 @@ int TestFontFeaturesandFeatureDestroyNull();
 int TestFontGetTextPathWithFallbackNomal();
 int TestFontGetTextPathWithFallbackNull();
 int TestFontGetTextPathWithFallbackMultipleCalls();
+
+// Font TextToGlyphsWithFallback related functions
+int TestFontTextToGlyphsWithFallbackNormal();
+int TestFontTextToGlyphsWithFallbackNull();
+int TestFontTextToGlyphsWithFallbackAbnormal();
+int TestFontTextToGlyphsWithFallbackMultipleCalls();
+int TestFontMeasureTextWithFallbackNormal();
+int TestFontMeasureTextWithFallbackNull();
+int TestFontMeasureTextWithFallbackAbnormal();
+int TestFontMeasureTextWithFallbackMultipleCalls();
+
+// Font MeasureTextWithBrushOrPenWithFallback related functions
+int TestFontMeasureTextWithBrushOrPenWithFallbackNormal();
+int TestFontMeasureTextWithBrushOrPenWithFallbackNull();
+int TestFontMeasureTextWithBrushOrPenWithFallbackAbnormal();
+int TestFontMeasureTextWithBrushOrPenWithFallbackMultipleCalls();
+
+// Font TypefaceFallbackInfoDestroy related functions
+int TestFontTypefaceFallbackInfoDestroyNull();
+int TestFontTypefaceFallbackInfoDestroyMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS
