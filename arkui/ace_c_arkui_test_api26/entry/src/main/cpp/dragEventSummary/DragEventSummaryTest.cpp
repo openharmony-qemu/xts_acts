@@ -28,6 +28,7 @@
 #include <cstring>
 #include <cstdio>
 #include <sstream>
+#include <securec.h>
 
 namespace ArkUICapiTest {
 
@@ -44,7 +45,9 @@ static char g_resultStr[1024] = {0};
 
 static void UpdateResultText(const char *text)
 {
-    if (!g_resultText || !g_nodeAPI) return;
+    if (!g_resultText || !g_nodeAPI) {
+        return;
+    }
     ArkUI_AttributeItem item = {.string = text};
     g_nodeAPI->setAttribute(g_resultText, NODE_TEXT_CONTENT, &item);
 }
@@ -52,7 +55,9 @@ static void UpdateResultText(const char *text)
 static void OnDragStart(ArkUI_NodeEvent *event)
 {
     auto dragEvent = OH_ArkUI_NodeEvent_GetDragEvent(event);
-    if (!dragEvent) return;
+    if (!dragEvent) {
+        return;
+    }
     OH_UdmfRecord *record = OH_UdmfRecord_Create();
     OH_UdsPlainText *textValue = OH_UdsPlainText_Create();
     OH_UdsPlainText_SetContent(textValue, "drag test data for GetSummary");
@@ -108,7 +113,10 @@ static void OnDragEnter(ArkUI_NodeEvent *event)
     }
 
     std::string result = ss.str();
-    snprintf(g_resultStr, sizeof(g_resultStr), "%s", result.c_str());
+    int32_t snRet = snprintf_s(g_resultStr, sizeof(g_resultStr), sizeof(g_resultStr) - 1, "%s", result.c_str());
+    if (snRet < 0) {
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "DragSummary", "snprintf_s failed");
+    }
     UpdateResultText(g_resultStr);
 }
 
@@ -117,9 +125,13 @@ static void NodeEventReceiver(ArkUI_NodeEvent *event)
     auto eventType = OH_ArkUI_NodeEvent_GetEventType(event);
     ArkUI_NodeHandle node = OH_ArkUI_NodeEvent_GetNodeHandle(event);
     if (node == g_dragImage) {
-        if (eventType == NODE_ON_DRAG_START) OnDragStart(event);
+        if (eventType == NODE_ON_DRAG_START) {
+            OnDragStart(event);
+        }
     } else if (node == g_dropArea) {
-        if (eventType == NODE_ON_DRAG_ENTER) OnDragEnter(event);
+        if (eventType == NODE_ON_DRAG_ENTER) {
+            OnDragEnter(event);
+        }
     }
 }
 
@@ -202,7 +214,9 @@ napi_value DragEventSummaryTest::CreateNativeNode(napi_env env, napi_callback_in
 
     g_nodeAPI = nullptr;
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, g_nodeAPI);
-    if (!g_nodeAPI) return nullptr;
+    if (!g_nodeAPI) {
+        return nullptr;
+    }
 
     auto root = g_nodeAPI->createNode(ARKUI_NODE_COLUMN);
 
