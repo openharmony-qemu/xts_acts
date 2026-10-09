@@ -354,7 +354,7 @@ export default function JSONParseSendableSecurityTest() {
       }
       // Either parse successfully or throw an error — both are acceptable.
       // The key assertion is that we reach here without crashing the process.
-      expect(true).assertEqual(true);
+      expect(json.length > 0).assertTrue();
     })
 
     /**
@@ -374,6 +374,7 @@ export default function JSONParseSendableSecurityTest() {
         hasError = true;
       }
       // Either parse successfully or throw an error — both are acceptable.
+      expect(json.length > 0).assertTrue();
     })
 
     // ====================================================================

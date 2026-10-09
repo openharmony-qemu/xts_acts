@@ -260,7 +260,7 @@ export default function AsyncNestingTest() {
             resolve(sharedVariable);
           });
         });
-      })
+      }).catch((e: BusinessError) => { console.info(`${e}`); })
       await new Promise<void>((resolve) => {
         setTimeout(() => {
           resolve();
@@ -347,7 +347,7 @@ export default function AsyncNestingTest() {
           });
         }).then(() => {
           console.log('all end');
-        }).catch((e: BusinessError) => {})
+        }).catch((e: BusinessError) => { console.info(`${e}`); })
       await new Promise<void>((resolve) => {
         setTimeout(() => {
           resolve();

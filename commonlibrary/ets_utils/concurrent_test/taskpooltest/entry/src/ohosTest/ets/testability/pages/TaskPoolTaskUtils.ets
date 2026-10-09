@@ -334,10 +334,10 @@ export function test3(block: () => void) {
 }
 
 export class CustomError implements BusinessError {
-  code: number
-  data?: void | undefined
-  name: string
-  message: string
+  public code: number
+  public data?: void | undefined
+  public name: string
+  public message: string
   public stack?: string | undefined
 
   constructor(code: number, name: string, message: string) {

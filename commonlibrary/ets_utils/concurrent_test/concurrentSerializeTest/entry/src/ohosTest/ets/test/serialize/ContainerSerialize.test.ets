@@ -882,7 +882,7 @@ export default function containerSerializeTest() {
         taskpool.execute(concurrentReadWrite, arrayList).then((res) => {
           expect(res as number).assertEqual(3);
           count++
-        }).catch((e: BusinessError) => {})
+        }).catch((e: BusinessError) => { console.info(`${e}`); })
       }
       while (count < 1000) {
         await Sleep(100)
@@ -920,7 +920,7 @@ export default function containerSerializeTest() {
           expect(result.getFirstValue()).assertEqual(99);
           expect(result.getLastValue()).assertEqual(0);
           count++
-        }).catch((e: BusinessError) => {});
+        }).catch((e: BusinessError) => { console.info(`${e}`); });
       }
       while (count < 10) {
         await Sleep(100)
