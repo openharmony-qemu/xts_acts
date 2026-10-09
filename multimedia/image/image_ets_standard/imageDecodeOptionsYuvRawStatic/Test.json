@@ -37,7 +37,7 @@
                 "./resource/image/JPG-481360-YUV311.jpg ->/data/local/tmp/",
                 "./resource/image/JPG-481361-YUV311.jpg ->/data/local/tmp/",
                 "./resource/image/JPG-480361-YUV311.jpg ->/data/local/tmp/",
-                "./setup_image_decodeOptionsYuvRaw_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_decodeOptionsYuvRaw_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
