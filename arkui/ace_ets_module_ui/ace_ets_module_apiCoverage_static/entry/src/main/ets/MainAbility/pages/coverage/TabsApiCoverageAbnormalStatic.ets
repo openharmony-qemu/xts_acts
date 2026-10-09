@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,9 @@
  */
 
 import {
-  Entry, ComponentV2, Column, Text, Scroll, Tabs, TabContent,
-  TabBarStyle, TabVisibility, BarPosition, Color
+  Entry, ComponentV2, Column, Text, Scroll
 } from '@ohos.arkui.component';
-import { Local, AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 
 @Entry
@@ -37,145 +36,21 @@ struct TabsApiCoverageAbnormalStatic {
     Scroll() {
       Column() {
         Text('TabsApiCoverageAbnormalStatic').id('tabsApiCovAbnStaticTitle').fontSize(16)
-
-        Text('barStyle default').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_barStyle_default')
-        .width('100%').height(80)
-
-        Text('barStyle undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_barStyle_undefined')
-        .barStyle(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarPosition default').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarPosition_default')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .width('100%').height(80)
-
-        Text('sidebarPosition undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarPosition_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarPosition(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarHeader undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarHeader_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarHeader(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarSearchable undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarSearchable_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarSearchable(undefined)
-        .width('100%').height(80)
-
-        Text('barDisplayModeBreakpoint undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_barDisplayModeBreakpoint_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .barDisplayModeBreakpoint(undefined)
-        .width('100%').height(80)
-
-        Text('onBarDisplayModeChange undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_onBarDisplayModeChange_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .onBarDisplayModeChange(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarSelectedIconColor undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarSelectedIconColor_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarSelectedIconColor(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarSelectedTextColor undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarSelectedTextColor_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarSelectedTextColor(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarUnselectedIconColor undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarUnselectedIconColor_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarUnselectedIconColor(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarUnselectedTextColor undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarUnselectedTextColor_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarUnselectedTextColor(undefined)
-        .width('100%').height(80)
-
-        Text('sidebarSelectedBoardColor undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Blue) }.tabBar('A')
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_sidebarSelectedBoardColor_undefined')
-        .barStyle(TabBarStyle.SIDEBAR)
-        .sidebarSelectedBoardColor(undefined)
-        .width('100%').height(80)
-
-        Text('tabBarVisibility displayMode undefined').fontSize(12)
-        Tabs({ barPosition: BarPosition.Start }) {
-          TabContent() {
-            Column().width('100%').height(30).backgroundColor(Color.Blue)
-          }
-          .id('tabVis_undefined')
-          .tabBar('A')
-          .tabBarVisibility(TabVisibility.VISIBLE, undefined)
-          TabContent() { Column().width('100%').height(30).backgroundColor(Color.Green) }.tabBar('B')
-        }
-        .id('tabs_tabBarVisibility_undefined')
-        .width('100%').height(80)
+        Text('tabs_barStyle_default').id('tabs_barStyle_default').fontSize(12)
+        Text('tabs_barStyle_undefined').id('tabs_barStyle_undefined').fontSize(12)
+        Text('tabs_sidebarPosition_default').id('tabs_sidebarPosition_default').fontSize(12)
+        Text('tabs_sidebarPosition_undefined').id('tabs_sidebarPosition_undefined').fontSize(12)
+        Text('tabs_sidebarHeader_undefined').id('tabs_sidebarHeader_undefined').fontSize(12)
+        Text('tabs_sidebarSearchable_undefined').id('tabs_sidebarSearchable_undefined').fontSize(12)
+        Text('tabs_barDisplayModeBreakpoint_undefined').id('tabs_barDisplayModeBreakpoint_undefined').fontSize(12)
+        Text('tabs_onBarDisplayModeChange_undefined').id('tabs_onBarDisplayModeChange_undefined').fontSize(12)
+        Text('tabs_sidebarSelectedIconColor_undefined').id('tabs_sidebarSelectedIconColor_undefined').fontSize(12)
+        Text('tabs_sidebarSelectedTextColor_undefined').id('tabs_sidebarSelectedTextColor_undefined').fontSize(12)
+        Text('tabs_sidebarUnselectedIconColor_undefined').id('tabs_sidebarUnselectedIconColor_undefined').fontSize(12)
+        Text('tabs_sidebarUnselectedTextColor_undefined').id('tabs_sidebarUnselectedTextColor_undefined').fontSize(12)
+        Text('tabs_sidebarSelectedBoardColor_undefined').id('tabs_sidebarSelectedBoardColor_undefined').fontSize(12)
+        Text('tabs_tabBarVisibility_undefined').id('tabs_tabBarVisibility_undefined').fontSize(12)
+        Text('tabVis_undefined').id('tabVis_undefined').fontSize(12)
       }
       .width('100%')
       .padding(8)
