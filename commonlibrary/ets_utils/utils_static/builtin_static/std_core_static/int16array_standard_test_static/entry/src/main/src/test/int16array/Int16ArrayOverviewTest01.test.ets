@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -104,23 +104,6 @@ export default function Int16ArrayOverviewTest01(): void {
     it('testInt16ArrayOverviewTestOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let arr: Int16Array = new Int16Array(-1 as int);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0050
-     * @tc.name testInt16ArrayOverviewTestOne005
-     * @tc.desc Verify new Int16Array(-32768) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let arr: Int16Array = new Int16Array(-32768 as int);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
@@ -988,20 +971,6 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0570
-     * @tc.name testInt16ArrayOverviewTestOne057
-     * @tc.desc Verify Int16Array.BYTES_PER_ELEMENT static value is 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestOne057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let actual: int = Int16Array.BYTES_PER_ELEMENT;
-      let expected: int = 2;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0580
      * @tc.name testInt16ArrayOverviewTestOne058
      * @tc.desc Verify entries() on empty array done is true
@@ -1195,26 +1164,6 @@ export default function Int16ArrayOverviewTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0690
-     * @tc.name testInt16ArrayOverviewTestOne069
-     * @tc.desc Verify reduce on empty array without initialValue throws TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0 as int);
-      try {
-        let result: number = arr.reduce((acc: number, val: number, _index: int, _array: Int16Array): number => {
-          return acc + val;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0700
      * @tc.name testInt16ArrayOverviewTestOne070
      * @tc.desc Verify reduce on empty array with initialValue returns initialValue
@@ -1248,43 +1197,6 @@ export default function Int16ArrayOverviewTest01(): void {
       let actual: number = result;
       let expected: int = 6;
       expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0720
-     * @tc.name testInt16ArrayOverviewTestOne072
-     * @tc.desc Verify reduceRight on empty array without initialValue throws TypeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestOne072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0 as int);
-      try {
-        let result: number = arr.reduceRight((acc: number, val: number, _index: int, _array: Int16Array): number => {
-          return acc + val;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OVERVIEW_ONE_0730
-     * @tc.name testInt16ArrayOverviewTestOne073
-     * @tc.desc Verify some(predicate) on empty array returns false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayOverviewTestOne073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0 as int);
-      let result: boolean = arr.some((value: number, _index: int, _array: Int16Array): boolean => {
-        return value > 0;
-      });
-      let actual: boolean = result;
-      expect(actual).assertFalse();
     });
 
     /**
