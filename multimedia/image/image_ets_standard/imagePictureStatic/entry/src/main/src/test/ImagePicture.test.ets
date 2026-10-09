@@ -1281,7 +1281,7 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_JPEG_STATIC_0100");
-      if (!isSupportHEIFDecode) {
+      if (!isSupportHEIFDecode || !isSupportHdr) {
         logger.log("device is not support heif decode");
         expect(!isSupportHEIFDecode).assertTrue();
         done();
@@ -5222,7 +5222,7 @@ export default function imagePicture() {
      */
     it('SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_PICTURE_IMAGESOURCE_GET_HDR_PIXELMAP_HEIF_STATIC_0100");
-      if (!isSupportHEIFDecode) {
+      if (!isSupportHEIFDecode || !isSupportHdr) {
         logger.log("device is not support heif decode");
         expect(!isSupportHEIFDecode).assertTrue();
         done();
