@@ -48,6 +48,12 @@ export default function IgnoreReadOnlyFalseTest() {
       PersistenceV2.remove('IgnoreFalseGetter');
       PersistenceV2.remove('IgnoreFalseComputed');
       PersistenceV2.remove('IgnoreFalseChild');
+      PersistenceV2.remove('IgnoreFalseNullGetter');
+      PersistenceV2.remove('IgnoreFalseNullComputed');
+      PersistenceV2.remove('IgnoreFalseNullChild');
+      PersistenceV2.remove('IgnoreFalseUndefinedGetter');
+      PersistenceV2.remove('IgnoreFalseUndefinedComputed');
+      PersistenceV2.remove('IgnoreFalseUndefinedChild');
       await CommonFunc.sleep(500);
       console.info('[IgnoreReadOnlyFalseTest] afterEach called');
     });
@@ -77,7 +83,9 @@ export default function IgnoreReadOnlyFalseTest() {
       let obj: ESObject = JSON.parse(getInspectorByKey('text_false_getter'));
       let content: string = obj.$attrs.content as string;
       console.info('[IgnoreReadOnlyFalse_Getter_0100] result: ' + content);
-      expect(content).assertContain('ERROR');
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('value=10');
+      expect(content).assertContain('readOnly=20');
 
       console.info('[IgnoreReadOnlyFalse_Getter_0100] END');
     });
@@ -103,7 +111,9 @@ export default function IgnoreReadOnlyFalseTest() {
       let obj: ESObject = JSON.parse(getInspectorByKey('text_false_computed'));
       let content: string = obj.$attrs.content as string;
       console.info('[IgnoreReadOnlyFalse_Computed_0100] result: ' + content);
-      expect(content).assertContain('ERROR');
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('value=5');
+      expect(content).assertContain('computed=15');
 
       console.info('[IgnoreReadOnlyFalse_Computed_0100] END');
     });
@@ -129,9 +139,182 @@ export default function IgnoreReadOnlyFalseTest() {
       let obj: ESObject = JSON.parse(getInspectorByKey('text_false_derived'));
       let content: string = obj.$attrs.content as string;
       console.info('[IgnoreReadOnlyFalse_Inheritance_0100] result: ' + content);
-      expect(content).assertContain('ERROR');
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('child=200');
+      expect(content).assertContain('base=100');
+      expect(content).assertContain('readOnly=300');
 
       console.info('[IgnoreReadOnlyFalse_Inheritance_0100] END');
+    });
+
+    /**
+     * @tc.name   IgnoreReadOnlyFalse_NullGetter_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_IGNOREREADONLYFALSE_NULLGETTER_0100
+     * @tc.desc   Test globalConnect with ignoreReadOnlyProperties=null for class with getter only (no setter)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('IgnoreReadOnlyFalse_NullGetter_0100', Level.LEVEL0, async () => {
+      console.info('[IgnoreReadOnlyFalse_NullGetter_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
+
+      let btn = await driver.findComponent(ON.id('btn_false_null_getter'));
+      await btn.click();
+      await CommonFunc.sleep(1000);
+
+      let obj: ESObject = JSON.parse(getInspectorByKey('text_false_null_getter'));
+      let content: string = obj.$attrs.content as string;
+      console.info('[IgnoreReadOnlyFalse_NullGetter_0100] result: ' + content);
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('value=10');
+      expect(content).assertContain('readOnly=20');
+
+      console.info('[IgnoreReadOnlyFalse_NullGetter_0100] END');
+    });
+
+    /**
+     * @tc.name   IgnoreReadOnlyFalse_NullComputed_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_IGNOREREADONLYFALSE_NULLCOMPUTED_0100
+     * @tc.desc   Test globalConnect with ignoreReadOnlyProperties=null for class with @Computed property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('IgnoreReadOnlyFalse_NullComputed_0100', Level.LEVEL0, async () => {
+      console.info('[IgnoreReadOnlyFalse_NullComputed_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
+
+      let btn = await driver.findComponent(ON.id('btn_false_null_computed'));
+      await btn.click();
+      await CommonFunc.sleep(1000);
+
+      let obj: ESObject = JSON.parse(getInspectorByKey('text_false_null_computed'));
+      let content: string = obj.$attrs.content as string;
+      console.info('[IgnoreReadOnlyFalse_NullComputed_0100] result: ' + content);
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('value=5');
+      expect(content).assertContain('computed=15');
+
+      console.info('[IgnoreReadOnlyFalse_NullComputed_0100] END');
+    });
+
+    /**
+     * @tc.name   IgnoreReadOnlyFalse_NullInheritance_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_IGNOREREADONLYFALSE_NULLINHERITANCE_0100
+     * @tc.desc   Test globalConnect with ignoreReadOnlyProperties=null for class A extends B, A has getter, B has setter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('IgnoreReadOnlyFalse_NullInheritance_0100', Level.LEVEL0, async () => {
+      console.info('[IgnoreReadOnlyFalse_NullInheritance_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
+
+      let btn = await driver.findComponent(ON.id('btn_false_null_derived'));
+      await btn.click();
+      await CommonFunc.sleep(1000);
+
+      let obj: ESObject = JSON.parse(getInspectorByKey('text_false_null_derived'));
+      let content: string = obj.$attrs.content as string;
+      console.info('[IgnoreReadOnlyFalse_NullInheritance_0100] result: ' + content);
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('child=200');
+      expect(content).assertContain('base=100');
+      expect(content).assertContain('readOnly=300');
+
+      console.info('[IgnoreReadOnlyFalse_NullInheritance_0100] END');
+    });
+
+    /**
+     * @tc.name   IgnoreReadOnlyFalse_UndefinedGetter_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_IGNOREREADONLYFALSE_UNDEFINEDGETTER_0100
+     * @tc.desc   Test globalConnect with ignoreReadOnlyProperties=undefined for class with getter only (no setter)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('IgnoreReadOnlyFalse_UndefinedGetter_0100', Level.LEVEL0, async () => {
+      console.info('[IgnoreReadOnlyFalse_UndefinedGetter_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
+
+      let btn = await driver.findComponent(ON.id('btn_false_undefined_getter'));
+      await btn.click();
+      await CommonFunc.sleep(1000);
+
+      let obj: ESObject = JSON.parse(getInspectorByKey('text_false_undefined_getter'));
+      let content: string = obj.$attrs.content as string;
+      console.info('[IgnoreReadOnlyFalse_UndefinedGetter_0100] result: ' + content);
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('value=10');
+      expect(content).assertContain('readOnly=20');
+
+      console.info('[IgnoreReadOnlyFalse_UndefinedGetter_0100] END');
+    });
+
+    /**
+     * @tc.name   IgnoreReadOnlyFalse_UndefinedComputed_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_IGNOREREADONLYFALSE_UNDEFINEDCOMPUTED_0100
+     * @tc.desc   Test globalConnect with ignoreReadOnlyProperties=undefined for class with @Computed property
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('IgnoreReadOnlyFalse_UndefinedComputed_0100', Level.LEVEL0, async () => {
+      console.info('[IgnoreReadOnlyFalse_UndefinedComputed_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
+
+      let btn = await driver.findComponent(ON.id('btn_false_undefined_computed'));
+      await btn.click();
+      await CommonFunc.sleep(1000);
+
+      let obj: ESObject = JSON.parse(getInspectorByKey('text_false_undefined_computed'));
+      let content: string = obj.$attrs.content as string;
+      console.info('[IgnoreReadOnlyFalse_UndefinedComputed_0100] result: ' + content);
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('value=5');
+      expect(content).assertContain('computed=15');
+
+      console.info('[IgnoreReadOnlyFalse_UndefinedComputed_0100] END');
+    });
+
+    /**
+     * @tc.name   IgnoreReadOnlyFalse_UndefinedInheritance_0100
+     * @tc.number SUB_ARUI_PERSISTENCEV2_IGNOREREADONLYFALSE_UNDEFINEDINHERITANCE_0100
+     * @tc.desc   Test globalConnect with ignoreReadOnlyProperties=undefined for class A extends B, A has getter, B has setter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('IgnoreReadOnlyFalse_UndefinedInheritance_0100', Level.LEVEL0, async () => {
+      console.info('[IgnoreReadOnlyFalse_UndefinedInheritance_0100] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create();
+      await CommonFunc.sleep(500);
+
+      let btn = await driver.findComponent(ON.id('btn_false_undefined_derived'));
+      await btn.click();
+      await CommonFunc.sleep(1000);
+
+      let obj: ESObject = JSON.parse(getInspectorByKey('text_false_undefined_derived'));
+      let content: string = obj.$attrs.content as string;
+      console.info('[IgnoreReadOnlyFalse_UndefinedInheritance_0100] result: ' + content);
+      expect(content).assertContain('SUCCESS');
+      expect(content).assertContain('child=200');
+      expect(content).assertContain('base=100');
+      expect(content).assertContain('readOnly=300');
+
+      console.info('[IgnoreReadOnlyFalse_UndefinedInheritance_0100] END');
     });
   });
 }
