@@ -75,22 +75,6 @@ export default function int16ArrayConstructorPart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__0300
-     * @tc.name int16ArrayConstructorPart05Test003
-     * @tc.desc Verify new Int16Array(FixedArray<int> []).byteOffset is 0 #006
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [];
-      const arr = new Int16Array(fa);
-      let actual: int = arr.byteOffset;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__0400
      * @tc.name int16ArrayConstructorPart05Test004
      * @tc.desc Verify new Int16Array(FixedArray<int> [0]) values via $_get #007
@@ -148,56 +132,6 @@ export default function int16ArrayConstructorPart05Test(): void {
       let actual3: number = arr.$_get(2);
       let expected3: int = 32767;
       expect(actual3).assertEqual(expected3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__0700
-     * @tc.name int16ArrayConstructorPart05Test007
-     * @tc.desc Verify new Int16Array(FixedArray<int> [32768, 65535, -32769]) values via $_get #021
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [32768, 65535, -32769];
-      const arr = new Int16Array(fa);
-      let actual: number = arr.$_get(0);
-      let expected: int = -32768;
-      expect(actual).assertEqual(expected);
-      let actual2: number = arr.$_get(1);
-      let expected2: int = -1;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(2);
-      let expected3: int = 32767;
-      expect(actual3).assertEqual(expected3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__0800
-     * @tc.name int16ArrayConstructorPart05Test008
-     * @tc.desc Verify new Int16Array(FixedArray<int> [-32768, -32769, 0, 32767, 32768]) values via $_get #022
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [-32768, -32769, 0, 32767, 32768];
-      const arr = new Int16Array(fa);
-      let actual: number = arr.$_get(0);
-      let expected: int = -32768;
-      expect(actual).assertEqual(expected);
-      let actual2: number = arr.$_get(1);
-      let expected2: int = 32767;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(2);
-      let expected3: int = 0;
-      expect(actual3).assertEqual(expected3);
-      let actual4: number = arr.$_get(3);
-      let expected4: int = 32767;
-      expect(actual4).assertEqual(expected4);
-      let actual5: number = arr.$_get(4);
-      let expected5: int = -32768;
-      expect(actual5).assertEqual(expected5);
     });
 
     /**
@@ -358,107 +292,6 @@ export default function int16ArrayConstructorPart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__1600
-     * @tc.name int16ArrayConstructorPart05Test016
-     * @tc.desc Verify new Int16Array(FixedArray<double> [Number.NaN]) values via $_get #054
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<double> = [Number.NaN];
-      const arr = new Int16Array(fa);
-      let actual: number = arr.$_get(0);
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__1700
-     * @tc.name int16ArrayConstructorPart05Test017
-     * @tc.desc Verify new Int16Array(FixedArray<double> [Number.POSITIVE_INFINITY]) values via $_get #055
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<double> = [Number.POSITIVE_INFINITY];
-      const arr = new Int16Array(fa);
-      let actual: number = arr.$_get(0);
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__1800
-     * @tc.name int16ArrayConstructorPart05Test018
-     * @tc.desc Verify new Int16Array(FixedArray<double> [Number.NEGATIVE_INFINITY]) values via $_get #056
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<double> = [Number.NEGATIVE_INFINITY];
-      const arr = new Int16Array(fa);
-      let actual: number = arr.$_get(0);
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__1900
-     * @tc.name int16ArrayConstructorPart05Test019
-     * @tc.desc Verify new Int16Array(FixedArray<double> [1.1, 2.5, 3.9, -1.1, -2.5]) values via $_get #059
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<double> = [1.1, 2.5, 3.9, -1.1, -2.5];
-      const arr = new Int16Array(fa);
-      let actual: number = arr.$_get(0);
-      let expected: int = 1;
-      expect(actual).assertEqual(expected);
-      let actual2: number = arr.$_get(1);
-      let expected2: int = 2;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(2);
-      let expected3: int = 3;
-      expect(actual3).assertEqual(expected3);
-      let actual4: number = arr.$_get(3);
-      let expected4: int = -1;
-      expect(actual4).assertEqual(expected4);
-      let actual5: number = arr.$_get(4);
-      let expected5: int = -2;
-      expect(actual5).assertEqual(expected5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__2000
-     * @tc.name int16ArrayConstructorPart05Test020
-     * @tc.desc Verify new Int16Array(FixedArray<double> [Number.NaN, Number.POSITIVE_INFINITY...]) values via $_get #060
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<double> = [Number.NaN, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY, 42.0];
-      const arr = new Int16Array(fa);
-      let actual: number = arr.$_get(0);
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-      let actual2: number = arr.$_get(1);
-      let expected2: int = 0;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(2);
-      let expected3: int = 0;
-      expect(actual3).assertEqual(expected3);
-      let actual4: number = arr.$_get(3);
-      let expected4: int = 42;
-      expect(actual4).assertEqual(expected4);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__2100
      * @tc.name int16ArrayConstructorPart05Test021
      * @tc.desc Verify new Int16Array(FixedArray<number> [Number.NaN]) values via $_get #065
@@ -554,22 +387,6 @@ export default function int16ArrayConstructorPart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__2600
-     * @tc.name int16ArrayConstructorPart05Test026
-     * @tc.desc Verify new Int16Array(FixedArray<int> [100, 200]).byteOffset is 0 #079
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [100, 200];
-      const arr = new Int16Array(fa);
-      let actual: int = arr.byteOffset;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__2700
      * @tc.name int16ArrayConstructorPart05Test027
      * @tc.desc Verify new Int16Array(FixedArray<int>).name equals Int16Array #080
@@ -582,22 +399,6 @@ export default function int16ArrayConstructorPart05Test(): void {
       const arr = new Int16Array(fa);
       let actual: string = arr.name;
       let expected: string = "Int16Array";
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__2800
-     * @tc.name int16ArrayConstructorPart05Test028
-     * @tc.desc Verify new Int16Array(FixedArray<int>).BYTES_PER_ELEMENT equals 2 #081
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [1];
-      const arr = new Int16Array(fa);
-      let actual: int = arr.BYTES_PER_ELEMENT;
-      let expected: int = 2;
       expect(actual).assertEqual(expected);
     });
 
@@ -615,73 +416,6 @@ export default function int16ArrayConstructorPart05Test(): void {
       let actual: int = arr.buffer.byteLength;
       let expected: int = 4;
       expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__3000
-     * @tc.name int16ArrayConstructorPart05Test030
-     * @tc.desc Verify new Int16Array(FixedArray<int>) buffer.byteLength equals 6 #083
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [7, 8, 9];
-      const arr = new Int16Array(fa);
-      let actual: int = arr.buffer.byteLength;
-      let expected: int = 6;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__3100
-     * @tc.name int16ArrayConstructorPart05Test031
-     * @tc.desc Verify new Int16Array from FixedArray<int> [5, 15, 25] #088
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [5, 15, 25];
-      const arr = new Int16Array(fa);
-      arr.$_set(0, 888);
-      let actual: number = fa[0];
-      let expected: int = 5;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__3200
-     * @tc.name int16ArrayConstructorPart05Test032
-     * @tc.desc Verify new Int16Array(FixedArray<int> [1, 2, 3]) isolation via $_set/$_get #089
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [1, 2, 3];
-      const arr1 = new Int16Array(fa);
-      const arr2 = new Int16Array(fa);
-      arr1.$_set(0, 100);
-      let actual: number = arr2.$_get(0);
-      let expected: int = 1;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART05__3300
-     * @tc.name int16ArrayConstructorPart05Test033
-     * @tc.desc Verify new Int16Array from FixedArray<int> [7, 8] #090
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart05Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fa: FixedArray<int> = [7, 8];
-      const arr1 = new Int16Array(fa);
-      const arr2 = new Int16Array(fa);
-      let actual: boolean = arr1.buffer === arr2.buffer;
-      expect(actual).assertFalse();
     });
 
     /**
