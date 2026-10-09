@@ -42,7 +42,7 @@
                 "./resource/wrongSuffixImage/wrong_suffix_svg.bmp ->/data/local/tmp/",
                 "./resource/wrongSuffixImage/wrong_suffix_bmp.dng ->/data/local/tmp/",
                 "./resource/wrongSuffixImage/wrong_suffix_dng.jpg ->/data/local/tmp/",
-                "./setup_image_image_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_image_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
