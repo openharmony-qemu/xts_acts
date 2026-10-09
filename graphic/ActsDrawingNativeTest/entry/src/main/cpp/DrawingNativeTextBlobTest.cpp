@@ -1035,18 +1035,14 @@ int TestTextBlobCreateFromPosTextWithFallbackNormal()
 {
     DrawingNativeTextBlobTestSetUp();
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
-    EXPECT_NE(font, nullptr);
-    OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateDefault();
-    OH_Drawing_FontSetTypeface(font, typeface);
     // UTF8 encoding
     const char utf8Text[] = "Hello 你好";
     int count = OH_Drawing_FontCountText(font, utf8Text, strlen(utf8Text), TEXT_ENCODING_UTF8);
     OH_Drawing_Point2D *pts = new OH_Drawing_Point2D[count];
     OH_Drawing_TextBlob **textBlobs = nullptr;
     uint32_t textBlobsCount = 0;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(
-        utf8Text, strlen(utf8Text), pts, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8,
-        &textBlobs, &textBlobsCount);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(utf8Text, strlen(utf8Text), pts,
+        font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_NE(textBlobs, nullptr);
     EXPECT_GT(textBlobsCount, 0);
@@ -1059,9 +1055,8 @@ int TestTextBlobCreateFromPosTextWithFallbackNormal()
     pts = new OH_Drawing_Point2D[count];
     textBlobs = nullptr;
     textBlobsCount = 0;
-    errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(
-        utf16Text, utf16ByteLen, pts, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF16,
-        &textBlobs, &textBlobsCount);
+    errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(utf16Text, utf16ByteLen, pts, font,
+        OH_Drawing_TextEncoding::TEXT_ENCODING_UTF16, &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     OH_Drawing_TextBlobsArrayDestroy(textBlobs, textBlobsCount);
     // UTF32 encoding
@@ -1072,25 +1067,21 @@ int TestTextBlobCreateFromPosTextWithFallbackNormal()
     pts = new OH_Drawing_Point2D[count];
     textBlobs = nullptr;
     textBlobsCount = 0;
-    errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(
-        utf32Text, utf32ByteLen, pts, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF32,
-        &textBlobs, &textBlobsCount);
+    errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(utf32Text, utf32ByteLen, pts, font,
+        OH_Drawing_TextEncoding::TEXT_ENCODING_UTF32, &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     OH_Drawing_TextBlobsArrayDestroy(textBlobs, textBlobsCount);
     // GLYPH_ID encoding
-    const char glyphIdText[] = "Ni~好 @#$%^|\n";
-    count = OH_Drawing_FontCountText(font, glyphIdText, strlen(glyphIdText), TEXT_ENCODING_UTF8);
+    count = OH_Drawing_FontCountText(font, utf8Text, strlen(utf8Text), TEXT_ENCODING_UTF8);
     delete[] pts;
     pts = new OH_Drawing_Point2D[count];
     textBlobs = nullptr;
     textBlobsCount = 0;
-    errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(
-        glyphIdText, strlen(glyphIdText), pts, font, OH_Drawing_TextEncoding::TEXT_ENCODING_GLYPH_ID,
-        &textBlobs, &textBlobsCount);
+    errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(utf8Text, strlen(utf8Text),
+        pts, font, OH_Drawing_TextEncoding::TEXT_ENCODING_GLYPH_ID, &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     OH_Drawing_TextBlobsArrayDestroy(textBlobs, textBlobsCount);
     delete[] pts;
-    OH_Drawing_TypefaceDestroy(typeface);
     OH_Drawing_FontDestroy(font);
     DrawingNativeTextBlobTestTearDown();
     return OH_DRAWING_SUCCESS;

@@ -1178,9 +1178,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontArgumentsDestoryNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontArgumentsDestoryNull', Level.LEVEL0, () => {
+    it('testFontArgumentsDestoryNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontArgumentsDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -1191,9 +1191,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontArgumentsDestoryMultiplieCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontArgumentsDestoryMultiplieCalls', Level.LEVEL0, () => {
+    it('testFontArgumentsDestoryMultiplieCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontArgumentsDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -1218,9 +1218,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontSetThemeFontFollowedMuitipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontSetThemeFontFollowedMuitipleCalls', Level.LEVEL0, () => {
+    it('testFontSetThemeFontFollowedMuitipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetThemeFontFollowed(1);
       expect(result).assertEqual(0);
     })
@@ -1231,9 +1231,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontSetThemeFontFollowedNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontSetThemeFontFollowedNull', Level.LEVEL0, () => {
+    it('testFontSetThemeFontFollowedNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetThemeFontFollowed(2);
       expect(result).assertEqual(0);
     })
@@ -1260,7 +1260,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFontIsThemeFontFollowedMultipleCalls', Level.LEVEL0, () => {
+    it('testFontIsThemeFontFollowedMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontIsThemeFontFollowed(1);
       expect(result).assertEqual(0);
     })
@@ -1273,7 +1273,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFontIsThemeFontFollowedNull', Level.LEVEL0, () => {
+    it('testFontIsThemeFontFollowedNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontIsThemeFontFollowed(2);
       expect(result).assertEqual(0);
     })
@@ -1298,9 +1298,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testFontMeasureTextWithBrushOrPenNormal2', Level.LEVEL0, () => {
+    it('testFontMeasureTextWithBrushOrPenNormal2', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingFontMeasureTextWithBrushOrPen(1);
       expect(result).assertEqual(0);
     })
@@ -1364,9 +1364,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontGetWidthsBoundsNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testFontGetWidthsBoundsNormal2', Level.LEVEL0, () => {
+    it('testFontGetWidthsBoundsNormal2', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingFontGetWidthsBounds(1);
       expect(result).assertEqual(0);
     })
@@ -1443,9 +1443,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontGePosNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testFontGePosNormal2', Level.LEVEL0, () => {
+    it('testFontGePosNormal2', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingFontGetPos(2);
       expect(result).assertEqual(0);
     })
@@ -1576,9 +1576,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontFeaturesAddFeatureNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('testFontFeaturesAddFeatureNormal', Level.LEVEL2, () => {
+    it('testFontFeaturesAddFeatureNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontFeatures(0);
       expect(result).assertEqual(0);
     })
@@ -1656,7 +1656,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testFontTextToGlyphsWithFallbackNormal', Level.LEVEL3, () => {
+    it('testFontTextToGlyphsWithFallbackNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontWithFallback(0);
       expect(result).assertEqual(0);
     })
@@ -1706,9 +1706,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontMeasureTextWithFallbackNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testFontMeasureTextWithFallbackNormal', Level.LEVEL3, () => {
+    it('testFontMeasureTextWithFallbackNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontWithFallback(4);
       expect(result).assertEqual(0);
     })
@@ -1758,9 +1758,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenWithFallbackNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testFontMeasureTextWithBrushOrPenWithFallbackNormal', Level.LEVEL3, () => {
+    it('testFontMeasureTextWithBrushOrPenWithFallbackNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontWithFallback(8);
       expect(result).assertEqual(0);
     })

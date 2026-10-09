@@ -459,7 +459,7 @@ export default function DrawingNativeTextBlobTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testTextBlobCreateFromTextWithFallbackNormal', Level.LEVEL3, () => {
+    it('testTextBlobCreateFromTextWithFallbackNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingTextBlobWithFallback(0);
       expect(result).assertEqual(0);
     })

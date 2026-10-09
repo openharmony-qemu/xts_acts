@@ -1606,8 +1606,8 @@ int TestFontMeasureTextWithBrushOrPenWithFallbackNormal()
     float textWidth = 0.0f;
     // UTF8 encoding with pen
     const char utf8Text[] = "Hello 你好";
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPenWithFallback(font, utf8Text, strlen(utf8Text),
-        OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_FontMeasureTextWithBrushOrPenWithFallback(font, utf8Text,
+        strlen(utf8Text), OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, nullptr, pen, bounds, &textWidth);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     EXPECT_EQ(textWidth, 464.0f);
     EXPECT_EQ(OH_Drawing_RectGetLeft(bounds), 3.0f);
