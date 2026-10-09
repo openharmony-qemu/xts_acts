@@ -839,7 +839,7 @@ export default function TaskPoolSendableTest() {
           expect(a1.state).assertEqual(0);
         } catch (e) {
           console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
-          expect(true).assertTrue();
+          expect().assertFail();
         }
         done();
       } catch (error) {
