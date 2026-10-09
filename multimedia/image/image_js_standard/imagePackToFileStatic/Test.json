@@ -21,7 +21,7 @@
             "pre-push": [],
             "push": [
                 "./resource/image/test.png ->/data/local/tmp/",
-                "./setup_image_packToFileJs_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_packToFileJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
