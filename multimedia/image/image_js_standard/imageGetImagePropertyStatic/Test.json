@@ -35,7 +35,7 @@
                 "./resource/image/moving_test_loop5.gif ->/data/local/tmp/",
                 "./resource/image/moving_test_loop1.gif ->/data/local/tmp/",
                 "./resource/image/moving_test_loop0.gif ->/data/local/tmp/",
-                "./setup_image_getImagePropertyJs_static_test.sh ->/data/local/tmp/"
+                "./resource/image/sh/setup_image_getImagePropertyJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
