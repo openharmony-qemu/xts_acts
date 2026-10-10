@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 import { ArkTSUtils, HashMap, MessageEvents, taskpool, worker } from '@kit.ArkTS';
-import { expect } from '@ohos/hypium-dynamic';
+import { expect } from '@ohos/hypium';
 import { sleep , printArgs2 } from './Utils';
 
 @Concurrent

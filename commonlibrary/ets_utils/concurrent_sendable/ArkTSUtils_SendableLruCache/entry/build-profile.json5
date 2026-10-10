@@ -20,8 +20,8 @@
       "workers": [
         "./src/ohosTest/ets/workers/worker.ets",
         "./src/ohosTest/ets/workers/workerReceiveCache.ets",
-        "./src/ohosTest/ets/workers/workerSendCache.ets"
-      ]
+        "./src/ohosTest/ets/workers/workerSendCache.ets",
+        "./src/ohosTest/ets/test/SendableLruCacheConcurrent/SendableLruCacheWorker.ets"]
     }
   },
   "buildOptionSet": [

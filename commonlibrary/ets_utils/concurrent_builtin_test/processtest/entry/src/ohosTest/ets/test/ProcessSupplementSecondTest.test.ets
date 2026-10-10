@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import process from '@ohos.process';
 import { MessageEvent, taskpool } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';

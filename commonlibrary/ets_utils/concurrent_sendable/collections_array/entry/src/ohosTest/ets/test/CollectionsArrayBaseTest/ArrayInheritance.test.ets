@@ -14,7 +14,7 @@
  */
 // ArrayInheritance.test.ets
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 
 @Sendable

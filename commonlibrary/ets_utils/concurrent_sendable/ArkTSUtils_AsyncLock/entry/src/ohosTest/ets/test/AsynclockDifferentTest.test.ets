@@ -24,7 +24,7 @@ import {
   Size,
   Level,
   TestType
-} from '@ohos/hypium-dynamic';
+} from '@ohos/hypium';
 import { ConcurrentFunc, delay, printArgs1,
   printArgs12,
   printArgs15,
@@ -1521,7 +1521,7 @@ export default function AsynclockDifferentTest() {
             console.error('taskpool execute failed: ', error);
           });
         }
-        while (count != 3) {
+        while (count != 3 || count1 != 3) {
           await sleep(300);
         }
         console.log('Success execution count:' + count);

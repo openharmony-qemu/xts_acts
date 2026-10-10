@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { sleep, CreateDefaultLruCache, concurrentPutWithLock, concurrentGetSideEffect, taskPoolAllApisTest, taskPoolCreateDefaultTest, concurrentAllOpsTryCatch, concurrentAllOpsWithLock } from './SendableLruCacheHelpers';
 import { ArkTSUtils, taskpool } from '@kit.ArkTS'
 import type { BusinessError } from '@ohos.base'
 import { ContainsLruCache, ChildLruCache, testWorkerReceiveCache001, testWorkerReceiveCache002, testWorkerSendCache001, testTaskPoolCreateCacheInMainThread001, testTaskPoolCreateCacheInMainThread002, testTaskPoolCreateCacheInTaskThread001 } from './SendableLruCache'
-import { sleep, CreateDefaultLruCache, concurrentPutWithLock, concurrentGetSideEffect, taskPoolAllApisTest, taskPoolCreateDefaultTest, concurrentAllOpsTryCatch, concurrentAllOpsWithLock } from './SendableLruCacheHelpers'
 import { test_sendable_0100, test_sendable_0200, test_sendable_0300, test_sendable_0500, test_sendable_0600, test_sendable_0700, test_sendable_0800, test_sendable_0900, test_sendable_1000, test_sendable_1400, test_sendable_1600 } from '../testability/pages/Sendablefunction'
 
 declare class ArkTools {
@@ -41,11 +41,12 @@ export default function SendableLruCacheConcurrentTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
+      
     })
     afterEach(() => {
     })
-    afterAll(() => {
+    afterAll(async () => {
+      await sleep(100);
     })
 
     /**

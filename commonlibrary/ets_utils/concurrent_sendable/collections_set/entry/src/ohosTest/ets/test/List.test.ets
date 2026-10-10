@@ -43,6 +43,8 @@ import SetConcurrentTest from './Concurrent/SetConcurrent.test';
 import SetNormalTest from './Normal/SetNormal.test';
 import SetTaskPoolTest from './TaskPool/SetTaskPool.test';
 
+import SetInheritanceTest from './collections/SetInheritanceTest.test';
+
 export default function testsuite() {
   SetBasicTest();
   SetConcurrentTest();
@@ -74,5 +76,7 @@ export default function testsuite() {
   collectionsSetAuxiliaryTest();
   collectionsSetInheritanceAndSendableTypesTest();
   collectionsSetSendableFunctionTest();
+  
+  SetInheritanceTest();
 }
 

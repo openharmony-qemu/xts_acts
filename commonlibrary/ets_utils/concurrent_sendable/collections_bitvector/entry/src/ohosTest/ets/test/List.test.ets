@@ -31,7 +31,7 @@ import BitVectorIndexAccessTest from './BitVectorIndexAccess.test';
 import BitVectorUnboundTest from './BitVectorUnbound.test';
 import BitVectorConcurrentSingleTest from './BitVectorConcurrentSingle.test';
 import BitVectorConcurrentMultiTest from './BitVectorConcurrentMulti.test';
-
+import BitVectorTest from './BitVectorTest.test';
 export default function testsuite() {
   BitVectorConstructorTest();
   BitVectorPushTest();
@@ -51,4 +51,6 @@ export default function testsuite() {
   BitVectorUnboundTest();
   BitVectorConcurrentSingleTest();
   BitVectorConcurrentMultiTest();
+  
+  BitVectorTest();
 };

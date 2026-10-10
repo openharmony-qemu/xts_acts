@@ -10,18 +10,28 @@ import atomicsStoreTest from './atomics/atomicStoreTest.test';
 import atomicsSubTest from './atomics/atomicSubTest.test';
 import atomicsWaitTest from './atomics/atomicWaitTest.test';
 import atomicsXorTest from './atomics/atomicXorTest.test';
+import atomicsAPITest from './atomics/AtomicsAPITest.test';
+import atomicsAPISecondTest from './atomics/AtomicsAPISecondTest.test';
+import AtomicsAPIThirdlyTest from './atomics/AtomicsAPIThirdlyTest.test';
+import AtomicsFunctionTest from './atomics/AtomicsFunctionTest.test';
+import AtomicsMultithreadTest from './atomics/AtomicsMultithreadTest.test';
 
 export default function testsuite() {
-  atomicsCombTest()
-  atomicsAddTest()
-  atomicsAndTest()
-  atomicsCompareExchangeTest()
-  atomicsExchangeTest()
-  atomicsIsLockFreeTest()
-  atomicsLoadTest()
-  atomicsOrTest()
-  atomicsStoreTest()
-  atomicsSubTest()
-  atomicsXorTest()
-  atomicsWaitTest()
+  atomicsCombTest();
+  atomicsAddTest();
+  atomicsAndTest();
+  atomicsCompareExchangeTest();
+  atomicsExchangeTest();
+  atomicsIsLockFreeTest();
+  atomicsLoadTest();
+  atomicsOrTest();
+  atomicsStoreTest();
+  atomicsSubTest();
+  atomicsXorTest();
+  atomicsWaitTest();
+  atomicsAPITest();
+  atomicsAPISecondTest();
+  AtomicsAPIThirdlyTest();
+  AtomicsFunctionTest();
+  AtomicsMultithreadTest();
 }

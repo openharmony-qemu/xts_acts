@@ -20,6 +20,7 @@ import Float32ArrayConcurrentTestConcurrent from './Concurrent/Float32ArrayConcu
 import Float32ArrayNormalTest from './Normal/Float32ArrayNormal.test';
 import Float32ArrayTaskPoolTest from './TaskPool/Float32ArrayTaskPool.test';
 
+import FloatArrayTest from './FloatArrayTest.test'
 export default function testsuite() {
   Float32ArrayBasicTest();
   Float32ArrayConcurrentTest();
@@ -27,4 +28,5 @@ export default function testsuite() {
   Float32ArrayConcurrentTestConcurrent();
   Float32ArrayNormalTest();
   Float32ArrayTaskPoolTest();
+  FloatArrayTest();
 }

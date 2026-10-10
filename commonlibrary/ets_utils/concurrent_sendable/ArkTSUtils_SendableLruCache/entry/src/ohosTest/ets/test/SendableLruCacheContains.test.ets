@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { sleep } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
 
 export default function SendableLruCacheContainsTest() {
@@ -24,7 +25,8 @@ export default function SendableLruCacheContainsTest() {
     })
     afterEach(() => {
     })
-    afterAll(() => {
+    afterAll(async () => {
+      await sleep(100);
     })
 
     /**

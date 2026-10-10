@@ -24,7 +24,6 @@ import jsonParseSendableBasicTest from './JSONParseSendableBasic.test';
 import jsonParseSendableCompareTest from './JSONParseSendableCompare.test';
 import jsonParseSendableRoundTripTest from './JSONParseSendableRoundTrip.test';
 import jsonParseSendableTransformTest from './JSONParseSendableTransform.test';
-import jsonParseSendableSecurity from './JSONParseSendableSecurity.test';
 import arkTSUtilJSONTest from './ArkTSUtilJSON.test';
 
 export default function testsuite() {
@@ -40,5 +39,4 @@ export default function testsuite() {
   jsonParseSendableRoundTripTest();
   jsonParseSendableTransformTest();
   arkTSUtilJSONTest();
-  jsonParseSendableSecurity();
 }

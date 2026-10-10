@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, taskpool } from '@kit.ArkTS';
 import { SET_CFG } from './SetExpandCfg';
 
