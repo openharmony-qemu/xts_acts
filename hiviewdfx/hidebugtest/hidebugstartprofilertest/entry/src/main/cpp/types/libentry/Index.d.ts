@@ -46,7 +46,7 @@ export const testDestroyProfilerOptionsNullReturnCode: () => number;
 export const testStartProfilerWithOptionsNullCallback: (resourceType: number, maxDuration: number) => number;
 export const testSetMaxDurationSecInvalidReturn: () => {
   zero: number,
-  overMax: number
+  overMax: number0
 };
 export const testGetProfilerOptionsDefaults: () => {
   maxDuration: number,
@@ -57,3 +57,7 @@ export const testGetProfilerOptionsDefaults: () => {
   maxAsyncNestingDepth: number,
   maxAsyncStackDepth: number
 };
+// Test functions for OH_HiDebug_SetStackTraceMode (XTS testing)
+export const testSetStackTraceMode: (mode: number) => number;
+export const testSetStackTraceModeNull: () => number;
+export const testStartProfilerWithOptionsStackTraceMode: (resourceType: number, maxDuration: number, stackTraceMode: number) => number;

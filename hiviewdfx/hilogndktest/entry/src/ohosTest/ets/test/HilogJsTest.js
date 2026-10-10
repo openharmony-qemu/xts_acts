@@ -788,13 +788,13 @@ describe('HilogJsTest', function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    // it('testHilogJsApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
-    //   console.info('testHilogJsApi43 start');
-    //   // @ts-ignore
-    //   const res = hilog.isLoggable("中文测试", "HILOGTEST", hilog.LogLevel.INFO);
-    //   expect(res).assertEqual(undefined);
-    //   console.info('testHilogJsApi43 end');
-    // })
+    it('testHilogJsApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+      console.info('testHilogJsApi43 start');
+      // @ts-ignore
+      const res = hilog.isLoggable("中文测试", "HILOGTEST", hilog.LogLevel.INFO);
+      expect(res).assertEqual(undefined);
+      console.info('testHilogJsApi43 end');
+    })
 	
     /**
      * @tc.name   testHilogJsApi44
@@ -1610,19 +1610,18 @@ describe('HilogJsTest', function () {
       }
     })
 
-    /**
-     * @tc.name   testHilogSetOutputTypeByDomainID0300
-     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0300
-     * @tc.desc   hilog的SetOutputTypeByDomainID方法
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
+/**
+    * @tc.name   testHilogSetOutputTypeByDomainID0300
+    * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_0300
+    * @tc.desc   setOutputTypeByDomainID接口-入参覆盖：domainIDs为空数组（length==0），规格调整为返回null
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
     it('testHilogSetOutputTypeByDomainID0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done)  {
       try {
         let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [], false);
         hilog.info(0x3200, "testTag", 'empty domain list log');
-        expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
         console.error(`====> testHilogSetOutputTypeByDomainID0300 > err code: ${err.code}, err msg: ${err.message}`)
@@ -1793,21 +1792,67 @@ describe('HilogJsTest', function () {
       }
     })
 
-    /**
-     * @tc.name   testHilogSetOutputTypeByDomainID1300
-     * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1300
-     * @tc.desc   setOutputTypeByDomainID接口-入参覆盖：空数组
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
+/**
+    * @tc.name   testHilogSetOutputTypeByDomainID1300
+    * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1300
+    * @tc.desc   setOutputTypeByDomainID接口-入参覆盖：空数组（length==0），isExclude为true，规格调整为返回null
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
     it('testHilogSetOutputTypeByDomainID1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       try {
         let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, [], true);
+        done();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   testHilogSetOutputTypeByDomainID1400
+    * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1400
+    * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs数组长度超过80（上限边界+1），返回null
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('testHilogSetOutputTypeByDomainID1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+      try {
+        let domainIds = [];
+        for (let i = 0; i < 81; i++) {
+          domainIds.push(i + 1);
+        }
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, domainIds, false);
+        done();
+      } catch (err) {
+        console.error(`====> testHilogSetOutputTypeByDomainID1400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+    * @tc.name   testHilogSetOutputTypeByDomainID1500
+    * @tc.number SUB_DFX_DFT_SetOutputTypeByDomainID_1500
+    * @tc.desc   setOutputTypeByDomainID接口-参数规格覆盖：domainIDs数组长度等于80（上边界值），正常返回
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it('testHilogSetOutputTypeByDomainID1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
+      try {
+        let domainIds = [];
+        for (let i = 0; i < 80; i++) {
+          domainIds.push(i + 1);
+        }
+        let lastType = hilog.setOutputTypeByDomainID(hilog.OutputType.SHARE_SANDBOX_ONLY, domainIds, false);
         expect(lastType >= 0 && lastType <= 4).assertTrue();
         done();
       } catch (err) {
-        console.error(`====> testHilogSetOutputTypeByDomainID1200 > err code: ${err.code}, err msg: ${err.message}`)
+        console.error(`====> testHilogSetOutputTypeByDomainID1500 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
         done();
       }

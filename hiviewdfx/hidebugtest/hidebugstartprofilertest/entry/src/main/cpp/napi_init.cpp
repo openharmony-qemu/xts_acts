@@ -571,6 +571,90 @@ static napi_value HiDebugStopProfiler(napi_env env, napi_callback_info info)
     return ret;
 }
 
+// ============================================================
+// Test functions for OH_HiDebug_SetStackTraceMode (XTS testing)
+// ============================================================
+
+static napi_value TestSetStackTraceMode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 1) {
+        napi_throw_error(env, nullptr, "need mode param");
+        return nullptr;
+    }
+    uint32_t mode = 0;
+    napi_get_value_uint32(env, args[0], &mode);
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceMode mode=%{public}u", mode);
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    HiDebug_ErrorCode code = OH_HiDebug_SetStackTraceMode(
+        opts, static_cast<OH_HiDebug_ProfilerStackTraceMode>(mode));
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceMode result code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value TestSetStackTraceModeNull(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceModeNull");
+    HiDebug_ErrorCode code = OH_HiDebug_SetStackTraceMode(nullptr, OH_HIDEBUG_STACK_TRACE_KEEP_ALL);
+    OH_LOG_INFO(LOG_APP, "testTag TestSetStackTraceModeNull result code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value TestStartProfilerWithOptionsStackTraceMode(napi_env env, napi_callback_info info)
+{
+    size_t argc = 3;
+    napi_value args[3] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    if (argc < 3) {
+        napi_throw_error(env, nullptr, "need 3 params");
+        return nullptr;
+    }
+    int32_t resourceType;
+    napi_get_value_int32(env, args[0], &resourceType);
+    uint32_t maxDuration;
+    napi_get_value_uint32(env, args[1], &maxDuration);
+    uint32_t stackTraceMode;
+    napi_get_value_uint32(env, args[2], &stackTraceMode);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithOptionsStackTraceMode type=%{public}d maxDuration=%{public}u stackTraceMode=%{public}u",
+                resourceType, maxDuration, stackTraceMode);
+    OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
+    if (opts == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_HiDebug_SetMaxDurationSec(opts, maxDuration);
+    OH_HiDebug_SetFilterSize(opts, 256);
+    OH_HiDebug_SetSampleIntervalBytes(opts, 384);
+    HiDebug_ErrorCode code = OH_HiDebug_SetStackTraceMode(
+        opts, static_cast<OH_HiDebug_ProfilerStackTraceMode>(stackTraceMode));
+    if (code != HIDEBUG_SUCCESS) {
+        OH_HiDebug_DestroyProfilerOptions(opts);
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    code = OH_HiDebug_StartProfilerWithOptions(
+        static_cast<OH_HiDebug_ResourceType>(resourceType), opts, OnProfilerOptionsResult);
+    OH_HiDebug_DestroyProfilerOptions(opts);
+    OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithOptionsStackTraceMode result code=%{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -601,6 +685,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"testCreateAndDestroyProfilerOptions", nullptr, TestCreateAndDestroyProfilerOptions, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testSetAllOptionsBoundary", nullptr, TestSetAllOptionsBoundary, nullptr, nullptr, nullptr, napi_default, nullptr},
         { "stopProfiler", nullptr, HiDebugStopProfiler, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetStackTraceMode", nullptr, TestSetStackTraceMode, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetStackTraceModeNull", nullptr, TestSetStackTraceModeNull, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testStartProfilerWithOptionsStackTraceMode", nullptr, TestStartProfilerWithOptionsStackTraceMode, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
