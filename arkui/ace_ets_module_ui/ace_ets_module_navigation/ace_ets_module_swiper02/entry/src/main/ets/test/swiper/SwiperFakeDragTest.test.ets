@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../MainAbility/common/Common';
 import router from '@ohos.router';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function SwiperFakeDragTest() {
   describe('SwiperFakeDragTest', () => {
@@ -105,7 +106,14 @@ export default function SwiperFakeDragTest() {
         expect(fakeDragByFlag == true).assertTrue();
         AppStorage.delete('fakeDragByFlag');
 
-        sendEventByKey('btn_stopFakeDrag_0200', 10, '');
+        let driver = Driver.create();
+        let stopBtn = await driver.findComponent(ON.id('btn_stopFakeDrag_0200'));
+        if (!stopBtn) {
+          await driver.swipe(150, 300, 150, 100, 300);
+          await CommonFunc.sleep(500);
+          stopBtn = await driver.findComponent(ON.id('btn_stopFakeDrag_0200'));
+        }
+        await stopBtn?.click();
         await CommonFunc.sleep(500);
         let stopFakeDragFlag: boolean | undefined = AppStorage.get('stopFakeDragFlag');
         console.info('[SwiperFakeDragTest_0200] stopFakeDragFlag is ', stopFakeDragFlag);
