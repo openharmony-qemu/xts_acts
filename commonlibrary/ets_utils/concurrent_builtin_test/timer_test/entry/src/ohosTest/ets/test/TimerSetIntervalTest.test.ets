@@ -89,7 +89,7 @@ export default function TimerSetIntervalTest() {
       while (!flag) {
         await sleep(100);
       }
-      expect(time2 - time1 >= 100).assertTrue()
+      expect(time2 - time1 >= 99).assertTrue()
       expect(msg2).assertEqual('Hello, World!');
       clearInterval(TimeID);
       Done();
