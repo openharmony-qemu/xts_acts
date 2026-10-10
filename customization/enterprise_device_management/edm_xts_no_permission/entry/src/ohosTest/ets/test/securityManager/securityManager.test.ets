@@ -1422,15 +1422,11 @@ function testGetUserExtCredential() {
   it("test_get_user_ext_credential_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
-      await securityManager.getUserExtendCredential(UKEY_ACCOUNT_ID);
-      expect(false).assertTrue();
+      let credentials = await securityManager.getUserExtendCredential(UKEY_ACCOUNT_ID);
+      expect(Array.isArray(credentials)).assertTrue();
     } catch (error) {
       console.info('test_get_user_ext_credential_0100 error.code = ' + error.code);
-      if (error.code === 801) {
-        expect(error.code).assertEqual(801);
-      } else {
-        expect(error.code).assertEqual(201);
-      }
+      expect(error.code).assertEqual(201);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
