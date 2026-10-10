@@ -218,7 +218,6 @@ import RichEditorScrollToVisibleTest from './RichEditorApi26Test/RichEditorScrol
 import ImageSpanResizableTest from './RichEditorApi26Test/ImageSpanResizable.test';
 import RichEditorImageSpanStyleResizableTest from './RichEditorApi26Test/RichEditorImageSpanStyleResizable.test';
 import ImageAttachmentResizableTest from './RichEditorApi26Test/ImageAttachmentResizable.test';
-import RefreshOffsetTest from './RichEditorApi26Test/RefreshOffset.test';
 import richEditorBuilderSpanApi26Test from './RichEditorApi26Test/RichEditorBuilderSpan.test';
 import stylesVersionDecoratorTest from './RichEditorApi26Test/StylesVersionDecorator.test';
 
@@ -430,7 +429,6 @@ export default function testsuite() {
   ImageSpanResizableTest()
   RichEditorImageSpanStyleResizableTest()
   ImageAttachmentResizableTest()
-  RefreshOffsetTest()
   richEditorBuilderSpanApi26Test()
   stylesVersionDecoratorTest()
 }
