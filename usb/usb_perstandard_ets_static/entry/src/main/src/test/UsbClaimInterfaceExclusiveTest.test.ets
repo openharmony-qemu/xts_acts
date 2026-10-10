@@ -422,7 +422,7 @@ export default function UsbClaimInterfaceExclusiveTest(): void {
           let endpoint: UsbMgr.USBEndpoint = {
             address: 129, attributes: 3, interval: 12, maxPacketSize: 4,
             direction: UsbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE,
-            number: 1, type: 3, interfaceId: original.id
+            endpointAddr: 1, type: 3, interfaceId: original.id
           };
           let iface: UsbMgr.USBInterface = {
             id: original.id, protocol: original.protocol, clazz: original.clazz,
@@ -466,7 +466,7 @@ export default function UsbClaimInterfaceExclusiveTest(): void {
           let endpoint: UsbMgr.USBEndpoint = {
             address: 1, attributes: 2, interval: 0, maxPacketSize: 64,
             direction: UsbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE,
-            number: 0, type: 2, interfaceId: original.id
+            endpointAddr: 0, type: 2, interfaceId: original.id
           };
           let iface: UsbMgr.USBInterface = {
             id: original.id, protocol: original.protocol, clazz: original.clazz,
@@ -510,7 +510,7 @@ export default function UsbClaimInterfaceExclusiveTest(): void {
           let endpoint: UsbMgr.USBEndpoint = {
             address: 129, attributes: 2, interval: 0, maxPacketSize: 64,
             direction: UsbMgr.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE,
-            number: 1, type: 2, interfaceId: original.id
+            endpointAddr: 1, type: 2, interfaceId: original.id
           };
           let iface: UsbMgr.USBInterface = {
             id: original.id, protocol: original.protocol, clazz: original.clazz,
