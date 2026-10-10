@@ -670,7 +670,5 @@ export default function GlobalSetTimeoutTest(): void {
       expect(marker).assertEqual(1);
     });
 
-
-
   });
 }
