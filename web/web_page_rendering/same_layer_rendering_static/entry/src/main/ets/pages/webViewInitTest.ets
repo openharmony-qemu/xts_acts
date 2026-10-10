@@ -85,6 +85,12 @@ struct WebEmbedVisibilityChange  {
 
               break;
             }
+            case 'SwitchNextPageStatic9': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebNativeEmbedOptionsCoverage' })
+              break;
+            }
           }
         })
       }
