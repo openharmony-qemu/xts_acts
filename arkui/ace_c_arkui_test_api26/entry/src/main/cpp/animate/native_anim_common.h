@@ -61,29 +61,7 @@ inline ArkUI_NumberValue MakeF32(float value)
     return numberValue;
 }
 
-inline ArkUI_CurveHandle MakeCurve()
-{
-    auto curve = OH_ArkUI_Curve_CreateCurveByType(ARKUI_CURVE_LINEAR);
-    if (curve != nullptr) {
-        return curve;
-    }
-    curve = OH_ArkUI_Curve_CreateCubicBezierCurve(0.42f, 0.0f, 0.58f, 1.0f);
-    if (curve != nullptr) {
-        return curve;
-    }
-    auto byType = AnimFp<CurveByTypeFn>("OH_ArkUI_Curve_CreateCurveByType");
-    if (byType != nullptr) {
-        curve = byType(ARKUI_CURVE_LINEAR);
-        if (curve != nullptr) {
-            return curve;
-        }
-    }
-    auto cubic = AnimFp<CurveCubicFn>("OH_ArkUI_Curve_CreateCubicBezierCurve");
-    if (cubic == nullptr) {
-        return nullptr;
-    }
-    return cubic(0.42f, 0.0f, 0.58f, 1.0f);
-}
+ArkUI_CurveHandle MakeCurve();
 
 inline void DisposeCurve(ArkUI_CurveHandle curve)
 {
