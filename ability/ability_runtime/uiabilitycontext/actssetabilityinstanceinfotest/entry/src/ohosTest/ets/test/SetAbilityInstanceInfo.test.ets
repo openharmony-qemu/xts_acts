@@ -684,5 +684,225 @@ export default function abilityTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2300
+     * @tc.desc   Expect: groupId overload success on 2in1, others failed with code 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2300', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2300';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      hilog.info(DOMAIN, LOG_TAG, tag + " " + deviceInfo.deviceType);
+      try {
+        await testContext.setAbilityInstanceInfo('label_group', pixelMap, 'group_a');
+        if (deviceInfo.deviceType === '2in1') {
+          hilog.info(DOMAIN, LOG_TAG, tag + " success");
+          done();
+        } else {
+          hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+          try { expect().assertFail(); } catch (err) {}
+          done();
+        }
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        if (deviceInfo.deviceType === '2in1') {
+          hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+          try { expect().assertFail(); } catch (err) {}
+          done();
+        } else if (err?.code === 801) {
+          hilog.info(DOMAIN, LOG_TAG, tag + " success");
+          done();
+        } else {
+          hilog.info(DOMAIN, LOG_TAG, tag + " fail unexpected code");
+          try { expect().assertFail(); } catch (err) {}
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2400
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2400
+     * @tc.desc   Expect: groupId length 64 call success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2400', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2400';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      let groupId = '';
+      for (let i = 0; i < 4; i++) {
+        groupId += '0123456789abcdef';
+      }
+      try {
+        await testContext.setAbilityInstanceInfo('label_group64', pixelMap, groupId);
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2500
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2500
+     * @tc.desc   Expect: groupId length over 64 failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2500', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2500';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      let groupId = '';
+      for (let i = 0; i < 4; i++) {
+        groupId += '0123456789abcdef';
+      }
+      groupId += 'g';
+      try {
+        await testContext.setAbilityInstanceInfo('label_group65', pixelMap, groupId);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        try { expect(err?.code).assertEqual(401); } catch (err) {}
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2600
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2600
+     * @tc.desc   Expect: empty groupId call success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2600', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2600';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      try {
+        await testContext.setAbilityInstanceInfo('label_empty_group', pixelMap, '');
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2700
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2700
+     * @tc.desc   Expect: same groupId set repeatedly call success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2700', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2700';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      let successCount = 0;
+      for (let i = 0; i < 5; i++) {
+        try {
+          await testContext.setAbilityInstanceInfo('label_repeat' + i, pixelMap, 'shared_group');
+          successCount++;
+        } catch (err) {
+          hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        }
+      }
+      if (successCount === 5) {
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      } else {
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800
+     * @tc.desc   Expect: groupId null failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2800';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      try {
+        await testContext.setAbilityInstanceInfo('label_group_null', pixelMap, null);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        try { expect(err?.code).assertEqual(401); } catch (err) {}
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900
+     * @tc.desc   Expect: groupId undefined failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900', Level.LEVEL0, async (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2900';
+      hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
+      if (deviceInfo.deviceType !== '2in1') {
+        done();
+        return;
+      }
+      try {
+        await testContext.setAbilityInstanceInfo('label_group_undefined', pixelMap, undefined);
+        hilog.info(DOMAIN, LOG_TAG, tag + " fail");
+        try { expect().assertFail(); } catch (err) {}
+        done();
+      } catch (err) {
+        hilog.info(DOMAIN, LOG_TAG, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+        try { expect(err?.code).assertEqual(401); } catch (err) {}
+        hilog.info(DOMAIN, LOG_TAG, tag + " success");
+        done();
+      }
+    })
   })
 }
