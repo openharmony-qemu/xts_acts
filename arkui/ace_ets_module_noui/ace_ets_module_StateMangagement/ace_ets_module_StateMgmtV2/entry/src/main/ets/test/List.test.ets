@@ -98,6 +98,7 @@ import CustomEnvNearTest from './CustomEnvTest/CustomEnvNearTest.test';
 import persistenceV2IgnoreReadOnlyProperties1Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties1Test.test';
 import persistenceV2IgnoreReadOnlyProperties2Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties2Test.test';
 import persistenceV2IgnoreReadOnlyProperties3Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties3Test.test';
+import persistenceV2IgnoreReadOnlyPropertiesSetTest from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyPropertiesSetTest.test';
 
 
 export default function testsuite() {
@@ -185,4 +186,5 @@ export default function testsuite() {
     persistenceV2IgnoreReadOnlyProperties1Test();
     persistenceV2IgnoreReadOnlyProperties2Test();
     persistenceV2IgnoreReadOnlyProperties3Test();
+    persistenceV2IgnoreReadOnlyPropertiesSetTest();
 }
