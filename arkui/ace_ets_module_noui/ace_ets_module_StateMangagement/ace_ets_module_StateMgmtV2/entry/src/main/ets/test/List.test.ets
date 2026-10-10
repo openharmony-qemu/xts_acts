@@ -18,6 +18,8 @@ import Env001 from './envTest/Env001.test';
 import PerGlobalConnectTest from './PersistenceV2Test/PerGlobalConnectTest.test';
 import persistenceV2NotifyOnErrorTest from './PersistenceV2Test/PersistenceV2NotifyOnErrorTest.test';
 import persistenceV2TypeMismatchTest from './PersistenceV2Test/PersistenceV2TypeMismatch.test';
+import ignoreReadOnlyTrueTest from './PersistenceV2Test/IgnoreReadOnlyTrueTest.test';
+import ignoreReadOnlyFalseTest from './PersistenceV2Test/IgnoreReadOnlyFalseTest.test';
 import ReuseV2Test0030 from './ReuseV2Test/ReuseV2Test0030.test';
 import reuseOptionsDynamicReuseIdTest from './ReuseV2Test/ReuseOptionsDynamicReuseIdTest.test';
 import monitorWildcardTest from './MonitorTest/MonitorWildcardTest.test';
@@ -164,6 +166,8 @@ export default function testsuite() {
     appStorageV2NullUndefinedTest();
     persistenceV2NotifyOnErrorTest();
     persistenceV2TypeMismatchTest();
+    ignoreReadOnlyTrueTest();
+    ignoreReadOnlyFalseTest();
     CustomEnvTest();
     CustomEnvWatchTest();
     CustomEnvDeepWatchTest();
