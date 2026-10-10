@@ -26,17 +26,17 @@ export default function decimalMulPart02TestTest() {
   describe('DecimalMulPart02TestTest', () => {
     beforeAll(() => {
     });
-  
+
     beforeEach(async () => {
       await sleep(30);
     });
-  
+
     afterEach(() => {
     });
-  
+
     afterAll(() => {
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0100
      * @tc.name testDecimalMulPart02TestTest001
@@ -49,7 +49,7 @@ export default function decimalMulPart02TestTest() {
       let r: Decimal = new Decimal('10').mul('4');
       expect(r.toString()).assertEqual('40');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0200
      * @tc.name testDecimalMulPart02TestTest002
@@ -61,7 +61,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(6).mul('7').toString()).assertEqual('42');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0300
      * @tc.name testDecimalMulPart02TestTest003
@@ -73,7 +73,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(0.5).mul('0.5').toString()).assertEqual('0.25');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0400
      * @tc.name testDecimalMulPart02TestTest004
@@ -85,7 +85,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('1.5').mul('2').toString()).assertEqual('3');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0500
      * @tc.name testDecimalMulPart02TestTest005
@@ -97,7 +97,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(5).mul('-6').toString()).assertEqual('-30');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0600
      * @tc.name testDecimalMulPart02TestTest006
@@ -109,7 +109,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(7).mul('+8').toString()).assertEqual('56');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0700
      * @tc.name testDecimalMulPart02TestTest007
@@ -121,7 +121,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(3).mul('007.5').toString()).assertEqual('22.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0800
      * @tc.name testDecimalMulPart02TestTest008
@@ -133,7 +133,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(3).mul('2E3').toString()).assertEqual('6000');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_0900
      * @tc.name testDecimalMulPart02TestTest009
@@ -145,7 +145,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(100).mul('5e-3').toString()).assertEqual('0.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1000
      * @tc.name testDecimalMulPart02TestTest010
@@ -157,7 +157,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(1).mul('1e-7').toString()).assertEqual('1e-7');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1100
      * @tc.name testDecimalMulPart02TestTest011
@@ -169,7 +169,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(1e7).mul('1e-7').toString()).assertEqual('1');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1200
      * @tc.name testDecimalMulPart02TestTest012
@@ -181,7 +181,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(1).mul('123.456e2').toString()).assertEqual('12345.6');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1300
      * @tc.name testDecimalMulPart02TestTest013
@@ -193,7 +193,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(Number.MAX_SAFE_INTEGER).mul('1').toString()).assertEqual('9007199254740991');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1400
      * @tc.name testDecimalMulPart02TestTest014
@@ -205,7 +205,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('9007199254740993').mul('2').toString()).assertEqual('18014398509481986');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1500
      * @tc.name testDecimalMulPart02TestTest015
@@ -217,7 +217,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('12345678901234567890').mul('2').toString()).assertEqual('24691357802469135780');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1600
      * @tc.name testDecimalMulPart02TestTest016
@@ -235,7 +235,7 @@ export default function decimalMulPart02TestTest() {
         Decimal.set({ precision: 20, rounding: 4 });
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1700
      * @tc.name testDecimalMulPart02TestTest017
@@ -247,7 +247,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('9').mul('0').toString()).assertEqual('0');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1800
      * @tc.name testDecimalMulPart02TestTest018
@@ -259,7 +259,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('8').mul('-1').toString()).assertEqual('-8');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_1900
      * @tc.name testDecimalMulPart02TestTest019
@@ -271,7 +271,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('2.5').mul('0.000000001').toString()).assertEqual('2.5e-9');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2000
      * @tc.name testDecimalMulPart02TestTest020
@@ -283,7 +283,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(5).mul('NaN').toString()).assertEqual('NaN');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2100
      * @tc.name testDecimalMulPart02TestTest021
@@ -295,7 +295,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(5).mul('Infinity').toString()).assertEqual('Infinity');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2200
      * @tc.name testDecimalMulPart02TestTest022
@@ -307,7 +307,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(5).mul('-Infinity').toString()).assertEqual('-Infinity');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2300
      * @tc.name testDecimalMulPart02TestTest023
@@ -319,7 +319,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('0').mul('Infinity').toString()).assertEqual('NaN');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2400
      * @tc.name testDecimalMulPart02TestTest024
@@ -331,7 +331,7 @@ export default function decimalMulPart02TestTest() {
     it('testDecimalMulPart02TestTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal('1e+309').mul('2').toString()).assertEqual('2e+309');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2500
      * @tc.name testDecimalMulPart02TestTest025
@@ -350,7 +350,7 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2600
      * @tc.name testDecimalMulPart02TestTest026
@@ -369,7 +369,7 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2700
      * @tc.name testDecimalMulPart02TestTest027
@@ -388,35 +388,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2800
      * @tc.name testDecimalMulPart02TestTest028
-     * @tc.desc Verify NUL 401
+     * @tc.desc Verify mul('12') does not throw on device
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalMulPart02TestTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let thrown: boolean = false;
-      try {
-        new Decimal(6).mul('');
-      } catch (e) {
-        thrown = true;
-        expect((e as Record<string, number>).code).assertEqual(401);
-      }
-      expect(thrown).assertTrue();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2900
-     * @tc.name testDecimalMulPart02TestTest029
-     * @tc.desc Verify NUL '1 2' 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalMulPart02TestTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(7).mul('12');
@@ -426,16 +407,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertFalse();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3000
-     * @tc.name testDecimalMulPart02TestTest030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_2900
+     * @tc.name testDecimalMulPart02TestTest029
      * @tc.desc Verify ' 4' 8 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let observed: string = '';
       try {
         observed = new Decimal(2).mul(' 4').toString();
@@ -445,16 +426,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(observed === '8').assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3100
-     * @tc.name testDecimalMulPart02TestTest031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3000
+     * @tc.name testDecimalMulPart02TestTest030
      * @tc.desc Verify '5 ' 10 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let observed: string = '';
       try {
         observed = new Decimal(2).mul('5 ').toString();
@@ -464,16 +445,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(observed === '10').assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3200
-     * @tc.name testDecimalMulPart02TestTest032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3100
+     * @tc.name testDecimalMulPart02TestTest031
      * @tc.desc Verify '3 4' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(8).mul('3 4');
@@ -483,16 +464,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3300
-     * @tc.name testDecimalMulPart02TestTest033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3200
+     * @tc.name testDecimalMulPart02TestTest032
      * @tc.desc Verify '\t' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(9).mul('\t');
@@ -502,16 +483,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3400
-     * @tc.name testDecimalMulPart02TestTest034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3300
+     * @tc.name testDecimalMulPart02TestTest033
      * @tc.desc Verify '\n' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(10).mul('\n');
@@ -521,16 +502,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3500
-     * @tc.name testDecimalMulPart02TestTest035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3400
+     * @tc.name testDecimalMulPart02TestTest034
      * @tc.desc Verify '\r' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(11).mul('\r');
@@ -540,16 +521,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3600
-     * @tc.name testDecimalMulPart02TestTest036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3500
+     * @tc.name testDecimalMulPart02TestTest035
      * @tc.desc Verify '\b' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(12).mul('\b');
@@ -559,16 +540,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3700
-     * @tc.name testDecimalMulPart02TestTest037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3600
+     * @tc.name testDecimalMulPart02TestTest036
      * @tc.desc Verify '\\x' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(13).mul('\\x');
@@ -578,16 +559,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3800
-     * @tc.name testDecimalMulPart02TestTest038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3700
+     * @tc.name testDecimalMulPart02TestTest037
      * @tc.desc Verify ' ' 2 * 123 = 246 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let observed: string = '';
       try {
         observed = new Decimal(2).mul('１２３').toString();
@@ -597,16 +578,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(observed === '246').assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3900
-     * @tc.name testDecimalMulPart02TestTest039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3800
+     * @tc.name testDecimalMulPart02TestTest038
      * @tc.desc Verify ' ' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(14).mul('一二三');
@@ -616,16 +597,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4000
-     * @tc.name testDecimalMulPart02TestTest040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_3900
+     * @tc.name testDecimalMulPart02TestTest039
      * @tc.desc Verify emoji \u{1F600} 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(15).mul('\u{1F600}');
@@ -635,16 +616,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4100
-     * @tc.name testDecimalMulPart02TestTest041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4000
+     * @tc.name testDecimalMulPart02TestTest040
      * @tc.desc Verify '\uD83D' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(16).mul('\uD83D');
@@ -654,16 +635,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4200
-     * @tc.name testDecimalMulPart02TestTest042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4100
+     * @tc.name testDecimalMulPart02TestTest041
      * @tc.desc Verify '\uDE00' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(17).mul('\uDE00');
@@ -673,47 +654,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4300
-     * @tc.name testDecimalMulPart02TestTest043
-     * @tc.desc Verify string | number 3 * 9 = 27
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalMulPart02TestTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: string | number = '9';
-      let b: string | number = 9;
-      expect(new Decimal(3).mul(a).toString()).assertEqual('27');
-      expect(new Decimal(3).mul(b).toString()).assertEqual('27');
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4400
-     * @tc.name testDecimalMulPart02TestTest044
-     * @tc.desc Verify string | Decimal 4 * 5 = 20
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalMulPart02TestTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: string | Decimal = '5';
-      let seed: Decimal = new Decimal('5');
-      let d: string | Decimal = seed;
-      expect(new Decimal(4).mul(s).toString()).assertEqual('20');
-      expect(new Decimal(4).mul(d).toString()).assertEqual('20');
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4500
-     * @tc.name testDecimalMulPart02TestTest045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4200
+     * @tc.name testDecimalMulPart02TestTest042
      * @tc.desc Verify string | number | Decimal 4 * 4 = 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let vs: string | number | Decimal = '4';
       let vn: string | number | Decimal = 4;
       let vd: string | number | Decimal = new Decimal(4);
@@ -721,56 +671,16 @@ export default function decimalMulPart02TestTest() {
       expect(new Decimal(4).mul(vn).toString()).assertEqual('16');
       expect(new Decimal(4).mul(vd).toString()).assertEqual('16');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4600
-     * @tc.name testDecimalMulPart02TestTest046
-     * @tc.desc Verify string | number | Decimal | undefined undefined 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalMulPart02TestTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string | number | Decimal | undefined = undefined;
-      let thrown: boolean = false;
-      try {
-        new Decimal(3).mul(v as ESObject);
-      } catch (e) {
-        thrown = true;
-        expect((e as Record<string, number>).code).assertEqual(401);
-      }
-      expect(thrown).assertTrue();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4700
-     * @tc.name testDecimalMulPart02TestTest047
-     * @tc.desc Verify string | number | Decimal | null null 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalMulPart02TestTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string | number | Decimal | null = null;
-      let thrown: boolean = false;
-      try {
-        new Decimal(3).mul(v as ESObject);
-      } catch (e) {
-        thrown = true;
-        expect((e as Record<string, number>).code).assertEqual(401);
-      }
-      expect(thrown).assertTrue();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4800
-     * @tc.name testDecimalMulPart02TestTest048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4300
+     * @tc.name testDecimalMulPart02TestTest043
      * @tc.desc Verify null/undefined number/string nullish 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: number | null = null;
       let b: string | null = null;
       let c: number | undefined = undefined;
@@ -786,32 +696,16 @@ export default function decimalMulPart02TestTest() {
       expect(codes[2]).assertEqual(401);
       expect(codes[3]).assertEqual(401);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4900
-     * @tc.name testDecimalMulPart02TestTest049
-     * @tc.desc Verify Decimal | number 3 * 4 = 12
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalMulPart02TestTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let seed: Decimal = new Decimal(4);
-      let a: Decimal | number = seed;
-      let b: Decimal | number = 4;
-      expect(new Decimal(3).mul(a).toString()).assertEqual('12');
-      expect(new Decimal(3).mul(b).toString()).assertEqual('12');
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5000
-     * @tc.name testDecimalMulPart02TestTest050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4400
+     * @tc.name testDecimalMulPart02TestTest044
      * @tc.desc Verify Date/RegExp/Error 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Date | number = new Date(0);
       let b: RegExp | string = /x/;
       let c: Error | number = new Error('boom');
@@ -833,16 +727,16 @@ export default function decimalMulPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5100
-     * @tc.name testDecimalMulPart02TestTest051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4500
+     * @tc.name testDecimalMulPart02TestTest045
      * @tc.desc Verify Array/Map/Set 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: ESObject = ['1'];
       let mp: ESObject = new Map<string, number>();
       let st: ESObject = new Set<number>();
@@ -864,16 +758,16 @@ export default function decimalMulPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5200
-     * @tc.name testDecimalMulPart02TestTest052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4600
+     * @tc.name testDecimalMulPart02TestTest046
      * @tc.desc Verify object input 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let hit: boolean = false;
       try {
         new Decimal(5).mul({ v: 2 } as ESObject);
@@ -884,17 +778,18 @@ export default function decimalMulPart02TestTest() {
       }
       expect(hit).assertTrue();
 
-  
+
     });
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5300
-     * @tc.name testDecimalMulPart02TestTest053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4700
+     * @tc.name testDecimalMulPart02TestTest047
      * @tc.desc Verify Decimal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Decimal = new Decimal('2.50');
       let b: Decimal = new Decimal('2.50');
       let r1: Decimal = new Decimal(2).mul(a);
@@ -903,31 +798,31 @@ export default function decimalMulPart02TestTest() {
       expect(r2.toString()).assertEqual('5');
       expect(r1 === r2).assertFalse();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5400
-     * @tc.name testDecimalMulPart02TestTest054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4800
+     * @tc.name testDecimalMulPart02TestTest048
      * @tc.desc Verify string Decimal 4 * '2.5' 4 * Decimal(2.5)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string = '2.5';
       let d: Decimal = new Decimal('2.5');
       expect(new Decimal(4).mul(s).toString()).assertEqual('10');
       expect(new Decimal(4).mul(d).toString()).assertEqual('10');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5500
-     * @tc.name testDecimalMulPart02TestTest055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_4900
+     * @tc.name testDecimalMulPart02TestTest049
      * @tc.desc Verify Record 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cross: Record<string, ESObject> = { a: '1', b: 2 } as ESObject;
       try {
         new Decimal(3).mul(cross as ESObject);
@@ -935,16 +830,16 @@ export default function decimalMulPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5600
-     * @tc.name testDecimalMulPart02TestTest056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5000
+     * @tc.name testDecimalMulPart02TestTest050
      * @tc.desc Verify undefined null 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let holder: Record<string, ESObject> = {};
       let missing: ESObject = holder['absent'];
       let nv: Record<string, ESObject> = { k: null } as ESObject;
@@ -956,16 +851,16 @@ export default function decimalMulPart02TestTest() {
       expect(t1).assertTrue();
       expect(t2).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5700
-     * @tc.name testDecimalMulPart02TestTest057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5100
+     * @tc.name testDecimalMulPart02TestTest051
      * @tc.desc Verify typeof string number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: ESObject = '6';
       let n: ESObject = 6;
       let bs: string = '';
@@ -975,112 +870,112 @@ export default function decimalMulPart02TestTest() {
       expect(bs).assertEqual('18');
       expect(bn).assertEqual('18');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5800
-     * @tc.name testDecimalMulPart02TestTest058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5200
+     * @tc.name testDecimalMulPart02TestTest052
      * @tc.desc Verify instanceof Decimal mul
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cand: ESObject = new Decimal(4);
       let branch: string = '';
       if (cand instanceof Decimal) { branch = new Decimal(3).mul(cand as ESObject).toString(); }
       expect(branch).assertEqual('12');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5900
-     * @tc.name testDecimalMulPart02TestTest059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5300
+     * @tc.name testDecimalMulPart02TestTest053
      * @tc.desc Verify Decimal string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = new Decimal('12').mul('2');
       expect(r instanceof Decimal).assertTrue();
       expect(r.toString()).assertEqual('24');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6000
-     * @tc.name testDecimalMulPart02TestTest060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5400
+     * @tc.name testDecimalMulPart02TestTest054
      * @tc.desc Verify mul
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Decimal = new Decimal('6');
       let r: Decimal = base.mul('3');
       expect(base.toString()).assertEqual('6');
       expect(r.toString()).assertEqual('18');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6100
-     * @tc.name testDecimalMulPart02TestTest061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5500
+     * @tc.name testDecimalMulPart02TestTest055
      * @tc.desc Verify string '1'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Decimal = new Decimal('5');
       let r: Decimal = base.mul('1');
       expect(r === base).assertFalse();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6200
-     * @tc.name testDecimalMulPart02TestTest062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5600
+     * @tc.name testDecimalMulPart02TestTest056
      * @tc.desc Verify s/e/d
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = new Decimal('7').mul('3');
       expect(Array.isArray(r.d)).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6300
-     * @tc.name testDecimalMulPart02TestTest063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5700
+     * @tc.name testDecimalMulPart02TestTest057
      * @tc.desc Verify toNumber '0.25' * '8' = 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = new Decimal('0.25').mul('8');
       expect(r.toNumber()).assertEqual(2);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6400
-     * @tc.name testDecimalMulPart02TestTest064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5800
+     * @tc.name testDecimalMulPart02TestTest058
      * @tc.desc Verify mul string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(new Decimal(2).mul('3').mul('4').toString()).assertEqual('24');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6500
-     * @tc.name testDecimalMulPart02TestTest065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_5900
+     * @tc.name testDecimalMulPart02TestTest059
      * @tc.desc Verify 'abc' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(18).mul('abc');
@@ -1090,16 +985,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6600
-     * @tc.name testDecimalMulPart02TestTest066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6000
+     * @tc.name testDecimalMulPart02TestTest060
      * @tc.desc Verify '123abc' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(19).mul('123abc');
@@ -1109,16 +1004,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6700
-     * @tc.name testDecimalMulPart02TestTest067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6100
+     * @tc.name testDecimalMulPart02TestTest061
      * @tc.desc Verify 'abc123' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(20).mul('abc123');
@@ -1128,16 +1023,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6800
-     * @tc.name testDecimalMulPart02TestTest068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6200
+     * @tc.name testDecimalMulPart02TestTest062
      * @tc.desc Verify '1,234' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(21).mul('1,234');
@@ -1147,16 +1042,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6900
-     * @tc.name testDecimalMulPart02TestTest069
-     * @tc.desc Verify '0x10' 401
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6300
+     * @tc.name testDecimalMulPart02TestTest063
+     * @tc.desc Verify mul('0x10') does not throw on device
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(22).mul('0x10');
@@ -1166,16 +1061,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertFalse();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7000
-     * @tc.name testDecimalMulPart02TestTest070
-     * @tc.desc Verify '0b101' 401
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6400
+     * @tc.name testDecimalMulPart02TestTest064
+     * @tc.desc Verify mul('0b101') does not throw on device
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(23).mul('0b101');
@@ -1185,16 +1080,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertFalse();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7100
-     * @tc.name testDecimalMulPart02TestTest071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6500
+     * @tc.name testDecimalMulPart02TestTest065
      * @tc.desc Verify '1e' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(24).mul('1e');
@@ -1204,16 +1099,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7200
-     * @tc.name testDecimalMulPart02TestTest072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6600
+     * @tc.name testDecimalMulPart02TestTest066
      * @tc.desc Verify '.' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(25).mul('.');
@@ -1223,16 +1118,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7300
-     * @tc.name testDecimalMulPart02TestTest073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6700
+     * @tc.name testDecimalMulPart02TestTest067
      * @tc.desc Verify '1.2.3' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(26).mul('1.2.3');
@@ -1242,16 +1137,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7400
-     * @tc.name testDecimalMulPart02TestTest074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6800
+     * @tc.name testDecimalMulPart02TestTest068
      * @tc.desc Verify '-' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(27).mul('-');
@@ -1261,16 +1156,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7500
-     * @tc.name testDecimalMulPart02TestTest075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_6900
+     * @tc.name testDecimalMulPart02TestTest069
      * @tc.desc Verify '+-5' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(28).mul('+-5');
@@ -1280,16 +1175,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7600
-     * @tc.name testDecimalMulPart02TestTest076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7000
+     * @tc.name testDecimalMulPart02TestTest070
      * @tc.desc Verify XSS '<script>alert(1)</script>' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let thrown: boolean = false;
       try {
         new Decimal(29).mul('<script>alert(1)</script>');
@@ -1299,16 +1194,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7700
-     * @tc.name testDecimalMulPart02TestTest077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7100
+     * @tc.name testDecimalMulPart02TestTest071
      * @tc.desc Verify 300 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let payload: string = 'a'.repeat(300);
       let thrown: boolean = false;
       try {
@@ -1319,16 +1214,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7800
-     * @tc.name testDecimalMulPart02TestTest078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7200
+     * @tc.name testDecimalMulPart02TestTest072
      * @tc.desc Verify 200 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let payload: string = '​'.repeat(200);
       let thrown: boolean = false;
       try {
@@ -1339,16 +1234,16 @@ export default function decimalMulPart02TestTest() {
       }
       expect(thrown).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7900
-     * @tc.name testDecimalMulPart02TestTest079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_MUL_PART02_SUPPLEMENT_TEST_7300
+     * @tc.name testDecimalMulPart02TestTest073
      * @tc.desc Verify 50 precision 60 '2'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalMulPart02TestTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalMulPart02TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 60 });
       try {
         let input: string = '0.' + '1234567890'.repeat(5);
@@ -1360,7 +1255,8 @@ export default function decimalMulPart02TestTest() {
         Decimal.set({ precision: 20, rounding: 4 });
       }
     });
-  
+
+
   });
 
 }
