@@ -26,6 +26,7 @@ import {
   fetchAllOption,
   sleep,
   getPermission,
+  driveFn,
   checkResourceFile,
   createResource
 } from '../common'
@@ -40,6 +41,7 @@ export default function checkAlbumAttrTest () {
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
+      await driveFn();
       await sleep(1000);
       checkResourceFile(testContext);
       await createResource(testContext, fileNameList)
@@ -47,10 +49,11 @@ export default function checkAlbumAttrTest () {
 
     let checkAssetAttr =  async(done: Function, testNum: string) => {
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        let albumName: string = 'absAlbum_' + Date.now();
+        const album:ESObject = await helper.createAlbum(albumName);
         expect(album.albumType).assertEqual(albumType.USER);
         expect(album.albumSubtype).assertEqual(albumSubtype.USER_GENERIC);
-        expect(album.albumName).assertEqual(testNum);
+        expect(album.albumName).assertEqual(albumName);
         const id = getAlbumId(album.albumUri);
         expect(album.albumUri).assertEqual('file://media/PhotoAlbum/' + id);
         const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'checkAttr.jpg');
