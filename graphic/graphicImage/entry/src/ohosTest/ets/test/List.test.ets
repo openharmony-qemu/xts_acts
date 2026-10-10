@@ -41,6 +41,7 @@ import GraphicImagePixelMapAPI2602 from './GraphicImagePixelMapAPI2602.test';
 import GraphicImagePixelMapAPI2603 from './GraphicImagePixelMapAPI2603.test';
 import GraphicImagePixelMapErrorCode from './GraphicImagePixelMapErrorCode.test';
 import GraphicImageGetImageInfoSyncRepeat from './GraphicImageGetImageInfoSyncRepeat.test';
+import GraphicImageGetImageInfoRepeat from './GraphicImageGetImageInfoRepeat.test';
 
 export default function testsuite() {
   imagePixelMapTest()
@@ -72,4 +73,5 @@ export default function testsuite() {
   GraphicImagePixelMapAPI2603();
   GraphicImagePixelMapErrorCode();
   GraphicImageGetImageInfoSyncRepeat();
+  GraphicImageGetImageInfoRepeat();
 }
