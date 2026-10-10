@@ -319,7 +319,7 @@ export default function ActsHiDebugProfilerOptionsTest() {
     /**
      * @tc.number SUB_DFX_DFR_HiDebug_ProfilerOptions_Interface_1400
      * @tc.name testProfilerOptionsInterface14
-     * @tc.desc 验证OH_HiDebug_SetStatisticsIntervalSec接口传入有效值0，返回HIDEBUG_SUCCESS
+     * @tc.desc 验证OH_HiDebug_SetStatisticsIntervalSec接口传入有效值1，返回HIDEBUG_SUCCESS
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level2
@@ -388,7 +388,7 @@ export default function ActsHiDebugProfilerOptionsTest() {
     /**
      * @tc.number SUB_DFX_DFR_HiDebug_ProfilerOptions_Interface_1700
      * @tc.name testProfilerOptionsInterface17
-     * @tc.desc 验证OH_HiDebug_SetMaxStackDepth接口传入有效值0，返回HIDEBUG_SUCCESS
+     * @tc.desc 验证OH_HiDebug_SetMaxStackDepth接口传入有效值1，返回HIDEBUG_SUCCESS
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level2
