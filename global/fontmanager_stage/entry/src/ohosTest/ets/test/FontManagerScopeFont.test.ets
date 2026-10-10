@@ -626,5 +626,55 @@ export default function fontManagerScopeFontTest() {
       }
       done();
     });
+
+    /**
+     * @tc.name   test_installScopeFont_2900
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_JS_2900
+     * @tc.desc   test installScopeFont with null second param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_installScopeFont_2900', Level.LEVEL2, async (done: Function) => {
+      try {
+        await fontManager.installScopeFont(validFontPath, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(ERR_SCOPE_FONT_NOT_REGISTERED);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_installScopeFont_3000
+     * @tc.number SUB_Global_FontManager_InstallScopeFont_JS_3000
+     * @tc.desc   test installScopeFont with undefined second param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_installScopeFont_3000', Level.LEVEL2, async (done: Function) => {
+      try {
+        await fontManager.installScopeFont(validFontPath, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error as BusinessError).code).assertEqual(ERR_SCOPE_FONT_NOT_REGISTERED);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_onServiceDied_3100
+     * @tc.number SUB_Global_FontManager_OnServiceDied_JS_3100
+     * @tc.desc   test onServiceDied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_onServiceDied_3100', Level.LEVEL2, () => {
+      let value = validObserver.onServiceDied();
+      expect(value).assertEqual(undefined);
+    });
+
   });
 }
