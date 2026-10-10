@@ -206,6 +206,12 @@ napi_value OHEffectFilterInfoGetSupportedBufferTypesSuppTest(napi_env env, napi_
         filterInfo = nullptr;
         code = OH_EffectFilterInfo_GetSupportedBufferTypes(filterInfo, &getSize, &bufferTypeArray);
         break;
+    case CASE_INDEX_4:
+        code = OH_EffectFilterInfo_GetSupportedBufferTypes(filterInfo, nullptr, &bufferTypeArray);
+        break;
+    case CASE_INDEX_5:
+        code = OH_EffectFilterInfo_GetSupportedBufferTypes(filterInfo, &getSize, nullptr);
+        break;
     default:
         break;
     }
@@ -283,6 +289,12 @@ napi_value OHEffectFilterInfoGetSupportedFormatsSuppTest(napi_env env, napi_call
     case CASE_INDEX_3:
         filterInfo = nullptr;
         code = OH_EffectFilterInfo_GetSupportedFormats(filterInfo, &getSize, &formatArray);
+        break;
+    case CASE_INDEX_4:
+        code = OH_EffectFilterInfo_GetSupportedFormats(filterInfo, nullptr, &formatArray);
+        break;
+    case CASE_INDEX_5:
+        code = OH_EffectFilterInfo_GetSupportedFormats(filterInfo, &getSize, nullptr);
         break;
     default:
         break;
