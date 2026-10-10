@@ -1993,3 +1993,458 @@ export default function GlobalIsIntegerPart_1Test(): void {
      * @tc.level LEVEL2
      */
     it('testGlobalIsIntegerTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: number = Number.NEGATIVE_INFINITY;
+      const r: boolean = isInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1380
+     * @tc.name testGlobalIsIntegerTest138
+     * @tc.desc isInteger with intoverflow type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: int = Int.MAX_VALUE + 1;
+      const r: boolean = isInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1390
+     * @tc.name testGlobalIsIntegerTest139
+     * @tc.desc isInteger with intunderflow type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: int = Int.MIN_VALUE - 1;
+      const r: boolean = isInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1400
+     * @tc.name testGlobalIsIntegerTest140
+     * @tc.desc isInteger with longoverflow type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: long = Long.MAX_VALUE + 1;
+      const r: boolean = isInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1410
+     * @tc.name testGlobalIsIntegerTest141
+     * @tc.desc isInteger with longunderflow type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: long = Long.MIN_VALUE - 1;
+      const r: boolean = isInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1420
+     * @tc.name testGlobalIsIntegerTest142
+     * @tc.desc isInteger with integer type min values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(-128);
+      expect(r1).assertTrue();
+      const r2: boolean = isInteger(-32768);
+      expect(r2).assertTrue();
+      const r3: boolean = isInteger(Int.MIN_VALUE);
+      expect(r3).assertTrue();
+      const r4: boolean = isInteger(Long.MIN_VALUE);
+      expect(r4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1430
+     * @tc.name testGlobalIsIntegerTest143
+     * @tc.desc isInteger with integer type max values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(127);
+      expect(r1).assertTrue();
+      const r2: boolean = isInteger(32767);
+      expect(r2).assertTrue();
+      const r3: boolean = isInteger(Int.MAX_VALUE);
+      expect(r3).assertTrue();
+      const r4: boolean = isInteger(Long.MAX_VALUE);
+      expect(r4).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1440
+     * @tc.name testGlobalIsIntegerTest144
+     * @tc.desc isInteger with float/number max positive values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(Float.MAX_VALUE);
+      expect(r1).assertTrue();
+      const r2: boolean = isInteger(Number.MAX_VALUE);
+      expect(r2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1450
+     * @tc.name testGlobalIsIntegerTest145
+     * @tc.desc isInteger with float/number max negative values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(-Float.MAX_VALUE);
+      expect(r1).assertTrue();
+      const r2: boolean = isInteger(-Number.MAX_VALUE);
+      expect(r2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1460
+     * @tc.name testGlobalIsIntegerTest146
+     * @tc.desc isInteger with min positive values: Float.MIN_VALUE returns true (ArkTS float subnormal flushed to 0), Number.MIN_VALUE returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(Float.MIN_VALUE);
+      expect(r1).assertTrue();
+      const r2: boolean = isInteger(Number.MIN_VALUE);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1470
+     * @tc.name testGlobalIsIntegerTest147
+     * @tc.desc isInteger with positive infinities returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(Float.POSITIVE_INFINITY);
+      expect(r1).assertFalse();
+      const r2: boolean = isInteger(Number.POSITIVE_INFINITY);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1480
+     * @tc.name testGlobalIsIntegerTest148
+     * @tc.desc isInteger with negative infinities returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(Float.NEGATIVE_INFINITY);
+      expect(r1).assertFalse();
+      const r2: boolean = isInteger(Number.NEGATIVE_INFINITY);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1490
+     * @tc.name testGlobalIsIntegerTest149
+     * @tc.desc isInteger with positive hex boundary returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(0x7FFFFFFF);
+      expect(r1).assertTrue();
+      const r2: boolean = isInteger(0x7FFFFFFFFFFFFFFF as long);
+      expect(r2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1500
+     * @tc.name testGlobalIsIntegerTest150
+     * @tc.desc isInteger with negative hex boundary returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(-0x80000000);
+      expect(r1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1510
+     * @tc.name testGlobalIsIntegerTest151
+     * @tc.desc isInteger with binary literal returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(0b1111111111111111111111111111111);
+      expect(r1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1520
+     * @tc.name testGlobalIsIntegerTest152
+     * @tc.desc isInteger with octal literal returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isInteger(0o7777777777777777 as long);
+      expect(r1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1530
+     * @tc.name testGlobalIsIntegerTest153
+     * @tc.desc isInteger(byte 5 widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const byteVal: byte = 5;
+      const num1: number = byteVal;
+      const r: boolean = isInteger(num1);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1540
+     * @tc.name testGlobalIsIntegerTest154
+     * @tc.desc isInteger(short 5 widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const shortVal: short = 5;
+      const num2: number = shortVal;
+      const r: boolean = isInteger(num2);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1550
+     * @tc.name testGlobalIsIntegerTest155
+     * @tc.desc isInteger(int 5 widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const intVal: int = 5;
+      const num3: number = intVal;
+      const r: boolean = isInteger(num3);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1560
+     * @tc.name testGlobalIsIntegerTest156
+     * @tc.desc isInteger(long 5 widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longVal: long = 5;
+      const num4: number = longVal;
+      const r: boolean = isInteger(num4);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1570
+     * @tc.name testGlobalIsIntegerTest157
+     * @tc.desc isInteger with object number property count returns true, frac returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: IntegerBox = new IntegerBox();
+      const r1: boolean = isInteger(obj.count);
+      expect(r1).assertTrue();
+      const r2: boolean = isInteger(obj.frac);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1580
+     * @tc.name testGlobalIsIntegerTest158
+     * @tc.desc isInteger with object float property floatCount returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: IntegerBox = new IntegerBox();
+      const r: boolean = isInteger(obj.floatCount);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1590
+     * @tc.name testGlobalIsIntegerTest159
+     * @tc.desc isInteger with byte MAX/MIN values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const bMax: byte = 127;
+      const bMin: byte = -128;
+      expect(isInteger(bMax)).assertTrue();
+      expect(isInteger(bMin)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1600
+     * @tc.name testGlobalIsIntegerTest160
+     * @tc.desc isInteger with short MAX/MIN values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const sMax: short = 32767;
+      const sMin: short = -32768;
+      expect(isInteger(sMax)).assertTrue();
+      expect(isInteger(sMin)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1610
+     * @tc.name testGlobalIsIntegerTest161
+     * @tc.desc isInteger with int/long MAX/MIN values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(isInteger(Int.MAX_VALUE)).assertTrue();
+      expect(isInteger(Int.MIN_VALUE)).assertTrue();
+      expect(isInteger(Long.MAX_VALUE)).assertTrue();
+      expect(isInteger(Long.MIN_VALUE)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1620
+     * @tc.name testGlobalIsIntegerTest162
+     * @tc.desc Verify isInteger throws ClassCastError for null union value (exception raised at runtime cast check, not inside isInteger)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let nullVal: number | null = null;
+        isInteger(nullVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1630
+     * @tc.name testGlobalIsIntegerTest163
+     * @tc.desc Verify isInteger throws ClassCastError for undefined union value (exception raised at runtime cast check, not inside isInteger)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let undefVal: number | undefined = undefined;
+        isInteger(undefVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1640
+     * @tc.name testGlobalIsIntegerTest164
+     * @tc.desc Verify isInteger throws ClassCastError for empty string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let strVal: number | string = "";
+        isInteger(strVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1650
+     * @tc.name testGlobalIsIntegerTest165
+     * @tc.desc Verify isInteger throws ClassCastError for emoji string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let emojiVal: number | string = "🎉";
+        isInteger(emojiVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISINTEGER_TEST_1660
+     * @tc.name testGlobalIsIntegerTest166
+     * @tc.desc Verify isInteger throws ClassCastError for digit string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsIntegerTest166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let strVal: number | string = "123";
+        isInteger(strVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+  });
+}

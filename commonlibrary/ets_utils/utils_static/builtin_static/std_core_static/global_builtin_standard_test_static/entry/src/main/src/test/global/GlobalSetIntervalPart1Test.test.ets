@@ -1979,3 +1979,436 @@ export default function GlobalSetIntervalPart_1Test(): void {
      * @tc.level LEVEL2
      */
     it('testGlobalSetIntervalTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let flag: boolean = false;
+      let timerId: int = 0;
+      if (flag) {
+        timerId = setInterval((): void => {}, 100);
+      }
+      expect(timerId).assertEqual(0);
+      flag = true;
+      if (flag) {
+        timerId = setInterval((): void => {}, 100);
+      }
+      expect(timerId).assertLarger(0);
+      clearInterval(timerId);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_7400
+     * @tc.name testGlobalSetIntervalTest074
+     * @tc.desc Verify setInterval callback with ternary expression inside
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let flag: boolean = true;
+      let captured: int = 0;
+      const timerId: int = setInterval((): void => {
+        captured = flag ? 1 : 0;
+      }, 20);
+      try {
+        try {
+          await Utils.msSleep(60);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+      } catch (e) {
+        expect(false).assertFail();
+      }
+      clearInterval(timerId);
+      expect(captured).assertEqual(1);
+      expect(timerId).assertLarger(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_7500
+     * @tc.name testGlobalSetIntervalTest075
+     * @tc.desc Verify setInterval with number cast as func throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let num: int = 123;
+        setInterval(num as Function, 100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_7600
+     * @tc.name testGlobalSetIntervalTest076
+     * @tc.desc Verify setInterval with string cast as func throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let str: string = 'not a function';
+        setInterval(str as Function, 100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_7700
+     * @tc.name testGlobalSetIntervalTest077
+     * @tc.desc Verify setInterval with null msg as string throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        setInterval(null as string, 100);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_7800
+     * @tc.name testGlobalSetIntervalTest078
+     * @tc.desc setInterval with long type delay parameter, callback fires then cleared
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 0;
+      const delay: long = 10;
+      const id: int = setInterval((): void => {
+        count = count + 1;
+      }, Long.toInt(delay));
+      await Utils.msSleep(50);
+      clearInterval(id);
+      expect(count).assertLarger(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_7900
+     * @tc.name testGlobalSetIntervalTest079
+     * @tc.desc Verify setInterval with 6 args returns valid timer id
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const timerId: int = setInterval(
+        (a: int, b: int, c: int, d: int, e: int, f: int): void => {},
+        100,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+      );
+      expect(timerId).assertLarger(0);
+      clearInterval(timerId);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8000
+     * @tc.name testGlobalSetIntervalTest080
+     * @tc.desc Verify setInterval with double arg returns valid timer id
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const timerId: int = setInterval((d: number): void => {}, 100, 3.14);
+      expect(timerId).assertLarger(0);
+      clearInterval(timerId);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8100
+     * @tc.name testGlobalSetIntervalTest081
+     * @tc.desc Verify setInterval with byte arg returns valid timer id
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const timerId: int = setInterval((b: byte): void => {}, 100, 127);
+      expect(timerId).assertLarger(0);
+      clearInterval(timerId);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8200
+     * @tc.name testGlobalSetIntervalTest082
+     * @tc.desc Verify setInterval msg overload with multiple timers all produce valid ids
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const id0: int = setInterval('msg', 0);
+      const id1: int = setInterval('msg', 100);
+      const id2: int = setInterval('msg', 500);
+      expect(id0).assertLarger(0);
+      expect(id1).assertLarger(0);
+      expect(id2).assertLarger(0);
+      clearInterval(id0);
+      clearInterval(id1);
+      clearInterval(id2);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8300
+     * @tc.name testGlobalSetIntervalTest083
+     * @tc.desc setInterval with delayMs=null, callback fires then cleared
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 0;
+      const id: int = setInterval((): void => {
+        count = count + 1;
+      }, null);
+      expect(id).assertLarger(0);
+      try {
+        await Utils.msSleep(100);
+      } catch (e) {
+        expect(false).assertFail();
+      }
+      clearInterval(id);
+      expect(count).assertLarger(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8400
+     * @tc.name testGlobalSetIntervalTest084
+     * @tc.desc Verify setInterval self-clear with counter condition stops after limit
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 0;
+      let id: int = 0;
+      id = setInterval((): void => {
+        count = count + 1;
+        if (count >= 3) {
+          clearInterval(id);
+        }
+      }, 10);
+      try {
+        await Utils.msSleep(80);
+      } catch (e) {
+        expect(false).assertFail();
+      }
+      expect(count).assertEqual(3);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8500
+     * @tc.name testGlobalSetIntervalTest085
+     * @tc.desc setInterval with number type delay parameter, callback fires then cleared
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 0;
+      const delay: byte = 10;
+      const id: int = setInterval((): void => {
+        count = count + 1;
+      }, Double.toInt(delay));
+      await Utils.msSleep(50);
+      clearInterval(id);
+      expect(count).assertLarger(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8600
+     * @tc.name testGlobalSetIntervalTest086
+     * @tc.desc Verify setInterval callback creates nested setInterval
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let nestedCount: int = 0;
+      let nestedId: int = 0;
+      let outerId: int = 0;
+      outerId = setInterval((): void => {
+        nestedId = setInterval((): void => {
+          nestedCount = nestedCount + 1;
+        }, 10);
+        clearInterval(outerId);
+      }, 30);
+      try {
+        await Utils.msSleep(80);
+      } catch (e) {
+        expect(false).assertFail();
+      }
+      clearInterval(nestedId);
+      expect(nestedCount).assertLarger(0);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8700
+     * @tc.name testGlobalSetIntervalTest087
+     * @tc.desc Verify setInterval msg overload with null delay returns valid ID
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const id: int = setInterval('msg', null);
+      expect(id).assertLarger(0);
+      clearInterval(id);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8800
+     * @tc.name testGlobalSetIntervalTest088
+     * @tc.desc Verify setInterval with Map as arg parameter, callback accesses Map
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const map: Map<string, int> = new Map<string, int>();
+      map.set('key', 0);
+      const id: int = setInterval(
+        (m: Map<string, int>): void => {
+          m.set('key', 42);
+        },
+        20,
+        map,
+      );
+      await Utils.msSleep(50);
+      clearInterval(id);
+      expect(map.get('key')).assertEqual(42);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_8900
+     * @tc.name testGlobalSetIntervalTest089
+     * @tc.desc setInterval with short type delay parameter, callback fires then cleared
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 91;
+      const delay: short = 100;
+      const id: int = setInterval((): void => {
+        count = count + 1;
+      }, delay);
+      try {
+        try {
+          await Utils.msSleep(150);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+      } catch (e) {
+        expect(false).assertFail();
+      }
+      clearInterval(id);
+      expect(count).assertLarger(91);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_9000
+     * @tc.name testGlobalSetIntervalTest090
+     * @tc.desc setInterval with int type delay parameter, callback fires then cleared
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 42;
+      const delay: int = 10;
+      const id: int = setInterval((): void => {
+        count = count + 1;
+      }, delay);
+      try {
+        await Utils.msSleep(50);
+      } catch (e) {
+        expect(false).assertFail();
+      }
+      clearInterval(id);
+      expect(count).assertLarger(42);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_9100
+     * @tc.name testGlobalSetIntervalTest091
+     * @tc.desc setInterval with float type delay parameter, callback fires then cleared
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 33;
+      const delay: float = 10;
+      const id: int = setInterval((): void => {
+        count = count + 1;
+      }, Float.toInt(delay));
+      try {
+        await Utils.msSleep(50);
+      } catch (e) {
+        expect(false).assertFail();
+      }
+      clearInterval(id);
+      expect(count).assertLarger(33);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETINTERVAL_TEST_9200
+     * @tc.name testGlobalSetIntervalTest092
+     * @tc.desc setInterval with negative delayMs, callback fires (treated as 0)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetIntervalTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let count: int = 65;
+      const id: int = setInterval((): void => {
+        count = count + 1;
+      }, -100);
+      expect(id).assertLarger(0);
+      try {
+        await Utils.msSleep(100);
+      } catch (e) {
+        expect().assertFail();
+      }
+      clearInterval(id);
+      expect(count).assertLarger(65);
+      done();
+    });
+  });
+}

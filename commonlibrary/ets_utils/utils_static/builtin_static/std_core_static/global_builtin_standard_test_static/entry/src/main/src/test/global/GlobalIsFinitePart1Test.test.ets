@@ -1993,3 +1993,286 @@ export default function GlobalIsFinitePart_1Test(): void {
      * @tc.level LEVEL2
      */
     it('testGlobalIsFiniteTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isFinite(Float.POSITIVE_INFINITY);
+      expect(r1).assertFalse();
+      const r2: boolean = isFinite(Number.POSITIVE_INFINITY);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1380
+     * @tc.name testGlobalIsFiniteTest138
+     * @tc.desc isFinite with negative infinities returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isFinite(Float.NEGATIVE_INFINITY);
+      expect(r1).assertFalse();
+      const r2: boolean = isFinite(Number.NEGATIVE_INFINITY);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1390
+     * @tc.name testGlobalIsFiniteTest139
+     * @tc.desc isFinite with positive hex boundary returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isFinite(0x7FFFFFFF);
+      expect(r1).assertTrue();
+      const r2: boolean = isFinite(0x7FFFFFFFFFFFFFFF as long);
+      expect(r2).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1400
+     * @tc.name testGlobalIsFiniteTest140
+     * @tc.desc isFinite with negative hex boundary returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isFinite(-0x80000000);
+      expect(r1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1410
+     * @tc.name testGlobalIsFiniteTest141
+     * @tc.desc isFinite with binary literal returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isFinite(0b1111111111111111111111111111111);
+      expect(r1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1420
+     * @tc.name testGlobalIsFiniteTest142
+     * @tc.desc isFinite with octal literal returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r1: boolean = isFinite(0o7777777777777777 as long);
+      expect(r1).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1430
+     * @tc.name testGlobalIsFiniteTest143
+     * @tc.desc isFinite(short 3) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: short = 3;
+      expect(isFinite(val)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1440
+     * @tc.name testGlobalIsFiniteTest144
+     * @tc.desc isFinite(byte value widening to number) returns true (byte widening to number should not throw)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: byte = 42;
+      const num: number = val;
+      const r: boolean = isFinite(num);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1450
+     * @tc.name testGlobalIsFiniteTest145
+     * @tc.desc isFinite(short value widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: short = 1000;
+      const num: number = val;
+      const r: boolean = isFinite(num);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1460
+     * @tc.name testGlobalIsFiniteTest146
+     * @tc.desc isFinite(int value widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: int = 100000;
+      const num: number = val;
+      const r: boolean = isFinite(num);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1470
+     * @tc.name testGlobalIsFiniteTest147
+     * @tc.desc isFinite(long value widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: long = 100;
+      const num: number = val;
+      const r: boolean = isFinite(num);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1480
+     * @tc.name testGlobalIsFiniteTest148
+     * @tc.desc isFinite(float value widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: float = 1.5f;
+      const num: number = val;
+      const r: boolean = isFinite(num);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1490
+     * @tc.name testGlobalIsFiniteTest149
+     * @tc.desc isFinite(obj.num) with object number field 42 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: NumObj = { num: 42 };
+      const r: boolean = isFinite(obj.num);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1500
+     * @tc.name testGlobalIsFiniteTest150
+     * @tc.desc isFinite(obj.num) with object number field Number.POSITIVE_INFINITY returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: NumObj = { num: Number.POSITIVE_INFINITY };
+      const r: boolean = isFinite(obj.num);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1510
+     * @tc.name testGlobalIsFiniteTest151
+     * @tc.desc Verify isFinite throws ClassCastError for null union value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let nullVal: number | null = null;
+        isFinite(nullVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1520
+     * @tc.name testGlobalIsFiniteTest152
+     * @tc.desc Verify isFinite throws ClassCastError for undefined union value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let undefVal: number | undefined = undefined;
+        isFinite(undefVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1530
+     * @tc.name testGlobalIsFiniteTest153
+     * @tc.desc Verify isFinite throws ClassCastError for empty string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let strVal: number | string = "";
+        isFinite(strVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1540
+     * @tc.name testGlobalIsFiniteTest154
+     * @tc.desc Verify isFinite throws ClassCastError for emoji string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let emojiVal: number | string = "🎉";
+        isFinite(emojiVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISFINITE_TEST_1550
+     * @tc.name testGlobalIsFiniteTest155
+     * @tc.desc Verify isFinite throws ClassCastError for digit string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsFiniteTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let strVal: number | string = "123";
+        isFinite(strVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+  });
+  }

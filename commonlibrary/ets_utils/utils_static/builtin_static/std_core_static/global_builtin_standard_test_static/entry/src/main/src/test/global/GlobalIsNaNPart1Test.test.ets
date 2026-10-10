@@ -1989,3 +1989,535 @@ isNaN(val as Any as short);
      * @tc.level LEVEL2
      */
     it('testGlobalIsNaNTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: float = 1.5f;
+      try {
+isNaN(val as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1350
+     * @tc.name testGlobalIsNaNTest135
+     * @tc.desc isNaN(float 1.5 as Any as long) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: float = 1.5f;
+      try {
+isNaN(val as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1360
+     * @tc.name testGlobalIsNaNTest136
+     * @tc.desc isNaN(number 3.14 as Any as byte) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: number = 3.14;
+      try {
+isNaN(val as Any as byte);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1370
+     * @tc.name testGlobalIsNaNTest137
+     * @tc.desc isNaN(number 3.14 as Any as short) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: number = 3.14;
+      try {
+isNaN(val as Any as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1380
+     * @tc.name testGlobalIsNaNTest138
+     * @tc.desc isNaN(number 3.14 as Any as int) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: number = 3.14;
+      try {
+isNaN(val as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1390
+     * @tc.name testGlobalIsNaNTest139
+     * @tc.desc isNaN(number 3.14 as Any as long) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: number = 3.14;
+      try {
+isNaN(val as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1400
+     * @tc.name testGlobalIsNaNTest140
+     * @tc.desc isNaN(byte 42 as Any as short) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: byte = 42;
+      try {
+isNaN(val as Any as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1410
+     * @tc.name testGlobalIsNaNTest141
+     * @tc.desc isNaN(short 1000 as Any as int) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: short = 1000;
+      try {
+isNaN(val as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1420
+     * @tc.name testGlobalIsNaNTest142
+     * @tc.desc isNaN(int 100000 as Any as long) throws ClassCastError on invalid cast
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: int = 100000;
+      try {
+isNaN(val as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1430
+     * @tc.name testGlobalIsNaNTest143
+     * @tc.desc isNaN(byte value widening to number) returns false (byte widening to number should not throw)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: byte = 42;
+      const num: number = val;
+      const r: boolean = isNaN(num);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1440
+     * @tc.name testGlobalIsNaNTest144
+     * @tc.desc isNaN(short value widening to number) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: short = 1000;
+      const num: number = val;
+      const r: boolean = isNaN(num);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1450
+     * @tc.name testGlobalIsNaNTest145
+     * @tc.desc isNaN(int value widening to number) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: int = 100000;
+      const num: number = val;
+      const r: boolean = isNaN(num);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1460
+     * @tc.name testGlobalIsNaNTest146
+     * @tc.desc isNaN(long value widening to number) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: long = 100;
+      const num: number = val;
+      const r: boolean = isNaN(num);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1470
+     * @tc.name testGlobalIsNaNTest147
+     * @tc.desc isNaN(float value widening to number) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const val: float = 1.5f;
+      const num: number = val;
+      const r: boolean = isNaN(num);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1480
+     * @tc.name testGlobalIsNaNTest148
+     * @tc.desc isNaN(null/undefined as Any as byte) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(null as Any as byte);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(undefined as Any as byte);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1490
+     * @tc.name testGlobalIsNaNTest149
+     * @tc.desc isNaN(null/undefined as Any as short) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(null as Any as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(undefined as Any as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1500
+     * @tc.name testGlobalIsNaNTest150
+     * @tc.desc isNaN(null/undefined as Any as int) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(null as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(undefined as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1510
+     * @tc.name testGlobalIsNaNTest151
+     * @tc.desc isNaN(null/undefined as Any as long) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(null as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(undefined as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1520
+     * @tc.name testGlobalIsNaNTest152
+     * @tc.desc isNaN(null/undefined as Any as float) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(null as Any as float);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(undefined as Any as float);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1530
+     * @tc.name testGlobalIsNaNTest153
+     * @tc.desc isNaN(obj.num) with object number field 42 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: NumObj = { num: 42 };
+      const r: boolean = isNaN(obj.num);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1540
+     * @tc.name testGlobalIsNaNTest154
+     * @tc.desc isNaN(obj.num) with object number field Number.NaN returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: NumObj = { num: Number.NaN };
+      const r: boolean = isNaN(obj.num);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1550
+     * @tc.name testGlobalIsNaNTest155
+     * @tc.desc isNaN(Float.NaN as Any as byte/short/int/long) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(Float.NaN as Any as byte);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.NaN as Any as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.NaN as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.NaN as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1560
+     * @tc.name testGlobalIsNaNTest156
+     * @tc.desc isNaN(Float.POSITIVE_INFINITY as Any as byte/short/int/long) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(Float.POSITIVE_INFINITY as Any as byte);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.POSITIVE_INFINITY as Any as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.POSITIVE_INFINITY as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.POSITIVE_INFINITY as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1570
+     * @tc.name testGlobalIsNaNTest157
+     * @tc.desc isNaN(Float.NEGATIVE_INFINITY as Any as byte/short/int/long) throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        isNaN(Float.NEGATIVE_INFINITY as Any as byte);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.NEGATIVE_INFINITY as Any as short);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.NEGATIVE_INFINITY as Any as int);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+      try {
+        isNaN(Float.NEGATIVE_INFINITY as Any as long);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1580
+     * @tc.name testGlobalIsNaNTest158
+     * @tc.desc Verify isNaN throws ClassCastError for null union value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let nullVal: number | null = null;
+        isNaN(nullVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1590
+     * @tc.name testGlobalIsNaNTest159
+     * @tc.desc Verify isNaN throws ClassCastError for undefined union value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let undefVal: number | undefined = undefined;
+        isNaN(undefVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISNAN_TEST_1600
+     * @tc.name testGlobalIsNaNTest160
+     * @tc.desc Verify isNaN throws ClassCastError for emoji string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsNaNTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let emojiVal: number | string = "🎉";
+        isNaN(emojiVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+  });
+}
