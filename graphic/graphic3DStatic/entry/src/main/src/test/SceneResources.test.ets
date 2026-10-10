@@ -1774,7 +1774,7 @@ export default function sceneResourcesTest() {
         let scene = await Scene.load();
         expect(scene != undefined).assertTrue();
         rf = scene.getResourceFactory();
-        let occlusionMaterial: OcclusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION) as OcclusionMaterial;
+        let occlusionMaterial: OcclusionMaterial = await rf!.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION) as OcclusionMaterial;
         expect(occlusionMaterial != null).assertTrue();
         expect(occlusionMaterial?.materialType).assertEqual(MaterialType.OCCLUSION);
         console.info(msg + " test completed successfully");
