@@ -47,10 +47,10 @@ export default class MainAbility extends UIAbility {
     });
     windowStage.loadContent('MainAbility/pages/XTSIndex', (err, data) => {
       if (err) {
-        hilog.error(0x0000, 'testTag', Failed to load the content. Code: ${err.code}, message: ${err.message}.);
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Code: ${err.code}, message: ${err.message}.`);
         return;
       }
-      hilog.info(0x0000, 'testTag', Succeeded in loading the content. Data: ${JSON.stringify(data)}. );
+      hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data)}.`);
     });
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {
