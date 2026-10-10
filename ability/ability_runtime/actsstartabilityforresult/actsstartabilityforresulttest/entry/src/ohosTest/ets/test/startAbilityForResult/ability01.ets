@@ -27,8 +27,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility01 JSON.stringify(want) is: ${JSON.stringify(want)}`);
     if (want.action == 'abc'){
       commonEventManager.publish('ability01_onCreate', () => {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityF' +
-          'orResult_0500 publish ability01_onCreate');
+        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 publish ability01_onCreate');
       });
       hilog.info(0x0000, 'testTag', '%{public}s',
         `SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 action = abc`);
@@ -37,8 +36,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
 
   onDestroy():void {
     commonEventManager.publish('ability01_onDestroy', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_0500 publish ability01_onDestroy');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 publish ability01_onDestroy');
     });
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 onDestroy');
   }
@@ -46,8 +44,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
   onWindowStageCreate(windowStage: window.WindowStage):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 onWindowStageCreate');
     commonEventManager.publish('ability01_onWindowStageCreate', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_0500 publish ability01_onWindowStageCreate');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 publish ability01_onWindowStageCreate');
     });
     windowStage.loadContent('testability/pages/Index', (err: BusinessError, data) => {
       if (err.code) {
@@ -60,21 +57,18 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
 
   onWindowStageDestroy():void {
     commonEventManager.publish('ability01_onWindowStageDestroy', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_0500 publish ability01_onWindowStageDestroy');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 publish ability01_onWindowStageDestroy');
     });
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 onWindowStageDestroy');
   }
 
   onForeground():void {
     commonEventManager.publish('ability01_onForeground', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_0500 publish ability01_onForeground');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 publish ability01_onForeground');
     });
     setTimeout(() => {
       commonEventManager.publish('ACTS_TEST_DESTROY', () => {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityF' +
-          'orResult_0500 publish ACTS_TEST_DESTROY');
+        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 publish ACTS_TEST_DESTROY');
       });
     }, 500);
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 onForeground');
@@ -83,8 +77,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
   onBackground():void {
     // Ability has back to background
     commonEventManager.publish('ability01_onBackground', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_0500 publish ability01_onBackground');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_0500 publish ability01_onBackground');
     });
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 onBackground');
   }

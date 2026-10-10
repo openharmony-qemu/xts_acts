@@ -24,8 +24,8 @@ import bundle from '@ohos.bundle.bundleManager';
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let targetVersion: number = 12;
-export default function startAbilityForResultTest() {
-  describe('startAbilityForResultTest', () => {
+export default function StartAbilityForResultTest() {
+  describe('StartAbilityForResultTest', () => {
 
     let delegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let abilityName = 'SecondAbility';
@@ -70,7 +70,7 @@ export default function startAbilityForResultTest() {
       try {
         await globalThis.abilityDelegator.startAbility({}).then(() => {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ability successful`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((error:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ablility error : ${error}`);
@@ -108,7 +108,7 @@ export default function startAbilityForResultTest() {
       try {
         await globalThis.abilityDelegator.startAbility(undefined).then(() => {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ability successful`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((error:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start ablility error : ${error}`);
@@ -172,7 +172,7 @@ export default function startAbilityForResultTest() {
         }).catch((err:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor successful: ${JSON.stringify(err.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       }
@@ -197,7 +197,7 @@ export default function startAbilityForResultTest() {
           })
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }))
@@ -241,7 +241,7 @@ export default function startAbilityForResultTest() {
       }
       catch (err) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${err}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -284,7 +284,7 @@ export default function startAbilityForResultTest() {
       }
       catch (err) {
         hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${err}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -333,7 +333,7 @@ export default function startAbilityForResultTest() {
         }).catch((err:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor successful: ${JSON.stringify(err.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       }
@@ -359,7 +359,7 @@ export default function startAbilityForResultTest() {
           })
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }))
@@ -408,7 +408,7 @@ export default function startAbilityForResultTest() {
         }).catch((err:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor successful: ${JSON.stringify(err.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       }
@@ -432,7 +432,7 @@ export default function startAbilityForResultTest() {
           })
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
         await driver.delayMs(2000);
@@ -490,7 +490,7 @@ export default function startAbilityForResultTest() {
         }).catch((err:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor successful: ${JSON.stringify(err.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       }
@@ -520,7 +520,7 @@ export default function startAbilityForResultTest() {
           })
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }))
@@ -570,7 +570,7 @@ export default function startAbilityForResultTest() {
         }).catch((err:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor successful: ${JSON.stringify(err.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       }
@@ -603,7 +603,7 @@ export default function startAbilityForResultTest() {
           })
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }))
@@ -653,7 +653,7 @@ export default function startAbilityForResultTest() {
         }).catch((err:BusinessError) => {
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor successful: ${JSON.stringify(err.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       }
@@ -679,7 +679,7 @@ export default function startAbilityForResultTest() {
           })
         } catch (error) {
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start fail : ${error}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }))

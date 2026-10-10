@@ -227,11 +227,13 @@ export default function abilityTest() {
             })
             .catch((error: BusinessError) => {
               console.error(JSON.stringify(error));
+              expect().assertFail();
               done();
             });
         })
         .catch((error: BusinessError) => {
           console.error(JSON.stringify(error));
+          expect().assertFail();
           done();
         });
     })
@@ -277,6 +279,7 @@ export default function abilityTest() {
                   if (error) {
                     console.error(JSON.stringify(error));
                   }
+                  expect().assertFail();
                   console.log('ACTS_StartAbility_Promise_0200 - timeout');
                   commonEvent.unsubscribe(subscriber, () => {
                     console.log('====>UnSubscribeCallback====>');
@@ -287,11 +290,13 @@ export default function abilityTest() {
             })
             .catch((error: BusinessError) => {
               console.error(JSON.stringify(error));
+              expect().assertFail();
               done();
             });
         })
         .catch((error: BusinessError) => {
           console.error(JSON.stringify(error));
+          expect().assertFail();
           done();
         });
     })

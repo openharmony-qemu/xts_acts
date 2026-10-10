@@ -45,8 +45,8 @@ let allowOpen = async () => {
     hilog.info(DOMAIN, LOG_TAG, 'button not found');
   }
 }
-export default function startManagerTest() {
-  describe('startManagerTest', () => {
+export default function StartManagerTest() {
+  describe('StartManagerTest', () => {
     beforeAll(async () => {
       uiAbilityContext = AppStorage.get<Context>('uiAbilityContext') as common.UIAbilityContext;
 

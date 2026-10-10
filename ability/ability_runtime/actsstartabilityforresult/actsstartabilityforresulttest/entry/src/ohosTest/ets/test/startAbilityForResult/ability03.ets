@@ -26,8 +26,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     globalThis.uiAbilityContext3 = this.context
     hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility03 JSON.stringify(want) is: ${JSON.stringify(want)}`);
     commonEventManager.publish('ability03_onCreate', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_5000 publish ability03_onCreate');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onCreate');
     });
   }
 
@@ -38,8 +37,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
   onWindowStageCreate(windowStage: window.WindowStage):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 onWindowStageCreate');
     commonEventManager.publish('ability03_onWindowStageCreate', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_5000 publish ability03_onWindowStageCreate');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onWindowStageCreate');
     });
     windowStage.loadContent('testability/pages/Index', (err: BusinessError, data) => {
       if (err.code) {
@@ -58,8 +56,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 onForeground');
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 execute router.back!');
     commonEventManager.publish('ability03_onForeground', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_5000 publish ability03_onForeground');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onForeground');
     });
     setTimeout(() => {
       globalThis.uiAbilityContext3.terminateSelf();
@@ -70,8 +67,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 onBackground');
     commonEventManager.publish('ability03_onBackground', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_5000 publish ability03_onBackground');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onBackground');
     });
   }
 }

@@ -31,8 +31,7 @@ onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
 onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility02 onCreate');
     commonEventManager.publish('ability02_onNewWant', () => {
-      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityFor' +
-        'Result_5000 publish ability02_onForeground');
+      hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability02_onForeground');
     });
     commonEventManager.publish('ACTS_TEST_DESTROY', () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'commonEventManager UiAbility02 publish ACTS_TEST_DESTROY');
@@ -89,8 +88,7 @@ onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam):void {
           error.message: ${message}`);
       }
       commonEventManager.publish('ability02_onForeground', () => {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityF' +
-          'orResult_5000 publish ability02_onForeground');
+        hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability02_onForeground');
       });
     }
   }
