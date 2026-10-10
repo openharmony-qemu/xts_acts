@@ -48,6 +48,9 @@ inline const char *SamplePathCommands()
 
 using CurveByTypeFn = ArkUI_CurveHandle (*)(ArkUI_AnimationCurve);
 using CurveCubicFn = ArkUI_CurveHandle (*)(float, float, float, float);
+// CI SDK headers may omit PathAnimation Set/GetCurve; resolve via dlsym.
+using PathSetCurveFn = ArkUI_ErrorCode (*)(OH_ArkUI_PathAnimationHandle, ArkUI_CurveHandle);
+using PathGetCurveFn = ArkUI_ErrorCode (*)(OH_ArkUI_PathAnimationHandle, ArkUI_CurveHandle *);
 
 inline void OnGroupFinish(void *userData)
 {
@@ -62,6 +65,8 @@ inline ArkUI_NumberValue MakeF32(float value)
 }
 
 ArkUI_CurveHandle MakeCurve();
+ArkUI_ErrorCode PathAnimSetCurve(OH_ArkUI_PathAnimationHandle anim, ArkUI_CurveHandle curve);
+ArkUI_ErrorCode PathAnimGetCurve(OH_ArkUI_PathAnimationHandle anim, ArkUI_CurveHandle *out);
 
 inline void DisposeCurve(ArkUI_CurveHandle curve)
 {

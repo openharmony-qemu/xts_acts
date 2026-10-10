@@ -59,4 +59,14 @@ ArkUI_CurveHandle MakeCurve()
     return TryCubicCurve();
 }
 
+ArkUI_ErrorCode PathAnimSetCurve(OH_ArkUI_PathAnimationHandle anim, ArkUI_CurveHandle curve)
+{
+    return CallAnimErr<PathSetCurveFn>("OH_ArkUI_NativeModule_PathAnimation_SetCurve", anim, curve);
+}
+
+ArkUI_ErrorCode PathAnimGetCurve(OH_ArkUI_PathAnimationHandle anim, ArkUI_CurveHandle *out)
+{
+    return CallAnimErr<PathGetCurveFn>("OH_ArkUI_NativeModule_PathAnimation_GetCurve", anim, out);
+}
+
 } // namespace ArkUICapiTest
