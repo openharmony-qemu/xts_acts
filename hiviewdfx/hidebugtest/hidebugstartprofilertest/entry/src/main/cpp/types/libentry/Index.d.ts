@@ -46,7 +46,7 @@ export const testDestroyProfilerOptionsNullReturnCode: () => number;
 export const testStartProfilerWithOptionsNullCallback: (resourceType: number, maxDuration: number) => number;
 export const testSetMaxDurationSecInvalidReturn: () => {
   zero: number,
-  overMax: number0
+  overMax: number
 };
 export const testGetProfilerOptionsDefaults: () => {
   maxDuration: number,
