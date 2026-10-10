@@ -13,27 +13,44 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function DialogStyleSheets() {
   describe('DialogStyleSheets', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogStyleSheets beforeEach');
-      await DialogApi26TestHelper.openPageIfNeeded('DialogStyleSheets', 'MainAbility/pages/dialog/DialogStyleSheets');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/dialog/DialogStyleSheets'
+      };
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (pages.name !== 'DialogStyleSheets') {
+          await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
+      } catch (err) {
+        console.error('[ARKUI_DYN] push DialogStyleSheets error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
 
     afterEach(async () => {
+      await CommonFunc.sleep(800);
+      try {
+        let driver = await Driver.create();
+        await driver.pressBack(displayID);
+      } catch (e) {
+        console.info('[ARKUI_DYN] pressBack skip');
+      }
       console.info('[ARKUI_DYN] DialogStyleSheets afterEach');
     });
-    afterAll(async () => {
-      await DialogApi26TestHelper.leavePage();
-      console.info('[ARKUI_DYN] DialogStyleSheets afterAll');
-    });
-
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogStyleSheets_0100
@@ -46,12 +63,12 @@ export default function DialogStyleSheets() {
     it('SUB_ArkUI_DialogApi26_DialogStyleSheets_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleSheets_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_style_sheets_only'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_style_sheets_only'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(2500);
-      let cover = await driver.waitForComponent(ON.id('style_sheets_cover'), 3000);
+      let cover = await driver.findComponent(ON.id('style_sheets_cover'));
       let coverTxt = await cover.getText();
       expect(coverTxt.indexOf('sheets_') >= 0).assertTrue();
       let idLabel = await driver.findComponent(ON.id('style_sheets_dialog_id'));
@@ -75,12 +92,12 @@ export default function DialogStyleSheets() {
     it('SUB_ArkUI_DialogApi26_DialogStyleSheets_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleSheets_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_style_sheets_only'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_style_sheets_only'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(2500);
-      let cover = await driver.waitForComponent(ON.id('style_sheets_cover'), 3000);
+      let cover = await driver.findComponent(ON.id('style_sheets_cover'));
       let coverTxt = await cover.getText();
       expect(coverTxt.indexOf('sheets_') >= 0).assertTrue();
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleSheets_0200 END');
@@ -98,12 +115,12 @@ export default function DialogStyleSheets() {
     it('SUB_ArkUI_DialogApi26_DialogStyleSheets_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleSheets_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_style_sheets_buttons'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_style_sheets_buttons'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(2500);
-      let cover = await driver.waitForComponent(ON.id('style_sheets_cover'), 3000);
+      let cover = await driver.findComponent(ON.id('style_sheets_cover'));
       let coverTxt = await cover.getText();
       expect(coverTxt.indexOf('sheet_btn_') >= 0).assertTrue();
       let idLabel = await driver.findComponent(ON.id('style_sheets_dialog_id'));
@@ -124,17 +141,17 @@ export default function DialogStyleSheets() {
     it('SUB_ArkUI_DialogApi26_DialogStyleSheets_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleSheets_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_style_sheets_grid'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_style_sheets_grid'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1500);
-      let title = await driver.waitForComponent(ON.text('GridTitle'), 3000);
+      let title = await driver.findComponent(ON.text('GridTitle'));
       expect(title !== null).assertTrue();
-      let ok = await driver.waitForComponent(ON.text('GridOK'), 3000);
+      let ok = await driver.findComponent(ON.text('GridOK'));
       expect(ok !== null).assertTrue();
       await ok.click();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let label = await driver.findComponent(ON.id('style_sheets_action'));
       let txt = await label.getText();
       expect(txt.indexOf('GridOK') >= 0).assertTrue();
@@ -153,11 +170,11 @@ export default function DialogStyleSheets() {
     it('SUB_ArkUI_DialogApi26_DialogStyleSheets_0500', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogStyleSheets_0500 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.waitForComponent(ON.id('btn_style_sheets_cover'), 5000);
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_style_sheets_cover'));
       expect(btn !== null).assertTrue();
       await btn.click();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(500);
       let cover = await driver.findComponent(ON.id('style_sheets_cover'));
       let txt = await cover.getText();
       expect(txt.indexOf('CoverSheet') >= 0).assertTrue();

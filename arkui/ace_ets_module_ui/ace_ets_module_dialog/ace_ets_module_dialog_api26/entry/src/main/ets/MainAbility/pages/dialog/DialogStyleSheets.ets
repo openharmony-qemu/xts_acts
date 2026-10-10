@@ -39,13 +39,14 @@ struct DialogStyleSheets {
   }
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text('DialogStyleOptions sheets').fontSize(18).fontWeight(FontWeight.Bold)
       Text('action=' + this.lastAction).id('style_sheets_action')
       Text('error=' + this.lastError).id('style_sheets_error')
       Text('dialogId=' + this.lastDialogId).id('style_sheets_dialog_id')
       Text('cover=' + this.coverFlag).id('style_sheets_cover')
-      Button('sheets only')
+      Row() {
+        Button('sheets only')
         .id('btn_style_sheets_only')
         .onClick(async () => {
           this.lastError = 'none';
@@ -179,7 +180,9 @@ struct DialogStyleSheets {
             }
           }
         })
-      Button('gridCount 6')
+      }
+      Row() {
+        Button('gridCount 6')
         .id('btn_style_sheets_grid')
         .onClick(async () => {
           this.lastError = 'none';
@@ -222,6 +225,8 @@ struct DialogStyleSheets {
           this.coverFlag = 'fields:' + sheet.title + ':' + msg.content;
           this.lastAction = 'fieldsCovered';
         })
+      } 
+      
     }
     .width('100%')
     .height('100%')

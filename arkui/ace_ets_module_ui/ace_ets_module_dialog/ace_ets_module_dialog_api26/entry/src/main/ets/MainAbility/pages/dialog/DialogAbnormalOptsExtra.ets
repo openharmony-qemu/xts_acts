@@ -55,11 +55,12 @@ struct DialogAbnormalOptsExtra {
   }
 
   build() {
-    Column({ space: 6 }) {
+    Column() {
       Text('DialogAbnormalOptsExtra').fontSize(16).fontWeight(FontWeight.Bold)
       Text('action=' + this.lastAction).id('abn_action')
       Text('error=' + this.lastError).id('abn_error')
       Text('cover=' + this.coverFlag).id('abn_cover')
+      Row() {
         Button('undefined autoCancel')
           .id('btn_abn_autoCancel')
           .onClick(async () => {
@@ -74,6 +75,8 @@ struct DialogAbnormalOptsExtra {
             opts.isModal = undefined;
             await this.runProbe('isModal', opts);
           })
+      }
+      Row() {
         Button('undefined backgroundColor')
           .id('btn_abn_backgroundColor')
           .onClick(async () => {
@@ -92,6 +95,8 @@ struct DialogAbnormalOptsExtra {
             opts.buttonDirection = undefined;
             await this.runProbe('buttonDirection', opts);
           })
+      }
+      Row() {
         Button('undefined wordBreak')
           .id('btn_abn_wordBreak')
           .onClick(async () => {
@@ -116,6 +121,8 @@ struct DialogAbnormalOptsExtra {
             opts.levelMode = undefined;
             await this.runProbe('levelMode', opts);
           })
+      }
+      Row() {
         Button('undefined focusable')
           .id('btn_abn_focusable')
           .onClick(async () => {
@@ -129,12 +136,13 @@ struct DialogAbnormalOptsExtra {
             await this.runProbe('omit', this.baseOpts('AbnOmitTitle', 'AbnOmitMsg', 'AbnOmitOK',
               'omit_ok'));
           })
-        Button('null probe cover note')
-          .id('btn_abn_null_note')
-          .onClick(() => {
-            this.coverFlag = 'null_compile_skip';
-            this.lastAction = 'null_noted';
-          })
+      }
+      Button('null probe cover note')
+        .id('btn_abn_null_note')
+        .onClick(() => {
+          this.coverFlag = 'null_compile_skip';
+          this.lastAction = 'null_noted';
+        })
     }
     .width('100%')
     .height('100%')
