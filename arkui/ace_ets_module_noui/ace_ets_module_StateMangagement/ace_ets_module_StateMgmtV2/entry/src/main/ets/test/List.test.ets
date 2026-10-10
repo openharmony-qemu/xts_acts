@@ -93,6 +93,10 @@ import CustomEnvMapTest from './CustomEnvTest/CustomEnvMapTest.test';
 import CustomEnvSetTest from './CustomEnvTest/CustomEnvSetTest.test';
 import CustomEnvMultiTypeTest from './CustomEnvTest/CustomEnvMultiTypeTest.test';
 import CustomEnvNearTest from './CustomEnvTest/CustomEnvNearTest.test';
+import persistenceV2IgnoreReadOnlyProperties1Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties1Test.test';
+import persistenceV2IgnoreReadOnlyProperties2Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties2Test.test';
+import persistenceV2IgnoreReadOnlyProperties3Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties3Test.test';
+
 
 export default function testsuite() {
 	ArrayLikeStringTest();
@@ -174,4 +178,7 @@ export default function testsuite() {
     CustomEnvSetTest();
     CustomEnvMultiTypeTest();
     CustomEnvNearTest();
+    persistenceV2IgnoreReadOnlyProperties1Test();
+    persistenceV2IgnoreReadOnlyProperties2Test();
+    persistenceV2IgnoreReadOnlyProperties3Test();
 }
