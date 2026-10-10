@@ -45,6 +45,7 @@ static constexpr uint32_t VALID_STACK_DEPTH_ZERO = 0;
 static constexpr uint32_t BELOW_MIN_DURATION_SEC = 0;
 static constexpr uint32_t VALID_ASYNC_TASK_STACK_DEPTH = 16;
 static constexpr uint32_t NUMBER = 2;
+static constexpr uint32_t NUMBER1 = 3;
 
 std::vector<uint32_t> tids;
 
@@ -617,7 +618,7 @@ static napi_value TestStartProfilerWithOptionsStackTraceMode(napi_env env, napi_
     size_t argc = 3;
     napi_value args[3] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (argc < 3) {
+    if (argc < NUMBER1) {
         napi_throw_error(env, nullptr, "need 3 params");
         return nullptr;
     }
@@ -636,8 +637,8 @@ static napi_value TestStartProfilerWithOptionsStackTraceMode(napi_env env, napi_
         return result;
     }
     OH_HiDebug_SetMaxDurationSec(opts, maxDuration);
-    OH_HiDebug_SetFilterSize(opts, 256);
-    OH_HiDebug_SetSampleIntervalBytes(opts, 384);
+    OH_HiDebug_SetFilterSize(opts, MAX_ASYNC_STACK_DEPTH);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
     HiDebug_ErrorCode code = OH_HiDebug_SetStackTraceMode(
         opts, static_cast<OH_HiDebug_ProfilerStackTraceMode>(stackTraceMode));
     if (code != HIDEBUG_SUCCESS) {
