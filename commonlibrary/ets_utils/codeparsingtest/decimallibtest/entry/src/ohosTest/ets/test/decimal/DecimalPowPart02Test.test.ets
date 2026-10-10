@@ -697,3 +697,434 @@ export default function decimalPowPart02TestTest() {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_4900
      * @tc.name testDecimalPowPart02TestTest049
+     * @tc.desc Verify pow Decimal instanceof
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Decimal = new Decimal(3).pow('2');
+      expect(r instanceof Decimal).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5000
+     * @tc.name testDecimalPowPart02TestTest050
+     * @tc.desc Verify string values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: Decimal = new Decimal(3);
+      let r: Decimal = b.pow('2');
+      expect(b.toString()).assertEqual('3');
+      expect(r.toString()).assertEqual('9');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5100
+     * @tc.name testDecimalPowPart02TestTest051
+     * @tc.desc Verify pow (3^2)^2 = 81
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Decimal = new Decimal(3).pow('2').pow('2');
+      expect(r.toString()).assertEqual('81');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5200
+     * @tc.name testDecimalPowPart02TestTest052
+     * @tc.desc Verify toString 2^0.5 20
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Decimal = new Decimal(2).pow('0.5');
+      expect(r.toString()).assertEqual('1.4142135623730950488');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5300
+     * @tc.name testDecimalPowPart02TestTest053
+     * @tc.desc Verify s = -1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Decimal = new Decimal(-8).pow('3');
+      expect(r.s).assertEqual(-1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5400
+     * @tc.name testDecimalPowPart02TestTest054
+     * @tc.desc Verify s = 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Decimal = new Decimal(4).pow('0.5');
+      expect(r.s).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5500
+     * @tc.name testDecimalPowPart02TestTest055
+     * @tc.desc Verify toNumber Infinity
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Decimal = new Decimal(2).pow('1e9');
+      expect(r.toNumber()).assertEqual(Infinity);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5600
+     * @tc.name testDecimalPowPart02TestTest056
+     * @tc.desc Verify toNumber 0 toString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: Decimal = new Decimal(2).pow('-1e9');
+      expect(r.toNumber()).assertEqual(0);
+      expect(r.toString().startsWith('2.1677979676')).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5700
+     * @tc.name testDecimalPowPart02TestTest057
+     * @tc.desc Verify 'abc' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = 'abc';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5800
+     * @tc.name testDecimalPowPart02TestTest058
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '   ';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_5900
+     * @tc.name testDecimalPowPart02TestTest059
+     * @tc.desc Verify ' 2' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = ' 2';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6000
+     * @tc.name testDecimalPowPart02TestTest060
+     * @tc.desc Verify '\t2' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '\t2';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6100
+     * @tc.name testDecimalPowPart02TestTest061
+     * @tc.desc Verify '\n2' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '\n2';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6200
+     * @tc.name testDecimalPowPart02TestTest062
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '​';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6300
+     * @tc.name testDecimalPowPart02TestTest063
+     * @tc.desc Verify NUL ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = ' ';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6400
+     * @tc.name testDecimalPowPart02TestTest064
+     * @tc.desc Verify '12abc' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '12abc';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6500
+     * @tc.name testDecimalPowPart02TestTest065
+     * @tc.desc Verify '1.2.3' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '1.2.3';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6600
+     * @tc.name testDecimalPowPart02TestTest066
+     * @tc.desc Verify '1e' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '1e';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6700
+     * @tc.name testDecimalPowPart02TestTest067
+     * @tc.desc Verify '--2' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '--2';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6800
+     * @tc.name testDecimalPowPart02TestTest068
+     * @tc.desc Verify '0xG' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '0xG';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_6900
+     * @tc.name testDecimalPowPart02TestTest069
+     * @tc.desc Verify BOM ' 2' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '﻿2';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_7000
+     * @tc.name testDecimalPowPart02TestTest070
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '２';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_7100
+     * @tc.name testDecimalPowPart02TestTest071
+     * @tc.desc Verify emoji '2 ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '2️⃣';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_7200
+     * @tc.name testDecimalPowPart02TestTest072
+     * @tc.desc Verify 'a'.repeat(5000) 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = 'a'.repeat(5000);
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_7300
+     * @tc.name testDecimalPowPart02TestTest073
+     * @tc.desc Verify XSS '<script>alert(1)</script>' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '<script>alert(1)</script>';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_7400
+     * @tc.name testDecimalPowPart02TestTest074
+     * @tc.desc Verify Unicode ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '中文';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_POW_PART02_SUPPLEMENT_TEST_7500
+     * @tc.name testDecimalPowPart02TestTest075
+     * @tc.desc Verify '\ud800' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPowPart02TestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: ESObject = '\ud800';
+      try {
+        new Decimal(3).pow(v as ESObject);
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
+
+  });
+
+}
