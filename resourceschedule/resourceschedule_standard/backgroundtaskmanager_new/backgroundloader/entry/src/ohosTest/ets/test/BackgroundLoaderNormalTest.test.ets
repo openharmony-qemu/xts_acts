@@ -16,6 +16,7 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from '@ohos/hypium-dynamic'
 import { backgroundLoader } from '@kit.BackgroundTasksKit'
 import { BusinessError } from '@kit.BasicServicesKit'
+import { abilityDelegatorRegistry } from '@kit.TestKit'
 import hilog from '@ohos.hilog'
 
 let DOMAIN: number = 0x0000;
@@ -23,6 +24,10 @@ let TAG: string = 'BackgroundLoaderTest';
 
 export default function BackgroundLoaderNormalTest() {
   describe('BackgroundLoaderNormalTest', () => {
+
+    const sleep = (ms: number): Promise<void> => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
     beforeAll(() => {
       hilog.info(DOMAIN, TAG, '%{public}s', 'beforeAll called');
@@ -149,6 +154,13 @@ export default function BackgroundLoaderNormalTest() {
       try {
         backgroundLoader.registerTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 registerTask success');
+        let delegator: abilityDelegatorRegistry.AbilityDelegator =
+          abilityDelegatorRegistry.getAbilityDelegator();
+        let cmd = "hidumper -s 1901 -a 'backgroundLoader com.acts.actsbackgroundloadertest TestAbility'";
+        delegator.executeShellCommand(cmd);
+        await sleep(1500);
+        hilog.info(DOMAIN, TAG, '%{public}s',
+          'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 delegator success');
         backgroundLoader.finishTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_0400 finishTask success');
         callbackFlag = callbackFlag + 1;
@@ -632,6 +644,13 @@ export default function BackgroundLoaderNormalTest() {
         callbackFlag = callbackFlag + 1;
         backgroundLoader.registerTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 registerTask success');
+        let delegator: abilityDelegatorRegistry.AbilityDelegator =
+          abilityDelegatorRegistry.getAbilityDelegator();
+        let cmd = "hidumper -s 1901 -a 'backgroundLoader com.acts.actsbackgroundloadertest TestAbility'";
+        delegator.executeShellCommand(cmd);
+        await sleep(1500);
+        hilog.info(DOMAIN, TAG, '%{public}s',
+          'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 delegator success');
         backgroundLoader.finishTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_2400 finishTask success');
         backgroundLoader.unregisterTask(taskInfo);
