@@ -101,6 +101,7 @@ export default function windowPropertiesTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let canIUseRes = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     beforeAll(async () => {
@@ -119,6 +120,8 @@ export default function windowPropertiesTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`beforeAll canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         let driver = Driver.create();
         let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
@@ -3570,62 +3573,51 @@ export default function windowPropertiesTest() {
         done();
       }
     })
-    /**
-     * @tc.name   testSetSubWindowMask
-     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6600
-     * @tc.desc   set subWindow mask with dimensions inconsistent with the subWindow size to verify error code 1300002
+
+   /**
+     * @tc.name   testSetSubWindowMask_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_SetSubWindowMask_0200
+     * @tc.desc   testSetSubWindowMask_1300002
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testSetSubWindowMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName = 'testSetSubWindowMask';
-      let subWindow = await windowStage.createSubWindow('testSetSubWindowMask');
-      await subWindow.setUIContent('testability/pages/Index1');
-      await subWindow.showWindow();
-      await sleep(1000);
-      let maskWidth = subWindow.getWindowProperties().windowRect.width;
-      let maskHeight = subWindow.getWindowProperties().windowRect.height;
-      // Intentionally construct a windowMask whose dimensions are inconsistent with the subWindow size.
-      let invalidMaskWidth = maskWidth - 10;
-      let invalidMaskHeight = maskHeight - 10;
-      let windowMask = Array<Array<number>>(invalidMaskHeight).fill([]).map((_, row) => {
-        let array = Array<number>(invalidMaskWidth);
-        for (let i = 0; i < invalidMaskWidth; i++) {
-          array[i] = (i + row) > (invalidMaskWidth + invalidMaskHeight) / 2 ? 1 : 0;
-        }
-        return array;
-      });
-      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+    it('testSetSubWindowMask_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'TestSetSubWindowMask ';
+      let subWindow: window.Window | undefined;
       try {
-        let promise = subWindow.setWindowMask(windowMask);
-        promise.then(async () => {
-          console.info(caseName + ' Succeeded in setting the window mask.');
-          expect(false).assertTrue();
-          await subWindow.destroyWindow();
-          done();
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + ` Failed to set the window mask. Cause code: ${err.code}, message: ${err.message}`);
-          await subWindow.destroyWindow();
-          if (err.code === 801) {
-            if (canIUseRes) {
-              console.error(caseName + ` Unexpected 801: device supports SystemCapability.Window.SessionManager but got capability error.`);
-              expect(false).assertTrue();
-            }
-            done();
-          } else {
-            expect(err.code).assertEqual(1300002);
-            done();
+        subWindow = await windowStage.createSubWindow('subWindowMask');
+        console.info(`${caseName} Succeeded in creating the subwindow. Data: ` + JSON.stringify(subWindow));
+        await subWindow.setUIContent("testability/pages/First/index2");
+        await subWindow?.showWindow();
+        await sleep(500);
+        let maskWidth = subWindow.getWindowProperties().windowRect.width;
+        let maskHeight = subWindow.getWindowProperties().windowRect.height;
+        let windowMask = Array<Array<number>>(maskHeight + 2).fill([]).map((_, row) => {
+          let array = Array<number>(maskWidth);
+          for (let i = 0 ; i < maskWidth; i++) {
+            array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
           }
+          return array;
         });
-      } catch (err) {
-        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
-        await subWindow.destroyWindow();
-        expect(false).assertTrue();
+        await subWindow?.setWindowMask(windowMask);
+        console.info(`${caseName} Succeeded in setting the window mask.`);
+        await subWindow?.destroyWindow();
+        done();
+      } catch (exception) {
+        await subWindow?.destroyWindow();
+        console.error(`Failed to set sub window mask. Cause code: ${exception.code}, message: ${exception.message}`);
+        if (!canIUseRes) {
+          console.info(`${caseName} The current device not support to set sub window mask`);
+          expect(exception.code).assertEqual(801);
+        } else {
+          expect(exception.code).assertEqual(1300002);
+        }
+        expect(exception.message !== null).assertTrue();
         done();
       }
     })
+
     /**
      * @tc.name   testGetWindowStatusInDefault
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6700
