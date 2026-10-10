@@ -18,8 +18,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityManager } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 
-export default function abilityManagerGetAbilityRunningInfosTest() {
-  describe('abilityManagerGetAbilityRunningInfosTest', () => {
+export default function AbilityManagerGetAbilityRunningInfosTest() {
+  describe('AbilityManagerGetAbilityRunningInfosTest', () => {
     /**
      * @tc.name   SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_001
      * @tc.number SUB_Ability_AbilityManager_GetAbilityRunningInfos_PROMISE_001
@@ -69,7 +69,7 @@ export default function abilityManagerGetAbilityRunningInfosTest() {
         
       } catch (error) {
         hilog.error(0x0000, 'testTag', `${tag} failed: ${JSON.stringify(error)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -90,7 +90,7 @@ export default function abilityManagerGetAbilityRunningInfosTest() {
           abilityRunningInfos: abilityManager.AbilityRunningInfo[]) => {
           if (error) {
             hilog.error(0x0000, 'testTag', `${tag} failed: ${JSON.stringify(error)}`);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
             return;
           }
@@ -128,7 +128,7 @@ export default function abilityManagerGetAbilityRunningInfosTest() {
         });
       } catch (error) {
         hilog.error(0x0000, 'testTag', `${tag} exception: ${JSON.stringify(error)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });

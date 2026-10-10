@@ -60,7 +60,7 @@ export default function abilityManagerTest() {
       abilityManager.updateConfiguration(configInit)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -112,7 +112,7 @@ export default function abilityManagerTest() {
         })
         .catch((err: BusinessError) => {
           console.log(TAG + ' err:' + JSON.stringify(err));
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
     })
@@ -149,7 +149,7 @@ export default function abilityManagerTest() {
       abilityManager.getExtensionRunningInfos(upperLimit)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -221,7 +221,7 @@ export default function abilityManagerTest() {
         done();
       } catch (error) {
         console.log(`${tag}, failed: ${JSON.stringify(error)}`);
-        expect(false).assertTrue()
+        expect().assertFail()
       }
     })
   })

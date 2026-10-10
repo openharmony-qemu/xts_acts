@@ -76,7 +76,7 @@ export default function abilityTest(abilityContext:common.UIAbilityContext) {
           if (err.code) {
             console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}startAbilityForResult failed, code is ${err.code},
               message is ${err.message}`);
-            expect(false).assertTrue();
+            expect().assertFail();
             return;
           }
           console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}:${JSON.stringify(result)}`);

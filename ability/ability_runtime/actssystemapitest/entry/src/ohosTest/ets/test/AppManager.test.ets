@@ -143,7 +143,7 @@ export default function appManagerTest() {
       appManager.getForegroundApplications()
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -187,7 +187,7 @@ export default function appManagerTest() {
       appManager.killProcessWithAccount(bundleName, accountId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -229,7 +229,7 @@ export default function appManagerTest() {
       appManager.killProcessesByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -271,7 +271,7 @@ export default function appManagerTest() {
       appManager.clearUpApplicationData(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -314,7 +314,7 @@ export default function appManagerTest() {
       appManager.getProcessMemoryByPid(pid)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -356,7 +356,7 @@ export default function appManagerTest() {
       appManager.getRunningProcessInfoByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -400,7 +400,7 @@ export default function appManagerTest() {
       appManager.getRunningProcessInfoByBundleName(bundleName, userId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -467,12 +467,12 @@ export default function appManagerTest() {
             done();
           }).catch((err:BusinessError)=>{
             console.log(`${tag} isRunningInStabilityTest error, err: ${err?.code}`);
-            try{expect(false).assertTrue();}catch(e){}
+            try{expect().assertFail();}catch(e){}
             done();
           });
         } catch (err) {
           console.error(`${tag} isRunningInStabilityTest error, errorCode: ${err?.code}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
     });
@@ -503,7 +503,7 @@ export default function appManagerTest() {
         })
       } catch (err) {
         console.error(`${tag} isRunningInStabilityTest error, errorCode: ${err?.code}`);
-        try{expect(false).assertTrue();}catch(e){}
+        try{expect().assertFail();}catch(e){}
         done();
       }
     });
@@ -581,7 +581,7 @@ export default function appManagerTest() {
           done();
         }).catch((err:BusinessError)=>{
           console.log(`${tag} off error, err: ${err?.code}`);
-          try{expect(false).assertTrue();}catch(e){}
+          try{expect().assertFail();}catch(e){}
           done();
         });
       } catch (err) {
@@ -639,7 +639,7 @@ export default function appManagerTest() {
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -668,12 +668,12 @@ export default function appManagerTest() {
           if (err) {
             console.error(JSON.stringify(err));
           }
-          try{expect(false).assertTrue();}catch(e){}
+          try{expect().assertFail();}catch(e){}
           done();
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -692,7 +692,7 @@ export default function appManagerTest() {
       try {
         appManager.killProcessesByBundleName(bundleName, false).then((data) => {
           console.log('System_API_Test_App_Manager_1700 killProcessesByBundleName success.');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.error(`System_API_Test_App_Manager_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
@@ -723,7 +723,7 @@ export default function appManagerTest() {
       try {
         appManager.killProcessesByBundleName(bundleName, true).then((data) => {
           console.log('System_API_Test_App_Manager_1800 killProcessesByBundleName success.');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError) => {
           console.error(`System_API_Test_App_Manager_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
@@ -758,12 +758,12 @@ export default function appManagerTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(`${TAG}, getAppMemorySize error, errorCode: ${err?.code}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -783,7 +783,7 @@ export default function appManagerTest() {
         appManager.getAppMemorySize((err: BusinessError | null, data: number | undefined) => {
           if (err) {
             console.error(`${TAG}, getAppMemorySize error, errorCode: ${err.code}`);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           } else {
             console.log(`${TAG}, getAppMemorySize success, data: ${data}`);
@@ -794,7 +794,7 @@ export default function appManagerTest() {
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -859,7 +859,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -888,7 +888,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -917,7 +917,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(null, false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -946,7 +946,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName(undefined, false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -975,7 +975,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('com.ohos.application', null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -985,7 +985,7 @@ export default function appManagerTest() {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1004,7 +1004,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('com.ohos.application', undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1014,7 +1014,7 @@ export default function appManagerTest() {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1033,7 +1033,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('')
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1043,7 +1043,7 @@ export default function appManagerTest() {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1066,7 +1066,7 @@ export default function appManagerTest() {
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1085,7 +1085,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1095,7 +1095,7 @@ export default function appManagerTest() {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1114,7 +1114,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1124,7 +1124,7 @@ export default function appManagerTest() {
           });
       } catch (e) {
         console.log(TAG + ' err.code: ' + e.code);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1144,12 +1144,12 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', false, null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
             console.log(TAG + ' err.code: ' + err.code);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           });
       } catch (e) {
@@ -1174,7 +1174,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', false, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1203,7 +1203,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', null)
         .then(() => {
           console.log(TAG + ' should not reach here');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -1232,7 +1232,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', undefined)
         .then(() => {
           console.log(TAG + ' should not reach here');
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -1264,7 +1264,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', null, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1274,7 +1274,7 @@ export default function appManagerTest() {
           });
       } catch (e) {
         console.log(TAG + ' err.code: ' + e.code);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1295,7 +1295,7 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', undefined, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
@@ -1305,7 +1305,7 @@ export default function appManagerTest() {
           });
       } catch (e) {
         console.log(TAG + ' err.code: ' + e.code);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -1325,12 +1325,12 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', true, null)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
             console.log(TAG + ' err.code: ' + err.code);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           });
       } catch (e) {
@@ -1355,12 +1355,12 @@ export default function appManagerTest() {
         appManager.killProcessesByBundleName('', true, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((err: BusinessError) => {
             console.log(TAG + ' err.code : ' + err.code);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           });
       } catch (e) {

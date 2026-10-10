@@ -81,7 +81,7 @@ export default function moveAbilityToBackgroundTest() {
           let subscribeCB = (err: BusinessError, data: CommonEventManager.CommonEventData) => {
             if (err) {
               console.error(`receive event failed, code is ${err.code}, message is ${err.message}`);
-              expect(false).assertTrue();
+              expect().assertFail();
               done();
             } else {
               console.info(`receive event success, event:${data.event}`);
@@ -94,10 +94,10 @@ export default function moveAbilityToBackgroundTest() {
           await button.click();
           await sleep(5000);
           console.error(`${tag}, timeout`);
-          expect(false).assertTrue();
+          expect().assertFail();
         } catch (err) {
           console.error(`${tag} error, errorCode: ${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }else if(mpEnable === 'false') {
@@ -107,7 +107,7 @@ export default function moveAbilityToBackgroundTest() {
       }else{
         console.error(`${tag} error, current device get MoveAbilityToBackground config fail,please check:
           ${JSON.stringify(mpEnable)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
       

@@ -18,7 +18,7 @@ import common from '@ohos.app.ability.common'
 import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 
-export default function requestModalUIExtension() {
+export default function RequestModalUIExtension() {
 
   describe('ACTS_RequestModalUIExtension', () => {
     let TAG = '';
@@ -54,7 +54,7 @@ export default function requestModalUIExtension() {
         });
       } catch (error) {
         console.log(TAG + 'requestModalUIExtension001 catch fail, err:' + JSON.stringify(error));
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     })
@@ -88,7 +88,7 @@ export default function requestModalUIExtension() {
         })
       } catch (error) {
         console.log(TAG + 'requestModalUIExtension002 catch fail, err:' + JSON.stringify(error));
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     })

@@ -41,7 +41,7 @@ export default function abilityTest() {
       mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model') == 'true';
       console.info('====> [test ]  mpEnable:' + mpEnable);
       if (mpEnable != true && mpEnable != false) {
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     })
@@ -64,7 +64,7 @@ export default function abilityTest() {
         testAbilityContext.startUIServiceExtensionAbility(null).then((data) => {
           console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -73,7 +73,7 @@ export default function abilityTest() {
             console.error(JSON.stringify(err));
           }
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -105,7 +105,7 @@ export default function abilityTest() {
         onData: (data: Record<string, Object>) => {
           console.log(tag + `dataCallBack received data`, JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -114,7 +114,7 @@ export default function abilityTest() {
         onDisconnect: () => {
           console.log(tag + `dataCallBack onDisconnect`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -124,7 +124,7 @@ export default function abilityTest() {
         testAbilityContext.connectUIServiceExtensionAbility(null, dataCallBack).then((proxy: common.UIServiceProxy) => {
           console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(proxy));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
 
@@ -134,7 +134,7 @@ export default function abilityTest() {
             console.error(JSON.stringify(err));
           }
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -167,7 +167,7 @@ export default function abilityTest() {
         }).then((data) => {
           console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -187,7 +187,7 @@ export default function abilityTest() {
         if (err.code === 801) {
           console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(err));
         } else {
-          expect(false).assertTrue();
+          expect().assertFail();
         }
         done();
       }
@@ -209,7 +209,7 @@ export default function abilityTest() {
         onData: (data: Record<string, Object>) => {
           console.log(tag + `dataCallBack received data`, JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -218,7 +218,7 @@ export default function abilityTest() {
         onDisconnect: () => {
           console.log(tag + `dataCallBack onDisconnect`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -231,7 +231,7 @@ export default function abilityTest() {
         }, dataCallBack).then((proxy: common.UIServiceProxy) => {
           console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(proxy));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -247,7 +247,7 @@ export default function abilityTest() {
         if (err.code === 801) {
           console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(err));
         } else {
-          expect(false).assertTrue();
+          expect().assertFail();
         }
         done();
       }
@@ -269,7 +269,7 @@ export default function abilityTest() {
           .then(() => {
             console.log(tag + `disconnectUIServiceExtensionAbility succeed`);
             try {
-              expect(false).assertTrue();
+              expect().assertFail();
             } catch {
             }
             done();
@@ -302,7 +302,7 @@ export default function abilityTest() {
         testAbilityContext.startUIServiceExtensionAbility(undefined).then((data) => {
           console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -311,7 +311,7 @@ export default function abilityTest() {
             console.error(JSON.stringify(err));
           }
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -342,7 +342,7 @@ export default function abilityTest() {
         testAbilityContext.startUIServiceExtensionAbility({}).then((data) => {
           console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -362,7 +362,7 @@ export default function abilityTest() {
         if (err.code === 801) {
           console.info(tag + '====> startUIServiceExtensionAbility: ' + JSON.stringify(err));
         } else {
-          expect(false).assertTrue();
+          expect().assertFail();
         }
         done();
       }
@@ -384,7 +384,7 @@ export default function abilityTest() {
         onData: (data: Record<string, Object>) => {
           console.log(tag + `dataCallBack received data`, JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -393,7 +393,7 @@ export default function abilityTest() {
         onDisconnect: () => {
           console.log(tag + `dataCallBack onDisconnect`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -404,7 +404,7 @@ export default function abilityTest() {
           .then((proxy: common.UIServiceProxy) => {
             console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(proxy));
             try {
-              expect(false).assertTrue();
+              expect().assertFail();
             } catch {
             }
             done();
@@ -414,7 +414,7 @@ export default function abilityTest() {
               console.error(JSON.stringify(err));
             }
             try {
-              expect(false).assertTrue();
+              expect().assertFail();
             } catch {
             }
             done();
@@ -647,7 +647,7 @@ export default function abilityTest() {
         onData: (data: Record<string, Object>) => {
           console.log(tag + `dataCallBack received data`, JSON.stringify(data));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
 
@@ -657,7 +657,7 @@ export default function abilityTest() {
         onDisconnect: () => {
           console.log(tag + `dataCallBack onDisconnect`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
 
@@ -668,7 +668,7 @@ export default function abilityTest() {
         testAbilityContext.connectUIServiceExtensionAbility({}, dataCallBack).then((proxy: common.UIServiceProxy) => {
           console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(proxy));
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
 
@@ -686,7 +686,7 @@ export default function abilityTest() {
         if (err.code === 801) {
           console.info(tag + '====> connectUIServiceExtensionAbility: ' + JSON.stringify(err));
         } else {
-          expect(false).assertTrue();
+          expect().assertFail();
         }
         done();
       }
@@ -708,7 +708,7 @@ export default function abilityTest() {
           .then(() => {
             console.log(tag + `disconnectUIServiceExtensionAbility succeed`);
             try {
-              expect(false).assertTrue();
+              expect().assertFail();
             } catch {
             }
   

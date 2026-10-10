@@ -40,7 +40,7 @@ export default function abilityTest() {
         })
         .catch((error: BusinessError) => {
           console.log('executeShellCommand Acts_UriPermisssion_0100 error : ' + JSON.stringify(error));
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       console.log('Acts_UriPermisssion_0100 end.');

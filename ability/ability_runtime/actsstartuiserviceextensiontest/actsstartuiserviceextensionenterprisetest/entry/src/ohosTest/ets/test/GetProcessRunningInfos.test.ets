@@ -53,7 +53,7 @@ export default function getProcessRunningInfosTest() {
           }
         } catch (error) {
           hilog.error(0x0000, 'testTag', `${tag} failed: ${JSON.stringify(error)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       });
@@ -95,7 +95,7 @@ export default function getProcessRunningInfosTest() {
         });
       } catch (error) {
         hilog.error(0x0000, 'testTag', `${tag} exception: ${JSON.stringify(error)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });

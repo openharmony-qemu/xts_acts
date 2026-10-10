@@ -100,7 +100,7 @@ export default function missionManagerTest() {
       missionManager.getMissionInfo(deviceId, missionId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -144,7 +144,7 @@ export default function missionManagerTest() {
       missionManager.getMissionInfos(deviceId, numMax)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -188,7 +188,7 @@ export default function missionManagerTest() {
       missionManager.getMissionSnapShot(deviceId, missionId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -232,7 +232,7 @@ export default function missionManagerTest() {
       missionManager.getLowResolutionMissionSnapShot(deviceId, missionId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -274,7 +274,7 @@ export default function missionManagerTest() {
       missionManager.lockMission(missionId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -316,7 +316,7 @@ export default function missionManagerTest() {
       missionManager.unlockMission(missionId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -358,7 +358,7 @@ export default function missionManagerTest() {
       missionManager.clearMission(missionId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -398,7 +398,7 @@ export default function missionManagerTest() {
       missionManager.clearAllMissions()
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -440,7 +440,7 @@ export default function missionManagerTest() {
       missionManager.moveMissionToFront(missionId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -486,7 +486,7 @@ export default function missionManagerTest() {
       })
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -528,7 +528,7 @@ export default function missionManagerTest() {
       missionManager.moveMissionsToForeground(missionIds)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -572,7 +572,7 @@ export default function missionManagerTest() {
       missionManager.moveMissionsToForeground(missionIds, topMission)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {
@@ -614,7 +614,7 @@ export default function missionManagerTest() {
       missionManager.moveMissionsToBackground(missionIds)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((err: BusinessError) => {

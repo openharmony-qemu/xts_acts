@@ -21,7 +21,7 @@ export default function abilityTest() {
       mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model') == 'true';
       console.info('====> [test ] isSupportCapability: ' + isSupportCapability +  ' mpEnable:' + mpEnable);
       if(mpEnable != true && mpEnable != false){
-        expect(false).assertTrue();
+        expect().assertFail();
       }
       done();
     })
@@ -48,7 +48,7 @@ export default function abilityTest() {
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
-        try{expect(false).assertTrue();}catch{};
+        try{expect().assertFail();}catch{};
         done();
       })
     })
@@ -66,7 +66,7 @@ export default function abilityTest() {
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_0200] start');
       appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', 1001).then((data: boolean) => {
         hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
-        try{expect(false).assertTrue();}catch{};
+        try{expect().assertFail();}catch{};
         done();
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
@@ -89,11 +89,11 @@ export default function abilityTest() {
           try{
             await appManager.isAppRunning(undefined, 0).then((data: boolean) => {
               hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
-              try{expect(false).assertTrue();}catch{};
+              try{expect().assertFail();}catch{};
               done();
             }).catch((err: BusinessError) => {
               hilog.error(0x0000, 'testTag', tag + `isAppRunning error, code: ${err.code}, msg:${err.message}`);
-              try{expect(false).assertTrue();}catch{};
+              try{expect().assertFail();}catch{};
               done();
             })
           }catch(e){
@@ -221,14 +221,14 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag', tag + `isAppRunning error, code: ${err.code}, msg:${err.message}`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
         })
       }catch(e){
         hilog.error(0x0000, 'testTag', tag + `isAppRunning catch error, code: ${e.code}, msg:${e.message}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     })
@@ -254,7 +254,7 @@ export default function abilityTest() {
       }).catch((err: BusinessError) => {
         hilog.error(0x0000, 'testTag', tag + `isAppRunning error, code: ${err.code}, msg:${err.message}`);
         try {
-          expect(false).assertTrue();
+          expect().assertFail();
         } catch {
         }
         done();
@@ -275,7 +275,7 @@ export default function abilityTest() {
       appManager.isAppRunning('').then((data: boolean) => {
         hilog.info(0x0000, 'testTag', tag + `data: ${JSON.stringify(data)}`);
         try {
-          expect(false).assertTrue();
+          expect().assertFail();
         } catch {
         }
         done();
@@ -305,14 +305,14 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag',
             `empty bundle name with appCloneIndex null, data: ${JSON.stringify(data)}`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag', tag + `isAppRunning error, code: ${err.code}, msg:${err.message}`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -340,14 +340,14 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag',
             `null bundle name with appCloneIndex 0, data: ${JSON.stringify(data)}`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag', tag + `isAppRunning error, code: ${err.code}, msg:${err.message}`);
           try {
-            expect(false).assertTrue();
+            expect().assertFail();
           } catch {
           }
           done();
@@ -375,7 +375,7 @@ export default function abilityTest() {
       try {
         const result = await appManager.isAppRunning(undefined, 1);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning undefined appCloneIndex result: ${result}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       } catch (err) {
         hilog.error(0x0000, 'testTag',
@@ -399,7 +399,7 @@ export default function abilityTest() {
       try {
         const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', 1);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName normal appCloneIndex result: ${result}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       } catch (err) {
         hilog.error(0x0000, 'testTag',
@@ -423,7 +423,7 @@ export default function abilityTest() {
       try {
         const result = await appManager.isAppRunning(null);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning null result: ${result}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       } catch (err) {
         hilog.error(0x0000, 'testTag', tag + `isAppRunning null error: ${err.code}, message: ${err.message}`);
@@ -446,7 +446,7 @@ export default function abilityTest() {
       try {
         const result = await appManager.isAppRunning(undefined);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning undefined result: ${result}`);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (err) {
         hilog.error(0x0000, 'testTag', tag + `isAppRunning undefined error: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
@@ -468,7 +468,7 @@ export default function abilityTest() {
       try {
         const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', null);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName null appCloneIndex result: ${result}`);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (err) {
         hilog.error(0x0000, 'testTag',
           `isAppRunning valid bundleName null appCloneIndex error: ${err.code}, message: ${err.message}`);
@@ -491,7 +491,7 @@ export default function abilityTest() {
       try {
         const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', undefined);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName undefined appCloneIndex result: ${result}`);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (err) {
         hilog.error(0x0000, 'testTag',
           `isAppRunning valid bundleName undefined appCloneIndex error: ${err.code}, message: ${err.message}`);
@@ -514,7 +514,7 @@ export default function abilityTest() {
       try {
         const result = await appManager.isAppRunning('com.acts.startuiserviceextensiontestenterprise', -1);
         hilog.info(0x0000, 'testTag', tag + `isAppRunning valid bundleName negative appCloneIndex result: ${result}`);
-        expect(false).assertTrue();
+        expect().assertFail();
       } catch (err) {
         hilog.error(0x0000, 'testTag',
           `isAppRunning valid bundleName negative appCloneIndex error: ${err.code}, message: ${err.message}`);
@@ -539,7 +539,7 @@ export default function abilityTest() {
         appManager.off('applicationState', observerId, (err) => {
           if (err) {
             hilog.info(0x0000, 'testTag', tag + `off error: ${JSON.stringify(err)}`);
-            expect(false).assertTrue();
+            expect().assertFail();
           } else {
             hilog.info(0x0000, 'testTag', tag + `off succeed`);
           }
@@ -566,7 +566,7 @@ export default function abilityTest() {
       try {
         await appManager.killProcessesByBundleName('com.non.exist.app', false, 0).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName succeed`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((err:BusinessError)=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName err ` + err?.code);
@@ -575,7 +575,7 @@ export default function abilityTest() {
         });
       } catch (err) {
         hilog.error(0x0000, 'testTag', tag + `killProcessesByBundleName error: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -594,7 +594,7 @@ export default function abilityTest() {
       try {
         await appManager.killProcessesByBundleName('com.non.exist.app', true, 1).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName succeed`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((err:BusinessError)=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName err ` + err?.code);
@@ -603,7 +603,7 @@ export default function abilityTest() {
         });
       } catch (err) {
         hilog.error(0x0000, 'testTag', tag + `killProcessesByBundleName error: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -623,11 +623,11 @@ export default function abilityTest() {
       try {
         await appManager.off('applicationState', observerId).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `off succeed`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((err:BusinessError)=>{
           hilog.info(0x0000, 'testTag', tag + `off err ` + err?.code);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         });
 
@@ -655,7 +655,7 @@ export default function abilityTest() {
           abilityName: 'EntryAbility'
         }).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `startAbilityByCall succeed`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }).catch((err: BusinessError)=>{
           hilog.info(0x0000, 'testTag', tag + `startAbilityByCall error ` + err?.code);
@@ -664,7 +664,7 @@ export default function abilityTest() {
         })
       } catch (err) {
         hilog.error(0x0000, 'testTag', tag + `startAbilityByCall error: ${err.code}, message: ${err.message}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });

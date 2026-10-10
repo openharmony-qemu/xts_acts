@@ -445,7 +445,7 @@ export default function abilityContextTest() {
       let account: number = 110;
       context.stopServiceExtensionAbilityWithAccount(want, account)
         .then(() => {
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((error: BusinessError) => {

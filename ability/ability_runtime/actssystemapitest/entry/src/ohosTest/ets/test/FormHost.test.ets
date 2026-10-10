@@ -65,7 +65,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.deleteForm(formId)
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -152,7 +152,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.releaseForm(formId)
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -209,7 +209,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.requestForm(formId)
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -266,7 +266,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.castToNormalForm(formId)
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -323,7 +323,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.notifyVisibleForms([formId])
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -380,7 +380,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.notifyInvisibleForms([formId])
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -437,7 +437,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.enableFormsUpdate([formId])
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -494,7 +494,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.disableFormsUpdate([formId])
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -543,7 +543,7 @@ export default function formHostTest() {
       try {
         formHost.isSystemReady()
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -592,7 +592,7 @@ export default function formHostTest() {
       try {
         formHost.getAllFormsInfo()
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
            })
           .catch((error: BusinessError) => {
@@ -679,7 +679,7 @@ export default function formHostTest() {
         let bundleName = 'bundleName';
         formHost.getFormsInfo(bundleName)
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -736,7 +736,7 @@ export default function formHostTest() {
         let formId = '12400633174999288';
         formHost.deleteInvalidForms([formId])
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -799,7 +799,7 @@ export default function formHostTest() {
         };
         formHost.acquireFormState(want)
           .then(() => {
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           })
           .catch((error: BusinessError) => {
@@ -827,7 +827,7 @@ export default function formHostTest() {
       try {
         formHost.on('formUninstall', (data) => {
           console.log(TAG + ` data->${JSON.stringify(data)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       } catch (error) {
@@ -850,7 +850,7 @@ export default function formHostTest() {
       try {
         formHost.off('formUninstall', (data) => {
           console.log(TAG + ` data->${JSON.stringify(data)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
       } catch (error) {
@@ -1008,7 +1008,7 @@ export default function formHostTest() {
       let deviceId: string = '12400633174999288';
       formHost.shareForm(formId, deviceId)
         .then(() => {
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         })
         .catch((error: BusinessError) => {

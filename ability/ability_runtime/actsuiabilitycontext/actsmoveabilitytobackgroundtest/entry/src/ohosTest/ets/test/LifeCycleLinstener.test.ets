@@ -22,10 +22,10 @@ import eventBus from '../lib/EventBus';
 import { Event } from '@kit.ArkTS';
 
 let testAbilityContext:common.UIAbilityContext;
-export default function lifeCycleLinstenerTest() {
+export default function LifeCycleLinstenerTest() {
   let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
   let mpEnable = '';
-  describe('lifeCycleLinstenerTest', () => {
+  describe('LifeCycleLinstenerTest', () => {
     beforeAll(() => {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       try {
@@ -140,13 +140,13 @@ export default function lifeCycleLinstenerTest() {
           } catch (paramError) {
             console.info(tag + ` off error: ${(paramError as BusinessError).code}, ${(paramError as
               BusinessError).message}`);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           }
           done();
         } catch (err) {
           console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }else if(mpEnable === 'false') {
@@ -156,7 +156,7 @@ export default function lifeCycleLinstenerTest() {
       }else{
         console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check:
           ${JSON.stringify(mpEnable)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
@@ -195,7 +195,7 @@ export default function lifeCycleLinstenerTest() {
           } catch (paramError) {
             console.info(tag + ` error: ${(paramError as BusinessError).code}, ${(paramError as
               BusinessError).message}`);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           }
           try {
@@ -203,7 +203,7 @@ export default function lifeCycleLinstenerTest() {
           } catch (paramError) {
             console.info(tag + `error: ${(paramError as BusinessError).code}, ${(paramError as
               BusinessError).message}`);
-            expect(false).assertTrue();
+            expect().assertFail();
             done();
           }
           testAbilityContext.startAbility({
@@ -213,7 +213,7 @@ export default function lifeCycleLinstenerTest() {
             console.info(tag + ` startAbility success`);
           }).catch((error:BusinessError)=>{
             console.info(tag + `error: ${(error as BusinessError).code}, ${(error as BusinessError).message}`);
-            try{expect(false).assertTrue();}catch{}
+            try{expect().assertFail();}catch{}
             done();
           })
           await Promise.all([
@@ -236,14 +236,14 @@ export default function lifeCycleLinstenerTest() {
           await sleep(2000);
           if (forgoundFlag || backgoundFlag){
             console.info(tag + ` off listener fail`);
-            expect(false).assertTrue();
+            expect().assertFail();
           }else{
             console.info(tag + ` off listener success`);
             done();
           }
         } catch (err) {
           console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
-          expect(false).assertTrue();
+          expect().assertFail();
           done();
         }
       }else if(mpEnable === 'false') {
@@ -253,7 +253,7 @@ export default function lifeCycleLinstenerTest() {
       }else{
         console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check:
           ${JSON.stringify(mpEnable)}`);
-        expect(false).assertTrue();
+        expect().assertFail();
         done();
       }
     });
