@@ -2197,20 +2197,20 @@ export default function LongTimeTaskManagerTest() {
     })
 
     /**
-     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200
-     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900
      * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_NOT_USE_NEARLINK
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 begin---');
+        hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900 begin---');
 
         try {
           let type: number = backgroundTaskManager.ContinuousTaskDetailedCancelReason.SYSTEM_CANCEL_NOT_USE_NEARLINK;
-          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 ContinuousTaskDetailedCancelReason: ' + type);
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900 ContinuousTaskDetailedCancelReason: ' + type);
           expect(type).assertEqual(15);
           done();
         } catch (error) {
@@ -2220,7 +2220,7 @@ export default function LongTimeTaskManagerTest() {
           done();
         }
 
-        hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2200 end---');
+        hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900 end---');
     })
 
   })
