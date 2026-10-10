@@ -38,11 +38,11 @@ function AddFunc2(sendAble: MyClass2): collections.Array<number> {
 }
 
 @Concurrent
-function sendableAFunc(sendAble: SendableA): number {
+async function sendableAFunc(sendAble: SendableA): Promise<number> {
   sendAble.state = sendAble.state + 20;
   let task1: taskpool.Task = new taskpool.Task(sendableAFunc1, sendAble);
-  taskpool.execute(task1).then(async (e: Object) => {
-    console.info(` task1 ${'[sendable]'} then ${JSON.stringify(e)}`);
+  await taskpool.execute(task1).then(async (e: Object) => {
+    console.info(` task1 ${'[sendable]'} then ${e}`);
   }).catch((e: BusinessError) => {
     console.info(` task1 catch ${JSON.stringify(e)}`);
   });
@@ -803,7 +803,7 @@ export default function TaskPoolSendableTest() {
         task1.setCloneList([sendableA1]);
         try {
           const e = await taskpool.execute(task1);
-          console.info(`${caseName} task1 ${JSON.stringify(sendableA1)} then ${JSON.stringify(e)}`);
+          console.info(`${caseName} task1 ${sendableA1} then ${JSON.stringify(e)}`);
           expect(sendableA1.state).assertEqual(0);
         } catch (e) {
           console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);

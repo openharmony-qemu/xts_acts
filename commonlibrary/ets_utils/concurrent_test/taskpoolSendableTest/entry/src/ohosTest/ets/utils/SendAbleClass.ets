@@ -116,11 +116,9 @@ export class SendableA {
 }
 
 @Concurrent
-export function sendableAFunc1(sendAble: SendableA): Promise<number> {
+export function sendableAFunc1(sendAble: SendableA): number {
   sendAble.state = sendAble.state + 20;
-  return new Promise<number>((res) => {
-    res(sendAble.state);
-  });
+  return sendAble.state;
 }
 
 export class MyClass2 {
