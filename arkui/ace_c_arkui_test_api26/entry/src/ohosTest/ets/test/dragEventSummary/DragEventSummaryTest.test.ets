@@ -15,9 +15,9 @@
 
 import { beforeAll, describe, expect, it, Level, afterEach } from '@ohos/hypium';
 import Utils from '../common/Utils';
-import { Driver, ON, Component } from '@kit.TestKit';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0
+
 
 export default function dragEventSummaryTest() {
   describe('dragEventSummaryTest', () => {
@@ -47,18 +47,7 @@ export default function dragEventSummaryTest() {
       expect(image != null).assertTrue();
       expect(dropArea != null).assertTrue();
 
-      let imgRect = await image.getBounds();
-      let dropRect = await dropArea.getBounds();
-      let startX = Math.round(imgRect.left + (imgRect.right - imgRect.left) / 2);
-      let startY = Math.round(imgRect.top + (imgRect.bottom - imgRect.top) / 2);
-      let endX = Math.round(dropRect.left + (dropRect.right - dropRect.left) / 2);
-      let endY = Math.round(dropRect.top + (dropRect.bottom - dropRect.top) / 2);
-
-      await driver.dragBetween(
-        { x: startX, y: startY, displayId: displayID },
-        { x: endX, y: endY, displayId: displayID },
-        600, 1000
-      );
+      await image.dragTo(dropArea);
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
@@ -85,18 +74,7 @@ export default function dragEventSummaryTest() {
       let driver = await Driver.create();
       let image = await driver.findComponent(ON.id('drag_image'));
       let dropArea = await driver.findComponent(ON.id('drop_area'));
-      let imgRect = await image.getBounds();
-      let dropRect = await dropArea.getBounds();
-      let startX = Math.round(imgRect.left + (imgRect.right - imgRect.left) / 2);
-      let startY = Math.round(imgRect.top + (imgRect.bottom - imgRect.top) / 2);
-      let endX = Math.round(dropRect.left + (dropRect.right - dropRect.left) / 2);
-      let endY = Math.round(dropRect.top + (dropRect.bottom - dropRect.top) / 2);
-
-      await driver.dragBetween(
-        { x: startX, y: startY, displayId: displayID },
-        { x: endX, y: endY, displayId: displayID },
-        600, 1000
-      );
+      await image.dragTo(dropArea);
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
@@ -123,18 +101,7 @@ export default function dragEventSummaryTest() {
       let driver = await Driver.create();
       let image = await driver.findComponent(ON.id('drag_image'));
       let dropArea = await driver.findComponent(ON.id('drop_area'));
-      let imgRect = await image.getBounds();
-      let dropRect = await dropArea.getBounds();
-      let startX = Math.round(imgRect.left + (imgRect.right - imgRect.left) / 2);
-      let startY = Math.round(imgRect.top + (imgRect.bottom - imgRect.top) / 2);
-      let endX = Math.round(dropRect.left + (dropRect.right - dropRect.left) / 2);
-      let endY = Math.round(dropRect.top + (dropRect.bottom - dropRect.top) / 2);
-
-      await driver.dragBetween(
-        { x: startX, y: startY, displayId: displayID },
-        { x: endX, y: endY, displayId: displayID },
-        600, 1000
-      );
+      await image.dragTo(dropArea);
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
@@ -161,18 +128,7 @@ export default function dragEventSummaryTest() {
       let driver = await Driver.create();
       let image = await driver.findComponent(ON.id('drag_image'));
       let dropArea = await driver.findComponent(ON.id('drop_area'));
-      let imgRect = await image.getBounds();
-      let dropRect = await dropArea.getBounds();
-      let startX = Math.round(imgRect.left + (imgRect.right - imgRect.left) / 2);
-      let startY = Math.round(imgRect.top + (imgRect.bottom - imgRect.top) / 2);
-      let endX = Math.round(dropRect.left + (dropRect.right - dropRect.left) / 2);
-      let endY = Math.round(dropRect.top + (dropRect.bottom - dropRect.top) / 2);
-
-      await driver.dragBetween(
-        { x: startX, y: startY, displayId: displayID },
-        { x: endX, y: endY, displayId: displayID },
-        600, 1000
-      );
+      await image.dragTo(dropArea);
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
@@ -199,18 +155,7 @@ export default function dragEventSummaryTest() {
       let driver = await Driver.create();
       let image = await driver.findComponent(ON.id('drag_image'));
       let dropArea = await driver.findComponent(ON.id('drop_area'));
-      let imgRect = await image.getBounds();
-      let dropRect = await dropArea.getBounds();
-      let startX = Math.round(imgRect.left + (imgRect.right - imgRect.left) / 2);
-      let startY = Math.round(imgRect.top + (imgRect.bottom - imgRect.top) / 2);
-      let endX = Math.round(dropRect.left + (dropRect.right - dropRect.left) / 2);
-      let endY = Math.round(dropRect.top + (dropRect.bottom - dropRect.top) / 2);
-
-      await driver.dragBetween(
-        { x: startX, y: startY, displayId: displayID },
-        { x: endX, y: endY, displayId: displayID },
-        600, 1000
-      );
+      await image.dragTo(dropArea);
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
@@ -237,18 +182,7 @@ export default function dragEventSummaryTest() {
       let driver = await Driver.create();
       let image = await driver.findComponent(ON.id('drag_image'));
       let dropArea = await driver.findComponent(ON.id('drop_area'));
-      let imgRect = await image.getBounds();
-      let dropRect = await dropArea.getBounds();
-      let startX = Math.round(imgRect.left + (imgRect.right - imgRect.left) / 2);
-      let startY = Math.round(imgRect.top + (imgRect.bottom - imgRect.top) / 2);
-      let endX = Math.round(dropRect.left + (dropRect.right - dropRect.left) / 2);
-      let endY = Math.round(dropRect.top + (dropRect.bottom - dropRect.top) / 2);
-
-      await driver.dragBetween(
-        { x: startX, y: startY, displayId: displayID },
-        { x: endX, y: endY, displayId: displayID },
-        600, 1000
-      );
+      await image.dragTo(dropArea);
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
@@ -275,18 +209,7 @@ export default function dragEventSummaryTest() {
       let driver = await Driver.create();
       let image = await driver.findComponent(ON.id('drag_image'));
       let dropArea = await driver.findComponent(ON.id('drop_area'));
-      let imgRect = await image.getBounds();
-      let dropRect = await dropArea.getBounds();
-      let startX = Math.round(imgRect.left + (imgRect.right - imgRect.left) / 2);
-      let startY = Math.round(imgRect.top + (imgRect.bottom - imgRect.top) / 2);
-      let endX = Math.round(dropRect.left + (dropRect.right - dropRect.left) / 2);
-      let endY = Math.round(dropRect.top + (dropRect.bottom - dropRect.top) / 2);
-
-      await driver.dragBetween(
-        { x: startX, y: startY, displayId: displayID },
-        { x: endX, y: endY, displayId: displayID },
-        600, 1000
-      );
+      await image.dragTo(dropArea);
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
