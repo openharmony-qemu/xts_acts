@@ -18,6 +18,7 @@ import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDi
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function onKeyEventDispatchTest() {
   describe('onKeyEventDispatchTest', () => {
     beforeEach(async (done: Function) => {
@@ -53,7 +54,7 @@ export default function onKeyEventDispatchTest() {
     it('onKeyEventDispatchTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[onKeyEventDispatchTest_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
       // test the  keyEvent.type
       let strJson = getInspectorByKey('onKeyEventDispatch01' + '_keyEvent0');

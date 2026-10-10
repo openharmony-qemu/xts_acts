@@ -839,6 +839,15 @@ export default function MultimodalKeyCodeTest() {
         expect(KeyCode.KEYCODE_XKEY === 3232).assertTrue();
         expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_UP == 3233).assertTrue();
         expect(KeyCode.KEYCODE_FINGERPRINT_SLIDE_DOWN == 3234).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_CLICK == 3235).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_FOCUS_LEFT == 3236).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_FOCUS_RIGHT == 3237).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_EXPOSURE_LEFT == 3238).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_EXPOSURE_RIGHT == 3239).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_SHUTTER_LEFT == 3240).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_SHUTTER_RIGHT == 3241).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_APERTURE_LEFT == 3242).assertTrue();
+        expect(KeyCode.KEYCODE_PTZ_APERTURE_RIGHT == 3243).assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);

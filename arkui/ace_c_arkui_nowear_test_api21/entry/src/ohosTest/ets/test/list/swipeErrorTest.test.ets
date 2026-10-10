@@ -24,7 +24,6 @@ const ARKUI_ERROR_CODE_PARAM_ERROR = 100023;
 const ARKUI_ERROR_CODE_NODE_NOT_ON_MAIN_TREE = 106203;
 
 let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
-
 export default function SwipeErrorTest(){
 
   describe('SwipeErrorTest', () => {
@@ -57,15 +56,15 @@ export default function SwipeErrorTest(){
       let rect = await list.getBounds();
       let y = Math.round(rect.right);
       let x = Math.round(rect.top);
-      driver.swipeBetween({ x: y, y: Math.round(x + distance), displayId: displayID }, { x: y, y: Math.round(x), displayId: displayID });
+      driver.swipeBetween({x: y, y: Math.round(x + distance), displayId: displayID}, {x: y, y: Math.round(x), displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
-      driver.swipeBetween({ x: y, y: Math.round(x + distance), displayId: displayID }, { x: y, y: Math.round(x), displayId: displayID });
+      driver.swipeBetween({x: y, y: Math.round(x + distance), displayId: displayID}, {x: y, y: Math.round(x), displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
-      driver.swipeBetween({ x: y, y: Math.round(x + distance), displayId: displayID }, { x: y, y: Math.round(x), displayId: displayID });
+      driver.swipeBetween({x: y, y: Math.round(x + distance), displayId: displayID}, {x: y, y: Math.round(x), displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
-      driver.swipeBetween({ x: y, y: Math.round(x + distance), displayId: displayID }, { x: y, y: Math.round(x), displayId: displayID });
+      driver.swipeBetween({x: y, y: Math.round(x + distance), displayId: displayID}, {x: y, y: Math.round(x), displayId: displayID});
       await Utils.sleep(SLEEP_TIME);
-      driver.swipeBetween({ x: y, y: Math.round(x + distance), displayId: displayID }, { x: y, y: Math.round(x), displayId: displayID });
+      driver.swipeBetween({x: y, y: Math.round(x + distance), displayId: displayID}, {x: y, y: Math.round(x), displayId: displayID});
       await Utils.sleep(SLEEP_TIME_2000);
       await button1.click();
       await Utils.sleep(SLEEP_TIME);

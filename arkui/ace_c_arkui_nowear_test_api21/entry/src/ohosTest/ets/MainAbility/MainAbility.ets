@@ -38,13 +38,6 @@ export default class MainAbility extends UIAbility {
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     globalThis.windowStage = windowStage;
     globalThis.context = this.context;
-    let mainWindow: window.Window = windowStage.getMainWindowSync();
-    let promise1 = mainWindow.getProperties();
-    promise1.then((data) => {
-      console.info('当前屏幕ID' + data.displayId);
-      AppStorage.setOrCreate('displayID',data.displayId);
-    }).catch((err: BusinessError) => {
-    });
     windowStage.loadContent('MainAbility/pages/XTSIndex', (err, data) => {
       if (err) {
         hilog.error(0x0000, 'testTag', `Failed to load the content. Code: ${err.code}, message: ${err.message}.`);
@@ -70,6 +63,13 @@ export default class MainAbility extends UIAbility {
       } catch (exception) {
         hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
       }
+    });
+    let mainWindow: window.Window = windowStage.getMainWindowSync();
+    let promise1 = mainWindow.getProperties();
+    promise1.then((data) => {
+      console.info('当前屏幕ID' + data.displayId);
+      AppStorage.setOrCreate('displayID', data.displayId);
+    }).catch((err: BusinessError) => {
     });
   }
 

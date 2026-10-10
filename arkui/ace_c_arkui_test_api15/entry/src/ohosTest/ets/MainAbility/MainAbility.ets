@@ -16,7 +16,7 @@
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
-import { BusinessError } from '@ohos.base';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG: string = '[createWindow]'
 
@@ -45,6 +45,7 @@ export default class MainAbility extends UIAbility {
       AppStorage.setOrCreate('displayID',data.displayId);
     }).catch((err: BusinessError) => {
     });
+
     windowStage.loadContent('MainAbility/pages/XTSIndex', (err, data) => {
       if (err) {
         hilog.error(0x0000, 'testTag', `Failed to load the content. Code: ${err.code}, message: ${err.message}.`);

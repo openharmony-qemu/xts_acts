@@ -33,7 +33,6 @@ struct CustomEnvV1ToV2 {
       Text(this.defaultMessage.defaultVal)
         .id('customEnvV1ToV2_001')
         .height('5%')
-        .fontSize(20)
       Button('update')
         .id('customEnvV1ToV2_002')
         .height('5%')
@@ -58,7 +57,6 @@ struct Child {
       Text(`Child Value is : ${this.message.defaultVal}`)
         .id('customEnvV1ToV2_004')
         .height('5%')
-        .fontSize(20)
     }
     .height('100%')
     .width('100%')

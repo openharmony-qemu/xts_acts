@@ -151,12 +151,13 @@ export default function list_ListInitialIndex6Test() {
 
       let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex6_Container01'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
-        { x: Math.round(listContainer.left + listContainer_width / 2),
-          y: Math.round(listContainer.top + listContainer_height / 6), displayId: displayId },
-        { x: Math.round(listContainer.left + listContainer_width / 2),
-          y: Math.round(listContainer.bottom - listContainer_height / 6), displayId: displayId });
+        { x: Math.round(sizeList.left + ((sizeList.right - sizeList.left) / 2)),
+          y: Math.round(sizeList.top + ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId },
+        { x: Math.round(sizeList.left + (sizeList.right - sizeList.left) / 2),
+          y: Math.round(sizeList.bottom - ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId });
       await CommonFunc.sleep(2000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex6_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex6_2');

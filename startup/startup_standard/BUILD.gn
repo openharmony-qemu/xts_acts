@@ -23,6 +23,7 @@ group("startup_standard") {
       "init_ndkTest:ActsInitNdkTest",
       "syscap_ndk:startup_syscapability_js_test",
       "deviceinfo_static:ActsStartupInitDeviceInfoStaticTest",
+      "boardinfo_static:ActsStartupInitBoardInfoStaticTest",
     ]
   }
 }

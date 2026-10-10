@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function swipeGestureTest() {
   describe('SwipeGestureTest', () => {
     beforeEach(async (done: Function) => {
@@ -68,8 +69,7 @@ export default function swipeGestureTest() {
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 / 2), Math.round(areaObj1.bottom-areaHeight1 / 4),
-        Math.round(areaObj1.left + areaWidth1 / 2), Math.round(areaObj1.top), 1600)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 / 2),y:Math.round(areaObj1.bottom-areaHeight1 / 4),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 / 2),y:Math.round(areaObj1.top),displayId:displayID}, 1600)
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('SwipeGesture');
       let obj: ESObject = JSON.parse(strJson);
@@ -103,7 +103,7 @@ export default function swipeGestureTest() {
       let driver = Driver.create();
       let speed = Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj2.left + areaWidth2 * 0.8),Math.round(areaObj2.top + areaObj2.top + areaHeight2/2),Math.round(areaObj2.left + areaWidth2 * 0.2),Math.round(areaObj2.top + areaObj2.top + areaHeight2/2),speed)
+      await driver.swipeBetween({x:Math.round(areaObj2.left + areaWidth2 * 0.8),y:Math.round(areaObj2.top + areaObj2.top + areaHeight2/2),displayId:displayID},{x:Math.round(areaObj2.left + areaWidth2 * 0.2),y:Math.round(areaObj2.top + areaObj2.top + areaHeight2/2),displayId:displayID},speed)
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('SwipeGesture2');
       let obj: ESObject = JSON.parse(strJson);

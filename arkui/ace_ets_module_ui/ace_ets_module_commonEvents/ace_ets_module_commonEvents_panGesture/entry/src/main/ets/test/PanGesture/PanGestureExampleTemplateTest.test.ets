@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function PanGestureExampleTemplateTest() {
   describe('PanGestureExampleTemplateTest', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +67,7 @@ export default function PanGestureExampleTemplateTest() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.5),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2))
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.5),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID})
       await CommonFunc.sleep(4000);
       let button = await driver.findComponent(ON.id('PanGestureExampleTemplate_template'));
       await button.click();

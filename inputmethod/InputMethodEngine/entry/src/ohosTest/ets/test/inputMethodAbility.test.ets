@@ -505,6 +505,9 @@ export default function inputMethodAbility() {
       let one_time_code: number = inputMethodEngine.PATTERN_ONE_TIME_CODE;
       console.info("====>inputMethodEngine_test_027 result:" + one_time_code);
       expect(one_time_code).assertEqual(13);
+      let one_time_code_number: number = inputMethodEngine.PATTERN_ONE_TIME_CODE_NUMBER;
+      console.info("====>inputMethodEngine_test_027 result:" + one_time_code_number);
+      expect(one_time_code_number).assertEqual(15);
       done();
     });
 

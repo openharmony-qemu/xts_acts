@@ -29,7 +29,7 @@ keycodeMap.set(FunctionKey.TAB, input.KeyCode.KEYCODE_TAB);
 async function testAsyncFunction(keyChar: string|FunctionKey, driver:Driver) {
   console.info('test SHIFT + ' + keyChar + " start");
   // keyboard to simulate
-  await driver.triggerCombineKeys(input.KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
+  await driver.triggerCombineKeys(input.KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar), 0, displayID);
   await CommonFunc.sleep(2000);
   // to get the data to check
   let tt2 = getInspectorByKey('keyTest2Tab');
@@ -38,6 +38,7 @@ async function testAsyncFunction(keyChar: string|FunctionKey, driver:Driver) {
   expect(obj2.$attrs.content).assertEqual("I clicked Button 1");
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function globalShortcutKeyTest2() {
   describe('globalShortcutKeyTest2', () => {
     beforeEach(async () => {

@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function HoverJsunit25() {
   describe('HoverJsunit25', () => {
    beforeEach(async (done: Function) => {
@@ -78,7 +79,7 @@ export default function HoverJsunit25() {
       let buttonCl = await driver.findComponent(ON.id('hover25'));
       await CommonFunc.sleep(500);
       let point = await buttonCl.getBoundsCenter();
-      await driver.mouseMoveTo({x:point.x , y:point.y })
+      await driver.mouseMoveTo({x:point.x , y:point.y, displayId: displayID })
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('hover25');

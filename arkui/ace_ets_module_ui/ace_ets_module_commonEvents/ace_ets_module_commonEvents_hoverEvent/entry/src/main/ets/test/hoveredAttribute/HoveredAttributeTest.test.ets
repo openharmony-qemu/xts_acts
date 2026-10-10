@@ -18,6 +18,7 @@ import { describe, beforeAll, afterEach, it, expect, Level } from "@ohos/hypium-
 import { Driver, ON, Point } from '@kit.TestKit';
 import Utils from '../../MainAbility/common/Utils';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function HoveredAttributeTest() {
   describe('HoveredAttributeTest', () => {
     beforeAll(async (done: Function) => {
@@ -64,7 +65,7 @@ export default function HoveredAttributeTest() {
       let bounds = await component.getBounds();
       let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
+      let hoverPoint: Point = { x: centerX, y: centerY, displayId: displayID };
       await driver.mouseMoveTo(hoverPoint);
       await Utils.sleep(500);
 
@@ -78,7 +79,7 @@ export default function HoveredAttributeTest() {
       let moveOutBounds = await moveOutComponent.getBounds();
       let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
+      let moveOutPoint: Point = { x: moveOutX, y: moveOutY, displayId: displayID };
       await driver.mouseMoveTo(moveOutPoint);
       await Utils.sleep(500);
 
@@ -108,13 +109,13 @@ export default function HoveredAttributeTest() {
       let bounds = await component.getBounds();
       let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
+      let hoverPoint: Point = { x: centerX, y: centerY, displayId: displayID };
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutBounds = await moveOutComponent.getBounds();
       let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
+      let moveOutPoint: Point = { x: moveOutX, y: moveOutY, displayId: displayID };
 
       for (let i: number = 0; i < 3; i++) {
         await driver.mouseMoveTo(hoverPoint);
@@ -150,7 +151,7 @@ export default function HoveredAttributeTest() {
       let moveOutBounds = await moveOutComponent.getBounds();
       let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
+      let moveOutPoint: Point = { x: moveOutX, y: moveOutY, displayId: displayID };
       await driver.mouseMoveTo(moveOutPoint);
       await Utils.sleep(500);
 
@@ -180,7 +181,7 @@ export default function HoveredAttributeTest() {
       let bounds = await component.getBounds();
       let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
+      let hoverPoint: Point = { x: centerX, y: centerY, displayId: displayID };
       await driver.mouseMoveTo(hoverPoint);
       await Utils.sleep(300);
 
@@ -188,7 +189,7 @@ export default function HoveredAttributeTest() {
       let moveOutBounds = await moveOutComponent.getBounds();
       let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
+      let moveOutPoint: Point = { x: moveOutX, y: moveOutY, displayId: displayID };
       await driver.mouseMoveTo(moveOutPoint);
       await Utils.sleep(500);
 
@@ -220,7 +221,7 @@ export default function HoveredAttributeTest() {
       let moveOutBounds = await moveOutComponent.getBounds();
       let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
+      let moveOutPoint: Point = { x: moveOutX, y: moveOutY, displayId: displayID };
       await driver.mouseMoveTo(moveOutPoint);
       await Utils.sleep(500);
 
@@ -228,7 +229,7 @@ export default function HoveredAttributeTest() {
       let bounds = await component.getBounds();
       let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
+      let hoverPoint: Point = { x: centerX, y: centerY, displayId: displayID };
       await driver.mouseMoveTo(hoverPoint);
       await Utils.sleep(500);
 
@@ -267,13 +268,13 @@ export default function HoveredAttributeTest() {
       let bounds = await component.getBounds();
       let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
+      let hoverPoint: Point = { x: centerX, y: centerY, displayId: displayID };
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutBounds = await moveOutComponent.getBounds();
       let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
+      let moveOutPoint: Point = { x: moveOutX, y: moveOutY, displayId: displayID };
 
       for (let i: number = 0; i < 3; i++) {
         await driver.mouseMoveTo(hoverPoint);
@@ -313,7 +314,7 @@ export default function HoveredAttributeTest() {
       let bounds = await component.getBounds();
       let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
+      let hoverPoint: Point = { x: centerX, y: centerY, displayId: displayID };
       await driver.mouseMoveTo(hoverPoint);
       await Utils.sleep(500);
 
@@ -343,7 +344,7 @@ export default function HoveredAttributeTest() {
       let moveOutBounds = await moveOutComponent.getBounds();
       let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
+      let moveOutPoint: Point = { x: moveOutX, y: moveOutY, displayId: displayID };
       await driver.mouseMoveTo(moveOutPoint);
       await Utils.sleep(500);
 

@@ -30,6 +30,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function SwipeRecognizerTest() {
   describe('SwipeRecognizerTest', () => {
     beforeEach(async (done: Function) => {
@@ -73,8 +74,8 @@ export default function SwipeRecognizerTest() {
       let colum = CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
       let top = colum.top
       let left = colum.left
-      await driver.swipe(Math.round(globalThis.winLeft + 100), Math.round(top + 100),
-        Math.round(globalThis.winLeft + 500), Math.round(top + 500), 1200)
+      await driver.swipeBetween({x:Math.round(globalThis.winLeft + 100),y:Math.round(top + 100),displayId:displayID},
+        {x:Math.round(globalThis.winLeft + 500),y:Math.round(top + 500),displayId:displayID}, 1200)
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('value');
       let obj: ESObject = JSON.parse(strJson);
@@ -101,9 +102,8 @@ export default function SwipeRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Horizontal'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.bottom + rect.top) / 2),
-        Math.round(rect.right),
-        Math.round((rect.bottom + rect.top) / 2), 1200)
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID},
+        {x:Math.round(rect.right),y:Math.round((rect.bottom + rect.top) / 2),displayId:displayID}, 1200)
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Horizontal')).assertEqual(1);
       console.info('[SwipeRecognizer_0200] END');
@@ -123,9 +123,8 @@ export default function SwipeRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('Vertical'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.top)),
-        Math.round((rect.left + rect.right) / 2),
-        Math.round((rect.bottom)), 1200)
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.top)),displayId:displayID},
+        {x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom)),displayId:displayID}, 1200)
       await CommonFunc.sleep(300);
       expect(AppStorage.get('Vertical')).assertEqual(2);
       console.info('[SwipeRecognizer_0300] END');
@@ -145,9 +144,8 @@ export default function SwipeRecognizerTest() {
       let driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('None'));
       let rect = await button.getBounds();
-      await driver.swipe(Math.round((rect.left + rect.right) / 2), Math.round((rect.top)),
-        Math.round((rect.left + rect.right) / 2),
-        Math.round((rect.bottom)), 1200)
+      await driver.swipeBetween({x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.top)),displayId:displayID},
+        {x:Math.round((rect.left + rect.right) / 2),y:Math.round((rect.bottom)),displayId:displayID}, 1200)
       await CommonFunc.sleep(300);
       expect(AppStorage.get('None')).assertEqual(0);
       console.info('[SwipeRecognizer_0400] END');

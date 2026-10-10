@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function HoverJsunit5() {
   describe('HoverJsunit5', () => {
     beforeEach(async (done: Function) => {
@@ -58,7 +59,7 @@ export default function HoverJsunit5() {
       console.info('HoverJsunit_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(500);
-      await driver.mouseMoveTo({x: Math.round(globalThis.winLeft + vp2px(100)), y: Math.round(globalThis.winTop + vp2px(100))})
+      await driver.mouseMoveTo({x: Math.round(globalThis.winLeft + vp2px(100)), y: Math.round(globalThis.winTop + vp2px(100)), displayId: displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('hover5');
       let obj: ESObject = JSON.parse(strJson);
@@ -84,7 +85,7 @@ export default function HoverJsunit5() {
       let buttonCl = await driver.findComponent(ON.id('columnBB'));
       await CommonFunc.sleep(500);
       let point = await buttonCl.getBoundsCenter();
-      await driver.mouseMoveTo({x: Math.round(point.x + vp2px(100)), y: Math.round(point.y  + vp2px(100))})
+      await driver.mouseMoveTo({x: Math.round(point.x + vp2px(100)), y: Math.round(point.y  + vp2px(100)), displayId: displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('hover5');
       let obj: ESObject = JSON.parse(strJson);
@@ -110,7 +111,7 @@ export default function HoverJsunit5() {
       let buttonCl = await driver.findComponent(ON.id('columnBB'));
       await CommonFunc.sleep(500);
       let point = await buttonCl.getBoundsCenter();
-      await driver.mouseMoveTo({x: Math.round(point.x + vp2px(100)), y: Math.round(point.y  + vp2px(100))})
+      await driver.mouseMoveTo({x: Math.round(point.x + vp2px(100)), y: Math.round(point.y  + vp2px(100)), displayId: displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('hover5');
       let obj: ESObject = JSON.parse(strJson);

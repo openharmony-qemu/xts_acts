@@ -18,6 +18,8 @@ import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayR
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function touchEventTest() {
   describe('touchEvent', () => {
     beforeEach(async (done: Function) => {

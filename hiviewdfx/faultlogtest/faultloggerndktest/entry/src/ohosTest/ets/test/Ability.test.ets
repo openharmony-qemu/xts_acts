@@ -2,7 +2,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import testNapi from 'libentry.so';
 import { bundleManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { FaultLogger } from '@kit.PerformanceAnalysisKit';
+import { FaultLogger, hilog, hiAppEvent } from '@kit.PerformanceAnalysisKit';
 
 export function asyncSleep(time: number): Promise<Object> {
   return new Promise(resolve => setTimeout(resolve, time));
@@ -305,5 +305,26 @@ export default function abilityTest() {
         console.error(`code: ${(err as BusinessError).code}, message: ${(err as BusinessError).message}`);
       }
     })
+
+    /**
+     * @tc.name RegisterExternalLogMgrSuccess001
+     * @tc.number SUB_HIVIEWDFX_HIAPPEVENT_RegisterExternalLogMgrSuccess_0100
+     * @tc.desc Test OH_HiAppEvent_RegExternalLogCapacityReachedCallback - success case
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('RegisterExternalLogMgrSuccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let code = testNapi.RegisterExternalLogMgrSuccess();
+        expect(code == 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error(`====>testTag RegisterExternalLogMgrSuccess001 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
   })
 }

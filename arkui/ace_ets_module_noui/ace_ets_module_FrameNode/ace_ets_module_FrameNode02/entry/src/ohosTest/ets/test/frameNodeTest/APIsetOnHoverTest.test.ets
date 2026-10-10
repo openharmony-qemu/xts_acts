@@ -67,29 +67,19 @@ export default function APIsetOnHoverTest() {
      */
     it('APIsetOnHoverTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIsetOnHoverTest_0100 START');
+      let driver = await Driver.create()
+      let buttonCl = await driver.findComponent(ON.id('setOnHover_1'));
+      await CommonFunc.sleep(1000);
+      let point = await buttonCl.getBoundsCenter();
+      await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID})
+      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('setOnHover_1');
-      expect(strJson !== '').assertTrue();
       let obj:ESObject = JSON.parse(strJson);
       console.info("[APIsetOnHoverTest_0100] component obj is: " + JSON.stringify(obj));
-      let rectInfo: Object[] = JSON.parse('[' + obj.$rect + ']');
-      let left: number = JSON.parse('[' + rectInfo[0] + ']')[0];
-      let top: number = JSON.parse('[' + rectInfo[0] + ']')[1];
-      let right: number = JSON.parse('[' + rectInfo[1] + ']')[0];
-      let bottom: number = JSON.parse('[' + rectInfo[1] + ']')[1];
-      let centerX: number = Math.floor((left + right) / 2);
-      let centerY: number = Math.floor((top + bottom) / 2);
-      let curDisplayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
-      console.info("[APIsetOnHoverTest_0100] center point: x=" + centerX + ", y=" + centerY + ", displayId=" + curDisplayID);
-      let driver = await Driver.create()
-      await driver.mouseMoveTo({x: centerX, y: centerY, displayId: curDisplayID})
-      await CommonFunc.sleep(1000);
-      let strJson2 = getInspectorByKey('setOnHover_1');
-      let obj2:ESObject = JSON.parse(strJson2);
-      console.info("[APIsetOnHoverTest_0100] component obj2 is: " + JSON.stringify(obj2));
-      console.info("[APIsetOnHoverTest_0100] title: " + JSON.stringify(obj2.$attrs.content));
-      console.info("[APIsetOnHoverTest_0100] backgroundColor: " + JSON.stringify(obj2.$attrs.backgroundColor));
-      expect(obj2.$attrs.content).assertEqual('setOnHover');
-      expect(obj2.$attrs.backgroundColor).assertEqual('#FFFFC0CB');
+      console.info("[APIsetOnHoverTest_0100] title: " + JSON.stringify(obj.$attrs.content));
+      console.info("[APIsetOnHoverTest_0100] backgroundColor: " + JSON.stringify(obj.$attrs.backgroundColor));
+      expect(obj.$attrs.content).assertEqual('setOnHover');
+      expect(obj.$attrs.backgroundColor).assertEqual('#FFFFC0CB');
       console.info('[APIsetOnHoverTest_0100] END');
       done();
     });

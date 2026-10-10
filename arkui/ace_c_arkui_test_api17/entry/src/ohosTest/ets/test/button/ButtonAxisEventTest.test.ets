@@ -23,9 +23,10 @@ async function mouseScrollCommonEvent(id: string) {
   let point = await component.getBounds();
   let centerX = Math.round((point.left + point.right) / 2);
   let centerY = Math.round((point.top + point.bottom) / 2);
-  await driver.mouseScroll({x: centerX, y: centerY}, true, 30, 2027);
+  await driver.mouseScroll({x: centerX, y: centerY, displayId: displayID}, true, 30, 2027);
 }
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function buttonAxisEventTest() {
 
   describe('ButtonAxisEventTest', () => {

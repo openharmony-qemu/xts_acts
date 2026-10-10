@@ -562,6 +562,8 @@ export default function inputMethodNamespaceTest() {
             expect(inputMethodEngine.PATTERN_PASSWORD === 7).assertTrue();
             console.info(`${CASE_NAME} PATTERN_ONE_TIME_CODE: ${inputMethodEngine.PATTERN_ONE_TIME_CODE}`);
             expect(inputMethodEngine.PATTERN_ONE_TIME_CODE === 13).assertTrue();
+            console.info(`${CASE_NAME} PATTERN_ONE_TIME_CODE_NUMBER: ${inputMethodEngine.PATTERN_ONE_TIME_CODE_NUMBER}`);
+            expect(inputMethodEngine.PATTERN_ONE_TIME_CODE_NUMBER === 15).assertTrue();
             console.info(`${CASE_NAME} PATTERN_NUMBER_DECIMAL: ${inputMethodEngine.PATTERN_NUMBER_DECIMAL}`);
             expect(inputMethodEngine.PATTERN_NUMBER_DECIMAL === 12).assertTrue();
             console.info(`${CASE_NAME} PATTERN_NUMBER: ${inputMethodEngine.PATTERN_NUMBER}`);

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title-text">flex position</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <text class="desc">absolute 祖先内放置四个 absolute 子元素，分别相对祖先四角定位</text>
+    <div class="abs-ancestor">
+        <text class="container-label">absolute ancestor (四角)</text>
+        <div class="corner corner-tl">
+            <text class="box-text">TL left:0 top:0</text>
+        </div>
+        <div class="corner corner-tr">
+            <text class="box-text">TR right:0 top:0</text>
+        </div>
+        <div class="corner corner-bl">
+            <text class="box-text">BL left:0 bottom:0</text>
+        </div>
+        <div class="corner corner-br">
+            <text class="box-text">BR right:0 bottom:0</text>
+        </div>
+    </div>
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

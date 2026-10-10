@@ -74,7 +74,7 @@ export default function RichEditorShortCutKeys023() {
       let builder = await driver.findComponent(ON.id('builder'));
       await builder.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
       await CommonFunc.sleep(500);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
       await getPosition.click();
@@ -83,7 +83,7 @@ export default function RichEditorShortCutKeys023() {
       let carePositionText = await carePosition.getText();
       await CommonFunc.sleep(500);
       expect(carePositionText).assertContain('carePosition:8');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
       await CommonFunc.sleep(500);
       await getPosition.click();
       await CommonFunc.sleep(500);
@@ -105,7 +105,7 @@ export default function RichEditorShortCutKeys023() {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDIT0R_SHORTCUTKEYS_0036 START');
       let driver = Driver.create();
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
       await CommonFunc.sleep(500);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
       await getPosition.click();
@@ -114,7 +114,7 @@ export default function RichEditorShortCutKeys023() {
       let carePositionText = await carePosition.getText();
       await CommonFunc.sleep(500);
       expect(carePositionText).assertContain('carePosition:7');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
       await CommonFunc.sleep(500);
       await getPosition.click();
       await CommonFunc.sleep(500);

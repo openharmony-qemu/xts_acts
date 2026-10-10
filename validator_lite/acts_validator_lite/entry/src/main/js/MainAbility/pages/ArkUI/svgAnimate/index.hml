@@ -1,0 +1,116 @@
+<!-- SVG动画：animate 透明度 + animateTransform 旋转/缩放/平移，拆分为独立基础用例 -->
+<!-- L1 限制：动画标签不允许嵌套在 selfClosing 图形标签内，用 g 包裹图形与动画（作用于父分组，视觉效果一致） -->
+<!-- L1 SMIL 无暂停API：播放/停止通过 if 挂载/卸载动画版SVG实现，停止时显示静态帧 -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">SVG动画</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 透明度动画 -->
+    <list-item class="card">
+      <text class="label">001 透明度动画(animate opacity)</text>
+      <div class="svg-item">
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{play1}}">
+          <g transform="translate(100, 50)">
+            <g>
+              <rect x="-30" y="-25" width="60" height="50" fill="#FF4444"/>
+              <animate attributeName="opacity" from="1" to="0" dur="2s" repeatCount="indefinite"/>
+            </g>
+          </g>
+        </svg>
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{!play1}}">
+          <g transform="translate(100, 50)">
+            <rect x="-30" y="-25" width="60" height="50" fill="#FF4444"/>
+          </g>
+        </svg>
+      </div>
+      <div class="btn-row">
+        <input type="button" value="{{play1 ? '停止' : '播放'}}" class="btn" onclick="togglePlay1" />
+      </div>
+      <text class="expect">预期：播放时红色矩形透明度循环变化；停止时静止显示</text>
+    </list-item>
+
+    <!-- 002 旋转动画 -->
+    <list-item class="card">
+      <text class="label">002 旋转动画(animateTransform rotate)</text>
+      <div class="svg-item">
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{play2}}">
+          <g transform="translate(100, 50)">
+            <g>
+              <rect x="-15" y="-15" width="30" height="30" fill="#44CC44"/>
+              <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="3s" repeatCount="indefinite"/>
+            </g>
+          </g>
+        </svg>
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{!play2}}">
+          <g transform="translate(100, 50)">
+            <rect x="-15" y="-15" width="30" height="30" fill="#44CC44"/>
+          </g>
+        </svg>
+      </div>
+      <div class="btn-row">
+        <input type="button" value="{{play2 ? '停止' : '播放'}}" class="btn" onclick="togglePlay2" />
+      </div>
+      <text class="expect">预期：播放时绿色矩形绕画布中心循环旋转；停止时静止显示</text>
+    </list-item>
+
+    <!-- 003 缩放动画 -->
+    <list-item class="card">
+      <text class="label">003 缩放动画(animateTransform scale)</text>
+      <div class="svg-item">
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{play3}}">
+          <g transform="translate(100, 50)">
+            <g>
+              <rect x="-15" y="-15" width="30" height="30" fill="#4488FF"/>
+              <animateTransform attributeName="transform" type="scale" from="1" to="0.5" dur="2s" repeatCount="indefinite"/>
+            </g>
+          </g>
+        </svg>
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{!play3}}">
+          <g transform="translate(100, 50)">
+            <rect x="-15" y="-15" width="30" height="30" fill="#4488FF"/>
+          </g>
+        </svg>
+      </div>
+      <div class="btn-row">
+        <input type="button" value="{{play3 ? '停止' : '播放'}}" class="btn" onclick="togglePlay3" />
+      </div>
+      <text class="expect">预期：播放时蓝色矩形循环缩放；停止时静止显示</text>
+    </list-item>
+
+    <!-- 004 平移动画 -->
+    <list-item class="card">
+      <text class="label">004 平移动画(animateTransform translate)</text>
+      <div class="svg-item">
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{play4}}">
+          <g transform="translate(100, 50)">
+            <g>
+              <circle cx="0" cy="0" r="15" fill="#FFAA00"/>
+              <animateTransform attributeName="transform" type="translate" from="-60 0" to="60 0" dur="2s" repeatCount="indefinite"/>
+            </g>
+          </g>
+        </svg>
+        <svg width="450" height="150" viewBox="0 0 200 100" if="{{!play4}}">
+          <g transform="translate(100, 50)">
+            <circle cx="0" cy="0" r="15" fill="#FFAA00"/>
+          </g>
+        </svg>
+      </div>
+      <div class="btn-row">
+        <input type="button" value="{{play4 ? '停止' : '播放'}}" class="btn" onclick="togglePlay4" />
+      </div>
+      <text class="expect">预期：播放时橙色圆水平循环平移；停止时静止显示</text>
+    </list-item>
+
+    <!-- 底部 pass/fail/back 按钮，作为 list 最后一项，随 list 滚动可见 -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

@@ -1,0 +1,214 @@
+/* 路径动画页样式（offset-path 体系，W3C CSS Motion Path 语法子集） */
+.container {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+
+.header {
+  width: 100%;
+  height: 56px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 40px;
+}
+
+.header-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.help-btn {
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+}
+
+.content {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  /* 底部预留 header 高度：content 高 100% 但起点在 header(56px) 之下，
+   * 不加该 padding 时 list 底部 56px 为死区（最后一项底部永远滚不进可视区，
+   * 003 卡片底部的 expect 文本因此不可见） */
+  padding-bottom: 60px;
+}
+
+/* 卡片头：标题 + 本用例开始/结束按钮 一行；右 padding 让按钮离右缘 24px */
+.card-head {
+  flex-direction: row;
+  width: 100%;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+/* 单个用例的开始/结束按钮（居中 + 加大，方便点击） */
+.case-btn {
+  width: 120px;
+  height: 40px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #0f3460;
+  border-radius: 6px;
+  margin-left: 20px;
+}
+
+/* 单个用例卡片：固定高度，lite 下不设高度会塌缩；
+ * 372px = padding20 + 按钮行54 + stage260 + expect行24 + 14px 余量，
+ * 高度不足时 expect 文本会被卡片 ContentRect 裁剪（滚动页面也看不到） */
+.card {
+  flex-direction: column;
+  width: 100%;
+  height: 372px;
+  background-color: #16213e;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+.label {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* 动画舞台：固定高度，动画块在其中运动；
+ * 高度 260px：块(30px)居中后上下余量各 115px，须覆盖 001 下移 115px 与 003 上拱 115px，
+ * 否则超出 stage 的部分会被 lite 父链 ContentRect 裁剪（不刷新不绘制）；
+ * 横向位移上限 400px（stage 宽 436 - 块 30 - 6px 安全边距，480 宽屏下不出屏幕） */
+.stage {
+  width: 100%;
+  height: 260px;
+  align-items: center;
+}
+
+/* 动画块基础样式：红色球形（30x30 圆角半径减半即圆形） */
+.a-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ff0000;
+}
+
+/* 001/004 旋转验证用：方形带 6px 圆角（保留朝向辨识度，同时缓解旋转直边锯齿） */
+.a-square {
+  border-radius: 6px;
+}
+
+/* 004 专用：蓝色方块，作为锯齿修复（BlitMapBuffer 纹凑拷贝）新旧固件的识别标记，验证通过后可还原 */
+.a-block-blue {
+  background-color: #0000ff;
+}
+
+/* ========== 路径动画 demo（坐标为相对视图原位的位移，单位 px 可省略） ========== */
+
+/* 001 A到B直线运动：A(0,0) → B(400,115) 斜向右下方，单程停在 B 点；
+ * 直线距离约 416px（原纯横向 240px 的 1.7 倍；横向 400 已贴近 480 屏横向安全上限） */
+.p-a2b {
+  offset-path: path("M 0 0 L 400 115");
+  animation-name: moveAtoB;
+  offset-rotate: 45deg;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes moveAtoB {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+/* 002 矩形折线循环：Z 闭合回起点；fill-mode 实验：forwards 跳过每圈末 RecoveryViewStatus */
+.p-rect {
+  offset-path: path("M 0 0 L 240 0 L 240 30 L 0 30 Z");
+  animation-name: rectPath;
+  animation-duration: 4000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes rectPath {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+/* 003 贝塞尔波浪运动：两段二次贝塞尔连续（第二段自动接续第一段终点）；
+ * 第一段上拱 Q(100,-220)→(200,0)，顶点(100,-110)；第二段下凹 Q(300,220)→(400,0)，谷底(300,110)；
+ * 路径弧长约 622px（约为最初单段版 244px 的 2.5 倍）；
+ * 横向终点 400、垂直 ±110 均在 stage 安全边界内（上限 400 / ±115） */
+.p-bezier {
+  offset-path: path("M 0 0 Q 100 -220 200 0 Q 300 220 400 0");
+  offset-rotate: 0deg;
+  animation-name: curveAnim;
+  animation-duration: 4000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes curveAnim {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+/* 004 offset-rotate:auto（W3C）：朝向跟随路径切线，路径同 003 波浪便于对照 */
+.p-auto-rotate {
+  offset-path: path("M 0 0 Q 100 -220 200 0 Q 300 220 400 0");
+  offset-rotate: auto;
+  animation-name: autoRotateAnim;
+  animation-duration: 4000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes autoRotateAnim {
+  from { offset-distance: 0%; }
+  to   { offset-distance: 100%; }
+}
+
+.expect {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 6px;
+}
+
+/* 底部按钮卡片：作为 list 最后一项，不再独立浮动 */
+.bottom-card {
+  flex-direction: column;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* 底部 pass/fail/back 按钮行（套本应用 validator 框架） */
+.bottom-bt {
+  width: 100%;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 31%;
+  height: 50px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.button:active {
+  background-color: blueviolet;
+}
+
+.help-btn:active {
+  background-color: blueviolet;
+}

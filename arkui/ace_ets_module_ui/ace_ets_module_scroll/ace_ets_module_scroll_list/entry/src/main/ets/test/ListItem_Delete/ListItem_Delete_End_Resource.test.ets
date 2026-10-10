@@ -78,7 +78,10 @@ export default function ListItem_Delete_End_Resource() {
       console.info('[SUB_ACE_ListItem_Delete_End_Resource_0100] START');
       await CommonFunc.sleep(1000);
       console.log('get Initial value')
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_00');
+      let driver = Driver.create();
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_End_Resource_ListItem_00'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_01');
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
@@ -89,9 +92,6 @@ export default function ListItem_Delete_End_Resource() {
       console.info("SUB_ACE_ListItem_Delete_End_Resource_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       console.log('slide ')
-      let driver = Driver.create();
-      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_End_Resource_ListItem_00'));
-      let displayId = await swipeComponent.getDisplayId();
       await CommonFunc.sleep(500);
       await driver.swipeBetween(
         { x: Math.round(right - vp2px(5)), y: Math.round(top + height / 2), displayId: displayId },
@@ -133,7 +133,9 @@ export default function ListItem_Delete_End_Resource() {
       await CommonFunc.sleep(2000);
 
       console.log('get Initial value')
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_00');
+      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_End_Resource_ListItem_00'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_End_Resource_ListItem_01');
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
@@ -144,8 +146,6 @@ export default function ListItem_Delete_End_Resource() {
       console.info("SUB_ACE_ListItem_Delete_End_Resource_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       console.log('slide ')
-      let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_End_Resource_ListItem_00'));
-      let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + vp2px(100)), y: Math.round(top + height / 2), displayId: displayId },
         { x: Math.round(left + vp2px(30)), y: Math.round(top + height / 2), displayId: displayId });

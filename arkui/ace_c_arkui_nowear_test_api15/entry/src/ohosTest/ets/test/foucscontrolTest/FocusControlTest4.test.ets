@@ -19,7 +19,7 @@ import router from '@ohos.router';
 import nativeRender from 'libnativerender.so'
 import Utils from '../common/Utils';
 
-let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function FocusControlTest4(){
   describe('FocusControlTest4',  () =>{

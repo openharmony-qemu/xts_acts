@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function SwipeRecognizerTest() {
   describe('SwipeRecognizerTest', () => {
     beforeEach(async (done: Function) => {
@@ -60,7 +61,7 @@ export default function SwipeRecognizerTest() {
       let colum = CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
       let top = colum.top
       let left = colum.left
-      await driver.swipe(Math.round(globalThis.winLeft + 100), Math.round(top + 100), Math.round(globalThis.winLeft + 500), Math.round(top + 500), 1200)
+      await driver.swipeBetween({x: Math.round(globalThis.winLeft + 100), y: Math.round(top + 100), displayId: displayID}, {x: Math.round(globalThis.winLeft + 500), y: Math.round(top + 500), displayId: displayID}, 1200)
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('value');
       let obj: ESObject = JSON.parse(strJson);

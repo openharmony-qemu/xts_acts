@@ -83,7 +83,7 @@ export default function ListItem_Delete_End_Default() {
       let swipeComponent = await driver.findComponent(ON.id('ListItem_Delete_End_Default_1'));
       let displayId = await swipeComponent.getDisplayId();
       await CommonFunc.sleep(500);
-      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_End_Default_1');
+      let swipeBar = await swipeComponent.getBounds();
       let top = swipeBar.top;
       let right = swipeBar.right;
       let left = swipeBar.left;

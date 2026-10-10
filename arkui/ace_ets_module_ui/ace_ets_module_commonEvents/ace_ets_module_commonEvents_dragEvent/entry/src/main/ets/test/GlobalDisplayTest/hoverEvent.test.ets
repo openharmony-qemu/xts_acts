@@ -18,6 +18,7 @@ import {UiComponent, UiDriver, Component, Driver, ON, BY, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function hoverEventTest() {
   describe('hoverEventTest', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +63,7 @@ export default function hoverEventTest() {
 
       let button = await driver.findComponent(ON.id('button'));
       let point = await button.getBoundsCenter();
-      await driver.penClick({x: point.x, y: point.y});
+      await driver.penClick({x: point.x, y: point.y, displayId:displayID});
       await CommonFunc.sleep(1000);
 
       let strJsonX = getInspectorByKey('globalDisplayX');

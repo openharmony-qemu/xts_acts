@@ -689,7 +689,31 @@ export default function MultimodalkeycodeTest() {
         done();
       }
       console.info(`${caseName} end to test`);
-    });    
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_KeyCodeNdk_2900
+     * @tc.number SUB_MMI_Input_Api_KeyCodeNdk_2900
+     * @tc.desc   KeyCode Enumerated Value Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_KeyCodeNdk_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_KeyCodeNdk_2900';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.KeyCode29();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue()
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });
 
     /**
      * @tc.name   SUB_MMI_Input_Api_PointerStyleNdk_0100

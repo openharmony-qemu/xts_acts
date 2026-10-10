@@ -91,10 +91,6 @@ export default function listItem_Visibility() {
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
       let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
-      let left = locationList.left;
-      let top = locationList.top;
-      let right = locationList.right;
-      let bottom = locationList.bottom;
       expect(locationText1.left).assertEqual(locationText2.left);
       expect(locationText2.left).assertEqual(locationText3.left);
       expect(locationText3.left).assertEqual(locationText4.left);
@@ -120,9 +116,15 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.bottom - locationText4.bottom) - Math.round(vp2px(80))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+      
       let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
+      let left = sizeList.left;
+      let top = sizeList.top;
+      let right = sizeList.right;
+      let bottom = sizeList.bottom;
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
           displayId: displayId },
@@ -161,10 +163,6 @@ export default function listItem_Visibility() {
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
       let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
-      let left = locationList.left;
-      let top = locationList.top;
-      let right = locationList.right;
-      let bottom = locationList.bottom;
       expect(locationText1.left).assertEqual(locationText2.left);
       expect(locationText2.left).assertEqual(locationText3.left);
       expect(locationText3.left).assertEqual(locationText4.left);
@@ -190,9 +188,15 @@ export default function listItem_Visibility() {
 
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
+
       let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
+      let left = sizeList.left;
+      let top = sizeList.top;
+      let right = sizeList.right;
+      let bottom = sizeList.bottom;
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) / 2 + top),
           displayId: displayId },
@@ -231,11 +235,6 @@ export default function listItem_Visibility() {
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
       let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
-
-      let left = locationList.left;
-      let top = locationList.top;
-      let right = locationList.right;
-      let bottom = locationList.bottom;
       expect(locationText1.left).assertEqual(locationText2.left);
       expect(locationText2.left).assertEqual(locationText3.left);
       expect(locationText3.left).assertEqual(locationText4.left);
@@ -263,9 +262,15 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemVisibilityFirstHidden 444');
+
       let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
+      let left = sizeList.left;
+      let top = sizeList.top;
+      let right = sizeList.right;
+      let bottom = sizeList.bottom;
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
           displayId: displayId },
@@ -313,10 +318,6 @@ export default function listItem_Visibility() {
       let locationText3 = CommonFunc.getComponentRect('ListItemTest43');
       let locationText4 = CommonFunc.getComponentRect('ListItemTest44');
       let locationList = CommonFunc.getComponentRect('ListItemVisibility1');
-      let left = locationList.left;
-      let top = locationList.top;
-      let right = locationList.right;
-      let bottom = locationList.bottom;
       expect(locationText1.left).assertEqual(locationText2.left);
       expect(locationText2.left).assertEqual(locationText3.left);
       expect(locationText3.left).assertEqual(locationText4.left);
@@ -343,9 +344,15 @@ export default function listItem_Visibility() {
       expect(Math.abs(Math.round(locationList.right - locationList.left) - Math.round(vp2px(350))) <= 1).assertTrue();
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       console.info('testListItemVisibilityFirstVisibile 444');
+
       let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('ListItemVisibility1'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
+      let left = sizeList.left;
+      let top = sizeList.top;
+      let right = sizeList.right;
+      let bottom = sizeList.bottom;
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round((bottom - top) * 0.4 + top),
           displayId: displayId },

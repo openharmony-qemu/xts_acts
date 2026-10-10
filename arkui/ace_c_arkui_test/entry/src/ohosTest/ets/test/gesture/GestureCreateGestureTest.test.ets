@@ -25,11 +25,11 @@ async function panGesture(id: string, x1: number, y1: number, x2: number, y2: nu
   let rect = await refresh.getBounds();
   const p1: Point = {
     x: Math.round(rect.left + vp2px(x1)),
-    y: Math.round(rect.top + vp2px(y1))
+    y: Math.round(rect.top + vp2px(y1)), displayId: displayID
   };
   const p2: Point = {
     x: Math.round(rect.left + vp2px(x2)),
-    y: Math.round(rect.top + vp2px(y2))
+    y: Math.round(rect.top + vp2px(y2)), displayId: displayID
   };
   await driver.fling(p1, p2, 5, 200)
 }
@@ -39,14 +39,14 @@ async function pinchGesture(id: string) {
   let refresh = await driver.findComponent(ON.id(id));
   let rect = await refresh.getBounds();
   let point: PointerMatrix = PointerMatrix.create(2, 4);
-  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(14)), y:Math.round( rect.top + vp2px(14)) });
-  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(11)), y: Math.round(rect.top + vp2px(11)) });
-  point.setPoint(0, 2, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(8)) });
-  point.setPoint(0, 3, { x: Math.round(rect.left + vp2px(5)), y: Math.round(rect.top + vp2px(5)) });
-  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(17)), y: Math.round(rect.top + vp2px(17)) });
-  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(20)), y: Math.round(rect.top + vp2px(20)) });
-  point.setPoint(1, 2, { x: Math.round(rect.left + vp2px(23)), y: Math.round(rect.top + vp2px(23)) });
-  point.setPoint(1, 3, { x: Math.round(rect.left + vp2px(26)), y: Math.round(rect.top + vp2px(26)) });
+  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(14)), y:Math.round( rect.top + vp2px(14)), displayId: displayID });
+  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(11)), y: Math.round(rect.top + vp2px(11)), displayId: displayID });
+  point.setPoint(0, 2, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(8)), displayId: displayID });
+  point.setPoint(0, 3, { x: Math.round(rect.left + vp2px(5)), y: Math.round(rect.top + vp2px(5)), displayId: displayID });
+  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(17)), y: Math.round(rect.top + vp2px(17)), displayId: displayID });
+  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(20)), y: Math.round(rect.top + vp2px(20)), displayId: displayID });
+  point.setPoint(1, 2, { x: Math.round(rect.left + vp2px(23)), y: Math.round(rect.top + vp2px(23)), displayId: displayID });
+  point.setPoint(1, 3, { x: Math.round(rect.left + vp2px(26)), y: Math.round(rect.top + vp2px(26)), displayId: displayID });
   await driver.injectMultiPointerAction(point, 200);
 }
 
@@ -55,17 +55,18 @@ async function rotationGesture(id: string) {
   let refresh = await driver.findComponent(ON.id(id));
   let rect = await refresh.getBounds();
   let point: PointerMatrix = PointerMatrix.create(2, 4);
-  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(12)) });
-  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(10)) });
-  point.setPoint(0, 2, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(7)) });
-  point.setPoint(0, 3, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(5)) });
-  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(15)) });
-  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(18)) });
-  point.setPoint(1, 2, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(20)) });
-  point.setPoint(1, 3, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(22)) });
+  point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(12)), displayId: displayID });
+  point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(10)), displayId: displayID });
+  point.setPoint(0, 2, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(7)), displayId: displayID });
+  point.setPoint(0, 3, { x: Math.round(rect.left + vp2px(12)), y: Math.round(rect.top + vp2px(5)), displayId: displayID });
+  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(15)), displayId: displayID });
+  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(18)), displayId: displayID });
+  point.setPoint(1, 2, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(20)), displayId: displayID });
+  point.setPoint(1, 3, { x: Math.round(rect.left + vp2px(15)), y: Math.round(rect.top + vp2px(22)), displayId: displayID });
   await driver.injectMultiPointerAction(point, 200);
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function gestureCreateGestureTest() {
 
   describe('GestureCreateGestureTest', () => {

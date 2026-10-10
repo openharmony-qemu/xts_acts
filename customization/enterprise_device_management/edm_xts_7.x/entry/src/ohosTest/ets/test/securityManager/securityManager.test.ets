@@ -3496,6 +3496,33 @@ function testUKeyAddUserExtCredential() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_user_ext_credential_1000
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USER_EXT_CREDENTIAL_JS_1000
+   * @tc.desc   test addUserExtendCredential with authToken
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_add_user_ext_credential_1000", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.AddCredentialInfo = { pluginInfo: UKEY_PLUGIN_INFO, authToken: UKEY_AUTH_TOKEN };
+    try {
+      await securityManager.openSession(UKEY_ACCOUNT_ID);
+      await securityManager.addUserExtendCredential(info, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testUKeyRemoveUserExtCredential() {
@@ -3608,6 +3635,33 @@ function testUKeyRemoveUserExtCredential() {
     done();
   });
 
+  /**
+   * @tc.name   test_remove_user_ext_credential_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_USER_EXT_CREDENTIAL_JS_0500
+   * @tc.desc   test removeUserExtendCredential with authToken
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_user_ext_credential_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.RemoveCredentialInfo = { credentialId: UKEY_CREDENTIAL_ID, authToken: UKEY_AUTH_TOKEN };
+    try {
+      await securityManager.openSession(UKEY_ACCOUNT_ID);
+      securityManager.removeUserExtendCredential(info, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testUKeyGetUserExtCredential() {
@@ -3699,6 +3753,46 @@ function testUKeyGetUserExtCredential() {
       expect(Array.isArray(credentials)).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_user_ext_credential_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_EXT_CREDENTIAL_JS_0500
+   * @tc.desc   test getUserExtendCredential with credentialId and pluginInfo
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_get_user_ext_credential_0500", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let localCredential: securityManager.UserExtCredentialInfo = { credentialId: UKEY_CREDENTIAL_ID, pluginInfo: UKEY_PLUGIN_INFO };
+    let addInfo: securityManager.AddCredentialInfo = { pluginInfo: localCredential.pluginInfo, authToken: UKEY_AUTH_TOKEN };
+    let removeInfo: securityManager.RemoveCredentialInfo = { credentialId: localCredential.credentialId, authToken: UKEY_AUTH_TOKEN };
+    try {
+      let credentials: Array<securityManager.UserExtCredentialInfo> = await securityManager.getUserExtendCredential(UKEY_ACCOUNT_ID);
+      expect(Array.isArray(credentials)).assertTrue();
+      for (let i = 0; i < credentials.length; i++) {
+        expect(credentials[i].credentialId instanceof Uint8Array).assertTrue();
+        expect(credentials[i].pluginInfo.length > 0).assertTrue();
+      }
+      await securityManager.openSession(UKEY_ACCOUNT_ID);
+      try {
+        await securityManager.addUserExtendCredential(addInfo, UKEY_ACCOUNT_ID);
+      } catch (e) {
+        // XTS 环境无 ukey 认证插件，add 失败不影响继续消费 credentialId 属性
+      }
+      securityManager.removeUserExtendCredential(removeInfo, UKEY_ACCOUNT_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200012);
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
