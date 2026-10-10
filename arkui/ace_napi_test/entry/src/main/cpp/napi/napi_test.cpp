@@ -2607,17 +2607,14 @@ static napi_value getGlobal(napi_env env, napi_callback_info info)
 }
 
 napi_threadsafe_function tsfn;
-napi_ref functionRef;
 static void CallJs(napi_env env, napi_value jsCb, void *context, void *data) {
     
     napi_value undefined;
     NAPI_CALL_RETURN_VOID(env, napi_get_undefined(env, &undefined));
-    napi_value cb;
-    NAPI_CALL_RETURN_VOID(env, napi_get_reference_value(env, functionRef, &cb));
     
     napi_value ret;
     int32_t num = 0;
-    NAPI_CALL_RETURN_VOID(env, napi_call_function(env, undefined, cb, 0, nullptr, &ret));
+    NAPI_CALL_RETURN_VOID(env, napi_call_function(env, undefined, jsCb, 0, nullptr, &ret));
     NAPI_CALL_RETURN_VOID(env, napi_get_value_int32(env, ret, &num));
     NAPI_ASSERT_RETURN_VOID(env, num == TAG_NUMBER, "CallJs fail");
 }
@@ -2626,7 +2623,6 @@ static napi_value ThreadSafeTest(napi_env env, napi_callback_info info) {
     size_t argc = 1;
     napi_value jsCb, work_name;
     NAPI_CALL(env, napi_get_cb_info(env, info, &argc, &jsCb, nullptr, nullptr));
-    napi_create_reference(env, jsCb, 1, &functionRef);
 
     NAPI_CALL(env, napi_create_string_utf8(env, "work_name", NAPI_AUTO_LENGTH, &work_name));
 
