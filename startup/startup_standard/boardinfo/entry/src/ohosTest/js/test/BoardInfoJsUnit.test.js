@@ -119,7 +119,7 @@ export default function BoardInfoTest() {
         expect(boardSn).assertInstanceOf('String');
       } catch (err) {
         console.info('boardInfo.boardSn error, code: ' + err.code);
-        expect(err.code).assertEqual(201);
+        expect(Number(err.code)).assertEqual(201);
       }
       done();
       console.info('boardinfo_test_004 : end');
