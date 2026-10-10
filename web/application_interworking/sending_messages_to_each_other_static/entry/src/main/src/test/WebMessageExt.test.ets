@@ -657,7 +657,6 @@ export default function webMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
