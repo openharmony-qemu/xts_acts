@@ -1998,3 +1998,1125 @@ export default function GlobalIsSafeIntegerPart_1Test(): void {
      * @tc.level LEVEL2
      */
     it('testGlobalIsSafeIntegerTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: long = 100 * 1000;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1330
+     * @tc.name testGlobalIsSafeIntegerTest133
+     * @tc.desc Verify isSafeInteger with long prefix increment returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i: long = 0;
+      let r: long = ++i;
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1340
+     * @tc.name testGlobalIsSafeIntegerTest134
+     * @tc.desc Verify isSafeInteger with long postfix increment returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let i: long = 0;
+      let r: long = i++;
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1350
+     * @tc.name testGlobalIsSafeIntegerTest135
+     * @tc.desc Verify isSafeInteger with float -1.0f returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: float = -1.0f;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1360
+     * @tc.name testGlobalIsSafeIntegerTest136
+     * @tc.desc Verify isSafeInteger with float 0.1f returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: float = 0.1f;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1370
+     * @tc.name testGlobalIsSafeIntegerTest137
+     * @tc.desc Verify isSafeInteger with float -0.99f returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let v: float = -0.99f;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1380
+     * @tc.name testGlobalIsSafeIntegerTest138
+     * @tc.desc isSafeInteger(9007199254740994) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(9007199254740994);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1390
+     * @tc.name testGlobalIsSafeIntegerTest139
+     * @tc.desc Verify isSafeInteger with number -9007199254740993 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner: number = -9007199254740993;
+      const r: boolean = isSafeInteger(valInner);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1400
+     * @tc.name testGlobalIsSafeIntegerTest140
+     * @tc.desc Verify isSafeInteger with 1e20 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(1e20);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1410
+     * @tc.name testGlobalIsSafeIntegerTest141
+     * @tc.desc Verify isSafeInteger with Number.MIN_VALUE returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner: number = Number.MIN_VALUE;
+      const r: boolean = isSafeInteger(valInner);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1420
+     * @tc.name testGlobalIsSafeIntegerTest142
+     * @tc.desc Verify isSafeInteger with Number.EPSILON returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner: number = Number.EPSILON;
+      const r: boolean = isSafeInteger(valInner);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1430
+     * @tc.name testGlobalIsSafeIntegerTest143
+     * @tc.desc Verify isSafeInteger with 1e3 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(1e3);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1440
+     * @tc.name testGlobalIsSafeIntegerTest144
+     * @tc.desc isSafeInteger(1e15) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(1e15);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1450
+     * @tc.name testGlobalIsSafeIntegerTest145
+     * @tc.desc Verify isSafeInteger with 1e16 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(1e16);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1460
+     * @tc.name testGlobalIsSafeIntegerTest146
+     * @tc.desc Verify isSafeInteger with -1e3 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner: number = -1e3;
+      const r: boolean = isSafeInteger(valInner);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1470
+     * @tc.name testGlobalIsSafeIntegerTest147
+     * @tc.desc Verify isSafeInteger with 0xFFFFFFFF returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(0xFFFFFFFF);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1480
+     * @tc.name testGlobalIsSafeIntegerTest148
+     * @tc.desc Verify isSafeInteger with 0x1FFFFFFFFFFFFF returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(0x1FFFFFFFFFFFFF);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1490
+     * @tc.name testGlobalIsSafeIntegerTest149
+     * @tc.desc Verify isSafeInteger with 0x20000000000000 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(0x20000000000000);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1500
+     * @tc.name testGlobalIsSafeIntegerTest150
+     * @tc.desc Verify isSafeInteger with binary 0b11111111111111111111111111111111 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(0b11111111111111111111111111111111);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1510
+     * @tc.name testGlobalIsSafeIntegerTest151
+     * @tc.desc Verify isSafeInteger with addition 42 + 58 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: int = 42 + 58;
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1520
+     * @tc.name testGlobalIsSafeIntegerTest152
+     * @tc.desc Verify isSafeInteger with subtraction 1000-500 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: int = 1000 - 500;
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1530
+     * @tc.name testGlobalIsSafeIntegerTest153
+     * @tc.desc Verify isSafeInteger with multiplication 50*2000 returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: int = 50 * 2000;
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1540
+     * @tc.name testGlobalIsSafeIntegerTest154
+     * @tc.desc Verify isSafeInteger with Math.floor(3.9) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = Math.floor(3.9);
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1550
+     * @tc.name testGlobalIsSafeIntegerTest155
+     * @tc.desc Verify isSafeInteger with Math.ceil(3.1) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = Math.ceil(3.1);
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1560
+     * @tc.name testGlobalIsSafeIntegerTest156
+     * @tc.desc Verify isSafeInteger with Math.round(3.5) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = Math.round(3.5);
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1570
+     * @tc.name testGlobalIsSafeIntegerTest157
+     * @tc.desc Verify isSafeInteger with Math.trunc(3.9) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = Math.trunc(3.9);
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1580
+     * @tc.name testGlobalIsSafeIntegerTest158
+     * @tc.desc Verify isSafeInteger with Math.pow(2, 10) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = Math.pow(2, 10);
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1590
+     * @tc.name testGlobalIsSafeIntegerTest159
+     * @tc.desc Verify isSafeInteger with Math.pow(2, 53) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = Math.pow(2, 53);
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1600
+     * @tc.name testGlobalIsSafeIntegerTest160
+     * @tc.desc Verify isSafeInteger with Math.abs(-42) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = Math.abs(-42);
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1610
+     * @tc.name testGlobalIsSafeIntegerTest161
+     * @tc.desc Verify isSafeInteger with 0xFF & 0x0F returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r: int = 0xFF & 0x0F;
+      const result: boolean = isSafeInteger(r);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1620
+     * @tc.name testGlobalIsSafeIntegerTest162
+     * @tc.desc Verify isSafeInteger with Math.PI and Math.E returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner4: number = Math.PI;
+      const r1: boolean = isSafeInteger(valInner4);
+      expect(r1).assertFalse();
+      const valInner2: number = Math.E;
+      const r2: boolean = isSafeInteger(valInner2);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1630
+     * @tc.name testGlobalIsSafeIntegerTest163
+     * @tc.desc Verify isSafeInteger with Math.LN2 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner: number = Math.LN2;
+      const r: boolean = isSafeInteger(valInner);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1640
+     * @tc.name testGlobalIsSafeIntegerTest164
+     * @tc.desc Verify isSafeInteger with Math.SQRT2 returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner: number = Math.SQRT2;
+      const r: boolean = isSafeInteger(valInner);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1650
+     * @tc.name testGlobalIsSafeIntegerTest165
+     * @tc.desc Verify if condition with isSafeInteger safe value enters true branch
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let entered: boolean = false;
+      if (isSafeInteger(42)) {
+        entered = true;
+      }
+      expect(entered).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1660
+     * @tc.name testGlobalIsSafeIntegerTest166
+     * @tc.desc Verify isSafeInteger && with two safe values returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(42) && isSafeInteger(100);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1670
+     * @tc.name testGlobalIsSafeIntegerTest167
+     * @tc.desc Verify isSafeInteger && with safe and unsafe returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(42) && isSafeInteger(1e20);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1680
+     * @tc.name testGlobalIsSafeIntegerTest168
+     * @tc.desc Verify isSafeInteger || with safe and unsafe returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(3.5) || isSafeInteger(42);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1690
+     * @tc.name testGlobalIsSafeIntegerTest169
+     * @tc.desc Verify isSafeInteger used in array filter operation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 3.5, Float.NaN, 42, 9007199254740992];
+      let safe: number[] = arr.filter((x: number): boolean => isSafeInteger(x));
+      expect(safe.length).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1700
+     * @tc.name testGlobalIsSafeIntegerTest170
+     * @tc.desc Verify isSafeInteger used in array every operation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [1, 2, 3, 4, 5];
+      expect(arr.every((x: number): boolean => isSafeInteger(x))).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1710
+     * @tc.name testGlobalIsSafeIntegerTest171
+     * @tc.desc Verify isSafeInteger used in array some operation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [Float.NaN, 3.5, 42, 1e20];
+      expect(arr.some((x: number): boolean => isSafeInteger(x))).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1720
+     * @tc.name testGlobalIsSafeIntegerTest172
+     * @tc.desc Verify isSafeInteger used in array find operation
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: number[] = [Float.NaN, 3.5, 42, 9007199254740992];
+      let found: number | undefined = arr.find((x: number): boolean => isSafeInteger(x));
+      expect(found).assertEqual(42);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1730
+     * @tc.name testGlobalIsSafeIntegerTest173
+     * @tc.desc Verify isSafeInteger(Float.NEGATIVE_INFINITY) returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const valInner: number = Float.NEGATIVE_INFINITY;
+      const r: boolean = isSafeInteger(valInner);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1740
+     * @tc.name testGlobalIsSafeIntegerTest174
+     * @tc.desc isSafeInteger(-128) returns true (byte minimum in safe range)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: byte = -128;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1750
+     * @tc.name testGlobalIsSafeIntegerTest175
+     * @tc.desc isSafeInteger(-32768) returns true (short minimum in safe range)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: short = -32768;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1760
+     * @tc.name testGlobalIsSafeIntegerTest176
+     * @tc.desc isSafeInteger(32767) returns true (short maximum in safe range)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: short = 32767;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1770
+     * @tc.name testGlobalIsSafeIntegerTest177
+     * @tc.desc isSafeInteger(Int.MAX_VALUE) returns false (ArkTS int boundary special handling) (known ArkTS runtime deviation, not ES semantics)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r: boolean = isSafeInteger(Int.MAX_VALUE);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1780
+     * @tc.name testGlobalIsSafeIntegerTest178
+     * @tc.desc isSafeInteger with byte type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: byte = 0;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1790
+     * @tc.name testGlobalIsSafeIntegerTest179
+     * @tc.desc isSafeInteger with bytemax type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: byte = 127;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1800
+     * @tc.name testGlobalIsSafeIntegerTest180
+     * @tc.desc isSafeInteger with short type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: short = 0;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1810
+     * @tc.name testGlobalIsSafeIntegerTest181
+     * @tc.desc isSafeInteger with intmin type parameter returns false (ArkTS int boundary special handling) (known ArkTS runtime deviation, not ES semantics)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: int = Int.MIN_VALUE;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1820
+     * @tc.name testGlobalIsSafeIntegerTest182
+     * @tc.desc isSafeInteger with longzero type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: long = 0;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1830
+     * @tc.name testGlobalIsSafeIntegerTest183
+     * @tc.desc isSafeInteger with longmax type parameter returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: long = Long.MAX_VALUE;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1840
+     * @tc.name testGlobalIsSafeIntegerTest184
+     * @tc.desc isSafeInteger with floatnan type parameter returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: float = Float.NaN;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1850
+     * @tc.name testGlobalIsSafeIntegerTest185
+     * @tc.desc isSafeInteger with floatinf type parameter returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: float = Float.POSITIVE_INFINITY;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1860
+     * @tc.name testGlobalIsSafeIntegerTest186
+     * @tc.desc isSafeInteger with numbersafe type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: number = Number.MAX_SAFE_INTEGER;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1870
+     * @tc.name testGlobalIsSafeIntegerTest187
+     * @tc.desc isSafeInteger with floatnegzero type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: float = -0.0f;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1880
+     * @tc.name testGlobalIsSafeIntegerTest188
+     * @tc.desc isSafeInteger with floatneginf type parameter returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: float = Float.NEGATIVE_INFINITY;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1890
+     * @tc.name testGlobalIsSafeIntegerTest189
+     * @tc.desc isSafeInteger with numbernegzero type parameter returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: number = -0.0;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1900
+     * @tc.name testGlobalIsSafeIntegerTest190
+     * @tc.desc isSafeInteger with numberneginf type parameter returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: number = Number.NEGATIVE_INFINITY;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1910
+     * @tc.name testGlobalIsSafeIntegerTest191
+     * @tc.desc isSafeInteger with intoverflow type parameter returns false (overflows to Int.MIN_VALUE, ArkTS boundary special handling) (known ArkTS runtime deviation, not ES semantics)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: int = Int.MAX_VALUE + 1;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1920
+     * @tc.name testGlobalIsSafeIntegerTest192
+     * @tc.desc isSafeInteger with intunderflow type parameter returns false (underflows to Int.MAX_VALUE, ArkTS boundary special handling) (known ArkTS runtime deviation, not ES semantics)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: int = Int.MIN_VALUE - 1;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1930
+     * @tc.name testGlobalIsSafeIntegerTest193
+     * @tc.desc isSafeInteger with longoverflow type parameter returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: long = Long.MAX_VALUE + 1;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1940
+     * @tc.name testGlobalIsSafeIntegerTest194
+     * @tc.desc isSafeInteger with longunderflow type parameter returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: long = Long.MIN_VALUE - 1;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1950
+     * @tc.name testGlobalIsSafeIntegerTest195
+     * @tc.desc isSafeInteger(16777217.0f) returns false (float precision loss)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const v: float = 16777217.0f;
+      const r: boolean = isSafeInteger(v);
+      expect(r).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1960
+     * @tc.name testGlobalIsSafeIntegerTest196
+     * @tc.desc isSafeInteger with whitespace/sign-prefixed parseInt results
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const posWithSpaces: number = parseInt("  42");
+      expect(isSafeInteger(posWithSpaces)).assertTrue();
+      const negWithSpaces: number = parseInt("  -42");
+      expect(isSafeInteger(negWithSpaces)).assertTrue();
+      const posWithPlus: number = parseInt("+42");
+      expect(isSafeInteger(posWithPlus)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1970
+     * @tc.name testGlobalIsSafeIntegerTest197
+     * @tc.desc isSafeInteger continuous boundary sweep MAX_SAFE_INTEGER +/- 2
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const base: number = Number.MAX_SAFE_INTEGER;
+      const offsets: number[] = [-2, -1, 0, 1, 2];
+      const expected: boolean[] = [true, true, true, false, false];
+      for (let i: int = 0; i < offsets.length; i++) {
+        const v: number = base + offsets[i] as number;
+        expect(isSafeInteger(v)).assertEqual(expected[i]);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1980
+     * @tc.name testGlobalIsSafeIntegerTest198
+     * @tc.desc isSafeInteger with hex boundary: 0x7FFFFFFF (int MAX) returns false (ArkTS int special handling), 2^53-1 as long returns true (known ArkTS runtime deviation, not ES semantics)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(isSafeInteger(0x7FFFFFFF)).assertFalse();
+      expect(isSafeInteger(0x1FFFFFFFFFFFFF as long)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_1990
+     * @tc.name testGlobalIsSafeIntegerTest199
+     * @tc.desc isSafeInteger with negative hex boundary (known ArkTS runtime deviation, not ES semantics)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(isSafeInteger(-0x80000000)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2000
+     * @tc.name testGlobalIsSafeIntegerTest200
+     * @tc.desc isSafeInteger(int 5 widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const intVal: int = 5;
+      const num1: number = intVal;
+      const r: boolean = isSafeInteger(num1);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2010
+     * @tc.name testGlobalIsSafeIntegerTest201
+     * @tc.desc isSafeInteger(long 5 widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const longVal: long = 5;
+      const num2: number = longVal;
+      const r: boolean = isSafeInteger(num2);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2020
+     * @tc.name testGlobalIsSafeIntegerTest202
+     * @tc.desc isSafeInteger(float 5.0 widening to number) returns true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const floatVal: float = 5.0f;
+      const num3: number = floatVal;
+      const r: boolean = isSafeInteger(num3);
+      expect(r).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2030
+     * @tc.name testGlobalIsSafeIntegerTest203
+     * @tc.desc isSafeInteger with object number property val returns true, unsafeVal returns false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj: SafeIntegerBox = new SafeIntegerBox();
+      const r1: boolean = isSafeInteger(obj.val);
+      expect(r1).assertTrue();
+      const r2: boolean = isSafeInteger(obj.unsafeVal);
+      expect(r2).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2040
+     * @tc.name testGlobalIsSafeIntegerTest204
+     * @tc.desc isSafeInteger with 2^53 boundary via long to number coercion returns true/false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const safeBound: number = (9007199254740991 as long);
+      const unsafeBound: number = (9007199254740992 as long);
+      expect(isSafeInteger(safeBound)).assertTrue();
+      expect(isSafeInteger(unsafeBound)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2050
+     * @tc.name testGlobalIsSafeIntegerTest205
+     * @tc.desc isSafeInteger with negative 2^53 boundary via long to number coercion returns true/false
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const safeBound: number = (-9007199254740991 as long);
+      const unsafeBound: number = (-9007199254740992 as long);
+      expect(isSafeInteger(safeBound)).assertTrue();
+      expect(isSafeInteger(unsafeBound)).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2060
+     * @tc.name testGlobalIsSafeIntegerTest206
+     * @tc.desc Verify isSafeInteger throws ClassCastError for null union value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let nullVal: number | null = null;
+        isSafeInteger(nullVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2070
+     * @tc.name testGlobalIsSafeIntegerTest207
+     * @tc.desc Verify isSafeInteger throws ClassCastError for undefined union value
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let undefVal: number | undefined = undefined;
+        isSafeInteger(undefVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2080
+     * @tc.name testGlobalIsSafeIntegerTest208
+     * @tc.desc Verify isSafeInteger throws ClassCastError for empty string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let strVal: number | string = "";
+        isSafeInteger(strVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2090
+     * @tc.name testGlobalIsSafeIntegerTest209
+     * @tc.desc Verify isSafeInteger throws ClassCastError for emoji string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let emojiVal: number | string = "🎉";
+        isSafeInteger(emojiVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_ISSAFEINTEGER_TEST_2100
+     * @tc.name testGlobalIsSafeIntegerTest210
+     * @tc.desc Verify isSafeInteger throws ClassCastError for digit string
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalIsSafeIntegerTest210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let strVal: number | string = "123";
+        isSafeInteger(strVal as number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
+    });
+
+  });
+}

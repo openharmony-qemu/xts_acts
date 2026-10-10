@@ -1996,3 +1996,622 @@ export default function GlobalSetTimeoutPart_1Test(): void {
      * @tc.level LEVEL2
      */
     it('testGlobalSetTimeoutTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const timerId: int = setTimeout('null delay trigger', null);
+      expect(timerId).assertLarger(0);
+      clearTimeout(timerId);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0780
+     * @tc.name testGlobalSetTimeoutTest078
+     * @tc.desc setTimeout(msg, delayMs) string overload with delay=50 returns clearable timer ID
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const timerId: int = setTimeout('scheduled output', 50);
+      expect(timerId).assertLarger(0);
+      clearTimeout(timerId);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0790
+     * @tc.name testGlobalSetTimeoutTest079
+     * @tc.desc setTimeout passes Object arg to callback via ...args
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        const data: Payload = new Payload('delivered');
+        let matched: boolean = false;
+        let id: int = setTimeout(
+          (p: Payload): void => {
+            matched = p.tag === 'delivered';
+          },
+          15,
+          data,
+        );
+        expect(id).assertLarger(0);
+        try {
+          await Utils.msSleep(60);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        clearTimeout(id);
+        expect(matched).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0800
+     * @tc.name testGlobalSetTimeoutTest080
+     * @tc.desc setTimeout passes null and undefined as arg values via ...args
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let nullCheck: boolean = false;
+        let undefCheck: boolean = false;
+        let id: int = setTimeout(
+          (a: object | null, b: string | undefined): void => {
+            nullCheck = a === null;
+            undefCheck = b === undefined;
+          },
+          15,
+          null,
+          undefined,
+        );
+        expect(id).assertLarger(0);
+        try {
+          await Utils.msSleep(60);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        clearTimeout(id);
+        expect(nullCheck).assertTrue();
+        expect(undefCheck).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0810
+     * @tc.name testGlobalSetTimeoutTest081
+     * @tc.desc 50 setTimeout calls produce 50 unique timer IDs
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const ids: int[] = [];
+      for (let i: int = 0; i < 50; i++) {
+        ids.push(setTimeout((): void => {}, 5000));
+      }
+      const seen: Set<int> = new Set<int>();
+      for (let j: int = 0; j < ids.length; j++) {
+        seen.add(ids[j]);
+      }
+      expect(seen.size).assertEqual(50);
+      for (let k: int = 0; k < ids.length; k++) {
+        clearTimeout(ids[k]);
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0820
+     * @tc.name testGlobalSetTimeoutTest082
+     * @tc.desc setTimeout with Promise, fired=true
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        await new Promise<void>((resolve: (value: void) => void, _reject: (reason: Error) => void): void => {
+          setTimeout((): void => {
+            fired = true;
+            resolve(undefined);
+          }, 10);
+        });
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0830
+     * @tc.name testGlobalSetTimeoutTest083
+     * @tc.desc nested clearTimeout: outer callback clears inner timer
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let nestedFired: boolean = false;
+        let outerFired: boolean = false;
+        let targetId: int = setTimeout((): void => {
+          nestedFired = true;
+        }, 100);
+        let outerId: int = setTimeout((): void => {
+          clearTimeout(targetId);
+          outerFired = true;
+        }, 20);
+        try {
+          await Utils.msSleep(200);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        expect(outerFired).assertTrue();
+        expect(nestedFired).assertFalse();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0840
+     * @tc.name testGlobalSetTimeoutTest084
+     * @tc.desc batch of 20 timers fire sequentially, all count
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let count: int = 0;
+        for (let i: int = 0; i < 20; i++) {
+          try {
+            await new Promise<void>((resolve: (value: void) => void, _reject: (reason: Error) => void): void => {
+              setTimeout((): void => {
+                count = count + 1;
+                resolve(undefined);
+              }, 0);
+            });
+          } catch (e) {
+            expect(false).assertFail();
+          }
+        }
+        expect(count).assertEqual(20);
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0850
+     * @tc.name testGlobalSetTimeoutTest085
+     * @tc.desc setTimeout with delay=50 and one arg, callback captures the arg
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let captured: int = 0;
+        try {
+          await new Promise<void>((resolve: (value: void) => void, _reject: (reason: Error) => void): void => {
+            setTimeout(
+              (a: int): void => {
+                captured = a;
+                resolve(undefined);
+              },
+              50,
+              42,
+            );
+          });
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        expect(captured).assertEqual(42);
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0860
+     * @tc.name testGlobalSetTimeoutTest086
+     * @tc.desc setTimeout(null as () => void, 0) with null callback via type cast throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        setTimeout(null as () => void, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0870
+     * @tc.name testGlobalSetTimeoutTest087
+     * @tc.desc setTimeout(undefined as () => void, 0) with undefined callback via type cast throws ClassCastError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        setTimeout(undefined as () => void, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0880
+     * @tc.name testGlobalSetTimeoutTest088
+     * @tc.desc setTimeout with long string message (10000 chars) returns valid timer id
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let longMsg: string = 'a'.repeat(10000);
+      let id: int = setTimeout(longMsg, 100);
+      expect(id).assertLarger(0);
+      clearTimeout(id);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0890
+     * @tc.name testGlobalSetTimeoutTest089
+     * @tc.desc setTimeout with unicode/emoji string message returns valid timer id
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      const timerId: int = setTimeout('😀🔥👍', 0);
+      expect(timerId).assertLarger(0);
+      clearTimeout(timerId);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0900
+     * @tc.name testGlobalSetTimeoutTest090
+     * @tc.desc setTimeout with different delays: shorter delay fires first
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let first: int = -1;
+        setTimeout((): void => {
+          if (first === -1) {
+            first = 1;
+          }
+        }, 50);
+        setTimeout((): void => {
+          if (first === -1) {
+            first = 2;
+          }
+        }, 10);
+        try {
+          await Utils.msSleep(100);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        expect(first).assertEqual(2);
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0910
+     * @tc.name testGlobalSetTimeoutTest091
+     * @tc.desc Recursive setTimeout: callback chains 3 times, count reaches 3
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let count: int = 0;
+        setTimeout((): void => {
+          count++;
+          setTimeout((): void => {
+            count++;
+            setTimeout((): void => {
+              count++;
+            }, 10);
+          }, 10);
+        }, 10);
+        try {
+          await Utils.msSleep(80);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        expect(count).assertEqual(3);
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0920
+     * @tc.name testGlobalSetTimeoutTest092
+     * @tc.desc setTimeout with object param: callback modifies property, verified externally
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        const obj: Record<string, int> = { 'value': 0 };
+        setTimeout(
+          (o: Record<string, int>): void => {
+            o['value'] = 42;
+          },
+          10,
+          obj,
+        );
+        await Utils.msSleep(50);
+        expect(obj['value']).assertEqual(42);
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0930
+     * @tc.name testGlobalSetTimeoutTest093
+     * @tc.desc Bulk create 100 setTimeout(fn, 0) and verify all fire
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let count: int = 0;
+        for (let i: int = 0; i < 100; i++) {
+          setTimeout((): void => {
+            count = count + 1;
+          }, 0);
+        }
+        try {
+          try {
+            await Utils.msSleep(200);
+          } catch (e) {
+            expect(false).assertFail();
+          }
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        expect(count).assertEqual(100);
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0940
+     * @tc.name testGlobalSetTimeoutTest094
+     * @tc.desc setTimeout with byte type delay parameter, callback fires
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const delay: byte = 10;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        }, delay);
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0950
+     * @tc.name testGlobalSetTimeoutTest095
+     * @tc.desc setTimeout with short type delay parameter, callback fires
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const delay: short = 10;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        }, delay);
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0960
+     * @tc.name testGlobalSetTimeoutTest096
+     * @tc.desc setTimeout with int type delay parameter, callback fires
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const delay: int = 10;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        }, delay);
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0970
+     * @tc.name testGlobalSetTimeoutTest097
+     * @tc.desc setTimeout with long type delay parameter, callback fires
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const delay: long = 10;
+        let id: int = 0;
+        id = setTimeout((): void => {
+          fired = true;
+        }, Long.toInt(delay));
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0980
+     * @tc.name testGlobalSetTimeoutTest098
+     * @tc.desc setTimeout with float type delay parameter, callback fires
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const delay: float = 10;
+        let id: int = 0;
+        id = setTimeout((): void => {
+          fired = true;
+        }, Float.toInt(delay));
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_0990
+     * @tc.name testGlobalSetTimeoutTest099
+     * @tc.desc setTimeout with number type delay parameter, callback fires
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const delay: number = 10;
+        let id: int = 0;
+        id = setTimeout((): void => {
+          fired = true;
+        }, Double.toInt(delay));
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_1000
+     * @tc.name testGlobalSetTimeoutTest100
+     * @tc.desc setTimeout with func only, no delay parameter, returns positive timer ID
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        });
+        expect(id).assertLarger(0);
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_1010
+     * @tc.name testGlobalSetTimeoutTest101
+     * @tc.desc setTimeout with delayMs=null, callback fires
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        }, null);
+        expect(id).assertLarger(0);
+        await Utils.msSleep(50);
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_1020
+     * @tc.name testGlobalSetTimeoutTest102
+     * @tc.desc setTimeout with delayMs=null, callback fires then cleared
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const delayMs: int | null = null;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        }, delayMs);
+        expect(id).assertLarger(0);
+        try {
+          await Utils.msSleep(50);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_1030
+     * @tc.name testGlobalSetTimeoutTest103
+     * @tc.desc setTimeout with negative delayMs, callback still fires (treated as 0)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        }, -100);
+        expect(id).assertLarger(0);
+        try {
+          await Utils.msSleep(50);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        clearTimeout(id);
+        expect(fired).assertTrue();
+        done();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SETTIMEOUT_TEST_1040
+     * @tc.name testGlobalSetTimeoutTest104
+     * @tc.desc clearTimeout on already-fired timer does not throw
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testGlobalSetTimeoutTest104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let fired: boolean = false;
+        const id: int = setTimeout((): void => {
+          fired = true;
+        }, 10);
+        try {
+          await Utils.msSleep(50);
+        } catch (e) {
+          expect(false).assertFail();
+        }
+        const result: void = clearTimeout(id);
+        expect(result).assertUndefined();
+        expect(fired).assertTrue();
+        done();
+    });
+  });
+}
