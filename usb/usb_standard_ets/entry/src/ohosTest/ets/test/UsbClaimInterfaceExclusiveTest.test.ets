@@ -597,7 +597,7 @@ export default function UsbClaimInterfaceExclusiveTest() {
           localPipe = usbMgr.connectDevice(testDevice!);
           expect(localPipe === undefined).assertFalse();
           let targetInterface = deviceList[0].configs[0].interfaces[0];
-          usbMgr.claimInterfaceExclusive(localPipe, targetInterface, null as unknown as boolean);
+          usbMgr.claimInterfaceExclusive(localPipe, targetInterface, null);
           let releaseRet = usbMgr.releaseInterface(localPipe, targetInterface);
           console.info(`${TAG} force null, release result: ${releaseRet}`);
           expect(releaseRet).assertEqual(0);
