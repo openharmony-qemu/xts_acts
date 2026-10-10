@@ -73,12 +73,12 @@ struct IgnoreReadOnlyFalse {
     Column({ space: 10 }) {
       Text(this.getterResult)
         .id('text_false_getter')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Getter')
         .id('btn_false_getter')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseGetterClass = PersistenceV2.globalConnect({
@@ -95,12 +95,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.computedResult)
         .id('text_false_computed')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Computed')
         .id('btn_false_computed')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseComputedClass = PersistenceV2.globalConnect({
@@ -117,12 +117,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.derivedResult)
         .id('text_false_derived')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Derived')
         .id('btn_false_derived')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseChildA = PersistenceV2.globalConnect({
@@ -139,12 +139,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.nullGetterResult)
         .id('text_false_null_getter')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Null Getter')
         .id('btn_false_null_getter')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseGetterClass = PersistenceV2.globalConnect({
@@ -161,12 +161,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.nullComputedResult)
         .id('text_false_null_computed')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Null Computed')
         .id('btn_false_null_computed')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseComputedClass = PersistenceV2.globalConnect({
@@ -183,12 +183,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.nullDerivedResult)
         .id('text_false_null_derived')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Null Derived')
         .id('btn_false_null_derived')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseChildA = PersistenceV2.globalConnect({
@@ -205,12 +205,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.undefinedGetterResult)
         .id('text_false_undefined_getter')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Undefined Getter')
         .id('btn_false_undefined_getter')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseGetterClass = PersistenceV2.globalConnect({
@@ -227,12 +227,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.undefinedComputedResult)
         .id('text_false_undefined_computed')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Undefined Computed')
         .id('btn_false_undefined_computed')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseComputedClass = PersistenceV2.globalConnect({
@@ -249,12 +249,12 @@ struct IgnoreReadOnlyFalse {
 
       Text(this.undefinedDerivedResult)
         .id('text_false_undefined_derived')
-        .height('5%')
+        .height('3%')
         .fontSize(16)
 
       Button('Connect Undefined Derived')
         .id('btn_false_undefined_derived')
-        .height('5%')
+        .height('3%')
         .onClick(() => {
           try {
             let obj: IgnoreFalseChildA = PersistenceV2.globalConnect({
