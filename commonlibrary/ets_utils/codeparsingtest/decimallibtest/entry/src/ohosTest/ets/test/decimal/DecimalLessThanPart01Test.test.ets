@@ -26,17 +26,17 @@ export default function decimalLessThanPart01TestTest() {
   describe('DecimalLessThanPart01TestTest', () => {
     beforeAll(() => {
     });
-  
+
     beforeEach(async () => {
       await sleep(30);
     });
-  
+
     afterEach(() => {
     });
-  
+
     afterAll(() => {
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0100
      * @tc.name testDecimalLessThanPart01TestTest001
@@ -52,7 +52,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0200
      * @tc.name testDecimalLessThanPart01TestTest002
@@ -68,7 +68,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0300
      * @tc.name testDecimalLessThanPart01TestTest003
@@ -84,7 +84,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0400
      * @tc.name testDecimalLessThanPart01TestTest004
@@ -97,7 +97,7 @@ export default function decimalLessThanPart01TestTest() {
       const d: ESObject = new Decimal(4);
       expect(d.lessThan(5, 100)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0500
      * @tc.name testDecimalLessThanPart01TestTest005
@@ -110,7 +110,7 @@ export default function decimalLessThanPart01TestTest() {
       const d: ESObject = new Decimal(4);
       expect(d.lessThan(5, undefined)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0600
      * @tc.name testDecimalLessThanPart01TestTest006
@@ -123,7 +123,7 @@ export default function decimalLessThanPart01TestTest() {
       const d: ESObject = new Decimal(4);
       expect(d.lessThan(5, null)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0700
      * @tc.name testDecimalLessThanPart01TestTest007
@@ -136,7 +136,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(6);
       expect(d.lessThan(6)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0800
      * @tc.name testDecimalLessThanPart01TestTest008
@@ -149,7 +149,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(4);
       expect(d.lessThan(5)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_0900
      * @tc.name testDecimalLessThanPart01TestTest009
@@ -162,7 +162,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(4);
       expect(d.lessThan(4)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1000
      * @tc.name testDecimalLessThanPart01TestTest010
@@ -175,7 +175,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-6);
       expect(d.lessThan(-5)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1100
      * @tc.name testDecimalLessThanPart01TestTest011
@@ -188,7 +188,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-6);
       expect(d.lessThan(-6)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1200
      * @tc.name testDecimalLessThanPart01TestTest012
@@ -201,7 +201,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0.4);
       expect(d.lessThan(0.5)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1300
      * @tc.name testDecimalLessThanPart01TestTest013
@@ -214,7 +214,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0.4);
       expect(d.lessThan(0.4)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1400
      * @tc.name testDecimalLessThanPart01TestTest014
@@ -227,7 +227,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-0.6);
       expect(d.lessThan(-0.5)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1500
      * @tc.name testDecimalLessThanPart01TestTest015
@@ -240,7 +240,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0);
       expect(d.lessThan(1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1600
      * @tc.name testDecimalLessThanPart01TestTest016
@@ -253,7 +253,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-1);
       expect(d.lessThan(0)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1700
      * @tc.name testDecimalLessThanPart01TestTest017
@@ -266,7 +266,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-0);
       expect(d.lessThan(0)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1800
      * @tc.name testDecimalLessThanPart01TestTest018
@@ -279,7 +279,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0);
       expect(d.lessThan(-0)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_1900
      * @tc.name testDecimalLessThanPart01TestTest019
@@ -292,7 +292,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-0);
       expect(d.lessThan(1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2000
      * @tc.name testDecimalLessThanPart01TestTest020
@@ -305,7 +305,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-1);
       expect(d.lessThan(-0)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2100
      * @tc.name testDecimalLessThanPart01TestTest021
@@ -318,7 +318,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1);
       expect(d.lessThan(1.0)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2200
      * @tc.name testDecimalLessThanPart01TestTest022
@@ -331,7 +331,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1.0);
       expect(d.lessThan(1)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2300
      * @tc.name testDecimalLessThanPart01TestTest023
@@ -344,7 +344,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1);
       expect(d.lessThan(1.5)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2400
      * @tc.name testDecimalLessThanPart01TestTest024
@@ -357,7 +357,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1e3);
       expect(d.lessThan(1e4)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2500
      * @tc.name testDecimalLessThanPart01TestTest025
@@ -370,7 +370,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1e-7);
       expect(d.lessThan(1e-6)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2600
      * @tc.name testDecimalLessThanPart01TestTest026
@@ -383,7 +383,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1e-8);
       expect(d.lessThan(0)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2700
      * @tc.name testDecimalLessThanPart01TestTest027
@@ -396,7 +396,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1e21);
       expect(d.lessThan(1e22)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2800
      * @tc.name testDecimalLessThanPart01TestTest028
@@ -409,7 +409,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(12345);
       expect(d.lessThan(1.2345e4)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_2900
      * @tc.name testDecimalLessThanPart01TestTest029
@@ -422,7 +422,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0x10);
       expect(d.lessThan(17)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3000
      * @tc.name testDecimalLessThanPart01TestTest030
@@ -435,7 +435,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0b11);
       expect(d.lessThan(4)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3100
      * @tc.name testDecimalLessThanPart01TestTest031
@@ -448,7 +448,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0o10);
       expect(d.lessThan(9)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3200
      * @tc.name testDecimalLessThanPart01TestTest032
@@ -461,7 +461,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MAX_SAFE_INTEGER);
       expect(d.lessThan(Number.MAX_SAFE_INTEGER)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3300
      * @tc.name testDecimalLessThanPart01TestTest033
@@ -474,7 +474,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MAX_SAFE_INTEGER);
       expect(d.lessThan(Number.MAX_SAFE_INTEGER + 1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3400
      * @tc.name testDecimalLessThanPart01TestTest034
@@ -487,7 +487,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MAX_SAFE_INTEGER);
       expect(d.lessThan(Number.MAX_SAFE_INTEGER - 1)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3500
      * @tc.name testDecimalLessThanPart01TestTest035
@@ -500,7 +500,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MIN_SAFE_INTEGER);
       expect(d.lessThan(Number.MIN_SAFE_INTEGER)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3600
      * @tc.name testDecimalLessThanPart01TestTest036
@@ -513,7 +513,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MIN_SAFE_INTEGER);
       expect(d.lessThan(Number.MIN_SAFE_INTEGER + 1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3700
      * @tc.name testDecimalLessThanPart01TestTest037
@@ -526,7 +526,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MAX_SAFE_INTEGER);
       expect(d.lessThan(Number.MIN_SAFE_INTEGER)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3800
      * @tc.name testDecimalLessThanPart01TestTest038
@@ -539,7 +539,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(9e15);
       expect(d.lessThan(9e15)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_3900
      * @tc.name testDecimalLessThanPart01TestTest039
@@ -552,7 +552,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(9e15);
       expect(d.lessThan(9e15 + 1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4000
      * @tc.name testDecimalLessThanPart01TestTest040
@@ -565,7 +565,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-9e15);
       expect(d.lessThan(-9e15)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4100
      * @tc.name testDecimalLessThanPart01TestTest041
@@ -578,7 +578,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-9e15);
       expect(d.lessThan(-9e15 + 1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4200
      * @tc.name testDecimalLessThanPart01TestTest042
@@ -591,7 +591,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MAX_VALUE);
       expect(d.lessThan(Number.MAX_VALUE)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4300
      * @tc.name testDecimalLessThanPart01TestTest043
@@ -604,7 +604,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MAX_VALUE);
       expect(d.lessThan(Number.MAX_VALUE / 2)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4400
      * @tc.name testDecimalLessThanPart01TestTest044
@@ -617,7 +617,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.MIN_VALUE);
       expect(d.lessThan(0)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4500
      * @tc.name testDecimalLessThanPart01TestTest045
@@ -630,7 +630,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0);
       expect(d.lessThan(Number.MIN_VALUE)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4600
      * @tc.name testDecimalLessThanPart01TestTest046
@@ -643,7 +643,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Number.EPSILON);
       expect(d.lessThan(1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4700
      * @tc.name testDecimalLessThanPart01TestTest047
@@ -656,7 +656,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1);
       expect(d.lessThan(1 + Number.EPSILON)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4800
      * @tc.name testDecimalLessThanPart01TestTest048
@@ -669,7 +669,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1 - Number.EPSILON);
       expect(d.lessThan(1)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_4900
      * @tc.name testDecimalLessThanPart01TestTest049
@@ -682,7 +682,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0.1).add(0.2);
       expect(d.lessThan(0.30000000000000004)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5000
      * @tc.name testDecimalLessThanPart01TestTest050
@@ -695,7 +695,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0.1).add(0.2);
       expect(d.lessThan(0.3)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5100
      * @tc.name testDecimalLessThanPart01TestTest051
@@ -708,7 +708,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(9007199254740993);
       expect(d.lessThan(9007199254740992)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5200
      * @tc.name testDecimalLessThanPart01TestTest052
@@ -721,7 +721,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(9007199254740993);
       expect(d.lessThan(9007199254740991)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5300
      * @tc.name testDecimalLessThanPart01TestTest053
@@ -735,7 +735,7 @@ export default function decimalLessThanPart01TestTest() {
       const r = d.lessThan(5);
       expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5400
      * @tc.name testDecimalLessThanPart01TestTest054
@@ -749,7 +749,7 @@ export default function decimalLessThanPart01TestTest() {
       const r = d.lessThan(5);
       expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5500
      * @tc.name testDecimalLessThanPart01TestTest055
@@ -763,7 +763,7 @@ export default function decimalLessThanPart01TestTest() {
       expect(d.lessThan(5)).assertTrue();
       expect(d.lessThan(5)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5600
      * @tc.name testDecimalLessThanPart01TestTest056
@@ -777,7 +777,7 @@ export default function decimalLessThanPart01TestTest() {
       expect(d.lessThan(5)).assertTrue();
       expect(d.toString()).assertEqual('4');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5700
      * @tc.name testDecimalLessThanPart01TestTest057
@@ -791,7 +791,7 @@ export default function decimalLessThanPart01TestTest() {
       expect(d.lessThan(5)).assertTrue();
       expect(d.comparedTo(5)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5800
      * @tc.name testDecimalLessThanPart01TestTest058
@@ -805,7 +805,7 @@ export default function decimalLessThanPart01TestTest() {
       expect(d.lessThan(4)).assertFalse();
       expect(d.equals(4)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_5900
      * @tc.name testDecimalLessThanPart01TestTest059
@@ -818,7 +818,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(4);
       expect(d.lessThan(NaN)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6000
      * @tc.name testDecimalLessThanPart01TestTest060
@@ -831,7 +831,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(NaN);
       expect(d.lessThan(4)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6100
      * @tc.name testDecimalLessThanPart01TestTest061
@@ -844,7 +844,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(NaN);
       expect(d.lessThan(NaN)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6200
      * @tc.name testDecimalLessThanPart01TestTest062
@@ -857,7 +857,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(NaN);
       expect(d.lessThan(Infinity)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6300
      * @tc.name testDecimalLessThanPart01TestTest063
@@ -870,7 +870,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Infinity);
       expect(d.lessThan(NaN)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6400
      * @tc.name testDecimalLessThanPart01TestTest064
@@ -883,7 +883,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(NaN);
       expect(d.lessThan(-0)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6500
      * @tc.name testDecimalLessThanPart01TestTest065
@@ -896,7 +896,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-0);
       expect(d.lessThan(NaN)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6600
      * @tc.name testDecimalLessThanPart01TestTest066
@@ -909,7 +909,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-Infinity);
       expect(d.lessThan(NaN)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6700
      * @tc.name testDecimalLessThanPart01TestTest067
@@ -922,7 +922,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(4);
       expect(d.lessThan(Infinity)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6800
      * @tc.name testDecimalLessThanPart01TestTest068
@@ -935,7 +935,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Infinity);
       expect(d.lessThan(4)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_6900
      * @tc.name testDecimalLessThanPart01TestTest069
@@ -948,7 +948,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-4);
       expect(d.lessThan(-Infinity)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7000
      * @tc.name testDecimalLessThanPart01TestTest070
@@ -961,7 +961,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-Infinity);
       expect(d.lessThan(-4)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7100
      * @tc.name testDecimalLessThanPart01TestTest071
@@ -974,7 +974,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(Infinity);
       expect(d.lessThan(Infinity)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7200
      * @tc.name testDecimalLessThanPart01TestTest072
@@ -987,7 +987,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-Infinity);
       expect(d.lessThan(Infinity)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7300
      * @tc.name testDecimalLessThanPart01TestTest073
@@ -1000,7 +1000,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(-Infinity);
       expect(d.lessThan(-Infinity)).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7400
      * @tc.name testDecimalLessThanPart01TestTest074
@@ -1013,7 +1013,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(0);
       expect(d.lessThan(Infinity)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7500
      * @tc.name testDecimalLessThanPart01TestTest075
@@ -1026,7 +1026,7 @@ export default function decimalLessThanPart01TestTest() {
       const d = new Decimal(1e308);
       expect(d.lessThan(Number.MAX_VALUE)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7600
      * @tc.name testDecimalLessThanPart01TestTest076
@@ -1042,7 +1042,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7700
      * @tc.name testDecimalLessThanPart01TestTest077
@@ -1058,7 +1058,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7800
      * @tc.name testDecimalLessThanPart01TestTest078
@@ -1074,7 +1074,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_7900
      * @tc.name testDecimalLessThanPart01TestTest079
@@ -1090,7 +1090,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8000
      * @tc.name testDecimalLessThanPart01TestTest080
@@ -1106,7 +1106,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8100
      * @tc.name testDecimalLessThanPart01TestTest081
@@ -1122,7 +1122,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8200
      * @tc.name testDecimalLessThanPart01TestTest082
@@ -1138,7 +1138,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8300
      * @tc.name testDecimalLessThanPart01TestTest083
@@ -1154,7 +1154,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8400
      * @tc.name testDecimalLessThanPart01TestTest084
@@ -1170,8 +1170,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8500
      * @tc.name testDecimalLessThanPart01TestTest085
@@ -1191,8 +1190,9 @@ export default function decimalLessThanPart01TestTest() {
       }
       expect(hit).assertTrue();
 
-  
+
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8600
      * @tc.name testDecimalLessThanPart01TestTest086
@@ -1209,7 +1209,7 @@ export default function decimalLessThanPart01TestTest() {
         expect(e.name).assertEqual('TypeError');
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8700
      * @tc.name testDecimalLessThanPart01TestTest087
@@ -1226,7 +1226,7 @@ export default function decimalLessThanPart01TestTest() {
         expect(e.name).assertEqual('TypeError');
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8800
      * @tc.name testDecimalLessThanPart01TestTest088
@@ -1242,7 +1242,7 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_8900
      * @tc.name testDecimalLessThanPart01TestTest089
@@ -1258,32 +1258,8 @@ export default function decimalLessThanPart01TestTest() {
         expect((e as ESObject).code).assertEqual(401);
       }
     });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_PART01_SUPPLEMENT_TEST_9000
-     * @tc.name testDecimalLessThanPart01TestTest090
-     * @tc.desc Verify null undefined 401 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalLessThanPart01TestTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let code1 = -1;
-      let code2 = -1;
-      try {
-        (new Decimal(6) as ESObject).lessThan(null as ESObject);
-      } catch (e) {
-        code1 = (e as ESObject).code;
-      }
-      try {
-        (new Decimal(6) as ESObject).lessThan(undefined as ESObject);
-      } catch (e) {
-        code2 = (e as ESObject).code;
-      }
-      expect(code1).assertEqual(401);
-      expect(code2).assertEqual(401);
-    });
-  
+
+
   });
 
 }

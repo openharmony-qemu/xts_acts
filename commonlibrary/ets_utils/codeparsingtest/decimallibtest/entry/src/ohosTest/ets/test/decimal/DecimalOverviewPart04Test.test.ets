@@ -26,18 +26,18 @@ export default function decimalOverviewPart04TestTest() {
   describe('DecimalOverviewPart04TestTest', () => {
     beforeAll(() => {
     });
-  
+
     beforeEach(async () => {
       await sleep(30);
     });
-  
+
     afterEach(() => {
     });
-  
+
     afterAll(() => {
     });
-  
-  
+
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0100
      * @tc.name testDecimalOverviewPart04TestTest001
@@ -51,7 +51,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('3.25');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0200
      * @tc.name testDecimalOverviewPart04TestTest002
@@ -65,7 +65,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(2).add(v);
       expect(r.toString()).assertEqual('9');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0300
      * @tc.name testDecimalOverviewPart04TestTest003
@@ -79,7 +79,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(4).mul(v);
       expect(r.toString()).assertEqual('6');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0400
      * @tc.name testDecimalOverviewPart04TestTest004
@@ -93,7 +93,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(10).sub(v);
       expect(r.toString()).assertEqual('8');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0500
      * @tc.name testDecimalOverviewPart04TestTest005
@@ -107,7 +107,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(8).div(v);
       expect(r.toString()).assertEqual('4');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0600
      * @tc.name testDecimalOverviewPart04TestTest006
@@ -121,7 +121,7 @@ export default function decimalOverviewPart04TestTest() {
       let c: number = new Decimal(5).comparedTo(v);
       expect(c).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0700
      * @tc.name testDecimalOverviewPart04TestTest007
@@ -135,7 +135,7 @@ export default function decimalOverviewPart04TestTest() {
       let eq: boolean = new Decimal('0.5').equals(v);
       expect(eq).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0800
      * @tc.name testDecimalOverviewPart04TestTest008
@@ -149,7 +149,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('2.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_0900
      * @tc.name testDecimalOverviewPart04TestTest009
@@ -163,7 +163,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('6');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1000
      * @tc.name testDecimalOverviewPart04TestTest010
@@ -177,7 +177,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(4).add(v);
       expect(r.toString()).assertEqual('7');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1100
      * @tc.name testDecimalOverviewPart04TestTest011
@@ -191,7 +191,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(3).mul(v);
       expect(r.toString()).assertEqual('6');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1200
      * @tc.name testDecimalOverviewPart04TestTest012
@@ -205,7 +205,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(3).pow(v);
       expect(r.toString()).assertEqual('9');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1300
      * @tc.name testDecimalOverviewPart04TestTest013
@@ -219,7 +219,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(10).mod(v);
       expect(r.toString()).assertEqual('2');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1400
      * @tc.name testDecimalOverviewPart04TestTest014
@@ -233,7 +233,7 @@ export default function decimalOverviewPart04TestTest() {
       let c: number = new Decimal('1.25').comparedTo(v);
       expect(c).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1500
      * @tc.name testDecimalOverviewPart04TestTest015
@@ -247,7 +247,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('7.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1600
      * @tc.name testDecimalOverviewPart04TestTest016
@@ -261,7 +261,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('-3');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1700
      * @tc.name testDecimalOverviewPart04TestTest017
@@ -275,7 +275,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(2).sub(v);
       expect(r.toString()).assertEqual('1.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1800
      * @tc.name testDecimalOverviewPart04TestTest018
@@ -289,7 +289,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(16).div(v);
       expect(r.toString()).assertEqual('4');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_1900
      * @tc.name testDecimalOverviewPart04TestTest019
@@ -303,7 +303,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(11).mod(v);
       expect(r.toString()).assertEqual('2');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2000
      * @tc.name testDecimalOverviewPart04TestTest020
@@ -317,7 +317,7 @@ export default function decimalOverviewPart04TestTest() {
       let eq: boolean = new Decimal(9).equals(v);
       expect(eq).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2100
      * @tc.name testDecimalOverviewPart04TestTest021
@@ -331,7 +331,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(7).dividedToIntegerBy(v);
       expect(r.toString()).assertEqual('3');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2200
      * @tc.name testDecimalOverviewPart04TestTest022
@@ -345,7 +345,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('123.45');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2300
      * @tc.name testDecimalOverviewPart04TestTest023
@@ -359,7 +359,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('0.75');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2400
      * @tc.name testDecimalOverviewPart04TestTest024
@@ -373,7 +373,7 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toString()).assertEqual('100');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2500
      * @tc.name testDecimalOverviewPart04TestTest025
@@ -387,7 +387,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(1.39).toNearest(v);
       expect(r.toString()).assertEqual('1.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2600
      * @tc.name testDecimalOverviewPart04TestTest026
@@ -401,7 +401,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(8).log(v);
       expect(r.toString()).assertEqual('3');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2700
      * @tc.name testDecimalOverviewPart04TestTest027
@@ -415,7 +415,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(10.1).clamp(v, 10);
       expect(r.toString()).assertEqual('10');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2800
      * @tc.name testDecimalOverviewPart04TestTest028
@@ -428,7 +428,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.pow('2', 3);
       expect(r.toString()).assertEqual('8');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_2900
      * @tc.name testDecimalOverviewPart04TestTest029
@@ -442,7 +442,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.atan2(v, 1);
       expect(Math.abs(r.toNumber() - Math.PI / 4)).assertLess(1e-14);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3000
      * @tc.name testDecimalOverviewPart04TestTest030
@@ -455,7 +455,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.sum('2', 3, new Decimal(4), 5);
       expect(r.toString()).assertEqual('14');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3100
      * @tc.name testDecimalOverviewPart04TestTest031
@@ -468,7 +468,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.max('1', new Decimal(2), 3, '4');
       expect(r.toString()).assertEqual('4');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3200
      * @tc.name testDecimalOverviewPart04TestTest032
@@ -481,7 +481,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.min('4', new Decimal(3), 2, '1');
       expect(r.toString()).assertEqual('1');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3300
      * @tc.name testDecimalOverviewPart04TestTest033
@@ -494,7 +494,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.hypot('3', new Decimal(4));
       expect(r.toString()).assertEqual('5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3400
      * @tc.name testDecimalOverviewPart04TestTest034
@@ -511,7 +511,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3500
      * @tc.name testDecimalOverviewPart04TestTest035
@@ -528,7 +528,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3600
      * @tc.name testDecimalOverviewPart04TestTest036
@@ -545,7 +545,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3700
      * @tc.name testDecimalOverviewPart04TestTest037
@@ -562,7 +562,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3800
      * @tc.name testDecimalOverviewPart04TestTest038
@@ -579,7 +579,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_3900
      * @tc.name testDecimalOverviewPart04TestTest039
@@ -596,7 +596,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4000
      * @tc.name testDecimalOverviewPart04TestTest040
@@ -613,7 +613,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4100
      * @tc.name testDecimalOverviewPart04TestTest041
@@ -630,7 +630,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4200
      * @tc.name testDecimalOverviewPart04TestTest042
@@ -647,7 +647,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4300
      * @tc.name testDecimalOverviewPart04TestTest043
@@ -664,7 +664,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4400
      * @tc.name testDecimalOverviewPart04TestTest044
@@ -682,7 +682,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4500
      * @tc.name testDecimalOverviewPart04TestTest045
@@ -700,7 +700,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4600
      * @tc.name testDecimalOverviewPart04TestTest046
@@ -717,7 +717,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4700
      * @tc.name testDecimalOverviewPart04TestTest047
@@ -734,7 +734,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4800
      * @tc.name testDecimalOverviewPart04TestTest048
@@ -751,7 +751,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_4900
      * @tc.name testDecimalOverviewPart04TestTest049
@@ -768,7 +768,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5000
      * @tc.name testDecimalOverviewPart04TestTest050
@@ -785,7 +785,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5100
      * @tc.name testDecimalOverviewPart04TestTest051
@@ -802,7 +802,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5200
      * @tc.name testDecimalOverviewPart04TestTest052
@@ -819,7 +819,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5300
      * @tc.name testDecimalOverviewPart04TestTest053
@@ -836,7 +836,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5400
      * @tc.name testDecimalOverviewPart04TestTest054
@@ -856,8 +856,9 @@ export default function decimalOverviewPart04TestTest() {
       }
       expect(hit).assertTrue();
 
-  
+
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5500
      * @tc.name testDecimalOverviewPart04TestTest055
@@ -874,7 +875,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5600
      * @tc.name testDecimalOverviewPart04TestTest056
@@ -891,7 +892,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5700
      * @tc.name testDecimalOverviewPart04TestTest057
@@ -905,7 +906,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(4).add(v);
       expect(r.toString()).assertEqual('7');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5800
      * @tc.name testDecimalOverviewPart04TestTest058
@@ -920,7 +921,7 @@ export default function decimalOverviewPart04TestTest() {
       expect(a.comparedTo(b)).assertEqual(0);
       expect(a === b).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_5900
      * @tc.name testDecimalOverviewPart04TestTest059
@@ -937,7 +938,7 @@ export default function decimalOverviewPart04TestTest() {
       }
       expect(r.toString()).assertEqual('16');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6000
      * @tc.name testDecimalOverviewPart04TestTest060
@@ -956,7 +957,7 @@ export default function decimalOverviewPart04TestTest() {
       }
       expect(r.toString()).assertEqual('10');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6100
      * @tc.name testDecimalOverviewPart04TestTest061
@@ -973,7 +974,7 @@ export default function decimalOverviewPart04TestTest() {
       }
       expect(r.toString()).assertEqual('12');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6200
      * @tc.name testDecimalOverviewPart04TestTest062
@@ -992,7 +993,7 @@ export default function decimalOverviewPart04TestTest() {
       }
       expect(r.toString()).assertEqual('1');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6300
      * @tc.name testDecimalOverviewPart04TestTest063
@@ -1009,7 +1010,7 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6400
      * @tc.name testDecimalOverviewPart04TestTest064
@@ -1022,7 +1023,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.sum(new Decimal(1), '2', 3);
       expect(r.toString()).assertEqual('6');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6500
      * @tc.name testDecimalOverviewPart04TestTest065
@@ -1037,7 +1038,7 @@ export default function decimalOverviewPart04TestTest() {
       expect(a.toString()).assertEqual(b.toString());
       expect(a.toString()).assertEqual('9.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6600
      * @tc.name testDecimalOverviewPart04TestTest066
@@ -1057,7 +1058,7 @@ export default function decimalOverviewPart04TestTest() {
       }
       expect(r.toString()).assertEqual('5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6700
      * @tc.name testDecimalOverviewPart04TestTest067
@@ -1070,7 +1071,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(10.1).clamp(0, new Decimal(10));
       expect(r.toString()).assertEqual('10');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6800
      * @tc.name testDecimalOverviewPart04TestTest068
@@ -1083,7 +1084,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(-5).clamp(new Decimal(-1), '10');
       expect(r.toString()).assertEqual('-1');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_6900
      * @tc.name testDecimalOverviewPart04TestTest069
@@ -1096,7 +1097,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.atan2('0', new Decimal(1));
       expect(r.toString()).assertEqual('0');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7000
      * @tc.name testDecimalOverviewPart04TestTest070
@@ -1109,7 +1110,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.log(new Decimal(8), '2');
       expect(r.toString()).assertEqual('3');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7100
      * @tc.name testDecimalOverviewPart04TestTest071
@@ -1122,7 +1123,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = new Decimal(9.499).toNearest('0.5', 0);
       expect(r.toString()).assertEqual('9.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7200
      * @tc.name testDecimalOverviewPart04TestTest072
@@ -1136,7 +1137,7 @@ export default function decimalOverviewPart04TestTest() {
       expect(f.length).assertEqual(2);
       expect(f[0].toString()).assertEqual('311');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7300
      * @tc.name testDecimalOverviewPart04TestTest073
@@ -1149,7 +1150,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.add('1.5', new Decimal(2.5));
       expect(r.toString()).assertEqual('4');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7400
      * @tc.name testDecimalOverviewPart04TestTest074
@@ -1162,7 +1163,7 @@ export default function decimalOverviewPart04TestTest() {
       let r: Decimal = Decimal.mul(3, '4');
       expect(r.toString()).assertEqual('12');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7500
      * @tc.name testDecimalOverviewPart04TestTest075
@@ -1177,7 +1178,7 @@ export default function decimalOverviewPart04TestTest() {
       expect(d instanceof Decimal).assertTrue();
       expect(d.valueOf()).assertEqual('2.5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7600
      * @tc.name testDecimalOverviewPart04TestTest076
@@ -1191,75 +1192,58 @@ export default function decimalOverviewPart04TestTest() {
       let d: Decimal = new Decimal(v);
       expect(d.toNumber()).assertEqual(10);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7700
      * @tc.name testDecimalOverviewPart04TestTest077
-     * @tc.desc Verify string|Object 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalOverviewPart04TestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string | Object = { a: 1 } as ESObject;
-      try {
-        let d: Decimal = new Decimal(v as ESObject);
-      } catch (e) {
-        expect((e as BusinessError).code).assertEqual(401);
-      }
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7800
-     * @tc.name testDecimalOverviewPart04TestTest078
      * @tc.desc Verify string|number string '9e15' Decimal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalOverviewPart04TestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalOverviewPart04TestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string | number = '9e15';
       let r: Decimal = new Decimal('9e15').add(v);
       expect(r.toString()).assertEqual('18000000000000000');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7900
-     * @tc.name testDecimalOverviewPart04TestTest079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7800
+     * @tc.name testDecimalOverviewPart04TestTest078
      * @tc.desc Verify number|Decimal Decimal Decimal Infinity
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalOverviewPart04TestTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalOverviewPart04TestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: Decimal | number = new Decimal('1e+308');
       let r: Decimal = new Decimal('1e+308').add(v);
       expect(r.isFinite()).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_8000
-     * @tc.name testDecimalOverviewPart04TestTest080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_7900
+     * @tc.name testDecimalOverviewPart04TestTest079
      * @tc.desc Verify string|number string number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalOverviewPart04TestTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalOverviewPart04TestTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string | number = '2';
       let b: string | number = 2;
       expect(new Decimal(a).comparedTo(new Decimal(b))).assertEqual(0);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_8100
-     * @tc.name testDecimalOverviewPart04TestTest081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_8000
+     * @tc.name testDecimalOverviewPart04TestTest080
      * @tc.desc Verify string|number|Decimal|boolean boolean 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalOverviewPart04TestTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalOverviewPart04TestTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string | number | Decimal | boolean = '1';
       let n: string | number | Decimal | boolean = 2;
       let dec: string | number | Decimal | boolean = new Decimal(3);
@@ -1271,31 +1255,31 @@ export default function decimalOverviewPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_8200
-     * @tc.name testDecimalOverviewPart04TestTest082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_8100
+     * @tc.name testDecimalOverviewPart04TestTest081
      * @tc.desc Verify set precision rest sum
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalOverviewPart04TestTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalOverviewPart04TestTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ precision: 3, rounding: 4 });
       let r: Decimal = Decimal.sum('1.111', new Decimal('2.222'));
       Decimal.set({ precision: 20, rounding: 4 });
       expect(r.toString()).assertEqual('3.33');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_8300
-     * @tc.name testDecimalOverviewPart04TestTest083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_OVERVIEW_PART04_SUPPLEMENT_TEST_8200
+     * @tc.name testDecimalOverviewPart04TestTest082
      * @tc.desc Verify set rounding toNearest
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalOverviewPart04TestTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalOverviewPart04TestTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       Decimal.set({ rounding: 0 });
       let up: Decimal = new Decimal(1.25).toNearest('0.5');
       Decimal.set({ rounding: 1 });
@@ -1304,7 +1288,8 @@ export default function decimalOverviewPart04TestTest() {
       expect(up.toString()).assertEqual('1.5');
       expect(down.toString()).assertEqual('1');
     });
-  
+
+
   });
 
 }

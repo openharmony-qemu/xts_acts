@@ -1849,7 +1849,7 @@ export default function decimalPropertiesPart06TestTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-        it('testDecimalPropertiesPart06TestTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart06TestTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let d: Decimal = new Decimal('0x1p2');
         expect(d.toString()).assertLarger(0);
