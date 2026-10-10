@@ -84,6 +84,8 @@
         "MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStylePaddingNullUndefined",
         "MainAbility/pages/TabContentNullUndefined/TabContentBottomTabBarStyleVerticalAlignNullUndefined",
         "MainAbility/pages/TabContentNullUndefined/tabBarNullUndefined",
-        "MainAbility/pages/animationCurveNullUndefined/animationCurveNullUndefined"
+        "MainAbility/pages/animationCurveNullUndefined/animationCurveNullUndefined",
+        "MainAbility/pages/Tabs/TabsSidebarStyle",
+        "MainAbility/pages/TabContent/TabBarOptionsCoverage"
     ]
 }
