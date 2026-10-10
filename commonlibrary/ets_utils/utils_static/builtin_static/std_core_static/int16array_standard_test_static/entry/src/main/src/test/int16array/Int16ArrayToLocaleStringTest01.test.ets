@@ -312,7 +312,7 @@ export default function Int16ArrayToLocaleStringTest01(): void {
       let val: int = 5678;
       let arr: Int16Array = Int16Array.of(val);
       let result: string = arr.toLocaleString('ru-RU');
-      let expectedResult: string = '5聽678';
+      let expectedResult: string = '5 678';
       expect(result).assertEqual(expectedResult);
     });
 
