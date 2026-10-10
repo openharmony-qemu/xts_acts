@@ -19,7 +19,7 @@ import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function persistenceV2IgnoreReadOnlyPropertiesSetTest() {
+export default function persistenceV2IgnoreReadOnlyPropertiesSet1Test() {
   describe('PersistenceV2IgnoreReadOnlyPropertiesSetTest', () => {
 
     beforeEach(async (done: Function) => {

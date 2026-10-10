@@ -14,11 +14,11 @@
  */
 
 import { PersistenceV2 } from '@kit.ArkUI';
-import { definePlainGetter, getAsBooleanTrue, getDoubled, getValue } from './getter-classes';
+import { definePlainGetter, getValue } from './getter-classes';
 
 @ObservedV2
 class AC08Parent {
-  @Trace other: number = 0;
+  @Trace public other: number = 0;
   set value(v: number) { this.other = v; }
 }
 
