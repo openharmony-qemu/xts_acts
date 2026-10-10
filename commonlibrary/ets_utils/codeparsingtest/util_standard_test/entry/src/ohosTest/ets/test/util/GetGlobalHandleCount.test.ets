@@ -18,6 +18,8 @@ import { util } from '@kit.ArkTS';
 import { BusinessError } from '@kit.BasicServicesKit';
 import worker, { MessageEvents, ErrorEvent } from '@ohos.worker';
 import testNapi from 'libentry.so';
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+import { fileIo as fs } from '@kit.CoreFileKit';
 
 @Sendable
 class SendableData {
@@ -695,6 +697,441 @@ export default function getGlobalHandleCountTest() {
         console.info(`${TAG} afterClear: ${afterClear}`);
         expect(afterClear < afterCreate).assertTrue();
         expect(afterClear - before < TIMER_COUNT).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      } finally {
+        for (let i = 0; i < activeTimerIds.length; i++) {
+          clearInterval(activeTimerIds[i]);
+        }
+        activeTimerIds = [];
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_1900
+     * @tc.desc   Test an independent ark runtime created via napi_create_ark_runtime
+     *            returns a valid global handle count, verifying the sub-thread VM path
+     *            is reachable.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetGlobalHandleCount019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount019';
+      console.info(`${TAG} START`);
+      try {
+        let count: number = testNapi.getSubRuntimeHandleCount();
+        console.info(`${TAG} sub-runtime count: ${count}`);
+        expect(typeof count === 'number').assertTrue();
+        expect(count >= 0).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2000
+     * @tc.desc   Test the ArkTS bridge getGlobalHandleCount and the C API
+     *            napi_get_global_handle_count return the same value on the main thread
+     *            at the same time, verifying AC-1.2 consistency.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetGlobalHandleCount020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount020';
+      console.info(`${TAG} START`);
+      try {
+        let capiCount: number = testNapi.getCApiHandleCount();
+        let arktsCount: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} capiCount: ${capiCount}, arktsCount: ${arktsCount}`);
+        expect(typeof capiCount === 'number' && capiCount >= 0).assertTrue();
+        expect(typeof arktsCount === 'number' && arktsCount >= 0).assertTrue();
+        expect(arktsCount === capiCount).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2100
+     * @tc.desc   Test the ArkTS bridge and the C API return the same value inside a
+     *            worker thread (worker's own VM context), verifying AC-1.2 consistency
+     *            in the worker VM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlobalHandleCount021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount021';
+      console.info(`${TAG} START`);
+      let isTerminate = false;
+      let newWorker = new worker.ThreadWorker('./GetGlobalHandleCountWorker.ets');
+      newWorker.onexit = () => {
+        isTerminate = true;
+      }
+      newWorker.onerror = (err: ErrorEvent) => {
+        console.error(`${TAG} worker error: ${err.message}`);
+        expect().assertFail();
+        newWorker.terminate();
+      }
+      newWorker.onmessage = (e: MessageEvents): void => {
+        let result: number[] = e.data as number[];
+        console.info(`${TAG} worker result: ${result}`);
+        expect(result.length === 2).assertTrue();
+        let arktsCount: number = result[0];
+        let capiCount: number = result[1];
+        console.info(`${TAG} worker arktsCount: ${arktsCount}, capiCount: ${capiCount}`);
+        expect(typeof arktsCount === 'number' && arktsCount >= 0).assertTrue();
+        expect(typeof capiCount === 'number' && capiCount >= 0).assertTrue();
+        expect(arktsCount === capiCount).assertTrue();
+        newWorker.terminate();
+      }
+      newWorker.postMessage('capiConsistency');
+      while (!isTerminate) {
+        await sleep(100);
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2200
+     * @tc.desc   Test that promises created by napi_create_promise but never settled
+     *            (no resolve/reject) keep the global handle count elevated and do not
+     *            fall back, verifying un-closed promises hold references.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlobalHandleCount022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount022';
+      console.info(`${TAG} START`);
+      const PROMISE_COUNT = 10;
+      try {
+        let before: number = util.ArkTSVM.getGlobalHandleCount();
+        let promises: Array<Promise<object>> = testNapi.createPromises(PROMISE_COUNT);
+        expect(promises.length === PROMISE_COUNT).assertTrue();
+        let afterCreate: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} before: ${before}, afterCreate: ${afterCreate}`);
+        expect(afterCreate - before >= PROMISE_COUNT).assertTrue();
+        for (let i = 0; i < promises.length; i++) {
+          promises[i].catch((): void => {});
+        }
+        let afterWait: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} afterWait (not settled): ${afterWait}`);
+        expect(afterWait >= afterCreate).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      } finally {
+        testNapi.clearDeferreds();
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2400
+     * @tc.desc   Test an active setTimeout one-shot timer is held by the native global
+     *            storage: each timer keeps its callback alive through a counted strong
+     *            napi reference, and clearTimeout releases them synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlobalHandleCount024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount024';
+      console.info(`${TAG} START`);
+      const TIMER_COUNT = 10;
+      const TIMER_DELAY_MS = 5000;
+      try {
+        let holder: WrapTarget = new WrapTarget();
+        let before: number = util.ArkTSVM.getGlobalHandleCount();
+        let timerIds: Array<number> = [];
+        for (let i = 0; i < TIMER_COUNT; i++) {
+          let cb = (): void => {
+            console.info(`${TAG} timeout ${holder.value}`);
+          };
+          timerIds.push(setTimeout(cb, TIMER_DELAY_MS));
+        }
+        let afterCreate: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} before: ${before}, afterCreate: ${afterCreate}`);
+        expect(afterCreate - before >= TIMER_COUNT).assertTrue();
+        for (let i = 0; i < timerIds.length; i++) {
+          clearTimeout(timerIds[i]);
+        }
+        let afterClear: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} afterClear: ${afterClear}`);
+        expect(afterClear < afterCreate).assertTrue();
+        expect(afterClear - before < TIMER_COUNT).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2600
+     * @tc.desc   Test getGlobalHandleCount reflects a large batch of 1000 napi_create_reference
+     *            references: the count rises by at least 1000 and falls back after deletion.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlobalHandleCount026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount026';
+      console.info(`${TAG} START`);
+      const BATCH_COUNT = 1000;
+      try {
+        let before: number = util.ArkTSVM.getGlobalHandleCount();
+        let created: boolean = testNapi.createNapiRefs(BATCH_COUNT, 1);
+        expect(created).assertTrue();
+        let afterCreate: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} before: ${before}, afterCreate: ${afterCreate}`);
+        expect(afterCreate - before >= BATCH_COUNT).assertTrue();
+        let deleted: boolean = testNapi.deleteNapiRefs(BATCH_COUNT);
+        expect(deleted).assertTrue();
+        let afterDelete: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} afterDelete: ${afterDelete}`);
+        expect(afterDelete - before < BATCH_COUNT).assertTrue();
+        expect(afterDelete < afterCreate).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      } finally {
+        testNapi.clearNapiRefs();
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2700
+     * @tc.desc   Test main thread and worker thread calling getGlobalHandleCount concurrently
+     *            100 times each: all returns are valid numbers >= 0, main thread returns
+     *            are consistent with the single-thread baseline (no cross-VM interference).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testGetGlobalHandleCount027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount027';
+      console.info(`${TAG} START`);
+      const CALL_TIMES = 100;
+      let baseline: number = util.ArkTSVM.getGlobalHandleCount();
+      let isTerminate = false;
+      let newWorker = new worker.ThreadWorker('./GetGlobalHandleCountWorker.ets');
+      newWorker.onexit = () => {
+        isTerminate = true;
+      }
+      newWorker.onerror = (err: ErrorEvent) => {
+        console.error(`${TAG} worker error: ${err.message}`);
+        expect().assertFail();
+        newWorker.terminate();
+      }
+      let workerResults: number[] = [];
+      newWorker.onmessage = (e: MessageEvents): void => {
+        workerResults = e.data as number[];
+        console.info(`${TAG} worker returned ${workerResults.length} results`);
+        expect(workerResults.length === CALL_TIMES).assertTrue();
+        for (let i = 0; i < workerResults.length; i++) {
+          expect(typeof workerResults[i] === 'number' && workerResults[i] >= 0).assertTrue();
+        }
+        newWorker.terminate();
+      }
+      newWorker.postMessage('concurrentQuery');
+      let mainResults: number[] = [];
+      for (let i = 0; i < CALL_TIMES; i++) {
+        mainResults.push(util.ArkTSVM.getGlobalHandleCount());
+      }
+      console.info(`${TAG} main thread completed ${mainResults.length} calls`);
+      for (let i = 0; i < mainResults.length; i++) {
+        expect(typeof mainResults[i] === 'number' && mainResults[i] >= 0).assertTrue();
+        expect(Math.abs(mainResults[i] - baseline) < 10).assertTrue();
+      }
+      while (!isTerminate) {
+        await sleep(100);
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2800
+     * @tc.desc   Test using getGlobalHandleCount as a threshold trigger for heap profiling:
+     *            when napi_create_reference pushes the count above a threshold, trigger
+     *            hidebug.dumpJsHeapData and verify the snapshot file exists and is non-empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlobalHandleCount028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount028';
+      console.info(`${TAG} START`);
+      const REF_COUNT = 50;
+      const SNAPSHOT_NAME = 'globalhandle_napi_ref';
+      const SNAPSHOT_KEYWORD = 'Object';
+      try {
+        let baseline: number = util.ArkTSVM.getGlobalHandleCount();
+        let threshold: number = baseline + REF_COUNT;
+        let created: boolean = testNapi.createNapiRefs(REF_COUNT, 1);
+        expect(created).assertTrue();
+        let current: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} baseline: ${baseline}, current: ${current}, threshold: ${threshold}`);
+        expect(current >= threshold).assertTrue();
+        if (current >= threshold) {
+          console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, false);
+          let filesDir: string = '/data/storage/el2/base/files/';
+          let files: string[] = fs.listFileSync(filesDir);
+          let found = false;
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].startsWith(SNAPSHOT_NAME)) {
+              let filePath = filesDir + files[i];
+              let fileStat = fs.statSync(filePath);
+              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+              expect(fileStat.size > 0).assertTrue();
+              let content = fs.readTextSync(filePath);
+              console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
+              expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
+              fs.unlinkSync(filePath);
+              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+              found = true;
+              break;
+            }
+          }
+          expect(found).assertTrue();
+        }
+        let deleted: boolean = testNapi.deleteNapiRefs(REF_COUNT);
+        expect(deleted).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      } finally {
+        testNapi.clearNapiRefs();
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_2900
+     * @tc.desc   Test using getGlobalHandleCount as a threshold trigger for heap profiling:
+     *            when napi_create_promise pushes the count above a threshold, trigger
+     *            hidebug.dumpJsHeapData and verify the snapshot file exists and is non-empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlobalHandleCount029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount029';
+      console.info(`${TAG} START`);
+      const PROMISE_COUNT = 50;
+      const SNAPSHOT_NAME = 'globalhandle_promise';
+      const SNAPSHOT_KEYWORD = 'Promise';
+      try {
+        let baseline: number = util.ArkTSVM.getGlobalHandleCount();
+        let threshold: number = baseline + PROMISE_COUNT;
+        let promises: Array<Promise<object>> = testNapi.createPromises(PROMISE_COUNT);
+        expect(promises.length === PROMISE_COUNT).assertTrue();
+        let current: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} baseline: ${baseline}, current: ${current}, threshold: ${threshold}`);
+        expect(current >= threshold).assertTrue();
+        if (current >= threshold) {
+          console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, false);
+          let filesDir: string = '/data/storage/el2/base/files/';
+          let files: string[] = fs.listFileSync(filesDir);
+          let found = false;
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].startsWith(SNAPSHOT_NAME)) {
+              let filePath = filesDir + files[i];
+              let fileStat = fs.statSync(filePath);
+              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+              expect(fileStat.size > 0).assertTrue();
+              let content = fs.readTextSync(filePath);
+              console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
+              expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
+              fs.unlinkSync(filePath);
+              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+              found = true;
+              break;
+            }
+          }
+          expect(found).assertTrue();
+        }
+        for (let i = 0; i < promises.length; i++) {
+          promises[i].catch((): void => {});
+        }
+        let settled: boolean = testNapi.settlePromises();
+        expect(settled).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
+        expect().assertFail();
+      } finally {
+        testNapi.clearDeferreds();
+      }
+      done();
+    });
+    /**
+     * @tc.name   testGetGlobalHandleCount030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBALHANDLECOUNT1_3000
+     * @tc.desc   Test using getGlobalHandleCount as a threshold trigger for heap profiling:
+     *            when setInterval timers push the count above a threshold, trigger
+     *            hidebug.dumpJsHeapData and verify the snapshot file exists and is non-empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetGlobalHandleCount030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const TAG = 'testGetGlobalHandleCount030';
+      console.info(`${TAG} START`);
+      const TIMER_COUNT = 50;
+      const TIMER_INTERVAL_MS = 5000;
+      const SNAPSHOT_NAME = 'globalhandle_setinterval';
+      const SNAPSHOT_KEYWORD = 'Closure';
+      try {
+        let baseline: number = util.ArkTSVM.getGlobalHandleCount();
+        let threshold: number = baseline + TIMER_COUNT;
+        for (let i = 0; i < TIMER_COUNT; i++) {
+          let cb = (): void => {
+            console.info(`${TAG} tick`);
+          };
+          activeTimerIds.push(setInterval(cb, TIMER_INTERVAL_MS));
+        }
+        let current: number = util.ArkTSVM.getGlobalHandleCount();
+        console.info(`${TAG} baseline: ${baseline}, current: ${current}, threshold: ${threshold}`);
+        expect(current >= threshold).assertTrue();
+        if (current >= threshold) {
+          console.info(`${TAG} count exceeded threshold, triggering heap profiler`);
+          hidebug.dumpJsHeapData(SNAPSHOT_NAME, false);
+          let filesDir: string = '/data/storage/el2/base/files/';
+          let files: string[] = fs.listFileSync(filesDir);
+          let found = false;
+          for (let i = 0; i < files.length; i++) {
+            if (files[i].startsWith(SNAPSHOT_NAME)) {
+              let filePath = filesDir + files[i];
+              let fileStat = fs.statSync(filePath);
+              console.info(`${TAG} snapshot file: ${files[i]}, size: ${fileStat.size}`);
+              expect(fileStat.size > 0).assertTrue();
+              let content = fs.readTextSync(filePath);
+              console.info(`${TAG} snapshot size: ${content.length} chars, keyword: ${SNAPSHOT_KEYWORD}`);
+              expect(content.includes(SNAPSHOT_KEYWORD)).assertTrue();
+              fs.unlinkSync(filePath);
+              console.info(`${TAG} deleted snapshot file: ${files[i]}`);
+              found = true;
+              break;
+            }
+          }
+          expect(found).assertTrue();
+        }
+        for (let i = 0; i < activeTimerIds.length; i++) {
+          clearInterval(activeTimerIds[i]);
+        }
+        activeTimerIds = [];
       } catch (err) {
         console.error(`${TAG} failed, error code: ${(err as BusinessError).code}`);
         expect().assertFail();
