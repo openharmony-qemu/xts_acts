@@ -65,18 +65,18 @@ export default function decimalPropertiesPart04TestTest() {
   describe('DecimalPropertiesPart04TestTest', () => {
     beforeAll(() => {
     });
-  
+
     beforeEach(async () => {
       await sleep(30);
     });
-  
+
     afterEach(() => {
     });
-  
+
     afterAll(() => {
     });
-  
-  
+
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0100
      * @tc.name testDecimalPropertiesPart04TestTest001
@@ -91,7 +91,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.e).assertEqual(2);
       expect(dec.s).assertEqual(1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0200
      * @tc.name testDecimalPropertiesPart04TestTest002
@@ -106,7 +106,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(88);
       expect(dec.e).assertEqual(1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0300
      * @tc.name testDecimalPropertiesPart04TestTest003
@@ -119,7 +119,7 @@ export default function decimalPropertiesPart04TestTest() {
       let u: ESObject = undefined;
       expect(tryBuild(u)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0400
      * @tc.name testDecimalPropertiesPart04TestTest004
@@ -135,7 +135,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(987);
       expect(dec.e).assertEqual(2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0500
      * @tc.name testDecimalPropertiesPart04TestTest005
@@ -150,7 +150,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(2);
       expect(dec.e).assertEqual(2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0600
      * @tc.name testDecimalPropertiesPart04TestTest006
@@ -166,7 +166,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(100000);
       expect(dec.e).assertEqual(5);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0700
      * @tc.name testDecimalPropertiesPart04TestTest007
@@ -181,7 +181,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(100000);
       expect(dec.e).assertEqual(5);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0800
      * @tc.name testDecimalPropertiesPart04TestTest008
@@ -196,7 +196,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(100);
       expect(dec.e).assertEqual(-5);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_0900
      * @tc.name testDecimalPropertiesPart04TestTest009
@@ -211,7 +211,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(100);
       expect(dec.e).assertEqual(-5);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1000
      * @tc.name testDecimalPropertiesPart04TestTest010
@@ -227,7 +227,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(2);
       expect(dec.d[1]).assertEqual(5000000);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1100
      * @tc.name testDecimalPropertiesPart04TestTest011
@@ -242,7 +242,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.s).assertEqual(-1);
       expect(dec.d[1]).assertEqual(5000000);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1200
      * @tc.name testDecimalPropertiesPart04TestTest012
@@ -262,7 +262,7 @@ export default function decimalPropertiesPart04TestTest() {
       }
       expect(ok).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1300
      * @tc.name testDecimalPropertiesPart04TestTest013
@@ -275,7 +275,7 @@ export default function decimalPropertiesPart04TestTest() {
       let v: string | number = '';
       expect(tryBuild(v)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1400
      * @tc.name testDecimalPropertiesPart04TestTest014
@@ -290,7 +290,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(2);
       expect(dec.e).assertEqual(2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1500
      * @tc.name testDecimalPropertiesPart04TestTest015
@@ -304,7 +304,7 @@ export default function decimalPropertiesPart04TestTest() {
       let dec: Decimal = new Decimal(v);
       expect(dec.e).assertEqual(2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1600
      * @tc.name testDecimalPropertiesPart04TestTest016
@@ -323,7 +323,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(a.e).assertEqual(2);
       expect(b.e).assertEqual(2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1700
      * @tc.name testDecimalPropertiesPart04TestTest017
@@ -332,13 +332,13 @@ export default function decimalPropertiesPart04TestTest() {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-        it('testDecimalPropertiesPart04TestTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: string | Decimal = '0';
-      let b: string | Decimal = new Decimal('0');
-      expect(new Decimal(a).toString()).assertEqual('0');
-      expect(new Decimal(b).isZero()).assertTrue();
+    it('testDecimalPropertiesPart04TestTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+  let a: string | Decimal = '0';
+  let b: string | Decimal = new Decimal('0');
+  expect(new Decimal(a).toString()).assertEqual('0');
+  expect(new Decimal(b).isZero()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1800
      * @tc.name testDecimalPropertiesPart04TestTest018
@@ -354,7 +354,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(a).e).assertEqual(-3);
       expect(new Decimal(b).s).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_1900
      * @tc.name testDecimalPropertiesPart04TestTest019
@@ -371,7 +371,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(a === b).assertFalse();
       expect(a.d[0]).assertEqual(6);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2000
      * @tc.name testDecimalPropertiesPart04TestTest020
@@ -386,7 +386,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(5);
       expect(dec.e).assertEqual(29);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2100
      * @tc.name testDecimalPropertiesPart04TestTest021
@@ -401,7 +401,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(5);
       expect(dec.e).assertEqual(29);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2200
      * @tc.name testDecimalPropertiesPart04TestTest022
@@ -416,7 +416,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(2);
       expect(dec.e).assertEqual(4);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2300
      * @tc.name testDecimalPropertiesPart04TestTest023
@@ -430,7 +430,7 @@ export default function decimalPropertiesPart04TestTest() {
       let dec: Decimal = new Decimal(v);
       expect(dec.e).assertEqual(4);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2400
      * @tc.name testDecimalPropertiesPart04TestTest024
@@ -446,7 +446,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(1000000);
       expect(dec.e).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2500
      * @tc.name testDecimalPropertiesPart04TestTest025
@@ -461,7 +461,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(viaNum).d[0]).assertEqual(1000000);
       expect(new Decimal(viaDec).e).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2600
      * @tc.name testDecimalPropertiesPart04TestTest026
@@ -477,7 +477,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(0);
       expect(dec.e).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2700
      * @tc.name testDecimalPropertiesPart04TestTest027
@@ -492,7 +492,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.s).assertEqual(-1);
       expect(dec.d[0]).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2800
      * @tc.name testDecimalPropertiesPart04TestTest028
@@ -508,7 +508,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(90);
       expect(dec.e).assertEqual(15);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_2900
      * @tc.name testDecimalPropertiesPart04TestTest029
@@ -523,7 +523,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(3);
       expect(dec.e).assertEqual(15);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3000
      * @tc.name testDecimalPropertiesPart04TestTest030
@@ -546,7 +546,7 @@ export default function decimalPropertiesPart04TestTest() {
       }
       expect(ok).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3100
      * @tc.name testDecimalPropertiesPart04TestTest031
@@ -564,7 +564,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(c).s).assertEqual(-1);
       expect(new Decimal(a).d[1]).assertEqual(undefined);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3200
      * @tc.name testDecimalPropertiesPart04TestTest032
@@ -581,7 +581,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(a).e).assertEqual(-2);
       expect(new Decimal(c).e).assertEqual(-2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3300
      * @tc.name testDecimalPropertiesPart04TestTest033
@@ -598,7 +598,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(b).e).assertEqual(-7);
       expect(new Decimal(c).e).assertEqual(-7);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3400
      * @tc.name testDecimalPropertiesPart04TestTest034
@@ -615,7 +615,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(b).e).assertEqual(15);
       expect(new Decimal(c).e).assertEqual(15);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3500
      * @tc.name testDecimalPropertiesPart04TestTest035
@@ -633,7 +633,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(b).d[0]).assertEqual(1000);
       expect(new Decimal(c).e).assertEqual(3);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3600
      * @tc.name testDecimalPropertiesPart04TestTest036
@@ -650,7 +650,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(b).d[0]).assertEqual(0);
       expect(new Decimal(c).e).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3700
      * @tc.name testDecimalPropertiesPart04TestTest037
@@ -667,7 +667,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(b).s).assertEqual(-1);
       expect(new Decimal(c).s).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3800
      * @tc.name testDecimalPropertiesPart04TestTest038
@@ -684,7 +684,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(b).d.length).assertEqual(3);
       expect(new Decimal(c).e).assertEqual(15);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_3900
      * @tc.name testDecimalPropertiesPart04TestTest039
@@ -701,7 +701,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dispatch(b)).assertEqual(6);
       expect(dispatch(c)).assertEqual(6);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4000
      * @tc.name testDecimalPropertiesPart04TestTest040
@@ -714,7 +714,7 @@ export default function decimalPropertiesPart04TestTest() {
       let v: string | number | Decimal | boolean = true;
       expect(tryBuild(v)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4100
      * @tc.name testDecimalPropertiesPart04TestTest041
@@ -727,7 +727,7 @@ export default function decimalPropertiesPart04TestTest() {
       let v: string | number | Decimal | boolean = false;
       expect(tryBuild(v)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4200
      * @tc.name testDecimalPropertiesPart04TestTest042
@@ -742,7 +742,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(okV).d[0]).assertEqual(42);
       expect(tryBuild(badV)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4300
      * @tc.name testDecimalPropertiesPart04TestTest043
@@ -755,7 +755,7 @@ export default function decimalPropertiesPart04TestTest() {
       let v: string | number | Decimal | null = null;
       expect(tryBuild(v)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4400
      * @tc.name testDecimalPropertiesPart04TestTest044
@@ -768,7 +768,7 @@ export default function decimalPropertiesPart04TestTest() {
       let v: string | number | Decimal | undefined = undefined;
       expect(tryBuild(v)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4500
      * @tc.name testDecimalPropertiesPart04TestTest045
@@ -781,7 +781,7 @@ export default function decimalPropertiesPart04TestTest() {
       let v: string | number | Decimal | null | undefined = null;
       expect(dispatchNullable(v)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4600
      * @tc.name testDecimalPropertiesPart04TestTest046
@@ -794,7 +794,7 @@ export default function decimalPropertiesPart04TestTest() {
       let v: string | number | Decimal | null | undefined = undefined;
       expect(dispatchNullable(v)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4700
      * @tc.name testDecimalPropertiesPart04TestTest047
@@ -809,7 +809,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(numV).d.length).assertEqual(1);
       expect(tryBuild(boolV)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4800
      * @tc.name testDecimalPropertiesPart04TestTest048
@@ -824,7 +824,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(strV).d[0]).assertEqual(3);
       expect(tryBuild(nullV)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_4900
      * @tc.name testDecimalPropertiesPart04TestTest049
@@ -838,7 +838,7 @@ export default function decimalPropertiesPart04TestTest() {
       let undefV: number | undefined = undefined;
       expect(tryBuild(undefV)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5000
      * @tc.name testDecimalPropertiesPart04TestTest050
@@ -853,7 +853,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(refV).d[1]).assertEqual(5000000);
       expect(tryBuild(nullV)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5100
      * @tc.name testDecimalPropertiesPart04TestTest051
@@ -868,7 +868,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(tryBuild(objV)).assertEqual(-1);
       expect(new Decimal(strV as ESObject).d[0]).assertEqual(9);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5200
      * @tc.name testDecimalPropertiesPart04TestTest052
@@ -883,7 +883,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(tryBuild(arrV)).assertEqual(-1);
       expect(new Decimal(strV).d[0]).assertEqual(4);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5300
      * @tc.name testDecimalPropertiesPart04TestTest053
@@ -897,7 +897,7 @@ export default function decimalPropertiesPart04TestTest() {
       let strV: Map<string, number> | string = '2.125';
       expect(tryBuild(mapV)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5400
      * @tc.name testDecimalPropertiesPart04TestTest054
@@ -912,7 +912,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(tryBuild(setV)).assertEqual(-1);
       expect(new Decimal(numV).d[0]).assertEqual(7);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5500
      * @tc.name testDecimalPropertiesPart04TestTest055
@@ -927,7 +927,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(tryBuild(dateV)).assertEqual(-1);
       expect(new Decimal(strV).e).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5600
      * @tc.name testDecimalPropertiesPart04TestTest056
@@ -944,7 +944,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(tryBuild(b)).assertEqual(-1);
       expect(tryBuild(c)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5700
      * @tc.name testDecimalPropertiesPart04TestTest057
@@ -964,7 +964,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(3);
       expect(dec.d.length).assertEqual(2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5800
      * @tc.name testDecimalPropertiesPart04TestTest058
@@ -984,7 +984,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(8);
       expect(dec.e).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_5900
      * @tc.name testDecimalPropertiesPart04TestTest059
@@ -1005,7 +1005,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[1]).assertEqual(5000000);
       expect(dec.e).assertEqual(1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6000
      * @tc.name testDecimalPropertiesPart04TestTest060
@@ -1025,7 +1025,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(6);
       expect(dec.d[1]).assertEqual(5000000);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6100
      * @tc.name testDecimalPropertiesPart04TestTest061
@@ -1049,7 +1049,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(4);
       expect(dec.d.length).assertEqual(2);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6200
      * @tc.name testDecimalPropertiesPart04TestTest062
@@ -1073,7 +1073,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(7);
       expect(dec.e).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6300
      * @tc.name testDecimalPropertiesPart04TestTest063
@@ -1096,7 +1096,7 @@ export default function decimalPropertiesPart04TestTest() {
       }
       expect(dec.d[0]).assertEqual(9);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6400
      * @tc.name testDecimalPropertiesPart04TestTest064
@@ -1119,7 +1119,7 @@ export default function decimalPropertiesPart04TestTest() {
       }
       expect(ok).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6500
      * @tc.name testDecimalPropertiesPart04TestTest065
@@ -1141,7 +1141,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(6);
       expect(obj.signed).assertEqual(1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6600
      * @tc.name testDecimalPropertiesPart04TestTest066
@@ -1156,7 +1156,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(viaStr.d[0]).assertEqual(11);
       expect(viaStr.e).assertEqual(1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6700
      * @tc.name testDecimalPropertiesPart04TestTest067
@@ -1173,7 +1173,7 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(pos).d[0]).assertEqual(3);
       expect(new Decimal(neg).d[0]).assertEqual(3);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6800
      * @tc.name testDecimalPropertiesPart04TestTest068
@@ -1192,42 +1192,29 @@ export default function decimalPropertiesPart04TestTest() {
       let missing: Record<string, ESObject> = { value: undefined, signed: 1 } as ESObject;
       expect(tryBuild(missing.value)).assertEqual(-1);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_6900
      * @tc.name testDecimalPropertiesPart04TestTest069
-     * @tc.desc Verify value undefined 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalPropertiesPart04TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value: ESObject = undefined;
-      expect(tryBuild(value)).assertEqual(-1);
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7000
-     * @tc.name testDecimalPropertiesPart04TestTest070
      * @tc.desc Verify value null 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let value: ESObject = null;
       expect(tryBuild(value)).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7100
-     * @tc.name testDecimalPropertiesPart04TestTest071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7000
+     * @tc.name testDecimalPropertiesPart04TestTest070
      * @tc.desc Verify value + extra extra
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       interface Holder {
         value: string | number | Decimal;
         extra: string;
@@ -1238,16 +1225,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(2);
       expect(h.extra).assertEqual('meta');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7200
-     * @tc.name testDecimalPropertiesPart04TestTest072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7100
+     * @tc.name testDecimalPropertiesPart04TestTest071
      * @tc.desc Verify value string '1e2' e=2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       interface Holder {
         value: string | number | Decimal;
       }
@@ -1256,16 +1243,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(100);
       expect(dec.e).assertEqual(2);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7300
-     * @tc.name testDecimalPropertiesPart04TestTest073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7200
+     * @tc.name testDecimalPropertiesPart04TestTest072
      * @tc.desc Verify value Decimal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       interface Holder {
         value: string | number | Decimal;
       }
@@ -1275,16 +1262,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d.length).assertEqual(2);
       expect(dec.s).assertEqual(1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7400
-     * @tc.name testDecimalPropertiesPart04TestTest074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7300
+     * @tc.name testDecimalPropertiesPart04TestTest073
      * @tc.desc Verify value string s=1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       interface Holder {
         value: string | number | Decimal;
       }
@@ -1294,31 +1281,31 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[1]).assertEqual(1250000);
       expect(dec.e).assertEqual(0);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7500
-     * @tc.name testDecimalPropertiesPart04TestTest075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7400
+     * @tc.name testDecimalPropertiesPart04TestTest074
      * @tc.desc Verify d string number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string | number = '77.7';
       let b: string | number = 77.7;
       expect(new Decimal(a).d.length).assertEqual(2);
       expect(new Decimal(b).d.length).assertEqual(2);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7600
-     * @tc.name testDecimalPropertiesPart04TestTest076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7500
+     * @tc.name testDecimalPropertiesPart04TestTest075
      * @tc.desc Verify add d/e/s
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: string | number | Decimal = '3.5';
       let dec: Decimal = new Decimal(src);
       let sum: Decimal = dec.add('1.5');
@@ -1327,16 +1314,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.s).assertEqual(1);
       expect(sum.toString()).assertEqual('5');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7700
-     * @tc.name testDecimalPropertiesPart04TestTest077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7600
+     * @tc.name testDecimalPropertiesPart04TestTest076
      * @tc.desc Verify negate s d e
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: string | number | Decimal = '6.5';
       let dec: Decimal = new Decimal(src);
       let neg: Decimal = dec.negate();
@@ -1345,16 +1332,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(neg.e).assertEqual(0);
       expect(dec.s).assertEqual(1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7800
-     * @tc.name testDecimalPropertiesPart04TestTest078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7700
+     * @tc.name testDecimalPropertiesPart04TestTest077
      * @tc.desc Verify toString d/e digits 10^(e-len+1)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: string | number | Decimal = '45.5';
       let dec: Decimal = new Decimal(src);
       let s: string = dec.toString();
@@ -1362,31 +1349,31 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.d[0]).assertEqual(45);
       expect(dec.e).assertEqual(1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7900
-     * @tc.name testDecimalPropertiesPart04TestTest079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7800
+     * @tc.name testDecimalPropertiesPart04TestTest078
      * @tc.desc Verify e toString
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: string | number | Decimal | boolean = '9e3';
       let dec: Decimal = new Decimal(src);
       expect(dec.e).assertEqual(3);
       expect(dec.toString()).assertEqual('9000');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8000
-     * @tc.name testDecimalPropertiesPart04TestTest080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_7900
+     * @tc.name testDecimalPropertiesPart04TestTest079
      * @tc.desc Verify union/intersection
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inner: Decimal = new Decimal('8.5');
       let dec: Decimal = new Decimal(inner);
       let grown: Decimal = dec.add('1');
@@ -1394,16 +1381,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(dec.toString()).assertEqual('8.5');
       expect(inner.toString()).assertEqual('8.5');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8100
-     * @tc.name testDecimalPropertiesPart04TestTest081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8000
+     * @tc.name testDecimalPropertiesPart04TestTest080
      * @tc.desc Verify null 401 catch
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string | number | Decimal | null = null;
       try {
         let dec: Decimal = new Decimal(v as ESObject);
@@ -1412,16 +1399,16 @@ export default function decimalPropertiesPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8200
-     * @tc.name testDecimalPropertiesPart04TestTest082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8100
+     * @tc.name testDecimalPropertiesPart04TestTest081
      * @tc.desc Verify undefined 401 null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string | number | Decimal | undefined = undefined;
       try {
         let dec: Decimal = new Decimal(v as ESObject);
@@ -1430,29 +1417,29 @@ export default function decimalPropertiesPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8300
-     * @tc.name testDecimalPropertiesPart04TestTest083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8200
+     * @tc.name testDecimalPropertiesPart04TestTest082
      * @tc.desc Verify value undefined 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let box: Record<string, ESObject> = {};
       expect(tryBuild(box.value)).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8400
-     * @tc.name testDecimalPropertiesPart04TestTest084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8300
+     * @tc.name testDecimalPropertiesPart04TestTest083
      * @tc.desc Verify boolean 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string | number | Decimal | boolean = true;
       try {
         let dec: Decimal = new Decimal(v as ESObject);
@@ -1461,37 +1448,53 @@ export default function decimalPropertiesPart04TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8500
-     * @tc.name testDecimalPropertiesPart04TestTest085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8400
+     * @tc.name testDecimalPropertiesPart04TestTest084
      * @tc.desc Verify NaN number 401 number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string | number | Decimal = NaN;
       expect(tryBuild(v)).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8600
-     * @tc.name testDecimalPropertiesPart04TestTest086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8500
+     * @tc.name testDecimalPropertiesPart04TestTest085
      * @tc.desc Verify Infinity number 401 number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string | number | Decimal = Infinity;
       expect(tryBuild(v)).assertEqual(-1);
     });
-  
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8600
+     * @tc.name testDecimalPropertiesPart04TestTest086
+     * @tc.desc Verify value boolean 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalPropertiesPart04TestTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      interface Holder {
+        value: string | number | Decimal;
+      }
+      let h: Holder = { value: true as ESObject };
+      expect(tryBuild(h.value)).assertEqual(-1);
+    });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8700
      * @tc.name testDecimalPropertiesPart04TestTest087
-     * @tc.desc Verify value boolean 401
+     * @tc.desc Verify value NaN 401 number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1500,66 +1503,50 @@ export default function decimalPropertiesPart04TestTest() {
       interface Holder {
         value: string | number | Decimal;
       }
-      let h: Holder = { value: true as ESObject };
-      expect(tryBuild(h.value)).assertEqual(-1);
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8800
-     * @tc.name testDecimalPropertiesPart04TestTest088
-     * @tc.desc Verify value NaN 401 number
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalPropertiesPart04TestTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      interface Holder {
-        value: string | number | Decimal;
-      }
       let h: Holder = { value: NaN as ESObject };
       expect(tryBuild(h.value)).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8900
-     * @tc.name testDecimalPropertiesPart04TestTest089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8800
+     * @tc.name testDecimalPropertiesPart04TestTest088
      * @tc.desc Verify string|number '987.654'/987.654 '1e5'/1e5 '-2.5'/-2.5 [DP-COMPOSITE-UNION-INTERSECT
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string | number = '6.75';
       let b: string | number = 6.75;
       expect(new Decimal(a).d.length).assertEqual(2);
       expect(new Decimal(b).d[1]).assertEqual(7500000);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9000
-     * @tc.name testDecimalPropertiesPart04TestTest090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_8900
+     * @tc.name testDecimalPropertiesPart04TestTest089
      * @tc.desc Verify Value '0.0625'/0.0625/Decimal('0.0625') e
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string | number | Decimal = '0.75';
       let b: string | number | Decimal = 0.75;
       let c: string | number | Decimal = new Decimal('0.75');
       expect(new Decimal(a).e).assertEqual(-1);
       expect(new Decimal(c).e).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9100
-     * @tc.name testDecimalPropertiesPart04TestTest091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9000
+     * @tc.name testDecimalPropertiesPart04TestTest090
      * @tc.desc Verify string|number|Decimal|boolean boolean 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: string | number | Decimal | boolean = '9';
       let n: string | number | Decimal | boolean = 9;
       let d: string | number | Decimal | boolean = new Decimal('9');
@@ -1569,16 +1556,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(d).e).assertEqual(0);
       expect(tryBuild(b)).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9200
-     * @tc.name testDecimalPropertiesPart04TestTest092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9100
+     * @tc.name testDecimalPropertiesPart04TestTest091
      * @tc.desc Verify null/undefined string|null number|undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sn: string | null = '3';
       let nn: number | undefined = 8;
       expect(new Decimal(sn).d[0]).assertEqual(3);
@@ -1586,16 +1573,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(tryBuild(null)).assertEqual(-1);
       expect(tryBuild(undefined)).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9300
-     * @tc.name testDecimalPropertiesPart04TestTest093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9200
+     * @tc.name testDecimalPropertiesPart04TestTest092
      * @tc.desc Verify / Decimal null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let refV: Decimal | object | null = new Decimal('2.5');
       let arrV: Decimal | object | null = {} as ESObject;
       let nullV: Decimal | object | null = null;
@@ -1603,16 +1590,16 @@ export default function decimalPropertiesPart04TestTest() {
       expect(tryBuild(arrV)).assertEqual(-1);
       expect(tryBuild(nullV)).assertEqual(-1);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9400
-     * @tc.name testDecimalPropertiesPart04TestTest094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9300
+     * @tc.name testDecimalPropertiesPart04TestTest093
      * @tc.desc Verify '4.5' Decimal('4.5') number 4.5 d/e
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: string | number | Decimal = '4.5';
       let b: string | number | Decimal = new Decimal('4.5');
       let c: string | number | Decimal = 4.5;
@@ -1620,22 +1607,23 @@ export default function decimalPropertiesPart04TestTest() {
       expect(new Decimal(b).e).assertEqual(0);
       expect(new Decimal(c).d[1]).assertEqual(5000000);
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9500
-     * @tc.name testDecimalPropertiesPart04TestTest095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_PROPERTIES_PART04_SUPPLEMENT_TEST_9400
+     * @tc.name testDecimalPropertiesPart04TestTest094
      * @tc.desc Verify Value 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalPropertiesPart04TestTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalPropertiesPart04TestTest094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: string | number | Decimal = '3.14';
       let dec: Decimal = new Decimal(v);
       expect(dec.d.length).assertEqual(2);
       expect(dec.e).assertEqual(0);
     });
-  
+
+
   });
 
 }
