@@ -105,6 +105,8 @@ public:
     bool isSurfaceExpired = false;
     bool isSurfaceReset = false;
     uint32_t inputCount = 0;
+    bool enableDmabufNameSuffix = false;
+    std::string dmabufNameSuffix;
     int32_t Start();
     int32_t Stop();
     int32_t Flush();

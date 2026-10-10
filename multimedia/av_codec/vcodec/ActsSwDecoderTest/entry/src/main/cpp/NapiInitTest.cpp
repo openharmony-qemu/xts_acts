@@ -265,6 +265,7 @@ static void RegisterChunk5(napi_env env, napi_value exports)
         XL("VideoDecodeSyncSw264Func0020", VideoDecodeSyncSw264Func0020),
         XL("VideoDecodeSyncSw264Func0040", VideoDecodeSyncSw264Func0040),
         XL("VideoSwdecodeBlankFrame0010", VideoSwdecodeBlankFrame0010),
+        XL("VideoDecoderS264DmabufSuffix0010", VideoDecoderS264DmabufSuffix0010),
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
 }

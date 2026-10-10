@@ -103,6 +103,8 @@ public:
                                         "5C", "76", "E7", "71", "8A", "B3", "C0", "51", "84", "0A", "FA", "AF", "FA",
                                         "DC", "7B", "C5", "26", "D1", "9A", "CA", "00", "DE", "FC", "C8", "4E", "34",
                                         "C5", "9A", "43", "59", "85", "DC", "AC", "97", "A3", "FB", "23", "51"};
+    bool enableDmabufNameSuffix = false;
+    std::string dmabufNameSuffix;
     int32_t Start();
     int32_t Stop();
     int32_t Flush();
