@@ -17,45 +17,18 @@
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Utils.test';
 import inspector from '@ohos.arkui.inspector';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
-import common from '@ohos.app.ability.common';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
-let testAbilityContext: common.UIAbilityContext;
 
 export default function webResourceResponseSetResponseBodyParam(): void {
 
   describe('webResourceResponseSetResponseBodyParamStaticTest', (): void => {
 
     beforeAll(async (): Promise<void> => {
-      console.log('App start')
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: 'EntryAbility',
-        moduleName: 'entry',
-        onAbilityCreate: (abilitys: UIAbility): void => {
-          testAbilityContext = abilitys.context
-          console.log('onAbilityCreate end')
-        },
-      }, (err: BusinessError<void> | null): void => {
-        if (err != null) {
-          console.log('-----' + err.code)
-        }
-        console.log('BusinessError  end')
-      });
-      await Utils.msSleep(2000)
-      let cmd = 'aa start -a EntryAbility -b com.open.harmony.runjavascripttest.static';
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-      if (user !== undefined) {
-        cmd += ' -u ' + user;
-      }
-      abilityDelegator.executeShellCommand(cmd)
-      await Utils.msSleep(2000)
+      // 接在 componentLifeCycleTestOneAdapt001 之后，当前在 webTwo；勿 aa start（易与 JsMessageExtButton 竞态导致 beforeAll 失败）
+      await Utils.msSleep(2000);
       Utils.emitEvent('GoSetResponseBodyPageStatic', 10);
-      await Utils.msSleep(1000);
-      inspector.sendEventByKey('JsMessageExtButton', 10, '');
-      await Utils.msSleep(2000)
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webcomponent', 10, '');
+      await Utils.msSleep(3000);
       console.log('beforeAll end,%s', 'Succeed!')
     });
 
@@ -75,11 +48,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyNullStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyNullStatic001', 'success', 174710, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -94,11 +67,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyUndefinedStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyUndefinedStatic001', 'success', 174720, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -113,11 +86,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyEmptyStringStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyEmptyStringStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyEmptyStringStatic001', 'success', 174730, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -132,11 +105,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyHtmlStringStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyHtmlStringStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyHtmlStringStatic001', 'success', 174735, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -151,11 +124,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyNumberStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyNumberStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyNumberStatic001', 'success', 174740, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -170,11 +143,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyNumberZeroStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyNumberZeroStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyNumberZeroStatic001', 'success', 174750, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -189,11 +162,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyNumberNegativeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyNumberNegativeStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyNumberNegativeStatic001', 'success', 174760, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -208,11 +181,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyResourceStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyResourceStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyResourceStatic001', 'success', 174770, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
 
@@ -227,11 +200,11 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     it('testSetResponseBodyArrayBufferStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSetResponseBodyArrayBufferStatic001', 174700);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         Utils.registerEvent('testSetResponseBodyArrayBufferStatic001', 'success', 174780, done);
-        await Utils.msSleep(1000);
+        await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(6000);
         done();
       })
   })

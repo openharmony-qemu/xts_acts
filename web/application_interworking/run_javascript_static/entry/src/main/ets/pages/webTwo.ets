@@ -31,6 +31,7 @@ import Utils from '../../src/test/Utils.test';
 import events_emitter from '@ohos.events.emitter';
 import emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 export class StringFields {
   public str: string = '';
@@ -78,6 +79,14 @@ struct Index {
 
             case 'getSourceIdStatic': {
               this.controller.runJavaScript('consoleTest()');
+              break;
+            }
+
+            case 'GoSetResponseBodyPageStatic': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webResourceResponseSetResponseBodyParam' })
+              console.log('push setResponseBody page success from webTwo')
               break;
             }
 
