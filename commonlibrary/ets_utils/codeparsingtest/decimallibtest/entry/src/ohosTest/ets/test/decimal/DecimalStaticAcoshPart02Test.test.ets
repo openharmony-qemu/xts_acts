@@ -677,3 +677,365 @@ export default function decimalStaticAcoshPart02TestTest() {
       let thrown = false;
       try {
         Decimal.acosh('2abc');
+      } catch (e) {
+        thrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_4500
+     * @tc.name testDecimalStaticAcoshPart02TestTest045
+     * @tc.desc Verify '1e' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let thrown = false;
+      try {
+        Decimal.acosh('1e');
+      } catch (e) {
+        thrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_4600
+     * @tc.name testDecimalStaticAcoshPart02TestTest046
+     * @tc.desc Verify acosh('2') / acosh(2) / acosh(new Decimal(2))
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Decimal.acosh('2');
+      const b = Decimal.acosh(2);
+      const c = Decimal.acosh(new Decimal(2));
+      expect(a.toString()).assertEqual(b.toString());
+      expect(b.toString()).assertEqual(c.toString());
+      expect(a.toString()).assertEqual('1.3169578969248167086');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_4700
+     * @tc.name testDecimalStaticAcoshPart02TestTest047
+     * @tc.desc Verify string|number acosh('1.5') acosh(1.5)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s = Decimal.acosh('1.5');
+      const n = Decimal.acosh(1.5);
+      expect(s.toString()).assertEqual(n.toString());
+      expect(s.toString()).assertEqual('0.962423650119206895');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_4800
+     * @tc.name testDecimalStaticAcoshPart02TestTest048
+     * @tc.desc Verify number|Decimal acosh(10) acosh(new Decimal('10'))
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const n = Decimal.acosh(10);
+      const d = Decimal.acosh(new Decimal('10'));
+      expect(n.toString()).assertEqual(d.toString());
+      expect(n.toString()).assertEqual('2.9932228461263808979');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_4900
+     * @tc.name testDecimalStaticAcoshPart02TestTest049
+     * @tc.desc Verify string|Decimal acosh('3') acosh(new Decimal('3'))
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const s = Decimal.acosh('3');
+      const d = Decimal.acosh(new Decimal('3'));
+      expect(s.toString()).assertEqual(d.toString());
+      expect(s.toString()).assertEqual('1.7627471740390860505');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5000
+     * @tc.name testDecimalStaticAcoshPart02TestTest050
+     * @tc.desc Verify number acosh(0x10)=acosh(16) string acosh('0x10') 401 [DP-COMPOSITE-UNION
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+  const r = Decimal.acosh(0x10);
+  expect(r.isFinite()).assertTrue();
+  let rad: Decimal = Decimal.acosh('0x10');
+  expect(rad.toString()).assertEqual(r.toString());
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5100
+     * @tc.name testDecimalStaticAcoshPart02TestTest051
+     * @tc.desc Verify Decimal acosh(new Decimal('1.25')) ln(2)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = Decimal.acosh(new Decimal('1.25'));
+      expect(r.toString()).assertEqual('0.69314718055994530942');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5200
+     * @tc.name testDecimalStaticAcoshPart02TestTest052
+     * @tc.desc Verify number acosh(-0) NaN string acosh('-0')
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Decimal.acosh(-0).isNaN()).assertTrue();
+      expect(Decimal.acosh('-0').isNaN()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5300
+     * @tc.name testDecimalStaticAcoshPart02TestTest053
+     * @tc.desc Verify null undefined 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let nullThrown = false;
+      try {
+        Decimal.acosh(null as ESObject);
+      } catch (e) {
+        nullThrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(nullThrown).assertTrue();
+      let undefThrown = false;
+      try {
+        Decimal.acosh(undefined as ESObject);
+      } catch (e) {
+        undefThrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(undefThrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5400
+     * @tc.name testDecimalStaticAcoshPart02TestTest054
+     * @tc.desc Verify string 'abc' 401 number 2
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Decimal.acosh(2).toString()).assertEqual('1.3169578969248167086');
+      let thrown = false;
+      try {
+        Decimal.acosh('abc');
+      } catch (e) {
+        thrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5500
+     * @tc.name testDecimalStaticAcoshPart02TestTest055
+     * @tc.desc Verify Decimal object object number number [DP-COMPOSITE-UNION-INTE
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+  let thrown = false;
+  try {
+    const wrapped = new Number(3);
+    Decimal.acosh(wrapped as ESObject);
+  } catch (e) {
+    thrown = true;
+    expect((e as BusinessError).code).assertEqual(401);
+  }
+  expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5600
+     * @tc.name testDecimalStaticAcoshPart02TestTest056
+     * @tc.desc Verify Decimal acosh(new Decimal('2')) acosh(new Decimal(2)) [DP-COMPOSITE-UNION-INT
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Decimal.acosh(new Decimal('2'));
+      const b = Decimal.acosh(new Decimal(2));
+      expect(a.toString()).assertEqual(b.toString());
+      expect(a.toString()).assertEqual('1.3169578969248167086');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5700
+     * @tc.name testDecimalStaticAcoshPart02TestTest057
+     * @tc.desc Verify Decimal Decimal
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Decimal(5);
+      const r = Decimal.acosh(src);
+      expect(r instanceof Decimal).assertTrue();
+      expect(r === src).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5800
+     * @tc.name testDecimalStaticAcoshPart02TestTest058
+     * @tc.desc Verify d s 1
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = Decimal.acosh('5');
+      expect(r.d.length).assertLarger(0);
+      expect(r.s).assertEqual(1);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_5900
+     * @tc.name testDecimalStaticAcoshPart02TestTest059
+     * @tc.desc Verify new Decimal(1) isZero true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const r = Decimal.acosh(new Decimal(1));
+      expect(r.isZero()).assertTrue();
+      expect(r.toString()).assertEqual('0');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_6000
+     * @tc.name testDecimalStaticAcoshPart02TestTest060
+     * @tc.desc Verify acosh('5') acosh('2')
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const big = Decimal.acosh('5');
+      const small = Decimal.acosh('2');
+      expect(big.greaterThan(small)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_6100
+     * @tc.name testDecimalStaticAcoshPart02TestTest061
+     * @tc.desc Verify Decimal toString
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new Decimal('7');
+      const before = src.toString();
+      Decimal.acosh(src);
+      expect(src.toString()).assertEqual(before);
+      expect(src.toString()).assertEqual('7');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_6200
+     * @tc.name testDecimalStaticAcoshPart02TestTest062
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let thrown = false;
+      try {
+        Decimal.acosh(' ');
+      } catch (e) {
+        thrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_6300
+     * @tc.name testDecimalStaticAcoshPart02TestTest063
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let thrown = false;
+      try {
+        Decimal.acosh('​');
+      } catch (e) {
+        thrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_6400
+     * @tc.name testDecimalStaticAcoshPart02TestTest064
+     * @tc.desc Verify NUL ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let thrown = false;
+      try {
+        Decimal.acosh(' ');
+      } catch (e) {
+        thrown = true;
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      expect(thrown).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART02_SUPPLEMENT_TEST_6500
+     * @tc.name testDecimalStaticAcoshPart02TestTest065
+     * @tc.desc Verify DP-COMPOSITE-UNION-INTERSECTION / null undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalStaticAcoshPart02TestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const a = Decimal.acosh('4');
+      const b = Decimal.acosh(4);
+      const c = Decimal.acosh(new Decimal('4'));
+      expect(a.toString()).assertEqual(b.toString());
+      expect(b.toString()).assertEqual(c.toString());
+      expect(a.toString()).assertEqual('2.0634370688955605467');
+    });
+
+
+  });
+
+}
