@@ -46,6 +46,8 @@ add_library(nativefunc SHARED
 
 add_library(nativeanim SHARED
     animate/NativeModuleAnimationTest.cpp
+    animate/NativeModuleAnimationExtraTest.cpp
+    animate/NativeModuleAnimationInit.cpp
 )
 
 find_library(

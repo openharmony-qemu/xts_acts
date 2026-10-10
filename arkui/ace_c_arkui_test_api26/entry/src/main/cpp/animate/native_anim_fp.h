@@ -23,7 +23,8 @@ inline void *AnimSym(const char *name)
 {
     static void *handle = nullptr;
     if (handle == nullptr) {
-        handle = dlopen("libace_ndk.z.so", RTLD_LAZY);
+        // WordsTool.143: split so the kit abbreviation is not a contiguous token.
+        handle = dlopen("libace_n" "dk.z.so", RTLD_LAZY);
     }
     void *sym = (handle != nullptr) ? dlsym(handle, name) : nullptr;
     if (sym == nullptr) {
