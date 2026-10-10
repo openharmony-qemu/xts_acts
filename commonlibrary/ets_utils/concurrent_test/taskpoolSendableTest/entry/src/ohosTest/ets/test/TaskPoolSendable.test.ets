@@ -338,7 +338,7 @@ export default function TaskPoolSendableTest() {
           expect().assertFail();
         } catch (e) {
           console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
-          expect(true).assertTrue();
+          
         }
         done();
       } catch (error) {
@@ -400,7 +400,7 @@ export default function TaskPoolSendableTest() {
           expect(a1.state).assertEqual(20);
         } catch (e) {
           console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
-          expect(true).assertTrue();
+          
         }
         done();
       } catch (error) {
@@ -467,7 +467,7 @@ export default function TaskPoolSendableTest() {
         try {
           const e = await taskpool.execute(task1);
           console.info(`${caseName} task1bb then ${typeof JSON.stringify(sendAble1.numberItem1)} result: ${JSON.stringify(e)}`);
-          expect(true).assertTrue();
+          
           // expect(sendAble1.numberItem1).assertEqual('40');
           console.info(`${caseName} hahahah`);
         } catch (e) {
@@ -512,7 +512,7 @@ export default function TaskPoolSendableTest() {
           expect(num1.array2.length).assertEqual(2)
         } catch (e) {
           console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
-          expect(true).assertTrue();
+          
         }
         done();
       } catch (error) {
@@ -780,7 +780,7 @@ export default function TaskPoolSendableTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
-        expect(true).assertTrue();
+        
         done();
       }
       console.log(`${caseName} test end `);
@@ -807,7 +807,7 @@ export default function TaskPoolSendableTest() {
           expect(sendableA1.state).assertEqual(0);
         } catch (e) {
           console.info(`${caseName} task1 catch ${JSON.stringify(e)}`);
-          expect(true).assertTrue();
+          
         }
         done();
       } catch (error) {

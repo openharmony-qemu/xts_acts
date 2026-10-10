@@ -184,7 +184,7 @@ export default function AsyncNestingTest() {
       thirdLayer()
         .then(() => {
           console.log(`${sharedVariable}`);
-        }).catch((e: BusinessError) => {})
+        }).catch((e: BusinessError) => {console.info(`${e}`);})
       await new Promise<void>((resolve) => {
         setTimeout(() => {
           resolve();

@@ -19,7 +19,7 @@ import { testUISec, testUISec1 } from './MultipleTask';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 export class WorkThread {
-  workerStageModel = new worker.ThreadWorker('./workers/WorkerTaskGroup.ets');
+  public workerStageModel = new worker.ThreadWorker('./workers/WorkerTaskGroup.ets');
 }
 
 @Concurrent
@@ -57,12 +57,12 @@ export function testUI1(): Promise<string> {
 }
 
 export class Contexts {
-  static contexts: Context
-  static path: string
+  public static contexts: Context
+  public static path: string
 }
 
 export class Drivers {
-  static drivers: Driver
+  public static drivers: Driver
 }
 
 export function sleep(time: number): Promise<void> {
@@ -318,11 +318,11 @@ export function taskFunction11(index: number): Promise<number> {
 }
 
 export class WorkerSrc {
-  workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../pages/workers/Worker');
+  public workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../pages/workers/Worker');
 }
 
 export class WorkThread1 {
-  workerStageModel = new worker.ThreadWorker('./workers/CalculatorWorker1.ets');
+  public workerStageModel = new worker.ThreadWorker('./workers/CalculatorWorker1.ets');
 }
 
 export class WorkThread2 {
