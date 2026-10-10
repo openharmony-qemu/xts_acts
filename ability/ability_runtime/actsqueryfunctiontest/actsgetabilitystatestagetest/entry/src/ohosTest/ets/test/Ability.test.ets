@@ -310,6 +310,7 @@ export default function abilityTest() {
 
     /**
      * @tc.number SUB_Ability_AbilityRuntime_GetAbilityState_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_GetAbilityState_0700
      * @tc.desc   Verify the BACKGROUND enum value is 3 in AbilityLifecycleState
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
