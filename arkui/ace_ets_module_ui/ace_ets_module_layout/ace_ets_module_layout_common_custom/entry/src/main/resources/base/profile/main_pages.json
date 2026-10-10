@@ -49,6 +49,10 @@
         "MainAbility/pages/CommonCustom/DynamicLayoutRow",
         "MainAbility/pages/CommonCustom/DynamicLayoutStack",
         "MainAbility/pages/CommonCustom/DynamicLayoutGrid",
-        "MainAbility/pages/CommonCustom/DynamicLayoutCustom"
+        "MainAbility/pages/CommonCustom/DynamicLayoutCustom",
+        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategy",
+        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyOther",
+        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyNoParam",
+        "MainAbility/pages/CommonCustom/UIContextApplyDefaultImmersiveStrategyTwoParam"
     ]
 }
