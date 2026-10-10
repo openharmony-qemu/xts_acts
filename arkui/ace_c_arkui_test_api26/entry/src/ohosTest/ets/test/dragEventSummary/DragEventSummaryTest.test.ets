@@ -62,10 +62,9 @@ export default function dragEventSummaryTest() {
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      let content = obj['$attrs']['content'] as string;
-      console.info('[GETSUMMARY_RETURN_0001] result: ' + content);
-      expect(content).assertContain('TC1=0');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[GETSUMMARY_RETURN_0001] result: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertContain('TC1=0');
       done();
     })
 
@@ -101,10 +100,9 @@ export default function dragEventSummaryTest() {
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      let content = obj['$attrs']['content'] as string;
-      console.info('[GETSUMMARY_ERROR_0001] result: ' + content);
-      expect(content).assertContain('TC2=401');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[GETSUMMARY_ERROR_0001] result: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertContain('TC2=401');
       done();
     })
 
@@ -140,10 +138,9 @@ export default function dragEventSummaryTest() {
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      let content = obj['$attrs']['content'] as string;
-      console.info('[GETSUMMARY_ERROR_0002] result: ' + content);
-      expect(content).assertContain('TC3=401');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[GETSUMMARY_ERROR_0002] result: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertContain('TC3=401');
       done();
     })
 
@@ -179,10 +176,9 @@ export default function dragEventSummaryTest() {
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      let content = obj['$attrs']['content'] as string;
-      console.info('[GETSUMMARY_ERROR_0003] result: ' + content);
-      expect(content).assertContain('TC4=401');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[GETSUMMARY_ERROR_0003] result: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertContain('TC4=401');
       done();
     })
 
@@ -218,10 +214,9 @@ export default function dragEventSummaryTest() {
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      let content = obj['$attrs']['content'] as string;
-      console.info('[GETSUMMARY_ERROR_0004] result: ' + content);
-      expect(content).assertContain('TC5=100001');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[GETSUMMARY_ERROR_0004] result: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertContain('TC5=100001');
       done();
     })
 
@@ -257,10 +252,9 @@ export default function dragEventSummaryTest() {
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      let content = obj['$attrs']['content'] as string;
-      console.info('[GETSUMMARY_ERROR_0005] result: ' + content);
-      expect(content).assertContain('TC6=401');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[GETSUMMARY_ERROR_0005] result: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertContain('TC6=401');
       done();
     })
 
@@ -296,10 +290,9 @@ export default function dragEventSummaryTest() {
       await Utils.sleep(2000);
 
       let strJson = getInspectorByKey('result_text');
-      let obj: Record<string, Object> = JSON.parse(strJson);
-      let content = obj['$attrs']['content'] as string;
-      console.info('[GETSUMMARY_ERROR_0006] result: ' + content);
-      expect(content).assertContain('TC7=401');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[GETSUMMARY_ERROR_0006] result: ' + obj.$attrs.content);
+      expect(obj.$attrs.content).assertContain('TC7=401');
       done();
     })
   })
