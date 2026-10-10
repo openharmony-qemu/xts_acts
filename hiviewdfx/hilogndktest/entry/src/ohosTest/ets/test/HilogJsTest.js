@@ -788,13 +788,13 @@ describe('HilogJsTest', function () {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    //it('testHilogJsApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
-    //  console.info('testHilogJsApi43 start');
-    //  // @ts-ignore
-    //  const res = hilog.isLoggable("中文测试", "HILOGTEST", hilog.LogLevel.INFO);
-    //  expect(res).assertEqual(undefined);
-    //  console.info('testHilogJsApi43 end');
-    //})
+    // it('testHilogJsApi43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+    //   console.info('testHilogJsApi43 start');
+    //   // @ts-ignore
+    //   const res = hilog.isLoggable("中文测试", "HILOGTEST", hilog.LogLevel.INFO);
+    //   expect(res).assertEqual(undefined);
+    //   console.info('testHilogJsApi43 end');
+    // })
 	
     /**
      * @tc.name   testHilogJsApi44
