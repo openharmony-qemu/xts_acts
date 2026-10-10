@@ -26,17 +26,17 @@ export default function decimalStaticAcoshPart01TestTest() {
   describe('DecimalStaticAcoshPart01TestTest', () => {
     beforeAll(() => {
     });
-  
+
     beforeEach(async () => {
       await sleep(30);
     });
-  
+
     afterEach(() => {
     });
-  
+
     afterAll(() => {
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0100
      * @tc.name testDecimalStaticAcoshPart01TestTest001
@@ -56,7 +56,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0200
      * @tc.name testDecimalStaticAcoshPart01TestTest002
@@ -69,7 +69,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(2);
       expect(r.toString()).assertEqual('1.3169578969248167086');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0300
      * @tc.name testDecimalStaticAcoshPart01TestTest003
@@ -82,7 +82,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(NaN);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0400
      * @tc.name testDecimalStaticAcoshPart01TestTest004
@@ -97,7 +97,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(r.isNaN()).assertFalse();
       expect(r.toString()).assertEqual('Infinity');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0500
      * @tc.name testDecimalStaticAcoshPart01TestTest005
@@ -110,7 +110,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(-Infinity);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0600
      * @tc.name testDecimalStaticAcoshPart01TestTest006
@@ -123,7 +123,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(-0);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0700
      * @tc.name testDecimalStaticAcoshPart01TestTest007
@@ -136,7 +136,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(0);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0800
      * @tc.name testDecimalStaticAcoshPart01TestTest008
@@ -149,7 +149,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(-1);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_0900
      * @tc.name testDecimalStaticAcoshPart01TestTest009
@@ -162,7 +162,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(-5);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1000
      * @tc.name testDecimalStaticAcoshPart01TestTest010
@@ -175,7 +175,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(-Number.MAX_VALUE);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1100
      * @tc.name testDecimalStaticAcoshPart01TestTest011
@@ -188,7 +188,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(0.5);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1200
      * @tc.name testDecimalStaticAcoshPart01TestTest012
@@ -201,7 +201,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(0.9999999999999999);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1300
      * @tc.name testDecimalStaticAcoshPart01TestTest013
@@ -215,7 +215,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(r.isNaN()).assertFalse();
       expect(Math.abs(r.toNumber() - 2e-8) < 1e-9).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1400
      * @tc.name testDecimalStaticAcoshPart01TestTest014
@@ -228,7 +228,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(1 - Number.EPSILON);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1500
      * @tc.name testDecimalStaticAcoshPart01TestTest015
@@ -241,7 +241,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(Number.MIN_VALUE);
       expect(r.isNaN()).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1600
      * @tc.name testDecimalStaticAcoshPart01TestTest016
@@ -255,7 +255,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(r.toNumber()).assertEqual(0);
       expect(r.toString()).assertEqual('0');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1700
      * @tc.name testDecimalStaticAcoshPart01TestTest017
@@ -268,8 +268,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(1.5);
       expect(r.toString()).assertEqual('0.962423650119206895');
     });
-  
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1800
      * @tc.name testDecimalStaticAcoshPart01TestTest018
@@ -282,7 +281,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(5);
       expect(r.toString()).assertEqual('2.2924316695611776878');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_1900
      * @tc.name testDecimalStaticAcoshPart01TestTest019
@@ -295,7 +294,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(10);
       expect(r.toString()).assertEqual('2.9932228461263808979');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2000
      * @tc.name testDecimalStaticAcoshPart01TestTest020
@@ -308,7 +307,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(50);
       expect(r.toString()).assertEqual('4.6050701709847571595');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2100
      * @tc.name testDecimalStaticAcoshPart01TestTest021
@@ -321,7 +320,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(100);
       expect(r.toString()).assertEqual('5.2982923656104845907');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2200
      * @tc.name testDecimalStaticAcoshPart01TestTest022
@@ -334,7 +333,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(1e8);
       expect(r.toString()).assertEqual('19.113827924512310757');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2300
      * @tc.name testDecimalStaticAcoshPart01TestTest023
@@ -347,7 +346,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(1e20);
       expect(r.toString()).assertEqual('46.74484904044085899');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2400
      * @tc.name testDecimalStaticAcoshPart01TestTest024
@@ -360,7 +359,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(1e100);
       expect(r.toString()).assertEqual('230.95165647996451371');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2500
      * @tc.name testDecimalStaticAcoshPart01TestTest025
@@ -373,7 +372,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(1e300);
       expect(r.toString()).assertEqual('691.46867507877365051');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2600
      * @tc.name testDecimalStaticAcoshPart01TestTest026
@@ -386,7 +385,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(Number.MAX_VALUE);
       expect(r.toString()).assertEqual('710.47586007394394204');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2700
      * @tc.name testDecimalStaticAcoshPart01TestTest027
@@ -399,7 +398,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(9e15);
       expect(r.toString()).assertEqual('37.429148152806849952');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2800
      * @tc.name testDecimalStaticAcoshPart01TestTest028
@@ -412,11 +411,11 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh('2');
       expect(r.toString()).assertEqual('1.3169578969248167086');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_2900
      * @tc.name testDecimalStaticAcoshPart01TestTest029
-     * @tc.desc Verify '9007199254740991' MAX_SAFE_INTEGER 37.429947750237046597
+     * @tc.desc Verify '9007199254740991' MAX_SAFE_INTEGER acosh 37.429947750237046598
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -425,7 +424,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh('9007199254740991');
       expect(r.toString()).assertEqual('37.429947750237046598');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3000
      * @tc.name testDecimalStaticAcoshPart01TestTest030
@@ -438,7 +437,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh('1e100');
       expect(r.toString()).assertEqual('230.95165647996451371');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3100
      * @tc.name testDecimalStaticAcoshPart01TestTest031
@@ -451,7 +450,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh('0x10');
       expect(r.toString()).assertEqual('3.4647579066758628279');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3200
      * @tc.name testDecimalStaticAcoshPart01TestTest032
@@ -466,7 +465,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(r instanceof Decimal).assertTrue();
       expect(r.comparedTo(d)).assertEqual(0);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3300
      * @tc.name testDecimalStaticAcoshPart01TestTest033
@@ -481,7 +480,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(r1.comparedTo(r2)).assertEqual(0);
       expect(r1 === r2).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3400
      * @tc.name testDecimalStaticAcoshPart01TestTest034
@@ -494,7 +493,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(50).toSignificantDigits(4);
       expect(r.toString()).assertEqual('4.605');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3500
      * @tc.name testDecimalStaticAcoshPart01TestTest035
@@ -509,7 +508,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(r.toString()).assertEqual('2.2924316695611776878');
       expect(d.toString()).assertEqual('5');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3600
      * @tc.name testDecimalStaticAcoshPart01TestTest036
@@ -523,7 +522,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(r.toNumber()).assertEqual(4.6050701709847575);
       expect(r.toString()).assertEqual('4.6050701709847571595');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3700
      * @tc.name testDecimalStaticAcoshPart01TestTest037
@@ -543,7 +542,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3800
      * @tc.name testDecimalStaticAcoshPart01TestTest038
@@ -563,7 +562,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_3900
      * @tc.name testDecimalStaticAcoshPart01TestTest039
@@ -583,7 +582,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4000
      * @tc.name testDecimalStaticAcoshPart01TestTest040
@@ -603,7 +602,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4100
      * @tc.name testDecimalStaticAcoshPart01TestTest041
@@ -623,7 +622,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4200
      * @tc.name testDecimalStaticAcoshPart01TestTest042
@@ -643,10 +642,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
-  
-  
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4300
      * @tc.name testDecimalStaticAcoshPart01TestTest043
@@ -659,7 +655,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh('2');
       expect(r.toNumber()).assertEqual(1.3169578969248168);
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4400
      * @tc.name testDecimalStaticAcoshPart01TestTest044
@@ -673,7 +669,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       let r: Decimal = Decimal.acosh(d);
       expect(r.toString()).assertEqual('1.3169578969248167086');
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4500
      * @tc.name testDecimalStaticAcoshPart01TestTest045
@@ -693,8 +689,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4600
      * @tc.name testDecimalStaticAcoshPart01TestTest046
@@ -719,7 +714,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       expect(hit1).assertTrue();
       expect(hit2).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4700
      * @tc.name testDecimalStaticAcoshPart01TestTest047
@@ -740,7 +735,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4800
      * @tc.name testDecimalStaticAcoshPart01TestTest048
@@ -761,7 +756,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_4900
      * @tc.name testDecimalStaticAcoshPart01TestTest049
@@ -782,7 +777,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5000
      * @tc.name testDecimalStaticAcoshPart01TestTest050
@@ -804,7 +799,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5100
      * @tc.name testDecimalStaticAcoshPart01TestTest051
@@ -826,7 +821,7 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5200
      * @tc.name testDecimalStaticAcoshPart01TestTest052
@@ -847,37 +842,16 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5300
      * @tc.name testDecimalStaticAcoshPart01TestTest053
-     * @tc.desc Verify class instance 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalStaticAcoshPart01TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let hit: boolean = false;
-      try {
-        Decimal.acosh({ v: 2 } as ESObject);
-      } catch (e) {
-        expect(e.name).assertEqual('BusinessError');
-        expect((e as BusinessError).code).assertEqual(401);
-        hit = true;
-      }
-      expect(hit).assertTrue();
-
-  
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5400
-     * @tc.name testDecimalStaticAcoshPart01TestTest054
      * @tc.desc Verify [2] 401 Value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalStaticAcoshPart01TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalStaticAcoshPart01TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<number> = new Array<number>();
       arr.push(2);
       let hit: boolean = false;
@@ -890,16 +864,16 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5500
-     * @tc.name testDecimalStaticAcoshPart01TestTest055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5400
+     * @tc.name testDecimalStaticAcoshPart01TestTest054
      * @tc.desc Verify 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalStaticAcoshPart01TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalStaticAcoshPart01TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let f: () => number = () => 2;
       let hit: boolean = false;
       try {
@@ -911,123 +885,20 @@ export default function decimalStaticAcoshPart01TestTest() {
       }
       expect(hit).assertTrue();
     });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5600
-     * @tc.name testDecimalStaticAcoshPart01TestTest056
-     * @tc.desc Verify boolean Map Set 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalStaticAcoshPart01TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m: Map<string, string> = new Map<string, string>();
-      m.set('a', '2');
-      let s: Set<string> = new Set<string>();
-      s.add('2');
-      let hitM: boolean = false;
-      let hitS: boolean = false;
-      try {
-        Decimal.acosh(m as ESObject);
-      } catch (e) {
-        hitM = true;
-      }
-      try {
-        Decimal.acosh(s as ESObject);
-      } catch (e) {
-        hitS = true;
-      }
-      expect(hitM).assertTrue();
-      expect(hitS).assertTrue();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5700
-     * @tc.name testDecimalStaticAcoshPart01TestTest057
-     * @tc.desc Verify class vs number 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalStaticAcoshPart01TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let hit: boolean = false;
-      try {
-        Decimal.acosh({ val: 2 } as ESObject);
-      } catch (e) {
-        expect(e.name).assertEqual('BusinessError');
-        expect((e as BusinessError).code).assertEqual(401);
-        hit = true;
-      }
-      expect(hit).assertTrue();
-
-  
-    });
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5800
-     * @tc.name testDecimalStaticAcoshPart01TestTest058
-     * @tc.desc Verify null Date vs null null 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalStaticAcoshPart01TestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Date = new Date(0);
-      let hitD: boolean = false;
-      let hitN: boolean = false;
-      try {
-        Decimal.acosh(d as ESObject);
-      } catch (e) {
-        hitD = true;
-      }
-      try {
-        Decimal.acosh(null as ESObject);
-      } catch (e) {
-        hitN = true;
-      }
-      expect(hitD).assertTrue();
-      expect(hitN).assertTrue();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5900
-     * @tc.name testDecimalStaticAcoshPart01TestTest059
-     * @tc.desc Verify Date 401
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalStaticAcoshPart01TestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d1: Date = new Date(0);
-      let d2: Date = new Date(0);
-      let hit1: boolean = false;
-      let hit2: boolean = false;
-      try {
-        Decimal.acosh(d1 as ESObject);
-      } catch (e) {
-        hit1 = true;
-      }
-      try {
-        Decimal.acosh(d2 as ESObject);
-      } catch (e) {
-        hit2 = true;
-      }
-      expect(hit1).assertTrue();
-      expect(hit2).assertTrue();
-    });
-  
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_6000
-     * @tc.name testDecimalStaticAcoshPart01TestTest060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_STATIC_ACOSH_PART01_SUPPLEMENT_TEST_5500
+     * @tc.name testDecimalStaticAcoshPart01TestTest055
      * @tc.desc Verify acosh extra argument ignored first only
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalStaticAcoshPart01TestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalStaticAcoshPart01TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r: Decimal = (Decimal.acosh as ESObject)('2', 'ignored') as Decimal;
       expect(r.toString()).assertEqual(Decimal.acosh('2').toString());
     });
+
 
   });
 
