@@ -13,7 +13,7 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_suite("task_js_test") {
+ohos_js_app_suite("ActsTaskTest") {
   hap_name = "ActsTaskTest"
   testonly = true
   test_hap = true
