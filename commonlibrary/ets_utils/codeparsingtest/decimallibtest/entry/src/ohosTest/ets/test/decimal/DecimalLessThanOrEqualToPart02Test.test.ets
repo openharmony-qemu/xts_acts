@@ -26,17 +26,17 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
   describe('DecimalLessThanOrEqualToPart02TestTest', () => {
     beforeAll(() => {
     });
-  
+
     beforeEach(async () => {
       await sleep(30);
     });
-  
+
     afterEach(() => {
     });
-  
+
     afterAll(() => {
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0100
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest001
@@ -50,344 +50,327 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       let r: boolean = d.lessThanOrEqualTo('12');
       expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0200
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest002
-     * @tc.desc Verify arity=0 n undefined 401
+     * @tc.desc Verify '0x10' 16 16 > 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      try {
-        d.lessThanOrEqualTo(undefined as ESObject);
-      } catch (e) {
-        expect((e as BusinessError).code).assertEqual(401);
-      }
+      let r: boolean = d.lessThanOrEqualTo('0x10');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0300
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest003
-     * @tc.desc Verify '0x10' 16 16 > 10 false
+     * @tc.desc Verify '0b101' 5 10 <= 5 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('0x10');
-      expect(r).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('0b101');
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0400
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest004
-     * @tc.desc Verify '0b101' 5 5 < 10 true
+     * @tc.desc Verify '0o12' 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('0b101');
-      expect(r).assertFalse();
+      let r: boolean = d.lessThanOrEqualTo('0o12');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0500
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest005
-     * @tc.desc Verify '0o12' 10 true
+     * @tc.desc Verify '1_0' 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('0o12');
+      let r: boolean = d.lessThanOrEqualTo('1_0');
       expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0600
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest006
-     * @tc.desc Verify '1_0' 10 true
+     * @tc.desc Verify '1e1' 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('1_0');
+      let r: boolean = d.lessThanOrEqualTo('1e1');
       expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0700
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest007
-     * @tc.desc Verify '1e1' 10 true
+     * @tc.desc Verify '1e-7' 10 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('1e1');
-      expect(r).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('1e-7');
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0800
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest008
-     * @tc.desc Verify '1e-7' 10 true
+     * @tc.desc Verify '1e308' 10 <= 1e308 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('1e-7');
-      expect(r).assertFalse();
+      let r: boolean = d.lessThanOrEqualTo('1e308');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_0900
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest009
-     * @tc.desc Verify '1e308' 10 false
+     * @tc.desc Verify '1e309' Infinity 10 <= Infinity true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('1e308');
+      let r: boolean = d.lessThanOrEqualTo('1e309');
       expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1000
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest010
-     * @tc.desc Verify '1e309' Infinity 10 <= Infinity true
+     * @tc.desc Verify '-1e309' -Infinity 10 <= -Infinity false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('1e309');
-      expect(r).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('-1e309');
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1100
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest011
-     * @tc.desc Verify '-1e309' -Infinity 10 <= -Infinity false
+     * @tc.desc Verify 'Infinity' 10 <= Infinity true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('-1e309');
-      expect(r).assertFalse();
+      let r: boolean = d.lessThanOrEqualTo('Infinity');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1200
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest012
-     * @tc.desc Verify 'Infinity' 10 <= Infinity true
+     * @tc.desc Verify '-Infinity' 10 <= -Infinity false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('Infinity');
-      expect(r).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('-Infinity');
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1300
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest013
-     * @tc.desc Verify '-Infinity' 10 <= -Infinity false
+     * @tc.desc Verify 'NaN' false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('-Infinity');
+      let r: boolean = d.lessThanOrEqualTo('NaN');
       expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1400
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest014
-     * @tc.desc Verify 'NaN' false
+     * @tc.desc Verify '+10' 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('NaN');
-      expect(r).assertFalse();
+      let r: boolean = d.lessThanOrEqualTo('+10');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1500
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest015
-     * @tc.desc Verify '+10' 10 true
+     * @tc.desc Verify '-5' 10 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('+10');
-      expect(r).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('-5');
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1600
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest016
-     * @tc.desc Verify '-5' 10 true
+     * @tc.desc Verify '-0' 0 10 <= 0 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('-5');
+      let r: boolean = d.lessThanOrEqualTo('-0');
       expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1700
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest017
-     * @tc.desc Verify '-0' 0 10 <= 0 false
+     * @tc.desc Verify '00010' 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('-0');
-      expect(r).assertFalse();
+      let r: boolean = d.lessThanOrEqualTo('00010');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1800
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest018
-     * @tc.desc Verify '00010' 10 true
+     * @tc.desc Verify '.5' 0.5 0.5 < 10 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('00010');
-      expect(r).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('.5');
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_1900
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest019
-     * @tc.desc Verify '.5' 0.5 0.5 < 10 true
+     * @tc.desc Verify '9.999999999999999999999999999999' 10 <= 9.99... false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('.5');
+      let r: boolean = d.lessThanOrEqualTo('9.999999999999999999999999999999');
       expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2000
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest020
-     * @tc.desc Verify 30 9 '9.999999999999999999999999999999' 10 true
+     * @tc.desc Verify 30 '10.0000000000000000000000000001' 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('9.999999999999999999999999999999');
-      expect(r).assertFalse();
+      let r: boolean = d.lessThanOrEqualTo('10.0000000000000000000000000001');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2100
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest021
-     * @tc.desc Verify 30 '10.0000000000000000000000000001' 10 false
+     * @tc.desc Verify '9'.repeat(2000) 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('10.0000000000000000000000000001');
+      let big: string = '9'.repeat(2000);
+      let r: boolean = d.lessThanOrEqualTo(big);
       expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2200
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest022
-     * @tc.desc Verify '9'.repeat(2000) 10 false
+     * @tc.desc Verify '0'.repeat(2000) + '1' 1 1 < 10 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let big: string = '9'.repeat(2000);
+      let big: string = '0'.repeat(2000) + '1';
       let r: boolean = d.lessThanOrEqualTo(big);
-      expect(r).assertTrue();
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2300
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest023
-     * @tc.desc Verify '0'.repeat(2000) + '1' 1 1 < 10 true
+     * @tc.desc Verify '10.' + '0'.repeat(1000) + '1' 10 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let big: string = '0'.repeat(2000) + '1';
-      let r: boolean = d.lessThanOrEqualTo(big);
-      expect(r).assertFalse();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2400
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest024
-     * @tc.desc Verify '10.' + '0'.repeat(1000) + '1' 10 false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalLessThanOrEqualToPart02TestTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal(10);
       let big: string = '10.' + '0'.repeat(1000) + '1';
       let r: boolean = d.lessThanOrEqualTo(big);
       expect(r).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2500
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2400
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest024
      * @tc.desc Verify 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo(' ');
@@ -395,16 +378,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2600
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2500
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest025
      * @tc.desc Verify '\t\n' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('\t\n');
@@ -412,16 +395,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2700
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2600
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest026
      * @tc.desc Verify NBSP ' ' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo(' ');
@@ -429,16 +412,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2800
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2700
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest027
      * @tc.desc Verify ZWSP ' ' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('​');
@@ -446,16 +429,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2900
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2800
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest028
      * @tc.desc Verify '\n1' trim 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('\n1');
@@ -463,16 +446,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3000
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_2900
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest029
      * @tc.desc Verify '12\n' trim 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('12\n');
@@ -480,16 +463,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3100
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3000
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest030
      * @tc.desc Verify ' 12 ' trim 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo(' 12 ');
@@ -497,16 +480,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3200
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3100
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest031
      * @tc.desc Verify NUL ' ' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('\u0000');
@@ -514,29 +497,29 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3300
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3200
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest032
      * @tc.desc Verify NUL '1 ' 401 [device does not throw, expected error pending SDK alignment]
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       expect(d.lessThanOrEqualTo('1').toString().length > 0).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3400
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest034
-     * @tc.desc Verify U+2028 401
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3300
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest033
+     * @tc.desc Verify '1;' lessThanOrEqualTo 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('1;');
@@ -544,16 +527,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3500
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3400
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest034
      * @tc.desc Verify U+2029 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo(';1');
@@ -561,16 +544,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3600
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3500
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest035
      * @tc.desc Verify BOM ' 12' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('﻿12');
@@ -578,16 +561,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3700
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3600
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest036
      * @tc.desc Verify BOM '12 ' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('12﻿');
@@ -595,16 +578,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3800
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3700
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest037
      * @tc.desc Verify ' ' ASCII 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('１２');
@@ -612,16 +595,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3900
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3800
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest038
      * @tc.desc Verify - ' ' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('١٢');
@@ -629,7 +612,24 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_3900
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest039
+     * @tc.desc Verify ' ' 401
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalLessThanOrEqualToPart02TestTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d: Decimal = new Decimal(10);
+      try {
+        d.lessThanOrEqualTo('১২');
+      } catch (e) {
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+    });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4000
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest040
@@ -641,12 +641,12 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
     it('testDecimalLessThanOrEqualToPart02TestTest040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
-        d.lessThanOrEqualTo('১২');
+        d.lessThanOrEqualTo('꧱꧲');
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4100
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest041
@@ -658,12 +658,12 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
     it('testDecimalLessThanOrEqualToPart02TestTest041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
-        d.lessThanOrEqualTo('꧱꧲');
+        d.lessThanOrEqualTo('Ⅻ');
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4200
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest042
@@ -675,16 +675,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
     it('testDecimalLessThanOrEqualToPart02TestTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
-        d.lessThanOrEqualTo('Ⅻ');
+        d.lessThanOrEqualTo('½');
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4300
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest043
-     * @tc.desc Verify ' ' 401
+     * @tc.desc Verify emoji ' ' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -692,16 +692,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
     it('testDecimalLessThanOrEqualToPart02TestTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
-        d.lessThanOrEqualTo('½');
+        d.lessThanOrEqualTo('😀');
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4400
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest044
-     * @tc.desc Verify emoji ' ' 401
+     * @tc.desc Verify '\uD800' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -709,86 +709,69 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
     it('testDecimalLessThanOrEqualToPart02TestTest044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
-        d.lessThanOrEqualTo('😀');
+        d.lessThanOrEqualTo('\uD800');
       } catch (e) {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4500
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest045
-     * @tc.desc Verify '\uD800' 401
+     * @tc.desc Verify string | number '15' 15 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      try {
-        d.lessThanOrEqualTo('\uD800');
-      } catch (e) {
-        expect((e as BusinessError).code).assertEqual(401);
-      }
+      let a: string | number = '15';
+      let b: string | number = 15;
+      expect(d.lessThanOrEqualTo(a)).assertTrue();
+      expect(d.lessThanOrEqualTo(b)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4600
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest046
-     * @tc.desc Verify string | number '15' 15 true
+     * @tc.desc Verify string | Decimal '10' Decimal true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let a: string | number = '15';
-      let b: string | number = 15;
+      let a: string | Decimal = '10';
+      let b: string | Decimal = new Decimal(10);
       expect(d.lessThanOrEqualTo(a)).assertTrue();
       expect(d.lessThanOrEqualTo(b)).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4700
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest047
-     * @tc.desc Verify string | Decimal '10' Decimal true
+     * @tc.desc Verify number | Decimal 5 false Decimal 20 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let a: string | Decimal = '10';
-      let b: string | Decimal = new Decimal(10);
-      expect(d.lessThanOrEqualTo(a)).assertTrue();
-      expect(d.lessThanOrEqualTo(b)).assertTrue();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4800
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest048
-     * @tc.desc Verify number | Decimal 5 false Decimal 20 true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalLessThanOrEqualToPart02TestTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal(10);
       let a: number | Decimal = 5;
       let b: number | Decimal = new Decimal(20);
       expect(d.lessThanOrEqualTo(a)).assertFalse();
       expect(d.lessThanOrEqualTo(b)).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4900
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4800
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest048
      * @tc.desc Verify string | number | Decimal '15' 20 true 5 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let s: string | number | Decimal = '15';
       let n: string | number | Decimal = 5;
@@ -797,16 +780,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       expect(d.lessThanOrEqualTo(n)).assertFalse();
       expect(d.lessThanOrEqualTo(dec)).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5000
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_4900
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest049
      * @tc.desc Verify string | number | Decimal | undefined undefined 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let s: string | number | Decimal | undefined = '15';
       let n: string | number | Decimal | undefined = 5;
@@ -821,16 +804,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5100
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5000
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest050
      * @tc.desc Verify null string null 401 '15' true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let n: null | string = null;
       let s: null | string = '15';
@@ -841,16 +824,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       }
       expect(d.lessThanOrEqualTo(s)).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5200
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5100
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest051
      * @tc.desc Verify undefined string undefined 401 '15' true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let u: undefined | string = undefined;
       let s: undefined | string = '15';
@@ -861,16 +844,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       }
       expect(d.lessThanOrEqualTo(s)).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5300
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5200
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest052
      * @tc.desc Verify null number null 401 5 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let n: null | number = null;
       let num: null | number = 5;
@@ -881,16 +864,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       }
       expect(d.lessThanOrEqualTo(num)).assertFalse();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5400
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5300
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest053
      * @tc.desc Verify undefined number undefined 401 15 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let u: undefined | number = undefined;
       let num: undefined | number = 15;
@@ -901,16 +884,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       }
       expect(d.lessThanOrEqualTo(num)).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5500
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5400
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest054
      * @tc.desc Verify null Decimal null 401 Decimal 15 true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let n: null | Decimal = null;
       let dec: null | Decimal = new Decimal(15);
@@ -921,16 +904,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       }
       expect(d.lessThanOrEqualTo(dec)).assertTrue();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5600
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5500
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest055
      * @tc.desc Verify undefined Decimal undefined 401 Decimal 5 false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       let u: undefined | Decimal = undefined;
       let dec: undefined | Decimal = new Decimal(5);
@@ -941,119 +924,100 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
       }
       expect(d.lessThanOrEqualTo(dec)).assertFalse();
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5700
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5600
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest056
      * @tc.desc Verify new Decimal(10) new Decimal('10') true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Decimal = new Decimal(10);
       let b: Decimal = new Decimal('10');
       expect(a.lessThanOrEqualTo(b)).assertTrue();
     });
-  
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5700
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest057
+     * @tc.desc Verify Decimal new Decimal('1e1') 10 true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testDecimalLessThanOrEqualToPart02TestTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let d: Decimal = new Decimal(10);
+      let dec: Decimal = new Decimal('1e1');
+      expect(d.lessThanOrEqualTo(dec)).assertTrue();
+    });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5800
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest058
-     * @tc.desc Verify null Value 401
+     * @tc.desc Verify '15' true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      try {
-        d.lessThanOrEqualTo(null as ESObject);
-      } catch (e) {
-        expect((e as BusinessError).code).assertEqual(401);
-      }
+      let r: boolean = d.lessThanOrEqualTo('15');
+      expect(r).assertTrue();
     });
-  
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_5900
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest059
-     * @tc.desc Verify Decimal new Decimal('1e1') 10 true
+     * @tc.desc Verify '10' true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let dec: Decimal = new Decimal('1e1');
-      expect(d.lessThanOrEqualTo(dec)).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('10');
+      expect(r).assertTrue();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6000
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest060
-     * @tc.desc Verify '15' true
+     * @tc.desc Verify '5' false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('15');
-      expect(r).assertTrue();
+      let r: boolean = d.lessThanOrEqualTo('5');
+      expect(r).assertFalse();
     });
-  
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6100
      * @tc.name testDecimalLessThanOrEqualToPart02TestTest061
-     * @tc.desc Verify '10' true
+     * @tc.desc Verify toString '10'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testDecimalLessThanOrEqualToPart02TestTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('10');
-      expect(r).assertTrue();
-    });
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6200
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest062
-     * @tc.desc Verify '5' false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalLessThanOrEqualToPart02TestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal(10);
-      let r: boolean = d.lessThanOrEqualTo('5');
-      expect(r).assertFalse();
-    });
-  
-  
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6300
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest063
-     * @tc.desc Verify toString '10'
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testDecimalLessThanOrEqualToPart02TestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d: Decimal = new Decimal(10);
       d.lessThanOrEqualTo(new Decimal(20));
       expect(d.toString()).assertEqual('10');
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6400
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6200
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest062
      * @tc.desc Verify '' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('');
@@ -1061,16 +1025,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6500
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6300
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest063
      * @tc.desc Verify 'abc' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('abc');
@@ -1078,16 +1042,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6600
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6400
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest064
      * @tc.desc Verify '1.2.3' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('1.2.3');
@@ -1095,16 +1059,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6700
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6500
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest065
      * @tc.desc Verify '1,000' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('1,000');
@@ -1112,16 +1076,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6800
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6600
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest066
      * @tc.desc Verify 'true' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('true');
@@ -1129,16 +1093,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6900
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6700
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest067
      * @tc.desc Verify 'null' null 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('null');
@@ -1146,16 +1110,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7000
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6800
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest068
      * @tc.desc Verify 'undefined' undefined 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('undefined');
@@ -1163,16 +1127,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7100
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_6900
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest069
      * @tc.desc Verify '1e' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('1e');
@@ -1180,16 +1144,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7200
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7000
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest070
      * @tc.desc Verify '1e+' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('1e+');
@@ -1197,16 +1161,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7300
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7100
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest071
      * @tc.desc Verify '.' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('.');
@@ -1214,16 +1178,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7400
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7200
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest072
      * @tc.desc Verify '+.' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('+.');
@@ -1231,16 +1195,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7500
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7300
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest073
      * @tc.desc Verify '0x' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('0x');
@@ -1248,16 +1212,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7600
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7400
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest074
      * @tc.desc Verify '0b' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('0b');
@@ -1265,16 +1229,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7700
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7500
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest075
      * @tc.desc Verify XSS '<script>alert(1)</script>' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('<script>alert(1)</script>');
@@ -1282,16 +1246,16 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7800
-     * @tc.name testDecimalLessThanOrEqualToPart02TestTest078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DECIMAL_LESS_THAN_OR_EQUAL_TO_PART02_SUPPLEMENT_TEST_7600
+     * @tc.name testDecimalLessThanOrEqualToPart02TestTest076
      * @tc.desc Verify '1 2' 401
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testDecimalLessThanOrEqualToPart02TestTest078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testDecimalLessThanOrEqualToPart02TestTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d: Decimal = new Decimal(10);
       try {
         d.lessThanOrEqualTo('1​2');
@@ -1299,7 +1263,8 @@ export default function decimalLessThanOrEqualToPart02TestTest() {
         expect((e as BusinessError).code).assertEqual(401);
       }
     });
-  
+
+
   });
 
 }
