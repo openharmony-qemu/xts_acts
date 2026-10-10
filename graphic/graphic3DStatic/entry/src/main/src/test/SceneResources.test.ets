@@ -42,7 +42,8 @@ import {
   ShaderMaterial,
   SubMesh,
   Vec2,
-  Vec4
+  Vec4,
+  OcclusionMaterial
 } from '@ohos.graphics.scene'
 import * as scene3d from '@ohos.graphics.scene'
 import { $rawfile, Resource } from '@ohos.arkui.component'
@@ -1754,6 +1755,32 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + ' Failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testOcclusionMaterialCreate
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1811
+     * @tc.desc   Test MaterialType.OCCLUSION enum value and verify OCCLUSION material can be created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOcclusionMaterialCreate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let msg = "============================testOcclusionMaterialCreate";
+      console.info(msg + ' begin ');
+      try {
+        let scene = await Scene.load();
+        expect(scene != undefined).assertTrue();
+        rf = scene.getResourceFactory();
+        let occlusionMaterial: OcclusionMaterial = await rf!.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION) as OcclusionMaterial;
+        expect(occlusionMaterial != null).assertTrue();
+        expect(occlusionMaterial?.materialType).assertEqual(MaterialType.OCCLUSION);
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testOcclusionMaterialCreate " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
