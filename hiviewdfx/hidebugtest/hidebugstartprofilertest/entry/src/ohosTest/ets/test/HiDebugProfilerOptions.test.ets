@@ -1230,5 +1230,375 @@ export default function ActsHiDebugProfilerOptionsTest() {
       }
       console.info("SUB_DFX_DFR_HiDebug_ProfilerOptions_Interface_5100 end");
     })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0100
+     * @tc.name testSetStackTraceMode01
+     * @tc.desc 验证OH_HiDebug_SetStackTraceMode接口传入OH_HIDEBUG_STACK_TRACE_KEEP_ALL(0)，返回HIDEBUG_SUCCESS
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0100 start");
+      try {
+        let res = testNapi.testSetStackTraceMode(0);
+        expect(res === 0).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0100 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0100 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0200
+     * @tc.name testSetStackTraceMode02
+     * @tc.desc 验证OH_HiDebug_SetStackTraceMode接口传入OH_HIDEBUG_STACK_TRACE_DISCARD_DESTROYED(1)，返回HIDEBUG_SUCCESS
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0200 start");
+      try {
+        let res = testNapi.testSetStackTraceMode(1);
+        expect(res === 0).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0200 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0200 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0300
+     * @tc.name testSetStackTraceMode03
+     * @tc.desc 验证OH_HiDebug_SetStackTraceMode接口传入无效值2，返回HIDEBUG_RES_PROF_INVALID_STACK_TRACE_MODE(11400433)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0300 start");
+      try {
+        let res = testNapi.testSetStackTraceMode(2);
+        expect(res === 11400433).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0300 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0300 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0400
+     * @tc.name testSetStackTraceMode04
+     * @tc.desc 验证OH_HiDebug_SetStackTraceMode接口传入无效值100，返回HIDEBUG_RES_PROF_INVALID_STACK_TRACE_MODE(11400433)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0400 start");
+      try {
+        let res = testNapi.testSetStackTraceMode(100);
+        expect(res === 11400433).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0400 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0400 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0500
+     * @tc.name testSetStackTraceMode05
+     * @tc.desc 验证OH_HiDebug_SetStackTraceMode接口opts传入nullptr，返回HIDEBUG_RES_PROF_INVALID_ARG(11400410)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0500 start");
+      try {
+        let res = testNapi.testSetStackTraceModeNull();
+        expect(res === 11400410).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0500 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0500 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0600
+     * @tc.name testSetStackTraceMode06
+     * @tc.desc 验证OH_HiDebug_SetStackTraceMode接口传入无效值-1(通过uint32转换)，返回HIDEBUG_RES_PROF_INVALID_STACK_TRACE_MODE(11400433)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0600 start");
+      try {
+        let res = testNapi.testSetStackTraceMode(4294967295);
+        expect(res === 11400433).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0600 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0600 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0600 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0700
+     * @tc.name testSetStackTraceMode07
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=KEEP_ALL(0)，ResourceType=OH_RES_TYPE_FD(0)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0700 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(0, 10, 0);
+        await asyncSleep(1000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0700", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0700 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0700 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0700 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0800
+     * @tc.name testSetStackTraceMode08
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=DISCARD_DESTROYED(1)，ResourceType=OH_RES_TYPE_NATIVE(2)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0800 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(2, 10, 1);
+        await asyncSleep(1000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0800", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0800 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0800 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0800 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_0900
+     * @tc.name testSetStackTraceMode09
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=KEEP_ALL(0)，ResourceType=OH_RES_TYPE_THREAD(1)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0900 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(1, 10, 0);
+        await asyncSleep(1000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0900", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0900 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_0900 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_0900 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_1000
+     * @tc.name testSetStackTraceMode10
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=DISCARD_DESTROYED(1)，ResourceType=OH_RES_TYPE_GPU(3)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1000 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(3, 10, 1);
+        await asyncSleep(10000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1000", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1000 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_1000 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1000 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_1100
+     * @tc.name testSetStackTraceMode11
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=KEEP_ALL(0)，ResourceType=OH_RES_TYPE_GLOBAL_HANDLE(4)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1100 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(4, 10, 0);
+        await asyncSleep(1000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1100", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1100 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_1100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1100 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_1200
+     * @tc.name testSetStackTraceMode12
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=DISCARD_DESTROYED(1)，ResourceType=OH_RES_TYPE_DMA(5)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1200 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(5, 10, 1);
+        await asyncSleep(1000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1200", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1200 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_1200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1200 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_1300
+     * @tc.name testSetStackTraceMode13
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=KEEP_ALL(0)，ResourceType=OH_RES_TYPE_ASHMEM(6)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1300 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(6, 10, 0);
+        await asyncSleep(1000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1300", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1300 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_1300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1300 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_1400
+     * @tc.name testSetStackTraceMode14
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=DISCARD_DESTROYED(1)，ResourceType=OH_RES_TYPE_COMPOSITE_HEAP(7)，返回非11400410
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1400 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(7, 10, 1);
+        await asyncSleep(1000);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1400", res);
+        expect(res != 11400410).assertTrue();
+        testNapi.stopProfiler();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1400 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_1400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1400 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_SetStackTraceMode_1500
+     * @tc.name testSetStackTraceMode15
+     * @tc.desc 验证通过StartProfilerWithOptions设置stackTraceMode=无效值(2)，ResourceType=OH_RES_TYPE_FD(0)，返回HIDEBUG_RES_PROF_INVALID_STACK_TRACE_MODE(11400433)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testSetStackTraceMode15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1500 start");
+      try {
+        let res = testNapi.testStartProfilerWithOptionsStackTraceMode(0, 10, 2);
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1500", res);
+        expect(res === 11400433).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1500 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_SetStackTraceMode_1500 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_SetStackTraceMode_1500 end");
+    })
   })
 }
