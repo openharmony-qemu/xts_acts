@@ -627,7 +627,7 @@ static napi_value TestStartProfilerWithOptionsStackTraceMode(napi_env env, napi_
     uint32_t maxDuration;
     napi_get_value_uint32(env, args[1], &maxDuration);
     uint32_t stackTraceMode;
-    napi_get_value_uint32(env, args[2], &stackTraceMode);
+    napi_get_value_uint32(env, args[NUMBER], &stackTraceMode);
     OH_LOG_INFO(LOG_APP, "testTag TestStartProfilerWithOptionsStackTraceMode type=%{public}d maxDuration=%{public}u stackTraceMode=%{public}u",
                 resourceType, maxDuration, stackTraceMode);
     OH_HiDebug_ProfilerOptions* opts = OH_HiDebug_CreateProfilerOptions();
