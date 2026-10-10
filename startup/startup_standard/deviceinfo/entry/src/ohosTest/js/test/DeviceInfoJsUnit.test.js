@@ -2326,7 +2326,7 @@ export default function DeviceInfoTest() {
 
         /**
          * @tc.name   testGetKernelVersion001
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_088
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_8800
          * @tc.desc   Get the kernel version represented by a string and the return value is not null.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2351,7 +2351,7 @@ export default function DeviceInfoTest() {
 
         /**
          * @tc.name   testGetKernelVersion002
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_089
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_8900
          * @tc.desc   Get the kernel version format which should be 'HongMeng Kernel X.Y.Z'.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -2384,7 +2384,7 @@ export default function DeviceInfoTest() {
 
         /**
          * @tc.name   testGetKernelVersion003
-         * @tc.number SUB_STARTUP_JS_DEVCEINFO_090
+         * @tc.number SUB_STARTUP_JS_DEVCEINFO_9000
          * @tc.desc   Get the kernel version which has at least one characters.
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
