@@ -17,6 +17,7 @@ import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import common from '@ohos.enterprise.common';
 import { usbManager } from '@kit.MDMKit';
 import restrictions from '@ohos.enterprise.restrictions';
 
@@ -37,6 +38,10 @@ export default function usbManagerTest() {
     testRemoveDisallowedPermissiveUsbDevices();
     testGetDisallowedPermissiveUsbDevices();
     testGetUsbSerialNumber();
+    testSetExternalStorageInterceptEnable();
+    testIsExternalStorageInterceptEnable();
+    testSetExternalStorageDeviceMountPolicy();
+    testGetExternalStorageDeviceInfos();
   })
 }
 
@@ -335,6 +340,98 @@ function testGetUsbSerialNumber() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetExternalStorageInterceptEnable() {
+  /**
+   * @tc.name   test_set_external_storage_intercept_enable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager setExternalStorageInterceptEnable with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_storage_intercept_enable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testIsExternalStorageInterceptEnable() {
+  /**
+   * @tc.name   test_is_external_storage_intercept_enable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager isExternalStorageInterceptEnable with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_external_storage_intercept_enable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.SELF);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetExternalStorageDeviceMountPolicy() {
+  /**
+   * @tc.name   test_set_external_storage_device_mount_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager setExternalStorageDeviceMountPolicy with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_storage_device_mount_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('testVolumeId', usbManager.MountPolicy.MOUNT_READ_WRITE);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetExternalStorageDeviceInfos() {
+  /**
+   * @tc.name   test_get_external_storage_device_infos_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_STORAGE_DEVICE_INFOS_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager getExternalStorageDeviceInfos with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_external_storage_device_infos_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.getExternalStorageDeviceInfos();
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
