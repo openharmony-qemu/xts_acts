@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@ import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam){
@@ -37,7 +36,7 @@ export default class EntryAbility extends UIAbility {
     let mainWindow: window.Window = windowStage.getMainWindowSync();
     let promise1 = mainWindow.getProperties();
     promise1.then((data) => {
-      console.info('当前屏幕ID' + data.displayId);
+      console.info('褰撳墠灞忓箷ID' + data.displayId);
       AppStorage.setOrCreate('displayID',data.displayId);
     }).catch((err: BusinessError) => {
     });

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import Utils from '../../MainAbility/common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import inputEventClient from '@ohos.multimodalInput.inputEventClient';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 
 let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function RatingAdvancedTest() {
