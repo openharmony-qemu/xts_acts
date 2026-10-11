@@ -29,6 +29,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function primary() {

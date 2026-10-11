@@ -17,6 +17,9 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../MainAbility/common/Common';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function dismissSheetActionTest() {
   describe('dismissSheetActionTest', () => {
@@ -62,7 +65,7 @@ export default function dismissSheetActionTest() {
       console.info("[dismissSheetActionTest_001] height is: " + JSON.stringify(height));
       console.info("[dismissSheetActionTest_001] height.y is: " + Math.round(height.y));
       console.info("[dismissSheetActionTest_001] height.x is: " + Math.round(height.x));
-      await driver.swipe(Math.round(height.x - 200),Math.round(height.y),Math.round(height.x + 300),Math.round(height.y));
+      await driver.swipeBetween({ x: Math.round(height.x - 200), y: Math.round(height.y), displayId: displayID }, { x: Math.round(height.x + 300), y: Math.round(height.y), displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let strJson1 : string = getInspectorByKey('dismissSheetAction_DismissReason');

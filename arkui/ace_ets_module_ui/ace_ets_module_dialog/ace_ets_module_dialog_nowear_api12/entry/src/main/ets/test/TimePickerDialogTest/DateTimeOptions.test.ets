@@ -17,6 +17,7 @@ import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function DateTimeOptions() {
