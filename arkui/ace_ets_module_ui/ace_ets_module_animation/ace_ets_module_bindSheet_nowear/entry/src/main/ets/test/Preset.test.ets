@@ -47,15 +47,15 @@ export default function PresetTest() {
     });
 
     /**
-     * @tc.name   PresetTest0001
-     * @tc.number PresetTest0001
+     * @tc.name   SUB_ARKUI_ARKUI_PRESET_TEST_0001
+     * @tc.number SUB_ARKUI_ARKUI_PRESET_TEST_0001
      * @tc.desc   preset about xiaoyi dialog
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('PresetTest0001',  Level.LEVEL0, async () => {
-      console.info('PresetTest PresetTest0001 START');
+    it('SUB_ARKUI_ARKUI_PRESET_TEST_0001',  Level.LEVEL0, async () => {
+      console.info('PresetTest SUB_ARKUI_ARKUI_PRESET_TEST_0001 START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
       if (globalThis.winLeft == 0) {
@@ -86,17 +86,17 @@ export default function PresetTest() {
         let button3 = await driver.findComponent(ON.text('全选'));
         await CommonFunc.sleep(500);
         await button3?.click();
-        console.info('PresetTest0001 全选 success');
+        console.info('SUB_ARKUI_ARKUI_PRESET_TEST_0001 全选 success');
         await CommonFunc.sleep(500);
 
         await textArea1.dragTo(textArea2);
         await CommonFunc.sleep(500);
-        console.info('PresetTest0001 dragTo success');
+        console.info('SUB_ARKUI_ARKUI_PRESET_TEST_0001 dragTo success');
         let button4 = await driver.findComponent(ON.text('取消'));
         await CommonFunc.sleep(500);
         await button4?.click();
         await CommonFunc.sleep(500);
-        console.info('PresetTest0001 取消 success');
+        console.info('SUB_ARKUI_ARKUI_PRESET_TEST_0001 取消 success');
 
         await textArea1.longClick();
         await CommonFunc.sleep(500);
@@ -104,12 +104,12 @@ export default function PresetTest() {
         await CommonFunc.sleep(500);
         await button5?.click();
         await CommonFunc.sleep(500);
-        console.info('PresetTest0001 2 全选 success');
+        console.info('SUB_ARKUI_ARKUI_PRESET_TEST_0001 2 全选 success');
         let button6 = await driver.findComponent(ON.text('复制'));
         await CommonFunc.sleep(500);
         await button6?.click();
         await CommonFunc.sleep(500);
-        console.info('PresetTest0001 2 复制 success');
+        console.info('SUB_ARKUI_ARKUI_PRESET_TEST_0001 2 复制 success');
         await textArea1.dragTo(textArea2);
         await CommonFunc.sleep(500);
         let Text7 = await driver.findComponent(ON.text('长按内容至浮起，可拖拽到底部小艺'));
@@ -119,7 +119,7 @@ export default function PresetTest() {
           await button7?.click();
         }
         await CommonFunc.sleep(500);
-        console.info('PresetTest0001 2 Button success');
+        console.info('SUB_ARKUI_ARKUI_PRESET_TEST_0001 2 Button success');
       }else {
         //切换HAD 输入法
         let textArea2 = await driver.findComponent(ON.id('textArea2_preset'));
@@ -136,10 +136,10 @@ export default function PresetTest() {
       let strJson = getInspectorByKey('textArea2_preset');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
-      console.info("[PresetTest0001] component obj is: " + JSON.stringify(obj));
+      console.info("[SUB_ARKUI_ARKUI_PRESET_TEST_0001] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
       expect(obj.$type).assertEqual('TextArea');
-      console.info("[PresetTest0001] end");
+      console.info("[SUB_ARKUI_ARKUI_PRESET_TEST_0001] end");
 
     });
 
