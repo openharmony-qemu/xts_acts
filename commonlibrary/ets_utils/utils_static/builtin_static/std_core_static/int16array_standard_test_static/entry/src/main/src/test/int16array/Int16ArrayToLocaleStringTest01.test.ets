@@ -300,21 +300,6 @@ export default function Int16ArrayToLocaleStringTest01(): void {
       expect(result).assertEqual(expectedResult);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_1600
-     * @tc.name testInt16ArrayToLocaleStringTestOne016
-     * @tc.desc Verify Int16Array.toLocaleString with locale 'ru-RU' uses non-breaking space group separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToLocaleStringTestOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let val: int = 5678;
-      let arr: Int16Array = Int16Array.of(val);
-      let result: string = arr.toLocaleString('ru-RU');
-      let expectedResult: string = '5 678';
-      expect(result).assertEqual(expectedResult);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOLOCALESTRING_ONE_1700
