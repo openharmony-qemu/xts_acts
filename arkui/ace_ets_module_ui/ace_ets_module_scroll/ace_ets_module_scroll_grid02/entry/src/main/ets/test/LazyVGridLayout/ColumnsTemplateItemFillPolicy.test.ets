@@ -59,12 +59,9 @@ export default function ColumnsTemplateItemFillPolicyTest() {
       let strJson: string = getInspectorByKey('lazyVGrid_columnsTemplate_sm1Md2Lg3');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[columnsTemplateItemFillPolicy_0100] type: " + JSON.stringify(obj.$type));
-      console.info("[columnsTemplateItemFillPolicy_0100] itemFillPolicy: " +
-        JSON.stringify(obj.$attrs.itemFillPolicy));
-      console.info("[columnsTemplateItemFillPolicy_0100] header: " +
-        JSON.stringify(obj.$attrs.header));
       expect(obj.$type).assertEqual('LazyVGridLayout');
-      expect(obj.$attrs.header).assertEqual('ItemFillPolicy: BREAKPOINT_SM1MD2LG3');
+      let headerComp = await driver.findComponent(ON.text('ItemFillPolicy: BREAKPOINT_SM1MD2LG3'));
+      expect(headerComp !== null).assertTrue();
       console.info('[columnsTemplateItemFillPolicy_0100] END');
       done();
     })
@@ -131,12 +128,9 @@ export default function ColumnsTemplateItemFillPolicyTest() {
       let strJson: string = getInspectorByKey('lazyVGrid_columnsTemplate_sm2Md3Lg5');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[columnsTemplateItemFillPolicy_0300] type: " + JSON.stringify(obj.$type));
-      console.info("[columnsTemplateItemFillPolicy_0300] itemFillPolicy: " +
-        JSON.stringify(obj.$attrs.itemFillPolicy));
-      console.info("[columnsTemplateItemFillPolicy_0300] header: " +
-        JSON.stringify(obj.$attrs.header));
       expect(obj.$type).assertEqual('LazyVGridLayout');
-      expect(obj.$attrs.header).assertEqual('ItemFillPolicy: BREAKPOINT_SM2MD3LG5');
+      let headerComp = await driver.findComponent(ON.text('ItemFillPolicy: BREAKPOINT_SM2MD3LG5'));
+      expect(headerComp !== null).assertTrue();
       console.info('[columnsTemplateItemFillPolicy_0300] END');
       done();
     })
@@ -203,12 +197,9 @@ export default function ColumnsTemplateItemFillPolicyTest() {
       let strJson: string = getInspectorByKey('lazyVGrid_columnsTemplate_default');
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[columnsTemplateItemFillPolicy_0500] type: " + JSON.stringify(obj.$type));
-      console.info("[columnsTemplateItemFillPolicy_0500] itemFillPolicy: " +
-        JSON.stringify(obj.$attrs.itemFillPolicy));
-      console.info("[columnsTemplateItemFillPolicy_0500] header: " +
-        JSON.stringify(obj.$attrs.header));
       expect(obj.$type).assertEqual('LazyVGridLayout');
-      expect(obj.$attrs.header).assertEqual('ItemFillPolicy: BREAKPOINT_DEFAULT');
+      let headerComp = await driver.findComponent(ON.text('ItemFillPolicy: BREAKPOINT_DEFAULT'));
+      expect(headerComp !== null).assertTrue();
       console.info('[columnsTemplateItemFillPolicy_0500] END');
       done();
     })
