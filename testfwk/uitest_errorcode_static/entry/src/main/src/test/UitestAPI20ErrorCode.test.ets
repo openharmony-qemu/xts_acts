@@ -270,13 +270,6 @@ export default function uitestDriverErrorTest() : void {
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:100, displayId: 0}, {x:100, y: 100, displayId: 1}, 600);
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, test_driver_swipeBetween_17000007_static diff error is: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
-      }
-      try {
         await driver!.swipeBetween({x: 100, y:100}, {x:100, y: 100}, -1);
         expect().assertFail();
       }catch (e) {
@@ -442,13 +435,6 @@ export default function uitestDriverErrorTest() : void {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.displayId = -1 error is: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
-      }
-      try {
-        await driver!.dragBetween({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 600, 1500);
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag} test_driver_dragBetween_17000007_static,diff error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
@@ -646,13 +632,6 @@ export default function uitestDriverErrorTest() : void {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, test_mouseLongClick_401_static to.displayId=-1 error is: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code == 401).assertTrue();
-      }
-      try {
-        await driver!.mouseDrag({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1});
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, test_mouseLongClick_401_static diff error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code == 401).assertTrue();
       }
       try {

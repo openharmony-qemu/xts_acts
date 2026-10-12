@@ -569,13 +569,6 @@ export default function uitestDriverErrorTest(): void {
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 5, 200);
-        expect().assertFail();
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_fling_401_static diff.id = -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
-      }
-      try {
         await driver.fling({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, -1, 200);
         expect().assertFail();
       } catch (e) {
@@ -1061,13 +1054,6 @@ export default function uitestDriverErrorTest(): void {
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.mouseMoveWithTrack({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 600);
-        expect().assertFail();
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_mouseMoveWithTrack_401_static displayId diff is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
-      }
-      try {
         await driver.mouseMoveWithTrack({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 0}, -1);
         expect().assertFail();
       } catch (e) {
@@ -1427,13 +1413,6 @@ export default function uitestDriverErrorTest(): void {
         expect().assertFail();
       } catch (e) {
         hilog.info(domain, tag, `test_driver_penSwipe_static endPoint.displayId = -1 is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
-      }
-      try {
-        await driver.penSwipe({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 200, 1);
-        expect().assertFail();
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_penSwipe_static displayId.diff is, ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {

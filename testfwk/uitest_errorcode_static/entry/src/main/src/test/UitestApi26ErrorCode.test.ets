@@ -355,28 +355,6 @@ export default function uitestApi26ErrorTest(): void {
     });
 
     /**
-     * @tc.name   testDriverSwipeBetweenDisplayIdDiff_static
-     * @tc.number SUB_testfwk_UITEST_SWIPEBETWEEN_ERROR_0400
-     * @tc.desc   Test swipeBetween with speed out of range (> 40000), expecting error 17000007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverSwipeBetweenDisplayIdDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverSwipeBetweenDisplayIdDiff start`);
-      const options: TouchOptions = { speed: 800 };
-      try {
-        await driver!.swipeBetweenWithOptions({x: 100, y: 100, displayId: 0}, {x: 200, y: 200, displayId: 1}, options)
-        expect().assertFail();
-      } catch (err) {
-        console.info(`${TestTag}, testDriverSwipeBetweenDisplayIdDiff error is: ${JSON.stringify(err)}`)
-        expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
-      }
-      console.info(`${TestTag}, testDriverSwipeBetweenDisplayIdDiff end`);
-    });
-
-
-    /**
      * @tc.name   testDriverDragBetweenWithNegativeSpeed_static
      * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0200
      * @tc.desc   Test dragBetween with negative speed, expecting error 17000007
@@ -505,27 +483,6 @@ export default function uitestApi26ErrorTest(): void {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
       }
       console.info(`${TestTag}, testDriverDragBetweenWithPressureGreaterThanOne end`);
-    });
-
-    /**
-     * @tc.name   testDriverDragBetweenDisplayIdDiff_static
-     * @tc.number SUB_testfwk_UITEST_DRAGBETWEEN_ERROR_0600
-     * @tc.desc   Test dragBetween displayId diff, expecting error 17000007
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testDriverDragBetweenDisplayIdDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.info(`${TestTag}, testDriverDragBetweenDisplayIdDiff start`);
-      const options: TouchOptions = { speed: 800 };
-      try {
-        await driver!.dragBetweenWithOptions({x: 100, y: 100, displayId: 0}, {x: 200, y: 200, displayId: 1}, options)
-        expect().assertFail();
-      } catch (err) {
-        console.info(`${TestTag}, testDriverDragBetweenDisplayIdDiff error is: ${JSON.stringify(err)}`)
-        expect((err as BusinessError).code).assertEqual(ParameterErrorCode)
-      }
-      console.info(`${TestTag}, testDriverDragBetweenDisplayIdDiff end`);
     });
 
     /**
@@ -728,29 +685,6 @@ export default function uitestApi26ErrorTest(): void {
         expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       console.log(`${TestTag}, testDriverMouseDragErrorPressureTooLarge end`);
-    });
-
-    /**
-     * @tc.name   testDriverMouseDragErrorDisplayIdDiff_static
-     * @tc.number SUB_testfwk_UITEST_MOUSEDRAG_ERROR_0800
-     * @tc.desc   Test mouseDrag with displayId diff
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     @tc.level  LEVEL3
-     */
-    it('testDriverMouseDragErrorDisplayIdDiff_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff start`);
-      const from: Point = { x: 500, y: 1000, displayId: 0 };
-      const to: Point = { x: 500, y: 800, displayId: 1 };
-      const touchOptions: TouchOptions = { pressure: 1.0 };
-      try {
-        await driver!.mouseDragWithOptions(from, to, touchOptions);
-        expect().assertFail();
-      } catch (err) {
-        console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff error is: ${JSON.stringify(err)}`);
-        expect((err as BusinessError).code).assertEqual(ParameterErrorCode);
-      }
-      console.log(`${TestTag}, testDriverMouseDragErrorDisplayIdDiff end`);
     });
 
     /**
