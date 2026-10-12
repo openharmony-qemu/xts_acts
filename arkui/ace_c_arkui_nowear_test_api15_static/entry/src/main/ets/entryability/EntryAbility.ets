@@ -31,14 +31,6 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onWindowStageCreate');
-    let mainWindow: window.Window = windowStage.getMainWindowSync();
-    let promise1 = mainWindow.getProperties();
-    promise1.then((data) => {
-      console.info('当前屏幕ID' + data.displayId);
-      AppStorage.setOrCreate('displayID', data.displayId);
-    }).catch((err: BusinessError) => {
-    });
-
     windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent entering');
       if (err?.code) {
@@ -46,6 +38,21 @@ class EntryAbility extends UIAbility {
         return;
       }
       hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
+      let windowClass: window.Window | undefined = undefined;
+      windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
+        let errCode: number = err!.code;
+        if (errCode) {
+          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+          return;
+        }
+        windowClass = data;
+        try {
+          let properties: window.WindowProperties | undefined = windowClass?.getWindowProperties();
+          AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
+        } catch (exception) {
+          hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+        }
+      })
       hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
     });
   }

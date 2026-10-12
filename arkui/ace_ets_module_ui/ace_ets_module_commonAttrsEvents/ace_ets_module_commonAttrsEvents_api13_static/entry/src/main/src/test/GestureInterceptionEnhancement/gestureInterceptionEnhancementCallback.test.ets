@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../ets/MainAbility/common/Rect'
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function gestureInterceptionEnhancementCallbackTest() {
   describe('gestureInterceptionEnhancementCallbackTest', () => {
     beforeEach(async (): Promise<void> => {

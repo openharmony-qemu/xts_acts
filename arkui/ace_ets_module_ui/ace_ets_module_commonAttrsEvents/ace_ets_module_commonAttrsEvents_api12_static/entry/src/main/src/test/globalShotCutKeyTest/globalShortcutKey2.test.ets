@@ -31,7 +31,7 @@ const keycodeMap = new Map<string | FunctionKey, int>();
 
 keycodeMap.set(FunctionKey.TAB, KeyCode.KEYCODE_TAB);
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function globalShortcutKeyTest2() {
   describe('globalShortcutKeyTest2', () => {
     beforeEach(async (): Promise<void> => {

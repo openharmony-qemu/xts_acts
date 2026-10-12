@@ -20,7 +20,7 @@ import { Driver, ON } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function buttonGetTypeTest() {
 
   describe('ButtonGetTypeTest', (): void  => {

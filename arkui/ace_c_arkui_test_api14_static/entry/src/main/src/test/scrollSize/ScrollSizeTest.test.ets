@@ -22,7 +22,7 @@ import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, UIInspector, Context } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function ScrollSizeTest() {
 
   describe('ScrollSizeTest', (): void => {

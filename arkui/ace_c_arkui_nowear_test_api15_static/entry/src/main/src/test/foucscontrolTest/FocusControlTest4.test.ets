@@ -24,7 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 import { LibUtil } from '../../../ets/pages/LibUtil';
 let libUtil: LibUtil = new LibUtil();
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function FocusControlTest4(){
   describe('FocusControlTest4',  () =>{
      beforeEach(async (): Promise<void> => {

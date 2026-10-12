@@ -21,7 +21,7 @@ import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageMa
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function PanGestureUpdateTest() {
   describe('PanGestureUpdateTest', () => {
     beforeEach(async ():Promise<void> => {

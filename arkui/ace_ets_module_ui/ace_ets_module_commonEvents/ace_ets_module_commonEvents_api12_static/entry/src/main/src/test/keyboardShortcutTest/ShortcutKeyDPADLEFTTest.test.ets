@@ -25,7 +25,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function ShortcutKeyDPADLEFTTest() {
   describe('ShortcutKeyDPADLEFTTest', () => {
     beforeEach(async () => {

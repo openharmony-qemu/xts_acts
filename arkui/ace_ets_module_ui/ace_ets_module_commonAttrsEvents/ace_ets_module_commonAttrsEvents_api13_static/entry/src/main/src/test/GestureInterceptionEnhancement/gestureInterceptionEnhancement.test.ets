@@ -38,7 +38,7 @@ interface ParamName {
   message: MessageManager<boolean>
 }
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function gestureInterceptionEnhancementTest() {
   describe('gestureInterceptionEnhancementTest', () => {
     beforeEach(async (): Promise<void> => {

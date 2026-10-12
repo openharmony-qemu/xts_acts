@@ -23,7 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function SwipeGestureExample02Test() {
   describe('SwipeGestureExample02Test', () => {
     beforeEach(async ():Promise<void> => {
