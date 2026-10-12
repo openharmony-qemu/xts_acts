@@ -15,6 +15,8 @@
  */
 import {
   WebResourceResponse,
+  $rawfile,
+  Resource,
   Entry,
   Component,
   Column,
@@ -40,7 +42,7 @@ struct webResourceResponseSetResponseBodyParam {
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   response: WebResourceResponse = new WebResourceResponse();
   htmlBody: string = '<!DOCTYPE html><html><body><h1>setResponseBodyStatic</h1></body></html>';
-  rawfilePath: string = '$rawfile(\'index.html\')';
+  rawfileResource: Resource = $rawfile('index.html');
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -132,7 +134,7 @@ struct webResourceResponseSetResponseBodyParam {
               }
               case 'emitSetResponseBodyResourceStatic001': {
                 try {
-                  this.response.setResponseBody(this.rawfilePath);
+                  this.response.setResponseBody(this.rawfileResource);
                   Utils.emitEvent('success', 174770);
                 } catch (error) {
                   this.emitSetResponseBodyError(error, 174770);

@@ -29,7 +29,10 @@ async function navigateToSetResponseBodyPage(): Promise<void> {
   if (user !== undefined) {
     cmd += ' -u ' + user;
   }
-  abilityDelegator.executeShellCommand(cmd);
+  let shellResult = await abilityDelegator.executeShellCommand(cmd);
+  if (shellResult.exitCode !== 0) {
+    throw new Error('aa start failed, exitCode=' + shellResult.exitCode + ', result=' + shellResult.stdResult);
+  }
   await Utils.msSleep(5000);
   Utils.emitEvent('GoSetResponseBodyPageStatic', 10);
   await Utils.msSleep(2000);
@@ -81,7 +84,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
-        done();
       }, IT_TIMEOUT_MS)
 
     /**
@@ -100,7 +102,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
-        done();
       }, IT_TIMEOUT_MS)
 
     /**
@@ -119,7 +120,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
-        done();
       }, IT_TIMEOUT_MS)
 
     /**
@@ -138,7 +138,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
-        done();
       }, IT_TIMEOUT_MS)
 
     /**
@@ -157,7 +156,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
-        done();
       }, IT_TIMEOUT_MS)
 
     /**
@@ -176,7 +174,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
-        done();
       }, IT_TIMEOUT_MS)
 
     /**
@@ -195,7 +192,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
-        done();
       }, IT_TIMEOUT_MS)
   })
 }

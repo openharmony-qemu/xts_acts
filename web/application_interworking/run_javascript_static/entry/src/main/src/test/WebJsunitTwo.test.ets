@@ -25,7 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webJsunitTwo() {
+export default function webJsunitTwo(): void {
 
   describe('componentLifeCycleTestOneAdapt001', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -56,7 +56,6 @@ export default function webJsunitTwo() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey ('webcomponent', 10, '');
       await Utils.msSleep(6000);
-      done();
     })
 
     /**
@@ -76,7 +75,6 @@ export default function webJsunitTwo() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey ('webcomponent', 10, '');
       await Utils.msSleep(6000);
-      done();
     })
 
 

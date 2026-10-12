@@ -26,7 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function jsMessageExt() {
+export default function jsMessageExt(): void {
 
   describe('JsMessageExtTestSuite', ():void => {
 
@@ -77,7 +77,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -95,7 +94,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -113,7 +111,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -131,7 +128,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -149,7 +145,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -167,7 +162,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -185,7 +179,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -203,7 +196,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -221,7 +213,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -239,7 +230,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -257,7 +247,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -275,7 +264,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -293,7 +281,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -311,7 +298,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -329,7 +315,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -347,7 +332,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -365,7 +349,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -383,7 +366,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -401,7 +383,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -419,7 +400,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -437,7 +417,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -455,7 +434,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -473,7 +451,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
@@ -491,7 +468,6 @@ export default function jsMessageExt() {
       await Utils.msSleep(2000);
       inspector.sendEventByKey('JsMessageExtButton', 10, '');
       await Utils.msSleep(6000);
-      done()
     })
 
     /**
