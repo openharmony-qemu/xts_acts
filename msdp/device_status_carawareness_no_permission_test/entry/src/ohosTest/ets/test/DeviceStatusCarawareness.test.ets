@@ -46,9 +46,9 @@ export default function KitCarAwarenessTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: SUB_MSDP_DeviceStatus_CARAWARENESS_ON_SPATIALMOTION_0100
-     * @tc.name: SUB_MSDP_DeviceStatus_CARAWARENESS_ON_SPATIALMOTION_0100
-     * @tc.desc: Call onSpatialMotion without permission, expect error code 201.
+     * @tc.number SUB_MSDP_DeviceStatus_CARAWARENESS_ON_SPATIALMOTION_0100
+     * @tc.name SUB_MSDP_DeviceStatus_CARAWARENESS_ON_SPATIALMOTION_0100
+     * @tc.desc Call onSpatialMotion without permission, expect error code 201.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -72,9 +72,9 @@ export default function KitCarAwarenessTest() {
     });
 
     /**
-     * @tc.number: SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REALTIMEWEATHER_0100
-     * @tc.name: SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REALTIMEWEATHER_0100
-     * @tc.desc: Call onRealTimeWeather without permission, expect error code 201.
+     * @tc.number SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REALTIMEWEATHER_0100
+     * @tc.name SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REALTIMEWEATHER_0100
+     * @tc.desc Call onRealTimeWeather without permission, expect error code 201.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
@@ -98,9 +98,9 @@ export default function KitCarAwarenessTest() {
     });
 
     /**
-     * @tc.number: SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REFUELING_0100
-     * @tc.name: SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REFUELING_0100
-     * @tc.desc: Call onRefueling without permission, expect error code 201.
+     * @tc.number SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REFUELING_0100
+     * @tc.name SUB_MSDP_DeviceStatus_CARAWARENESS_ON_REFUELING_0100
+     * @tc.desc Call onRefueling without permission, expect error code 201.
      * @tc.level Level1
      * @tc.size MediumTest
      * @tc.type Function
