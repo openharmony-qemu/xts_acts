@@ -35,15 +35,17 @@ export default function volumeManagerTest() {
      */
     it('test_getExternalDiskInfos_Promise_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: Function): Promise<void> => {
         try {
           let disks: Array<volumeManager.ExternalDiskInfo> = await volumeManager.getExternalDiskInfos();
           hilog.info(domain, tag, 'getExternalDiskInfos successfully: %{public}s', JSON.stringify(disks));
+          done();
         } catch (error) {
           const err = error as BusinessError;
           hilog.error(domain, tag, 'Failed to getExternalDiskInfos. Code: %{public}d, message: %{public}s',
             err.code, err.message);
           expect(false).assertTrue();
+          done();
         }
       });
 
