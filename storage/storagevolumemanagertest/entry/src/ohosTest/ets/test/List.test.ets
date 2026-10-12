@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import volumeManagerTest from './volumeManager.test.ets'
+import volumeManagerTest from './volumeManager.test'
 export default function testsuite() {
     volumeManagerTest()
 }
