@@ -1083,9 +1083,9 @@ export default function promiseRejectTest() {
      */
     it('PromiseRejectTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const racePromises = [
-        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('10ms')), 50)),
+        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('100ms')), 150)),
         new Promise<string>((_, reject) => setTimeout(() => reject('5ms'), 50)),
-        new Promise<string>(resolve => setTimeout(() => resolve('20ms'), 50))
+        new Promise<string>(resolve => setTimeout(() => resolve('200ms'), 250))
       ];
 
       let winner = '';

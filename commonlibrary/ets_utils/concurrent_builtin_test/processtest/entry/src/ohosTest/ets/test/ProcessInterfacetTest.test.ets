@@ -522,7 +522,7 @@ export default function ProcessInterfacetTest() {
       const caseName = 'ProcessInterfacetTest1500';
       console.info(`${caseName}, test start`);
       let errorCount = 0;
-      let exitCount = 0;
+      let messageCount = 0;
       const totalCalls = 100;
       const mainUptime = process.uptime();
       console.info(`${caseName}, uptime: ${mainUptime}`);
@@ -530,10 +530,10 @@ export default function ProcessInterfacetTest() {
         if (event.data !== mainUptime) {
           errorCount++;
         }
+        messageCount++;
         console.log(`${event.data}`);
       };
       WorkThread8.workerStageModel.onexit = () => {
-        exitCount++;
       };
       WorkThread8.workerStageModel.onerror = (err) => {
         console.error(`${caseName}, Worker error: ${err.message}`);
@@ -543,7 +543,7 @@ export default function ProcessInterfacetTest() {
       for (let i = 0; i < totalCalls; i++) {
         WorkThread8.workerStageModel.postMessage('uptime');
       }
-      while(exitCount < 1){
+      while(messageCount < totalCalls){
         await sleep(100);
       }
       WorkThread8.workerStageModel.terminate();
