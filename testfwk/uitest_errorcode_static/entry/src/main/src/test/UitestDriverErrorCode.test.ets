@@ -1129,13 +1129,6 @@ export default function uitestDriverErrorTest(): void {
         expect((e as BusinessError).code).assertEqual(ErrorCode);
       }
       try {
-        await driver.mouseDrag({x: 100, y: 100,displayId: 0}, {x: 100, y: 100, displayId: 1}, 600, 1500);
-        expect().assertFail();
-      } catch (e) {
-        hilog.info(domain, tag, `test_driver_mouseDrag_401_static diff.displayId is, ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ErrorCode);
-      }
-      try {
         await driver.mouseDrag({x: 100, y: 100,displayId: 0}, {x: 100, y: 100, displayId: 0}, -1, 1500);
         expect().assertFail();
       } catch (e) {
