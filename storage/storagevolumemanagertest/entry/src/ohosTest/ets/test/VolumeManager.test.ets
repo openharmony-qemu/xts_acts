@@ -37,7 +37,6 @@ export default function volumeManagerTest() {
         expect(false).assertTrue();
       }
     });
-  })
 
     /**
      * @tc.name   test_getExternalVolumeInfos_Promise_000
@@ -56,4 +55,5 @@ export default function volumeManagerTest() {
         expect(false).assertTrue();
       }
     });
+  });
 }
