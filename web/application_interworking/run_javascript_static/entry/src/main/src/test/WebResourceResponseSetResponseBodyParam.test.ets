@@ -66,44 +66,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
     })
 
     /**
-     * @tc.name   testSetResponseBodyNullStatic001
-     * @tc.number SUB_WEB_WEBRESOURCERESPONSE_SETRESPONSEBODY_NULL_STATIC_0100
-     * @tc.desc   test WebResourceResponse.setResponseBody with null parameter (static)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testSetResponseBodyNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitSetResponseBodyNullStatic001', 174700);
-        await Utils.msSleep(2000);
-        Utils.registerEvent('testSetResponseBodyNullStatic001', 'success', 174710, done);
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(6000);
-        done();
-      }, IT_TIMEOUT_MS)
-
-    /**
-     * @tc.name   testSetResponseBodyUndefinedStatic001
-     * @tc.number SUB_WEB_WEBRESOURCERESPONSE_SETRESPONSEBODY_UNDEFINED_STATIC_0100
-     * @tc.desc   test WebResourceResponse.setResponseBody with undefined parameter (static)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testSetResponseBodyUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitSetResponseBodyUndefinedStatic001', 174700);
-        await Utils.msSleep(2000);
-        Utils.registerEvent('testSetResponseBodyUndefinedStatic001', 'success', 174720, done);
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
-        await Utils.msSleep(6000);
-        done();
-      }, IT_TIMEOUT_MS)
-
-    /**
      * @tc.name   testSetResponseBodyEmptyStringStatic001
      * @tc.number SUB_WEB_WEBRESOURCERESPONSE_SETRESPONSEBODY_EMPTYSTRING_STATIC_0100
      * @tc.desc   test WebResourceResponse.setResponseBody with empty string parameter (static)

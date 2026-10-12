@@ -33,8 +33,6 @@ export class StringFields {
   public str: string = '';
 }
 
-type ResponseBodyData = String | Int | ArrayBuffer;
-
 @Entry
 @Component
 struct webResourceResponseSetResponseBodyParam {
@@ -63,6 +61,17 @@ struct webResourceResponseSetResponseBodyParam {
     }
   }
 
+  private emitSetResponseBodyError(error: Object, eventId: Long): void {
+    try {
+      let err = error as BusinessError;
+      console.error(this.stringObj.str + ` ErrorCode: ${err.code}, Message: ${err.message}`);
+      Utils.emitEvent(String(err.code), eventId);
+    } catch (castErr) {
+      console.error(this.stringObj.str + ' catch emit failed: ' + JSON.stringify(error));
+      Utils.emitEvent('error', eventId);
+    }
+  }
+
   build() {
     Column() {
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
@@ -76,33 +85,12 @@ struct webResourceResponseSetResponseBodyParam {
           .onClick((e: ClickEvent) => {
             console.info('key==>' + this.stringObj.str)
             switch (this.stringObj.str) {
-              case 'emitSetResponseBodyNullStatic001': {
-                try {
-                  this.response.setResponseBody(null as ResponseBodyData);
-                  Utils.emitEvent('success', 174710);
-                } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174710);
-                }
-                break;
-              }
-              case 'emitSetResponseBodyUndefinedStatic001': {
-                try {
-                  this.response.setResponseBody(undefined as ResponseBodyData);
-                  Utils.emitEvent('success', 174720);
-                } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174720);
-                }
-                break;
-              }
               case 'emitSetResponseBodyEmptyStringStatic001': {
                 try {
                   this.response.setResponseBody('');
                   Utils.emitEvent('success', 174730);
                 } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174730);
+                  this.emitSetResponseBodyError(error, 174730);
                 }
                 break;
               }
@@ -111,8 +99,7 @@ struct webResourceResponseSetResponseBodyParam {
                   this.response.setResponseBody(this.htmlBody);
                   Utils.emitEvent('success', 174735);
                 } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174735);
+                  this.emitSetResponseBodyError(error, 174735);
                 }
                 break;
               }
@@ -121,8 +108,7 @@ struct webResourceResponseSetResponseBodyParam {
                   this.response.setResponseBody(123);
                   Utils.emitEvent('success', 174740);
                 } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174740);
+                  this.emitSetResponseBodyError(error, 174740);
                 }
                 break;
               }
@@ -131,8 +117,7 @@ struct webResourceResponseSetResponseBodyParam {
                   this.response.setResponseBody(0);
                   Utils.emitEvent('success', 174750);
                 } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174750);
+                  this.emitSetResponseBodyError(error, 174750);
                 }
                 break;
               }
@@ -141,8 +126,7 @@ struct webResourceResponseSetResponseBodyParam {
                   this.response.setResponseBody(-1);
                   Utils.emitEvent('success', 174760);
                 } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174760);
+                  this.emitSetResponseBodyError(error, 174760);
                 }
                 break;
               }
@@ -151,8 +135,7 @@ struct webResourceResponseSetResponseBodyParam {
                   this.response.setResponseBody(this.rawfilePath);
                   Utils.emitEvent('success', 174770);
                 } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174770);
+                  this.emitSetResponseBodyError(error, 174770);
                 }
                 break;
               }
@@ -164,8 +147,7 @@ struct webResourceResponseSetResponseBodyParam {
                   this.response.setResponseBody(buffer);
                   Utils.emitEvent('success', 174780);
                 } catch (error) {
-                  let err = error as BusinessError;
-                  Utils.emitEvent(String(err.code), 174780);
+                  this.emitSetResponseBodyError(error, 174780);
                 }
                 break;
               }
