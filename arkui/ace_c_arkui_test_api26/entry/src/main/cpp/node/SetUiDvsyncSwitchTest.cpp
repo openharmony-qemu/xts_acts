@@ -16,6 +16,8 @@
 #include "common/common.h"
 #include <arkui/native_node.h>
 #include <arkui/native_interface.h>
+#include <arkui/ui_info_collection.h>
+#include <arkui/ui_json_wrapper.h>
 
 namespace ArkUICapiTest {
 
