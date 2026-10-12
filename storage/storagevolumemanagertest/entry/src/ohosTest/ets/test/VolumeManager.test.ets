@@ -33,7 +33,7 @@ export default function volumeManagerTest() {
         let disks: Array<volumeManager.ExternalDiskInfo> = await volumeManager.getExternalDiskInfos();
         console.info('getExternalDiskInfos successfully:' + JSON.stringify(disks));
       } catch (error) {
-        console.error(`Failed to getExternalDiskInfos. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+        console.info(`Failed to getExternalDiskInfos. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
         expect(false).assertTrue();
       }
     });
@@ -52,7 +52,7 @@ export default function volumeManagerTest() {
         let volumes: Array<volumeManager.ExternalVolumeInfo> = await volumeManager.getExternalVolumeInfos();
         console.info('getExternalVolumeInfos successfully:' + JSON.stringify(volumes));
       } catch (error) {
-        console.error(`Failed to getExternalVolumeInfos. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+        console.info(`Failed to getExternalVolumeInfos. Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
         expect(false).assertTrue();
       }
     });
