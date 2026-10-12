@@ -107,7 +107,8 @@ export default function checkAlbumAttrTest () {
     it('album_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_001';
       try {
-        let album:ESObject = await helper.createAlbum(testNum);
+        let albumName: string = testNum + '_' + Date.now();
+        let album:ESObject = await helper.createAlbum(albumName);
         const id = getAlbumId(album.albumUri);
         expect(album.albumUri).assertEqual('file://media/PhotoAlbum/' + id);
         let fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'albumImageVideoCount01.jpg');
