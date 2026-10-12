@@ -357,9 +357,10 @@ export default function observerManagerSimStateTest1() {
       console.info(`${caseName} test start`);
       try {
         let slotId: int = 3;
+        await sim.deactivateSim(slotId);
         observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
           console.info(`${caseName} data: ${data}`);
-          ExpectFail();
+          ExpectTrue(data === true);
           done();
         });
       } catch (error) {
@@ -367,6 +368,7 @@ export default function observerManagerSimStateTest1() {
         ExpectTrue(error?.code === 8300001);
         done();
       }
+      await sim.activateSim(3);
       console.info(`${caseName} test end`);
     });
 
