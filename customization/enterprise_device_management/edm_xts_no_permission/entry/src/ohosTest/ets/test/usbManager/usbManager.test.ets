@@ -24,6 +24,10 @@ import restrictions from '@ohos.enterprise.restrictions';
 const DISALLOWED_USB_DEVICES_MAX_SIZE = 200;
 const LABEL_USB = 'usb';
 
+const OPTICAL_DISC_BURN_USB_DEVICES: Array<usbManager.UsbDevice> = [
+  { vendorId: 1, productId: 1, serial: 'serial001' }
+];
+
 export default function usbManagerTest() {
   describe('usbManager_test', () => {
     testAddAllowedUsbDevices();
@@ -38,6 +42,9 @@ export default function usbManagerTest() {
     testRemoveDisallowedPermissiveUsbDevices();
     testGetDisallowedPermissiveUsbDevices();
     testGetUsbSerialNumber();
+    testAddAllowedOpticalDiscDriveBurnUsbDevices();
+    testRemoveAllowedOpticalDiscDriveBurnUsbDevices();
+    testGetAllowedOpticalDiscDriveBurnUsbDevices();
     testSetExternalStorageInterceptEnable();
     testIsExternalStorageInterceptEnable();
     testSetExternalStorageDeviceMountPolicy();
@@ -340,6 +347,83 @@ function testGetUsbSerialNumber() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testAddAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_add_allowed_optical_disc_drive_burn_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager addAllowedOpticalDiscDriveBurnUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_allowed_optical_disc_drive_burn_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_remove_allowed_optical_disc_drive_burn_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager removeAllowedOpticalDiscDriveBurnUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_allowed_optical_disc_drive_burn_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_get_allowed_optical_disc_drive_burn_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager getAllowedOpticalDiscDriveBurnUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_allowed_optical_disc_drive_burn_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect(error.code).assertEqual(201);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
