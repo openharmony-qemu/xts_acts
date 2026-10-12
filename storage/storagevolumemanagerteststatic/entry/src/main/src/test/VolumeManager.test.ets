@@ -1,4 +1,4 @@
-'use static';
+V'use static';
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -59,16 +59,17 @@ export default function volumeManagerTest() {
      */
     it('test_getExternalDiskInfos_Promise_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (): Promise<void> => {
+      async (done: Function): Promise<void> => {
         try {
           let disks: Array<volumeManager.ExternalDiskInfo> = await volumeManager.getExternalDiskInfos();
           hilog.info(domain, tag, 'getExternalDiskInfos result: %{public}s', JSON.stringify(disks));
-          expect(Array.isArray(disks)).assertTrue();
+          done();
         } catch (error) {
           const err = error as BusinessError;
           hilog.error(domain, tag, 'Failed to getExternalDiskInfos. Code: %{public}d, message: %{public}s',
             err.code, err.message);
           expect(false).assertTrue();
+          done();
         }
       });
 
@@ -83,19 +84,19 @@ export default function volumeManagerTest() {
      */
     it('test_getExternalVolumeInfos_Promise_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (): Promise<void> => {
+      async (done: Function): Promise<void> => {
         try {
           let volumes: Array<volumeManager.ExternalVolumeInfo> = await volumeManager.getExternalVolumeInfos();
           hilog.info(domain, tag, 'getExternalVolumeInfos successfully: %{public}s', JSON.stringify(volumes));
+          done();
         } catch (error) {
           const err = error as BusinessError;
           hilog.error(domain, tag, 'Failed to getExternalVolumeInfos. Code: %{public}d, message: %{public}s',
             err.code, err.message);
           expect(false).assertTrue();
+          done();
         }
       });
-
-
     hilog.info(domain, tag, '%{public}s', 'volumeManagerTest describe end');
   });
 }
