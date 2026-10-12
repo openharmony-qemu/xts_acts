@@ -43,7 +43,7 @@ export default function abilityTest() {
         console.debug('ACTS_GetAppContext_0200====>Create Subscriber====');
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          if (err) {
+          if (err && err.code !== 0) {
             console.info(`callback err: ${JSON.stringify(err)}`);
             expect().assertFail();
             return;
