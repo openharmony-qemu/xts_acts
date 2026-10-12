@@ -60,15 +60,13 @@ export default function onVisibleAreaChangeModifierUndefinedTest() {
       await CommonFunc.sleep(500);
 
       let driver1 = Driver.create();
-      let onVisibleAreaChangeModifier1 = await driver1.findComponent(ON.id('commonmethod_onVisibleAreaChangeModifier22')) as Component;
-      await CommonFunc.sleep(500);
-      let onVisibleAreaChangeModifier2 = await driver1.findComponent(ON.id('commonmethod_onVisibleAreaChangeModifier21')) as Component;
-      await CommonFunc.sleep(500);
-      await (onVisibleAreaChangeModifier1?.dragTo(onVisibleAreaChangeModifier2) as Promise<void>);
-      await CommonFunc.sleep(2000);
+      let scrollBar: Component = await driver1.findComponent(ON.type('Scroll')) as Component;
+      await scrollBar.scrollToBottom();
+      await CommonFunc.sleep(3000);
 
       let strJson = inspector.getInspectorByKey('commonmethod_onVisibleAreaChangeModifier1');
       let onVisibleAreaChangeModifierValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content');
+      console.info('onVisibleAreaChangeModifier1 content is :' + onVisibleAreaChangeModifierValue.asString());
       expect(onVisibleAreaChangeModifierValue.asString()).assertEqual('The component is completely invisible!');
 
       let driver2 = Driver.create();
@@ -79,14 +77,12 @@ export default function onVisibleAreaChangeModifierUndefinedTest() {
       let btn3: Component | null = await driver3.findComponent(ON.id('button_onVisibleAreaChangeModifier2'));
       btn3?.click();
       await CommonFunc.sleep(2000);
-      let driver4 = Driver.create();
-      let onVisibleAreaChangeModifier3 = await driver4.findComponent(ON.id('commonmethod_onVisibleAreaChangeModifier24')) as Component;
-      await CommonFunc.sleep(500);
-      await (onVisibleAreaChangeModifier1?.dragTo(onVisibleAreaChangeModifier3) as Promise<void>);
-      await CommonFunc.sleep(500);
+      await scrollBar.scrollToTop();
+      await CommonFunc.sleep(3000);
 
       let strJson1 = inspector.getInspectorByKey('commonmethod_onVisibleAreaChangeModifier1');
       let onVisibleAreaChangeModifierValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content');
+      console.info('onVisibleAreaChangeModifier1 content2 is :' + onVisibleAreaChangeModifierValue1.asString());
       expect(onVisibleAreaChangeModifierValue1.asString()).assertEqual('The component is completely invisible!');
 
       console.info('[onVisibleAreaChangeModifierUndefinedTest_static_0100] END');

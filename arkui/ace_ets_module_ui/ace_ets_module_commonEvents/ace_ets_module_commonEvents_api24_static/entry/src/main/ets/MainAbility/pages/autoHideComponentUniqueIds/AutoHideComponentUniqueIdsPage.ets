@@ -134,7 +134,7 @@ struct AutoHideComponentUniqueIdsPage {
         }
       }
       .width('90%')
-      .margin({ top: '2%', bottom: '2%' } as Margin)
+      .margin({ top: '1%', bottom: '1%' } as Margin)
       .justifyContent(FlexAlign.Center)
 
       Row({ space: '2%' } as RowOptions) {
@@ -142,7 +142,7 @@ struct AutoHideComponentUniqueIdsPage {
           Text('Drag1')
         }
         .width('12%')
-        .height('8%')
+        .height('6%')
         .backgroundColor(Color.Blue)
         .borderRadius('1%')
         .id('dragSource1')
@@ -170,7 +170,7 @@ struct AutoHideComponentUniqueIdsPage {
           Text('Drag2')
         }
         .width('12%')
-        .height('8%')
+        .height('6%')
         .backgroundColor(Color.Green)
         .borderRadius('1%')
         .id('dragSource2')
@@ -181,7 +181,7 @@ struct AutoHideComponentUniqueIdsPage {
           Text('Drag3')
         }
         .width('12%')
-        .height('8%')
+        .height('6%')
         .backgroundColor('#800080')
         .borderRadius('1%')
         .id('dragSource3')
@@ -190,13 +190,13 @@ struct AutoHideComponentUniqueIdsPage {
       }
       .width('90%')
       .justifyContent(FlexAlign.Center)
-      .margin({ top: '3%', bottom: '3%' } as Margin)
+      .margin({ top: '1%', bottom: '1%' } as Margin)
 
       Column() {
         Text('Drop')
       }
       .width('30%')
-      .height('6%')
+      .height('4%')
       .backgroundColor(Color.Gray)
       .borderRadius('1%')
       .id('dropTarget')
@@ -206,11 +206,11 @@ struct AutoHideComponentUniqueIdsPage {
         this.dragResult = 'Drop Success';
         this.restoreVisibility();
       })
-      .margin({ top: '2%', bottom: '2%' } as Margin)
+      .margin({ top: '1%', bottom: '1%' } as Margin)
 
       Text('Result: ' + this.dragResult)
         .id('dragResultText')
-        .margin({ bottom: '2%' } as Margin)
+        .margin({ bottom: '1%' } as Margin)
 
       Row({ space: '1%' } as RowOptions) {
         Button('T1')
@@ -251,12 +251,12 @@ struct AutoHideComponentUniqueIdsPage {
       }
       .width('90%')
       .justifyContent(FlexAlign.Center)
-      .margin({ bottom: '2%' } as Margin)
+      .margin({ bottom: '1%' } as Margin)
 
       Button('ExecuteDrag')
         .width('35%')
         .id('btnExecuteDrag')
-        .margin({ bottom: '2%' } as Margin)
+        .margin({ bottom: '1%' } as Margin)
         .onClick(() => {
           console.info('[AutoHideComponentUniqueIdsPage] ExecuteDrag button clicked, testType=' +
           this.currentTestType.toString());
@@ -319,7 +319,7 @@ struct AutoHideComponentUniqueIdsPage {
       }
       .width('90%')
       .justifyContent(FlexAlign.Center)
-      .margin({ bottom: '2%' } as Margin)
+      .margin({ bottom: '1%' } as Margin)
     }
     .width('100%')
     .height('100%')

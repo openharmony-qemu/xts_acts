@@ -109,9 +109,9 @@ it('SwipeGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       let driver = Driver.create();
       let speed = (Math.floor(areaWidth2 * 0.6 / 0.016 / 1000) * 1000).toInt()
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 * 0.2).toInt(),
+      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 * 0.8).toInt(),
         Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2).toInt(),
-        Math.round(areaObj2.left + areaWidth2 * 0.8).toInt(),
+        Math.round(areaObj2.left + areaWidth2 * 0.2).toInt(),
         Math.round(areaObj2.top + areaObj2.top + areaHeight2 / 2).toInt(), speed)) as Promise<void>)
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SwipeGesture2');
