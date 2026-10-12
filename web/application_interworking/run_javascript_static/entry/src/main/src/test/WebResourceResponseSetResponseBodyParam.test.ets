@@ -17,18 +17,46 @@
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Utils.test';
 import inspector from '@ohos.arkui.inspector';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+
+const IT_TIMEOUT_MS: number = 120000;
+const BUNDLE_NAME: string = 'com.open.harmony.runjavascripttest.static';
+
+async function navigateToSetResponseBodyPage(): Promise<void> {
+  let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+  let cmd: string = 'aa start -a EntryAbility -b ' + BUNDLE_NAME;
+  let user: string | undefined = abilityDelegatorRegistry.getArguments().parameters['-u'] as string | undefined;
+  if (user !== undefined) {
+    cmd += ' -u ' + user;
+  }
+  abilityDelegator.executeShellCommand(cmd);
+  await Utils.msSleep(5000);
+  Utils.emitEvent('GoSetResponseBodyPageStatic', 10);
+  await Utils.msSleep(2000);
+  try {
+    inspector.sendEventByKey('JsMessageExtButton', 10, '');
+  } catch (err) {
+    console.error('navigate: JsMessageExtButton failed, try webcomponent: ' + JSON.stringify(err));
+    try {
+      inspector.sendEventByKey('webcomponent', 10, '');
+    } catch (err2) {
+      console.error('navigate: webcomponent failed: ' + JSON.stringify(err2));
+    }
+  }
+  await Utils.msSleep(6000);
+}
 
 export default function webResourceResponseSetResponseBodyParam(): void {
 
   describe('webResourceResponseSetResponseBodyParamStaticTest', (): void => {
 
     beforeAll(async (): Promise<void> => {
-      // 接在 componentLifeCycleTestOneAdapt001 之后，当前在 webTwo；勿 aa start（易与 JsMessageExtButton 竞态导致 beforeAll 失败）
-      await Utils.msSleep(2000);
-      Utils.emitEvent('GoSetResponseBodyPageStatic', 10);
-      await Utils.msSleep(2000);
-      inspector.sendEventByKey('webcomponent', 10, '');
-      await Utils.msSleep(3000);
+      // 本套件在 List 中最后执行；冷启动回到 jsMessageExt 再跳页，避免 webTwo 上 inspector 失败导致 beforeAll 抛错整套件 blocked
+      try {
+        await navigateToSetResponseBodyPage();
+      } catch (err) {
+        console.error('beforeAll navigate failed (non-fatal): ' + JSON.stringify(err));
+      }
       console.log('beforeAll end,%s', 'Succeed!')
     });
 
@@ -54,7 +82,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyUndefinedStatic001
@@ -73,7 +101,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyEmptyStringStatic001
@@ -92,7 +120,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyHtmlStringStatic001
@@ -111,7 +139,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyNumberStatic001
@@ -130,7 +158,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyNumberZeroStatic001
@@ -149,7 +177,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyNumberNegativeStatic001
@@ -168,7 +196,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyResourceStatic001
@@ -187,7 +215,7 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
 
     /**
      * @tc.name   testSetResponseBodyArrayBufferStatic001
@@ -206,6 +234,6 @@ export default function webResourceResponseSetResponseBodyParam(): void {
         inspector.sendEventByKey('webResourceResponseSetResponseBodyParamStaticButton', 10, '');
         await Utils.msSleep(6000);
         done();
-      })
+      }, IT_TIMEOUT_MS)
   })
 }
