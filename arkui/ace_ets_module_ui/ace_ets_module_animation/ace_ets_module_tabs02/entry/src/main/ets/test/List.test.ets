@@ -15,8 +15,10 @@
 
 import systemMaterialBarStyle from './Tabs/systemMaterialBarStyle.test';
 import TabsBarFloatingStyle from './Tabs/TabsBarFloatingStyle.test';
+import TabsSidebarDisplayStyle from './Tabs/TabsSidebarDisplayStyle.test';
 
 export default function testsuite() {
   systemMaterialBarStyle();
   TabsBarFloatingStyle();
+  TabsSidebarDisplayStyle();
 }
