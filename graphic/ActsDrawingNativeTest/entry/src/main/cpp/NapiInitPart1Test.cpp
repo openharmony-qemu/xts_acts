@@ -1286,3 +1286,31 @@ napi_value DrawingFontGetTextPathWithFallback(napi_env env, napi_callback_info i
         return resultValue;
     });
 }
+
+// Font WithFallback related functions
+napi_value DrawingFontWithFallback(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, FONT_WITH_FALLBACK_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackNull,
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestFontTextToGlyphsWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackNull,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackNull,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestFontMeasureTextWithBrushOrPenWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestFontTypefaceFallbackInfoDestroyNull,
+            OHOS::Rosen::Drawing::TestFontTypefaceFallbackInfoDestroyMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}

@@ -355,6 +355,34 @@ napi_value DrawingTextBlobOther(napi_env env, napi_callback_info info)
             OHOS::Rosen::Drawing::TestTextBlobUniqueIDMultipleCalls,
             OHOS::Rosen::Drawing::TestTextBlobDestroyNormal,
             OHOS::Rosen::Drawing::TestTextBlobDestroyNull,
+            OHOS::Rosen::Drawing::TestTextBlobsArrayDestroyNull,
+            OHOS::Rosen::Drawing::TestTextBlobsArrayDestroyMultipleCalls,
+        };
+        int result = DispatchByCaseNum(caseNum, handlers);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// TextBlob WithFallback related functions
+napi_value DrawingTextBlobWithFallback(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        static const std::array<DrawingNativeFn, TEXT_BLOB_WITH_FALLBACK_HANDLER_COUNT> handlers = {
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromTextWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromTextWithFallbackNull,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromTextWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromTextWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromPosTextWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromPosTextWithFallbackNull,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromPosTextWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromPosTextWithFallbackMultipleCalls,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromStringWithFallbackNormal,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromStringWithFallbackNull,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromStringWithFallbackAbnormal,
+            OHOS::Rosen::Drawing::TestTextBlobCreateFromStringWithFallbackMultipleCalls,
         };
         int result = DispatchByCaseNum(caseNum, handlers);
         napi_value resultValue;

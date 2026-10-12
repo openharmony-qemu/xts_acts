@@ -1178,9 +1178,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontArgumentsDestoryNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontArgumentsDestoryNull', Level.LEVEL0, () => {
+    it('testFontArgumentsDestoryNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontArgumentsDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -1191,9 +1191,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontArgumentsDestoryMultiplieCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontArgumentsDestoryMultiplieCalls', Level.LEVEL0, () => {
+    it('testFontArgumentsDestoryMultiplieCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontArgumentsDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -1218,9 +1218,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontSetThemeFontFollowedMuitipleCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontSetThemeFontFollowedMuitipleCalls', Level.LEVEL0, () => {
+    it('testFontSetThemeFontFollowedMuitipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetThemeFontFollowed(1);
       expect(result).assertEqual(0);
     })
@@ -1231,9 +1231,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontSetThemeFontFollowedNull.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testFontSetThemeFontFollowedNull', Level.LEVEL0, () => {
+    it('testFontSetThemeFontFollowedNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontSetThemeFontFollowed(2);
       expect(result).assertEqual(0);
     })
@@ -1260,7 +1260,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFontIsThemeFontFollowedMultipleCalls', Level.LEVEL0, () => {
+    it('testFontIsThemeFontFollowedMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontIsThemeFontFollowed(1);
       expect(result).assertEqual(0);
     })
@@ -1273,7 +1273,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFontIsThemeFontFollowedNull', Level.LEVEL0, () => {
+    it('testFontIsThemeFontFollowedNull', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontIsThemeFontFollowed(2);
       expect(result).assertEqual(0);
     })
@@ -1298,9 +1298,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontMeasureTextWithBrushOrPenNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testFontMeasureTextWithBrushOrPenNormal2', Level.LEVEL0, () => {
+    it('testFontMeasureTextWithBrushOrPenNormal2', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingFontMeasureTextWithBrushOrPen(1);
       expect(result).assertEqual(0);
     })
@@ -1364,9 +1364,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontGetWidthsBoundsNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testFontGetWidthsBoundsNormal2', Level.LEVEL0, () => {
+    it('testFontGetWidthsBoundsNormal2', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingFontGetWidthsBounds(1);
       expect(result).assertEqual(0);
     })
@@ -1443,9 +1443,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontGePosNormal2
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL1
      */
-    it('testFontGePosNormal2', Level.LEVEL0, () => {
+    it('testFontGePosNormal2', Level.LEVEL1, () => {
       const result = libDrawingNative.DrawingFontGetPos(2);
       expect(result).assertEqual(0);
     })
@@ -1576,9 +1576,9 @@ export default function DrawingNativeFontTest() {
      * @tc.desc   test for testFontFeaturesAddFeatureNormal
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL0
      */
-    it('testFontFeaturesAddFeatureNormal', Level.LEVEL2, () => {
+    it('testFontFeaturesAddFeatureNormal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontFeatures(0);
       expect(result).assertEqual(0);
     })
@@ -1645,6 +1645,188 @@ export default function DrawingNativeFontTest() {
      */
     it('testFontGetTextPathWithFallbackMultipleCalls', Level.LEVEL3, () => {
       const result = libDrawingNative.DrawingFontGetTextPathWithFallback(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontTextToGlyphsWithFallbackNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0100
+     * @tc.desc   test for testFontTextToGlyphsWithFallbackNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontTextToGlyphsWithFallbackNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontTextToGlyphsWithFallbackNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0200
+     * @tc.desc   test for testFontTextToGlyphsWithFallbackNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontTextToGlyphsWithFallbackNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontTextToGlyphsWithFallbackAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0300
+     * @tc.desc   test for testFontTextToGlyphsWithFallbackAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontTextToGlyphsWithFallbackAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(2);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontTextToGlyphsWithFallbackMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0400
+     * @tc.desc   test for testFontTextToGlyphsWithFallbackMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontTextToGlyphsWithFallbackMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(3);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithFallbackNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0500
+     * @tc.desc   test for testFontMeasureTextWithFallbackNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontMeasureTextWithFallbackNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(4);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithFallbackNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0600
+     * @tc.desc   test for testFontMeasureTextWithFallbackNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureTextWithFallbackNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(5);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithFallbackAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0700
+     * @tc.desc   test for testFontMeasureTextWithFallbackAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureTextWithFallbackAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(6);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithFallbackMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0800
+     * @tc.desc   test for testFontMeasureTextWithFallbackMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureTextWithFallbackMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(7);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithBrushOrPenWithFallbackNormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_0900
+     * @tc.desc   test for testFontMeasureTextWithBrushOrPenWithFallbackNormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontMeasureTextWithBrushOrPenWithFallbackNormal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(8);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithBrushOrPenWithFallbackNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_1000
+     * @tc.desc   test for testFontMeasureTextWithBrushOrPenWithFallbackNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureTextWithBrushOrPenWithFallbackNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(9);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithBrushOrPenWithFallbackAbnormal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_1100
+     * @tc.desc   test for testFontMeasureTextWithBrushOrPenWithFallbackAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureTextWithBrushOrPenWithFallbackAbnormal', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(10);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontMeasureTextWithBrushOrPenWithFallbackMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_1200
+     * @tc.desc   test for testFontMeasureTextWithBrushOrPenWithFallbackMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontMeasureTextWithBrushOrPenWithFallbackMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(11);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontTypefaceFallbackInfoDestroyNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_1300
+     * @tc.desc   test for testFontTypefaceFallbackInfoDestroyNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontTypefaceFallbackInfoDestroyNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(12);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontTypefaceFallbackInfoDestroyMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontWithFallback_1400
+     * @tc.desc   test for testFontTypefaceFallbackInfoDestroyMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontTypefaceFallbackInfoDestroyMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontWithFallback(13);
       expect(result).assertEqual(0);
     })
   })
