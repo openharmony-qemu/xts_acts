@@ -34,12 +34,19 @@ export default function addAssetsTest () {
   describe('addAssetsTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const invalidArgErrorCode = 13900020;
+    const ts = `_${Date.now()}`;
+    const addCb01Jpg = `addCb01${ts}.jpg`;
+    const addCb03Jpg = `addCb03${ts}.jpg`;
+    const addCb01Mp4 = `addCb01${ts}.mp4`;
+    const addPro01Jpg = `addPro01${ts}.jpg`;
+    const addCb04Jpg = `addCb04${ts}.jpg`;
+    const addPro01Mp4 = `addPro01${ts}.mp4`;
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
       await driveFn();
       await sleep(1000);
-      let fileNameList = ["addCb01.jpg", "addCb03.jpg", "addCb01.mp4", "addPro01.jpg", "addCb04.jpg", "addPro01.mp4"];
+      let fileNameList = [addCb01Jpg, addCb03Jpg, addCb01Mp4, addPro01Jpg, addCb04Jpg, addPro01Mp4];
       checkResourceFile(testContext);
       await createResource(testContext, fileNameList)
     });
@@ -58,8 +65,8 @@ export default function addAssetsTest () {
     it('addAssets_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'addAssets_callback_001';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'addCb01.jpg');
+        const album:ESObject = await helper.createAlbum(testNum + ts);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, addCb01Jpg);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
         let fetchResultBefore: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(fetchAllOption());
         let countBefore: number = fetchResultBefore.getCount();
@@ -103,9 +110,9 @@ export default function addAssetsTest () {
     it('addAssets_callback_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_callback_003';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.in(photoKeys.DISPLAY_NAME, ['addCb03.jpg', 'addCb01.mp4']);
+        predicates.in(photoKeys.DISPLAY_NAME, [addCb03Jpg, addCb01Mp4]);
         const fetchOps : photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
@@ -148,7 +155,7 @@ export default function addAssetsTest () {
     it('addAssets_callback_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_callback_004';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         album.addAssets([], async (err:BusinessError) => {
           try {
             if (err) {
@@ -179,7 +186,7 @@ export default function addAssetsTest () {
     it('addAssets_callback_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_callback_005';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         album.addAssets(undefined, async (err:BusinessError) => {
           if (err) {
             console.info(`${testNum} err: ${err}`);
@@ -207,7 +214,7 @@ export default function addAssetsTest () {
     it('addAssets_callback_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_callback_006';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         album.addAssets([123123], async (err:BusinessError) => {
           expect(false).assertTrue();
         })
@@ -230,7 +237,7 @@ export default function addAssetsTest () {
     it('addAssets_callback_007', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_callback_007';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         album.addAssets('', async (err:BusinessError) => {
           if (!err) {
             console.info(`${testNum} addAssets '' success.`);
@@ -261,8 +268,8 @@ export default function addAssetsTest () {
     it('addAssets_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'addAssets_promise_001';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, 'addPro01.jpg');
+        const album:ESObject = await helper.createAlbum(testNum + ts);
+        const fetchOps = fetchOption(testNum, photoKeys.DISPLAY_NAME, addPro01Jpg);
         const asset = await getFileAsset(testContext, testNum, fetchOps);
 
         await album.addAssets([asset]);
@@ -288,9 +295,9 @@ export default function addAssetsTest () {
     it('addAssets_promise_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_promise_003';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         const predicates = new dataSharePredicates.DataSharePredicates();
-        predicates.in(photoKeys.DISPLAY_NAME, ['addCb04.jpg', 'addPro01.mp4']);
+        predicates.in(photoKeys.DISPLAY_NAME, [addCb04Jpg, addPro01Mp4]);
         const fetchOps : photoAccessHelper.FetchOptions = {
           fetchColumns: [],
           predicates: predicates
@@ -322,7 +329,7 @@ export default function addAssetsTest () {
     it('addAssets_promise_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_promise_004';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         await album.addAssets([]);
         done();
       } catch (error) {
@@ -343,7 +350,7 @@ export default function addAssetsTest () {
     it('addAssets_promise_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_promise_005';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         await album.addAssets(undefined);
         expect(false).assertTrue();
         done();
@@ -365,7 +372,7 @@ export default function addAssetsTest () {
     it('addAssets_promise_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_promise_006';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         await album.addAssets([123123]);
         expect(false).assertTrue();
         done();
@@ -387,7 +394,7 @@ export default function addAssetsTest () {
     it('addAssets_promise_007', Level.LEVEL2, async (done: Function) => {
       const testNum = 'addAssets_promise_007';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
+        const album:ESObject = await helper.createAlbum(testNum + ts);
         await album.addAssets('');
         expect(false).assertTrue();
         done();
