@@ -53,7 +53,7 @@ export default function webResourceResponseSetResponseBodyParam() {
       try {
         await config.enableAbility(BUNDLE_NAME, CAPACITY);
         console.info(`enable success`);
-      } catch (err: object) {
+      } catch (err) {
         console.error(`failed to enable, ${err}`);
         expect(false).assertTrue();
       }
