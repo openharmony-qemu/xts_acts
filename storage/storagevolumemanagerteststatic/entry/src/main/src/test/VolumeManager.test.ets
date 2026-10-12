@@ -35,7 +35,7 @@ export default function volumeManagerTest() {
      */
     it('test_getExternalDiskInfos_Promise_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         try {
           let disks: Array<volumeManager.ExternalDiskInfo> = await volumeManager.getExternalDiskInfos();
           hilog.info(domain, tag, 'getExternalDiskInfos successfully: %{public}s', JSON.stringify(disks));
@@ -59,7 +59,7 @@ export default function volumeManagerTest() {
      */
     it('test_getExternalDiskInfos_Promise_static_001',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         try {
           let disks: Array<volumeManager.ExternalDiskInfo> = await volumeManager.getExternalDiskInfos();
           hilog.info(domain, tag, 'getExternalDiskInfos result: %{public}s', JSON.stringify(disks));
@@ -84,7 +84,7 @@ export default function volumeManagerTest() {
      */
     it('test_getExternalVolumeInfos_Promise_static_000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function): Promise<void> => {
+      async (done: () => void): Promise<void> => {
         try {
           let volumes: Array<volumeManager.ExternalVolumeInfo> = await volumeManager.getExternalVolumeInfos();
           hilog.info(domain, tag, 'getExternalVolumeInfos successfully: %{public}s', JSON.stringify(volumes));
