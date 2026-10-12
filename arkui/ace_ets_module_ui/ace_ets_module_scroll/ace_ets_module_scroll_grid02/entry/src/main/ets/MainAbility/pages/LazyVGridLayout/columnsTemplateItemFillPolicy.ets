@@ -62,7 +62,7 @@ struct LazyVGridLayoutColumnsTemplateItemFillPolicy {
   GridItemBuilder(item: number, backgroundColor: string, itemId: string) {
     Text(item.toString())
       .id(itemId)
-      .height(56)
+      .height(40)
       .width('100%')
       .borderRadius(6)
       .backgroundColor(backgroundColor)
@@ -86,9 +86,7 @@ struct LazyVGridLayoutColumnsTemplateItemFillPolicy {
           .rowsGap(LengthMetrics.vp(8))
           .columnsGap(LengthMetrics.vp(8))
           .header(this.ItemFillPolicySm1Md2Lg3Header)
-          .padding(8)
           .backgroundColor('#F7F9FC')
-          .border({ width: 1, color: '#D0D5DD' })
           .borderRadius(8)
 
           // ItemFillPolicy：根据内容区宽度对应的断点类型自动确定列数
@@ -103,9 +101,7 @@ struct LazyVGridLayoutColumnsTemplateItemFillPolicy {
           .rowsGap(LengthMetrics.vp(8))
           .columnsGap(LengthMetrics.vp(8))
           .header(this.ItemFillPolicySm2Md3Lg5Header)
-          .padding(8)
           .backgroundColor('#F7F9FC')
-          .border({ width: 1, color: '#D0D5DD' })
           .borderRadius(8)
 
           // ItemFillPolicy：根据内容区宽度对应的断点类型自动确定列数
@@ -120,12 +116,10 @@ struct LazyVGridLayoutColumnsTemplateItemFillPolicy {
           .rowsGap(LengthMetrics.vp(8))
           .columnsGap(LengthMetrics.vp(8))
           .header(this.ItemFillPolicyDefaultHeader)
-          .padding(8)
           .backgroundColor('#F7F9FC')
-          .border({ width: 1, color: '#D0D5DD' })
           .borderRadius(8)
         }
-        .space(LengthMetrics.vp(16))
+        .space(LengthMetrics.vp(5))
         .width('100%')
       }
       .width('100%')

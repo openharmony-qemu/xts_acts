@@ -218,7 +218,7 @@ export default function ColumnsTemplateItemFillPolicyTest() {
       console.info('[columnsTemplateItemFillPolicy_0600] START');
       let driver: Driver = Driver.create();
       let scrollComp = await driver.findComponent(ON.type('Scroll'));
-      await scrollComp.scrollSearch(ON.id('lazyVGrid_columnsTemplate_default'));
+      await scrollComp.scrollSearch(ON.id('type3_5'));
       await CommonFunc.sleep(1000);
       let gridComp = await driver.findComponent(ON.id('lazyVGrid_columnsTemplate_default'));
       let gridRect = await gridComp.getBounds();
