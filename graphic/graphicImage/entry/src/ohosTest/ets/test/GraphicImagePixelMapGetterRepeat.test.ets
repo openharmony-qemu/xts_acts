@@ -208,24 +208,16 @@ export default function GraphicImagePixelMapGetterRepeat() {
 
           await pixelMap.release();
 
-          let allThrowError: boolean = true;
           for (let i = 0; i < 100; i++) {
             try {
               pixelMap.getUniqueId();
-              allThrowError = false;
-              console.error(msgStr + 'expected error at iteration ' + i + ' after release, but no error');
+              expect().assertFail();
               break;
             } catch (err) {
-              if (Number(err.code) !== 7600201) {
-                allThrowError = false;
-                console.error(msgStr + 'unexpected error code at iteration ' + i +
-                  ', expected: 7600201, actual: ' + err.code);
-                break;
-              }
+              expect(Number(err.code)).assertEqual(7600201);
             }
           }
-          console.info(msgStr + 'all 100 calls throw 7600201 after release: ' + allThrowError);
-          expect(allThrowError).assertTrue();
+          console.info(msgStr + 'all 100 calls throw 7600201 after release');
 
           console.info(msgStr + 'end');
           done();
