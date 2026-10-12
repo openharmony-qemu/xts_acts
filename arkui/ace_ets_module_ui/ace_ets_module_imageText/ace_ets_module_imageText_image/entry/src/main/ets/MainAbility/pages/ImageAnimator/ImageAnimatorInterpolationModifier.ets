@@ -31,8 +31,8 @@ struct ImageAnimatorInterpolationModifierPage {
     this.modifier.interpolationValue = this.storageInterpolation;
   }
 
-  setExceptionInterpolation(value: ESObject) {
-    this.modifier.interpolationValue = value as ImageInterpolation;
+  setExceptionInterpolation(value: ImageInterpolation | undefined | null | number) {
+    this.modifier.interpolationValue = value;
   }
 
   build() {
@@ -96,12 +96,10 @@ struct ImageAnimatorInterpolationModifierPage {
 
       Row({ space: 10 }) {
         Button('Undefined').layoutWeight(1).onClick(() => {
-          let undefinedValue: ESObject = undefined;
-          this.setExceptionInterpolation(undefinedValue)
+          this.setExceptionInterpolation(undefined)
         }).key('btn_undefined')
         Button('Null').layoutWeight(1).onClick(() => {
-          let nullValue: ESObject = null;
-          this.setExceptionInterpolation(nullValue)
+          this.setExceptionInterpolation(null)
         }).key('btn_null')
       }
       .width('100%')

@@ -80,7 +80,7 @@ class InterpolationInvalidEnumModifier extends BaseImageAnimatorModifier {
 }
 
 // 异常值：负数 -1
-class InterpolationInvalidNegativeModifier extends BaseImageAnimatorModifier {
+class InterpolationNegativeModifier extends BaseImageAnimatorModifier {
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     super.applyNormalAttribute(instance);
     instance.interpolation(-1 as ImageInterpolation);
@@ -112,7 +112,7 @@ struct ImageAnimatorInterpolationModifierPage {
   interpolationMediumModifier: InterpolationMediumModifier = new InterpolationMediumModifier();
   interpolationHighModifier: InterpolationHighModifier = new InterpolationHighModifier();
   interpolationInvalidEnumModifier: InterpolationInvalidEnumModifier = new InterpolationInvalidEnumModifier();
-  interpolationInvalidNegativeModifier: InterpolationInvalidNegativeModifier = new InterpolationInvalidNegativeModifier();
+  interpolationNegativeModifier: InterpolationNegativeModifier = new InterpolationNegativeModifier();
   interpolationUndefinedModifier: InterpolationUndefinedModifier = new InterpolationUndefinedModifier();
   interpolationNullModifier: InterpolationNullModifier = new InterpolationNullModifier();
 
@@ -157,7 +157,7 @@ struct ImageAnimatorInterpolationModifierPage {
 
         ImageAnimator()
           .id('ia_interpolation_invalid_negative')
-          .attributeModifier(this.interpolationInvalidNegativeModifier)
+          .attributeModifier(this.interpolationNegativeModifier)
           .width(100)
           .height(100)
 
