@@ -24,7 +24,7 @@ struct PopupOptionsLevelMode {
   @State showEmbeddedNav: boolean = false;
 
   build() {
-    Column({ space: 12 }) {
+    Column() {
       Text('PopupOptions.levelMode').fontSize(18).fontWeight(FontWeight.Bold)
       Button('levelMode default')
         .id('btn_popup_level_default')

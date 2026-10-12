@@ -31,11 +31,12 @@ struct DialogLifeCallbacks {
 
   build() {
     Scroll() {
-      Column({ space: 8 }) {
+      Column() {
         Text('DialogBaseOptions lifecycle callbacks').fontSize(18).fontWeight(FontWeight.Bold)
         Text('action=' + this.lastAction).id('life_cb_action')
         Text('life=' + this.lifeLog).id('life_cb_log')
-        Button('onWillAppear')
+        Row() {
+          Button('onWillAppear')
           .id('btn_life_will_appear')
           .onClick(async () => {
             this.lifeLog = '';
@@ -69,7 +70,9 @@ struct DialogLifeCallbacks {
               }]
             });
           })
-        Button('onWillDisappear')
+        }
+        Row() {
+          Button('onWillDisappear')
           .id('btn_life_will_disappear')
           .onClick(async () => {
             this.lifeLog = '';
@@ -103,7 +106,9 @@ struct DialogLifeCallbacks {
               }]
             });
           })
-        Button('full life chain')
+        }
+        Row() {
+          Button('full life chain')
           .id('btn_life_full')
           .onClick(async () => {
             this.lifeLog = '';
@@ -142,7 +147,9 @@ struct DialogLifeCallbacks {
               }]
             });
           })
-        Button('subtitle only style')
+        }
+        Row() {
+          Button('subtitle only style')
           .id('btn_life_subtitle')
           .onClick(async () => {
             await this.presenter().present({
@@ -168,6 +175,8 @@ struct DialogLifeCallbacks {
               }]
             });
           })
+        }
+        
       }
       .width('100%')
       .padding(16)

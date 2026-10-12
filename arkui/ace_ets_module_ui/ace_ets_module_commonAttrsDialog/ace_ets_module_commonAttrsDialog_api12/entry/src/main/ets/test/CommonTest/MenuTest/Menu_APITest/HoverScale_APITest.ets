@@ -16,6 +16,9 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../../MainAbility/common/Common';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function HoverScale_APITest() {
   describe('HoverScale_APITest', () => {
     beforeEach(async (done: Function) => {
@@ -56,7 +59,9 @@ export default function HoverScale_APITest() {
       let point = await row.getBoundsCenter();
       await btn.click();
       await CommonFunc.sleep(5000);
-      await driver.click(Math.round(point.x/2), Math.round(point.y/4));
+      // 涉及坐标
+      await driver.clickAt({ x: Math.round(point.x/2), y: Math.round(point.y/4), displayId: displayID });
+      // await driver.click(Math.round(point.x/2), Math.round(point.y/4));
       await CommonFunc.sleep(1000);
       let hoverScale = getInspectorByKey('hoverScale');
       console.info("[HoverScale_APITest_0100] hoverScale attrs is: " + JSON.stringify(JSON.parse(hoverScale).$attrs));
