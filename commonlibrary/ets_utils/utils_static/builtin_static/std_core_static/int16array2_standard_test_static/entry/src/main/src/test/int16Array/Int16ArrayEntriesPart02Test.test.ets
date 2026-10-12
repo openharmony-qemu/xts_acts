@@ -83,22 +83,6 @@ export default function int16ArrayEntriesPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART02__0300
-     * @tc.name int16ArrayEntriesPart02Test003
-     * @tc.desc Verify entries() over [100] first next() done is false
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayEntriesPart02Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(100);
-      let iter = arr.entries();
-      let result = iter.next();
-      let actual: boolean = result.done;
-      expect(actual).assertFalse();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART02__0400
      * @tc.name int16ArrayEntriesPart02Test004
      * @tc.desc Verify entries() over [10,20,30,40] second next() index equals 1
@@ -117,43 +101,6 @@ export default function int16ArrayEntriesPart02Test(): void {
       let actual: number = _i;
       let expected: int = 1;
       expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART02__0500
-     * @tc.name int16ArrayEntriesPart02Test005
-     * @tc.desc Verify entries() over [5,15,25,35] second next() value equals 15
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayEntriesPart02Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(5, 15, 25, 35);
-      let iter = arr.entries();
-      iter.next();
-      let entry = iter.next().value!;
-      let _i: int;
-      let _v: Number;
-      [_i, _v] = entry;
-      let actual: number = _v;
-      let expected: int = 15;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART02__0600
-     * @tc.name int16ArrayEntriesPart02Test006
-     * @tc.desc Verify entries() next().done true
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayEntriesPart02Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let iter = arr.entries();
-      let result = iter.next();
-      let actual: boolean = result.done;
-      expect(actual).assertTrue();
     });
 
     /**

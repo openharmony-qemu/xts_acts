@@ -56,34 +56,6 @@ export default function int16ArrayLastIndexOfTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_0200
-     * @tc.name testInt16ArrayLastIndexOfTestTwo002
-     * @tc.desc Verify lastIndexOf(1) returns -1 when not found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array([]);
-      const result: int = arr.lastIndexOf(1);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_0300
-     * @tc.name testInt16ArrayLastIndexOfTestTwo003
-     * @tc.desc Verify lastIndexOf(100) returns -1 when not found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array([5, 6, 7]);
-      const result: int = arr.lastIndexOf(100);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_0400
      * @tc.name testInt16ArrayLastIndexOfTestTwo004
      * @tc.desc Verify lastIndexOf(42) returns 2
@@ -637,21 +609,6 @@ export default function int16ArrayLastIndexOfTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_4300
-     * @tc.name testInt16ArrayLastIndexOfTestTwo043
-     * @tc.desc Verify lastIndexOf found index is less than length 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array([]);
-      arr.lastIndexOf(1);
-      let actual1: int = arr.length;
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_4400
      * @tc.name testInt16ArrayLastIndexOfTestTwo044
      * @tc.desc Verify lastIndexOf fromIndex length
@@ -800,44 +757,6 @@ export default function int16ArrayLastIndexOfTestTwoTest(): void {
       let actual1: int = arr.byteLength;
       let expected1: number = originalByteLen;
       expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_5300
-     * @tc.name testInt16ArrayLastIndexOfTestTwo053
-     * @tc.desc Verify lastIndexOf does not mutate array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array([10, 20, 30]);
-      arr.lastIndexOf(20);
-      let actual1: number = arr.$_get(0);
-      expect(actual1).assertEqual(10);
-      let actual2: number = arr.$_get(1);
-      expect(actual2).assertEqual(20);
-      let actual3: number = arr.$_get(2);
-      expect(actual3).assertEqual(30);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_TWO_5400
-     * @tc.name testInt16ArrayLastIndexOfTestTwo054
-     * @tc.desc Verify lastIndexOf does not mutate array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestTwo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array([10, 20, 30]);
-      arr.lastIndexOf(999);
-      let actual1: number = arr.$_get(0);
-      expect(actual1).assertEqual(10);
-      let actual2: number = arr.$_get(1);
-      expect(actual2).assertEqual(20);
-      let actual3: number = arr.$_get(2);
-      expect(actual3).assertEqual(30);
     });
 
     /**

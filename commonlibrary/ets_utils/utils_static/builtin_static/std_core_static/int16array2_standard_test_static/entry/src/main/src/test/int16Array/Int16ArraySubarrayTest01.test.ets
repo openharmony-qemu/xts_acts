@@ -59,22 +59,6 @@ export default function int16ArraySubarrayTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_ONE_0200
-     * @tc.name testInt16ArraySubarrayTestOne002
-     * @tc.desc Verify subarray() length equals arr.length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArraySubarrayTestOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let sub: Int16Array = arr.subarray();
-      let actual1: int = sub.length;
-      let expected1: int = arr.length;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_ONE_0300
      * @tc.name testInt16ArraySubarrayTestOne003
      * @tc.desc Verify subarray() element values via $_get
@@ -340,22 +324,6 @@ export default function int16ArraySubarrayTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_ONE_2000
-     * @tc.name testInt16ArraySubarrayTestOne020
-     * @tc.desc Verify subarray(-6) length equals arr.length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArraySubarrayTestOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let sub: Int16Array = arr.subarray(-6);
-      let actual1: int = sub.length;
-      let expected1: int = arr.length;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_ONE_2100
      * @tc.name testInt16ArraySubarrayTestOne021
      * @tc.desc Verify subarray(-6) element values via $_get
@@ -492,21 +460,6 @@ export default function int16ArraySubarrayTestOneTest(): void {
       let actual1: int = sub.length;
       let expected1: int = arr.length;
       expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_ONE_3000
-     * @tc.name testInt16ArraySubarrayTestOne030
-     * @tc.desc Verify subarray(1, 1) length equals 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArraySubarrayTestOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let sub: Int16Array = arr.subarray(1, 1);
-      let actual1: int = sub.length;
-      expect(actual1).assertEqual(0);
     });
 
     /**

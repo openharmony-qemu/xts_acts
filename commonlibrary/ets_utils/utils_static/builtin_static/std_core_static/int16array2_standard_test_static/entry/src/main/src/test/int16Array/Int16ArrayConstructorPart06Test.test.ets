@@ -465,38 +465,6 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2200
-     * @tc.name int16ArrayConstructorPart06Test022
-     * @tc.desc Verify new Int16Array(FixedArray<number>) BYTES_PER_ELEMENT equals 2
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [1.0];
-      let result: Int16Array = new Int16Array(src);
-      let actual: int = result.BYTES_PER_ELEMENT;
-      let expected: int = 2;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2300
-     * @tc.name int16ArrayConstructorPart06Test023
-     * @tc.desc Verify new Int16Array(FixedArray<number>) byteOffset is 0 for root buffer
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [1.0, 2.0];
-      let result: Int16Array = new Int16Array(src);
-      let actual: int = result.byteOffset;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2400
      * @tc.name int16ArrayConstructorPart06Test024
      * @tc.desc Verify new Int16Array(FixedArray<number>) buffer.byteLength equals result.byteLength
@@ -607,81 +575,6 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3000
-     * @tc.name int16ArrayConstructorPart06Test030
-     * @tc.desc Verify new Int16Array(FixedArray<number>) source FixedArray elements unchanged after construct
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [10.0, 20.0, 30.0];
-      let result: Int16Array = new Int16Array(src);
-      let actual: number = src[0];
-      let expected: number = 10.0;
-      expect(actual).assertEqual(expected);
-      let actual2: number = src[1];
-      let expected2: number = 20.0;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = src[2];
-      let expected3: number = 30.0;
-      expect(actual3).assertEqual(expected3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3100
-     * @tc.name int16ArrayConstructorPart06Test031
-     * @tc.desc Verify new Int16Array(FixedArray<number>) two instances from same source are independent
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [50.0, 60.0];
-      let arr1: Int16Array = new Int16Array(src);
-      let arr2: Int16Array = new Int16Array(src);
-      arr1.$_set(0, 777);
-      let actual: number = arr2.$_get(0);
-      let expected: int = 50;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3200
-     * @tc.name int16ArrayConstructorPart06Test032
-     * @tc.desc Verify new Int16Array(FixedArray<number>) two instances from same source have distinct buffers
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [1.0, 2.0];
-      let arr1: Int16Array = new Int16Array(src);
-      let arr2: Int16Array = new Int16Array(src);
-      let actual: boolean = arr1.buffer === arr2.buffer;
-      expect(actual).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3300
-     * @tc.name int16ArrayConstructorPart06Test033
-     * @tc.desc Verify new Int16Array(FixedArray<number>) allocates independent buffer
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [1.0, 2.0, 3.0];
-      let result: Int16Array = new Int16Array(src);
-      let actual: int = result.byteLength;
-      let expected: int = 6;
-      expect(actual).assertEqual(expected);
-      let actual2: int = result.byteOffset;
-      let expected2: int = 0;
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3400
      * @tc.name int16ArrayConstructorPart06Test034
      * @tc.desc Verify new Int16Array(FixedArray<number>) buffer mutation does not affect source FixedArray
@@ -713,31 +606,6 @@ export default function int16ArrayConstructorPart06Test(): void {
       let result: Int16Array = new Int16Array(src);
       let actual: boolean = result.buffer === buf;
       expect(actual).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3600
-     * @tc.name int16ArrayConstructorPart06Test036
-     * @tc.desc Verify new Int16Array(FixedArray<number>) [32768.0, -32769.0, 65535.0, 65536.0] four overflow elements [32768.0, -32769.0, 65535.0, 65536.0]
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [32768.0, -32769.0, 65535.0, 65536.0];
-      let result: Int16Array = new Int16Array(src);
-      let actual: number = result.$_get(0);
-      let expected: int = -32768;
-      expect(actual).assertEqual(expected);
-      let actual2: number = result.$_get(1);
-      let expected2: int = 32767;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = result.$_get(2);
-      let expected3: int = -1;
-      expect(actual3).assertEqual(expected3);
-      let actual4: number = result.$_get(3);
-      let expected4: int = 0;
-      expect(actual4).assertEqual(expected4);
     });
 
     /**

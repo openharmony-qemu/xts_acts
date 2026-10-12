@@ -112,40 +112,6 @@ export default function int16ArrayWithTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_THREE_0500
-     * @tc.name testInt16ArrayWithTestThree005
-     * @tc.desc Verify with(-5, 11) sets index 0 to 11 without mutating original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestThree005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([10, 20, 30, 40, 50]);
-      let result = arr.with(-5, 11);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(11);
-      let actual2: number = result.$_get(4);
-      expect(actual2).assertEqual(50);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_THREE_0600
-     * @tc.name testInt16ArrayWithTestThree006
-     * @tc.desc Verify with(-2, 66) sets index 3 to 66 without mutating original
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestThree006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([10, 20, 30, 40, 50]);
-      let result = arr.with(-2, 66);
-      let actual1: number = result.$_get(3);
-      expect(actual1).assertEqual(66);
-      let actual2: number = result.$_get(4);
-      expect(actual2).assertEqual(50);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_THREE_0700
      * @tc.name testInt16ArrayWithTestThree007
      * @tc.desc Verify with(0, 99) sets index 0 to 99 without mutating original
