@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function TabsSidebarDisplayStyle() {
+export default function TabsSidebarDisplayStyleTest() {
   describe('TabsSidebarDisplayStyle', () => {
     beforeEach(async (done: Function) => {
       console.info("TabsSidebarDisplayStyle beforeEach start");
