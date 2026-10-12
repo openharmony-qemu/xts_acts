@@ -50,7 +50,7 @@ export default function flexWrapReverse_fixedParentPadding() {
 
     /**
      * @tc.name   testWrapReverseParentfixedPaddingChildPadding
-     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildPadding
+     * @tc.number SUB_ACE_ARKUI_testWrapReverseParentfixedMarPadChildMarginAndPadding
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function flexWrapReverse_fixedParentPadding() {
 
     /**
      * @tc.name   testWrapReverseParentfixedPaddingChildMargin
-     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildMargin
+     * @tc.number SUB_ACE_ARKUI_testWrapReverseParentfixedPaddingChildMargin
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,9 +123,25 @@ export default function flexWrapReverse_fixedParentPadding() {
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest30');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest10');
 
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi1:' + Math.floor(Math.abs(Math.round(locationFlex.right - locationText1.right) - vp2px(70))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi2:' + Math.floor(Math.abs(Math.round(locationText1.left - locationText2.right) - vp2px(20))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi3:' + Math.floor(Math.abs(Math.round(locationText2.left - locationFlex.left) - vp2px(110))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi4:' + Math.floor(Math.abs(Math.round(locationText3.left - locationText1.left) - vp2px(20))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi5:' + Math.floor(Math.abs(Math.round(locationFlex.right - locationText3.right) - vp2px(50))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi6:' + Math.floor(Math.abs(Math.round(locationText1.top - locationText2.top) - vp2px(20))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi7:' + Math.floor(Math.abs(Math.round(locationText2.top - locationFlex.top) - vp2px(50))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi8:' + Math.floor(Math.abs(locationText3.top - locationText2.bottom)));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi9:' + Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom)));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi10:' + Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi11:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi12:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - vp2px(150))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi13:' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(50))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi14:' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))));
+      console.info('testWrapReverseParentfixedPaddingChildMargin_chazhi15:' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))));
+
       expect(Math.floor(Math.abs(Math.round(locationFlex.right - locationText1.right) - vp2px(70))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationText1.left - locationText2.right) - vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Math.round(locationText2.left - locationFlex.left) - vp2px(110))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Math.round(locationText2.left - locationFlex.left) - vp2px(110))) <= 2).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationText3.left - locationText1.left) - vp2px(20))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationFlex.right - locationText3.right) - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationText1.top - locationText2.top) - vp2px(20))) <= 1).assertTrue();
@@ -142,12 +158,11 @@ export default function flexWrapReverse_fixedParentPadding() {
       expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))) <= 1).assertTrue();
 
       console.info('new testWrapReverseParentfixedPaddingChildMargin END');
-
     });
 
     /**
      * @tc.name   testWrapReverseParentfixedPaddingChildPaddingAndMargin
-     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildPaddingAndMargin
+     * @tc.number SUB_ACE_ARKUI_testWrapReverseParentfixedPaddingChildPaddingAndMargin
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

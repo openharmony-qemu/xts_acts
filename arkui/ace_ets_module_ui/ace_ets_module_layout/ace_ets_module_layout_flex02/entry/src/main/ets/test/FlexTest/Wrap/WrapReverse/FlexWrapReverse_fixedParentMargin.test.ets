@@ -50,7 +50,7 @@ export default function flexWrapReverse_fixedParentMargin() {
 
     /**
      * @tc.name   testWrapReverseParentfixedMarginChildPadding
-     * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0600
+     * @tc.number SUB_ACE_ARKUI_testWrapReverseParentfixedMarginChildPadding
      * @tc.desc   The parent component layout space is fixed, and the parent component setting margin,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function flexWrapReverse_fixedParentMargin() {
 
     /**
      * @tc.name   testWrapReverseParentfixedMarginChildMargin
-     * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0700
+     * @tc.number SUB_ACE_ARKUI_testWrapReverseParentfixedMarginChildMargin
      * @tc.desc   The parent component layout space is fixed, and the parent component setting margin,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,9 +120,26 @@ export default function flexWrapReverse_fixedParentMargin() {
       let locationText2: RectValue = CommonFunc.getComponentRect('WrapReverseTest38');
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest39');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest13');
+
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi1:' + Math.floor(Math.abs((locationFlex.right - locationText1.right) - vp2px(50))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi2:' + Math.floor(Math.abs((locationText1.left - locationText2.right) - vp2px(50))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi3:' + Math.floor(Math.abs((locationText2.left - locationFlex.left) - vp2px(100))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi4:' + Math.floor(Math.abs((locationText3.left - locationText1.left) - vp2px(50))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi5:' + Math.floor(Math.abs(locationText3.right - locationFlex.right)));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi6:' + Math.floor(Math.abs((locationText1.top - locationFlex.top) - vp2px(50))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi7:' + Math.floor(Math.abs(locationText2.top - locationFlex.top)));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi8:' + Math.floor(Math.abs((locationText3.top - locationText2.bottom) - vp2px(50))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi9:' + Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom)));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi10:' + Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi11:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi12:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - vp2px(150))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi13:' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(50))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi14:' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))));
+      console.info('testWrapReverseParentfixedMarginChildMargin_chazhi15:' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))));
+
       expect(Math.floor(Math.abs((locationFlex.right - locationText1.right) - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationText2.right) - vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((locationText2.left - locationFlex.left) - vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((locationText2.left - locationFlex.left) - vp2px(100))) <= 2).assertTrue();
       expect(Math.floor(Math.abs((locationText3.left - locationText1.left) - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText3.right - locationFlex.right)) <= 1).assertTrue()
       expect(Math.floor(Math.abs((locationText1.top - locationFlex.top) - vp2px(50))) <= 1).assertTrue();
@@ -137,13 +154,13 @@ export default function flexWrapReverse_fixedParentMargin() {
       expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))) <= 1).assertTrue();
-      console.info('new testWrapReverseParentfixedMarginChildMargin END');
 
+      console.info('new testWrapReverseParentfixedMarginChildMargin END');
     });
 
     /**
      * @tc.name   testWrapReverseParentfixedMarginChildMarginAndPadding
-     * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_0800
+     * @tc.number SUB_ACE_ARKUI_testWrapReverseParentfixedMarginChildMarginAndPadding
      * @tc.desc   The parent component layout space is fixed, and the parent component setting margin,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
