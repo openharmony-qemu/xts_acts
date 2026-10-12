@@ -66,6 +66,7 @@ static napi_value RequestSuspendDelaySuccess(napi_env env, napi_callback_info in
     napi_value result;
     int32_t res = OH_BackgroundTaskManager_RequestSuspendDelay("test", OnCallbackCompleted, &delaySuspendInfo);
     napi_create_int32(env, res == ERR_TRANSIENT_TASK_OK ? 0 : -1, &result);
+    OH_BackgroundTaskManager_CancelSuspendDelay(delaySuspendInfo.requestId);
     return result;
 }
 
