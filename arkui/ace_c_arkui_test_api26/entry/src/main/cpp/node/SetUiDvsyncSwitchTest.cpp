@@ -24,7 +24,7 @@ namespace ArkUICapiTest {
 static napi_value SetUiDvsyncSwitchTest001(napi_env env, napi_callback_info info)
 {
     ArkUI_ContextHandle context1;
-    OH_ArkUI_NativeModule_UIJsonWrapper *pageText = nullptr;
+    OH_ArkUI_NativeModule_UIJsonWrapper *pageText;
     auto ret1 = OH_ArkUI_NativeModule_UIAgentGetPageText(context1, &pageText);
     ASSERT_EQ(ret1, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
     auto ret = OH_ArkUI_NodeUtils_SetUiDvsyncSwitch(context1, true);
