@@ -44,7 +44,7 @@ export default function persistenceV2IgnoreReadOnlyProperties2Test() {
       done();
     });
 
-    afterEach(() => {
+    afterEach(async () => {
       PersistenceV2.remove('IgnoreReadOnlyProperties2');
       await CommonFunc.sleep(500);
       console.info('[PersistenceV2IgnoreReadOnlyProperties2Test] afterEach called');

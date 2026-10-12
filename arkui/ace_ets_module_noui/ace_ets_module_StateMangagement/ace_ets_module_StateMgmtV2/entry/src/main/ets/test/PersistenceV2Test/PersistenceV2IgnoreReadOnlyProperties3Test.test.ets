@@ -44,7 +44,7 @@ export default function persistenceV2IgnoreReadOnlyProperties3Test() {
       done();
     });
 
-    afterEach(() => {
+    afterEach(async () => {
       // Cleanup persisted data
       PersistenceV2.remove('ac41');
       await CommonFunc.sleep(500);
