@@ -3410,7 +3410,7 @@ export default function adminManagerTest() {
         adminManager.getAdminInfos();
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code) === 9200001.assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
       done();
     })
