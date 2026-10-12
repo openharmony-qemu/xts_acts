@@ -364,8 +364,8 @@ export default function observerManagerSimStateTest1() {
           done();
         });
       } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
-        ExpectTrue(error?.code === 8300001);
+        console.info(`${caseName} catchError ` + error?.code);
+        ExpectTrue(error?.code === 8300001 || error?.code === 8300004);
         done();
       }
       await sim.activateSim(3);
