@@ -402,10 +402,20 @@ async function closePickerModelWithNoResult(driver: Driver, time ?: number) {
 
 async function savePhoto() {
   console.log('savePhoto start');
-  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
+  const context = getContext();
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
   try {
-    let uri = 'data/storage/el2/base/haps/files/demo.jpg';
-    let fileUriList = [fileUri.getUriFromPath(uri)];
+    const filePath = context.filesDir + '/demo.jpg';
+    const resourcePath = context.resourceDir + '/demo.jpg';
+    if (!fs.accessSync(filePath)) {
+      const srcFile = fs.openSync(resourcePath, fs.OpenMode.READ_ONLY);
+      const dstFile = fs.openSync(filePath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+      fs.copyFileSync(srcFile.fd, dstFile.fd);
+      fs.closeSync(srcFile);
+      fs.closeSync(dstFile);
+      console.log(`savePhoto copied ${resourcePath} -> ${filePath}`);
+    }
+    let fileUriList = [fileUri.getUriFromPath(filePath)];
     let photoCreationConfig: Array<photoAccessHelper.PhotoCreationConfig> = [
       {
         title: 'showAssetsCreationDialogTest',
@@ -414,19 +424,21 @@ async function savePhoto() {
         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,
       }
     ];
-    let result: string[] = [];
-    phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig).then((uris)=>{
-      result = uris;
+    let resultUri = '';
+    phAccessHelper.showAssetsCreationDialog(fileUriList, photoCreationConfig).then((uris) => {
+      resultUri = uris[0];
       console.log(`savePhoto result = ${JSON.stringify(uris)}`);
-    })
+    });
     await CommonFunc.sleep(3000);
     await driveFn();
-    readWriteFile(uri, result[0]);
+    await CommonFunc.sleep(1000);
+    readWriteFile(filePath, resultUri);
     console.log('savePhoto success');
   } catch (error) {
-    console.log('savePhoto fail')
+    console.log(`savePhoto fail: ${JSON.stringify(error)}`);
   }
 }
+
 
 function readWriteFile(srcUri: string, dstUri: string) {
   let srcFile: fileIo.File = fs.openSync(srcUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
