@@ -15,7 +15,7 @@
  */
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON, Component, PointerMatrix, MouseButton } from '@ohos.UiTest';
+import { Driver, ON, Component, PointerMatrix, MouseButton } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
@@ -23,6 +23,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function onKeyEventDispatchTest3() {
   describe('onKeyEventDispatchTest3', () => {
     beforeEach(async (): Promise<void> => {
@@ -59,10 +60,10 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
 
       console.info('[onKeyEventDispatchTest3_static_0100] START');
       let driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1500);
       // test ctrl & alt & shift
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, displayID)
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
@@ -71,7 +72,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       expect(obj.getElement('$attrs').getString('content')).assertEqual('ctrl & alt & shift  is press');
 
       // test ctrl & shift
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_CTRL_LEFT)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_CTRL_LEFT, displayID)
       await CommonFunc.sleep(1500);
       let strJson3 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj3 = JSON.parseJsonElement(strJson3);
@@ -79,7 +80,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       expect(obj3.getElement('$attrs').getString('content')).assertEqual('ctrl & shift  is press');
 
       // test ctrl & alt
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_CTRL_LEFT)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_CTRL_LEFT, displayID)
       await CommonFunc.sleep(1500);
       let strJson4 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj4 = JSON.parseJsonElement(strJson4);
@@ -87,7 +88,7 @@ it('onKeyEventDispatchTest3_static_0100', Level.LEVEL0, async (done: () => void)
       expect(obj4.getElement('$attrs').getString('content')).assertEqual('ctrl & alt  is press');
 
       // test alt & shift
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, displayID)
       await CommonFunc.sleep(1500);
       let strJson6 = inspector.getInspectorByKey('onkeyEventDispatch03' + '_modifierStatePress');
       let obj6 = JSON.parseJsonElement(strJson6);

@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON, Component } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function tabStopApiTest() {
   describe('tabStopApiTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -52,12 +53,12 @@ it('tabStopApiTest_static_1000', Level.LEVEL0, async (done: () => void): Promise
       console.info('[tabStopApiTest_static_1000] START');
       let driver = Driver.create();
        await CommonFunc.sleep(2000);
-      await driver.triggerKey(2049);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       let strJson = inspector.getInspectorByKey('button 3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[tabStopApiTest_static_1000] obj is: " + obj.getElement('$attrs').getBoolean('tabStop'));

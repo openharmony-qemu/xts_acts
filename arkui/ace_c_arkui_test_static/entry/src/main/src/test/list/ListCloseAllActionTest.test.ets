@@ -76,6 +76,7 @@ async function flingComponentH(key: string, isLeft: boolean, speed: Int = 10, di
   }
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function listCloseAllActionTest() {
 
   describe('ListCloseAllActionTest', () => {

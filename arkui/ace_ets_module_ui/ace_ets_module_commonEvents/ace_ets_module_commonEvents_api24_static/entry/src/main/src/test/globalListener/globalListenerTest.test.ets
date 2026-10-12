@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
+import { Driver, ON, MouseButton, Point } from '@kit.TestKit';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -25,6 +25,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function globalListenerTest(): void {
   describe('globalListenerTest', () => {
 
@@ -130,7 +131,7 @@ export default function globalListenerTest(): void {
       try {
       console.info('[globalListenerTest_0300] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('listenKey');
       let obj = JSON.parseJsonElement(strJson);

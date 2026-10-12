@@ -15,7 +15,7 @@
  */
 
 import { expect, describe, it, afterEach, beforeEach,  Level } from '../../../../hypium/index';
-import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
+import { Driver, ON, PointerMatrix, Rect } from '@kit.TestKit';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -24,6 +24,7 @@ import inspector from '@ohos.arkui.inspector';
 import { LibUtil } from '../../../ets/pages/LibUtil';
 let libUtil: LibUtil = new LibUtil();
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusControlTest4(){
   describe('FocusControlTest4',  () =>{
      beforeEach(async (): Promise<void> => {
@@ -86,15 +87,15 @@ export default function FocusControlTest4(){
         await Utils.sleep(1000); 
         
         // tab key
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
         await Utils.sleep(1000);
 
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
         await Utils.sleep(1000);
 
         expect(Utils.getComponentInfoByKey('button4x').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00');
 
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, displayID);
         await Utils.sleep(1000);
         done();
       } catch (err) {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON, Component, PointerMatrix, MouseButton } from '@ohos.UiTest';
+import { Driver, ON, Component, PointerMatrix, MouseButton } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function onkeyEventDispatchTest4() {
   describe('onkeyEventDispatchTest4', () => {
     beforeEach(async (): Promise<void> => {
@@ -60,7 +61,7 @@ it('onkeyEventDispatchTest4_static_0100', Level.LEVEL0, async (done: () => void)
 
       console.info('[onkeyEventDispatchTest4_static_0100] START');
       let driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
 
       // test the child component response
@@ -75,7 +76,7 @@ it('onkeyEventDispatchTest4_static_0100', Level.LEVEL0, async (done: () => void)
       console.info("[onkeyEventDispatchTest4_010] obj is: " + obj1.getElement('$attrs').getString('content'));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('parentTab');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
 
       // tab key focus

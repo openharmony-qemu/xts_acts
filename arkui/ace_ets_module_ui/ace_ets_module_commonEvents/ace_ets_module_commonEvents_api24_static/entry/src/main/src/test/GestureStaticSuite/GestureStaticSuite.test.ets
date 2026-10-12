@@ -29,7 +29,7 @@ import {
   ON,
   Rect,
   Point
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 
 function gesturePanOptionsDistanceMap(): Map<SourceTool, number> {
   let m: Map<SourceTool, number> = new Map<SourceTool, number>();
@@ -37,6 +37,7 @@ function gesturePanOptionsDistanceMap(): Map<SourceTool, number> {
   return m;
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function GestureStaticSuiteTest(): void {
   describe('GestureRealTypesPanGestureOptionsTest', () => {
 
@@ -118,8 +119,8 @@ export default function GestureStaticSuiteTest(): void {
       let button = await driver.findComponent(ON.id('gesturePanHost'));
       let center = await (button?.getBoundsCenter() as Promise<Point>);
       let rect = await (button?.getBounds() as Promise<Rect>)
-      await ((driver.swipe(Math.round(center.x).toInt(), Math.round(center.y).toInt(),
-        Math.round(rect.left).toInt(), Math.round(center.y).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(center.x).toInt(), y: Math.round(center.y).toInt(), displayId: displayID},
+        {x: Math.round(rect.left).toInt(), y: Math.round(center.y).toInt(), displayId: displayID})) as Promise<void>);
       await Utils.sleep(400);
       let gdx =
         AppStorage.get<string>('gesture_probe_pan_fi_gdx') ??
@@ -149,8 +150,8 @@ export default function GestureStaticSuiteTest(): void {
       let button = await driver.findComponent(ON.id('gesturePanHost'));
       let center = await (button?.getBoundsCenter() as Promise<Point>);
       let rect = await (button?.getBounds() as Promise<Rect>)
-      await ((driver.swipe(Math.round(center.x).toInt(), Math.round(center.y).toInt(),
-        Math.round(rect.left).toInt(), Math.round(center.y).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(center.x).toInt(), y: Math.round(center.y).toInt(), displayId: displayID},
+        {x: Math.round(rect.left).toInt(), y: Math.round(center.y).toInt(), displayId: displayID})) as Promise<void>);
       await Utils.sleep(650);
       let gdy = AppStorage.get<string>('gesture_probe_pan_fi_gdy');
       let hasGdyPan: boolean = gdy != null && gdy.length > 0;
@@ -212,8 +213,8 @@ export default function GestureStaticSuiteTest(): void {
       let button2 = await driver.findComponent(ON.id('gesturePanHost'));
       let center = await (button2?.getBoundsCenter() as Promise<Point>);
       let rect = await (button2?.getBounds() as Promise<Rect>)
-      await ((driver.swipe(Math.round(center.x).toInt(), Math.round(center.y).toInt(),
-        Math.round(rect.left).toInt(), Math.round(center.y).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(center.x).toInt(), y: Math.round(center.y).toInt(), displayId: displayID},
+        {x: Math.round(rect.left).toInt(), y: Math.round(center.y).toInt(), displayId: displayID})) as Promise<void>);
       await Utils.sleep(400);
       let pid = AppStorage.get<string>('gesture_probe_pan_target_id');
       let pidOk: boolean = pid != null && pid.length > 0;
@@ -264,8 +265,8 @@ export default function GestureStaticSuiteTest(): void {
       let button = await driver.findComponent(ON.id('gesturePanHost'));
       let center = await (button?.getBoundsCenter() as Promise<Point>);
       let rect = await (button?.getBounds() as Promise<Rect>)
-      await ((driver.swipe(Math.round(center.x).toInt(), Math.round(center.y).toInt(),
-        Math.round(rect.left).toInt(), Math.round(center.y).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(center.x).toInt(), y: Math.round(center.y).toInt(), displayId: displayID},
+        {x: Math.round(rect.left).toInt(), y: Math.round(center.y).toInt(), displayId: displayID})) as Promise<void>);
       await Utils.sleep(650);
       let endOff = AppStorage.get<string>('gesture_probe_pan_end_off_x');
       expect(Math.abs(Number(endOff ?? '0'))).assertLarger(0);
@@ -291,8 +292,8 @@ export default function GestureStaticSuiteTest(): void {
       let button = await driver.findComponent(ON.id('gesturePanHost'));
       let center = await (button?.getBoundsCenter() as Promise<Point>);
       let rect = await (button?.getBounds() as Promise<Rect>)
-      await ((driver.swipe(Math.round(center.x).toInt(), Math.round(center.y).toInt(),
-        Math.round(rect.left).toInt(), Math.round(center.y).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(center.x).toInt(), y: Math.round(center.y).toInt(), displayId: displayID},
+        {x: Math.round(rect.left).toInt(), y: Math.round(center.y).toInt(), displayId: displayID})) as Promise<void>);
       await Utils.sleep(400);
       expect(Number(AppStorage.get<string>('gesture_probe_pan_rec_dist'))).assertLarger(0);
       } catch (e) {
@@ -317,8 +318,8 @@ export default function GestureStaticSuiteTest(): void {
       let button = await driver.findComponent(ON.id('gesturePanHost'));
       let center = await (button?.getBoundsCenter() as Promise<Point>);
       let rect = await (button?.getBounds() as Promise<Rect>)
-      await ((driver.swipe(Math.round(center.x).toInt(), Math.round(center.y).toInt(),
-        Math.round(rect.left).toInt(), Math.round(center.y).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(center.x).toInt(), y: Math.round(center.y).toInt(), displayId: displayID},
+        {x: Math.round(rect.left).toInt(), y: Math.round(center.y).toInt(), displayId: displayID})) as Promise<void>);
       await Utils.sleep(650);
       expect(Number(AppStorage.get<string>('gesture_probe_pan_cfg_dm_size'))).assertLarger(0);
       expect(AppStorage.get<string>('gesture_probe_pan_start')).assertEqual('1');

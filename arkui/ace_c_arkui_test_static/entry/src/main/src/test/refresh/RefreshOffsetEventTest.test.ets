@@ -23,6 +23,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 let context: UIContext = AppStorage.get<UIContext>('uiContent') as UIContext;
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function refreshOffsetEventTest() {
 
   describe('RefreshOffsetEventTest', () => {
@@ -53,7 +54,7 @@ export default function refreshOffsetEventTest() {
       let x = (Math.round(AppStorage.get<number>('winLeft') as number + Utils.getRectHorizontalCenterX(rect))).toInt();
       let y = (Math.round(AppStorage.get<number>('winTop') as number + Utils.getRectVerticalCenterY(rect))).toInt();
       console.info("RefreshLessOffsetTest  x= " +  x  + ", y = " + y);
-      await driver.swipe((Math.round(x - context.vp2px(30))).toInt(), (Math.round(y - context.vp2px(100))).toInt(), (Math.round(x + context.vp2px(30))).toInt(), (Math.round(y + context.vp2px(90))).toInt());
+      await driver.swipeBetween({x: (Math.round(x - context.vp2px(30))).toInt(), y: (Math.round(y - context.vp2px(100))).toInt(), displayId: displayID}, {x: (Math.round(x + context.vp2px(30))).toInt(), y: (Math.round(y + context.vp2px(90))).toInt(), displayId: displayID});
       await Utils.sleep(2000);
       expect(obj1.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF0000FF');
       done();
@@ -78,7 +79,7 @@ export default function refreshOffsetEventTest() {
       let x = (Math.round(AppStorage.get<number>('winLeft') as number + Utils.getRectHorizontalCenterX(rect))).toInt();
       let y = (Math.round(AppStorage.get<number>('winTop') as number + Utils.getRectVerticalCenterY(rect))).toInt();
       console.info("RefreshOverOffsetTest  x= " +  x  + ", y = " + y);
-      await driver.swipe((Math.round(x - context.vp2px(30))).toInt(), (Math.round(y - context.vp2px(100))).toInt(), (Math.round(x + context.vp2px(30))).toInt(), (Math.round(y + context.vp2px(500))).toInt());
+      await driver.swipeBetween({x: (Math.round(x - context.vp2px(30))).toInt(), y: (Math.round(y - context.vp2px(100))).toInt(), displayId: displayID}, {x: (Math.round(x + context.vp2px(30))).toInt(), y: (Math.round(y + context.vp2px(500))).toInt(), displayId: displayID});
 
       await Utils.sleep(2000);
       expect(obj1.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFFF00');

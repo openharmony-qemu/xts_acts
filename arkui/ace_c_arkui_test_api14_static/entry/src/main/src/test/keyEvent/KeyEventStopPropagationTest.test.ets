@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 import { expect, describe, it, afterEach, Level, beforeAll, beforeEach } from '../../../../hypium/index';
-import { Component, Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
+import { Component, Driver, ON, PointerMatrix, Rect } from '@kit.TestKit';
 import Utils from '../common/Utils';
 import router from '@ohos.router';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function KeyEventStopPropagationTest() {
 
   describe('KeyEventStopPropagationTest', (): void  => {
@@ -43,7 +44,7 @@ export default function KeyEventStopPropagationTest() {
         console.info('KeyEventStopPropagationTest_001 START');
         let driver =  Driver.create()
         await Utils.sleep(500);
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
         await Utils.sleep(500);
          expect(Utils.getComponentInfoByKey('KeyEventStopPropagation').getElement("$attrs").getString("backgroundColor")).assertEqual('#FF00FF00');
         done();

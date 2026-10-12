@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +26,7 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -34,6 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PanGestureExample01Test() {
   describe('PanGestureExample01Test', () => {
 
@@ -97,9 +98,9 @@ it('PanGestureExample01Test_static_0010', Level.LEVEL0, async (done: () => void)
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),
-        Math.round(areaObj1.top + areaHeight1 / 2).toInt(), Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),
-        Math.round(areaObj1.top + areaHeight1 / 2).toInt())) as Promise<void>)
+      await ((driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),
+        y: Math.round(areaObj1.top + areaHeight1 / 2).toInt(), displayId: displayID})) as Promise<void>)
       await CommonFunc.sleep(3000);
       // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('PanGestureExample01_Father');

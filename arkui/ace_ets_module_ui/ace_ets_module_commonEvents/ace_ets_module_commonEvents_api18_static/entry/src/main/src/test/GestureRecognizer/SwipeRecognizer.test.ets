@@ -26,11 +26,12 @@ import {
 } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
+import { Driver, ON, PointerMatrix } from '@kit.TestKit';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function SwipeRecognizerTest() {
   describe('SwipeRecognizerTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -80,9 +81,7 @@ it('SwipeRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promis
       let colum = CommonFunc.getComponentRectOnScreen('SwipeRecognizer');
       let top = colum.top
       let left = colum.left
-      await driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100).toInt(),
-        Math.round(top + 100).toInt(), Math.round(AppStorage.get<number>("winLeft") as number + 500).toInt(),
-        Math.round(top + 500).toInt(), 600)
+      await driver.swipeBetween({x: Math.round(AppStorage.get<number>("winLeft") as number + 100).toInt(), y: Math.round(top + 100).toInt(), displayId: displayID}, {x: Math.round(AppStorage.get<number>("winLeft") as number + 500).toInt(), y: Math.round(top + 500).toInt(), displayId: displayID}, 600)
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('value');
       let obj = JSON.parseJsonElement(strJson);

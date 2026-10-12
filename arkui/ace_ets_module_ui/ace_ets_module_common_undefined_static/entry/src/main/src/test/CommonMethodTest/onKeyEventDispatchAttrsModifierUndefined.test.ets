@@ -16,7 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,6 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function OnKeyEventDispatchAttrsModifierUndefinedTest() {
   describe('OnKeyEventDispatchAttrsModifierUndefinedTest', () => {
 
@@ -64,7 +65,7 @@ export default function OnKeyEventDispatchAttrsModifierUndefinedTest() {
       console.info('[OnKeyEventDispatchAttrsModifierUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
       let text = await driver.findComponent(ON.id('textModifier'));
       await CommonFunc.sleep(1000);
@@ -73,7 +74,7 @@ export default function OnKeyEventDispatchAttrsModifierUndefinedTest() {
       let changeBtn = await driver.findComponent(ON.id('onKeyEventDispatchAttrsModifierUndefined' + '_Common_OnKeyEventDispatch'));
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
       text = await driver.findComponent(ON.id('textModifier'));
       expect(await (text?.getText() as Promise<String>)).assertEqual('childTab');

@@ -16,9 +16,11 @@
 
 import { beforeAll, describe, expect, it, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector'
 import { UtilsTest, startAbility, stopApplication } from "../Util.test"
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function buttonGetTypeTest() {
 
   describe('ButtonGetTypeTest', (): void  => {
@@ -38,9 +40,9 @@ export default function buttonGetTypeTest() {
      */
     it('ButtonGetTypeTest001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver =  Driver.create()
-      await driver.triggerKey(2049)
+      await driver.triggerKey(2049, displayID)
       await Utils.sleep(1000)
-      await driver.triggerKey(2119)
+      await driver.triggerKey(2119, displayID)
       await Utils.sleep(1000)
       let strJson = inspector.getInspectorByKey('gettype');  // 可能是inspector.getInspectorByKey返回值有问题 strJson无法打印 导致crash
       console.log('ButtonGetTypeTest001 inspector.getInspectorByKey end')

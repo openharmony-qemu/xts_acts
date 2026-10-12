@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
  */
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
@@ -24,6 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function tapGestureAddInterfaceTest() {
   describe('tapGestureAddInterfaceTest', () => {
     beforeEach(async ():Promise<void> => {
@@ -132,7 +133,7 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)).toInt(),Math.round(column1.top + uiContext.vp2px(10)).toInt(),Math.round(column1.left + uiContext.vp2px(80)).toInt(), Math.round(column1.top + uiContext.vp2px(10)).toInt());
+      await driver.swipeBetween({x: Math.round(column1.left + uiContext.vp2px(10)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID}, {x: Math.round(column1.left + uiContext.vp2px(80)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID});
       await CommonFunc.sleep(3000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -143,7 +144,7 @@ it('tapGestureAddInterfaceTest_static_0020', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
 
        // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)).toInt(),Math.round(column1.top + uiContext.vp2px(10)).toInt(),Math.round(column1.left + uiContext.vp2px(130)).toInt(), Math.round(column1.top + uiContext.vp2px(10)).toInt());
+      await driver.swipeBetween({x: Math.round(column1.left + uiContext.vp2px(10)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID}, {x: Math.round(column1.left + uiContext.vp2px(130)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID});
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
       let obj3 = JSON.parseJsonElement(tt3);
@@ -231,7 +232,7 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE.getInteger('localY') - 10) <= 1).assertTrue();
 
       // swipe the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)).toInt(),Math.round(column1.top + uiContext.vp2px(10)).toInt(),Math.round(column1.left + uiContext.vp2px(80)).toInt(), Math.round(column1.top + uiContext.vp2px(10)).toInt());
+      await driver.swipeBetween({x: Math.round(column1.left + uiContext.vp2px(10)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID}, {x: Math.round(column1.left + uiContext.vp2px(80)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID});
       await CommonFunc.sleep(3000)
       let tt2 = inspector.getInspectorByKey('valueKey');
       let obj2 = JSON.parseJsonElement(tt2);
@@ -242,7 +243,7 @@ it('tapGestureAddInterfaceTest_static_0040', Level.LEVEL0, async (done: () => vo
       expect(Math.abs(dataE2.getInteger('localY') - 10) <= 1).assertTrue();
 
        // swipe out of the distanceThreshold range
-      await driver.swipe(Math.round(column1.left + uiContext.vp2px(10)).toInt(),Math.round(column1.top + uiContext.vp2px(10)).toInt(),Math.round(column1.left + uiContext.vp2px(130)).toInt(), Math.round(column1.top + uiContext.vp2px(10)).toInt());
+      await driver.swipeBetween({x: Math.round(column1.left + uiContext.vp2px(10)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID}, {x: Math.round(column1.left + uiContext.vp2px(130)).toInt(), y: Math.round(column1.top + uiContext.vp2px(10)).toInt(), displayId: displayID});
       await CommonFunc.sleep(3000)
       let tt3 = inspector.getInspectorByKey('valueKey');
       let obj3 = JSON.parseJsonElement(tt3);

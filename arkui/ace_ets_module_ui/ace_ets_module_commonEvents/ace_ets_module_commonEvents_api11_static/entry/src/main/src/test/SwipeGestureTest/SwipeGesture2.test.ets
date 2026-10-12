@@ -25,7 +25,7 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 
@@ -35,6 +35,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function SwipeGesture2() {
   describe('SwipeGesture2', () => {
     beforeEach(async (): Promise<void> => {
@@ -98,8 +99,7 @@ it('SwipeGesture2_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       let top = colum.top
       let right = colum.right
       let left = colum.left
-      await ((driver.swipe(Math.round(left + (right - left) / 6).toInt(), Math.round(top + 50).toInt(),
-        Math.round(right - (right - left) / 6).toInt(), Math.round(top + 450).toInt())) as Promise<void>)
+      await ((driver.swipeBetween({x: Math.round(left + (right - left) / 6).toInt(), y: Math.round(top + 50).toInt(), displayId: displayID}, {x: Math.round(right - (right - left) / 6).toInt(), y: Math.round(top + 450).toInt(), displayId: displayID})) as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Swipe4');
       await CommonFunc.sleep(1000);

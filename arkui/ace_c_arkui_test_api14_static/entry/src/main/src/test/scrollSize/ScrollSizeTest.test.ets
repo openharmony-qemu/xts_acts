@@ -15,13 +15,14 @@
  */
 
 import { expect, describe, it, afterEach, Level, beforeAll, beforeEach } from '../../../../hypium/index';
-import { Component, Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
+import { Component, Driver, ON, PointerMatrix, Rect } from '@kit.TestKit';
 import Utils from '../common/Utils';
 import router from '@ohos.router';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, UIInspector, Context } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ScrollSizeTest() {
 
   describe('ScrollSizeTest', (): void => {
@@ -50,8 +51,8 @@ export default function ScrollSizeTest() {
       let x = Math.round(AppStorage.get<number>("winLeft") as number + Utils.getRectHorizontalCenterX(rect));
       let y = Math.round(AppStorage.get<number>("winTop") as number + Utils.getRectVerticalCenterY(rect));
       console.info("testGetScrollSizeTest001  x= " + x + ", y = " + y);
-      await driver.swipe(x.toInt(), Math.round(y + AppStorage.get<UIContext>('uiContext')!.vp2px(40)).toInt(), x.toInt(),
-        Math.round(y - AppStorage.get<UIContext>('uiContext')!.vp2px(40)).toInt());
+      await driver.swipeBetween({x: x.toInt(), y: Math.round(y + AppStorage.get<UIContext>('uiContext')!.vp2px(40)).toInt(), displayId: displayID},
+        {x: x.toInt(), y: Math.round(y - AppStorage.get<UIContext>('uiContext')!.vp2px(40)).toInt(), displayId: displayID});
       await Utils.sleep(2000);
       console.info("testGetScrollSizeTest001  swipe");
       expect(Utils.getComponentInfoByKey('scrollSizeCalled').getElement("$attrs").getString("backgroundColor"))

@@ -26,11 +26,12 @@ import {
 } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function nextFocus2() {
   describe('ButtonAdapt001', () => {
     beforeEach(async (): Promise<void> => {
@@ -68,19 +69,19 @@ it('Button_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> =
       try {
       console.info('[Button_static_0101] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2012);
+      await driver.triggerKey(2012, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2013);
+      await driver.triggerKey(2013, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2014);
+      await driver.triggerKey(2014, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2015);
+      await driver.triggerKey(2015, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerCombineKeys(2047, 2049);
+      await driver.triggerCombineKeys(2047, 2049, displayID);
       await CommonFunc.sleep(2000);
 
       // test the child component response

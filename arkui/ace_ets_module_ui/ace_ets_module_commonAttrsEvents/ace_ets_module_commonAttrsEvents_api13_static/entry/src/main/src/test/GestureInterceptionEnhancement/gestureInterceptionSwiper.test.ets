@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -33,6 +33,7 @@ class Msg {
   }
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function gestureInterceptionEnhancementCallbackSwiperTest() {
   describe('gestureInterceptionEnhancementCallbackSwiperTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -85,12 +86,12 @@ it('gestureInterceptionEnhancementCallbackSwiperTest_static_0010', Level.LEVEL0,
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left).toInt(), Math.round(top + height / 2).toInt());
+        await driver.swipeBetween({x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID},
+          {x: Math.round(left).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID});
         await CommonFunc.sleep(3000);
 
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left).toInt(), Math.round(top + height / 2).toInt());
+        await driver.swipeBetween({x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID},
+          {x: Math.round(left).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID});
         await CommonFunc.sleep(3000);
 
         // check the GestureRecognizerJudgeBegin trigger
@@ -129,12 +130,12 @@ it('gestureInterceptionEnhancementCallbackSwiperTest_static_0020', Level.LEVEL0,
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left).toInt(), Math.round(top + height / 2).toInt());
+        await driver.swipeBetween({x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID},
+          {x: Math.round(left).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID});
         await CommonFunc.sleep(3000);
 
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left).toInt(), Math.round(top + height / 2).toInt());
+        await driver.swipeBetween({x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID},
+          {x: Math.round(left).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID});
         await CommonFunc.sleep(3000);
 
         // check the GestureRecognizerJudgeBegin trigger

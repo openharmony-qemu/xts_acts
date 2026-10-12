@@ -25,7 +25,7 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 
@@ -34,6 +34,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PanGestureEventJsunit() {
   describe('PanGestureEventJsunit', () => {
     beforeEach(async (): Promise<void> => {
@@ -76,8 +77,7 @@ it('PanGestureEventJsunit_static_0100', Level.LEVEL0, async (done: () => void): 
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID}, {x: Math.round(right - 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(2000);
       let textComponent = await driver.findComponent(ON.id('velocityX'));
       let text = await (textComponent?.getText() as Promise<string>)
@@ -105,8 +105,7 @@ it('PanGestureEventJsunit_static_0200', Level.LEVEL0, async (done: () => void): 
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID}, {x: Math.round(right - 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(2000);
       let textComponent = await driver.findComponent(ON.id('velocityY'));
       let text = await (textComponent?.getText() as Promise<string>)
@@ -134,8 +133,7 @@ it('PanGestureEventJsunit_static_0300', Level.LEVEL0, async (done: () => void): 
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID}, {x: Math.round(right - 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(2000);
       let textComponent = await driver.findComponent(ON.id('velocity'));
       let text = await (textComponent?.getText() as Promise<string>)

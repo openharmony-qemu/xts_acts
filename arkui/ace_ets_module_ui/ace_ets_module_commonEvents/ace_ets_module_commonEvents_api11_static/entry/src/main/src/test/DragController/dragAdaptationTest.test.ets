@@ -16,13 +16,14 @@
 
 import router from '@ohos.router';
 import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dragAdaptationTest() {
   describe('dragAdaptationTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -70,7 +71,7 @@ it('dragAdaptationTest_static_001', Level.LEVEL0, async () => {
         await CommonFunc.sleep(500);
         await (textArea2?.click() as Promise<void>)
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, displayID);
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);

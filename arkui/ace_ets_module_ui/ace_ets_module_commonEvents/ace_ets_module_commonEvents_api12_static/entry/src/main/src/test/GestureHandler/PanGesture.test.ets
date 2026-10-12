@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
  */
 
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
@@ -24,6 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PanGestureHandlerTest() {
 
   describe('PanGestureHandlerTest', () => {
@@ -77,8 +78,8 @@ it('PanGestureHandler_static_0010', Level.LEVEL0, async (done: () => void): Prom
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID},
+        {x: Math.round(right - 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PanGestureHandler1');
       await CommonFunc.sleep(2000);

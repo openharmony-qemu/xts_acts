@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, Component, ON } from '@ohos.UiTest';
+import { Driver, Component, ON } from '@kit.TestKit';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError, RecordData } from '@ohos.base';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -25,6 +25,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ShortcutKeyDPADLEFTTest() {
   describe('ShortcutKeyDPADLEFTTest', () => {
     beforeEach(async () => {
@@ -72,7 +73,7 @@ it('ShortcutKeyDPADLEFTTest_static_0100', Level.LEVEL0, async () => {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_LEFT)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_LEFT, displayID)
       console.info(`ShortcutKeyDPADLEFTTest_0100 END`);
     });
   })

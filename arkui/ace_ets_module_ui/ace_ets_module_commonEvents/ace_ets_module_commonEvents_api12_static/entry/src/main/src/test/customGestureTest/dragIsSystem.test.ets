@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,13 +16,14 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, MouseButton, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dragIsSystem() {
   describe('dragIsSystem', () => {
 
@@ -84,7 +85,7 @@ it('dragIsSystem_001', Level.LEVEL0, async (done: () => void): Promise<void> => 
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)).toInt(), Math.round(CommonFunc.rect_top + uiContext.vp2px(53.33)).toInt(), 200, 200, 600);
+      await driver.dragBetween({x: Math.round(CommonFunc.rect_left + uiContext.vp2px(66.66)).toInt(), y: Math.round(CommonFunc.rect_top + uiContext.vp2px(53.33)).toInt(), displayId: displayID}, {x: 200, y: 200, displayId: displayID}, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("dragIsSystemBtn2");
       await CommonFunc.sleep(200);

@@ -16,11 +16,12 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function activeApiTest() {
   describe('activeApiTest', () => {
     
@@ -40,9 +41,9 @@ it('activeApiTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(2000);
       console.info('activeApiTest_0010 START');
       let driver = Driver.create()
-      await driver.triggerKey(2014);
-      await driver.triggerKey(2014);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2014, displayID);
+      await driver.triggerKey(2014, displayID);
+      await driver.triggerKey(2049, displayID);
       let Button2 = await driver.findComponent(ON.id('Button2'));
      if (Button2 != null) {
        let btn3_6_isFocusedValue2 = await Button2.isFocused()
@@ -67,8 +68,8 @@ it('activeApiTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(2000);
       console.info('activeApiTest_0020 START');
       let driver = Driver.create()
-      await driver.triggerKey(2014);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2014, displayID);
+      await driver.triggerKey(2049, displayID);
       let Button2 = await driver.findComponent(ON.id('Button2'));
       if (Button2 != null) {
         let btn3_6_isFocusedValue2 = await Button2.isFocused()
@@ -93,8 +94,8 @@ it('activeApiTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(2000);
       console.info('activeApiTest_0030 START');
       let driver = Driver.create()
-      await driver.triggerKey(2014);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2014, displayID);
+      await driver.triggerKey(2049, displayID);
       let Button2 = await driver.findComponent(ON.id('Button2'));
       if (Button2 != null) {
         let btn3_6_isFocusedValue2 = await Button2.isFocused()
@@ -120,8 +121,8 @@ it('activeApiTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(2000);
       console.info('activeApiTest_0040 START');
       let driver = Driver.create();
-      await driver.triggerKey(2014);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2014, displayID);
+      await driver.triggerKey(2049, displayID);
       let Button2 = await driver.findComponent(ON.id('Button2'));
       if (Button2 != null) {
         let btn3_6_isFocusedValue2 = await Button2.isFocused()
@@ -147,8 +148,8 @@ it('activeApiTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(2000);
       console.info('activeApiTest_0050 START');
       let driver = Driver.create()
-      await driver.triggerKey(2014);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2014, displayID);
+      await driver.triggerKey(2049, displayID);
       let Button2 = await driver.findComponent(ON.id('Button2'));
       if (Button2 != null) {
         let btn3_6_isFocusedValue2 = await Button2.isFocused()

@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,13 +15,14 @@
  */
 
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopeId10() {
   describe('FocusScopeId10', () => {
     beforeEach(async (): Promise<void> => {
@@ -73,7 +74,7 @@ export default function FocusScopeId10() {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -85,7 +86,7 @@ export default function FocusScopeId10() {
       expect(btn3_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn3 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -97,7 +98,7 @@ export default function FocusScopeId10() {
       expect(btn4_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn4 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -109,7 +110,7 @@ export default function FocusScopeId10() {
       expect(btn6_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn6 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -121,7 +122,7 @@ export default function FocusScopeId10() {
       expect(btn7_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn7 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -132,7 +133,7 @@ export default function FocusScopeId10() {
       expect(btn3_isFocusedValue2).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn3 isFocused 2');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -143,7 +144,7 @@ export default function FocusScopeId10() {
       expect(btn4_isFocusedValue2).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn4 isFocused 2');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -155,7 +156,7 @@ export default function FocusScopeId10() {
       expect(btn5_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn5 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
@@ -166,7 +167,7 @@ export default function FocusScopeId10() {
       expect(btn6_isFocusedValue2).assertEqual(true);
       console.info('[FocusScopeId10_static_0100] btn6 isFocused 2');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {

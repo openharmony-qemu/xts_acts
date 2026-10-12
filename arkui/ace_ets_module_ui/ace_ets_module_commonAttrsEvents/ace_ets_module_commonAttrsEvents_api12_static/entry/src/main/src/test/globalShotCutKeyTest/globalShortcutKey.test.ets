@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 import { Callback, Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -53,6 +53,7 @@ keycodeMap.set(FunctionKey.DPAD_DOWN, KeyCode.KEYCODE_DPAD_DOWN);
 keycodeMap.set(FunctionKey.DPAD_LEFT, KeyCode.KEYCODE_DPAD_LEFT);
 keycodeMap.set(FunctionKey.DPAD_RIGHT, KeyCode.KEYCODE_DPAD_RIGHT);
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function globalShortcutKeyTest() {
   describe('globalShortcutKeyTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -140,7 +141,7 @@ export default function globalShortcutKeyTest() {
       async (done: () => void): Promise<void> => {
         let driver = Driver.create();
         // keyboard to sumilate 'CTRL + M'
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_M);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_M, displayID);
         try {
           await CommonFunc.sleep(500);
         } catch (err) {
@@ -168,7 +169,7 @@ export default function globalShortcutKeyTest() {
         let driver = Driver.create();
         // keyboard to sumilate 'CTRAL + 鈫?
         await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_CTRL_LEFT,
-          KeyCode.KEYCODE_DPAD_LEFT);
+          KeyCode.KEYCODE_DPAD_LEFT, displayID);
         try {
           await CommonFunc.sleep(500);
         } catch (err) {
@@ -195,7 +196,7 @@ export default function globalShortcutKeyTest() {
       async (done: () => void): Promise<void> => {
         let driver = Driver.create();
         // keyboard to sumilate 'CTRAL + I'
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I, displayID);
         try {
           await CommonFunc.sleep(2000);
         } catch (err) {
@@ -222,7 +223,7 @@ export default function globalShortcutKeyTest() {
       async (done: () => void): Promise<void> => {
         let driver = Driver.create();
         // keyboard to sumilate 'SHIFT + ->'
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, displayID);
         try {
           await CommonFunc.sleep(500);
         } catch (err) {
@@ -292,7 +293,7 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
     } catch (err) {
       console.info('xxxTest sleep err: ' + JSON.stringify(err));
     }
-    driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
+    driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar), displayID);
     try {
       await CommonFunc.sleep(1500);
     } catch (err) {
@@ -316,7 +317,7 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
     } catch (err) {
       console.info('xxxTest sleep err: ' + JSON.stringify(err));
     }
-    driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
+    driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar), displayID);
     try {
       await CommonFunc.sleep(1500);
     } catch (err) {
@@ -340,7 +341,7 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
     } catch (err) {
       console.info('xxxTest sleep err: ' + JSON.stringify(err));
     }
-    driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
+    driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar), displayID);
     try {
       await CommonFunc.sleep(2000);
     } catch (err) {
@@ -364,7 +365,7 @@ async function testAsyncFunction3(keyChar: string | FunctionKey): Promise<void> 
     } catch (err) {
       console.info('xxxTest sleep err: ' + JSON.stringify(err));
     }
-    driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
+    driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar), displayID);
     try {
       await CommonFunc.sleep(2000);
     } catch (err) {

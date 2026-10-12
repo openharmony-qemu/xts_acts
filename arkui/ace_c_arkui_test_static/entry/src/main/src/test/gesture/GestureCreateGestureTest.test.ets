@@ -17,7 +17,7 @@
 import { describe, expect, it, Level,beforeAll } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix,Component } from '@kit.TestKit';
-import { Point } from '@ohos.UiTest';
+import { Point } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import { UtilsTest } from '../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -73,6 +73,7 @@ async function rotationGesture(id: string) {
   await driver.injectMultiPointerAction(point, 200);
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function gestureCreateGestureTest() {
 
   describe('GestureCreateGestureTest', () => {

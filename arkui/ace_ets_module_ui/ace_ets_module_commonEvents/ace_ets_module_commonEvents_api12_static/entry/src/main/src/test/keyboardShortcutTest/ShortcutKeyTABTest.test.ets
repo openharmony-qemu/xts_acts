@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router'
-import { Component, Driver, ON } from '@ohos.UiTest'
+import { Component, Driver, ON } from '@kit.TestKit'
 import events_emitter from '@ohos.events.emitter';
 //import input from '@ohos.multimodalInput.keyCode';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -28,6 +28,7 @@ import { RecordData } from '@ohos.base';
 
 const uiContext = new UIContext();
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ShortcutKeyTABTest() {
   describe('ShortcutKeyTABTest', () => {
     beforeEach(async () => {
@@ -76,7 +77,7 @@ it('ShortcutKeyTABTest_static_0100', Level.LEVEL0, async () => {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_TAB)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_TAB, displayID)
       console.info(`ShortcutKeyTABTest_0100 END`);
     });
   })

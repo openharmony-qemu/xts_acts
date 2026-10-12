@@ -15,13 +15,14 @@
  */
 
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON, Component, MouseButton } from '@ohos.UiTest';
+import { Driver, ON, Component, MouseButton } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PanGestureAllowedTypesTest() {
   describe('PanGestureAllowedTypesTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -75,7 +76,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let speed = (Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000).toInt()
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
+      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, speed)
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj1 = JSON.parseJsonElement(text1);
@@ -102,7 +103,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
+      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, speed)
       await CommonFunc.sleep(3000);
       let text4 = inspector.getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj4 = JSON.parseJsonElement(text4);
@@ -138,7 +139,7 @@ it('PanGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(),Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(),Math.round(areaObj1.top + areaHeight1/2).toInt(), speed)
+      await driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID}, speed)
       await CommonFunc.sleep(3000);
       let text8 = inspector.getInspectorByKey('PanGestureAllowedTypes' + '_result');
       let obj8 = JSON.parseJsonElement(text8);

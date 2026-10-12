@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +27,7 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -35,6 +35,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function GestureRecognizerIsValid() {
   describe('GestureRecognizerIsValid', () => {
     beforeEach(async (): Promise<void> => {
@@ -84,9 +85,9 @@ it('GestureRecognizerIsValid_static_001', Level.LEVEL0, async (done: () => void)
       console.log('GestureRecognizerIsValid_001 item height and width', areaHeight, areaWidth)
       // child scroll
       let driver = Driver.create();
-      await ((driver.swipe(Math.round(areaObj1.left + areaWidth / 2).toInt(),
-        Math.round(areaObj1.bottom - areaHeight * 0.2).toInt(), Math.round(areaObj1.left + areaWidth / 2).toInt(),
-        Math.round(areaObj1.top).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(areaObj1.left + areaWidth / 2).toInt(),
+        y: Math.round(areaObj1.bottom - areaHeight * 0.2).toInt(), displayId: displayID}, {x: Math.round(areaObj1.left + areaWidth / 2).toInt(),
+        y: Math.round(areaObj1.top).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(3000);
       let strJson1 = inspector.getInspectorByKey('recognizer_text');
       console.info('[GestureRecognizerIsValid_001] component strJson1 is: ' +
@@ -105,9 +106,9 @@ it('GestureRecognizerIsValid_static_001', Level.LEVEL0, async (done: () => void)
       let areaWidth2 = areaObj2.right - areaObj2.left
       console.log('GestureRecognizerIsValid_001 text height and width', areaHeight2, areaWidth2)
       // parent scroll
-      await ((driver.swipe(Math.round(areaObj2.left + areaWidth2 / 2).toInt(),
-        Math.round(areaObj1.bottom - areaHeight2 * 0.1).toInt(), Math.round(areaObj2.left + areaWidth2 / 2).toInt(),
-        Math.round(areaObj1.top - areaHeight2 * 0.3).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(areaObj2.left + areaWidth2 / 2).toInt(),
+        y: Math.round(areaObj1.bottom - areaHeight2 * 0.1).toInt(), displayId: displayID}, {x: Math.round(areaObj2.left + areaWidth2 / 2).toInt(),
+        y: Math.round(areaObj1.top - areaHeight2 * 0.3).toInt(), displayId: displayID})) as Promise<void>);
 
       await CommonFunc.sleep(3000);
       let strJson2 = inspector.getInspectorByKey('recognizer_text');
