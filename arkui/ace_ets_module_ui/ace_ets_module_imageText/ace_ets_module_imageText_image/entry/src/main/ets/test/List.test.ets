@@ -35,7 +35,9 @@ import ImageAnalyzerControllerTest from './ImageAnalyzerControllerTest/ImageAnal
 import ImageAnimationControllerTest from './ImageAnimationControllerTest/ImageAnimationController.test';
 import ImageAnimatorFillModeJsunitTest from './ImageAnimator/FillModeJsunit.test';
 import ImageAnimatorBasicAttributesTest from './ImageAnimator/ImageAnimatorBasicAttributes.test';
+import ImageAnimatorInterpolationTest from './ImageAnimator/ImageAnimatorInterpolation.test';
 import ImageAnimatorAttributeModifierTest from './ImageAnimator/ImageAnimatorAttributeModifier.test';
+import ImageAnimatorInterpolationModifierTest from './ImageAnimator/ImageAnimatorInterpolationModifier.test';
 import ImageAnimatorEventDataTest from './ImageAnimator/ImageAnimatorEventData.test';
 import monitorInvisibleAreaTest from './ImageAnimator/monitorInvisibleArea.test';
 import ImageAnimatorAdvancedTest from './ImageAnimatorAdvancedTest/ImageAnimatorAdvancedTest.test';
@@ -124,7 +126,9 @@ export default function testsuite() {
   ImageAnimationControllerTest();
   ImageAnimatorFillModeJsunitTest();
   ImageAnimatorBasicAttributesTest();
+  ImageAnimatorInterpolationTest();
   ImageAnimatorAttributeModifierTest();
+  ImageAnimatorInterpolationModifierTest();
   ImageAnimatorEventDataTest();
   monitorInvisibleAreaTest();
   ImageAnimatorAdvancedTest();
