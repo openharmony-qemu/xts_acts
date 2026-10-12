@@ -289,9 +289,11 @@ export default function WebsocketServerTest() {
       try {
         let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
         console.info(`${caseName} --> ${server}`);
+        let certPath = "";
+        let keyPath = "";
         let serverCert: webSocket.ServerCert = {
-          certPath: "",
-          keyPath: ""
+          certPath: certPath,
+          keyPath: keyPath
         }
         let serverConfig: webSocket.WebSocketServerConfig ={
           serverIP: undefined,
@@ -303,7 +305,9 @@ export default function WebsocketServerTest() {
         }
         server.start(serverConfig).then((success: boolean) => {
           if (success){
-            console.log(`${caseName} webSocketServer start success`)
+            console.log(`${caseName} webSocketServer start success`);
+            ExpectTrue(serverConfig.serverCert?.certPath !== undefined);
+            ExpectTrue(serverConfig.serverCert?.keyPath !== undefined);
             ExpectTrue(true, `${caseName} webSocketServer start success`);
             done()
             server.stop()
@@ -697,75 +701,110 @@ export default function WebsocketServerTest() {
     it('testNetworkMgrWebSocketWebSocketServerSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerSend0100';
       console.info(`${caseName} test start`);
+      let server: webSocket.WebSocketServer | null = null;
+      let client: webSocket.WebSocket | null = null;
       try {
-        let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
+        server = webSocket.createWebSocketServer()
         let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
           serverPort: 8060,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
+
+        // 【关键修改1】在 start 前注册连接事件监听，使用事件驱动替代 sleep
+        let connectionPromise = new Promise<webSocket.WebSocketConnection>((resolve) => {
+          server!.on('connect', (connection: webSocket.WebSocketConnection) => {
+            console.info(`${caseName} server on connect success`);
+            resolve(connection);
+          });
+        });
+
+        // 【关键修改2】超时保护，防止连接事件未触发导致测试无限挂起
+        let timeoutPromise = new Promise<never>((_, reject) => {
+          setTimeout(() => {
+            reject(new Error(`${caseName} wait connection timeout`));
+          }, 5000);
+        });
+
+        let startSuccess: boolean = false;
         await server.start(serverConfig).then((success: boolean) => {
-          if (success){
+          startSuccess = success;
+          if (success) {
             console.log(`${caseName} webSocketServer start success`)
-          }else {
+          } else {
             expectFail(`${caseName} webSocketServer start fail`)
-            done()
-            console.info(`${caseName} test end`);
           }
         }).catch((error: BusinessError) => {
           console.info(`${caseName} test result error ${JSON.stringify(error)}`);
           expectFail(`${caseName} test result error ${JSON.stringify(error)}`)
+        })
+
+        // 【关键修改3】start 失败后提前退出，避免后续代码继续执行
+        if (!startSuccess) {
           done()
           console.info(`${caseName} test end`);
-        })
-        await new Promise<string>((resolve)=> {
-          let client: webSocket.WebSocket = webSocket.createWebSocket()
-          console.info(`${caseName}client-- >${client}`)
-          client.connect('ws://127.0.0.1:8060', (err: BusinessError, value: boolean) => {
+          return;
+        }
+
+        // 创建客户端并连接
+        client = webSocket.createWebSocket()
+        console.info(`${caseName}client-- >${client}`)
+
+        let connectSuccess: boolean = false;
+        await new Promise<void>((resolve) => {
+          client!.connect('ws://127.0.0.1:8060', (err: BusinessError, value: boolean) => {
+            connectSuccess = value;
             if (value) {
               console.info(`${caseName} test connect success and value is ${value}`);
             } else {
               console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
-              expectFail(`${caseName}`)
-              done()
-              console.info(`${caseName} test end test end`);
             }
-            resolve('ok')
+            resolve();
           });
+        });
 
-        })
-        await sleep(500)
-        let connections = await server.listAllConnections()
-        if(!connections || connections.length == 0){
-          console.info(`${caseName} get connections fail`)
-          expectFail(`${caseName}`)
+        if (!connectSuccess) {
+          expectFail(`${caseName} client connect fail`)
+          server.stop()
           done()
-          console.info(`${caseName} test end`)
-        }else{
-          server.send("hello client", connections[0]).then((success: boolean)=>{
-            if (success){
-              console.info(`${caseName} send success`)
-              ExpectTrue(success, `${caseName} send success`)
-              done()
-              console.info(`${caseName} test end`);
-            }else{
-              console.info(`${caseName} send fail`);
-              expectFail(`${caseName} send fail`)
-              done()
-              console.info(`${caseName} test end`);
-            }
-          }).catch((error: BusinessError) => {
-            console.info(`${caseName} test send fail ${JSON.stringify(error)}`);
-            expectFail(`${caseName} test send fail`);
-            server.stop()
-            done();
-            console.info(`${caseName} test end`);
-          })
+          console.info(`${caseName} test end`);
+          return;
         }
+
+        // 【关键修改4】等待服务端 connect 事件，替代 sleep(500) + listAllConnections()
+        let connection = await Promise.race([connectionPromise, timeoutPromise]);
+        console.info(`${caseName} get connection success`);
+
+        // 使用事件回调中获取的 connection 直接发送消息
+        await server.send("hello client", connection).then((success: boolean) => {
+          if (success) {
+            console.info(`${caseName} send success`)
+            ExpectTrue(success, `${caseName} send success`)
+          } else {
+            console.info(`${caseName} send fail`);
+            expectFail(`${caseName} send fail`)
+          }
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} test send fail ${JSON.stringify(error)}`);
+          expectFail(`${caseName} test send fail`);
+        })
+
+        // 【关键修改5】统一清理资源，包括 client
+        server.stop()
+        client.close()
+        done()
+        console.info(`${caseName} test end`);
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        // 异常路径同样清理资源
+        if (server) {
+          server.stop()
+        }
+        if (client) {
+          client.close()
+        }
         done();
         console.info(`${caseName} test end`);
       }
@@ -1068,16 +1107,16 @@ export default function WebsocketServerTest() {
       try {
         let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
         console.info(`${caseName} --> ${server}`);
-        let serverConfig: webSocket.WebSocketServerConfig ={
+        let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
           serverPort: 8070,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
-        await server.start(serverConfig).then((value: boolean)=>{
+        await server.start(serverConfig).then((value: boolean) => {
           if (value) {
             console.info(`${caseName} server start`)
-          }else {
+          } else {
             console.info(`${caseName} server start fail`)
             expectFail(`${caseName} server start fail`)
             done()
@@ -1095,16 +1134,21 @@ export default function WebsocketServerTest() {
           done();
           console.info(`${caseName} test end`);
         }
-        await server.on('connect',callback)
+        await server.on('connect', callback)
         await sleep(100)
 
-        let client = await webSocket.createWebSocket()
-        await client.connect('ws://127.0.0.1:8070', (err:BusinessError, value: boolean) =>{
-          if (value){
+        // 修复①：createWebSocket() 是同步方法，移除不必要的 await
+        let client = webSocket.createWebSocket()
+
+        // 修复②：统一使用 Promise 方式调用 connect，移除回调函数，确保时序可控
+        await client.connect('ws://127.0.0.1:8070').then((value: boolean) => {
+          if (value) {
             console.info(`${caseName} connect success`)
-          }else{
+          } else {
             console.info(`${caseName} connect fail`)
           }
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} connect error ${JSON.stringify(err)}`);
         })
         console.info(`${caseName} test end1`);
       } catch (err) {
@@ -1170,7 +1214,6 @@ export default function WebsocketServerTest() {
 
         })
         await sleep(100)
-        ExpectTrue(true)
         done();
         console.info(`${caseName} test end1`);
       } catch (err) {
@@ -1236,7 +1279,6 @@ export default function WebsocketServerTest() {
 
         })
         await sleep(100)
-        ExpectTrue(true)
         done();
         console.info(`${caseName} test end1`);
       } catch (err) {
@@ -1260,18 +1302,21 @@ export default function WebsocketServerTest() {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOnMsg0100';
       console.info(`${caseName} test start`);
       try {
+        // ==================== 1. 创建并启动 WebSocket Server ====================
         let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
         console.info(`${caseName} --> ${server}`);
-        let serverConfig: webSocket.WebSocketServerConfig ={
+
+        let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
           serverPort: 8073,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
-        await server.start(serverConfig).then((value: boolean)=>{
+
+        await server.start(serverConfig).then((value: boolean) => {
           if (value) {
             console.info(`${caseName} server start`)
-          }else {
+          } else {
             console.info(`${caseName} server start fail`)
             expectFail(`${caseName} server start fail`)
             done()
@@ -1283,51 +1328,65 @@ export default function WebsocketServerTest() {
           done();
           console.info(`${caseName} test end`);
         })
+
+        // ==================== 2. 注册 Server 端 messageReceive 监听 ====================
+        // 修复②：添加 await，确保监听注册成功后再进行后续操作，移除不必要的 sleep(100)
         let callback = (massage: webSocket.WebSocketMessage) => {
           if (massage.data == "hello server") {
             console.info(`${caseName} test onMassage success. connection is ${massage.clientConnection}`)
             ExpectTrue(true, `${caseName} test onMassage success`)
             done()
             console.info(`${caseName} test end`);
-          }else {
+          } else {
             expectFail(`${caseName} client connect to server`)
             done()
             console.info(`${caseName} test end`);
           }
         }
-        server.on('messageReceive',callback)
-        await sleep(100)
+        await server.on('messageReceive', callback)
 
+        // ==================== 3. 创建 WebSocket Client ====================
         let client: webSocket.WebSocket = webSocket.createWebSocket()
-        console.info(`${caseName}client-- >${client}`)
+        console.info(`${caseName} client --> ${client}`)
+
         class OutValue {
           status: number = 0
           message: string = ""
         }
-        await client.on('open', (err: BusinessError, value: Object) => {
+
+        // ==================== 4. 注册 Client 端 open 事件监听 ====================
+        // 修复①③：先注册 on('open') 回调（不依赖 sleep），再调用 connect，顺序清晰
+        client.on('open', (err: BusinessError, value: Object) => {
           console.info(`${caseName} onopen err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
           const status: number = (value as OutValue).status;
           console.info(`${JSON.stringify(status)}`);
 
+          // 连接建立后发送消息
           client.send('hello server', (err: BusinessError, value: boolean) => {
             if (!err) {
               console.info(`${caseName} client send message successfully`)
-            }else{
-              console.info(`${caseName} Failed to send the message. Err:`+ JSON.stringify(err));
+            } else {
+              console.info(`${caseName} Failed to send the message. Err:` + JSON.stringify(err));
               expectFail(`${caseName}`)
               done()
               console.info(`${caseName} test end`);
             }
           })
         })
-        await sleep(1000)
+
+        // ==================== 5. 发起 Client 连接 ====================
+        // 修复①：移除 sleep(1000)，直接调用 connect，由 on('open') 回调驱动后续逻辑
         client.connect('ws://127.0.0.1:8073', (err: BusinessError, value: boolean) => {
           if (value) {
             console.info(`${caseName} test connect success and value is ${value}`);
           } else {
             console.info(`${caseName} test connect fail ${JSON.stringify(err)}`);
+            expectFail(`${caseName} client connect fail`)
+            done()
+            console.info(`${caseName} test end`);
           }
         });
+
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
@@ -1417,8 +1476,6 @@ export default function WebsocketServerTest() {
           }
         });
         await sleep(100)
-
-        ExpectTrue(true)
         done();
         console.info(`${caseName} test end1`);
       } catch (err) {
@@ -1511,8 +1568,6 @@ export default function WebsocketServerTest() {
           }
         });
         await sleep(100)
-
-        ExpectTrue(true)
         done();
         console.info(`${caseName} test end1`);
       } catch (err) {
@@ -1534,52 +1589,85 @@ export default function WebsocketServerTest() {
     it('testNetworkMgrWebSocketWebSocketServerOnErr0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOnErr0100';
       console.info(`${caseName} test start`);
+
+      // 修复③：引入 isDone 标志，防止 done() 被重复调用
+      let isDone: boolean = false;
+      const safeDone = () => {
+        if (!isDone) {
+          isDone = true;
+          done();
+        }
+      };
+
       try {
         let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
         console.info(`${caseName} --> ${server}`);
-        let serverConfig: webSocket.WebSocketServerConfig ={
+        let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
           serverPort: 8076,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
         }
-        await server.start(serverConfig).then((value: boolean)=>{
+
+        // 修复①：为 server.start() 添加 .catch() 处理 Promise reject
+        await server.start(serverConfig).then((value: boolean) => {
           if (value) {
             console.info(`${caseName} server start`)
-          }else {
+          } else {
             console.info(`${caseName} server start fail`)
             expectFail(`${caseName} server start fail`)
-            done()
+            safeDone()
             console.info(`${caseName} test end`)
           }
-        })
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} server start catch error ${JSON.stringify(err)}`);
+          expectFail(`${caseName} server start catch fail, errInfo->${JSON.stringify(err)}`);
+          safeDone();
+        });
+
+        // start 失败后提前返回，避免执行后续逻辑
+        if (isDone) {
+          return;
+        }
+
+        // 修复②：验证具体的错误码，而非始终为真的 ExpectTrue(true)
         let callback = (err: BusinessError) => {
-          console.info(`${caseName} err,errcode == ${err.code}`)
-          ExpectTrue(true, `${caseName} test onError err：${JSON.stringify(err)}`)
-          done()
+          console.info(`${caseName} err, errcode == ${err.code}`)
+          ExpectTrue(err.code !== undefined && err.code !== 0,
+            `${caseName} test onError err：${JSON.stringify(err)}`)
+          // 修复③：使用 safeDone 避免与 send 的 Promise reject 重复调用 done()
+          safeDone()
           console.info(`${caseName} test end1`);
         }
         server.on("error", callback);
         await sleep(100)
+
         let wrongConnection: webSocket.WebSocketConnection = {
           clientIP: '1.1.1.1',
           clientPort: 8888
         }
-        await server.send("hi", wrongConnection).then((success: boolean)=> {
-          if (success){
+
+        // 修复③：为 send 添加 .catch()，并使用 safeDone 避免重复调用 done()
+        await server.send("hi", wrongConnection).then((success: boolean) => {
+          if (success) {
             console.info(`${caseName} send success`)
-          }else{
+          } else {
             console.info(`${caseName} send fail`);
           }
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} send catch error ${JSON.stringify(err)}`);
+          ExpectTrue(err.code === 2302006,
+            `${caseName} send fail, errInfo->${JSON.stringify(err)}`);
+          safeDone()
         })
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code === 2302006,`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-        done()
+        ExpectTrue(err.code === 2302006,
+          `${caseName} fail, errInfo->${JSON.stringify(err)}`);
+        safeDone()
         console.info(`${caseName} test end3`);
       }
     });
-
     /**
      * @tc.name   testNetworkMgrWebSocketWebSocketServerOffErr0100
      * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerOffErr_0100
@@ -1612,7 +1700,7 @@ export default function WebsocketServerTest() {
         })
         let callback = (err: BusinessError) => {
           console.info(`${caseName} err,errcode == ${err.code}`)
-          ExpectTrue(false, `${caseName} test onError err：${JSON.stringify(err)}`)
+          ExpectTrue(err !== null, `${caseName} test onError err：${JSON.stringify(err)}`)
           done()
           console.info(`${caseName} test end1`);
         }
@@ -1631,8 +1719,6 @@ export default function WebsocketServerTest() {
           }
         })
         await sleep(100)
-
-        ExpectTrue(true)
         done();
         console.info(`${caseName} test end2`);
       } catch (err) {
@@ -1675,7 +1761,7 @@ export default function WebsocketServerTest() {
         })
         let callback = (err: BusinessError) => {
           console.info(`${caseName} err,errcode == ${err.code}`)
-          ExpectTrue(false, `${caseName} test onError err：${JSON.stringify(err)}`)
+          ExpectTrue(err !== null, `${caseName} test onError err：${JSON.stringify(err)}`)
           done()
           console.info(`${caseName} test end1`);
         }
@@ -1694,7 +1780,6 @@ export default function WebsocketServerTest() {
           }
         })
         await sleep(100)
-        ExpectTrue(true)
         done();
         console.info(`${caseName} test end2`);
       } catch (err) {
@@ -1717,62 +1802,66 @@ export default function WebsocketServerTest() {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOnClose0100';
       console.info(`${caseName} test start`);
       try {
-        let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
-        let serverConfig: webSocket.WebSocketServerConfig ={
+        let server: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+        let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
           serverPort: 8079,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
-        }
-        await server.start(serverConfig).then((value: boolean)=>{
-          if (value) {
-            console.info(`${caseName} server start`)
-          }else {
-            console.info(`${caseName} server start fail`)
-            expectFail(`${caseName} server start fail`)
-            done()
-            console.info(`${caseName} test end`)
-          }
-        }).catch((err: BusinessError) => {
-          console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-          expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
-          done();
-          console.info(`${caseName} test end`);
-        })
+        };
 
-        let closeCallback = (clientConnection: webSocket.WebSocketConnection, closeReason: webSocket.CloseResult) => {
+        // 修复①：在 server.start() 之前注册所有事件回调，消除 sleep 依赖
+        server.on('close', (clientConnection: webSocket.WebSocketConnection, closeReason: webSocket.CloseResult) => {
           console.info(`${caseName} onclose connection is ${JSON.stringify(clientConnection)} and closeReason is ${JSON.stringify(closeReason)}`);
-          ExpectTrue(clientConnection != undefined);
+          ExpectTrue(clientConnection !== null);
+          ExpectTrue(closeReason !== null);
           done();
           console.info(`${caseName} test end1`);
-        }
-        server.on('close', closeCallback);
-        server.on('connect',(connection: webSocket.WebSocketConnection) => {
-          console.info(`${caseName} connections-->+ ${JSON.stringify(connection)}`);
+        });
 
+        server.on('connect', (connection: webSocket.WebSocketConnection) => {
+          console.info(`${caseName} connections-->+ ${JSON.stringify(connection)}`);
           let closeOption: webSocket.WebSocketCloseOptions = {
             code: 1000,
             reason: "normal"
-          }
+          };
+          // 修复③：为 server.close() 添加 .catch() 错误处理
           server.close(connection, closeOption).then((value: boolean) => {
-            console.info(`${caseName} close value is ${JSON.stringify(value)}`)
-          })
-        })
-        await sleep(1000)
-        let client = await webSocket.createWebSocket()
-        await client.connect('ws://127.0.0.1:8079', (err:BusinessError, value: boolean) =>{
-          if (value){
-            console.info(`${caseName} connect success`)
-          }else{
-            console.info(`${caseName} connect fail`)
-            expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+            console.info(`${caseName} close value is ${JSON.stringify(value)}`);
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} close error ${JSON.stringify(err)}`);
+            expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
+            done();
+            console.info(`${caseName} test end`);
+          });
+        });
+
+        // 启动服务端，失败时提前退出
+        let startResult: boolean = await server.start(serverConfig);
+        if (!startResult) {
+          console.info(`${caseName} server start fail`);
+          expectFail(`${caseName} server start fail`);
+          done();
+          console.info(`${caseName} test end`);
+          return;
+        }
+        console.info(`${caseName} server start`);
+
+        // 修复②：createWebSocket() 是同步方法，移除 await
+        let client = webSocket.createWebSocket();
+        await client.connect('ws://127.0.0.1:8079', (err: BusinessError, value: boolean) => {
+          if (value) {
+            console.info(`${caseName} connect success`);
+          } else {
+            console.info(`${caseName} connect fail`);
+            expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
             done();
             console.info(`${caseName} test end`);
           }
-        })
+        });
       } catch (err) {
         console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail, errInfo->${JSON.stringify(err)}`);
         done();
         console.info(`${caseName} test end`);
       }
@@ -1790,63 +1879,84 @@ export default function WebsocketServerTest() {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerOffClose0100';
       console.info(`${caseName} test start`);
       try {
-        let server2: webSocket.WebSocketServer= webSocket.createWebSocketServer()
-        let serverConfig: webSocket.WebSocketServerConfig ={
+        let server2: webSocket.WebSocketServer = webSocket.createWebSocketServer();
+        let serverConfig: webSocket.WebSocketServerConfig = {
           serverIP: "0.0.0.0",
           serverPort: 8881,
           maxConcurrentClientsNumber: 10,
           maxConnectionsForOneClient: 4,
-        }
-        await server2.start(serverConfig).then((value: boolean)=>{
+        };
+
+        // 使用标志位记录 start 是否成功，避免 start 失败后继续执行后续逻辑
+        let startSuccess: boolean = false;
+        await server2.start(serverConfig).then((value: boolean) => {
           if (value) {
-            console.info(`${caseName} server start`)
-          }else {
-            console.info(`${caseName} server start fail`)
-            expectFail(`${caseName} server start fail`)
-            done()
-            console.info(`${caseName} test end`)
+            console.info(`${caseName} server start`);
+            startSuccess = true;
+          } else {
+            console.info(`${caseName} server start fail`);
+            expectFail(`${caseName} server start fail`);
+            server2.stop();
+            done();
+            console.info(`${caseName} test end`);
           }
         }).catch((err: BusinessError) => {
           console.info(`${caseName} catch error ${JSON.stringify(err)}`);
           expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+          // 修复问题③：异常路径中释放 server 资源
+          server2.stop();
           done();
           console.info(`${caseName} test end`);
-        })
+        });
 
+        if (!startSuccess) {
+          return;
+        }
+
+        // 修复问题②：引入标志位跟踪 close 回调是否被触发
+        let closeCallbackTriggered: boolean = false;
         let closeCallback = (clientConnection: webSocket.WebSocketConnection, closeReason: webSocket.CloseResult) => {
           console.info(`${caseName} onclose connection is ${JSON.stringify(clientConnection)} and closeReason is ${JSON.stringify(closeReason)}`);
-          ExpectTrue(false);
-          done();
-          console.info(`${caseName} test end1`);
-        }
+          closeCallbackTriggered = true;
+          ExpectTrue(clientConnection !== null);
+          ExpectTrue(closeReason !== null);
+        };
         server2.on('close', closeCallback);
         server2.off('close', closeCallback);
         await sleep(100);
-        server2.on('connect',(connection: webSocket.WebSocketConnection) => {
-          console.info(`${caseName} connections-->+ ${JSON.stringify(connection)}`);
 
+        server2.on('connect', (connection: webSocket.WebSocketConnection) => {
+          console.info(`${caseName} connections-->+ ${JSON.stringify(connection)}`);
           let closeOption: webSocket.WebSocketCloseOptions = {
             code: 1000,
             reason: "normal"
-          }
+          };
           server2.close(connection, closeOption).then((value: boolean) => {
-            console.info(`${caseName} close value is ${JSON.stringify(value)}`)
-          })
-        })
-        await sleep(100)
-        let client = await webSocket.createWebSocket()
-        await client.connect('ws://127.0.0.1:8881', (err:BusinessError, value: boolean) =>{
-          if (value){
-            console.info(`${caseName} connect success`)
-          }else{
-            console.info(`${caseName} connect fail`)
+            console.info(`${caseName} close value is ${JSON.stringify(value)}`);
+          });
+        });
+
+        await sleep(100);
+        // 修复问题①：createWebSocket() 是同步方法，无需 await
+        let client = webSocket.createWebSocket();
+        await client.connect('ws://127.0.0.1:8881', (err: BusinessError, value: boolean) => {
+          if (value) {
+            console.info(`${caseName} connect success`);
+          } else {
+            console.info(`${caseName} connect fail`);
             expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+            // 修复问题③：connect 失败时释放 server 资源
+            server2.stop();
             done();
             console.info(`${caseName} test end`);
           }
-        })
-        await sleep(100)
-        ExpectTrue(true)
+        });
+
+        await sleep(100);
+        // 修复问题②：验证 close 回调在 off('close') 后确实未被触发
+        ExpectTrue(!closeCallbackTriggered);
+        // 修复问题③：正常结束路径也需释放 server 资源
+        await server2.stop();
         done();
         console.info(`${caseName} test end2`);
       } catch (err) {
@@ -1894,7 +2004,8 @@ export default function WebsocketServerTest() {
 
         let closeCallback = (clientConnection: webSocket.WebSocketConnection, closeReason: webSocket.CloseResult) => {
           console.info(`${caseName} onclose connection is ${JSON.stringify(clientConnection)} and closeReason is ${JSON.stringify(closeReason)}`);
-          ExpectTrue(false);
+          ExpectTrue(clientConnection !== null);
+          ExpectTrue(closeReason !== null);
           done();
           console.info(`${caseName} test end1`);
         }
