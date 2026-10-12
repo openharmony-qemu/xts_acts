@@ -52,6 +52,7 @@ export default function saveCompCustomizeTest() {
       const retryCount = 20;
       for (let retry = 0; retry < retryCount; retry++) {
         let button = await driver.findComponent(ON.type('SaveButton'));
+        await Utils.sleep(3000);
         if (button !== null) {
           return button;
         }
@@ -73,6 +74,7 @@ export default function saveCompCustomizeTest() {
         await button.click();
         await Utils.sleep(1000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
         if (titleTx !== null) {
           await clickAllowBtn(testname, driver);
@@ -88,6 +90,7 @@ export default function saveCompCustomizeTest() {
       console.info(`====>${testname} clickAllowBtn function Start====`);
       try {
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
         if(allowBtn !== null) {
           console.info(`====>${testname} allowBtnClick START====`);
@@ -110,6 +113,7 @@ export default function saveCompCustomizeTest() {
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(3000);
           console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
           console.info(`====>${testname} allowBtnClick START====`);
           await allowBtn.click();
@@ -169,6 +173,8 @@ export default function saveCompCustomizeTest() {
       console.info(`====>${TCNAME} START====`);
       let expectText: string = '下载';
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -241,6 +247,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -283,6 +291,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -325,6 +335,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.icon).assertEqual(0);
       expect(obj.$attrs.text).assertEqual(0);
@@ -367,6 +379,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.iconBorderRadius.topLeft).assertEqual('10.00vp');
       expect(obj.$attrs.iconBorderRadius.topRight).assertEqual('10.00vp');
@@ -414,6 +428,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.iconBorderRadius.topLeft).assertEqual('8.00vp');
       expect(obj.$attrs.iconBorderRadius.topRight).assertEqual('0.00vp');
@@ -458,6 +474,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.iconSize).assertEqual('20.00vp');
       await Utils.sleep(1000);
@@ -500,6 +518,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.symbolIconColor).assertEqual('#FF00FF00, #FFFF00FF');
       expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.MULTIPLE_OPACITY');
@@ -543,6 +563,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.SINGLE');
       expect(obj.$attrs.SymbolFontWeight).assertEqual('900');
@@ -585,6 +607,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.SymbolRenderingStrategy).assertEqual('SymbolRenderingStrategy.MULTIPLE_COLOR');
       expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Lighter');
@@ -627,6 +651,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.symbolIconColor).assertEqual('#FFFFFFFF');
       expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Normal');
@@ -668,6 +694,8 @@ export default function saveCompCustomizeTest() {
       }
       await Utils.sleep(1000);
       let strJson = getInspectorByKey('keySave');
+      await Utils.sleep(3000);
+      console.info(`====>${TCNAME} strJson is: ${strJson}`);
       let obj : ESObject = JSON.parse(strJson);
       expect(obj.$attrs.SymbolFontWeight).assertEqual('FontWeight.Bold');
       await Utils.sleep(1000);
