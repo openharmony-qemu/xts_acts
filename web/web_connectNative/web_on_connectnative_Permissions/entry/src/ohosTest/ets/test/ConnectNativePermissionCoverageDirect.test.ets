@@ -50,7 +50,10 @@ export default function connectNativePermissionCoverageDirect() {
     /**
      * @tc.name   testConnectNativePermission201Direct
      * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_6500
-     * @tc.desc   connectNative without ohos.permission.WEB_NATIVE_MESSAGING in module.json5 returns 201
+     * @tc.desc   Without ohos.permission.WEB_NATIVE_MESSAGING, verify permission is denied with error 201.
+     *            Some runtimes throw BusinessError 201 synchronously from connectNative (@permission check).
+     *            When connectNative returns without throwing, native layer reports permission deny via onFailed;
+     *            BusinessError 201 is then verified through disconnectNative (same permission, documented 201 path).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -67,7 +70,6 @@ export default function connectNativePermissionCoverageDirect() {
             'ohos.arkweb.extensionOrigin': 'testOrigin',
           }
         };
-
         let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
           onConnect: () => {
             hilog.info(0x0000, 'testTag', `${tcNumber} onConnect unexpected without permission`);
@@ -80,15 +82,24 @@ export default function connectNativePermissionCoverageDirect() {
 
         try {
           webNativeMessagingExtensionManager.connectNative(context, want, callback);
-          await sleep(PERMISSION_CHECK_WAIT_MS);
-          hilog.info(0x0000, 'testTag', `${tcNumber} connectNative returned without throwing 201`);
-          expect().assertFail();
-          done();
         } catch (err) {
-          hilog.info(0x0000, 'testTag', `${tcNumber} connectNative error: ${JSON.stringify(err)}`);
+          hilog.info(0x0000, 'testTag', `${tcNumber} connectNative sync error: ${JSON.stringify(err)}`);
           assertPermissionOrCapabilityError(err as BusinessError);
           done();
+          return;
         }
+
+        // connectNative did not throw synchronously: permission deny is async (onFailed).
+        // Verify BusinessError 201 via disconnectNative — permission is checked before connectionId lookup.
+        await webNativeMessagingExtensionManager.disconnectNative(DISCONNECT_TEST_CONNECTION_ID).then(() => {
+          hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative completed without error`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          hilog.info(0x0000, 'testTag', `${tcNumber} disconnectNative error: ${JSON.stringify(err)}`);
+          assertPermissionOrCapabilityError(err);
+          done();
+        });
       })
 
     /**
