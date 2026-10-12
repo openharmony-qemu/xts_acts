@@ -311,21 +311,18 @@ export default function SimManagerTest() {
      * @tc.level  LEVEL1
      */
     it('Telephony_Sim_isSimActive_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
-      sim.isSimActive(env.SLOTID_INVALID, (err, data) => {
-        if (err.code === 8300001) {
-          console.info("Telephony_Sim_isSimActive_Async_0700 err info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
-          expect(err.code).assertEqual(8300001);
-          done();
-        } else if (data === false){
-          console.info("Telephony_Sim_isSimActive_Async_0700 data info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
+      const CASE_NAME = 'Telephony_Sim_isSimActive_Async_0700';
+        sim.isSimActive(env.SLOTID_INVALID, (err, data) => {
+          if (err){
+            console.info(CASE_NAME + " isSimActive async info " + "err:" + JSON.stringify(err));
+            expect(err.code).assertEqual(8300001);
+            done();
+            return;
+          }
+          console.info(CASE_NAME + " isSimActive async info " + "data:" + JSON.stringify(data));
           expect(data).assertEqual(false);
           done();
-        } else {
-          console.info("Telephony_Sim_isSimActive_Async_0700 fail info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
-          expect().assertFail();
-          done();
-        }    
-      });
+        });
     });
 
     /**
