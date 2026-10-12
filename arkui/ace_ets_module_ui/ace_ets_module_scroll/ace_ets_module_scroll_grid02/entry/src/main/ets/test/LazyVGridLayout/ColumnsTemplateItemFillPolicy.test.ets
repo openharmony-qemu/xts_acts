@@ -17,8 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function columnsTemplateItemFillPolicy() {
-  describe('columnsTemplateItemFillPolicy', () => {
+export default function ColumnsTemplateItemFillPolicyTest() {
+  describe('ColumnsTemplateItemFillPolicyTest', () => {
     beforeEach(async (done: Function) => {
       console.info("columnsTemplateItemFillPolicy beforeEach start");
       let options: router.RouterOptions = {

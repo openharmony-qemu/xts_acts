@@ -17,8 +17,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function columnsTemplateAuto() {
-  describe('columnsTemplateAuto', () => {
+export default function ColumnsTemplateAutoTest() {
+  describe('ColumnsTemplateAutoTest', () => {
     beforeEach(async (done: Function) => {
       console.info("columnsTemplateAuto beforeEach start");
       let options: router.RouterOptions = {

@@ -18,8 +18,8 @@ import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function refreshOffsetMin() {
-  describe('refreshOffsetMin', () => {
+export default function RefreshOffsetMinTest() {
+  describe('RefreshOffsetMinTest', () => {
     beforeEach(async (done: Function) => {
       console.info('refreshOffsetMin beforeEach start');
       let options: router.RouterOptions = {
