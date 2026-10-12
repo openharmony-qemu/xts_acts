@@ -58,9 +58,6 @@ static void OnDragStart(ArkUI_NodeEvent *event)
     OH_UdmfData *data = OH_UdmfData_Create();
     OH_UdmfData_AddRecord(data, record);
     OH_ArkUI_DragEvent_SetData(dragEvent, data);
-    OH_UdmfData_Destroy(data);
-    OH_UdmfRecord_Destroy(record);
-    OH_UdsPlainText_Destroy(textValue);
 }
 
 static void OnDragEnter(ArkUI_NodeEvent *event)
