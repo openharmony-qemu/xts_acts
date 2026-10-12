@@ -36,6 +36,7 @@ export interface RouterOptionsParams {
   eventId: Long;
   pickerOptions: PickerOptions;
   albumOptions?: AlbumPickerOptions;
+  isOnItemClickedSet?: boolean;
   isOnItemClickedNotifySet?: boolean;
 }
 
