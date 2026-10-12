@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../MainAbility/utils/MessageManager';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function aboutToDisappearFalse() {
   describe('aboutToDisappearFalse', () => {
     beforeEach(async (done:Function) =>{
@@ -68,8 +70,9 @@ export default function aboutToDisappearFalse() {
       let button = await driver.findComponent(ON.id('aboutToDisappearFalse'));
       await button.click();
       await CommonFunc.sleep(1000);
-
-      await driver.click(200, 200);
+      // 涉及坐标
+      await driver.clickAt({ x: 200, y: 200, displayId: displayID });
+      // await driver.click(200, 200);
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('aboutToDisappearFalseText');

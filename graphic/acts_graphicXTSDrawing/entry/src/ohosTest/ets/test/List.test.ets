@@ -34,6 +34,7 @@ import DrawingTsTypefacePart2Test from './TypefacePart2.test';
 import textBlobTest from './TextBlob.test';
 import DrawingTsTextBlob2Test from './TextBlob2.test';
 import DrawingTsTextBlobPart3Test from './TextBlobPart3.test';
+import DrawingTsTextBlobPart4Test from './TextBlobPart4.test';
 import drawingTsPathTest from './Path.test';
 import drawingTsPath2Test from './Path2.test';
 import drawingTsPath3Test from './Path3.test';
@@ -72,6 +73,7 @@ import DrawingTsRectUtilsPart2Test from './RectUtilsPart2.test'
 import DrawingTsBrushPart2 from './BrushPart2.test';
 import FontPart4 from './FontPart4.test';
 import DrawingTsFontPart5Test from './FontPart5.test';
+import DrawingTsFontPart6Test from './FontPart6.test';
 import PathEffect2 from './PathEffect2.test';
 import DrawingPathEffectPart3Test from './PathEffect3.test';
 import PathIterator from './PathIterator.test';
@@ -106,6 +108,7 @@ export default function testsuite() {
   textBlobTest();
   DrawingTsTextBlob2Test();
   DrawingTsTextBlobPart3Test();
+  DrawingTsTextBlobPart4Test();
   drawingTsPathTest();
   drawingTsPath2Test();
   drawingTsPath3Test();
@@ -141,6 +144,7 @@ export default function testsuite() {
   DrawingTsBrushPart2();
   FontPart4();
   DrawingTsFontPart5Test();
+  DrawingTsFontPart6Test();
   PathEffect2();
   DrawingPathEffectPart3Test();
   PathIterator();

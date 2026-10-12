@@ -22,6 +22,7 @@ import webDefaultTextEncodingFormat from './WebDefaultTextEncodingFormat.test';
 import WebOnNativeEmbedObjectParamChange from './NativeEmbedParamStatusUpdate.test';
 import webViewEventResult from "./WebViewEventResult.test";
 import webViewInitTest from "./WebViewInitTest.test";
+import webNativeEmbedOptionsCoverage from './WebNativeEmbedOptionsCoverage.test';
 
  export default function testsuite() {
    WebEmbedVisibilityChange();
@@ -33,4 +34,5 @@ import webViewInitTest from "./WebViewInitTest.test";
    WebOnNativeEmbedObjectParamChange();
    webViewEventResult();
    webViewInitTest();
+   webNativeEmbedOptionsCoverage();
  }

@@ -125,6 +125,9 @@ napi_value OHEffectBufferInfoGetHeightTest(napi_env env, napi_callback_info info
         setHeight = IMAGE_EFFECT_1080;
         code = OH_EffectBufferInfo_GetHeight(bufferInfo, &getHeight);
         break;
+    case CASE_INDEX_5:
+        code = OH_EffectBufferInfo_GetHeight(bufferInfo, nullptr);
+        break;
     default:
         break;
     }
@@ -202,6 +205,9 @@ napi_value OHEffectBufferInfoGetWidthTest(napi_env env, napi_callback_info info)
         setWidth = IMAGE_EFFECT_1080;
         code = OH_EffectBufferInfo_GetWidth(bufferInfo, &getWidth);
         break;
+    case CASE_INDEX_5:
+        code = OH_EffectBufferInfo_GetWidth(bufferInfo, nullptr);
+        break;
     default:
         break;
     }
@@ -278,6 +284,9 @@ napi_value OHEffectBufferInfoGetRowSizeTest(napi_env env, napi_callback_info inf
         bufferInfo = nullptr;
         setRowSize = IMAGE_EFFECT_1080;
         code = OH_EffectBufferInfo_GetRowSize(bufferInfo, &getRowSize);
+        break;
+    case CASE_INDEX_5:
+        code = OH_EffectBufferInfo_GetRowSize(bufferInfo, nullptr);
         break;
     default:
         break;

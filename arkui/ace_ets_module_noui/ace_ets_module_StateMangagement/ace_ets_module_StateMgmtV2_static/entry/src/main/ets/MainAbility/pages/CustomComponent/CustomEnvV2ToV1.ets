@@ -35,7 +35,6 @@ struct CustomEnvV2ToV1 {
       Text(`Parent Value is :${this.defaultMessage}`)
         .id('customEnvV2ToV1_001')
         .height('5%')
-        .fontSize(20)
       Child({ message: this.defaultMessage })
         .id('customEnvV2ToV1_002')
         .height('5%')
@@ -54,7 +53,6 @@ struct Child {
       Text(`Child value is :${this.message}`)
         .id('customEnvV2ToV1_003')
         .height('5%')
-        .fontSize(20)
     }
     .height('100%')
     .width('100%')

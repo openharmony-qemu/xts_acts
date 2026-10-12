@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, TestType, Size, Level, afterAll } from '@ohos/hypium-dynamic';
+import { describe, expect, it, TestType, Size, Level, afterAll } from '@ohos/hypium';
 import { worker } from '@kit.ArkTS';
 
 export const sleep = (ms: number | undefined) => {

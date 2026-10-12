@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
 import {
   AuditClassDecorator,

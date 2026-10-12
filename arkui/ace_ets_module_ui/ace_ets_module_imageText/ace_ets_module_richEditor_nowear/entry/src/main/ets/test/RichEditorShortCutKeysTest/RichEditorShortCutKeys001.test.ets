@@ -77,7 +77,7 @@ export default function RichEditorShortCutKeys001() {
       await select?.click()
       await CommonFunc.sleep(1000);
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
       await CommonFunc.sleep(500);
 
       let rich = await driver.findComponent(ON.id('RichEditorShortCutKeys001'));
@@ -88,7 +88,7 @@ export default function RichEditorShortCutKeys001() {
       await driver.longClick(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
 
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(1000);
 
       let finalText = await driver.findComponent(ON.id('finalText'));

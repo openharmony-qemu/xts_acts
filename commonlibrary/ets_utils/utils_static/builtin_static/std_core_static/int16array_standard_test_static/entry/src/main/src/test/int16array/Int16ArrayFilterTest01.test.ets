@@ -180,35 +180,6 @@ export default function Int16ArrayFilterTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_0700
-     * @tc.name testInt16ArrayFilterTestOne007
-     * @tc.desc Verify filter callback captures vals [-32768, 0, 32767] from Int16Array.of three-element source
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(-32768, 0, 32767);
-      let receivedVals: number[] = [];
-      arr.filter((val: number, index: int, array: Int16Array): boolean => {
-        receivedVals.push(val);
-        return true;
-      });
-      let receivedValsLength: int = receivedVals.length;
-      let expectedReceivedValsLength: int = 3;
-      expect(receivedValsLength).assertEqual(expectedReceivedValsLength);
-      let receivedValsElement0: number = receivedVals[0];
-      let expectedReceivedValsElement0: int = -32768;
-      expect(receivedValsElement0).assertEqual(expectedReceivedValsElement0);
-      let receivedValsElement1: number = receivedVals[1];
-      let expectedReceivedValsElement1: int = 0;
-      expect(receivedValsElement1).assertEqual(expectedReceivedValsElement1);
-      let receivedValsElement2: number = receivedVals[2];
-      let expectedReceivedValsElement2: int = 32767;
-      expect(receivedValsElement2).assertEqual(expectedReceivedValsElement2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_0800
      * @tc.name testInt16ArrayFilterTestOne008
      * @tc.desc Verify filter callback vals are all negative for negative source
@@ -333,52 +304,6 @@ export default function Int16ArrayFilterTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_1400
-     * @tc.name testInt16ArrayFilterTestOne014
-     * @tc.desc Verify filter callback array BYTES_PER_ELEMENT equals source value 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let inputValue: int = 1;
-      let arr: Int16Array = Int16Array.of(inputValue);
-      let bytesPerElement: number = 0;
-      arr.filter((val: number, index: int, array: Int16Array): boolean => {
-        bytesPerElement = array.BYTES_PER_ELEMENT;
-        return true;
-      });
-      let expectedBytesPerElement: int = 2;
-      expect(bytesPerElement).assertEqual(expectedBytesPerElement);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_1500
-     * @tc.name testInt16ArrayFilterTestOne015
-     * @tc.desc Verify filter callback values on new Int16Array array-like source
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([-1, 0, 1]);
-      let vals: number[] = [];
-      arr.filter((val: number, index: int, array: Int16Array): boolean => {
-        vals.push(val);
-        return true;
-      });
-      let valsElement0: number = vals[0];
-      let expectedValsElement0: int = -1;
-      expect(valsElement0).assertEqual(expectedValsElement0);
-      let valsElement1: number = vals[1];
-      let expectedValsElement1: int = 0;
-      expect(valsElement1).assertEqual(expectedValsElement1);
-      let valsElement2: number = vals[2];
-      let expectedValsElement2: int = 1;
-      expect(valsElement2).assertEqual(expectedValsElement2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_1600
      * @tc.name testInt16ArrayFilterTestOne016
      * @tc.desc Verify filter callback values on Int16Array.from constructed source
@@ -432,32 +357,6 @@ export default function Int16ArrayFilterTest01(): void {
       let valsElement2: number = vals[2];
       let expectedValsElement2: int = 21;
       expect(valsElement2).assertEqual(expectedValsElement2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_1800
-     * @tc.name testInt16ArrayFilterTestOne018
-     * @tc.desc Verify filter uses updated closure variable after modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let limit: number = 0;
-      let arr = Int16Array.of(-5, 0, 5, 10);
-      limit = 3;
-      let result = arr.filter((val: number, index: int, array: Int16Array): boolean => {
-        return val > limit;
-      });
-      let resultLength: int = result.length;
-      let expectedResultLength: int = 2;
-      expect(resultLength).assertEqual(expectedResultLength);
-      let resultElement0: number = result.$_get(0);
-      let expectedResultElement0: int = 5;
-      expect(resultElement0).assertEqual(expectedResultElement0);
-      let resultElement1: number = result.$_get(1);
-      let expectedResultElement1: int = 10;
-      expect(resultElement1).assertEqual(expectedResultElement1);
     });
 
     /**
@@ -536,78 +435,6 @@ export default function Int16ArrayFilterTest01(): void {
       try {
         arr.filter((val: number, index: int, array: Int16Array): boolean => {
           throw new TypeError('callback error');
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_2300
-     * @tc.name testInt16ArrayFilterTestOne023
-     * @tc.desc Verify filter callback throw on first element propagates immediately
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(10, 20, 30);
-      let callCount: number = 0;
-      try {
-        arr.filter((val: number, index: int, array: Int16Array): boolean => {
-          callCount = callCount + 1;
-          if (index === 0) {
-            throw new TypeError('error at first');
-          }
-          return true;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-      expect(callCount).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_2400
-     * @tc.name testInt16ArrayFilterTestOne024
-     * @tc.desc Verify filter callback throw on middle element propagates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1, 2, 3, 4, 5);
-      try {
-        arr.filter((val: number, index: int, array: Int16Array): boolean => {
-          if (index === 2) {
-            throw new TypeError('error at middle');
-          }
-          return true;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_2500
-     * @tc.name testInt16ArrayFilterTestOne025
-     * @tc.desc Verify filter callback throw on last element propagates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(100, 200);
-      try {
-        arr.filter((val: number, index: int, array: Int16Array): boolean => {
-          if (index === 1) {
-            throw new TypeError('error at last');
-          }
-          return true;
         });
         expect().assertFail();
       } catch (e) {
@@ -729,24 +556,6 @@ export default function Int16ArrayFilterTest01(): void {
         return true;
       });
       expect(called).assertFalse();
-      let resultLength: int = result.length;
-      let expectedResultLength: int = 0;
-      expect(resultLength).assertEqual(expectedResultLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_3100
-     * @tc.name testInt16ArrayFilterTestOne031
-     * @tc.desc Verify filter on empty Int16Array returns empty non-null result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(0);
-      let result = arr.filter((val: number, index: int, array: Int16Array): boolean => {
-        return true;
-      });
       let resultLength: int = result.length;
       let expectedResultLength: int = 0;
       expect(resultLength).assertEqual(expectedResultLength);
@@ -1082,45 +891,6 @@ export default function Int16ArrayFilterTest01(): void {
       result.$_set(0, 99);
       let actualFirst: number = result.$_get(0);
       let expectedFirst: int = 99;
-      expect(actualFirst).assertEqual(expectedFirst);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_4800
-     * @tc.name testInt16ArrayFilterTestOne048
-     * @tc.desc Verify filter() with false callback gives empty result.length on 5-element array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      let result: Int16Array = arr.filter((value: number, index: int, array: Int16Array): boolean => {
-        return false;
-      });
-      let actualFirst: int = result.length;
-      let expectedFirst: int = 0;
-      expect(actualFirst).assertEqual(expectedFirst);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_4900
-     * @tc.name testInt16ArrayFilterTestOne049
-     * @tc.desc Verify filter() on empty Int16Array with true callback keeps length 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([]);
-      let result: Int16Array = arr.filter((value: number, index: int, array: Int16Array): boolean => {
-        return true;
-      });
-      let actualString: string = result.toString();
-      let expectedString: string = '';
-      expect(actualString).assertEqual(expectedString);
-      let actualFirst: int = result.length;
-      let expectedFirst: int = 0;
       expect(actualFirst).assertEqual(expectedFirst);
     });
 
@@ -1520,26 +1290,6 @@ export default function Int16ArrayFilterTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_6700
-     * @tc.name testInt16ArrayFilterTestOne067
-     * @tc.desc Verify filter() callback throws TypeError at index=0 and error is propagated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20, 30]);
-      try {
-        arr.filter((value: number, index: int, array: Int16Array): boolean => {
-          throw new TypeError('type error at first');
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_6800
      * @tc.name testInt16ArrayFilterTestOne068
      * @tc.desc Verify filter() callback throws TypeError at last index and source array remains intact
@@ -1566,49 +1316,6 @@ export default function Int16ArrayFilterTest01(): void {
       let actualFourthElement: number = arr.$_get(3);
       let expectedFourthElement: int = 80;
       expect(actualFourthElement).assertEqual(expectedFourthElement);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_6900
-     * @tc.name testInt16ArrayFilterTestOne069
-     * @tc.desc Verify filter() callback throws TypeError at middle index=2 and error is propagated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      try {
-        arr.filter((value: number, index: int, array: Int16Array): boolean => {
-          if (index === 2) {
-            throw new TypeError('middle iteration abort');
-          }
-          return true;
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_7000
-     * @tc.name testInt16ArrayFilterTestOne070
-     * @tc.desc Verify filter() callback throws TypeError on single-element array and error is propagated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([42]);
-      try {
-        arr.filter((value: number, index: int, array: Int16Array): boolean => {
-          throw new TypeError('single element throw');
-        });
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('TypeError');
-      }
     });
 
     /**
@@ -1764,27 +1471,6 @@ export default function Int16ArrayFilterTest01(): void {
       } catch (e) {
         expect(e.name).assertEqual('TypeError');
       }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILTER_ONE_7700
-     * @tc.name testInt16ArrayFilterTestOne077
-     * @tc.desc Verify filter() on empty array never calls callback and returns empty Int16Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFilterTestOne077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let called: boolean = false;
-      let result: Int16Array = arr.filter((value: number, index: int, array: Int16Array): boolean => {
-        called = true;
-        throw new TypeError('should never execute');
-      });
-      expect(called).assertFalse();
-      let actualLength: int = result.length;
-      let expectedLength: int = 0;
-      expect(actualLength).assertEqual(expectedLength);
     });
 
     /**

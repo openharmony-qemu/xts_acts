@@ -36,7 +36,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0100
      * @tc.name testSetInterval001
      * @tc.desc Verify setInterval(func, delayMs) with 2 parameters creates timer
      * @tc.size MediumTest
@@ -55,7 +55,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0200
      * @tc.name testSetInterval002
      * @tc.desc Verify setInterval with func, delayMs and args passes parameters correctly
      * @tc.size MediumTest
@@ -74,7 +74,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0300
      * @tc.name testSetInterval003
      * @tc.desc Verify setInterval with multiple args passes all parameters
      * @tc.size MediumTest
@@ -93,7 +93,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0400
      * @tc.name testSetInterval004
      * @tc.desc Verify setInterval(msg) registers string message interval and returns ID when log capture is unavailable
      * @tc.size MediumTest
@@ -107,7 +107,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0500
      * @tc.name testSetInterval005
      * @tc.desc Verify setInterval with delayMs=0 repeatedly executes callback
      * @tc.size MediumTest
@@ -126,7 +126,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0600
      * @tc.name testSetInterval006
      * @tc.desc Verify setInterval with normal named function as func parameter
      * @tc.size MediumTest
@@ -143,7 +143,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0700
      * @tc.name testSetInterval007
      * @tc.desc Verify setInterval with function that receives parameters via args
      * @tc.size MediumTest
@@ -162,7 +162,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0800
      * @tc.name testSetInterval008
      * @tc.desc Verify setInterval with empty string message registers interval and returns ID when log capture is unavailable
      * @tc.size MediumTest
@@ -176,7 +176,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0900
      * @tc.name testSetInterval009
      * @tc.desc Verify setInterval with negative delayMs still executes callback
      * @tc.size MediumTest
@@ -194,7 +194,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1000
      * @tc.name testSetInterval010
      * @tc.desc Verify setInterval with delayMs=int max value can be cancelled before execution
      * @tc.size MediumTest
@@ -213,7 +213,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1100
      * @tc.name testSetInterval011
      * @tc.desc Verify setInterval with delayMs=null repeatedly executes callback
      * @tc.size MediumTest
@@ -231,7 +231,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0120
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1200
      * @tc.name testSetInterval012
      * @tc.desc Verify setInterval with delayMs=undefined can be cleared before execution
      * @tc.size MediumTest
@@ -249,7 +249,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1300
      * @tc.name testSetInterval013
      * @tc.desc Verify setInterval return value assignable to int variable
      * @tc.size MediumTest
@@ -265,7 +265,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1400
      * @tc.name testSetInterval014
      * @tc.desc Verify setInterval can be cleared safely before callback fires
      * @tc.size MediumTest
@@ -284,7 +284,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1500
      * @tc.name testSetInterval015
      * @tc.desc Verify setInterval with number args passed to callback
      * @tc.size MediumTest
@@ -303,7 +303,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1600
      * @tc.name testSetInterval016
      * @tc.desc Verify setInterval with string args
      * @tc.size MediumTest
@@ -322,7 +322,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1700
      * @tc.name testSetInterval017
      * @tc.desc Verify setInterval with boolean args
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1800
      * @tc.name testSetInterval018
      * @tc.desc Verify setInterval with Int.MIN_VALUE delay still schedules callback execution
      * @tc.size MediumTest
@@ -360,7 +360,7 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_1900
      * @tc.name testSetInterval019
      * @tc.desc Verify setInterval with parsed Infinity converted delay can be cleared before execution
      * @tc.size MediumTest
@@ -379,36 +379,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2000
      * @tc.name testSetInterval020
-     * @tc.desc Verify setInterval with null and undefined as args values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testSetInterval020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let receivedNull: boolean = false;
-      let receivedUndefined: boolean = false;
-      const timerId: int = setInterval((a: Object | null, b: string | undefined): void => {
-        receivedNull = a === null;
-        receivedUndefined = b === undefined;
-      }, 20, null, undefined);
-      expect(timerId > 0).assertTrue();
-      await Utils.msSleep(80);
-      clearInterval(timerId);
-      expect(receivedNull).assertTrue();
-      expect(receivedUndefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0210
-     * @tc.name testSetInterval021
      * @tc.desc Verify setInterval with parsed NaN converted delay can be cleared before execution
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSetInterval020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let count: int = 0;
       const timerId: int = setInterval(() => {
         count++;
@@ -420,14 +398,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0220
-     * @tc.name testSetInterval022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2100
+     * @tc.name testSetInterval021
      * @tc.desc Verify multiple setInterval calls return unique IDs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testSetInterval021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const ids: int[] = [];
       for (let i: int = 0; i < 5; i++) {
         ids.push(setInterval(() => {}, 10000));
@@ -452,14 +430,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0230
-     * @tc.name testSetInterval023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2200
+     * @tc.name testSetInterval022
      * @tc.desc Verify clearInterval immediately cancels callback with int argument before execution
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSetInterval022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let received: int = 0;
       let id: int = setInterval((value: int): void => {
         received = value;
@@ -471,42 +449,42 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0240
-     * @tc.name testSetInterval024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2300
+     * @tc.name testSetInterval023
      * @tc.desc Verify setInterval accepts string message with null delay and returns clearable timer ID
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testSetInterval023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let id: int = setInterval("interval generated delayed 27", null);
       expect(id > 0).assertTrue();
       clearInterval(id);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0250
-     * @tc.name testSetInterval025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2400
+     * @tc.name testSetInterval024
      * @tc.desc Verify setInterval accepts string message with numeric delay and returns clearable timer ID
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testSetInterval024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let id: int = setInterval("interval generated message 28", 228);
       expect(id > 0).assertTrue();
       clearInterval(id);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0260
-     * @tc.name testSetInterval026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2500
+     * @tc.name testSetInterval025
      * @tc.desc Verify clearInterval cancels delayed interval callback before marker update
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('testSetInterval025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let marker: int = 0;
       let id: int = setInterval((): void => {
         marker = marker + 29;
@@ -518,14 +496,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0270
-     * @tc.name testSetInterval027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2600
+     * @tc.name testSetInterval026
      * @tc.desc Verify setInterval callback overload returns clearable timer ID for delay 31
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetInterval026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let id: int = setInterval((): void => {
       }, 131);
       expect(id > 0).assertTrue();
@@ -533,14 +511,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0280
-     * @tc.name testSetInterval028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2700
+     * @tc.name testSetInterval027
      * @tc.desc Verify setInterval callback accepts string argument for case 32
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let received: string = "";
       let tickCount: int = 0;
       let id: int = setInterval((value: string): void => {
@@ -554,14 +532,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0290
-     * @tc.name testSetInterval029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2800
+     * @tc.name testSetInterval028
      * @tc.desc Verify setInterval callback accepts int argument for case 33
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let received: int = -1;
       let tickCount: int = 0;
       let id: int = setInterval((value: int): void => {
@@ -575,14 +553,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0300
-     * @tc.name testSetInterval030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_2900
+     * @tc.name testSetInterval029
      * @tc.desc Verify setInterval callback accepts boolean argument for case 34
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let expected: boolean = true;
       let received: boolean = false;
       let tickCount: int = 0;
@@ -597,14 +575,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0310
-     * @tc.name testSetInterval031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_3000
+     * @tc.name testSetInterval030
      * @tc.desc Verify setInterval accepts null delay for callback case 35
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetInterval030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let id: int = setInterval((): void => {
       }, null);
       expect(id > 0).assertTrue();
@@ -612,14 +590,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0320
-     * @tc.name testSetInterval032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_3100
+     * @tc.name testSetInterval031
      * @tc.desc Verify setInterval timer behavior case 35
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let total: int = 0;
       let id: int = setInterval((value: int): void => {
         total = total + value;
@@ -631,14 +609,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0330
-     * @tc.name testSetInterval033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_3200
+     * @tc.name testSetInterval032
      * @tc.desc Verify setInterval timer behavior case 36
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let count: int = 0;
       let id: int = setInterval((): void => {
         count++;
@@ -651,14 +629,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0340
-     * @tc.name testSetInterval034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_3300
+     * @tc.name testSetInterval033
      * @tc.desc Verify setInterval timer behavior case 39
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let count: int = 0;
       let id: int = setInterval((): void => {
         count++;
@@ -670,14 +648,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0350
-     * @tc.name testSetInterval035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_3400
+     * @tc.name testSetInterval034
      * @tc.desc Verify setInterval timer behavior case 40
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let text: string = "";
       let flag: boolean = false;
       let count: int = 0;
@@ -692,14 +670,14 @@ export default function GlobalSetIntervalTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_0360
-     * @tc.name testSetInterval036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GLOBAL_SET_INTERVAL_3500
+     * @tc.name testSetInterval035
      * @tc.desc Verify setInterval timer behavior case 41
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetInterval036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
+    it('testSetInterval035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let first: int = 0;
       let second: int = 0;
       let firstId: int = setInterval((): void => {

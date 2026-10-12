@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import { sleep, CreateDefaultLruCache } from './SendableLruCacheHelpers';
 import { ArkTSUtils } from '@kit.ArkTS'
-import { CreateDefaultLruCache } from './SendableLruCacheHelpers'
-
 export default function SendableLruCacheClearTest() {
   describe('SendableLruCacheClearTest', () => {
     beforeAll(() => {
@@ -25,7 +24,8 @@ export default function SendableLruCacheClearTest() {
     })
     afterEach(() => {
     })
-    afterAll(() => {
+    afterAll(async () => {
+      await sleep(100);
     })
 
     /**

@@ -42,6 +42,9 @@ int OutputDecsFunc004Test();
 int OutputDecsFunc005Test();
 int OutputDecsFunc006Test();
 int OutputDecsFunc007Test();
+int VideoDecodeH264DmabufSuffix0010();
+int VideoDecodeH265DmabufSuffix0010();
+int VideoDecodeH266DmabufSuffix0010();
 
 void InitFuncTest();
 

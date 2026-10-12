@@ -71,8 +71,8 @@ export default function DatePickerComponentOnChangeTest() {
       let centerX: number = bounds.left + (bounds.right - bounds.left) / 2;
       let centerY: number = bounds.top + (bounds.bottom - bounds.top) / 2;
       await driver.swipeBetween(
-        { x: centerX, y: centerY, displayId: displayId },
-        { x: centerX, y: centerY + 100, displayId: displayId },
+        { x: Math.round(centerX), y: Math.round(centerY), displayId: displayId },
+        { x: Math.round(centerX), y: Math.round(centerY + 100), displayId: displayId },
         600
       );
       await CommonFunc.sleep(1500);

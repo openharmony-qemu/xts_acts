@@ -532,118 +532,6 @@ export default function int16ArrayLastIndexOfTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_3600
-     * @tc.name testInt16ArrayLastIndexOfTestThree036
-     * @tc.desc Verify lastIndexOf(10, -1) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(10, -1);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_3700
-     * @tc.name testInt16ArrayLastIndexOfTestThree037
-     * @tc.desc Verify lastIndexOf(7, 0) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(7, 0);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_3800
-     * @tc.name testInt16ArrayLastIndexOfTestThree038
-     * @tc.desc Verify lastIndexOf(42, 1) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(42, 1);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_3900
-     * @tc.name testInt16ArrayLastIndexOfTestThree039
-     * @tc.desc Verify lastIndexOf(99, -0) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(99, -0);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4000
-     * @tc.name testInt16ArrayLastIndexOfTestThree040
-     * @tc.desc Verify lastIndexOf(50, -1) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(50, -1);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4100
-     * @tc.name testInt16ArrayLastIndexOfTestThree041
-     * @tc.desc Verify lastIndexOf(13, 100) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(13, 100);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4200
-     * @tc.name testInt16ArrayLastIndexOfTestThree042
-     * @tc.desc Verify lastIndexOf(77, -100) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(77, -100);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4300
-     * @tc.name testInt16ArrayLastIndexOfTestThree043
-     * @tc.desc Verify lastIndexOf(1, 2147483647) on new Int16Array([]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([]);
-      let actual1: int = arr.lastIndexOf(1, 2147483647);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4400
      * @tc.name testInt16ArrayLastIndexOfTestThree044
      * @tc.desc Verify lastIndexOf(Number.NaN, 0) on new Int16Array([8, 16, 24, 32, 40]) returns -1
@@ -654,62 +542,6 @@ export default function int16ArrayLastIndexOfTestThreeTest(): void {
     it('testInt16ArrayLastIndexOfTestThree044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array([8, 16, 24, 32, 40]);
       let actual1: int = arr.lastIndexOf(Number.NaN, 0);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4500
-     * @tc.name testInt16ArrayLastIndexOfTestThree045
-     * @tc.desc Verify lastIndexOf(Number.NaN, -1) on new Int16Array([15, 30, 45, 60, 75]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([15, 30, 45, 60, 75]);
-      let actual1: int = arr.lastIndexOf(Number.NaN, -1);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4600
-     * @tc.name testInt16ArrayLastIndexOfTestThree046
-     * @tc.desc Verify lastIndexOf(Number.NaN, 3) on new Int16Array([3, 6, 9]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([3, 6, 9]);
-      let actual1: int = arr.lastIndexOf(Number.NaN, 3);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4700
-     * @tc.name testInt16ArrayLastIndexOfTestThree047
-     * @tc.desc Verify lastIndexOf(Number.NaN, -5) on new Int16Array([2, 4, 6, 8]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([2, 4, 6, 8]);
-      let actual1: int = arr.lastIndexOf(Number.NaN, -5);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_4800
-     * @tc.name testInt16ArrayLastIndexOfTestThree048
-     * @tc.desc Verify lastIndexOf(Number.NaN, 1000000) on new Int16Array([25, 50, 75, 100]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([25, 50, 75, 100]);
-      let actual1: int = arr.lastIndexOf(Number.NaN, 1000000);
       expect(actual1).assertEqual(-1);
     });
 
@@ -854,62 +686,6 @@ export default function int16ArrayLastIndexOfTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_5900
-     * @tc.name testInt16ArrayLastIndexOfTestThree059
-     * @tc.desc Verify lastIndexOf(42, -1) on new Int16Array([42]) returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([42]);
-      let actual1: int = arr.lastIndexOf(42, -1);
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6000
-     * @tc.name testInt16ArrayLastIndexOfTestThree060
-     * @tc.desc Verify lastIndexOf(42, 1) on new Int16Array([42]) returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([42]);
-      let actual1: int = arr.lastIndexOf(42, 1);
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6100
-     * @tc.name testInt16ArrayLastIndexOfTestThree061
-     * @tc.desc Verify lastIndexOf(42, 100) on new Int16Array([42]) returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([42]);
-      let actual1: int = arr.lastIndexOf(42, 100);
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6200
-     * @tc.name testInt16ArrayLastIndexOfTestThree062
-     * @tc.desc Verify lastIndexOf(42, -2) on new Int16Array([42]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([42]);
-      let actual1: int = arr.lastIndexOf(42, -2);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6300
      * @tc.name testInt16ArrayLastIndexOfTestThree063
      * @tc.desc Verify lastIndexOf(42, -100) on new Int16Array([42]) returns -1
@@ -938,48 +714,6 @@ export default function int16ArrayLastIndexOfTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6500
-     * @tc.name testInt16ArrayLastIndexOfTestThree065
-     * @tc.desc Verify lastIndexOf(7, 2) on new Int16Array([7, 7, 7, 7, 7]) returns 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([7, 7, 7, 7, 7]);
-      let actual1: int = arr.lastIndexOf(7, 2);
-      expect(actual1).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6600
-     * @tc.name testInt16ArrayLastIndexOfTestThree066
-     * @tc.desc Verify lastIndexOf(7, -3) on new Int16Array([7, 7, 7, 7, 7]) returns 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([7, 7, 7, 7, 7]);
-      let actual1: int = arr.lastIndexOf(7, -3);
-      expect(actual1).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6700
-     * @tc.name testInt16ArrayLastIndexOfTestThree067
-     * @tc.desc Verify lastIndexOf(7, -6) on new Int16Array([7, 7, 7, 7, 7]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([7, 7, 7, 7, 7]);
-      let actual1: int = arr.lastIndexOf(7, -6);
-      expect(actual1).assertEqual(-1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6800
      * @tc.name testInt16ArrayLastIndexOfTestThree068
      * @tc.desc Verify lastIndexOf(1) on new Int16Array([1, 2, 1, 2, 1]) returns 4
@@ -991,48 +725,6 @@ export default function int16ArrayLastIndexOfTestThreeTest(): void {
       let arr = new Int16Array([1, 2, 1, 2, 1]);
       let actual1: int = arr.lastIndexOf(1);
       expect(actual1).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_6900
-     * @tc.name testInt16ArrayLastIndexOfTestThree069
-     * @tc.desc Verify lastIndexOf(1, 3) on new Int16Array([1, 2, 1, 2, 1]) returns 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([1, 2, 1, 2, 1]);
-      let actual1: int = arr.lastIndexOf(1, 3);
-      expect(actual1).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_7000
-     * @tc.name testInt16ArrayLastIndexOfTestThree070
-     * @tc.desc Verify lastIndexOf(2, 2) on new Int16Array([1, 2, 1, 2, 1]) returns 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([1, 2, 1, 2, 1]);
-      let actual1: int = arr.lastIndexOf(2, 2);
-      expect(actual1).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_7100
-     * @tc.name testInt16ArrayLastIndexOfTestThree071
-     * @tc.desc Verify lastIndexOf(1, 0) on new Int16Array([1, 2, 1, 2, 1]) returns 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([1, 2, 1, 2, 1]);
-      let actual1: int = arr.lastIndexOf(1, 0);
-      expect(actual1).assertEqual(0);
     });
 
     /**
@@ -1063,32 +755,5 @@ export default function int16ArrayLastIndexOfTestThreeTest(): void {
       expect(actual1).assertEqual(4);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_7400
-     * @tc.name testInt16ArrayLastIndexOfTestThree074
-     * @tc.desc Verify lastIndexOf(9, -2) on new Int16Array([9, 8, 9, 8, 9]) returns 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([9, 8, 9, 8, 9]);
-      let actual1: int = arr.lastIndexOf(9, -2);
-      expect(actual1).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_THREE_7500
-     * @tc.name testInt16ArrayLastIndexOfTestThree075
-     * @tc.desc Verify lastIndexOf(9, -6) on new Int16Array([9, 8, 9, 8, 9]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestThree075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([9, 8, 9, 8, 9]);
-      let actual1: int = arr.lastIndexOf(9, -6);
-      expect(actual1).assertEqual(-1);
-    });
   });
 }

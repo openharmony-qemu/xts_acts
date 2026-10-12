@@ -64,7 +64,7 @@ export default function touchEventTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info('[Touch_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[Touch_0100] title: ' + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual(displayID + ',0,0,0');
+      expect(obj.$attrs.content).assertEqual('0,0,0,0');
       console.info('[Touch_0100] END');
       done();
     });

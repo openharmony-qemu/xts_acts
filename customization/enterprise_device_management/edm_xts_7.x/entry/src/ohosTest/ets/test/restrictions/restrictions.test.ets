@@ -501,6 +501,32 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_sata_odd_burn_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSATA_ODD_BURN_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with sata_odd_burn feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_disallowed_policy_sata_odd_burn_0100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN, false);
+      ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN);
+      expect(ret).assertFalse();
+    } catch (error) {
+      console.info('test_set_disallowed_policy_sata_odd_burn_0100 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedPolicy() {

@@ -57,7 +57,6 @@ struct DeepWatchChild {
       Text(`message${this.num1}:`+this.msg[0][0] + '')
         .id('customEnvDeepWatch_dynamic_001')
         .height('5%')
-        .fontSize(22);
     }
     .height('100%')
     .width('100%')

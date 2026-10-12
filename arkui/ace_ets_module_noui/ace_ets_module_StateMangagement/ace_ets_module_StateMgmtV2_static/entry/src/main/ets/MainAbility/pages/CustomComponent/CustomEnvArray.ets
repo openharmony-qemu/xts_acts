@@ -36,7 +36,6 @@ struct CustomEnvArray {
         ForEach(this.fruits, (item: Fruit) => {
           Text(`${item.name}`)
             .id('customEnvArray_001')
-            .fontSize(20)
             .height('5%')
             .margin(5)
         })

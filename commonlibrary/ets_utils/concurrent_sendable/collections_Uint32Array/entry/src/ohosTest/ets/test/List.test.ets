@@ -20,6 +20,7 @@ import Uint32ArrayConcurrentTestConcurrent from './Concurrent/Uint32ArrayConcurr
 import Uint32ArrayNormalTest from './Normal/Uint32ArrayNormal.test';
 import Uint32ArrayTaskPoolTest from './TaskPool/Uint32ArrayTaskPool.test';
 
+import UintIntArrayTest from './uintArray/UintIntArrayTest.test';
 export default function testsuite() {
   Uint32ArrayBasicTest();
   Uint32ArrayConcurrentTest();
@@ -27,4 +28,5 @@ export default function testsuite() {
   Uint32ArrayConcurrentTestConcurrent();
   Uint32ArrayNormalTest();
   Uint32ArrayTaskPoolTest();
+  UintIntArrayTest();
 }

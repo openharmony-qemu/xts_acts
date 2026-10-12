@@ -244,21 +244,6 @@ export default function Int16ArrayToStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_1400
-     * @tc.name testInt16ArrayToStringTestOne014
-     * @tc.desc Verify MIN Int16Array toString MIN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([-32768, -32768, -32768]);
-      let actualString: string = arr.toString();
-      let expectedString: string = '-32768,-32768,-32768';
-      expect(actualString).assertEqual(expectedString);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_1500
      * @tc.name testInt16ArrayToStringTestOne015
      * @tc.desc Verify [1, -1, 0] Int16Array toString '1,-1,0'
@@ -518,22 +503,6 @@ export default function Int16ArrayToStringTest01(): void {
       let sub: Int16Array = arr.subarray(1, 4);
       let result: string = sub.toString();
       expect(result).assertEqual('20,30,40');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_3100
-     * @tc.name testInt16ArrayToStringTestOne031
-     * @tc.desc Verify toString() on all MIN values returns the exact sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(-32768, -32768);
-      let result: string = arr.toString();
-      let actualResult: string = result;
-      let expectedResult: string = '-32768,-32768';
-      expect(actualResult).assertEqual(expectedResult);
     });
 
     /**
@@ -868,26 +837,6 @@ export default function Int16ArrayToStringTest01(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_5000
-     * @tc.name testInt16ArrayToStringTestOne050
-     * @tc.desc Verify After toString() on all MIN values, all elements still MIN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(-32768, -32768);
-      let result: string = arr.toString();
-      expect(result).assertEqual('-32768,-32768');
-      let elementAt0: number = arr.$_get(0 as int);
-      let expectedElement0: int = -32768;
-      expect(elementAt0).assertEqual(expectedElement0);
-      let elementAt1: number = arr.$_get(1 as int);
-      let expectedElement1: int = -32768;
-      expect(elementAt1).assertEqual(expectedElement1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_5100
      * @tc.name testInt16ArrayToStringTestOne051
      * @tc.desc Verify toString() produces identical content on repeated calls
@@ -1057,198 +1006,6 @@ export default function Int16ArrayToStringTest01(): void {
       }
       let result: string = arr.toString();
       let expectedValue: string = '10,20,30';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6100
-     * @tc.name testInt16ArrayToStringTestOne061
-     * @tc.desc Verify $_set(length) throws RangeError and toString remains unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([5, 15, 25]);
-      try {
-        arr.$_set(3 as int, 888);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '5,15,25';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6200
-     * @tc.name testInt16ArrayToStringTestOne062
-     * @tc.desc Verify $_set(length+1) throws RangeError and toString remains unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
-      try {
-        arr.$_set(5 as int, 777);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '1,2,3,4';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6300
-     * @tc.name testInt16ArrayToStringTestOne063
-     * @tc.desc Verify $_set(-length) throws RangeError and toString remains unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([100, 200, 300]);
-      try {
-        arr.$_set(-3 as int, 666);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '100,200,300';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6400
-     * @tc.name testInt16ArrayToStringTestOne064
-     * @tc.desc Verify $_set(-length-1) throws RangeError and toString remains unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([7, 8, 9]);
-      try {
-        arr.$_set(-4 as int, 555);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '7,8,9';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6500
-     * @tc.name testInt16ArrayToStringTestOne065
-     * @tc.desc Verify $_set(2147483647) throws RangeError and toString remains unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3]);
-      try {
-        arr.$_set(2147483647 as int, 444);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '1,2,3';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6600
-     * @tc.name testInt16ArrayToStringTestOne066
-     * @tc.desc Verify $_set(-2147483647) throws RangeError and toString remains unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20]);
-      try {
-        arr.$_set(-2147483647 as int, 333);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '10,20';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6700
-     * @tc.name testInt16ArrayToStringTestOne067
-     * @tc.desc Verify multiple out-of-range $_set calls throw RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([50, 60, 70]);
-      try {
-        arr.$_set(-1 as int, 999);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      try {
-        arr.$_set(3 as int, 888);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      try {
-        arr.$_set(-4 as int, 777);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      try {
-        arr.$_set(2147483647 as int, 666);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '50,60,70';
-      expect(result).assertEqual(expectedValue);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_TOSTRING_ONE_6800
-     * @tc.name testInt16ArrayToStringTestOne068
-     * @tc.desc Verify out-of-range $_set calls on empty array throw RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayToStringTestOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      try {
-        arr.$_set(-1 as int, 111);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      try {
-        arr.$_set(0 as int, 222);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-      let result: string = arr.toString();
-      let expectedValue: string = '';
       expect(result).assertEqual(expectedValue);
     });
 

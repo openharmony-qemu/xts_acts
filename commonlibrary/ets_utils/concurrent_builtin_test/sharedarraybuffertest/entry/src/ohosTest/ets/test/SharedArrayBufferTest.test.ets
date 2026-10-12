@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { sleep, SliceResult, WorkerResult, BufferContainer, processSlice, workerFunction, modifyFunction, readFunction, MemoryMonitor, performBufferOperations, gc } from '../testability/pages/TestUtils';
 import taskpool from '@ohos.taskpool';
 

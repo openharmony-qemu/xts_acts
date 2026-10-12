@@ -26,30 +26,32 @@ const PAGE_URL = 'MainAbility/pages/coverage/Coverage0917Static';
 
 export default function coverage0917StaticTest(): void {
   describe('coverage0917StaticTest', () => {
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} beforeEach start`);
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         const pages = routerInstance.getState();
         if (pages.name !== 'Coverage0917Static') {
-          const options: router.RouterOptions = {
-            url: PAGE_URL,
-          };
-          routerInstance.replaceUrl(options);
+          routerInstance.clear();
+          await Utils.sleep(500);
+          const options: router.RouterOptions = { url: PAGE_URL };
+          await routerInstance.pushUrl(options);
+          await Utils.sleep(2500);
         }
       } catch (err) {
         console.error(`${LOG_TAG} beforeEach navigate soft-fail: ${err}`);
       }
     });
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} afterEach`);
+      await Utils.sleep(200);
     });
 
     /**
      * @tc.number SUB_ARKUI_APICOVERAGE0917_STATIC_FSLAUNCH_0100
      * @tc.name SUB_ARKUI_APICOVERAGE0917_STATIC_FSLAUNCH_0100
-     * @tc.desc Cover FullScreenLaunchComponent / ContentBuilder on static page
+     * @tc.desc Cover FullScreenLaunch appId alias smoke on static page
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1

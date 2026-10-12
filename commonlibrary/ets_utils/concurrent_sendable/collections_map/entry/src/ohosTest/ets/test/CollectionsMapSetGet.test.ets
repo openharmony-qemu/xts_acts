@@ -20,7 +20,7 @@
  * @since 2026
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, ArkTSUtils } from '@kit.ArkTS';
 
 function sleep(time: number): Promise<void> {

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { sleep } from './utils';
 import { worker } from '@kit.ArkTS';
 import { typeWait01, typeWait02, typeWait03, typeWait04, typeWait05, typeWait06, typeWait07, typeWait11 } from './atomics';

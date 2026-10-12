@@ -156,6 +156,9 @@ import TextPunctuationOverflowTest from './TextTest/TextPunctuationOverflow.test
 import TextIncrementalUpdatePolicyTest from './TextTest/TextIncrementalUpdatePolicy.test';
 import TextTailIndentsTest from './TextTest/TextTailIndents.test';
 import TextEnableHapticFeedbackTest from './TextTest/TextEnableHapticFeedback.test';
+import TextStrokeColorTest from './TextTest/TextStrokeColor.test';
+import TextStrokeJoinStyleTest from './TextTest/TextStrokeJoinStyle.test';
+import TextStrokeWidthTest from './TextTest/TextStrokeWidth.test';
 
 
 
@@ -304,4 +307,7 @@ export default function testsuite() {
   TextIncrementalUpdatePolicyTest();
   TextTailIndentsTest();
   TextEnableHapticFeedbackTest();
+  TextStrokeColorTest();
+  TextStrokeJoinStyleTest();
+  TextStrokeWidthTest();
 }

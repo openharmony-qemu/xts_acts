@@ -531,6 +531,7 @@ std::vector<napi_property_descriptor> desc = {
     {"receiverRelease", nullptr, JsReceiverRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"imageFormatYcbcr422Sp", nullptr, JsImageFormatYcbcr422Sp, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"imageFormatJPEG", nullptr, JsImageFormatJPEG, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"imageComponentFormatEnum", nullptr, JsImageComponentFormatEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"imageComponentFormatYUVY", nullptr, JsImageComponentFormatYUVY, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"imageComponentFormatYUVU", nullptr, JsImageComponentFormatYUVU, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"imageComponentFormatYUVV", nullptr, JsImageComponentFormatYUVV, nullptr, nullptr, nullptr, napi_default, nullptr},

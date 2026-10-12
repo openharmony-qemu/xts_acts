@@ -135,12 +135,13 @@ export default function list_ListInitialIndex4Test() {
 
       let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex4_Container01'));
+      let sizeList = await swipeComponent.getBounds();
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
-        { x: Math.round(fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2)),
-          y: Math.round(fourthListItem.bottom), displayId: displayId },
-        { x: Math.round(firstListItem.left + (firstListItem.right - firstListItem.left) / 2),
-          y: Math.round(firstListItem.bottom), displayId: displayId });
+        { x: Math.round(sizeList.left + ((sizeList.right - sizeList.left) / 2)),
+          y: Math.round(sizeList.bottom - ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId },
+        { x: Math.round(sizeList.left + (sizeList.right - sizeList.left) / 2),
+          y: Math.round(sizeList.top + ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let scrollColumn: Component = await driver.findComponent(ON.type('Scroll'));

@@ -33,10 +33,11 @@ struct DialogBaseOptionsVisual {
 
   build() {
     Scroll() {
-      Column({ space: 10 }) {
+      Column() {
         Text('DialogBaseOptions visual').fontSize(18).fontWeight(FontWeight.Bold)
         Text('action=' + this.lastAction).id('base_visual_action')
-        Button('backgroundColor blur')
+        Row() {
+          Button('backgroundColor blur')
           .id('btn_visual_bg')
           .onClick(async () => {
             await this.presenter().present({
@@ -82,7 +83,9 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
-        Button('levelMode OVERLAY')
+        }
+        Row() {
+          Button('levelMode OVERLAY')
           .id('btn_visual_level_overlay')
           .onClick(async () => {
             await this.presenter().present({
@@ -119,7 +122,9 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
-        Button('isModal false')
+        }
+        Row() {
+          Button('isModal false')
           .id('btn_visual_not_modal')
           .onClick(async () => {
             await this.presenter().present({
@@ -156,7 +161,9 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
-        Button('transition keyboard')
+        }
+        Row() {
+          Button('transition keyboard')
           .id('btn_visual_transition')
           .onClick(async () => {
             await this.presenter().present({
@@ -195,6 +202,8 @@ struct DialogBaseOptionsVisual {
               ]
             });
           })
+        }
+
         Button('systemMaterial')
           .id('btn_visual_material')
           .onClick(async () => {

@@ -57,8 +57,8 @@ struct AComp {
         .height('3%')
         .fontSize(9)
         .onClick(():void => {
-        this.val++
-      }).id('text1')
+          this.val++
+        }).id('text1')
       A1Comp({ val: this.val })
     }.border({ width: 2, color: Color.Green })
   }
@@ -75,5 +75,7 @@ struct A1Comp {
         .fontSize(9)
         .id('text2')
     }.border({ width: 2, color: Color.Pink })
+    .margin(10)
+    .padding(10)
   }
 }

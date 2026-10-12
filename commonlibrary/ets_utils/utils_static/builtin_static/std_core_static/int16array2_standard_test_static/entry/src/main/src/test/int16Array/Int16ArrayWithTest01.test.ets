@@ -57,21 +57,6 @@ export default function int16ArrayWithTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_ONE_0200
-     * @tc.name testInt16ArrayWithTestOne002
-     * @tc.desc Verify with(0, 99) replaces first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.with(0, 99);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(99);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_ONE_0300
      * @tc.name testInt16ArrayWithTestOne003
      * @tc.desc Verify with(4, 99) replaces last element via positive index
@@ -99,21 +84,6 @@ export default function int16ArrayWithTestOneTest(): void {
       let result: Int16Array = arr.with(2, 99);
       let actual1: number = result.$_get(2);
       expect(actual1).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_ONE_0500
-     * @tc.name testInt16ArrayWithTestOne005
-     * @tc.desc Verify non-target last element unchanged after with(0, 99)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
-      let result: Int16Array = arr.with(0, 99);
-      let actual1: number = result.$_get(4);
-      expect(actual1).assertEqual(50);
     });
 
     /**

@@ -31,6 +31,7 @@ import TextLayoutManagerWithEncodingTest from "./TextCommonTest/TextLayoutManage
 import SetUiDvsyncSwitchTest from "./TextCommonTest/SetUiDvsyncSwitch.test"
 import ImageSpanResizableTest from "./TextCommonTest/ImageSpanResizable.test"
 import ImageAttachmentResizableTest from "./StyledStringTest/ImageAttachmentResizable.test"
+import TextStrokeTest from "./TextCommonTest/TextStroke.test"
 
 export default function testsuite() {
   TextEnumTest();
@@ -52,4 +53,5 @@ export default function testsuite() {
   SetUiDvsyncSwitchTest();
   ImageSpanResizableTest();
   ImageAttachmentResizableTest();
+  TextStrokeTest();
 }

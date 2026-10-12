@@ -21,6 +21,16 @@ import { JSON } from '@kit.ArkTS';
 
 const TAG = LOG_TAG + 'AuxiliaryPictureGetMetadataTestSupp';
 
+const AUX_WIDTH: number = 240;
+const AUX_HEIGHT: number = 180;
+const AUX_BUFFER_SIZE: number = AUX_WIDTH * AUX_HEIGHT * 4;
+
+interface AuxFixture {
+  picture: image.Picture | null;
+  auxiliary: image.AuxiliaryPicture | null;
+  pixelMap: image.PixelMap | null;
+  createdAux: image.AuxiliaryPicture | null;
+}
 
 async function getMetadataAbnormalTest(done: Function, testName: string, path: string, metadataType: image.MetadataType,
   callback: (errorCode: string) => void) {
@@ -62,8 +72,51 @@ async function getMetadataAbnormalTest(done: Function, testName: string, path: s
  }
 }
 
+function createPictureWithGAINMAPAux(): AuxFixture {
+  const result: AuxFixture = {
+    picture: null,
+    auxiliary: null,
+    pixelMap: null,
+    createdAux: null
+  };
+  const auxBuffer: ArrayBuffer = new ArrayBuffer(AUX_BUFFER_SIZE);
+  const auxSize: Size = { height: AUX_HEIGHT, width: AUX_WIDTH };
+  const auxType: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
+  result.createdAux = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
+  if (result.createdAux == null) {
+    return result;
+  }
+  const pmBuffer: ArrayBuffer = new ArrayBuffer(4 * 4 * 4);
+  const pmOpts: image.InitializationOptions = {
+    size: { height: 4, width: 4 },
+    pixelFormat: image.PixelMapFormat.RGBA_8888,
+    editable: true
+  };
+  result.pixelMap = image.createPixelMapSync(pmBuffer, pmOpts);
+  result.picture = image.createPicture(result.pixelMap);
+  try {
+    result.picture.setAuxiliaryPicture(auxType, result.createdAux);
+  } catch (e) {
+    return result;
+  }
+  result.auxiliary = result.picture.getAuxiliaryPicture(auxType);
+  return result;
+}
 
-
+function releaseFixture(fixture: AuxFixture): void {
+  if (fixture.auxiliary != null) {
+    fixture.auxiliary.release();
+  }
+  if (fixture.createdAux != null) {
+    fixture.createdAux.release();
+  }
+  if (fixture.picture != null) {
+    fixture.picture.release();
+  }
+  if (fixture.pixelMap != null) {
+    fixture.pixelMap.release();
+  }
+}
 
 export default function ImageAuxiliaryPictureGetMetadataTest() {
   describe('ImageAuxiliaryPictureGetMetadataTest', () => {
@@ -139,6 +192,80 @@ export default function ImageAuxiliaryPictureGetMetadataTest() {
       })
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100
+     * @tc.desc   AuxiliaryPicture.getMetadata request EXIF_METADATA on GAINMAP auxiliary picture, expect 7600202
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0100';
+      const fixture = createPictureWithGAINMAPAux();
+      try {
+        if (fixture.auxiliary == null) {
+          console.error(TAG, testName, 'setup failed: auxiliary is null');
+          expect().assertFail();
+          releaseFixture(fixture);
+          done();
+          return;
+        }
+        console.info(TAG, testName, 'setup success, auxiliary getType=', fixture.auxiliary.getType());
+        try {
+          fixture.auxiliary.getMetadata(image.MetadataType.EXIF_METADATA);
+          console.error(TAG, testName, 'getMetadata(EXIF_METADATA) should throw 7600202 but succeeded');
+          expect().assertFail();
+        } catch (error) {
+          console.info(TAG, testName, `getMetadata(EXIF_METADATA) threw, code=${error.code}, message=${error.message}`);
+          expect(error.code).assertEqual('7600202');
+        }
+        releaseFixture(fixture);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        releaseFixture(fixture);
+        expect().assertFail();
+        done();
+      }
+    });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200
+     * @tc.desc   AuxiliaryPicture.getMetadata request FRAGMENT_METADATA on GAINMAP (non-FRAGMENT_MAP) auxiliary picture, expect 7600202
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_IMAGE_AUXILIARY_PICTURE_GET_METADATA_0200';
+      const fixture = createPictureWithGAINMAPAux();
+      try {
+        if (fixture.auxiliary == null) {
+          console.error(TAG, testName, 'setup failed: auxiliary is null');
+          expect().assertFail();
+          releaseFixture(fixture);
+          done();
+          return;
+        }
+        console.info(TAG, testName, 'setup success, auxiliary getType=', fixture.auxiliary.getType());
+        try {
+          fixture.auxiliary.getMetadata(image.MetadataType.FRAGMENT_METADATA);
+          console.error(TAG, testName, 'getMetadata(FRAGMENT_METADATA) should throw 7600202 but succeeded');
+          expect().assertFail();
+        } catch (error) {
+          console.info(TAG, testName, `getMetadata(FRAGMENT_METADATA) threw, code=${error.code}, message=${error.message}`);
+          expect(error.code).assertEqual('7600202');
+        }
+        releaseFixture(fixture);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `failed; error: ${error},${error?.code}`);
+        releaseFixture(fixture);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

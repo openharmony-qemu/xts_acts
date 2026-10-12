@@ -15,7 +15,7 @@
 
 // ArrayAnnotation.test.ets object、Function 纯非 Sendable，编译器直接拦截注释1个用例
 
-import { describe, it, beforeEach, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
+import { describe, it, beforeEach, TestType, Size, Level, expect } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import { ArkTSUtils } from '@kit.ArkTS';
 import {

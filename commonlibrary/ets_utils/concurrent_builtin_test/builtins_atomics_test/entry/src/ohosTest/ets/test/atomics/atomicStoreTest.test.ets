@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { typeLoad95, typeStore80, typeStore85, typeStore88, typeStore95 } from './atomics';
 import { sleep } from './utils';
 

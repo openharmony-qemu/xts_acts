@@ -8,6 +8,7 @@
     "pages/webDefaultTextEncodingFormat",
     "pages/webOnNativeEmbedObjectParamChange",
     "pages/webViewEventResult",
-    "pages/webViewInitTest"
+    "pages/webViewInitTest",
+    "pages/WebNativeEmbedOptionsCoverage"
   ]
 }

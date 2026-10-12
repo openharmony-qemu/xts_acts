@@ -66,5 +66,7 @@ struct State0040 {
           this.count += 1
         })
     }
+    .padding(10)
+    .margin(10)
   }
 }

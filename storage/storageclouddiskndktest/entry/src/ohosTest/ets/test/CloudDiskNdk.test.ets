@@ -1,5 +1,5 @@
-/*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+/**
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,24 +13,23 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
-import clouddisk from 'libclouddisk.so';
-import { fileUri } from '@kit.CoreFileKit';
-import { common, UIAbility } from '@kit.AbilityKit';
-import fs from '@ohos.file.fs';
+import { describe, it, expect, Level } from "@ohos/hypium";
+import clouddisk from "libclouddisk.so";
+import { fileUri } from "@kit.CoreFileKit";
+import { common, UIAbility } from "@kit.AbilityKit";
+import fs from "@ohos.file.fs";
 
 const CloudDisk_ErrorCode = new Map<string, number>([
-  ['CLOUD_DISK_OK', 0],
-  ['CLOUD_DISK_NOT_SUPPORTED', 801],
-  ['CLOUD_DISK_INVALID_ARG', 34400001],
-  ['CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED', 34400002],
-  ['CLOUD_DISK_SYNC_FOLDER_NOT_REGISTERED', 34400008],
-  ['CLOUD_DISK_SYNC_FOLDER_PATH_NOT_EXIST', 34400010]
+  ["CLOUD_DISK_OK", 0],
+  ["CLOUD_DISK_NOT_SUPPORTED", 801],
+  ["CLOUD_DISK_INVALID_ARG", 34400001],
+  ["CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED", 34400002],
+  ["CLOUD_DISK_SYNC_FOLDER_NOT_REGISTERED", 34400008],
+  ["CLOUD_DISK_SYNC_FOLDER_PATH_NOT_EXIST", 34400010],
 ]);
 
-export default function CloudDiskNdkTest(){
-  describe('CloudDiskNdkTest',async () => {
-
+export default function CloudDiskNdkTest() {
+  describe("CloudDiskNdkTest", () => {
     /**
      * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0100
      * @tc.name CloudDisk_RegisterSyncFolder_001
@@ -40,7 +39,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_RegisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_RegisterSyncFolder_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_RegisterSyncFolder_001: " + filepath);
       let ret = clouddisk.RegisterSyncFolder(filepath);
@@ -64,16 +63,16 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_RegisterSyncFolder_002', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_RegisterSyncFolder_002", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/appdata/";
       console.info("CloudDisk_RegisterSyncFolder_002: " + filepath);
       let ret = clouddisk.RegisterSyncFolder(filepath);
       console.info("CloudDisk_RegisterSyncFolder_002 Test NAPI ret= " + JSON.stringify(ret));
-      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+      if (ret == CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED")) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED"));
         done();
       } else {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_INVALID_ARG'));
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get("CLOUD_DISK_INVALID_ARG"));
         done();
       }
       done();
@@ -88,16 +87,16 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-     it('CloudDisk_RegisterSyncFolder_003', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_RegisterSyncFolder_003", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/test003";
       console.info("CloudDisk_RegisterSyncFolder_003: " + filepath);
       let ret = clouddisk.RegisterSyncFolder(filepath);
       console.info("CloudDisk_RegisterSyncFolder_003 Test NAPI ret= " + JSON.stringify(ret));
-      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+      if (ret == CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED")) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED"));
         done();
       } else {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_SYNC_FOLDER_PATH_NOT_EXIST'));
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get("CLOUD_DISK_SYNC_FOLDER_PATH_NOT_EXIST"));
         done();
       }
       done();
@@ -112,16 +111,18 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_RegisterSyncFolder_004', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_RegisterSyncFolder_004", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_RegisterSyncFolder_004: " + filepath);
       let ret = clouddisk.RegisterSyncFolder(filepath);
       console.info("CloudDisk_RegisterSyncFolder_004 Test NAPI ret= " + JSON.stringify(ret));
-      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+      if (ret == CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED")) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED"));
         done();
       } else {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED'));
+        expect(ret).assertEqual(
+          CloudDisk_ErrorCode.get("CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED"),
+        );
         done();
       }
       done();
@@ -136,16 +137,18 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_RegisterSyncFolder_005', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/Documents/";
+    it("CloudDisk_RegisterSyncFolder_005", Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/Desktop/";
       console.info("CloudDisk_RegisterSyncFolder_005: " + filepath);
       let ret = clouddisk.RegisterSyncFolder001(filepath);
       console.info("CloudDisk_RegisterSyncFolder_005 Test NAPI ret= " + JSON.stringify(ret));
-      if (ret == CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED')) {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_NOT_SUPPORTED'));
+      if (ret == CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED")) {
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get("CLOUD_DISK_NOT_SUPPORTED"));
         done();
       } else {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED'));
+        expect(ret).assertEqual(
+          CloudDisk_ErrorCode.get("CLOUD_DISK_SYNC_FOLDER_PATH_UNAUTHORIZED"),
+        );
         done();
       }
       done();
@@ -160,7 +163,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_UnregisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_UnregisterSyncFolder_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_UnregisterSyncFolder_001: " + filepath);
       let ret = clouddisk.UnregisterSyncFolder(filepath);
@@ -184,7 +187,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_ActiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_ActiveSyncFolder_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_ActiveSyncFolder_001: " + filepath);
       let ret = clouddisk.ActiveSyncFolder(filepath);
@@ -208,7 +211,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_DeactiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_DeactiveSyncFolder_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_DeactiveSyncFolder_001: " + filepath);
       let ret = clouddisk.DeactiveSyncFolder(filepath);
@@ -232,7 +235,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_GetSyncFolders_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_GetSyncFolders_001", Level.LEVEL0, async (done: Function) => {
       let ret = clouddisk.GetSyncFolders();
       console.info("CloudDisk_GetSyncFolders_001 Test NAPI ret= " + JSON.stringify(ret));
       if (ret == 801) {
@@ -254,14 +257,14 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_GetSyncFolders_002', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_GetSyncFolders_002", Level.LEVEL0, async (done: Function) => {
       let ret = clouddisk.GetSyncFolders001();
       console.info("CloudDisk_GetSyncFolders_002 Test NAPI ret= " + JSON.stringify(ret));
       if (ret == 801) {
         expect(ret).assertEqual(801);
         done();
       } else {
-        expect(ret).assertEqual(CloudDisk_ErrorCode.get('CLOUD_DISK_INVALID_ARG'));
+        expect(ret).assertEqual(CloudDisk_ErrorCode.get("CLOUD_DISK_INVALID_ARG"));
         done();
       }
       done();
@@ -276,7 +279,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_UpdateCustomAlias_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_UpdateCustomAlias_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_UpdateCustomAlias_001: " + filepath);
       let ret = clouddisk.UpdateCustomAlias(filepath);
@@ -300,7 +303,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_RegisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_RegisterSyncFolderChanges_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_RegisterSyncFolderChanges_001: " + filepath);
       let ret = clouddisk.ReFolderChanges(filepath);
@@ -324,11 +327,13 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_UnregisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_UnregisterSyncFolderChanges_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_UnregisterSyncFolderChanges_001: " + filepath);
       let ret = clouddisk.UnReFolderChanges(filepath);
-      console.info("CloudDisk_UnregisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
+      console.info(
+        "CloudDisk_UnregisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret),
+      );
       if (ret == 801) {
         expect(ret).assertEqual(801);
         done();
@@ -348,7 +353,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_GetSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_GetSyncFolderChanges_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_GetSyncFolderChanges_001: " + filepath);
       let ret = clouddisk.GetSyncFolderChanges(filepath);
@@ -372,7 +377,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_SetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_SetFileSyncStates_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_SetFileSyncStates_001: " + filepath);
       let ret = clouddisk.SetFileSyncStates(filepath);
@@ -396,7 +401,7 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_GetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
+    it("CloudDisk_GetFileSyncStates_001", Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_GetFileSyncStates_001: " + filepath);
       let ret = clouddisk.GetFileSyncStates(filepath);
@@ -420,13 +425,15 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_ErrorCode_ENUM_001', Level.LEVEL0, async () => {
+    it("CloudDisk_ErrorCode_ENUM_001", Level.LEVEL0, async () => {
       try {
         let ret = clouddisk.Tset_CloudDisk_ErrorCode_ENUM();
         console.info("CloudDisk_ErrorCode_ENUM_001 Test NAPI ret= " + JSON.stringify(ret));
         expect(ret).assertEqual(1);
       } catch (e) {
-        console.log('CloudDisk_ErrorCode_ENUM_001 has failed for ' + e.message + ', code: ' + e.code);
+        console.log(
+          "CloudDisk_ErrorCode_ENUM_001 has failed for " + e.message + ", code: " + e.code,
+        );
         expect(false).assertTrue();
       }
     });
@@ -440,13 +447,15 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_OperationType_ENUM_001', Level.LEVEL0, async () => {
+    it("CloudDisk_OperationType_ENUM_001", Level.LEVEL0, async () => {
       try {
         let ret = clouddisk.Tset_CloudDisk_OperationType_ENUM();
         console.info("CloudDisk_OperationType_ENUM_001 Test NAPI ret= " + JSON.stringify(ret));
         expect(ret).assertEqual(1);
       } catch (e) {
-        console.log('CloudDisk_OperationType_ENUM_001 has failed for ' + e.message + ', code: ' + e.code);
+        console.log(
+          "CloudDisk_OperationType_ENUM_001 has failed for " + e.message + ", code: " + e.code,
+        );
         expect(false).assertTrue();
       }
     });
@@ -460,13 +469,15 @@ export default function CloudDiskNdkTest(){
      * @tc.level Level 0
      * @tc.require
      */
-    it('CloudDisk_ErrorReason_ENUM_001', Level.LEVEL0, async () => {
+    it("CloudDisk_ErrorReason_ENUM_001", Level.LEVEL0, async () => {
       try {
         let ret = clouddisk.Tset_CloudDisk_ErrorReason_ENUM();
         console.info("CloudDisk_ErrorReason_ENUM_001 Test NAPI ret= " + JSON.stringify(ret));
         expect(ret).assertEqual(1);
       } catch (e) {
-        console.log('CloudDisk_ErrorReason_ENUM_001 has failed for ' + e.message + ', code: ' + e.code);
+        console.log(
+          "CloudDisk_ErrorReason_ENUM_001 has failed for " + e.message + ", code: " + e.code,
+        );
         expect(false).assertTrue();
       }
     });

@@ -3121,6 +3121,56 @@ function testUKeyOpenSession() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_open_session_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPEN_SESSION_JS_0600
+   * @tc.desc   test openSession with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_open_session_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.openSession(null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_open_session_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_OPEN_SESSION_JS_0700
+   * @tc.desc   test openSession with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_open_session_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.openSession(undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testUKeyCloseSession() {
@@ -3244,6 +3294,56 @@ function testUKeyCloseSession() {
       securityManager.closeSession(UKEY_ACCOUNT_ID);
     } catch (error) {
       expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_close_session_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_CLOSE_SESSION_JS_0600
+   * @tc.desc   test closeSession with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_close_session_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.closeSession(null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_close_session_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_CLOSE_SESSION_JS_0700
+   * @tc.desc   test closeSession with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_close_session_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.closeSession(undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -3523,6 +3623,58 @@ function testUKeyAddUserExtCredential() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_add_user_ext_credential_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USER_EXT_CREDENTIAL_JS_1100
+   * @tc.desc   test addUserExtendCredential with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_user_ext_credential_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.AddCredentialInfo = { pluginInfo: UKEY_PLUGIN_INFO };
+    try {
+      await securityManager.addUserExtendCredential(info, null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_add_user_ext_credential_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USER_EXT_CREDENTIAL_JS_1200
+   * @tc.desc   test addUserExtendCredential with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_user_ext_credential_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.AddCredentialInfo = { pluginInfo: UKEY_PLUGIN_INFO };
+    try {
+      await securityManager.addUserExtendCredential(info, undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testUKeyRemoveUserExtCredential() {
@@ -3662,6 +3814,58 @@ function testUKeyRemoveUserExtCredential() {
     done();
   });
 
+  /**
+   * @tc.name   test_remove_user_ext_credential_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_USER_EXT_CREDENTIAL_JS_0600
+   * @tc.desc   test removeUserExtendCredential with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_user_ext_credential_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.RemoveCredentialInfo = { credentialId: UKEY_CREDENTIAL_ID };
+    try {
+      securityManager.removeUserExtendCredential(info, null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_remove_user_ext_credential_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_USER_EXT_CREDENTIAL_JS_0700
+   * @tc.desc   test removeUserExtendCredential with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_user_ext_credential_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    let info: securityManager.RemoveCredentialInfo = { credentialId: UKEY_CREDENTIAL_ID };
+    try {
+      securityManager.removeUserExtendCredential(info, undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
 }
 
 function testUKeyGetUserExtCredential() {
@@ -3792,6 +3996,56 @@ function testUKeyGetUserExtCredential() {
         expect(error.code).assertEqual(801);
       } else {
         expect(error.code).assertEqual(9200012);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_user_ext_credential_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_EXT_CREDENTIAL_JS_0600
+   * @tc.desc   test getUserExtendCredential with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_ext_credential_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.getUserExtendCredential(null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_user_ext_credential_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_EXT_CREDENTIAL_JS_0700
+   * @tc.desc   test getUserExtendCredential with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_ext_credential_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      await securityManager.getUserExtendCredential(undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
       }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
@@ -4050,6 +4304,56 @@ function testUKeySetUnlockPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_unlock_policy_1100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_UNLOCK_POLICY_JS_1100
+   * @tc.desc   test setUnlockPolicy with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_unlock_policy_1100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setUnlockPolicy(securityManager.UnlockPolicy.DEFAULT, null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_unlock_policy_1200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_UNLOCK_POLICY_JS_1200
+   * @tc.desc   test setUnlockPolicy with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_unlock_policy_1200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setUnlockPolicy(securityManager.UnlockPolicy.DEFAULT, undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testUKeyGetUnlockPolicy() {
@@ -4177,6 +4481,56 @@ function testUKeyGetUnlockPolicy() {
       expect(policy >= 0 && policy <= 2).assertTrue();
     } catch (error) {
       expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_unlock_policy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UNLOCK_POLICY_JS_0600
+   * @tc.desc   test getUnlockPolicy with null accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_unlock_policy_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getUnlockPolicy(null);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_unlock_policy_0700
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_UNLOCK_POLICY_JS_0700
+   * @tc.desc   test getUnlockPolicy with undefined accountId
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_unlock_policy_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getUnlockPolicy(undefined);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

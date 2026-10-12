@@ -19,10 +19,12 @@ import Uint16ArrayConcurrentTest from './Concurrent/Uint16ArrayConcurrent.test';
 import Uint16ArrayNormalTest from './Normal/Uint16ArrayNormal.test';
 import Uint16ArrayTaskPoolTest from './TaskPool/Uint16ArrayTaskPool.test';
 
+import UintShortArrayTest from './uintArray/UintShortArrayTest.test';
 export default function testsuite() {
   Uint16ArrayBasicTest();
   Uint16ArrayAllTest();
   Uint16ArrayConcurrentTest();
   Uint16ArrayNormalTest();
   Uint16ArrayTaskPoolTest();
+  UintShortArrayTest();
 }

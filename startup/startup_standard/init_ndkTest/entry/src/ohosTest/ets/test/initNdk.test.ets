@@ -785,6 +785,100 @@ export default function initNdkTest() {
     });
 
     /**
+     * @tc.number   SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKMINORAPIVERSION_0100
+     * @tc.name     testOHGetSdkMinorApiVersion001
+     * @tc.desc     test OH_GetSdkMinorApiVersion return value type is without special characters for numbers.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testOHGetSdkMinorApiVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let sdkMinorApiVersionInfo: number = initndk.oHGetSdkMinorApiVersion();
+      let str: RegExp = new RegExp("[\\w\\-\\.(\\)]","g");
+      let arr = sdkMinorApiVersionInfo.toString().match(str);
+      if(arr !== null){
+        let bufferstr = arr.join('');
+        let numstr = parseInt(bufferstr);
+        console.info('the value of the bufferstr is :' + numstr);
+        expect(sdkMinorApiVersionInfo).assertEqual(numstr);
+      }
+ 
+      done();
+    });
+ 
+    /**
+     * @tc.number   SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKMINORAPIVERSION_0200
+     * @tc.name     testOHGetSdkMinorApiVersion002
+     * @tc.desc     test OH_GetSdkMinorApiVersion return value type is number, the return value is greater than or equal to 0.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testOHGetSdkMinorApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let sdkMinorApiVersionInfo: number = initndk.oHGetSdkMinorApiVersion();
+ 
+      let ret = false;
+      console.info('the value of the deviceinfo sdkMinorApiVersion is :' + sdkMinorApiVersionInfo);
+      expect(sdkMinorApiVersionInfo).assertInstanceOf('Number');
+      if (sdkMinorApiVersionInfo >= 0) {
+        ret = true;
+        expect(ret).assertTrue();
+        done();
+      } else {
+        console.info('the return value SdkMinorApiVersion is null or incorrect.');
+        expect(false).assertTrue();
+        done();
+      }
+    });
+ 
+    /**
+     * @tc.number   SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKPATCHAPIVERSION_0100
+     * @tc.name     testOHGetSdkPatchApiVersion001
+     * @tc.desc     test OH_GetSdkPatchApiVersion return value type is without special characters for numbers.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testOHGetSdkPatchApiVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let sdkPatchApiVersionInfo: number = initndk.oHGetSdkPatchApiVersion();
+      let str: RegExp = new RegExp("[\\w\\-\\.(\\)]","g");
+      let arr = sdkPatchApiVersionInfo.toString().match(str);
+      if(arr !== null){
+        let bufferstr = arr.join('');
+        let numstr = parseInt(bufferstr);
+        console.info('the value of the bufferstr is :' + numstr);
+        expect(sdkPatchApiVersionInfo).assertEqual(numstr);
+      }
+ 
+      done();
+    });
+ 
+    /**
+     * @tc.number   SUB_STARTUP_INIT_DEVICEINFO_OH_GETSDKPATCHAPIVERSION_0200
+     * @tc.name     testOHGetSdkPatchApiVersion002
+     * @tc.desc     test OH_GetSdkPatchApiVersion return value type is number, the return value is greater than or equal to 0.
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level 1
+     */
+    it('testOHGetSdkPatchApiVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let sdkPatchApiVersionInfo: number = initndk.oHGetSdkPatchApiVersion();
+ 
+      let ret = false;
+      console.info('the value of the deviceinfo sdkPatchApiVersion is :' + sdkPatchApiVersionInfo);
+      expect(sdkPatchApiVersionInfo).assertInstanceOf('Number');
+      if (sdkPatchApiVersionInfo >= 0) {
+        ret = true;
+        expect(ret).assertTrue();
+        done();
+      } else {
+        console.info('the return value SdkPatchApiVersion is null or incorrect.');
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   testOHGetVersionId002
      * @tc.number SUB_STARTUP_INIT_DEVICEINFO_OH_GETVERSIONID_0200
      * @tc.desc   test OH_GetVersionId has at least one character and at most 255 characters.

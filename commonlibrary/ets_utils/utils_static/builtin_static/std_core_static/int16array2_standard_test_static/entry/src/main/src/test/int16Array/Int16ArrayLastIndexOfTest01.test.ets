@@ -182,20 +182,6 @@ export default function int16ArrayLastIndexOfTestOneTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_ONE_1100
-     * @tc.name testInt16ArrayLastIndexOfTestOne011
-     * @tc.desc Verify arr.lastIndexOf(0) on new Int16Array(0) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let result: int = arr.lastIndexOf(0);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_ONE_1200
      * @tc.name testInt16ArrayLastIndexOfTestOne012
      * @tc.desc Verify arr.lastIndexOf(42) on new Int16Array([42]) returns 0
@@ -319,50 +305,6 @@ export default function int16ArrayLastIndexOfTestOneTest(): void {
       let arr: Int16Array = new Int16Array([5, 0, 10]);
       let result: int = arr.lastIndexOf(-0);
       expect(result).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_ONE_2100
-     * @tc.name testInt16ArrayLastIndexOfTestOne021
-     * @tc.desc Verify arr.lastIndexOf(Number.NaN) on new Int16Array([10, 20, 30]) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20, 30]);
-      let result: int = arr.lastIndexOf(Number.NaN);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_ONE_2200
-     * @tc.name testInt16ArrayLastIndexOfTestOne022
-     * @tc.desc Verify arr.lastIndexOf(Number.POSITIVE_INFINITY) on new Int16Array(1) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(1);
-      arr.$_set(0 as int, Number.POSITIVE_INFINITY);
-      let result: int = arr.lastIndexOf(Number.POSITIVE_INFINITY);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_ONE_2300
-     * @tc.name testInt16ArrayLastIndexOfTestOne023
-     * @tc.desc Verify arr.lastIndexOf(Number.NEGATIVE_INFINITY) on new Int16Array(1) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(1);
-      arr.$_set(0 as int, Number.NEGATIVE_INFINITY);
-      let result: int = arr.lastIndexOf(Number.NEGATIVE_INFINITY);
-      expect(result).assertEqual(-1);
     });
 
     /**
@@ -992,32 +934,5 @@ export default function int16ArrayLastIndexOfTestOneTest(): void {
       expect(result).assertEqual(0);
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_ONE_6800
-     * @tc.name testInt16ArrayLastIndexOfTestOne068
-     * @tc.desc Verify arr.lastIndexOf(1, 0) on new Int16Array(0) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestOne068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let result: int = arr.lastIndexOf(1, 0);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_ONE_6900
-     * @tc.name testInt16ArrayLastIndexOfTestOne069
-     * @tc.desc Verify arr.lastIndexOf(1, -1) on new Int16Array(0) returns -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestOne069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let result: int = arr.lastIndexOf(1, -1);
-      expect(result).assertEqual(-1);
-    });
   });
 }

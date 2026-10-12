@@ -231,5 +231,7 @@ struct IfElse0100 {
         this.swipeStartIndex = start
       })
     }
+    .padding(10)
+    .margin(10)
   }
 }

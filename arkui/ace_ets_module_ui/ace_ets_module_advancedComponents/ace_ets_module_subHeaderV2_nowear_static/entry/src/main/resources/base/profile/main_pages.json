@@ -9,9 +9,7 @@
     "MainAbility/pages/subHeaderV2/subHeaderV2CustomContent",
     "MainAbility/pages/subHeaderV2/subHeaderV2CustomStyle",
     "MainAbility/pages/subHeaderV2/subHeaderV2LeftAccess",
-    "MainAbility/pages/subHeaderV2/subHeaderV2RightAccess"
-
-
-
+    "MainAbility/pages/subHeaderV2/subHeaderV2RightAccess",
+    "MainAbility/pages/subHeaderV2/subHeaderV2EndIcon"
   ]
 }

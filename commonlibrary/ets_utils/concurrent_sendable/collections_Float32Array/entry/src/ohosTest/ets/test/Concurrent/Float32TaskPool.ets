@@ -1,5 +1,5 @@
 import { ArkTSUtils, collections } from '@kit.ArkTS';
-import { expect } from '@ohos/hypium-dynamic';
+import { expect } from '@ohos/hypium';
 
 
 @Concurrent

@@ -17,24 +17,19 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.colorSpaceTransfer.Static/haps/entry/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.colorSpaceTransfer.Static/haps/entry/files/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "push": [
-                "./resource/image/colorspace.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.colorSpaceTransfer.Static/haps/entry/files"
+                "./resource/image/colorspace.jpg ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_colorSpaceTransfer_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.image.colorSpaceTransfer.Static/haps/entry/*"
-            ]
+                "chmod 755 /data/local/tmp/setup_image_colorSpaceTransfer_static_test.sh",
+                "sh /data/local/tmp/setup_image_colorSpaceTransfer_static_test.sh"
+            ],
+            "teardown-command": []
         }
     ]
 }

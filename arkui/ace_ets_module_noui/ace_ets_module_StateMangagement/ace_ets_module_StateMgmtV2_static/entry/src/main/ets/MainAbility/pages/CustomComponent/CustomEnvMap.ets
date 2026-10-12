@@ -30,7 +30,6 @@ struct CustomEnvMap {
           Text(`key: ${item[0]}, value: ${item[1]}`)
             .id('customEnvMap_001')
             .height('5%')
-            .fontSize(20)
         })
         // 新增键值对，触发UI刷新
         Button('Set entry cherry')

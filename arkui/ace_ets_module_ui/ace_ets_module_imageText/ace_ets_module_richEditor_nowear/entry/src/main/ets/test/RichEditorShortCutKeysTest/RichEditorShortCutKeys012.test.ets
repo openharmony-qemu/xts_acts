@@ -82,7 +82,7 @@ export default function RichEditorShortCutKeys012() {
       let selectAll = await driver.findComponent(ON.text('全选'));
       await selectAll.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I, 0, displayID);
       await CommonFunc.sleep(2000);
       await getSpans.click();
       await CommonFunc.sleep(500);

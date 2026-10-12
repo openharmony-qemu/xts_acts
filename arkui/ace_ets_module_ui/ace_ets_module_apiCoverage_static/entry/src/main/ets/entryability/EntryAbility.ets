@@ -49,7 +49,7 @@ class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<window.WindowStage>('windowStage', windowStage);
     AppStorage.setOrCreate<common.UIAbilityContext>('stageContext', this.context);
     try {
-      const coveragePage: string = 'MainAbility/pages/coverage/CoverageStaticIndex';
+      const coveragePage: string = 'MainAbility/pages/index/index';
       windowStage.loadContent(coveragePage, (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         if (err?.code) {

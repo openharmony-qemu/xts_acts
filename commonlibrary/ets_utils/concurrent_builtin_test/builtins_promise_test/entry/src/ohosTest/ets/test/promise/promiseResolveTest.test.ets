@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { PromiseResolveTest005, PromiseResolveTest048, PromiseResolveTest054 } from './promisejs';
 import {
   asyncThenable34,

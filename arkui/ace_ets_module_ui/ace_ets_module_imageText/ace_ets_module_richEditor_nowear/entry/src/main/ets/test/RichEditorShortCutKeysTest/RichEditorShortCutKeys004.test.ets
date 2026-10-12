@@ -71,11 +71,11 @@ export default function RichEditorShortCutKeys004() {
       let pointCenter = await rich.getBoundsCenter();
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_LEFT, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
       await CommonFunc.sleep(500);
       let selection = await driver.findComponent(ON.id('selection'));
       let selectionText = await selection.getText();
@@ -85,11 +85,11 @@ export default function RichEditorShortCutKeys004() {
       let set_position = await driver.findComponent(ON.id('set_position'));
       await set_position.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
       await CommonFunc.sleep(500);
       selectionText = await selection.getText();
       await CommonFunc.sleep(500);
@@ -97,7 +97,7 @@ export default function RichEditorShortCutKeys004() {
       expect(selectionText).assertContain('"end"');
       driver.triggerKey(KeyCode.KEYCODE_DPAD_UP, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_UP, 0, displayID);
       await CommonFunc.sleep(500);
       let get_position = await driver.findComponent(ON.id('get_position'));
       await get_position.click();
@@ -108,7 +108,7 @@ export default function RichEditorShortCutKeys004() {
       expect(positionNumText).assertEqual('positionNum:0');
       driver.triggerKey(KeyCode.KEYCODE_DPAD_DOWN, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID);
       await CommonFunc.sleep(500);
       await get_position.click();
       await CommonFunc.sleep(500);
