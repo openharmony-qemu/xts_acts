@@ -45,6 +45,9 @@ export default function persistenceV2IgnoreReadOnlyPropertiesSet1Test() {
     });
 
     afterEach(() => {
+      // Cleanup persisted data
+      PersistenceV2.remove('ac81');
+      await CommonFunc.sleep(500);
       console.info('[PersistenceV2IgnoreReadOnlyPropertiesSetTest] afterEach called');
     });
 
@@ -121,8 +124,6 @@ export default function persistenceV2IgnoreReadOnlyPropertiesSet1Test() {
         let content2: string = obj2.$attrs.content as string;
         expect(content2).assertEqual('value = 51');
 
-        // Cleanup persisted data
-        PersistenceV2.remove('ac81');
         console.info('[PersistenceV2IgnoreReadOnlyPropertiesSetTest_002] END');
       } catch (err) {
         console.error('[PersistenceV2IgnoreReadOnlyPropertiesSetTest_002] Error: ' + JSON.stringify(err));

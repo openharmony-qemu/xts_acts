@@ -4,6 +4,8 @@
     "MainAbility/pages/PersistenceV2/PerGlobalConnect",
     "MainAbility/pages/PersistenceV2/PersistenceV2NotifyOnErrorTest",
     "MainAbility/pages/PersistenceV2/PersistenceV2TypeMismatch",
+    "MainAbility/pages/PersistenceV2/IgnoreReadOnlyTrue",
+    "MainAbility/pages/PersistenceV2/IgnoreReadOnlyFalse",
     "MainAbility/pages/PersistenceV2/PersistenceV2IgnoreReadOnlyProperties1",
     "MainAbility/pages/PersistenceV2/PersistenceV2IgnoreReadOnlyProperties2",
     "MainAbility/pages/PersistenceV2/PersistenceV2IgnoreReadOnlyProperties3",
