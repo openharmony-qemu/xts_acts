@@ -265,7 +265,7 @@ export default function adminManagerTest() {
         adminManager.getAdminInfos();
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 201).assertTrue();
+        expect(error.code === 201).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
