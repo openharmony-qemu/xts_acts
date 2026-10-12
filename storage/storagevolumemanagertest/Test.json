@@ -21,17 +21,6 @@
             ]
         },
         {
-            "type": "PushKit",
-            "pre-push": [],
-            "push": []
-        },
-        {
-            "type": "ShellKit",
-            "teardown-command": [
-                "reboot"
-            ]
-        },
-        {
             "test-file-name": [
                 "ActsStorageVolumeManagerJSTest.hap"
             ],
