@@ -1112,5 +1112,30 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
           hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700 end---');
       })
 
+      /**
+       * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_4000
+       * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_4000
+       * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_USB_CONNECTION value is 16
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_4000 begin---');
+          try {
+            let type: number = backgroundTaskManager.BackgroundTaskMode.MODE_USB_CONNECTION;
+            console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_4000 backgroundTaskManager BackgroundTaskMode MODE_USB_CONNECTION: ' + type);
+            expect(type).assertEqual(16);
+            done();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_4000 error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          }
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_4000 end---');
+      })
+
   })
 }
