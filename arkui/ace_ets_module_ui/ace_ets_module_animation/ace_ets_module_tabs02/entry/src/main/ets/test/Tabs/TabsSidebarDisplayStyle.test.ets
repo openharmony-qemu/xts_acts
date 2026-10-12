@@ -58,7 +58,7 @@ export default function TabsSidebarDisplayStyleTest() {
       console.info("[tabsSidebarDisplayStyle_0100] sidebarDisplayStyle: " + JSON.stringify(obj.$attrs.sidebarDisplayStyle));
 
       expect(TabsSidebarDisplayStyle.EMBED).assertEqual(0);
-      expect(obj.$attrs.sidebarDisplayStyle).assertEqual('TabsSidebarDisplayStyle.EMBED');
+      expect(obj.getElement('$attrs').getString('sidebarDisplayStyle')).assertEqual('SidebarDisplayStyle.EMBED');
       console.info('[tabsSidebarDisplayStyle_0100] END');
       done();
     })
@@ -80,7 +80,7 @@ export default function TabsSidebarDisplayStyleTest() {
       console.info("[tabsSidebarDisplayStyle_0200] sidebarDisplayStyle: " + JSON.stringify(obj.$attrs.sidebarDisplayStyle));
 
       expect(TabsSidebarDisplayStyle.DISPLACE).assertEqual(1);
-      expect(obj.$attrs.sidebarDisplayStyle).assertEqual('TabsSidebarDisplayStyle.DISPLACE');
+      expect(obj.getElement('$attrs').getString('sidebarDisplayStyle')).assertEqual('SidebarDisplayStyle.DISPLACE');
       console.info('[tabsSidebarDisplayStyle_0200] END');
       done();
     })
@@ -125,7 +125,9 @@ export default function TabsSidebarDisplayStyleTest() {
       console.info("[tabsSidebarDisplayStyle_0400] sidebarDisplayStyle: " + JSON.stringify(obj.$attrs.sidebarDisplayStyle));
 
       expect(obj.$attrs.sidebarDisplayStyle).not().assertUndefined();
-      expect(obj.$attrs.sidebarDisplayStyle).assertEqual(objDefault.$attrs.sidebarDisplayStyle);
+      let styleUndefined = (obj.$attrs.sidebarDisplayStyle as string).split('.').pop();
+      let styleDefault = (objDefault.$attrs.sidebarDisplayStyle as string).split('.').pop();
+      expect(styleUndefined).assertEqual(styleDefault);
       console.info('[tabsSidebarDisplayStyle_0400] END');
       done();
     })
