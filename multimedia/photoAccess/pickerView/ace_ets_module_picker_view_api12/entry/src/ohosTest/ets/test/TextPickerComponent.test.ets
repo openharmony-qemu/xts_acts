@@ -250,14 +250,17 @@ async function clickAlbumButton(driver: Driver) {
 }
 
 async function clickBigPicture(driver: Driver) {
-  console.info("testpicker create");
-  let btn = await driver.findComponent(ON.type('Image'));
-  if (btn === null) {
-    console.info('no Image');
+  console.info("testpicker clickBigPicture start");
+  let picker = await driver.findComponent(ON.id('PhotoPickerComponent'));
+  if (picker === null) {
+    console.info('clickBigPicture: PhotoPickerComponent not found');
     return;
   }
-  await btn.click();
-  console.info('testPicker btn click finish');
+  let bounds = await picker.getBounds();
+  let cx = Math.round((bounds.left + bounds.right) / 2);
+  let cy = Math.round((bounds.top + bounds.bottom) / 2);
+  console.info('clickBigPicture: click center (' + cx + ',' + cy + ')');
+  await driver.click(cx, cy);
   await CommonFunc.sleep(1000);
 }
 
