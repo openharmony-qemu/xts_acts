@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -55,15 +55,19 @@ export default function scrollDidJsunit() {
      */
     it('scrollDidJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[scrollDidJsunit_0100] START');
-      let scrollRect = CommonFunc.getComponentRectOnScreen('scrollSource_scroll')
       let driver = Driver.create()
+      let scrollComp = await driver.findComponent(ON.id('scrollSource_scroll'))
+      let scrollRect = await scrollComp.getBounds()
+      let displayId = await scrollComp.getDisplayId()
       await driver.fling({
         x: Number.parseInt(`${(scrollRect.right - scrollRect.left) * 0.5 + scrollRect.left}`),
-        y: Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.6 + scrollRect.top}`)
+        y: Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.6 + scrollRect.top}`),
+        displayId: displayId
       },
         {
           x: Number.parseInt(`${(scrollRect.right - scrollRect.left) * 0.5 + scrollRect.left}`),
-          y: Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.2 + scrollRect.top}`)
+          y: Number.parseInt(`${(scrollRect.bottom - scrollRect.top) * 0.2 + scrollRect.top}`),
+          displayId: displayId
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

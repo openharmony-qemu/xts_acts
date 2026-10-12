@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -64,9 +64,12 @@ export default function ListFillPolicyModifier() {
       await CommonFunc.sleep(SLEEP_TIME);
       expect(obj.$type).assertEqual('List');
       expect(JSON.parse(strJsonNew).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM1MD2LG3");
-      let listItem1 = CommonFunc.getComponentRectOnScreen('listType_1');
+      let driver = Driver.create();
+      let listItem1Comp = await driver.findComponent(ON.id('listType_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem1.bottom: ' + listItem1.bottom);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('listType_2');
+      let listItem2Comp = await driver.findComponent(ON.id('listType_2'));
+      let listItem2 = await listItem2Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem2.top: ' + listItem2.top);
       await CommonFunc.sleep(SLEEP_TIME);
       expect(Math.abs(Math.floor(listItem2.top - listItem1.bottom)) <= 1 ).assertTrue();
@@ -92,9 +95,11 @@ export default function ListFillPolicyModifier() {
       let obj: Record<string, Object> = JSON.parse(strJsonNew);
       expect(obj.$type).assertEqual('List');
       expect(JSON.parse(strJsonNew).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM2MD3LG5");
-      let listItem1 = CommonFunc.getComponentRectOnScreen('listType_1');
+      let listItem1Comp = await driver.findComponent(ON.id('listType_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem1.bottom: ' + listItem1.bottom);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('listType_2');
+      let listItem2Comp = await driver.findComponent(ON.id('listType_2'));
+      let listItem2 = await listItem2Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem2.top: ' + listItem2.top);
       await CommonFunc.sleep(SLEEP_TIME);
       expect(Math.abs(Math.floor(listItem2.top - listItem1.bottom)) <= 1 ).assertTrue();
@@ -120,9 +125,11 @@ export default function ListFillPolicyModifier() {
       let obj: Record<string, Object> = JSON.parse(strJsonNew);
       expect(obj.$type).assertEqual('List');
       expect(JSON.parse(strJsonNew).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_DEFAULT");
-      let listItem1 = CommonFunc.getComponentRectOnScreen('listType_1');
+      let listItem1Comp = await driver.findComponent(ON.id('listType_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem1.bottom: ' + listItem1.bottom);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('listType_2');
+      let listItem2Comp = await driver.findComponent(ON.id('listType_2'));
+      let listItem2 = await listItem2Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem2.top: ' + listItem2.top);
       await CommonFunc.sleep(SLEEP_TIME);
       expect(Math.abs(Math.floor(listItem2.top - listItem1.bottom)) <= 1 ).assertTrue();
@@ -148,9 +155,11 @@ export default function ListFillPolicyModifier() {
       let obj: Record<string, Object> = JSON.parse(strJsonNew);
       expect(obj.$type).assertEqual('List');
       expect(JSON.parse(strJsonNew).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_DEFAULT");
-      let listItem1 = CommonFunc.getComponentRectOnScreen('listType_1');
+      let listItem1Comp = await driver.findComponent(ON.id('listType_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem1.bottom: ' + listItem1.bottom);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('listType_2');
+      let listItem2Comp = await driver.findComponent(ON.id('listType_2'));
+      let listItem2 = await listItem2Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem2.top: ' + listItem2.top);
       await CommonFunc.sleep(SLEEP_TIME);
       expect(Math.abs(Math.floor(listItem2.top - listItem1.bottom)) <= 1 ).assertTrue();
@@ -176,9 +185,11 @@ export default function ListFillPolicyModifier() {
       let obj: Record<string, Object> = JSON.parse(strJsonNew);
       expect(obj.$type).assertEqual('List');
       expect(JSON.parse(strJsonNew).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_DEFAULT");
-      let listItem1 = CommonFunc.getComponentRectOnScreen('listType_1');
+      let listItem1Comp = await driver.findComponent(ON.id('listType_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem1.bottom: ' + listItem1.bottom);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('listType_2');
+      let listItem2Comp = await driver.findComponent(ON.id('listType_2'));
+      let listItem2 = await listItem2Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem2.top: ' + listItem2.top);
       await CommonFunc.sleep(SLEEP_TIME);
       expect(Math.abs(Math.floor(listItem2.top - listItem1.bottom)) <= 1 ).assertTrue();
@@ -204,9 +215,11 @@ export default function ListFillPolicyModifier() {
       let obj: Record<string, Object> = JSON.parse(strJsonNew);
       expect(obj.$type).assertEqual('List');
       expect(JSON.parse(strJsonNew).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_DEFAULT");
-      let listItem1 = CommonFunc.getComponentRectOnScreen('listType_1');
+      let listItem1Comp = await driver.findComponent(ON.id('listType_1'));
+      let listItem1 = await listItem1Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem1.bottom: ' + listItem1.bottom);
-      let listItem2 = CommonFunc.getComponentRectOnScreen('listType_2');
+      let listItem2Comp = await driver.findComponent(ON.id('listType_2'));
+      let listItem2 = await listItem2Comp.getBounds();
       console.info('[ListFillPolicy_0200] listItem2.top: ' + listItem2.top);
       await CommonFunc.sleep(SLEEP_TIME);
       expect(Math.abs(Math.floor(listItem2.top - listItem1.bottom)) <= 1 ).assertTrue();

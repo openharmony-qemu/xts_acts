@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import * as startsWithTest from './string_startswith_test1';
 
 export default function StringStartsWithTest() {

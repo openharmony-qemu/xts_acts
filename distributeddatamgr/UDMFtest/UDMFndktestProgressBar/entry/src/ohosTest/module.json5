@@ -34,7 +34,7 @@
         "startWindowIcon": "$media:icon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
-        "orientation": "portrait",
+        "orientation": "auto_rotation",
         "skills": [
           {
             "actions": [

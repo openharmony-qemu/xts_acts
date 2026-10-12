@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorOnWillChange014() {
   describe('RichEditorOnWillChange014', () => {
@@ -85,7 +87,11 @@ export default function RichEditorOnWillChange014() {
       expect(didText).assertEqual('onDidChange_callback:true');
 
 
-      await driver.triggerKey(KeyCode.KEYCODE_DEL);
+      try {
+        await driver.triggerKey(KeyCode.KEYCODE_DEL, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
 
       let onDidChange_rangeBefore = await driver.findComponent(ON.id('onDidChange_rangeBefore'));
@@ -104,7 +110,7 @@ export default function RichEditorOnWillChange014() {
       expect(replaceCall).assertEqual('replacedSpans Callback:[]');
 
       //撤销删除
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, 0, displayID);
       await CommonFunc.sleep(500);
 
       onDidBefore = await onDidChange_rangeBefore.getText();
@@ -119,7 +125,7 @@ export default function RichEditorOnWillChange014() {
       await CommonFunc.sleep(500);
       expect(replaceCall.indexOf('"value":"ab"') > 0).assertEqual(true);
       //还原删除
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y, 0, displayID);
       await CommonFunc.sleep(500);
 
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
@@ -143,5 +149,6 @@ export default function RichEditorOnWillChange014() {
 
   })
 }
+
 
 

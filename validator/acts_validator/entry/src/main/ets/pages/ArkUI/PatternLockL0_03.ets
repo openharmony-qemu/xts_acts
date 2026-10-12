@@ -28,9 +28,11 @@ struct PatternLockL0_03 {
   @State rating: number = 0;
   @State FillColor: string = '#FF000000';
   @State name: string = 'PatternLockL0_03';
-  @State StepTips: string = '操作步骤：在两个九宫格中设置1、3为连接点，点击确认按钮' + '\n' + '预期结果：路径经过但手指未经过的自动被选中';
+  @State StepTips: string = '操作步骤：在两个九宫格中设置1、3为连接点' + '\n' + '预期结果：路径经过但手指未经过的自动被选中';
   @State Vue: boolean = false;
   @State passwords: Number[] = [];
+  @State passwords1: number[] = [];
+  @State passwords2: number[] = [];
   @State customModifier: PatternLockModifier = new PatternLockModifier()
     .sideLength('47.5%')
     .circleRadius(9)
@@ -112,6 +114,42 @@ struct PatternLockL0_03 {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  // 验证绘制的密码是否为1、2、3连接点
+  isValidPassword(input: Array<number>): boolean {
+    const target = [0, 1, 2];
+    if (input.length !== target.length) {
+      return false;
+    }
+    return input.toString() === target.toString();
+  }
+
+  // 检查两个PatternLock组件绘制的密码是否一致
+  checkAllPatternDrawn() {
+    if (this.passwords1.length > 0 && this.passwords2.length > 0) {
+      // 验证密码是否为1、3
+      if (!this.isValidPassword(this.passwords1) || !this.isValidPassword(this.passwords2)) {
+        promptAction.showToast({ message: '请设置1、3为连接点', duration: 2000 });
+        this.patternLockController.reset();
+        this.patternLockController1.reset();
+        this.passwords1 = [];
+        this.passwords2 = [];
+        return;
+      }
+      if (this.passwords1.toString() === this.passwords2.toString()) {
+        promptAction.showToast({ message: '密码设置成功', duration: 1000 });
+        setTimeout(() => {
+          this.Vue = true;
+        }, 500);
+      } else {
+        promptAction.showToast({ message: '两次输入的密码不一致，请重新输入', duration: 2000 });
+        this.patternLockController.reset();
+        this.patternLockController1.reset();
+        this.passwords1 = [];
+        this.passwords2 = [];
+      }
+    }
+  }
+
   build() {
     Column() {
       Row() {
@@ -147,7 +185,7 @@ struct PatternLockL0_03 {
       Column({ space: 10 }) {
         Row({ space: 5 }){
           Column({ space: 5 }){
-            Text("原生属性").fontColor(Color.Red).margin({ top: 10 })
+            Text("原生属性" + this.passwords1).fontColor(Color.Red).margin({ top: 10 })
             PatternLock(this.patternLockController)
               .sideLength('47.5%')
               .circleRadius(9)
@@ -161,20 +199,22 @@ struct PatternLockL0_03 {
               .activateCircleStyle({
                 radius: LengthMetrics.vp(15)
               })
+              .onPatternComplete((input: Array<number>) => {
+                this.passwords1 = input;
+                this.checkAllPatternDrawn();
+              })
           }
           Column({ space: 5 }){
-            Text("Modifier").fontColor(Color.Red).margin({ top: 10 })
+            Text("Modifier" + this.passwords2).fontColor(Color.Red).margin({ top: 10 })
             PatternLock(this.patternLockController1)
               .attributeModifier(this.customModifier)
+              .onPatternComplete((input: Array<number>) => {
+                this.passwords2 = input;
+                this.checkAllPatternDrawn();
+              })
           }
         }
 
-        Button('确认')
-          .width('30%')
-          .height('6%')
-          .onClick(() => {
-            this.Vue = true;
-          })
       }
       .height('70%')
       .width('100%')

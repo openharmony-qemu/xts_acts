@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level, afterAll } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import Utils from '../Utils';
 import { Driver } from '@ohos.UiTest';
@@ -47,6 +47,10 @@ export default function CounterV2Api() {
       }
       console.info('CounterV2Api after each called');
     });
+    afterAll(async () => {
+      AppStorage.delete('isActive');
+      console.info("afterAll case");
+    });
 
     /**
      * @tc.name   SUB_ARKUI_API_CounterV2Api_0100
@@ -59,17 +63,21 @@ export default function CounterV2Api() {
     it('SUB_ARKUI_API_CounterV2Api_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ARKUI_API_CounterV2Api_0100] START');
       try {
-        await Utils.sleep(1000);
-        let driver = await Driver.create();
-        await Utils.sleep(1000);
-        await driver.triggerKey(2049);
-        await Utils.sleep(1000);
-        let strJson = getInspectorByKey('CounterV2ApiText2');
-        await Utils.sleep(1000);
-        let obj: Record<string, ESObject> = JSON.parse(strJson);
-        console.info('[SUB_ARKUI_API_CounterV2Api_0100] component obj is: ' + JSON.stringify(obj));
-        await Utils.sleep(1000);
-        expect(obj.$attrs.content).assertEqual('onFocusDecrease');
+        if(AppStorage.get('isActive')) {
+          await Utils.sleep(1000);
+          let driver = await Driver.create();
+          await Utils.sleep(1000);
+          await driver.triggerKey(2049);
+          await Utils.sleep(1000);
+          let strJson = getInspectorByKey('CounterV2ApiText2');
+          await Utils.sleep(1000);
+          let obj: Record<string, ESObject> = JSON.parse(strJson);
+          console.info('[SUB_ARKUI_API_CounterV2Api_0100] component obj is: ' + JSON.stringify(obj));
+          await Utils.sleep(1000);
+          expect(obj.$attrs.content).assertEqual('onFocusDecrease');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Api_0100 error: ' + err);
         expect(true).assertEqual(false);
@@ -89,20 +97,24 @@ export default function CounterV2Api() {
     it('SUB_ARKUI_API_CounterV2Api_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ARKUI_API_CounterV2Api_0200] START');
       try {
-        await Utils.sleep(1000);
-        let driver = await Driver.create();
-        await Utils.sleep(1000);
-        await driver.triggerKey(2049);
-        await Utils.sleep(1000);
-        let strJson = getInspectorByKey('CounterV2ApiText1');
-        await Utils.sleep(1000);
-        let strJson2 = getInspectorByKey('CounterV2ApiText2');
-        await Utils.sleep(1000);
-        console.info('[SUB_ARKUI_API_CounterV2Api_0200] component obj is: ' + JSON.stringify(JSON.parse(strJson)));
-        console.info('[SUB_ARKUI_API_CounterV2Api_0200] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
-        await Utils.sleep(1000);
-        expect(JSON.parse(strJson).$attrs.content).assertEqual('onFocusIncrease');
-        expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurDecrease');
+        if(AppStorage.get('isActive')) {
+          await Utils.sleep(1000);
+          let driver = await Driver.create();
+          await Utils.sleep(1000);
+          await driver.triggerKey(2049);
+          await Utils.sleep(1000);
+          let strJson = getInspectorByKey('CounterV2ApiText1');
+          await Utils.sleep(1000);
+          let strJson2 = getInspectorByKey('CounterV2ApiText2');
+          await Utils.sleep(1000);
+          console.info('[SUB_ARKUI_API_CounterV2Api_0200] component obj is: ' + JSON.stringify(JSON.parse(strJson)));
+          console.info('[SUB_ARKUI_API_CounterV2Api_0200] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
+          await Utils.sleep(1000);
+          expect(JSON.parse(strJson).$attrs.content).assertEqual('onFocusIncrease');
+          expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurDecrease');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Api_0200 error: ' + err);
         expect(true).assertEqual(false);
@@ -122,16 +134,20 @@ export default function CounterV2Api() {
     it('SUB_ARKUI_API_CounterV2Api_0300', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ARKUI_API_CounterV2Api_0300] START');
       try {
-        await Utils.sleep(1000);
-        let driver = await Driver.create();
-        await Utils.sleep(1000);
-        await driver.triggerKey(2049);
-        await Utils.sleep(1000);
-        let strJson2 = getInspectorByKey('CounterV2ApiText1');
-        await Utils.sleep(1000);
-        console.info('[SUB_ARKUI_API_CounterV2Api_0300] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
-        await Utils.sleep(1000);
-        expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurIncrease');
+        if(AppStorage.get('isActive')) {
+          await Utils.sleep(1000);
+          let driver = await Driver.create();
+          await Utils.sleep(1000);
+          await driver.triggerKey(2049);
+          await Utils.sleep(1000);
+          let strJson2 = getInspectorByKey('CounterV2ApiText1');
+          await Utils.sleep(1000);
+          console.info('[SUB_ARKUI_API_CounterV2Api_0300] component obj is: ' + JSON.stringify(JSON.parse(strJson2)));
+          await Utils.sleep(1000);
+          expect(JSON.parse(strJson2).$attrs.content).assertEqual('onBlurIncrease');
+        } else {
+          expect(AppStorage.get('isActive')!=true).assertEqual(true);
+        }
       } catch (err) {
         console.log('SUB_ARKUI_API_CounterV2Api_0300 error: ' + err);
         expect(true).assertEqual(false);

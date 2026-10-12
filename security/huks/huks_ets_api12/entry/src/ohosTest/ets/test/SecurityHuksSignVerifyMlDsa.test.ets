@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { GetEmptyOptions, GetParam, MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
+import { DeleteParam, GetEmptyOptions, GetParam, MergeOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
 import { BuildSignVerifyData, DoSign, DoVerify, SignVerify, SignVerifyData, SignVerifyReal } from './utils/huks/SignVerifyUtils';
 import { GetMlDsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { Logger } from './utils/common/Logger';
@@ -864,6 +864,288 @@ export default function SecurityHuksSignVerifyMLDSATest() {
       } catch (err) {
         Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000006);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_2900
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_2900
+     * @tc.desc   Generate ML-DSA 44 key, sign and verify with HUKS_TAG_CONTEXT, process success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_2900";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let contextData: Uint8Array = new Uint8Array([0x61, 0x70, 0x70, 0x31]);
+      SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, contextData);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        let res: boolean = await SignVerify(testNumber, signVerifyOptions, signVerifyData);
+        expect(res).assertEqual(true);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3000
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3000
+     * @tc.desc   Generate ML-DSA 44 key, sign and verify with 1-byte HUKS_TAG_CONTEXT, process success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3000";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let contextData: Uint8Array = new Uint8Array(1).fill(0x61);
+      SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, contextData);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        let signatureData = await DoSign(testNumber, signVerifyOptions, signVerifyData);
+        expect(signatureData.length).assertLarger(0);
+        signVerifyData.signatureData = signatureData;
+        SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+        await DoVerify(testNumber, signVerifyOptions, signVerifyData);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3100
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3100
+     * @tc.desc   Generate ML-DSA 44 key, sign and verify with 255-byte HUKS_TAG_CONTEXT, process success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3100";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let contextData: Uint8Array = new Uint8Array(255).fill(0x61);
+      SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, contextData);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        let signatureData = await DoSign(testNumber, signVerifyOptions, signVerifyData);
+        expect(signatureData.length).assertLarger(0);
+        signVerifyData.signatureData = signatureData;
+        SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+        await DoVerify(testNumber, signVerifyOptions, signVerifyData);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3200
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3200
+     * @tc.desc   Generate ML-DSA 44 key, sign with 0-byte HUKS_TAG_CONTEXT, process fail with error HUKS_ERR_CODE_ILLEGAL_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3200";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let contextData: Uint8Array = new Uint8Array(0);
+      SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, contextData);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        await DoSign(testNumber, signVerifyOptions, signVerifyData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3300
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3300
+     * @tc.desc   Generate ML-DSA 44 key, sign with 256-byte HUKS_TAG_CONTEXT, process fail with error HUKS_ERR_CODE_ILLEGAL_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3300";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let contextData: Uint8Array = new Uint8Array(256).fill(0x61);
+      SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, contextData);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        await DoSign(testNumber, signVerifyOptions, signVerifyData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3400
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3400
+     * @tc.desc   Generate ML-DSA 44 key, sign and verify with different HUKS_TAG_CONTEXT, process fail with error 12000006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3400";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let signContextData: Uint8Array = new Uint8Array([0x61, 0x70, 0x70, 0x31]);
+      let verifyContextData: Uint8Array = new Uint8Array([0x61, 0x70, 0x70, 0x32]);
+      SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, signContextData);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        let signatureData = await DoSign(testNumber, signVerifyOptions, signVerifyData);
+        signVerifyData.signatureData = signatureData;
+        SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, verifyContextData);
+        SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+        await DoVerify(testNumber, signVerifyOptions, signVerifyData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000006);
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3500
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3500
+     * @tc.desc   Generate ML-DSA 44 key, sign with HUKS_TAG_CONTEXT and verify without it, process fail with error 12000006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3500";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let contextData: Uint8Array = new Uint8Array([0x61, 0x70, 0x70, 0x31]);
+      SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, contextData);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        let signatureData = await DoSign(testNumber, signVerifyOptions, signVerifyData);
+        signVerifyData.signatureData = signatureData;
+        DeleteParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT);
+        SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+        await DoVerify(testNumber, signVerifyOptions, signVerifyData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000006);
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3600
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3600
+     * @tc.desc   Generate ML-DSA 44 key, sign without HUKS_TAG_CONTEXT and verify with it, process fail with error 12000006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_3600";
+
+      let generateKeyOptions = GetMlDsaGenerateOptions(44);
+      let baseKeyOptions = GetEmptyOptions();
+      let signVerifyData: SignVerifyData = BuildSignVerifyData([63]);
+      let contextData: Uint8Array = new Uint8Array([0x61, 0x70, 0x70, 0x31]);
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        let signatureData = await DoSign(testNumber, signVerifyOptions, signVerifyData);
+        signVerifyData.signatureData = signatureData;
+        SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_CONTEXT, contextData);
+        SetParam(signVerifyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+        await DoVerify(testNumber, signVerifyOptions, signVerifyData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000006);
+      } finally {
+        try {
+          await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        } catch (err) {
+          Logger.error(`${testNumber} delete key error ${JSON.stringify(err)}`);
+        }
       }
     })
 

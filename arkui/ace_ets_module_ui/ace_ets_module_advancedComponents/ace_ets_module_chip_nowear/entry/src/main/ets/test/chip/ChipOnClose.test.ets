@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -31,6 +32,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function ChipOnClose() {
   describe('ChipOnClose', () => {
@@ -74,9 +76,11 @@ export default function ChipOnClose() {
       await CommonFunc.sleep(200);
       console.info('ChipOnClose_001 right：' + right + 'top:' + top);
       let driver = Driver.create();
+
       await driver.mouseClick({
-        x: Math.round(right), y: Math.round(top)
+        x: Math.round(right), y: Math.round(top), displayId: displayID
       }, MouseButton.MOUSE_BUTTON_LEFT);
+
       await CommonFunc.sleep(1000);
       console.info('ChipOnClose_001 click success');
 
@@ -88,7 +92,6 @@ export default function ChipOnClose() {
 
       done();
     });
-
 
   })
 }

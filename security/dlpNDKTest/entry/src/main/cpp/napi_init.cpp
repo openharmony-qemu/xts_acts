@@ -102,6 +102,39 @@ static napi_value OsCleanSandboxAppConfigA(napi_env env, napi_callback_info info
     return result;
 }
 
+#ifndef OH_DLP_NOT_SUPPORTED
+#define OH_DLP_NOT_SUPPORTED 801
+#endif
+
+static void SetInt32Prop(napi_env env, napi_value obj, const char* name, int32_t value)
+{
+    napi_value val;
+    napi_create_int32(env, value, &val);
+    napi_set_named_property(env, obj, name, val);
+}
+
+static napi_value OhDlpValidateEnumTest0100(napi_env env, napi_callback_info info)
+{
+    napi_value resultObj;
+    napi_create_object(env, &resultObj);
+
+    SetInt32Prop(env, resultObj, "ERR_OH_SUCCESS", static_cast<int32_t>(DLP_ErrCode::ERR_OH_SUCCESS));
+    SetInt32Prop(env, resultObj, "OH_DLP_NOT_SUPPORTED", OH_DLP_NOT_SUPPORTED);
+    SetInt32Prop(env, resultObj, "ERR_OH_INVALID_PARAMETER",
+                 static_cast<int32_t>(DLP_ErrCode::ERR_OH_INVALID_PARAMETER));
+    SetInt32Prop(env, resultObj, "ERR_OH_API_ONLY_FOR_SANDBOX",
+                 static_cast<int32_t>(DLP_ErrCode::ERR_OH_API_ONLY_FOR_SANDBOX));
+    SetInt32Prop(env, resultObj, "ERR_OH_API_NOT_FOR_SANDBOX",
+                 static_cast<int32_t>(DLP_ErrCode::ERR_OH_API_NOT_FOR_SANDBOX));
+    SetInt32Prop(env, resultObj, "ERR_OH_SYSTEM_SERVICE_EXCEPTION",
+                 static_cast<int32_t>(DLP_ErrCode::ERR_OH_SYSTEM_SERVICE_EXCEPTION));
+    SetInt32Prop(env, resultObj, "ERR_OH_OUT_OF_MEMORY", static_cast<int32_t>(DLP_ErrCode::ERR_OH_OUT_OF_MEMORY));
+    SetInt32Prop(env, resultObj, "ERR_OH_APPLICATION_NOT_AUTHORIZED",
+                 static_cast<int32_t>(DLP_ErrCode::ERR_OH_APPLICATION_NOT_AUTHORIZED));
+
+    return resultObj;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -117,6 +150,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"osGetSandboxAppConfigA", nullptr, OsGetSandboxAppConfigA, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"osCleanSandboxAppConfigA", nullptr, OsCleanSandboxAppConfigA, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"ohDlpValidateEnumTest0100", nullptr, OhDlpValidateEnumTest0100, nullptr,
          nullptr, nullptr, napi_default, nullptr}
     };
 

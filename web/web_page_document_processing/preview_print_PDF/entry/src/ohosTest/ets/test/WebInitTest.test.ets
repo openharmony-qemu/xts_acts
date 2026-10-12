@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium-dynamic';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];

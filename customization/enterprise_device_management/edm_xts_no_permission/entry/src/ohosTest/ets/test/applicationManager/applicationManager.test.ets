@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import {
   ENTINFO1,
   SELFWANT,
@@ -1189,5 +1189,58 @@ export default function applicationManagerTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   test_requestExemptionResource_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_REQUESTEXEMPTIONRESOURCE_NO_PERMISSION_JS_0100
+     * @tc.desc   test requestExemptionResource with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_requestExemptionResource_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.requestExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME, 3600);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(201);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_releaseExemptionResource_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_RELEASEEXEMPTIONRESOURCE_NO_PERMISSION_JS_0100
+     * @tc.desc   test releaseExemptionResource with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_releaseExemptionResource_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        applicationManager.releaseExemptionResource(
+          applicationManager.StandbyResourceType.NETWORK, TEST_BUNDLENAME);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(201);
+        }
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+    
   })
 }

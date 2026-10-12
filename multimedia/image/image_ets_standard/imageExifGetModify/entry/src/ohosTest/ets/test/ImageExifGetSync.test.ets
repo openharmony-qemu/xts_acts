@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, it, expect, afterEach, Level } from '@ohos/hypium';
+import { describe, it, expect, afterEach, Level } from '@ohos/hypium-dynamic';
 import image from '@ohos.multimedia.image';
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs';

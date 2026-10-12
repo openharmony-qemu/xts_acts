@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, it, expect, beforeAll, afterAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, afterAll, Level } from '@ohos/hypium-dynamic';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { fileIo } from '@kit.CoreFileKit';
 import { inferenceImage, InferenceResult, clearModelBufferCache } from './util/InferenceUtil';

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Level, TestType, Size} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Level, TestType, Size} from '@ohos/hypium-dynamic';
 import observer from '@ohos.telephony.observer';
 import data from '@ohos.telephony.data';
 import sim from '@ohos.telephony.sim';

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc, { RectValue } from "../../../MainAbility/common/Common";
 import {
@@ -32,6 +32,8 @@ import {
   UiDirection,
   MouseButton
 } from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function swiperDisableSwipeTrue() {
   describe('swiperDisableSwipeTest', () => {
@@ -88,14 +90,9 @@ export default function swiperDisableSwipeTrue() {
       expect(disableTrue.bottom).assertEqual(disableTrue01.bottom);
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      //await driver.swipe(250, 230, 200, 230);
+      //await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
       let swipeRect:RectValue = CommonFunc.getComponentRectOnScreen('disableTrue')
-      await driver.swipe(
-        Number.parseInt(`${(swipeRect.right - swipeRect.left) * 0.8 + swipeRect.left}`),
-        Number.parseInt(`${(swipeRect.bottom - swipeRect.top) * 0.5 + swipeRect.top}`),
-        Number.parseInt(`${(swipeRect.right - swipeRect.left) * 0.1 + swipeRect.left}`),
-        Number.parseInt(`${(swipeRect.bottom - swipeRect.top) * 0.5 + swipeRect.top}`),
-        1000);
+      await driver.swipeBetween({ x: Number.parseInt(`${(swipeRect.right - swipeRect.left) * 0.8 + swipeRect.left}`), y: Number.parseInt(`${(swipeRect.bottom - swipeRect.top) * 0.5 + swipeRect.top}`), displayId: displayID }, { x: Number.parseInt(`${(swipeRect.right - swipeRect.left) * 0.1 + swipeRect.left}`), y: Number.parseInt(`${(swipeRect.bottom - swipeRect.top) * 0.5 + swipeRect.top}`), displayId: displayID }, 1000);
       await CommonFunc.sleep(1000);
       disableTrue01 = CommonFunc.getComponentRectOnScreen('disableTrue01');
       disableTrue02 = CommonFunc.getComponentRectOnScreen('disableTrue02');

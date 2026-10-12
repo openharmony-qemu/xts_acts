@@ -14,7 +14,7 @@
  */
 
 import { PlainArray } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 const VALID_VALUES: Array<Array<number>> = [
   [1, 2, 3], [0, -1], [Number.MAX_SAFE_INTEGER], [], [1, 2, 3],
 ];

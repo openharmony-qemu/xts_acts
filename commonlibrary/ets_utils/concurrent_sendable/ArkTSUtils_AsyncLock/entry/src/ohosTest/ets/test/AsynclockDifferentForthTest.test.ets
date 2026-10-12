@@ -174,7 +174,7 @@ export default function AsynclockDifferentForthTest() {
             console.error('taskpool execute failed: ', error);
           });
         }
-        while (count != 3) {
+        while (count != 3 || count1 != 3) {
           await sleep(300);
         }
         console.log('Success execution count:' + count);

@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Level, Size} from "@ohos/hypium"
+import { describe, it, expect, TestType, Level, Size} from "@ohos/hypium-dynamic"
 import { batteryInfo, BusinessError, systemDateTime } from "@kit.BasicServicesKit"
 import { systemTimer } from '@kit.BasicServicesKit';
 import { inputMethod } from '@kit.IMEKit';
@@ -303,8 +303,8 @@ export default function optionalSystemCapability() {
     it('testJPEGPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
       try {
-        let context = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
-        const entryContext = await application.createModuleContext(context.context, 'entry');
+        let context = await AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        const entryContext = await application.createModuleContext(context, 'entry');
         let img = await entryContext.resourceManager.getMediaContent($r('app.media.startIcon'));
         let imageSource:image.ImageSource = image.createImageSource(img.buffer.slice(0));
         let decodingOptions : image.DecodingOptions = {
@@ -338,8 +338,8 @@ export default function optionalSystemCapability() {
     it('testPNGPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
       try {
-        let context = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
-        const entryContext = await application.createModuleContext(context.context, 'entry');
+        let context = await AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        const entryContext = await application.createModuleContext(context, 'entry');
         let img = await entryContext.resourceManager.getMediaContent($r('app.media.startIcon'));
         let imageSource:image.ImageSource = image.createImageSource(img.buffer.slice(0));
         let decodingOptions : image.DecodingOptions = {
@@ -374,8 +374,8 @@ export default function optionalSystemCapability() {
     it('testWEBPPacker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(`${TAG}, testPNGPacker start`);
       try {
-        let context = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility();
-        const entryContext = await application.createModuleContext(context.context, 'entry');
+        let context = await AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
+        const entryContext = await application.createModuleContext(context, 'entry');
         let img = await entryContext.resourceManager.getMediaContent($r('app.media.startIcon'));
         let imageSource:image.ImageSource = image.createImageSource(img.buffer.slice(0));
         let decodingOptions : image.DecodingOptions = {

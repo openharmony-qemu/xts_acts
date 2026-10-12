@@ -13,15 +13,14 @@
  * limitations under the License.
  */
 
-import Ability from '@ohos.app.ability.UIAbility';
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
-import { AbilityConstant, Want } from '@kit.AbilityKit';
 
 const TAG: string = '[createWindow]'
 
-export default class MainAbility extends Ability {
+export default class MainAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
     console.log(`${TAG} MainAbility onCreate`);
@@ -39,7 +38,20 @@ export default class MainAbility extends Ability {
     console.log(`${TAG} MainAbility onWindowStageCreate windowStage=` + windowStage);
     globalThis.windowStage = windowStage;
     globalThis.context = this.context;
-    windowStage.loadContent('MainAbility/pages/XTSIndex', null);
+    let mainWindow: window.Window = windowStage.getMainWindowSync();
+    let promise1 = mainWindow.getProperties();
+    promise1.then((data) => {
+      console.info('当前屏幕ID' + data.displayId);
+      AppStorage.setOrCreate('displayID',data.displayId);
+    }).catch((err: BusinessError) => {
+    });
+    windowStage.loadContent('MainAbility/pages/XTSIndex', (err, data) => {
+      if (err) {
+        hilog.error(0x0000, 'testTag', `Failed to load the content. Code: ${err.code}, message: ${err.message}.`);
+        return;
+      }
+      hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data)}.`);
+    });
     let windowClass: window.Window | undefined = undefined;
     windowStage.getMainWindow((err: BusinessError, data) => {
       let errCode: number = err.code;

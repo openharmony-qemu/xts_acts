@@ -49,6 +49,7 @@ function defaultStrokeWidth(sysWidth: Resource) {
   let newStrokeWidth: string = Math.round(px2vp(resourceStrokeWidth)) + '.00vp'
   return newStrokeWidth;
 }
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function sliderJsunitSliderTest() {
     describe("sliderJsunitSliderTestSliderTest", () => {
         beforeEach(async (done: Function) => {
@@ -473,7 +474,7 @@ export default function sliderJsunitSliderTest() {
                 let y = Math.round(top + (bottom - top) / 2)
 
                 await driver.delayMs(waitUiReadyMs)
-                await driver.swipe(x,y,right,y)
+                await driver.swipeBetween({ x: x, y: y, displayId: displayID }, { x: right, y: y, displayId: displayID })
 
                 await driver.delayMs(waitUiReadyMs)
                 let strJson = getInspectorByKey("tex")

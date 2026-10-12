@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach } from '@ohos/hypium-dynamic'
 import nativerenderndk from 'libnoderenderndk.so'
 import Utils from '../common/Utils';
 import { ON } from '@kit.TestKit';

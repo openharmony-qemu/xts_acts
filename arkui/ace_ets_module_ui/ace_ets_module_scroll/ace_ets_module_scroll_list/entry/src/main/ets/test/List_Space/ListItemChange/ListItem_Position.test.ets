@@ -114,7 +114,9 @@ export default function listItem_Position() {
       expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       
       let driver = Driver.create();
-      await driver.swipe(360, 690, 360, 30);
+      let swipeComponent = await driver.findComponent(ON.id('ListItemPosition1'));
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween({ x: 360, y: 690, displayId: displayId }, { x: 360, y: 30, displayId: displayId });
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest54');
       expect(locationText4.top).assertEqual(locationText4Again.top);
       console.info('new testListItemPosition END');

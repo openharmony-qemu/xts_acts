@@ -44,6 +44,39 @@ export default function nearLinkManagerTest(): void {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterAll');
     })
     /**
+     * @tc.name SUB_Communication_XTS_NearLink_Manager_Enum_static_0100
+     * @tc.number SUB_Communication_XTS_NearLink_Manager_Enum_0100
+     * @tc.desc NearlinkState enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Manager_Enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Manager_Enum_static_0100';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let STATE_TURNING_ON: manager.NearlinkState = manager.NearlinkState.STATE_TURNING_ON;
+          hilog.info(0x0000, 'testTag', '%{public}s STATE_TURNING_ON result: %{public}d', caseName, STATE_TURNING_ON);
+          expect(STATE_TURNING_ON).assertEqual(0);
+          let STATE_ON: manager.NearlinkState = manager.NearlinkState.STATE_ON;
+          hilog.info(0x0000, 'testTag', '%{public}s STATE_ON result: %{public}d', caseName, STATE_ON);
+          expect(STATE_ON).assertEqual(1);
+          let STATE_TURNING_OFF: manager.NearlinkState = manager.NearlinkState.STATE_TURNING_OFF;
+          hilog.info(0x0000, 'testTag', '%{public}s STATE_TURNING_OFF result: %{public}d', caseName, STATE_TURNING_OFF);
+          expect(STATE_TURNING_OFF).assertEqual(2);
+          let STATE_OFF: manager.NearlinkState = manager.NearlinkState.STATE_OFF;
+          hilog.info(0x0000, 'testTag', '%{public}s STATE_OFF result: %{public}d', caseName, STATE_OFF);
+          expect(STATE_OFF).assertEqual(3);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s NearlinkState error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLink_Manager_static_0100
      * @tc.number SUB_Communication_XTS_NearLink_Manager_0100
      * @tc.desc  createPort normal test

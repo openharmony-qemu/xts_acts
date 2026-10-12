@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, PointerMatrix, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function gestureListenerTest() {
   describe('GestureListenerTest', () => {
     beforeEach(async (done: Function) => {
@@ -103,9 +104,9 @@ export default function gestureListenerTest() {
       let w = rect.right - rect.left
       let h = rect.bottom - rect.top
       let speed = Math.floor(w * 0.6 / 0.016 / 1000) * 1000
-      await driver.swipe(
-        Math.round(rect.left + w * 0.8), Math.round(rect.top + h / 2),
-        Math.round(rect.left + w * 0.2), Math.round(rect.top + h / 2), speed)
+      await driver.swipeBetween(
+        {x: Math.round(rect.left + w * 0.8), y: Math.round(rect.top + h / 2), displayId: displayID},
+        {x: Math.round(rect.left + w * 0.2), y: Math.round(rect.top + h / 2), displayId: displayID}, speed)
       await CommonFunc.sleep(1000)
       let swipeResult: string = AppStorage.get<string>('swipeCallback') ?? ''
       console.info('[gestureListener_swipe_0100] after add: ' + swipeResult)
@@ -114,9 +115,9 @@ export default function gestureListenerTest() {
       await removeBtn.click()
       await CommonFunc.sleep(500)
       AppStorage.setOrCreate('swipeCallback', '')
-      await driver.swipe(
-        Math.round(rect.left + w * 0.8), Math.round(rect.top + h / 2),
-        Math.round(rect.left + w * 0.2), Math.round(rect.top + h / 2), speed)
+      await driver.swipeBetween(
+        {x: Math.round(rect.left + w * 0.8), y: Math.round(rect.top + h / 2), displayId: displayID},
+        {x: Math.round(rect.left + w * 0.2), y: Math.round(rect.top + h / 2), displayId: displayID}, speed)
       await CommonFunc.sleep(1000)
       let swipeResult2: string = AppStorage.get<string>('swipeCallback') ?? ''
       console.info('[gestureListener_swipe_0100] after remove: ' + swipeResult2)
@@ -142,7 +143,7 @@ export default function gestureListenerTest() {
       let rect = CommonFunc.getComponentRectOnScreen('longPressTarget')
       let w = rect.right - rect.left
       let h = rect.bottom - rect.top
-      await driver.longClick(Math.round(rect.left + w / 2), Math.round(rect.top + h / 2))
+      await driver.longClickAt({x: Math.round(rect.left + w / 2), y: Math.round(rect.top + h / 2), displayId: displayID})
       await CommonFunc.sleep(2000)
       let longPressResult: string = AppStorage.get<string>('longPressCallback') ?? ''
       console.info('[gestureListener_longpress_0100] after add: ' + longPressResult)
@@ -173,10 +174,10 @@ export default function gestureListenerTest() {
       let w = rect.right - rect.left
       let h = rect.bottom - rect.top
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
-      pointers.setPoint(0, 0, { x: Math.round(rect.left + w * 0.5), y: Math.round(rect.top + h * 0.5) });
-      pointers.setPoint(0, 1, { x: Math.round(rect.left + w * 0.7), y: Math.round(rect.top + h * 0.5) });
-      pointers.setPoint(1, 0, { x: Math.round(rect.right - w * 0.5), y: Math.round(rect.top + h * 0.5) });
-      pointers.setPoint(1, 1, { x: Math.round(rect.right - w * 0.7), y: Math.round(rect.top + h * 0.5) });
+      pointers.setPoint(0, 0, { x: Math.round(rect.left + w * 0.5), y: Math.round(rect.top + h * 0.5), displayId: displayID });
+      pointers.setPoint(0, 1, { x: Math.round(rect.left + w * 0.7), y: Math.round(rect.top + h * 0.5), displayId: displayID });
+      pointers.setPoint(1, 0, { x: Math.round(rect.right - w * 0.5), y: Math.round(rect.top + h * 0.5), displayId: displayID });
+      pointers.setPoint(1, 1, { x: Math.round(rect.right - w * 0.7), y: Math.round(rect.top + h * 0.5), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(2000)
       let pinchResult: string = AppStorage.get<string>('pinchCallback') ?? ''
@@ -206,11 +207,16 @@ export default function gestureListenerTest() {
       await addBtn.click()
       await CommonFunc.sleep(500)
       let rect = CommonFunc.getComponentRectOnScreen('rotationTarget')
+      let w = rect.right - rect.left
+      let h = rect.bottom - rect.top
+      let cx = Math.round(rect.left + w / 2)
+      let cy = Math.round(rect.top + h / 2)
+      let r = Math.round(Math.min(w, h) * 0.2)
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
-      pointers.setPoint(0, 0, { x: Math.round(rect.left), y: Math.round(rect.top) });
-      pointers.setPoint(0, 1, { x: Math.round(rect.right), y: Math.round(rect.top) });
-      pointers.setPoint(1, 0, { x: Math.round(rect.right), y: Math.round(rect.bottom) });
-      pointers.setPoint(1, 1, { x: Math.round(rect.left), y: Math.round(rect.bottom) });
+      pointers.setPoint(0, 0, { x: cx, y: cy - r, displayId: displayID });
+      pointers.setPoint(0, 1, { x: cx + r, y: cy, displayId: displayID });
+      pointers.setPoint(1, 0, { x: cx, y: cy + r, displayId: displayID });
+      pointers.setPoint(1, 1, { x: cx - r, y: cy, displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(2000)
       let rotationResult: string = AppStorage.get<string>('rotationCallback') ?? ''
@@ -241,20 +247,21 @@ export default function gestureListenerTest() {
       let rect = CommonFunc.getComponentRectOnScreen('panTarget')
       let w = rect.right - rect.left
       let h = rect.bottom - rect.top
-      await driver.swipe(
-        Math.round(rect.left + w * 0.8), Math.round(rect.top + h / 2),
-        Math.round(rect.left + w * 0.2), Math.round(rect.top + h / 2))
+      let speed = Math.floor(w * 0.6 / 0.016 / 1000) * 1000
+      await driver.swipeBetween(
+        {x: Math.round(rect.left + w * 0.8), y: Math.round(rect.top + h / 2), displayId: displayID},
+        {x: Math.round(rect.left + w * 0.2), y: Math.round(rect.top + h / 2), displayId: displayID}, speed)
       await CommonFunc.sleep(1000)
       let panResult: string = AppStorage.get<string>('panCallback') ?? ''
       console.info('[gestureListener_pan_0100] after add: ' + panResult)
       expect(panResult === 'triggered').assertTrue()
       let removeBtn = await driver.findComponent(ON.text('移除全部监听'))
       await removeBtn.click()
-      await CommonFunc.sleep(500)
+      await CommonFunc.sleep(2000)
       AppStorage.setOrCreate('panCallback', '')
-      await driver.swipe(
-        Math.round(rect.left + w * 0.8), Math.round(rect.top + h / 2),
-        Math.round(rect.left + w * 0.2), Math.round(rect.top + h / 2))
+      await driver.swipeBetween(
+        {x: Math.round(rect.left + w * 0.8), y: Math.round(rect.top + h / 2), displayId: displayID},
+        {x: Math.round(rect.left + w * 0.2), y: Math.round(rect.top + h / 2), displayId: displayID}, speed)
       await CommonFunc.sleep(1000)
       let panResult2: string = AppStorage.get<string>('panCallback') ?? ''
       console.info('[gestureListener_pan_0100] after remove: ' + panResult2)

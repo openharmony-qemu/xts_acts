@@ -15,12 +15,13 @@
 
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { fileIo } from '@kit.CoreFileKit';
 import fs from '@ohos.file.fs';
 
 const TAG = 'packBinaryImageToTiffSupp';
 let fdNumber: number;
+let isSupportTiff: Boolean;
 
 const IMAGE_ERR_INVALID_PARAM = 7800202;
 
@@ -45,6 +46,8 @@ export default function packBinaryImageToTiffTest() {
 
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
+      isSupportTiff = image.getImageSourceSupportedFormats().includes("image/tiff");
+      console.info(TAG, ' isSupportTiff is ' + isSupportTiff);
     });
 
     beforeEach(() => {
@@ -68,6 +71,11 @@ export default function packBinaryImageToTiffTest() {
      * @tc.level      Level 0
      */
     it('SUB_MEDIA_IMAGE_packBinaryImageToTiffFile_0100', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportTiff) {
+        console.info("device is not support tiff");
+        done();
+        return;
+      }
       const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffFile_0100';
       const width = 100;
       const height = 100;
@@ -267,6 +275,11 @@ export default function packBinaryImageToTiffTest() {
      * @tc.level      Level 0
      */
     it('SUB_MEDIA_IMAGE_packBinaryImageToTiffFile_0600', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportTiff) {
+        console.info("device is not support tiff");
+        done();
+        return;
+      }
       const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffFile_0600';
       const width = 100;
       const height = 100;
@@ -307,6 +320,11 @@ export default function packBinaryImageToTiffTest() {
      * @tc.level      Level 0
      */
     it('SUB_MEDIA_IMAGE_packBinaryImageToTiffFile_0700', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportTiff) {
+        console.info("device is not support tiff");
+        done();
+        return;
+      }
       const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffFile_0700';
       const width = 100;
       const height = 100;
@@ -347,6 +365,11 @@ export default function packBinaryImageToTiffTest() {
      * @tc.level      Level 0
      */
     it('SUB_MEDIA_IMAGE_packBinaryImageToTiffData_0100', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportTiff) {
+        console.info("device is not support tiff");
+        done();
+        return;
+      }
       const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffData_0100';
       const width = 100;
       const height = 100;
@@ -451,6 +474,11 @@ export default function packBinaryImageToTiffTest() {
      * @tc.level      Level 0
      */
     it('SUB_MEDIA_IMAGE_packBinaryImageToTiffData_0400', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportTiff) {
+        console.info("device is not support tiff");
+        done();
+        return;
+      }
       const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffData_0400';
       const width = 100;
       const height = 100;
@@ -485,6 +513,11 @@ export default function packBinaryImageToTiffTest() {
      * @tc.level      Level 0
      */
     it('SUB_MEDIA_IMAGE_packBinaryImageToTiffData_0500', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportTiff) {
+        console.info("device is not support tiff");
+        done();
+        return;
+      }
       const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffData_0500';
       const width = 100;
       const height = 100;

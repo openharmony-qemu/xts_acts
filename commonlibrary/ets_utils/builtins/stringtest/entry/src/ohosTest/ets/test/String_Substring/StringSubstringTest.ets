@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { testMixedTypes, testExtremeValues } from './substring_combine_test';
 import { testStringObject, testNumberThis, testBooleanThis, testObjectThis, testFloatThis } from './substring_conversion_test';
 import { testNaN, testInfinity, testNull, testBoolean, testStringNumeric, testStringNonNumeric } from './substring_special_test';

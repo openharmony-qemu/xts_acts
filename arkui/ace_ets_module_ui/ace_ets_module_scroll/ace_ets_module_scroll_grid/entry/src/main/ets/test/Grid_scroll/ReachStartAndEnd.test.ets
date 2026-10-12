@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
@@ -65,14 +65,21 @@ export default function ReachStartAndEnd() {
      */
     it('Grid_ReachStartAndEnd_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd_0100] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_grid')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
-        1000);
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ReachStartAndEnd_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('Grid_ReachStartAndEnd_tex2')
@@ -80,12 +87,17 @@ export default function ReachStartAndEnd() {
       console.info("[Grid_ReachStartAndEnd_0100] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)))
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('onReachEnd');
 
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
-        1000);
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson2 = getInspectorByKey('Grid_ReachStartAndEnd_tex1')
@@ -107,15 +119,19 @@ export default function ReachStartAndEnd() {
      */
     it('Grid_ReachStartAndEnd_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd_0600] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_grid')
       let driver = Driver.create()
+      let gridRectComponent = await driver.findComponent(ON.id('Grid_ReachStartAndEnd_grid'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
+        displayId: displayId
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+          displayId: displayId
         }, 5, 4000);
       await CommonFunc.sleep(2000);
 

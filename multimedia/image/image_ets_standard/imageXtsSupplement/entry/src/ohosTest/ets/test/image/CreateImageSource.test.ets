@@ -16,7 +16,7 @@
 import common from '@ohos.app.ability.common';
 import { image } from '@kit.ImageKit';
 import fs from '@ohos.file.fs';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { JSON } from '@kit.ArkTS';
 
 const TAG = 'xts.CreateImageSourceSuppTest';

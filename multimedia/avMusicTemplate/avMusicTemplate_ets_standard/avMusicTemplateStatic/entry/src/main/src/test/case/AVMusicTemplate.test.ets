@@ -2032,5 +2032,129 @@ export default function avMusicTemplateTest() {
           done();
         }
       })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_STATIC_6200
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_STATIC_6200
+     * @tc.desc   Testing on custom command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_CUSTOM_COMMAND_STATIC_6200',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          });
+          await CommonUtils.msSleep();
+          const command = 'commandTest';
+          const args = 'argsTest';
+          let res: avMusicTemplate.OperResult = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `6200: res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "ON_CUSTOM_COMMAND_STATIC_6200 catch err: " + CommonUtils.getError(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_STATIC_6300
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_STATIC_6300
+     * @tc.desc   Testing off custom command
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_OFF_CUSTOM_COMMAND_STATIC_6300',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          template!.onCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          });
+          await CommonUtils.msSleep();
+          const command = 'commandTest';
+          const args = 'argsTest';
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand(command, args);
+          CommonUtils.logInfo(TAG, `6300: res=${JSON.stringify(res)}`);
+          expect(res!.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
+          template!.offCustomCommand(async (command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          });
+          await CommonUtils.msSleep();
+          CommonUtils.logInfo(TAG, `6300: after off res=${JSON.stringify(res)}`);
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "OFF_CUSTOM_COMMAND_STATIC_6300 catch err: " + CommonUtils.getError(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_CUSTOM_COMMAND_EVENT_STATIC_6400
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_CUSTOM_COMMAND_EVENT_STATIC_6400
+     * @tc.desc   Testing custom command event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_CUSTOM_COMMAND_EVENT_STATIC_6400',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          let receivedCommand = '';
+          let receivedArgs = '';
+          let callback: avMusicTemplate.CustomCommandEvent = async(command: string, args: string): Promise<avMusicTemplate.OperResult> => {
+            receivedCommand = command;
+            receivedArgs = args;
+            let data: avMusicTemplate.OperResult = { errorCode: CommonConstants.SUCCESS_CODE, errorMsg: '' };
+            return data;
+          };
+          template!.onCustomCommand(callback);
+          await CommonUtils.msSleep();
+          let res: avMusicTemplate.OperResult | undefined = await controller!.sendCustomCommand('testCmd', 'testArgs');
+          CommonUtils.logInfo(TAG, `6400: res=${JSON.stringify(res)}, receivedCommand=${receivedCommand}, receivedArgs=${receivedArgs}`);
+          expect(res!.errorCode).assertEqual(CommonConstants.SUCCESS_CODE);
+          expect(receivedCommand).assertEqual('testCmd');
+          expect(receivedArgs).assertEqual('testArgs');
+          template!.offCustomCommand();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "CUSTOM_COMMAND_EVENT_STATIC_6400 catch err: " + CommonUtils.getError(err));
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_OFF_PLAY_STATIC_MEDIAENTITY_6500
+     * @tc.number SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_OFF_PLAY_STATIC_MEDIAENTITY_6500
+     * @tc.desc   Testing onPlayMediaEntity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_OFF_PLAY_STATIC_MEDIAENTITY_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+     async (done: () => void): Promise<void> => {
+        try {
+          let callback: avMusicTemplate.NoParamAsyncCallback = async() => {
+            CommonUtils.logInfo(TAG, `callback`);
+          }
+          template!.onPlayMediaEntity(callback);
+          await CommonUtils.msSleep();
+          template!.offPlayMediaEntity();
+          done();
+        } catch (err) {
+          CommonUtils.logError(TAG, "SUB_MULTIMEDIA_AVMUSICTEMPLATE_ON_OFF_PLAY_STATIC_MEDIAENTITY_6500 catch err: " + CommonUtils.getError(err));
+          expect().assertFail();
+        }
+      })
   })
 }

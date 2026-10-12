@@ -13,31 +13,47 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
-import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
+import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function DialogBaseSizeBorder() {
   describe('DialogBaseSizeBorder', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] DialogBaseSizeBorder beforeEach');
-      await DialogApi26TestHelper.openPageIfNeeded('DialogBaseSizeBorder', 'MainAbility/pages/dialog/DialogBaseSizeBorder');
+      let options: router.RouterOptions = { url: 'MainAbility/pages/dialog/DialogBaseSizeBorder' };
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (pages.name !== 'DialogBaseSizeBorder') {
+          await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
+      } catch (err) {
+        console.error('[ARKUI_DYN] push DialogBaseSizeBorder error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
 
     afterEach(async () => {
+      await CommonFunc.sleep(800);
+      try {
+        let driver = await Driver.create();
+        await driver.pressBack(displayID);
+      } catch (e) {
+        console.info('[ARKUI_DYN] pressBack skip');
+      }
       console.info('[ARKUI_DYN] DialogBaseSizeBorder afterEach');
-    });
-
-    afterAll(async () => {
-      await DialogApi26TestHelper.leavePage();
-      console.info('[ARKUI_DYN] DialogBaseSizeBorder afterAll');
     });
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0100
      * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0100
-     * @tc.desc DialogBaseSizeBorder matrix scan (12 steps)
+     * @tc.desc width percent Dimension
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level 2
@@ -45,68 +61,352 @@ export default function DialogBaseSizeBorder() {
     it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0100 START');
       let driver = await Driver.create();
-
-      // step 1: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0100
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_width_pct');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'WidthPctTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'WidthPctOK');
-
-      // step 2: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0200
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_width_num');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'WidthNumTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'WidthNumOK');
-
-      // step 3: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0300
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_height');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'HeightTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'HeightOK');
-
-      // step 4: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0400
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_bw');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'BWTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'BWOK');
-
-      // step 5: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0500
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_br');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'BRTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'BROK');
-
-      // step 6: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0600
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_bs');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'BSTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'BSOK');
-
-      // step 7: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0700
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_offset');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'OffsetTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'OffsetOK');
-
-      // step 8: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0800
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_mask');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'MaskColorTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'MaskColorOK');
-
-      // step 9: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0900
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_ac');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'ACTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'ACOK');
-
-      // step 10: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1000
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_focusable');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'FocusableTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'FocusableOK');
-
-      // step 11: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1100
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_kbd');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'KbdTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'KbdOK');
-
-      // step 12: SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1200
-      await DialogApi26TestHelper.clickId(driver, 'btn_size_shadow');
-      await DialogApi26TestHelper.expectTextVisible(driver, 'ShadowTitle');
-      await DialogApi26TestHelper.dismissByText(driver, 'ShadowOK');
-
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_width_pct'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('WidthPctTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('WidthPctOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('WidthPctOK') >= 0).assertTrue();
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0100 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0200
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0200
+     * @tc.desc width number Dimension
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0200 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_width_num'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('WidthNumTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('WidthNumOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('WidthNumOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0200 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0300
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0300
+     * @tc.desc height Dimension
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0300', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0300 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_height'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('HeightTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('HeightOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('HeightOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0300 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0400
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0400
+     * @tc.desc borderWidth borderColor
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0400', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0400 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_bw'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('BWTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('BWOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('BWOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0400 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0500
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0500
+     * @tc.desc borderRadius
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0500', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0500 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_br'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('BRTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('BROK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('BROK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0500 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0600
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0600
+     * @tc.desc borderStyle Dashed
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0600', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0600 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_bs'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('BSTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('BSOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('BSOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0600 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0700
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0700
+     * @tc.desc offset dx dy
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0700', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0700 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_offset'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('OffsetTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('OffsetOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('OffsetOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0700 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0800
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0800
+     * @tc.desc maskColor
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0800', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0800 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_mask'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('MaskColorTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('MaskColorOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('MaskColorOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0800 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0900
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0900
+     * @tc.desc autoCancel false
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0900', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0900 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_ac'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('ACTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('ACOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('ACOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_0900 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1000
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1000
+     * @tc.desc focusable false
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1000', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1000 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_focusable'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('FocusableTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('FocusableOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('FocusableOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1000 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1100
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1100
+     * @tc.desc keyboardAvoidMode Distance
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1100', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1100 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_kbd'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('KbdTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('KbdOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('KbdOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1100 END');
+      done();
+    });
+
+    /**
+     * @tc.number SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1200
+     * @tc.name SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1200
+     * @tc.desc shadow ShadowStyle
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level 2
+     */
+    it('SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1200', Level.LEVEL2, async (done: Function) => {
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1200 START');
+      let driver = await Driver.create();
+      await CommonFunc.sleep(800);
+      let btn = await driver.findComponent(ON.id('btn_size_shadow'));
+      expect(btn !== null).assertTrue();
+      await btn.click();
+      await CommonFunc.sleep(1200);
+      let node = await driver.findComponent(ON.text('ShadowTitle'));
+      expect(node !== null).assertTrue();
+      let act = await driver.findComponent(ON.text('ShadowOK'));
+      expect(act !== null).assertTrue();
+      await act.click();
+      await CommonFunc.sleep(800);
+      let label = await driver.findComponent(ON.id('size_border_action'));
+      expect(label !== null).assertTrue();
+      let txt = await label.getText();
+      expect(txt.indexOf('ShadowOK') >= 0).assertTrue();
+      console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_DialogBaseSizeBorder_1200 END');
       done();
     });
 

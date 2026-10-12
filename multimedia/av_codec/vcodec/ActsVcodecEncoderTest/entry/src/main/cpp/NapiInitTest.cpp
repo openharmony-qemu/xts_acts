@@ -192,6 +192,8 @@ static void InitPush2(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("VideoEncodeFunction1800Test", VideoEncodeFunction1800Test));
     desc.push_back(XL("VideoEncodeFunction2000Test", VideoEncodeFunction2000Test));
     desc.push_back(XL("VideoEncodeFunction1900Test", VideoEncodeFunction1900Test));
+    desc.push_back(XL("VideoEncoder264DmabufSuffix0010", VideoEncoder264DmabufSuffix0010));
+    desc.push_back(XL("VideoEncoder265DmabufSuffix0010", VideoEncoder265DmabufSuffix0010));
 }
 
 static void InitPush3(std::vector<napi_property_descriptor> &desc)

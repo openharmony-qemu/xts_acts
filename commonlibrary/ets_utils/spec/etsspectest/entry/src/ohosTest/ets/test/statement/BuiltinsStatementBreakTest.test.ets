@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from "@ohos/hypium";
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Level, Size } from "@ohos/hypium-dynamic";
 import { sleep } from "../../testability/pages/Utils";
 
 
@@ -820,9 +820,9 @@ export default function BuiltinsStatementBreakTest() {
     it('BuiltinsStatementBreakTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let isAllConditionsMet = false;
       outer: {
-        let outerCondition1 = Math.random() > 0.5;
+        let outerCondition1 = true;
         let outerCondition2 = false;
-        let outerCondition3 = Math.random() < 0.4;
+        let outerCondition3 = true;
         if (outerCondition1) {
           outerCondition2 = true;
         }
@@ -831,8 +831,8 @@ export default function BuiltinsStatementBreakTest() {
           console.log('All outer conditions are true. Entering middle block.');
           outer1: {
             let middleCondition1 = false;
-            let middleCondition2 = Math.random() < 0.3;
-            let middleCondition3 = Math.random() > 0.6;
+            let middleCondition2 = true;
+            let middleCondition3 = true;
             if (middleCondition2) {
               middleCondition1 = true;
             }
@@ -843,9 +843,9 @@ export default function BuiltinsStatementBreakTest() {
               outer2: {
                 let innerCondition1 = true;
                 let innerCondition2 = false;
-                let innerCondition3 = Math.random() < 0.2;
+                let innerCondition3 = false;
                 if (innerCondition1) {
-                  innerCondition2 = Math.random() > 0.7;
+                  innerCondition2 = false;
                 }
                 console.log(`Inner Condition 1: ${innerCondition1}, Inner Condition 2: ${innerCondition2}, Inner Condition 3: ${innerCondition3}`);
                 if (innerCondition1 && innerCondition2 && innerCondition3) {
@@ -888,9 +888,9 @@ export default function BuiltinsStatementBreakTest() {
           console.log(`  Middle loop iteration: ${j}`);
           innerLoop: for (let k = 0; k < 5; k++) {
             console.log(`    Inner loop iteration: ${k}`);
-            const condition1 = Math.random() > 0.7;
-            const condition2 = Math.random() < 0.3;
-            const condition3 = Math.random() > 0.5;
+            const condition1 = (i === 1 && j === 2 && k === 1);
+            const condition2 = (i === 2 && j === 3 && k === 0);
+            const condition3 = (i === 3 && j === 4 && k === 2);
             if (condition1) {
               console.log('Condition 1 met, breaking inner loop');
               break innerLoop;

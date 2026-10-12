@@ -6,7 +6,7 @@
         "shell-timeout": "600000",
         "bundle-name": "com.example.OHImageNdkSupplement",
         "module-name": "entry_test",
-	    "testcase-timeout": "180000"
+        "testcase-timeout": "180000"
     },
     "kits": [
         {
@@ -18,13 +18,28 @@
             "cleanup-apps": true
         },
         {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/image/test_exif_v2.jpg ->/data/local/tmp/",
+                "./resource/image/4K-2160x3840.avif ->/data/local/tmp/",
+                "./resource/image/test_exif_v3.jpg ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./resource/image/test8.bmp ->/data/local/tmp/",
+                "./resource/image/test_exif_v2.png ->/data/local/tmp/",
+                "./resource/image/test_exif_v3.heic ->/data/local/tmp/",
+                "./resource/image/test_exif_v2.heic ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_imageNDKSupplement_test.sh ->/data/local/tmp/"
+            ]
+        },
+        {
             "type": "ShellKit",
             "run-command": [
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
                 "power-shell setmode 602",
-                "mkdir -p /data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files/",
-                "chmod -R 666 /data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files/*"
+                "chmod 755 /data/local/tmp/setup_image_imageNDKSupplement_test.sh",
+                "sh /data/local/tmp/setup_image_imageNDKSupplement_test.sh"
             ],
             "teardown-command": [
                 "power-shell setmode 600",
@@ -32,20 +47,6 @@
                 "kill -9 `pidof com.example.OHImageNdkSupplement`",
                 "scanner",
                 "sleep 5"
-            ]
-        },
-        {
-            "type": "PushKit",
-            "pre-push": [],
-            "push": [
-                "./resource/image/test_exif_v2.jpg ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/4K-2160x3840.avif ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/test_exif_v3.jpg ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/test8.bmp ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/test_exif_v2.png ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/test_exif_v3.heic ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files",
-                "./resource/image/test_exif_v2.heic ->/data/app/el2/100/base/com.example.OHImageNdkSupplement/haps/entry_test/files"
             ]
         }
     ]

@@ -1,5 +1,5 @@
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium-dynamic';
 import { getPermission, driveFn, } from '../common';
 import { JSON } from '@kit.ArkTS';
 import { common } from '@kit.AbilityKit';

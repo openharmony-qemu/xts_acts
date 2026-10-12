@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import {
   fetchOption,
   photoType,

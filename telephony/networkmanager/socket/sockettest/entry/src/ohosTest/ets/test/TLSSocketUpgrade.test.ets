@@ -15,7 +15,7 @@
 
 import { socket } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 
 let smtpServer163: socket.NetAddress = {
   address: "smtp.163.com", port: 25

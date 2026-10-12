@@ -31,6 +31,21 @@ import PromiseThenFirstTest from './PromiseThenFirstTest.test';
 import PromiseThenSecondTest from './PromiseThenSecondTest.test';
 import PromiseThenThirdTest from './PromiseThenThirdTest.test';
 import PromiseThenFourthTest from './PromiseThenFourthTest.test';
+import PromiseConstructorFirstTest from './PromiseConstructorFirstTest.test';
+import PromiseConstructorSecondTest from './PromiseConstructorSecondTest.test';
+import PromiseFulfilledResultTest from './PromiseFulfilledResultTest.test';
+import PromiseLikeInterfaceFirstTest from './PromiseLikeInterfaceFirstTest.test';
+import PromiseLikeInterfaceSecondTest from './PromiseLikeInterfaceSecondTest.test';
+import PromiseLikeThenFirstTest from './PromiseLikeThenFirstTest.test';
+import PromiseLikeThenSecondTest from './PromiseLikeThenSecondTest.test';
+import PromiseRejectFirstTest from './PromiseRejectFirstTest.test';
+import PromiseRejectSecondTest from './PromiseRejectSecondTest.test';
+import PromiseRejectedResultTest from './PromiseRejectedResultTest.test';
+import PromiseResolveFirstTest from './PromiseResolveFirstTest.test';
+import PromiseResolveSecondTest from './PromiseResolveSecondTest.test';
+import PromiseResolveThirdTest from './PromiseResolveThirdTest.test';
+import PromiseSettledResultTest from './PromiseSettledResultTest.test';
+import PromiseStatusTest from './PromiseStatusTest.test';
 
 export default function testsuite(): void {
   PromiseAllFirstTest();
@@ -51,4 +66,19 @@ export default function testsuite(): void {
   PromiseThenSecondTest();
   PromiseThenThirdTest();
   PromiseThenFourthTest();
+  PromiseConstructorFirstTest();
+  PromiseConstructorSecondTest();
+  PromiseFulfilledResultTest();
+  PromiseLikeInterfaceFirstTest();
+  PromiseLikeInterfaceSecondTest();
+  PromiseLikeThenFirstTest();
+  PromiseLikeThenSecondTest();
+  PromiseRejectFirstTest();
+  PromiseRejectSecondTest();
+  PromiseRejectedResultTest();
+  PromiseResolveFirstTest();
+  PromiseResolveSecondTest();
+  PromiseResolveThirdTest();
+  PromiseSettledResultTest();
+  PromiseStatusTest();
 }

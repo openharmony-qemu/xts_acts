@@ -1304,6 +1304,37 @@ export default function JsLeakNewConfigEnableStatic():void {
       }
       console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_5000 end");
     })
-
+    
+    /**
+     * @tc.name   testNewJsLeakWatcher51
+     * @tc.number SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100
+     * @tc.desc   验证enableLeakWatcher接口关闭检测时callback返回空数组
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNewJsLeakWatcher51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 start");
+      try {
+        let config: jsLeakWatcher.LeakWatcherConfig = {monitorObjectTypes: jsLeakWatcher.MonitorObjectType.ALL};
+        jsLeakWatcher.enableLeakWatcher(true, config, (filepath : Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 enable true callback');
+        });
+        await Utils.msSleep(3000);
+        jsLeakWatcher.enableLeakWatcher(false, config, (filepath : Array<string>) => {
+          console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 disable callback invoked, filepath length: ' + filepath.length);
+          expect(filepath.length === 0).assertTrue();
+          done();
+        });
+        await Utils.msSleep(5000);0
+        console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 callback not triggered within timeout');
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_jsLeakWatcherNew_Interface_5100 end");
+    })
   })
 }

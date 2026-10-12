@@ -28,6 +28,7 @@ import UsbApiTransferCompatEtsTest from './UsbApiTransferCompatEtsTest.test';
 import UsbApiDeprecatedEtsTest from './UsbApiDeprecatedEtsTest.test';
 import UsbApiDeprecatedAddEtsTest from './UsbApiDeprecatedAddEtsTest.test';
 import UsbApiInputParaTest from './UsbApiInputParaTest.test';
+import UsbClaimInterfaceExclusiveTest from './UsbClaimInterfaceExclusiveTest.test';
 
 export default function testsuite() {
   UsbSystemApiPermissionTest()
@@ -45,4 +46,5 @@ export default function testsuite() {
   UsbApiDeprecatedEtsTest()
   UsbApiDeprecatedAddEtsTest()
   UsbApiInputParaTest()
+  UsbClaimInterfaceExclusiveTest()
 }

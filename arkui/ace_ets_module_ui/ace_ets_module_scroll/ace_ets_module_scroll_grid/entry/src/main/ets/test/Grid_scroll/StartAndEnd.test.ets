@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -52,27 +52,39 @@ export default function StartAndEnd() {
      */
     it('StartAndEnd_0001',  Level.LEVEL2, async (done: Function) => {
       console.info('[StartAndEnd_0001] START');
-      let gridRect = CommonFunc.getComponentRectOnScreen('StartAndEnd')
       let driver = Driver.create()
+      let gridRectComponent = await driver.findComponent(ON.id('StartAndEnd'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
       await CommonFunc.sleep(1000);
-      await driver.swipe(
-        Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`),
-        Number.parseInt(`${`${`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`}`}`),
-        Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`),
-        Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`),
-        1000);
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`),
+          y: Number.parseInt(`${`${`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`}`}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`}`),
+          y: Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('StartAndEnd_end');
       console.info("[StartAndEnd_0001] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)))
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('onReachEnd');
 
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
-        1000);
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
       let strJson2 = getInspectorByKey('StartAndEnd_start')

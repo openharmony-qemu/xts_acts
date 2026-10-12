@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function tabsCallBack4() {
   describe('tabsCallBack4', () => {
@@ -64,7 +66,7 @@ export default function tabsCallBack4() {
       let height = bottom -top;
       let width = right - left;
       let driver = await Driver.create()
-      await driver.swipe(Math.round(left + width*0.9),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.9), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('tabs_callback_4');
       console.info("[tabsCallBack4_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));

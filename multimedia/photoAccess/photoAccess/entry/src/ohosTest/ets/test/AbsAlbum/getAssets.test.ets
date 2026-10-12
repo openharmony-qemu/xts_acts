@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import {
   albumType,
   albumSubtype,

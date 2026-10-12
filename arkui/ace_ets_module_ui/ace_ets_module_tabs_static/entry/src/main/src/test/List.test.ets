@@ -16,9 +16,11 @@
 import TabsTest from './TabsTest/Tabs.test';
 import tabsBarFloatingStyle from './TabsTest/tabsBarFloatingStyle.test';
 import systemMaterialBarStyle from './TabsTest/systemMaterialBarStyle.test';
+import tabsSidebarStyle from './TabsTest/TabsSidebarStyle.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   TabsTest();
   tabsBarFloatingStyle();
   systemMaterialBarStyle();
+  tabsSidebarStyle();
 }

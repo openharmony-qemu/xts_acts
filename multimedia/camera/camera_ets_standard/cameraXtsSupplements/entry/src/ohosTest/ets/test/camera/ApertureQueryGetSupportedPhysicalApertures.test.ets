@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { camera } from '@kit.CameraKit';
 import { abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';

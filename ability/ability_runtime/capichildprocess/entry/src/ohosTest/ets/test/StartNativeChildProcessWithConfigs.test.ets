@@ -62,7 +62,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0100`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.SetIsolationModeConfigsNullptr();
+        let ret: number = testNapi.SetIsolationModeConfigsNullptr();
         expect(401).assertEqual(ret);
         await sleep(3000);
         done();
@@ -84,7 +84,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0200`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.SetProcessNameConfigsNullptr();
+        let ret: number = testNapi.SetProcessNameConfigsNullptr();
         expect(401).assertEqual(ret);
         await sleep(3000);
         done();
@@ -106,7 +106,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0300`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.SetProcessName("");
+        let ret: number = testNapi.SetProcessName("");
         expect(401).assertEqual(ret);
         await sleep(3000);
         done();
@@ -128,7 +128,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0400`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.SetProcessName("1231fdafqw131fafq2fagfag23KJHKHH68dafagf\
+        let ret: number = testNapi.SetProcessName("1231fdafqw131fafq2fagfag23KJHKHH68dafagf\
                                             123143hnkfhakdafafafaffHJLKJHFALJFLA");
         expect(401).assertEqual(ret);
         await sleep(3000);
@@ -151,7 +151,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0500`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.SetProcessName("abc_123");
+        let ret: number = testNapi.SetProcessName("abc_123");
         expect(0).assertEqual(ret);
         await sleep(3000);
         done();
@@ -173,7 +173,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0600`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.SetProcessName("abc_123([]");
+        let ret: number = testNapi.SetProcessName("abc_123([]");
         expect(401).assertEqual(ret);
         await sleep(3000);
         done();
@@ -195,7 +195,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0700`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.DestroyChildProcessConfigs();
+        let ret: number = testNapi.DestroyChildProcessConfigs();
         expect(0).assertEqual(ret);
         await sleep(3000);
         done();
@@ -217,7 +217,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       let tag = `NativeChildProcessWithConfigs_0800`;
       console.log(`${tag} it begin`);
       try {
-        let ret = testNapi.DestroyChildProcessConfigsNullptr();
+        let ret: number = testNapi.DestroyChildProcessConfigsNullptr();
         expect(401).assertEqual(ret);
         await sleep(3000);
         done();
@@ -330,7 +330,7 @@ export default function startNativeChildProcessWithConfigsTest() {
       try {
         pid = testNapi.StartNativeChildProcessWithConfigs("libentry.so:MainLoop");
         console.log(`${tag} StartNativeChildProcess success, pid: ${pid}`);
-        if(pid == 801 || pid == 16010004){
+        if(pid == 801 || pid == 16010004 || pid == 16010006){
           done();
           return;
         }else{

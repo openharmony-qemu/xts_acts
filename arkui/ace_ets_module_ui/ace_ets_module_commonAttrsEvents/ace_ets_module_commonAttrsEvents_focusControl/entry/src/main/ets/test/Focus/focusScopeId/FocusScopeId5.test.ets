@@ -14,11 +14,12 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopeId5() {
   describe('FocusScopeId5', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +63,7 @@ export default function FocusScopeId5() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn3_6 = await driver.findComponent(ON.id('FocusScopeId5_btn3_6'));
@@ -70,7 +71,7 @@ export default function FocusScopeId5() {
       expect(btn3_6_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId5_0100] btn3_6 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn_clearFocus = await driver.findComponent(ON.id('FocusScopeId5_clearFocus'));
@@ -78,7 +79,7 @@ export default function FocusScopeId5() {
       expect(btn_clearFocus_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId5_0100] btn_clearFocus isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn_requestFocus = await driver.findComponent(ON.id('FocusScopeId5_requestFocus'));

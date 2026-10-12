@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium';
+import { afterAll, beforeAll, beforeEach, describe, it, expect , Level} from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { QRCodeKeys, qrCodeThemeProperty } from '../../MainAbility/pages/components/QRCodePage';
 import { greenCustomTheme, redCustomTheme } from '../../MainAbility/themes/CustomTheme';

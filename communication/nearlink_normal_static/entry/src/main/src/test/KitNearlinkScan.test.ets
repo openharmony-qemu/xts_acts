@@ -77,6 +77,36 @@ export default function scanTest(): void {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterAll');
     })
     /**
+     * @tc.name SUB_Communication_XTS_NearLink_Scan_Enum_static_0100
+     * @tc.number SUB_Communication_XTS_NearLink_Scan_Enum_0100
+     * @tc.desc ScanMode enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Scan_Enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Scan_Enum_static_0100';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let SCAN_MODE_LOW_POWER: scan.ScanMode = scan.ScanMode.SCAN_MODE_LOW_POWER;
+          hilog.info(0x0000, 'testTag', '%{public}s SCAN_MODE_LOW_POWER result: %{public}d', caseName, SCAN_MODE_LOW_POWER);
+          expect(SCAN_MODE_LOW_POWER).assertEqual(0);
+          let SCAN_MODE_BALANCED: scan.ScanMode = scan.ScanMode.SCAN_MODE_BALANCED;
+          hilog.info(0x0000, 'testTag', '%{public}s SCAN_MODE_BALANCED result: %{public}d', caseName, SCAN_MODE_BALANCED);
+          expect(SCAN_MODE_BALANCED).assertEqual(1);
+          let SCAN_MODE_LOW_LATENCY: scan.ScanMode = scan.ScanMode.SCAN_MODE_LOW_LATENCY;
+          hilog.info(0x0000, 'testTag', '%{public}s SCAN_MODE_LOW_LATENCY result: %{public}d', caseName, SCAN_MODE_LOW_LATENCY);
+          expect(SCAN_MODE_LOW_LATENCY).assertEqual(2);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s ScanMode error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLinkPub_Scan_ON_static_0100
      * @tc.number SUB_Communication_XTS_NearLinkPub_Scan_ON_0100
      * @tc.desc 无法触发回调仅调用

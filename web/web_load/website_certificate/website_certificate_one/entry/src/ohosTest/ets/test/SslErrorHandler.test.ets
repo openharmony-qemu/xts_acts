@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -155,5 +155,63 @@ export default function sslErrorHandler() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testSslErrorHandlerConstructor001
+     * @tc.number SUB_WEB_SSLERRORHANDLER_CONSTRUCTOR_5600
+     * @tc.desc   test SslErrorHandler constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSslErrorHandlerConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitSslErrorHandlerConstructor001', EVENT_ID_SET_EMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testSslErrorHandlerConstructor001', true, 202590, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'SslErrorHandlerButton');
+        if (await Utils.waitForExist(() => isReturn, 'testSslErrorHandlerConstructor001_returnCheck', 1, 1000)) {
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSslErrorHandlerConstructorReturn001
+     * @tc.number SUB_WEB_SSLERRORHANDLER_CONSTRUCTOR_RETURN_5700
+     * @tc.desc   test SslErrorHandler constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSslErrorHandlerConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitSslErrorHandlerConstructorReturn001', EVENT_ID_SET_EMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testSslErrorHandlerConstructorReturn001', true, 202591, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'SslErrorHandlerButton');
+        if (await Utils.waitForExist(() => isReturn,
+          'testSslErrorHandlerConstructorReturn001_returnCheck', 1, 1000)) {
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testSslErrorHandlerClass001
+     * @tc.number SUB_WEB_SSLERRORHANDLER_CLASS_5800
+     * @tc.desc   test SslErrorHandler class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSslErrorHandlerClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        Utils.emitEvent('emitSslErrorHandlerClass001', EVENT_ID_SET_EMIT_KEY);
+        let isReturn = 0;
+        Utils.registerEvent('testSslErrorHandlerClass001', true, 202592, () => { isReturn = 1 });
+        await Utils.waitAndClickComponent(driver, 'SslErrorHandlerButton');
+        if (await Utils.waitForExist(() => isReturn, 'testSslErrorHandlerClass001_returnCheck', 1, 1000)) {
+          done();
+        }
+      })
   })
 }

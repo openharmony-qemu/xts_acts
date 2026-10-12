@@ -15,7 +15,7 @@
 
 import camera from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import { surfaceIds } from '../testability/pages/Index';
@@ -356,6 +356,41 @@ export default function CameraPhotoSessionTest() {
     if (!isEmpty(mPhotoOutput)) {
       mPhotoOutput?.getActiveProfile();
     }
+
+    await sleep(100);
+    console.info(TAG + "Exit startCameraSession");
+
+    return true;
+  }
+
+  let commitCameraSession = async (idx: number) => {
+    console.info(TAG + "Enter startCameraSession");
+
+    await createInput(idx);
+    createOutput(idx);
+
+    await sleep(1);
+
+    mCameraSession.beginConfig();
+
+    if (!isEmpty(mCameraInput)) {
+      console.info(TAG + "Start to addInput");
+      mCameraSession.addInput(mCameraInput);
+    }
+
+    if (!isEmpty(mPreviewOutput)) {
+      console.info(TAG + "Start to addOutput mPreviewOutput");
+      mCameraSession.addOutput(mPreviewOutput);
+    }
+
+    if (!isEmpty(mPhotoOutput)) {
+      console.info(TAG + "Start to addOutput mPhotoOutput");
+      mCameraSession.addOutput(mPhotoOutput);
+    }
+
+    await sleep(30);
+
+    await mCameraSession.commitConfig();
 
     await sleep(100);
     console.info(TAG + "Exit startCameraSession");
@@ -2204,7 +2239,7 @@ export default function CameraPhotoSessionTest() {
         //--------------------------------------------预置条件------------------------------------------------------
         console.info("Enter SUB_MULTIMEDIA_CAMERA_EXPOSURE_STATE_0500")
         createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
-        await startCameraSession(0);
+        await commitCameraSession(0);
         let isExposureStart = false;
         let isExposureFinish = false;
 
@@ -2413,7 +2448,7 @@ export default function CameraPhotoSessionTest() {
           expect(currentVal).assertEqual(0)
         } catch (error) {
           console.error(`setColorTint failed, value: ${val}, ${JSON.stringify(error)}`)
-          expect(error.code).assertEqual(401)
+          expect(error.code).assertEqual('401')
         }
       }
       //--------------------------------------------后置处理------------------------------------------------------

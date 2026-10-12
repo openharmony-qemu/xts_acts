@@ -18,6 +18,8 @@ import Utils from '../common/Utils';
 import nativeFunc from 'libnativefunc.so'
 import { Component, Driver, ON } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function KeyEventGetKeyIntensionCodeTest() {
 
   describe('KeyEventGetKeyIntensionCodeTest', () => {
@@ -40,7 +42,7 @@ export default function KeyEventGetKeyIntensionCodeTest() {
        console.info('KeyEventGetKeyIntensionCodeTest_001 START');
         let driver = await Driver.create()
         await Utils.sleep(500);
-        await driver.triggerKey(2049);
+        await driver.triggerKey(2049, displayID);
         await Utils.sleep(500);
         expect(Utils.getComponentInfoByKey('KeyEventGetKeyIntensionCode').$attrs.backgroundColor).assertEqual('#FF00FF00');
         done();

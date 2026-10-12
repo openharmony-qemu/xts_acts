@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import inputMethod from '@ohos.inputMethod';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import * as env from './lib/Const';
 import { BusinessError } from '@ohos.base';
 import { UIContext } from '@kit.ArkUI';
@@ -57,6 +57,13 @@ export default function inputMethodTest() {
 
     afterEach(async () => {
       clearTimeout(st);
+      try {
+        await inputMethod.getController().detach();
+        console.info(`detach inputMethod success`);
+      } catch (error) {
+        console.info(`detach inputMethod fail, error: [${error.code}, ${error.message}]`);
+      }
+      await sleep(100);
     });
 
     /**

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -53,12 +53,14 @@ export default function TouchTestStrategy() {
     it('TouchTestStrategy_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TouchTestStrategy_0100 START');
       await CommonFunc.sleep(1000);
-      let gridTop = CommonFunc.getComponentRect('border_TouchStrategy');
-      let top = gridTop.top
-      let gridBottom = CommonFunc.getComponentRect('border_TouchStrategy');
-      let bottom = gridBottom.bottom
-      let driver = await UiDriver.create()
-      await driver.swipe(Math.round(globalThis.winLeft + vp2px(100)),Math.round(globalThis.winTop + top + vp2px(80)), Math.round(globalThis.winLeft + vp2px(100)), Math.round(globalThis.winTop + top + vp2px(10)));
+      let driver = await Driver.create()
+      let borderComp = await driver.findComponent(ON.id('border_TouchStrategy'))
+      let borderRect = await borderComp.getBounds()
+      let displayId = await borderComp.getDisplayId()
+      let top = borderRect.top
+      await driver.swipeBetween(
+        {x: Math.round(borderRect.left + vp2px(100)), y: Math.round(top + vp2px(80)), displayId: displayId},
+        {x: Math.round(borderRect.left + vp2px(100)), y: Math.round(top + vp2px(10)), displayId: displayId});
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('listText_TouchStrategy');
       let obj: ESObject = JSON.parse(strJson);

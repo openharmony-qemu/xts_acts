@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { BusinessError } from '@ohos.base';
 import { Driver, ON } from "@ohos.UiTest"
 import window from '@ohos.window';
@@ -21,6 +21,7 @@ import ohosWindow from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
 export default function extensionWindowPropertiesTest() {
   describe('extensionWindowProperties_test', () => {
     let sleep = (sleepMs: number) => new Promise < string > (resolve => setTimeout(resolve, sleepMs));
@@ -32,6 +33,7 @@ export default function extensionWindowPropertiesTest() {
     let isFreeWindowMode = false;
     let canIUseRes: boolean = false;
     let deviceType:string = deviceInfo.deviceType;
+    let displayId: number = 0;
     console.info(`deviceType: ${deviceType}`);
 
     beforeAll(() => {
@@ -47,6 +49,8 @@ export default function extensionWindowPropertiesTest() {
       canIUseRes = canIUse('SystemCapability.Window.SessionManager');
       console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       driver = Driver.create();
+      displayId = display.getDefaultDisplaySync().id;
+      console.info(`displayId: ${displayId}`);
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -77,7 +81,7 @@ export default function extensionWindowPropertiesTest() {
       await windowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentPage');
       console.log(caseName + ' setUIContent success');
       await sleep(2000);
-      let btn = await driver.findComponent(ON.id('Button'));
+      let btn = await driver.findComponent(ON.id('Button').belongingDisplay(displayId));
       console.log(caseName + ' btn1 : ' + btn);
 
       if (btn == undefined) {
@@ -86,7 +90,7 @@ export default function extensionWindowPropertiesTest() {
       } else {
         await btn.click();
         await sleep(1000);
-        let btn2 = await driver.findComponent(ON.id('HelloWorld'));
+        let btn2 = await driver.findComponent(ON.id('HelloWorld').belongingDisplay(displayId));
 
         let txt = await btn2.getText();
         console.log(caseName + ' btn2 : ' + txt);
@@ -122,7 +126,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let btn = await driver.findComponent(ON.id('button'))
+          let btn = await driver.findComponent(ON.id('button').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
             console.log(caseName + 'device not support')
@@ -135,7 +139,7 @@ export default function extensionWindowPropertiesTest() {
             console.log(caseName + 'resizeAsync success');
             subWindowClass.moveWindowToAsync(0, 0)
 
-            let hw = await driver.findComponent(ON.id('testNum'))
+            let hw = await driver.findComponent(ON.id('testNum').belongingDisplay(displayId))
             let testNum = await hw.getText()
             console.log(caseName + 'testNum : ' + testNum)
             // pad设备不支持监听，rectChange报801
@@ -186,7 +190,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let btn = await driver.findComponent(ON.id('off_single'))
+          let btn = await driver.findComponent(ON.id('off_single').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
             console.log(caseName + 'device not support')
@@ -199,7 +203,7 @@ export default function extensionWindowPropertiesTest() {
             subWindowClass.resizeAsync(1200, 800)
             subWindowClass.moveWindowToAsync(0, 0)
 
-            let hw = await driver.findComponent(ON.id('testNum'))
+            let hw = await driver.findComponent(ON.id('testNum').belongingDisplay(displayId))
             let testNum = await hw.getText()
             console.log(caseName + 'testNum : ' + testNum)
             // 只有一个回调函数被响应, pad设备不支持监听，rectChange报801
@@ -250,7 +254,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let btn = await driver.findComponent(ON.id('off_all'))
+          let btn = await driver.findComponent(ON.id('off_all').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
             console.log(caseName + 'device not support')
@@ -263,7 +267,7 @@ export default function extensionWindowPropertiesTest() {
             subWindowClass.resizeAsync(1200, 800)
             subWindowClass.moveWindowToAsync(0, 0)
 
-            let hw = await driver.findComponent(ON.id('testNum'))
+            let hw = await driver.findComponent(ON.id('testNum').belongingDisplay(displayId))
             let testNum = await hw.getText()
             console.log(caseName + 'testNum : ' + testNum)
             // 没有回调函数被响应, 设备不支持监听时报801
@@ -314,7 +318,7 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let btn = await driver.findComponent(ON.id('button401'))
+          let btn = await driver.findComponent(ON.id('button401').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设别
           if (btn == undefined) {
@@ -328,7 +332,7 @@ export default function extensionWindowPropertiesTest() {
             subWindowClass.resizeAsync(1200, 800)
             subWindowClass.moveWindowToAsync(0, 0)
 
-            let hw = await driver.findComponent(ON.id('errorMessage'))
+            let hw = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let testNum = await hw.getText()
             console.log(caseName + 'testNum : ' + testNum)
             // 传null，错误码为401, 设备不支持监听时报801
@@ -380,18 +384,18 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // UEC独占事件按钮
-          let btn = await driver.findComponent(ON.id('button'))
+          let btn = await driver.findComponent(ON.id('button').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // UEC点击事件按钮
-          let btnClick = await driver.findComponent(ON.id('clickBtn'))
+          let btnClick = await driver.findComponent(ON.id('clickBtn').belongingDisplay(displayId))
           // UEC点击事件响应次数
-          let clickNum = await driver.findComponent(ON.id('clickNum'))
+          let clickNum = await driver.findComponent(ON.id('clickNum').belongingDisplay(displayId))
           // 宿主点击事件相应次数
-          let clickNumParent = await driver.findComponent(ON.id('clickNumParent'))
+          let clickNumParent = await driver.findComponent(ON.id('clickNumParent').belongingDisplay(displayId))
           // UEC长按事件响应次数
-          let longPressNum = await driver.findComponent(ON.id('longPressNum'))
+          let longPressNum = await driver.findComponent(ON.id('longPressNum').belongingDisplay(displayId))
           // 宿主长按事件响应次数
-          let longPressNumParent = await driver.findComponent(ON.id('longPressNumParent'))
+          let longPressNumParent = await driver.findComponent(ON.id('longPressNumParent').belongingDisplay(displayId))
 
           // 只针对pc设备
           if (btn == undefined) {
@@ -474,7 +478,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('button401'))
+          let btn = await driver.findComponent(ON.id('button401').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -485,7 +489,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('longPressNum1'))
+            let errorMessage = await driver.findComponent(ON.id('longPressNum1').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -535,7 +539,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('button401_2'))
+          let btn = await driver.findComponent(ON.id('button401_2').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -546,7 +550,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('longPressNum1'))
+            let errorMessage = await driver.findComponent(ON.id('longPressNum1').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -598,7 +602,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('getWindowAvoidArea401'))
+          let btn = await driver.findComponent(ON.id('getWindowAvoidArea401').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -609,7 +613,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -660,7 +664,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('onAvoidAreaChange401'))
+          let btn = await driver.findComponent(ON.id('onAvoidAreaChange401').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -671,7 +675,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -722,7 +726,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('onAvoidAreaChange1300002'))
+          let btn = await driver.findComponent(ON.id('onAvoidAreaChange1300002').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -733,7 +737,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '1300002').assertTrue()
@@ -785,7 +789,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('offAvoidAreaChange'))
+          let btn = await driver.findComponent(ON.id('offAvoidAreaChange').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -796,7 +800,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == 'success').assertTrue()
@@ -847,7 +851,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('offAvoidAreaChange1300002'))
+          let btn = await driver.findComponent(ON.id('offAvoidAreaChange1300002').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -858,7 +862,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '1300002').assertTrue()
@@ -909,7 +913,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('onWindowSizeChange401'))
+          let btn = await driver.findComponent(ON.id('onWindowSizeChange401').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -920,7 +924,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -971,7 +975,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('onWindowSizeChange1300002'))
+          let btn = await driver.findComponent(ON.id('onWindowSizeChange1300002').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -982,7 +986,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '1300002').assertTrue()
@@ -1033,7 +1037,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // 设置独占事件
-          let btn = await driver.findComponent(ON.id('offWindowSizeChange1300002'))
+          let btn = await driver.findComponent(ON.id('offWindowSizeChange1300002').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1044,7 +1048,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '1300002').assertTrue()
@@ -1096,7 +1100,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.createSubWindowWithOptions('', null)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions1'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions1').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1107,7 +1111,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             if(errorMessageText === 'success'){
@@ -1167,7 +1171,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.createSubWindowWithOptions('', null)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1178,7 +1182,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             if(errorMessageText === '401'){
@@ -1239,7 +1243,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.createSubWindowWithOptions('', null)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions401'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions401').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1250,7 +1254,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -1300,7 +1304,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.createSubWindowWithOptions(null, null)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsnull'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsnull').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1311,7 +1315,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -1361,7 +1365,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.createSubWindowWithOptions(undefined, undefined)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsundefined'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsundefined').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1372,7 +1376,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -1422,7 +1426,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.extensionWindow?.createSubWindowWithOptions(null, null,true)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2Null'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2Null').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1433,7 +1437,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -1483,7 +1487,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.extensionWindow?.createSubWindowWithOptions(null, null,true)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2Null'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2Null').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1494,7 +1498,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -1544,7 +1548,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.createSubWindowWithOptions(undefined, undefined,false)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2undefined'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2undefined').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1555,7 +1559,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -1605,7 +1609,7 @@ export default function extensionWindowPropertiesTest() {
 
           await sleep(1000)
           // extensionWindow?.extensionWindow?.createSubWindowWithOptions('', null,false)
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2_'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptions2_').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设备
           if (btn == undefined) {
@@ -1616,7 +1620,7 @@ export default function extensionWindowPropertiesTest() {
             await sleep(1000)
 
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             expect(errorMessageText == '401').assertTrue()
@@ -1724,20 +1728,20 @@ export default function extensionWindowPropertiesTest() {
           await subWindowClass.showWindow();
           await sleep(2000);
           // extensionWindow?.createSubWindowWithOptions
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsTrue'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsTrue').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           if (btn != null) {
             await btn.click()
             await sleep(1000)
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             if (errorMessageText == 'success') {
               let tempWnd = window.findWindow('createSubWindowWithOptionsTrue');
               expect(tempWnd == null).assertTrue();
               // Uec组件显示
-              let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
+              let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn').belongingDisplay(displayId))
               console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
               await sleep(1000)
               await changeUecVisible.click()
@@ -1791,20 +1795,20 @@ export default function extensionWindowPropertiesTest() {
           await subWindowClass.showWindow();
           await sleep(2000);
           // extensionWindow?.createSubWindowWithOptions
-          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsFalse'))
+          let btn = await driver.findComponent(ON.id('createSubWindowWithOptionsFalse').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           if (btn != null) {
             await btn.click()
             await sleep(1000)
             // 获取接口返回信息
-            let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+            let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
             let errorMessageText = await errorMessage.getText()
             console.log(caseName + 'errorMessageText : ' + errorMessageText)
             if (errorMessageText == 'success') {
               let tempWnd = window.findWindow('createSubWindowWithOptionsFalse');
               expect(tempWnd == null).assertTrue();
               // Uec组件显示
-              let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn'))
+              let changeUecVisible = await driver.findComponent(ON.id('changeVisibleBtn').belongingDisplay(displayId))
               console.log(caseName + ' changeUecVisible : ' + changeUecVisible);
               await sleep(1000)
               await changeUecVisible.click()
@@ -1853,18 +1857,18 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaCUTOUT'))
+        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaCUTOUT').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (deviceType === '2in1' && btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -1910,18 +1914,18 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaGESTURE'))
+        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaGESTURE').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -1967,18 +1971,18 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaKEYBOARD'))
+        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaKEYBOARD').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -2024,18 +2028,18 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaNAVIGATION_INDICATOR'))
+        let btn = await driver.findComponent(ON.id('getWindowAvoidAreaNAVIGATION_INDICATOR').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -2081,22 +2085,22 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('windowSizeChange'))
+        let btn = await driver.findComponent(ON.id('windowSizeChange').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let windowSizeChangeWidth = await driver.findComponent(ON.id('windowSizeChangeWidth'))
+            let windowSizeChangeWidth = await driver.findComponent(ON.id('windowSizeChangeWidth').belongingDisplay(displayId))
             console.log(caseName + 'windowSizeChangeWidth : ' + windowSizeChangeWidth);
             await windowSizeChangeWidth.click();
             await sleep(1000);
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -2142,22 +2146,22 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('rectChange'))
+        let btn = await driver.findComponent(ON.id('rectChange').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight'))
+            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight').belongingDisplay(displayId))
             console.log(caseName + 'RectChangeHeight : ' + RectChangeHeight);
             await RectChangeHeight.click();
             await sleep(1000);
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -2204,22 +2208,22 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('onRectChange1300002'))
+        let btn = await driver.findComponent(ON.id('onRectChange1300002').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight'))
+            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight').belongingDisplay(displayId))
             console.log(caseName + 'RectChangeHeight : ' + RectChangeHeight);
             await RectChangeHeight.click();
             await sleep(1000);
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -2266,22 +2270,22 @@ export default function extensionWindowPropertiesTest() {
         await subWindowClass.showWindow();
         await sleep(2000);
         // extensionWindow?.createSubWindowWithOptions
-        let btn = await driver.findComponent(ON.id('offRectChange1300002'))
+        let btn = await driver.findComponent(ON.id('offRectChange1300002').belongingDisplay(displayId))
         console.log(caseName + ' btn : ' + btn);
         if (btn != null) {
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('errorMessage'))
+          let errorMessage = await driver.findComponent(ON.id('errorMessage').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
 
           if (errorMessageText == 'success') {
-            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight'))
+            let RectChangeHeight = await driver.findComponent(ON.id('RectChangeHeight').belongingDisplay(displayId))
             console.log(caseName + 'RectChangeHeight : ' + RectChangeHeight);
             await RectChangeHeight.click();
             await sleep(1000);
-            let flag = await driver.findComponent(ON.id('flag'))
+            let flag = await driver.findComponent(ON.id('flag').belongingDisplay(displayId))
             console.log(caseName + 'flag : ' + flag);
             let flagtext = await flag.getText();
             console.log(caseName + 'flagtext : ' + flagtext);
@@ -2358,12 +2362,12 @@ export default function extensionWindowPropertiesTest() {
           await subWindowClass.showWindow();
           await sleep(2000);
           // extensionWindow?.createSubWindowWithOptions
-          let btn = await driver.findComponent(ON.id('testEnv'))
+          let btn = await driver.findComponent(ON.id('testEnv').belongingDisplay(displayId))
           console.log(caseName + ' btn : ' + btn);
           await btn.click()
           await sleep(1000)
           // 获取接口返回信息
-          let errorMessage = await driver.findComponent(ON.id('HelloWorld'))
+          let errorMessage = await driver.findComponent(ON.id('HelloWorld').belongingDisplay(displayId))
           let errorMessageText = await errorMessage.getText()
           console.log(caseName + 'errorMessageText : ' + errorMessageText);
           expect(errorMessageText).assertEqual('true')

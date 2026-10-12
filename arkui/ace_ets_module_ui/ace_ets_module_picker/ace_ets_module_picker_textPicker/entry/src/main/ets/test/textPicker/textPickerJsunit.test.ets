@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
@@ -144,16 +144,16 @@ export default function TextPickerJsunitTest() {
       let top = rect.top
       let bottom = rect.bottom
       let right = rect.right
+      let displayId = await textPicker.getDisplayId();
 
       console.info("[TextPickerJsunit_0300] bottom: " + JSON.stringify(bottom));
       console.info("[TextPickerJsunit_0300] right: " + JSON.stringify(right));
       await CommonFunc.sleep(1000);
 
-      await driver.swipe(
-        Math.round(left + (right - left) / 2), 
-        Math.round(top + (bottom - top) / 2),
-        Math.round(left + (right - left) / 2), 
-        Math.round(top));
+      await driver.swipeBetween(
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2), displayId: displayId },
+        { x: Math.round(left + (right - left) / 2), y: Math.round(top), displayId: displayId }
+      );
 
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('textContent1');

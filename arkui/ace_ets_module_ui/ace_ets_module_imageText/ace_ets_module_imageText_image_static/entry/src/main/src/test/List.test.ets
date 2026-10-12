@@ -38,6 +38,8 @@ import ImageAnimatorAttributeModifierTest from './ImageAnimatorTest/ImageAnimato
 import ImageAttributeModifierTest from './imageTest/ImageAttributeModifier.test';
 
 export default function testsuite() {
+  ImageAnimatorAttributeModifierTest();
+  ImageAttributeModifierTest();
   blendNodeTest();
   getUIContextApiTest();
   ImageAlt22Test();
@@ -57,6 +59,4 @@ export default function testsuite() {
   PixelMapDrawableDescriptorConstructorTest();
   SetHdrCompositionTest();
   GetMaskClipPathTest();
-  ImageAnimatorAttributeModifierTest();
-  ImageAttributeModifierTest();
 }

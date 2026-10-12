@@ -28,9 +28,11 @@ struct PatternLockL0_01 {
   @State rating: number = 0;
   @State FillColor: string = '#FF000000';
   @State name: string = 'PatternLockL0_01';
-  @State StepTips: string = '操作步骤：在两个九宫格中画出自己想设置的密码，点击确认按钮' + '\n' + '预期结果：背景圆环及连线在宫格圆点上方显示，覆盖宫格圆点';
+  @State StepTips: string = '操作步骤：在两个九宫格中画出自己想设置的密码' + '\n' + '预期结果：背景圆环及连线在宫格圆点上方显示，覆盖宫格圆点';
   @State Vue: boolean = false;
   @State passwords: Number[] = [];
+  @State passwords1: number[] = [];
+  @State passwords2: number[] = [];
   @State customModifier: PatternLockModifier = new PatternLockModifier()
     .sideLength('47.5%')
     .circleRadius(9)
@@ -113,6 +115,24 @@ struct PatternLockL0_01 {
     FirstDialog.ChooseDialog(this.StepTips, this.name);
   }
 
+  // 检查两个PatternLock组件绘制的密码是否一致
+  checkAllPatternDrawn() {
+    if (this.passwords1.length > 0 && this.passwords2.length > 0) {
+      if (this.passwords1.toString() === this.passwords2.toString()) {
+        promptAction.showToast({ message: '密码设置成功', duration: 1000 });
+        setTimeout(() => {
+          this.Vue = true;
+        }, 500);
+      } else {
+        promptAction.showToast({ message: '两次输入的密码不一致，请重新输入', duration: 2000 });
+        this.patternLockController.reset();
+        this.patternLockController1.reset();
+        this.passwords1 = [];
+        this.passwords2 = [];
+      }
+    }
+  }
+
   build() {
     Column() {
       Row() {
@@ -163,21 +183,22 @@ struct PatternLockL0_01 {
                 radius: LengthMetrics.vp(15),
                 enableForeground: true
               })
+              .onPatternComplete((input: Array<number>) => {
+                this.passwords1 = input;
+                this.checkAllPatternDrawn();
+              })
           }
           Column({ space: 5 }) {
             Text("Modifier").fontColor(Color.Red)
             PatternLock(this.patternLockController1)
               .attributeModifier(this.customModifier)
+              .onPatternComplete((input: Array<number>) => {
+                this.passwords2 = input;
+                this.checkAllPatternDrawn();
+              })
           }
         }
 
-        Button('确认')
-          .margin(10)
-          .width('30%')
-          .height('6%')
-          .onClick(() => {
-            this.Vue = true;
-          })
       }
       .height('70%')
       .width('100%')

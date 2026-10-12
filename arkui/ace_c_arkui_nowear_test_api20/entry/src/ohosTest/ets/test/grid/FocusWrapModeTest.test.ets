@@ -17,6 +17,7 @@ import { afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hy
 import Utils from '../common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function focusWrapModeTest() {
 
   describe('focusWrapModeTest', () => {
@@ -48,11 +49,11 @@ export default function focusWrapModeTest() {
 
       let driver = Driver.create();
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(TAB_KEY);
+      await driver.triggerKey(TAB_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(RIGHT_KEY);
+      await driver.triggerKey(RIGHT_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(RIGHT_KEY);
+      await driver.triggerKey(RIGHT_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
       let btn = await driver.findComponent(ON.id('isFocus'));
      
@@ -84,11 +85,11 @@ export default function focusWrapModeTest() {
 
       let driver = Driver.create();
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(TAB_KEY);
+      await driver.triggerKey(TAB_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(RIGHT_KEY);
+      await driver.triggerKey(RIGHT_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(RIGHT_KEY);
+      await driver.triggerKey(RIGHT_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
       let btn = await driver.findComponent(ON.id('isFocus'));
       let btn_isFocusedValue = await btn.isFocused();
@@ -119,11 +120,11 @@ export default function focusWrapModeTest() {
 
       let driver = Driver.create();
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(TAB_KEY);
+      await driver.triggerKey(TAB_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(RIGHT_KEY);
+      await driver.triggerKey(RIGHT_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
-      await driver.triggerKey(RIGHT_KEY);
+      await driver.triggerKey(RIGHT_KEY, displayID);
       await Utils.sleep(SLEEP_TIME);
       let btn = await driver.findComponent(ON.id('isFocus'));
       let btn_isFocusedValue = await btn.isFocused();

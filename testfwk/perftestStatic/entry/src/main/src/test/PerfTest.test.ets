@@ -19,6 +19,7 @@ import { Driver, ON, UiDirection, Component } from '@ohos.UiTest'
 import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@ohos.test.PerfTest';
 import { BusinessError, Callback } from '@ohos.base';
 import hilog from '@ohos.hilog'
+import display from '@ohos.display';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Utils, startAbility, stopApplication } from './Util.test';
 import { PerfUtils } from '../../ets/utils/PerfUtils';
@@ -104,6 +105,8 @@ export default function perfTestTest() {
             hilog.info(domain, tag, `testPerfTestPageSwitch_static start`);
             await startAbility('com.perftestScene.acts', 'EntryAbility');
             await driver!.delayMs(3000)
+            let disPlay = display.getDefaultDisplaySync();
+            hilog.info(domain, tag, `testPerfTestPageSwitch_static is: ${JSON.stringify(disPlay)}`);
             let metrics: Array<PerfMetric> = [PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
                 waitForCompletion(async () => {
@@ -118,7 +121,7 @@ export default function perfTestTest() {
             }
             let resetCode = (finish: Callback<boolean>) => {
                 waitForCompletion(async () => {
-                await driver!.pressBack()
+                await driver!.pressBack(disPlay.id.toInt())
                 await driver!.delayMs(1000)
                 finish(true)
                 })
@@ -154,6 +157,8 @@ export default function perfTestTest() {
             hilog.info(domain, tag, `testPerfTestListSwipe_static start`);
             await startAbility('com.perftest.acts.static', 'EntryAbility');
             await driver!.delayMs(3000)
+            let disPlay = display.getDefaultDisplaySync();
+            hilog.info(domain, tag, `testPerfTestPageSwitch_static is: ${JSON.stringify(disPlay)}`);
             let button = await driver!.findComponent(ON.text('ListPage'))
             expect(button != null).assertTrue()
             if (button != null) {
@@ -169,7 +174,7 @@ export default function perfTestTest() {
                     await driver!.delayMs(1000)
                     let center = await scroll.getBoundsCenter()
                     await driver!.delayMs(1000)
-                    await driver!.fling({x: center.x, y: Math.floor(center.y * 3 / 2).toInt()}, {x: center.x, y: Math.floor(center.y / 2).toInt()}, 50, 20000)
+                    await driver!.fling({x: center.x, y: Math.floor(center.y * 3 / 2).toInt(), displayId: disPlay.id.toInt()}, {x: center.x, y: Math.floor(center.y / 2).toInt(), displayId: disPlay.id.toInt()}, 50, 20000)
                     await driver!.delayMs(3000)
                 }
                 finish(true)
@@ -198,6 +203,7 @@ export default function perfTestTest() {
             let res1 = perfTest.getMeasureResult(PerfMetric.LIST_SWIPE_FPS)
             perfTest.destroy()
             hilog.info(domain, tag, `testPerfTestListSwipe_static res1, ${JSON.stringify(res1)}`);
+            await driver!.pressBack(disPlay.id.toInt())
             expect(res1.average).assertLargerOrEqual(0)
             expect(res1.metric).assertEqual(PerfMetric.LIST_SWIPE_FPS)
             hilog.info(domain, tag, `testPerfTestListSwipe_static end`);
@@ -257,14 +263,14 @@ export default function perfTestTest() {
             hilog.info(domain, tag, `testPerfTest_NavigationChange_static start`);
             await startAbility('com.perftestScene.acts', 'EntryAbility');
             await driver!.delayMs(3000)
+            let disPlay = display.getDefaultDisplaySync();
+            hilog.info(domain, tag, `testPerfTestPageSwitch_static is: ${JSON.stringify(disPlay)}`);
             let textCom = await driver!.findComponent(ON.text('navigation'))
             hilog.info(domain, tag, `testPerfTest_NavigationChange_static textCom, ${JSON.stringify(textCom)}`);
             expect(textCom != null).assertTrue()
             if (textCom != null) {
                 await driver!.delayMs(1000)
-                let center = await textCom.getBoundsCenter()
-                await driver!.delayMs(1000)
-                await driver!.click(center.x, center.y)
+                await textCom!.click()
                 await driver!.delayMs(1000)
             }
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.MEMORY_RSS, PerfMetric.MEMORY_PSS, PerfMetric.PAGE_SWITCH_COMPLETE_TIME]
@@ -274,9 +280,7 @@ export default function perfTestTest() {
                 let textCom1 = await driver!.findComponent(ON.text('push Page01'))
                 if (textCom1 != null) {
                     await driver!.delayMs(1000)
-                    let center1 = await textCom1.getBoundsCenter()
-                    await driver!.delayMs(1000)
-                    await driver!.click(center1.x, center1.y)
+                    await textCom1!.click()
                     await driver!.delayMs(1000)
                 }
                 finish(true)
@@ -285,7 +289,7 @@ export default function perfTestTest() {
             let resetCode = (finish: Callback<boolean>) => {
                 waitForCompletion(async () => {
                 await driver!.delayMs(1000)
-                await driver!.pressBack()
+                await driver!.pressBack(disPlay.id.toInt())
                 await driver!.delayMs(1000)
                 finish(true)
                 })

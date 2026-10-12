@@ -85,6 +85,102 @@ export default function sSapTest(): void {
     })
 
     /**
+     * @tc.name SUB_Communication_XTS_NearLink_Ssap_Enum_static_0100
+     * @tc.number SUB_Communication_XTS_NearLink_Ssap_Enum_0100
+     * @tc.desc PropertyDescriptorType enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Ssap_Enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Ssap_Enum_static_0100';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let PROPERTY: ssap.PropertyDescriptorType = ssap.PropertyDescriptorType.PROPERTY;
+          hilog.info(0x0000, 'testTag', '%{public}s PROPERTY result: %{public}d', caseName, PROPERTY);
+          expect(PROPERTY).assertEqual(1);
+          let CLIENT_PROPERTY_CONFIG: ssap.PropertyDescriptorType = ssap.PropertyDescriptorType.CLIENT_PROPERTY_CONFIG;
+          hilog.info(0x0000, 'testTag', '%{public}s CLIENT_PROPERTY_CONFIG result: %{public}d', caseName, CLIENT_PROPERTY_CONFIG);
+          expect(CLIENT_PROPERTY_CONFIG).assertEqual(2);
+          let SERVER_PROPERTY_CONFIG: ssap.PropertyDescriptorType = ssap.PropertyDescriptorType.SERVER_PROPERTY_CONFIG;
+          hilog.info(0x0000, 'testTag', '%{public}s SERVER_PROPERTY_CONFIG result: %{public}d', caseName, SERVER_PROPERTY_CONFIG);
+          expect(SERVER_PROPERTY_CONFIG).assertEqual(3);
+          let PROPERTY_FORMAT: ssap.PropertyDescriptorType = ssap.PropertyDescriptorType.PROPERTY_FORMAT;
+          hilog.info(0x0000, 'testTag', '%{public}s PROPERTY_FORMAT result: %{public}d', caseName, PROPERTY_FORMAT);
+          expect(PROPERTY_FORMAT).assertEqual(4);
+          let TYPE_VENDOR: ssap.PropertyDescriptorType = ssap.PropertyDescriptorType.TYPE_VENDOR;
+          hilog.info(0x0000, 'testTag', '%{public}s TYPE_VENDOR result: %{public}d', caseName, TYPE_VENDOR);
+          expect(TYPE_VENDOR).assertEqual(255);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s PropertyDescriptorType error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Ssap_Enum_static_0200
+     * @tc.number SUB_Communication_XTS_NearLink_Ssap_Enum_0200
+     * @tc.desc Operation enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Ssap_Enum_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Ssap_Enum_static_0200';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let READABLE: ssap.Operation = ssap.Operation.READABLE;
+          hilog.info(0x0000, 'testTag', '%{public}s READABLE result: %{public}d', caseName, READABLE);
+          expect(READABLE).assertEqual(0x01);
+          let WRITE_NO_RESPONSE: ssap.Operation = ssap.Operation.WRITE_NO_RESPONSE;
+          hilog.info(0x0000, 'testTag', '%{public}s WRITE_NO_RESPONSE result: %{public}d', caseName, WRITE_NO_RESPONSE);
+          expect(WRITE_NO_RESPONSE).assertEqual(0x02);
+          let WRITE_WITH_RESPONSE: ssap.Operation = ssap.Operation.WRITE_WITH_RESPONSE;
+          hilog.info(0x0000, 'testTag', '%{public}s WRITE_WITH_RESPONSE result: %{public}d', caseName, WRITE_WITH_RESPONSE);
+          expect(WRITE_WITH_RESPONSE).assertEqual(0x04);
+          let NOTIFY: ssap.Operation = ssap.Operation.NOTIFY;
+          hilog.info(0x0000, 'testTag', '%{public}s NOTIFY result: %{public}d', caseName, NOTIFY);
+          expect(NOTIFY).assertEqual(0x08);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s Operation error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_Ssap_Enum_static_0300
+     * @tc.number SUB_Communication_XTS_NearLink_Ssap_Enum_0300
+     * @tc.desc PropertyWriteType enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Ssap_Enum_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Ssap_Enum_static_0300';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let WRITE: ssap.PropertyWriteType = ssap.PropertyWriteType.WRITE;
+          hilog.info(0x0000, 'testTag', '%{public}s WRITE result: %{public}d', caseName, WRITE);
+          expect(WRITE).assertEqual(1);
+          let WRITE_NO_RESPONSE: ssap.PropertyWriteType = ssap.PropertyWriteType.WRITE_NO_RESPONSE;
+          hilog.info(0x0000, 'testTag', '%{public}s WRITE_NO_RESPONSE result: %{public}d', caseName, WRITE_NO_RESPONSE);
+          expect(WRITE_NO_RESPONSE).assertEqual(2);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s PropertyWriteType error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLinkPub_Ssap_Client_On_static_0100
      * @tc.number SUB_Communication_XTS_NearLinkPub_Ssap_Client_On_0100
      * @tc.desc ssap.Client.onPropertyChange normal call with callback
@@ -2690,5 +2786,80 @@ export default function sSapTest(): void {
       }
       done();
     });
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_SSap_static_8700
+     * @tc.number SUB_Communication_XTS_NearLink_SSap_8700
+     * @tc.desc ssap client notifyPropertyChanged 空数组覆盖 without connect test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_SSap_static_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let propertyDescriptor8: Array<ssap.PropertyDescriptor> = [];
+      let property8: ssap.Property = {
+        serviceUuid: UUID_test,
+        propertyUuid: UUID,
+        value: bufferCCC,
+        descriptors: propertyDescriptor8,
+        operation: ssap.Operation.NOTIFY,
+      };
+      try {
+        await ssapServer!.notifyPropertyChanged(ADDRESS_invailable_3, property8);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink_Test]notifyPropertyChanged success');
+        expect().assertFail();
+      } catch (error) {
+        hilog.error(0x0000, 'testTag', '[NearLink_Test] notifyPropertyChanged failed, code is %{public}s,message is %{public}s', error.code, error.message);
+        if (error.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(return_boolean === false).assertTrue();
+        } else {
+          expect(error.code).assertEqual(36100041);
+        }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name SUB_Communication_XTS_NearLink_SSap_static_2200
+     * @tc.number SUB_Communication_XTS_NearLink_SSap_2200
+     * @tc.desc ssap client writeProperty without connect test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_SSap_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let propertyDescriptor6: Array<ssap.PropertyDescriptor> = [];
+      let descriptor6: ssap.PropertyDescriptor = {
+        serviceUuid: UUID_Upp_Invailable,
+        propertyUuid: UUID_LOW_Invailable,
+        value: bufferDesc,
+        descriptorType: ssap.PropertyDescriptorType.PROPERTY,
+        isWriteable: false,
+      };
+      propertyDescriptor6.push(descriptor6);
+      let property6: ssap.Property = {
+        serviceUuid: UUID_Upp_Invailable,
+        propertyUuid: UUID_LOW_Invailable,
+        value: bufferCCC,
+        descriptors: propertyDescriptor6,
+        operation: ssap.Operation.WRITE_NO_RESPONSE,
+      };
+      try {
+        await ssapClient!.writeProperty(property6, ssap.PropertyWriteType.WRITE_NO_RESPONSE);
+        hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink_Test] writeProperty success');
+        expect().assertFail();
+      } catch (error) {
+        hilog.error(0x0000, 'testTag', '%{public}s', `[NearLink_Test] writeProperty failed, code is ${error.code},message is ${error.message}`);
+        if (error.code === 801) {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'api is not support');
+          expect(return_boolean === false).assertTrue();
+        } else {
+          expect(error.code).assertEqual(36100044);
+        }
+      }
+      done();
+    })
+
   })
 }

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,Size,TestType } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level,Size,TestType } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -30,6 +30,7 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function primary() {
   describe('primary', () => {
 
@@ -68,10 +69,10 @@ export default function primary() {
       let button = await driver.findComponent(ON.id('primary1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054);
+      await driver.triggerKey(2054,displayID);
       console.info('primary_0100 Enter');
       await CommonFunc.sleep(1500);
-      let button1 = await driver.findComponent(ON.text('按钮1'));
+      let button1 = await driver.findComponent(ON.text('鎸夐挳1'));
       expect(button1 == null).assertTrue()
       // await button1.click();
       await CommonFunc.sleep(1000);
@@ -94,10 +95,10 @@ export default function primary() {
       let button = await driver.findComponent(ON.id('primary2'));
       await button.click();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2054);
+      await driver.triggerKey(2054,displayID);
       console.info('primary_0200 Enter');
       await CommonFunc.sleep(1500);
-      let button1 = await driver.findComponent(ON.text('按钮1'));
+      let button1 = await driver.findComponent(ON.text('鎸夐挳1'));
       expect(button1 != null).assertTrue()
       await button1.click();
       await CommonFunc.sleep(1000);

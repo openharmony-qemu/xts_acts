@@ -12,12 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium-dynamic';
 import router from '@ohos.router'
 import { UiDriver, UiComponent, BY, Driver, Component, ON } from '@ohos.UiTest'
 import events_emitter from '@ohos.events.emitter';
 import input from '@ohos.multimodalInput.keyCode';
 import { BusinessError } from '@ohos.base';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function shortcutKeyJsunit() {
 
@@ -67,7 +69,7 @@ export default function shortcutKeyJsunit() {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create();
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_B);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_B, undefined, displayID);
       done();
     });
   })

@@ -14,11 +14,12 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopeId6() {
   describe('FocusScopeId6', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +63,7 @@ export default function FocusScopeId6() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_1 = await driver.findComponent(ON.id('FocusScopeId6_btn1_1'));
@@ -70,7 +71,7 @@ export default function FocusScopeId6() {
       expect(btn1_1_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId6_0100] btn1_1 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn_del = await driver.findComponent(ON.id('FocusScopeId6_btn_del'));
@@ -78,7 +79,7 @@ export default function FocusScopeId6() {
       expect(btn_del_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId6_0100] btn_del isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_2 = await driver.findComponent(ON.id('FocusScopeId6_btn1_2'));
@@ -86,7 +87,7 @@ export default function FocusScopeId6() {
       expect(btn1_2_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId6_0100] btn1_2 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn_btn = await driver.findComponent(ON.id('FocusScopeId6_btn_btn'));

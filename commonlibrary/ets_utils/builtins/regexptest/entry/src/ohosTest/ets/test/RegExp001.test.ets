@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size} from '@ohos/hypium-dynamic';
 import { testRegCtrJs0006, testRegCtrJs0007, testRegCtrJs0018, testRegCtrJs0021,
   testRegCtrJs0023,
   testRegCtrJs0030,

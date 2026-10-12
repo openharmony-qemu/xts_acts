@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -51,6 +51,7 @@ function assertAllAxisInRange(tag: string): void {
   expect(absBrake >= 0 && absBrake <= 1).assertTrue();
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function gameCtrollerCallBackDataTest() {
   describe('GameCtrollerCallBackDataTest', () => {
     beforeEach(async (done: Function) => {
@@ -84,7 +85,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_a_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_a_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_A);
+      await driver.triggerKey(KEYCODE_BUTTON_A,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_a_0100');
       done();
@@ -101,7 +102,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_b_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_b_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_B);
+      await driver.triggerKey(KEYCODE_BUTTON_B,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_b_0100');
       done();
@@ -118,7 +119,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_x_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_x_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_X);
+      await driver.triggerKey(KEYCODE_BUTTON_X,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_x_0100');
       done();
@@ -135,7 +136,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_y_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_y_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_Y);
+      await driver.triggerKey(KEYCODE_BUTTON_Y,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_y_0100');
       done();
@@ -152,7 +153,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_l1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_l1_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_L1);
+      await driver.triggerKey(KEYCODE_BUTTON_L1,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_l1_0100');
       done();
@@ -169,7 +170,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_r1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_r1_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_R1);
+      await driver.triggerKey(KEYCODE_BUTTON_R1,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_r1_0100');
       done();
@@ -186,7 +187,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_l2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_l2_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_L2);
+      await driver.triggerKey(KEYCODE_BUTTON_L2,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_l2_0100');
       done();
@@ -203,7 +204,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_r2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_r2_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_R2);
+      await driver.triggerKey(KEYCODE_BUTTON_R2,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_r2_0100');
       done();
@@ -220,7 +221,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_select_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_select_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_SELECT);
+      await driver.triggerKey(KEYCODE_BUTTON_SELECT,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_select_0100');
       done();
@@ -237,7 +238,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_start_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_start_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_START);
+      await driver.triggerKey(KEYCODE_BUTTON_START,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_start_0100');
       done();
@@ -254,7 +255,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_mode_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_mode_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_MODE);
+      await driver.triggerKey(KEYCODE_BUTTON_MODE,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_mode_0100');
       done();
@@ -271,7 +272,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_thumbl_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_thumbl_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_THUMBL);
+      await driver.triggerKey(KEYCODE_BUTTON_THUMBL,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_thumbl_0100');
       done();
@@ -288,7 +289,7 @@ export default function gameCtrollerCallBackDataTest() {
     it('gameCtroller_button_thumbr_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gameCtroller_button_thumbr_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(KEYCODE_BUTTON_THUMBR);
+      await driver.triggerKey(KEYCODE_BUTTON_THUMBR,displayID);
       await CommonFunc.sleep(500);
       assertAllAxisInRange('gameCtroller_button_thumbr_0100');
       done();

@@ -14,8 +14,8 @@
  */
 import { Vec4, Aabb, SceneResourceType, SceneResource, Shader, MaterialType, Material, ShaderMaterial, SubMesh, Mesh,
   Animation, EnvironmentBackgroundType, Environment, Node, Geometry, SceneResourceFactory, Scene, PolygonMode, 
-  Effect, EffectParameters,SceneNodeParameters } from '@kit.ArkGraphics3D'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+  Effect, EffectParameters,SceneNodeParameters,OcclusionMaterial } from '@kit.ArkGraphics3D'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import * as scene3d from '@ohos.graphics.scene'
 import { lookAt, GenRandom, sleep } from '../common/utils';
 import { RenderingPipelineType, CameraParameters } from '@ohos.graphics.scene'
@@ -1957,7 +1957,7 @@ export default function sceneResourcesTest() {
         console.info(msg + " MaterialType.OCCLUSION value is 4");
 
         // Verify OCCLUSION material can be created
-        let occlusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
+        let occlusionMaterial:OcclusionMaterial = await rf.createMaterial({ name: "OcclusionMaterial" }, MaterialType.OCCLUSION);
         expect(occlusionMaterial != null).assertTrue();
         console.info(msg + " OCCLUSION material created successfully");
 
@@ -1983,6 +1983,7 @@ export default function sceneResourcesTest() {
         done();
       }
     })
+    
     /**
      * @tc.name   testMat4x4Properties
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1019

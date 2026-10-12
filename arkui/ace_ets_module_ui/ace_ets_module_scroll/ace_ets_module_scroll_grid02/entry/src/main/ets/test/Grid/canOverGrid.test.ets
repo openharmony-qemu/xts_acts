@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -58,8 +58,10 @@ export default function canOverGrid() {
       await btn_true.click();
       await CommonFunc.sleep(1500);
       await CommonFunc.sleep(5000);
-      let grid = CommonFunc.getComponentRectOnScreen('canOverScroll_grid');
-      let gridItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_grid_0');
+      let gridComponent = await driver.findComponent(ON.id('canOverScroll_grid'));
+      let grid = await gridComponent.getBounds();
+      let gridItem0Component = await driver.findComponent(ON.id('canOverScroll_grid_0'));
+      let gridItem0 = await gridItem0Component.getBounds();
 
       console.info(`[canOverGrid_0100] grid.top=
         ${grid.top}`);
@@ -87,8 +89,10 @@ export default function canOverGrid() {
       let btn_true = await driver.findComponent(ON.id('canOver_grid_false'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let grid = CommonFunc.getComponentRectOnScreen('canOverScroll_grid');
-      let gridItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_grid_0');
+      let gridComponent = await driver.findComponent(ON.id('canOverScroll_grid'));
+      let grid = await gridComponent.getBounds();
+      let gridItem0Component = await driver.findComponent(ON.id('canOverScroll_grid_0'));
+      let gridItem0 = await gridItem0Component.getBounds();
 
       console.info(`[canOverGrid_0100] grid.top=
         ${grid.top}`);
@@ -114,8 +118,10 @@ export default function canOverGrid() {
       let btn_true = await driver.findComponent(ON.id('canOver_grid_null'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let grid = CommonFunc.getComponentRectOnScreen('canOverScroll_grid');
-      let gridItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_grid_0');
+      let gridComponent = await driver.findComponent(ON.id('canOverScroll_grid'));
+      let grid = await gridComponent.getBounds();
+      let gridItem0Component = await driver.findComponent(ON.id('canOverScroll_grid_0'));
+      let gridItem0 = await gridItem0Component.getBounds();
 
       console.info(`[canOverGrid_0100] grid.top=
         ${grid.top}`);
@@ -141,8 +147,10 @@ export default function canOverGrid() {
       let btn_true = await driver.findComponent(ON.id('canOver_grid_ude'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let grid = CommonFunc.getComponentRectOnScreen('canOverScroll_grid');
-      let gridItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_grid_0');
+      let gridComponent = await driver.findComponent(ON.id('canOverScroll_grid'));
+      let grid = await gridComponent.getBounds();
+      let gridItem0Component = await driver.findComponent(ON.id('canOverScroll_grid_0'));
+      let gridItem0 = await gridItem0Component.getBounds();
 
       console.info(`[canOverGrid_0100] grid.top=
         ${grid.top}`);

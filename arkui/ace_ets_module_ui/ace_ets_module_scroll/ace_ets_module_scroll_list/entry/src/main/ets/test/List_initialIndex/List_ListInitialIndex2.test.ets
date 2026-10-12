@@ -82,8 +82,8 @@ export default function list_ListInitialIndex2Test() {
       let tenthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex2_10');
       let eleventhListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex2_11');
       let twelfthListItem: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex2_12');
-      let listContainer: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex2' + '_Container01');
-      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex2' + '_Container01');
+      let listContainer: RectValue = CommonFunc.getComponentRect('List_ListInitialIndex2_Container01');
+      let listContainerStrJson = getInspectorByKey('List_ListInitialIndex2_Container01');
 
       expect(JSON.parse(listContainerStrJson).$type).assertEqual('List');
 
@@ -134,9 +134,14 @@ export default function list_ListInitialIndex2Test() {
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(vp2px(0));
 
       let driver = Driver.create();
-      await driver.swipe(Math.round(globalThis.winLeft + fourthListItem.left + ((fourthListItem.right - fourthListItem.left) / 2)),
-         Math.round(globalThis.winTop +fourthListItem.bottom), Math.round(globalThis.winLeft + firstListItem.left + (firstListItem.right - firstListItem.left) / 2),
-        Math.round(globalThis.winTop + firstListItem.bottom));
+      let swipeComponent = await driver.findComponent(ON.id('List_ListInitialIndex2_Container01'));
+      let sizeList = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
+      await driver.swipeBetween(
+        { x: Math.round(sizeList.left + ((sizeList.right - sizeList.left) / 2)),
+          y: Math.round(sizeList.bottom - ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId },
+        { x: Math.round(sizeList.left + (sizeList.right - sizeList.left) / 2),
+          y: Math.round(sizeList.top + ((sizeList.bottom - sizeList.top) / 10)), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let scrollColumn: Component = await driver.findComponent(ON.type('Scroll'));
@@ -145,7 +150,7 @@ export default function list_ListInitialIndex2Test() {
       fifthListItem = CommonFunc.getComponentRect('List_ListInitialIndex2_5');
       sixthListItem = CommonFunc.getComponentRect('List_ListInitialIndex2_6');
       seventhListItem = CommonFunc.getComponentRect('List_ListInitialIndex2_7');
-      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex2' + '_Container01');
+      listContainer = CommonFunc.getComponentRect('List_ListInitialIndex2_Container01');
 
       expect(Math.abs(Math.floor(sixthListItem.top - fifthListItem.bottom - vp2px(20))) <= 1).assertTrue();
       expect(Math.abs(sixthListItem.left - listContainer.left) <= 1).assertTrue();

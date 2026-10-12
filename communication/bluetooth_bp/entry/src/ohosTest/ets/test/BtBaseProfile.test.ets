@@ -22,7 +22,7 @@ import map from '@ohos.bluetooth.map';
 import pbap from '@ohos.bluetooth.pbap';
 import bluetooth from '@ohos.bluetooth.baseProfile';
 import opp from '@ohos.bluetooth.opp';
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
 function sleep(delay : number) : Promise<void> {
@@ -624,7 +624,12 @@ export default function btBaseProfileTest() {
         PanProfile.off('connectionStateChange', onReceiveEvent);
       } catch (err) {
         console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
+        if (err.code === '801') {
+          console.info('[bluetooth_js]getConnectionState is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        }
       }
       done();
     });
@@ -648,7 +653,12 @@ export default function btBaseProfileTest() {
         PanProfile.off('connectionStateChange');
       } catch (err) {
         console.error("bluetooth connectionStateChange errCode:" + err.code + ",errMessage:" + err.message);
-        expect().assertFail();
+        if (err.code === '801') {
+          console.info('[bluetooth_js]getConnectionState is not support');
+          expect(err.code).assertEqual('801');
+        } else {
+          expect().assertFail();
+        };
       }
       done();
     });

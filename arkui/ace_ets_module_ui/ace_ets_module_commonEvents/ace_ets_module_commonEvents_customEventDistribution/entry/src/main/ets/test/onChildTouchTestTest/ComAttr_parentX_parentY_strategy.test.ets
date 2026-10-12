@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UiDirection, MouseButton, UIElementInfo, UIEventObserver} from '@ohos.UiTest';
@@ -20,6 +20,7 @@ import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function parentX_parentY_strategy_Test() {
   describe('parentX_parentY_strategy_Test', () => {
     beforeEach(async (done: Function) => {
@@ -70,7 +71,7 @@ export default function parentX_parentY_strategy_Test() {
       let row: Component = await driver.findComponent(ON.id('Column_CustomEvent'));
       let point = await row.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(point.x), Math.round(point.y))
+      await driver.clickAt({ x: Math.round(point.x), y: Math.round(point.y), displayId: displayID })
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('parentX');
       let obj: ESObject = JSON.parse(strJson);
@@ -96,7 +97,7 @@ export default function parentX_parentY_strategy_Test() {
       let row: Component = await driver.findComponent(ON.id('Column_CustomEvent'));
       let point = await row.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(point.x), Math.round(point.y))
+      await driver.clickAt({ x: Math.round(point.x), y: Math.round(point.y), displayId: displayID })
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('parentY');
       let obj: ESObject = JSON.parse(strJson);
@@ -121,7 +122,7 @@ export default function parentX_parentY_strategy_Test() {
       let row: Component = await driver.findComponent(ON.id('row'));
       let point = await row.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(point.x), Math.round(point.y))
+      await driver.clickAt({ x: Math.round(point.x), y: Math.round(point.y), displayId: displayID })
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('strategy_DEFAULT');
       let obj: ESObject = JSON.parse(strJson);
@@ -147,7 +148,7 @@ export default function parentX_parentY_strategy_Test() {
       let row: Component = await driver.findComponent(ON.id('row'));
       let point = await row.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(point.x), Math.round(point.y))
+      await driver.clickAt({ x: Math.round(point.x), y: Math.round(point.y), displayId: displayID })
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('strategy_FORWARD_COMPETITION');
       let obj: ESObject = JSON.parse(strJson);
@@ -173,7 +174,7 @@ export default function parentX_parentY_strategy_Test() {
       let row: Component = await driver.findComponent(ON.id('row'));
       let point = await row.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(point.x), Math.round(point.y))
+      await driver.clickAt({ x: Math.round(point.x), y: Math.round(point.y), displayId: displayID })
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('strategy_FORWARD');
       let obj: ESObject = JSON.parse(strJson);

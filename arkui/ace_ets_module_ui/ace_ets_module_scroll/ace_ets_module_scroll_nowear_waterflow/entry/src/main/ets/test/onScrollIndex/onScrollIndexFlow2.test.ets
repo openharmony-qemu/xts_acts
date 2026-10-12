@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -55,8 +55,10 @@ export default function onScrollIndexFlow2() {
      */
     it('onScrollIndexFlow2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[onScrollIndexFlow2_0100] START');
-      let waterRect = CommonFunc.getComponentRectOnScreen('water_onIndex');
       let driver = Driver.create();
+      let waterRectComponent = await driver.findComponent(ON.id('water_onIndex'));
+      let waterRect = await waterRectComponent.getBounds();
+      let displayId = await waterRectComponent.getDisplayId();
       let top = waterRect.top;
       let right = waterRect.right;
       let left = waterRect.left;
@@ -65,7 +67,9 @@ export default function onScrollIndexFlow2() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.7),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.7), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId });
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('onScrollIndex_flow');

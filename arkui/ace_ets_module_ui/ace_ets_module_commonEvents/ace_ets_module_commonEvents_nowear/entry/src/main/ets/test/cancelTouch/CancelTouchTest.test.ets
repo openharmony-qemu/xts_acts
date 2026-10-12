@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function cancelTouchTest() {
   describe('CancelTouchTest', () => {
     beforeEach(async (done: Function) => {
@@ -52,7 +53,7 @@ export default function cancelTouchTest() {
       let driver: Driver = Driver.create();
       let text: Component = await driver.findComponent(ON.id('fatherScrollText'));
       let point = await text.getBoundsCenter();
-      await driver.longClickAt(point,3000);
+      await driver.longClickAt({x: point.x, y: point.y, displayId: displayID},3000);
       await CommonFunc.sleep(2000);
       expect(AppStorage.get('outer')).assertEqual('outer');
       done();

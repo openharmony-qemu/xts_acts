@@ -14,6 +14,7 @@
  */
 import browserManagerTest from './browser/browser.test.ets'
 import bluetoothManagerTest from './bluetoothManager/bluetoothManager.test.ets'
+import commonTest from './common/Common.test.ets'
 import securityManagerTest from './securityManager/securityManager.test';
 import deviceSettingsTest from './deviceSettings/deviceSettings.test';
 import deviceInfoTest from './deviceInfo/deviceInfo.test';
@@ -28,8 +29,10 @@ import deviceControlTest from './deviceControl/deviceControl.test.ets';
 import locationManagerTest from './locationManager/locationManager.test.ets';
 import usbManagerTest from './usbManager/usbManager.test.ets';
 import telephonyManagerTest from './telephonyManager/telephonyManager.test.ets';
+import beforeAllTest from './beforeAll/BeforeAll.test.ets';
 
 export default function testsuite() {
+  beforeAllTest();
   accountManagerTest();
   systemManagerTest();
   wifiManagerTest();
@@ -46,4 +49,5 @@ export default function testsuite() {
   bundleManagerTest();
   restrictionsTest();
   telephonyManagerTest();
+  commonTest();
 }

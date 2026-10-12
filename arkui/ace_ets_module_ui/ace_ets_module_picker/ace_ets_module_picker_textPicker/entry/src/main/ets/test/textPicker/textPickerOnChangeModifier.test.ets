@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { router } from '@kit.ArkUI';
@@ -65,14 +65,15 @@ export default function textPickerOnChangeModifierTest() {
         let switchButton = await driver.findComponent(ON.id('LunarBtn'));
         await switchButton.click();
         await Utils.sleep(1000);
-        let textPicker = Utils.getComponentRect('TextPicker');
-        let top = textPicker.top
-        let bottom = textPicker.bottom
-        let right = textPicker.right
-        let middle = (bottom-top) / 2 + top
-        let left = textPicker.left
-        await driver.swipe(Math.round(globalThis.winLeft+(right-left)/2+left), Math.round(globalThis.winTop+middle), Math.round(globalThis.winLeft+(right-left)/2+left),
-        Math.round(0));
+        let textPickerComp: Component = await driver.findComponent(ON.id('TextPicker'));
+        let rect = await textPickerComp.getBounds();
+        let displayId = await textPickerComp.getDisplayId();
+        let centerX = rect.left + (rect.right - rect.left) / 2;
+        let centerY = rect.top + (rect.bottom - rect.top) / 2;
+        await driver.swipeBetween(
+          { x: Math.round(centerX), y: Math.round(centerY), displayId: displayId },
+          { x: Math.round(centerX), y: 0, displayId: displayId }
+        );
         await Utils.sleep(5000);
         let strJsonNew:string = getInspectorByKey('onChangeOff');
         console.info("TextPicker_OnChange_Modifier_001 component  is: " + JSON.stringify(JSON.parse(strJsonNew)

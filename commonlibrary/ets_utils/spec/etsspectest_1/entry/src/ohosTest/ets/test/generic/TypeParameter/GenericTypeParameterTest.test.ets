@@ -23,7 +23,7 @@ import {
   beforeEach,
   afterEach,
   afterAll
-} from '@ohos/hypium';
+} from '@ohos/hypium-dynamic';
 
 function tpIdentity<T>(value: T): T {
   return value

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,39 +12,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ 
 import { Chip, ChipSize } from '@ohos.arkui.advanced.Chip';
 
 @Entry
 @Component
 struct ChipOnClick {
-    @State text: string = ''
-    build() {
-        Column() {
-            Column(){
-                Chip({
-                    prefixIcon: {
-                        src: $r('app.media.icon'),
-                        size: { width: 16, height: 16 },
-                        fillColor: Color.Red,
-                    },
-                    label: {
-                        text: "操作块",
-                        fontSize: 16,
-                        fontColor: Color.Blue,
-                        labelMargin: { left: 4, right: 4 },
-                    },
-                    size: ChipSize.NORMAL,
-                    allowClose: true,
-                    enabled: true,
-                    backgroundColor: 0x808080,
-                    activated: true,
-                    onClicked: () => {
-                        this.text = 'onClicked'
-                        console.log('test onClick')
-                    }
-                })
-            }.width(120).borderWidth(1).key('ChipOnClick')
-            Text(this.text).key('ChipOnClickText')
-        }
-    }
+  @State text: string = ''
+  build() {
+    Column() {
+      Column(){
+        Chip({
+          prefixIcon: {
+            src: $r('app.media.icon'),
+            size: { width: 16, height: 16 },
+            fillColor: Color.Red,
+          },
+          label: {
+            text: "操作块",
+            fontSize: 16,
+            fontColor: Color.Blue,
+            labelMargin: { left: 4, right: 4 },
+          },
+          size: ChipSize.NORMAL,
+          allowClose: true,
+          enabled: true,
+          backgroundColor: 0x808080,
+          activated: true,
+          onClicked: () => {
+            this.text = 'onClicked'
+            console.log('test onClick')
+          }
+        })
+      }.width(120).borderWidth(1).key('ChipOnClick')
+      Text(this.text).key('ChipOnClickText')
+    }.width('100%').height('100%')
+  }
 }

@@ -1492,8 +1492,18 @@ export default function ImageReceiverTest() {
             const myData = getUserData(CALLBACK_FUC_01, 888, "on image arrive", false);
             expect(arriveOnNdkTest.imageArriveOn(receiverPhoto, myData) == IMAGE_SUCCESS).assertTrue();
             expect(arriveOnNdkTest.imageReceiverTest(receiverPhoto, CAMERA_FORMAT_JPEG, TEST_TYPE_PHOTO, receiverPreview) == IMAGE_SUCCESS).assertTrue();
-            await sleep(2000);
-            const result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
+        
+            let result: ESObject = -1;
+            for (let i = 0; i < 3; i++) {
+                result = arriveOnNdkTest.waitForCondition(myData.callBackId, myData.num, 0);
+                if (typeof result != 'number') {
+                    console.info(`${TAG} retry ${i + 1}, got valid result: ${JSON.stringify(result)}`);
+                    break;
+                }
+                console.info(`${TAG} retry ${i + 1}, result is number ${result}, will retry`);
+                await sleep(1000);
+            }
+        
             expect(arriveOnNdkTest.imageArriveOff(receiverPhoto, CALLBACK_FUC_DE) == IMAGE_SUCCESS).assertTrue();
             arriveOnNdkTest.releaseImageReceiver(receiverPhoto);
             arriveOnNdkTest.releaseImageReceiver(receiverPreview);

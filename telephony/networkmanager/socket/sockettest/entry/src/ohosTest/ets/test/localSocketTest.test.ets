@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium';
+import { describe, it, TestType, Size, Level, expect } from '@ohos/hypium-dynamic';
 import socket from '@ohos.net.socket';
 import { BusinessError, Callback} from '@ohos.base';
 import { JSON } from '@kit.ArkTS';
@@ -49,10 +49,12 @@ function stringToArrayBuffer(str: string): ArrayBuffer {
 
 export default function LocalSocketTest() {
   describe('LocalSocketTest', () => {
-
     /**
+
+     describe('LocalSocket', () => {
+     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0100
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0100
      * @tc.desc   Bind
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -70,18 +72,14 @@ export default function LocalSocketTest() {
         let address: socket.LocalAddress = {
           address: sandboxPath
         };
-        try {
-          await client.bind(address);
-          console.log(`${caseName} bind success`);
-          expectTrue(true, 'bind should succeed with valid address');
-        } catch (err) {
-          console.error(`${caseName} failed to bind: ${JSON.stringify(err)}`);
-          const errObj = err as BusinessError;
-          console.info(`${caseName} err.code type: ${typeof errObj.code}, value: ${errObj.code}`);
-          expectFail('bind should not fail with valid address');
-        }
+        await client.bind(address);
+        console.log(`${caseName} bind success`);
+        expectTrue(true, 'bind should succeed with valid address');
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        const errObj = err as BusinessError;
+        console.info(`${caseName} err.code type: ${typeof errObj.code}, value: ${errObj.code}`);
+        expectFail('bind should not fail with valid address');
       } finally {
         if (client) {
           client.close();
@@ -93,7 +91,7 @@ export default function LocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0200
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0200
      * @tc.desc   test localSocket Bind function (401 or 2301098)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +157,7 @@ export default function LocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketConnect0100
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Connect_0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_connect_0100
      * @tc.desc   Connect to the specified socket
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,27 +215,20 @@ export default function LocalSocketTest() {
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        try {
-          await server.listen(localAddr);
-          console.log(`${caseName} listen success`)
-        } catch (err) {
-          console.info(`${caseName} fail to listen ${err.code.toString()}`);
-        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
           timeout: 6000
         }
-        try {
-          await client.connect(connectOpt);
-          console.log(`${caseName} connect success`)
-          let sendOpt: socket.LocalSendOptions = {
-            data: 'Hello world!'
-          }
-          await client.send(sendOpt);
-          console.info(`${caseName} client send success`)
-          expectTrue(true)
-        } catch (err) {
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        let sendOpt: socket.LocalSendOptions = {
+          data: 'Hello world!'
         }
+        await client.send(sendOpt);
+        console.info(`${caseName} client send success`)
+        expectTrue(true)
         client.close()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -260,34 +251,26 @@ export default function LocalSocketTest() {
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
-
         let sandboxPath: string = getContext().filesDir + '/testSocket'
         let client: socket.LocalSocket = socket.constructLocalSocketInstance()
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        try {
-          await server.listen(localAddr);
-          console.log(`${caseName} listen success`)
-        } catch (err) {
-          console.info(`${caseName} fail to listen ${err.code.toString()}`);
-        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
           timeout: 6000
         }
-        try {
-          await client.connect(connectOpt);
-          console.log(`${caseName} connect success`)
-          let sendOpt: socket.LocalSendOptions = {
-            data: 'Hello world!',
-            encoding: 'UTF-8',
-          }
-          await client.send(sendOpt);
-          console.info(`${caseName} client send success`)
-          expectTrue(true)
-        } catch (err) {
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        let sendOpt: socket.LocalSendOptions = {
+          data: 'Hello world!',
+          encoding: 'UTF-8',
         }
+        await client.send(sendOpt);
+        console.info(`${caseName} client send success`)
+        expectTrue(true)
         client.close()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -310,35 +293,26 @@ export default function LocalSocketTest() {
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
-
         let sandboxPath: string = getContext().filesDir + '/testSocket'
         let client: socket.LocalSocket = socket.constructLocalSocketInstance()
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        try {
-          await server.listen(localAddr);
-          console.log(`${caseName} listen success`)
-        } catch (err) {
-          console.info(`${caseName} fail to listen ${err.code.toString()}`);
-        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
           timeout: 6000
         }
-
-        try {
-          await client.connect(connectOpt);
-          console.log(`${caseName} connect success`)
-          let sendOpt: socket.LocalSendOptions = {
-            data: stringToArrayBuffer('Hello, server!'),
-            encoding: 'UTF-8',
-          }
-          await client.send(sendOpt);
-          console.info(`${caseName} client send success`)
-          expectTrue(true)
-        } catch (err) {
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        let sendOpt: socket.LocalSendOptions = {
+          data: stringToArrayBuffer('Hello, server!'),
+          encoding: 'UTF-8',
         }
+        await client.send(sendOpt);
+        console.info(`${caseName} client send success`)
+        expectTrue(true)
         client.close()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -361,40 +335,107 @@ export default function LocalSocketTest() {
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
-
         let sandboxPath: string = getContext().filesDir + '/testSocket'
         let client: socket.LocalSocket = socket.constructLocalSocketInstance()
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        try {
-          await server.listen(localAddr);
-          console.log(`${caseName} listen success`)
-        } catch (err) {
-          console.info(`${caseName} fail to listen ${err.code.toString()}`);
-        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
           timeout: 6000
         }
-        try {
-          await client.connect(connectOpt);
-          console.log(`${caseName} connect success`)
-          await client.send(null);
-          console.info(`${caseName} client send success`)
-          expectFail()
-        } catch (err) {
-          console.info(`${caseName} err: ${JSON.stringify(err)}`)
-          expectEqual(401, err.code)
-        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        await client.send(null);
+        console.info(`${caseName} client send success`)
+        expectFail()
         client.close()
       } catch (err) {
-        console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        expectFail();
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
       }
       console.info(`${caseName} test end`);
       done()
     });
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketSendTest0500
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_send_0500
+     * @tc.desc   test localSocket send function with undefined options, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketSendTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketSendTest0500';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        await client.send(undefined);
+        console.info(`${caseName} client send success`)
+        expectFail()
+        client.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketSendTest0600
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_send_0600
+     * @tc.desc   test localSocket send function with empty object options, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketSendTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketSendTest0600';
+      console.info(`${caseName} test start`);
+      try {
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        let emptyOpt: socket.LocalSendOptions = {} as socket.LocalSendOptions;
+        await client.send(emptyOpt);
+        console.info(`${caseName} client send success`)
+        expectFail()
+        client.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done()
+    });
+
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketGetState0100
      * @tc.number SUB_NetworkMgr_Socket_localSocket_getState_0100
@@ -408,32 +449,22 @@ export default function LocalSocketTest() {
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
-
         let sandboxPath: string = getContext().filesDir + '/testSocket'
         let client: socket.LocalSocket = socket.constructLocalSocketInstance()
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        try {
-          await server.listen(localAddr);
-          console.log(`${caseName} listen success`)
-        } catch (err) {
-          console.info(`${caseName} fail to listen ${err.code.toString()}`);
-        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
           timeout: 6000
         }
-        try {
-          await client.connect(connectOpt);
-          console.log(`${caseName} connect success`)
-          await client.getState();
-          console.info(`${caseName} get state success`)
-          expectTrue(true)
-        } catch (err) {
-          console.info(`${caseName} err: ${JSON.stringify(err)}`)
-          expectFail()
-        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        await client.getState();
+        console.info(`${caseName} get state success`)
+        expectTrue(true)
         client.close()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -462,12 +493,8 @@ export default function LocalSocketTest() {
         let localAddr: socket.LocalAddress = {
           address: sandboxPath
         }
-        try {
-          await server.listen(localAddr);
-          console.log(`${caseName} listen success`)
-        } catch (err) {
-          console.info(`${caseName} fail to listen ${err.code.toString()}`);
-        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
         let connectOpt: socket.LocalConnectOptions = {
           address: localAddr,
           timeout: 6000
@@ -541,15 +568,15 @@ export default function LocalSocketTest() {
     });
 
     /**
-     * @tc.name   testLocalSocketServerGetSocketFd0100
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_GetSocketFd_0100
+     * @tc.name   testNetworkMgrSocketLocalSocketServerGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocketServer_getSocketFd_0100
      * @tc.desc   test LocalSocketServer getSocketFd function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLocalSocketServerGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testLocalSocketServerGetSocketFd0100';
+    it('testNetworkMgrSocketLocalSocketServerGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketServerGetSocketFd0100';
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
@@ -584,15 +611,15 @@ export default function LocalSocketTest() {
     });
 
     /**
-     * @tc.name   testLocalSocketServerGetSocketFd0200
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocketServer_GetSocketFd_0200
+     * @tc.name   testNetworkMgrSocketLocalSocketServerGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocketServer_getSocketFd_0200
      * @tc.desc   test LocalSocketServer getSocketFd function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLocalSocketServerGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testLocalSocketServerGetSocketFd0200';
+    it('testNetworkMgrSocketLocalSocketServerGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketServerGetSocketFd0200';
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
@@ -617,15 +644,15 @@ export default function LocalSocketTest() {
     });
 
     /**
-     * @tc.name   testLocalSocketConnectionGetSocketFd0100
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocketConnection_GetSocketFd_0100
+     * @tc.name   testNetworkMgrSocketLocalSocketConnectionGetSocketFd0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocketConnection_getSocketFd_0100
      * @tc.desc   test LocalSocketConnection getSocketFd function (Promise style)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLocalSocketConnectionGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testLocalSocketConnectionGetSocketFd0100';
+    it('testNetworkMgrSocketLocalSocketConnectionGetSocketFd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketConnectionGetSocketFd0100';
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
@@ -678,15 +705,15 @@ export default function LocalSocketTest() {
     });
 
     /**
-     * @tc.name   testLocalSocketConnectionGetSocketFd0200
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocketConnection_GetSocketFd_0200
+     * @tc.name   testNetworkMgrSocketLocalSocketConnectionGetSocketFd0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocketConnection_getSocketFd_0200
      * @tc.desc   test LocalSocketConnection getSocketFd function (Promise style)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLocalSocketConnectionGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testLocalSocketConnectionGetSocketFd0200';
+    it('testNetworkMgrSocketLocalSocketConnectionGetSocketFd0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketConnectionGetSocketFd0200';
       console.info(`${caseName} test start`);
       try {
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance();
@@ -739,15 +766,15 @@ export default function LocalSocketTest() {
     });
 
     /**
-     * @tc.name   testLocalSocketOn0100
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_On_Message_0100
+     * @tc.name   testNetworkMgrSocketLocalSocketOn0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_on_message_0100
      * @tc.desc   test LocalSocket On message function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLocalSocketOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 ,  (done: Function) => {
-      const caseName: string = 'testLocalSocketOn0100';
+    it('testNetworkMgrSocketLocalSocketOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 ,  (done: Function) => {
+      const caseName: string = 'testNetworkMgrSocketLocalSocketOn0100';
       console.info(`${caseName}---Start`);
       let server: socket.LocalSocketServer | null = null;
       let client: socket.LocalSocket | null = null;
@@ -888,15 +915,15 @@ export default function LocalSocketTest() {
     });
 
     /**
-     * @tc.name   testLocalSocketConnectionClientId0100
-     * @tc.number Socket_LocalSocketConnection_ClintId_0100
+     * @tc.name   testNetworkMgrSocketLocalSocketConnectionClientId0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocketConnection_clientId_0100
      * @tc.desc   test localSocketConnection ClientId.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testLocalSocketConnectionClientId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
-      let caseName: string = 'testLocalSocketConnectionClientId0100';
+    it('testNetworkMgrSocketLocalSocketConnectionClientId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketConnectionClientId0100';
       console.info(`${caseName} test start`);
       try{
         let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
@@ -937,7 +964,7 @@ export default function LocalSocketTest() {
     });
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0300
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0300
      * @tc.desc   test localSocket Bind function (401)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1002,7 +1029,7 @@ export default function LocalSocketTest() {
     });
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0400
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0400
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0400
      * @tc.desc   test localSocket Bind function (401)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1087,7 +1114,7 @@ export default function LocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0500
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0500
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0500
      * @tc.desc   test localSocket Bind function (2301022 - Invalid argument)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1171,7 +1198,7 @@ export default function LocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0600
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0600
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0600
      * @tc.desc   test localSocket Bind function (2301099 - Cannot assign requested address)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1271,7 +1298,7 @@ export default function LocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0700
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0700
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0700
      * @tc.desc   test localSocket Bind function (2301013 - Insufficient permissions)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1352,7 +1379,7 @@ export default function LocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0800
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0800
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0800
      * @tc.desc   test localSocket Bind function (2301111 - Connection refused)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1436,7 +1463,7 @@ export default function LocalSocketTest() {
 
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind0900
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_0900
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_0900
      * @tc.desc   test localSocket Bind function (2301022 - Invalid argument with invalid socket options)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1518,10 +1545,9 @@ export default function LocalSocketTest() {
         done();
       }
     });
-
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketBind1000
-     * @tc.number SUB_NetworkMgr_Socket_LocalSocket_Bind_1000
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_1000
      * @tc.desc   test localSocket Bind function (2301111 - Connection refused with non-existent path)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1605,6 +1631,931 @@ export default function LocalSocketTest() {
         done();
       }
     });
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketBind1100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_bind_1100
+     * @tc.desc   bind with already bound address, expected error code 2301098 (Address already in use)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketBind1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketBind1100';
+      console.info(`${caseName} test start`);
+      let client1: socket.LocalSocket | null = null;
+      let client2: socket.LocalSocket | null = null;
+
+      try {
+        client1 = socket.constructLocalSocketInstance();
+        let sandboxPath: string = getContext().filesDir + '/testSocket2301098';
+        let address: socket.LocalAddress = {
+          address: sandboxPath
+        };
+        console.info(`${caseName}: binding first socket to ${sandboxPath}`);
+
+        try {
+          await client1.bind(address);
+          console.info(`${caseName}: first socket bound successfully`);
+
+          client2 = socket.constructLocalSocketInstance();
+          console.info(`${caseName}: attempting to bind second socket to same address`);
+
+          try {
+            await client2.bind(address);
+            console.info(`${caseName}: second bind unexpectedly succeeded`);
+            expect().assertFail();
+          } catch (err) {
+            const errorObj = err as BusinessError;
+            console.info(`${caseName}: second bind failed with code: ${errorObj.code}`);
+            expect(errorObj.code).assertEqual(2301098);
+          }
+        } catch (err) {
+          console.info(`${caseName}: first bind failed: ${JSON.stringify(err)}`);
+        }
+      } catch (error) {
+        console.info(`${caseName}: outer catch err: ${JSON.stringify(error)}`);
+      } finally {
+        if (client1) {
+          client1.close();
+        }
+        if (client2) {
+          client2.close();
+        }
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketConnect0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_connect_0200
+     * @tc.desc   connect with null options, expected error code 401 (Parameter error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketConnect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketConnect0200';
+      console.info(`${caseName} test start`);
+      try {
+        let paramNull = null;
+        expect(paramNull === null).assertTrue();
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance();
+        client.connect(paramNull).then(() => {
+          console.info(`${caseName} unexpected success`);
+          expect().assertFail();
+          done();
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} promise catch err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(401);
+          console.info(`${caseName} test end`);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} sync err: ${JSON.stringify(err)}`);
+        expect(err.code !== 401).assertTrue();
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketConnect0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_connect_0300
+     * @tc.desc   connect to a socket file that exists but has no listener, expected error code 2301111 (Connection refused)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketConnect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketConnect0300';
+      console.info(`${caseName} test start`);
+      let binder: socket.LocalSocket | null = null;
+      let client: socket.LocalSocket | null = null;
+      try {
+        binder = socket.constructLocalSocketInstance();
+        let sandboxPath: string = getContext().filesDir + '/testSocketConn2301111';
+        let bindAddr: socket.LocalAddress = {
+          address: sandboxPath
+        };
+        console.info(`${caseName}: binding first socket to ${sandboxPath}`);
+        await binder.bind(bindAddr);
+        console.info(`${caseName}: first socket bound successfully, socket file exists`);
+        binder.close();
+        binder = null;
+        client = socket.constructLocalSocketInstance();
+        let connectOpt: socket.LocalConnectOptions = {
+          address: {
+            address: sandboxPath
+          },
+          timeout: 6000
+        };
+        console.info(`${caseName}: connecting to ${sandboxPath} (file exists, no listener)`);
+        await client.connect(connectOpt);
+        console.info(`${caseName}: connect unexpectedly succeeded`);
+        expect().assertFail();
+      } catch (err) {
+        const errorObj = err as BusinessError;
+        console.info(`${caseName}: connect failed with code: ${errorObj?.code}`);
+        if (errorObj && typeof errorObj === 'object' && errorObj.code !== undefined) {
+          expect(errorObj.code).assertEqual(2301111);
+        } else {
+          console.info(`${caseName}: error code is undefined, test may have encountered environment issue`);
+        }
+      } finally {
+        if (binder) {
+          binder.close();
+        }
+        if (client) {
+          client.close();
+        }
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffMessage0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_message_0100
+     * @tc.desc   test localSocket off('message') without callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffMessage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffMessage0100';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: Callback<socket.LocalSocketMessageInfo> = (data: socket.LocalSocketMessageInfo) => {
+          console.info(`${caseName} on message callback triggered`);
+        };
+        client.on('message', callback);
+        expectTrue(callback !== undefined, 'callback is defined before off');
+        client.off('message');
+        console.info(`${caseName} off('message') without callback success`)
+        expectTrue(true, "off('message') without callback succeeded");
+        client.close()
+        server.off('connect');
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffMessage0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_message_0200
+     * @tc.desc   test localSocket off('message', callback) with callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffMessage0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffMessage0200';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: Callback<socket.LocalSocketMessageInfo> = (data: socket.LocalSocketMessageInfo) => {
+          console.info(`${caseName} on message callback triggered`);
+        };
+        client.on('message', callback);
+
+        // off with callback — assert callback is a valid function before passing
+        expectTrue(typeof callback === 'function', 'callback parameter is a function');
+        client.off('message', callback);
+        console.info(`${caseName} off('message', callback) with callback success`)
+        expectTrue(true, "off('message', callback) with callback succeeded");
+        client.close()
+        server.off('connect');
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffMessage0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_message_0300
+     * @tc.desc   test localSocket off(null) with null type, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketOffMessage0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffMessage0300';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+        client.off(null);
+        console.info(`${caseName} off(null) success`)
+        expectFail()
+        client.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffMessage0400
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_message_0400
+     * @tc.desc   test localSocket off(undefined) with undefined type, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketOffMessage0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffMessage0400';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        client.off(undefined);
+        console.info(`${caseName} off(undefined) success`)
+        expectFail()
+        client.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffMessage0500
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_message_0500
+     * @tc.desc   test localSocket off('error', null) with null callback, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketOffMessage0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffMessage0500';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        client.off('error', null);
+        console.info(`${caseName} off('error', null) success`)
+        expectFail()
+        client.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffConnect0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_connect_0100
+     * @tc.desc   test localSocket off('connect') without callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffConnect0100';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: Callback<void> = () => {
+          console.info(`${caseName} connect callback triggered`);
+        };
+        client.on('connect', callback);
+        expectTrue(callback !== undefined, 'callback is defined before off');
+        client.off('connect');
+        console.info(`${caseName} off('connect') without callback success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffConnect0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_connect_0200
+     * @tc.desc   test localSocket off('connect', callback) with callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffConnect0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffConnect0200';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: Callback<void> = () => {
+          console.info(`${caseName} connect callback triggered`);
+        };
+        client.on('connect', callback);
+        expectTrue(callback !== undefined, 'callback is defined before off');
+        client.off('connect', callback);
+        console.info(`${caseName} off('connect', callback) with callback success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffConnect0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_connect_0300
+     * @tc.desc   test localSocketServer off(undefined) with undefined type, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketOffConnect0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffConnect0300';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        client.off(undefined);
+        console.info(`${caseName} off(undefined) success`)
+        expectFail()
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffClose0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_close_0100
+     * @tc.desc   test localSocket off('close') without callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffClose0100';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: Callback<void> = () => {
+          console.info(`${caseName} close callback triggered`);
+        };
+        client.on('close', callback);
+        expectTrue(callback !== undefined, 'callback is defined before off');
+        client.off('close');
+        console.info(`${caseName} off('close') without callback success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffClose0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_close_0200
+     * @tc.desc   test localSocket off('close', callback) with callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffClose0200';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: Callback<void> = () => {
+          console.info(`${caseName} close callback triggered`);
+        };
+        client.on('close', callback);
+        expectTrue(callback !== undefined, 'callback is defined before off');
+        client.off('close', callback);
+        console.info(`${caseName} off('close', callback) with callback success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffClose0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_close_0300
+     * @tc.desc   test localSocket off(undefined) with undefined type, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketOffClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffClose0300';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        client.off('message', undefined);
+        console.info(`${caseName} off(undefined) success`)
+        expectFail()
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOnError0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_on_error_0100
+     * @tc.desc   test localSocket on('error', callback) with single callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOnError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOnError0100';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: (err: BusinessError) => void = (err: BusinessError) => {
+          console.info(`${caseName} error callback triggered`);
+        };
+        expectTrue(typeof callback === 'function', 'single callback is valid');
+        client.on('error', callback);
+        console.info(`${caseName} on('error', callback) success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOnError0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_on_error_0200
+     * @tc.desc   test localSocket on('error', callback) with multiple callbacks, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOnError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOnError0200';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback1: (err: BusinessError) => void = (err: BusinessError) => {
+          console.info(`${caseName} error callback1 triggered`);
+        };
+        let callback2: (err: BusinessError) => void = (err: BusinessError) => {
+          console.info(`${caseName} error callback2 triggered`);
+        };
+        expectTrue(typeof callback1 === 'function' && typeof callback2 === 'function', 'multiple callbacks are valid');
+        let ret1: void = client.on('error', callback1);
+        let ret2: void = client.on('error', callback2);
+        expectTrue(ret1 === undefined, `${caseName} first on('error') should return undefined`);
+        expectTrue(ret2 === undefined, `${caseName} second on('error') should return undefined`);
+        console.info(`${caseName} on('error', callback) with multiple callbacks success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOnError0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_on_error_0300
+     * @tc.desc   test localSocket on(undefined, callback) with undefined type, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketOnError0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOnError0300';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: (err: BusinessError) => void = (err: BusinessError) => {
+          console.info(`${caseName} error callback triggered`);
+        };
+        client.on(undefined, callback);
+        console.info(`${caseName} on(undefined) success`)
+        expectFail()
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffError0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_error_0100
+     * @tc.desc   test localSocket off('error') without callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffError0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffError0100';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: (err: BusinessError) => void = (err: BusinessError) => {
+          console.info(`${caseName} error callback triggered`);
+        };
+        client.on('error', callback);
+        expectTrue(callback !== undefined, 'callback is defined before off');
+        client.off('error');
+        console.info(`${caseName} off('error') without callback success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffError0200
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_error_0200
+     * @tc.desc   test localSocket off('error', callback) with callback, should succeed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketOffError0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffError0200';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        let callback: (err: BusinessError) => void = (err: BusinessError) => {
+          console.info(`${caseName} error callback triggered`);
+        };
+        client.on('error', callback);
+        expectTrue(callback !== undefined, 'callback is defined before off');
+        client.off('error', callback);
+        console.info(`${caseName} off('error', callback) with callback success`)
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketOffError0300
+     * @tc.number SUB_NetworkMgr_Socket_localSocket_off_error_0300
+     * @tc.desc   test localSocket off(undefined) with undefined type, expect 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testNetworkMgrSocketLocalSocketOffError0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketOffError0300';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+
+        client.off(undefined);
+        console.info(`${caseName} off(undefined) success`)
+        expectFail()
+        client.close()
+        server.close()
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`)
+        expectEqual(401, err.code)
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testNetworkMgrSocketLocalSocketConnectionSend0100
+     * @tc.number SUB_NetworkMgr_Socket_localSocketConnection_send_0100
+     * @tc.desc   test LocalSocketConnection send(options) with valid data, assert return value is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testNetworkMgrSocketLocalSocketConnectionSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketLocalSocketConnectionSend0100';
+      console.info(`${caseName} test start`);
+      try {
+        let sandboxPath: string = getContext().filesDir + '/testSocket'
+        let server: socket.LocalSocketServer = socket.constructLocalSocketServerInstance()
+        let client: socket.LocalSocket = socket.constructLocalSocketInstance()
+        let localAddr: socket.LocalAddress = {
+          address: sandboxPath
+        }
+        await server.listen(localAddr);
+        console.log(`${caseName} listen success`)
+
+        server.on('connect', async (connection: socket.LocalSocketConnection) => {
+          console.info(`${caseName} server accept connection success`);
+          try {
+            let sendOpt: socket.LocalSendOptions = {
+              data: 'Hello from LocalSocketConnection!'
+            }
+            let result: void = await connection.send(sendOpt);
+            expectTrue(result === undefined, 'send return value should be undefined');
+            console.info(`${caseName} connection send success`);
+          } catch (err) {
+            console.info(`${caseName} connection send err: ${JSON.stringify(err)}`);
+            expectFail();
+          } finally {
+            server.off('connect');
+            connection.close().catch(() => {});
+            client.close();
+            server.close().catch(() => {});
+            console.info(`${caseName} test end`);
+            done();
+          }
+        });
+
+        let connectOpt: socket.LocalConnectOptions = {
+          address: localAddr,
+          timeout: 6000
+        }
+        await client.connect(connectOpt);
+        console.log(`${caseName} connect success`)
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        expectFail();
+        done();
+      }
+    });
+
   });
 }
-

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import Utils from './Utils';

@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium'
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium-dynamic'
 import {UiComponent, UiDriver, Component, Driver, ON, BY, MouseButton} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function mouseEventTest() {
   describe('mouseEventTest', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +63,7 @@ export default function mouseEventTest() {
 
       let button = await driver.findComponent(ON.id('button'));
       let point = await button.getBoundsCenter();
-      await driver.mouseClick({x: point.x, y: point.y}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: point.x, y: point.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
 
       let strJsonX = getInspectorByKey('globalDisplayX');

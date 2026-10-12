@@ -31,6 +31,7 @@ const MENU_ITEM_TEXT = '菜单选项1';
 
 async function clickShowAndDismiss(btnId: string): Promise<void> {
   let driver = Driver.create();
+  await Utils.sleep(500);
   let btn = await driver.findComponent(ON.id(btnId));
   expect(!!btn).assertTrue();
   if (btn) {

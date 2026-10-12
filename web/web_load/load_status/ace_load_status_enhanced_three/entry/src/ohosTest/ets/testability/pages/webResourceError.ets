@@ -84,6 +84,18 @@ struct webResourceError {
               }
               break;
             }
+            case 'emitWebResourceErrorConstructor001': {
+              Utils.emitEvent(true, 141520);
+              break;
+            }
+            case 'emitWebResourceErrorConstructorReturn001': {
+              Utils.emitEvent(true, 141521);
+              break;
+            }
+            case 'emitWebResourceErrorClass001': {
+              Utils.emitEvent(true, 141522);
+              break;
+            }
           }
         })
       }

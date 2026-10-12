@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function getCurrentLocalPositionTest_MouseEvent() {
   describe('getCurrentLocalPositionTest_MouseEvent', () => {
     beforeEach(async (done: Function) => {
@@ -54,7 +55,7 @@ export default function getCurrentLocalPositionTest_MouseEvent() {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button01'));
       let point = await button.getBoundsCenter();
-      await driver.mouseClick({x: point.x, y: point.y}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: point.x, y: point.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1500);
 
       let strJson = getInspectorByKey('text01');

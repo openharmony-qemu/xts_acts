@@ -18,7 +18,7 @@ import bluetooth from '@ohos.bluetooth.connection';
 import ble from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import btCommon from '@ohos.bluetooth.common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 
     function PinRequiredParam(data : bluetooth.PinRequiredParam) {
@@ -214,7 +214,7 @@ describe('btConnectionTest', () => {
             message is ${error.message}`);
             if (error.code == 801) {
                 console.info('[bluetooth_js]pinRequired is not support');
-                expect(true).assertTrue();
+                expect(error.code).assertEqual(801);
             } else {
                 expect(Number(error.code)).assertEqual(2900099);
             }
@@ -4962,7 +4962,6 @@ describe('btConnectionTest', () => {
             console.info('[bluetooth_js]on bluetoothDeviceFind success');
             bluetooth.off('bluetoothDeviceFind');
             console.info('[bluetooth_js]off bluetoothDeviceFind without callback success');
-            expect(true).assertTrue();
         } catch (error) {
             console.info(`[bluetooth_js]off bluetoothDeviceFind no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
@@ -4989,7 +4988,6 @@ describe('btConnectionTest', () => {
             console.info('[bluetooth_js]on bondStateChange success');
             bluetooth.off('bondStateChange');
             console.info('[bluetooth_js]off bondStateChange without callback success');
-            expect(true).assertTrue();
         } catch (error) {
             console.info(`[bluetooth_js]off bondStateChange no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
@@ -5016,7 +5014,6 @@ describe('btConnectionTest', () => {
             console.info('[bluetooth_js]on pinRequired success');
             bluetooth.off('pinRequired');
             console.info('[bluetooth_js]off pinRequired without callback success');
-            expect(true).assertTrue();
         } catch (error) {
             console.info(`[bluetooth_js]off pinRequired no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
@@ -5046,11 +5043,40 @@ describe('btConnectionTest', () => {
             console.info('[bluetooth_js]on batteryChange success');
             bluetooth.off('batteryChange');
             console.info('[bluetooth_js]off batteryChange without callback success');
-            expect(true).assertTrue();
         } catch (error) {
             console.info(`[bluetooth_js]off batteryChange no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
                 console.info('[bluetooth_js]batteryChange is not support');
+                expect(error.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERYRESULT_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERYRESULT_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off discoveryResult without callback param test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERYRESULT_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
+        let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
+            console.info('bluetooth discoveryResult callback');
+        }
+        try {
+            bluetooth.on('discoveryResult', onReceiveEvent);
+            console.info('[bluetooth_js]on discoveryResult success');
+            await sleep(900);
+            bluetooth.off('discoveryResult');
+            console.info('[bluetooth_js]off discoveryResult without callback success');
+        } catch (error) {
+            console.info(`[bluetooth_js]off discoveryResult no callback error, code is ${error.code}, message is ${error.message}`);
+            if (error.code === 801) {
+                console.info('[bluetooth_js]discoveryResult is not support');
                 expect(error.code).assertEqual(801);
             } else {
                 expect().assertFail();

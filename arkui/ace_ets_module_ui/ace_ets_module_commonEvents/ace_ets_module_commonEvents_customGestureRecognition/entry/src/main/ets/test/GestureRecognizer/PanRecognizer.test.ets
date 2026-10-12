@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PanRecognizerTest() {
   describe('PanRecognizerTest', () => {
     beforeEach(async (done: Function) => {
@@ -68,8 +69,8 @@ export default function PanRecognizerTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(2000);
       let pointers: PointerMatrix = PointerMatrix.create(1,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj.left + areaWidth * 0.1),y: Math.round(areaObj.top + areaHeight * 0.5) });
-      pointers.setPoint(0,1,{x: Math.round(areaObj.left + areaWidth * 0.3),y: Math.round(areaObj.top + areaHeight * 0.5) });
+      pointers.setPoint(0,0,{x: Math.round(areaObj.left + areaWidth * 0.1),y: Math.round(areaObj.top + areaHeight * 0.5), displayId: displayID});
+      pointers.setPoint(0,1,{x: Math.round(areaObj.left + areaWidth * 0.3),y: Math.round(areaObj.top + areaHeight * 0.5), displayId: displayID});
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       let strJson = getInspectorByKey('PanRecognizer');

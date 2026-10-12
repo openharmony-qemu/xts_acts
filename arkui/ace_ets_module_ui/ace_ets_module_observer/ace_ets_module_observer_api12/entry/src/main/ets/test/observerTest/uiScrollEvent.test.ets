@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function uiScrollEvent() {
   describe('uiScrollEvent', () => {
@@ -61,16 +63,21 @@ export default function uiScrollEvent() {
       await btn.click();
       console.log('uiScrollEvent_0100 000')
       await CommonFunc.sleep(1000);
-      let swipeAnimation = CommonFunc.getComponentRectOnScreen('testId_uiScroll');
-      let top = swipeAnimation.top;
-      let right = swipeAnimation.right;
-      let left = swipeAnimation.left;
-      let bottom = swipeAnimation.bottom;
-      console.info("uiScrollEvent_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom -top;
+      let scrollComponent = await driver.findComponent(ON.id('testId_uiScroll'));
+      let rect = await scrollComponent.getBounds();
+      let displayId = await scrollComponent.getDisplayId();
+      let top = rect.top;
+      let right = rect.right;
+      let left = rect.left;
+      let bottom = rect.bottom;
+      console.info("uiScrollEvent_0100 value is" + left + " --" + right
+        + "--" + top + "--" + bottom + ", displayId = " + displayId);
+      let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(bottom - height/5),Math.round(left + width*0.2),Math.round(bottom - height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 5), displayId: displayId },
+        { x: Math.round(left + width * 0.2), y: Math.round(bottom - height / 2), displayId: displayId });
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('scrollEvent_ui2');
       let obj: ESObject = JSON.parse(strJson);

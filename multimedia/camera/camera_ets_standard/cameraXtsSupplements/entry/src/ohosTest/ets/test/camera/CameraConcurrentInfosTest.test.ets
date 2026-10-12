@@ -16,7 +16,7 @@
 
 import camera from '@ohos.multimedia.camera';
 import image from '@ohos.multimedia.image';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';

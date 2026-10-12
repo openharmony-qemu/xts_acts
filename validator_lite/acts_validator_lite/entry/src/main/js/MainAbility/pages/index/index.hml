@@ -30,6 +30,9 @@
     <input class="sub-btn" type="button" value="Location" onclick="navigateTo('Location')" />
   </list-item>
   <list-item class="listItem">
+    <input class="sub-btn" type="button" value="RouterTransition" onclick="navigateTo('RouterTransition')" />
+  </list-item>
+  <list-item class="listItem">
     <input class="report-btn" type="button" value="{{ reportBtnText }}" onclick="generateReport" />
   </list-item>
 </list>

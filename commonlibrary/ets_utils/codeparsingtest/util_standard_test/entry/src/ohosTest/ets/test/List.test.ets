@@ -1,6 +1,7 @@
 import base64HelperTest from './Base64Helper/Base64HelperTest.test';
 import base64HelperTest02 from './Base64Helper/Base64HelperTest02.test';
 import base64HelperTest03 from './Base64Helper/Base64HelperTest03.test';
+import base64HelperTest04 from './Base64Helper/Base64HelperTest04.test';
 
 import jsonTest from './json/Json.test';
 import jsonTest01 from './json/JsonTest01.test';
@@ -48,6 +49,7 @@ import utilTest from './util/Util.test';
 import util2Test from './util/Util2.test';
 import util3Test from './util/Util3.test';
 import utilTypeTest from './util/UtilType.test';
+import utilGetGlobalHandleCountTest from './util/GetGlobalHandleCount.test';
 import vmHeapMemoryPressureTest from './util/VMHeapMemoryPressureTest.test';
 
 import util1FPTest from './utilfp/Util1FP.test';
@@ -58,6 +60,7 @@ export default function testsuite() {
   base64HelperTest();
   base64HelperTest02();
   base64HelperTest03();
+  base64HelperTest04();
   jsonTest();
   jsonTest01();
   jsonTest02();
@@ -98,6 +101,7 @@ export default function testsuite() {
   util2Test();
   util3Test();
   utilTypeTest();
+  utilGetGlobalHandleCountTest();
   vmHeapMemoryPressureTest();
   util1FPTest();
   util2FPTest();

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType, expect } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it, Level, Size, TestType, expect } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import Utils from './Utils';
 import webView from '@ohos.web.webview';
@@ -118,6 +118,42 @@ export default function GetReferrerUrlTest() {
     it('testGetOriginal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetOriginal001", 260420)
       Utils.registerBaseEvent("testGetOriginal001", true, 26042002, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'GetReferrerUrlTestButton');
+    })
+
+    /**
+     * @tc.name   testGetReferrerUrlReturnType001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETREFERRERURL_RETURN_2000
+     * @tc.desc   test WebDownloadItem.getReferrerUrl return type is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetReferrerUrlReturnType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('testGetReferrerUrlReturnType001', 260420);
+      Utils.registerBaseEvent('testGetReferrerUrlReturnType001', true, 26042003, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'GetReferrerUrlTestButton');
+    })
+
+    /**
+     * @tc.name   testGetOriginalUrlReturnType001
+     * @tc.number SUB_WEB_WEBDOWNLOADITEM_GETORIGINALURL_RETURN_2100
+     * @tc.desc   test WebDownloadItem.getOriginalUrl return type is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetOriginalUrlReturnType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('testGetOriginalUrlReturnType001', 260420);
+      Utils.registerBaseEvent('testGetOriginalUrlReturnType001', true, 26042004, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });

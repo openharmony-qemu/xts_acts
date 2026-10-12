@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -32,6 +32,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function MouseEventWindowTest() {
   describe('MouseEventWindowTest', () => {
     beforeEach(async (done: Function) => {
@@ -75,14 +76,14 @@ export default function MouseEventWindowTest() {
       await CommonFunc.sleep(500);
       let mouseButton = await driver.findComponent(ON.id('mouseButton'));
       let rect = await mouseButton.getBoundsCenter();
-      await driver.mouseClick({ x: rect.x, y: rect.y }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: rect.x, y: rect.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(2000);
 
       let text = await driver.findComponent(ON.id('mouseText'));
       await text.click();
       await CommonFunc.sleep(2000);
 
-      await driver.mouseClick({ x: rect.x, y: rect.y }, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({ x: rect.x, y: rect.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(2000);
       expect(AppStorage.get('ENTER_WINDOW')).assertEqual(MouseAction.ENTER_WINDOW);
       expect(MouseAction.ENTER_WINDOW).assertEqual(4);

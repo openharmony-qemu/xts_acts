@@ -16,7 +16,7 @@
 import image from "@ohos.multimedia.image";
 import fileio from "@ohos.fileio";
 import colorSpaceManager from "@ohos.graphics.colorSpaceManager";
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import { testImg } from "./testImg";
 import { testP3 } from "./testImg2";
 import featureAbility from "@ohos.ability.featureAbility";

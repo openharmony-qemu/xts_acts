@@ -73,7 +73,7 @@ struct SelectMenuBackground {
 
   build() {
     Scroll() {
-      Column({ space: 10 }) {
+      Column() {
         Text('Select menuBackground*').fontSize(18).fontWeight(FontWeight.Bold)
         Text('blur=' + this.blurMode + ' effect=' + this.effectMode)
           .id('select_bg_mode_label')

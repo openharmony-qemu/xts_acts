@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,15 +57,18 @@ export default function gridRepeatTrue() {
       console.info("[gridRepeatTrue_0100] onText1 is: " + onText1);
       expect(onText1).assertEqual(null);
 
-      let gridItem0 = CommonFunc.getComponentRectOnScreen('grid_repeat_true_4');
+      let gridItem0Component = await driver.findComponent(ON.id('grid_repeat_true_4'));
+      let gridItem0 = await gridItem0Component.getBounds();
       let left = gridItem0.left;
       let right = gridItem0.right;
       console.info("gridRepeatTrue_0100 value is" + left + " --" + right);
       let width = right - left;
       console.info("[gridRepeatTrue_0100] gridItem0 width is: " + width);
-      let gridItem1 = CommonFunc.getComponentRectOnScreen('grid_repeat_true_6');
+      let gridItem1Component = await driver.findComponent(ON.id('grid_repeat_true_6'));
+      let gridItem1 = await gridItem1Component.getBounds();
       console.info("[gridRepeatTrue_0100] gridItem1 right is: " + gridItem1.right);
-      let gridItem2 = CommonFunc.getComponentRectOnScreen('grid_repeat_true_8');
+      let gridItem2Component = await driver.findComponent(ON.id('grid_repeat_true_8'));
+      let gridItem2 = await gridItem2Component.getBounds();
       console.info("[gridRepeatTrue_0100] gridItem2 left is: " + gridItem2.left);
       expect(Math.floor(Math.abs(gridItem2.left - gridItem1.right - width)) <= 1).assertTrue();
       console.info('[gridRepeatTrue_0100] END');

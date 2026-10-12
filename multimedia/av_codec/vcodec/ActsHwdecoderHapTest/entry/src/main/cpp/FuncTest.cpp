@@ -16,6 +16,7 @@
 #include <multimedia/player_framework/native_avcodec_videodecoder.h>
 #include <string>
 #include "VideoDecNdkSample.h"
+#include "VideoDecApi11Sample.h"
 #include "include/CommonTool.h"
 #include "hilog/log.h"
 
@@ -28,14 +29,18 @@ using namespace OHOS::Media;
 namespace {
 const char* INP_DIR_720_30 = "/data/storage/el2/base/files/1280_720_30_10Mb.h264";
 const char* INP_DIR_1080_30 = "/data/storage/el2/base/files/1920_1080_10_30Mb.h264";
+const char* INP_DIR_1080_20 = "/data/storage/el2/base/files/1920_1080_20M_30.h265";
+const char* INP_DIR_VVC_1080 = "/data/storage/el2/base/files/1920_1080_10bit.vvc";
 
 static OH_AVCapability* cap = nullptr;
 static OH_AVCapability* cap_hevc = nullptr;
+static OH_AVCapability* cap_vvc = nullptr;
 static OH_AVRange heightRange;
 static OH_AVRange widthRange;
 static OH_AVErrCode ret = AV_ERR_OK;
 static string g_codecName = "";
 static string g_codecNameHEVC = "";
+static string g_codecNameVVC = "";
 constexpr int32_t DEFAULT_WIDTH = 1920;
 constexpr int32_t DEFAULT_HEIGHT = 1080;
 constexpr int32_t DEFAULT_FRAME_RATE = 30;
@@ -52,10 +57,69 @@ static void TestSetUpTestCase()
     cap_hevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, HARDWARE);
     g_codecNameHEVC = OH_AVCapability_GetName(cap_hevc);
     cout << "g_codecNameHEVC: " << g_codecNameHEVC << endl;
+    cap_vvc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VVC, false, HARDWARE);
+    g_codecNameVVC = OH_AVCapability_GetName(cap_vvc);
+    cout << "g_codecNameVVC: " << g_codecNameVVC << endl;
     ret = OH_AVCapability_GetVideoHeightRange(cap, &heightRange);
     cout << "minval=" << heightRange.minVal << "  maxval=" << heightRange.maxVal << endl;
     ret = OH_AVCapability_GetVideoWidthRangeForHeight(cap, heightRange.maxVal, &widthRange);
     cout << "minval=" << widthRange.minVal << "  maxval=" << widthRange.maxVal << endl;
+}
+ 
+const std::vector<std::string> &GetDmabufSuffixCat1()
+{
+    static const std::vector<std::string> cat1 = {
+        "!", "abc123", "a_b-c!a1bcX2YZ3!@#$%^&*",
+    };
+    return cat1;
+}
+ 
+const std::vector<std::string> &GetDmabufSuffixCat2()
+{
+    static const std::vector<std::string> cat2 = {
+        "测试 / cafe /  ", "12 3a", "abc\n \t \r \0", "0123456789", "\n \t",
+    };
+    return cat2;
+}
+ 
+static void ResetDmabufTestState(const std::shared_ptr<VDecAPI11Sample> &vDecSample)
+{
+    vDecSample->FlushBuffer();
+    vDecSample->errCount = 0;
+    vDecSample->frameCount_ = 0;
+    vDecSample->outCount = 0;
+}
+ 
+static int RunDmabufSuffixCat1(const std::shared_ptr<VDecAPI11Sample> &vDecSample)
+{
+    const auto &cat1 = GetDmabufSuffixCat1();
+    for (size_t i = 0; i < cat1.size(); i++) {
+        if (i > 0) {
+            if (vDecSample->Reset() != AV_ERR_OK) { return -1; }
+            ResetDmabufTestState(vDecSample);
+        }
+        vDecSample->dmabufNameSuffix = cat1[i];
+        if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
+        if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) { return -1; }
+    }
+    return 0;
+}
+ 
+static int RunDmabufSuffixCat2(const std::shared_ptr<VDecAPI11Sample> &vDecSample)
+{
+    const auto &cat2 = GetDmabufSuffixCat2();
+    for (size_t i = 0; i < cat2.size(); i++) {
+        if (vDecSample->Reset() != AV_ERR_OK) { return -1; }
+        ResetDmabufTestState(vDecSample);
+        vDecSample->dmabufNameSuffix = cat2[i];
+        int32_t ret = vDecSample->ConfigureVideoDecoder();
+        if (ret != AV_ERR_INVALID_VAL) {
+            return -1;
+        }
+    }
+    return 0;
 }
 
 /**
@@ -704,6 +768,87 @@ int OutputDecsFunc007Test()
         vDecSample->WaitForEOS();
     } else {
         cout << "hardware encoder is rk,skip." << endl;
+    }
+    return 0;
+}
+
+/**
+ * @tc.name   VideoDecodeH264DmabufSuffix0010
+ * @tc.number VideoDecodeH264DmabufSuffix0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VideoDecodeH264DmabufSuffix0010()
+{
+    if (cap != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->sfOutput = false;
+        vDecSample->enableDmabufNameSuffix = true;
+        vDecSample->afterEosDestroyCodec = false;
+        if (vDecSample->CreateVideoDecoder(g_codecName) != AV_ERR_OK) { return -1; }
+        if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat1(vDecSample) != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat2(vDecSample) != AV_ERR_OK) { return -1; }
+    }
+    return 0;
+}
+
+/**
+ * @tc.name   VideoDecodeH265DmabufSuffix0010
+ * @tc.number VideoDecodeH265DmabufSuffix0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VideoDecodeH265DmabufSuffix0010()
+{
+    if (cap_hevc != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = INP_DIR_1080_20;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->sfOutput = false;
+        vDecSample->enableDmabufNameSuffix = true;
+        vDecSample->afterEosDestroyCodec = false;
+        if (vDecSample->CreateVideoDecoder(g_codecNameHEVC) != AV_ERR_OK) { return -1; }
+        if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat1(vDecSample) != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat2(vDecSample) != AV_ERR_OK) { return -1; }
+    }
+    return 0;
+}
+
+/**
+ * @tc.name   VideoDecodeH266DmabufSuffix0010
+ * @tc.number VideoDecodeH266DmabufSuffix0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int VideoDecodeH266DmabufSuffix0010()
+{
+    if (cap_vvc != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = INP_DIR_VVC_1080;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->sfOutput = false;
+        vDecSample->enableDmabufNameSuffix = true;
+        vDecSample->afterEosDestroyCodec = false;
+        if (vDecSample->CreateVideoDecoder(g_codecNameVVC) != AV_ERR_OK) { return -1; }
+        if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat1(vDecSample) != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat2(vDecSample) != AV_ERR_OK) { return -1; }
     }
     return 0;
 }

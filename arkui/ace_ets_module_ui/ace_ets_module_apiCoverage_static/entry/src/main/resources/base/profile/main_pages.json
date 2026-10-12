@@ -1,0 +1,9 @@
+{
+  "src": [
+    "MainAbility/pages/index/index",
+    "MainAbility/pages/coverage/CoverageStaticIndex",
+    "MainAbility/pages/coverage/Coverage0917Static",
+    "MainAbility/pages/coverage/TabsApiCoverageStatic",
+    "MainAbility/pages/coverage/TabsApiCoverageAbnormalStatic"
+  ]
+}

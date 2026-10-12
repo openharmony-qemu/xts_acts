@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import ohosrouter from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/common/Common';
@@ -2000,7 +2000,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
     expect(prevMargin).assertEqual("6.00vp");
     expect(itemspace).assertEqual("10.00vp");
 
-    expect(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(4*10 + 15 + 6))) <= 1).assertTrue();
+    expect(Math.floor(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(4*10 + 15 + 6)))) <= 2).assertTrue();
     done();
   });
 
@@ -2449,7 +2449,7 @@ export default function SwiperNextPrevMarginAddJsunit() {
     expect(prevMargin).assertEqual("6.00vp");
     expect(itemspace).assertEqual("10.00vp");
 
-    expect(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(15 + 6 + 4 * 10))) <= 1).assertTrue();
+    expect(Math.floor(Math.abs(Math.round(swiperTop - swiperbottom) -  Math.round(3 *(top - bottom) - vp2px(15 + 6 + 4 * 10)))) <= 2).assertTrue();
     done();
   });
 

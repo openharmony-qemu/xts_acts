@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -22,6 +22,7 @@ import accessibility from '@ohos.accessibility';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function PanGestureEventJsunit() {
   describe('PanGestureEventJsunit', () => {
       beforeEach(async (done: Function) => {
@@ -65,17 +66,17 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
     it('PanGestureEventJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the GestureEvent
       console.info('[PanGestureEventJsunit_0100] START');
-      let driver = await UiDriver.create()
+      let driver = Driver.create()
       await CommonFunc.sleep(500);
       let colum = CommonFunc.getComponentRectOnScreen('PanGestureEvent_column_id');
       let top = colum.top
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(left + (colum.right - colum.left)/2), Math.round((top + bottom) / 2),
-        Math.round(right - (colum.right - colum.left)*0.1), Math.round((top + bottom) / 2));
+      await driver.swipeBetween({x:Math.round(left + (colum.right - colum.left)/2),y:Math.round((top + bottom) / 2),displayId:displayID},
+        {x:Math.round(right - (colum.right - colum.left)*0.1),y:Math.round((top + bottom) / 2),displayId:displayID});
       await CommonFunc.sleep(2000);
-      let textComponent = await driver.findComponent(BY.key('velocityX'));
+      let textComponent = await driver.findComponent(ON.id('velocityX'));
       let text = await textComponent.getText();
       await CommonFunc.sleep(1000);
       expect(text == "0").assertFalse();
@@ -94,17 +95,17 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
     it('PanGestureEventJsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Get the information of the GestureEvent
       console.info('[PanGestureEventJsunit_0200] START');
-      let driver = await UiDriver.create()
+      let driver = Driver.create()
       await CommonFunc.sleep(500);
       let colum = CommonFunc.getComponentRectOnScreen('PanGestureEvent_column_id');
       let top = colum.top
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(left + (colum.right - colum.left)/2), Math.round((top + bottom) / 2),
-        Math.round(right - (colum.right - colum.left)*0.1), Math.round((top + bottom) / 2));
+      await driver.swipeBetween({x:Math.round(left + (colum.right - colum.left)/2),y:Math.round((top + bottom) / 2),displayId:displayID},
+        {x:Math.round(right - (colum.right - colum.left)*0.1),y:Math.round((top + bottom) / 2),displayId:displayID});
       await CommonFunc.sleep(2000);
-      let textComponent = await driver.findComponent(BY.key('velocityY'));
+      let textComponent = await driver.findComponent(ON.id('velocityY'));
       let text = await textComponent.getText();
       await CommonFunc.sleep(1000);
       expect(text == "0").assertFalse();
@@ -123,17 +124,17 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
     it('PanGestureEventJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Get the information of the GestureEvent
       console.info('[PanGestureEventJsunit_0300] START');
-      let driver = await UiDriver.create()
+      let driver = Driver.create()
       await CommonFunc.sleep(500);
       let colum = CommonFunc.getComponentRectOnScreen('PanGestureEvent_column_id');
       let top = colum.top
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await driver.swipe(Math.round(left + (colum.right - colum.left)/2), Math.round((top + bottom) / 2),
-        Math.round(right - (colum.right - colum.left)*0.1), Math.round((top + bottom) / 2));
+      await driver.swipeBetween({x:Math.round(left + (colum.right - colum.left)/2),y:Math.round((top + bottom) / 2),displayId:displayID},
+        {x:Math.round(right - (colum.right - colum.left)*0.1),y:Math.round((top + bottom) / 2),displayId:displayID});
       await CommonFunc.sleep(2000);
-       let textComponent = await driver.findComponent(BY.key('velocity'));
+       let textComponent = await driver.findComponent(ON.id('velocity'));
       let text = await textComponent.getText();
       await CommonFunc.sleep(1000);
       expect(text == "0").assertFalse();

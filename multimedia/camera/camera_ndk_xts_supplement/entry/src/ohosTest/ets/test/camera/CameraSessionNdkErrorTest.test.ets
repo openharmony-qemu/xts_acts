@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import cameraObj from 'libentry.so'
 import { driveFn, getPermission, sleep } from '../CameraCommon.test';
 import { indexSurfaceId } from '../../testability/pages/Index';

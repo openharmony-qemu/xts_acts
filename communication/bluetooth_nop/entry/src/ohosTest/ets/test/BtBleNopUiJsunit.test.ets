@@ -14,7 +14,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import ble from '@ohos.bluetooth.ble';
 import partnerAgent from '@ohos.FusionConnectivity.partnerAgent';
 import common from '@ohos.bluetooth.common';

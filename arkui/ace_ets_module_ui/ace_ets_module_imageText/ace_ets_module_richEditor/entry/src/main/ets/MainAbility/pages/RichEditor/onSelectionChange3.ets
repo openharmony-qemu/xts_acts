@@ -56,6 +56,7 @@ struct onSelectionChange3 {
         })
         .id('onSelectionChange3_RichEditor')
         .width('100%')
+        .margin({top:10})
       Text('' + this.text1).key('onSelectionChange3_text1').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
       Text('' + this.text2).key('onSelectionChange3_text2').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')
       Text('' + this.text3).key('onSelectionChange3_text3').fontSize(10).width('100%').textAlign(TextAlign.Center).height('5%')

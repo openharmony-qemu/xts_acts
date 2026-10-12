@@ -48,9 +48,10 @@ export default function CoastingAxisTest(){
       let scrollBar = await driver.findComponent(ON.id('column'));
       console.log('CoastingAxisTest000 2')
       let center = await scrollBar.getBoundsCenter();
+      let displayId = await scrollBar.getDisplayId();
       console.log('CoastingAxisTest000 3')
       await Utils.sleep(500);
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayId }, true, 30);
       console.log('CoastingAxisTest000 4')
       await Utils.sleep(500);
       expect(nativeRender.CoastingAxisTest_c()).assertEqual(0)

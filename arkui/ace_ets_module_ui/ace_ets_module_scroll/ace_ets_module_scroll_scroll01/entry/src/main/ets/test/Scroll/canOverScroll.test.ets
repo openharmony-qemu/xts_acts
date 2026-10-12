@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -57,8 +57,10 @@ export default function canOverScroll() {
       let btn_true = await driver.findComponent(ON.id('canOver_scroll_true'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let scroll = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll');
-      let scrollItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll_0');
+      let scrollComp = await driver.findComponent(ON.id('canOverScroll_scroll'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem0Comp = await driver.findComponent(ON.id('canOverScroll_scroll_0'))
+      let scrollItem0 = await scrollItem0Comp.getBounds()
 
       console.info(`[canOverScroll_0100] scroll.top=
         ${scroll.top}`);
@@ -86,8 +88,10 @@ export default function canOverScroll() {
       let btn_true = await driver.findComponent(ON.id('canOver_scroll_false'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let scroll = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll');
-      let scrollItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll_0');
+      let scrollComp = await driver.findComponent(ON.id('canOverScroll_scroll'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem0Comp = await driver.findComponent(ON.id('canOverScroll_scroll_0'))
+      let scrollItem0 = await scrollItem0Comp.getBounds()
 
       console.info(`[canOverScroll_0100] scroll.top=
         ${scroll.top}`);
@@ -113,8 +117,10 @@ export default function canOverScroll() {
       let btn_true = await driver.findComponent(ON.id('canOver_scroll_null'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let scroll = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll');
-      let scrollItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll_0');
+      let scrollComp = await driver.findComponent(ON.id('canOverScroll_scroll'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem0Comp = await driver.findComponent(ON.id('canOverScroll_scroll_0'))
+      let scrollItem0 = await scrollItem0Comp.getBounds()
 
       console.info(`[canOverScroll_0100] scroll.top=
         ${scroll.top}`);
@@ -140,8 +146,10 @@ export default function canOverScroll() {
       let btn_true = await driver.findComponent(ON.id('canOver_scroll_ude'));
       await btn_true.click();
       await CommonFunc.sleep(1500);
-      let scroll = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll');
-      let scrollItem0 = CommonFunc.getComponentRectOnScreen('canOverScroll_scroll_0');
+      let scrollComp = await driver.findComponent(ON.id('canOverScroll_scroll'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem0Comp = await driver.findComponent(ON.id('canOverScroll_scroll_0'))
+      let scrollItem0 = await scrollItem0Comp.getBounds()
 
       console.info(`[canOverScroll_0100] scroll.top=
         ${scroll.top}`);

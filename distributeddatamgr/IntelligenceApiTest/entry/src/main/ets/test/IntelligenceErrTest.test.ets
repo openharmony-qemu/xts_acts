@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import osAccount from '@ohos.account.osAccount';

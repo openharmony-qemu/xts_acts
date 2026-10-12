@@ -14,7 +14,7 @@
 */
 
 
-import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
+import { describe, it, expect, beforeAll, Level } from '@ohos/hypium-dynamic'
 import image from '@ohos.multimedia.image';
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@ohos.base';

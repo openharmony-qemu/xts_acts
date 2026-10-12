@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium";
+import { beforeEach, describe, expect, it, TestType, Size, Level } from "@ohos/hypium-dynamic";
 import Utils from './Utils';
 import exp2Finitendktest from 'libexp2Finitendktest.so';
 

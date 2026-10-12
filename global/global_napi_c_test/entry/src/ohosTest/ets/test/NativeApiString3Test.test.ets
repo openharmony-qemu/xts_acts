@@ -43,13 +43,13 @@ export default function NativeApiString3Test() {
 
     /**
      * @tc.name   TestGetSuccess0100
-     * @tc.number SUB_GLOBAL_SUCCESS_0100
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_TESTGETSUCCESS_0100
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestGetSuccess0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetSuccess0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestGetSuccess0100 start====");
         let result: number = nativeTest.GetSuccess0100($r('app.color.start_window_background_test').id);
@@ -703,9 +703,9 @@ export default function NativeApiString3Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestAddResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestAddResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestAddResource0100 start====");
         let path = resManager.bundleCodeDir + "/entry.hap";
@@ -726,9 +726,9 @@ export default function NativeApiString3Test() {
      * @tc.desc   overriding error code
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL0
      */
-    it('TestRemoveResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestRemoveResource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>TestRemoveResource0100 start====");
         let path = resManager.bundleCodeDir + "/entry.hap";

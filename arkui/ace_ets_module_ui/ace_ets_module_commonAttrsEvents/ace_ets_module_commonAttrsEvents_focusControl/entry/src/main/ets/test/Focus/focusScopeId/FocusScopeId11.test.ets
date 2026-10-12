@@ -14,11 +14,12 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopeId11() {
   describe('FocusScopeId11', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +63,7 @@ export default function FocusScopeId11() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_2= await driver.findComponent(ON.id('FocusScopeId1_btn1_2'));
@@ -70,7 +71,7 @@ export default function FocusScopeId11() {
       expect(btn1_2_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId11_0100] btn1_2 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_1= await driver.findComponent(ON.id('FocusScopeId1_btn1_1'));
@@ -78,7 +79,7 @@ export default function FocusScopeId11() {
       expect(btn1_1_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId11_0100] btn1_1 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_3= await driver.findComponent(ON.id('FocusScopeId1_btn1_3'));
@@ -86,7 +87,7 @@ export default function FocusScopeId11() {
       expect(btn1_3_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId11_0100] btn1_3 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_2_isFocusedValue2 = await btn1_2.isFocused()
@@ -98,28 +99,28 @@ export default function FocusScopeId11() {
       await CommonFunc.sleep(1000);
       console.info('[FocusScopeId11_0100] btn2_3 click');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn2_3_isFocusedValue = await btn2_3.isFocused()
       expect(btn2_3_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId11_0100] btn2_3 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_2_isFocusedValue3 = await btn1_2.isFocused()
       expect(btn1_2_isFocusedValue3).assertEqual(true);
       console.info('[FocusScopeId11_0100] btn1_2 isFocused 3');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_1_isFocusedValue2 = await btn1_1.isFocused()
       expect(btn1_1_isFocusedValue2).assertEqual(true);
       console.info('[FocusScopeId11_0100] btn1_1 isFocused 2');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn2_3_isFocusedValue2 = await btn2_3.isFocused()

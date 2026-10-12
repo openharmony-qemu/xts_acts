@@ -15,7 +15,7 @@
 
 import image from "@ohos.multimedia.image";
 import common from '@ohos.app.ability.common';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import fs from '@ohos.file.fs';
 
 const TAG ='packToFileFromPixelmapSequenceSupp';

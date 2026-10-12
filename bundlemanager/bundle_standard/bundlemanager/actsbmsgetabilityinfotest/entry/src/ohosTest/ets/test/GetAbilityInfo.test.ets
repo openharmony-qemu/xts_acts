@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import launcherBundleManager from '@ohos.bundle.launcherBundleManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@kit.BasicServicesKit';
 import { osAccount } from '@kit.BasicServicesKit';
 import { Want } from '@kit.AbilityKit';

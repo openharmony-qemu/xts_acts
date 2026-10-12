@@ -13,15 +13,20 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, SELFWANT, SELFHAPNAME } from '../commom';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import common from '@ohos.enterprise.common';
 import { usbManager } from '@kit.MDMKit';
 import restrictions from '@ohos.enterprise.restrictions';
 
 const DISALLOWED_USB_DEVICES_MAX_SIZE = 200;
 const LABEL_USB = 'usb';
+
+const OPTICAL_DISC_BURN_USB_DEVICES: Array<usbManager.UsbDevice> = [
+  { vendorId: 1, productId: 1, serial: 'serial001' }
+];
 
 export default function usbManagerTest() {
   describe('usbManager_test', () => {
@@ -36,6 +41,14 @@ export default function usbManagerTest() {
     testAddDisallowedPermissiveUsbDevices();
     testRemoveDisallowedPermissiveUsbDevices();
     testGetDisallowedPermissiveUsbDevices();
+    testGetUsbSerialNumber();
+    testAddAllowedOpticalDiscDriveBurnUsbDevices();
+    testRemoveAllowedOpticalDiscDriveBurnUsbDevices();
+    testGetAllowedOpticalDiscDriveBurnUsbDevices();
+    testSetExternalStorageInterceptEnable();
+    testIsExternalStorageInterceptEnable();
+    testSetExternalStorageDeviceMountPolicy();
+    testGetExternalStorageDeviceInfos();
   })
 }
 
@@ -311,6 +324,198 @@ function testGetDisallowedPermissiveUsbDevices() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetUsbSerialNumber() {
+  /**
+   * @tc.name   test_get_usb_serial_number_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_SERIAL_NUMBER_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager getUsbSerialNumber with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_usb_serial_number_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.getUsbSerialNumber(1, 1);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testAddAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_add_allowed_optical_disc_drive_burn_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager addAllowedOpticalDiscDriveBurnUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_add_allowed_optical_disc_drive_burn_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await usbManager.addAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testRemoveAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_remove_allowed_optical_disc_drive_burn_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager removeAllowedOpticalDiscDriveBurnUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_remove_allowed_optical_disc_drive_burn_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      await usbManager.removeAllowedOpticalDiscDriveBurnUsbDevices(OPTICAL_DISC_BURN_USB_DEVICES);
+      expect().assertFail();
+    } catch (error) {
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(201);
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
+  /**
+   * @tc.name   test_get_allowed_optical_disc_drive_burn_usb_devices_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_OPTICAL_DISC_DRIVE_BURN_USB_DEVICES_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager getAllowedOpticalDiscDriveBurnUsbDevices with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_allowed_optical_disc_drive_burn_usb_devices_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
+      expect(result.length >= 0).assertEqual(true);
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetExternalStorageInterceptEnable() {
+  /**
+   * @tc.name   test_set_external_storage_intercept_enable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_INTERCEPT_ENABLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager setExternalStorageInterceptEnable with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_storage_intercept_enable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.setExternalStorageInterceptEnable(true);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testIsExternalStorageInterceptEnable() {
+  /**
+   * @tc.name   test_is_external_storage_intercept_enable_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_EXTERNAL_STORAGE_INTERCEPT_ENABLE_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager isExternalStorageInterceptEnable with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_is_external_storage_intercept_enable_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.isExternalStorageInterceptEnable(common.QueryPolicy.SELF);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetExternalStorageDeviceMountPolicy() {
+  /**
+   * @tc.name   test_set_external_storage_device_mount_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_STORAGE_DEVICE_MOUNT_POLICY_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager setExternalStorageDeviceMountPolicy with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_external_storage_device_mount_policy_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.setExternalStorageDeviceMountPolicy('testVolumeId', usbManager.MountPolicy.MOUNT_READ_WRITE);
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetExternalStorageDeviceInfos() {
+  /**
+   * @tc.name   test_get_external_storage_device_infos_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_STORAGE_DEVICE_INFOS_NO_PERMISSION_JS_0100
+   * @tc.desc   test usbManager getExternalStorageDeviceInfos with permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_external_storage_device_infos_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      usbManager.getExternalStorageDeviceInfos();
+      expect().assertFail();
+    } catch (error) {
+      expect(error.code).assertEqual(201);
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

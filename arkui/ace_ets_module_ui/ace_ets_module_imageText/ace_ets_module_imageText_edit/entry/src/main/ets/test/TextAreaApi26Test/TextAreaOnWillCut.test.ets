@@ -13,11 +13,13 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { inputMethod } from '@kit.IMEKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function TextAreaOnWillCutTest() {
   describe('TextAreaOnWillCutTest', () => {
@@ -65,9 +67,17 @@ export default function TextAreaOnWillCutTest() {
       await CommonFunc.sleep(500);
       await TextArea.longClick()
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2040);
+      try {
+        await driver.triggerCombineKeys(2072,2040, 0, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);
@@ -91,9 +101,17 @@ export default function TextAreaOnWillCutTest() {
       await CommonFunc.sleep(500);
       await TextArea.longClick()
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2017);
+      try {
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2072,2040);
+      try {
+        await driver.triggerCombineKeys(2072,2040, 0, displayID);
+      } catch (err) {
+        console.log('triggerCombineKeys error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(500);
       await inputMethod.getController().stopInputSession();
       await CommonFunc.sleep(500);

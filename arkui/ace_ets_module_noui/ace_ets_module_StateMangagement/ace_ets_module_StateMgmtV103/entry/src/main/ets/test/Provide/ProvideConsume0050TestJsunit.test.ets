@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -28,6 +28,8 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 
 export default function ProvideConsume0050TestJsunit() {
@@ -82,7 +84,7 @@ export default function ProvideConsume0050TestJsunit() {
       await CommonFunc.sleep(1000);
       console.info("[ProvideConsume0050Test_001] component obj is: " + obj.$attrs.content);
       expect(obj.$attrs.content).assertEqual('world')
-      await driver.pressBack()
+      await driver.pressBack(displayID)
 
       let btn2: Component = await driver.findComponent(ON.id("parent_change"));
       await CommonFunc.sleep(1000);
@@ -93,7 +95,7 @@ export default function ProvideConsume0050TestJsunit() {
       console.info("[ProvideConsume0050Test_001] component obj2 is: " + obj2.$attrs.content);
       expect(obj2.$attrs.content).assertEqual('hello world')
       console.info('[ProvideConsume0050Test_001] END');
-      await driver.pressBack()
+      await driver.pressBack(displayID)
 
     })
   })

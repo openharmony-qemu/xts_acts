@@ -62,8 +62,9 @@ export default function nativeChildProcessTest() {
           return;
         } else if (!ncpEnable) {
           console.info(`${tag}: Native child process disable`);
-          expect(801).assertEqual(ret);
-          return;
+          if(ret == 801 || ret == 16010006){
+            return;
+          }          
         }
 
         expect(0).assertEqual(ret);

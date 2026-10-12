@@ -16,7 +16,7 @@
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@kit.BasicServicesKit';
 import media from '@ohos.multimedia.media'
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 
 export function playAudioSource(src: string | media.AVFileDescriptor | undefined, duration: number, playTime: number,
   checkSeekTime: boolean, done: Function) {

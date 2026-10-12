@@ -13,7 +13,7 @@
 * limitations under the License.
 */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from "@ohos/hypium"
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from "@ohos/hypium-dynamic"
 import { isArrayArrayEqual, isArrayEqual, isObjectEqual, sleep } from "../../testability/pages/UtilAnys";
 
 

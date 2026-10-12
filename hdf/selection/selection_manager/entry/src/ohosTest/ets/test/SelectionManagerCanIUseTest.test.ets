@@ -14,7 +14,7 @@
  */
 
 
-import { describe, expect, beforeAll, afterAll, it, TestType, Size, Level } from '@ohos/hypium'
+import { describe, expect, beforeAll, afterAll, it, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import rpc from './@ohos.rpc';
 import Want from './@ohos.app.ability.Want';
 import { Callback } from './@ohos.base';

@@ -3031,5 +3031,237 @@ export default function printTest() {
         done();
       })
     })
+    
+    /**
+     * @tc.name   SUB_print_print_fwk_check_printerInfo_fields_0900
+     * @tc.number SUB_print_print_fwk_check_printerInfo_fields_0900
+     * @tc.desc   check print function printerInfo Properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_check_printerInfo_fields_0900', Level.LEVEL1, async (done: Function) => {
+      let pageSize: print.PrintPageSize = {
+        id: '0',
+        name: '0',
+        width: 210,
+        height: 297
+      };
+      let pageSizes: Array<print.PrintPageSize> = [pageSize];
+      hilog.info(DOMAIN, TAG, 'pageSizes:%{public}s', JSON.stringify(pageSizes));
+
+      let printResolution: print.PrintResolution = new MyPrintResolution();
+      printResolution.id = '123';
+      printResolution.horizontalDpi = 123;
+      printResolution.verticalDpi = 123;
+      let printResolutions: Array<print.PrintResolution> = [printResolution];
+      hilog.info(DOMAIN, TAG, 'printResolutions:%{public}s', JSON.stringify(printResolutions));
+
+      let minMargin: print.PrintMargin = new MyPrintMargin();
+      minMargin.top = 1;
+      minMargin.bottom = 1;
+      minMargin.left = 1;
+      minMargin.right = 1;
+      hilog.info(DOMAIN, TAG, 'minMargin:%{public}s', JSON.stringify(minMargin));
+
+      let colorMode = 1;
+      let duplexMode = 1;
+      let options1 = 1;
+      hilog.info(DOMAIN, TAG, 'colorMode:%{public}s', JSON.stringify(colorMode));
+      hilog.info(DOMAIN, TAG, 'duplexMode:%{public}s', JSON.stringify(duplexMode));
+      hilog.info(DOMAIN, TAG, 'options1:%{public}s', JSON.stringify(options1));
+
+      let capability: print.PrinterCapability = {
+        colorMode: colorMode,
+        duplexMode: duplexMode,
+        pageSize: pageSizes,
+        resolution: printResolutions,
+        minMargin: minMargin,
+        options: options1,
+      }
+      hilog.info(DOMAIN, TAG, 'capability:%{public}s', JSON.stringify(capability));
+
+      let printerId: string = "string";
+      let printerName: string = "string";
+      let printerState: print.PrinterState = print.PrinterState.PRINTER_ADDED;
+      let printerIcon: number = -1;
+      let description: string = "string";
+      let options2 = 2;
+      hilog.info(DOMAIN, TAG, 'printerId:%{public}s', JSON.stringify(printerId));
+      hilog.info(DOMAIN, TAG, 'printerName:%{public}s', JSON.stringify(printerName));
+      hilog.info(DOMAIN, TAG, 'printerState:%{public}s', JSON.stringify(printerState));
+      hilog.info(DOMAIN, TAG, 'printerIcon:%{public}s', JSON.stringify(printerIcon));
+      hilog.info(DOMAIN, TAG, 'description:%{public}s', JSON.stringify(description));
+      hilog.info(DOMAIN, TAG, 'options2:%{public}s', JSON.stringify(options2));
+      let printerInfo: print.PrinterInfo = {
+        printerId: printerId,
+        printerName: printerName,
+        printerState: printerState,
+        printerIcon: printerIcon,
+        description: description,
+        capability: capability,
+        options: options2,
+      }
+      hilog.info(DOMAIN, TAG, 'printerInfo:%{public}s', JSON.stringify(printerInfo));
+      expect(!!printerInfo).assertTrue();
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_print_print_fwk_check_printerInfo_fields_1000
+     * @tc.number SUB_print_print_fwk_check_printerInfo_fields_1000
+     * @tc.desc   check success of startDiscoverPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_check_printerInfo_fields_1000', Level.LEVEL1, async (done: Function) => {
+      let extensionList: string[] = ["extension"];
+      // Permissions required: ohos.permission.PRINT
+      let flag:boolean = true;
+      await print.startDiscoverPrinter(extensionList).then((data: void) => {
+        hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_printerInfo_fields_1000 expect success');
+        expect(flag).assertTrue();
+        done();
+      }).catch((err: BusinessError) => {
+        expect(!!err).assertTrue();
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100
+     * @tc.number SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100
+     * @tc.desc   check success of startDiscoverPrinter function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100', Level.LEVEL1, async (done: Function) => {
+      let extensionList: string[] = ["extension"];
+      // Permissions required: ohos.permission.PRINT
+      let flag:boolean = true;
+      print.startDiscoverPrinter(extensionList, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            expect(!!err).assertTrue();
+            done();
+          } else {
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_startDiscoverPrinter_extensionList_1100 expect success');
+            expect(flag).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+    })
+
+    /**
+     * @tc.name   SUB_print_print_fwk_check_updatePrintJobState_prop_1200
+     * @tc.number SUB_print_print_fwk_check_updatePrintJobState_prop_1200
+     * @tc.desc   check success of updatePrintJobState function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_print_print_fwk_check_updatePrintJobState_prop_1200', Level.LEVEL1, async (done: Function) => {
+      let jobId: string = "";
+      // Permissions required: ohos.permission.MANAGE_PRINT_JOB or ohos.permission.ENTERPRISE_MANAGE_PRINT
+      let subState = print.PrintJobSubState.PRINT_JOB_COMPLETED_SUCCESS;
+      let state = 6;
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.updatePrintJobState(jobId, null, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.updatePrintJobState(jobId, undefined, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      subState = -1;
+      state = print.PrintJobState.PRINT_JOB_PREPARE;
+      print.updatePrintJobState(jobId, state, subState, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.updatePrintJobState(jobId, state, null, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+
+      print.updatePrintJobState(jobId, state, undefined, (err: BusinessError, data: void) => {
+        try {
+          if (err) {
+            hilog.info(DOMAIN, TAG, 'SUB_print_print_fwk_check_updatePrintJobState_prop_1200 expect success');
+            expect(err).assertEqual(401);
+            done();
+          } else {
+            expect(data).assertTrue();
+            done();
+          }
+        } catch (error) {
+          done();
+        }
+      })
+    })
   })
 }

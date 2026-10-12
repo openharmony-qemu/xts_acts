@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 
 import {
@@ -67,7 +67,7 @@ export default function onGetIrregular2Jsunit() {
     it('onGetIrregular2Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[onGetIrregular2Jsunit_0000] START');
       await CommonFunc.sleep(1000);
-      let Grid = CommonFunc.getComponentRect('onGetIrregular2' + '_GridItem2');
+      let Grid = CommonFunc.getComponentRect('onGetIrregular2_GridItem2');
 
       let GridItem0 = CommonFunc.getComponentRect('onGetText0');
       let GridItem1 = CommonFunc.getComponentRect('onGetText1');

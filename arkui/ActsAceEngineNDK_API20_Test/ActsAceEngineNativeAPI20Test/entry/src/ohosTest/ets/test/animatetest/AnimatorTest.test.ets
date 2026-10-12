@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level, beforeAll } from '@ohos/hypium-dynamic'
 import animatendk from 'libanimatendk.so'
 import Utils from '../common/Utils'
 

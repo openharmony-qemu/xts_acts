@@ -64,6 +64,33 @@ export default function cdsmTest(): void {
     })
 
     /**
+     * @tc.name SUB_Communication_XTS_NearLink_Cdsm_Enum_static_0100
+     * @tc.number SUB_Communication_XTS_NearLink_Cdsm_Enum_0100
+     * @tc.desc CdsmConnectionState enumvalue (by constant)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_Cdsm_Enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_Cdsm_Enum_static_0100';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let DISCONNECTED: cdsm.CdsmConnectionState = cdsm.CdsmConnectionState.DISCONNECTED;
+          hilog.info(0x0000, 'testTag', '%{public}s DISCONNECTED result: %{public}d', caseName, DISCONNECTED);
+          expect(DISCONNECTED).assertEqual(0);
+          let CONNECTED: cdsm.CdsmConnectionState = cdsm.CdsmConnectionState.CONNECTED;
+          hilog.info(0x0000, 'testTag', '%{public}s CONNECTED result: %{public}d', caseName, CONNECTED);
+          expect(CONNECTED).assertEqual(1);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s CdsmConnectionState error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLinkPub_Cdsm_ON_static_0100
      * @tc.number SUB_Communication_XTS_NearLinkPub_Cdsm_ON_0100
      * @tc.desc 无法触发回调仅调�?

@@ -1,0 +1,48 @@
+<!-- flex-direction: row and column static demos on one page -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">flex-direction</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 flex-direction: row -->
+    <list-item class="card card-1">
+      <div class="card-head">
+        <text class="label">001 row 水平排列</text>
+      </div>
+      <div class="stage stage-row">
+        <div class="demo-row">
+          <div class="box r"><text class="box-text">1</text></div>
+          <div class="box g"><text class="box-text">2</text></div>
+          <div class="box b"><text class="box-text">3</text></div>
+        </div>
+      </div>
+      <text class="expect">预期：1 2 3 三个色块从左到右水平排列</text>
+    </list-item>
+
+    <!-- 002 flex-direction: column -->
+    <list-item class="card card-2">
+      <div class="card-head">
+        <text class="label">002 column 垂直排列</text>
+      </div>
+      <div class="stage stage-col">
+        <div class="demo-col">
+          <div class="box r"><text class="box-text">1</text></div>
+          <div class="box g"><text class="box-text">2</text></div>
+          <div class="box b"><text class="box-text">3</text></div>
+        </div>
+      </div>
+      <text class="expect">预期：1 2 3 三个色块从上到下垂直排列</text>
+    </list-item>
+
+    <!-- bottom pass/fail/back buttons, as the last list item so they scroll into view -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

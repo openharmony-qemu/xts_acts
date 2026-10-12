@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router'
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
@@ -56,7 +56,7 @@ async function testAsyncFunctionSingle2(keyChar: string|FunctionKey) {
   await CommonFunc.sleep(500);
   let driver = Driver.create();
   // keyboard to sumilate single press key
-  await driver.triggerKey(keycodeMap.get(keyChar));
+  await driver.triggerKey(keycodeMap.get(keyChar), displayID);
   await CommonFunc.sleep(2000);
   // to get the data to check
   let tt2 = getInspectorByKey('keyTest2');
@@ -79,7 +79,7 @@ async function testAsyncFunction3(keyChar: string|FunctionKey) {
   if(keyChar === 'Z') {
     globalThis.value.message.notify({name:'keys',value:[ModifierKey.SHIFT,ModifierKey.CTRL]})
     await CommonFunc.sleep(500);
-    await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
+    await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar), displayID);
     await CommonFunc.sleep(2000);
     // to get the data to check
     let tt2 = getInspectorByKey('keyTest3');
@@ -91,7 +91,7 @@ async function testAsyncFunction3(keyChar: string|FunctionKey) {
   if(keyChar === FunctionKey.TAB) {
     globalThis.value.message.notify({name:'keys',value:[ModifierKey.SHIFT,ModifierKey.ALT]})
     await CommonFunc.sleep(500);
-    await driver.triggerCombineKeys(input.KeyCode.KEYCODE_ALT_LEFT, input.KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar));
+    await driver.triggerCombineKeys(input.KeyCode.KEYCODE_ALT_LEFT, input.KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar), displayID);
     await CommonFunc.sleep(2000);
     // to get the data to check
     let tt2 = getInspectorByKey('keyTest3');
@@ -102,6 +102,7 @@ async function testAsyncFunction3(keyChar: string|FunctionKey) {
 
 }
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function globalShortcutKeyTest() {
   describe('globalShortcutKeyTest', () => {
     beforeEach(async () => {
@@ -188,7 +189,7 @@ export default function globalShortcutKeyTest() {
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0340', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
       // keyboard to sumilate 'CTRL + M'
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_M);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_M, 0, displayID);
       await CommonFunc.sleep(1500);
       // to get the data to check
       let tt2 = getInspectorByKey('keyTest5');
@@ -209,7 +210,7 @@ export default function globalShortcutKeyTest() {
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0380', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
       // keyboard to sumilate 'CTRAL + ←'
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT,input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_DPAD_LEFT);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT,input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_DPAD_LEFT, displayID);
       await CommonFunc.sleep(1500);
       // to get the data to check
       let tt2 = getInspectorByKey('keyTest6');
@@ -230,7 +231,7 @@ export default function globalShortcutKeyTest() {
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0370', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
       // keyboard to sumilate 'CTRAL + I'
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_I);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_CTRL_LEFT, input.KeyCode.KEYCODE_I, 0, displayID);
       await CommonFunc.sleep(1500);
       // to get the data to check
       let tt2 = getInspectorByKey('keyTest7');
@@ -252,7 +253,7 @@ export default function globalShortcutKeyTest() {
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0330', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
       // keyboard to sumilate 'SHIFT + ->'
-      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_SHIFT_LEFT, input.KeyCode.KEYCODE_DPAD_RIGHT);
+      await driver.triggerCombineKeys(input.KeyCode.KEYCODE_SHIFT_LEFT, input.KeyCode.KEYCODE_DPAD_RIGHT, 0, displayID);
       await CommonFunc.sleep(1500);
       // to get the data to check
       let tt2 = getInspectorByKey('keyTest8');

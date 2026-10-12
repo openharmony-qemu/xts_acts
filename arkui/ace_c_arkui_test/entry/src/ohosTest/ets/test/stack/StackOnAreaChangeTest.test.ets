@@ -35,7 +35,7 @@ export default function stackOnAreaChangeTest() {
      * @tc.level  LEVEL1
      */
     it('testStackOnAreaChange001', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnAreaChangeTestStackSize');
+      await Utils.clickComponentNew('OnAreaChangeTestStackSize');
       await Utils.sleep(1000);
       expect(Utils.getComponentInfoByKey('OnAreaChangeTestStackSize').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done();
@@ -50,7 +50,7 @@ export default function stackOnAreaChangeTest() {
      * @tc.level  LEVEL1
      */
     it('testStackOnAreaChange002', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnAreaChangeTestStackMoveCompare');
+      await Utils.clickComponentNew('OnAreaChangeTestStackMoveCompare');
       await Utils.sleep(1000);
       expect(Utils.getComponentInfoByKey('OnAreaChangeTestStackMove').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done();
@@ -65,7 +65,7 @@ export default function stackOnAreaChangeTest() {
      * @tc.level  LEVEL1
      */
     it('testStackOnAreaChange003', Level.LEVEL1, async (done: Function) => {
-      await Utils.clickComponent('OnAreaChangeTestStackOffset');
+      await Utils.clickComponentNew('OnAreaChangeTestStackOffset');
       await Utils.sleep(1000);
       expect(Utils.getComponentInfoByKey('OnAreaChangeTestStackOffset').$attrs.backgroundColor).assertEqual('#FFFF0000')
       done();

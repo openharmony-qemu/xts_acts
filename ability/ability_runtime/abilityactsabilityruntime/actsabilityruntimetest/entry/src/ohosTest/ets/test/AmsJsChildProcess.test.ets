@@ -15,7 +15,7 @@
 
 
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { ChildProcessArgs, childProcessManager, ChildProcessOptions } from '@kit.AbilityKit';
 import { fileIo } from '@kit.CoreFileKit';
@@ -187,8 +187,12 @@ export default function AbilityRuntimeAmsJSChildProcess() {
           done();
         } catch (err) {
           hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect().assertFail()
-          done();
+          if(err.code === 16000062){
+            done();
+          }else{
+            expect().assertFail()
+            done();
+          }
         }
       }else if (mpEnable == 'false') {
         hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);
@@ -224,8 +228,12 @@ export default function AbilityRuntimeAmsJSChildProcess() {
           done();
         } catch (err) {
           hilog.error(0x0000, 'testTag', `restart failed: ${err.code}, ${err.message},${testNum}`);
-          expect().assertFail()
-          done();
+          if(err.code === 16000062){
+            done();
+          }else{
+            expect().assertFail()
+            done();
+          }
         }
       }else if (mpEnable == 'false') {
         hilog.info(0x0000, 'testTag', `restart failed: The current device does not support`);

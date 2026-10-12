@@ -15,7 +15,7 @@
 import notification from '@ohos.notification'
 import hilog from '@ohos.hilog';
 import notificationManager from '@ohos.notificationManager'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import Base from '@ohos.base';
 import { BusinessError } from '@ohos.base'
 

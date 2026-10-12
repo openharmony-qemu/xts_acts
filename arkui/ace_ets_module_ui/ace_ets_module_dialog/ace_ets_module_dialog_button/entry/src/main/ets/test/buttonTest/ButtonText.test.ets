@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, beforeEach, Level } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, afterEach, beforeEach, Level } from '@ohos/hypium-dynamic';
 import { abilityDelegatorRegistry, Driver, ON, MouseButton, MatchPattern, UiDirection } from '@kit.TestKit';
 import { UIAbility, Want } from '@kit.AbilityKit';
 import router from '@ohos.router';

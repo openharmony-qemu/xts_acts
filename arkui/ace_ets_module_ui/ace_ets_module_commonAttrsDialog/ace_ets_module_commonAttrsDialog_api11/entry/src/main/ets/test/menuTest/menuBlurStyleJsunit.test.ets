@@ -31,6 +31,7 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function menuBlurStyleJsunit() {
   describe('menuBlurStyleJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -79,7 +80,7 @@ export default function menuBlurStyleJsunit() {
       console.info("[menuBlurStyleJsunit_0100] menuText is: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(JSON.parse(strJson).$attrs.content).assertEqual("menuBlurStyle");
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
       console.info('[menuBlurStyleJsunit_0100] END');
       done();

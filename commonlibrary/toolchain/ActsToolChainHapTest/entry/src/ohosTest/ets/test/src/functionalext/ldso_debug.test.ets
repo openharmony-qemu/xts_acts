@@ -14,7 +14,7 @@
  */
 
 import * as testNapi from "libentry.so";
-import { describe, expect, it, Level } from "@ohos/hypium";
+import { describe, expect, it, Level } from "@ohos/hypium-dynamic";
 
 export default function FunctionalextLdsoDebugTestGroupTest() {
   describe("ActsToolChainHapTest_src_functionalext_ldso_debug", () => {

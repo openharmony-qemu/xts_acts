@@ -15,7 +15,7 @@
 
 import hilog from '@ohos.hilog';
 import base from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import backgroundTaskManager from '@ohos.resourceschedule.backgroundTaskManager';
 import EventBusPlus from '../lib/EventBusPlus'

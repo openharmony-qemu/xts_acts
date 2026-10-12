@@ -18,7 +18,7 @@ import { UiDriver, BY } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base'
 import CheckEmptyUtils from './CheckEmptyUtils.js';
 import { isFilteredDevice } from './FilterUtils';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 const TAG = "[UsbApiTransferCompatEtsTest]";
 

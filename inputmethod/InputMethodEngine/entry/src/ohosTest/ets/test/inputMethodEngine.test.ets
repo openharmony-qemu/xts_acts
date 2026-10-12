@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import commoneventmanager from '@ohos.commonEventManager';
 import inputMethod from '@ohos.inputMethod';
-import { Driver, ON, MatchPattern, Component, UiWindow, Rect } from '@ohos.UiTest'
+import { Driver, ON, MatchPattern, Component, UiWindow, Rect, Point } from '@ohos.UiTest'
 import deviceinfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -25,6 +25,7 @@ export default function inputMethodEngineJSUnit() {
     let driver = Driver.create();
     let textArea: Component;
     let rectInfo: Rect;
+    let id: number = 0;
     const delegator:AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     let testTemplate: (testName: string, code: number, done: Function, beforePublish?: () => Promise<void>,
@@ -97,14 +98,24 @@ export default function inputMethodEngineJSUnit() {
     beforeAll(async (done: Function) => {
       console.info('====>beforeAll inputMethod_enable start!')
       try {
-        await delegator.executeShellCommand('ime -e com.acts.inputmethodengine.test -f');
-        await delegator.executeShellCommand('ime -s com.acts.inputmethodengine.test');
+        let enableCmd = 'ime -e com.acts.inputmethodengine.test -f';
+        let setCmd = 'ime -s com.acts.inputmethodengine.test';
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+          enableCmd = `ime -u ${user} -e com.acts.inputmethodengine.test -f`;
+          setCmd = `ime -u ${user} -s com.acts.inputmethodengine.test`;
+        }
+        console.info(`====>beforeAll enableCmd:${enableCmd} ,setCmd:${setCmd}`);
+        await delegator.executeShellCommand(enableCmd);
+        await delegator.executeShellCommand(setCmd);
         console.info('====>beforeAll inputMethod_enable success');
         await driver.delayMs(1000);
         textArea = await driver.findComponent(ON.type('TextArea'));
         console.info('====>beforeAll inputMethodSwitch window textArea: ' + JSON.stringify(textArea));
         rectInfo = await textArea.getBounds();
         console.info('====>beforeAll inputMethodSwitch textArea rectInfo: ' + JSON.stringify(rectInfo));
+        id = await textArea.getDisplayId();
+        console.info(`====>beforeAll DisplayId:${id}`);
         await driver.delayMs(1000);
         await runCmd();
         await driver.delayMs(1000);
@@ -125,8 +136,9 @@ export default function inputMethodEngineJSUnit() {
     let runCmd = async () => {
       let cursor_x = rectInfo.left + 20 + Math.floor(Math.random() * (rectInfo.right - rectInfo.left) * 0.7);
       let cursor_y = rectInfo.top + 20 + Math.floor(Math.random() * (rectInfo.bottom - rectInfo.top) * 0.7);
-      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y}`)
-      await driver.click(cursor_x, cursor_y)
+      let point: Point = {x: cursor_x, y: cursor_y, displayId: id};
+      console.info(`====>start click x: ${cursor_x}  y: ${cursor_y} displayId: ${id}`);
+      await driver.clickAt(point);
     }
 
     /**
@@ -1743,7 +1755,7 @@ export default function inputMethodEngineJSUnit() {
             clearTimeout(t);
           }, 200)
           let t1 = setTimeout(async () => {
-            let result = await delegator.executeShellCommand(`uinput -K -d 2000 -u 2000`);
+            let result = await delegator.executeShellCommand(`uinput -D ${id} -K -d 2000 -u 2000`);
             console.info("====>inputMethodEngine_test_073 executeShellCommand success: " + JSON.stringify(result));
             clearTimeout(t1);
           }, 400)

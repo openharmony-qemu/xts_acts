@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent,MouseButton, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function SwipeGestureHandlerAllowedTypesTest() {
   describe('SwipeGestureHandlerAllowedTypesTest', () => {
     beforeEach(async (done: Function) => {
@@ -72,7 +73,7 @@ export default function SwipeGestureHandlerAllowedTypesTest() {
       let driver = Driver.create();
       let speed = Math.floor(areaWidth1 * 0.6 / 0.016 / 1000) * 1000
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2), speed)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.2),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID}, speed)
       await CommonFunc.sleep(3000);
       let text1 = getInspectorByKey('SwipeGestureHandlerAllowedTypes' + '_result');
       let obj1: ESObject = JSON.parse(text1);
@@ -90,7 +91,7 @@ export default function SwipeGestureHandlerAllowedTypesTest() {
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2), speed)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.2),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID}, speed)
       await CommonFunc.sleep(3000);
       let text3 = getInspectorByKey('SwipeGestureHandlerAllowedTypes' + '_result');
       let obj3: ESObject = JSON.parse(text3);
@@ -108,7 +109,7 @@ export default function SwipeGestureHandlerAllowedTypesTest() {
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2), speed)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.2),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID}, speed)
       await CommonFunc.sleep(3000);
       let text5 = getInspectorByKey('SwipeGestureHandlerAllowedTypes' + '_result');
       let obj5: ESObject = JSON.parse(text5);
@@ -127,7 +128,7 @@ export default function SwipeGestureHandlerAllowedTypesTest() {
 
       // trigger gesture again with finger
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),speed)
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.2),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},speed)
       await CommonFunc.sleep(3000);
       let text10 = getInspectorByKey('SwipeGestureHandlerAllowedTypes' + '_result');
       let obj10: ESObject = JSON.parse(text10);

@@ -16,10 +16,12 @@ import ActsWebErrorCodeTest from './ActsWebErrorCodeTest.test'
 import ActsWebErrorCodeListTest from './ActsWebErrorCodeListTest.test'
 import NativeInterfaceTest from './NativeInterfaceTest.test'
 import ActsWebSchemeHandlerTest from './ActsWebSchemeHandlerTest.test'
+import ActsWebErrorInfoTest from './ActsWebErrorInfoTest.test'
 
 export default function testsuite() {
   ActsWebErrorCodeTest()
   ActsWebErrorCodeListTest()
   NativeInterfaceTest()
   ActsWebSchemeHandlerTest()
+  ActsWebErrorInfoTest()
 }

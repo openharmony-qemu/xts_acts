@@ -15,7 +15,7 @@
 
 import audio from '@ohos.multimedia.audio';
 import fileio from '@ohos.fileio';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import {  Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
@@ -83,8 +83,18 @@ export default function audioCapturer() {
       console.info(`${Tag} case2 dirPath is  ${JSON.stringify(dirPath)}`);
     }
     let getFullFilePath = async (filename:string)=> {
-      file_to_play =  testContext.filesDir + '/' + filename;
-      console.info(`${Tag} file_to_play: `+ file_to_play);
+      try {
+        file_to_play =  testContext.filesDir + '/' + filename;
+        console.info(`${Tag} file_to_play: `+ file_to_play);
+        console.info(`${Tag} copying from rawfile: ${filename}`);
+        let buffer = await testContext.resourceManager.getRawFileContent(filename);
+        let fd = fs.openSync(file_to_play, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
+        fs.writeSync(fd.fd, buffer.buffer);
+        fs.closeSync(fd);
+        console.info(`getFullFilePath success dirPath: ${file_to_play}`);
+      } catch (e) {
+        console.info(`${Tag} getFullFilePath failed: `+ e);
+      }
     }
     let playbackPromise = async (AudioRendererOptions: ESObject, pathName: string) => {
       let resultFlag = false;

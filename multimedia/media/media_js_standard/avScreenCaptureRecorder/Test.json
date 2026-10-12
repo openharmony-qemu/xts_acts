@@ -18,6 +18,13 @@
             "cleanup-apps": true
         },
         {
+            "type": "PushKit",
+            "push": [
+                "./resource/media/codec/audio_encoder/f32le_44100_2_dayuhaitang.pcm -> /data/local/tmp/",
+                "./resource/media/setup_media_js_standard_avScreenCaptureRecorder_test.sh -> /data/local/tmp/"
+            ]
+        },
+        {
             "type": "ShellKit",
             "run-command": [
                 "remount",
@@ -26,16 +33,12 @@
                 "power-shell timeout -o 2147483647",
                 "power-shell setmode 602",
                 "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.avscreencapturerecorder/haps/entry_test/files",
-                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.avscreencapturerecorder/haps/entry_test"
+                "chmod 777 -R /data/app/el2/100/base/ohos.acts.multimedia.avscreencapturerecorder/haps/entry_test",
+                "chmod 755 /data/local/tmp/",
+                "sh /data/local/tmp/setup_media_js_standard_avScreenCaptureRecorder_test.sh"
             ],
             "teardown-command": [
                 "power-shell setmode 600"
-            ]
-        },
-        {
-            "type": "PushKit",
-            "push": [
-                "./resource/media/codec/audio_encoder/f32le_44100_2_dayuhaitang.pcm -> /data/app/el2/100/base/ohos.acts.multimedia.avscreencapturerecorder/haps/entry_test/files/"
             ]
         }
     ]

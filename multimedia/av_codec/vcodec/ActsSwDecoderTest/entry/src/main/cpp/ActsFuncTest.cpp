@@ -43,6 +43,62 @@ const char* CODEC_NAME_AVC = "OH.Media.Codec.Decoder.Video.AVC";
 
 OH_AVCapability* g_cap = nullptr;
 string g_codecNameAvc;
+ 
+const std::vector<std::string> &GetDmabufSuffixCat1()
+{
+    static const std::vector<std::string> cat1 = {
+        "!", "abc123", "a_b-c!a1bcX2YZ3!@#$%^&*",
+    };
+    return cat1;
+}
+ 
+const std::vector<std::string> &GetDmabufSuffixCat2()
+{
+    static const std::vector<std::string> cat2 = {
+        "测试 / cafe /  ", "12 3a", "abc\n \t \r \0", "0123456789", "\n \t",
+    };
+    return cat2;
+}
+ 
+static void ResetDmabufTestState(const std::shared_ptr<VDecAPI11Sample> &vDecSample)
+{
+    vDecSample->FlushBuffer();
+    vDecSample->errCount = 0;
+    vDecSample->frameCount_ = 0;
+    vDecSample->outCount = 0;
+}
+ 
+static int RunDmabufSuffixCat1(const std::shared_ptr<VDecAPI11Sample> &vDecSample)
+{
+    const auto &cat1 = GetDmabufSuffixCat1();
+    for (size_t i = 0; i < cat1.size(); i++) {
+        if (i > 0) {
+            if (vDecSample->Reset() != AV_ERR_OK) { return -1; }
+            ResetDmabufTestState(vDecSample);
+        }
+        vDecSample->dmabufNameSuffix = cat1[i];
+        if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) { return -1; }
+        if (vDecSample->StartVideoDecoder() != AV_ERR_OK) { return -1; }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) { return -1; }
+    }
+    return 0;
+}
+ 
+static int RunDmabufSuffixCat2(const std::shared_ptr<VDecAPI11Sample> &vDecSample)
+{
+    const auto &cat2 = GetDmabufSuffixCat2();
+    for (size_t i = 0; i < cat2.size(); i++) {
+        if (vDecSample->Reset() != AV_ERR_OK) { return -1; }
+        ResetDmabufTestState(vDecSample);
+        vDecSample->dmabufNameSuffix = cat2[i];
+        int32_t ret = vDecSample->ConfigureVideoDecoder();
+        if (ret != AV_ERR_INVALID_VAL) {
+            return -1;
+        }
+    }
+    return 0;
+}
 
 void InitSwdecCapability()
 {
@@ -536,6 +592,26 @@ int VideoSwdecodeBlankFrame0010()
     }
     vDecSample->WaitForEOS();
     return (vDecSample->errCount == 0) ? SWDEC_SUCCESS : -1;
+}
+
+int VideoDecoderS264DmabufSuffix0010()
+{
+    InitSwdecCapability();
+    if (g_cap != nullptr && !access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = INP_DIR_1080_30;
+        vDecSample->defaultWidth = K_WIDTH_1920;
+        vDecSample->defaultHeight = K_HEIGHT_1080;
+        vDecSample->defaultFrameRate = K_FRAME_RATE_30;
+        vDecSample->surfaceOutput = false;
+        vDecSample->enableDmabufNameSuffix = true;
+        vDecSample->afterEosDestoryCodec = false;
+        if (vDecSample->CreateVideoDecoder(g_codecNameAvc) != AV_ERR_OK) { return -1; }
+        if (vDecSample->SetVideoDecoderCallback() != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat1(vDecSample) != AV_ERR_OK) { return -1; }
+        if (RunDmabufSuffixCat2(vDecSample) != AV_ERR_OK) { return -1; }
+    }
+    return 0;
 }
 
 void InitActsFuncTest() {}

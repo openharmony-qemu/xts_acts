@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
+import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic";
 import { fs, nextFileName, prepareFile, FILE_CONTENT} from "./Common.test.ets";
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { ListFileExtOptions, FileFilter } from '@ohos.file.fs';

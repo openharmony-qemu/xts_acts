@@ -40,11 +40,20 @@ export default function ScrollSizeTest(){
       await Utils.sleep(1000)
       console.info("testGetScrollSizeTest001  START");
       let driver = Driver.create();
-      let rect = Utils.getComponentRect("scrollSizeCalled");
-      let x = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-      let y = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
-      console.info("testGetScrollSizeTest001  x= " +  x  + ", y = " + y);
-      await driver.swipe(x, Math.round(y + vp2px(40)), x, Math.round(y - vp2px(40)));
+      let scrollSize = await driver.findComponent(ON.id('scrollSizeCalled'));
+      console.info('testGetScrollSizeTest001 id find success');
+      let rect = await scrollSize.getBounds();
+      let top = rect.top;
+      let left = rect.left;
+      let right = rect.right;
+      let bottom = rect.bottom;
+      let displayId = await scrollSize.getDisplayId();
+      console.info("testGetScrollSizeTest001 rect is" + rect + ", displayId is" + displayId);
+      let centerX = Math.round(left + (right - left) / 2);
+      let centerY = Math.round(top + (bottom - top) / 2);
+      console.info("testGetScrollSizeTest001  centerX= " +  centerX  + ", centerY = " + centerY);
+      await driver.swipeBetween({ x: centerX, y: Math.round(centerY + vp2px(40)), displayId: displayId },
+      { x: centerX, y: Math.round(centerY - vp2px(40)), displayId: displayId }, 800);
       await Utils.sleep(2000);
       console.info("testGetScrollSizeTest001  swipe");
       expect(Utils.getComponentInfoByKey('scrollSizeCalled').$attrs.backgroundColor).assertEqual('#FF00FF00')

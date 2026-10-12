@@ -104,58 +104,51 @@ struct clearPrefetchedResourceTest {
               break;
             }
 
-            case 'testPrefetchResourceEmptyStatic001': {
+            case 'testPrefetchResourceEmptyUrlStatic001': {
               try {
                 let requestInfo: web_webview.RequestInfo = {
                   url: '',
+                  method: 'POST',
+                  formData: 'a=x&b=y'
+                } as web_webview.RequestInfo
+                web_webview.WebviewController.prefetchResource(requestInfo, [], 'KeyEmptyUrl', 500);
+                Utils.emitEvent(true, 41023104);
+              } catch (error) {
+                Utils.emitEvent(error.code, 41023104);
+              }
+              break;
+            }
+
+            case 'testPrefetchResourceEmptyMethodStatic001': {
+              try {
+                let requestInfo: web_webview.RequestInfo = {
+                  url: 'https://www.example.com/test',
                   method: '',
+                  formData: 'a=x&b=y'
+                } as web_webview.RequestInfo
+                web_webview.WebviewController.prefetchResource(requestInfo, [], 'KeyEmptyMethod', 500);
+                Utils.emitEvent(true, 41023105);
+              } catch (error) {
+                Utils.emitEvent(error.code, 41023105);
+              }
+              break;
+            }
+
+            case 'testPrefetchResourceEmptyFormDataStatic001': {
+              try {
+                let requestInfo: web_webview.RequestInfo = {
+                  url: 'https://www.example.com/test',
+                  method: 'POST',
                   formData: ''
                 } as web_webview.RequestInfo
-                web_webview.WebviewController.prefetchResource(requestInfo, [], '', 500);
-                Utils.emitEvent(true, 41023101)
+                web_webview.WebviewController.prefetchResource(requestInfo, [], 'KeyEmptyFormData', 500);
+                Utils.emitEvent(true, 41023106);
               } catch (error) {
-                Utils.emitEvent(error.code, 41023101)
+                Utils.emitEvent(error.code, 41023106);
               }
               break;
             }
 
-            case 'testPrefetchResourceNullStatic001': {
-              try {
-                let requestInfo: web_webview.RequestInfo = {
-                  url: null as string,
-                  method: null as string,
-                  formData: null as string
-                } as web_webview.RequestInfo
-                let headers: Array<web_webview.WebHeader> | null = null;
-                let cacheKey: string | null = null;
-                let cacheValidTime: Int | null = null;
-                web_webview.WebviewController.prefetchResource(requestInfo,
-                  headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
-                Utils.emitEvent(true, 41023102)
-              } catch (error) {
-                Utils.emitEvent(error.code, 41023102)
-              }
-              break;
-            }
-
-            case 'testPrefetchResourceUndefinedStatic001': {
-              try {
-                let requestInfo: web_webview.RequestInfo = {
-                  url: undefined as string,
-                  method: undefined as string,
-                  formData: undefined as string
-                } as web_webview.RequestInfo
-                let headers: Array<web_webview.WebHeader> | undefined = undefined;
-                let cacheKey: string | undefined = undefined;
-                let cacheValidTime: Int | undefined = undefined;
-                web_webview.WebviewController.prefetchResource(requestInfo,
-                  headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
-                Utils.emitEvent(true, 41023103)
-              } catch (error) {
-                Utils.emitEvent(error.code, 41023103)
-              }
-              break;
-            }
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

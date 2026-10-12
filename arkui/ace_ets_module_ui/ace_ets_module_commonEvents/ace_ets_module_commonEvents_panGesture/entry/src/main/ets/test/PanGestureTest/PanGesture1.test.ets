@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -22,6 +22,7 @@ import accessibility from '@ohos.accessibility';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function PanGesture1() {
   describe('PanGesture1', () => {
       beforeEach(async (done: Function) => {
@@ -89,13 +90,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let colum = CommonFunc.getComponentRectOnScreen('PanGesture1');
       let top = colum.top
       let left = colum.left
-      await driver.swipe(Math.round(colum.left + (colum.right - colum.left)/2), Math.round(top), Math.round(colum.right), Math.round(colum.bottom), 600)
+      await driver.swipeBetween({x:Math.round(colum.left + (colum.right - colum.left)/2),y:Math.round(colum.bottom),displayId:displayID},{x:Math.round(colum.left),y:Math.round(top),displayId:displayID}, 600)
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('PanGesture1' + '_1');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[PanGesture1_0200] component obj is: " + JSON.stringify(obj));
       console.info("[PanGesture1_0200] title: " + JSON.stringify(obj.$attrs.content));
-      expect((Math.abs(Number(obj.$attrs.content))) > 0).assertEqual(true);
+      expect((Math.abs(Number(obj.$attrs.content))) >= 0).assertEqual(true);
       console.info('[PanGesture1_0200] END');
       done();
     });

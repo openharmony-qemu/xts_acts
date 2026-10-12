@@ -13,9 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {MessageManager,Callback} from '../../common/MessageManager';
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,TextPicker,
-  Row, ClickEvent, Margin, ButtonType, TimePicker} from '@ohos.arkui.component'
+import { MessageManager, Callback } from '../../common/MessageManager';
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  TextPicker,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  TimePicker
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -23,6 +39,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Component
 struct TimePickerStartAndEnd {
   @State selectedTime: Date = new Date('2022-07-22 06:00:00');
+
   build() {
     Column() {
       TimePicker({
@@ -30,21 +47,21 @@ struct TimePickerStartAndEnd {
         start: new Date('2022-07-22 08:00:00'),
         end: new Date('2022-07-22  10:00:00')
       })
-      .id('TimePicker')
+        .id('TimePicker')
 
       TimePicker({
         selected: this.selectedTime,
         start: undefined,
         end: undefined
       })
-      .id('TimePicker2')
+        .id('TimePicker2')
 
       TimePicker({
         selected: this.selectedTime,
         start: undefined,
         end: undefined
       })
-      .id('TimePicker3')
+        .id('TimePicker3')
     }
   }
 }

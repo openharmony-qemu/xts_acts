@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function WebTextMenuGestureTest() {
 
   describe('WebTextMenuGestureTest', () => {
@@ -62,7 +63,7 @@ export default function WebTextMenuGestureTest() {
       let web = await driver.findComponent(ON.id('web'));
       let rect =await web.getBounds()
       let rectCenter =await web.getBoundsCenter()
-      await driver.swipe(rect.right,rectCenter.y,rectCenter.x,rectCenter.y)
+      await driver.swipeBetween({x: rect.right,y: rectCenter.y,displayId: displayID}, {x: rectCenter.x,y: rectCenter.y,displayId: displayID})
       await CommonFunc.sleep(500);
       expect(AppStorage.get('WEB_SCROLL_GESTURE')).assertEqual(GestureControl.GestureType.WEB_SCROLL_GESTURE);
       console.info('[WebTextMenumGestureTest_0100] END');
@@ -84,7 +85,7 @@ export default function WebTextMenuGestureTest() {
       let text = await driver.findComponent(ON.id('text'));
       let rect =await text.getBounds()
       let rectCenter =await text.getBoundsCenter()
-      await driver.swipe(rectCenter.x,rectCenter.y,rect.left,rectCenter.y)
+      await driver.swipeBetween({x: rectCenter.x,y: rectCenter.y,displayId: displayID}, {x: rect.left,y: rectCenter.y,displayId: displayID})
       await CommonFunc.sleep(500);
       expect(AppStorage.get('TEXT_FIELD_SELECT_GESTURE')).assertEqual(GestureControl.GestureType.TEXT_FIELD_SELECT_GESTURE);
       console.info('[WebTextMenumGestureTest_0200] END');
@@ -107,6 +108,8 @@ export default function WebTextMenuGestureTest() {
       await image.longClick();
       await CommonFunc.sleep(500);
       expect(AppStorage.get('CONTEXT_MENU_HOVER_GESTURE')).assertEqual(GestureControl.GestureType.CONTEXT_MENU_HOVER_GESTURE);
+      let menum = await driver.findComponent(ON.text('菜单选项'));
+      await menum.click();
       console.info('[WebTextMenumGestureTest_0300] END');
       done();
     });

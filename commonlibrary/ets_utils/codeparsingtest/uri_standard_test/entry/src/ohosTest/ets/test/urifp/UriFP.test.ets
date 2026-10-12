@@ -14,7 +14,7 @@
  */
 
 import uri from '@ohos.uri';
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import {
   testAddEncodedSegmentPara001,
   testAddQueryValuePara001,

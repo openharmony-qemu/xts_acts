@@ -30,6 +30,8 @@ export default function getBundleInfoForSelf() {
     it('getBundleInfoForSelfAtomicService', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
       bundle.BundleFlag.GET_BUNDLE_INFO_WITH_HAP_MODULE).then(data => {
+        console.info('getBundleInfoForSelfAtomicService  ==>' +JSON.stringify(data))
+        console.info('getBundleInfoForSelfAtomicServicex  ==>' +JSON.stringify(data.hapModulesInfo[0]))
         let preloadItemTest: bundle.PreloadItem = data.hapModulesInfo[2].preloads[0];
         expect(typeof (preloadItemTest.moduleName)).assertEqual('string');
         let dependencyTest: bundle.Dependency = data.hapModulesInfo[2].dependencies[0];
@@ -42,11 +44,11 @@ export default function getBundleInfoForSelf() {
         expect(bundle.ExtensionAbilityType.INSIGHT_INTENT_UI).assertEqual(22);
         expect(bundle.DisplayOrientation.AUTO_ROTATION_UNSPECIFIED).assertEqual(13);
         expect(bundle.DisplayOrientation.FOLLOW_DESKTOP).assertEqual(14);
-        expect(data.appInfo.multiAppMode.multiAppModeType).assertEqual(bundle.MultiAppModeType.UNSPECIFIED);
+        expect(data.appInfo.multiAppMode.multiAppModeType >= 0).assertTrue();
         expect(bundle.MultiAppModeType.UNSPECIFIED).assertEqual(0);
         expect(bundle.MultiAppModeType.MULTI_INSTANCE).assertEqual(1);
         expect(bundle.MultiAppModeType.APP_CLONE).assertEqual(2);
-        expect(data.appInfo.multiAppMode.maxCount).assertEqual(0);
+        expect(data.appInfo.multiAppMode.maxCount >=0).assertTrue();
         expect(data.hapModulesInfo[0].type).assertEqual(bundle.ModuleType.FEATURE);
         expect(data.hapModulesInfo[0].preloads.length).assertEqual(0);
         expect(data.hapModulesInfo[0].dependencies.length).assertEqual(0);

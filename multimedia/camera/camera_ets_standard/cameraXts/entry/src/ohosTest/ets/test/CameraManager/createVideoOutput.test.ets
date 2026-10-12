@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { camera } from '@kit.CameraKit';
 import { common } from '@kit.AbilityKit';
 import { cameraErrorCode, closeFd, getFd, isEmpty, resourceName, sceneMode } from '../common';

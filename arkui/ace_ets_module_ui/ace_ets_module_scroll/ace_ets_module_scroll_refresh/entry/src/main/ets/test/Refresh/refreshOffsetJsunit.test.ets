@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -79,7 +79,10 @@ export default function refreshOffsetJsunit() {
      */
     it('refreshOffsetJsunit_0200', Level.LEVEL2, async (done: Function) => {
       console.info('refreshOffsetJsunit_0200 START');
-      let swiperOffset = CommonFunc.getComponentRectOnScreen('Refresh_Offset');
+      let driver = await Driver.create()
+      let refreshComp = await driver.findComponent(ON.id('Refresh_Offset'))
+      let swiperOffset = await refreshComp.getBounds()
+      let displayId = await refreshComp.getDisplayId()
       let top = swiperOffset.top;
       let right = swiperOffset.right;
       let left = swiperOffset.left;
@@ -87,9 +90,9 @@ export default function refreshOffsetJsunit() {
       console.info("scrollOffsetJsunit_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.2),Math.round(bottom - height/2),Math.round(left + width*0.2),Math.round(bottom - height/4));
+      await driver.swipeBetween({x: Math.round(left + width*0.2), y: Math.round(bottom - height/2), displayId: displayId},
+        {x: Math.round(left + width*0.2), y: Math.round(bottom - height/4), displayId: displayId});
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('refresh_mess');
       let obj: ESObject = JSON.parse(strJson);

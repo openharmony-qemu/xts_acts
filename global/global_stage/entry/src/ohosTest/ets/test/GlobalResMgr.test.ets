@@ -14,7 +14,7 @@
  */
 
 import resourceManager from '@ohos.resourceManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import { BusinessError } from '@ohos.base';
 import { GlobalContext, openPNGWithBase64 } from '../test/global';
 import application from '@ohos.app.ability.application';

@@ -14,7 +14,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
@@ -65,7 +65,7 @@ export default function RouterPageUpdateTest() {
       await button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.pressBack();
+      await driver.pressBack(0);
       await CommonFunc.sleep(1000);
 
       expect(AppStorage.get('RouterPageUpdatePage_callBackFuncOnCount')).assertEqual(1);

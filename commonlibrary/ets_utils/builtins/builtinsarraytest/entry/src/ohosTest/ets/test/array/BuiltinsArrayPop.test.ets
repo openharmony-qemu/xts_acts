@@ -14,7 +14,7 @@
 */
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import { TestA } from '../../testability/pages/InterfaceDefined';
 import { sleep } from '../../testability/pages/Utils';
 

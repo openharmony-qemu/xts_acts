@@ -1,0 +1,31 @@
+<!-- SVG文本：text 元素的字号与颜色，静态展示按预期比对 -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">SVG文本</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 文本绘制：font-size 字号与 fill 颜色 -->
+    <list-item class="card">
+      <text class="label">001 文本绘制(text font-size/fill)</text>
+      <div class="svg-item">
+        <svg width="450" height="225" viewBox="0 0 300 150">
+          <text x="10" y="40" font-size="16" fill="#ff0000">red 16px</text>
+          <text x="10" y="80" font-size="24" fill="#00aa00">green 24px</text>
+          <text x="10" y="130" font-size="32" fill="#0000ff">blue你好 32px</text>
+        </svg>
+      </div>
+      <text class="expect">预期：三行文字颜色依次为红/绿/蓝，字号递增（16/24/32），中英文显示完整无截断</text>
+    </list-item>
+
+    <!-- 底部 pass/fail/back 按钮，作为 list 最后一项，随 list 滚动可见 -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

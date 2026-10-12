@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from '@ohos/hypium-dynamic';
 import { inspector, UIContext, window } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 import { router } from '@kit.ArkUI';

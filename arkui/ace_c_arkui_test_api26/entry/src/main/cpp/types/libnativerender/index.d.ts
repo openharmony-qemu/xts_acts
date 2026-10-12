@@ -31,3 +31,5 @@ export const ArcListEventCallbackTest: (a: string) => void;
 export const ArcSwiperEventCallbackTest: (a: string) => void;
 
 export const ArcAlphabetIndexerEventCallbackTest: (a: string) => void;
+
+export const DragEventSummaryTest: (a: string) => void;

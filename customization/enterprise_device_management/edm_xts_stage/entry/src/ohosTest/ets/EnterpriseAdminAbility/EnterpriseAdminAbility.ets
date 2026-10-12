@@ -14,7 +14,7 @@
  */
 
 import EnterpriseAdminExtensionAbility from '@ohos.enterprise.EnterpriseAdminExtensionAbility'
-import { expect } from '@ohos/hypium'
+import { expect } from '@ohos/hypium-dynamic'
 import { systemManager } from '@kit.MDMKit';
 import common from '@ohos.enterprise.common';
 

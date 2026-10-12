@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {PointerMatrix, UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function RotationGestureTemplateTest() {
   describe('RotationGestureTemplateTest', () => {
     beforeEach(async (done: Function) => {
@@ -70,10 +71,10 @@ export default function RotationGestureTemplateTest() {
       let pointersSize = 120;
       let pointers = PointerMatrix.create(2, pointersSize);
       for (let step = 0; step < pointersSize; step++) {
-        pointers.setPoint(0, step, {x: Math.round(areaObj1.left * (pointersSize - step)/pointersSize+ areaObj1.right * (0 + step)/pointersSize),y: Math.round(areaObj1.top)})
+        pointers.setPoint(0, step, {x: Math.round(areaObj1.left * (pointersSize - step)/pointersSize+ areaObj1.right * (0 + step)/pointersSize),y: Math.round(areaObj1.top),displayId: displayID})
       }
       for (let step = 0; step < pointersSize; step++) {
-        pointers.setPoint(1, step, {x: Math.round(areaObj1.left * (0 + step)/pointersSize+ areaObj1.right * (pointersSize - step)/pointersSize),y: Math.round(areaObj1.bottom)})
+        pointers.setPoint(1, step, {x: Math.round(areaObj1.left * (0 + step)/pointersSize+ areaObj1.right * (pointersSize - step)/pointersSize),y: Math.round(areaObj1.bottom),displayId: displayID})
       }
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);

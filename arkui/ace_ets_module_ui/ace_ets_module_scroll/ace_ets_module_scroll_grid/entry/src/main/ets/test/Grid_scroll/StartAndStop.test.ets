@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
@@ -61,21 +61,28 @@ export default function StartAndStop() {
     it('StartAndStop_0300',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[StartAndStop_0300] START');
-      let gridRect = CommonFunc.getComponentRect('StartandStop')
       let driver = Driver.create()
-      await driver.swipe(
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
-        Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
-        1000);
+      let gridRectComponent = await driver.findComponent(ON.id('StartandStop'))
+      let gridRect = await gridRectComponent.getBounds()
+      let displayId = await gridRectComponent.getDisplayId()
+      await driver.swipeBetween(
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
+          displayId: displayId
+        },
+        {
+          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+          displayId: displayId
+        }, 1000);
       await CommonFunc.sleep(2000);
 
-      let strJson1 = getInspectorByKey('StartAndStop' + '_start')
+      let strJson1 = getInspectorByKey('StartAndStop_start')
       console.info("[StartAndStop_0300] component obj1 is: " + JSON.stringify(JSON.parse(strJson1)))
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('onScrollStart');
 
-      let strJson2 = getInspectorByKey('StartAndStop' + '_end')
+      let strJson2 = getInspectorByKey('StartAndStop_end')
       console.info("[StartAndStop_0300] component obj2 is: " + JSON.stringify(JSON.parse(strJson2)))
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('onScrollStop');
 

@@ -69,7 +69,9 @@ export default function listSwipeActionJsunit() {
       let strJson = getInspectorByKey('lSwipeAction0');
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0010] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeAction0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeAction0'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -78,9 +80,9 @@ export default function listSwipeActionJsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0010 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(53)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(53)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(5000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipeState');
@@ -108,7 +110,9 @@ export default function listSwipeActionJsunit() {
       let strJson = getInspectorByKey('lSwipeAction0');
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeAction0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeAction0'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -117,9 +121,9 @@ export default function listSwipeActionJsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + left + vp2px(120)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(left + vp2px(120)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipeState');
@@ -147,7 +151,9 @@ export default function listSwipeActionJsunit() {
       let strJson = getInspectorByKey('lSwipeAction0');
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeAction0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeAction0'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -156,9 +162,9 @@ export default function listSwipeActionJsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + vp2px(50)), Math.round(globalThis.winTop + top + height/2), Math.round(globalThis.winLeft + right + vp2px(10)), Math.round(globalThis.winTop  + top + height/2)
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId },
+        { x: Math.round(right + vp2px(10)), y: Math.round(top + height / 2), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipeState');

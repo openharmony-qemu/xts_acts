@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 // NavPathStack and NavPathInfo are globally available in ArkTS dynamic mode (component/navigation.d.ts)
 
 export default function SmallComponentSupplement() {

@@ -82,6 +82,8 @@ napi_value VideoEncodeCapability4600Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeCapability4800Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeCapability4900Test(napi_env env, napi_callback_info info);
 napi_value VideoEncodeCapability9800Test(napi_env env, napi_callback_info info);
+napi_value VideoEncoder264DmabufSuffix0010(napi_env env, napi_callback_info info);
+napi_value VideoEncoder265DmabufSuffix0010(napi_env env, napi_callback_info info);
 
 void InitFuncTest();
 void TestTearDownFunc();

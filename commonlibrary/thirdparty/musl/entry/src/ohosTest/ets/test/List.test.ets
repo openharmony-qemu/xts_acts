@@ -129,6 +129,15 @@ import wcharNdk1Test from './WcharNdk1.test';
 import timeNdk1Test from './TimeNdk1.test';
 import timexNdk1Test from './TimexNdk1.test';
 import unistdNdk1Test from './UnistdNdk1.test';
+import RegisterPrintfSpecifierTest from './RegisterPrintfSpecifier.test';
+import RegisterPrintftypeTest from './RegisterPrintftype.test';
+import RegisterPrintfModifierTest from './RegisterPrintfModifier.test';
+import abilityPthreadJoinTest from './PthreadJoinDetach.test';
+import pthreadSetcanceltypeTest from './PthreadSetcanceltype.test';
+import pthreadYieldTest from './PthreadYield.test';
+import pthreadTsdTest from './PthreadTsd.test';
+import pthreadKeyCreateTest from './PthreadKeyCreate.test';
+import GroupIpcTest from './GroupIpc.test';
 
 
 export default function testsuite() {
@@ -237,4 +246,14 @@ export default function testsuite() {
   threadsNdk1Test();
   muslResourceNdk1Test();
 
+  RegisterPrintfSpecifierTest();
+  RegisterPrintftypeTest();
+  RegisterPrintfModifierTest();
+  
+  abilityPthreadJoinTest();
+  GroupIpcTest();
+  pthreadSetcanceltypeTest();
+  pthreadYieldTest();
+  pthreadTsdTest();
+  pthreadKeyCreateTest();
 }

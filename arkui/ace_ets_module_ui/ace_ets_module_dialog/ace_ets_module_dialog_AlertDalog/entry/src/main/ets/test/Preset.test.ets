@@ -14,10 +14,11 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../MainAbility/common/Common'
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PresetTest() {
   describe('PresetTest', () => {
     beforeAll(async () => {
@@ -68,7 +69,7 @@ export default function PresetTest() {
         await CommonFunc.sleep(500);
         await button?.click();
         await CommonFunc.sleep(1000);
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070,displayID);
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
@@ -128,7 +129,7 @@ export default function PresetTest() {
         let areaText = await textArea2.getText();
         await CommonFunc.sleep(500);
         if(areaText != 'aaa'){
-          await driver.triggerKey(2047)
+          await driver.triggerKey(2047,displayID)
         }
       }
       

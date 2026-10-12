@@ -11,6 +11,7 @@
     "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith",
     "MainAbility/pages/arcList/ArcListEventCallbackTest",
     "MainAbility/pages/arcSwiper/ArcSwiperEventCallbackTest",
-    "MainAbility/pages/arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest"
+    "MainAbility/pages/arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest",
+        "MainAbility/pages/dragEventSummary/DragEventSummaryTest"
   ]
 }

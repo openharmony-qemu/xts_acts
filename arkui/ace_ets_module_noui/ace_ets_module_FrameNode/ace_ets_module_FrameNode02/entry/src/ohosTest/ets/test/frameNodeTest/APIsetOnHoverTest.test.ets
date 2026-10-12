@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +30,9 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function APIsetOnHoverTest() {
   describe('APIsetOnHoverTest', () => {
     beforeEach(async (done: Function) => {
@@ -65,11 +69,9 @@ export default function APIsetOnHoverTest() {
       console.info('APIsetOnHoverTest_0100 START');
       let driver = await Driver.create()
       let buttonCl = await driver.findComponent(ON.id('setOnHover_1'));
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
       let point = await buttonCl.getBoundsCenter();
-      await driver.mouseMoveTo({
-        x: point.x, y: point.y
-      })
+      await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID})
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('setOnHover_1');
       let obj:ESObject = JSON.parse(strJson);

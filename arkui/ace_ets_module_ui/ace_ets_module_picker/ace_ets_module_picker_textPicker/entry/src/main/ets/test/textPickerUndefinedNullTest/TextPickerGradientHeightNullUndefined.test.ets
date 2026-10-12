@@ -35,7 +35,7 @@
  * - 负数和零值会使用默认值
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';

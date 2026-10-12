@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Level, Size, beforeAll } from '@ohos/hypium'
+import { describe, it, expect, TestType, Level, Size, beforeAll } from '@ohos/hypium-dynamic'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { PerfMetric, PerfTestStrategy, PerfMeasureResult, PerfTest} from '@ohos.test.PerfTest';
 import { Driver, ON } from '@kit.TestKit';

@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function rotationGestureTest() {
   describe('RotationGestureTest', () => {
     beforeEach(async (done: Function) => {
@@ -70,10 +71,10 @@ export default function rotationGestureTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.top + areaHeight1/4) });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.top + areaHeight1/4) });
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) });
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.top + areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.top + areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) , displayId: displayID});
       await driver.injectMultiPointerAction(pointers,1200);
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('RotationGesture');
@@ -117,12 +118,12 @@ export default function rotationGestureTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(3,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.top + areaHeight1/4) });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.top + areaHeight1/4) });
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) });
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) });
-      pointers.setPoint(2,0,{x: Math.round(areaObj1.left + areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) });
-      pointers.setPoint(2,1,{x: Math.round(areaObj1.right - areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.top + areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.top + areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(2,0,{x: Math.round(areaObj1.left + areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) , displayId: displayID});
+      pointers.setPoint(2,1,{x: Math.round(areaObj1.right - areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) , displayId: displayID});
       await driver.injectMultiPointerAction(pointers,1200);
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('RotationGesture');

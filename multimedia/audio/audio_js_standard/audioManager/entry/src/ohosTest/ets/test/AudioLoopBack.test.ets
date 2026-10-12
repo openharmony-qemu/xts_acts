@@ -14,7 +14,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
 import { Driver } from '@ohos.UiTest';
@@ -481,7 +481,7 @@ export default function audioLoopBack() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100", Level.LEVEL2, async (done: Function) => {
+    it("SUB_MULTIMEDIA_AUDIO_LOOPBACK_STATUS_CHANGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
           let audioLoopback: audio.AudioLoopback = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
@@ -503,6 +503,7 @@ export default function audioLoopBack() {
           done();
         }
       }
+      done();
     })
     /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ENABLE_0100

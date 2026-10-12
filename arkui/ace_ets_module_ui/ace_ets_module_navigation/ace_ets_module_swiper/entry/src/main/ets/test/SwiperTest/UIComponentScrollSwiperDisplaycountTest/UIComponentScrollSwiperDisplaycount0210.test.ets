@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/utils/Common';
 import {
@@ -28,6 +28,8 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function UIComponentScrollSwiperDisplaycount0210() {
   describe('UIComponentScrollSwiperDisplaycount0210', () => {
@@ -76,7 +78,7 @@ export default function UIComponentScrollSwiperDisplaycount0210() {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_0210 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      await driver.swipe(Math.round(left + width*0.4),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.4), y: Math.round(top + height/2), displayId: displayID }, { x: Math.round(left + width*0.9), y: Math.round(top + height/2), displayId: displayID });
       await CommonFunc.sleep(2000);
       let strIndex: string = getInspectorByKey('swiperdisplaycount0210_1')
       let jsonIndex: ESObject = JSON.parse(strIndex).$attrs.content;

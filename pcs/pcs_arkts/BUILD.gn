@@ -31,6 +31,13 @@ ohos_copy("ActsPCSArktsTestCopy") {
       [ root_out_dir + "/suites/acts/acts/testcases/common_event.txt" ]
 }
 
+ohos_copy("ActsPCSArktsTestHookCopy") {
+  subsystem_name = "xts"
+  part_name = "acts"
+  sources = [ "./setup_pcs_arkts_test.sh" ]
+  outputs = [ root_out_dir + "/suites/acts/acts/testcases/setup_pcs_arkts_test.sh" ]
+}
+
 ohos_js_app_suite("ActsPCSArktsTest") {
   test_hap = true
   testonly = true
@@ -41,5 +48,6 @@ ohos_js_app_suite("ActsPCSArktsTest") {
   deps = [
     ":ActsPCSArkts",
     ":ActsPCSArktsTestCopy",
+    ":ActsPCSArktsTestHookCopy",
   ]
 }

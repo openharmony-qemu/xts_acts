@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import uiinputeventndk from 'libuiinputeventndk.so'
 import Utils from '../common/Utils';
 import { Point, MouseButton } from '@kit.TestKit';
 
 const OS_ACCOUNT_ERR_OK = 0;
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function ActsUIInputEventNdkTest() {
   describe('ActsUIInputEventNdkTest', () => {
@@ -45,7 +47,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0101 start====");
-          await Utils.driver.triggerKey(2017);
+          await Utils.driver.triggerKey(2017, displayID);
           let result = uiinputeventndk.UIInputEventType0101();
           console.info("====>testArkUI_UIInputEvent_Type_0101 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -68,7 +70,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0102 start====");
-          await Utils.driver.triggerKey(2017);
+          await Utils.driver.triggerKey(2017, displayID);
           let result = uiinputeventndk.UIInputEventType0102();
           console.info("====>testArkUI_UIInputEvent_Type_0102 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -137,7 +139,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0106 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0106();
           console.info("====>testArkUI_UIInputEvent_Type_0106 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -160,7 +162,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0107 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0107();
           console.info("====>testArkUI_UIInputEvent_Type_0107 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -367,7 +369,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0119 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2, speed);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID }, speed);
           let result = uiinputeventndk.UIInputEventType0119();
           console.info("====>testArkUI_UIInputEvent_Type_0119 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -551,7 +553,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0131 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0131();
           console.info("====>testArkUI_UIInputEvent_Type_0131 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -574,7 +576,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0132 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0132();
           console.info("====>testArkUI_UIInputEvent_Type_0132 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -597,7 +599,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0133 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0133();
           console.info("====>testArkUI_UIInputEvent_Type_0133 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -620,7 +622,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0134 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0134();
           console.info("====>testArkUI_UIInputEvent_Type_0134 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -643,7 +645,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0135 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0135();
           console.info("====>testArkUI_UIInputEvent_Type_0135 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -666,7 +668,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0136 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0136();
           console.info("====>testArkUI_UIInputEvent_Type_0136 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -689,7 +691,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0137 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0137();
           console.info("====>testArkUI_UIInputEvent_Type_0137 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -712,7 +714,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0138 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0138();
           console.info("====>testArkUI_UIInputEvent_Type_0138 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -735,7 +737,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0139 start====");
-          await Utils.driver.swipe(x1, y1, x2, y2);
+          await Utils.driver.swipeBetween({ x: x1, y: y1, displayId: displayID }, { x: x2, y: y2, displayId: displayID });
           let result = uiinputeventndk.UIInputEventType0139();
           console.info("====>testArkUI_UIInputEvent_Type_0139 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -758,9 +760,9 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0140 start====");
-          await Utils.driver.triggerKey(2000)
-          await Utils.driver.triggerKey(2001)
-          await Utils.driver.triggerKey(2002)
+          await Utils.driver.triggerKey(2000, displayID)
+          await Utils.driver.triggerKey(2001, displayID)
+          await Utils.driver.triggerKey(2002, displayID)
           let result = uiinputeventndk.UIInputEventType0140();
           console.info("====>testArkUI_UIInputEvent_Type_0140 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -783,9 +785,9 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0142 start====");
-          await Utils.driver.triggerKey(2000)
-          await Utils.driver.triggerKey(2001)
-          await Utils.driver.triggerKey(2002)
+          await Utils.driver.triggerKey(2000, displayID)
+          await Utils.driver.triggerKey(2001, displayID)
+          await Utils.driver.triggerKey(2002, displayID)
           let result = uiinputeventndk.UIInputEventType0142();
           console.info("====>testArkUI_UIInputEvent_Type_0142 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);
@@ -808,7 +810,7 @@ export default function ActsUIInputEventNdkTest() {
       async (done: Function) => {
         try {
           console.info("====>testArkUI_UIInputEvent_Type_0143 start====");
-          await Utils.driver.triggerCombineKeys(2045, 2019);
+          await Utils.driver.triggerCombineKeys(2045, 2019, displayID);
           let result = uiinputeventndk.UIInputEventType0143();
           console.info("====>testArkUI_UIInputEvent_Type_0143 result: " + result);
           expect(result).assertEqual(OS_ACCOUNT_ERR_OK);

@@ -23,8 +23,10 @@ async function penClickEvent(id: string) {
   let point = await component.getBounds();
   let centerX = Math.round((point.left + point.right) / 2);
   let centerY = Math.round((point.top + point.bottom) / 2);
-  await driver.penClick({x: centerX, y: centerY});
+  await driver.penClick({x: centerX, y: centerY, displayId: displayID});
 }
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function buttonRollAngleTest() {
 

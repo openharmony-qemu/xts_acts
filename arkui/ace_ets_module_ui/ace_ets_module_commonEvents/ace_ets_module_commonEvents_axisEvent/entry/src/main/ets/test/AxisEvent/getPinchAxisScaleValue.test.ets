@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic'
 import { UiComponent, UiDriver, Component, Driver, ON, BY, UiDirection, } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function getPinchAxisScaleValue() {
   describe('getPinchAxisScaleValueTest', () => {
     beforeEach(async (done: Function) => {
@@ -60,7 +61,7 @@ export default function getPinchAxisScaleValue() {
       let button = await driver.findComponent(ON.id('button'));
       let center = await button.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayID }, true, 30);
       let strJson = getInspectorByKey('text');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[getPinchAxisScaleValueTest_0010] PreDrag: ' + JSON.stringify(obj));
@@ -84,7 +85,7 @@ export default function getPinchAxisScaleValue() {
       let button = await driver.findComponent(ON.id('button'));
       let center = await button.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.mouseScroll({ x: center.x, y: center.y }, true, 30);
+      await driver.mouseScroll({ x: center.x, y: center.y, displayId: displayID }, true, 30);
       let strJson = getInspectorByKey('text1');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[getPinchAxisScaleValueTest_0020] PreDrag: ' + JSON.stringify(obj));

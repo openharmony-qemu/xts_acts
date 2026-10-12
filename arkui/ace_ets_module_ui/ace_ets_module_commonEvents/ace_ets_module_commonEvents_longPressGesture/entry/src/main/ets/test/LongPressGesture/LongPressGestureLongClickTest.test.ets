@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function LongPressGestureLongClickTest() {
   describe('LongPressGestureLongClickTest', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +74,7 @@ export default function LongPressGestureLongClickTest() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(areaObj.left + areaWidth/2),Math.round(areaObj.top + areaHeight/2));
+      await driver.longClickAt({x:Math.round(areaObj.left + areaWidth/2),y:Math.round(areaObj.top + areaHeight/2),displayId:displayID});
       await CommonFunc.sleep(3000);
 
       let text1 = getInspectorByKey('LongPressGestureLongClick_repeat');

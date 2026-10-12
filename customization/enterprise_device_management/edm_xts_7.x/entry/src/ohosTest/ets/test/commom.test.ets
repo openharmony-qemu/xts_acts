@@ -248,6 +248,7 @@ const DOMAIN_ACCOUNT_POLICY1: accountManager.DomainAccountPolicy = {
   authenticationValidityPeriod: 120,
   passwordValidityPeriod: 90,
   passwordExpirationNotification: 60,
+  supportUKeyAuthentication: true,
 };
 
 const DEFAULT_APP_INDEX = 0;

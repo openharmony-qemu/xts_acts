@@ -12,12 +12,13 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function PromptActionMethodNullUndefinedTest() {
   describe('PromptActionMethodNullUndefinedTest', () => {
     beforeEach(async (done: Function) => {
@@ -228,7 +229,7 @@ export default function PromptActionMethodNullUndefinedTest() {
 		await CommonFunc.sleep(200);
 		await btn.click()
 		await CommonFunc.sleep(200);
-		await driver.triggerKey(2070)
+		await driver.triggerKey(2070,displayID)
 		await CommonFunc.sleep(200);
 		expect(AppStorage.get('promptActionShowDialog1')).assertEqual(true)
 		console.log('PromptActionMethodNullUndefinedTest_009 END')
@@ -318,7 +319,7 @@ export default function PromptActionMethodNullUndefinedTest() {
 		await CommonFunc.sleep(200);
 		await btn.click()
 		await CommonFunc.sleep(200);
-		await driver.triggerKey(2070)
+		await driver.triggerKey(2070,displayID)
 		await CommonFunc.sleep(200);
 		expect(AppStorage.get('promptActionShowDialog5')).assertEqual(true)
 		console.log('PromptActionMethodNullUndefinedTest_013 END')

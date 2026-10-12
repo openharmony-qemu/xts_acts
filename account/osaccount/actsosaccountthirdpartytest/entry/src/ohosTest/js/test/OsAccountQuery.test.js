@@ -741,11 +741,13 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       if (isEnable != true) {
         console.info("====>ActsOsAccountQueryCounts_0100 not support multiple osaccouts====");
         try {
+          // 获取所有非系统级的操作系统账号的本地ID
+          let expectLocalIds = await osAccountManager.getOsAccountLocalIds();
           osAccountManager.getOsAccountCount((err, data) => {
             console.info("====>obtains the number of all os accounts created err:" + JSON.stringify(err));
             console.info("====>obtains the number of all os accounts created data:" + data);
             expect(err).assertEqual(null);
-            expect(data).assertEqual(1);
+            expect(data).assertEqual(expectLocalIds.length);
             console.info("====>ActsOsAccountQueryCounts_0100 end====");
             done();
           })
@@ -1058,9 +1060,12 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       var AccountManager = osaccount.getAccountManager();
       console.info("====>get os AccountManager finish====");
       try {
+        // 动态获取所在用户的localId
+        var expectLocalId = await AccountManager.getOsAccountLocalId();
+        console.info("====>getOsAccountLocalId expectLocalId:" + expectLocalId);
         var data = await AccountManager.getCurrentOsAccount();
         console.info("====>getCurrentOsAccount data:" + JSON.stringify(data));
-        expect(data.localId).assertEqual(100);
+        expect(data.localId).assertEqual(expectLocalId);
         expect(data.type).assertEqual(0);
         var serialNumberStr = data.serialNumber.toString();
         var serialIntercept = serialNumberStr.substring(8);
@@ -1467,11 +1472,11 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       try {
         let dataArray = await accountManager.getOsAccountLocalIds();
         console.info(tag, "data: " + dataArray);
-        if (dataArray.length > 0) {
-          expect(dataArray.length).assertEqual(1);
-          expect(dataArray[0]).assertEqual(100);
-        } else {
-          expect(dataArray.length).assertEqual(0);
+        // 断言1:返回有效数组，至少包含当前用户
+        expect(dataArray.length > 0).assertTrue();
+        // 断言2:所有localId均为合法值(>0)
+        for (let index = 0; index < dataArray.length; index++) {
+          expect(dataArray[index] > 0).assertTrue(); 
         }
         console.info(tag, "end====");
       } catch (err) {

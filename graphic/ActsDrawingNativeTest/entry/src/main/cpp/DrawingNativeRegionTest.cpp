@@ -100,6 +100,31 @@ int TestRegionDestroyNull()
     return OH_DRAWING_SUCCESS;
 }
 
+// 补充场景6: RegionContains边界测试
+int TestRegionContainsBoundary()
+{
+    DrawingNativeRegionTestSetUp();
+    
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 100, 100);
+    OH_Drawing_RegionSetRect(region, rect);
+    
+    // 测试边界点
+    bool contains1 = OH_Drawing_RegionContains(region, 0, 0);  // 左上角
+    EXPECT_EQ(contains1, true);
+    
+    bool contains2 = OH_Drawing_RegionContains(region, 100, 100);  // 右下角
+    EXPECT_EQ(contains2, false);
+    
+    bool contains3 = OH_Drawing_RegionContains(region, 50, 50);  // 中心点
+    EXPECT_EQ(contains3, true);
+    
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+    DrawingNativeRegionTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
 int TestRegionContainsInRange()
 {
     DrawingNativeRegionTestSetUp();
@@ -311,6 +336,25 @@ int TestRegionSetRectResultTrue()
     return OH_DRAWING_SUCCESS;
 }
 
+int TestRegionSetRectResultFalse()
+{
+    DrawingNativeRegionTestSetUp();
+    OH_Drawing_Region *region = OH_Drawing_RegionCreate();
+    EXPECT_NE(region, nullptr);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
+    // add assert
+    EXPECT_NE(rect, nullptr);
+
+    // 1. OH_Drawing_RegionSetRect takes correct region and rect object pointers as input
+    bool ret = OH_Drawing_RegionSetRect(region, rect);
+    EXPECT_EQ(ret, false);
+
+    OH_Drawing_RectDestroy(rect);
+    OH_Drawing_RegionDestroy(region);
+    DrawingNativeRegionTestTearDown();
+    return OH_DRAWING_SUCCESS;
+}
+
 int TestRegionSetRectRegionNull()
 {
     DrawingNativeRegionTestSetUp();
@@ -342,20 +386,30 @@ int TestRegionSetRectRectNull()
     return OH_DRAWING_SUCCESS;
 }
 
-int TestRegionSetRectResultFalse()
+// 补充场景2: RegionSetRect边界值测试
+int TestRegionSetRectBoundaryValues()
 {
     DrawingNativeRegionTestSetUp();
+    
     OH_Drawing_Region *region = OH_Drawing_RegionCreate();
     EXPECT_NE(region, nullptr);
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
-    // add assert
-    EXPECT_NE(rect, nullptr);
-
-    // 1. OH_Drawing_RegionSetRect takes correct region and rect object pointers as input
-    bool ret = OH_Drawing_RegionSetRect(region, rect);
-    EXPECT_EQ(ret, false);
-
-    OH_Drawing_RectDestroy(rect);
+    
+    // 测试各种边界矩形
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(0, 0, 0, 0);  // 面积为0
+    OH_Drawing_RegionSetRect(region, rect1);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(-100, -100, 100, 100);  // 负坐标
+    OH_Drawing_RegionSetRect(region, rect2);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    
+    OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(FLT_MAX, FLT_MAX, FLT_MAX, FLT_MAX);  // 极大值
+    OH_Drawing_RegionSetRect(region, rect3);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
+    
+    OH_Drawing_RectDestroy(rect1);
+    OH_Drawing_RectDestroy(rect2);
+    OH_Drawing_RectDestroy(rect3);
     OH_Drawing_RegionDestroy(region);
     DrawingNativeRegionTestTearDown();
     return OH_DRAWING_SUCCESS;
@@ -407,6 +461,11 @@ int TestRegionSetPathRegionNull()
     OH_Drawing_Region *clip = OH_Drawing_RegionCreate();
     // add assert
     EXPECT_NE(clip, nullptr);
+    
+    bool ret = OH_Drawing_RegionSetPath(region, path, clip);
+    EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(ret, false);
+    
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(DRAWING_NUMBER_150, DRAWING_NUMBER_180, DRAWING_NUMBER_200,
         DRAWING_NUMBER_200);
     // add assert
@@ -414,7 +473,7 @@ int TestRegionSetPathRegionNull()
     OH_Drawing_RegionSetRect(clip, rect);
 
     // 1. OH_Drawing_RegionSetPath takes correct path and clip object pointers as input, region is nullptr
-    bool ret = OH_Drawing_RegionSetPath(nullptr, path, clip);
+    ret = OH_Drawing_RegionSetPath(nullptr, path, clip);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(ret, false);
 

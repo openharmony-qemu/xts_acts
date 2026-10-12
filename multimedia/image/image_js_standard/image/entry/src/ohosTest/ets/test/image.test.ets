@@ -15,7 +15,7 @@
 
 import image from '@ohos.multimedia.image'
 import rpc from '@ohos.rpc'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic'
 import { testPng, testJpg } from './testImg.test'
 import { tcBuf020, tcBuf020_1, tcBuf021, tcBuf021_1, tcBuf022 } from './testImg.test'
 import { BusinessError } from '@ohos.base'

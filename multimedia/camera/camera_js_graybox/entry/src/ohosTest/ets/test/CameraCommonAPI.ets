@@ -4,7 +4,7 @@ import { abilityDelegatorRegistry, Driver, MatchPattern, ON } from "@kit.TestKit
 import { camera } from "@kit.CameraKit";
 import { photoAccessHelper } from "@kit.MediaLibraryKit";
 import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
-import { expect } from "@ohos/hypium";
+import { expect } from "@ohos/hypium-dynamic";
 import { media } from "@kit.MediaKit";
 import { dataSharePredicates } from "@kit.ArkData";
 import { image } from "@kit.ImageKit";

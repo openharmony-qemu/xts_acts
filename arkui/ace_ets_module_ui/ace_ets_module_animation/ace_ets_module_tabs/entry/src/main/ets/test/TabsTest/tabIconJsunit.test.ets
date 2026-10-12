@@ -12,11 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
 import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function tabIconJsunit() {
   describe('tabIconJsunit', () => {
@@ -82,7 +84,7 @@ export default function tabIconJsunit() {
       let width = right - left;
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width*0.9),Math.round(bottom - height/2),Math.round(left + width*0.1),Math.round(bottom - height/2));
+      await driver.swipeBetween({ x: Math.round(left + width*0.9), y: Math.round(bottom - height/2), displayId: displayID }, { x: Math.round(left + width*0.1), y: Math.round(bottom - height/2), displayId: displayID });
       await CommonFunc.sleep(3000);
       let strJson = getInspectorByKey('tabIcon_mess1');
       let strJson1 = getInspectorByKey('tabIcon_mess2');

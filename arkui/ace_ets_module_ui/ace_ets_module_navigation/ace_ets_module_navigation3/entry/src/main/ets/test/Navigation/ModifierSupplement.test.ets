@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, Level } from '@ohos/hypium'
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic'
 import { AlphabetIndexerModifier, NavDestinationModifier, NavigationModifier,
   NavigatorModifier, NavRouterModifier, SideBarContainerModifier,
   StepperItemModifier, SwiperModifier, TabsModifier } from '@ohos.arkui.modifier'

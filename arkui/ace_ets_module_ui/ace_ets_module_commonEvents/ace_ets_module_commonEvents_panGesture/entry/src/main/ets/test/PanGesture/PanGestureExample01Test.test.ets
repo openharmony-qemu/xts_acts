@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0;
 export default function PanGestureExample01Test() {
   describe('PanGestureExample01Test', () => {
     beforeEach(async (done: Function) => {
@@ -69,7 +70,7 @@ export default function PanGestureExample01Test() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.5),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2))
+      await driver.swipeBetween({x:Math.round(areaObj1.left + areaWidth1 * 0.5),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID},{x:Math.round(areaObj1.left + areaWidth1 * 0.8),y:Math.round(areaObj1.top + areaHeight1/2),displayId:displayID})
       await CommonFunc.sleep(3000);
       // 拖动之后重新获取当前区域的位置信息
       let FatherObj = CommonFunc.getComponentRectOnScreen('PanGestureExample01' + '_Father');

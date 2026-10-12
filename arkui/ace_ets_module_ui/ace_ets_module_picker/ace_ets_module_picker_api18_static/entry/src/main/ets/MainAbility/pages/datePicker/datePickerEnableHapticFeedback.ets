@@ -13,8 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,Color,
-  Row, ClickEvent, Margin, ButtonType, AttributeModifier, DatePickerAttribute, DatePicker} from '@ohos.arkui.component'
+import {
+  Entry,
+  Column,
+  Component,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Text,
+  Button,
+  FontWeight,
+  Color,
+  Row,
+  ClickEvent,
+  Margin,
+  ButtonType,
+  AttributeModifier,
+  DatePickerAttribute,
+  DatePicker
+} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { State } from '@ohos.arkui.stateManagement'
@@ -24,6 +42,7 @@ import { State } from '@ohos.arkui.stateManagement'
 struct DatePickerPage {
   private selectedDate: Date = new Date('2021-08-08')
   @State isLunar: boolean = false
+
   build() {
     Column() {
       DatePicker({
@@ -32,9 +51,9 @@ struct DatePickerPage {
         selected: this.selectedDate
       })
         .id('datePicker1')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         .enableHapticFeedback(true)
         .onDateChange((value: Date) => {
@@ -47,9 +66,9 @@ struct DatePickerPage {
         selected: this.selectedDate
       })
         .id('datePicker2')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         .enableHapticFeedback(false)
         .onDateChange((value: Date) => {
@@ -62,9 +81,9 @@ struct DatePickerPage {
         selected: this.selectedDate
       })
         .id('datePicker3')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         .enableHapticFeedback(undefined)
         .onDateChange((value: Date) => {
@@ -77,9 +96,9 @@ struct DatePickerPage {
         selected: this.selectedDate
       })
         .id('datePicker4')
-        .disappearTextStyle({color: Color.Gray, font: {size: '16fp', weight: FontWeight.Bold}})
-        .textStyle({color: '#ff182431', font: {size: '18fp', weight: FontWeight.Normal}})
-        .selectedTextStyle({color: '#ff0000FF', font: {size: '26fp', weight: FontWeight.Regular}})
+        .disappearTextStyle({ color: Color.Gray, font: { size: '16fp', weight: FontWeight.Bold } })
+        .textStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+        .selectedTextStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Regular } })
         .lunar(this.isLunar)
         // .enableHapticFeedback(null)
         .onDateChange((value: Date) => {

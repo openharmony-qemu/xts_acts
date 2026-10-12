@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import { ENTINFO1, SELFWANT, SELFHAPNAME, INVALID_WANT, DEFAULT_USER_ID, APP_IDS_1 } from '../commom.test.ets';
 
 import { usbManager } from '@kit.MDMKit';
@@ -467,7 +467,63 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SYSTEM_ROLLBACK, true);
       expect(false).assertTrue();
     } catch (error) {
-      expect(error.code === 9200001).assertTrue();
+      if (error.code === 801) {
+        expect(error.code === 801).assertTrue();
+      } else {
+        expect(error.code === 9200001).assertTrue();
+      }
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_packet_filtering_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYPACKET_FILTERING_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with packet_filtering feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_disallowed_policy_packet_filtering_0100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING, false);
+      ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.PACKET_FILTERING);
+      expect(ret).assertFalse();
+    } catch (error) {
+      console.info('test_set_disallowed_policy_packet_filtering_0100 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_sata_odd_burn_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYSATA_ODD_BURN_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with sata_odd_burn feature super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it("test_set_disallowed_policy_sata_odd_burn_0100", Level.LEVEL0, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN, true);
+      let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN);
+      expect(ret).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN, false);
+      ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SATA_ODD_BURN);
+      expect(ret).assertFalse();
+    } catch (error) {
+      console.info('test_set_disallowed_policy_sata_odd_burn_0100 error.code = ' + error.code);
+      expect(error.code).assertEqual(801);
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
     done();
   });

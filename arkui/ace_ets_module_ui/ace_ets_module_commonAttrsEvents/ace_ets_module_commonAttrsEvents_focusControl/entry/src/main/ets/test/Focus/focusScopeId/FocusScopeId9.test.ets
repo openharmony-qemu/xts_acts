@@ -14,11 +14,12 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopeId9() {
   describe('FocusScopeId9', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +63,7 @@ export default function FocusScopeId9() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn3_6 = await driver.findComponent(ON.id('FocusScopeId9_btn3_6'));
@@ -70,19 +71,19 @@ export default function FocusScopeId9() {
       expect(btn3_6_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId9_0100] btn3_6 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn_changIsGroup = await driver.findComponent(ON.id('FocusScopeId9_changIsGroup'));
@@ -90,7 +91,7 @@ export default function FocusScopeId9() {
       expect(btn_changIsGroup_isFocusedValue).assertEqual(true);
       console.info('[FocusScopeId9_0100] btn_changIsGroup isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let btn1_1 = await driver.findComponent(ON.id('FocusScopeId9_btn1_1'));

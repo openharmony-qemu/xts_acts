@@ -24,9 +24,10 @@ async function click(id: string) {
   let rect = await refresh.getBounds();
   let centerX = Math.round((rect.left + rect.right) / 2);
   let centerY = Math.round((rect.top + rect.bottom) / 2);
-  await driver.mouseClick({ x: centerX, y: centerY }, 1);
+  await driver.mouseClick({ x: centerX, y: centerY, displayId: displayID }, 1);
 }
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function GestureCaseTest() {
 
   describe('GestureCaseTest', () => {

@@ -14,7 +14,7 @@
  */
 
 import image from '@ohos.multimedia.image';
-import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import {
   photoKeys,
   fetchOption,

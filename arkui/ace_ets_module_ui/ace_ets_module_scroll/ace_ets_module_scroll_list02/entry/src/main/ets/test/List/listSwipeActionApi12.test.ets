@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON, On } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
@@ -56,7 +56,9 @@ export default function listSwipeActionApi12Test() {
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       // swipe the listItem to right
-      let swipeRect = CommonFunc.getComponentRectOnScreen('lSwipe29Action0');
+      let swipeRectComponent = await driver.findComponent(ON.id('lSwipe29Action0'));
+      let swipeRect = await swipeRectComponent.getBounds();
+      let displayId = await swipeRectComponent.getDisplayId();
       let top = swipeRect.top;
       let right = swipeRect.right;
       let left = swipeRect.left;
@@ -65,7 +67,9 @@ export default function listSwipeActionApi12Test() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + vp2px(60)),Math.round(top + height/2),Math.round(left + vp2px(150)),Math.round(top + height/2));
+      await driver.swipeBetween(
+        { x: Math.round(left + vp2px(60)), y: Math.round(top + height/2), displayId: displayId },
+        { x: Math.round(left + vp2px(150)), y: Math.round(top + height/2), displayId: displayId });
       await CommonFunc.sleep(5000);
       let strJson1 = getInspectorByKey('ListTestApi12_2');
       let obj1: ESObject = JSON.parse(strJson1);

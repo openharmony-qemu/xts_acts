@@ -14,7 +14,7 @@
  */
 
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test2020_03_ans } from './test2020_03'
 import { test2020_04_ans } from './test2020_04'
 import { test2020_07_ans } from './test2020_07'

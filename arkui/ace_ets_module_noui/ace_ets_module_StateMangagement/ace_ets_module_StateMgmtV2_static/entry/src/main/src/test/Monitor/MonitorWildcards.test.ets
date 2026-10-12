@@ -63,7 +63,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button_001"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -85,7 +85,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button_002"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -107,7 +107,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("componentV2Button_003"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -129,7 +129,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_001"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -151,7 +151,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_002"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -173,7 +173,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_003"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -195,7 +195,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_004"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -217,7 +217,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_005"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -239,7 +239,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_006"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -261,7 +261,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("arrButtonWildcards_007"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -283,7 +283,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("observedV2Button_001"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 
@@ -305,7 +305,7 @@ export default function MonitorWildcards(): void {
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("observedV2Button_002"));
-      await (btn?.click() as Promise<void>);
+      await (btn?.click());
       await CommonFunc.sleep(1000);
 
 

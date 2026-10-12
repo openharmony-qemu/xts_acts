@@ -14,11 +14,12 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import CommonFunc from '../../../MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function FocusScopePriority12() {
   describe('FocusScopePriority12', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +68,7 @@ export default function FocusScopePriority12() {
       await CommonFunc.sleep(2000);
       console.info('[FocusScopePriority12_0100] open click');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let Item1_1 = await driver.findComponent(ON.id('FocusScopePriority12_Item1_1'));
@@ -75,7 +76,7 @@ export default function FocusScopePriority12() {
       expect(Item1_1_isFocusedValue).assertEqual(true);
       console.info('[FocusScopePriority12_0100] Item1_1 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let Item2_1 = await driver.findComponent(ON.id('FocusScopePriority12_Item2_1'));
@@ -83,7 +84,7 @@ export default function FocusScopePriority12() {
       expect(Item2_1_isFocusedValue).assertEqual(true);
       console.info('[FocusScopePriority12_0100] Item2_1 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let Item1_2 = await driver.findComponent(ON.id('FocusScopePriority12_Item1_2'));
@@ -91,7 +92,7 @@ export default function FocusScopePriority12() {
       expect(Item1_2_isFocusedValue).assertEqual(true);
       console.info('[FocusScopePriority12_0100] Item1_2 isFocused');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(1000);
 
       let Item2_2 = await driver.findComponent(ON.id('FocusScopePriority12_Item2_2'));

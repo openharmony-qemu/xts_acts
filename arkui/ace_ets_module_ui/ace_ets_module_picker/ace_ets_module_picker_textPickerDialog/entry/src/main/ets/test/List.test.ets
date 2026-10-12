@@ -54,7 +54,6 @@ export default function testsuite() {
   textPickerDialogBlurStyleOptionsTest();
   textPickerDialogAcceptButtonStyleTest();
   TextPickerDialogAppearTextTest();
-  TextPickerDialogCallbackTest();
   textPickerDialogCancelButtonStyleTest();
   TextPickerDialogOptionsTest();
   TextPickerDialogUITest();

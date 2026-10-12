@@ -15,7 +15,7 @@
 
 import image from "@ohos.multimedia.image";
 import hilog from '@ohos.hilog';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium-dynamic";
 import { BusinessError } from '@ohos.base';
 import { common } from '@kit.AbilityKit';
 import display from '@ohos.display';

@@ -993,11 +993,13 @@ struct webMessageExt {
                     let value = err.name + ': ' + err.message
                     console.info(`The postErrorToApp() return value is: ${value}`)
                     Utils.emitEvent(value, this.listening_port.toLong())
-                  } catch (e) {
+                  } catch (error) {
+                    console.log(`getError failed code: ${error.code}, msg: ${error.message}`)
                     if (this.listening_port == 100026) {
+                      // ArkWeb static: getError() may throw 17100014 for JS URIError; avoid App died
                       Utils.emitEvent(true, this.listening_port.toLong())
                     } else {
-                      Utils.emitEvent(e.code, this.listening_port.toLong())
+                      Utils.emitEvent(error.code, this.listening_port.toLong())
                     }
                   }
                 }

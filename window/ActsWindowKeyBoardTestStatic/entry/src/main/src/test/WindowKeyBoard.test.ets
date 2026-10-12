@@ -754,20 +754,12 @@ export default function WindowKeyBoardTest() {
             try {
                 mainWindow.offKeyboardWillShow();
                 await Utils.msSleep(500);
-                if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
-                    hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillShow success: ');
-                    done();
-                }
+                hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillShow success: ');
+                done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
-                if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1') {
-                    expect(err.code).assertEqual(801);
-                    done();
-                } else {
-                    expect(true).assertFail();
-                    done();
-                }
+                expect(true).assertFalse();
+                done();
             }
         });
 
@@ -861,20 +853,12 @@ export default function WindowKeyBoardTest() {
             try {
                 mainWindow.offKeyboardWillHide();
                 await Utils.msSleep(500);
-                if (deviceType === 'phone' || deviceType === 'tablet' || deviceType === '2in1') {
-                    hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillHide success: ');
-                    done();
-                }
+                hilog.info(domain, tag, '%{public}s', msgStr + 'off keyboardWillHide success: ');
+                done();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', msgStr + 'Failed. Cause: ' + JSON.stringify(err));
-                if (deviceType !== 'phone' && deviceType !== 'tablet' && deviceType !== '2in1') {
-                    expect(err.code).assertEqual(801);
-                    done();
-                } else {
-                    expect(true).assertFail();
-                    done();
-                }
+                expect(true).assertFalse();
+                done();
             }
         });
 

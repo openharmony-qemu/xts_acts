@@ -87,6 +87,33 @@ export default function dataTransferTest(): void {
       hilog.info(0x0000, 'testTag', '%{public}s', '[Nearlink Test] afterAll');
     })
     /**
+     * @tc.name SUB_Communication_XTS_NearLink_DataTransfer_Enum_static_0100
+     * @tc.number SUB_Communication_XTS_NearLink_DataTransfer_Enum_0100
+     * @tc.desc TransferMode enum values test.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLink_DataTransfer_Enum_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let caseName = 'SUB_Communication_XTS_NearLink_DataTransfer_Enum_static_0100';
+        hilog.info(0x0000, 'testTag', '%{public}s test start', caseName);
+        try {
+          let BASIC: dataTransfer.TransferMode = dataTransfer.TransferMode.BASIC;
+          hilog.info(0x0000, 'testTag', '%{public}s BASIC result: %{public}d', caseName, BASIC);
+          expect(BASIC).assertEqual(0);
+          let RELIABLE: dataTransfer.TransferMode = dataTransfer.TransferMode.RELIABLE;
+          hilog.info(0x0000, 'testTag', '%{public}s RELIABLE result: %{public}d', caseName, RELIABLE);
+          expect(RELIABLE).assertEqual(1);
+        } catch (error) {
+          hilog.info(0x0000, 'testTag', '%{public}s TransferMode error.code %{public}s,errMessage: %{public}s', caseName, JSON.stringify(error.code), JSON.stringify(error.message));
+          expect().assertFail();
+        }
+        hilog.info(0x0000, 'testTag', '%{public}s test end', caseName);
+        done();
+      })
+
+    /**
      * @tc.name SUB_Communication_XTS_NearLinkPub_DataTransfer_On_static_0100
      * @tc.number SUB_Communication_XTS_NearLinkPub_DataTransfer_On_0100
      * @tc.desc dataTransfer.onConnectionStateChanged normal call with callback

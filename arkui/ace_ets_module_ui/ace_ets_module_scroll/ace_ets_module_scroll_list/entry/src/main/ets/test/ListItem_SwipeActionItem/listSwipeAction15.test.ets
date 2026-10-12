@@ -68,7 +68,9 @@ export default function listSwipeAction15Jsunit() {
       // get the rect of listItem
       let strJson = getInspectorByKey('lSwipe15Action0');
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe15Action0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe15Action0'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -78,9 +80,9 @@ export default function listSwipeAction15Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0150 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0150] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(30)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(40))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(30)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(40)), displayId: displayId });
       await CommonFunc.sleep(5000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipe15State');
@@ -107,7 +109,9 @@ export default function listSwipeAction15Jsunit() {
       // get the rect of listItem
       let strJson = getInspectorByKey('lSwipe15Action0');
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe15Action0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe15Action0'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -117,9 +121,9 @@ export default function listSwipeAction15Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0160 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0160] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(10)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(100))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(10)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(100)), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipe15State');
@@ -146,7 +150,9 @@ export default function listSwipeAction15Jsunit() {
       // get the rect of listItem
       let strJson = getInspectorByKey('lSwipe15Action0');
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe15Action0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipe15Action0'));
+      let ListItem_00 = await swipeComponent.getBounds();
+      let displayId = await swipeComponent.getDisplayId();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -156,9 +162,9 @@ export default function listSwipeAction15Jsunit() {
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170 value is" + left + " --" + right + "--" + top + "--" + bottom);
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      await driver.swipe(
-        Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop + top + vp2px(2)), Math.round(globalThis.winLeft + left + width/2), Math.round(globalThis.winTop  + top + vp2px(230))
-      );
+      await driver.swipeBetween(
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(2)), displayId: displayId },
+        { x: Math.round(left + width / 2), y: Math.round(top + vp2px(230)), displayId: displayId });
       await CommonFunc.sleep(4000);
       // judge the swipeActionState
       let textSwipeState = getInspectorByKey('swipe15State');

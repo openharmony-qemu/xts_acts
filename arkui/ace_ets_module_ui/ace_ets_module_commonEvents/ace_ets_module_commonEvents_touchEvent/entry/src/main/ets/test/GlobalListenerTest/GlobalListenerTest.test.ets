@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import Utils from '../../MainAbility/common/Utils';
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection,
@@ -20,6 +20,7 @@ import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPatter
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function GlobalListenerTest() {
   describe('GlobalListenerTest', () => {
     beforeEach(async (done: Function) => {
@@ -88,7 +89,7 @@ export default function GlobalListenerTest() {
       let rect = await btn.getBounds();
       let centerX = Math.round((rect.left + rect.right) / 2);
       let centerY = Math.round((rect.top + rect.bottom) / 2);
-      await driver.mouseClick({ x: centerX, y: centerY }, MouseButton.MOUSE_BUTTON_RIGHT);
+      await driver.mouseClick({ x: centerX, y: centerY , displayId: displayID}, MouseButton.MOUSE_BUTTON_RIGHT);
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('listenMouse');
       let obj1: ESObject = JSON.parse(strJson1);
@@ -110,7 +111,7 @@ export default function GlobalListenerTest() {
       console.info('[SUB_ACE_ARKUI_GLOBALLISTENER_0300] START');
       await Utils.sleep(100);
       let driver = await Driver.create()
-      await driver.triggerKey(KeyCode.KEYCODE_TAB);
+      await driver.triggerKey(KeyCode.KEYCODE_TAB,displayID);
       await Utils.sleep(2000);
       let strJson1 = getInspectorByKey('listenKey');
       let obj1: ESObject = JSON.parse(strJson1);

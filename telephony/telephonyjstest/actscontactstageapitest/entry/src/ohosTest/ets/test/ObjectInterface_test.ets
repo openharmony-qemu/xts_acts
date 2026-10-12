@@ -16,7 +16,7 @@
 import contact from '@ohos.contact';
 import sms from '@ohos.telephony.sms';
 import featureAbility from '@ohos.ability.featureAbility';
-import { afterAll, afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import uitest from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';

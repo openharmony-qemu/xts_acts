@@ -16,7 +16,7 @@
 import { sendableImage } from '@kit.ImageKit';
 import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG } from '../common';
 const TAG = 'writeBufferToPixelsSyncSupp';
 

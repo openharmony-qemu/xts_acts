@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorGetNumber003() {
   describe('RichEditorGetNumber003', () => {
@@ -81,9 +83,9 @@ export default function RichEditorGetNumber003() {
       await set_care.click();
       await CommonFunc.sleep(500);
 
-      driver.triggerKey(KeyCode.KEYCODE_A);
+      driver.triggerKey(KeyCode.KEYCODE_A, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerKey(KeyCode.KEYCODE_F);
+      driver.triggerKey(KeyCode.KEYCODE_F, displayID);
       await CommonFunc.sleep(500);
 
       lineCountText = await lineCount.getText();
@@ -94,5 +96,6 @@ export default function RichEditorGetNumber003() {
 
   })
 }
+
 
 

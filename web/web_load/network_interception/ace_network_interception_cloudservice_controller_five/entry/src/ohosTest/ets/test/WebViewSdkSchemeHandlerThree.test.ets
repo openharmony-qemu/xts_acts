@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium-dynamic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { Driver, ON } from '@kit.TestKit';
@@ -73,7 +73,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
       await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse001", true,1000);
       done();
     })
@@ -92,7 +92,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
       await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse002", true,1000);
       done();
     })
@@ -111,7 +111,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
       await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
       done();
     })
@@ -130,7 +130,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
       await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
       done();
     })
@@ -149,7 +149,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
       await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
       done();
     })
@@ -168,7 +168,7 @@ export default function ActsAceWebViewSdkSchemeHandlerThree() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
+      await Utils.waitAndClickComponent("webViewSdkSchemeHandlerThreeButton",driver)
       await waitForExist(()=>isReturn, "testSchemeHandlerDidFailCompleteIfNoResponse003", true,1000);
       done();
     })

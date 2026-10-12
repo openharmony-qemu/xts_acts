@@ -14,13 +14,14 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function dragAdaptationTest() {
   describe('dragAdaptationTest', () => {
     beforeEach(async (done: Function) => {
@@ -74,7 +75,7 @@ export default function dragAdaptationTest() {
         await CommonFunc.sleep(500);
         await textArea2.click()
         await CommonFunc.sleep(500);
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, displayID);
         await CommonFunc.sleep(1000);
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
@@ -134,7 +135,7 @@ export default function dragAdaptationTest() {
         let areaText = await textArea2.getText();
         await CommonFunc.sleep(500);
         if(areaText != 'aaa'){
-          await driver.triggerKey(2047)
+          await driver.triggerKey(2047, displayID)
         }
       }
       let strJson = getInspectorByKey('textArea2');

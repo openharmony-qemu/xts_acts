@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level  } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level  } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../MainAbility/common/Common';
@@ -170,13 +170,17 @@ export default function GridItemJsunit() {
     it('GridItemJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify the function of onSelect of GridItem component 
       console.info('[GridItemJsunit_0400] START');
-      let grid1 = CommonFunc.getComponentRectOnScreen('GridItemPage' + '_grid1');
+      let driver = await Driver.create()
+      let grid1Component = await driver.findComponent(ON.id('GridItemPage_grid1'));
+      let grid1 = await grid1Component.getBounds();
+      let displayId = await grid1Component.getDisplayId();
       let left_x = Math.round(grid1.left)
       let bottom_y = Math.round(grid1.top + (grid1.bottom - grid1.top) / 2)
-      let driver = await UiDriver.create()
-      await driver.swipe(Math.round(left_x + vp2px(100)), bottom_y, Math.round(left_x + vp2px(120)), bottom_y);
+      await driver.swipeBetween(
+        { x: Math.round(left_x + vp2px(100)), y: bottom_y, displayId: displayId },
+        { x: Math.round(left_x + vp2px(120)), y: bottom_y, displayId: displayId });
       await CommonFunc.sleep(500);
-      let textComponent = await driver.findComponent(BY.key('onSelect'));
+      let textComponent = await driver.findComponent(ON.id('onSelect'));
       let text = await textComponent.getText();
       await CommonFunc.sleep(500);
       expect(text).assertEqual('a');

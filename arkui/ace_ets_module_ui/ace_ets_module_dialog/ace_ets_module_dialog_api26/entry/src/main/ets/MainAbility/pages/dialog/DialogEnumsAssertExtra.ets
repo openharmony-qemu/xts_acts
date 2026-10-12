@@ -29,33 +29,41 @@ struct DialogEnumsAssertExtra {
   }
 
   build() {
-    Column({ space: 6 }) {
+    Column() {
       Text('dialog enums part2').fontSize(16).fontWeight(FontWeight.Bold)
       Text(this.resultText).id('enums_extra_result').fontSize(14)
-      Button('align TOP_END').id('btn_enum_align_5').onClick(() => {
-        this.setResult(DialogBaseAlignment.TOP_END === 5, 'TOP_END');
-      })
-      Button('align CENTER_START').id('btn_enum_align_6').onClick(() => {
-        this.setResult(DialogBaseAlignment.CENTER_START === 6, 'CENTER_START');
-      })
-      Button('align CENTER_END').id('btn_enum_align_7').onClick(() => {
-        this.setResult(DialogBaseAlignment.CENTER_END === 7, 'CENTER_END');
-      })
-      Button('align BOTTOM_START').id('btn_enum_align_8').onClick(() => {
-        this.setResult(DialogBaseAlignment.BOTTOM_START === 8, 'BOTTOM_START');
-      })
-      Button('align BOTTOM_END').id('btn_enum_align_9').onClick(() => {
-        this.setResult(DialogBaseAlignment.BOTTOM_END === 9, 'BOTTOM_END');
-      })
-      Button('orient AUTO').id('btn_enum_orient_0').onClick(() => {
-        this.setResult(DialogButtonOrientation.AUTO === 0, 'AUTO');
-      })
-      Button('orient HORIZONTAL').id('btn_enum_orient_1').onClick(() => {
-        this.setResult(DialogButtonOrientation.HORIZONTAL === 1, 'HORIZONTAL');
-      })
-      Button('orient VERTICAL').id('btn_enum_orient_2').onClick(() => {
-        this.setResult(DialogButtonOrientation.VERTICAL === 2, 'VERTICAL');
-      })
+      Row() {
+        Button('align TOP_END').id('btn_enum_align_5').onClick(() => {
+          this.setResult(DialogBaseAlignment.TOP_END === 5, 'TOP_END');
+        })
+        Button('align CENTER_START').id('btn_enum_align_6').onClick(() => {
+          this.setResult(DialogBaseAlignment.CENTER_START === 6, 'CENTER_START');
+        })
+      }
+      Row() {
+        Button('align CENTER_END').id('btn_enum_align_7').onClick(() => {
+          this.setResult(DialogBaseAlignment.CENTER_END === 7, 'CENTER_END');
+        })
+        Button('align BOTTOM_START').id('btn_enum_align_8').onClick(() => {
+          this.setResult(DialogBaseAlignment.BOTTOM_START === 8, 'BOTTOM_START');
+        })
+      }
+      Row() {
+        Button('align BOTTOM_END').id('btn_enum_align_9').onClick(() => {
+          this.setResult(DialogBaseAlignment.BOTTOM_END === 9, 'BOTTOM_END');
+        })
+        Button('orient AUTO').id('btn_enum_orient_0').onClick(() => {
+          this.setResult(DialogButtonOrientation.AUTO === 0, 'AUTO');
+        })
+      }
+      Row() {
+        Button('orient HORIZONTAL').id('btn_enum_orient_1').onClick(() => {
+          this.setResult(DialogButtonOrientation.HORIZONTAL === 1, 'HORIZONTAL');
+        })
+        Button('orient VERTICAL').id('btn_enum_orient_2').onClick(() => {
+          this.setResult(DialogButtonOrientation.VERTICAL === 2, 'VERTICAL');
+        })
+      }
       Button('DialogTextStyleOptions cover').id('btn_enum_text_style').onClick(() => {
         let msg: dialog.DialogMessage = {
           content: 'TextStyleCover',

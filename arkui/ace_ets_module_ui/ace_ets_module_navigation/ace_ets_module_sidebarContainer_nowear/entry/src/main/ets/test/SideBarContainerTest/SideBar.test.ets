@@ -14,7 +14,7 @@
  */
 
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../MainAbility/utils/Common';
 import router from '@ohos.router';

@@ -19,14 +19,20 @@
       {
         "name": "default",
         "signingConfig": "default",
-        "compileSdkVersion": "26.0.0",
+        "compileSdkVersion": "26.0.1",
         "compatibleSdkVersion": 12,
         "runtimeOS": "OpenHarmony",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
       }
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"

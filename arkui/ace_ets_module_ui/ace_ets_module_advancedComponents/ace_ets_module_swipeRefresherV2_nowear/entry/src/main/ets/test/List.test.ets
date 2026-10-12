@@ -15,10 +15,12 @@
 
 import swipeRefresherV2PageTest from './swipeRefresherV2/SwipeRefresherV2Page.test';
 import SwipeRefresherV2ContentIsLoadingTest from './swipeRefresherV2/SwipeRefresherV2ContentIsLoadingTest.test';
+import progressButtonV2PageTest from './progressButtonV2/progressButtonV2Page.test';
 
 export default function testsuite() {
 
   swipeRefresherV2PageTest();
   SwipeRefresherV2ContentIsLoadingTest();
+  progressButtonV2PageTest();
 
 }

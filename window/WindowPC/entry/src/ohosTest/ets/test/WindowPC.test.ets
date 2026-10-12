@@ -14,7 +14,7 @@
  */
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON } from '@kit.TestKit';
@@ -3167,7 +3167,7 @@ export default function windowPCTest() {
       try {
         let windowClass = await windowStage.createSubWindowWithOptions('testOffWindowStatusDidChange_NoCallback',options);
         await windowClass.setUIContent('testability/pages/Index1')
-
+        await windowClass.showWindow()
         const callback1 = (data: window.WindowStatusType) => {
           console.log(`${msgStr} callback1 data: ${JSON.stringify(data)}`);
           count1++;

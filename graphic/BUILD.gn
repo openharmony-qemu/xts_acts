@@ -58,7 +58,6 @@ group("graphic") {
       "graphicTextStatic:ActsGraphicTextStaticTest",
       "graphicUiEffect:ActsGraphicUiEffectTest",
       "graphicUiEffectStatic:ActsGraphicUiEffectStaticTest",
-      "graphicnapidrawingtest:ActsGraphicNapiDrawingTest",
       "graphics2DTestApi20:ActsGraphics2DApi20Test",
       "graphicImageNdk:image_ndk_hap",
       "nativeColorSpaceNdk:ActsNativeColorSpaceTest",

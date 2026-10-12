@@ -14,6 +14,7 @@
  */
 
 #include "NativeBufferTest.h"
+#include "common/native_common.h"
 #include "napi/native_api.h"
 #include <IPCKit/ipc_cparcel.h>
 #include <native_buffer/buffer_common.h>
@@ -22,6 +23,8 @@
 #include <native_window/external_window.h>
 #include "common/log_common.h"
 #include <vector>
+#include <thread>
+#include <chrono>
 
 #undef LOG_DOMAIN
 #define LOG_DOMAIN 0xD003200
@@ -290,17 +293,17 @@ napi_value OHNativeBufferMapAndGetConfilgMultipleCalls02(napi_env env, napi_call
         return result;
     }
     void *virAddr = nullptr;
-    uint32_t TARGET_USAGE = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA;
+    uint32_t targetUsage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA;
     for (int i = 0; i < NUMBER_10; i++) {
         int32_t ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer1, &virAddr, &config1);
         if (ret != 0 || config1.width != NUMBER_0X001 || config1.height != NUMBER_0X001 || config1.format !=
-            NATIVEBUFFER_PIXEL_FMT_RGBA_8888 || (config1.usage & TARGET_USAGE) != TARGET_USAGE) {
+            NATIVEBUFFER_PIXEL_FMT_RGBA_8888 || (config1.usage & targetUsage) != targetUsage) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
         ret = OH_NativeBuffer_MapAndGetConfig(nativeBuffer2, &virAddr, &config2);
         if (ret != 0 || config2.width != NUMBER_0X001 || config2.height != NUMBER_0X001 || config2.format !=
-            NATIVEBUFFER_PIXEL_FMT_BGRA_8888 || (config2.usage & TARGET_USAGE) != TARGET_USAGE) {
+            NATIVEBUFFER_PIXEL_FMT_BGRA_8888 || (config2.usage & targetUsage) != targetUsage) {
             napi_create_int32(env, FAIL, &result);
             return result;
         }
@@ -676,3 +679,181 @@ napi_value OHNativeBufferSetColorSpaceBt2020LogLimit(napi_env env, napi_callback
 {
     return SetColorSpaceAndVerify(env, OH_COLORSPACE_BT2020_LOG_LIMIT, "Bt2020LogLimit");
 }
+
+// 进程运行期间 dump信息验证  cat /proc/pid/mm_dmabuf_info
+napi_value OHNativeBufferSetDmaBufferNameNormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config config = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        .stride = 1024
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&config);
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    const char *name = "Surface123";
+    int32_t ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+
+napi_value OHNativeBufferSetDmaBufferNameNormal2(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config config = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        .stride = 1024
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&config);
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    // 传入长度为64字节的合规字符串
+    char name[NUMBER_65];
+    for (int i = 0; i < NUMBER_64; i++) {
+        name[i] = 'a';
+    }
+    name[NUMBER_64] = '\0';
+    int32_t ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name);
+    if (ret != NATIVE_ERROR_OK) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+
+napi_value OHNativeBufferSetDmaBufferNameNull(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config config = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        .stride = 1024
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&config);
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    const char *name = "Surface123";
+    int32_t ret = OH_NativeBuffer_SetDmaBufferName(nullptr, name);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, NUMBER_1, &result);
+        return result;
+    }
+    ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, nullptr);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, NUMBER_2, &result);
+        return result;
+    }
+    ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, "");
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, NUMBER_3, &result);
+        return result;
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+
+napi_value OHNativeBufferSetDmaBufferNameAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config config = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        .stride = 1024
+    };
+    OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&config);
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    // 1. 非法字符串（非字母数字）
+    const char *name1 = "Surface@#$";
+    int32_t ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name1);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, NUMBER_1, &result);
+        return result;
+    }
+    // 2. 首字符非字母的字符串
+    const char *name2 = "123Abc";
+    ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name2);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, NUMBER_2, &result);
+        return result;
+    }
+    // 3. 传入长度大于64字节的字符串
+    char name4[NUMBER_66];
+    for (int i = 0; i < NUMBER_65; i++) {
+        name4[i] = 'b';
+    }
+    name4[NUMBER_65] = '\0';
+    ret = OH_NativeBuffer_SetDmaBufferName(nativeBuffer, name4);
+    if (ret != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, NUMBER_3, &result);
+        return result;
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+
+// 进程运行期间 dump信息验证  cat /proc/pid/mm_dmabuf_info
+napi_value OHNativeBufferSetDmaBufferNameMultipleCalls(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer_Config config1 = {
+        .width = 0x100,
+        .height = 0x100,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        .stride = 1024
+    };
+    OH_NativeBuffer *nativeBuffer1 = OH_NativeBuffer_Alloc(&config1);
+    NAPI_ASSERT(env, nativeBuffer1 != nullptr, "nativeBuffer1 == nullptr");
+    const char *name1 = "Surface123";
+    
+    OH_NativeBuffer_Config config2 = {
+        .width = 0x010,
+        .height = 0x010,
+        .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
+        .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
+        .stride = 1024
+    };
+    OH_NativeBuffer *nativeBuffer2 = OH_NativeBuffer_Alloc(&config2);
+    NAPI_ASSERT(env, nativeBuffer2 != nullptr, "nativeBuffer2 == nullptr");
+    const char *name2 = "Surface456";
+    
+    for (int i = 0; i < NUMBER_10; i++) {
+        int32_t ret1 = OH_NativeBuffer_SetDmaBufferName(nativeBuffer1, name1);
+        NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
+        int32_t ret2 = OH_NativeBuffer_SetDmaBufferName(nativeBuffer2, name2);
+        NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer1);
+    OH_NativeBuffer_Unreference(nativeBuffer2);
+    napi_create_int32(env, NATIVE_ERROR_OK, &result);
+    return result;
+}
+

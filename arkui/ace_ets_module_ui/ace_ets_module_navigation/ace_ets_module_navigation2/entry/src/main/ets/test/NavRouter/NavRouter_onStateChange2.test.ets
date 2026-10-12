@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/utils/Common';
 import {
@@ -29,6 +29,8 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function NavRouter_onStateChange2() {
   describe('NavRouter_onStateChange2', () => {
@@ -77,7 +79,7 @@ export default function NavRouter_onStateChange2() {
       await btn1.click();
       await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2);
+      await driver.triggerKey(2, displayID);
       await CommonFunc.sleep(300);
       let text1 = getInspectorByKey('NavRouter_onStateChange2' + '_text1');
       expect(JSON.parse(text1).$attrs.content).assertEqual('false');

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import hilog from '@ohos.hilog';
 
 function asBoolean(val: boolean | string | number) {

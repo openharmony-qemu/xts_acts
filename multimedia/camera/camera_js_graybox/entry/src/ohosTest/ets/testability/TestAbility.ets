@@ -17,7 +17,7 @@ import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import { Hypium } from '@ohos/hypium';
+import { Hypium } from '@ohos/hypium-dynamic';
 import testsuite from '../test/List.test';
 import { BusinessError } from '@ohos.base';
 import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl';

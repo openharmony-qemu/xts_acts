@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { FrameNode, NodeController } from '@ohos.arkui.node'
 
 class NodeControllerOnHover extends NodeController {
@@ -65,12 +66,12 @@ struct setOnHoverTest {
       }
       .align(Alignment.Center)
       .hoverEffect(HoverEffect.None)
-      .width('50%').height('40%').border({ width: 1 })
+      .width('50%').height('35%').border({ width: 1 })
 
       NodeContainer(this.NodeControllerOnHover)
         .borderWidth(1)
         .width(100)
-        .height('40%')
+        .height('35%')
 
     }.width("100%")
     .height('100%')

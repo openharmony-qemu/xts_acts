@@ -1,4 +1,4 @@
-import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import libnativetype from 'libnativetype.so'
 import Utils from '../common/Utils';
 import nativexcomponent from 'libnativexcomponent.so';
@@ -15,6 +15,8 @@ const ARKUI_ERROR_CODE_FOCUS_NON_EXISTENT = 150003;
 const ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER = 180001;
 const ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED = 180102;
 const ARKUI_ERROR_CODE_POST_CLONED_COMPONENT_STATUS_ABNORMAL = 180004;
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function ErrorCodeTest() {
   describe('ErrorCodeTest', () => {
@@ -174,7 +176,7 @@ export default function ErrorCodeTest() {
         let Component = await Utils.driver.findComponent(ON.id('Column1'));
         let ComponentPoint = await Component.getBoundsCenter();
         console.info(`====>ComponentPoint x====${ComponentPoint.x} y====${ComponentPoint.y}`);
-        await Utils.driver.swipe(ComponentPoint.x, ComponentPoint.y, globalThis.winLeft, globalThis.winTop, 5000);
+        await Utils.driver.swipeBetween({ x: ComponentPoint.x, y: ComponentPoint.y, displayId: displayID }, { x: globalThis.winLeft, y: globalThis.winTop, displayId: displayID }, 5000);
         let Result: number = libnativetype.ErrorCodeRecognizerTypeNotSupported();
         expect(ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED).assertEqual(Result);
         done()

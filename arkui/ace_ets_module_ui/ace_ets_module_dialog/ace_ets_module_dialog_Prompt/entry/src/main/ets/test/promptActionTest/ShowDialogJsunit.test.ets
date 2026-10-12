@@ -19,6 +19,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function ShowDialogJsunit() {
   describe('ShowDialogJsunit', () => {
     beforeEach(async (done: Function) => {
@@ -63,7 +64,7 @@ export default function ShowDialogJsunit() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ShowDialogJsunit_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual("PromptActionDialog");
-      await driver.triggerKey(2070)
+      await driver.triggerKey(2070,displayID)
       await CommonFunc.sleep(1000);
       console.info('[ShowDialogJsunit_0100] END');
       done();

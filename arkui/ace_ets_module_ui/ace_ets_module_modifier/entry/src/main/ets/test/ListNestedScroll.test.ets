@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium';
+import { describe, beforeEach, afterEach, it, expect, Level} from '@ohos/hypium-dynamic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
@@ -53,12 +53,18 @@ export default function listNestedScrollJsunit() {
     it('ArkUI_Stage_listNestedScroll01', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_listNestedScroll01] START');
       await Utils.sleep(2000)
-      let webRect = Utils.getComponentRect('listNestedScroll' + '_ColumnSize');
-      console.info(`ArkUI_Stage_listNestedScroll01 get webRect is:` + JSON.stringify(webRect));
-      let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
-      let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      await driver.swipe(Math.round(x), Math.round(y + vp2px(60)), Math.round(x), Math.round(y - vp2px(60)));
+      await Utils.sleep(500)
+      let columnRect = await driver.findComponent(ON.id('listNestedScroll_ColumnSize'));
+      let rect = await columnRect.getBounds();
+      let displayId = await columnRect.getDisplayId();
+      console.info(`ArkUI_Stage_listNestedScroll01 get webRect is:` + JSON.stringify(rect));
+      let top = rect.top
+      let bottom = rect.bottom
+      let centerX = Math.round((rect.left + rect.right) / 2);
+      await driver.swipeBetween(
+        { x: centerX, y: Math.round(bottom - (bottom - top) / 10), displayId: displayId },
+        { x: centerX, y: Math.round(top + (bottom - top) / 6), displayId: displayId });
       console.info('[ArkUI_Stage_listNestedScroll01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

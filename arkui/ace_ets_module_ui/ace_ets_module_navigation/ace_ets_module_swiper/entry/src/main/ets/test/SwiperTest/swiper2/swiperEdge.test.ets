@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function swiperEdgeTest() {
   describe('swiperEdgeTest', () => {
@@ -66,7 +68,7 @@ export default function swiperEdgeTest() {
       //[180.00, 87.00],[540.00,327.00]
       let driver = await Driver.create();
       
-      await driver.swipe(globalThis.winLeft + Math.round(btRight), globalThis.winTop + Math.round(btTop + height/2), globalThis.winLeft + Math.round(btRight) - Math.round(vp2px(20)), globalThis.winTop + Math.round(btTop + height/2));
+      await driver.swipeBetween({ x: globalThis.winLeft + Math.round(btRight), y: globalThis.winTop + Math.round(btTop + height/2), displayId: displayID }, { x: globalThis.winLeft + Math.round(btRight) - Math.round(vp2px(20)), y: globalThis.winTop + Math.round(btTop + height/2), displayId: displayID });
       await CommonFunc.sleep(3000);
 
       // get the component of text_10, scroll distance is to short can not slow

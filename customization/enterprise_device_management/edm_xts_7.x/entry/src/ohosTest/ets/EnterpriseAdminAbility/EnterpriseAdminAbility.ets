@@ -14,7 +14,7 @@
  */
 
 import EnterpriseAdminExtensionAbility from '@ohos.enterprise.EnterpriseAdminExtensionAbility'
-import { expect } from '@ohos/hypium'
+import { expect } from '@ohos/hypium-dynamic'
 import { systemManager } from '@kit.MDMKit';
 import common from '@ohos.enterprise.common';
 
@@ -136,5 +136,21 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   }
   onDeviceBootCompleted(): void {
     console.info('EnterpriseAdminExtensionAbility onDeviceBootCompleted');
+  }
+  onUnmountExternalStorageDevice(deviceInfo: common.ExternalStorageDeviceInfo): void {
+    console.log(`EnterpriseAdminExtensionAbility onUnmountExternalStorageDevice type: ${deviceInfo.type}`);
+    console.log(`EnterpriseAdminExtensionAbility onUnmountExternalStorageDevice devicePath: ${deviceInfo.devicePath}`);
+    console.log(`EnterpriseAdminExtensionAbility onUnmountExternalStorageDevice volumeId: ${deviceInfo.volumeId}`);
+    console.log(`EnterpriseAdminExtensionAbility onUnmountExternalStorageDevice mountStatus: ${deviceInfo.mountStatus}`);
+    console.log(`EnterpriseAdminExtensionAbility onUnmountExternalStorageDevice vendorId: ${deviceInfo.vendorId}`);
+    console.log(`EnterpriseAdminExtensionAbility onUnmountExternalStorageDevice productId: ${deviceInfo.productId}`);
+    console.log(`EnterpriseAdminExtensionAbility onUnmountExternalStorageDevice serial: ${deviceInfo.serial}`);
+    expect(deviceInfo.type != null).assertTrue();
+    expect(deviceInfo.devicePath != null).assertTrue();
+    expect(deviceInfo.volumeId != null).assertTrue();
+    expect(deviceInfo.mountStatus != null).assertTrue();
+    expect(deviceInfo.vendorId != null).assertTrue();
+    expect(deviceInfo.productId != null).assertTrue();
+    expect(deviceInfo.serial != null).assertTrue();
   }
 }

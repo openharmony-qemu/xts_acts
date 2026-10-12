@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,11 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function DateButtonStyle() {
   describe('DateButtonStyle', () => {
     beforeEach(async (done: Function) => {
@@ -67,7 +68,7 @@ export default function DateButtonStyle() {
       expect(obj2.$children[1].$children[0].$children[0].$children[2].$children[0].$attrs.type).assertEqual("ButtonType.Normal");
 
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+      await driver.triggerKey(2070,displayID);
       await CommonFunc.sleep(1000);
 
       console.info('[DateButtonStyle_001] END');

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic"
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -207,6 +207,9 @@ export default function checkBoxGroupUIJsunit() {
       console.info('checkBoxGroupUIJsunit_0700 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      await driver.delayMs(waitUiReadyMs);
+      // reset checkbox group state: deselect all, then select only cb2
+      globalThis.value.message.notify({name:'selectAll',value:false})
       await driver.delayMs(waitUiReadyMs);
       let checkGoup = await driver.findComponent(ON.id('cb2'));
       await checkGoup.click();

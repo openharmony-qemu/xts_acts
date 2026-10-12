@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import account from '@ohos.account.appAccount'
-import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 
 export default function AppAccountParamLengthCheck(): void {
   describe('AppAccountParamLengthCheck', () => {

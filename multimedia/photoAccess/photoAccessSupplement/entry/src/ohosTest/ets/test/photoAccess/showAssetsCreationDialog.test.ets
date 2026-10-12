@@ -14,7 +14,7 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
-import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium';
+import { describe, it, expect, beforeAll, Level, afterAll } from '@ohos/hypium-dynamic';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { sleep, getPermission, driveFn } from '../common'
 import common from '@ohos.app.ability.common';

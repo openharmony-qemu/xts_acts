@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils.test';
 import { Driver, ON } from '@ohos.UiTest';
@@ -93,14 +93,11 @@ export default function webViewOnRequestStart() {
      */
     it('defaultOnRequestStart0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("defaultOnRequestStart0100", EVENT_ID_SET_EMIT_KEY);
-      let isReturn = 0;
-      Utils.registerBaseEvent("defaultOnRequestStart0100", 'https://www.example.com/|GET||true|false|true|true', 202970, () => { isReturn = 1 }, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(expected);
-      });
-      await Utils.waitAndClickComponent(driver, "OnRequestStart");
-      if (await Utils.waitForExist(() => isReturn, 'defaultOnRequestStart0100' + '_returnCheck', 1, 1000)) {
-        done();
-      }
+      Utils.registerBaseEvent("defaultOnRequestStart0100", 'https://www.example.com/|GET||true|false|true|true', 202970, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('OnRequestStart', 10, '');
     })
 
     /**

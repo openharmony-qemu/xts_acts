@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import { router } from '@kit.ArkUI';
 import { Component, Driver, On, ON, MouseButton } from '@kit.TestKit';
 
@@ -36,6 +36,7 @@ export default function ScrollBackToTopTest() {
       let driverScroll: Driver = Driver.create();
       let scroll: Component = await driverScroll.findComponent(ON.id('Scroll_4'));
       let rect = await scroll.getBounds();
+      let displayId = await scroll.getDisplayId();
       let top = rect.top;
       let left = rect.left;
       let right = rect.right;
@@ -49,11 +50,17 @@ export default function ScrollBackToTopTest() {
       let driverSwitch = await Driver.create();
       let switchButton: Component = await driverSwitch.findComponent(ON.id('Switch'))
       await sleep(1000);  //wait for driver to be ready
-      await driverScroll.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
+      await driverScroll.swipeBetween(
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 4),
+          displayId: displayId
+        },
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 2),
+          displayId: displayId
+        }
       );
       //waiting for scroll to complete
       await sleep(2000);
@@ -67,11 +74,17 @@ export default function ScrollBackToTopTest() {
       await topButton.click();
       await sleep(1500)
 
-      await driverScroll.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
+      await driverScroll.swipeBetween(
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 4),
+          displayId: displayId
+        },
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 2),
+          displayId: displayId
+        }
       );
       await sleep(2000);
       await switchButton.click();
@@ -79,11 +92,17 @@ export default function ScrollBackToTopTest() {
       await topButton.click();
       await sleep(1500)
 
-      await driverScroll.swipe(
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 4),
-        Math.round(left + width * 0.2),
-        Math.round(bottom - height / 2)
+      await driverScroll.swipeBetween(
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 4),
+          displayId: displayId
+        },
+        {
+          x: Math.round(left + width * 0.2),
+          y: Math.round(bottom - height / 2),
+          displayId: displayId
+        }
       );
       await sleep(2000);
       await switchButton.click();

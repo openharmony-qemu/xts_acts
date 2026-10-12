@@ -15,7 +15,7 @@
 
 import { BusinessError } from '@ohos.base';
 import sim from '@ohos.telephony.sim';
-import { describe, it, expect, Level, TestType, Size} from '@ohos/hypium';
+import { describe, it, expect, Level, TestType, Size} from '@ohos/hypium-dynamic';
 
 const ExpectFail: () => void = () => {
   try {

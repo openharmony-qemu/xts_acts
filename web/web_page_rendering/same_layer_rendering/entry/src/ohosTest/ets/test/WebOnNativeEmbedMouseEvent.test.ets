@@ -16,6 +16,7 @@
 import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import { waitForExist } from './WaitTest.test';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 let driver: Driver = Driver.create();
@@ -66,6 +67,60 @@ export default function webViewControllerPart2() {
     Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)
     Utils.registerEvent("testOnNativeEmbedMouseEvent001", true, 153540, done);
     await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testOnNativeEmbedMouseEvent001');
+    })
+
+    /**
+     * @tc.name   testEventResultConstructor001
+     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_5900
+     * @tc.desc   test EventResult class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEventResultConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitEventResultConstructor001', 153530);
+      let isReturn = 0;
+      Utils.registerEvent('testEventResultConstructor001', true, 153550, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultConstructor001');
+      await waitForExist(() => isReturn, 'testEventResultConstructor001_returnCheck', 1, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEventResultConstructorReturn001
+     * @tc.number SUB_WEB_EVENTRESULT_CONSTRUCTOR_RETURN_6000
+     * @tc.desc   test EventResult constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEventResultConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitEventResultConstructorReturn001', 153530);
+      let isReturn = 0;
+      Utils.registerEvent('testEventResultConstructorReturn001', true, 153551, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton',
+        'testEventResultConstructorReturn001');
+      await waitForExist(() => isReturn, 'testEventResultConstructorReturn001_returnCheck', 1, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testEventResultClass001
+     * @tc.number SUB_WEB_EVENTRESULT_CLASS_6100
+     * @tc.desc   test EventResult class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testEventResultClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitEventResultClass001', 153530);
+      let isReturn = 0;
+      Utils.registerEvent('testEventResultClass001', true, 153552, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'testEventResultClass001');
+      await waitForExist(() => isReturn, 'testEventResultClass001_returnCheck', 1, 1000);
+      done();
     })
   })
 }

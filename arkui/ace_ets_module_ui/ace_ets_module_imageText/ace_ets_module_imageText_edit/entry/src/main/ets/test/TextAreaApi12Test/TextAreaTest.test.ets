@@ -12,10 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 export default function TextAreaTest() {
   describe('TextAreaTest', () => {
     beforeEach(async (done: Function) => {
@@ -54,11 +55,19 @@ export default function TextAreaTest() {
       let button = await driver.findComponent(ON.id('TextArea_5'));
       await button.click();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await button.inputText("hello")
       await CommonFunc.sleep(2000);
-	    await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextArea_1');
       let obj: ESObject = JSON.parse(strJson);
@@ -85,11 +94,19 @@ export default function TextAreaTest() {
       let button = await driver.findComponent(ON.id('TextArea_6'));
       await button.click();
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       await button.clearText()
       await CommonFunc.sleep(3000);
-	    await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextArea_3');
       let obj: ESObject = JSON.parse(strJson);

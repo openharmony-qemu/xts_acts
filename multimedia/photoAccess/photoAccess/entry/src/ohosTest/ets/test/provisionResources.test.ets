@@ -14,7 +14,7 @@
  */
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 
 import {
     sleep,

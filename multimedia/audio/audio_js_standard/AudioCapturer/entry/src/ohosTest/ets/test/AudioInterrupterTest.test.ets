@@ -15,7 +15,7 @@
 
 import audio from '@ohos.multimedia.audio';
 import fileio from '@ohos.fileio';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest'
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -278,6 +278,20 @@ export default function audioInterrupterTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0300 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try{
         let listeningFlag01 = false;
         render1 = await createAudioRenderer(renderInfo.ALARM, streamInfo.A44100, done)
@@ -320,6 +334,20 @@ export default function audioInterrupterTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0400 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try{
         let listeningFlag01 = false;
         let listeningFlag02 = false;
@@ -368,6 +396,20 @@ export default function audioInterrupterTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0500 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         render1 = await createAudioRenderer(renderInfo.RINGTONE, streamInfo.A44100, done)
         await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
@@ -394,6 +436,20 @@ export default function audioInterrupterTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioRoutingManager = audioManager.getRoutingManager();
+      let outputDeviceDescription = await audioRoutingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_INTERRUPTER_TEST_0600 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
+      if (outputDeviceDescription.length == 0) {
+        console.info(`this device has external device`)
+        done();
+        return;
+      }
       try {
         let listeningFlag01 = false;
         let listeningFlag02 = false;

@@ -15,7 +15,7 @@
 import osaccount from '@ohos.account.osAccount'
 import account from '@ohos.account.appAccount'
 import daccount from '@ohos.account.distributedAccount'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic'
 
 export default function ActsOnlyOnePermissionTest(): void {
   describe('ActsOnlyOnePermissionTest', () => {

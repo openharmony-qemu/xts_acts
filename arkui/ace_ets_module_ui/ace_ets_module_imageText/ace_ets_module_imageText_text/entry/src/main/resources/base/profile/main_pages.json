@@ -143,6 +143,9 @@
         "MainAbility/pages/Text/TextPunctuationOverflow",
         "MainAbility/pages/Text/TextIncrementalUpdatePolicy",
         "MainAbility/pages/Text/TextTailIndents",
-        "MainAbility/pages/Text/TextEnableHapticFeedback"
+        "MainAbility/pages/Text/TextEnableHapticFeedback",
+        "MainAbility/pages/Text/TextStrokeColor",
+        "MainAbility/pages/Text/TextStrokeJoinStyle",
+        "MainAbility/pages/Text/TextStrokeWidth"
     ]
 }

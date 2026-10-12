@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import PlainArray from '@ohos.util.PlainArray';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { test004, test009, test018, test021, test026, test033, test039, test040, test041, test042, test043, test044, test045, test046, test047 } from './PlainArrayResource';
 
 export default function PlainArrayTest() {

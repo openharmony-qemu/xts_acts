@@ -12,12 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function onkeyEventDispatchTest6() {
   describe('onkeyEventDispatchTest6', () => {
     beforeEach(async (done: Function) => {
@@ -53,7 +54,7 @@ export default function onkeyEventDispatchTest6() {
     it('SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0270', Level.LEVEL0, async (done: Function) => {
       console.info('[onkeyEventDispatchTest6_0100] START');
       let driver: Driver = Driver.create();
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
 
       // firt button component response
@@ -62,7 +63,7 @@ export default function onkeyEventDispatchTest6() {
       console.info("[SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0270] obj is: " + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertEqual('childTrigger');
 
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
       
        // two button component response

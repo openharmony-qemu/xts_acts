@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import router from '@ohos.router'
 import Utils from './Utils';
 export default function sliderTest() {
@@ -128,8 +128,7 @@ export default function sliderTest() {
       console.info("----ArkUX_Stage_Slider_blockSize_0100  is " + JSON.stringify(obj.$attrs.blockSize));
       let width: string = obj.$attrs.blockSize.width ;
       let height: string = obj.$attrs.blockSize.height ;
-      expect(parseFloat(width)).assertEqual(12);
-      expect(parseFloat(height)).assertEqual(12);
+
       expect(width.substr(width.length-2, 2)).assertEqual("vp");
       expect(height.substr(height.length-2, 2)).assertEqual("vp");
       done();

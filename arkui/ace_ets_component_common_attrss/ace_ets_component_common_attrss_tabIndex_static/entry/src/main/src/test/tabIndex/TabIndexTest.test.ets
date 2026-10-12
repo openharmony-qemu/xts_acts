@@ -15,21 +15,12 @@
  */
 import Utils, { BasePageConfig, PageConfig,TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,focusControl } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 async function executeTab(
   data: BasePageConfig,
   referenceOneValue: string,
@@ -41,9 +32,17 @@ async function executeTab(
     data.pageConfig.targetView == "TextInput" ||
       data.pageConfig.targetView == "TextArea"
   ) {
-    await Utils.sleep(4000)
+    try {
+      await Utils.sleep(4000)
+    } catch (err) {
+      console.info("[" + data.caseTag + "] executeTab sleep err: " + JSON.stringify(err))
+    }
   } else {
-    await Utils.sleep(1000)
+    try {
+      await Utils.sleep(1000)
+    } catch (err) {
+      console.info("[" + data.caseTag + "] executeTab sleep err: " + JSON.stringify(err))
+    }
   }
   console.info("[" + data.caseTag + "] Press Tab.")
   let referenceOneComponent = Utils.getComponentByKey(
@@ -146,13 +145,6 @@ export default function TabIndexTest() {
   ]
 
   describe("TabIndexTest", () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("TabIndexTest beforeEach start");
-      
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(
       pageConfig,
@@ -160,7 +152,11 @@ export default function TabIndexTest() {
       testValues,
       async (data: BasePageConfig) => {
         let strJson = inspector.getInspectorByKey(pageConfig.componentKey);
-        await CommonFunc.sleep(2000);
+        try {
+          await CommonFunc.sleep(2000);
+        } catch (err) {
+          console.info("[" + data.caseTag + "] CommonFunc.sleep err: " + JSON.stringify(err));
+        }
         data.viewObj = JSON.parseJsonElement(strJson);
         //Place Focus
         let requestFocusText = focusControl.requestFocus(
@@ -171,9 +167,17 @@ export default function TabIndexTest() {
           data.pageConfig.targetView == "TextInput" ||
             data.pageConfig.targetView == "TextArea"
         ) {
-          await Utils.sleep(4000)
+          try {
+            await Utils.sleep(4000)
+          } catch (err) {
+            console.info("[" + data.caseTag + "] sleep err: " + JSON.stringify(err))
+          }
         } else {
-          await Utils.sleep(1000)
+          try {
+            await Utils.sleep(1000)
+          } catch (err) {
+            console.info("[" + data.caseTag + "] sleep err: " + JSON.stringify(err))
+          }
         }
         if ("SetLessThanZero" == data.testValue.describe) {
           //Press the Tab key for the first time to reference the component (1) and capture the focus

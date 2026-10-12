@@ -32,6 +32,7 @@ struct UIExtensionPage {
 
   aboutToAppear(): void {
     this.params = (router.getParams() as MyRouterParam).fromPage;
+    console.log(`${tag} aboutToAppear params: ${this.params}`);
   }
 
   build() {

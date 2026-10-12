@@ -20,12 +20,14 @@ import ssap from '@ohos.nearlink.ssap';
 import scan from '@ohos.nearlink.scan';
 import advertising from '@ohos.nearlink.advertising';
 import cdsm from '@ohos.nearlink.cdsm';
+import dataTransfer from '@ohos.nearlink.dataTransfer';
 import hilog from '@ohos.hilog';
 
 export default function nearLinkErrCode201Test(): void {
   let ssapClient :ssap.Client;
   let ssapServer :ssap.Server;
   let ADDRESS = "22:33:44:55:66:77"
+  let UUID = "FFFFFFFF-1234-5678-ABCD-000000001234";
   describe('nearLinkErrCode201Test', () => {
     let return_boolean: boolean
     beforeAll(() => {
@@ -303,6 +305,30 @@ export default function nearLinkErrCode201Test(): void {
       try {
         ssapServer = ssap.createServer();
         hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink Test] createServer = ' + JSON.stringify(ssapServer));
+        expect().assertFail();
+      } catch (error) {
+        hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink Test] fail ' + JSON.stringify(error.code) + JSON.stringify(error.message));
+        if (error.code === 801) {
+          expect(return_boolean === false).assertTrue();
+        } else {
+          expect(return_boolean === true).assertTrue();
+          expect(error.code).assertEqual(201);
+        }
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Communication_XTS_NearLinkPub_DataTransfer_0100
+     * @tc.name SUB_Communication_XTS_NearLinkPub_DataTransfer_static_0100
+     * @tc.desc createPort
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('SUB_Communication_XTS_NearLinkPub_DataTransfer_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        dataTransfer.createPort(UUID);
         expect().assertFail();
       } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s', '[NearLink Test] fail ' + JSON.stringify(error.code) + JSON.stringify(error.message));

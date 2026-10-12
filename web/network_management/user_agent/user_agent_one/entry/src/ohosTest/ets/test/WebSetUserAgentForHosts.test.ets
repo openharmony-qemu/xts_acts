@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach,afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import events_emitter from '@ohos.events.emitter';
-import { expect } from '@ohos/hypium';
+import { expect } from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@kit.TestKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];

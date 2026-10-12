@@ -162,6 +162,170 @@ export default function webAttributeTest() {
       done();
     })
 
-    
+    /**
+     * @tc.name   testJsResultConstructor001
+     * @tc.number SUB_WEB_JSRESULT_CONSTRUCTOR_0800
+     * @tc.desc   test JsResult class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJsResultConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent('emitJsResultConstructor001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testJsResultConstructor001', true, 177170, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testJsResultConstructor001');
+      await Utils.waitForExist(() => isReturn, "testJsResultConstructor001" + '_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testScreenCaptureHandlerConstructor001
+     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_0900
+     * @tc.desc   test ScreenCaptureHandler class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testScreenCaptureHandlerConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitScreenCaptureHandlerConstructor001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testScreenCaptureHandlerConstructor001', true, 177180, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testScreenCaptureHandlerConstructor001');
+      await Utils.waitForExist(() => isReturn, 'testScreenCaptureHandlerConstructor001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testJsGeolocationConstructor001
+     * @tc.number SUB_WEB_JSGEOLOCATION_CONSTRUCTOR_1000
+     * @tc.desc   test JsGeolocation class constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJsGeolocationConstructor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitJsGeolocationConstructor001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testJsGeolocationConstructor001', true, 177190, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testJsGeolocationConstructor001');
+      await Utils.waitForExist(() => isReturn, 'testJsGeolocationConstructor001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testJsResultConstructorReturn001
+     * @tc.number SUB_WEB_JSRESULT_CONSTRUCTOR_RETURN_1100
+     * @tc.desc   test JsResult constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJsResultConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitJsResultConstructorReturn001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testJsResultConstructorReturn001', true, 177171, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testJsResultConstructorReturn001');
+      await Utils.waitForExist(() => isReturn, 'testJsResultConstructorReturn001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testJsResultClass001
+     * @tc.number SUB_WEB_JSRESULT_CLASS_1200
+     * @tc.desc   test JsResult class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJsResultClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitJsResultClass001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testJsResultClass001', true, 177172, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testJsResultClass001');
+      await Utils.waitForExist(() => isReturn, 'testJsResultClass001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testScreenCaptureHandlerConstructorReturn001
+     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CONSTRUCTOR_RETURN_1300
+     * @tc.desc   test ScreenCaptureHandler constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testScreenCaptureHandlerConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitScreenCaptureHandlerConstructorReturn001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testScreenCaptureHandlerConstructorReturn001', true, 177181, () => {
+        isReturn = true;
+      });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton',
+        'testScreenCaptureHandlerConstructorReturn001');
+      await Utils.waitForExist(() => isReturn,
+        'testScreenCaptureHandlerConstructorReturn001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testScreenCaptureHandlerClass001
+     * @tc.number SUB_WEB_SCREENCAPTUREHANDLER_CLASS_1400
+     * @tc.desc   test ScreenCaptureHandler class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testScreenCaptureHandlerClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitScreenCaptureHandlerClass001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testScreenCaptureHandlerClass001', true, 177182, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testScreenCaptureHandlerClass001');
+      await Utils.waitForExist(() => isReturn, 'testScreenCaptureHandlerClass001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testJsGeolocationConstructorReturn001
+     * @tc.number SUB_WEB_JSGEOLOCATION_CONSTRUCTOR_RETURN_1500
+     * @tc.desc   test JsGeolocation constructor return value instanceof
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJsGeolocationConstructorReturn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitJsGeolocationConstructorReturn001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testJsGeolocationConstructorReturn001', true, 177191, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testJsGeolocationConstructorReturn001');
+      await Utils.waitForExist(() => isReturn, 'testJsGeolocationConstructorReturn001_returnCheck', true, 1000);
+      done();
+    })
+
+    /**
+     * @tc.name   testJsGeolocationClass001
+     * @tc.number SUB_WEB_JSGEOLOCATION_CLASS_1600
+     * @tc.desc   test JsGeolocation class export accessible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testJsGeolocationClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      Utils.emitEvent('emitJsGeolocationClass001', EVENT_ID_SET_SUITE_KEY);
+      let isReturn = false;
+      Utils.registerEvent('testJsGeolocationClass001', true, 177192, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, 'WebAttributeTestButton', 'testJsGeolocationClass001');
+      await Utils.waitForExist(() => isReturn, 'testJsGeolocationClass001_returnCheck', true, 1000);
+      done();
+    })
+
   })
 }

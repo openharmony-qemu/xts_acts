@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc, {RectValue} from "../../../MainAbility/common/Common";
 import {
@@ -32,6 +32,8 @@ import {
   UiDirection,
   MouseButton
 } from '@ohos.UiTest';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function swiperItemMargin() {
   describe('swiperItemPadMarTest1', () => {
@@ -100,7 +102,7 @@ export default function swiperItemMargin() {
     //      expect(Math.round(swiperItemMargin.bottom - swiperItemMargin01.bottom)).assertEqual(vp2px(20));
     //      // Page turning.
     //      let driver = Driver.create();
-    //      await driver.swipe(250, 230, 200, 230);
+    //      await driver.swipeBetween({ x: 250, y: 230, displayId: displayID }, { x: 200, y: 230, displayId: displayID });
     //      await CommonFunc.sleep(1000);
     //      swiperItemMargin:RectValue = CommonFunc.getComponentRect('swiperItemMargin');
     //      swiperItemMargin01:RectValue = CommonFunc.getComponentRect('swiperItemMargin01');

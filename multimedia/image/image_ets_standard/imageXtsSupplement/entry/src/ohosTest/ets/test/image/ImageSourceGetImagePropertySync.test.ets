@@ -14,7 +14,7 @@
  */
 
 import { image } from '@kit.ImageKit';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium-dynamic';
 import { LOG_TAG } from '../common';
 import fs from '@ohos.file.fs';
 import { common } from '@kit.AbilityKit';

@@ -14,7 +14,7 @@
  */
 
 import { TreeSet } from '@kit.ArkTS';
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
 interface BigIntInvalidObject { marker: string; }
 const BIGINT_INVALID_OBJECT: BigIntInvalidObject = { marker: 'invalid' };
 const VALID_VALUES: Array<bigint> = [

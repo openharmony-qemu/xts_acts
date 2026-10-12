@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UiDirection, MouseButton, UIElementInfo, UIEventObserver} from '@ohos.UiTest';
@@ -20,6 +20,7 @@ import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function aboutToAppearTest() {
   describe('aboutToAppearTest', () => {
     beforeEach(async (done: Function) => {
@@ -73,7 +74,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let closeButton: Component = await driver.findComponent(ON.id('close'));
       let point = await closeButton.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.click(point.x, point.y)
+      await driver.clickAt({ x: point.x, y: point.y, displayId: displayID })
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('aboutToAppear');
       let obj: ESObject = JSON.parse(strJson);
@@ -102,7 +103,7 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       let closeButton: Component = await driver.findComponent(ON.id('close'));
       let point = await closeButton.getBoundsCenter();
       await CommonFunc.sleep(1000);
-      await driver.click(point.x, point.y)
+      await driver.clickAt({ x: point.x, y: point.y, displayId: displayID })
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('aboutToAppear');
       let obj: ESObject = JSON.parse(strJson);

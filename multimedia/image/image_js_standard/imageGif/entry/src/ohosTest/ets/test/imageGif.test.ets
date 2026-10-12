@@ -17,7 +17,7 @@ import image from "@ohos.multimedia.image";
 import fileio from "@ohos.fileio";
 import hilog from '@ohos.hilog';
 import rpc from '@ohos.rpc';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "@ohos/hypium-dynamic";
 import featureAbility from "@ohos.ability.featureAbility";
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';

@@ -15,41 +15,47 @@
 
 import { beforeAll, describe, expect, it, Level } from '@ohos/hypium';
 import Utils from '../common/Utils';
-import { Driver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 import nativeRender from 'libnativerender.so'
 
 async function flingComponentV(key: string, isForward: boolean, speed: number = 500, distance: number = 20,
   offsetX: number = 0, distanceEnd: number | null = null) {
   let driver = Driver.create();
-  let rect = Utils.getComponentRect(key);
-  let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect) + vp2px(offsetX));
-  let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
+  let component = await driver.findComponent(ON.id(key));
+  let rect = await component.getBounds();
+  let displayId = await component.getDisplayId();
+  let centerX = Math.round(Utils.getRectHorizontalCenterX(rect) + vp2px(offsetX));
+  let centerY = Math.round(Utils.getRectVerticalCenterY(rect));
   let Y1 = Math.round(centerY - vp2px(distance));
   let Y2 = Math.round(centerY + vp2px(distance));
   let stepLen = 20;
 
   if (isForward) {
     await driver.fling({
-      x: centerX, y: Y2
+      x: centerX, y: Y2, displayId: displayId
     }, {
-      x: centerX, y: (distanceEnd !== null ? Math.round(centerY - vp2px(distanceEnd)) : Y1)
+      x: centerX, y: (distanceEnd !== null ? Math.round(centerY - vp2px(distanceEnd)) : Y1),
+      displayId: displayId
     }, stepLen, speed);
   } else {
     await driver.fling({
-      x: centerX, y: Y1
+      x: centerX, y: Y1, displayId: displayId
     }, {
-      x: centerX, y: (distanceEnd !== null ? Math.round(centerY + vp2px(distanceEnd)) : Y2)
+      x: centerX, y: (distanceEnd !== null ? Math.round(centerY + vp2px(distanceEnd)) : Y2),
+      displayId: displayId
     }, stepLen, speed);
   }
 }
 
 async function mouseScrollV(key: string, isDown: boolean, done?: Function) {
   let driver = Driver.create();
-  let rect = Utils.getComponentRect(key);
-  let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect));
-  let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect));
+  let component = await driver.findComponent(ON.id(key));
+  let rect = await component.getBounds();
+  let displayId = await component.getDisplayId();
+  let centerX = Math.round(Utils.getRectHorizontalCenterX(rect));
+  let centerY = Math.round(Utils.getRectVerticalCenterY(rect));
   await driver.mouseScroll({
-    x: centerX, y: centerY
+    x: centerX, y: centerY, displayId: displayId
   }, isDown, 1);
   if (done) {
     done();

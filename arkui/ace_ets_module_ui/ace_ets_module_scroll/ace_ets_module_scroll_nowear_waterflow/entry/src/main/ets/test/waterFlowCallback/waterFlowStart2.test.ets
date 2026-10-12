@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -61,7 +61,9 @@ export default function waterFlowStart2() {
       console.info('[waterFlowStart2_0100] onReachStartText' + text1);
       expect(text1).assertEqual('onReachStart:succ');
       await CommonFunc.sleep(1000);
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('waterFlowStart2');
+      let swiperScrollComponent = await driver.findComponent(ON.id('waterFlowStart2'));
+      let swiperScroll = await swiperScrollComponent.getBounds();
+      let displayId = await swiperScrollComponent.getDisplayId();
       let top = swiperScroll.top;
       let right = swiperScroll.right;
       let left = swiperScroll.left;
@@ -70,7 +72,9 @@ export default function waterFlowStart2() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.mouseScroll({x:Math.round(left + width/2), y: Math.round(top + height*0.3)}, true ,20)
+      await driver.mouseScroll({
+        x: Math.round(left + width/2), y: Math.round(top + height*0.3), displayId: displayId
+      }, true ,20)
       await CommonFunc.sleep(2000)
 
       let onScrollStartText = await driver.findComponent(ON.id('onScrollStart_wText_2'));

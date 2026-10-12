@@ -96,6 +96,9 @@ int TestPathIsClosedNormal2()
     // 4. Check if the path is closed using OH_Drawing_PathIsClosed
     bool isClosed = OH_Drawing_PathIsClosed(path, false);
     EXPECT_EQ(isClosed, false);
+    // 未闭合路径，forceClosed=true时返回true
+    isClosed = OH_Drawing_PathIsClosed(path, true);
+    EXPECT_EQ(isClosed, true);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 5. Free the memory
@@ -136,7 +139,7 @@ int TestPathGetPositionTangentNormal()
     // second parameter to true.
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
-    bool isSuccess = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    bool isSuccess = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess, true);
     // add assert
@@ -162,7 +165,7 @@ int TestPathGetPositionTangentNormal2()
     // second parameter to false.
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
-    bool isSuccess = OH_Drawing_PathGetPositionTangent(path, false, DRAWING_NUMBER_50, &position, &tangent);
+    bool isSuccess = OH_Drawing_PathGetPositionTangent(path, false, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess, true);
     // add assert
@@ -182,7 +185,7 @@ int TestPathGetPositionTangentNull()
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathGetPositionTangent with the first parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathGetPositionTangent(nullptr, true, DRAWING_NUMBER_50, nullptr, nullptr);
+    OH_Drawing_PathGetPositionTangent(nullptr, true, 50.0f, nullptr, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_PathGetPositionTangent with the third parameter as 0.00, no crash
@@ -193,12 +196,12 @@ int TestPathGetPositionTangentNull()
     EXPECT_EQ(isSuccess, false);
     // 4. Call OH_Drawing_PathGetPositionTangent with the fourth parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, nullptr, &tangent);
+    OH_Drawing_PathGetPositionTangent(path, true, 50.0f, nullptr, &tangent);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 5. Call OH_Drawing_PathGetPositionTangent with the fifth parameter as nullptr, expect
     // OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, nullptr);
+    OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 6. Free the memory
     OH_Drawing_PathDestroy(path);
@@ -216,37 +219,40 @@ int TestPathGetPositionTangentAbnormal()
     // 2. Set the starting point of the path using OH_Drawing_PathMoveTo
     OH_Drawing_PathMoveTo(path, 0, 0);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
     // 4. Call OH_Drawing_PathGetPositionTangent with the third parameter as an integer or character type
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
-    bool isSuccess1 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    bool isSuccess1 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess1, true);
     // 5. Call OH_Drawing_PathGetPositionTangent with the x coordinate of the fourth parameter as an integer or
     // character type
     position = {10, 10.0f};
-    bool isSuccess2 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    bool isSuccess2 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess2, true);
     // 6. Call OH_Drawing_PathGetPositionTangent with the y coordinate of the fourth parameter as an integer or
     // character type
     position = {10.0f, 10};
-    bool isSuccess3 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    bool isSuccess3 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess3, true);
     // 7. Call OH_Drawing_PathGetPositionTangent with the x coordinate of the fifth parameter as an integer or character
     // type
     tangent = {10, 10.0f};
-    bool isSuccess4 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    bool isSuccess4 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess4, true);
     // 8. Call OH_Drawing_PathGetPositionTangent with the y coordinate of the fifth parameter as an integer or character
     // type
     tangent = {10.0f, 10};
-    bool isSuccess5 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    bool isSuccess5 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess5, true);
+    // distance小于0时会被视作0
+    bool isSuccess6 = OH_Drawing_PathGetPositionTangent(path, true, -50.0f, &position, &tangent);
+    EXPECT_EQ(isSuccess6, true);
     // 9. Free the memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();
@@ -263,38 +269,41 @@ int TestPathGetPositionTangentMaximal()
     // 2. Set the starting point of the path using OH_Drawing_PathMoveTo
     OH_Drawing_PathMoveTo(path, 0, 0);
     // 3. Add a line segment from the starting point to the target point using OH_Drawing_PathLineTo
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_PathLineTo(path, 100.0f, 100.0f);
     // 4. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the
     // third parameter to a large value FLT_MAX + 1.
     OH_Drawing_Point2D position;
     OH_Drawing_Point2D tangent;
-    bool isSuccess1 = OH_Drawing_PathGetPositionTangent(path, true, FLT_MAX + DRAWING_NUMBER_1, &position, &tangent);
+    bool isSuccess1 = OH_Drawing_PathGetPositionTangent(path, true, FLT_MAX, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess1, true);
     // 5. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the x
     // coordinate of the fourth parameter to a large value FLT_MAX + 1.
-    position = {FLT_MAX + DRAWING_NUMBER_1, 0.0f};
-    bool isSuccess2 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    position = {FLT_MAX, 0.0f};
+    bool isSuccess2 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess2, true);
     // 6. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the y
     // coordinate of the fourth parameter to a large value FLT_MAX + 1.
-    position = {0.0f, FLT_MAX + DRAWING_NUMBER_1};
-    bool isSuccess3 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    position = {0.0f, FLT_MAX};
+    bool isSuccess3 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess3, true);
     // 7. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the x
     // coordinate of the fifth parameter to a large value FLT_MAX + 1.
-    tangent = {FLT_MAX + DRAWING_NUMBER_1, 0.0f};
-    bool isSuccess4 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    tangent = {FLT_MAX, 0.0f};
+    bool isSuccess4 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess4, true);
     // 8. Get the position and tangent of a point at a specified distance from the starting point of the path. Set the y
     // coordinate of the fifth parameter to a large value FLT_MAX + 1.
-    tangent = {0.0f, FLT_MAX + DRAWING_NUMBER_1};
-    bool isSuccess5 = OH_Drawing_PathGetPositionTangent(path, true, DRAWING_NUMBER_50, &position, &tangent);
+    tangent = {0.0f, FLT_MAX};
+    bool isSuccess5 = OH_Drawing_PathGetPositionTangent(path, true, 50.0f, &position, &tangent);
     // add assert
     EXPECT_EQ(isSuccess5, true);
+    // 文档说明: distance大于路径长度时会被视作路径长度
+    bool isSuccess = OH_Drawing_PathGetPositionTangent(path, false, FLT_MAX, &position, &tangent);
+    EXPECT_EQ(isSuccess, true);
     // 9. Free the memory
     OH_Drawing_PathDestroy(path);
     DrawingNativePathPart3TestTearDown();

@@ -12,11 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditor3() {
   describe('RichEditor3', () => {
@@ -177,7 +179,11 @@ export default function RichEditor3() {
       let quanxuan = await driver.findComponent(ON.text("全选"));
       await quanxuan.click()
       await driver.delayMs(500)
-      await driver.triggerKey(2070);
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await driver.delayMs(500)
       let getSelection = await driver.findComponent(ON.id("getSelection"));
       await getSelection.click()
@@ -236,3 +242,4 @@ export default function RichEditor3() {
     });
   })
 }
+

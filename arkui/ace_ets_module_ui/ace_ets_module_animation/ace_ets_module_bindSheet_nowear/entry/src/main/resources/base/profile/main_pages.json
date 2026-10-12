@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/Preset",
     "MainAbility/pages/bindSheet/detentSelection",
     "MainAbility/pages/SheetType/keyboardAvoidMode",
     "MainAbility/pages/tabs/tabs_onContentWillChangeIndex10",

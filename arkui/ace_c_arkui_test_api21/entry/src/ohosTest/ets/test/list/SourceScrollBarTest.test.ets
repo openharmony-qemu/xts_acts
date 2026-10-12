@@ -34,15 +34,19 @@ export default function SourceScrollBarTest() {
       await Utils.pushPage(`list/SourceBarTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_bar_source");
+      let component = await driver.findComponent(ON.id('list_bar_source'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let top = rect.top;
       let right = rect.right;
       console.info("SourceScrollBarTest_0100 top =" + top  + ", right = " + right);
-      let barX = Math.round(globalThis.winLeft + rect.right - vp2px(40));
-      let y1 = Math.round(globalThis.winTop + rect.top + vp2px(40));
-      let y2 = Math.round(globalThis.winTop + rect.top + vp2px(80));
+      let barX = Math.round(rect.right - vp2px(40));
+      let y1 = Math.round(rect.top + vp2px(40));
+      let y2 = Math.round(rect.top + vp2px(80));
       console.info("SourceScrollBarTest_0100  barX= " +  barX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.drag(barX, y1, barX, y2, 300);
+      await driver.dragBetween(
+        { x: barX, y: y1, displayId: displayId },
+        { x: barX, y: y2, displayId: displayId }, 300);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_bar_source'); //ARKUI_SCROLL_SOURCE_SCROLL_BAR
       console.info("[SourceScrollBarTest_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
@@ -65,15 +69,19 @@ export default function SourceScrollBarTest() {
       await Utils.pushPage(`list/SourceBarFlingTest`);
       await Utils.sleep(1500)
       let driver: Driver = Driver.create();
-      let rect = Utils.getComponentRect("list_bar_source");
+      let component = await driver.findComponent(ON.id('list_bar_source'));
+      let rect = await component.getBounds();
+      let displayId = await component.getDisplayId();
       let top = rect.top;
       let right = rect.right;
       console.info("SourceScrollBarTest_0200 top =" + top  + ", right = " + right);
-      let barX = Math.round(globalThis.winLeft + rect.right - vp2px(40));
-      let y1 = Math.round(globalThis.winTop + rect.top + vp2px(40));
-      let y2 = Math.round(globalThis.winTop + rect.top + vp2px(80));
+      let barX = Math.round(rect.right - vp2px(40));
+      let y1 = Math.round(rect.top + vp2px(40));
+      let y2 = Math.round(rect.top + vp2px(80));
       console.info("SourceScrollBarTest_0200  barX= " +  barX  + ", y1 = " + y1  + ", y2 = " + y2);
-      await driver.drag(barX, y1, barX, y2, 1000);
+      await driver.dragBetween(
+        { x: barX, y: y1, displayId: displayId },
+        { x: barX, y: y2, displayId: displayId }, 1000);
       await Utils.sleep(2000);
       let strJson = getInspectorByKey('list_bar_source'); //ARKUI_SCROLL_SOURCE_SCROLL_BAR_FLING
       console.info("[SourceScrollBarTest_0200] component obj is: " + JSON.stringify(JSON.parse(strJson)));

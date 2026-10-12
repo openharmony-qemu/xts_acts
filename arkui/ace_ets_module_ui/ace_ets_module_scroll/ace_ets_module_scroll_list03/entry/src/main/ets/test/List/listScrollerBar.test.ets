@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -56,14 +56,18 @@ export default function listScrollerBar() {
     it('listScrollerBar_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listScrollerBar_0100] START');
       let driver = await Driver.create()
-      let swiperBar = CommonFunc.getComponentRectOnScreen('scroller_list_scrollbar');
+      let swiperBarComponent = await driver.findComponent(ON.id('scroller_list_scrollbar'));
+      let swiperBar = await swiperBarComponent.getBounds();
+      let displayId = await swiperBarComponent.getDisplayId();
       let top = swiperBar.top;
       let bottom = swiperBar.bottom;
       let right = swiperBar.right;
       let left = swiperBar.left;
       let widthBar = right - left;
       console.info("listScrollerBar_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(Math.round(left + widthBar/2),Math.round(top + vp2px(10)),Math.round(left + widthBar/2),Math.round(bottom - vp2px(10)),1000);
+      await driver.swipeBetween(
+        { x: Math.round(left + widthBar / 2), y: Math.round(top + vp2px(10)), displayId: displayId },
+        { x: Math.round(left + widthBar / 2), y: Math.round(bottom - vp2px(10)), displayId: displayId }, 1000);
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('list_scrollBar_onText');
       console.info("[listScrollerBar_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));

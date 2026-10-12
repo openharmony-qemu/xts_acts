@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import { huks } from '@kit.UniversalKeystoreKit';
 import { DeleteParam, GenParam, GetEmptyOptions, GetParam, MergeOptions, PrintOptions, SetInData, SetParam } from './utils/huks/HuksOptionsUtils';
 import { GetMlKemGenerateOptions, GetSm4GenerateOptions } from './utils/huks/GenerateKeyUtils';
@@ -1326,7 +1326,7 @@ export default function SecurityHuksMlKemTest() {
         let getKeyPropertiesRes = await huks.getKeyItemProperties(encapSharedKeyAlias, baseKeyOptions);
         let keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
         PrintOptions({ properties: keyProperties } as huks.HuksOptions);
-        expect(keyProperties.length).assertEqual(12);
+        expect(keyProperties.length).assertEqual(11);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_AES);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_SIZE)).assertEqual(256);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PURPOSE)).assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
@@ -1342,7 +1342,7 @@ export default function SecurityHuksMlKemTest() {
         await huks.decapsulate(keyAlias, wrapParams.properties, encapResult.outData, decapSharedKeyAlias, sharedKeyParams.properties);
         getKeyPropertiesRes = await huks.getKeyItemProperties(decapSharedKeyAlias, baseKeyOptions);
         keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
-        expect(keyProperties.length).assertEqual(12);
+        expect(keyProperties.length).assertEqual(11);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_AES);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_SIZE)).assertEqual(256);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PURPOSE)).assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);

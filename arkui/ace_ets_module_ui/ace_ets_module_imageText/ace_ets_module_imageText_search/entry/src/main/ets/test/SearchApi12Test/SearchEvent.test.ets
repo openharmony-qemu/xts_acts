@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 import {UiComponent, UiDriver, Component, Driver, MouseButton, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function SearchEvent() {
   describe('SearchEvent', () => {
@@ -59,7 +61,11 @@ export default function SearchEvent() {
       let text = await driver.findComponent(ON.id('SearchEvent'));
       await text.inputText('9');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEventText')
       let strJson2 = getInspectorByKey('SearchEventText2');
@@ -94,7 +100,11 @@ export default function SearchEvent() {
       let point = await text.getBoundsCenter();
       await driver.inputText(point, '9');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEventText')
       let strJson2 = getInspectorByKey('SearchEventText2');
@@ -129,7 +139,11 @@ export default function SearchEvent() {
       let point = await text.getBoundsCenter();
       await driver.inputText(point, '123');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEventText')
       let strJson2 = getInspectorByKey('SearchEventText2');
@@ -164,7 +178,11 @@ export default function SearchEvent() {
       let point = await text.getBoundsCenter();
       await driver.inputText(point, '3');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEventText')
       let strJson2 = getInspectorByKey('SearchEventText2');
@@ -201,7 +219,11 @@ export default function SearchEvent() {
       await CommonFunc.sleep(1000);
       await text.inputText('123');
       await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
+	    try {
+	      await driver.triggerKey(2070, displayID);
+	    } catch (err) {
+	      console.log('triggerKey error: ' + JSON.stringify(err));
+	    }
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEventText3')
       let strJson2 = getInspectorByKey('SearchEventText4');

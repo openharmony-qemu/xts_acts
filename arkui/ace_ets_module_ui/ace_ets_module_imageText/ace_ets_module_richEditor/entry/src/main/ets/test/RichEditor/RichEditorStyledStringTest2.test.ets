@@ -14,9 +14,11 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditorStyledStringTest2() {
   describe('RichEditorStyledStringTest2', () => {
@@ -62,7 +64,11 @@ export default function RichEditorStyledStringTest2() {
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2001);
+      try {
+        await driver.triggerKey(2001, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(2000);
 
       let strJson1 = getInspectorByKey('RichEditorStyledStringTest2_text');

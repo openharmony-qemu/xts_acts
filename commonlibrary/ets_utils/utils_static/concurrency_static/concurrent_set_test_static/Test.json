@@ -2,9 +2,9 @@
     "description": "Configuration for hjunit demo Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "800000",
-        "shell-timeout": "800000",
-        "testcase-timeout": "15000",
+        "test-timeout": "1800000",
+        "shell-timeout": "1800000",
+        "testcase-timeout": "240000",
         "bundle-name": "com.concurrentSet.standard.static",
         "module-name": "entry"
     },

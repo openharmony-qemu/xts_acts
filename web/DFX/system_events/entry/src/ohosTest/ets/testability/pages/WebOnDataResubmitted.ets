@@ -144,6 +144,18 @@ struct WebOnDataResubmitted {
               }
               break;
             }
+            case 'emitDataResubmissionHandlerConstructor001': {
+              Utils.emitEvent(true, 127040);
+              break;
+            }
+            case 'emitDataResubmissionHandlerConstructorReturn001': {
+              Utils.emitEvent(true, 127041);
+              break;
+            }
+            case 'emitDataResubmissionHandlerClass001': {
+              Utils.emitEvent(true, 127042);
+              break;
+            }
           }
         })
       }

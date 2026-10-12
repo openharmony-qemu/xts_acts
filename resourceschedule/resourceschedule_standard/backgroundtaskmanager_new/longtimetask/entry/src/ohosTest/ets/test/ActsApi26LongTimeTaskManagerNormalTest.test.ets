@@ -19,7 +19,7 @@ import ohosWantAgent from '@ohos.wantAgent'
 import { backgroundTaskManager } from '@kit.BackgroundTasksKit'
 import { abilityDelegatorRegistry } from '@kit.TestKit'
 import hilog from '@ohos.hilog';
-import { describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium'
+import { describe, it, TestType, Size, Level, beforeAll, afterAll, beforeEach, afterEach, expect } from '@ohos/hypium-dynamic'
 
 const TAG = "testTag";
 const DOMAIN: number = 0x0000;
@@ -1060,6 +1060,56 @@ export default function ActsApi26LongTimeTaskManagerNormalTest() {
             done();
           }
           hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3500 end---');
+      })
+
+      /**
+       * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3600
+       * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3600
+       * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_NOT_USE_USB
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3600 begin---');
+          try {
+            let type: number = backgroundTaskManager.ContinuousTaskDetailedCancelReason.SYSTEM_CANCEL_NOT_USE_USB;
+            console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3600 ContinuousTaskDetailedCancelReason: ' + type);
+            expect(type).assertEqual(16);
+            done();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3600 error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          }
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3600 end---');
+      })
+
+      /**
+       * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700
+       * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700
+       * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskSuspendReason of SYSTEM_SUSPEND_USB_NOT_USED
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700 begin---');
+          try {
+            let type: number = backgroundTaskManager.ContinuousTaskSuspendReason.SYSTEM_SUSPEND_USB_NOT_USED;
+            console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700 ContinuousTaskSuspendReason: ' + type);
+            expect(type).assertEqual(20);
+            done();
+          } catch (error) {
+            let e: BusinessError = error as BusinessError;
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700 error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          }
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3700 end---');
       })
 
   })

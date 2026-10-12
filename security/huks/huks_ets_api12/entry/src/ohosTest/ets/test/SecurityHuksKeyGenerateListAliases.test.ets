@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import huks from '@ohos.security.huks';
 import { DeleteParam, SetParam } from './utils/huks/HuksOptionsUtils';
 import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils';

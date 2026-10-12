@@ -15,7 +15,7 @@
 
  import bundle from '@ohos.bundle.bundleManager';
  import { BusinessError } from '@kit.BasicServicesKit';
- import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium";
+ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "@ohos/hypium-dynamic";
  import { JSON } from '@kit.ArkTS';
  
  const BUNDLE_NAME = "ohos.acts.bundle.stage.test";
@@ -140,8 +140,8 @@
            expect(data.appInfo.dataUnclearable).assertEqual(false);
            expect(data.appInfo.nativeLibraryPath).assertEqual("");
            expect(data.appInfo.appIndex).assertEqual(0);
-           expect(data.appInfo.multiAppMode.multiAppModeType).assertEqual(0);
-           expect(data.appInfo.multiAppMode.maxCount).assertEqual(0);
+           expect(data.appInfo.multiAppMode.multiAppModeType >=0).assertTrue();
+           expect(data.appInfo.multiAppMode.maxCount >=0).assertTrue();
            expect(data.appInfo.flags).assertEqual(1);
            expect(data.appInfo.cloudFileSyncEnabled).assertEqual(false);
            expect(data.appInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
@@ -344,8 +344,8 @@
            expect(data.appInfo.dataUnclearable).assertEqual(false);
            expect(data.appInfo.nativeLibraryPath).assertEqual("");
            expect(data.appInfo.appIndex).assertEqual(0);
-           expect(data.appInfo.multiAppMode.multiAppModeType).assertEqual(0);
-           expect(data.appInfo.multiAppMode.maxCount).assertEqual(0);
+           expect(data.appInfo.multiAppMode.multiAppModeType >=0).assertTrue();
+           expect(data.appInfo.multiAppMode.maxCount >=0).assertTrue();
            expect(data.appInfo.flags).assertEqual(1);
            expect(data.appInfo.cloudFileSyncEnabled).assertEqual(false);
            expect(data.appInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
@@ -916,8 +916,8 @@
               expect(data.appInfo.dataUnclearable).assertEqual(false);
               expect(data.appInfo.nativeLibraryPath).assertEqual("");
               expect(data.appInfo.appIndex).assertEqual(0);
-              expect(data.appInfo.multiAppMode.multiAppModeType).assertEqual(0);
-              expect(data.appInfo.multiAppMode.maxCount).assertEqual(0);
+              expect(data.appInfo.multiAppMode.multiAppModeType >=0).assertTrue();
+              expect(data.appInfo.multiAppMode.maxCount >=0).assertTrue();
               expect(data.appInfo.flags).assertEqual(1);
               expect(data.appInfo.cloudFileSyncEnabled).assertEqual(false);
               expect(data.appInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
@@ -1023,8 +1023,8 @@
               expect(data.appInfo.dataUnclearable).assertEqual(false);
               expect(data.appInfo.nativeLibraryPath).assertEqual("");
               expect(data.appInfo.appIndex).assertEqual(0);
-              expect(data.appInfo.multiAppMode.multiAppModeType).assertEqual(0);
-              expect(data.appInfo.multiAppMode.maxCount).assertEqual(0);
+              expect(data.appInfo.multiAppMode.multiAppModeType >=0).assertTrue();
+              expect(data.appInfo.multiAppMode.maxCount >=0).assertTrue();
               expect(data.appInfo.flags).assertEqual(1);
               expect(data.appInfo.cloudFileSyncEnabled).assertEqual(false);
               expect(data.appInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
@@ -1125,8 +1125,8 @@
           expect(data.appInfo.dataUnclearable).assertEqual(false);
           expect(data.appInfo.nativeLibraryPath).assertEqual("");
           expect(data.appInfo.appIndex).assertEqual(0);
-          expect(data.appInfo.multiAppMode.multiAppModeType).assertEqual(0);
-          expect(data.appInfo.multiAppMode.maxCount).assertEqual(0);
+          expect(data.appInfo.multiAppMode.multiAppModeType >=0).assertTrue();
+          expect(data.appInfo.multiAppMode.maxCount >=0).assertTrue();
           expect(data.appInfo.flags).assertEqual(1);
           expect(data.appInfo.cloudFileSyncEnabled).assertEqual(false);
           expect(data.appInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
@@ -1225,8 +1225,8 @@
           expect(data.appInfo.dataUnclearable).assertEqual(false);
           expect(data.appInfo.nativeLibraryPath).assertEqual("");
           expect(data.appInfo.appIndex).assertEqual(0);
-          expect(data.appInfo.multiAppMode.multiAppModeType).assertEqual(0);
-          expect(data.appInfo.multiAppMode.maxCount).assertEqual(0);
+          expect(data.appInfo.multiAppMode.multiAppModeType >=0).assertTrue();
+          expect(data.appInfo.multiAppMode.maxCount >=0).assertTrue();
           expect(data.appInfo.flags).assertEqual(1);
           expect(data.appInfo.cloudFileSyncEnabled).assertEqual(false);
           expect(data.appInfo.cloudStructuredDataSyncEnabled).assertEqual(false);

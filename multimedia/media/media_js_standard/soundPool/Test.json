@@ -17,29 +17,32 @@
             "cleanup-apps": true
         },
         {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+                "./resource/soundpool/test_01.mp3 ->/data/local/tmp/",
+                "./resource/soundpool/test_02.mp3 ->/data/local/tmp/",
+                "./resource/soundpool/test_03.mp3 ->/data/local/tmp/",
+                "./resource/soundpool/test_04.mp3 ->/data/local/tmp/",
+                "./resource/soundpool/test_05.wav ->/data/local/tmp/",
+               "./resource/media/setup_media_js_standard_soundPool_test.sh ->/data/local/tmp/" 
+            ]
+        },
+        {
             "type": "ShellKit",
             "run-command": [
-                "mkdir -p /data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files",
-                "chmod 777 -R /data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test",
                 "param set persist.ace.testmode.enabled 1",
                 "power-shell wakeup",
                 "power-shell timeout -o 2147483647",
                 "uinput -T -m 300 2700 280 200",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files",
+                "chmod 777 -R /data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test",
+                "chmod 755 /data/local/tmp/",
+                "sh /data/local/tmp/setup_media_js_standard_soundPool_test.sh"
             ],
             "teardown-command": [
                 "power-shell setmode 600"
-            ]
-        },
-        {
-            "type": "PushKit",
-            "pre-push": [],
-            "push": [
-                "./resource/soundpool/test_01.mp3 ->/data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files/",
-                "./resource/soundpool/test_02.mp3 ->/data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files/",
-                "./resource/soundpool/test_03.mp3 ->/data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files/",
-                "./resource/soundpool/test_04.mp3 ->/data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files/",
-                "./resource/soundpool/test_05.wav ->/data/app/el2/100/base/com.example.soundpoolxts/haps/entry_test/files/"
             ]
         }
     ]

@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import Base from '@ohos.base';
 import { BusinessError } from '@kit.BasicServicesKit';
 import NotificationManager from '@ohos.notificationManager';
@@ -1687,7 +1687,7 @@ export default function actsNotificationAnsCovered() {
 	            expect(NotificationSlot.sound).assertEqual('file://system/etc/Light.ogg');
  	            expect(NotificationSlot.lightEnabled).assertEqual(false);
  	            expect(NotificationSlot.enabled).assertEqual(true);
- 	            expect(NotificationSlot.vibrationValues).assertContain([200]);
+ 	            expect(NotificationSlot.vibrationValues?.[0]).assertEqual(200);
  	            expect(NotificationSlot.lightColor).assertEqual(0);
               console.info(TAG + 'Acts_NotificationSlot_0100 END');
               done();

@@ -13,11 +13,12 @@
  * limitations under the License.
  */
 
-import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from "@ohos/hypium"
+import {describe, beforeAll, beforeEach, afterEach, it, expect, Level} from "@ohos/hypium-dynamic"
 import {Component, Driver, ON} from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function normalDragTest() {
 
   describe('normalDragTest', () => {
@@ -68,7 +69,7 @@ export default function normalDragTest() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.drag(Math.round(left + width/2),Math.round(top + height*0.1),Math.round(left + width/2),Math.round(bottom + vp2px(50)));
+      await driver.dragBetween({x:Math.round(left + width/2),y:Math.round(top + height*0.1),displayId:displayID},{x:Math.round(left + width/2),y:Math.round(bottom + vp2px(50)),displayId:displayID});
       await CommonFunc.sleep(1000);
       console.info('dragSource2'+ AppStorage.get('dragSource2'))
       console.info('dragSource4'+ AppStorage.get('dragSource4'))

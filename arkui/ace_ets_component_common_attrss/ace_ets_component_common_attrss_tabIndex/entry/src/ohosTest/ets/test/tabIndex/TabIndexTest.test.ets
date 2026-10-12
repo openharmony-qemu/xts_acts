@@ -15,7 +15,7 @@
 
 import Utils from "../../MainAbility/common/Utils"
 import CommonTest from "../common/CommonTest"
-import { describe, expect } from "@ohos/hypium"
+import { describe, expect } from "@ohos/hypium-dynamic"
 
 async function executeTab(
     data: ESObject,

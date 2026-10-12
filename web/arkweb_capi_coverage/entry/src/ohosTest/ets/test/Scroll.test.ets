@@ -1,5 +1,5 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level }
-    from '@ohos/hypium';
+    from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@kit.TestKit';
 import Utils from './Utils.test';
 import nativeFunc from 'libentry.so';
@@ -13,7 +13,7 @@ export default function scrollTest() {
 
     /**
      * @tc.name TestArkWeb_RegisterScrollCallback
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_REGISTER_SCROLL_CALLBACK_0046
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_REGISTER_SCROLL_CALLBACK_0200
      * @tc.desc Test OH_ArkWeb_RegisterScrollCallback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

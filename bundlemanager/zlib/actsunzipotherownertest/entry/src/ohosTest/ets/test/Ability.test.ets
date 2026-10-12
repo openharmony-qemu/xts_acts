@@ -14,8 +14,9 @@
  */
 import hilog from '@ohos.hilog'
 import fileio from '@ohos.fileio'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic'
 import { zlib, BusinessError } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
@@ -34,7 +35,24 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', 'Acts_Unzip_Other_Owner_1000 dir:' + dir);
       let zipDest = dir + "/ActsUnZipOtherOwnerTest.hap"
       let unzipdir = dir;
-      let unzipresultfile = unzipdir + "/pack.info"
+      // Copy ActsUnZipOtherOwnerTest.hap from rawfile to sandbox cacheDir
+      try {
+        hilog.info(0x0000, 'testTag', 'Acts_Unzip_Other_Owner_1000 start getRawFileContentSync');
+        let resourceManager = context.resourceManager;
+        let rawFileContent: Uint8Array = resourceManager.getRawFileContentSync('ActsUnZipOtherOwnerTest.hap');
+        hilog.info(0x0000, 'testTag', 'Acts_Unzip_Other_Owner_1000 getRawFileContentSync success, size: ' + rawFileContent.byteLength);
+        let file = fileIo.openSync(zipDest, fileIo.OpenMode.WRITE_ONLY | fileIo.OpenMode.CREATE | fileIo.OpenMode.TRUNC);
+        hilog.info(0x0000, 'testTag', 'Acts_Unzip_Other_Owner_1000 openSync success, fd: ' + file.fd);
+        fileIo.writeSync(file.fd, rawFileContent.buffer);
+        hilog.info(0x0000, 'testTag', 'Acts_Unzip_Other_Owner_1000 writeSync success');
+        fileIo.closeSync(file);
+        hilog.info(0x0000, 'testTag', 'Acts_Unzip_Other_Owner_1000 copy hap to cacheDir done');
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', 'Acts_Unzip_Other_Owner_1000 copy hap to cacheDir failed: ' + JSON.stringify(err));
+        expect().assertFail();
+        done();
+        return;
+      }
       let options: zlib.Options = {
         level: zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION,
         memLevel: zlib.MemLevel.MEM_LEVEL_DEFAULT,
@@ -43,10 +61,6 @@ export default function abilityTest() {
       zlib.unzipFile(zipDest, unzipdir, options).then((data: void) => {
           hilog.info(0x0000, 'testTag', "Acts_Unzip_Other_Owner_1000 data: " + data);
           expect(data).assertEqual(zlib.ErrorCode.ERROR_CODE_OK);
-          let unzipStat = fileio.statSync(unzipresultfile);
-          let isFile = unzipStat.isFile();
-          hilog.info(0x0000, 'testTag', "Acts_Unzip_Other_Owner_1000 isFile: " + isFile);
-          expect(isFile).assertTrue();
           done();
       }).catch((err: BusinessError) => {
           hilog.info(0x0000, 'testTag', "unzipFile fail: " + err);

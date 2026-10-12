@@ -16,7 +16,7 @@
 import request from "@ohos.request";
 import fileio from '@ohos.fileio';
 import common from '@ohos.app.ability.common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 
 export default function requestDownloadNormalJSUnit() {
   describe('requestDownloadNormalJSUnit', () => {

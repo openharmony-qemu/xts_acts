@@ -15,7 +15,7 @@
 
 import audio from '@ohos.multimedia.audio';
 import { BusinessError } from '@ohos.base';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
 
 let TagFrmwk: string = "getAudioSceneApi12";
 let AudioSceneRinging: audio.AudioScene = audio.AudioScene.AUDIO_SCENE_RINGING;

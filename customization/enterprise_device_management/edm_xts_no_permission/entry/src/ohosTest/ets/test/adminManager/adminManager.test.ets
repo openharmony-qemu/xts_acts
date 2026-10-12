@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, it, Level } from '@ohos/hypium';
+import { describe, expect, it, Level } from '@ohos/hypium-dynamic';
 import Want from '@ohos.app.ability.Want'
 import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EVENTS,
   BUNDLENAME1, INVALID_WANT, PARAMETERS_LOWER_BOUND, INVALID_PARAMETERS, INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND,
@@ -247,6 +247,27 @@ export default function adminManagerTest() {
         } else {
           expect(error.code === 201).assertTrue();
         }
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_getAdminInfos_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETADMININFOS_NO_PERMISSION_JS_0100
+     * @tc.desc   test getAdminInfos with permission denied 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_getAdminInfos_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        adminManager.getAdminInfos();
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 201).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })

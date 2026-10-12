@@ -1,5 +1,5 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level }
-    from '@ohos/hypium';
+    from '@ohos/hypium-dynamic';
 import { Driver, ON } from '@kit.TestKit';
 import Utils from './Utils.test';
 import nativeFunc from 'libentry.so';
@@ -13,7 +13,7 @@ export default function native_cookieTest() {
 
     /**
      * @tc.name TestArkWebCookieManager_SaveCookieAsync
-     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_COOKIE_MANAGER_SAVE_COOKIE_ASYNC_0014
+     * @tc.number SUB_WEB_ARKWEB_CAPI_TEST_ARK_WEB_COOKIE_MANAGER_SAVE_COOKIE_ASYNC_9800
      * @tc.desc Test OH_ArkWebCookieManager_SaveCookieAsync
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

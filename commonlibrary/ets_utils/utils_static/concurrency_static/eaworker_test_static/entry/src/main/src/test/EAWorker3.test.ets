@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -866,6 +866,144 @@ export default function EAWorker3Test(): void {
           done();
         }
       });
+
+    /**
+     * @tc.number SUB_BUILTINS_EAWORKER_EXCLUSIVE_THREAD_TEST_0100
+     * @tc.name threadExclusivityTest
+     * @tc.desc Verify 64 EAWorkers each have unique thread IDs and worker IDs
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('threadExclusivityTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const count = 50;
+      let tidSet = new containers.ConcurrentSet<number>();
+      let widSet = new containers.ConcurrentSet<number>();
+      let workers: EAWorker[] = [];
+      let jobs: Job<void>[] = [];
+
+      for (let i = 0; i < count; ++i) {
+        workers.push(new EAWorker('threadExclusive-' + i));
+        workers[i].start();
+      }
+
+      for (let i = 0; i < count; ++i) {
+        let wk = workers[i];
+        jobs.push(wk.run<void>((): void => {
+          tidSet.add(StdProcess.tid());
+          let current = EAWorker.current();
+          if (current != undefined) {
+            widSet.add(current.getWorkerId()!);
+          }
+        }));
+      }
+
+      try {
+        for (let job of jobs) {
+          job.Await();
+        }
+        expect(tidSet.size).assertEqual(count);
+        expect(widSet.size).assertEqual(count);
+      } finally {
+        for (let i = 0; i < count; ++i) {
+          try { workers[i].quit(); } catch (error) {}
+          try { workers[i].join().Await(); } catch (error) {}
+        }
+      }
+    });
+
+    /**
+     * @tc.number SUB_BUILTINS_EAWORKER_MSG_CALLBACK_THREAD_TEST_0100
+     * @tc.name messageCallbackThreadTest
+     * @tc.desc Verify message callback and run() task execute on the same thread
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('messageCallbackThreadTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      let eaWorker = new EAWorker('msgCallbackThread', true);
+      eaWorker.start();
+      eaWorker.run<void>((): void => {}).Await();
+      eaWorker.run<void>((): void => {}).Await();
+
+      let runTid = new AtomicLong(0);
+      let callbackTid = new AtomicLong(0);
+
+      eaWorker.run<void>((): void => {
+        runTid.store(StdProcess.tid());
+      }).Await();
+
+      let handler = new concurrency.MessageHandler((msg: concurrency.Message): void => {
+        callbackTid.store(StdProcess.tid());
+      }, eaWorker);
+      handler.sendEmptyMessage(1);
+
+      eaWorker.run<void>((): void => {}).Await();
+      eaWorker.run<void>((): void => {}).Await();
+      eaWorker.run<void>((): void => {}).Await();
+
+      try {
+        expect(runTid.load()).assertLarger(0);
+        expect(callbackTid.load()).assertLarger(0);
+        expect(runTid.load()).assertEqual(callbackTid.load());
+      } finally {
+        try { eaWorker.quit(); } catch (error) {}
+        try { eaWorker.join().Await(); } catch (error) {}
+      }
+    });
+
+
+    /**
+     * @tc.number SUB_BUILTINS_EAWORKER_NOSTART_NO_THREAD_TEST_0100
+     * @tc.name EAWorkerNotStartedNoResourceLeak
+     * @tc.desc Verify 64 EAWorkers created without start do not leak resources, then new workers can start and receive messages normally
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level0
+     */
+    it('EAWorkerNotStartedNoResourceLeak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const unusedCount = 64;
+      let unusedWorkers: EAWorker[] = [];
+
+      for (let i = 0; i < unusedCount; ++i) {
+        try {
+          let eaw = new EAWorker('unused-' + i);
+          unusedWorkers.push(eaw);
+          let msgHandler = new concurrency.MessageHandler(()=>{}, eaw);
+          msgHandler.sendEmptyMessage(99);
+        } catch (error) {
+        }
+      }
+
+
+      const wk = new EAWorker('activeAfterLeak');
+      wk.start();
+      expect(wk.isAlive()).assertTrue();
+      try {
+        let completed = new AtomicBoolean(false);
+        let job = wk.run<void>((): void => {
+          completed.store(true);
+        });
+        job.Await();
+        expect(completed.load()).assertTrue();
+      } finally {
+        try {
+          wk.quit();
+        } catch (error) {
+        }
+        try {
+          wk.join().Await();
+        } catch (error) {
+        }
+      }
+
+      for (let i = 0; i < unusedWorkers.length; ++i) {
+        try {
+          unusedWorkers[i].quit();
+        } catch (error) {
+        }
+      }
+    })
 
   });
 }

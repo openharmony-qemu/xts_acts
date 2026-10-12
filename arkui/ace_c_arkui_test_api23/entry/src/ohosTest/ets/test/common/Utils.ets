@@ -71,7 +71,9 @@ export default class Utils {
 
   static async pickerFlingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
+    let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
     let Picker = await driver.findComponent(ON.id(key));
+    let displayId = await Picker.getDisplayId();
     let rect = await Picker.getBounds();
     let centerX = Math.round(Utils.getRectHorizontalCenterX(rect))
     let centerY = Math.round(Utils.getRectVerticalCenterY(rect))
@@ -85,29 +87,29 @@ export default class Utils {
     if (isHorizontal) {
       if (isForward) {
         await driver.fling({
-          x: X2, y: centerY
+          x: X2, y: centerY, displayId: displayID
         }, {
-          x: X1, y: centerY
+          x: X1, y: centerY, displayId: displayID
         }, stepLen, speed);
       } else {
         await driver.fling({
-          x: X1, y: centerY
+          x: X1, y: centerY, displayId: displayID
         }, {
-          x: X2, y: centerY
+          x: X2, y: centerY, displayId: displayID
         }, stepLen, speed);
       }
     } else {
       if (isForward) {
         await driver.fling({
-          x: centerX, y: Y2
+          x: centerX, y: Y2, displayId: displayID
         }, {
-          x: centerX, y: Y1
+          x: centerX, y: Y1, displayId: displayID
         }, stepLen, speed);
       } else {
         await driver.fling({
-          x: centerX, y: Y1
+          x: centerX, y: Y1, displayId: displayID
         }, {
-          x: centerX, y: Y2
+          x: centerX, y: Y2, displayId: displayID
         }, stepLen, speed);
       }
     }
@@ -115,6 +117,7 @@ export default class Utils {
 
   static async flingComponent(key: string, isHorizontal: boolean, isForward: boolean) {
     let driver = Driver.create();
+    let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
     let rect = Utils.getComponentRect(key);
     let centerX = Math.round(globalThis.winLeft + Utils.getRectHorizontalCenterX(rect))
     let centerY = Math.round(globalThis.winTop + Utils.getRectVerticalCenterY(rect))
@@ -128,29 +131,29 @@ export default class Utils {
     if (isHorizontal) {
       if (isForward) {
         await driver.fling({
-          x: X2, y: centerY
+          x: X2, y: centerY, displayId: displayID
         }, {
-          x: X1, y: centerY
+          x: X1, y: centerY, displayId: displayID
         }, stepLen, speed);
       } else {
         await driver.fling({
-          x: X1, y: centerY
+          x: X1, y: centerY, displayId: displayID
         }, {
-          x: X2, y: centerY
+          x: X2, y: centerY, displayId: displayID
         }, stepLen, speed);
       }
     } else {
       if (isForward) {
         await driver.fling({
-          x: centerX, y: Y2
+          x: centerX, y: Y2, displayId: displayID
         }, {
-          x: centerX, y: Y1
+          x: centerX, y: Y1, displayId: displayID
         }, stepLen, speed);
       } else {
         await driver.fling({
-          x: centerX, y: Y1
+          x: centerX, y: Y1, displayId: displayID
         }, {
-          x: centerX, y: Y2
+          x: centerX, y: Y2, displayId: displayID
         }, stepLen, speed);
       }
     }
@@ -171,12 +174,14 @@ export default class Utils {
 
   static async clickLocation(X: number, Y: number) {
     let driver = Driver.create();
-    await driver.click(X, Y);
+    let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+    await driver.clickAt({x: X, y: Y, displayId: displayID});
   }
 
   static async triggerKey(id: number) {
     let driver = Driver.create();
-    await driver.triggerKey(id);
+    let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+    await driver.triggerKey(id, displayID);
   }
 
   static async longClickComponent(id: string) {
@@ -198,24 +203,25 @@ export default class Utils {
     let fingerUpCenterY = Math.round(centerY - vp2px(66.67));
     let fingerDownCenterY = Math.round(centerY + vp2px(66.67));
     let driver: Driver = Driver.create();
+    let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
     let pointers: PointerMatrix = PointerMatrix.create(2, 3);
     pointers.setPoint(0, 0, {
-      x: centerX, y: fingerUpCenterY - (isOut ? 40 : 120)
+      x: centerX, y: fingerUpCenterY - (isOut ? 40 : 120), displayId: displayID
     });
     pointers.setPoint(0, 1, {
-      x: centerX, y: fingerUpCenterY - 80
+      x: centerX, y: fingerUpCenterY - 80, displayId: displayID
     });
     pointers.setPoint(0, 2, {
-      x: centerX, y: fingerUpCenterY - (isOut ? 120 : 40)
+      x: centerX, y: fingerUpCenterY - (isOut ? 120 : 40), displayId: displayID
     });
     pointers.setPoint(1, 0, {
-      x: centerX, y: fingerDownCenterY + (isOut ? 40 : 120)
+      x: centerX, y: fingerDownCenterY + (isOut ? 40 : 120), displayId: displayID
     });
     pointers.setPoint(1, 1, {
-      x: centerX, y: fingerDownCenterY + 80
+      x: centerX, y: fingerDownCenterY + 80, displayId: displayID
     });
     pointers.setPoint(1, 2, {
-      x: centerX, y: fingerDownCenterY + (isOut ? 120 : 40)
+      x: centerX, y: fingerDownCenterY + (isOut ? 120 : 40), displayId: displayID
     });
     await driver.injectMultiPointerAction(pointers);
   }
@@ -358,8 +364,9 @@ export default class Utils {
 
   static async mouseMoveTo(X: number, Y: number) {
     let driver = Driver.create();
+    let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
     await driver.mouseMoveTo({
-      x: X, y: Y
+      x: X, y: Y, displayId: displayID
     });
   }
 

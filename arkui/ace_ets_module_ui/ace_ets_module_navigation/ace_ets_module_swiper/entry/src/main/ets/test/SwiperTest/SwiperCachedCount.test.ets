@@ -13,7 +13,7 @@
  */
 
 import CommonFunc from '../../MainAbility/common/Common';
-import { describe, it, expect, Level } from '@ohos/hypium';
+import { describe, it, expect, Level } from '@ohos/hypium-dynamic';
 import {
   SWIPER_CACHED_COUNT_PAGE,
   SWIPER_CACHED_COUNT_ROUTE_PARAM,

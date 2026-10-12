@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -62,8 +62,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollPageNullUndefined_0100] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollPageNullUndefined_0100] scroll.top = ${scroll.top}`);
       console.info(`[scrollPageNullUndefined_0100] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -90,8 +92,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollPageNullUndefined_0200] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollPageNullUndefined_0200] scroll.top = ${scroll.top}`);
       console.info(`[scrollPageNullUndefined_0200] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -119,8 +123,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollToNullUndefined_0100] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollToNullUndefined_0100] scroll.top = ${scroll.top}`);
       console.info(`[scrollToNullUndefined_0100] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -147,8 +153,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollToNullUndefined_0200] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollToNullUndefined_0200] scroll.top = ${scroll.top}`);
       console.info(`[scrollToNullUndefined_0200] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -175,8 +183,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollToNullUndefined_0300] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollToNullUndefined_0300] scroll.top = ${scroll.top}`);
       console.info(`[scrollToNullUndefined_0300] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -204,8 +214,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollEdgeNullUndefined_0100] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollEdgeNullUndefined_0100] scroll.top = ${scroll.top}`);
       console.info(`[scrollEdgeNullUndefined_0100] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -232,8 +244,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollEdgeNullUndefined_0200] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollEdgeNullUndefined_0200] scroll.top = ${scroll.top}`);
       console.info(`[scrollEdgeNullUndefined_0200] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -260,8 +274,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollEdgeNullUndefined_0300] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_20');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_20'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollEdgeNullUndefined_0300] scroll.bottom = ${scroll.bottom}`);
       console.info(`[scrollEdgeNullUndefined_0300] scrollItem1.bottom = ${scrollItem1.bottom}`);
       expect(Math.floor(Math.abs(scrollItem1.bottom - scroll.bottom)) <= 1).assertTrue();
@@ -288,8 +304,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollEdgeNullUndefined_0400] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollEdgeNullUndefined_0400] scroll.top = ${scroll.top}`);
       console.info(`[scrollEdgeNullUndefined_0400] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -317,8 +335,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollToIndexNullUndefined_0100] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollToIndexNullUndefined_0100] scroll.top = ${scroll.top}`);
       console.info(`[scrollToIndexNullUndefined_0100] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -345,8 +365,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollToIndexNullUndefined_0200] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollToIndexNullUndefined_0200] scroll.top = ${scroll.top}`);
       console.info(`[scrollToIndexNullUndefined_0200] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -373,8 +395,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollToIndexNullUndefined_0300] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollToIndexNullUndefined_0300] scroll.top = ${scroll.top}`);
       console.info(`[scrollToIndexNullUndefined_0300] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -401,8 +425,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollToIndexNullUndefined_0400] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollToIndexNullUndefined_0400] scroll.top = ${scroll.top}`);
       console.info(`[scrollToIndexNullUndefined_0400] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -431,8 +457,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollByNullUndefined_0100] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollByNullUndefined_0100] scroll.top = ${scroll.top}`);
       console.info(`[scrollByNullUndefined_0100] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -459,8 +487,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollByNullUndefined_0200] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollByNullUndefined_0200] scroll.top = ${scroll.top}`);
       console.info(`[scrollByNullUndefined_0200] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -487,8 +517,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollByNullUndefined_0300] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollByNullUndefined_0300] scroll.top = ${scroll.top}`);
       console.info(`[scrollByNullUndefined_0300] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();
@@ -515,8 +547,10 @@ export default function scrollerNullUndefined() {
       console.info("[scrollByNullUndefined_0400] type: " + JSON.stringify(obj.$type));
       expect(obj.$type).assertEqual("Scroll");
 
-      let scroll = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined');
-      let scrollItem1 = CommonFunc.getComponentRectOnScreen('scroller_nullUndefined_1');
+      let scrollComp = await driver.findComponent(ON.id('scroller_nullUndefined'))
+      let scroll = await scrollComp.getBounds()
+      let scrollItem1Comp = await driver.findComponent(ON.id('scroller_nullUndefined_1'))
+      let scrollItem1 = await scrollItem1Comp.getBounds()
       console.info(`[scrollByNullUndefined_0400] scroll.top = ${scroll.top}`);
       console.info(`[scrollByNullUndefined_0400] scrollItem1.top = ${scrollItem1.top}`);
       expect(Math.floor(Math.abs(scrollItem1.top - scroll.top)) <= 1).assertTrue();

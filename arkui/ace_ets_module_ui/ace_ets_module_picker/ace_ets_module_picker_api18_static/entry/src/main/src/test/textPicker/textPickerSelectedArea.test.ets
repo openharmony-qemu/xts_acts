@@ -20,9 +20,9 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 export default function textPickerSelectedAreaTest() {
   describe('textPickerSelectedAreaTest', () => {
-
     beforeEach(async () => {
       console.info('textPickerSelectedAreaTest beforeEach start');
       let options: router.RouterOptions = {
@@ -45,20 +45,16 @@ export default function textPickerSelectedAreaTest() {
       }
       console.info('textPickerSelectedAreaTest beforeEach end');
     });
-    
-    
-    
-    
-    
-/**
-     * @tc.number   textPickerSelectedAreaTest_static_001
-     * @tc.name     textPickerSelectedAreaTest_static_001
-     * @tc.desc     textPickerSelectedAreaTest_static_001
+
+    /**
+     * @tc.number   SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001
+     * @tc.name     SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001
+     * @tc.desc     SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001
      * @tc.level    Level.LEVEL0
      */
-it('textPickerSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        console.info('textPickerSelectedAreaTest_static_001 START');
+        console.info('SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001 START');
         let driver = Driver.create();
         await Utils.sleep(2000);
         let textPicker = await driver.findComponent(ON.id('textPicker'));
@@ -70,20 +66,20 @@ it('textPickerSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => voi
         let middle = (top + bottom) / 2
 
         await driver.swipe(
-          Math.round(left + (right - left) / 2) as int,
-          Math.round(top + (bottom - top) / 2) as int,
-          Math.round(left + (right - left) / 2) as int,
-          Math.round(top) as int);
+          Math.round(left + (right - left) / 2).toInt(),
+          Math.round(top + (bottom - top) / 2).toInt(),
+          Math.round(left + (right - left) / 2).toInt(),
+          Math.round(top).toInt());
         await Utils.sleep(6000);
 
         let textStr = await driver.findComponent(ON.id('textFlag'));
         let eText = await textStr!.getText();
-        console.info("[textPickerSelectedAreaTest_static_001] text: " + JSON.stringify(eText));
+        console.info("[SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001] text: " + JSON.stringify(eText));
         expect(eText).assertEqual('enter');
-        console.info('[textPickerSelectedAreaTest_static_001] END');
+        console.info('[SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001] END');
         done();
       } catch (err) {
-        console.info('textPickerSelectedAreaTest_static_001 err: ' + JSON.stringify(err));
+        console.info('SUB_ARKUI_ACE_ENGINE_TEXTPICKER_SELECTEDAREA_0001 err: ' + JSON.stringify(err));
         done();
       }
     });

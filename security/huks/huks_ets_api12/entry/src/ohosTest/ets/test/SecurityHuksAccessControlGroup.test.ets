@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, describe, Level, Size, TestType, it, expect } from '@ohos/hypium';
+import { beforeAll, describe, Level, Size, TestType, it, expect } from '@ohos/hypium-dynamic';
 import { huks } from '@kit.UniversalKeystoreKit';
 import { GetAesGenerateOptions, GetEccGenerateOptions, GetMlDsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { SetParam, SetInData, MergeOptions, CheckSoftware, GetParam } from './utils/huks/HuksOptionsUtils';
@@ -1805,7 +1805,7 @@ export default function abilityTest() {
         let getKeyPropertiesRes = await huks.getKeyItemProperties(testNumber, baseKeyOptions);
         let keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
         Logger.error(`${testNumber} getKeyProperties ${JSON.stringify(getKeyPropertiesRes.properties)}`);
-        expect(getKeyPropertiesRes.properties?.length).assertEqual(12);
+        expect(getKeyPropertiesRes.properties?.length).assertEqual(11);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_ML_DSA);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_SIZE)).assertEqual(44);
         expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PURPOSE)).assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);

@@ -12,10 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function CalendarDialogAJsunit() {
   describe('CalendarDialogAJsunit', () => {
@@ -51,8 +53,8 @@ export default function CalendarDialogAJsunit() {
      */
     it('CalendarDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CalendarDialogAJsunit_0100 START');
-      let driver = await UiDriver.create()
-      let button = await driver.findComponent(BY.key('CalendarPickerDialogExits' + '_Calendar_dialog_A'));
+      let driver = await Driver.create()
+      let button = await driver.findComponent(ON.id('CalendarPickerDialogExits' + '_Calendar_dialog_A'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('CalendarPickerDialogExits' + '_Calendar_dialog_A');
@@ -60,9 +62,17 @@ export default function CalendarDialogAJsunit() {
       console.info('[CalendarDialogAJsunit_0100] component obj is: ' + JSON.stringify(obj));
       expect(obj.$attrs.label).assertEqual('CalendarPickerDialog按esc弹窗逐层退出');
       console.info('[CalendarDialogAJsunit_0100] END');
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
+      try {
+        await driver.triggerKey(2070, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
       await CommonFunc.sleep(1000);
       done();
     });

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import ArrayList from '@ohos.util.ArrayList';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
 import {
   test001,
   test004,

@@ -18,7 +18,7 @@ import bluetoothBle from '@ohos.bluetooth.ble';
 import btAccess from '@ohos.bluetooth.access';
 import connection from '@ohos.bluetooth.connection';
 import { util } from '@kit.ArkTS'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
 let gattS: bluetoothBle.GattServer;
 let gattC: bluetoothBle.GattClientDevice;
@@ -4651,7 +4651,6 @@ export default function btBleManagerTest() {
         gattS.on("characteristicRead", ReadCharacteristicReq);
         gattS.off("characteristicRead");
         console.info('[bluetooth_js]off characteristicRead without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.info("characteristicReadOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -4677,7 +4676,6 @@ export default function btBleManagerTest() {
         gattS.on("characteristicWrite", WriteCharacteristicReq);
         gattS.off("characteristicWrite");
         console.info('[bluetooth_js]off characteristicWrite without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.info("characteristicWriteOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -4703,7 +4701,6 @@ export default function btBleManagerTest() {
         gattS.on("descriptorRead", ReadDescriptorReq);
         gattS.off("descriptorRead");
         console.info('[bluetooth_js]off descriptorRead without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.info("descriptorReadOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -4729,7 +4726,6 @@ export default function btBleManagerTest() {
         gattS.on("descriptorWrite", WriteDescriptorReq);
         gattS.off("descriptorWrite");
         console.info('[bluetooth_js]off descriptorWrite without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.info("descriptorWriteOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {
@@ -4757,7 +4753,6 @@ export default function btBleManagerTest() {
         });
         gattC.off('BLEMtuChange');
         console.info('[bluetooth_js]off BLEMtuChange without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.info("BLEMtuChangeOffNoCallback errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code === 801) {

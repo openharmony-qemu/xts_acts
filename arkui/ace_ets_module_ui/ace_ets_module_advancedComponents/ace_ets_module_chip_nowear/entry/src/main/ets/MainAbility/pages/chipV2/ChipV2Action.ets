@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
   AccessibilitySelectedType,
   ChipV2,
@@ -69,6 +70,6 @@ struct ChipV2Action {
         })
       }.width(120).borderWidth(1).id('ChipV2ActionCol')
       Text(this.text).id('tvChipV2Action')
-    }
+    }.width('100%').height('100%')
   }
 }

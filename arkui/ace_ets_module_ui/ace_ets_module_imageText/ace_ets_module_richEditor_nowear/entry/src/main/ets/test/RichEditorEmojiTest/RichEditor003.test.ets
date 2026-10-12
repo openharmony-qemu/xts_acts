@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import {
   UiComponent,
@@ -29,6 +29,8 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
 export default function RichEditor002() {
   describe('RichEditor003', () => {
@@ -80,7 +82,11 @@ export default function RichEditor002() {
       let beginPosition = await text.getText();
 
       //KEYCODE_FORWARD_DEL
-      await driver.triggerKey(2071);
+      try {
+        await driver.triggerKey(2071, displayID);
+      } catch (err) {
+        console.log('triggerKey error: ' + JSON.stringify(err));
+      }
 
       await CommonFunc.sleep(500);
       await point.click();
@@ -92,5 +98,6 @@ export default function RichEditor002() {
     });
   })
 }
+
 
 

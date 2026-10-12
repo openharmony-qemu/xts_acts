@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { cert } from '@kit.DeviceCertificateKit'
-import { expect } from '@ohos/hypium'
+import { expect } from '@ohos/hypium-dynamic'
 import { stringToUint8Array } from '../certificate/p12'
 
 let rsa_p8_pem: string =

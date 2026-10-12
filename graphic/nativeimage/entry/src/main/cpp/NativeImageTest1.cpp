@@ -1800,8 +1800,6 @@ napi_value OHConsumerSurfaceSetDefaultUsageSizeNormal(napi_env env, napi_callbac
             return result;
         }
         OH_NativeImage_Destroy(&image);
-        OH_NativeWindow_DestroyNativeWindow(window);
-        OH_NativeWindow_DestroyNativeWindowBuffer(windowBuffer);
         OH_NativeBuffer_Unreference(buffer);
     }
     napi_create_int32(env, SUCCESS, &result);
@@ -1816,11 +1814,9 @@ napi_value OHNativeWindowDropBufferModeSetTrueNormal(napi_env env, napi_callback
     glGenTextures(PARAM_1, &textureId);
     OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
     int32_t ret1 = OH_NativeImage_SetDropBufferMode(image, false);
+    NAPI_ASSERT(env, ret1 == NATIVE_ERROR_OK, "ret1 != NATIVE_ERROR_OK");
     int32_t ret2 = OH_NativeImage_SetDropBufferMode(image, true);
-    if (ret1 != NATIVE_ERROR_OK || ret2 != NATIVE_ERROR_OK) {
-        napi_create_int32(env, FAIL, &result);
-        return result;
-    }
+    NAPI_ASSERT(env, ret2 == NATIVE_ERROR_OK, "ret2 != NATIVE_ERROR_OK");
     InitNativeWindow *initNative = new InitNativeWindow(image);
     int produceBuffer = 0;
     int consumerBuffer = 0;

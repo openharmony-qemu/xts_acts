@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
@@ -55,7 +55,10 @@ export default function offsetEdgeTop() {
      */
     it('offsetEdgeTop_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[offsetEdgeTop_0100] START');
-      let swiperList = CommonFunc.getComponentRectOnScreen('edge_endOffset_top');
+      let driver = await Driver.create()
+      let swiperListComponent = await driver.findComponent(ON.id('edge_endOffset_top'));
+      let swiperList = await swiperListComponent.getBounds();
+      let displayId = await swiperListComponent.getDisplayId();
       let top = swiperList.top;
       let right = swiperList.right;
       let left = swiperList.left;
@@ -63,17 +66,20 @@ export default function offsetEdgeTop() {
       console.info("offsetEdgeTop value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom -top;
       let width = right - left;
-      let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.8),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipeBetween(
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.8), displayId: displayId },
+        { x: Math.round(left + width/2), y: Math.round(top + height*0.2), displayId: displayId });
       await CommonFunc.sleep(3000);
 
       let btn: Component = await driver.findComponent(ON.id('offset_scrollEdge_top'));
       await btn.click();
       await CommonFunc.sleep(2000);
 
-      let list = CommonFunc.getComponentRectOnScreen('edge_endOffset_top');
-      let listItem = CommonFunc.getComponentRectOnScreen('edge_endOffset_top_0');
+      let listComponent = await driver.findComponent(ON.id('edge_endOffset_top'));
+      let list = await listComponent.getBounds();
+      let listItemComponent = await driver.findComponent(ON.id('edge_endOffset_top_0'));
+      let listItem = await listItemComponent.getBounds();
       console.info('[offsetEdgeTop_0100] list.top: ' + list.top);
       console.info('[offsetEdgeTop_0100] listItem.top: ' + listItem.top);
       await CommonFunc.sleep(1000);
