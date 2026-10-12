@@ -8,11 +8,11 @@
 -   [用例开发指导](#section3695134065513)
     -   [C语言用例开发编译指导（适用于轻量系统产品用例开发）](#section198193336544)
     -   [C语言用例执行指导（适用于轻量系统产品用例开发）](#section13820233175418)
+    -   [JS语言用例开发编译执行指导（适用于小型系统）](#section_jsunit_lite)
     -   [C++语言用例开发编译指导（适用于小型系统、标准系统用例开发）](#section3822123311540)
     -   [C++语言用例执行指导（适用于小型系统、标准系统用例开发）](#section128222336544)
     -   [JS语言用例开发指导（适用于标准系统）](#section159801435165220)
     -   [JS语言用例编译打包指导（适用于标准系统）](#section445519106559)
-    -   [JS语言用例开发编译执行指导（适用于小型系统）](#section_jsunit_lite)
     -   [Python用例开发编译指导](#section281040146993)
     -   [Python用例执行指导](#section637497153319)
 
@@ -383,6 +383,319 @@ OpenHarmony支持如下几种系统类型：
 基于串口打印日志进行分析；
 
 每个测试套件执行以Start to run test suite开始，以xx Tests xx Failures xx Ignored结束。
+
+### JS语言用例开发编译执行指导（适用于小型系统）<a name="section_jsunit_lite"></a>
+
+当前使用的测试框架是 jsunit_lite，用于支撑小型系统（small system）JS 接口自动化测试。jsunit_lite 适配 JerryScript 引擎能力限制，提供测试用例编写、执行和结果输出能力。
+
+#### 目录结构
+
+新建 JS 测试用例目录结构如下，开发者需将 `your_test_suite` 替换为实际测试套名称：
+
+```
+test/xts/acts/arkxtest_lite/<your_test_suite>/
+├── BUILD.gn                           # 编译配置（使用 jsunit_lite_suite 模板）
+├── Test.json                          # xdevice 测试配置
+├── cert/
+│   └── openharmony_sx.p7b            # 签名文件
+└── entry/src/main/
+    ├── config.json                    # 应用配置
+    ├── resources/base/media/
+    │   └── icon.png                   # 应用图标
+    └── js/
+        ├── MainAbility/
+        │   ├── app.js                 # 应用入口（初始化框架 + 执行测试）
+        │   ├── manifest.json          # 应用 manifest
+        │   └── pages/index/
+        │       ├── index.js           # UI 页面
+        │       └── index.hml          # UI 模板
+        └── test/
+            ├── List.test.js           # 测试套聚合入口
+            └── Assert.test.js         # 断言用例（示例）
+```
+
+#### 用例编写
+
+**1. 编写测试用例文件**
+
+```javascript
+// entry/src/main/js/test/MyTest.test.js
+import { describe, it, expect, beforeAll, afterAll, Level } from 'jsunit_lite/index';
+
+export default function myTest() {
+    describe('MyTestSuite', function() {
+        /**
+         * @tc.name      my_first_test
+         * @tc.number    SUB_XXXX_0001
+         * @tc.desc      Verify assertEqual works
+         */
+        it('my_first_test', Level.LEVEL0, function() {
+            expect(1).assertEqual(1);
+        });
+
+        /**
+         * @tc.name      my_string_test
+         * @tc.number    SUB_XXXX_0002
+         * @tc.desc      Verify assertContain works
+         */
+        it('my_string_test', Level.LEVEL0, function() {
+            expect('hello world').assertContain('world');
+        });
+    });
+}
+```
+
+**2. 编写 List.test.js 聚合入口**
+
+```javascript
+// entry/src/main/js/test/List.test.js
+import { describe, it, expect } from 'jsunit_lite/index';
+import myTest from './MyTest.test';
+
+export default function testsuite() {
+    myTest();
+    // 如有多个测试文件，在此依次调用
+}
+```
+
+**3. 编写 app.js 应用入口**
+
+```javascript
+// entry/src/main/js/MainAbility/app.js
+import Core from 'jsunit_lite/src/core';
+import liteReport from 'jsunit_lite/src/module/report/liteReport';
+import { describe, it, expect } from 'jsunit_lite/index';
+import testsuite from '../test/List.test';
+
+export default {
+    data: {},
+    onCreate: function() {
+        console.info('[MyTest] onCreate start');
+        var core = Core.getInstance();
+        var reportInstance = new liteReport({ id: 'default' });
+        core.addService('report', reportInstance);
+        core.init();
+        testsuite();
+        core.execute();
+    },
+    onDestroy: function() {
+        console.info('[MyTest] onDestroy');
+    }
+};
+```
+
+**4. 编写 config.json**
+
+以下为小型系统测试应用的 config.json 模板，开发者需根据实际测试套修改 `bundleName`、`package`、`name`、`label` 等字段：
+
+```json
+{
+  "app": {
+    "bundleName": "com.ohos.yourtest",
+    "vendor": "ohos",
+    "version": {
+      "code": 1,
+      "name": "1.0.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 4
+    }
+  },
+  "deviceConfig": {
+    "default": {}
+  },
+  "module": {
+    "package": "com.ohos.yourtest",
+    "name": ".YourTestAbilityPackage",
+    "deviceType": [
+      "smartVision"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "name": "JsunitAbility",
+        "srcLanguage": "js",
+        "srcPath": "default",
+        "icon": "assets/entry/resources/base/media/icon.png",
+        "description": "Your test ability",
+        "label": "YourTest",
+        "type": "page",
+        "visible": true,
+        "launchType": "standard"
+      }
+    ],
+    "js": [
+      {
+        "pages": [
+          "pages/index/index"
+        ],
+        "name": "JsunitAbility"
+      }
+    ]
+  }
+}
+```
+
+#### 编译配置
+
+以下为编译配置模板，开发者需将 `hap_name`、`hap_dir`、`extra_sources` 等替换为实际值：
+
+**BUILD.gn**
+
+```gn
+import("//test/xts/tools/lite/build/jsunit_lite_suite.gni")
+
+jsunit_lite_suite("acts_your_test") {
+  hap_name = "ActsYourTest"
+  hap_dir = "your_test_suite"
+  config_path = "entry/src/main/config.json"
+  test_json_path = "Test.json"
+  suite_name = "acts"
+  cert_profile = "cert/openharmony_sx.p7b"
+  resources_path = "entry/src/main/resources"
+  js_source_dir = "entry/src/main/js/MainAbility"
+  extra_sources = [
+    "entry/src/main/js/MainAbility/pages/index/index.js",
+    "entry/src/main/js/test/List.test.js",
+    "entry/src/main/js/test/MyTest.test.js",
+  ]
+}
+```
+
+**Test.json**
+
+以下为 xdevice 测试配置模板，开发者需将 `bundle-name`、`hap-file-name`、`source` 路径等替换为实际值。MountKit 的 `type_kernel` 无需配置，编译时按目标内核自动注入（LiteOS 产物为 `lite`，Linux 产物为 `linux`）：
+
+```json
+{
+    "description": "Your test suite",
+    "environment": [
+        {
+            "type": "device",
+            "label": "ipcamera",
+            "device": {
+                "label": "ipcamera",
+                "type": "usb"
+            }
+        }
+    ],
+    "kits": [
+        {
+            "type": "MountKit",
+            "server": "NfsServer",
+            "mount": [
+                {
+                    "source": "$testcases/your_test_suite",
+                    "target": "/test_root"
+                }
+            ]
+        }
+    ],
+    "driver": {
+        "type": "JSUnitTestLite",
+        "ability-name": "JsunitAbility",
+        "bundle-name": "com.ohos.yourtest",
+        "hap-file-name": "ActsYourTest.hap",
+        "timeout": "600000",
+        "cleanup": "true",
+        "reboot-after-cleanup": "true"
+    }
+}
+```
+
+#### 编译命令
+
+在 OpenHarmony 源码根目录执行：
+
+```bash
+# Linux 内核设备（如 HiSpark Taurus Linux 版）
+./build.sh --product-name ipcamera_hispark_taurus_linux --build-xts=true
+
+# LiteOS 内核设备
+./build.sh --product-name ipcamera_hispark_taurus --build-xts=true
+```
+
+编译产物路径：
+
+```
+out/hispark_taurus/ipcamera_hispark_taurus_linux/suites/acts/testcases/<your_test_suite>/<HapName>.hap
+```
+
+> **app.js 体积限制**：编译后的 app.js（webpack 打包后）不能超过 48KB，否则设备加载失败。如遇超限，需精简测试代码或减少导入的框架模块。
+
+#### 执行测试（xdevice）
+
+通过 xdevice 配置 Test.json 实现全自动化执行。执行前需配置 `config/user_config.xml`：
+
+```xml
+<!-- config/user_config.xml 示例 -->
+<user_config>
+    <environment>
+        <device type="com" label="ipcamera">
+            <serial>
+                <com>com4</com>           <!-- 修改：串口号 -->
+                <type>cmd</type>
+                <baud_rate>115200</baud_rate>
+            </serial>
+        </device>
+    </environment>
+    <testcases>
+        <server label="NfsServer">
+            <ip>192.168.1.100</ip>        <!-- 修改：NFS 服务器 IP -->
+            <dir>D:\test</dir>            <!-- 修改：NFS 共享目录 -->
+            <remote>false</remote>         <!-- true=远程 SFTP，false=本地目录 -->
+        </server>
+    </testcases>
+</user_config>
+```
+
+| 字段 | 说明 |
+|------|------|
+| `com` | 设备串口号（Windows: `com4`，Linux: `/dev/ttyUSB0`） |
+| `ip` | NFS 服务器 IP，需与设备同网段 |
+| `dir` | NFS 共享目录，NFS 挂载到设备 `/test_root` |
+| `-alldirs` | NFS exports 配置需添加 `-alldirs` 选项，支持按设备 serial 挂载子目录（多设备隔离） |
+| `remote` | `false` 时用本地 `shutil.copy`，`true` 时用 SFTP |
+
+配置完成后执行：
+
+```bash
+xdevice run test/xts/acts/arkxtest_lite/<your_test_suite>/Test.json
+```
+
+xdevice 自动完成：NFS 挂载 → hap 推送 → 安装 → 启动测试 → 串口日志采集 → 结果解析 → 报告生成。
+
+#### 结果解析
+
+测试结果通过串口输出，JSUnitParserLite 解析以下标记：
+
+| 标记 | 含义 |
+|------|------|
+| `[start] start run suites` | 测试任务开始 |
+| `[suite start] xxx` | 测试套开始 |
+| `[start] xxx` | 单条用例开始 |
+| `[pass] xxx` | 用例通过 |
+| `[fail] xxx` | 用例失败（后跟错误堆栈） |
+| `[ignore] xxx` | 用例跳过（SkipError 或 xit） |
+| `[suite end]` | 测试套结束 |
+| `[end] run suites end` | 测试任务结束 |
+
+xdevice 生成的报告位于 `reports/` 目录，包含 JUnit XML + HTML 格式。
+
+#### 小型系统限制注意事项
+
+| 限制 | 影响 | 建议 |
+|------|------|------|
+| 不支持 async/await | 不能用 `async function` | 使用同步函数 |
+| Promise 微任务不可靠 | `.then()` 回调可能不执行 | 避免依赖 Promise 链 |
+| app.js ≤ 48KB | 框架代码+用例代码打包后不能超限 | 精简用例，避免导入不必要的模块 |
+| 无 hdc | 不能用 `hdc shell`/`hdc file send` | 使用串口（pyserial）或 NFS |
+| 无 globalThis | 不能用 `globalThis` 全局变量 | 框架已通过 Core 实例属性注入 |
 
 ### C++语言用例开发编译指导（适用于小型系统、标准系统用例开发）<a name="section3822123311540"></a>
 
@@ -936,320 +1249,6 @@ Stage 模式适配指导请参考
 ### JS语言用例编译打包指导（适用于标准系统）<a name="section445519106559"></a>
 
 hap包编译请参考 [标准系统 JS用例源码编译Hap包指导](https://gitcode.com/openharmony/xts_acts/wiki/%E6%A0%87%E5%87%86%E7%B3%BB%E7%BB%9F%20JS%E7%94%A8%E4%BE%8B%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91Hap%E5%8C%85%E6%8C%87%E5%AF%BC%20?sort_id=4427112)。
-
-### JS语言用例开发编译执行指导（适用于小型系统）<a name="section_jsunit_lite"></a>
-
-当前使用的测试框架是 jsunit_lite，用于支撑小型系统（small system）JS 接口自动化测试。jsunit_lite 适配 JerryScript 引擎能力限制，提供测试用例编写、执行和结果输出能力。
-
-#### 目录结构
-
-新建 JS 测试用例目录结构如下，开发者需将 `your_test_suite` 替换为实际测试套名称：
-
-```
-test/xts/acts/<your_test_suite>/
-├── BUILD.gn                           # 编译配置（使用 jsunit_lite_suite 模板）
-├── Test.json                          # xdevice 测试配置
-├── cert/
-│   └── openharmony_sx.p7b            # 签名文件
-└── entry/src/main/
-    ├── config.json                    # 应用配置
-    ├── resources/base/media/
-    │   └── icon.png                   # 应用图标
-    └── js/
-        ├── MainAbility/
-        │   ├── app.js                 # 应用入口（初始化框架 + 执行测试）
-        │   ├── manifest.json          # 应用 manifest
-        │   └── pages/index/
-        │       ├── index.js           # UI 页面
-        │       └── index.hml          # UI 模板
-        └── test/
-            ├── List.test.js           # 测试套聚合入口
-            └── Assert.test.js         # 断言用例（示例）
-```
-
-#### 用例编写
-
-**1. 编写测试用例文件**
-
-```javascript
-// entry/src/main/js/test/MyTest.test.js
-import { describe, it, expect, beforeAll, afterAll, Level } from 'jsunit_lite/index';
-
-export default function myTest() {
-    describe('MyTestSuite', function() {
-        /**
-         * @tc.name      my_first_test
-         * @tc.number    SUB_XXXX_0001
-         * @tc.desc      Verify assertEqual works
-         */
-        it('my_first_test', Level.LEVEL0, function() {
-            expect(1).assertEqual(1);
-        });
-
-        /**
-         * @tc.name      my_string_test
-         * @tc.number    SUB_XXXX_0002
-         * @tc.desc      Verify assertContain works
-         */
-        it('my_string_test', Level.LEVEL0, function() {
-            expect('hello world').assertContain('world');
-        });
-    });
-}
-```
-
-**2. 编写 List.test.js 聚合入口**
-
-```javascript
-// entry/src/main/js/test/List.test.js
-import { describe, it, expect } from 'jsunit_lite/index';
-import myTest from './MyTest.test';
-
-export default function testsuite() {
-    myTest();
-    // 如有多个测试文件，在此依次调用
-}
-```
-
-**3. 编写 app.js 应用入口**
-
-```javascript
-// entry/src/main/js/MainAbility/app.js
-import Core from 'jsunit_lite/src/core';
-import liteReport from 'jsunit_lite/src/module/report/liteReport';
-import { describe, it, expect } from 'jsunit_lite/index';
-import testsuite from '../test/List.test';
-
-export default {
-    data: {},
-    onCreate: function() {
-        console.info('[MyTest] onCreate start');
-        var core = Core.getInstance();
-        var reportInstance = new liteReport({ id: 'default' });
-        core.addService('report', reportInstance);
-        core.init();
-        testsuite();
-        core.execute();
-    },
-    onDestroy: function() {
-        console.info('[MyTest] onDestroy');
-    }
-};
-```
-
-**4. 编写 config.json**
-
-以下为小型系统测试应用的 config.json 模板，开发者需根据实际测试套修改 `bundleName`、`package`、`name`、`label` 等字段：
-
-```json
-{
-  "app": {
-    "bundleName": "com.ohos.yourtest",
-    "vendor": "ohos",
-    "version": {
-      "code": 1,
-      "name": "1.0.0"
-    },
-    "apiVersion": {
-      "compatible": 3,
-      "target": 4
-    }
-  },
-  "deviceConfig": {
-    "default": {}
-  },
-  "module": {
-    "package": "com.ohos.yourtest",
-    "name": ".YourTestAbilityPackage",
-    "deviceType": [
-      "smartVision"
-    ],
-    "distro": {
-      "deliveryWithInstall": true,
-      "moduleName": "entry",
-      "moduleType": "entry"
-    },
-    "abilities": [
-      {
-        "name": "JsunitAbility",
-        "srcLanguage": "js",
-        "srcPath": "default",
-        "icon": "assets/entry/resources/base/media/icon.png",
-        "description": "Your test ability",
-        "label": "YourTest",
-        "type": "page",
-        "visible": true,
-        "launchType": "standard"
-      }
-    ],
-    "js": [
-      {
-        "pages": [
-          "pages/index/index"
-        ],
-        "name": "JsunitAbility"
-      }
-    ]
-  }
-}
-```
-
-#### 编译配置
-
-以下为编译配置模板，开发者需将 `hap_name`、`hap_dir`、`extra_sources` 等替换为实际值：
-
-**BUILD.gn**
-
-```gn
-import("//test/xts/tools/lite/build/jsunit_lite_suite.gni")
-
-jsunit_lite_suite("acts_your_test") {
-  hap_name = "ActsYourTest"
-  hap_dir = "your_test_suite"
-  config_path = "entry/src/main/config.json"
-  test_json_path = "Test.json"
-  suite_name = "acts"
-  cert_profile = "cert/openharmony_sx.p7b"
-  resources_path = "entry/src/main/resources"
-  js_source_dir = "entry/src/main/js/MainAbility"
-  extra_sources = [
-    "entry/src/main/js/MainAbility/pages/index/index.js",
-    "entry/src/main/js/test/List.test.js",
-    "entry/src/main/js/test/MyTest.test.js",
-  ]
-}
-```
-
-**Test.json**
-
-以下为 xdevice 测试配置模板，开发者需将 `bundle-name`、`hap-file-name`、`source` 路径等替换为实际值：
-
-```json
-{
-    "description": "Your test suite",
-    "environment": [
-        {
-            "type": "device",
-            "label": "ipcamera",
-            "device": {
-                "label": "ipcamera",
-                "type": "usb"
-            }
-        }
-    ],
-    "kits": [
-        {
-            "type": "MountKit",
-            "server": "NfsServer",
-            "type_kernel": "linux",
-            "mount": [
-                {
-                    "source": "$testcases/your_test_suite",
-                    "target": "/test_root"
-                }
-            ]
-        }
-    ],
-    "driver": {
-        "type": "JSUnitTestLite",
-        "ability-name": "JsunitAbility",
-        "bundle-name": "com.ohos.yourtest",
-        "hap-file-name": "ActsYourTest.hap",
-        "timeout": "600000",
-        "cleanup": "true",
-        "reboot-after-cleanup": "true"
-    }
-}
-```
-
-#### 编译命令
-
-在 OpenHarmony 源码根目录执行：
-
-```bash
-# Linux 内核设备（如 HiSpark Taurus Linux 版）
-./build.sh --product-name ipcamera_hispark_taurus_linux --build-xts=true
-
-# LiteOS 内核设备
-./build.sh --product-name ipcamera_hispark_taurus --build-xts=true
-```
-
-编译产物路径：
-
-```
-out/hispark_taurus/ipcamera_hispark_taurus_linux/suites/acts/testcases/<your_test_suite>/<HapName>.hap
-```
-
-> **app.js 体积限制**：编译后的 app.js（webpack 打包后）不能超过 48KB，否则设备加载失败。如遇超限，需精简测试代码或减少导入的框架模块。
-
-#### 执行测试（xdevice）
-
-通过 xdevice 配置 Test.json 实现全自动化执行。执行前需配置 `config/user_config.xml`：
-
-```xml
-<!-- config/user_config.xml 示例 -->
-<user_config>
-    <environment>
-        <device type="com" label="ipcamera">
-            <serial>
-                <com>com4</com>           <!-- 修改：串口号 -->
-                <type>cmd</type>
-                <baud_rate>115200</baud_rate>
-            </serial>
-        </device>
-    </environment>
-    <testcases>
-        <server label="NfsServer">
-            <ip>192.168.1.100</ip>        <!-- 修改：NFS 服务器 IP -->
-            <dir>D:\test</dir>            <!-- 修改：NFS 共享目录 -->
-            <remote>false</remote>         <!-- true=远程 SFTP，false=本地目录 -->
-        </server>
-    </testcases>
-</user_config>
-```
-
-| 字段 | 说明 |
-|------|------|
-| `com` | 设备串口号（Windows: `com4`，Linux: `/dev/ttyUSB0`） |
-| `ip` | NFS 服务器 IP，需与设备同网段 |
-| `dir` | NFS 共享目录，NFS 挂载到设备 `/test_root` |
-| `-alldirs` | NFS exports 配置需添加 `-alldirs` 选项，支持按设备 serial 挂载子目录（多设备隔离） |
-| `remote` | `false` 时用本地 `shutil.copy`，`true` 时用 SFTP |
-
-配置完成后执行：
-
-```bash
-xdevice run test/xts/acts/<your_test_suite>/Test.json
-```
-
-xdevice 自动完成：NFS 挂载 → hap 推送 → 安装 → 启动测试 → 串口日志采集 → 结果解析 → 报告生成。
-
-#### 结果解析
-
-测试结果通过串口输出，JSUnitParserLite 解析以下标记：
-
-| 标记 | 含义 |
-|------|------|
-| `[start] start run suites` | 测试任务开始 |
-| `[suite start] xxx` | 测试套开始 |
-| `[start] xxx` | 单条用例开始 |
-| `[pass] xxx` | 用例通过 |
-| `[fail] xxx` | 用例失败（后跟错误堆栈） |
-| `[ignore] xxx` | 用例跳过（SkipError 或 xit） |
-| `[suite end]` | 测试套结束 |
-| `[end] run suites end` | 测试任务结束 |
-
-xdevice 生成的报告位于 `reports/` 目录，包含 JUnit XML + HTML 格式。
-
-#### 小型系统限制注意事项
-
-| 限制 | 影响 | 建议 |
-|------|------|------|
-| 不支持 async/await | 不能用 `async function` | 使用同步函数 |
-| Promise 微任务不可靠 | `.then()` 回调可能不执行 | 避免依赖 Promise 链 |
-| app.js ≤ 48KB | 框架代码+用例代码打包后不能超限 | 精简用例，避免导入不必要的模块 |
-| 无 hdc | 不能用 `hdc shell`/`hdc file send` | 使用串口（pyserial）或 NFS |
-| 无 globalThis | 不能用 `globalThis` 全局变量 | 框架已通过 Core 实例属性注入 |
 
 ### Python用例开发编译指导 <a name="section281040146993"></a>
 
