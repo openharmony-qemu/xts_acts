@@ -51,7 +51,6 @@ async function flingComponentV(key: string, isForward: boolean, speed: Int = 500
   }
 }
 
-let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 export default function listNestedScrollEventTest() {
 
   describe('ListNestedScrollEventTest', () => {
