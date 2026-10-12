@@ -31,6 +31,7 @@ export default function albumCloseTest () {
   describe('albumCloseTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
     const helper:ESObject  = photoAccessHelper.getPhotoAccessHelper(testContext);
+    const ts = `_${Date.now()}`;
 
     beforeAll(async () => {
       console.info('beforeAll case');
@@ -136,8 +137,8 @@ export default function albumCloseTest () {
     it('album_close_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_close_001';
       try {
-        const album:ESObject = await helper.createAlbum(testNum);
-        const fetchOps = fetchOption(testNum, albumKeys.ALBUM_NAME, album.albumName);
+        const album:ESObject = await helper.createAlbum(`${testNum}${ts}`);
+        const fetchOps = fetchOption(`${testNum}${ts}`, albumKeys.ALBUM_NAME, album.albumName);
         const fetchResult:ESObject = await helper.getAlbums(albumType.USER, albumSubtype.USER_GENERIC, fetchOps);
         expect(fetchResult.getCount()).assertEqual(1);
         fetchResult.close();
