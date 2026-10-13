@@ -399,14 +399,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2400
-     * @tc.name int8ArrayReversePart03Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2200
+     * @tc.name int8ArrayReversePart03Test022
      * @tc.desc Verify reverse on two-element array swaps elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([11, 22]);
       arr.reverse();
       let result = arr.$_get(0);
@@ -415,14 +415,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2500
-     * @tc.name int8ArrayReversePart03Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2300
+     * @tc.name int8ArrayReversePart03Test023
      * @tc.desc Verify modifying return value of reverse affects original array on 2 elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([11, 22]);
       let ret = arr.reverse();
       ret.$_set(0, 99);
@@ -432,14 +432,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2600
-     * @tc.name int8ArrayReversePart03Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2400
+     * @tc.name int8ArrayReversePart03Test024
      * @tc.desc Verify reverse on three-element array keeps middle element unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.reverse();
       let result = arr.$_get(1);
@@ -448,14 +448,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2700
-     * @tc.name int8ArrayReversePart03Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2500
+     * @tc.name int8ArrayReversePart03Test025
      * @tc.desc Verify reverse on 256-element array covering full int8 range keeps length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array(256);
       for (let i = 0; i < 256; i++) {
         arr.$_set(i, i - 128);
@@ -467,14 +467,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2800
-     * @tc.name int8ArrayReversePart03Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2600
+     * @tc.name int8ArrayReversePart03Test026
      * @tc.desc Verify reverse on empty array keeps toString as empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array(0);
       arr.reverse();
       let result = arr.toString();
@@ -483,14 +483,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2900
-     * @tc.name int8ArrayReversePart03Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2700
+     * @tc.name int8ArrayReversePart03Test027
      * @tc.desc Verify reverse on single-element array keeps toString unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([42]);
       arr.reverse();
       let result = arr.toString();
@@ -499,14 +499,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3000
-     * @tc.name int8ArrayReversePart03Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2800
+     * @tc.name int8ArrayReversePart03Test028
      * @tc.desc Verify reverse on all-zero array keeps specified position still 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 0, 0, 0]);
       arr.reverse();
       let result = arr.$_get(2);
@@ -515,14 +515,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3800
-     * @tc.name int8ArrayReversePart03Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_2900
+     * @tc.name int8ArrayReversePart03Test029
      * @tc.desc Verify reverse of [1.9, 10, -1.9] moves the negative truncated value to the front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<number> = [1.9, 10, -1.9];
       let arr = new Int8Array(src);
       arr.reverse();
@@ -532,14 +532,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3900
-     * @tc.name int8ArrayReversePart03Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3000
+     * @tc.name int8ArrayReversePart03Test030
      * @tc.desc Verify reverse of all-Number.NaN array keeps middle position still 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<number> = [Number.NaN, Number.NaN, Number.NaN];
       let arr = new Int8Array(src);
       arr.reverse();
@@ -549,14 +549,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4000
-     * @tc.name int8ArrayReversePart03Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3100
+     * @tc.name int8ArrayReversePart03Test031
      * @tc.desc Verify reverse of [-128, 127, 0] moves 0 to the front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([INT8_MIN, INT8_MAX, 0]);
       arr.reverse();
       let result = arr.$_get(0);
@@ -565,14 +565,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4100
-     * @tc.name int8ArrayReversePart03Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3200
+     * @tc.name int8ArrayReversePart03Test032
      * @tc.desc Verify reverse of [Number.NaN, 10, Number.POSITIVE_INFINITY, 20] moves the last element to the front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<number> = [Number.NaN, 10, Number.POSITIVE_INFINITY, 20];
       let arr = new Int8Array(src);
       arr.reverse();
@@ -582,14 +582,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4200
-     * @tc.name int8ArrayReversePart03Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3300
+     * @tc.name int8ArrayReversePart03Test033
      * @tc.desc Verify subarray view reverse modifies original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       let view = arr.subarray(1, 4);
       view.reverse();
@@ -599,14 +599,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4300
-     * @tc.name int8ArrayReversePart03Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3400
+     * @tc.name int8ArrayReversePart03Test034
      * @tc.desc Verify subarray(0, 3) view reverse on [10, 20, 30, 40] reverses first 3 elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let resultVal1: Int8Array = arr.subarray(0, 3).reverse();
       let expectedVal1: Int8Array = new Int8Array([30, 20, 10]);
@@ -617,14 +617,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4400
-     * @tc.name int8ArrayReversePart03Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3500
+     * @tc.name int8ArrayReversePart03Test035
      * @tc.desc Verify subarray(1, 4) offset non-zero view reverse on [5, 6, 7, 8, 9]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([5, 6, 7, 8, 9]);
       let resultVal1: Int8Array = arr.subarray(1, 4).reverse();
       let expectedVal1: Int8Array = new Int8Array([8, 7, 6]);
@@ -635,14 +635,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4500
-     * @tc.name int8ArrayReversePart03Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3600
+     * @tc.name int8ArrayReversePart03Test036
      * @tc.desc Verify shared buffer non-overlapping intervals, one view reverse does not affect another
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(4);
       let a = new Int8Array(buf, 0, 2);
       let b = new Int8Array(buf, 2, 2);
@@ -657,14 +657,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4600
-     * @tc.name int8ArrayReversePart03Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3700
+     * @tc.name int8ArrayReversePart03Test037
      * @tc.desc Verify slice copy reverse does not affect original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       let copy = arr.slice();
       copy.reverse();
@@ -674,14 +674,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4700
-     * @tc.name int8ArrayReversePart03Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3800
+     * @tc.name int8ArrayReversePart03Test038
      * @tc.desc Verify full subarray(0) reverse is equivalent to original array reverse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       let resultVal1: Int8Array = arr.subarray(0).reverse();
       let expectedVal1: Int8Array = new Int8Array([3, 2, 1]);
@@ -692,14 +692,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4800
-     * @tc.name int8ArrayReversePart03Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_3900
+     * @tc.name int8ArrayReversePart03Test039
      * @tc.desc Verify empty view subarray(2, 2) reverse causes no change
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4]);
       let view = arr.subarray(2, 2);
       view.reverse();
@@ -709,14 +709,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4900
-     * @tc.name int8ArrayReversePart03Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4000
+     * @tc.name int8ArrayReversePart03Test040
      * @tc.desc Verify single-element view reverse causes no change
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4]);
       let resultVal1: Int8Array = arr.subarray(1, 2).reverse();
       let expectedVal1: Int8Array = new Int8Array([2]);
@@ -727,14 +727,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5000
-     * @tc.name int8ArrayReversePart03Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4100
+     * @tc.name int8ArrayReversePart03Test041
      * @tc.desc Verify subarray view reverse returns view itself
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       let view = arr.subarray(0, 2);
       let ret = view.reverse();
@@ -742,14 +742,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5100
-     * @tc.name int8ArrayReversePart03Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4200
+     * @tc.name int8ArrayReversePart03Test042
      * @tc.desc Verify multi-view chain subarray reverse subarray for segmented reversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       let resultVal1: Int8Array = arr.subarray(0, 3).reverse();
       let expectedVal1: Int8Array = new Int8Array([3, 2, 1]);
@@ -763,14 +763,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5200
-     * @tc.name int8ArrayReversePart03Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4300
+     * @tc.name int8ArrayReversePart03Test043
      * @tc.desc Verify after reverse, at(length) returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.reverse();
       let len: int = arr.length;
@@ -778,14 +778,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5300
-     * @tc.name int8ArrayReversePart03Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4400
+     * @tc.name int8ArrayReversePart03Test044
      * @tc.desc Verify after reverse, at(-length-1) returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.reverse();
       let len: int = arr.length;
@@ -793,14 +793,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5400
-     * @tc.name int8ArrayReversePart03Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4500
+     * @tc.name int8ArrayReversePart03Test045
      * @tc.desc Verify after reverse, at(0) returns original last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.reverse();
       let result = arr.at(0);
@@ -809,14 +809,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5500
-     * @tc.name int8ArrayReversePart03Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4600
+     * @tc.name int8ArrayReversePart03Test046
      * @tc.desc Verify after reverse, at(-1) returns original first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.reverse();
       let result = arr.at(-1);
@@ -825,42 +825,42 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5600
-     * @tc.name int8ArrayReversePart03Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4700
+     * @tc.name int8ArrayReversePart03Test047
      * @tc.desc Verify after reverse on empty array, at(0) returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array(0);
       arr.reverse();
       expect(arr.at(0)).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5700
-     * @tc.name int8ArrayReversePart03Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4800
+     * @tc.name int8ArrayReversePart03Test048
      * @tc.desc Verify after reverse on single-element array, at(1) returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([42]);
       arr.reverse();
       expect(arr.at(1)).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6000
-     * @tc.name int8ArrayReversePart03Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_4900
+     * @tc.name int8ArrayReversePart03Test049
      * @tc.desc Verify reverse keeps length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       arr.reverse();
       let result = arr.length;
@@ -869,14 +869,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6100
-     * @tc.name int8ArrayReversePart03Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5000
+     * @tc.name int8ArrayReversePart03Test050
      * @tc.desc Verify reverse keeps byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let arr = new Int8Array(buf, 2, 4);
       let off: int = arr.byteOffset;
@@ -887,14 +887,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6200
-     * @tc.name int8ArrayReversePart03Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5100
+     * @tc.name int8ArrayReversePart03Test051
      * @tc.desc Verify reverse keeps buffer reference unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       let buf = arr.buffer;
       arr.reverse();
@@ -904,14 +904,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6300
-     * @tc.name int8ArrayReversePart03Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5200
+     * @tc.name int8ArrayReversePart03Test052
      * @tc.desc Verify modifying return value of reverse affects original array on 4 elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4]);
       let ret = arr.reverse();
       ret.$_set(0, 88);
@@ -921,14 +921,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6400
-     * @tc.name int8ArrayReversePart03Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5300
+     * @tc.name int8ArrayReversePart03Test053
      * @tc.desc Verify reverse then indexOf finds original last element at index 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.reverse();
       let result = arr.indexOf(30);
@@ -937,14 +937,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6500
-     * @tc.name int8ArrayReversePart03Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5400
+     * @tc.name int8ArrayReversePart03Test054
      * @tc.desc Verify reverse maps original index 2 element to index 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let mid = arr.$_get(2);
       arr.reverse();
@@ -954,14 +954,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6600
-     * @tc.name int8ArrayReversePart03Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5500
+     * @tc.name int8ArrayReversePart03Test055
      * @tc.desc Verify reverse last element equals original first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       let first = arr.$_get(0);
       arr.reverse();
@@ -971,14 +971,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6700
-     * @tc.name int8ArrayReversePart03Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5600
+     * @tc.name int8ArrayReversePart03Test056
      * @tc.desc Verify reverse toString reflects new order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       arr.reverse();
       let result = arr.toString();
@@ -987,14 +987,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6800
-     * @tc.name int8ArrayReversePart03Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5700
+     * @tc.name int8ArrayReversePart03Test057
      * @tc.desc Verify reverse then includes works correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.reverse();
       let includesResult: boolean = arr.includes(20);
@@ -1002,14 +1002,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_6900
-     * @tc.name int8ArrayReversePart03Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5800
+     * @tc.name int8ArrayReversePart03Test058
      * @tc.desc Verify double reverse of [128, 5] keeps truncated value at original position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<number> = [128, 5];
       let arr = new Int8Array(src);
       arr.reverse();
@@ -1020,14 +1020,14 @@ export default function int8ArrayReversePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_7000
-     * @tc.name int8ArrayReversePart03Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REVERSE_PART03_TEST_5900
+     * @tc.name int8ArrayReversePart03Test059
      * @tc.desc Verify reverse of [128, 5, 9] moves the original last element to the front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReversePart03Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReversePart03Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<number> = [128, 5, 9];
       let arr = new Int8Array(src);
       arr.reverse();
