@@ -12,11 +12,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { uiObserver, window,UIUtils,display } from '@kit.ArkUI';
+import { uiObserver, window, UIUtils, display, SystemProperties } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@ohos.base';
 let subWindowClass: window.Window | undefined = undefined;
 let envNum: number = 0;
+
 @Entry
+@ComponentV2
+struct SubMainWindow {
+  @Local windowInfoInitialized: boolean = false;
+
+  aboutToAppear(): void {
+    this.windowInfoInitialized = this.isWindowInfoInitialized();
+    if (!this.windowInfoInitialized) {
+      setTimeout(() => {
+        this.windowInfoInitialized = this.isWindowInfoInitialized();
+      }, 500);
+    }
+  }
+
+  private isWindowInfoInitialized(): boolean {
+    return this.getUIContext().getWindowId() !== undefined;
+  }
+
+  build() {
+    Column() {
+      if (this.windowInfoInitialized) {
+        SubWindow();
+      } else {
+        Text('window info not initialized');
+      }
+    }
+  }
+}
+
 @ComponentV2
 struct SubWindow {
   @Local message: string = 'SubWindow';
