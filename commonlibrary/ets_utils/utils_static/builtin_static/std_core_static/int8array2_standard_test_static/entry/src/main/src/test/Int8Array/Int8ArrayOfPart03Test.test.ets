@@ -223,27 +223,27 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1200
-     * @tc.name int8ArrayOfPart03Test012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1100
+     * @tc.name int8ArrayOfPart03Test011
      * @tc.desc Verify of() at(0) undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       expect(arr.at(0)).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1300
-     * @tc.name int8ArrayOfPart03Test013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1200
+     * @tc.name int8ArrayOfPart03Test012
      * @tc.desc Verify of() indexOf(0) -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       let actualIndex: int = arr.indexOf(0);
       let expectedIndex: int = -1;
@@ -251,28 +251,28 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1400
-     * @tc.name int8ArrayOfPart03Test014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1300
+     * @tc.name int8ArrayOfPart03Test013
      * @tc.desc Verify of() includes(0) false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       let actualIncluded: boolean = arr.includes(0);
       expect(actualIncluded).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1500
-     * @tc.name int8ArrayOfPart03Test015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1400
+     * @tc.name int8ArrayOfPart03Test014
      * @tc.desc Verify of() find undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       let called = false;
       let resultVal1: number | undefined = arr.find((v: number): boolean => {
@@ -287,14 +287,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1600
-     * @tc.name int8ArrayOfPart03Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1500
+     * @tc.name int8ArrayOfPart03Test015
      * @tc.desc Verify of() findIndex -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       let actualFindIndex: int = arr.findIndex((v: number): boolean => v === 0);
       let expectedFindIndex: int = -1;
@@ -302,14 +302,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1700
-     * @tc.name int8ArrayOfPart03Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1600
+     * @tc.name int8ArrayOfPart03Test016
      * @tc.desc Verify of() slice() 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       const copy = arr.slice();
       let actualLength: int = copy.length;
@@ -318,28 +318,28 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1800
-     * @tc.name int8ArrayOfPart03Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1700
+     * @tc.name int8ArrayOfPart03Test017
      * @tc.desc Verify of() reverse this
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       const ret = arr.reverse();
       expect(ret).assertEqual(arr);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1900
-     * @tc.name int8ArrayOfPart03Test019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1800
+     * @tc.name int8ArrayOfPart03Test018
      * @tc.desc Verify set offset RangeError length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const src = Int8Array.of(3, 4, 5);
       try {
@@ -354,14 +354,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2000
-     * @tc.name int8ArrayOfPart03Test020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_1900
+     * @tc.name int8ArrayOfPart03Test019
      * @tc.desc Verify set offset RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const src = Int8Array.of(3, 4, 5);
       try {
@@ -376,14 +376,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2100
-     * @tc.name int8ArrayOfPart03Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2000
+     * @tc.name int8ArrayOfPart03Test020
      * @tc.desc Verify sort callback throwing Error leaves length and first element of array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.sort((a: number, b: number) => {
@@ -403,14 +403,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2200
-     * @tc.name int8ArrayOfPart03Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2100
+     * @tc.name int8ArrayOfPart03Test021
      * @tc.desc Verify reduce on empty of array without initial value throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of();
       try {
         arr.reduce((acc: number, v: number) => acc + v);
@@ -424,14 +424,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2300
-     * @tc.name int8ArrayOfPart03Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2200
+     * @tc.name int8ArrayOfPart03Test022
      * @tc.desc Verify reduce propagates callback Error and keeps elements of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.reduce((acc: number, v: number) => {
@@ -448,14 +448,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2400
-     * @tc.name int8ArrayOfPart03Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2300
+     * @tc.name int8ArrayOfPart03Test023
      * @tc.desc Verify reduceRight propagates callback Error keeping length of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.reduceRight((acc: number, v: number) => {
@@ -472,14 +472,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2500
-     * @tc.name int8ArrayOfPart03Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2400
+     * @tc.name int8ArrayOfPart03Test024
      * @tc.desc Verify find propagates predicate Error keeping elements of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.find((v: number): boolean => {
@@ -499,14 +499,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2600
-     * @tc.name int8ArrayOfPart03Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2500
+     * @tc.name int8ArrayOfPart03Test025
      * @tc.desc Verify findIndex propagates predicate Error keeping length of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.findIndex((v: number): boolean => {
@@ -523,14 +523,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2700
-     * @tc.name int8ArrayOfPart03Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2600
+     * @tc.name int8ArrayOfPart03Test026
      * @tc.desc Verify map propagates callback Error keeping elements of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.map((v: number) => {
@@ -550,14 +550,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2800
-     * @tc.name int8ArrayOfPart03Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2700
+     * @tc.name int8ArrayOfPart03Test027
      * @tc.desc Verify forEach propagates callback Error keeping length of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.forEach((v: number): void => {
@@ -577,14 +577,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2900
-     * @tc.name int8ArrayOfPart03Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2800
+     * @tc.name int8ArrayOfPart03Test028
      * @tc.desc Verify at out of range returns undefined keeping length of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const r = arr.at(5);
       expect(r).assertUndefined();
@@ -594,14 +594,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3000
-     * @tc.name int8ArrayOfPart03Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_2900
+     * @tc.name int8ArrayOfPart03Test029
      * @tc.desc Verify with replaces element keeping source of array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const neu = arr.with(0, 5);
       let actualOriginal: number = arr.$_get(0);
@@ -613,14 +613,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3100
-     * @tc.name int8ArrayOfPart03Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3000
+     * @tc.name int8ArrayOfPart03Test030
      * @tc.desc Verify with out-of-range index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       try {
         arr.with(-3, 0);
@@ -634,15 +634,32 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3200
-     * @tc.name int8ArrayOfPart03Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3100
+     * @tc.name int8ArrayOfPart03Test031
      * @tc.desc Verify valueOf returns same Int8Array reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
+      let actualValueOf: Int8Array = arr.valueOf();
+      let expectedValueOf: Int8Array = arr;
+      expect(actualValueOf).assertEqual(expectedValueOf);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3200
+     * @tc.name int8ArrayOfPart03Test032
+     * @tc.desc Verify valueOf on byte-constructed array returns itself
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayOfPart03Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b1: byte = 1;
+      const b2: byte = 2;
+      const arr = Int8Array.of(b1, b2);
       let actualValueOf: Int8Array = arr.valueOf();
       let expectedValueOf: Int8Array = arr;
       expect(actualValueOf).assertEqual(expectedValueOf);
@@ -651,29 +668,12 @@ export default function int8ArrayOfPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3300
      * @tc.name int8ArrayOfPart03Test033
-     * @tc.desc Verify valueOf on byte-constructed array returns itself
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayOfPart03Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const b1: byte = 1;
-      const b2: byte = 2;
-      const arr = Int8Array.of(b1, b2);
-      let actualValueOf: Int8Array = arr.valueOf();
-      let expectedValueOf: Int8Array = arr;
-      expect(actualValueOf).assertEqual(expectedValueOf);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3400
-     * @tc.name int8ArrayOfPart03Test034
      * @tc.desc Verify toString of of-created array returns 1,2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       let actualStr: string = arr.toString();
       let expectedStr: string = '1,2';
@@ -681,15 +681,32 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3500
-     * @tc.name int8ArrayOfPart03Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3400
+     * @tc.name int8ArrayOfPart03Test034
      * @tc.desc Verify byteLength of number-created array equals its length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
+      let actualByteLength: int = arr.byteLength;
+      let expectedByteLength: int = arr.length;
+      expect(actualByteLength).assertEqual(expectedByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3500
+     * @tc.name int8ArrayOfPart03Test035
+     * @tc.desc Verify byteLength of byte-created array equals its length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayOfPart03Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b1: byte = 1;
+      const b2: byte = 2;
+      const arr = Int8Array.of(b1, b2);
       let actualByteLength: int = arr.byteLength;
       let expectedByteLength: int = arr.length;
       expect(actualByteLength).assertEqual(expectedByteLength);
@@ -698,29 +715,12 @@ export default function int8ArrayOfPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3600
      * @tc.name int8ArrayOfPart03Test036
-     * @tc.desc Verify byteLength of byte-created array equals its length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayOfPart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const b1: byte = 1;
-      const b2: byte = 2;
-      const arr = Int8Array.of(b1, b2);
-      let actualByteLength: int = arr.byteLength;
-      let expectedByteLength: int = arr.length;
-      expect(actualByteLength).assertEqual(expectedByteLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3700
-     * @tc.name int8ArrayOfPart03Test037
      * @tc.desc Verify number byteOffset 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       let actualByteOffset: int = arr.byteOffset;
       let expectedByteOffset: int = 0;
@@ -728,14 +728,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3800
-     * @tc.name int8ArrayOfPart03Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3700
+     * @tc.name int8ArrayOfPart03Test037
      * @tc.desc Verify buffer byteLength of number-created array equals two
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       let actualBufferByteLength: int = arr.buffer.byteLength;
       let expectedBufferByteLength: int = 2;
@@ -743,15 +743,32 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3900
-     * @tc.name int8ArrayOfPart03Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3800
+     * @tc.name int8ArrayOfPart03Test038
      * @tc.desc Verify buffer byteLength of number-created array equals length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
+      let actualBufferByteLength: int = arr.buffer.byteLength;
+      let expectedBufferByteLength: int = arr.length;
+      expect(actualBufferByteLength).assertEqual(expectedBufferByteLength);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_3900
+     * @tc.name int8ArrayOfPart03Test039
+     * @tc.desc Verify buffer byteLength of byte-created array equals length
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayOfPart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b1: byte = 1;
+      const b2: byte = 2;
+      const arr = Int8Array.of(b1, b2);
       let actualBufferByteLength: int = arr.buffer.byteLength;
       let expectedBufferByteLength: int = arr.length;
       expect(actualBufferByteLength).assertEqual(expectedBufferByteLength);
@@ -760,30 +777,30 @@ export default function int8ArrayOfPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4000
      * @tc.name int8ArrayOfPart03Test040
-     * @tc.desc Verify buffer byteLength of byte-created array equals length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayOfPart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const b1: byte = 1;
-      const b2: byte = 2;
-      const arr = Int8Array.of(b1, b2);
-      let actualBufferByteLength: int = arr.buffer.byteLength;
-      let expectedBufferByteLength: int = arr.length;
-      expect(actualBufferByteLength).assertEqual(expectedBufferByteLength);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4100
-     * @tc.name int8ArrayOfPart03Test041
      * @tc.desc Verify join with dash returns 1-2 for of-created array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
+      let actualJoined: string = arr.join('-');
+      let expectedJoined: string = '1-2';
+      expect(actualJoined).assertEqual(expectedJoined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4100
+     * @tc.name int8ArrayOfPart03Test041
+     * @tc.desc Verify join with dash returns 1-2 for byte-created of array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayOfPart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const b1: byte = 1;
+      const b2: byte = 2;
+      const arr = Int8Array.of(b1, b2);
       let actualJoined: string = arr.join('-');
       let expectedJoined: string = '1-2';
       expect(actualJoined).assertEqual(expectedJoined);
@@ -792,29 +809,12 @@ export default function int8ArrayOfPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4200
      * @tc.name int8ArrayOfPart03Test042
-     * @tc.desc Verify join with dash returns 1-2 for byte-created of array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayOfPart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const b1: byte = 1;
-      const b2: byte = 2;
-      const arr = Int8Array.of(b1, b2);
-      let actualJoined: string = arr.join('-');
-      let expectedJoined: string = '1-2';
-      expect(actualJoined).assertEqual(expectedJoined);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4300
-     * @tc.name int8ArrayOfPart03Test043
      * @tc.desc Verify number indexOf(2) 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       let actualIndex: int = arr.indexOf(2);
       let expectedIndex: int = 1;
@@ -822,14 +822,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4400
-     * @tc.name int8ArrayOfPart03Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4300
+     * @tc.name int8ArrayOfPart03Test043
      * @tc.desc Verify includes finds one for byte-created of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b1: byte = 1;
       const b2: byte = 2;
       const arr = Int8Array.of(b1, b2);
@@ -838,14 +838,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4700
-     * @tc.name int8ArrayOfPart03Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4400
+     * @tc.name int8ArrayOfPart03Test044
      * @tc.desc Verify of reverse of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a1 = Int8Array.of(1, 2);
       const a2 = Int8Array.of(1, 2);
       a1.reverse();
@@ -855,14 +855,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4800
-     * @tc.name int8ArrayOfPart03Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4500
+     * @tc.name int8ArrayOfPart03Test045
      * @tc.desc Verify of fill of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a1 = Int8Array.of(1, 2);
       const a2 = Int8Array.of(1, 2);
       a1.fill(9);
@@ -872,14 +872,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4900
-     * @tc.name int8ArrayOfPart03Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4600
+     * @tc.name int8ArrayOfPart03Test046
      * @tc.desc Verify of sort of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a1 = Int8Array.of(2, 1);
       const a2 = Int8Array.of(2, 1);
       a1.sort();
@@ -889,14 +889,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5000
-     * @tc.name int8ArrayOfPart03Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4700
+     * @tc.name int8ArrayOfPart03Test047
      * @tc.desc Verify slice copy mutation does not affect source of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const copy = arr.slice();
       copy.$_set(0, 99);
@@ -906,14 +906,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5100
-     * @tc.name int8ArrayOfPart03Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4800
+     * @tc.name int8ArrayOfPart03Test048
      * @tc.desc Verify subarray view write visible in source of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const view = arr.subarray(0, 1);
       view.$_set(0, 99);
@@ -923,14 +923,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5200
-     * @tc.name int8ArrayOfPart03Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_4900
+     * @tc.name int8ArrayOfPart03Test049
      * @tc.desc Verify copyWithin copies second value to first index of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       arr.copyWithin(0, 1, 2);
       let actualValue: number = arr.$_get(0);
@@ -939,14 +939,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5300
-     * @tc.name int8ArrayOfPart03Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5000
+     * @tc.name int8ArrayOfPart03Test050
      * @tc.desc Verify of arrays equal before and after set mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const a1 = Int8Array.of(1, 2);
       const a2 = Int8Array.of(1, 2);
       let actualValue: number = a1.$_get(0);
@@ -959,14 +959,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5400
-     * @tc.name int8ArrayOfPart03Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5100
+     * @tc.name int8ArrayOfPart03Test051
      * @tc.desc Verify subarray shares buffer of source array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const view = arr.subarray(0, 1);
       let actualBuffer: ArrayBuffer = view.buffer;
@@ -975,14 +975,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5500
-     * @tc.name int8ArrayOfPart03Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5200
+     * @tc.name int8ArrayOfPart03Test052
      * @tc.desc Verify fill writes visible through subarray of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const view = arr.subarray(0, 2);
       arr.fill(9);
@@ -992,14 +992,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5600
-     * @tc.name int8ArrayOfPart03Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5300
+     * @tc.name int8ArrayOfPart03Test053
      * @tc.desc Verify set writes visible through subarray view of array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const view = arr.subarray(0, 2);
       arr.set(Int8Array.of(7, 8));
@@ -1009,14 +1009,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5700
-     * @tc.name int8ArrayOfPart03Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5400
+     * @tc.name int8ArrayOfPart03Test054
      * @tc.desc Verify toReversed keeps source of array and reverses first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2);
       const r = arr.toReversed();
       let originalValue: number = arr.$_get(0);
@@ -1028,14 +1028,14 @@ export default function int8ArrayOfPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5800
-     * @tc.name int8ArrayOfPart03Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_OF_PART03_TEST_5500
+     * @tc.name int8ArrayOfPart03Test055
      * @tc.desc Verify toSorted keeps source of array and sorts first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayOfPart03Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayOfPart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(2, 1);
       const r = arr.toSorted();
       let originalValue: number = arr.$_get(0);
