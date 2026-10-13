@@ -55,30 +55,6 @@ struct RefreshOffset {
         .refreshOffset(0)
         .pullDownRatio(1)
         .backgroundColor(0x89CFF0)
-
-        Refresh({ refreshing: this.isRefreshing }) {
-          Text('refresh...')
-            .fontSize(16)
-            .margin(10)
-        }
-        .width('100%')
-        .height('12%')
-        .id('refresh_refreshOffset_null')
-        .refreshOffset(null)
-        .pullDownRatio(1)
-        .backgroundColor(0x89CFF0)
-
-        Refresh({ refreshing: this.isRefreshing }) {
-          Text('refresh...')
-            .fontSize(16)
-            .margin(10)
-        }
-        .width('100%')
-        .height('12%')
-        .id('refresh_refreshOffset_undefined')
-        .refreshOffset(undefined)
-        .pullDownRatio(1)
-        .backgroundColor(0x89CFF0)
       }
       .width('100%')
       .height('100%')

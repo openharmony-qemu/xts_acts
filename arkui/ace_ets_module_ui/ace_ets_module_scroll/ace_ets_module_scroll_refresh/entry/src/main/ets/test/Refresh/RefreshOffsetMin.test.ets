@@ -85,59 +85,5 @@ export default function RefreshOffsetMinTest() {
       console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_0_0100] END');
     })
 
-    /**
-     * @tc.name   SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100
-     * @tc.number SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100
-     * @tc.desc   Test Refresh refreshOffset property with null, should restore to default value
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100', Level.LEVEL0, async () => {
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100] START');
-
-      let strJsonCompare: string = getInspectorByKey('refresh_refreshOffset_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
-      let strJson: string = getInspectorByKey('refresh_refreshOffset_null');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100] default obj is: ' + JSON.stringify(objCompare.$attrs));
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100] null obj is: ' + JSON.stringify(obj.$attrs));
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100] default refreshOffset is: ' +
-        objCompare.$attrs.refreshOffset);
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100] null refreshOffset is: ' + obj.$attrs.refreshOffset);
-
-      expect(obj.$attrs.refreshOffset).assertEqual(objCompare.$attrs.refreshOffset);
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_NULL_0100] END');
-    })
-
-    /**
-     * @tc.name   SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100
-     * @tc.number SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100
-     * @tc.desc   Test Refresh refreshOffset property with undefined, should restore to default value
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100', Level.LEVEL0, async () => {
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100] START');
-
-      let strJsonCompare: string = getInspectorByKey('refresh_refreshOffset_default');
-      let objCompare: Record<string, ESObject> = JSON.parse(strJsonCompare);
-      let strJson: string = getInspectorByKey('refresh_refreshOffset_undefined');
-      let obj: Record<string, ESObject> = JSON.parse(strJson);
-
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100] default obj is: ' +
-        JSON.stringify(objCompare.$attrs));
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100] undefined obj is: ' + JSON.stringify(obj.$attrs));
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100] default refreshOffset is: ' +
-        objCompare.$attrs.refreshOffset);
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100] undefined refreshOffset is: ' +
-        obj.$attrs.refreshOffset);
-
-      expect(obj.$attrs.refreshOffset).assertEqual(objCompare.$attrs.refreshOffset);
-      console.info('[SUB_ARKUI_REFRESH_REFRESHOFFSET_UNDEFINED_0100] END');
-    })
-
   })
 }

@@ -20,10 +20,10 @@ import { Driver, ON, Component, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
+ 
 export default function ColumnsTemplateItemFillPolicy() {
   describe('ColumnsTemplateItemFillPolicy', () => {
-
+ 
     beforeEach(async (): Promise<void> => {
       console.info('ColumnsTemplateItemFillPolicy beforeEach start');
       let options: router.RouterOptions = {
@@ -44,7 +44,7 @@ export default function ColumnsTemplateItemFillPolicy() {
       }
       console.info('ColumnsTemplateItemFillPolicy beforeEach end');
     });
-
+ 
     /**
      * @tc.name   columnsTemplateItemFillPolicy_static_0100
      * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_COLUMNSTEMPLATE_ITEMFILLPOLICY_STATIC_0100
@@ -60,7 +60,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         let driver: Driver = Driver.create();
         await CommonFunc.sleep(1000);
         let scrollComp = await driver.findComponent(ON.type('Scroll'));
-        await scrollComp.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm1Md2Lg3'));
+        await (scrollComp?.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm1Md2Lg3')) as Promise<Component>);
         await CommonFunc.sleep(500);
         let strJson: string = inspector.getInspectorByKey('lazyVGrid_columnsTemplate_sm1Md2Lg3');
         let obj = JSON.parseJsonElement(strJson);
@@ -76,7 +76,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   columnsTemplateItemFillPolicy_static_0200
      * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_COLUMNSTEMPLATE_ITEMFILLPOLICY_STATIC_0200
@@ -93,33 +93,39 @@ export default function ColumnsTemplateItemFillPolicy() {
         let driver: Driver = Driver.create();
         await CommonFunc.sleep(1000);
         let scrollComp = await driver.findComponent(ON.type('Scroll'));
-        await scrollComp.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm1Md2Lg3'));
+        await (scrollComp?.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm1Md2Lg3')) as Promise<Component>);
         await CommonFunc.sleep(500);
         let gridComp = await driver.findComponent(ON.id('lazyVGrid_columnsTemplate_sm1Md2Lg3'));
-        let gridRect = await gridComp.getBounds();
-        let type1_0_Comp = await driver.findComponent(ON.id('type1_0'));
-        let type1_0_rect = await type1_0_Comp.getBounds();
-        console.info('[columnsTemplateItemFillPolicy_static_0200] type1_0 left: ' + type1_0_rect.left +
-          ', top: ' + type1_0_rect.top);
-        let type1_1_Com = await driver.findComponent(ON.id('type1_1'));
-        let type1_1_rect = await type1_1_Comp.getBounds();
-        let type1_2_Comp = await driver.findComponent(ON.id('type1_2'));
-        let type1_2_rect = await type1_2_Comp.getBounds();
-        let type1_3_Comp = await driver.findComponent(ON.id('type1_3'));
-        let type1_3_rect = await type1_3_Comp.getBounds();
+        let gridRect = await (gridComp?.getBounds() as Promise<Rect>);
         const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
         let gridWidthVp: number = uiContext.px2vp(gridRect.right - gridRect.left);
         console.info('[columnsTemplateItemFillPolicy_static_0200] grid_width_vp: ' + gridWidthVp);
-
+        let type1_0_Comp = await driver.findComponent(ON.id('type1_0'));
+        let type1_0_rect = await (type1_0_Comp?.getBounds() as Promise<Rect>);
+        console.info('[columnsTemplateItemFillPolicy_static_0200] type1_0 left: ' + type1_0_rect.left +
+          ', top: ' + type1_0_rect.top);
+ 
         if (gridWidthVp < 600) {
+          await (scrollComp?.scrollSearch(ON.id('type1_1')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type1_1_Comp = await driver.findComponent(ON.id('type1_1'));
+          let type1_1_rect = await (type1_1_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0200] sm breakpoint, type1_1 left: ' +
             type1_1_rect.left);
           expect(type1_1_rect.left).assertEqual(type1_0_rect.left);
         } else if (gridWidthVp < 840) {
+          await (scrollComp?.scrollSearch(ON.id('type1_2')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type1_2_Comp = await driver.findComponent(ON.id('type1_2'));
+          let type1_2_rect = await (type1_2_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0200] md breakpoint, type1_2 left: ' +
             type1_2_rect.left);
           expect(type1_2_rect.left).assertEqual(type1_0_rect.left);
         } else {
+          await (scrollComp?.scrollSearch(ON.id('type1_3')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type1_3_Comp = await driver.findComponent(ON.id('type1_3'));
+          let type1_3_rect = await (type1_3_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0200] lg breakpoint, type1_3 left: ' +
             type1_3_rect.left);
           expect(type1_3_rect.left).assertEqual(type1_0_rect.left);
@@ -132,7 +138,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   columnsTemplateItemFillPolicy_static_0300
      * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_COLUMNSTEMPLATE_ITEMFILLPOLICY_STATIC_0300
@@ -148,7 +154,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         let driver: Driver = Driver.create();
         await CommonFunc.sleep(1000);
         let scrollComp = await driver.findComponent(ON.type('Scroll'));
-        await scrollComp.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm2Md3Lg5'));
+        await (scrollComp?.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm2Md3Lg5')) as Promise<Component>);
         await CommonFunc.sleep(1000);
         let strJson: string = inspector.getInspectorByKey('lazyVGrid_columnsTemplate_sm2Md3Lg5');
         let obj = JSON.parseJsonElement(strJson);
@@ -164,7 +170,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   columnsTemplateItemFillPolicy_static_0400
      * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_COLUMNSTEMPLATE_ITEMFILLPOLICY_STATIC_0400
@@ -181,32 +187,39 @@ export default function ColumnsTemplateItemFillPolicy() {
         let driver: Driver = Driver.create();
         await CommonFunc.sleep(1000);
         let scrollComp = await driver.findComponent(ON.type('Scroll'));
-        await scrollComp.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm2Md3Lg5'));
+        await (scrollComp?.scrollSearch(ON.id('lazyVGrid_columnsTemplate_sm2Md3Lg5')) as Promise<Component>);
         await CommonFunc.sleep(1000);
         let gridComp = await driver.findComponent(ON.id('lazyVGrid_columnsTemplate_sm2Md3Lg5'));
-        let gridRect = await gridComp.getBounds();
-        let type2_0_Comp = await driver.findComponent(ON.id('type2_0'));
-        let type2_0_rect = await type2_0_Comp.getBounds();
-        console.info('[columnsTemplateItemFillPolicy_static_0400] type2_0 left: ' + type2_0_rect.left +
-          ', top: ' + type2_0_rect.top);
-        let type2_2_Comp = await driver.findComponent(ON.id('type2_2'));
-        let type2_2_rectit driver.findComponent(ON.id('type2_3'));
-        let type2_3_rect = await type2_3_Comp.getBounds();
-        let type2_5_Comp = await driver.findComponent(ON.id('type2_5'));
-        let type2_5_rect = await type2_5_Comp.getBounds();
+        let gridRect = await (gridComp?.getBounds() as Promise<Rect>);
         const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
         let gridWidthVp: number = uiContext.px2vp(gridRect.right - gridRect.left);
         console.info('[columnsTemplateItemFillPolicy_static_0400] grid_width_vp: ' + gridWidthVp);
-
+        let type2_0_Comp = await driver.findComponent(ON.id('type2_0'));
+        let type2_0_rect = await (type2_0_Comp?.getBounds() as Promise<Rect>);
+        console.info('[columnsTemplateItemFillPolicy_static_0400] type2_0 left: ' + type2_0_rect.left +
+          ', top: ' + type2_0_rect.top);
+ 
         if (gridWidthVp < 600) {
+          await (scrollComp?.scrollSearch(ON.id('type2_2')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type2_2_Comp = await driver.findComponent(ON.id('type2_2'));
+          let type2_2_rect = await (type2_2_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0400] sm breakpoint, type2_2 left: ' +
             type2_2_rect.left);
           expect(type2_2_rect.left).assertEqual(type2_0_rect.left);
         } else if (gridWidthVp < 840) {
+          await (scrollComp?.scrollSearch(ON.id('type2_3')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type2_3_Comp = await driver.findComponent(ON.id('type2_3'));
+          let type2_3_rect = await (type2_3_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0400] md breakpoint, type2_3 left: ' +
             type2_3_rect.left);
           expect(type2_3_rect.left).assertEqual(type2_0_rect.left);
         } else {
+          await (scrollComp?.scrollSearch(ON.id('type2_5')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type2_5_Comp = await driver.findComponent(ON.id('type2_5'));
+          let type2_5_rect = await (type2_5_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0400] lg breakpoint, type2_5 left: ' +
             type2_5_rect.left);
           expect(type2_5_rect.left).assertEqual(type2_0_rect.left);
@@ -219,7 +232,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   columnsTemplateItemFillPolicy_static_0500
      * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_COLUMNSTEMPLATE_ITEMFILLPOLICY_STATIC_0500
@@ -235,7 +248,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         let driver: Driver = Driver.create();
         await CommonFunc.sleep(1000);
         let scrollComp = await driver.findComponent(ON.type('Scroll'));
-        await scrollComp.scrollSearch(ON.id('lazyVGrid_columnsTemplate_default'));
+        await (scrollComp?.scrollSearch(ON.id('lazyVGrid_columnsTemplate_default')) as Promise<Component>);
         await CommonFunc.sleep(1000);
         let strJson: string = inspector.getInspectorByKey('lazyVGrid_columnsTemplate_default');
         let obj = JSON.parseJsonElement(strJson);
@@ -251,7 +264,7 @@ export default function ColumnsTemplateItemFillPolicy() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   columnsTemplateItemFillPolicy_static_0600
      * @tc.number SUB_ARKUI_LAZYVGRIDLAYOUT_COLUMNSTEMPLATE_ITEMFILLPOLICY_STATIC_0600
@@ -268,33 +281,39 @@ export default function ColumnsTemplateItemFillPolicy() {
         let driver: Driver = Driver.create();
         await CommonFunc.sleep(1000);
         let scrollComp = await driver.findComponent(ON.type('Scroll'));
-        await scrollComp.scrollSearch(ON.id('type3_5'));
+        await (scrollComp?.scrollSearch(ON.id('lazyVGrid_columnsTemplate_default')) as Promise<Component>);
         await CommonFunc.sleep(1000);
         let gridComp = await driver.findComponent(ON.id('lazyVGrid_columnsTemplate_default'));
-        let gridRect = await gridComp.getBounds();
-        let type3_0_Comp = await driver.findComponent(ON.id('type3_0'));
-        let type3_0_rect = await type3_0_Comp.getBounds();
-        console.info('[columnsTemplateItemFillPolicy_static_0600] type3_0 left: ' + type3_0_rect.left +
-          ', top: ' + type3_0_rect.top);
-        let type3_2_Comp = await driver.findComponent(ON.id('type3_2'));
-        let type3_2_rect = await type3_2_Comp.getBounds();
-        let type3_3_Comp = await driver.findComponent(ON.id('type3_3'));
-        let type3_3_rect = await type3_3_Comp.getBounds();
-        let type3_5_Comp = await driver.findComponent(ON.id('type3_5'));
-        let type3_5_rect = await type3_5_Comp.getBounds();
+        let gridRect = await (gridComp?.getBounds() as Promise<Rect>);
         const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
         let gridWidthVp: number = uiContext.px2vp(gridRect.right - gridRect.left);
         console.info('[columnsTemplateItemFillPolicy_static_0600] grid_width_vp: ' + gridWidthVp);
-
+        let type3_0_Comp = await driver.findComponent(ON.id('type3_0'));
+        let type3_0_rect = await (type3_0_Comp?.getBounds() as Promise<Rect>);
+        console.info('[columnsTemplateItemFillPolicy_static_0600] type3_0 left: ' + type3_0_rect.left +
+          ', top: ' + type3_0_rect.top);
+ 
         if (gridWidthVp < 600) {
+          await (scrollComp?.scrollSearch(ON.id('type3_2')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type3_2_Comp = await driver.findComponent(ON.id('type3_2'));
+          let type3_2_rect = await (type3_2_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0600] sm breakpoint, type3_2 left: ' +
             type3_2_rect.left);
           expect(type3_2_rect.left).assertEqual(type3_0_rect.left);
         } else if (gridWidthVp < 840) {
+          await (scrollComp?.scrollSearch(ON.id('type3_3')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type3_3_Comp = await driver.findComponent(ON.id('type3_3'));
+          let type3_3_rect = await (type3_3_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0600] md breakpoint, type3_3 left: ' +
             type3_3_rect.left);
           expect(type3_3_rect.left).assertEqual(type3_0_rect.left);
         } else {
+          await (scrollComp?.scrollSearch(ON.id('type3_5')) as Promise<Component>);
+          await CommonFunc.sleep(500);
+          let type3_5_Comp = await driver.findComponent(ON.id('type3_5'));
+          let type3_5_rect = await (type3_5_Comp?.getBounds() as Promise<Rect>);
           console.info('[columnsTemplateItemFillPolicy_static_0600] lg breakpoint, type3_5 left: ' +
             type3_5_rect.left);
           expect(type3_5_rect.left).assertEqual(type3_0_rect.left);
