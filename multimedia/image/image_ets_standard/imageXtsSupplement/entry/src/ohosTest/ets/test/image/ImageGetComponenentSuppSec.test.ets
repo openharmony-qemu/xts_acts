@@ -700,7 +700,7 @@ export default function ImageGetComponentSuppSec() {
             expect().assertFail();
           }catch (error) {
             console.error(TAG, testName, `actual error code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(1);
+            expect(Number(error.code)).assertEqual(1);
           }
         });
         createPhotoOutput();
@@ -729,7 +729,7 @@ export default function ImageGetComponentSuppSec() {
             expect().assertFail();
           }catch (error) {
             console.error(TAG, testName, `actual error code: ${error.code}, message: ${error.message}`);
-            expect(error.code).assertEqual(1);
+            expect(Number(error.code)).assertEqual(1);
           }
         });
         createPhotoOutput();
