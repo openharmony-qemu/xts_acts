@@ -58,10 +58,9 @@ export default function PresetTest() {
     it('SUB_ARKUI_PRESET_TEST_0100',  Level.LEVEL0, async () => {
       console.info('PresetTest PresetTest0001 START');
       let driver = Driver.create();
-      console.info('PresetTest PresetTest0001 START');
       await CommonFunc.sleep(1000);
-      let textArea1 = await driver.findComponent(ON.id('textArea1_preset'));
-      await CommonFunc.sleep(500);
+      let strJson = getInspectorByKey('textArea1_preset');
+      console.info('PresetTest0001 obj is: ' + strJson);
       let textArea2 = await driver.findComponent(ON.id('textArea2_preset'));
       await CommonFunc.sleep(500);
       await textArea2.click()
@@ -81,7 +80,8 @@ export default function PresetTest() {
         await button3?.click();
         await CommonFunc.sleep(500);
       }
-      expect(1).assertEqual(1);
+      let obj: ESObject = JSON.parse(strJson);
+      expect(obj.$type).assertEqual('Text');
       console.info("[PresetTest0001] end");
     });
 
