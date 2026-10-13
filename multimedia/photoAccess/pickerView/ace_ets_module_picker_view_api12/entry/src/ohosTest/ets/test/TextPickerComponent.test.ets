@@ -5331,7 +5331,6 @@ export default function TextPicker() {
       await routeToUrl(options);
 
       let checkbox: Component = await driver.findComponent(ON.type('Checkbox'));
-
       if (checkbox === null) {
         console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
         router.back();
@@ -5353,23 +5352,25 @@ export default function TextPicker() {
         return;
       }
 
-      let leftX = bounds.left - 150;
-      let rightX = bounds.right + 200;
-      if (leftX > 0) {
-        await driver.click(leftX, centerY);
-        await CommonFunc.sleep(1000);
+      let checkboxComp: Component = await driver.findComponent(ON.type('Checkbox'));
+      if (checkboxComp !== null) {
+        await checkboxComp.click();
+        console.info('SUB_PHOTO_PICKER_TEST_0700 checkbox clicked');
+        await CommonFunc.sleep(500);
       }
-      if (rightX > 0) {
-        await driver.click(rightX, centerY);
-        await CommonFunc.sleep(1500);
+
+      let previewBtn: Component = await driver.findComponent(ON.id('previewButton'));
+      if (previewBtn !== null) {
+        await previewBtn.click();
+        console.info('SUB_PHOTO_PICKER_TEST_0700 previewButton clicked');
+        await CommonFunc.sleep(2000);
       }
 
       let bigImage: Component = await driver.findComponent(ON.type('Image'));
       if (bigImage !== null) {
         try {
-          console.info("SUB_PHOTO_PICKER_TEST_0700 executing pinchOut (Zoom In)...");
           await bigImage.pinchOut(2.0);
-          await CommonFunc.sleep(1500);
+          await CommonFunc.sleep(1000);
         } catch (e) {
           console.error("SUB_PHOTO_PICKER_TEST_0700 pinch execution failed: " + e.message);
         }
