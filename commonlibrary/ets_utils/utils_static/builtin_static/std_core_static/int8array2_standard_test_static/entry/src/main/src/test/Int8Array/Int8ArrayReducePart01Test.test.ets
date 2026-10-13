@@ -1004,14 +1004,14 @@ export default function int8ArrayReducePart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6000
-     * @tc.name int8ArrayReducePart01Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_5900
+     * @tc.name int8ArrayReducePart01Test059
      * @tc.desc Verify reduce 127 int8 currentValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([INT8_MAX]);
       let captured: number = 999;
       arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => {
@@ -1022,14 +1022,14 @@ export default function int8ArrayReducePart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6100
-     * @tc.name int8ArrayReducePart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6000
+     * @tc.name int8ArrayReducePart01Test060
      * @tc.desc Verify reduce 0 currentValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0]);
       let captured: number = 999;
       arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => {
@@ -1040,43 +1040,57 @@ export default function int8ArrayReducePart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6200
-     * @tc.name int8ArrayReducePart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6100
+     * @tc.name int8ArrayReducePart01Test061
      * @tc.desc Verify 128 -128 reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([128]);
       let result = arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => p + c, 0);
       expect(result).assertEqual(INT8_MIN);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6300
-     * @tc.name int8ArrayReducePart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6200
+     * @tc.name int8ArrayReducePart01Test062
      * @tc.desc Verify 255 -1 reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([255]);
       let result = arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => p + c, 0);
       expect(result).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6400
-     * @tc.name int8ArrayReducePart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6300
+     * @tc.name int8ArrayReducePart01Test063
      * @tc.desc Verify 256 0 reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([256]);
+      let result = arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => p + c, 0);
+      expect(result).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6400
+     * @tc.name int8ArrayReducePart01Test064
+     * @tc.desc Verify Number.NaN 0 reduce
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int8ArrayReducePart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr = new Int8Array([Number.NaN]);
       let result = arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => p + c, 0);
       expect(result).assertEqual(0);
     });
@@ -1084,26 +1098,12 @@ export default function int8ArrayReducePart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6500
      * @tc.name int8ArrayReducePart01Test065
-     * @tc.desc Verify Number.NaN 0 reduce
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayReducePart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int8Array([Number.NaN]);
-      let result = arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => p + c, 0);
-      expect(result).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6600
-     * @tc.name int8ArrayReducePart01Test066
      * @tc.desc Verify reduce on subarray view sums to 9
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base = new Int8Array([1, 2, 3, 4, 5]);
       let view = base.subarray(1, 4);
       let result = view.reduce<number>((p: number, c: number, i: int, a: Int8Array) => p + c, 0);
@@ -1111,14 +1111,14 @@ export default function int8ArrayReducePart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6700
-     * @tc.name int8ArrayReducePart01Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6600
+     * @tc.name int8ArrayReducePart01Test066
      * @tc.desc Verify reduce on filled array sums to 21
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array(3);
       arr.fill(7);
       let result = arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => p + c, 0);
@@ -1126,42 +1126,42 @@ export default function int8ArrayReducePart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6800
-     * @tc.name int8ArrayReducePart01Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6700
+     * @tc.name int8ArrayReducePart01Test067
      * @tc.desc Verify reduce callback records sign of each element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([-5, 3, -1]);
       let result = arr.reduce<string>((p: string, c: number, i: int, a: Int8Array) => p + (c < 0 ? '-' : '+'), '');
       expect(result).assertEqual('-+-');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6900
-     * @tc.name int8ArrayReducePart01Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6800
+     * @tc.name int8ArrayReducePart01Test068
      * @tc.desc Verify reduce callback counts positive elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([-5, 3, 7, -1, 2]);
       let result = arr.reduce<number>((p: number, c: number, i: int, a: Int8Array) => (c > 0 ? p + 1 : p), 0);
       expect(result).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_7000
-     * @tc.name int8ArrayReducePart01Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCE_PART01_6900
+     * @tc.name int8ArrayReducePart01Test069
      * @tc.desc Verify reduce callback U=string concatenates char codes 65,66,67
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReducePart01Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReducePart01Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([65, 66, 67]);
       let result: string = arr.reduce<string>((p: string, c: number, i: int, a: Int8Array): string => {
         return p.length === 0 ? c.toString() : p + ',' + c.toString();
