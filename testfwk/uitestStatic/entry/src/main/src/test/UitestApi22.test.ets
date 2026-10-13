@@ -242,8 +242,9 @@ export default function uitestDriverTestApi22(): void {
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()});
+        let disPlay = display.getDefaultDisplaySync();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()});
         await driver!.delayMs(5000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -299,8 +300,9 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 8000);
+        let disPlay = display.getDefaultDisplaySync();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()}, 8000);
         await driver!.delayMs(5000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -447,8 +449,9 @@ export default function uitestDriverTestApi22(): void {
       expect(longClickBtn != null).assertTrue();
       if (longClickBtn != null) {
         let center = await longClickBtn.getBoundsCenter();
+        let disPlay = display.getDefaultDisplaySync();
         await driver!.delayMs(waitUiReadyMs);
-        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center)
+        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), {x: center.x, y: center.y, displayId: disPlay.id.toInt()})
         expect(result).assertTrue();
         await driver!.delayMs(waitUiReadyMs);
         let longClickTextResultBtn = await driver!.findComponent(ON.id('longClickTextResult'));
@@ -532,8 +535,9 @@ export default function uitestDriverTestApi22(): void {
         let longClickBtn = await driver!.findComponent(ON.id('longClickBtn'));
         await driver!.delayMs(waitUiReadyMs);
         let center = await longClickBtn!.getBoundsCenter();
+        let disPlay = display.getDefaultDisplaySync();
         await driver!.delayMs(waitUiReadyMs);
-        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, undefined)
+        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), {x: center.x, y: center.y, displayId: disPlay.id.toInt()}, undefined)
         expect(result).assertTrue();
         await driver!.delayMs(waitUiReadyMs);
         let longClickTextResultBtn = await driver!.findComponent(ON.id('longClickTextResult'));
@@ -613,9 +617,10 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar != null) {
         let rect = await scrollBar.getBounds()
         let center = await scrollBar.getBoundsCenter()
+        let disPlay = display.getDefaultDisplaySync();
         let result = await driver!.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-          {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt()}, 9000)
+          {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()}, 200)
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static result, ${JSON.stringify(result)}`);
         expect(result).assertTrue();
       }
@@ -672,9 +677,10 @@ export default function uitestDriverTestApi22(): void {
         let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'))
         let rect = await scrollBar!.getBounds()
         let center = await scrollBar!.getBoundsCenter()
+        let disPlay = display.getDefaultDisplaySync();
         let result = await driver!.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-          { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt() },
-          { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt() }, undefined)
+          { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt() },
+          { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt() }, undefined)
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined_static result, ${JSON.stringify(result)}`);
         expect(result).assertTrue();
         let text = await driver!.findComponent(ON.text('toast'))
@@ -782,19 +788,19 @@ export default function uitestDriverTestApi22(): void {
         console.log(`${TestTag}, tesKnuckleKnockS_static play, ${JSON.stringify(play)}`);	
         let centerX = (play.width / 2).toInt();
         let centY = (play.height / 2).toInt();
-        let fivePoint: Point = {x: centerX - 40, y: centY - 80};
-        let sixPoint: Point = {x: centerX - 40, y: centY - 60};
-        let sevPoint: Point = {x: centerX - 40, y: centY - 40};
-        let eigPoint: Point = {x: centerX -40, y: centY - 20};
-        let niePoint: Point = {x: centerX - 40, y: centY };
-        let tenPoint: Point = {x: centerX - 20, y: centY};
-        let ten1Point: Point = {x: centerX, y: centY};
-        let ten2Point: Point = {x: centerX + 20, y: centY };
-        let ten3Point: Point = {x: centerX + 40, y: centY };
-        let ten4Point: Point = {x: centerX + 40, y: centY + 20};
-        let ten5Point: Point = {x: centerX + 40, y: centY + 40};
-        let ten6Point: Point = {x: centerX + 40, y: centY + 60};
-        let ten7Point: Point = {x: centerX + 40, y: centY + 80};
+        let fivePoint: Point = {x: centerX - 40, y: centY - 80, displayId: play.id.toInt()};
+        let sixPoint: Point = {x: centerX - 40, y: centY - 60, displayId: play.id.toInt()};
+        let sevPoint: Point = {x: centerX - 40, y: centY - 40, displayId: play.id.toInt()};
+        let eigPoint: Point = {x: centerX -40, y: centY - 20, displayId: play.id.toInt()};
+        let niePoint: Point = {x: centerX - 40, y: centY, displayId: play.id.toInt()};
+        let tenPoint: Point = {x: centerX - 20, y: centY, displayId: play.id.toInt()};
+        let ten1Point: Point = {x: centerX, y: centY, displayId: play.id.toInt()};
+        let ten2Point: Point = {x: centerX + 20, y: centY, displayId: play.id.toInt()};
+        let ten3Point: Point = {x: centerX + 40, y: centY, displayId: play.id.toInt()};
+        let ten4Point: Point = {x: centerX + 40, y: centY + 20, displayId: play.id.toInt()};
+        let ten5Point: Point = {x: centerX + 40, y: centY + 40, displayId: play.id.toInt()};
+        let ten6Point: Point = {x: centerX + 40, y: centY + 60, displayId: play.id.toInt()};
+        let ten7Point: Point = {x: centerX + 40, y: centY + 80, displayId: play.id.toInt()};
         let pointers = PointerMatrix.create(1,13);
         pointers.setPoint(0,0, fivePoint);
         pointers.setPoint(0,1, sixPoint);
@@ -843,13 +849,14 @@ export default function uitestDriverTestApi22(): void {
         if (scrollBar != null) {
           await driver!.delayMs(waitUiReadyMs);
           let center = await scrollBar.getBoundsCenter();
+          let disPlay = display.getDefaultDisplaySync();
           await driver!.delayMs(waitUiReadyMs);
-          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y}, UiDirection.UP, 300);
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y, displayId: disPlay.id.toInt()}, UiDirection.UP, 300);
           await driver!.delayMs(waitUiReadyMs);
           let text = await driver!.findComponent(ON.text('toast'));
           await driver!.delayMs(waitUiReadyMs);
           expect(text == null).assertTrue()
-          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y}, UiDirection.DOWN, 400, 5000);
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y, displayId: disPlay.id.toInt()}, UiDirection.DOWN, 400, 5000);
           let text1 = await driver!.findComponent(ON.text('toast'));
           await driver!.delayMs(waitUiReadyMs);
           expect(text1 != null).assertTrue()
@@ -883,15 +890,16 @@ export default function uitestDriverTestApi22(): void {
         let scrollBar = await driver!.findComponent(ON.type('Scroll').id('horizontalScroll'));
         await driver!.delayMs(waitUiReadyMs);
         let center = await scrollBar!.getBoundsCenter();
+        let disPlay = display.getDefaultDisplaySync();
         await driver!.delayMs(waitUiReadyMs);
-        await driver!.touchPadTwoFingersScroll({ x: center.x, y: center.y },
+        await driver!.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlay.id.toInt() },
           UiDirection.LEFT, 600, 5000);
         await driver!.delayMs(waitUiReadyMs);
         let scroll11 = await driver!.findComponent(ON.text('1_hor'));
         await driver!.delayMs(waitUiReadyMs);
         expect(scroll11 == null).assertTrue();
         await driver!.delayMs(waitUiReadyMs);
-        await driver!.touchPadTwoFingersScroll({ x: center.x, y: center.y },
+        await driver!.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlay.id.toInt() },
           UiDirection.RIGHT, 800);
         await driver!.delayMs(waitUiReadyMs);
         let scroll111 = await driver!.findComponent(ON.text('1_hor'));
