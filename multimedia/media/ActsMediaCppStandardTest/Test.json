@@ -19,12 +19,7 @@
     },
     {
       "type": "ShellKit",
-      "run-command": [
-        "mkdir -p /data/app/el2/100/base/com.example.actsmediacppstandardtest/haps/entry_test/files",
-        "chmod 777 -R /data/app/el2/100/base/com.example.actsmediacppstandardtest/haps/entry_test/files",
-        "power-shell wakeup",
-        "power-shell setmode 602"
-      ]
+      "run-command": []
     },
     {
       "type": "PushKit",
