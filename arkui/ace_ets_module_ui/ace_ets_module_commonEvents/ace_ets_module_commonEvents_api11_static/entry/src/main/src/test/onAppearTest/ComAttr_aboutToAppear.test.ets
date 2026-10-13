@@ -31,12 +31,13 @@ import {
   UIEventObserver,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 
 export default function aboutToAppearTest() {

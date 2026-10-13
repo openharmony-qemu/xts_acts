@@ -16,7 +16,7 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -25,6 +25,7 @@ import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function getCurrentLocalPositionTest_MouseEvent(): void{
   describe('getCurrentLocalPositionTest_MouseEvent', () => {

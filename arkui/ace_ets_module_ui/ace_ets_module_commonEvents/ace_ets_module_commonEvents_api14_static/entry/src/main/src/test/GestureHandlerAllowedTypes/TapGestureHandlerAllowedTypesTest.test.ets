@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON, Component, MouseButton } from '@ohos.UiTest';
+import { Driver, ON, Component, MouseButton } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../ets/MainAbility/common/Rect';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function TapGestureHandlerAllowedTypesTest() {
   describe('TapGestureHandlerAllowedTypesTest', () => {
     beforeEach(async (): Promise<void> => {

@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, MouseButton, ON, Point, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, MouseButton, ON, Point, PointerMatrix } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function panGestureTest() {
   describe('PanGestureTest', () => {
     beforeEach(async (): Promise<void> => {

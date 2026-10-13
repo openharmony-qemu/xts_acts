@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,12 +25,13 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 const uiContext = new UIContext();
 

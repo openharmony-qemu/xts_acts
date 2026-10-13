@@ -20,8 +20,9 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
+
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function pinchGestureTest() {
   describe('PinchGestureTest', () => {
