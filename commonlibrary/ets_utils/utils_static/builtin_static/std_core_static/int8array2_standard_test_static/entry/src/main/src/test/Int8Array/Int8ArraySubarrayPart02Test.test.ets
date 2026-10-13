@@ -47,14 +47,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     const INT8_MIN = -128;
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0200
-     * @tc.name int8ArraySubarrayPart02Test002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0100
+     * @tc.name int8ArraySubarrayPart02Test001
      * @tc.desc Verify subarray(1) positive index returns 1-byte typed array view sharing src buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1);
       let actualBytesPerElement: int = view.BYTES_PER_ELEMENT;
@@ -66,14 +66,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0400
-     * @tc.name int8ArraySubarrayPart02Test004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0200
+     * @tc.name int8ArraySubarrayPart02Test002
      * @tc.desc Verify subarray(length) out-of-bounds returns 1-byte typed array view sharing src buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(5);
       let actualBytesPerElement: int = view.BYTES_PER_ELEMENT;
@@ -85,14 +85,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0500
-     * @tc.name int8ArraySubarrayPart02Test005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0300
+     * @tc.name int8ArraySubarrayPart02Test003
      * @tc.desc Verify subarray(0,1) single-element view shares buffer and keeps first value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(0, 1);
       let actualBytesPerElement: int = view.BYTES_PER_ELEMENT;
@@ -107,14 +107,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0700
-     * @tc.name int8ArraySubarrayPart02Test007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0400
+     * @tc.name int8ArraySubarrayPart02Test004
      * @tc.desc Verify subarray(-2,-1) double-negative view returns 1-byte typed array view sharing src buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(-2, -1);
       let actualBytesPerElement: int = view.BYTES_PER_ELEMENT;
@@ -126,14 +126,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0800
-     * @tc.name int8ArraySubarrayPart02Test008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0500
+     * @tc.name int8ArraySubarrayPart02Test005
      * @tc.desc Verify subarray() view preserves signed negative values (not Uint8Array behavior)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(-10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray();
       let actualFirstElement: number = view[0];
@@ -142,14 +142,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1200
-     * @tc.name int8ArraySubarrayPart02Test012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0600
+     * @tc.name int8ArraySubarrayPart02Test006
      * @tc.desc Verify subarray(1) view first element equals src index 1 element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(11, 22, 33, 44, 55);
       let view: Int8Array = src.subarray(1);
       let actualFirstElement: number = view[0];
@@ -158,14 +158,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1600
-     * @tc.name int8ArraySubarrayPart02Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0700
+     * @tc.name int8ArraySubarrayPart02Test007
      * @tc.desc Verify subarray(-2) view elements equal last 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(11, 22, 33, 44, 55);
       let view: Int8Array = src.subarray(-2);
       let actualFirstElement: number = view[0];
@@ -177,14 +177,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1700
-     * @tc.name int8ArraySubarrayPart02Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0800
+     * @tc.name int8ArraySubarrayPart02Test008
      * @tc.desc Verify subarray(-2,-1) view only contains second-to-last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(11, 22, 33, 44, 55);
       let view: Int8Array = src.subarray(-2, -1);
       let actualFirstElement: number = view[0];
@@ -193,14 +193,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1800
-     * @tc.name int8ArraySubarrayPart02Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_0900
+     * @tc.name int8ArraySubarrayPart02Test009
      * @tc.desc Verify subarray(0,2) view elements equal first 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(11, 22, 33, 44, 55);
       let view: Int8Array = src.subarray(0, 2);
       let actualFirstElement: number = view[0];
@@ -212,14 +212,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2300
-     * @tc.name int8ArraySubarrayPart02Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1000
+     * @tc.name int8ArraySubarrayPart02Test010
      * @tc.desc Verify subarray(0, length+100) end out-of-bounds clipped to end, last element correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(11, 22, 33, 44, 55);
       let view: Int8Array = src.subarray(0, 105);
       let actualLastElement: number = view[4];
@@ -228,14 +228,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2400
-     * @tc.name int8ArraySubarrayPart02Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1100
+     * @tc.name int8ArraySubarrayPart02Test011
      * @tc.desc Verify subarray(-100) negative out-of-bounds normalized to 0, first element correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(11, 22, 33, 44, 55);
       let view: Int8Array = src.subarray(-100);
       let actualFirstElement: number = view[0];
@@ -244,14 +244,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2500
-     * @tc.name int8ArraySubarrayPart02Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1200
+     * @tc.name int8ArraySubarrayPart02Test012
      * @tc.desc Verify subarray view containing boundary element 127 value correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(127, 1, 2);
       let view: Int8Array = src.subarray(0, 1);
       let actualFirstElement: number = view[0];
@@ -260,14 +260,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2600
-     * @tc.name int8ArraySubarrayPart02Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1300
+     * @tc.name int8ArraySubarrayPart02Test013
      * @tc.desc Verify subarray view containing boundary element -128 value correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(-128, 1, 2);
       let view: Int8Array = src.subarray(0, 1);
       let actualFirstElement: number = view[0];
@@ -276,14 +276,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2700
-     * @tc.name int8ArraySubarrayPart02Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1400
+     * @tc.name int8ArraySubarrayPart02Test014
      * @tc.desc Verify subarray view shows truncated two hundred as negative fifty six
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = new Int8Array([200, 1, 2]);
       let view: Int8Array = src.subarray(0, 1);
       let actualFirstElement: number = view[0];
@@ -292,14 +292,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2800
-     * @tc.name int8ArraySubarrayPart02Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1500
+     * @tc.name int8ArraySubarrayPart02Test015
      * @tc.desc Verify subarray() length equals src length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray();
       let actualViewLength: int = view.length;
@@ -308,14 +308,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2900
-     * @tc.name int8ArraySubarrayPart02Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1600
+     * @tc.name int8ArraySubarrayPart02Test016
      * @tc.desc Verify subarray(1) length equals src length minus 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1);
       let actualViewLength: int = view.length;
@@ -324,14 +324,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3000
-     * @tc.name int8ArraySubarrayPart02Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1700
+     * @tc.name int8ArraySubarrayPart02Test017
      * @tc.desc Verify subarray(1,3) length equals 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1, 3);
       let actualViewLength: int = view.length;
@@ -340,14 +340,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3100
-     * @tc.name int8ArraySubarrayPart02Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1800
+     * @tc.name int8ArraySubarrayPart02Test018
      * @tc.desc Verify subarray(0, 0) length equals 0 on an of()-created array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(0, 0);
       let actualViewLength: int = view.length;
@@ -356,14 +356,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3200
-     * @tc.name int8ArraySubarrayPart02Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_1900
+     * @tc.name int8ArraySubarrayPart02Test019
      * @tc.desc Verify subarray(length) length equals 0 on an of()-created array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(5);
       let actualViewLength: int = view.length;
@@ -372,14 +372,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3300
-     * @tc.name int8ArraySubarrayPart02Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2000
+     * @tc.name int8ArraySubarrayPart02Test020
      * @tc.desc Verify subarray(-2) length equals 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(-2);
       let actualViewLength: int = view.length;
@@ -388,14 +388,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3400
-     * @tc.name int8ArraySubarrayPart02Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2100
+     * @tc.name int8ArraySubarrayPart02Test021
      * @tc.desc Verify subarray(-2,-1) length equals 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(-2, -1);
       let actualViewLength: int = view.length;
@@ -404,14 +404,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3500
-     * @tc.name int8ArraySubarrayPart02Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2200
+     * @tc.name int8ArraySubarrayPart02Test022
      * @tc.desc Verify subarray(1,-1) length equals src length minus 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1, -1);
       let actualViewLength: int = view.length;
@@ -420,14 +420,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3600
-     * @tc.name int8ArraySubarrayPart02Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2300
+     * @tc.name int8ArraySubarrayPart02Test023
      * @tc.desc Verify subarray(0, length+100) length clipped to src length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(0, 105);
       let actualViewLength: int = view.length;
@@ -436,14 +436,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3700
-     * @tc.name int8ArraySubarrayPart02Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2400
+     * @tc.name int8ArraySubarrayPart02Test024
      * @tc.desc Verify subarray(length, length+5) length equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(5, 10);
       let actualViewLength: int = view.length;
@@ -452,14 +452,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3800
-     * @tc.name int8ArraySubarrayPart02Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2500
+     * @tc.name int8ArraySubarrayPart02Test025
      * @tc.desc Verify subarray() byteOffset equals src byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray();
       let actualByteOffset: int = view.byteOffset;
@@ -468,14 +468,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3900
-     * @tc.name int8ArraySubarrayPart02Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2600
+     * @tc.name int8ArraySubarrayPart02Test026
      * @tc.desc Verify subarray(1) byteOffset equals src byteOffset plus 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1);
       let actualByteOffset: int = view.byteOffset;
@@ -484,14 +484,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4000
-     * @tc.name int8ArraySubarrayPart02Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2700
+     * @tc.name int8ArraySubarrayPart02Test027
      * @tc.desc Verify subarray(2,4) byteOffset equals src byteOffset plus 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(2, 4);
       let actualByteOffset: int = view.byteOffset;
@@ -500,14 +500,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4100
-     * @tc.name int8ArraySubarrayPart02Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2800
+     * @tc.name int8ArraySubarrayPart02Test028
      * @tc.desc Verify subarray(-2) byteOffset equals src byteOffset plus (src length minus 2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(-2);
       let actualByteOffset: int = view.byteOffset;
@@ -516,14 +516,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4200
-     * @tc.name int8ArraySubarrayPart02Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_2900
+     * @tc.name int8ArraySubarrayPart02Test029
      * @tc.desc Verify subarray(length) byteOffset equals src byteOffset plus src length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(5);
       let actualByteOffset: int = view.byteOffset;
@@ -532,14 +532,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4300
-     * @tc.name int8ArraySubarrayPart02Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3000
+     * @tc.name int8ArraySubarrayPart02Test030
      * @tc.desc Verify subarray(1) call does not change src length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       src.subarray(1);
       let actualSrcLength: int = src.length;
@@ -548,14 +548,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4400
-     * @tc.name int8ArraySubarrayPart02Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3100
+     * @tc.name int8ArraySubarrayPart02Test031
      * @tc.desc Verify subarray(1,3) call does not change src first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       src.subarray(1, 3);
       let actualSrcFirstElement: number = src[0];
@@ -564,14 +564,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4500
-     * @tc.name int8ArraySubarrayPart02Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3200
+     * @tc.name int8ArraySubarrayPart02Test032
      * @tc.desc Verify subarray(1,3) call does not change src last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       src.subarray(1, 3);
       let actualSrcLastElement: number = src[4];
@@ -580,14 +580,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4600
-     * @tc.name int8ArraySubarrayPart02Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3300
+     * @tc.name int8ArraySubarrayPart02Test033
      * @tc.desc Verify subarray(-2) call does not change src first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       src.subarray(-2);
       let actualSrcFirstElement: number = src[0];
@@ -596,14 +596,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4800
-     * @tc.name int8ArraySubarrayPart02Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3400
+     * @tc.name int8ArraySubarrayPart02Test034
      * @tc.desc Verify subarray(length) call does not change src elements one by one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       src.subarray(src.length);
       let actualSrcFourthElement: number = src[3];
@@ -615,14 +615,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4900
-     * @tc.name int8ArraySubarrayPart02Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3500
+     * @tc.name int8ArraySubarrayPart02Test035
      * @tc.desc Verify subarray().subarray() chained return is 1-byte typed array view sharing src buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray().subarray();
       let actualBytesPerElement: int = view.BYTES_PER_ELEMENT;
@@ -634,14 +634,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_5000
-     * @tc.name int8ArraySubarrayPart02Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3600
+     * @tc.name int8ArraySubarrayPart02Test036
      * @tc.desc Verify subarray(1).subarray(1) equivalent to subarray(2) first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1).subarray(1);
       let actualFirstElement: number = view[0];
@@ -650,14 +650,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_5100
-     * @tc.name int8ArraySubarrayPart02Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3700
+     * @tc.name int8ArraySubarrayPart02Test037
      * @tc.desc Verify subarray(1,3).subarray(1) equivalent to subarray(2,3) element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1, 3).subarray(1);
       let actualFirstElement: number = view[0];
@@ -666,14 +666,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_5200
-     * @tc.name int8ArraySubarrayPart02Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3800
+     * @tc.name int8ArraySubarrayPart02Test038
      * @tc.desc Verify subarray(0,2).subarray(0,1) element correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(0, 2).subarray(0, 1);
       let actualFirstElement: number = view[0];
@@ -682,14 +682,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_5300
-     * @tc.name int8ArraySubarrayPart02Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_3900
+     * @tc.name int8ArraySubarrayPart02Test039
      * @tc.desc Verify subarray().subarray().subarray() triple chain length equals src length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray().subarray().subarray();
       let actualViewLength: int = view.length;
@@ -698,14 +698,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_5400
-     * @tc.name int8ArraySubarrayPart02Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4000
+     * @tc.name int8ArraySubarrayPart02Test040
      * @tc.desc Verify subarray(1).subarray(0,1) length equals 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1).subarray(0, 1);
       let actualViewLength: int = view.length;
@@ -714,14 +714,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_5500
-     * @tc.name int8ArraySubarrayPart02Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4100
+     * @tc.name int8ArraySubarrayPart02Test041
      * @tc.desc Verify subarray(-2).subarray(-1) first element equals src last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(-2).subarray(-1);
       let actualFirstElement: number = view[0];
@@ -730,14 +730,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_6100
-     * @tc.name int8ArraySubarrayPart02Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4200
+     * @tc.name int8ArraySubarrayPart02Test042
      * @tc.desc Verify offset-constructed view subarray byteOffset accumulates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(10);
       let src: Int8Array = new Int8Array(buf, 2, 5);
       let view: Int8Array = src.subarray(1);
@@ -747,14 +747,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_6200
-     * @tc.name int8ArraySubarrayPart02Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4300
+     * @tc.name int8ArraySubarrayPart02Test043
      * @tc.desc Verify offset-constructed view subarray(0) byteOffset equals src byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(10);
       let src: Int8Array = new Int8Array(buf, 2, 5);
       let view: Int8Array = src.subarray(0);
@@ -764,14 +764,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_6800
-     * @tc.name int8ArraySubarrayPart02Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4400
+     * @tc.name int8ArraySubarrayPart02Test044
      * @tc.desc Verify subarray(1) view length change does not affect src length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1);
       let actualSrcLength: int = src.length;
@@ -783,14 +783,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_6900
-     * @tc.name int8ArraySubarrayPart02Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4500
+     * @tc.name int8ArraySubarrayPart02Test045
      * @tc.desc Verify subarray view element set keeps src byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1, 3);
       view[0] = 99;
@@ -800,14 +800,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_7000
-     * @tc.name int8ArraySubarrayPart02Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4600
+     * @tc.name int8ArraySubarrayPart02Test046
      * @tc.desc Verify subarray(1,3) modify view element reflected in src index 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(1, 3);
       view[0] = 50;
@@ -817,14 +817,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_7100
-     * @tc.name int8ArraySubarrayPart02Test071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4700
+     * @tc.name int8ArraySubarrayPart02Test047
      * @tc.desc Verify subarray(2) modify view element to -128 reflected in src index 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let view: Int8Array = src.subarray(2);
       view[0] = -128;
@@ -834,14 +834,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_7200
-     * @tc.name int8ArraySubarrayPart02Test072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4800
+     * @tc.name int8ArraySubarrayPart02Test048
      * @tc.desc Verify subarray() on empty buffer length equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = new Int8Array(new ArrayBuffer(0));
       let view: Int8Array = src.subarray();
       let actualViewLength: int = view.length;
@@ -850,14 +850,14 @@ export default function int8ArraySubarrayPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_7300
-     * @tc.name int8ArraySubarrayPart02Test073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART02_TEST_4900
+     * @tc.name int8ArraySubarrayPart02Test049
      * @tc.desc Verify subarray() on empty buffer buffer same reference as src buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart02Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int8Array = new Int8Array(new ArrayBuffer(0));
       let view: Int8Array = src.subarray();
       let actualViewBuffer: ArrayBuffer = view.buffer;
