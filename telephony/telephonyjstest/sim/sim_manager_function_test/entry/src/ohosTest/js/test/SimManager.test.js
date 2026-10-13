@@ -311,12 +311,19 @@ export default function SimManagerTest() {
      * @tc.level  LEVEL1
      */
     it('Telephony_Sim_isSimActive_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+      const CASE_NAME = 'Telephony_Sim_isSimActive_Async_0700';
       sim.isSimActive(env.SLOTID_INVALID, (err, data) => {
         if (err) {
-          console.info("isSimActive async err info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
-          expect(err.code).assertEqual(8300001);
-          done();
-        } else {
+          if (err === undefined) {
+            console.info(CASE_NAME + " isSimActive async err info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
+            expect(data).assertEqual(false);
+            done();
+          } else {
+            console.info(CASE_NAME + "isSimActive async err info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
+            expect(err.code).assertEqual(8300001);
+            done();
+          }
+        } else{
           console.info("isSimActive async data info :" + "data:" + JSON.stringify(data));
           expect(data).assertEqual(false);
           done();
