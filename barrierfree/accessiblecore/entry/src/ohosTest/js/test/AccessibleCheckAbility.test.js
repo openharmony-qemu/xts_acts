@@ -670,6 +670,12 @@ describe('AccessibleCheckAbilityAdapt001', function () {
         let result = false;
         const callback_1 = (data) => {
             console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000 callback data: ${data}`);
+            if (data.focusedElement) {
+                expect(data.focusedElement).assertEqual(undefined);
+            }
+            if (data.unfocusedElement) {
+                expect(data.unfocusedElement).assertEqual(undefined);
+            }
         };
         try {
             accessibility.onUIAccessibilityFocusChanged(callback_1);

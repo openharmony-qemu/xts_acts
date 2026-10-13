@@ -1258,6 +1258,12 @@ export default function abilityTest() {
         hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800');
         let callbackdata = (data: accessibility.UIAccessibilityFocusChangeInfo) => {
           hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800 callback');
+          if (data.focusedElement) {
+            expect(data.focusedElement).assertEqual(undefined);
+          }
+          if (data.unfocusedElement) {
+            expect(data.unfocusedElement).assertEqual(undefined);
+          }
         }
         let result = false;
         try {
