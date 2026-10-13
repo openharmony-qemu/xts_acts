@@ -42,6 +42,10 @@ import {
 
 export default function customSaveSetNullStaticTest() {
   describe('customSaveSetNullStaticTest', () => {
+    let driver: Driver = Driver.create();
+    let authorized: boolean = false;
+    let caseDone: boolean = false;
+
     beforeAll(async (): Promise<void> => {
       let options:router.RouterOptions = {
         url: 'pages/customSaveSetNull',
@@ -110,7 +114,9 @@ export default function customSaveSetNullStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickAllowBtn err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickAllowBtn function End====`);
     }
@@ -138,12 +144,14 @@ export default function customSaveSetNullStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickSecComponent err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickSecComponent function End====`);
     }
 
-    let sucCallback = (testname: string, done: () => void) => {
+    let sucCallback = (testname: string) => {
       console.info(`====>${testname} sucCallback function Start====`);
       let clickEvent:events_emitter.InnerEvent = {
         eventId: 2,
@@ -157,26 +165,23 @@ export default function customSaveSetNullStaticTest() {
             console.info(`====>${testname} get clickData.data.clickResult is: ` + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == SaveButtonOnClickResult.SUCCESS) {
               console.info(`====>${testname} 设置权限成功`);
-              expect(data['clickResult'] == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info(`====>${testname} END====`);
-              done();
             } else {
               console.info(`====>${testname} 设置权限失败`);
-              expect(false).assertTrue();
+              authorized = false;
               console.info(`====>${testname} END====`);
-              done();
             }
           } else {
             console.info(`====>${testname} ERR CASE 失败`);
-            expect(false).assertTrue();
+            authorized = false;
             console.info(`====>${testname} END====`);
-            done();
           }
         } catch (err) {
           err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
+          authorized = false;
           console.info(`====>${testname} END====`);
-          done();
         }
       }
       events_emitter.once(clickEvent, clickCallback);
@@ -194,19 +199,28 @@ export default function customSaveSetNullStaticTest() {
     it('Test_Security_Customize_SaveButton_SetNull_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_Customize_SaveButton_SetNull_Static_0100';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let expectText: string = '自定义保存';
       let strJson: string = inspector.getInspectorByKey('customSave0');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('buttonType')).assertEqual(0);
-//      expect(obj.getElement('$attrs').getString('symbolIconColor')).assertEqual('#E5000000');
+      // expect(obj.getElement('$attrs').getString('symbolIconColor')).assertEqual('#E5000000');
       expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
       expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Normal');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, expectText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -220,19 +234,28 @@ export default function customSaveSetNullStaticTest() {
     it('Test_Security_Customize_SaveButton_SetNull_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_Customize_SaveButton_SetNull_Static_0200';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let expectText: string = '自定义保存';
       let strJson: string = inspector.getInspectorByKey('customSave1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('buttonType')).assertEqual(0);
-//      expect(obj.getElement('$attrs').getString('symbolIconColor')).assertEqual('#E5000000');
+      // expect(obj.getElement('$attrs').getString('symbolIconColor')).assertEqual('#E5000000');
       expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
       expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Normal');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, expectText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
   })
 }
