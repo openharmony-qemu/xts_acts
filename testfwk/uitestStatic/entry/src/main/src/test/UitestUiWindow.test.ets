@@ -535,7 +535,7 @@ export default function uitestUiWindowTest(): void {
         let resizey = Math.floor(bounds1y / 2).toInt()
         await windowFloat!.resize(bounds1x, resizey, ResizeDirection.DOWN)
         await driver!.delayMs(waitUiReadyMs)
-        let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+        let window2 = await driver!.findWindow({ bundleName: 'com.uitestScene.acts' })
         console.log(`${TestTag}, testWindowResizeB_float_static findWindow2 success, ${JSON.stringify(window2)}`);
         let bounds2 = await window2!.getBounds()
         console.log(`${TestTag}, testWindowResizeB_float_static getBounds2 success, ${JSON.stringify(bounds2)}`);
@@ -564,8 +564,9 @@ export default function uitestUiWindowTest(): void {
         expect(bounds8.left != bounds9.left).assertTrue()
         await window9!.resize(bounds1x, bounds1y, ResizeDirection.LEFT)
       } catch (error) {
-        console.log('testWindowResizeB_float_static error is ' + error)
-        expect(error.code === WindowsErrorCode).assertTrue()
+        error = error as BusinessError;
+        console.log('testWindowResizeB_float_static error is ' + JSON.stringify(error))
+        expect((error as BusinessError).code === WindowsErrorCode).assertTrue()
       }
     })
 
@@ -600,8 +601,9 @@ export default function uitestUiWindowTest(): void {
           await window6!.resize(bounds1x, bounds1y, ResizeDirection.UP)
         }
       } catch (error) {
-        console.log('testWindowResizeB_UP_float_static error is ' + error)
-        expect(error.code === WindowsErrorCode).assertTrue()
+        error = error as BusinessError;
+        console.log('testWindowResizeB_UP_float_static error is ' + JSON.stringify(error))
+        expect((error as BusinessError).code === WindowsErrorCode).assertTrue()
       }
     })
 
