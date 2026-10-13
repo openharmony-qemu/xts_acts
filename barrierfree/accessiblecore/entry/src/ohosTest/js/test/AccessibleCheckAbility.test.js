@@ -630,6 +630,62 @@ describe('AccessibleCheckAbilityAdapt001', function () {
         }
     })
 
-})
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_7900
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_7900
+     * @tc.desc   Test getFocusedUIAccessibilityElement() function in promise mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_7900', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_7900');
+        let result = false;
+        try {
+            let element = await accessibility.getFocusedUIAccessibilityElement();
+            console.info('testtest Focused UI element: ' + JSON.stringify(element));
+            result = true;
+        } catch (err) {
+            if (err && err.code != 0){
+                console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_7900 try has error: ${err.code}`);
+                expect(null).assertFail();
+                done();
+            }
+        }
+        await sleep(1000);
+        expect(result).assertEqual(true);
+        done();
+    })
 
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000
+     * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000
+     * @tc.desc   Test onSeniorModeStateChangeForSelf() function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000');
+        let result = false;
+        const callback_1 = (data) => {
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000 callback data: ${data}`);
+        };
+        try {
+            accessibility.onUIAccessibilityFocusChanged(callback_1);
+            accessibility.offUIAccessibilityFocusChanged(callback_1);
+            accessibility.offUIAccessibilityFocusChanged();
+            console.info('AccessibilityApi: SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000 onUIAccessibilityFocusChanged success');
+            result = true;
+        } catch (exception) {
+            console.error('SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_8000 failed to onUIAccessibilityFocusChanged because ' + JSON.stringify(exception));
+            expect(null).assertFail();
+            done();
+        }
+        await sleep(1000);
+        expect(result).assertEqual(true);
+        done();
+    })
+
+})
 }
