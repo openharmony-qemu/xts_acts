@@ -70,6 +70,7 @@ export default function RichEditorStrokeJoinStyleTest() {
     it('richEditorStrokeJoinStyle_miter_join_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorStrokeJoinStyle_miter_join_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_strokeJoinStyle_miter_join'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);
@@ -90,6 +91,7 @@ export default function RichEditorStrokeJoinStyleTest() {
     it('richEditorStrokeJoinStyle_round_join_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorStrokeJoinStyle_round_join_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_strokeJoinStyle_round_join'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);
@@ -110,6 +112,7 @@ export default function RichEditorStrokeJoinStyleTest() {
     it('richEditorStrokeJoinStyle_bevel_join_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorStrokeJoinStyle_bevel_join_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_strokeJoinStyle_bevel_join'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);
@@ -130,6 +133,7 @@ export default function RichEditorStrokeJoinStyleTest() {
     it('richEditorStrokeJoinStyle_undefined_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorStrokeJoinStyle_undefined_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btnUndefined = await driver.findComponent(ON.id('btn_strokeJoinStyle_undefined'));
       expect(btnUndefined).not().assertUndefined();
       await (btnUndefined?.click()as Promise<void>);
@@ -155,6 +159,7 @@ export default function RichEditorStrokeJoinStyleTest() {
     it('richEditorStrokeJoinStyle_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorStrokeJoinStyle_default_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_strokeJoinStyle_default'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);

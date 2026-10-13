@@ -74,6 +74,7 @@ export default function RichEditorShaderStyleTest() {
     it('richEditorShaderStyle_linear_gradient_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_linear_gradient_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_shaderStyle_linear_gradient'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);
@@ -99,6 +100,7 @@ export default function RichEditorShaderStyleTest() {
     it('richEditorShaderStyle_radial_gradient_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_radial_gradient_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_shaderStyle_radial_gradient'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);
@@ -125,6 +127,7 @@ export default function RichEditorShaderStyleTest() {
     it('richEditorShaderStyle_color_shader_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_color_shader_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_shaderStyle_color_shader'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);
@@ -145,6 +148,7 @@ export default function RichEditorShaderStyleTest() {
     it('richEditorShaderStyle_undefined_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_undefined_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btnUndefined = await driver.findComponent(ON.id('btn_shaderStyle_undefined'));
       expect(btnUndefined).not().assertUndefined();
       await (btnUndefined?.click()as Promise<void>);
@@ -170,6 +174,7 @@ export default function RichEditorShaderStyleTest() {
     it('richEditorShaderStyle_default_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[richEditorShaderStyle_default_0100] START');
       driver = Driver.create();
+      await CommonFunc.sleep(500);
       let btn = await driver.findComponent(ON.id('btn_shaderStyle_default'));
       expect(btn).not().assertUndefined();
       await (btn?.click()as Promise<void>);
