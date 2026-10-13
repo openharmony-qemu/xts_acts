@@ -1937,6 +1937,7 @@ export default function requestVideoTest() {
       };
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
+        /**
     /**
      * @tc.name   request_hdr_video_fileUri_imageUri_photoAsset_compatible_onprogress
      * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7800
@@ -1978,6 +1979,11 @@ export default function requestVideoTest() {
         await sleep(3500);
         let uri = await createVideoBySandBoxUri(testNum, testContext, destUri);
         let flag = await isHdr(testNum, uri);
+        if (flag == -1) {
+          console.info('device unsupport hdr');
+          done();
+          return;
+        }
         expect(flag).assertEqual(0);
         expect(status).assertTrue();
         done();
