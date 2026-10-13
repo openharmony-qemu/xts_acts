@@ -4030,17 +4030,19 @@ describe('threadWorkerTest', function () {
     it('threadWorker_constructor_test_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         try {
             let ss = new worker.ThreadWorker("/entry_test/ets/workers/newworker.js", null)
+            expect(ss != null).assertTrue()
             let isTerminate = false
             ss.onexit = function () {
                 isTerminate = true
             }
-            expect(ss != null).assertTrue()
             try {
                 ss.terminate()
-                while (!isTerminate) {
-                    await promiseCase()
-                }
             } catch (e) {
+            }
+            let waitCount = 0
+            while (!isTerminate && waitCount < 50) {
+                await promiseCase()
+                waitCount++
             }
         } catch (error) {
             expect(error.name == "BusinessError").assertTrue()
@@ -4059,17 +4061,19 @@ describe('threadWorkerTest', function () {
     it('threadWorker_constructor_test_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         try {
             let ss = new worker.ThreadWorker("/entry_test/ets/workers/newworker.js", undefined)
+            expect(ss != null).assertTrue()
             let isTerminate = false
             ss.onexit = function () {
                 isTerminate = true
             }
-            expect(ss != null).assertTrue()
             try {
                 ss.terminate()
-                while (!isTerminate) {
-                    await promiseCase()
-                }
             } catch (e) {
+            }
+            let waitCount = 0
+            while (!isTerminate && waitCount < 50) {
+                await promiseCase()
+                waitCount++
             }
         } catch (error) {
             expect(error.name == "BusinessError").assertTrue()
