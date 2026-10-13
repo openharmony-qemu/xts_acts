@@ -43,7 +43,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testBitmapDestroyNormal', Level.LEVEL0, () => {
+    it('testBitmapDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingBitmap(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapDestroyNull', Level.LEVEL3, () => {
+    it('testBitmapDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testBitmapCreateFromPixelsNormal', Level.LEVEL0, () => {
+    it('testBitmapCreateFromPixelsNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingBitmap(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapCreateFromPixelsNull', Level.LEVEL3, () => {
+    it('testBitmapCreateFromPixelsNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapCreateFromPixelsMismatch', Level.LEVEL3, () => {
+    it('testBitmapCreateFromPixelsMismatch', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapCreateFromPixelsAbnormal', Level.LEVEL3, () => {
+    it('testBitmapCreateFromPixelsAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapCreateFromPixelsVeryBig', Level.LEVEL3, () => {
+    it('testBitmapCreateFromPixelsVeryBig', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(6);
       expect(result).assertEqual(0);
     })
@@ -132,9 +132,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for testBitmapCreateFromPixelsBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapCreateFromPixelsBoundary', Level.LEVEL0, () => {
+    it('testBitmapCreateFromPixelsBoundary', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(7);
       expect(result).assertEqual(0);
     })
@@ -145,9 +145,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for testBitmapBuildAllColorFormats.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapBuildAllColorFormats', Level.LEVEL0, () => {
+    it('testBitmapBuildAllColorFormats', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(8);
       expect(result).assertEqual(0);
     })
@@ -158,9 +158,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for testBitmapBuildAllAlphaFormats.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapBuildAllAlphaFormats', Level.LEVEL0, () => {
+    it('testBitmapBuildAllAlphaFormats', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(9);
       expect(result).assertEqual(0);
     })
@@ -171,9 +171,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for testBitmapBuildAllFormatCombinations.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapBuildAllFormatCombinations', Level.LEVEL0, () => {
+    it('testBitmapBuildAllFormatCombinations', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(10);
       expect(result).assertEqual(0);
     })
@@ -186,7 +186,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testBitmapBuildNormal', Level.LEVEL0, () => {
+    it('testBitmapBuildNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingBitmap(11);
       expect(result).assertEqual(0);
     })
@@ -199,7 +199,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapBuildNull', Level.LEVEL3, () => {
+    it('testBitmapBuildNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(12);
       expect(result).assertEqual(0);
     })
@@ -212,7 +212,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapBuildAbnormal', Level.LEVEL3, () => {
+    it('testBitmapBuildAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(13);
       expect(result).assertEqual(0);
     })
@@ -225,7 +225,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapBuildMultipleCalls', Level.LEVEL3, () => {
+    it('testBitmapBuildMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(14);
       expect(result).assertEqual(0);
     })
@@ -236,9 +236,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for testBitmapBuildBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapBuildBoundary', Level.LEVEL0, () => {
+    it('testBitmapBuildBoundary', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(15);
       expect(result).assertEqual(0);
     })
@@ -251,7 +251,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testBitmapGetXXNormal', Level.LEVEL0, () => {
+    it('testBitmapGetXXNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingBitmap(16);
       expect(result).assertEqual(0);
     })
@@ -264,7 +264,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapGetXXNull', Level.LEVEL3, () => {
+    it('testBitmapGetXXNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(17);
       expect(result).assertEqual(0);
     })
@@ -277,7 +277,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapGetXXInputDestroyed', Level.LEVEL3, () => {
+    it('testBitmapGetXXInputDestroyed', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(18);
       expect(result).assertEqual(0);
     })
@@ -288,9 +288,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for testBitmapGetXXBoundary.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapGetXXBoundary', Level.LEVEL0, () => {
+    it('testBitmapGetXXBoundary', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(19);
       expect(result).assertEqual(0);
     })
@@ -303,7 +303,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testBitmapReadPixelsNormal', Level.LEVEL0, () => {
+    it('testBitmapReadPixelsNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingBitmap(20);
       expect(result).assertEqual(0);
     })
@@ -316,7 +316,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapReadPixelsNull', Level.LEVEL3, () => {
+    it('testBitmapReadPixelsNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(21);
       expect(result).assertEqual(0);
     })
@@ -329,7 +329,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapReadPixelsInputDestroyed', Level.LEVEL3, () => {
+    it('testBitmapReadPixelsInputDestroyed', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(22);
       expect(result).assertEqual(0);
     })
@@ -342,7 +342,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapReadPixelsMismatch', Level.LEVEL3, () => {
+    it('testBitmapReadPixelsMismatch', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(23);
       expect(result).assertEqual(0);
     })
@@ -353,9 +353,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for OH_Drawing_BitmapBuild.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapReadPixelsBoundary', Level.LEVEL0, () => {
+    it('testBitmapReadPixelsBoundary', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(24);
       expect(result).assertEqual(0);
     })
@@ -366,9 +366,9 @@ export default function DrawingNativeBitmapTest() {
      * @tc.desc   test for testBitmapBuildMaximum.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testBitmapBuildMaximum', Level.LEVEL0, () => {
+    it('testBitmapBuildMaximum', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(25);
       expect(result).assertEqual(0);
     })
@@ -381,7 +381,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testBitmapGetRowBytesNormal', Level.LEVEL0, () => {
+    it('testBitmapGetRowBytesNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingBitmap(26);
       expect(result).assertEqual(0);
     })
@@ -394,7 +394,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapGetRowBytesNull', Level.LEVEL3, () => {
+    it('testBitmapGetRowBytesNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(27);
       expect(result).assertEqual(0);
     })
@@ -407,7 +407,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapGetRowBytesAbnormal', Level.LEVEL3, () => {
+    it('testBitmapGetRowBytesAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(28);
       expect(result).assertEqual(0);
     })
@@ -420,7 +420,7 @@ export default function DrawingNativeBitmapTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testBitmapGetRowBytesMultipleCalls', Level.LEVEL3, () => {
+    it('testBitmapGetRowBytesMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingBitmap(29);
       expect(result).assertEqual(0);
     })

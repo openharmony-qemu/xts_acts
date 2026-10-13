@@ -18,11 +18,11 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_19937 19937
+#define NUMBER_1 1
+#define NUMBER_3 3
+#define NUMBER_10 10
+#define NUMBER_200 200
+#define NUMBER_19937 19937
 
 namespace OHOS {
 namespace Rosen {
@@ -48,13 +48,13 @@ int TestImageFilterCreateBlurNormal()
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_TileMode modes[] = {CLAMP, REPEAT, MIRROR, DECAL};
     for (OH_Drawing_TileMode mode : modes) {
-        OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1, mode,
+        OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(NUMBER_1, NUMBER_1, mode,
             nullptr);
         EXPECT_NE(filter, nullptr);
         OH_Drawing_ImageFilterDestroy(filter);
     }
     // 2. Pass decimal values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
-    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_1, DRAWING_NUMBER_1,
+    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(NUMBER_1, NUMBER_1,
         OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
@@ -99,11 +99,11 @@ int TestImageFilterCreateBlurMultipleCalls()
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur (pass random values for sigmaX and sigmaY, random enum value for
     // OH_Drawing_TileMode), call 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         std::random_device rd;
         std::mt19937 gen(rd());
-        std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_10);
-        std::uniform_int_distribution<int> enum_dis(0, DRAWING_NUMBER_3);
+        std::uniform_real_distribution<float> dis(0, NUMBER_10);
+        std::uniform_int_distribution<int> enum_dis(0, NUMBER_3);
         OH_Drawing_TileMode tileMode = static_cast<OH_Drawing_TileMode>(enum_dis(gen));
         OH_Drawing_ImageFilter *filter =
             OH_Drawing_ImageFilterCreateBlur(dis(gen), dis(gen), tileMode, nullptr);
@@ -192,7 +192,7 @@ int TestImageFilterCreateFromColorFilterNULL()
 int TestImageFilterCreateFromColorFilterMultipleCalls()
 {
     DrawingNativeImageFilterTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ColorFilter *colorFilter = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
         // add assert
         EXPECT_NE(colorFilter, nullptr);
@@ -234,7 +234,7 @@ int TestImageFilterDestroyMultipleCalls()
     // 1. Call OH_Drawing_ImageFilterCreateFromColorFilter 10 times
     OH_Drawing_ColorFilter *colorFilters[10];
     OH_Drawing_ImageFilter *filters[10];
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         colorFilters[i] = OH_Drawing_ColorFilterCreateLinearToSrgbGamma();
         // add assert
         EXPECT_NE(colorFilters[i], nullptr);
@@ -243,12 +243,12 @@ int TestImageFilterDestroyMultipleCalls()
         EXPECT_NE(filters[i], nullptr);
     }
     // 2. Call OH_Drawing_ImageFilterDestroy 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ImageFilterDestroy(filters[i]);
         OH_Drawing_ColorFilterDestroy(colorFilters[i]);
     }
     // 3. Call OH_Drawing_ImageFilterCreateBlur and OH_Drawing_ImageFilterDestroy alternately 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ImageFilter *filter =
             OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
         // add assert
@@ -344,7 +344,7 @@ int TestImageFilterCreateOffsetMultipleCalls()
         OH_Drawing_ImageFilterCreateBlur(1.0f, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     EXPECT_NE(imageFilter1, nullptr);
     // 2. OH_Drawing_ImageFilterCreateOffset is called multiple times.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ImageFilter *imageFilter2 =
         OH_Drawing_ImageFilterCreateOffset(0xFFFFFFFF, 10.0f, imageFilter1);
         EXPECT_NE(imageFilter2, nullptr);
@@ -391,7 +391,7 @@ int TestImageFilterCreateFromShderEffectMultipleCalls()
     OH_Drawing_ShaderEffect *shaderEffect = OH_Drawing_ShaderEffectCreateColorShader(0xFF00FF00);
     EXPECT_NE(shaderEffect, nullptr);
     // 2. Create an instance object through the interface OH_Drawing_ImageFilterCreateFromShaderEffect.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ImageFilter *imageFilter = OH_Drawing_ImageFilterCreateFromShaderEffect(shaderEffect);
         EXPECT_NE(imageFilter, nullptr);
         OH_Drawing_ImageFilterDestroy(imageFilter);
@@ -463,7 +463,7 @@ int TestImageFilterCreateBlurWithCropMultiCalls()
             nullptr, nullptr);
     OH_Drawing_ImageFilter *imageFilter2 = nullptr;
     // 1. The interface of OH_Drawing_ImageFilterCreateBlurWithCrop is called 10 times.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         imageFilter2 = OH_Drawing_ImageFilterCreateBlurWithCrop(
             10.0f, 10.0f, OH_Drawing_TileMode::CLAMP, imageFilter1, cropRect);
         EXPECT_NE(imageFilter2, nullptr);

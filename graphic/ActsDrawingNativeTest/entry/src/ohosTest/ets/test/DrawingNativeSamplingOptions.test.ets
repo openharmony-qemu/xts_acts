@@ -43,7 +43,7 @@ export default function DrawingNativeSamplingOptionsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSamplingOptionsCreateDestroyDestroyNormal', Level.LEVEL0, () => {
+    it('testSamplingOptionsCreateDestroyDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingSamplingOptions(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeSamplingOptionsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSamplingOptionsCreateDestroyDestroyNull', Level.LEVEL3, () => {
+    it('testSamplingOptionsCreateDestroyDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSamplingOptions(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeSamplingOptionsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSamplingOptionsCreateDestroyDestroyMultipleCalls', Level.LEVEL3, () => {
+    it('testSamplingOptionsCreateDestroyDestroyMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSamplingOptions(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeSamplingOptionsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testSamplingOptionsCopyNormal', Level.LEVEL0, () => {
+    it('testSamplingOptionsCopyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingSamplingOptions(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeSamplingOptionsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSamplingOptionsCopyNull', Level.LEVEL3, () => {
+    it('testSamplingOptionsCopyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSamplingOptions(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeSamplingOptionsTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testSamplingOptionsCopyMultiCalls', Level.LEVEL3, () => {
+    it('testSamplingOptionsCopyMultiCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingSamplingOptions(5);
       expect(result).assertEqual(0);
     })

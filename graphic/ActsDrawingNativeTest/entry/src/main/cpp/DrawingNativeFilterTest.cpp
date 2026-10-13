@@ -16,7 +16,7 @@
 #include "include/DrawingNativeFilterTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_10 10
+#define NUMBER_10 10
 
 namespace OHOS {
 namespace Rosen {
@@ -60,7 +60,7 @@ int TestFilterCreateDestroyNULL()
 int TestFilterCreateDestroyMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
         EXPECT_NE(filter, nullptr);
         OH_Drawing_FilterDestroy(filter);
@@ -76,7 +76,7 @@ int TestFilterSetImageFilterNormal()
     // add assert
     EXPECT_NE(cFilter, nullptr);
     OH_Drawing_ImageFilter *cImageFilter =
-        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP, nullptr);
+        OH_Drawing_ImageFilterCreateBlur(NUMBER_10, NUMBER_10, OH_Drawing_TileMode::CLAMP, nullptr);
     // add assert
     EXPECT_NE(cImageFilter, nullptr);
 
@@ -97,7 +97,7 @@ int TestFilterSetImageFilterNULL()
     // add assert
     EXPECT_NE(cFilter, nullptr);
     OH_Drawing_ImageFilter *cImageFilter =
-        OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_10, DRAWING_NUMBER_10, OH_Drawing_TileMode::CLAMP, nullptr);
+        OH_Drawing_ImageFilterCreateBlur(NUMBER_10, NUMBER_10, OH_Drawing_TileMode::CLAMP, nullptr);
     // add assert
     EXPECT_NE(cImageFilter, nullptr);
     OH_Drawing_FilterSetImageFilter(nullptr, cImageFilter);
@@ -115,12 +115,12 @@ int TestFilterSetImageFilterNULL()
 int TestFilterSetImageFilterMultipleCalls()
 {
     DrawingNativeFilterTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Filter *cFilter = OH_Drawing_FilterCreate();
         // add assert
         EXPECT_NE(cFilter, nullptr);
         OH_Drawing_ImageFilter *cImageFilter =
-            OH_Drawing_ImageFilterCreateBlur(DRAWING_NUMBER_10 + i, DRAWING_NUMBER_10 + i, OH_Drawing_TileMode::CLAMP,
+            OH_Drawing_ImageFilterCreateBlur(NUMBER_10 + i, NUMBER_10 + i, OH_Drawing_TileMode::CLAMP,
                 nullptr);
         // add assert
         EXPECT_NE(cImageFilter, nullptr);
@@ -142,7 +142,7 @@ int TestFilterSetMaskFilterNormal()
     OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(filter, nullptr);
-    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, DRAWING_NUMBER_10,
+    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, NUMBER_10,
         true);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
@@ -163,7 +163,7 @@ int TestFilterSetMaskFilterNULL()
     OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
     // add assert
     EXPECT_NE(filter, nullptr);
-    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, DRAWING_NUMBER_10,
+    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL, NUMBER_10,
         true);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
@@ -192,12 +192,12 @@ int TestFilterSetMaskFilterMultipleCalls()
     DrawingNativeFilterTestSetUp();
     // 1. Call OH_Drawing_FilterSetMaskFilter 10 times with different OH_Drawing_Filter and OH_Drawing_MaskFilter
     // objects.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
         // add assert
         EXPECT_NE(filter, nullptr);
         OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(OH_Drawing_BlurType::NORMAL,
-            DRAWING_NUMBER_10 + i, true);
+            NUMBER_10 + i, true);
         // add assert
         EXPECT_NE(maskFilter, nullptr);
         OH_Drawing_FilterSetMaskFilter(filter, maskFilter);
@@ -292,7 +292,7 @@ int TestFilterSetColorFilterMultipleCalls()
     DrawingNativeFilterTestSetUp();
     // 1. Call OH_Drawing_FilterSetColorFilter 10 times with different OH_Drawing_Filter and OH_Drawing_ColorFilter
     // objects. Call successful, errorcode returns OH_DRAWING_SUCCESS
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Filter *filter = OH_Drawing_FilterCreate();
         // add assert
         EXPECT_NE(filter, nullptr);

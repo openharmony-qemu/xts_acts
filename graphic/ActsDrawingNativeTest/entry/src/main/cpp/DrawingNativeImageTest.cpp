@@ -19,18 +19,18 @@
 #include <random>
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_5 5
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_400 400
-#define DRAWING_NUMBER_565 565
-#define DRAWING_NUMBER_2160 2160
-#define DRAWING_NUMBER_4096 4096
-#define DRAWING_NUMBER_4444 4444
-#define DRAWING_NUMBER_8888 8888
+#define NUMBER_1 1
+#define NUMBER_3 3
+#define NUMBER_5 5
+#define NUMBER_10 10
+#define NUMBER_100 100
+#define NUMBER_200 200
+#define NUMBER_400 400
+#define NUMBER_565 565
+#define NUMBER_2160 2160
+#define NUMBER_4096 4096
+#define NUMBER_4444 4444
+#define NUMBER_8888 8888
 
 namespace OHOS {
 namespace Rosen {
@@ -78,21 +78,21 @@ int TestImageCreateDestroyMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
     // 1. Call OH_Drawing_ImageCreate and OH_Drawing_ImageDestroy 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
         OH_Drawing_ImageDestroy(image);
     }
     // 2. Call OH_Drawing_ImageCreate 10 times continuously
-    OH_Drawing_Image *images[DRAWING_NUMBER_10];
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    OH_Drawing_Image *images[NUMBER_10];
+    for (int i = 0; i < NUMBER_10; i++) {
         images[i] = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(images[i], nullptr);
     }
     // 3. Call OH_Drawing_ImageDestroy 10 times continuously
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ImageDestroy(images[i]);
     }
     DrawingNativeImageTestTearDown();
@@ -110,8 +110,8 @@ int TestImageBuildFromBitmapNormal()
     OH_Drawing_Bitmap *bitmap = OH_Drawing_BitmapCreate();
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    uint32_t width = DRAWING_NUMBER_200;
-    uint32_t height = DRAWING_NUMBER_200;
+    uint32_t width = NUMBER_200;
+    uint32_t height = NUMBER_200;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     // 3. OH_Drawing_ImageBuildFromBitmap successfully constructs the image content
     bool ret = OH_Drawing_ImageBuildFromBitmap(image, bitmap);
@@ -156,7 +156,7 @@ int TestImageBuildFromBitmapNULL()
 int TestImageBuildFromBitmapMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
@@ -164,8 +164,8 @@ int TestImageBuildFromBitmapMultipleCalls()
         // add assert
         EXPECT_NE(bitmap, nullptr);
         OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-        uint32_t width = DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10;
-        uint32_t height = DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10;
+        uint32_t width = NUMBER_200 + i * NUMBER_10;
+        uint32_t height = NUMBER_200 + i * NUMBER_10;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         bool ret = OH_Drawing_ImageBuildFromBitmap(image, bitmap);
         EXPECT_EQ(ret, true);
@@ -179,7 +179,7 @@ int TestImageBuildFromBitmapMultipleCalls()
 int TestImageBuildFromBitmapMultipleCallsBoundary()
 {
     DrawingNativeImageTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
@@ -187,8 +187,8 @@ int TestImageBuildFromBitmapMultipleCallsBoundary()
         // add assert
         EXPECT_NE(bitmap, nullptr);
         OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-        uint32_t width = DRAWING_NUMBER_4096;
-        uint32_t height = DRAWING_NUMBER_2160;
+        uint32_t width = NUMBER_4096;
+        uint32_t height = NUMBER_2160;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_ImageBuildFromBitmap(image, bitmap);
         OH_Drawing_ImageDestroy(image);
@@ -209,16 +209,16 @@ int TestImageGetWidthHeightNormal()
     // add assert
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    constexpr uint32_t width = DRAWING_NUMBER_200;
-    constexpr uint32_t height = DRAWING_NUMBER_200;
+    constexpr uint32_t width = NUMBER_200;
+    constexpr uint32_t height = NUMBER_200;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     OH_Drawing_ImageBuildFromBitmap(image, bitmap);
     // 2. OH_Drawing_ImageGetWidth
     int32_t width2 = OH_Drawing_ImageGetWidth(image);
-    EXPECT_EQ(width2, DRAWING_NUMBER_200);
+    EXPECT_EQ(width2, NUMBER_200);
     // 3. OH_Drawing_ImageGetHeight
     int32_t height2 = OH_Drawing_ImageGetHeight(image);
-    EXPECT_EQ(height2, DRAWING_NUMBER_200);
+    EXPECT_EQ(height2, NUMBER_200);
     // 4. Free memory
     OH_Drawing_ImageDestroy(image);
     OH_Drawing_BitmapDestroy(bitmap);
@@ -236,8 +236,8 @@ int TestImageGetWidthHeightNULL()
     // add assert
     EXPECT_NE(bitmap, nullptr);
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    uint32_t width = DRAWING_NUMBER_200;
-    uint32_t height = DRAWING_NUMBER_200;
+    uint32_t width = NUMBER_200;
+    uint32_t height = NUMBER_200;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     OH_Drawing_ImageBuildFromBitmap(image, bitmap);
     // 1. OH_Drawing_ImageGetWidth with a null parameter, check the error code with OH_Drawing_ErrorCodeGet
@@ -254,7 +254,7 @@ int TestImageGetWidthHeightNULL()
 int TestImageGetWidthHeightMultipleCalls()
 {
     DrawingNativeImageTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
@@ -262,14 +262,14 @@ int TestImageGetWidthHeightMultipleCalls()
         // add assert
         EXPECT_NE(bitmap, nullptr);
         OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-        uint32_t width = DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10;
-        uint32_t height = DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10;
+        uint32_t width = NUMBER_200 + i * NUMBER_10;
+        uint32_t height = NUMBER_200 + i * NUMBER_10;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_ImageBuildFromBitmap(image, bitmap);
         int32_t width2 = OH_Drawing_ImageGetWidth(image);
-        EXPECT_EQ(width2, DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10);
+        EXPECT_EQ(width2, NUMBER_200 + i * NUMBER_10);
         int32_t height2 = OH_Drawing_ImageGetHeight(image);
-        EXPECT_EQ(height2, DRAWING_NUMBER_200 + i * DRAWING_NUMBER_10);
+        EXPECT_EQ(height2, NUMBER_200 + i * NUMBER_10);
         OH_Drawing_ImageDestroy(image);
         OH_Drawing_BitmapDestroy(bitmap);
     }
@@ -280,7 +280,7 @@ int TestImageGetWidthHeightMultipleCalls()
 int TestImageGetWidthHeightMultipleCallsBoundary()
 {
     DrawingNativeImageTestSetUp();
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Image *image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
@@ -288,16 +288,16 @@ int TestImageGetWidthHeightMultipleCallsBoundary()
         // add assert
         EXPECT_NE(bitmap, nullptr);
         OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-        uint32_t width = DRAWING_NUMBER_4096;
-        uint32_t height = DRAWING_NUMBER_2160;
+        uint32_t width = NUMBER_4096;
+        uint32_t height = NUMBER_2160;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         EXPECT_NE(bitmap, nullptr);
         OH_Drawing_ImageBuildFromBitmap(image, bitmap);
         EXPECT_NE(image, nullptr);
         int32_t width2 = OH_Drawing_ImageGetWidth(image);
-        EXPECT_EQ(width2, DRAWING_NUMBER_4096);
+        EXPECT_EQ(width2, NUMBER_4096);
         int32_t height2 = OH_Drawing_ImageGetHeight(image);
-        EXPECT_EQ(height2, DRAWING_NUMBER_2160);
+        EXPECT_EQ(height2, NUMBER_2160);
         OH_Drawing_ImageDestroy(image);
         OH_Drawing_BitmapDestroy(bitmap);
     }
@@ -328,8 +328,8 @@ int TestImageGetImageInfoNormal()
             // add assert
             EXPECT_NE(bitmap, nullptr);
             OH_Drawing_BitmapFormat cFormat{cf, af};
-            uint32_t width = DRAWING_NUMBER_400;
-            uint32_t height = DRAWING_NUMBER_400;
+            uint32_t width = NUMBER_400;
+            uint32_t height = NUMBER_400;
             OH_Drawing_Image_Info imageInfo;
             OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
             OH_Drawing_ImageGetImageInfo(image, &imageInfo);
@@ -355,8 +355,8 @@ int TestImageGetImageInfoNULL()
     EXPECT_NE(bitmap, nullptr);
     // 2. OH_Drawing_Image_Info
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    uint32_t width = DRAWING_NUMBER_400;
-    uint32_t height = DRAWING_NUMBER_400;
+    uint32_t width = NUMBER_400;
+    uint32_t height = NUMBER_400;
     OH_Drawing_Image_Info imageInfo;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     OH_Drawing_ImageGetImageInfo(image, &imageInfo);
@@ -383,7 +383,7 @@ int TestImageGetImageInfoMultipleCalls()
         ALPHA_FORMAT_PREMUL,
         ALPHA_FORMAT_UNPREMUL,
     };
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_Image* image = OH_Drawing_ImageCreate();
         // add assert
         EXPECT_NE(image, nullptr);
@@ -397,10 +397,10 @@ int TestImageGetImageInfoMultipleCalls()
             // 兜底处理，避免未初始化随机种子
             srand(1U);
         }
-        OH_Drawing_BitmapFormat cFormat{ cf[std::random_device{}() % DRAWING_NUMBER_5 + DRAWING_NUMBER_1],
-                                         af[std::random_device{}() % DRAWING_NUMBER_3 + DRAWING_NUMBER_1] };
-        uint32_t width = std::random_device{}() % DRAWING_NUMBER_100 + DRAWING_NUMBER_1;
-        uint32_t height = std::random_device{}() % DRAWING_NUMBER_100 + DRAWING_NUMBER_1;
+        OH_Drawing_BitmapFormat cFormat{ cf[std::random_device{}() % NUMBER_5 + NUMBER_1],
+                                         af[std::random_device{}() % NUMBER_3 + NUMBER_1] };
+        uint32_t width = std::random_device{}() % NUMBER_100 + NUMBER_1;
+        uint32_t height = std::random_device{}() % NUMBER_100 + NUMBER_1;
         OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
         OH_Drawing_Image_Info imageInfo;
         OH_Drawing_ImageGetImageInfo(image, &imageInfo);
@@ -423,8 +423,8 @@ int TestImageGetImageInfoAbnormal()
     EXPECT_NE(bitmap, nullptr);
     // 2. OH_Drawing_ImageGetImageInfo creates OH_Drawing_Image_Info with width=-400 and height=-400
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    uint32_t width = -DRAWING_NUMBER_400;
-    uint32_t height = -DRAWING_NUMBER_400;
+    uint32_t width = -NUMBER_400;
+    uint32_t height = -NUMBER_400;
     OH_Drawing_Image_Info imageInfo;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     OH_Drawing_ImageGetImageInfo(image, &imageInfo);
@@ -471,8 +471,8 @@ int TestImageGetImageInfoBoundary()
     EXPECT_NE(bitmap, nullptr);
     // 2. OH_Drawing_ImageGetImageInfo creates OH_Drawing_Image_Info with width=maximum value and height=maximum value
     OH_Drawing_BitmapFormat cFormat{COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE};
-    uint32_t width = DRAWING_NUMBER_4096;
-    uint32_t height = DRAWING_NUMBER_2160;
+    uint32_t width = NUMBER_4096;
+    uint32_t height = NUMBER_2160;
     OH_Drawing_Image_Info imageInfo;
     OH_Drawing_BitmapBuild(bitmap, width, height, &cFormat);
     EXPECT_NE(bitmap, nullptr);

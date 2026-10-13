@@ -43,7 +43,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIteratorCreateNormal', Level.LEVEL0, () => {
+    it('testPathIteratorCreateNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathIterator(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIteratorCreateNull', Level.LEVEL3, () => {
+    it('testPathIteratorCreateNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathIterator(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIteratorCreateMultipleCalls', Level.LEVEL3, () => {
+    it('testPathIteratorCreateMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathIterator(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIteratorDestroyNormal', Level.LEVEL0, () => {
+    it('testPathIteratorDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathIterator(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIteratorDestroyNull', Level.LEVEL3, () => {
+    it('testPathIteratorDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathIterator(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIteratorHasNextNormal', Level.LEVEL0, () => {
+    it('testPathIteratorHasNextNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathIterator(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIteratorHasNextNull', Level.LEVEL3, () => {
+    it('testPathIteratorHasNextNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathIterator(6);
       expect(result).assertEqual(0);
     })
@@ -134,7 +134,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIteratorNextNormal', Level.LEVEL0, () => {
+    it('testPathIteratorNextNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathIterator(7);
       expect(result).assertEqual(0);
     })
@@ -147,7 +147,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testPathIteratorNextNull', Level.LEVEL3, () => {
+    it('testPathIteratorNextNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathIterator(8);
       expect(result).assertEqual(0);
     })
@@ -160,7 +160,7 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testPathIteratorPeekNormal', Level.LEVEL0, () => {
+    it('testPathIteratorPeekNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingPathIterator(9);
       expect(result).assertEqual(0);
     })
@@ -171,9 +171,9 @@ export default function DrawingNativePathIteratorTest() {
      * @tc.desc   test for testPathIteratorPeekNull
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testPathIteratorPeekNull', Level.LEVEL0, () => {
+    it('testPathIteratorPeekNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingPathIterator(10);
       expect(result).assertEqual(0);
     })

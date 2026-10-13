@@ -44,7 +44,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsBeginRecordingAbnormal', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsBeginRecordingAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsBeginRecording(0);
       expect(result).assertEqual(0);
     })
@@ -55,9 +55,9 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.desc   test for testRecordCmdUtilsBeginRecordingCalls.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL2
+     * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsBeginRecordingCalls', Level.LEVEL2, () => {
+    it('testRecordCmdUtilsBeginRecordingCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsBeginRecording(1);
       expect(result).assertEqual(0);
     })
@@ -71,7 +71,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRecordCmdUtilsDestroyNormal', Level.LEVEL0, () => {
+    it('testRecordCmdUtilsDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -85,7 +85,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRecordCmdUtilsFinishRecordingNormal', Level.LEVEL0, () => {
+    it('testRecordCmdUtilsFinishRecordingNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsFinishRecording(0);
       expect(result).assertEqual(0);
     })
@@ -98,7 +98,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsFinishRecordingNull', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsFinishRecordingNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsFinishRecording(1);
       expect(result).assertEqual(0);
     })
@@ -111,7 +111,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testRecordCmdDestroyNormal', Level.LEVEL0, () => {
+    it('testRecordCmdDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRecordCmdDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -122,9 +122,9 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.desc   test for testRecordCmdDestroyNULL.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL3
      */
-    it('testRecordCmdDestroyNULL', Level.LEVEL0, () => {
+    it('testRecordCmdDestroyNULL', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -137,7 +137,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testCanvasDrawRecordCmdNormal', Level.LEVEL0, () => {
+    it('testCanvasDrawRecordCmdNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(0);
       expect(result).assertEqual(0);
     })
@@ -150,7 +150,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testCanvasDrawRecordCmdABNormal', Level.LEVEL0, () => {
+    it('testCanvasDrawRecordCmdABNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(1);
       expect(result).assertEqual(0);
     })
@@ -163,7 +163,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testCanvasDrawRecordCmdNestingNormal', Level.LEVEL0, () => {
+    it('testCanvasDrawRecordCmdNestingNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(2);
       expect(result).assertEqual(0);
     })
@@ -174,9 +174,9 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testCanvasDrawRecordCmdNestingAbNormal', Level.LEVEL3, () => {
+    it('testCanvasDrawRecordCmdNestingAbNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(3);
       expect(result).assertEqual(0);
     })
@@ -187,9 +187,9 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal1.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testCanvasDrawRecordCmdNestingAbNormal1', Level.LEVEL3, () => {
+    it('testCanvasDrawRecordCmdNestingAbNormal1', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingCanvasDrawRecordCmd(4);
       expect(result).assertEqual(0);
     })
@@ -200,9 +200,9 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.desc   test for testRecordCmdUtilsGetHeightNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testRecordCmdUtilsGetHeightNormal', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetHeightNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(0);
       expect(result).assertEqual(0);
     })
@@ -215,7 +215,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsGetHeightNull', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetHeightNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(1);
       expect(result).assertEqual(0);
     })
@@ -228,7 +228,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsGetHeightAbnormal', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetHeightAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(2);
       expect(result).assertEqual(0);
     })
@@ -241,7 +241,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsGetHeightMultipleCalls', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetHeightMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(3);
       expect(result).assertEqual(0);
     })
@@ -252,9 +252,9 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.desc   test for testRecordCmdUtilsGetWidthNormal.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('testRecordCmdUtilsGetWidthNormal', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetWidthNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(4);
       expect(result).assertEqual(0);
     })
@@ -267,7 +267,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsGetWidthNull', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetWidthNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(5);
       expect(result).assertEqual(0);
     })
@@ -280,7 +280,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsGetWidthAbnormal', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetWidthAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(6);
       expect(result).assertEqual(0);
     })
@@ -293,7 +293,7 @@ export default function DrawingNativeRecordCmdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testRecordCmdUtilsGetWidthMultipleCalls', Level.LEVEL3, () => {
+    it('testRecordCmdUtilsGetWidthMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingRecordCmdUtilsGetHeightOrWidth(7);
       expect(result).assertEqual(0);
     })

@@ -16,7 +16,7 @@
 #include "include/DrawingNativeMaskFilterTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_10 10
+#define NUMBER_10 10
 
 
 namespace OHOS {
@@ -48,24 +48,24 @@ int TestMaskFilterCreateBlurDestroyNormal()
     };
     // 1. Enumerate through the blurType values in OH_Drawing_MaskFilterCreateBlur
     for (OH_Drawing_BlurType type : types) {
-        OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(type, DRAWING_NUMBER_10, true);
+        OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(type, NUMBER_10, true);
         EXPECT_NE(maskFilter, nullptr);
         OH_Drawing_MaskFilterDestroy(maskFilter);
     }
     // 2. Call OH_Drawing_MaskFilterCreateBlur with a floating-point value for sigma
-    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, DRAWING_NUMBER_10, true);
+    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, NUMBER_10, true);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
     // 3. Call OH_Drawing_MaskFilterCreateBlur with an integer value for sigma
-    maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, DRAWING_NUMBER_10, true);
+    maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, NUMBER_10, true);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
     // 4. Call OH_Drawing_MaskFilterCreateBlur with respectCTM set to false
-    maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, DRAWING_NUMBER_10, false);
+    maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, NUMBER_10, false);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
     // 5. Call OH_Drawing_MaskFilterCreateBlur with respectCTM set to true
-    maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, DRAWING_NUMBER_10, true);
+    maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, NUMBER_10, true);
     // add assert
     EXPECT_NE(maskFilter, nullptr);
     // 6. Call OH_Drawing_MaskFilterDestroy
@@ -90,20 +90,20 @@ int TestMaskFilterCreateBlurDestroyMultipleCalls()
 {
     DrawingNativeMaskFilterTestSetUp();
     // 1. Call OH_Drawing_MaskFilterCreateBlur and OH_Drawing_MaskFilterDestroy 10 times in a loop
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, DRAWING_NUMBER_10, true);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, NUMBER_10, true);
         EXPECT_NE(maskFilter, nullptr);
         OH_Drawing_MaskFilterDestroy(maskFilter);
     }
     // 2. Call OH_Drawing_MaskFilterCreateBlur 10 times consecutively
-    OH_Drawing_MaskFilter *maskFilters[DRAWING_NUMBER_10];
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        maskFilters[i] = OH_Drawing_MaskFilterCreateBlur(NORMAL, DRAWING_NUMBER_10, true);
+    OH_Drawing_MaskFilter *maskFilters[NUMBER_10];
+    for (int i = 0; i < NUMBER_10; i++) {
+        maskFilters[i] = OH_Drawing_MaskFilterCreateBlur(NORMAL, NUMBER_10, true);
         // add assert
         EXPECT_NE(maskFilters[i], nullptr);
     }
     // 3. Call OH_Drawing_MaskFilterDestroy 10 times consecutively
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_MaskFilterDestroy(maskFilters[i]);
     }
     DrawingNativeMaskFilterTestTearDown();
@@ -114,7 +114,7 @@ int TestMaskFilterCreateBlurDestroyAbnormal()
 {
     DrawingNativeMaskFilterTestSetUp();
     // 1. Call OH_Drawing_MaskFilterCreateBlur with a negative value for sigma and check the error code using
-    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, -DRAWING_NUMBER_10, true);
+    OH_Drawing_MaskFilter *maskFilter = OH_Drawing_MaskFilterCreateBlur(NORMAL, -NUMBER_10, true);
     EXPECT_NE(maskFilter, nullptr);
     OH_Drawing_MaskFilterDestroy(maskFilter);
     DrawingNativeMaskFilterTestTearDown();
