@@ -343,7 +343,7 @@ export default function audioSessionManagerTest() {
     * @tc.size   MEDIUMTEST
     * @tc.level  LEVEL2
     */
-    it("AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE);
         console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE: PASS`);
