@@ -207,3 +207,9 @@ export const SetUiDvsyncSwitchTest001: () => number;
 export const SetUiDvsyncSwitchTest002: () => number;
 export const SetUiDvsyncSwitchTest003: () => number;
 export const SetUiDvsyncSwitchTest004: () => number;
+
+export const UIAgentGetPageTextTest001: () => number;
+export const UIAgentGetPageTextTest002: () => number;
+export const UIAgentGetPageTextTest003: () => number;
+export const UIAgentGetPageTextTest004: () => number;
+export const UIAgentGetPageTextTest005: () => number;

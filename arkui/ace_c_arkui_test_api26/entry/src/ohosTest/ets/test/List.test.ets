@@ -57,11 +57,13 @@ import ArcSwiperEventCallbackTest from './arcSwiper/ArcSwiperEventCallbackTest.t
 import ArcAlphabetIndexerAttributeTest from './arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.test'
 import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.test'
 import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
+import UIAgentGetPageTextTest from './node/UIAgentGetPageTextTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
 import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
 
 export default function testsuite() {
   SetUiDvsyncSwitchTest() // 此条特殊用例请放在首行，勿动
+  UIAgentGetPageTextTest()
   RegisterCommonAreaApproximateChangeEventTest();
   UnregisterCommonAreaApproximateChangeEventTest();
   AreaChangeErrorCodeTest();

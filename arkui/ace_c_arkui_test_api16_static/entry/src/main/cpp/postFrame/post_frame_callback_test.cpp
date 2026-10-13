@@ -57,6 +57,12 @@ static ArkUI_NodeHandle CreateChildNode(ArkUI_NativeNodeAPI_1 *nodeAPI)
     ArkUI_AttributeItem startDragHeightItem = {startDragHeightValue, 1};
     nodeAPI->setAttribute(startDrag, NODE_WIDTH, &startDragWidthItem);
     nodeAPI->setAttribute(startDrag, NODE_HEIGHT, &startDragHeightItem);
+    ArkUI_NumberValue justifyContentValue[] = {{.i32 = ARKUI_FLEX_ALIGNMENT_CENTER}};
+    ArkUI_AttributeItem justifyContentItem = {justifyContentValue, 1};
+    nodeAPI->setAttribute(startDrag, NODE_COLUMN_JUSTIFY_CONTENT, &justifyContentItem);
+    ArkUI_NumberValue alignItemsValue[] = {{.i32 = ARKUI_HORIZONTAL_ALIGNMENT_CENTER}};
+    ArkUI_AttributeItem alignItemsItem = {alignItemsValue, 1};
+    nodeAPI->setAttribute(startDrag, NODE_COLUMN_ALIGN_ITEMS, &alignItemsItem);
     nodeAPI->registerNodeEvent(startDrag, NODE_ON_CLICK, 1, nullptr);
     
     auto enableDragArea = nodeAPI->createNode(ARKUI_NODE_COLUMN);
