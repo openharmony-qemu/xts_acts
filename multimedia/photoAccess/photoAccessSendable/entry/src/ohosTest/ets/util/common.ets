@@ -155,11 +155,28 @@ export function addResourceToSandbox(context: common.UIAbilityContext) {
   }
 }
 
+export function checkResourceFile(context: Context) {
+  try {
+    const sandboxPath = context.filesDir;
+    let resourcePath = context.resourceDir;
+    let resourcePathArray = fs.listFileSync(resourcePath);
+    for (let index = 0; index < resourcePathArray.length; index++) {
+      fs.copyFileSync((resourcePath + '/' + resourcePathArray[index]), (sandboxPath + '/' + resourcePathArray[index]));
+    }
+    let sandboxFileArray = fs.listFileSync(sandboxPath)
+    console.log(`sandbox fileList ==> ${sandboxFileArray}`)
+  } catch (error) {
+    console.error(`checkResourceFile failed, err is ${error}`);
+  }
+}
+
 export async function createResource(context: common.UIAbilityContext, fileNameList: Array<string>) {
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
-    let imageUri = 'file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/files/01.jpg';
-    let videoUri = 'file://ohos.acts.multimedia.photoaccess/data/storage/el2/base/haps/entry_test/files/01.mp4';
+    let imageUri = context.filesDir + '/photo.jpg';
+    console.info("imageUri: " + imageUri);
+    let videoUri = context.filesDir + '/video.mp4';
+    console.info("videoUri: " + imageUri);
     for (let i = 0; i < fileNameList.length; i++) {
       let fileName = fileNameList[i];
       let displayName = fileName.substring(0, fileName.lastIndexOf("."));
