@@ -420,6 +420,8 @@ export default function usbManagerPermissionTest() {
         }
         done();
       })
+    /**
+     * @tc.number        SUB_USB_USBMANAGER_CAPI_TEST_3900
      * @tc.name          SUB_USB_USBMANAGER_CAPI_TEST_3900
      * @tc.desc          Verify OH_UsbManager_RequestPermission delivers result=false with
      *                   errorCode SUCCESS when the permission dialog is DENIED, and that
