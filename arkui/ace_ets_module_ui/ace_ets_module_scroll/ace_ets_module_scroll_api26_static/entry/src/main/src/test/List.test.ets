@@ -44,6 +44,7 @@ import headerFooterStickyColumn from './LazyColumnLayout/headerFooterStickyColum
 import lazyColumnLayoutModifier from './LazyColumnLayout/lazyColumnLayoutModifier.test'
 import lazyVWaterFlowLayoutModifier from './LazyVWaterFlowLayout/lazyVWaterFlowLayoutModifier.test'
 import lazyVGridLayoutModifier from './LazyVGridLayout/lazyVGridLayoutModifier.test'
+import ColumnsTemplateItemFillPolicy from './LazyVGridLayout/ColumnsTemplateItemFillPolicy.test'
 import ScrollScrollBarHeight from './Scroll/scrollScrollBarHeight.test'
 import customListLayoutTest from './LazyDynamicLayout/customListLayoutTest.test';
 
@@ -72,6 +73,7 @@ export default function testsuite() {
   listEditModeChange();
   headerFooterStickyGrid();
   lazyVGridLayoutModifier();
+  ColumnsTemplateItemFillPolicy();
   ScrollScrollBarHeight();
   customListLayoutTest();
 }

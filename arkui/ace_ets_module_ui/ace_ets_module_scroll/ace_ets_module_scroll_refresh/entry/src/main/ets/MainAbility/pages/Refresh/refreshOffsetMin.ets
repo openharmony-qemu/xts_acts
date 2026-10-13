@@ -39,8 +39,8 @@ struct RefreshOffset {
         }
         .width('100%')
         .height('12%')
-        .id('refresh_refreshOffset_64')
-        .refreshOffset(64)
+        .id('refresh_refreshOffset_1')
+        .refreshOffset(1)
         .pullDownRatio(1)
         .backgroundColor(0x89CFF0)
 
@@ -51,32 +51,8 @@ struct RefreshOffset {
         }
         .width('100%')
         .height('12%')
-        .id('refresh_refreshOffset_50')
-        .refreshOffset(50)
-        .pullDownRatio(1)
-        .backgroundColor(0x89CFF0)
-
-        Refresh({ refreshing: this.isRefreshing }) {
-          Text('refresh...')
-            .fontSize(16)
-            .margin(10)
-        }
-        .width('100%')
-        .height('12%')
-        .id('refresh_refreshOffset_null')
-        .refreshOffset(null)
-        .pullDownRatio(1)
-        .backgroundColor(0x89CFF0)
-
-        Refresh({ refreshing: this.isRefreshing }) {
-          Text('refresh...')
-            .fontSize(16)
-            .margin(10)
-        }
-        .width('100%')
-        .height('12%')
-        .id('refresh_refreshOffset_undefined')
-        .refreshOffset(undefined)
+        .id('refresh_refreshOffset_0')
+        .refreshOffset(0)
         .pullDownRatio(1)
         .backgroundColor(0x89CFF0)
       }
