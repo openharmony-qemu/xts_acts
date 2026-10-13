@@ -21,10 +21,6 @@ import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 
-interface FormLifeParams {
-  Life: string;
-}
-
 export default class SecondAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.log("[Demo] SecondAbility onCreate");
@@ -50,9 +46,8 @@ export default class SecondAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log("[Demo] SecondAbility onForeground");
-    const lifeParams: FormLifeParams = {
-      Life: 'onForeground'
-    };
+    const lifeParams: Record<string, Object> = {};
+    lifeParams['Life'] = 'onForeground';
     const commonEventPublishData: CommonEventManager.CommonEventPublishData = {
       parameters: lifeParams
     };

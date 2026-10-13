@@ -22,16 +22,8 @@ import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 
-interface FormLifeParams {
-  Life: string;
-}
-
 interface ShareTitleParam {
   title: string;
-}
-
-interface ShareAbstractParam {
-  Abstract: string;
 }
 
 interface ShareUrlParam {
@@ -63,9 +55,8 @@ export default class SecondAbility extends Ability {
   onForeground() {
     // Ability has brought to foreground
     console.log("[Demo] SecondAbility onForeground");
-    const lifeParams: FormLifeParams = {
-      Life: 'onForeground'
-    };
+    const lifeParams: Record<string, Object> = {};
+    lifeParams['Life'] = 'onForeground';
     const commonEventPublishData: CommonEventManager.CommonEventPublishData = {
       parameters: lifeParams
     };
@@ -87,9 +78,8 @@ export default class SecondAbility extends Ability {
     const titleObj: ShareTitleParam = {
       title: 'baidu'
     };
-    const abstractObj: ShareAbstractParam = {
-      Abstract: 'share data'
-    };
+    const abstractObj: Record<string, Object> = {};
+    abstractObj['Abstract'] = 'share data';
     const urlObj: ShareUrlParam = {
       uri: 'www.baidu.com'
     };
