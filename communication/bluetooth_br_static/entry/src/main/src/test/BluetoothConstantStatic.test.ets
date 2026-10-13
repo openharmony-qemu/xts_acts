@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -28,7 +28,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtConstantTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let g_context: common.UIAbilityContext;
 
-export default function bluetoothConstantTest() {
+export default function bluetoothConstantTest(): void {
 
     describe("bluetoothConstantTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
