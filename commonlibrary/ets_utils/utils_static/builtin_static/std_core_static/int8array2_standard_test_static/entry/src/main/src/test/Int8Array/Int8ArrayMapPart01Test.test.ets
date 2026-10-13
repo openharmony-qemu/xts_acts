@@ -826,14 +826,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3700
-     * @tc.name int8ArrayMapPart01Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3300
+     * @tc.name int8ArrayMapPart01Test033
      * @tc.desc Verify map fn 129 -127 129 - 256 = -127 128 -128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (v < INT8_MIN || v > INT8_MAX) {
@@ -847,14 +847,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4100
-     * @tc.name int8ArrayMapPart01Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3400
+     * @tc.name int8ArrayMapPart01Test034
      * @tc.desc Verify map fn -0.0 0 0 int8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (v < INT8_MIN || v > INT8_MAX) {
@@ -868,14 +868,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4200
-     * @tc.name int8ArrayMapPart01Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3500
+     * @tc.name int8ArrayMapPart01Test035
      * @tc.desc Verify map fn 127.5 127
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (v < INT8_MIN || v > INT8_MAX) {
@@ -889,14 +889,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4300
-     * @tc.name int8ArrayMapPart01Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3600
+     * @tc.name int8ArrayMapPart01Test036
      * @tc.desc Verify map fn -128.5 -128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (v < INT8_MIN || v > INT8_MAX) {
@@ -910,14 +910,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4400
-     * @tc.name int8ArrayMapPart01Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3700
+     * @tc.name int8ArrayMapPart01Test037
      * @tc.desc Verify map fn -100 -100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (v < INT8_MIN || v > INT8_MAX) {
@@ -931,14 +931,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4500
-     * @tc.name int8ArrayMapPart01Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3800
+     * @tc.name int8ArrayMapPart01Test038
      * @tc.desc Verify map fn val + 127 val=1 128 -128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1);
       const result = arr.map((v: number, i: int, a: Int8Array) => v + 127);
       let firstMappedValue: number = result.$_get(0);
@@ -947,14 +947,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4600
-     * @tc.name int8ArrayMapPart01Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_3900
+     * @tc.name int8ArrayMapPart01Test039
      * @tc.desc Verify map fn val - 129 val=0 -129 127
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(0);
       const result = arr.map((v: number, i: int, a: Int8Array) => v - 129);
       let firstMappedValue: number = result.$_get(0);
@@ -963,14 +963,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4700
-     * @tc.name int8ArrayMapPart01Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4000
+     * @tc.name int8ArrayMapPart01Test040
      * @tc.desc Verify map fn index 0 127
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (v < INT8_MIN || v > INT8_MAX) {
@@ -993,14 +993,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4800
-     * @tc.name int8ArrayMapPart01Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4100
+     * @tc.name int8ArrayMapPart01Test041
      * @tc.desc Verify map fn -val [-1, 1, -128] [1, -1, 128 -128]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(-1, 1, -128);
       const result = arr.map((v: number, i: int, a: Int8Array) => -v);
       let firstMappedValue: number = result.$_get(0);
@@ -1015,14 +1015,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4900
-     * @tc.name int8ArrayMapPart01Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4200
+     * @tc.name int8ArrayMapPart01Test042
      * @tc.desc Verify map fn val * index val index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(10, 10, 10);
       const result = arr.map((v: number, i: int, a: Int8Array) => v * i);
       let firstMappedValue: number = result.$_get(0);
@@ -1037,14 +1037,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5000
-     * @tc.name int8ArrayMapPart01Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4300
+     * @tc.name int8ArrayMapPart01Test043
      * @tc.desc Verify map fn array a.$_get(2 - i)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(10, 20, 30);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (v < INT8_MIN || v > INT8_MAX) {
@@ -1066,14 +1066,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5100
-     * @tc.name int8ArrayMapPart01Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4400
+     * @tc.name int8ArrayMapPart01Test044
      * @tc.desc Verify map fn Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       try {
         arr.map((v: number, i: int, a: Int8Array) => {
@@ -1089,14 +1089,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5200
-     * @tc.name int8ArrayMapPart01Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4500
+     * @tc.name int8ArrayMapPart01Test045
      * @tc.desc Verify map propagates RangeError thrown by callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       try {
         arr.map((v: number, i: int, a: Int8Array) => {
@@ -1112,14 +1112,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5300
-     * @tc.name int8ArrayMapPart01Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4600
+     * @tc.name int8ArrayMapPart01Test046
      * @tc.desc Verify map propagates TypeError thrown by callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       try {
         arr.map((v: number, i: int, a: Int8Array) => {
@@ -1135,14 +1135,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5400
-     * @tc.name int8ArrayMapPart01Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4700
+     * @tc.name int8ArrayMapPart01Test047
      * @tc.desc Verify map callback not invoked on empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(0);
       let callCount: int = 0;
       let resultVal1: Int8Array = arr.map((v: number, i: int, a: Int8Array) => {
@@ -1155,14 +1155,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5500
-     * @tc.name int8ArrayMapPart01Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4800
+     * @tc.name int8ArrayMapPart01Test048
      * @tc.desc Verify map 0 Int8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(0);
       const result = arr.map((v: number, i: int, a: Int8Array) => v + 1);
       let firstMappedValue: int = result.length;
@@ -1171,14 +1171,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5600
-     * @tc.name int8ArrayMapPart01Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_4900
+     * @tc.name int8ArrayMapPart01Test049
      * @tc.desc Verify map 1 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(42);
       let callCount: int = 0;
       const result = arr.map((v: number, i: int, a: Int8Array) => {
@@ -1195,14 +1195,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5700
-     * @tc.name int8ArrayMapPart01Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5000
+     * @tc.name int8ArrayMapPart01Test050
      * @tc.desc Verify map callback adding offset maps values to 11 12 13
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       let offset: number = 10;
       const result = arr.map((v: number, i: int, a: Int8Array) => v + offset);
@@ -1218,14 +1218,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5800
-     * @tc.name int8ArrayMapPart01Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5100
+     * @tc.name int8ArrayMapPart01Test051
      * @tc.desc Verify fn map ===
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3, 4, 5);
       let externalCounter: int = 0;
       let resultVal1: Int8Array = arr.map((v: number, i: int, a: Int8Array) => {
@@ -1238,14 +1238,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5900
-     * @tc.name int8ArrayMapPart01Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5200
+     * @tc.name int8ArrayMapPart01Test052
      * @tc.desc Verify map fn reads values from lookup Int8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(0, 1, 2);
       const lookup = Int8Array.of(100, 110, 120);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
@@ -1267,14 +1267,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_6000
-     * @tc.name int8ArrayMapPart01Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5300
+     * @tc.name int8ArrayMapPart01Test053
      * @tc.desc Verify fn a[i] map fn val
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         a.$_set(i, 99);
@@ -1292,14 +1292,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_6100
-     * @tc.name int8ArrayMapPart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5400
+     * @tc.name int8ArrayMapPart01Test054
      * @tc.desc Verify fn a[i+1] map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (i < 2) {
@@ -1319,14 +1319,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_6200
-     * @tc.name int8ArrayMapPart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5500
+     * @tc.name int8ArrayMapPart01Test055
      * @tc.desc Verify map fn val - 1 [-128, 127] [-129 127, 126]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(-128, 127);
       const result = arr.map((v: number, i: int, a: Int8Array) => v - 1);
       let firstMappedValue: number = result.$_get(0);
@@ -1338,14 +1338,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_6300
-     * @tc.name int8ArrayMapPart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5600
+     * @tc.name int8ArrayMapPart01Test056
      * @tc.desc Verify map fn 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(100);
       for (let i = 0; i < 100; i++) {
         arr.$_set(i, 1);
@@ -1363,14 +1363,14 @@ export default function int8ArrayMapPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_6400
-     * @tc.name int8ArrayMapPart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_MAP_PART01_TEST_5700
+     * @tc.name int8ArrayMapPart01Test057
      * @tc.desc Verify map fn Number.NaN 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayMapPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayMapPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Int8Array.of(1, 2, 3);
       const result = arr.map((v: number, i: int, a: Int8Array) => {
         if (i === 1) {
