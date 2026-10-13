@@ -23,6 +23,14 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles310001TestSuite, TestCase_000898,
-        "KHR-GL40.transform_feedback_overfl",
-        "ow_query_ARB.error-no-active-query");
+static SHRINK_HWTEST_F(ActsDeqpgles310001TestSuite, TestCase_000007,
+        "KHR-GL40.clip_d",
+        "istance.coverage");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310001TestSuite, TestCase_000008,
+        "KHR-GL40.clip_di",
+        "stance.functional");
+
+static SHRINK_HWTEST_F(ActsDeqpgles310001TestSuite, TestCase_000009,
+        "KHR-GL40.clip_d",
+        "istance.negative");

@@ -23,6 +23,6 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles310001TestSuite, TestCase_000900,
-        "KHR-GL40.transform_feedback_overflow_quer",
-        "y_ARB.basic-single-stream-separate-attribs");
+static SHRINK_HWTEST_F(ActsDeqpgles310001TestSuite, TestCase_000874,
+        "KHR-GL40.a",
+        "pi.coverage");
