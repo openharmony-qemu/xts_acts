@@ -40,6 +40,7 @@ struct PersistenceV2IgnoreReadOnlyProperties3 {
   build() {
     Column({ space: 8 }) {
       Text('嵌套对象 getter 递归过滤/跳过')
+        .height('5%')
       Text(`outerVal = ${this.data.outerVal}`)
         .id('IgnoreReadOnlyProperties3_001')
         .height('5%')

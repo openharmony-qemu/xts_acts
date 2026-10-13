@@ -44,7 +44,9 @@ export default function persistenceV2IgnoreReadOnlyProperties3Test() {
       done();
     });
 
-    afterEach(() => {
+    afterEach(async () => {
+      // Cleanup persisted data
+      PersistenceV2.remove('ac41');
       console.info('[PersistenceV2IgnoreReadOnlyProperties3Test] afterEach called');
     });
 
@@ -135,8 +137,6 @@ export default function persistenceV2IgnoreReadOnlyProperties3Test() {
         let content3: string = obj3.$attrs.content as string;
         expect(content3).assertEqual('nested.innerComputed = 50');
 
-        // Cleanup persisted data
-        PersistenceV2.remove('ac41');
         console.info('[PersistenceV2IgnoreReadOnlyProperties3Test_002] END');
       } catch (err) {
         console.error('[PersistenceV2IgnoreReadOnlyProperties3Test_002] Error: ' + JSON.stringify(err));

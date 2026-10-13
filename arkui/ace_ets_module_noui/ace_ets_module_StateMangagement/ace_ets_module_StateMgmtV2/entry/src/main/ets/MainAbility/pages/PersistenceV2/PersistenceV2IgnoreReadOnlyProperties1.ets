@@ -32,6 +32,7 @@ export class SampleComputed {
 struct PersistenceV2IgnoreReadOnlyProperties1 {
   @Local sample: SampleComputed = PersistenceV2.globalConnect({
     type: SampleComputed,
+    key: 'IgnoreReadOnlyProperties1',
     defaultCreator: () => new SampleComputed(),
     // 必须配置ignoreReadOnlyProperties: true，否则反序列化会因@Computed失败，导致应用crash
     ignoreReadOnlyProperties: true
