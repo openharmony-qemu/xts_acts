@@ -266,6 +266,26 @@ export default function audioSessionManagerTest() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_STATIC_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_STATIC_0100
+    * @tc.desc   setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager!.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE);
+        console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE: PASS`);
+        done();
+      } catch (error) {
+        console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE: FAIL :${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0900
     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_ENABLEMUTESUGGESTIONWHENMIXWITHOTHERS_STATIC_0900
     * @tc.desc   enableMuteSuggestionWhenMixWithOthers-set-false
