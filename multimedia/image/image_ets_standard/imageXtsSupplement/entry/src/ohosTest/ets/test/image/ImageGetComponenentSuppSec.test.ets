@@ -681,6 +681,64 @@ export default function ImageGetComponentSuppSec() {
     })
 
     /**
+     * @tc.number     SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0007
+     * @tc.name       SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0007
+     * @tc.desc       sendableImage.Image.getComponent cover null, expected error code 1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0007';
+      sendableGetComponent(done,testName, async (receiver) => {
+        receiver.on('imageArrival', async () => {
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            let component = await img.getComponent(null as ESObject as image.ComponentType);
+            console.error(TAG, testName, `getComponent(null) should throw, but returned: ${component}`);
+            expect().assertFail();
+          }catch (error) {
+            console.error(TAG, testName, `actual error code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(1);
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+      })
+    })
+
+    /**
+     * @tc.number     SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0008
+     * @tc.name       SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0008
+     * @tc.desc       sendableImage.Image.getComponent cover undefined, expected error code 1
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SENDABLE_GET_COMPONENT_PROMISE_0008';
+      sendableGetComponent(done,testName, async (receiver) => {
+        receiver.on('imageArrival', async () => {
+          try {
+            let img = await receiver.readNextImage();
+            console.info(TAG, testName, 'receiver.readNextImage succeeded.',img);
+            let component = await img.getComponent(undefined as ESObject as image.ComponentType);
+            console.error(TAG, testName, `getComponent(undefined) should throw, but returned: ${component}`);
+            expect().assertFail();
+          }catch (error) {
+            console.error(TAG, testName, `actual error code: ${error.code}, message: ${error.message}`);
+            expect(error.code).assertEqual(1);
+          }
+        });
+        createPhotoOutput();
+        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+        mPhotoSession.start();
+      })
+    })
+
+    /**
      * @tc.number     image_Image_readLatestImage_Promise_001
      * @tc.name       image_Image_readLatestImage_Promise_001
      * @tc.desc       receiver.readLatestImage,return Value: img.size,clipRect.size
@@ -899,4 +957,3 @@ export default function ImageGetComponentSuppSec() {
 
   })
 }
-
