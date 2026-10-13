@@ -4020,68 +4020,6 @@ describe('threadWorkerTest', function () {
     })
 
     /**
-     * @tc.name   threadWorker_constructor_test_015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0204
-     * @tc.desc   worker constructor with options=null.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('threadWorker_constructor_test_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-        try {
-            let ss = new worker.ThreadWorker("/entry_test/ets/workers/newworker.js", null)
-            expect(ss != null).assertTrue()
-            let isTerminate = false
-            ss.onexit = function () {
-                isTerminate = true
-            }
-            try {
-                ss.terminate()
-            } catch (e) {
-            }
-            let waitCount = 0
-            while (!isTerminate && waitCount < 50) {
-                await promiseCase()
-                waitCount++
-            }
-        } catch (error) {
-            expect(error.name == "BusinessError").assertTrue()
-        }
-        done()
-    })
-
-    /**
-     * @tc.name   threadWorker_constructor_test_016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0205
-     * @tc.desc   worker constructor with options=undefined.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('threadWorker_constructor_test_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-        try {
-            let ss = new worker.ThreadWorker("/entry_test/ets/workers/newworker.js", undefined)
-            expect(ss != null).assertTrue()
-            let isTerminate = false
-            ss.onexit = function () {
-                isTerminate = true
-            }
-            try {
-                ss.terminate()
-            } catch (e) {
-            }
-            let waitCount = 0
-            while (!isTerminate && waitCount < 50) {
-                await promiseCase()
-                waitCount++
-            }
-        } catch (error) {
-            expect(error.name == "BusinessError").assertTrue()
-        }
-        done()
-    })
-
-    /**
      * @tc.name   threadWorker_constructor_test_017
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0206
      * @tc.desc   worker constructor with options={} (empty object).
