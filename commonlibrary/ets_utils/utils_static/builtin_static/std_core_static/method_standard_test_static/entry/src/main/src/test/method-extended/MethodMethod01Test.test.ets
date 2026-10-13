@@ -25,8 +25,8 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../../hypium/index';
-import Utils from '../../Util.test';
+} from '../../../../hypium/index';
+import Utils from '../Util.test';
 
 class Sample_MM02 {
   add(a: number, b: number): number {

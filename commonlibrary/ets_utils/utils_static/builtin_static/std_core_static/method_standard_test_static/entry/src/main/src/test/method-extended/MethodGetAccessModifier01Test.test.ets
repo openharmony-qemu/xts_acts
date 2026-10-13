@@ -25,8 +25,8 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../../hypium/index';
-import Utils from '../../Util.test';
+} from '../../../../hypium/index';
+import Utils from '../Util.test';
 
 class PubCtorAM {
   constructor() {}

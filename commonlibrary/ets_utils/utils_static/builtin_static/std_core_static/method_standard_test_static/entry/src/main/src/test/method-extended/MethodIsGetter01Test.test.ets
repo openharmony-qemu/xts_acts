@@ -25,8 +25,8 @@ import {
   Level,
   Size,
   TestType,
-} from '../../../../../hypium/index';
-import Utils from '../../Util.test';
+} from '../../../../hypium/index';
+import Utils from '../Util.test';
 
 function assertGetter(cls: ClassType, name: string, expected: boolean): void {
   const m = cls.getMethodByName(name);

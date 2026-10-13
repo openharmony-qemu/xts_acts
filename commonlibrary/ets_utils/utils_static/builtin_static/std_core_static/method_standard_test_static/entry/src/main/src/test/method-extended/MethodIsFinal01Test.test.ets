@@ -25,8 +25,8 @@ import {
   Level,
   Size,
   TestType
-} from '../../../../../hypium/index';
-import Utils from '../../Util.test';
+} from '../../../../hypium/index';
+import Utils from '../Util.test';
 
 function _M(ct: ClassType, name: string): Method {
   return ct.getMethodByName(name) as Method;
