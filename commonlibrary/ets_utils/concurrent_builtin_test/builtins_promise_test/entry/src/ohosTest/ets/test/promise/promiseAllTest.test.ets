@@ -2196,7 +2196,7 @@ export default function promiseAllTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAllTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAllTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const outerStartTime = Date.now();
 
       const inner1 = Promise.all([
@@ -2217,6 +2217,7 @@ export default function promiseAllTest() {
       expect(result[0]).assertDeepEquals([1, 2]);
       expect(result[1]).assertDeepEquals([3, 4]);
       expect(result[2]).assertDeepEquals([3, 4]); // inner2 finishes first
+      done();
     });
 
     /**
@@ -2592,7 +2593,7 @@ export default function promiseAllTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAllTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAllTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       // Create promises that will fail and succeed
       const fastFail = new Promise<number>((_, reject) => setTimeout(() => reject(1), 50));
       const slowSuccess = new Promise<number>(resolve => setTimeout(() => resolve(2), 200));
@@ -2611,6 +2612,7 @@ export default function promiseAllTest() {
       ]);
 
       expect(result).assertDeepEquals([2, 0, 2]);
+      done();
     });
 
   })

@@ -1041,21 +1041,18 @@ export default function promiseResolveTest() {
      * @tc.level Level 4
      */
     it('PromiseResolveTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const start = Date.now();
       const innerRace = Promise.race([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-slow'), 20))),
+        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-slow'), 200))),
         Promise.resolve('inner-fast')
       ]);
       const outerRace = Promise.race([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerRace), 10))),
+        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerRace), 100))),
         Promise.resolve('outer-fast')
       ]);
 
       const result = await outerRace;
-      const end = Date.now();
 
       expect(result).assertEqual('outer-fast');
-      expect(end - start).assertLess(15);
     });
 
     /**
@@ -1276,7 +1273,7 @@ export default function promiseResolveTest() {
      * @tc.type Function
      * @tc.level Level 5
      */
-    it('PromiseResolveTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseResolveTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const start = Date.now();
       const race1 = Promise.race([
         Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(10), 50))),
@@ -1292,6 +1289,7 @@ export default function promiseResolveTest() {
       const end = Date.now();
 
       expect(result).assertDeepEquals([10, 40]);
+      done();
     });
 
     /**

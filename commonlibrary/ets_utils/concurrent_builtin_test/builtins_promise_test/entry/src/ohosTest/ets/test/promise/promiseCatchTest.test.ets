@@ -1819,7 +1819,7 @@ export default function promiseCatchTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('PromiseCatchTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseCatchTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let raceErrReason: string = '';
       const slowResolve: Promise<string> = new Promise(resolve => setTimeout(() => resolve('Slow win'), 200));
       const fastReject: Promise<never> = new Promise((_, reject) => setTimeout(() => reject('Fast fail'), 50));
@@ -1832,6 +1832,7 @@ export default function promiseCatchTest() {
         })
         .catch((err: string) => {
           raceErrReason = err;
+      done();
         });
 
       expect(raceErrReason).assertEqual('Fast fail');

@@ -992,7 +992,7 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAnyTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const innerAny1: Promise<number> = Promise.any([
         new Promise<number>((resolve) => setTimeout(() => resolve(1), 350)),
         new Promise<number>((resolve) => setTimeout(() => resolve(2), 200))
@@ -1005,6 +1005,7 @@ export default function promiseAnyTest() {
 
       const result = await Promise.any([innerAny1, innerAny2]);
       expect(result).assertEqual(3);
+      done();
     });
 
     /**
@@ -1199,7 +1200,7 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAnyTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const depDelays: Record<number, number> = { 1: 200, 2: 50, 3: 60, 4: 200 };
       const resolveDependency = async (id: number, deps: number[]): Promise<number> => {
         if (deps.length > 0) {
@@ -1221,6 +1222,7 @@ export default function promiseAnyTest() {
       ]);
 
       expect(result).assertEqual(2);
+      done();
     });
 
     /**
@@ -1738,7 +1740,7 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAnyTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const promises: Promise<number>[] = [
         new Promise<number>((resolve) => setTimeout(() => resolve(1), 200)),
         new Promise<number>((resolve) => setTimeout(() => resolve(2), 50)),
@@ -1747,6 +1749,7 @@ export default function promiseAnyTest() {
 
       const result = await Promise.any(promises);
       expect(result).assertEqual(2);
+      done();
     });
 
     /**
@@ -1832,7 +1835,7 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAnyTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const race1: Promise<string> = Promise.race([
         new Promise<string>(resolve => setTimeout(() => resolve("race1-1"), 350)),
         new Promise<string>(resolve => setTimeout(() => resolve("race1-2"), 200))
@@ -1845,6 +1848,7 @@ export default function promiseAnyTest() {
 
       const result = await Promise.any([race1, race2]);
       expect(result).assertEqual("race2-1");
+      done();
     });
 
     /**

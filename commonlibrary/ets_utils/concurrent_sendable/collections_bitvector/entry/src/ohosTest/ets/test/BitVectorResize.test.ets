@@ -650,7 +650,7 @@ export default function BitVectorResizeTest() {
 
     /**
      * @tc.name   testBitVectorResize10200201
-     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_0608
+     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_0626
      * @tc.desc   BitVector resize 10200201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

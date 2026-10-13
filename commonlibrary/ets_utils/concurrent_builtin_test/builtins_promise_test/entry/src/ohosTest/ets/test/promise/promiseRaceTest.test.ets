@@ -1368,7 +1368,7 @@ export default function promiseRaceTest() {
      * @tc.type Function
      * @tc.level Level 5
      */
-    it('PromiseRaceTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRaceTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Create independent base promises
       const base1: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(10), 200));
       const base2: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(20), 350));
@@ -1384,6 +1384,7 @@ export default function promiseRaceTest() {
       // Final race between dependent promises
       const result = await Promise.race([dep1, dep2, dep3]);
       expect(result).assertEqual(35);
+      done();
     });
 
     /**
