@@ -72,6 +72,7 @@ export default function persistenceV2IgnoreReadOnlyProperties2Test() {
         console.info('[PersistenceV2IgnoreReadOnlyProperties2Test_001] component obj: ' + JSON.stringify(obj));
         let content: string = obj.$attrs.content as string;
         console.info('[PersistenceV2IgnoreReadOnlyProperties2Test_001] content: ' + JSON.stringify(content));
+        
         // value=1, doubled=1*2=2, expected text: "doubled value is 2"
         expect(content).assertEqual('doubled value is 2');
         console.info('[PersistenceV2IgnoreReadOnlyProperties2Test_001] END');
