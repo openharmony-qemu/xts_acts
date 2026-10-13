@@ -3778,10 +3778,232 @@ export default function geolocationTest_geo7() {
             }
         }
         try {
-            geolocationm.enableLocation();
+            await geolocationm.enableLocation();
         } catch (error) {
             console.info('[lbs_js] offLocationChange0100 enableLocation error.' + JSON.stringify(error));
         }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_Location_Location_onLocationChange_3301100_0100
+     * @tc.number SUB_Location_Location_onLocationChange_3301100_0100
+     * @tc.desc   When the location switch is disabled, on('locationChange') will return 3301100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Location_Location_onLocationChange_3301100_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_Location_Location_onLocationChange_3301100_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support location');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
+        try {
+            await geolocationm.disableLocation();
+            console.info('[lbs_js] onLocationChange3301100 disableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] onLocationChange3301100 disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+
+        var locationChange = (location) => {
+            console.info('[lbs_js] onLocationChange3301100 data:' + JSON.stringify(location));
+        };
+        let requestInfo = {"priority":request_priority_UNSET, "scenario":request_scenario_UNSET, "timeInterval":1,
+            "distanceInterval": 0, "maxAccuracy": 0};
+        try {
+            geolocationm.on('locationChange', requestInfo, locationChange);
+            console.info('[lbs_js] onLocationChange3301100 on without err thrown');
+            expect().assertFail();
+        } catch (error) {
+            console.info('[lbs_js] onLocationChange3301100 on try err.' + JSON.stringify(error));
+            expect(error.code).assertEqual('3301100');
+        }
+        try {
+            geolocationm.off('locationChange', locationChange);
+        } catch (error) {
+            console.info('[lbs_js] onLocationChange3301100 off cleanup err.' + JSON.stringify(error));
+        }
+        try {
+            await geolocationm.enableLocation();
+            console.info('[lbs_js] onLocationChange3301100 enableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] onLocationChange3301100 enableLocation error.' + JSON.stringify(error));
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_Location_Location_onSatelliteStatusChange_3301100_0100
+     * @tc.number SUB_Location_Location_onSatelliteStatusChange_3301100_0100
+     * @tc.desc   When the location switch is disabled, on('satelliteStatusChange') will return 3301100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Location_Location_onSatelliteStatusChange_3301100_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Gnss');
+        console.info('SUB_Location_Location_onSatelliteStatusChange_3301100_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support gnss');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
+        try {
+            await geolocationm.disableLocation();
+            console.info('[lbs_js] onSatelliteStatusChange3301100 disableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] onSatelliteStatusChange3301100 disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+
+        var gnssStatusCb = (satelliteStatusInfo) => {
+            console.info('[lbs_js] onSatelliteStatusChange3301100 data:' + JSON.stringify(satelliteStatusInfo));
+        };
+        try {
+            geolocationm.on('satelliteStatusChange', gnssStatusCb);
+            console.info('[lbs_js] onSatelliteStatusChange3301100 on without err thrown');
+            expect().assertFail();
+        } catch (error) {
+            console.info('[lbs_js] onSatelliteStatusChange3301100 on try err.' + JSON.stringify(error));
+            expect(error.code).assertEqual('3301100');
+        }
+        try {
+            geolocationm.off('satelliteStatusChange', gnssStatusCb);
+        } catch (error) {
+            console.info('[lbs_js] onSatelliteStatusChange3301100 off cleanup err.' + JSON.stringify(error));
+        }
+        try {
+            await geolocationm.enableLocation();
+            console.info('[lbs_js] onSatelliteStatusChange3301100 enableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] onSatelliteStatusChange3301100 enableLocation error.' + JSON.stringify(error));
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_Location_Location_onCachedGnssLocationsChange_switch_0100
+     * @tc.number SUB_Location_Location_onCachedGnssLocationsChange_switch_0100
+     * @tc.desc   When the location switch is disabled, on('cachedGnssLocationsChange') will return 3301100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Location_Location_onCachedGnssLocationsChange_switch_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Gnss');
+        console.info('SUB_Location_Location_onCachedGnssLocationsChange_switch_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support gnss');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
+        try {
+            await geolocationm.disableLocation();
+            console.info('[lbs_js] onCachedGnssLocationsChange3301100 disableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] onCachedGnssLocationsChange3301100 disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+
+        let cachedRequest = {
+            'reportingPeriodSec': 1000,
+            'wakeUpCacheQueueFull': true
+        };
+        var cachedLocationsCb = (locations) => {
+            console.info('[lbs_js] onCachedGnssLocationsChange3301100 data:' + JSON.stringify(locations));
+        };
+        try {
+            geolocationm.on('cachedGnssLocationsChange', cachedRequest, cachedLocationsCb);
+            console.info('[lbs_js] onCachedGnssLocationsChange3301100 on without err thrown');
+            try {
+                geolocationm.off('cachedGnssLocationsChange', cachedLocationsCb);
+            } catch (error) {
+                console.info('[lbs_js] onCachedGnssLocationsChange3301100 off cleanup err.' + JSON.stringify(error));
+            }
+            expect().assertFail();
+        } catch (error) {
+            console.info('[lbs_js] onCachedGnssLocationsChange3301100 on try err.' + JSON.stringify(error));
+            expect(error.code).assertEqual('3301100');
+        }
+        try {
+            await geolocationm.enableLocation();
+            console.info('[lbs_js] onCachedGnssLocationsChange3301100 enableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] onCachedGnssLocationsChange3301100 enableLocation error.' + JSON.stringify(error));
+        }
+        await sleep(1000);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_Location_Location_offCachedGnssLocationsChange_switch_0100
+     * @tc.number SUB_Location_Location_offCachedGnssLocationsChange_switch_0100
+     * @tc.desc   When the location switch is disabled, off('cachedGnssLocationsChange') will return 3301100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Location_Location_offCachedGnssLocationsChange_switch_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
+        var isAcessToken = canIUse('SystemCapability.Location.Location.Gnss');
+        console.info('SUB_Location_Location_offCachedGnssLocationsChange_switch_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+            console.info('The device does not support gnss');
+            expect(isAcessToken).assertFalse();
+            done();
+            return;
+        }
+        try {
+            await geolocationm.disableLocation();
+            console.info('[lbs_js] offCachedGnssLocationsChange3301100 disableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] offCachedGnssLocationsChange3301100 disableLocation error.' + JSON.stringify(error));
+            expect().assertFail();
+            done();
+            return;
+        }
+        await sleep(1000);
+
+        let cachedRequest = {
+            'reportingPeriodSec': 1000,
+            'wakeUpCacheQueueFull': true
+        };
+        var cachedLocationsCb = (locations) => {
+            console.info('[lbs_js] offCachedGnssLocationsChange3301100 data:' + JSON.stringify(locations));
+        };
+        try {
+            geolocationm.on('cachedGnssLocationsChange', cachedRequest, cachedLocationsCb);
+            geolocationm.off('cachedGnssLocationsChange', cachedLocationsCb);
+            console.info('[lbs_js] offCachedGnssLocationsChange3301100 off without err thrown');
+            expect().assertFail();
+        } catch (error) {
+            console.info('[lbs_js] offCachedGnssLocationsChange3301100 off try err.' + JSON.stringify(error));
+            expect(error.code).assertEqual('3301100');
+        }
+        try {
+            await geolocationm.enableLocation();
+            console.info('[lbs_js] offCachedGnssLocationsChange3301100 enableLocation success');
+        } catch (error) {
+            console.info('[lbs_js] offCachedGnssLocationsChange3301100 enableLocation error.' + JSON.stringify(error));
+        }
+        await sleep(1000);
         done();
     })
 
