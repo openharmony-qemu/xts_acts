@@ -54,14 +54,14 @@ export default function int8ArraySomePart03Test(): void {
     const INT8_MIN = -128;
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0600
-     * @tc.name int8ArraySomePart03Test006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0100
+     * @tc.name int8ArraySomePart03Test001
      * @tc.desc Verify some single zero always true returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -73,14 +73,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0700
-     * @tc.name int8ArraySomePart03Test007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0200
+     * @tc.name int8ArraySomePart03Test002
      * @tc.desc Verify some single zero always false returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -92,14 +92,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0800
-     * @tc.name int8ArraySomePart03Test008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0300
+     * @tc.name int8ArraySomePart03Test003
      * @tc.desc Verify some single max greater than one hundred returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([INT8_MAX]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e > 100;
@@ -108,14 +108,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0900
-     * @tc.name int8ArraySomePart03Test009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0400
+     * @tc.name int8ArraySomePart03Test004
      * @tc.desc Verify some single min less than negative one hundred returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e < -100;
@@ -124,14 +124,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1000
-     * @tc.name int8ArraySomePart03Test010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0500
+     * @tc.name int8ArraySomePart03Test005
      * @tc.desc Verify some single element throwing predicate propagates RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([5]);
       try {
         arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -147,14 +147,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1100
-     * @tc.name int8ArraySomePart03Test011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0600
+     * @tc.name int8ArraySomePart03Test006
      * @tc.desc Verify some predicate at zero equals passed element returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([99]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         let val: number | undefined = a.at(0);
@@ -167,14 +167,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1200
-     * @tc.name int8ArraySomePart03Test012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0700
+     * @tc.name int8ArraySomePart03Test007
      * @tc.desc Verify some all zeros match zero short circuits first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 0, 0]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === 0;
@@ -183,14 +183,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1300
-     * @tc.name int8ArraySomePart03Test013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0800
+     * @tc.name int8ArraySomePart03Test008
      * @tc.desc Verify some all zeros no match traverses all three
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 0, 0]);
       let counter: int[] = [0];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -204,14 +204,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1400
-     * @tc.name int8ArraySomePart03Test014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_0900
+     * @tc.name int8ArraySomePart03Test009
      * @tc.desc Verify some all max match 127 short circuits first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([INT8_MAX, INT8_MAX, INT8_MAX]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === 127;
@@ -220,14 +220,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1500
-     * @tc.name int8ArraySomePart03Test015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1000
+     * @tc.name int8ArraySomePart03Test010
      * @tc.desc Verify some all min negative predicate short circuits first
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([INT8_MIN, INT8_MIN, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e < 0;
@@ -236,14 +236,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1600
-     * @tc.name int8ArraySomePart03Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1100
+     * @tc.name int8ArraySomePart03Test011
      * @tc.desc Verify some all fives not five traverses all three
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([5, 5, 5]);
       let counter: int[] = [0];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -257,14 +257,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1700
-     * @tc.name int8ArraySomePart03Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1200
+     * @tc.name int8ArraySomePart03Test012
      * @tc.desc Verify some all sevens match seven counter one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([7, 7, 7, 7]);
       let counter: int[] = [0];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -278,14 +278,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1800
-     * @tc.name int8ArraySomePart03Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1300
+     * @tc.name int8ArraySomePart03Test013
      * @tc.desc Verify some throwing RangeError first element catch name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       try {
         arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -301,14 +301,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3600
-     * @tc.name int8ArraySomePart03Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1400
+     * @tc.name int8ArraySomePart03Test014
      * @tc.desc Verify some predicate at negative one returns last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -324,14 +324,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3700
-     * @tc.name int8ArraySomePart03Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1500
+     * @tc.name int8ArraySomePart03Test015
      * @tc.desc Verify some predicate at negative length returns first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -347,14 +347,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3800
-     * @tc.name int8ArraySomePart03Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1600
+     * @tc.name int8ArraySomePart03Test016
      * @tc.desc Verify some predicate at negative length minus one undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -367,14 +367,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3900
-     * @tc.name int8ArraySomePart03Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1700
+     * @tc.name int8ArraySomePart03Test017
      * @tc.desc Verify some predicate at length out of bounds undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -387,14 +387,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4000
-     * @tc.name int8ArraySomePart03Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1800
+     * @tc.name int8ArraySomePart03Test018
      * @tc.desc Verify some predicate at length plus one undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -407,14 +407,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4100
-     * @tc.name int8ArraySomePart03Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_1900
+     * @tc.name int8ArraySomePart03Test019
      * @tc.desc Verify some predicate at int max index undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -427,14 +427,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4200
-     * @tc.name int8ArraySomePart03Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2000
+     * @tc.name int8ArraySomePart03Test020
      * @tc.desc Verify some predicate at negative nine ninety nine undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -447,14 +447,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4300
-     * @tc.name int8ArraySomePart03Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2100
+     * @tc.name int8ArraySomePart03Test021
      * @tc.desc Verify some predicate at int minimum index undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -467,14 +467,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4400
-     * @tc.name int8ArraySomePart03Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2200
+     * @tc.name int8ArraySomePart03Test022
      * @tc.desc Verify some single element at zero returns forty two
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([42]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -490,14 +490,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4500
-     * @tc.name int8ArraySomePart03Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2300
+     * @tc.name int8ArraySomePart03Test023
      * @tc.desc Verify some single element at negative two undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([42]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -510,14 +510,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4600
-     * @tc.name int8ArraySomePart03Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2400
+     * @tc.name int8ArraySomePart03Test024
      * @tc.desc Verify empty array callback a.$_get(0) would be out of bounds but predicate never executes, some returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array(0);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
@@ -530,14 +530,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4700
-     * @tc.name int8ArraySomePart03Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2500
+     * @tc.name int8ArraySomePart03Test025
      * @tc.desc Verify some predicate NaN never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, -1, INT8_MAX, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === Number.NaN;
@@ -546,14 +546,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4800
-     * @tc.name int8ArraySomePart03Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2600
+     * @tc.name int8ArraySomePart03Test026
      * @tc.desc Verify some isNaN predicate never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, -1, INT8_MAX, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return isNaN(e);
@@ -562,14 +562,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4900
-     * @tc.name int8ArraySomePart03Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2700
+     * @tc.name int8ArraySomePart03Test027
      * @tc.desc Verify some positive infinity never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, INT8_MAX, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === Number.POSITIVE_INFINITY;
@@ -578,14 +578,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5000
-     * @tc.name int8ArraySomePart03Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2800
+     * @tc.name int8ArraySomePart03Test028
      * @tc.desc Verify some negative infinity never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, INT8_MAX, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === -Number.POSITIVE_INFINITY;
@@ -594,14 +594,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5100
-     * @tc.name int8ArraySomePart03Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_2900
+     * @tc.name int8ArraySomePart03Test029
      * @tc.desc Verify some out of bounds undefined never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         let oob: number | undefined = a.at(100);
@@ -614,14 +614,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5200
-     * @tc.name int8ArraySomePart03Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3000
+     * @tc.name int8ArraySomePart03Test030
      * @tc.desc Verify some external null guard never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, 2]);
       let extVal: int = 0;
       let extIsNull: boolean = true;
@@ -635,14 +635,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5300
-     * @tc.name int8ArraySomePart03Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3100
+     * @tc.name int8ArraySomePart03Test031
      * @tc.desc Verify some Number max value never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, INT8_MAX, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === Number.MAX_VALUE;
@@ -651,14 +651,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5400
-     * @tc.name int8ArraySomePart03Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3200
+     * @tc.name int8ArraySomePart03Test032
      * @tc.desc Verify some Number min value never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, INT8_MAX, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === Number.MIN_VALUE;
@@ -667,14 +667,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5500
-     * @tc.name int8ArraySomePart03Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3300
+     * @tc.name int8ArraySomePart03Test033
      * @tc.desc Verify some Number epsilon never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, INT8_MAX, INT8_MIN]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === Number.EPSILON;
@@ -683,14 +683,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5600
-     * @tc.name int8ArraySomePart03Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3400
+     * @tc.name int8ArraySomePart03Test034
      * @tc.desc Verify some Math PI never matches returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, 2, 3]);
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
         return e === Math.PI;
@@ -699,14 +699,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5700
-     * @tc.name int8ArraySomePart03Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3500
+     * @tc.name int8ArraySomePart03Test035
      * @tc.desc Verify some set modifies subsequent element reads fifty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       let seen: number[] = [];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -723,14 +723,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5800
-     * @tc.name int8ArraySomePart03Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3600
+     * @tc.name int8ArraySomePart03Test036
      * @tc.desc Verify some length stable throughout iteration four
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4]);
       let len: int[] = [0];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -744,14 +744,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_5900
-     * @tc.name int8ArraySomePart03Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3700
+     * @tc.name int8ArraySomePart03Test037
      * @tc.desc Verify some counter three partial traversal short circuit
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       let counter: int[] = [0];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -765,14 +765,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6000
-     * @tc.name int8ArraySomePart03Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3800
+     * @tc.name int8ArraySomePart03Test038
      * @tc.desc Verify some records hit index two short circuits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let foundIdx: int[] = [-1];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -789,14 +789,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6100
-     * @tc.name int8ArraySomePart03Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_3900
+     * @tc.name int8ArraySomePart03Test039
      * @tc.desc Verify some fill zeros subsequent reads zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       let seen: number[] = [];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -816,14 +816,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6200
-     * @tc.name int8ArraySomePart03Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4000
+     * @tc.name int8ArraySomePart03Test040
      * @tc.desc Verify some reverse in place subsequent reads reversed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4, 5]);
       let seen: number[] = [];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -843,14 +843,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6300
-     * @tc.name int8ArraySomePart03Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4100
+     * @tc.name int8ArraySomePart03Test041
      * @tc.desc Verify some throws then every on same array works correctly, array not corrupted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       try {
         arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -870,14 +870,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6400
-     * @tc.name int8ArraySomePart03Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4200
+     * @tc.name int8ArraySomePart03Test042
      * @tc.desc Verify some throws then array first element at(0) still equals original value 10
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       try {
         arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -895,14 +895,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6500
-     * @tc.name int8ArraySomePart03Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4300
+     * @tc.name int8ArraySomePart03Test043
      * @tc.desc Verify some throws TypeError then includes on same array returns true normally
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([5, 10, 15]);
       try {
         arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -920,14 +920,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6600
-     * @tc.name int8ArraySomePart03Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4400
+     * @tc.name int8ArraySomePart03Test044
      * @tc.desc Verify nested some inner returns boolean, outer throws RangeError based on inner result, inner does not throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4]);
       try {
         arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -949,14 +949,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6700
-     * @tc.name int8ArraySomePart03Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4500
+     * @tc.name int8ArraySomePart03Test045
      * @tc.desc Verify some throws then array byteLength unchanged, exception does not affect underlying buffer geometry
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3, 4]);
       let beforeByteLen: int = arr.byteLength;
       try {
@@ -976,14 +976,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6800
-     * @tc.name int8ArraySomePart03Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4600
+     * @tc.name int8ArraySomePart03Test046
      * @tc.desc Verify some internal catch returns false counter three
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([1, 2, 3]);
       let counter: int[] = [0];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
@@ -1005,14 +1005,14 @@ export default function int8ArraySomePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_6900
-     * @tc.name int8ArraySomePart03Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SOME_PART03_TEST_4700
+     * @tc.name int8ArraySomePart03Test047
      * @tc.desc Verify some graceful NaN check then five counter three
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySomePart03Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySomePart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 1, 2]);
       let counter: int[] = [0];
       let result = arr.some((e: number, i: int, a: Int8Array): boolean => {
