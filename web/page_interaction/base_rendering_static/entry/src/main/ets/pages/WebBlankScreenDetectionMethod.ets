@@ -155,7 +155,7 @@ struct WebComponent {
             }
           })
       }
-      Web({ src: 'https://www.example.com', controller: this.controller })
+      Web({ src: 'https://mse.360.cn/m/blank.html', controller: this.controller })
         .javaScriptAccess(true)
         .blankScreenDetectionConfig({
           enable: true,
