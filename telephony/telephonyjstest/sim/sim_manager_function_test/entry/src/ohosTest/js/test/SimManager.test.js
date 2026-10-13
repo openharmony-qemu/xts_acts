@@ -316,7 +316,7 @@ export default function SimManagerTest() {
         if (err) {
           if (err === undefined) {
             console.info(CASE_NAME + " isSimActive async err info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
-            expect(data).assertEqual(false);
+            expect(data).assertFalse;
             done();
           } else {
             console.info(CASE_NAME + "isSimActive async err info :" + JSON.stringify(err) + "data:" + JSON.stringify(data));
