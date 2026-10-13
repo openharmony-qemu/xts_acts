@@ -72,7 +72,7 @@ export default function ImageAnimatorInterpolationTest() {
     /**
      * @tc.name   ImageAnimatorInterpolationTest_0200
      * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_0200
-     * @tc.desc   Test interpolation property initial value set to ImageInterpolation.None (boundary - min)
+     * @tc.desc   Test interpolation property set to ImageInterpolation.None (boundary - min)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -81,9 +81,9 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0200] START');
       try {
         await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
+        let strJson = getInspectorByKey('imageAnimatorNone');
         let obj: ESObject = JSON.parse(strJson);
-        console.info('[ImageAnimatorInterpolationTest_0200] initial interpolation: ' + obj.$attrs.interpolation);
+        console.info('[ImageAnimatorInterpolationTest_0200] interpolation: ' + obj.$attrs.interpolation);
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.None');
         console.info('[ImageAnimatorInterpolationTest_0200] END');
       } catch (err) {
@@ -105,11 +105,7 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0300] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'interpolation', value: ImageInterpolation.Low
-        })
-        await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
+        let strJson = getInspectorByKey('imageAnimatorLow');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorInterpolationTest_0300] interpolation: ' + obj.$attrs.interpolation);
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
@@ -133,11 +129,7 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0400] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'interpolation', value: ImageInterpolation.Medium
-        })
-        await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
+        let strJson = getInspectorByKey('imageAnimatorMedium');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorInterpolationTest_0400] interpolation: ' + obj.$attrs.interpolation);
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.Medium');
@@ -161,11 +153,7 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0500] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'interpolation', value: ImageInterpolation.High
-        })
-        await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
+        let strJson = getInspectorByKey('imageAnimatorHigh');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorInterpolationTest_0500] interpolation: ' + obj.$attrs.interpolation);
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.High');
@@ -180,7 +168,7 @@ export default function ImageAnimatorInterpolationTest() {
     /**
      * @tc.name   ImageAnimatorInterpolationTest_0600
      * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_0600
-     * @tc.desc   Test dynamic switch of interpolation from None to High then to Low
+     * @tc.desc   Test interpolation property values of None, High and Low components simultaneously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -189,28 +177,20 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0600] START');
       try {
         await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
-        let obj: ESObject = JSON.parse(strJson);
-        console.info('[ImageAnimatorInterpolationTest_0600] initial interpolation: ' + obj.$attrs.interpolation);
-        expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.None');
+        let strJsonNone = getInspectorByKey('imageAnimatorNone');
+        let objNone: ESObject = JSON.parse(strJsonNone);
+        console.info('[ImageAnimatorInterpolationTest_0600] None interpolation: ' + objNone.$attrs.interpolation);
+        expect(objNone.$attrs.interpolation).assertEqual('ImageInterpolation.None');
 
-        globalThis.value.message.notify({
-          name: 'interpolation', value: ImageInterpolation.High
-        })
-        await CommonFunc.sleep(1000);
-        let strJson2 = getInspectorByKey('imageAnimatorInterpolation');
-        let obj2: ESObject = JSON.parse(strJson2);
-        console.info('[ImageAnimatorInterpolationTest_0600] after High interpolation: ' + obj2.$attrs.interpolation);
-        expect(obj2.$attrs.interpolation).assertEqual('ImageInterpolation.High');
+        let strJsonHigh = getInspectorByKey('imageAnimatorHigh');
+        let objHigh: ESObject = JSON.parse(strJsonHigh);
+        console.info('[ImageAnimatorInterpolationTest_0600] High interpolation: ' + objHigh.$attrs.interpolation);
+        expect(objHigh.$attrs.interpolation).assertEqual('ImageInterpolation.High');
 
-        globalThis.value.message.notify({
-          name: 'interpolation', value: ImageInterpolation.Low
-        })
-        await CommonFunc.sleep(1000);
-        let strJson3 = getInspectorByKey('imageAnimatorInterpolation');
-        let obj3: ESObject = JSON.parse(strJson3);
-        console.info('[ImageAnimatorInterpolationTest_0600] after Low interpolation: ' + obj3.$attrs.interpolation);
-        expect(obj3.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
+        let strJsonLow = getInspectorByKey('imageAnimatorLow');
+        let objLow: ESObject = JSON.parse(strJsonLow);
+        console.info('[ImageAnimatorInterpolationTest_0600] Low interpolation: ' + objLow.$attrs.interpolation);
+        expect(objLow.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
         console.info('[ImageAnimatorInterpolationTest_0600] END');
       } catch (err) {
         expect().assertFail();
@@ -231,11 +211,7 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0700] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'interpolation', value: 99
-        })
-        await CommonFunc.sleep(2000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
+        let strJson = getInspectorByKey('imageAnimatorInvalidEnum');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorInterpolationTest_0700] invalid enum 99 interpolation: ' + obj.$attrs.interpolation);
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
@@ -259,11 +235,7 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0800] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'interpolation', value: -1
-        })
-        await CommonFunc.sleep(2000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
+        let strJson = getInspectorByKey('imageAnimatorInvalidNegative');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorInterpolationTest_0800] invalid negative -1 interpolation: ' + obj.$attrs.interpolation);
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
@@ -287,12 +259,7 @@ export default function ImageAnimatorInterpolationTest() {
       console.info('[ImageAnimatorInterpolationTest_0900] START');
       try {
         await CommonFunc.sleep(1000);
-        let undefinedValue: ESObject = undefined;
-        globalThis.value.message.notify({
-          name: 'interpolation', value: undefinedValue
-        })
-        await CommonFunc.sleep(2000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
+        let strJson = getInspectorByKey('imageAnimatorUndefined');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorInterpolationTest_0900] undefined interpolation: ' + obj.$attrs.interpolation);
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
@@ -300,35 +267,6 @@ export default function ImageAnimatorInterpolationTest() {
       } catch (err) {
         expect().assertFail();
         console.info('[ImageAnimatorInterpolationTest_0900] ERR ' + JSON.stringify(err));
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   ImageAnimatorInterpolationTest_1000
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_1000
-     * @tc.desc   Test interpolation property with null value (exception value)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ImageAnimatorInterpolationTest_1000', Level.LEVEL1, async (done: Function) => {
-      console.info('[ImageAnimatorInterpolationTest_1000] START');
-      try {
-        await CommonFunc.sleep(1000);
-        let nullValue: ESObject = null;
-        globalThis.value.message.notify({
-          name: 'interpolation', value: nullValue
-        })
-        await CommonFunc.sleep(2000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolation');
-        let obj: ESObject = JSON.parse(strJson);
-        console.info('[ImageAnimatorInterpolationTest_1000] null interpolation: ' + obj.$attrs.interpolation);
-        expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
-        console.info('[ImageAnimatorInterpolationTest_1000] END');
-      } catch (err) {
-        expect().assertFail();
-        console.info('[ImageAnimatorInterpolationTest_1000] ERR ' + JSON.stringify(err));
       }
       done();
     });

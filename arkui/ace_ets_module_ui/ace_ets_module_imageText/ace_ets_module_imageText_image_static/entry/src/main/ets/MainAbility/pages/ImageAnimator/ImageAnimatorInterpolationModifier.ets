@@ -71,35 +71,11 @@ class InterpolationHighModifier extends BaseImageAnimatorModifier {
   }
 }
 
-// 异常值：非法枚举数字 99
-class InterpolationInvalidEnumModifier extends BaseImageAnimatorModifier {
-  applyNormalAttribute(instance: ImageAnimatorAttribute): void {
-    super.applyNormalAttribute(instance);
-    instance.interpolation(99 as ImageInterpolation);
-  }
-}
-
-// 异常值：负数 -1
-class InterpolationNegativeModifier extends BaseImageAnimatorModifier {
-  applyNormalAttribute(instance: ImageAnimatorAttribute): void {
-    super.applyNormalAttribute(instance);
-    instance.interpolation(-1 as ImageInterpolation);
-  }
-}
-
 // 异常值：undefined
 class InterpolationUndefinedModifier extends BaseImageAnimatorModifier {
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     super.applyNormalAttribute(instance);
-    instance.interpolation(undefined as ImageInterpolation);
-  }
-}
-
-// 异常值：null
-class InterpolationNullModifier extends BaseImageAnimatorModifier {
-  applyNormalAttribute(instance: ImageAnimatorAttribute): void {
-    super.applyNormalAttribute(instance);
-    instance.interpolation(null as ImageInterpolation);
+    instance.interpolation(undefined);
   }
 }
 
@@ -111,10 +87,7 @@ struct ImageAnimatorInterpolationModifierPage {
   interpolationLowModifier: InterpolationLowModifier = new InterpolationLowModifier();
   interpolationMediumModifier: InterpolationMediumModifier = new InterpolationMediumModifier();
   interpolationHighModifier: InterpolationHighModifier = new InterpolationHighModifier();
-  interpolationInvalidEnumModifier: InterpolationInvalidEnumModifier = new InterpolationInvalidEnumModifier();
-  interpolationNegativeModifier: InterpolationNegativeModifier = new InterpolationNegativeModifier();
   interpolationUndefinedModifier: InterpolationUndefinedModifier = new InterpolationUndefinedModifier();
-  interpolationNullModifier: InterpolationNullModifier = new InterpolationNullModifier();
 
   build() {
     Scroll() {
@@ -150,26 +123,8 @@ struct ImageAnimatorInterpolationModifierPage {
           .height(100)
 
         ImageAnimator()
-          .id('ia_interpolation_invalid_enum')
-          .attributeModifier(this.interpolationInvalidEnumModifier)
-          .width(100)
-          .height(100)
-
-        ImageAnimator()
-          .id('ia_interpolation_invalid_negative')
-          .attributeModifier(this.interpolationNegativeModifier)
-          .width(100)
-          .height(100)
-
-        ImageAnimator()
           .id('ia_interpolation_undefined')
           .attributeModifier(this.interpolationUndefinedModifier)
-          .width(100)
-          .height(100)
-
-        ImageAnimator()
-          .id('ia_interpolation_null')
-          .attributeModifier(this.interpolationNullModifier)
           .width(100)
           .height(100)
       }

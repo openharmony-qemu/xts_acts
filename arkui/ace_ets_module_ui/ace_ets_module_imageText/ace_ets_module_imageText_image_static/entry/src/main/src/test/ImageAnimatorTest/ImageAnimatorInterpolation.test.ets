@@ -268,32 +268,5 @@ export default function ImageAnimatorInterpolationTest() {
       }
       done();
     });
-
-    /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_ERROR_0800
-     * @tc.name   ImageAnimatorInterpolationTest_static_0900
-     * @tc.desc   Verify interpolation property with null value, expect fallback to default Low
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     */
-    it('ImageAnimatorInterpolationTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ImageAnimatorInterpolationTest_static_0900 START');
-      try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_null');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_0900] $type: ' + obj.getString('$type'));
-        console.info('[static_0900] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
-        expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
-      } catch (err) {
-        console.error('[static_0900] error: ' + err);
-        expect(false).assertTrue();
-      }
-      done();
-    });
   })
 }

@@ -123,20 +123,8 @@ struct ImageAnimatorInterpolationPage {
             { src: $r('app.media.flower') },
             { src: $r('app.media.landscape') }
           ])
-          .interpolation(undefined as ImageInterpolation)
+          .interpolation(undefined)
           .id('ia_interpolation_undefined')
-          .width(100)
-          .height(100)
-
-        // 异常值：null
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(null as ImageInterpolation)
-          .id('ia_interpolation_null')
           .width(100)
           .height(100)
       }

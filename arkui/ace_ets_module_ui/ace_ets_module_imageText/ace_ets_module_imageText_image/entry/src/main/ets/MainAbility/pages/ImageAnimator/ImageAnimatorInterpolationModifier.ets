@@ -14,7 +14,7 @@
  */
 
 class MyImageAnimatorInterpolationModifier implements AttributeModifier<ImageAnimatorAttribute> {
-  public interpolationValue: ImageInterpolation = ImageInterpolation.None;
+  public interpolationValue: ImageInterpolation | undefined = ImageInterpolation.None;
 
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
     instance.interpolation(this.interpolationValue)
@@ -31,7 +31,7 @@ struct ImageAnimatorInterpolationModifierPage {
     this.modifier.interpolationValue = this.storageInterpolation;
   }
 
-  setExceptionInterpolation(value: ImageInterpolation | undefined | null | number) {
+  setExceptionInterpolation(value: ImageInterpolation | undefined) {
     this.modifier.interpolationValue = value;
   }
 

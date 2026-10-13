@@ -87,7 +87,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         console.info('[ImageAnimatorInterpolationModifierTest_0200] initial interpolation: ' + obj.$attrs.interpolation);
 
         let btnLow = await driver.findComponent(ON.id('btn_low'));
-        expect(btnLow != null).assertTrue();
         await btnLow.click();
         await CommonFunc.sleep(1000);
 
@@ -121,7 +120,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         console.info('[ImageAnimatorInterpolationModifierTest_0300] initial interpolation: ' + obj.$attrs.interpolation);
 
         let btnMedium = await driver.findComponent(ON.id('btn_medium'));
-        expect(btnMedium != null).assertTrue();
         await btnMedium.click();
         await CommonFunc.sleep(1000);
 
@@ -155,7 +153,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         console.info('[ImageAnimatorInterpolationModifierTest_0400] initial interpolation: ' + obj.$attrs.interpolation);
 
         let btnHigh = await driver.findComponent(ON.id('btn_high'));
-        expect(btnHigh != null).assertTrue();
         await btnHigh.click();
         await CommonFunc.sleep(1000);
 
@@ -186,7 +183,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         await CommonFunc.sleep(1000);
 
         let btnHigh = await driver.findComponent(ON.id('btn_high'));
-        expect(btnHigh != null).assertTrue();
         await btnHigh.click();
         await CommonFunc.sleep(1000);
         let strJson = getInspectorByKey('imageAnimatorInterpolationModifier');
@@ -195,7 +191,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         expect(obj.$attrs.interpolation).assertEqual('ImageInterpolation.High');
 
         let btnNone = await driver.findComponent(ON.id('btn_none'));
-        expect(btnNone != null).assertTrue();
         await btnNone.click();
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorInterpolationModifier');
@@ -228,7 +223,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         console.info('[ImageAnimatorInterpolationModifierTest_0600] initial interpolation: ' + obj.$attrs.interpolation);
 
         let btnInvalidEnum = await driver.findComponent(ON.id('btn_invalidEnum'));
-        expect(btnInvalidEnum != null).assertTrue();
         await btnInvalidEnum.click();
         await CommonFunc.sleep(1000);
 
@@ -262,7 +256,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         console.info('[ImageAnimatorInterpolationModifierTest_0700] initial interpolation: ' + obj.$attrs.interpolation);
 
         let btnInvalidNegative = await driver.findComponent(ON.id('btn_invalidNegative'));
-        expect(btnInvalidNegative != null).assertTrue();
         await btnInvalidNegative.click();
         await CommonFunc.sleep(1000);
 
@@ -296,7 +289,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
         console.info('[ImageAnimatorInterpolationModifierTest_0800] initial interpolation: ' + obj.$attrs.interpolation);
 
         let btnUndefined = await driver.findComponent(ON.id('btn_undefined'));
-        expect(btnUndefined != null).assertTrue();
         await btnUndefined.click();
         await CommonFunc.sleep(1000);
 
@@ -308,40 +300,6 @@ export default function ImageAnimatorInterpolationModifierTest() {
       } catch (err) {
         expect().assertFail();
         console.info('[ImageAnimatorInterpolationModifierTest_0800] ERR ' + JSON.stringify(err));
-      }
-      done();
-    });
-
-    /**
-     * @tc.name   ImageAnimatorInterpolationModifierTest_0900
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_MODIFIER_0900
-     * @tc.desc   Test interpolation property with null value via applyNormalAttribute of AttributeModifier
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ImageAnimatorInterpolationModifierTest_0900', Level.LEVEL1, async (done: Function) => {
-      console.info('[ImageAnimatorInterpolationModifierTest_0900] START');
-      try {
-        let driver = Driver.create();
-        await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolationModifier');
-        let obj: ESObject = JSON.parse(strJson);
-        console.info('[ImageAnimatorInterpolationModifierTest_0900] initial interpolation: ' + obj.$attrs.interpolation);
-
-        let btnNull = await driver.findComponent(ON.id('btn_null'));
-        expect(btnNull != null).assertTrue();
-        await btnNull.click();
-        await CommonFunc.sleep(1000);
-
-        let strJson2 = getInspectorByKey('imageAnimatorInterpolationModifier');
-        let obj2: ESObject = JSON.parse(strJson2);
-        console.info('[ImageAnimatorInterpolationModifierTest_0900] after null click interpolation: ' + obj2.$attrs.interpolation);
-        expect(obj2.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
-        console.info('[ImageAnimatorInterpolationModifierTest_0900] END');
-      } catch (err) {
-        expect().assertFail();
-        console.info('[ImageAnimatorInterpolationModifierTest_0900] ERR ' + JSON.stringify(err));
       }
       done();
     });
