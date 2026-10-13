@@ -1370,9 +1370,9 @@ export default function promiseRaceTest() {
      */
     it('PromiseRaceTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       // Create independent base promises
-      const base1: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(10), 10));
-      const base2: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(20), 15));
-      const base3: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(30), 5));
+      const base1: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(10), 200));
+      const base2: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(20), 350));
+      const base3: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(30), 50));
 
       // Create dependent promises
       const dep1: Promise<number> = Promise.all([base1, base2]).then((res: number[]) => res[0] + res[1]);

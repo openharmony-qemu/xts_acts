@@ -1401,19 +1401,19 @@ export default function promiseAllSettledTest() {
       setTimeout(() => {
         timeLog.push(1);
         resolve(1);
-      }, 20)
+      }, 350)
       );
       const p2: Promise<number> = new Promise<number>((resolve) =>
       setTimeout(() => {
         timeLog.push(2);
         resolve(2);
-      }, 10)
+      }, 50)
       );
       const p3: Promise<number> = new Promise<number>((resolve) =>
       setTimeout(() => {
         timeLog.push(3);
         resolve(3);
-      }, 15)
+      }, 200)
       );
 
       const results = await Promise.allSettled([p1, p2, p3]);
@@ -1828,16 +1828,16 @@ export default function promiseAllSettledTest() {
       const p1: Promise<string> = new Promise<string>((r) => setTimeout(() => {
         timeLog.push('p1');
         r('p1');
-      }, 20));
+      }, 350));
       const p2: Promise<string> = new Promise<string>((r) => setTimeout(() => {
         timeLog.push('p2');
         r('p2');
-      }, 10));
+      }, 50));
       const inner = Promise.allSettled([p1, p2]);
       const p3: Promise<string> = new Promise<string>((r) => setTimeout(() => {
         timeLog.push('p3');
         r('p3');
-      }, 15));
+      }, 200));
 
       const results = await Promise.allSettled([inner, p3]);
       const innerRes = (results[0] as PromiseFulfilledResult<PromiseSettledResult<string>[]>).value;
@@ -2297,8 +2297,8 @@ export default function promiseAllSettledTest() {
      */
     it('PromiseAllSettledTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const raceVal = Promise.race([
-        new Promise<number>((r) => setTimeout(() => r(10), 15)),
-        new Promise<number>((r) => setTimeout(() => r(20), 5))
+        new Promise<number>((r) => setTimeout(() => r(10), 200)),
+        new Promise<number>((r) => setTimeout(() => r(20), 50))
       ]);
       const allPromise = Promise.all([
         raceVal,
@@ -2405,9 +2405,9 @@ export default function promiseAllSettledTest() {
      */
     it('PromiseAllSettledTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const level3 = Promise.race([
-        new Promise<number>((r) => setTimeout(() => r(1), 20)),
-        new Promise<number>((r) => setTimeout(() => r(2), 10)),
-        new Promise<number>((r) => setTimeout(() => r(3), 15))
+        new Promise<number>((r) => setTimeout(() => r(1), 350)),
+        new Promise<number>((r) => setTimeout(() => r(2), 50)),
+        new Promise<number>((r) => setTimeout(() => r(3), 200))
       ]);
       const level2 = Promise.all([
         level3,

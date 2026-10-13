@@ -2227,12 +2227,12 @@ export default function promiseThenTest() {
         .then(() => {
           log.push('outer-start');
           // 嵌套并行任务
-          const tasks = [parallelTask('parallel1', 15), parallelTask('parallel2', 5)];
+          const tasks = [parallelTask('parallel1', 200), parallelTask('parallel2', 50)];
           return Promise.all<void>(tasks);
         })
         .then(() => {
           log.push('outer-middle');
-          return parallelTask('outer-async', 10);
+          return parallelTask('outer-async', 50);
         })
         .then(() => log.push('outer-end'));
 

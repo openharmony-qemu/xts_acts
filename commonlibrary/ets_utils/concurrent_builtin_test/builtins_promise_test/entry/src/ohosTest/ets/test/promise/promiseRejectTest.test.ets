@@ -109,11 +109,11 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseRejectTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let allRejectionReason = '';
       const promise1 = Promise.resolve(10);
       const promise2 = Promise.reject(new Error('Second promise rejected'));
-      const promise3 = new Promise<number>(resolve => setTimeout(resolve, 50, 30));
+      const promise3 = new Promise<number>(resolve => setTimeout(resolve, 10, 30));
 
       try {
         await Promise.all([promise1, promise2, promise3]);
@@ -122,6 +122,7 @@ export default function promiseRejectTest() {
       }
 
       expect(allRejectionReason).assertEqual('Second promise rejected');
+      done();
     });
 
     /**
@@ -154,11 +155,11 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseRejectTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const promises = [
         Promise.resolve('success'),
         Promise.reject('failure'),
-        new Promise<string>(resolve => setTimeout(resolve, 50, 'delayed success'))
+        new Promise<string>(resolve => setTimeout(resolve, 5, 'delayed success'))
       ];
 
       const results = await Promise.allSettled(promises);
@@ -167,6 +168,7 @@ export default function promiseRejectTest() {
       expect((results[1] as PromiseRejectedResult).reason).assertEqual('failure');
       expect((results[2] as PromiseFulfilledResult<string>).value).assertEqual('delayed success');
       expect(results.every(r => r.status)).assertEqual(true);
+      done();
     });
 
     /**
@@ -369,7 +371,7 @@ export default function promiseRejectTest() {
           // 修复：直接传入字符串原因
           reject('Reject 2');
         }),
-        new Promise<string>((resolve) => setTimeout(resolve, 50, 'Delayed success'))
+        new Promise<string>((resolve) => setTimeout(resolve, 10, 'Delayed success'))
       ];
 
       const results = await Promise.allSettled(promises);
@@ -506,7 +508,7 @@ export default function promiseRejectTest() {
       const promise1: Promise<number> = new Promise<number>((resolve) => setTimeout(resolve, 50, 1));
       const promise2: Promise<string> = new Promise<string>((_, reject) => {
         // Fix: Reject directly without wrapping in Promise.reject
-        setTimeout(() => reject(new Error('Early reject')), 50);
+        setTimeout(() => reject(new Error('Early reject')), 10);
       });
       const promise3: Promise<boolean> = new Promise<boolean>((resolve) => setTimeout(resolve, 100, true));
 
@@ -672,10 +674,10 @@ export default function promiseRejectTest() {
         setTimeout(() => reject('Fast'), 50);
       });
       const slowReject: Promise<number> = new Promise<number>((_, reject) => {
-        setTimeout(() => reject(new Error('Slow')), 50);
+        setTimeout(() => reject(new Error('Slow')), 200);
       });
       const slowResolve: Promise<boolean> = new Promise<boolean>((resolve) => {
-        setTimeout(() => resolve(true), 50);
+        setTimeout(() => resolve(true), 350);
       });
 
       let raceReason = '';
@@ -703,7 +705,7 @@ export default function promiseRejectTest() {
         reject(new Error('A fail'));
       });
       const promiseB: Promise<string> = new Promise<string>((resolve) => {
-        setTimeout(() => resolve('B success'), 50);
+        setTimeout(() => resolve('B success'), 20);
       });
       const promiseC: Promise<string> = new Promise<string>((_, reject) => {
         reject(new Error('C fail'));
@@ -769,13 +771,13 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest031', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async () => {
       const start = Date.now();
       const level3: Promise<number> = new Promise<number>((_, reject) =>
-      setTimeout(() => reject(new Error('L3 delay 20ms')), 50)
+      setTimeout(() => reject(new Error('L3 delay 20ms')), 20)
       );
       const level2: Promise<number> = new Promise<number>((_, reject) =>
-      level3.catch((err: Error) => setTimeout(() => reject(err), 50))
+      level3.catch((err: Error) => setTimeout(() => reject(err), 10))
       );
       const level1: Promise<number> = new Promise<number>((_, reject) =>
-      level2.catch((err: Error) => setTimeout(() => reject(err), 50))
+      level2.catch((err: Error) => setTimeout(() => reject(err), 15))
       );
 
       const result = await Promise.allSettled([level1]);
@@ -796,7 +798,7 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let rejectLog: string[] = [];
       const root: Promise<string> = new Promise<string>((_, reject) =>
-      setTimeout(() => reject('Root'), 50)
+      setTimeout(() => reject('Root'), 10)
       );
 
       await root
@@ -873,16 +875,16 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest035', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async () => {
       const start = Date.now();
       const level4: Promise<number> = new Promise<number>((_, reject) =>
-      setTimeout(() => reject('L4'), 50)
+      setTimeout(() => reject('L4'), 5)
       );
       const level3: Promise<number> = new Promise<number>((_, reject) =>
-      level4.catch((err: string) => setTimeout(() => reject(`${err}-L3`), 50))
+      level4.catch((err: string) => setTimeout(() => reject(`${err}-L3`), 10))
       );
       const level2: Promise<number> = new Promise<number>((_, reject) =>
-      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2`), 50))
+      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2`), 15))
       );
       const level1: Promise<number> = new Promise<number>((_, reject) =>
-      level2.catch((err: string) => setTimeout(() => reject(`${err}-L1`), 50))
+      level2.catch((err: string) => setTimeout(() => reject(`${err}-L1`), 20))
       );
 
       const result = await Promise.allSettled([level1]);
@@ -962,11 +964,11 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const promiseSet = new Set<Promise<string>>([
-        new Promise<string>((_, reject) => setTimeout(() => reject('Set1'), 50)),
-        new Promise<string>(resolve => setTimeout(() => resolve('Set2'), 50)),
-        new Promise<string>((_, reject) => setTimeout(() => reject('Set3'), 50))
+        new Promise<string>((_, reject) => setTimeout(() => reject('Set1'), 20)),
+        new Promise<string>(resolve => setTimeout(() => resolve('Set2'), 10)),
+        new Promise<string>((_, reject) => setTimeout(() => reject('Set3'), 15))
       ]);
 
       const results = await Promise.allSettled(promiseSet);
@@ -976,6 +978,7 @@ export default function promiseRejectTest() {
       expect((resultArr[0] as PromiseRejectedResult).reason).assertEqual('Set1');
       expect((resultArr[1] as PromiseFulfilledResult<string>).value).assertEqual('Set2');
       expect((resultArr[2] as PromiseRejectedResult).reason).assertEqual('Set3');
+      done();
     });
 
     /**
@@ -988,11 +991,11 @@ export default function promiseRejectTest() {
      */
     it('PromiseRejectTest039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const chain: Promise<string> = new Promise<string>((_, reject) =>
-      setTimeout(() => reject('Original'), 50)
+      setTimeout(() => reject('Original'), 10)
       )
         .catch((err: string) => {
           return new Promise<string>((resolve) =>
-          setTimeout(() => resolve(`Recover: ${err}`), 50)
+          setTimeout(() => resolve(`Recover: ${err}`), 5)
           );
         })
         .then(val => {
@@ -1051,7 +1054,7 @@ export default function promiseRejectTest() {
       const level4: Promise<number> = new Promise<number>((_, reject) =>
       // 修复2：level5.catch的回调需显式调用reject，且修正err类型为string
       level5.catch((err: string) => {
-        setTimeout(() => reject(`${err}-L4`), 50);
+        setTimeout(() => reject(`${err}-L4`), 20);
       })
       );
       const level3: Promise<number> = new Promise<number>((_, reject) =>
@@ -1061,7 +1064,7 @@ export default function promiseRejectTest() {
       const level2: Promise<number> = new Promise<number>((_, reject) =>
       // 修复4：修正err类型为string，且回调需显式调用reject
       level3.catch((err: string) => {
-        setTimeout(() => reject(`${err}-L2`), 50);
+        setTimeout(() => reject(`${err}-L2`), 10);
       })
       );
       const level1: Promise<number> = new Promise<number>((_, reject) =>
@@ -1081,11 +1084,11 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const racePromises = [
-        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('100ms')), 150)),
+        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('10ms')), 200)),
         new Promise<string>((_, reject) => setTimeout(() => reject('5ms'), 50)),
-        new Promise<string>(resolve => setTimeout(() => resolve('200ms'), 250))
+        new Promise<string>(resolve => setTimeout(() => resolve('20ms'), 350))
       ];
 
       let winner = '';
@@ -1096,6 +1099,7 @@ export default function promiseRejectTest() {
       }
 
       expect(winner).assertEqual('5ms');
+      done();
     });
 
     /**
@@ -1109,7 +1113,7 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       let isCleaned = false;
       const chain: Promise<number> = new Promise<number>((_, reject) =>
-      setTimeout(() => reject(Promise.reject('Cleanup')), 50)
+      setTimeout(() => reject(Promise.reject('Cleanup')), 10)
       )
         .catch((err: Error) => {
           throw new Error(`Caught: ${err}`);
@@ -1135,13 +1139,13 @@ export default function promiseRejectTest() {
       const inner: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Inner reject 10ms'), 50);
+          setTimeout(() => reject('Inner reject 10ms'), 10);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(200), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(200), 20))
       ]);
       const outer: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         inner,
-        new Promise<string>((_, reject) => setTimeout(() => reject('Outer reject 15ms'), 50))
+        new Promise<string>((_, reject) => setTimeout(() => reject('Outer reject 15ms'), 15))
       ]);
 
       const outerResults = await outer;
@@ -1201,13 +1205,13 @@ export default function promiseRejectTest() {
       let finalError = '';
       const root: Promise<number> = new Promise<number>((_, reject) => {
         // Fix: Reject directly with reason (no Promise.reject wrap)
-        setTimeout(() => reject('Root err'), 50);
+        setTimeout(() => reject('Root err'), 10);
       });
 
       await root
         .catch((err:string) => {
           return new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`Catch1: ${err}`), 50)
+          setTimeout(() => reject(`Catch1: ${err}`), 5)
           );
         })
         .catch((err:string) => {
@@ -1229,10 +1233,10 @@ export default function promiseRejectTest() {
       const anyPromises = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Fail 5ms'), 50);
+          setTimeout(() => reject('Fail 5ms'), 5);
         }),
-        new Promise<string>((_, reject) => setTimeout(() => reject('Fail 10ms'), 50)),
-        new Promise<string>((resolve) => setTimeout(() => resolve('Success 8ms'), 50))
+        new Promise<string>((_, reject) => setTimeout(() => reject('Fail 10ms'), 10)),
+        new Promise<string>((resolve) => setTimeout(() => resolve('Success 8ms'), 8))
       ];
 
       const result = await Promise.any(anyPromises);
@@ -1251,13 +1255,13 @@ export default function promiseRejectTest() {
       const innerSet = new Set<Promise<number>>([
         new Promise<number>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject(100), 50);
+          setTimeout(() => reject(100), 20);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(200), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(200), 10))
       ]);
       const outerSet = new Set<Promise<Object>>([
         Promise.allSettled(innerSet),
-        new Promise<string>((_, reject) => setTimeout(() => reject('Outer fail'), 50))
+        new Promise<string>((_, reject) => setTimeout(() => reject('Outer fail'), 15))
       ]);
 
       const outerResults = await Promise.allSettled(outerSet);
@@ -1281,7 +1285,7 @@ export default function promiseRejectTest() {
       const start = Date.now();
       const chain: Promise<number | string> = new Promise<number | string>((_, reject) => {
         // Fix: Reject directly with reason (no Promise.reject wrap)
-        setTimeout(() => reject(50), 50);
+        setTimeout(() => reject(50), 20);
       })
         .catch((err: number) => {
           return new Promise<string>((resolve) =>
@@ -1356,13 +1360,13 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let catchCount = 0;
       const innerAll: Promise<(number | string)[]> = Promise.all([
-        new Promise<number>((resolve) => setTimeout(() => resolve(10), 50)),
+        new Promise<number>((resolve) => setTimeout(() => resolve(10), 5)),
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Inner all fail'), 50);
+          setTimeout(() => reject('Inner all fail'), 10);
         })
       ]);
       const outer: Promise<Object> = Promise.all([innerAll, Promise.resolve(20)]);
@@ -1374,6 +1378,7 @@ export default function promiseRejectTest() {
       }
 
       expect(catchCount).assertEqual(1);
+      done();
     });
 
     /**
@@ -1387,11 +1392,11 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const chain: Promise<string> = new Promise<string>((_, reject) => {
         // Fix: Reject directly with reason (no Promise.reject wrap)
-        setTimeout(() => reject('Temporary fail'), 50);
+        setTimeout(() => reject('Temporary fail'), 10);
       })
         .catch((err: string) => {
           return new Promise<string>((resolve) =>
-          setTimeout(() => resolve(`Recovered after: ${err}`), 50)
+          setTimeout(() => resolve(`Recovered after: ${err}`), 20)
           );
         });
 
@@ -1413,7 +1418,7 @@ export default function promiseRejectTest() {
         reject('L3 immediate');
       });
       const level2: Promise<number> = new Promise<number>((_, reject) =>
-      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2`), 50))
+      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2`), 10))
       );
       const level1: Promise<number> = new Promise<number>((_, reject) =>
       level2.catch((err: string) => reject(`${err}-L1`))
@@ -1435,9 +1440,9 @@ export default function promiseRejectTest() {
       const racePromises = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Race 1'), 50);
+          setTimeout(() => reject('Race 1'), 5);
         }),
-        new Promise<string>((_, reject) => setTimeout(() => reject('Race 2'), 50))
+        new Promise<string>((_, reject) => setTimeout(() => reject('Race 2'), 10))
       ];
 
       let errorCount = 0;
@@ -1492,17 +1497,17 @@ export default function promiseRejectTest() {
       const level3: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         new Promise<number>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject(1), 50);
+          setTimeout(() => reject(1), 5);
         }),
-        new Promise<string>((resolve) => setTimeout(() => resolve('L3 success'), 50))
+        new Promise<string>((resolve) => setTimeout(() => resolve('L3 success'), 10))
       ]);
       const level2: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         level3,
-        new Promise<boolean>((_, reject) => setTimeout(() => reject('L2 reject'), 50))
+        new Promise<boolean>((_, reject) => setTimeout(() => reject('L2 reject'), 15))
       ]);
       const level1: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         level2,
-        new Promise<number>((resolve) => setTimeout(() => resolve(999), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(999), 8))
       ]);
 
       const level1Results = await level1;
@@ -1584,18 +1589,18 @@ export default function promiseRejectTest() {
       const innerAny: Promise<string | number> = Promise.any([
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Inner fail 1'), 50);
+          setTimeout(() => reject('Inner fail 1'), 5);
         }),
         new Promise<number>((resolve) => setTimeout(() => resolve(100), 50)),
-        new Promise<string>((_, reject) => setTimeout(() => reject('Inner fail 2'), 50))
+        new Promise<string>((_, reject) => setTimeout(() => reject('Inner fail 2'), 10))
       ]);
       const outerAny: Promise<Object> = Promise.any([
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Outer fail'), 50);
+          setTimeout(() => reject('Outer fail'), 8);
         }),
         innerAny,
-        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 50))
+        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 200))
       ]);
 
       const result = await outerAny;
@@ -1614,19 +1619,19 @@ export default function promiseRejectTest() {
       const start = Date.now();
       const level5: Promise<number> = new Promise<number>((_, reject) =>
       // Fix: Reject directly with reason (no Promise.reject wrap)
-      setTimeout(() => reject('L5'), 50)
+      setTimeout(() => reject('L5'), 5)
       );
       const level4: Promise<number> = new Promise<number>((_, reject) =>
-      level5.catch((err: string) => setTimeout(() => reject(`${err}-L4`), 50))
+      level5.catch((err: string) => setTimeout(() => reject(`${err}-L4`), 10))
       );
       const level3: Promise<number> = new Promise<number>((_, reject) =>
-      level4.catch((err: string) => setTimeout(() => reject(`${err}-L3`), 50))
+      level4.catch((err: string) => setTimeout(() => reject(`${err}-L3`), 15))
       );
       const level2: Promise<number> = new Promise<number>((_, reject) =>
-      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2`), 50))
+      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2`), 20))
       );
       const level1: Promise<number> = new Promise<number>((_, reject) =>
-      level2.catch((err: string) => setTimeout(() => reject(`${err}-L1`), 50))
+      level2.catch((err: string) => setTimeout(() => reject(`${err}-L1`), 25))
       );
 
       const result = await Promise.allSettled([level1]);
@@ -1705,12 +1710,12 @@ export default function promiseRejectTest() {
       )
         .catch((err: string) => {
           return new Promise<string>((resolve) =>
-          setTimeout(() => resolve(`Recover: ${err}`), 50)
+          setTimeout(() => resolve(`Recover: ${err}`), 15)
           );
         })
         .then(val => {
           return new Promise<string>((_, reject) =>
-          setTimeout(() => reject(`Rereject: ${val}`), 50)
+          setTimeout(() => reject(`Rereject: ${val}`), 10)
           );
         });
 
@@ -1733,21 +1738,21 @@ export default function promiseRejectTest() {
       const level4: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('L4'), 50);
+          setTimeout(() => reject('L4'), 5);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(40), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(40), 10))
       ]);
       const level3: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         level4,
-        new Promise<boolean>((_, reject) => setTimeout(() => reject('L3'), 50))
+        new Promise<boolean>((_, reject) => setTimeout(() => reject('L3'), 15))
       ]);
       const level2: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         level3,
-        new Promise<string>((resolve) => setTimeout(() => resolve('L2'), 50))
+        new Promise<string>((resolve) => setTimeout(() => resolve('L2'), 20))
       ]);
       const level1: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         level2,
-        new Promise<number>((_, reject) => setTimeout(() => reject('L1'), 50))
+        new Promise<number>((_, reject) => setTimeout(() => reject('L1'), 25))
       ]);
 
       const l1Res = await level1;
@@ -1774,10 +1779,10 @@ export default function promiseRejectTest() {
       const raceCandidates = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('15ms-reject'), 150);
+          setTimeout(() => reject('15ms-reject'), 200);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(100), 100)),
-        new Promise<boolean>((_, reject) => setTimeout(() => reject('20ms-reject'), 200))
+        new Promise<number>((resolve) => setTimeout(() => resolve(100), 50)),
+        new Promise<boolean>((_, reject) => setTimeout(() => reject('20ms-reject'), 350))
       ];
 
       let raceResult: number | string | boolean = '';
@@ -1810,14 +1815,14 @@ export default function promiseRejectTest() {
         } else {
           resolve(30);
         }
-      }, 100)
+      }, 10)
       );
       const level2 = async (): Promise<number> => {
         try {
           return await level3(true);
         } catch (err) {
           return new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`L2-wrap: ${err}`), 150)
+          setTimeout(() => reject(`L2-wrap: ${err}`), 15)
           );
         }
       };
@@ -1826,7 +1831,7 @@ export default function promiseRejectTest() {
           return await level2();
         } catch (err) {
           return new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`L1-wrap: ${err}`), 200)
+          setTimeout(() => reject(`L1-wrap: ${err}`), 20)
           );
         }
       };
@@ -1850,21 +1855,21 @@ export default function promiseRejectTest() {
       const timeLog: string[] = [];
       const innerSet = new Set<Promise<string | number>>([
         new Promise<string>((_, reject) => setTimeout(() => {
-          timeLog.push('inner-reject(20ms)');
+          timeLog.push('inner-reject(350ms)');
           // Fix: Reject directly with reason (no Promise.reject wrap)
           reject('Inner');
-        }, 200)),
+        }, 350)),
         new Promise<number>((resolve) => setTimeout(() => {
-          timeLog.push('inner-resolve(10ms)');
+          timeLog.push('inner-resolve(50ms)');
           resolve(200);
-        }, 100))
+        }, 50))
       ]);
       const outerSet = new Set<Promise<Object>>([
         Promise.allSettled(innerSet),
         new Promise<string>((_, reject) => setTimeout(() => {
-          timeLog.push('outer-reject(15ms)');
+          timeLog.push('outer-reject(200ms)');
           reject('Outer');
-        }, 150))
+        }, 200))
       ]);
 
       const outerResults = await Promise.allSettled(outerSet);
@@ -1873,8 +1878,8 @@ export default function promiseRejectTest() {
       expect((Array.from(innerResults)[0] as PromiseRejectedResult).reason).assertEqual('Inner');
       expect((Array.from(innerResults)[1] as PromiseFulfilledResult<number>).value).assertEqual(200);
       expect((outerResults[1] as PromiseRejectedResult).reason).assertEqual('Outer');
-      // Execution order based on timeout delays (10ms → 15ms → 20ms)
-      expect(timeLog).assertDeepEquals(['inner-resolve(10ms)', 'outer-reject(15ms)', 'inner-reject(20ms)']);
+      // Execution order based on timeout delays (50ms → 200ms → 350ms)
+      expect(timeLog).assertDeepEquals(['inner-resolve(50ms)', 'outer-reject(200ms)', 'inner-reject(350ms)']);
     });
 
     /**
@@ -1896,12 +1901,12 @@ export default function promiseRejectTest() {
       )
         .finally(() => {
           timeLog.push('finally(15ms)');
-          return new Promise<void>((resolve) => setTimeout(resolve, 50));
+          return new Promise<void>((resolve) => setTimeout(resolve, 5));
         })
         .catch((err: string) => {
           timeLog.push('catch(20ms)');
           return new Promise<string>((resolve) =>
-          setTimeout(() => resolve(`Recover: ${err}`), 50)
+          setTimeout(() => resolve(`Recover: ${err}`), 10)
           );
         });
 
@@ -1923,7 +1928,7 @@ export default function promiseRejectTest() {
       const level5 = async (): Promise<number> => {
         return new Promise<number>((_, reject) =>
         // Fix: Reject directly with reason (no Promise.reject wrap)
-        setTimeout(() => reject('L5'), 50)
+        setTimeout(() => reject('L5'), 5)
         );
       };
       const level4 = async (): Promise<number> => {
@@ -1931,7 +1936,7 @@ export default function promiseRejectTest() {
           return await level5();
         } catch (err) {
           return new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`${err}-L4`), 50)
+          setTimeout(() => reject(`${err}-L4`), 10)
           );
         }
       };
@@ -1940,7 +1945,7 @@ export default function promiseRejectTest() {
           return await level4();
         } catch (err) {
           return new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`${err}-L3`), 50)
+          setTimeout(() => reject(`${err}-L3`), 15)
           );
         }
       };
@@ -1949,7 +1954,7 @@ export default function promiseRejectTest() {
           return await level3();
         } catch (err) {
           return new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`${err}-L2`), 50)
+          setTimeout(() => reject(`${err}-L2`), 20)
           );
         }
       };
@@ -1958,7 +1963,7 @@ export default function promiseRejectTest() {
           return await level2();
         } catch (err) {
           return new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`${err}-L1`), 50)
+          setTimeout(() => reject(`${err}-L1`), 25)
           );
         }
       };
@@ -1982,10 +1987,10 @@ export default function promiseRejectTest() {
       const anyPromises = [
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Any 1 (5ms)'), 50);
+          setTimeout(() => reject('Any 1 (5ms)'), 5);
         }),
-        new Promise<number>((_, reject) => setTimeout(() => reject('Any 2 (10ms)'), 50)),
-        new Promise<boolean>((_, reject) => setTimeout(() => reject('Any 3 (15ms)'), 50))
+        new Promise<number>((_, reject) => setTimeout(() => reject('Any 2 (10ms)'), 10)),
+        new Promise<boolean>((_, reject) => setTimeout(() => reject('Any 3 (15ms)'), 15))
       ];
 
       let aggregateErrors: string[] = [];
@@ -2070,12 +2075,12 @@ export default function promiseRejectTest() {
       )
         .catch((err: string) => {
           return new Promise<string>((resolve) =>
-          setTimeout(() => resolve(`Recover: ${err}`), 50)
+          setTimeout(() => resolve(`Recover: ${err}`), 15)
           );
         })
         .then(val => {
           return new Promise<string>((resolve) =>
-          setTimeout(() => resolve(`Processed: ${val}`), 50)
+          setTimeout(() => resolve(`Processed: ${val}`), 10)
           );
         });
 
@@ -2126,7 +2131,7 @@ export default function promiseRejectTest() {
       }, 12)
       );
       const level1: Promise<string> = new Promise<string>((_, reject) =>
-      level2.catch((err: ValidationError) => setTimeout(() => reject(err), 50))
+      level2.catch((err: ValidationError) => setTimeout(() => reject(err), 18))
       );
 
       const result = await Promise.allSettled([level1]);
@@ -2153,7 +2158,7 @@ export default function promiseRejectTest() {
         reject('L3-immediate');
       });
       const level2: Promise<number> = new Promise<number>((_, reject) =>
-      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2-delayed`), 50))
+      level3.catch((err: string) => setTimeout(() => reject(`${err}-L2-delayed`), 15))
       );
       const level1: Promise<number> = new Promise<number>((_, reject) =>
       level2.catch((err: string) => reject(`${err}-L1-immediate`))
@@ -2182,7 +2187,7 @@ export default function promiseRejectTest() {
         })
           .then(val => val + ' extended')
           .catch((err: string) => Promise.reject(`Caught: ${err}`)),
-        new Promise<number>((resolve) => setTimeout(() => resolve(200), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(200), 200))
           .then(val => val * 2)
       ];
 
@@ -2256,16 +2261,16 @@ export default function promiseRejectTest() {
     it('PromiseRejectTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const finallyOrder: string[] = [];
       const chain: Promise<number> = new Promise<number>((_, reject) =>
-      setTimeout(() => reject(Promise.reject('Root (10ms)')), 50)
+      setTimeout(() => reject(Promise.reject('Root (10ms)')), 10)
       )
         .finally(() => {
           finallyOrder.push('Finally 1 (15ms)');
-          return new Promise<void>((resolve) => setTimeout(resolve, 50));
+          return new Promise<void>((resolve) => setTimeout(resolve, 5));
         })
         .catch((err: Error) => Promise.reject(`Caught: ${err}`))
         .finally(() => {
           finallyOrder.push('Finally 2 (25ms)');
-          return new Promise<void>((resolve) => setTimeout(resolve, 50));
+          return new Promise<void>((resolve) => setTimeout(resolve, 5));
         });
 
       await Promise.allSettled([chain]);
@@ -2329,11 +2334,11 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const start = Date.now();
       const raceCandidates = [
-        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('Race-err(10ms)')), 50))
-          .catch((err: Error) => new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 50))),
+        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('Race-err(10ms)')), 10))
+          .catch((err: Error) => new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 200))),
         new Promise<number>((resolve) => setTimeout(() => resolve(300), 50))
       ];
 
@@ -2341,6 +2346,7 @@ export default function promiseRejectTest() {
       const end = Date.now();
 
       expect(result).assertEqual(300);
+      done();
     });
 
     /**
@@ -2472,7 +2478,7 @@ export default function promiseRejectTest() {
       );
       const level1: Promise<NetworkError> = new Promise<NetworkError>((_, reject) =>
       // Fix: Type err as NetworkError (matches rejected value type)
-      level2.catch((err: NetworkError) => setTimeout(() => reject(err), 50))
+      level2.catch((err: NetworkError) => setTimeout(() => reject(err), 18))
       );
 
       const result = await Promise.allSettled([level1]);
@@ -2504,7 +2510,7 @@ export default function promiseRejectTest() {
       )
         .catch((err: string) => {
           orderLog.push('Catch(15ms)');
-          return new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 50));
+          return new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 10));
         })
         .finally(() => {
           orderLog.push('Finally(25ms)');
@@ -2531,17 +2537,17 @@ export default function promiseRejectTest() {
       const level3: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         new Promise<string>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('L3'), 50);
+          setTimeout(() => reject('L3'), 5);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(30), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(30), 10))
       ]);
       const level2: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         level3,
-        new Promise<boolean>((_, reject) => setTimeout(() => reject('L2'), 50))
+        new Promise<boolean>((_, reject) => setTimeout(() => reject('L2'), 15))
       ]);
       const level1: Promise<PromiseSettledResult<Object>[]> = Promise.allSettled([
         level2,
-        new Promise<string>((resolve) => setTimeout(() => resolve('L1'), 50))
+        new Promise<string>((resolve) => setTimeout(() => resolve('L1'), 20))
       ]);
 
       const l1Res = await level1;
@@ -2570,7 +2576,7 @@ export default function promiseRejectTest() {
       const chain: Promise<string> = Promise.resolve('Init')
         .then(val => {
           stepLog.push('Then1(5ms)');
-          return new Promise<string>((resolve) => setTimeout(() => resolve(val + '-Then1'), 50));
+          return new Promise<string>((resolve) => setTimeout(() => resolve(val + '-Then1'), 5));
         })
         .then(val => {
           stepLog.push('Then2(10ms)');
@@ -2579,7 +2585,7 @@ export default function promiseRejectTest() {
         })
         .catch((err: string) => {
           stepLog.push('Catch(15ms)');
-          return new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 50));
+          return new Promise<string>((resolve) => setTimeout(() => resolve(`Recover: ${err}`), 10));
         })
         .then(val => {
           stepLog.push('Then3(25ms)');
@@ -2673,7 +2679,7 @@ export default function promiseRejectTest() {
         Promise.resolve('Success 2'),
         new Promise<boolean>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('Delayed Reject 3'), 50);
+          setTimeout(() => reject('Delayed Reject 3'), 15);
         })
       ];
 
@@ -2700,13 +2706,13 @@ export default function promiseRejectTest() {
           // Fix: Reject directly with reason (no Promise.reject wrap)
           setTimeout(() => reject('Race Reject (10ms)'), 50);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(200), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(200), 200))
       ];
       // Use Promise.any as fallback for Promise.race when rejection occurs first
       const combined = Promise.race(raceCandidates)
         .catch((err: string) => Promise.any([
-          new Promise<string>((resolve) => setTimeout(() => resolve(`Fallback: ${err}`), 50)),
-          new Promise<boolean>((_, reject) => setTimeout(() => reject('Fallback Reject'), 50))
+          new Promise<string>((resolve) => setTimeout(() => resolve(`Fallback: ${err}`), 5)),
+          new Promise<boolean>((_, reject) => setTimeout(() => reject('Fallback Reject'), 10))
         ]));
 
       const result = await combined;
@@ -2768,19 +2774,20 @@ export default function promiseRejectTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseRejectTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseRejectTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const anyCandidates = [
-        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('Any Reject 1 (5ms)')), 50)),
+        new Promise<string>((_, reject) => setTimeout(() => reject(Promise.reject('Any Reject 1 (5ms)')), 5)),
         new Promise<number>((resolve) => setTimeout(() => resolve(100), 50)),
-        new Promise<string>((_, reject) => setTimeout(() => reject('Any Reject 2 (10ms)'), 50))
+        new Promise<string>((_, reject) => setTimeout(() => reject('Any Reject 2 (10ms)'), 10))
       ];
       const raceCandidates = [
         Promise.any(anyCandidates),
-        new Promise<boolean>((_, reject) => setTimeout(() => reject(Promise.reject('Race Reject (20ms)')), 50))
+        new Promise<boolean>((_, reject) => setTimeout(() => reject(Promise.reject('Race Reject (20ms)')), 200))
       ];
 
       const result = await Promise.race(raceCandidates);
       expect(result).assertEqual(100);
+      done();
     });
 
     /**
@@ -2830,7 +2837,7 @@ export default function promiseRejectTest() {
           .finally(() => {
             cleanupExecuted = true;
           }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(300), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(300), 200))
       ];
 
       let raceReason = '';
@@ -2861,7 +2868,7 @@ export default function promiseRejectTest() {
         }),
         new Promise<number>((_, reject) => {
           // Fix: Reject directly with reason (no Promise.reject wrap)
-          setTimeout(() => reject('All Reject 2'), 50);
+          setTimeout(() => reject('All Reject 2'), 10);
         })
       ];
       // Use Promise.any as fallback when all promises in Promise.all reject
@@ -2914,17 +2921,17 @@ export default function promiseRejectTest() {
         new Promise<string>((_, reject) => {
           setTimeout(() => reject('Inner Race Reject (5ms)'), 50);
         }),
-        new Promise<number>((resolve) => setTimeout(() => resolve(10), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(10), 200))
       ]);
       const handledInnerRace = innerRace.catch((err:string) => err);
       const middleAll = Promise.all([
         handledInnerRace,
-        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 50))
+        new Promise<boolean>((resolve) => setTimeout(() => resolve(true), 350))
       ]);
       const outerRace = Promise.race([
         middleAll,
         new Promise<string>((_, reject) => {
-          setTimeout(() => reject('Outer Race Reject (20ms)'), 50);
+          setTimeout(() => reject('Outer Race Reject (20ms)'), 500);
         })
       ]);
 

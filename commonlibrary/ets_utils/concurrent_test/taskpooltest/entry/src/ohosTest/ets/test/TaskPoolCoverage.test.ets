@@ -15,6 +15,7 @@
 
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { taskpool } from '@kit.ArkTS';
+// boundary value coverage tests
 
 // 测试函数定义
 @Concurrent
@@ -2351,7 +2352,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskConstructorNamedWithEmptyArrayArgs
-     * @tc.number SUB_CONCURRENCY_TASK_BOUNDARY_005
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASK_PARAM_0005
      * @tc.desc   Test Task(name, func, ...args) with args=[].
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2367,7 +2368,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testTaskGroupAddTaskWithExplicitEmptyArray
-     * @tc.number SUB_CONCURRENCY_TASK_BOUNDARY_008
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASKGROUP_PARAM_0008
      * @tc.desc   Test TaskGroup.addTask(func, ...args) with args=[].
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2384,7 +2385,7 @@ export default function taskPoolCoverageTest() {
 
     /**
      * @tc.name   testExecuteFuncWithExplicitEmptyArray
-     * @tc.number SUB_CONCURRENCY_TASK_BOUNDARY_009
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_0009
      * @tc.desc   Test taskpool.execute(func, ...args) with args=[].
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

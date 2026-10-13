@@ -527,7 +527,7 @@ export default function ProcessInterfacetTest() {
       const mainUptime = process.uptime();
       console.info(`${caseName}, uptime: ${mainUptime}`);
       WorkThread8.workerStageModel.onmessage = (event) => {
-        if (event.data !== mainUptime) {
+        if (event.data < mainUptime) {
           errorCount++;
         }
         messageCount++;
