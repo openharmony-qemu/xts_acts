@@ -24,10 +24,9 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const TestTag = 'uitestTag';
 const waitUiReadyMs: int = 1000;
-const DeviceErrorCode: int = 17000005;
 
 export default function uitestDriverTestApi22(): void {
-  describe('UiTest_API22', (): void => {
+  describe('uitestTest_Api22', (): void => {
     let driver: Driver | undefined;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverTestApi22 loadup start!!!!!");
@@ -45,7 +44,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name testComponentEventOccurOptionsClickMonitor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0001
+     * @tc.number uitestDriverTest_Api22_001
      * @tc.desc monitor component click.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -92,7 +91,7 @@ export default function uitestDriverTestApi22(): void {
       }
       if (btn) {
         await btn.click()
-        await driver!.delayMs(5000)
+        await driver!.delayMs(11000)
       }
       await stopApplication('com.uitestScene.acts');
       expect(isCallBack).assertTrue()
@@ -100,8 +99,150 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
+     * @tc.name testComponentEventOccurOptionsClickMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_020
+     * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsClickMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      let btn = await driver!.findComponent(ON.isBefore(ON.text('next page')).type('Button'))
+      expect(btn != null).assertTrue()
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.text,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+          expect(elementInfo.text == 'toast').assertTrue()
+          expect(elementInfo.type == 'Button').assertTrue()
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_CLICKED).assertTrue();
+          expect(elementInfo.componentId).assertEqual('toastBtn');
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static callback error ,${JSON.stringify(err)}`);
+        }
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, {
+          timeout: 9000,
+        } , callback)
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static onceComponentEventOccur error ,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (btn) {
+        await btn.click()
+        await driver!.delayMs(11000)
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue()
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullOn_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsClickMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_022
+     * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsClickMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      let btn = await driver!.findComponent(ON.isBefore(ON.text('next page')).type('Button'))
+      expect(btn != null).assertTrue()
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+          expect(elementInfo.text == 'toast').assertTrue()
+          expect(elementInfo.type == 'Button').assertTrue()
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_CLICKED).assertTrue();
+          expect(elementInfo.componentId).assertEqual('toastBtn');
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static callback error ,${JSON.stringify(err)}`);
+        }
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, { } , callback)
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static onceComponentEventOccur error ,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (btn) {
+        await btn.click()
+        await driver!.delayMs(11000)
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue()
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_nullType_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsClickMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0011
+     * @tc.desc monitor component click.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsClickMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_notOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+      await driver!.delayMs(waitUiReadyMs)
+      let btn = await driver!.findComponent(ON.isBefore(ON.text('next page')).type('Button'))
+      expect(btn != null).assertTrue()
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        isCallBack = true;
+      }
+      try {
+        let on1 = ON.text('NotToast').type('Button');
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, {
+          timeout: 9000,
+          on: on1
+        } , callback)
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_notOn_static onceComponentEventOccur error ,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (btn) {
+        await btn.click()
+        await driver!.delayMs(11000)
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_notOn_static isCallBack ,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertFalse()
+      hilog.info(domain, tag, `testComponentEventOccurOptionsClickMonitor_notOn_static end`);
+    })
+
+    /**
      * @tc.name testComponentEventOccurOptionsLongClickMonitor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0002
+     * @tc.number uitestDriverTest_Api22_002
      * @tc.desc monitor component LongClick.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -152,52 +293,148 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
-     * @tc.name   testComponentEventOccurOptionsWithInClickMonitor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0003
-     * @tc.desc   monitor component click.
+     * @tc.name testComponentEventOccurOptionsLongClickMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_023
+     * @tc.desc monitor component LongClick.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testComponentEventOccurOptionsWithInClickMonitor_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor_static start`);
-      let observer = await driver!.createUIEventObserver();
+    it('testComponentEventOccurOptionsLongClickMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let btn = await driver!.findComponent(ON.text('next page'));
+      expect(btn != null).assertTrue()
+      let observer = driver!.createUIEventObserver();
       let isCallBack = false;
-      let callback = (elementInfo: UIElementInfo) => {
-        console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor_static elementInfo,${JSON.stringify(elementInfo)}`);
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
         isCallBack = true;
         try {
-          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-          expect(elementInfo.text == 'toast').assertTrue()
-          expect(elementInfo.type == 'Button').assertTrue()
-          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_CLICKED).assertTrue();
-          expect(elementInfo.componentId).assertEqual('toastBtn');
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
+          expect(elementInfo.text == '').assertTrue();
+          expect(elementInfo.type == 'Button').assertTrue();
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_LONG_CLICKED).assertTrue();
+          expect(elementInfo.componentId).assertEqual('my-key');
         } catch (err) {
-          console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor_static callback error ,${JSON.stringify(err)}`);
+          hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static callback,${JSON.stringify(err)}`);
         }
       }
       try {
-        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_CLICKED, {
-          timeout: 9000,
-          on: ON.text('toast')
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_LONG_CLICKED,{
+          timeout: 9000
         }, callback);
-      } catch (error) {
-        console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor_static once error ,${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(DeviceErrorCode);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
       }
+      if (btn) {
+        await btn.longClick();
+        await driver!.delayMs(5000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue()
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullOn_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsLongClickMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_024
+     * @tc.desc monitor component LongClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsLongClickMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static start`);
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver!.delayMs(waitUiReadyMs);
-      let btn = await driver!.findComponent(ON.within(ON.type('Scroll')).text('toast'));
-      await btn!.click();
-      await driver!.delayMs(5000);
-      expect(isCallBack).assertTrue();
+      let btn = await driver!.findComponent(ON.text('next page'));
+      expect(btn != null).assertTrue()
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
+          expect(elementInfo.text == '').assertTrue();
+          expect(elementInfo.type == 'Button').assertTrue();
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_LONG_CLICKED).assertTrue();
+          expect(elementInfo.componentId).assertEqual('my-key');
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static callback,${JSON.stringify(err)}`);
+        }
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_LONG_CLICKED, {}, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (btn) {
+        await btn.longClick();
+        await driver!.delayMs(5000);
+      }
       await stopApplication('com.uitestScene.acts');
-      console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor_static end`);
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue()
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_nullType_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsLongClickMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0021
+     * @tc.desc monitor component LongClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsLongClickMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_notOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let btn = await driver!.findComponent(ON.text('next page'));
+      expect(btn != null).assertTrue()
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        isCallBack = true;
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_LONG_CLICKED, {
+          on: ON.type('Button').text('toast')
+        }, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (btn) {
+        await btn.longClick();
+        await driver!.delayMs(5000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_notOn_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertFalse()
+      hilog.info(domain, tag, `testComponentEventOccurOptionsLongClickMonitor_notOn_static end`);
     })
 
     /**
      * @tc.name testComponentEventOccurOptionsScrollStartMonitor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0004
+     * @tc.number uitestDriverTest_Api22_004
      * @tc.desc monitor component Scroll start.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,9 +479,10 @@ export default function uitestDriverTestApi22(): void {
       if(scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        let disPlay = display.getDefaultDisplaySync();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()});
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
         await driver!.delayMs(5000);
       }
       await stopApplication('com.uitestScene.acts');
@@ -253,8 +491,164 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
+     * @tc.name testComponentEventOccurOptionsScrollStartMonitor_nullNo_static
+     * @tc.number uitestDriverTest_Api22_025
+     * @tc.desc monitor component Scroll start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsScrollStartMonitor_nullNo_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'));
+      expect(scrollBar != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static elementInfo.componentRect,${elementInfo.componentRect}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
+          expect(elementInfo.text == '').assertTrue();
+          expect(elementInfo.type == 'Scroll').assertTrue();
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_SCROLL_START).assertTrue();
+          expect(elementInfo.componentId == 'parentScroll').assertTrue();
+          expect(elementInfo.componentRect != null).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static error, ${JSON.stringify(err)}`);
+        }
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_START, {
+          timeout: 6000
+        }, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if(scrollBar) {
+        let rect = await scrollBar.getBounds();
+        let center = await scrollBar.getBoundsCenter();
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
+        await driver!.delayMs(5000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullNo_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsScrollStartMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_026
+     * @tc.desc monitor component Scroll start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsScrollStartMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'));
+      expect(scrollBar != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static elementInfo.componentRect,${elementInfo.componentRect}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
+          expect(elementInfo.text == '').assertTrue();
+          expect(elementInfo.type == 'Scroll').assertTrue();
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_SCROLL_START).assertTrue();
+          expect(elementInfo.componentId == 'parentScroll').assertTrue();
+          expect(elementInfo.componentRect != null).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static error, ${JSON.stringify(err)}`);
+        }
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_START, {}, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if(scrollBar) {
+        let rect = await scrollBar.getBounds();
+        let center = await scrollBar.getBoundsCenter();
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
+        await driver!.delayMs(5000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_nullType_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsScrollStartMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0041
+     * @tc.desc monitor component Scroll start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsScrollStartMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_notOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'));
+      expect(scrollBar != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        isCallBack = true;
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_START, {
+          on: ON.type('Scroll').id('NotParentScroll')
+        }, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if(scrollBar) {
+        let rect = await scrollBar.getBounds();
+        let center = await scrollBar.getBoundsCenter();
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId});
+        await driver!.delayMs(5000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      expect(isCallBack).assertFalse();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollStartMonitor_notOn_static end`);
+    })
+
+    /**
      * @tc.name testComponentEventOccurOptionsScrollEndMonitor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0005
+     * @tc.number uitestDriverTest_Api22_005
      * @tc.desc monitor component Scroll end.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -300,10 +694,11 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar) {
         let rect = await scrollBar.getBounds();
         let center = await scrollBar.getBoundsCenter();
-        let disPlay = display.getDefaultDisplaySync();
-        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()}, 8000);
-        await driver!.delayMs(5000);
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
+        await driver!.delayMs(10000);
       }
       await stopApplication('com.uitestScene.acts');
       expect(isCallBack).assertTrue();
@@ -311,8 +706,168 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
+     * @tc.name testComponentEventOccurOptionsScrollEndMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_027
+     * @tc.desc monitor component Scroll end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsScrollEndMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'));
+      expect(scrollBar != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static elementInfo.componentRect,${elementInfo.componentRect}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+          expect(elementInfo.text == '').assertTrue()
+          expect(elementInfo.type == 'Scroll').assertTrue()
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_SCROLL_END).assertTrue();
+          expect(elementInfo.componentId == 'parentScroll').assertTrue();
+          expect(elementInfo.componentRect != null).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static callback error, ${JSON.stringify(err)}`);
+        }
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_END, {
+          timeout: 15000,
+        }, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (scrollBar) {
+        let rect = await scrollBar.getBounds();
+        let center = await scrollBar.getBoundsCenter();
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
+        await driver!.delayMs(10000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullOn_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsScrollEndMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_028
+     * @tc.desc monitor component Scroll end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsScrollEndMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'));
+      expect(scrollBar != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static elementInfo.componentRect,${elementInfo.componentRect}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
+          expect(elementInfo.text == '').assertTrue()
+          expect(elementInfo.type == 'Scroll').assertTrue()
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_SCROLL_END).assertTrue();
+          expect(elementInfo.componentId == 'parentScroll').assertTrue();
+          expect(elementInfo.componentRect != null).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static callback error, ${JSON.stringify(err)}`);
+        }
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_END, {}, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (scrollBar) {
+        let rect = await scrollBar.getBounds();
+        let center = await scrollBar.getBoundsCenter();
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
+        await driver!.delayMs(10000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_nullType_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsScrollEndMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0051
+     * @tc.desc monitor component Scroll end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsScrollEndMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'));
+      expect(scrollBar != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        isCallBack = true;
+      }
+      try {
+        observer.onceComponentEventOccur(ComponentEventType.COMPONENT_SCROLL_END, {
+          timeout: 15000,
+          on: ON.type('Scroll').id('parentScrollNot')
+        }, callback);
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
+        expect((error as BusinessError).code).assertEqual(17000005);
+      }
+      if (scrollBar) {
+        let rect = await scrollBar.getBounds();
+        let center = await scrollBar.getBoundsCenter();
+        let playId = await scrollBar.getDisplayId();
+        await driver!.swipeBetween({x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt()
+        , displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 8000);
+        await driver!.delayMs(10000);
+      }
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertFalse();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsScrollEndMonitor_notOn_static end`);
+    })
+
+    /**
      * @tc.name testComponentEventOccurOptionsTextContentMonitor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0006
+     * @tc.number uitestDriverTest_Api22_006
      * @tc.desc monitor component text changed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -372,8 +927,178 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
+     * @tc.name testComponentEventOccurOptionsTextContentMonitor_nullOn_static
+     * @tc.number uitestDriverTest_Api22_029
+     * @tc.desc monitor component text changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsTextContentMonitor_nullOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let nextPageBtn = await driver!.findComponent(ON.text('next page'));
+      await driver!.delayMs(waitUiReadyMs);
+      expect(nextPageBtn != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static elementInfo.componentRect,${elementInfo.componentRect}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
+          expect(elementInfo.text == '1').assertTrue();
+          expect(elementInfo.type == 'TextInput').assertTrue();
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_TEXT_CHANGED).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static callback error, ${JSON.stringify(err)}`);
+        }
+      }
+      if(nextPageBtn) {
+        await nextPageBtn.click();
+        await driver!.delayMs(waitUiReadyMs);
+        try {
+          observer.onceComponentEventOccur(ComponentEventType.COMPONENT_TEXT_CHANGED, {
+            on: ON.id('changContext')
+          }, callback);
+        } catch(error) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
+          expect((error as BusinessError).code).assertEqual(17000005);
+        }
+
+        let changTest = await driver!.findComponent(ON.id('changContext'));
+        await driver!.delayMs(1000);
+        expect(changTest != null).assertTrue();
+        if (changTest != null) {
+          await changTest.inputText('123');
+          await driver!.delayMs(3000);
+        }
+      }
+      await driver!.delayMs(5000);
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullOn_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsTextContentMonitor_nullType_static
+     * @tc.number uitestDriverTest_Api22_030
+     * @tc.desc monitor component text changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsTextContentMonitor_nullType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let nextPageBtn = await driver!.findComponent(ON.text('next page'));
+      await driver!.delayMs(waitUiReadyMs);
+      expect(nextPageBtn != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo,${JSON.stringify(elementInfo)}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.bundleName,${elementInfo.bundleName}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.text,${elementInfo.text}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.type,${elementInfo.type}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.componentEventType,${elementInfo.componentEventType}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.componentId,${elementInfo.componentId}`);
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static elementInfo.componentRect,${elementInfo.componentRect}`);
+        isCallBack = true;
+        try {
+          expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue();
+          expect(elementInfo.text == '1').assertTrue();
+          expect(elementInfo.type == 'TextInput').assertTrue();
+          expect(elementInfo.componentEventType == ComponentEventType.COMPONENT_TEXT_CHANGED).assertTrue();
+        } catch (err) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static callback error, ${JSON.stringify(err)}`);
+        }
+      }
+      if(nextPageBtn) {
+        await nextPageBtn.click();
+        await driver!.delayMs(waitUiReadyMs);
+        try {
+          observer.onceComponentEventOccur(ComponentEventType.COMPONENT_TEXT_CHANGED, {}, callback);
+        } catch(error) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static onceComponentEventOccur,${JSON.stringify(error)}`);
+          expect((error as BusinessError).code).assertEqual(17000005);
+        }
+
+        let changTest = await driver!.findComponent(ON.id('changContext'));
+        await driver!.delayMs(1000);
+        expect(changTest != null).assertTrue();
+        if (changTest != null) {
+          await changTest.inputText('123');
+          await driver!.delayMs(3000);
+        }
+      }
+      await driver!.delayMs(5000);
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertTrue();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_nullType_static end`);
+    })
+
+    /**
+     * @tc.name testComponentEventOccurOptionsTextContentMonitor_notOn_static
+     * @tc.number uitestDriverTest_Api22_0061
+     * @tc.desc monitor component text changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testComponentEventOccurOptionsTextContentMonitor_notOn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> =>{
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let nextPageBtn = await driver!.findComponent(ON.text('next page'));
+      await driver!.delayMs(waitUiReadyMs);
+      expect(nextPageBtn != null).assertTrue();
+      let observer = driver!.createUIEventObserver();
+      let isCallBack = false;
+      let callback = (elementInfo : UIElementInfo): void => {
+        hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static elementInfo,${JSON.stringify(elementInfo)}`);
+        isCallBack = true;
+      }
+      if(nextPageBtn) {
+        await nextPageBtn.click();
+        await driver!.delayMs(waitUiReadyMs);
+        try {
+          observer.onceComponentEventOccur(ComponentEventType.COMPONENT_TEXT_CHANGED, {
+            on: ON.id('changContextNot')
+          }, callback);
+        } catch(error) {
+          hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static onceComponentEventOccur,${JSON.stringify(error)}`);
+          expect((error as BusinessError).code).assertEqual(17000005);
+        }
+
+        let changTest = await driver!.findComponent(ON.id('changContext'));
+        await driver!.delayMs(1000);
+        expect(changTest != null).assertTrue();
+        if (changTest != null) {
+          await changTest.inputText('123');
+          await driver!.delayMs(3000);
+        }
+      }
+      await driver!.delayMs(5000);
+      await stopApplication('com.uitestScene.acts');
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static isCallBack,${JSON.stringify(isCallBack)}`);
+      expect(isCallBack).assertFalse();
+      hilog.info(domain, tag, `testComponentEventOccurOptionsTextContentMonitor_notOn_static end`);
+    })
+
+    /**
      * @tc.name testComponentEventOccurOptionsTimeOutClickMonitor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0007
+     * @tc.number uitestDriverTest_Api22_007
      * @tc.desc monitor component click.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -417,6 +1142,7 @@ export default function uitestDriverTestApi22(): void {
       if (btn) {
         await driver!.delayMs(5000);
         await btn.click()
+        await driver!.delayMs(5000);
       }
       await driver!.delayMs(waitUiReadyMs)
       await stopApplication('com.uitestScene.acts')
@@ -426,7 +1152,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesIsComponentPresentWhenLongClickTrue_static
-     * @tc.number SUB_testfwk_uitest_Api22_0012
+     * @tc.number uitestDriverTest_Api22_008
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -449,9 +1175,8 @@ export default function uitestDriverTestApi22(): void {
       expect(longClickBtn != null).assertTrue();
       if (longClickBtn != null) {
         let center = await longClickBtn.getBoundsCenter();
-        let disPlay = display.getDefaultDisplaySync();
         await driver!.delayMs(waitUiReadyMs);
-        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), {x: center.x, y: center.y, displayId: disPlay.id.toInt()})
+        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center, 6000)
         expect(result).assertTrue();
         await driver!.delayMs(waitUiReadyMs);
         let longClickTextResultBtn = await driver!.findComponent(ON.id('longClickTextResult'));
@@ -468,7 +1193,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesIsComponentPresentWhenLongClickFalse_static
-     * @tc.number SUB_testfwk_uitest_Api22_0013
+     * @tc.number uitestDriverTest_Api22_09
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -512,48 +1237,86 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
-     * @tc.name   tesIsComponentPresentWhenLongClickDuringUndefined_static
-     * @tc.number SUB_testfwk_uitest_Api22_0042
-     * @tc.desc   isComponentPresentWhenLongClick test.
+     * @tc.name tesIsComponentPresentWhenDragTrue_static
+     * @tc.number uitestDriverTest_Api22_010
+     * @tc.desc isComponentPresentWhenDrag test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('tesIsComponentPresentWhenLongClickDuringUndefined_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      try {
-        console.log(`${TestTag}, tesIsComponentPresentWhenLongClickDuringUndefined_static start`);
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver!.delayMs(waitUiReadyMs);
-        let to5Btn = await driver!.findComponent(ON.id('to5'));
-        if (to5Btn == null) {
-          let scroll = await driver!.findComponent(ON.type('Scroll'))
-          to5Btn = await scroll!.scrollSearch(ON.id('to5'))
-
-        }
-        await to5Btn!.click();
-        await driver!.delayMs(waitUiReadyMs);
-        let longClickBtn = await driver!.findComponent(ON.id('longClickBtn'));
-        await driver!.delayMs(waitUiReadyMs);
-        let center = await longClickBtn!.getBoundsCenter();
-        let disPlay = display.getDefaultDisplaySync();
-        await driver!.delayMs(waitUiReadyMs);
-        let result = await driver!.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), {x: center.x, y: center.y, displayId: disPlay.id.toInt()}, undefined)
-        expect(result).assertTrue();
-        await driver!.delayMs(waitUiReadyMs);
-        let longClickTextResultBtn = await driver!.findComponent(ON.id('longClickTextResult'));
-        let longClickText = await longClickTextResultBtn!.getText();
-        expect(longClickText == 'longClickEvent').assertTrue();
-        await driver!.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts')
-      } catch (error) {
-        expect().assertFail();
+    it('tesIsComponentPresentWhenDragTrue_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let to5Btn = await driver!.findComponent(ON.id('to5'));
+      expect(to5Btn != null).assertTrue();
+      if (to5Btn != null) {
+        await to5Btn.click();
       }
-      console.log(`${TestTag}, tesIsComponentPresentWhenLongClickDuringUndefined_static end`);
+      await driver!.delayMs(waitUiReadyMs);
+      let dragColCom = await driver!.findComponent(ON.id('dragCol'));
+      expect(dragColCom != null).assertTrue();
+      if (dragColCom != null) {
+        await driver!.delayMs(waitUiReadyMs);
+        let center1 = await dragColCom.getBoundsCenter();
+        let dragResultTextCom = await driver!.findComponent(ON.id('dragResultText'));
+        expect(dragResultTextCom != null).assertTrue();
+        if (dragResultTextCom != null) {
+          await driver!.delayMs(waitUiReadyMs);
+          let center2 = await dragResultTextCom.getBoundsCenter();
+          let result = await driver!.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+          console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static result, ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+        }
+      }
+      let text = await driver!.findComponent(ON.text('drag end'));
+      expect(text != null).assertTrue()
+      await stopApplication('com.uitestScene.acts')
+      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static end`);
+    })
+
+    /**
+     * @tc.name tesIsComponentPresentWhenDragTrue_speed_static
+     * @tc.number uitestDriverTest_Api22_0101
+     * @tc.desc isComponentPresentWhenDrag test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('tesIsComponentPresentWhenDragTrue_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static start`);
+      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+      await driver!.delayMs(waitUiReadyMs);
+      let to5Btn = await driver!.findComponent(ON.id('to5'));
+      expect(to5Btn != null).assertTrue();
+      if (to5Btn != null) {
+        await to5Btn.click();
+      }
+      await driver!.delayMs(waitUiReadyMs);
+      let dragColCom = await driver!.findComponent(ON.id('dragCol'));
+      expect(dragColCom != null).assertTrue();
+      if (dragColCom != null) {
+        await driver!.delayMs(waitUiReadyMs);
+        let center1 = await dragColCom.getBoundsCenter();
+        let dragResultTextCom = await driver!.findComponent(ON.id('dragResultText'));
+        expect(dragResultTextCom != null).assertTrue();
+        if (dragResultTextCom != null) {
+          await driver!.delayMs(waitUiReadyMs);
+          let center2 = await dragResultTextCom.getBoundsCenter();
+          let result = await driver!.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2, 600);
+          console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static result, ${JSON.stringify(result)}`);
+          expect(result).assertTrue();
+        }
+      }
+      let text = await driver!.findComponent(ON.text('drag end'));
+      expect(text != null).assertTrue()
+      await stopApplication('com.uitestScene.acts')
+      console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static end`);
     })
 
     /**
      * @tc.name tesIsComponentPresentWhenDragFalse_static
-     * @tc.number SUB_testfwk_uitest_Api22_0015
+     * @tc.number uitestDriverTest_Api22_011
      * @tc.desc isComponentPresentWhenDrag test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -602,7 +1365,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesIsComponentPresentWhenSwipeTrue_static
-     * @tc.number SUB_testfwk_uitest_Api22_0016
+     * @tc.number uitestDriverTest_Api22_012
      * @tc.desc isComponentPresentWhenSwipe test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -617,10 +1380,11 @@ export default function uitestDriverTestApi22(): void {
       if (scrollBar != null) {
         let rect = await scrollBar.getBounds()
         let center = await scrollBar.getBoundsCenter()
-        let disPlay = display.getDefaultDisplaySync();
+        let playId = await scrollBar.getDisplayId();
+        console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static playId is: ${JSON.stringify(playId)}`);
         let result = await driver!.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-          {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()},
-          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt()}, 200)
+          {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: playId},
+          {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 200)
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static result, ${JSON.stringify(result)}`);
         expect(result).assertTrue();
       }
@@ -632,7 +1396,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesIsComponentPresentWhenSwipeFalse_static
-     * @tc.number SUB_testfwk_uitest_Api22_0017
+     * @tc.number uitestDriverTest_Api22_013
      * @tc.desc isComponentPresentWhenSwipe test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -662,39 +1426,8 @@ export default function uitestDriverTestApi22(): void {
     })
 
     /**
-     * @tc.name   tesIsComponentPresentWhenSwipeDuringUndefined_static
-     * @tc.number SUB_testfwk_uitest_Api22_0136
-     * @tc.desc   isComponentPresentWhenSwipe test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('tesIsComponentPresentWhenSwipeDuringUndefined_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      try {
-        console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined_static start`);
-        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
-        await driver!.delayMs(waitUiReadyMs)
-        let scrollBar = await driver!.findComponent(ON.type('Scroll').id('parentScroll'))
-        let rect = await scrollBar!.getBounds()
-        let center = await scrollBar!.getBoundsCenter()
-        let disPlay = display.getDefaultDisplaySync();
-        let result = await driver!.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
-          { x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt() },
-          { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: disPlay.id.toInt() }, undefined)
-        console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined_static result, ${JSON.stringify(result)}`);
-        expect(result).assertTrue();
-        let text = await driver!.findComponent(ON.text('toast'))
-        expect(text == null).assertTrue()
-        await stopApplication('com.uitestScene.acts')
-        console.log(`${TestTag}, tesIsComponentPresentWhenSwipeDuringUndefined_static end`);
-      } catch (error) {
-        expect().assertFail();
-      }
-    })
-
-    /**
      * @tc.name tesKnuckleKnockSingle_static
-     * @tc.number SUB_testfwk_uitest_Api22_0018
+     * @tc.number uitestDriverTest_Api22_014
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -726,7 +1459,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesKnuckleKnockDouble_static
-     * @tc.number SUB_testfwk_uitest_Api22_0019
+     * @tc.number uitestDriverTest_Api22_015
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -759,7 +1492,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name tesKnuckleKnockS_static
-     * @tc.number SUB_testfwk_uitest_Api22_0020
+     * @tc.number uitestDriverTest_Api22_016
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -788,19 +1521,19 @@ export default function uitestDriverTestApi22(): void {
         console.log(`${TestTag}, tesKnuckleKnockS_static play, ${JSON.stringify(play)}`);	
         let centerX = (play.width / 2).toInt();
         let centY = (play.height / 2).toInt();
-        let fivePoint: Point = {x: centerX - 40, y: centY - 80, displayId: play.id.toInt()};
-        let sixPoint: Point = {x: centerX - 40, y: centY - 60, displayId: play.id.toInt()};
-        let sevPoint: Point = {x: centerX - 40, y: centY - 40, displayId: play.id.toInt()};
-        let eigPoint: Point = {x: centerX -40, y: centY - 20, displayId: play.id.toInt()};
-        let niePoint: Point = {x: centerX - 40, y: centY, displayId: play.id.toInt()};
-        let tenPoint: Point = {x: centerX - 20, y: centY, displayId: play.id.toInt()};
-        let ten1Point: Point = {x: centerX, y: centY, displayId: play.id.toInt()};
-        let ten2Point: Point = {x: centerX + 20, y: centY, displayId: play.id.toInt()};
-        let ten3Point: Point = {x: centerX + 40, y: centY, displayId: play.id.toInt()};
-        let ten4Point: Point = {x: centerX + 40, y: centY + 20, displayId: play.id.toInt()};
-        let ten5Point: Point = {x: centerX + 40, y: centY + 40, displayId: play.id.toInt()};
-        let ten6Point: Point = {x: centerX + 40, y: centY + 60, displayId: play.id.toInt()};
-        let ten7Point: Point = {x: centerX + 40, y: centY + 80, displayId: play.id.toInt()};
+        let fivePoint: Point = {x: centerX - 40, y: centY - 80};
+        let sixPoint: Point = {x: centerX - 40, y: centY - 60};
+        let sevPoint: Point = {x: centerX - 40, y: centY - 40};
+        let eigPoint: Point = {x: centerX -40, y: centY - 20};
+        let niePoint: Point = {x: centerX - 40, y: centY };
+        let tenPoint: Point = {x: centerX - 20, y: centY};
+        let ten1Point: Point = {x: centerX, y: centY};
+        let ten2Point: Point = {x: centerX + 20, y: centY };
+        let ten3Point: Point = {x: centerX + 40, y: centY };
+        let ten4Point: Point = {x: centerX + 40, y: centY + 20};
+        let ten5Point: Point = {x: centerX + 40, y: centY + 40};
+        let ten6Point: Point = {x: centerX + 40, y: centY + 60};
+        let ten7Point: Point = {x: centerX + 40, y: centY + 80};
         let pointers = PointerMatrix.create(1,13);
         pointers.setPoint(0,0, fivePoint);
         pointers.setPoint(0,1, sixPoint);
@@ -833,7 +1566,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name teTouchPadTwoFingersScrollVer_Static
-     * @tc.number SUB_testfwk_uitest_Api22_0022
+     * @tc.number uitestDriverTest_Api22_018
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -849,14 +1582,13 @@ export default function uitestDriverTestApi22(): void {
         if (scrollBar != null) {
           await driver!.delayMs(waitUiReadyMs);
           let center = await scrollBar.getBoundsCenter();
-          let disPlay = display.getDefaultDisplaySync();
           await driver!.delayMs(waitUiReadyMs);
-          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y, displayId: disPlay.id.toInt()}, UiDirection.UP, 300);
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y}, UiDirection.UP, 300);
           await driver!.delayMs(waitUiReadyMs);
           let text = await driver!.findComponent(ON.text('toast'));
           await driver!.delayMs(waitUiReadyMs);
           expect(text == null).assertTrue()
-          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y, displayId: disPlay.id.toInt()}, UiDirection.DOWN, 400, 5000);
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y}, UiDirection.DOWN, 400, 5000);
           let text1 = await driver!.findComponent(ON.text('toast'));
           await driver!.delayMs(waitUiReadyMs);
           expect(text1 != null).assertTrue()
@@ -871,7 +1603,7 @@ export default function uitestDriverTestApi22(): void {
 
     /**
      * @tc.name teTouchPadTwoFingersScrollHor_static
-     * @tc.number SUB_testfwk_uitest_Api22_0023
+     * @tc.number uitestDriverTest_Api22_019
      * @tc.desc isComponentPresentWhenLongClick test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -883,28 +1615,32 @@ export default function uitestDriverTestApi22(): void {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let scrollBarBtn = await driver!.findComponent(ON.id('to5'));
+        expect(scrollBarBtn != null).assertTrue();
         if (scrollBarBtn != null) {
+          await driver!.delayMs(waitUiReadyMs);
           await scrollBarBtn.click();
           await driver!.delayMs(waitUiReadyMs);
         }
         let scrollBar = await driver!.findComponent(ON.type('Scroll').id('horizontalScroll'));
         await driver!.delayMs(waitUiReadyMs);
-        let center = await scrollBar!.getBoundsCenter();
-        let disPlay = display.getDefaultDisplaySync();
-        await driver!.delayMs(waitUiReadyMs);
-        await driver!.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlay.id.toInt() },
-          UiDirection.LEFT, 600, 5000);
-        await driver!.delayMs(waitUiReadyMs);
-        let scroll11 = await driver!.findComponent(ON.text('1_hor'));
-        await driver!.delayMs(waitUiReadyMs);
-        expect(scroll11 == null).assertTrue();
-        await driver!.delayMs(waitUiReadyMs);
-        await driver!.touchPadTwoFingersScroll({ x: center.x, y: center.y, displayId: disPlay.id.toInt() },
-          UiDirection.RIGHT, 800);
-        await driver!.delayMs(waitUiReadyMs);
-        let scroll111 = await driver!.findComponent(ON.text('1_hor'));
-        await driver!.delayMs(waitUiReadyMs);
-        expect(scroll111 != null).assertTrue();
+        expect(scrollBar != null).assertTrue();
+        if (scrollBar != null) {
+          let center = await scrollBar.getBoundsCenter();
+          await driver!.delayMs(waitUiReadyMs);
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y},
+            UiDirection.LEFT, 600, 5000);
+          await driver!.delayMs(waitUiReadyMs);
+          let scroll11 = await driver!.findComponent(ON.text('1_hor'));
+          await driver!.delayMs(waitUiReadyMs);
+          expect(scroll11 == null).assertTrue();
+          await driver!.delayMs(waitUiReadyMs);
+          await driver!.touchPadTwoFingersScroll({x: center.x, y: center.y},
+            UiDirection.RIGHT, 800);
+          await driver!.delayMs(waitUiReadyMs);
+          let scroll111 = await driver!.findComponent(ON.text('1_hor'));
+          await driver!.delayMs(waitUiReadyMs);
+          expect(scroll111 != null).assertTrue();
+        }
       } catch (error) {
         console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static error, ${JSON.stringify(error)}`);
         expect((error as BusinessError).code).assertEqual(17000005);
@@ -912,5 +1648,6 @@ export default function uitestDriverTestApi22(): void {
       await stopApplication('com.uitestScene.acts')
       console.log(`${TestTag}, teTouchPadTwoFingersScrollHor_static end`);
     })
+
   })
 }
