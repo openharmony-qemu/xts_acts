@@ -140,9 +140,9 @@ failX() {
 - pf-row: 58px（40px + 6px + 12px）
 - border: 4px
 
-## 新增用例
+## 新增用例（已有页面）
 
-以 ArkUI 下新增测试项为例，改 5 个文件：
+以 ArkUI 下新增测试项为例：
 
 ### 1. app.js — 注册用例
 
@@ -171,26 +171,21 @@ failX() {
 </list-item>
 ```
 
-### 4. config.json + manifest.json — 注册路由
-
-两个文件的 `pages` 数组都需添加页面路径。
-
-### 5. BUILD.gn — 注册源文件
-
-```gn
-"entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.css",
-"entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.hml",
-"entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.js",
-```
+以上 3 步即可——页面已在 `_pages` 清单中，无需改 `BUILD.gn`。新增页面见「新增子系统」/「新增子页面」。
 
 ## 新增子系统
 
-1. `index/index.hml` — 添加首页按钮
-2. `index/index.js` — `navigateTo` 中添加路由
-3. `pages/<子系统>/index/index.{js,hml,css}` — 创建用例页（list-item 布局）
-4. `app.js` — 注册该子系统下的用例
-5. `config.json` + `manifest.json` — 注册路由
-6. `BUILD.gn` — 注册源文件
+在 `pages/` 根目录下新增子系统目录（顶级页，如 `pages/Sensors/`）：
+
+1. `pages/<子系统>/index/index.{js,hml,css}` — 创建用例页（list-item 布局；路由 = 文件路径去后缀）
+2. `BUILD.gn` — `_pages` 加一行路由字符串（任何新页面都必须；`manifest.json`/`config.json` 的 pages 由构建生成，无需维护）
+3. `app.js` — 注册该子系统下的用例条目
+4. `index/index.hml` — 添加首页按钮
+5. `index/index.js` — `navigateTo` 中添加路由
+
+## 新增子页面（非根目录）
+
+在已有子系统/分组下新增页面（如 ArkUI 子页面、RouterTransition 组内页面）：前 3 步同「新增子系统」，入口注册改为——所属菜单页 todolist 加一行（如 `pages/ArkUI/common/index/index.js`、`pages/RouterTransition/index/index.js`）。
 
 ## 不支持能力处理（canIUse 前置判定）
 
@@ -251,16 +246,34 @@ HML 中每个测试点 list-item 内加独立 tip：
 
 新增/修改用例时，以下文件需同步检查：
 
-| 文件 | 用途 |
+| 位置 | 用途 |
 |------|------|
 | `app.js` | testItems 注册 |
-| `manifest.json` | 页面路由注册 |
-| `config.json` | 页面路由注册（与 manifest.json 保持一致） |
-| `BUILD.gn` | 源文件列表（ninja 依赖来源） |
+| `BUILD.gn` `_pages` | 页面清单（唯一真源，首页 `pages/index/index` 必须保持首位） |
 | `index/index.js` | 首页 navigateTo 路由 |
 | 对应子系统 `common/index/index.js` | 子菜单列表（ArkUI 专属） |
 
-> **三个路由文件必须一致**：`manifest.json`、`config.json`、`BUILD.gn` 的页面列表必须完全匹配，否则编译报 `missing and no known rule to make it`。修改后需删除 `out/.../toolchain.ninja` 让 GN 重新生成。
+`manifest.json` / `config.json` 的 `pages` 由构建按 `_pages` 生成，无需维护。
+
+## 条件编译（页面级）
+
+### 新增条件编译用例
+
+按「新增用例 / 新增子系统 / 新增子页面」正常添加，唯一区别：`_pages` 那一行写在 if 块内（条件为任意 GN 布尔表达式：产品名、import 的引擎 feature 等）：
+
+```gn
+if (<任意 GN 布尔条件>) {
+  _pages += [ "pages/Xxx/index/index" ]
+}
+```
+
+条件不命中时，该页面及其 app.js 条目、首页按钮、路由行、子菜单行自动从产物移除，无需其他动作；条目或路由引用不一致会构建报错。
+
+### 注意
+
+- 页内单条 test item 不做编译期裁剪；设备能力差异继续用 `canIUse` 运行时跳过（untested）
+- 改了 if 条件或清单后正常走 `./build.sh`（会重新 gen），裸跑 ninja 不会刷新
+- 验证：多产品构建后解包 HAP，对比 `manifest.json` pages / `app.js` testItems / 首页与子菜单
 
 ## ACE Lite 注意事项
 
