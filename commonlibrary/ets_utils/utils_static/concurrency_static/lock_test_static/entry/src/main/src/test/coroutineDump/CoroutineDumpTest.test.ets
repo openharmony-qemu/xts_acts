@@ -179,6 +179,17 @@ function findEAWorkerByStatus(states: CoroutineDumpInfo[], targetStatus: string)
   }
   return null;
 }
+// Poll dumpCoroutineInfo until predicate holds or maxAttempts reached. Returns last snapshot.
+function pollDumpFor(pred: (states: CoroutineDumpInfo[]) => boolean, maxAttempts: int = 200): CoroutineDumpInfo[] {
+  let states: CoroutineDumpInfo[] = [];
+  for (let attempt: int = 0; attempt < maxAttempts; attempt++) {
+    states = CoroutineDump.dumpCoroutineInfo();
+    if (pred(states)) {
+      break;
+    }
+  }
+  return states;
+}
 export default function CoroutineDumpTest(): void {
   describe('CoroutineDumpTest', (): void => {
     beforeAll((): void => {})
@@ -231,7 +242,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let blocked: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(blocked !== null).assertTrue();
         if (blocked !== null) {
@@ -271,7 +284,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].waitReason === 'RWLOCK_READ') return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].waitReason === 'RWLOCK_READ') {
@@ -314,7 +329,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].waitReason === 'RWLOCK_WRITE') return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].waitReason === 'RWLOCK_WRITE') {
@@ -407,7 +424,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].workerName.includes('[e-worker]')) return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].workerName.includes('[e-worker]')) {
@@ -444,7 +463,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          let mf: boolean = false; let wf: boolean = false; for (let i: int = 0; i < s.length; i++) { if (s[i].isMain === true) { mf = true; } if (s[i].workerName.includes('[e-worker]') && s[i].isMain === false) { wf = true; } } return mf && wf;
+        });
         let mainFound: boolean = false;
         let workerFound: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
@@ -487,7 +508,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let blocked: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(blocked !== null).assertTrue();
         if (blocked !== null) {
@@ -524,7 +547,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let blocked: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(blocked !== null).assertTrue();
         if (blocked !== null) {
@@ -662,7 +687,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].workerName.includes('[e-worker]')) return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].workerName.includes('[e-worker]')) {
@@ -726,7 +753,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].workerName.includes('[e-worker]')) return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].workerName.includes('[e-worker]')) {
@@ -764,7 +793,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].workerName.includes('[e-worker]')) return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].workerName.includes('[e-worker]')) {
@@ -877,7 +908,9 @@ export default function CoroutineDumpTest(): void {
         while (!started1.get() || !started2.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].waitReason === 'MUTEX_LOCK') return true; } return false;
+        });
         let mutexBlocked: boolean = false;
         let rwlockBlocked: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
@@ -926,7 +959,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].waitReason === 'RWLOCK_WRITE') return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].waitReason === 'RWLOCK_WRITE') {
@@ -970,7 +1005,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          let wb: boolean = false; let mnb: boolean = false; for (let i: int = 0; i < s.length; i++) { if (s[i].waitReason === 'MUTEX_LOCK' && s[i].workerName.includes('[e-worker]')) { wb = true; } if (s[i].isMain === true && s[i].waitReason === 'NONE') { mnb = true; } } return wb && mnb;
+        });
         let workerBlocked: boolean = false;
         let mainNotBlocked: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
@@ -1104,7 +1141,9 @@ export default function CoroutineDumpTest(): void {
         while (!started1.get() || !started2.get() || !started3.get()) {
         }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return countByWaitReason(s, 'MUTEX_LOCK') >= 3;
+        });
         let blockedCount: int = 0;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].waitReason === 'MUTEX_LOCK') {
@@ -1223,7 +1262,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let blockedInfo: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(blockedInfo !== null).assertTrue();
         if (blockedInfo !== null) {
@@ -1267,7 +1308,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWaitReason(s,'RWLOCK_READ') !== null;
+        });
         let blockedInfo: CoroutineDumpInfo | null = findByWaitReason(states, 'RWLOCK_READ');
         expect(blockedInfo !== null).assertTrue();
         if (blockedInfo !== null) {
@@ -1312,7 +1355,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!s1.get() || !s2.get() || !s3.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return countByWaitReason(s, 'MUTEX_LOCK') >= 3;
+        });
         let count: int = countByWaitReason(states, 'MUTEX_LOCK');
         expect(count >= 3).assertTrue();
 
@@ -1352,7 +1397,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!s1.get() || !s2.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return countByWaitReason(s, 'MUTEX_LOCK') >= 1 && countByWaitReason(s, 'RWLOCK_READ') >= 1;
+        });
         expect(countByWaitReason(states, 'MUTEX_LOCK') >= 1).assertTrue();
         expect(countByWaitReason(states, 'RWLOCK_READ') >= 1).assertTrue();
 
@@ -1388,7 +1435,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWaitReason(s,'RWLOCK_WRITE') !== null;
+        });
         let blockedInfo: CoroutineDumpInfo | null = findByWaitReason(states, 'RWLOCK_WRITE');
         expect(blockedInfo !== null).assertTrue();
         if (blockedInfo !== null) {
@@ -1498,7 +1547,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          let mi: boolean = false; let wi: boolean = false; for (let i: int = 0; i < s.length; i++) { if (s[i].isMain === true && s[i].waitReason === 'NONE') { mi = true; } if (s[i].waitReason === 'MUTEX_LOCK') { wi = true; } } return mi && wi;
+        });
         let mainInfo: CoroutineDumpInfo | null = null;
         let workerInfo: CoroutineDumpInfo | null = null;
         for (let i: int = 0; i < states.length; i++) {
@@ -1541,7 +1592,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let info: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -1581,7 +1634,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWaitReason(s,'RWLOCK_READ') !== null;
+        });
         let info: CoroutineDumpInfo | null = findByWaitReason(states, 'RWLOCK_READ');
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -1619,7 +1674,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findRWLockBlocked(s,'RWLOCK_WRITE') !== null;
+        });
         let info: CoroutineDumpInfo | null = findRWLockBlocked(states, 'RWLOCK_WRITE');
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -1656,7 +1713,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let info: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -1803,7 +1862,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!s1.get() || !s2.get() || !s3.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWorkerName(s,'s') !== null;
+        });
         let found1: boolean = findByWorkerName(states, 's') !== null;
         let found2: boolean = findByWorkerName(states, 'a'.repeat(256)) !== null;
         let found3: boolean = findByWorkerName(states, '鐗规畩-!@#') !== null;
@@ -1848,7 +1909,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!s1.get() || !s2.get() || !s3.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return countByWaitReason(s, 'RWLOCK_READ') >= 3;
+        });
         let count: int = countByWaitReason(states, 'RWLOCK_READ');
         expect(count >= 3).assertTrue();
 
@@ -1881,7 +1944,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let blocked: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(blocked !== null).assertTrue();
         if (blocked !== null) {
@@ -2033,7 +2098,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWorkerName(s,'coroutinename-test') !== null;
+        });
         let info: CoroutineDumpInfo | null = findByWorkerName(states, 'coroutinename-test');
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -2243,7 +2310,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWorkerName(s,'mutator-type-worker') !== null;
+        });
         let info: CoroutineDumpInfo | null = findByWorkerName(states, 'mutator-type-worker');
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -2310,7 +2379,9 @@ export default function CoroutineDumpTest(): void {
         let jW = wWriter.run<void>((): void => { rwLock.writeLock().lock(); rwLock.writeLock().unlock(); });
         await Utils.msSleep(200);
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWorkerName(s,'blocked-writer') !== null;
+        });
         let writerInfo: CoroutineDumpInfo | null = findByWorkerName(states, 'blocked-writer');
         expect(writerInfo !== null).assertTrue();
         if (writerInfo !== null && writerInfo.waitReason === 'RWLOCK_WRITE') {
@@ -2351,7 +2422,9 @@ export default function CoroutineDumpTest(): void {
         let jR = wReader.run<void>((): void => { rwLock.readLock().lock(); rwLock.readLock().unlock(); });
         await Utils.msSleep(200);
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findByWorkerName(s,'blocked-reader') !== null;
+        });
         let readerInfo: CoroutineDumpInfo | null = findByWorkerName(states, 'blocked-reader');
         expect(readerInfo !== null).assertTrue();
         if (readerInfo !== null && readerInfo.waitReason === 'RWLOCK_READ') {
@@ -2617,7 +2690,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          for (let i: int = 0; i < s.length; i++) { if (s[i].waitReason === 'RWLOCK_READ') return true; } return false;
+        });
         let found: boolean = false;
         for (let i: int = 0; i < states.length; i++) {
           if (states[i].waitReason === 'RWLOCK_READ') {
@@ -2665,7 +2740,9 @@ export default function CoroutineDumpTest(): void {
         while (!started.get()) { }
         await Utils.msSleep(200);
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let info: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -2747,7 +2824,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let info: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -2785,7 +2864,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!started.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return findMutexBlocked(s) !== null;
+        });
         let info: CoroutineDumpInfo | null = findMutexBlocked(states);
         expect(info !== null).assertTrue();
         if (info !== null) {
@@ -2832,7 +2913,9 @@ export default function CoroutineDumpTest(): void {
 
         while (!s1.get() || !s2.get()) { }
 
-        let states: CoroutineDumpInfo[] = CoroutineDump.dumpCoroutineInfo();
+        let states: CoroutineDumpInfo[] = pollDumpFor((s: CoroutineDumpInfo[]): boolean => {
+          return countByWaitReason(s, 'MUTEX_LOCK') >= 1 && countByWaitReason(s, 'RWLOCK_READ') >= 1;
+        });
         expect(countByWaitReason(states, 'MUTEX_LOCK') >= 1).assertTrue();
         expect(countByWaitReason(states, 'RWLOCK_READ') >= 1).assertTrue();
 
