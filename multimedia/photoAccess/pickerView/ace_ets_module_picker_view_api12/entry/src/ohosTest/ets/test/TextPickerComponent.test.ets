@@ -5331,7 +5331,7 @@ export default function TextPicker() {
       await routeToUrl(options);
 
       let checkbox: Component = await driver.findComponent(ON.type('Checkbox'));
-      
+
       if (checkbox === null) {
         console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
         router.back();
@@ -5342,10 +5342,9 @@ export default function TextPicker() {
       }
 
       let bounds = await checkbox.getBounds();
-      let targetX = bounds.left - 150;
       let centerY = Math.floor(bounds.top + (bounds.bottom - bounds.top) / 2);
 
-      if (targetX <= 0 || centerY <= 0) {
+      if (centerY <= 0) {
         console.info('SUB_PHOTO_PICKER_TEST_0700 no photo found, skipping zoom test');
         router.back();
         events_emitter.off(event.eventId);
@@ -5353,8 +5352,17 @@ export default function TextPicker() {
         done();
         return;
       }
-      
-      await driver.click(targetX, centerY);
+
+      let leftX = bounds.left - 150;
+      let rightX = bounds.right + 200;
+      if (leftX > 0) {
+        await driver.click(leftX, centerY);
+        await CommonFunc.sleep(1000);
+      }
+      if (rightX > 0) {
+        await driver.click(rightX, centerY);
+        await CommonFunc.sleep(1500);
+      }
 
       let bigImage: Component = await driver.findComponent(ON.type('Image'));
       if (bigImage !== null) {
