@@ -767,7 +767,7 @@ export default function windowLayoutTest() {
         let blank = await driver.findComponent(ON.id('startMoving'))
         await sleep(1000)
         let point = await blank.getBoundsCenter();
-        await driver.drag(point.x, point.y, point.x - 50, point.y - 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x - 50, y:point.y - 50,displayId:displayID}, 200);
         await sleep(1000)
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
@@ -839,7 +839,7 @@ export default function windowLayoutTest() {
         await sleep(1000)
         let point = await blank.getBoundsCenter();
         console.info(`${message} point = ${JSON.stringify(point.x)},y = ${JSON.stringify(point.y)}`)
-        await driver.drag(point.x, point.y, point.x + 100, point.y + 100, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 100, y:point.y + 100,displayId:displayID}, 200);
         await sleep(1000)
         let rectNow = windowClass.getWindowProperties().windowRect
         console.info(`${message} rectNow = ${JSON.stringify(rectNow.left)},y = ${JSON.stringify(rectNow.top)}`)
@@ -891,7 +891,7 @@ export default function windowLayoutTest() {
             let blank = await driver.findComponent(ON.id('startMoving'));
             await sleep(1000)
             let point = await blank.getBoundsCenter();
-            await driver.drag(point.x, point.y, point.x + 100, point.y + 100, 200);
+            await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 100, y:point.y + 100,displayId:displayID}, 200);
             let text = await driver.findComponent(ON.id('startMovingText'));
             await sleep(1000)
             let textDragged = await text.getText()
@@ -2911,7 +2911,7 @@ export default function windowLayoutTest() {
         console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
         let point = await blank.getBoundsCenter();
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
-        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 50, y:point.y + 50,displayId:displayID}, 200);
         await sleep(1000);
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
@@ -6212,7 +6212,7 @@ export default function windowLayoutTest() {
         console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
         let point = await blank.getBoundsCenter();
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
-        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 50, y:point.y + 50,displayId:displayID}, 200);
         await sleep(1000);
         let text = await driver.findComponent(ON.id('startMovingText'));
         await sleep(1000)
@@ -6285,7 +6285,7 @@ export default function windowLayoutTest() {
         console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
         let point = await blank.getBoundsCenter();
         console.info(`${caseName} point = ${JSON.stringify(point)}`);
-        await driver.drag(point.x, point.y, point.x + 50, point.y + 50, 200);
+        await driver.dragBetween({x:point.x,y:point.y,displayId:displayID}, {x:point.x + 50, y:point.y + 50,displayId:displayID}, 200);
         await sleep(1000);
         let num = AppStorage.get('num') as number;
         console.info(`${caseName} num = ${JSON.stringify(num)}`);
