@@ -1937,7 +1937,6 @@ export default function requestVideoTest() {
       };
       await requestVideoRequestOptionsErrorHdr(testNum, done, requestOptions);
     });
-        /**
     /**
      * @tc.name   request_hdr_video_fileUri_imageUri_photoAsset_compatible_onprogress
      * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_VIDEO_7800
