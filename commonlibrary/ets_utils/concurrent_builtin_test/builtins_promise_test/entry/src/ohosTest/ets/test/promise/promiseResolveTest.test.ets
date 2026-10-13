@@ -1040,7 +1040,7 @@ export default function promiseResolveTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseResolveTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseResolveTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const innerRace = Promise.race([
         Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-slow'), 200))),
         Promise.resolve('inner-fast')
@@ -1053,6 +1053,7 @@ export default function promiseResolveTest() {
       const result = await outerRace;
 
       expect(result).assertEqual('outer-fast');
+      done();
     });
 
     /**

@@ -2586,7 +2586,7 @@ export default function promiseAllTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_PROMISE_ALL_TEST_10000
+     * @tc.number SUB_BUILTINS_PROMISE_ALL_TEST_1000
      * @tc.name PromiseAllTest100
      * @tc.desc test Promise.all with all Promise static methods in chain
      * @tc.size MediumTest

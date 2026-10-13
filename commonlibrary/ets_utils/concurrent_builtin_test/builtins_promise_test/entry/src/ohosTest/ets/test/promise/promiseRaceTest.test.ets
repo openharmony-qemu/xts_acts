@@ -1361,7 +1361,7 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_059
+     * @tc.number SUB_BUILTINS_PROMISE_RACE_TEST_0059
      * @tc.name PromiseRaceTest059
      * @tc.desc Race between promises with complex dependency graphs
      * @tc.size LargeTest

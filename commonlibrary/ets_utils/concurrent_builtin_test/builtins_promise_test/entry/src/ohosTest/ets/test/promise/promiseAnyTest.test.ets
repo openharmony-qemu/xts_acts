@@ -1828,7 +1828,7 @@ export default function promiseAnyTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_093
+     * @tc.number SUB_BUILTINS_PROMISE_ANY_TEST_0093
      * @tc.name PromiseAnyTest093
      * @tc.desc Combine Promise.any with Promise.race in cascading calls
      * @tc.size MediumTest
