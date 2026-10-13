@@ -1056,7 +1056,7 @@ export default function decimalLnTestTest() {
      */
     it('testDecimalLnTestTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const vals: Array<number | null> = [4, null];
-      expect(Math.abs(new Decimal(vals[0]).ln().toNumber() - 1.3862943611198906) < 1e-12).assertTrue();
+      expect(Math.abs(new Decimal(vals[0] as number).ln().toNumber() - 1.3862943611198906) < 1e-12).assertTrue();
       let threw: boolean = false;
       try { new Decimal(vals[1] as ESObject).ln(); } catch (e) { threw = true; }
       expect(threw).assertTrue();
