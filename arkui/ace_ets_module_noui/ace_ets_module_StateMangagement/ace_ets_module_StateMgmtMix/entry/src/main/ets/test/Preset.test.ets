@@ -48,14 +48,14 @@ export default function PresetTest() {
     });
 
     /**
-     * @tc.name   SUB_ARKUI_PRESETTEST_0100
-     * @tc.number SUB_ARKUI_PRESETTEST_0100
+     * @tc.name   SUB_ARKUI_PRESET_TEST_0100
+     * @tc.number SUB_ARKUI_PRESET_TEST_0100
      * @tc.desc   preset about xiaoyi dialog
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_PRESETTEST_0100',  Level.LEVEL0, async () => {
+    it('SUB_ARKUI_PRESET_TEST_0100',  Level.LEVEL0, async () => {
       console.info('PresetTest PresetTest0001 START');
       let driver = await Driver.create();
       await CommonFunc.sleep(1000);
