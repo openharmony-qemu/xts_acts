@@ -305,14 +305,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2100
-     * @tc.name int8ArraySlicePart03Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_1600
+     * @tc.name int8ArraySlicePart03Test016
      * @tc.desc Verify slice(-2147483648) begin 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s: Int8Array = new Int8Array([7]);
       let r: Int8Array = s.slice(-2147483648);
       let actualLen: int = r.length;
@@ -324,14 +324,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2200
-     * @tc.name int8ArraySlicePart03Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_1700
+     * @tc.name int8ArraySlicePart03Test017
      * @tc.desc Verify slice(2, 2) begin=end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int8Array = new Int8Array([7, 7, 7, 7]);
       let r: Int8Array = a.slice(2, 2);
       let actualLen: int = r.length;
@@ -340,14 +340,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2300
-     * @tc.name int8ArraySlicePart03Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_1800
+     * @tc.name int8ArraySlicePart03Test018
      * @tc.desc Verify slice(2, 2147483647) end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int8Array = new Int8Array([7, 7, 7, 7]);
       let r: Int8Array = a.slice(2, 2147483647);
       let actualLen: int = r.length;
@@ -359,14 +359,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2400
-     * @tc.name int8ArraySlicePart03Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_1900
+     * @tc.name int8ArraySlicePart03Test019
      * @tc.desc Verify slice begin=end=-2147483648 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let r: Int8Array = base.slice(-2147483648, -2147483648);
       let actualLen: int = r.length;
@@ -375,14 +375,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2500
-     * @tc.name int8ArraySlicePart03Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2000
+     * @tc.name int8ArraySlicePart03Test020
      * @tc.desc Verify slice begin=end=length returns length=0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let r: Int8Array = base.slice(4, 4);
       let actualLen: int = r.length;
@@ -391,14 +391,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2600
-     * @tc.name int8ArraySlicePart03Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2100
+     * @tc.name int8ArraySlicePart03Test021
      * @tc.desc Verify slice() returns new Int8Array containing copy of specified range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let r: Int8Array = base.slice(-2147483648, 2147483647);
       let actualVal: number = r.$_get(0);
@@ -410,14 +410,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2700
-     * @tc.name int8ArraySlicePart03Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2200
+     * @tc.name int8ArraySlicePart03Test022
      * @tc.desc Verify slice begin=-length-1 returns independent copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let copy: Int8Array = base.slice(-5);
       copy.$_set(0, 99);
@@ -430,14 +430,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2800
-     * @tc.name int8ArraySlicePart03Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2300
+     * @tc.name int8ArraySlicePart03Test023
      * @tc.desc Verify slice begin=-5 0 end=2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let r: Int8Array = base.slice(-5, 2);
       let actualLen: int = r.length;
@@ -449,14 +449,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2900
-     * @tc.name int8ArraySlicePart03Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2400
+     * @tc.name int8ArraySlicePart03Test024
      * @tc.desc Verify slice begin=1 end= 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let r: Int8Array = base.slice(1, 2147483647);
       let actualVal: number = r.$_get(0);
@@ -468,14 +468,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_3000
-     * @tc.name int8ArraySlicePart03Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2500
+     * @tc.name int8ArraySlicePart03Test025
      * @tc.desc Verify slice begin=1 end=-5 0 begin>end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let r: Int8Array = base.slice(1, -5);
       let actualLen: int = r.length;
@@ -484,14 +484,14 @@ export default function int8ArraySlicePart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_3100
-     * @tc.name int8ArraySlicePart03Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART03_TEST_2600
+     * @tc.name int8ArraySlicePart03Test026
      * @tc.desc Verify slice begin=3 end=5 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, 20, 30, 40]);
       let r: Int8Array = base.slice(3, 5);
       let actualLen: int = r.length;
