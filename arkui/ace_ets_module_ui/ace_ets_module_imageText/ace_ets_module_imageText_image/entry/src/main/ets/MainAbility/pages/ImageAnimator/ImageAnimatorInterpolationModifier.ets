@@ -98,9 +98,6 @@ struct ImageAnimatorInterpolationModifierPage {
         Button('Undefined').layoutWeight(1).onClick(() => {
           this.setExceptionInterpolation(undefined)
         }).key('btn_undefined')
-        Button('Null').layoutWeight(1).onClick(() => {
-          this.setExceptionInterpolation(null)
-        }).key('btn_null')
       }
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
