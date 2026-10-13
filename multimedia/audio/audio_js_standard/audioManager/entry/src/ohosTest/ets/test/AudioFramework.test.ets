@@ -6614,6 +6614,8 @@ export default function audioFramework() {
       console.info("audio.AudioSessionScene.AUDIO_SESSION_SCENE_GAME :" + audio.AudioSessionScene.AUDIO_SESSION_SCENE_GAME);
       expect(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_COMMUNICATION).assertEqual(2);
       console.info("audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_COMMUNICATION :" + audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_COMMUNICATION);
+      expect(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE).assertEqual(3);
+      console.info("audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE :" + audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE);
       await sleep(50);
       done();
     })
