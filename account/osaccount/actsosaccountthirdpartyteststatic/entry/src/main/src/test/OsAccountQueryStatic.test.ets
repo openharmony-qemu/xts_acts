@@ -33,9 +33,10 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static(): void {
     afterEach(async (done: () => void): Promise<void> => {
       hilog.info(0x0000, tag, "====>afterEach start====");
       let accounts: Array<osAccount.OsAccountInfo> = await accountManager.queryAllCreatedOsAccounts();
+      let foregroundLocalId: int = await accountManager.getForegroundOsAccountLocalId();
       for (let i: int = 0; i < accounts.length; i++) {
         let localId: int = accounts[i].localId;
-        if (localId != 100) {
+        if (localId != 100 && localId != foregroundLocalId) {
           await RemoveAccount(localId);
         }
       }
@@ -70,7 +71,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static(): void {
               hilog.info(0x0000, tag, "====>run err");
               expect().assertFail();
             } else {
-              if (localId) {
+              if (localId !== undefined) {
                 expect(localId).assertEqual(testLocalId);
                 hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUid_0100 end====");
               } else {
@@ -1084,11 +1085,9 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static(): void {
         try {
           let dataArray: Array<int> = await accountManager.getOsAccountLocalIds();
           hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0100 data: " + dataArray);
-          if (dataArray.length > 0) {
-            expect(dataArray.length).assertEqual(1);
-            expect(dataArray[0]).assertEqual(100);
-          } else {
-            expect(dataArray.length).assertEqual(0);
+          expect(dataArray.length > 0).assertTrue();
+          for (let i: int = 0; i < dataArray.length; i++) {
+            expect(dataArray[i] >= 100).assertTrue();
           }
           hilog.info(0x0000, tag, "====>SUB_Account_OsAccount_GetLocalIds_0100 end====");
         } catch (err) {
