@@ -190,9 +190,9 @@ int TestRoundRectSetGetCornerNormal()
     // 4. OH_Drawing_RoundRectSetCorner with decimal values for x and y radii, and call OH_Drawing_RoundRectGetCorner to
     // retrieve the values
     OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {10.1f, 10.1f});
-    OH_Drawing_Corner_Radii radiiNUMBER_2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiNUMBER_2.x, 10.1f), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiNUMBER_2.y, 10.1f), true);
+    OH_Drawing_Corner_Radii radii2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.x, 10.1f), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.y, 10.1f), true);
     // 5. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
@@ -247,9 +247,9 @@ int TestRoundRectSetGetCornerAbnormal()
     // 3. OH_Drawing_RoundRectSetCorner with negative value for y-axis in OH_Drawing_Corner_Radii, followed by
     // OH_Drawing_RoundRectGetCorner
     OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {NUMBER_10, -NUMBER_10});
-    OH_Drawing_Corner_Radii radiiNUMBER_2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiNUMBER_2.x, NUMBER_10), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiNUMBER_2.y, -NUMBER_10), true);
+    OH_Drawing_Corner_Radii radii2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.x, NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.y, -NUMBER_10), true);
     // 4. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
@@ -276,9 +276,9 @@ int TestRoundRectSetGetCornerMaximum()
     // 3. Call OH_Drawing_RoundRectSetCorner with the maximum value for the y-axis in OH_Drawing_Corner_Radii, followed
     // by OH_Drawing_RoundRectGetCorner
     OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {NUMBER_10, FLT_MAX});
-    OH_Drawing_Corner_Radii radiiNUMBER_2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiNUMBER_2.x, NUMBER_10), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiNUMBER_2.y, FLT_MAX), true);
+    OH_Drawing_Corner_Radii radii2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.x, NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.y, FLT_MAX), true);
     // 4. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);

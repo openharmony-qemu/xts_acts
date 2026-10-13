@@ -359,7 +359,7 @@ int TestCreatePathDashEffectNormal()
     // 6. OH_Drawing_CreatePathDashEffect 参数正常入参并且遍历第四个枚举参数
     OH_Drawing_PathEffect *pathEffect = OH_Drawing_CreatePathDashEffect(path2, 50.0f, 50.0f,
         DRAWING_PATH_DASH_STYLE_TRANSLATE);
-        EXPECT_NE(pathEffect, nullptr);
+    EXPECT_NE(pathEffect, nullptr);
     pathEffect = OH_Drawing_CreatePathDashEffect(path2, 50.0f, 50.0f, DRAWING_PATH_DASH_STYLE_ROTATE);
     EXPECT_NE(pathEffect, nullptr);
     pathEffect = OH_Drawing_CreatePathDashEffect(path2, 50.0f, 50.0f, DRAWING_PATH_DASH_STYLE_MORPH);

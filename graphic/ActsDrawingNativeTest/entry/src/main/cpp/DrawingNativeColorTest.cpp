@@ -51,8 +51,7 @@ int TestColorSetArgbNormal()
 {
     DrawingNativeColorTestSetUp();
     // 1
-    uint32_t color = OH_Drawing_ColorSetArgb(NUMBER_255, NUMBER_255, NUMBER_255,
-        NUMBER_255);
+    uint32_t color = OH_Drawing_ColorSetArgb(NUMBER_255, NUMBER_255, NUMBER_255, NUMBER_255);
     // add assert
     EXPECT_NE(color, 0);
     // 2

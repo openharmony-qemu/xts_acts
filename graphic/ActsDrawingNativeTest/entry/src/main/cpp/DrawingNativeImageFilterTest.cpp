@@ -48,8 +48,7 @@ int TestImageFilterCreateBlurNormal()
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ImageFilterCreateBlur
     OH_Drawing_TileMode modes[] = {CLAMP, REPEAT, MIRROR, DECAL};
     for (OH_Drawing_TileMode mode : modes) {
-        OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(NUMBER_1, NUMBER_1, mode,
-            nullptr);
+        OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(NUMBER_1, NUMBER_1, mode, nullptr);
         EXPECT_NE(filter, nullptr);
         OH_Drawing_ImageFilterDestroy(filter);
     }
@@ -80,8 +79,7 @@ int TestImageFilterCreateBlurNULL()
 {
     DrawingNativeImageFilterTestSetUp();
     // 1. OH_Drawing_ImageFilterCreateBlur with the first parameter being null
-    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(0, 1.0f, OH_Drawing_TileMode::MIRROR,
-        nullptr);
+    OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(0, 1.0f, OH_Drawing_TileMode::MIRROR, nullptr);
     // add assert
     EXPECT_NE(filter, nullptr);
     // 2. OH_Drawing_ImageFilterCreateBlur with the second parameter being null
@@ -105,8 +103,7 @@ int TestImageFilterCreateBlurMultipleCalls()
         std::uniform_real_distribution<float> dis(0, NUMBER_10);
         std::uniform_int_distribution<int> enum_dis(0, NUMBER_3);
         OH_Drawing_TileMode tileMode = static_cast<OH_Drawing_TileMode>(enum_dis(gen));
-        OH_Drawing_ImageFilter *filter =
-            OH_Drawing_ImageFilterCreateBlur(dis(gen), dis(gen), tileMode, nullptr);
+        OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(dis(gen), dis(gen), tileMode, nullptr);
         EXPECT_NE(filter, nullptr);
         OH_Drawing_ImageFilterDestroy(filter);
     }

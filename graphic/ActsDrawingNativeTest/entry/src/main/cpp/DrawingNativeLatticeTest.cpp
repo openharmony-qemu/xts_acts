@@ -63,9 +63,8 @@ int TestLatticeCreateNormal()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_LatticeRectType rectTypes[NUMBER_9] = {OH_Drawing_LatticeRectType::DEFAULT};
     uint32_t colors[NUMBER_9] = {NUMBER_0XFFFF0000};
-    OH_Drawing_ErrorCode errorCode =
-        OH_Drawing_LatticeCreate(xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes, NUMBER_9,
-            colors, NUMBER_9, &lattice);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeCreate(
+        xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes, NUMBER_9, colors, NUMBER_9, &lattice);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_LatticeDestroy(lattice);
@@ -83,9 +82,8 @@ int TestLatticeCreateNull()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_LatticeRectType rectTypes[NUMBER_9] = {OH_Drawing_LatticeRectType::DEFAULT};
     uint32_t colors[NUMBER_9] = {NUMBER_0XFFFF0000};
-    OH_Drawing_ErrorCode errorCode =
-        OH_Drawing_LatticeCreate(nullptr, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes, NUMBER_9,
-            colors, NUMBER_9, &lattice);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeCreate(nullptr, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes,
+        NUMBER_9, colors, NUMBER_9, &lattice);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_LatticeCreate(xDivs, nullptr, NUMBER_2, NUMBER_2, rect, rectTypes,
         NUMBER_9, colors, NUMBER_9, &lattice);
@@ -126,12 +124,10 @@ int TestLatticeCreateAbnormal()
     OH_Drawing_Lattice *lattice = nullptr;
     int xDivs1[NUMBER_2] = {NUMBER_10, NUMBER_20};
     int yDivs1[NUMBER_2] = {NUMBER_10, NUMBER_20};
-    int xDivs2[NUMBER_10] = {NUMBER_10, NUMBER_20, NUMBER_30, NUMBER_40,
-        NUMBER_50, NUMBER_60, NUMBER_70, NUMBER_80, NUMBER_90,
-        NUMBER_100};
-    int yDivs2[NUMBER_10] = {NUMBER_10, NUMBER_20, NUMBER_30, NUMBER_40,
-        NUMBER_50, NUMBER_60, NUMBER_70, NUMBER_80, NUMBER_90,
-        NUMBER_100};
+    int xDivs2[NUMBER_10] = {NUMBER_10, NUMBER_20, NUMBER_30, NUMBER_40, NUMBER_50, NUMBER_60, NUMBER_70, NUMBER_80,
+        NUMBER_90, NUMBER_100};
+    int yDivs2[NUMBER_10] = {NUMBER_10, NUMBER_20, NUMBER_30, NUMBER_40, NUMBER_50, NUMBER_60, NUMBER_70, NUMBER_80,
+        NUMBER_90, NUMBER_100};
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_LatticeRectType rectTypes1[NUMBER_9] = {OH_Drawing_LatticeRectType::DEFAULT};
@@ -175,9 +171,8 @@ int TestLatticeCreateEnumTraversal()
     };
     uint32_t colors[9] = {NUMBER_0XFFFF0000};
     for (int i = 0; i < NUMBER_3; i++) {
-        OH_Drawing_ErrorCode errorCode =
-            OH_Drawing_LatticeCreate(xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes,
-                NUMBER_9, colors, NUMBER_9, &lattice);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeCreate(
+            xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes, NUMBER_9, colors, NUMBER_9, &lattice);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_RectDestroy(rect);
@@ -197,9 +192,8 @@ int TestLatticeCreateMultipleCalls()
     OH_Drawing_LatticeRectType rectTypes[NUMBER_9] = {OH_Drawing_LatticeRectType::DEFAULT};
     uint32_t colors[NUMBER_9] = {NUMBER_0XFFFF0000};
     for (int i = 0; i < NUMBER_10; i++) {
-        OH_Drawing_ErrorCode errorCode =
-            OH_Drawing_LatticeCreate(xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes,
-                NUMBER_9, colors, NUMBER_9, &lattice);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeCreate(
+            xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes, NUMBER_9, colors, NUMBER_9, &lattice);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_RectDestroy(rect);
@@ -218,8 +212,7 @@ int TestLatticeDestroyNormal()
     EXPECT_NE(rect, nullptr);
     OH_Drawing_LatticeRectType rectTypes[NUMBER_9] = {OH_Drawing_LatticeRectType::DEFAULT};
     uint32_t colors[NUMBER_9] = {NUMBER_0XFFFF0000};
-    OH_Drawing_LatticeCreate(xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes, NUMBER_9,
-        colors, NUMBER_9, &lattice);
+    OH_Drawing_LatticeCreate(xDivs, yDivs, NUMBER_2, NUMBER_2, rect, rectTypes, NUMBER_9, colors, NUMBER_9, &lattice);
     OH_Drawing_RectDestroy(rect);
     OH_Drawing_ErrorCode errorCode = OH_Drawing_LatticeDestroy(lattice);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
