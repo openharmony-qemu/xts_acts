@@ -20,6 +20,7 @@ import Utils from '../common/Utils';
 import router from '@ohos.router';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function KeyEventGetTypeTest() {
 
