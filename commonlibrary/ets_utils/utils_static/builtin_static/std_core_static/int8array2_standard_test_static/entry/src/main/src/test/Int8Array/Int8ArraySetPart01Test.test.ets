@@ -979,14 +979,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5400
-     * @tc.name int8ArraySetPart01Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_4800
+     * @tc.name int8ArraySetPart01Test048
      * @tc.desc Verify set(array, offset) offset=length-1 source length 1 fills last position no error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dst: Int8Array = new Int8Array(4);
       let src: Int8Array = Int8Array.of(77);
       dst.set(src, 3);
@@ -996,14 +996,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5500
-     * @tc.name int8ArraySetPart01Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_4900
+     * @tc.name int8ArraySetPart01Test049
      * @tc.desc Verify set(array, offset) offset=length source length 1 overflow throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dst: Int8Array = new Int8Array(4);
       let src: Int8Array = Int8Array.of(77);
       try {
@@ -1015,14 +1015,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5600
-     * @tc.name int8ArraySetPart01Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5000
+     * @tc.name int8ArraySetPart01Test050
      * @tc.desc Verify set(array, offset) offset=length-1 source length 2 overflow by 1 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dst: Int8Array = new Int8Array(4);
       let src: Int8Array = Int8Array.of(1, 2);
       try {
@@ -1034,14 +1034,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5700
-     * @tc.name int8ArraySetPart01Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5100
+     * @tc.name int8ArraySetPart01Test051
      * @tc.desc Verify set(array, offset) same buffer overlapping region set front segment to back
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(5);
       let view: Int8Array = new Int8Array(buf);
       let init: Int8Array = Int8Array.of(1, 2, 3, 4, 5);
@@ -1064,14 +1064,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5800
-     * @tc.name int8ArraySetPart01Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5200
+     * @tc.name int8ArraySetPart01Test052
      * @tc.desc Verify set(array, offset) same buffer overlapping region set back segment to front
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(5);
       let view: Int8Array = new Int8Array(buf);
       let init: Int8Array = Int8Array.of(1, 2, 3, 4, 5);
@@ -1091,14 +1091,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5900
-     * @tc.name int8ArraySetPart01Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5300
+     * @tc.name int8ArraySetPart01Test053
      * @tc.desc Verify set(array, offset) subarray source set to parent array at specified position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(1, 2, 3, 4, 5);
       let sub: Int8Array = arr.subarray(0, 2);
       arr.set(sub, 3);
@@ -1111,14 +1111,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_6000
-     * @tc.name int8ArraySetPart01Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5400
+     * @tc.name int8ArraySetPart01Test054
      * @tc.desc Verify set(array, offset) subarray target receives source write reflected to parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(0, 0, 0, 0, 0);
       let sub: Int8Array = arr.subarray(1, 4);
       let src: Int8Array = Int8Array.of(7, 8, 9);
@@ -1135,14 +1135,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_6100
-     * @tc.name int8ArraySetPart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5500
+     * @tc.name int8ArraySetPart01Test055
      * @tc.desc Verify set(array, offset) same buffer non-overlapping regions set independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(6);
       let view: Int8Array = new Int8Array(buf);
       let init: Int8Array = Int8Array.of(1, 2, 3, 4, 5, 6);
@@ -1165,14 +1165,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_6200
-     * @tc.name int8ArraySetPart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5600
+     * @tc.name int8ArraySetPart01Test056
      * @tc.desc Verify set(array, offset) source modification does not affect target with independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dst: Int8Array = new Int8Array(3);
       let src: Int8Array = Int8Array.of(1, 2, 3);
       dst.set(src, 0);
@@ -1184,14 +1184,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_6300
-     * @tc.name int8ArraySetPart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5700
+     * @tc.name int8ArraySetPart01Test057
      * @tc.desc Verify set(array, offset) multiple set accumulates in different regions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dst: Int8Array = new Int8Array(6);
       let s1: Int8Array = Int8Array.of(1, 2);
       let s2: Int8Array = Int8Array.of(3, 4);
@@ -1211,14 +1211,14 @@ export default function int8ArraySetPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_6400
-     * @tc.name int8ArraySetPart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SET_PART01_TEST_5800
+     * @tc.name int8ArraySetPart01Test058
      * @tc.desc Verify set(array, offset) partial region set other regions keep original values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySetPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySetPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dst: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let src: Int8Array = Int8Array.of(99, 99);
       dst.set(src, 1);
