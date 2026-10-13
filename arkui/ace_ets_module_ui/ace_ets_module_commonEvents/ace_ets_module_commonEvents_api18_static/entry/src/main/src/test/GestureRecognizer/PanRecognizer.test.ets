@@ -29,6 +29,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 import inspector from '@ohos.arkui.inspector';
 
 export default function PanRecognizerTest() {
@@ -91,9 +92,9 @@ it('PanRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(2000);
       let pointers: PointerMatrix = PointerMatrix.create(1, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj.left + areaWidth * 0.1).toInt(), y: Math.round(areaObj.top + areaHeight * 0.5).toInt() });
+        { x: Math.round(areaObj.left + areaWidth * 0.1).toInt(), y: Math.round(areaObj.top + areaHeight * 0.5).toInt(), displayId: displayID });
       pointers.setPoint(0, 1,
-        { x: Math.round(areaObj.left + areaWidth * 0.3).toInt(), y: Math.round(areaObj.top + areaHeight * 0.5).toInt() });
+        { x: Math.round(areaObj.left + areaWidth * 0.3).toInt(), y: Math.round(areaObj.top + areaHeight * 0.5).toInt(), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       let strJson = inspector.getInspectorByKey('PanRecognizer');

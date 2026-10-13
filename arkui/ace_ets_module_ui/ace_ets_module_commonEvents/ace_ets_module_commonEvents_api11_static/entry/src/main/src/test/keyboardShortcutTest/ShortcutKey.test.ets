@@ -117,7 +117,7 @@ it('ArkUI_Shortcut_Key_static_0100', Level.LEVEL0, async () => {
       }
       emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, displayID)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_B, 0, displayID)
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -145,7 +145,7 @@ it('ArkUI_Shortcut_Key_static_0200', Level.LEVEL0, async () => {
       }
       emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_1, displayID);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_1, 0, displayID);
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -173,7 +173,7 @@ it('ArkUI_Shortcut_Key_static_0300', Level.LEVEL0, async () => {
       }
       emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_Q, displayID);
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_ALT_LEFT, KeyCode.KEYCODE_Q, 0, displayID);
 
       console.info(`${SUITE} ${CASE} END`);
     });
@@ -209,7 +209,7 @@ it('ArkUI_Shortcut_Key_static_0400', Level.LEVEL0, async () => {
           priority: emitter.EventPriority.LOW
         }
         emitter.on(event, callback);
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, arr_keyCode[i], displayID)
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, arr_keyCode[i], 0, displayID)
       }
 
       console.info(`${SUITE} ${CASE} END`);

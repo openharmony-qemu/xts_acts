@@ -75,7 +75,7 @@ it('SourceTool_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
 
       let point = await (button?.getBoundsCenter() as Promise<Point>);
 
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: point.x, y: point.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('sourceTool1_id');
       await CommonFunc.sleep(2000);

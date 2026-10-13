@@ -100,8 +100,8 @@ it('TapGestureBasicDoubleClickTest_static_0010', Level.LEVEL0, async (done: () =
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.doubleClick(Math.round(areaObj.left + areaWidth / 2).toInt(),
-        Math.round(areaObj.top + areaHeight / 2).toInt());
+      await driver.doubleClickAt({x: Math.round(areaObj.left + areaWidth / 2).toInt(),
+        y: Math.round(areaObj.top + areaHeight / 2).toInt(), displayId: displayID});
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('TapGestureBasicDoubleClick_repeat');
       let obj1 = JSON.parseJsonElement(text1);

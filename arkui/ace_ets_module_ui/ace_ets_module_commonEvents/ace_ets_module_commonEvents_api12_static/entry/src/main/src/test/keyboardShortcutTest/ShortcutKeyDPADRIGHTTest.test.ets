@@ -75,7 +75,7 @@ it('ShortcutKeyDPADRIGHTTest_static_0100', Level.LEVEL0, async () => {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, displayID)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, 0, displayID)
       console.info(`ShortcutKeyDPADRIGHTTest_0100 END`);
     });
   })

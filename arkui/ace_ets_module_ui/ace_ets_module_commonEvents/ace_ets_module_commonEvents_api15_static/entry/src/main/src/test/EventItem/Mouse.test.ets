@@ -22,6 +22,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function mouseEventTest() {
   describe('mouseEvent', () => {
     beforeEach(async (): Promise<void> => {
@@ -66,7 +67,7 @@ it('Mouse1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =
 
       console.log('test driver is: ' + driver)
       await driver.mouseClick({
-        x: mouseX, y: mouseY
+        x: mouseX, y: mouseY, displayId: displayID
       }, MouseButton.MOUSE_BUTTON_LEFT);
 
       await CommonFunc.sleep(5000);
@@ -75,7 +76,7 @@ it('Mouse1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =
       let obj = JSON.parseJsonElement(strJson);
       console.info('[Mouse1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[Mouse1_static_0100] title: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0,0,0,1');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(displayID + ',0,0,1');
       console.info('[Mouse1_static_0100] END');
       done();
     });

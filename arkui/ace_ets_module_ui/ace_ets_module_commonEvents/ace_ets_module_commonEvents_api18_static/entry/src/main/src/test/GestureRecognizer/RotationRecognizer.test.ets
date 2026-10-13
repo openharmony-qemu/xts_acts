@@ -29,6 +29,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 import inspector from '@ohos.arkui.inspector';
 
 export default function rotationGestureTest() {
@@ -94,13 +95,13 @@ it('RotationRecognizer_static_0100', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(2000);
       let pointers: PointerMatrix = PointerMatrix.create(2, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj.left + areaWidth / 4).toInt(), y: Math.round(areaObj.top + areaHeight / 4).toInt() });
+        { x: Math.round(areaObj.left + areaWidth / 4).toInt(), y: Math.round(areaObj.top + areaHeight / 4).toInt(), displayId: displayID });
       pointers.setPoint(0, 1,
-        { x: Math.round(areaObj.right - areaWidth / 2).toInt(), y: Math.round(areaObj.top + areaHeight / 4).toInt() });
+        { x: Math.round(areaObj.right - areaWidth / 2).toInt(), y: Math.round(areaObj.top + areaHeight / 4).toInt(), displayId: displayID });
       pointers.setPoint(1, 0,
-        { x: Math.round(areaObj.right - areaWidth / 2).toInt(), y: Math.round(areaObj.bottom - areaHeight / 4).toInt() });
+        { x: Math.round(areaObj.right - areaWidth / 2).toInt(), y: Math.round(areaObj.bottom - areaHeight / 4).toInt(), displayId: displayID });
       pointers.setPoint(1, 1,
-        { x: Math.round(areaObj.left + areaWidth / 4).toInt(), y: Math.round(areaObj.bottom - areaHeight / 4).toInt() });
+        { x: Math.round(areaObj.left + areaWidth / 4).toInt(), y: Math.round(areaObj.bottom - areaHeight / 4).toInt(), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('RotationRecognizer');

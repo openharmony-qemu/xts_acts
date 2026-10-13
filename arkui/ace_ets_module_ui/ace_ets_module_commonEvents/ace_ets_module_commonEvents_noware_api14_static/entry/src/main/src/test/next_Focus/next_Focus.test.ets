@@ -69,7 +69,7 @@ it('Button_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> =
       await CommonFunc.sleep(500);
       await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(500);
-      await driver.triggerCombineKeys(2047,2049, displayID);
+      await driver.triggerCombineKeys(2047,2049, 0, displayID);
       await CommonFunc.sleep(500);
 
       // test the child component response

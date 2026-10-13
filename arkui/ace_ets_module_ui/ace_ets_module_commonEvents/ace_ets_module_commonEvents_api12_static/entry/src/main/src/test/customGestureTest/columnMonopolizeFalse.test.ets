@@ -93,8 +93,8 @@ it('columnMonopolizeFalse_static_001', Level.LEVEL0, async (done: () => void): P
       let column2 = await driver.findComponent(ON.id('columnClick2'));
 
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt());
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
+        y: Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt(), displayId: displayID});
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -108,8 +108,8 @@ it('columnMonopolizeFalse_static_001', Level.LEVEL0, async (done: () => void): P
 
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt());
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
+        y: Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt(), displayId: displayID});
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       let strJson2 = inspector.getInspectorByKey('columnTextFalse');

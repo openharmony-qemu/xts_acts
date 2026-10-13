@@ -87,7 +87,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture with mouse
         await CommonFunc.sleep(1000);
-        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
+        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point)
         await CommonFunc.sleep(3000);
         let text2 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj2 = JSON.parseJsonElement(text2);
@@ -114,7 +114,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture again with mouse
         await CommonFunc.sleep(1000);
-        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
+        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point)
         await CommonFunc.sleep(3000);
         let text5 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj5 = JSON.parseJsonElement(text5);
@@ -132,7 +132,7 @@ it('PanGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: (
 
         // trigger gesture again with mouse
         await CommonFunc.sleep(1000);
-        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt()} as Point)
+        await driver.mouseDrag({x: Math.round(areaObj1.left + areaWidth1 * 0.2).toInt(),y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point, {x: Math.round(areaObj1.left + areaWidth1 * 0.8).toInt(), y: Math.round(areaObj1.top + areaHeight1/2).toInt(), displayId: displayID } as Point)
         await CommonFunc.sleep(3000);
         let text7 = inspector.getInspectorByKey('PanGestureHandlerAllowedTypes_result');
         let obj7 = JSON.parseJsonElement(text7);

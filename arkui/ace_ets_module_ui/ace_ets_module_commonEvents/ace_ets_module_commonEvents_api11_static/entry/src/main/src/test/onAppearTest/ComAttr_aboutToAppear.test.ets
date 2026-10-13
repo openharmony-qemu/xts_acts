@@ -88,7 +88,7 @@ it('aboutToAppearTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
       await CommonFunc.sleep(2000);
       let point = await (closeButton?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(1000);
-      await driver.click(point.x, point.y)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('aboutToAppear');
       let obj = JSON.parseJsonElement(strJson);
@@ -119,7 +119,7 @@ it('aboutToAppearTest_static_0200', Level.LEVEL0, async (done: () => void): Prom
       let closeButton: Component | null = await driver.findComponent(ON.id('close'))!;
       let point = await (closeButton?.getBoundsCenter() as Promise<Point>);
       await CommonFunc.sleep(1000);
-      await driver.click(point.x, point.y)
+      await driver.clickAt({x: point.x, y: point.y, displayId: displayID})
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('aboutToAppear');
       let obj = JSON.parseJsonElement(strJson);

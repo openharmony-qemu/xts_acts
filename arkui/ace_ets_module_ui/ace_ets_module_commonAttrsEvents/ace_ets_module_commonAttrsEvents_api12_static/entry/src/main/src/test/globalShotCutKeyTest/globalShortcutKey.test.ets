@@ -141,7 +141,7 @@ export default function globalShortcutKeyTest() {
       async (done: () => void): Promise<void> => {
         let driver = Driver.create();
         // keyboard to sumilate 'CTRL + M'
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_M, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_M, 0, displayID);
         try {
           await CommonFunc.sleep(500);
         } catch (err) {
@@ -196,7 +196,7 @@ export default function globalShortcutKeyTest() {
       async (done: () => void): Promise<void> => {
         let driver = Driver.create();
         // keyboard to sumilate 'CTRAL + I'
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_I, 0, displayID);
         try {
           await CommonFunc.sleep(2000);
         } catch (err) {
@@ -223,7 +223,7 @@ export default function globalShortcutKeyTest() {
       async (done: () => void): Promise<void> => {
         let driver = Driver.create();
         // keyboard to sumilate 'SHIFT + ->'
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, KeyCode.KEYCODE_DPAD_RIGHT, 0, displayID);
         try {
           await CommonFunc.sleep(500);
         } catch (err) {
@@ -253,7 +253,7 @@ async function testAsyncFunctionSingle2(keyChar: string | FunctionKey): Promise<
   }
   let driver = Driver.create();
   // keyboard to sumilate single press key
-  driver.triggerKey(keycodeMap.get(keyChar) as int);
+  driver.triggerKey(keycodeMap.get(keyChar) as int, displayID);
   try {
     await CommonFunc.sleep(2500);
   } catch (err) {

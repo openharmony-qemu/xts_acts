@@ -77,7 +77,7 @@ it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info('[SwipeGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[SwipeGesture1_static_0100] title: ' +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(displayID + '');
       console.info('[SwipeGesture1_static_0100] END');
       done();
     });

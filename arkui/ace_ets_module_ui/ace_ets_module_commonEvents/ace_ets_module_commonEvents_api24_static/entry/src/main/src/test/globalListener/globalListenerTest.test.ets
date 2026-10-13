@@ -102,7 +102,7 @@ export default function globalListenerTest(): void {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('listenTest'));
       let point: Point = await (button?.getBoundsCenter() as Promise<Point>);
-      await driver!.mouseClick({x: point.x, y: point.y}, MouseButton.MOUSE_BUTTON_RIGHT);
+      await driver!.mouseClick({x: point.x, y: point.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_RIGHT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('listenMouse');
       let obj = JSON.parseJsonElement(strJson);

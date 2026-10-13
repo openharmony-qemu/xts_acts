@@ -73,7 +73,7 @@ it('ShortcutKeyDPADDOWNTest_static_0100', Level.LEVEL0, async () => {
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, displayID)
+      await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_DPAD_DOWN, 0, displayID)
       console.info(`ShortcutKeyDPADDOWNTest_0100 END`);
     });
   })
