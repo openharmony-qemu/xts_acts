@@ -526,14 +526,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2400
-     * @tc.name int8ArrayReduceRightPart03Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2200
+     * @tc.name int8ArrayReduceRightPart03Test022
      * @tc.desc Verify reduceRight no initial max returns nine
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([3, 7, 2, 9, 4]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev > curr ? prev : curr;
@@ -542,14 +542,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2500
-     * @tc.name int8ArrayReduceRightPart03Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2300
+     * @tc.name int8ArrayReduceRightPart03Test023
      * @tc.desc Verify reduceRight no initial min returns two
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([3, 7, 2, 9, 4]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev < curr ? prev : curr;
@@ -558,14 +558,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2600
-     * @tc.name int8ArrayReduceRightPart03Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2400
+     * @tc.name int8ArrayReduceRightPart03Test024
      * @tc.desc Verify reduceRight constant zero return overrides initial
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return 0;
@@ -574,14 +574,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2700
-     * @tc.name int8ArrayReduceRightPart03Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2500
+     * @tc.name int8ArrayReduceRightPart03Test025
      * @tc.desc Verify reduceRight callback always returns int8 min value -128, result=-128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return -128;
@@ -590,14 +590,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2800
-     * @tc.name int8ArrayReduceRightPart03Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2600
+     * @tc.name int8ArrayReduceRightPart03Test026
      * @tc.desc Verify reduceRight callback always returns int8 max value 127, result=127
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return 127;
@@ -606,14 +606,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2900
-     * @tc.name int8ArrayReduceRightPart03Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2700
+     * @tc.name int8ArrayReduceRightPart03Test027
      * @tc.desc Verify reduceRight callback NaN propagates chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return Number.NaN;
@@ -623,14 +623,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3000
-     * @tc.name int8ArrayReduceRightPart03Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2800
+     * @tc.name int8ArrayReduceRightPart03Test028
      * @tc.desc Verify reduceRight callback positive infinity propagates chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return Number.POSITIVE_INFINITY;
@@ -639,14 +639,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3100
-     * @tc.name int8ArrayReduceRightPart03Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_2900
+     * @tc.name int8ArrayReduceRightPart03Test029
      * @tc.desc Verify reduceRight callback negative infinity propagates chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return Number.NEGATIVE_INFINITY;
@@ -655,14 +655,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3200
-     * @tc.name int8ArrayReduceRightPart03Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3000
+     * @tc.name int8ArrayReduceRightPart03Test030
      * @tc.desc Verify reduceRight callback adds float half keeps precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + 0.5;
@@ -671,14 +671,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3300
-     * @tc.name int8ArrayReduceRightPart03Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3100
+     * @tc.name int8ArrayReduceRightPart03Test031
      * @tc.desc Verify reduceRight callback subtracts float half keeps precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev - 0.5;
@@ -687,14 +687,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3400
-     * @tc.name int8ArrayReduceRightPart03Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3200
+     * @tc.name int8ArrayReduceRightPart03Test032
      * @tc.desc Verify reduceRight callback uses all four parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr + idx + a.length;
@@ -703,14 +703,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3500
-     * @tc.name int8ArrayReduceRightPart03Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3300
+     * @tc.name int8ArrayReduceRightPart03Test033
      * @tc.desc Verify reduceRight subtraction with zero initial negative ten
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev - curr;
@@ -719,14 +719,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3600
-     * @tc.name int8ArrayReduceRightPart03Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3400
+     * @tc.name int8ArrayReduceRightPart03Test034
      * @tc.desc Verify reduceRight callback reads external closure variable multiplier=10, result=60
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let multiplier: number = 10;
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
@@ -736,14 +736,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3700
-     * @tc.name int8ArrayReduceRightPart03Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3500
+     * @tc.name int8ArrayReduceRightPart03Test035
      * @tc.desc Verify reduceRight callback writes external sum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let externalSum: number = 0;
       let resultVal1: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
@@ -756,14 +756,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3800
-     * @tc.name int8ArrayReduceRightPart03Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3600
+     * @tc.name int8ArrayReduceRightPart03Test036
      * @tc.desc Verify nested reduceRight call, inner result as outer initialValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outer: Int8Array = new Int8Array([1, 2]);
       let inner: Int8Array = new Int8Array([10, 20]);
       let innerSum: number = inner.reduceRight((p: number, c: number, i: int, ar: Int8Array) => {
@@ -777,14 +777,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3900
-     * @tc.name int8ArrayReduceRightPart03Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3700
+     * @tc.name int8ArrayReduceRightPart03Test037
      * @tc.desc Verify reduceRight callback reads elements via array bracket access, array is original and readable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + a[idx];
@@ -793,14 +793,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4000
-     * @tc.name int8ArrayReduceRightPart03Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3800
+     * @tc.name int8ArrayReduceRightPart03Test038
      * @tc.desc Verify reduceRight initialValue=0, result=30
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 10, 15]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -809,14 +809,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4100
-     * @tc.name int8ArrayReduceRightPart03Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_3900
+     * @tc.name int8ArrayReduceRightPart03Test039
      * @tc.desc Verify reduceRight initialValue=-128 (int8 min), result=-122
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -825,14 +825,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4200
-     * @tc.name int8ArrayReduceRightPart03Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4000
+     * @tc.name int8ArrayReduceRightPart03Test040
      * @tc.desc Verify reduceRight initialValue=127 (int8 max), result=133
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -841,14 +841,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4300
-     * @tc.name int8ArrayReduceRightPart03Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4100
+     * @tc.name int8ArrayReduceRightPart03Test041
      * @tc.desc Verify reduceRight initial 128 not truncated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -857,14 +857,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4400
-     * @tc.name int8ArrayReduceRightPart03Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4200
+     * @tc.name int8ArrayReduceRightPart03Test042
      * @tc.desc Verify reduceRight initial -129 not truncated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -873,14 +873,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4500
-     * @tc.name int8ArrayReduceRightPart03Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4300
+     * @tc.name int8ArrayReduceRightPart03Test043
      * @tc.desc Verify reduceRight initial 255 not truncated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -889,14 +889,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4600
-     * @tc.name int8ArrayReduceRightPart03Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4400
+     * @tc.name int8ArrayReduceRightPart03Test044
      * @tc.desc Verify reduceRight NaN initial propagates chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -906,14 +906,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4700
-     * @tc.name int8ArrayReduceRightPart03Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4500
+     * @tc.name int8ArrayReduceRightPart03Test045
      * @tc.desc Verify reduceRight positive infinity initial propagates chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -922,14 +922,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4800
-     * @tc.name int8ArrayReduceRightPart03Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4600
+     * @tc.name int8ArrayReduceRightPart03Test046
      * @tc.desc Verify reduceRight negative infinity initial propagates chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -938,14 +938,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4900
-     * @tc.name int8ArrayReduceRightPart03Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4700
+     * @tc.name int8ArrayReduceRightPart03Test047
      * @tc.desc Verify reduceRight float initial 1.5 sums 2.5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -954,14 +954,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5000
-     * @tc.name int8ArrayReduceRightPart03Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4800
+     * @tc.name int8ArrayReduceRightPart03Test048
      * @tc.desc Verify reduceRight negative float initial keeps precision
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -970,14 +970,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5100
-     * @tc.name int8ArrayReduceRightPart03Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_4900
+     * @tc.name int8ArrayReduceRightPart03Test049
      * @tc.desc Verify reduceRight empty array returns initial forty two
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([]);
       let callCount: int = 0;
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
@@ -989,14 +989,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5200
-     * @tc.name int8ArrayReduceRightPart03Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5000
+     * @tc.name int8ArrayReduceRightPart03Test050
      * @tc.desc Verify reduceRight single element with initial sums one hundred seven
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([7]);
       let callCount: int = 0;
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
@@ -1008,14 +1008,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5300
-     * @tc.name int8ArrayReduceRightPart03Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5100
+     * @tc.name int8ArrayReduceRightPart03Test051
      * @tc.desc Verify reduceRight initial one hundred with negatives sums forty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([-10, -20, -30]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1024,14 +1024,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5400
-     * @tc.name int8ArrayReduceRightPart03Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5200
+     * @tc.name int8ArrayReduceRightPart03Test052
      * @tc.desc Verify reduceRight initial fifty mixed signs sums sixty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([-5, 10, -15, 20]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1040,14 +1040,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5500
-     * @tc.name int8ArrayReduceRightPart03Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5300
+     * @tc.name int8ArrayReduceRightPart03Test053
      * @tc.desc Verify reduceRight result adds to further math
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1057,14 +1057,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5600
-     * @tc.name int8ArrayReduceRightPart03Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5400
+     * @tc.name int8ArrayReduceRightPart03Test054
      * @tc.desc Verify reduceRight result multiplies in further math
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1074,14 +1074,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5700
-     * @tc.name int8ArrayReduceRightPart03Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5500
+     * @tc.name int8ArrayReduceRightPart03Test055
      * @tc.desc Verify reduceRight all negative sums negative six
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([-1, -2, -3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1090,14 +1090,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5800
-     * @tc.name int8ArrayReduceRightPart03Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5600
+     * @tc.name int8ArrayReduceRightPart03Test056
      * @tc.desc Verify reduceRight no initial keeps elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let snap0: number = arr[0];
       let snap1: number = arr[1];
@@ -1123,14 +1123,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5900
-     * @tc.name int8ArrayReduceRightPart03Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5700
+     * @tc.name int8ArrayReduceRightPart03Test057
      * @tc.desc Verify reduceRight with initial keeps elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let resultVal1: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1149,14 +1149,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6100
-     * @tc.name int8ArrayReduceRightPart03Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5800
+     * @tc.name int8ArrayReduceRightPart03Test058
      * @tc.desc Verify reduceRight return value can be stored and reused multiple times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1168,14 +1168,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6200
-     * @tc.name int8ArrayReduceRightPart03Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_5900
+     * @tc.name int8ArrayReduceRightPart03Test059
      * @tc.desc Verify reduceRight initial one product same elements six twenty five
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 5, 5, 5]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev * curr;
@@ -1184,14 +1184,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6300
-     * @tc.name int8ArrayReduceRightPart03Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6000
+     * @tc.name int8ArrayReduceRightPart03Test060
      * @tc.desc Verify reduceRight boundary elements sum negative one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([INT8_MIN, INT8_MAX]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1200,14 +1200,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6400
-     * @tc.name int8ArrayReduceRightPart03Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6100
+     * @tc.name int8ArrayReduceRightPart03Test061
      * @tc.desc Verify reduceRight initial one boundary elements sum zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([INT8_MIN, INT8_MAX]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev + curr;
@@ -1216,14 +1216,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6500
-     * @tc.name int8ArrayReduceRightPart03Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6200
+     * @tc.name int8ArrayReduceRightPart03Test062
      * @tc.desc Verify reduceRight identity callback returns initial
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev;
@@ -1232,14 +1232,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6600
-     * @tc.name int8ArrayReduceRightPart03Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6300
+     * @tc.name int8ArrayReduceRightPart03Test063
      * @tc.desc Verify reduceRight current callback with initial ends first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return curr;
@@ -1248,14 +1248,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6700
-     * @tc.name int8ArrayReduceRightPart03Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6400
+     * @tc.name int8ArrayReduceRightPart03Test064
      * @tc.desc Verify reduceRight current callback no initial ends first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return curr;
@@ -1264,14 +1264,14 @@ export default function int8ArrayReduceRightPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6800
-     * @tc.name int8ArrayReduceRightPart03Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_REDUCERIGHT_PART03_6500
+     * @tc.name int8ArrayReduceRightPart03Test065
      * @tc.desc Verify reduceRight subtraction from last element leftwards
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayReduceRightPart03Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayReduceRightPart03Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let result: number = arr.reduceRight((prev: number, curr: number, idx: int, a: Int8Array) => {
         return prev - curr;
