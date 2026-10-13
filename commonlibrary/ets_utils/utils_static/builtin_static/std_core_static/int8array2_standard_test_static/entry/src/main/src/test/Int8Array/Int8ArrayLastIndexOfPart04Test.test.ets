@@ -44,14 +44,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0700
-     * @tc.name int8ArrayLastIndexOfPart04Test007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0100
+     * @tc.name int8ArrayLastIndexOfPart04Test001
      * @tc.desc Verify lastIndexOf returns consistent index across calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 20]);
       let first = arr.lastIndexOf(20);
       let second = arr.lastIndexOf(20);
@@ -63,14 +63,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0800
-     * @tc.name int8ArrayLastIndexOfPart04Test008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0200
+     * @tc.name int8ArrayLastIndexOfPart04Test002
      * @tc.desc Verify lastIndexOf after indexOf calls leaves elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 20]);
       let resultVal1: number = arr.indexOf(20);
       let expectedVal1: number = 1;
@@ -99,14 +99,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0900
-     * @tc.name int8ArrayLastIndexOfPart04Test009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0300
+     * @tc.name int8ArrayLastIndexOfPart04Test003
      * @tc.desc Verify lastIndexOf on one view leaves sibling view unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(6);
       let a = new Int8Array(buf, 0, 3);
       let b = new Int8Array(buf, 3, 3);
@@ -131,14 +131,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1000
-     * @tc.name int8ArrayLastIndexOfPart04Test010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0400
+     * @tc.name int8ArrayLastIndexOfPart04Test004
      * @tc.desc Verify lastIndexOf chained fromIndex finds 4 then 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([20, 10, 20, 10, 20]);
       let first = arr.lastIndexOf(20);
       let next = arr.lastIndexOf(20, first - 1);
@@ -147,14 +147,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1100
-     * @tc.name int8ArrayLastIndexOfPart04Test011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0500
+     * @tc.name int8ArrayLastIndexOfPart04Test005
      * @tc.desc Verify lastIndexOf -1 -1 fromIndex -1+length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       let miss = arr.lastIndexOf(99);
       let retry = arr.lastIndexOf(30, miss);
@@ -163,14 +163,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1200
-     * @tc.name int8ArrayLastIndexOfPart04Test012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0600
+     * @tc.name int8ArrayLastIndexOfPart04Test006
      * @tc.desc Verify lastIndexOf searchElement -1 when search element is an index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 20]);
       let pos = arr.lastIndexOf(20);
       let result = arr.lastIndexOf(pos);
@@ -179,14 +179,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1300
-     * @tc.name int8ArrayLastIndexOfPart04Test013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0700
+     * @tc.name int8ArrayLastIndexOfPart04Test007
      * @tc.desc Verify lastIndexOf with indexOf result as fromIndex returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([20, 10, 20, 10, 20]);
       let firstFwd = arr.indexOf(20);
       let lastBwd = arr.lastIndexOf(20, firstFwd);
@@ -195,14 +195,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1400
-     * @tc.name int8ArrayLastIndexOfPart04Test014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0800
+     * @tc.name int8ArrayLastIndexOfPart04Test008
      * @tc.desc Verify chained lastIndexOf with fromIndex walks 4, 2, 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([20, 10, 20, 10, 20]);
       let p1 = arr.lastIndexOf(20);
       let p2 = arr.lastIndexOf(20, p1 - 1);
@@ -213,14 +213,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1600
-     * @tc.name int8ArrayLastIndexOfPart04Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_0900
+     * @tc.name int8ArrayLastIndexOfPart04Test009
      * @tc.desc Verify $_set then lastIndexOf finds new value at index 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.$_set(1, 50);
       let lastIndex50: int = arr.lastIndexOf(50);
@@ -229,14 +229,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1700
-     * @tc.name int8ArrayLastIndexOfPart04Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1000
+     * @tc.name int8ArrayLastIndexOfPart04Test010
      * @tc.desc Verify $_set lastIndexOf -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       arr.$_set(1, 50);
       let lastIndex20: int = arr.lastIndexOf(20);
@@ -245,14 +245,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1800
-     * @tc.name int8ArrayLastIndexOfPart04Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1100
+     * @tc.name int8ArrayLastIndexOfPart04Test011
      * @tc.desc Verify $_set then lastIndexOf finds new value at index 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([20, 10, 30]);
       arr.$_set(2, 20);
       let lastIndex20: int = arr.lastIndexOf(20);
@@ -261,14 +261,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1900
-     * @tc.name int8ArrayLastIndexOfPart04Test019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1200
+     * @tc.name int8ArrayLastIndexOfPart04Test012
      * @tc.desc Verify $_set then lastIndexOf finds new value at index 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 20]);
       arr.$_set(0, 20);
       let lastIndex20: int = arr.lastIndexOf(20);
@@ -277,14 +277,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2000
-     * @tc.name int8ArrayLastIndexOfPart04Test020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1300
+     * @tc.name int8ArrayLastIndexOfPart04Test013
      * @tc.desc Verify fill lastIndexOf length-1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array(5);
       arr.fill(40);
       let lastIndex40: int = arr.lastIndexOf(40);
@@ -293,14 +293,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2100
-     * @tc.name int8ArrayLastIndexOfPart04Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1400
+     * @tc.name int8ArrayLastIndexOfPart04Test014
      * @tc.desc Verify fill then lastIndexOf finds filled value at index 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 10, 10, 10, 10]);
       arr.fill(40, 1, 4);
       let lastIndex40: int = arr.lastIndexOf(40);
@@ -309,14 +309,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2200
-     * @tc.name int8ArrayLastIndexOfPart04Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1500
+     * @tc.name int8ArrayLastIndexOfPart04Test015
      * @tc.desc Verify reverse changes lastIndexOf from 0 to 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([20, 10, 30]);
       let before = arr.lastIndexOf(20);
       arr.reverse();
@@ -326,14 +326,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2300
-     * @tc.name int8ArrayLastIndexOfPart04Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1600
+     * @tc.name int8ArrayLastIndexOfPart04Test016
      * @tc.desc Verify copyWithin visible in lastIndexOf result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([20, 10, 30, 40]);
       arr.copyWithin(0, 2, 4);
       let valueAt0: number = arr.$_get(0);
@@ -345,14 +345,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2400
-     * @tc.name int8ArrayLastIndexOfPart04Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1700
+     * @tc.name int8ArrayLastIndexOfPart04Test017
      * @tc.desc Verify sort then lastIndexOf finds sorted value at index 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([30, 10, 20, 10]);
       arr.sort();
       let lastIndex10: int = arr.lastIndexOf(10);
@@ -361,14 +361,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2500
-     * @tc.name int8ArrayLastIndexOfPart04Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1800
+     * @tc.name int8ArrayLastIndexOfPart04Test018
      * @tc.desc Verify set(source) visible in lastIndexOf result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 40]);
       let src = new Int8Array([50, 60]);
       arr.set(src, 1);
@@ -378,14 +378,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2600
-     * @tc.name int8ArrayLastIndexOfPart04Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_1900
+     * @tc.name int8ArrayLastIndexOfPart04Test019
      * @tc.desc Verify lastIndexOf result captured before $_set stays valid
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       let pos = arr.lastIndexOf(20);
       arr.$_set(1, 99);
@@ -393,14 +393,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2700
-     * @tc.name int8ArrayLastIndexOfPart04Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2000
+     * @tc.name int8ArrayLastIndexOfPart04Test020
      * @tc.desc Verify lastIndexOf returns -1 after value removed by $_set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       let before = arr.lastIndexOf(20);
       arr.$_set(1, 99);
@@ -410,14 +410,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2800
-     * @tc.name int8ArrayLastIndexOfPart04Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2100
+     * @tc.name int8ArrayLastIndexOfPart04Test021
      * @tc.desc Verify lastIndexOf result used with at() returns value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 20]);
       let pos = arr.lastIndexOf(20);
       let val = arr.at(pos);
@@ -426,14 +426,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2900
-     * @tc.name int8ArrayLastIndexOfPart04Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2200
+     * @tc.name int8ArrayLastIndexOfPart04Test022
      * @tc.desc Verify lastIndexOf searchElement=0.0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([-1, 0, 1]);
       let lastIndexZero: number = arr.lastIndexOf(0.0);
       let expected1: int = 1;
@@ -441,14 +441,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3000
-     * @tc.name int8ArrayLastIndexOfPart04Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2300
+     * @tc.name int8ArrayLastIndexOfPart04Test023
      * @tc.desc Verify lastIndexOf searchElement=-0.0 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([-1, 0, 1]);
       let lastIndexNegZero: number = arr.lastIndexOf(-0.0);
       let expected1: int = 1;
@@ -456,14 +456,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3100
-     * @tc.name int8ArrayLastIndexOfPart04Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2400
+     * @tc.name int8ArrayLastIndexOfPart04Test024
      * @tc.desc Verify lastIndexOf(128) returns -1 because 128 ToInt8 clamps to -128 not found in array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       let lastIndex128: int = arr.lastIndexOf(128);
       let expected1: int = -1;
@@ -471,14 +471,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3300
-     * @tc.name int8ArrayLastIndexOfPart04Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2500
+     * @tc.name int8ArrayLastIndexOfPart04Test025
      * @tc.desc Verify $_set subarray lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([10, 20, 30, 40, 50]);
       let child = parent.subarray(1, 4);
       parent.$_set(2, 99);
@@ -488,14 +488,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3400
-     * @tc.name int8ArrayLastIndexOfPart04Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2600
+     * @tc.name int8ArrayLastIndexOfPart04Test026
      * @tc.desc Verify fill subarray lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([10, 20, 30, 40, 50]);
       let child = parent.subarray(1, 4);
       parent.fill(77);
@@ -505,14 +505,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3500
-     * @tc.name int8ArrayLastIndexOfPart04Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2700
+     * @tc.name int8ArrayLastIndexOfPart04Test027
      * @tc.desc Verify reverse subarray lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([10, 20, 30, 40, 50]);
       let child = parent.subarray(0, 3);
       parent.reverse();
@@ -522,14 +522,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3600
-     * @tc.name int8ArrayLastIndexOfPart04Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2800
+     * @tc.name int8ArrayLastIndexOfPart04Test028
      * @tc.desc Verify $_set on subarray visible in parent lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([10, 20, 30, 40, 50]);
       let child = parent.subarray(1, 4);
       child.$_set(0, 99);
@@ -539,14 +539,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3700
-     * @tc.name int8ArrayLastIndexOfPart04Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_2900
+     * @tc.name int8ArrayLastIndexOfPart04Test029
      * @tc.desc Verify fill on subarray visible in parent lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([10, 20, 30, 40, 50]);
       let child = parent.subarray(1, 4);
       child.fill(88);
@@ -556,14 +556,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3800
-     * @tc.name int8ArrayLastIndexOfPart04Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3000
+     * @tc.name int8ArrayLastIndexOfPart04Test030
      * @tc.desc Verify sort on subarray visible in parent lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([50, 40, 30, 20, 10]);
       let child = parent.subarray(0, 3);
       child.sort();
@@ -579,14 +579,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3900
-     * @tc.name int8ArrayLastIndexOfPart04Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3100
+     * @tc.name int8ArrayLastIndexOfPart04Test031
      * @tc.desc Verify subarray lastIndexOf finds values in two views independently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(6);
       let viewA = new Int8Array(buf, 0, 3);
       let viewB = new Int8Array(buf, 3, 3);
@@ -601,14 +601,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4000
-     * @tc.name int8ArrayLastIndexOfPart04Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3200
+     * @tc.name int8ArrayLastIndexOfPart04Test032
      * @tc.desc Verify subarray lastIndexOf returns view-relative index 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([20, 20, 20, 20, 20]);
       let child = parent.subarray(1, 4);
       let lastIndex20: int = child.lastIndexOf(20);
@@ -617,14 +617,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4100
-     * @tc.name int8ArrayLastIndexOfPart04Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3300
+     * @tc.name int8ArrayLastIndexOfPart04Test033
      * @tc.desc Verify lastIndexOf on two views of one buffer searches independently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(6);
       let viewA = new Int8Array(buf, 0, 3);
       let viewB = new Int8Array(buf, 3, 3);
@@ -649,14 +649,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4200
-     * @tc.name int8ArrayLastIndexOfPart04Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3400
+     * @tc.name int8ArrayLastIndexOfPart04Test034
      * @tc.desc Verify subarray subarray lastIndexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([10, 20, 30, 40, 50]);
       let child = parent.subarray(1, 4);
       let grandchild = child.subarray(1, 3);
@@ -673,14 +673,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4300
-     * @tc.name int8ArrayLastIndexOfPart04Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3500
+     * @tc.name int8ArrayLastIndexOfPart04Test035
      * @tc.desc Verify lastIndexOf finds value written via sibling view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([10, 20, 30, 40, 50]);
       let viewA = parent.subarray(0, 3);
       let viewB = parent.subarray(2, 5);
@@ -694,14 +694,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4400
-     * @tc.name int8ArrayLastIndexOfPart04Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3600
+     * @tc.name int8ArrayLastIndexOfPart04Test036
      * @tc.desc Verify lastIndexOf on subarray returns indices within view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent = new Int8Array([20, 10, 20, 30, 20]);
       let child = parent.subarray(0, 4);
       let p1 = child.lastIndexOf(20);
@@ -711,14 +711,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4500
-     * @tc.name int8ArrayLastIndexOfPart04Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3700
+     * @tc.name int8ArrayLastIndexOfPart04Test037
      * @tc.desc Verify $_set twice then lastIndexOf chain finds 2, 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([20, 10, 30]);
       arr.$_set(0, 20);
       arr.$_set(2, 20);
@@ -729,14 +729,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4600
-     * @tc.name int8ArrayLastIndexOfPart04Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3800
+     * @tc.name int8ArrayLastIndexOfPart04Test038
      * @tc.desc Verify lastIndexOf on all-equal array walks 4 to 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([50, 50, 50, 50, 50]);
       let p1 = arr.lastIndexOf(50);
       let p2 = arr.lastIndexOf(50, p1 - 1);
@@ -751,14 +751,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4700
-     * @tc.name int8ArrayLastIndexOfPart04Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_3900
+     * @tc.name int8ArrayLastIndexOfPart04Test039
      * @tc.desc Verify lastIndexOf then subarray keeps elements 20, 30
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30, 20]);
       let resultVal1: number = arr.lastIndexOf(20);
       let expectedVal1: number = 3;
@@ -776,14 +776,14 @@ export default function int8ArrayLastIndexOfPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4800
-     * @tc.name int8ArrayLastIndexOfPart04Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_LAST_INDEX_OF_PART04_TEST_4000
+     * @tc.name int8ArrayLastIndexOfPart04Test040
      * @tc.desc Verify lastIndexOf chain 1, -1, 2 across two $_set calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayLastIndexOfPart04Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayLastIndexOfPart04Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([10, 20, 30]);
       let r1 = arr.lastIndexOf(20);
       arr.$_set(1, 99);
