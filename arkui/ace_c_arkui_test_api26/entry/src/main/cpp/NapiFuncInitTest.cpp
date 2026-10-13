@@ -48,6 +48,7 @@
 #include "arcSwiper/ArcSwiperMethodTest.cpp"
 #include "arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.cpp"
 #include "node/SetUiDvsyncSwitchTest.cpp"
+#include "node/UIAgentGetPageTextTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -280,6 +281,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"SetUiDvsyncSwitchTest002", nullptr, SetUiDvsyncSwitchTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetUiDvsyncSwitchTest003", nullptr, SetUiDvsyncSwitchTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetUiDvsyncSwitchTest004", nullptr, SetUiDvsyncSwitchTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentGetPageTextTest001", nullptr, UIAgentGetPageTextTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest002", nullptr, UIAgentGetPageTextTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest003", nullptr, UIAgentGetPageTextTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
