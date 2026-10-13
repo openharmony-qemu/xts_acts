@@ -54,40 +54,51 @@ struct DialogBaseOptionsLayout {
 
   build() {
     Scroll() {
-      Column({ space: 8 }) {
+      Column() {
         Text('DialogBaseOptions layout').fontSize(18).fontWeight(FontWeight.Bold)
         Text('align=' + this.lastAlign).id('base_layout_align')
         Text('action=' + this.lastAction).id('base_layout_action')
-        Button('TOP').id('btn_align_TOP').onClick(() => {
-          this.openAlign('TOP', DialogBaseAlignment.TOP);
-        })
-        Button('CENTER').id('btn_align_CENTER').onClick(() => {
-          this.openAlign('CENTER', DialogBaseAlignment.CENTER);
-        })
-        Button('BOTTOM').id('btn_align_BOTTOM').onClick(() => {
-          this.openAlign('BOTTOM', DialogBaseAlignment.BOTTOM);
-        })
-        Button('DEFAULT').id('btn_align_DEFAULT').onClick(() => {
-          this.openAlign('DEFAULT', DialogBaseAlignment.DEFAULT);
-        })
-        Button('TOP_START').id('btn_align_TOP_START').onClick(() => {
-          this.openAlign('TOP_START', DialogBaseAlignment.TOP_START);
-        })
-        Button('TOP_END').id('btn_align_TOP_END').onClick(() => {
-          this.openAlign('TOP_END', DialogBaseAlignment.TOP_END);
-        })
-        Button('CENTER_START').id('btn_align_CENTER_START').onClick(() => {
-          this.openAlign('CENTER_START', DialogBaseAlignment.CENTER_START);
-        })
-        Button('CENTER_END').id('btn_align_CENTER_END').onClick(() => {
-          this.openAlign('CENTER_END', DialogBaseAlignment.CENTER_END);
-        })
-        Button('BOTTOM_START').id('btn_align_BOTTOM_START').onClick(() => {
-          this.openAlign('BOTTOM_START', DialogBaseAlignment.BOTTOM_START);
-        })
-        Button('BOTTOM_END').id('btn_align_BOTTOM_END').onClick(() => {
-          this.openAlign('BOTTOM_END', DialogBaseAlignment.BOTTOM_END);
-        })
+        Row() {
+          Button('TOP').id('btn_align_TOP').onClick(() => {
+            this.openAlign('TOP', DialogBaseAlignment.TOP);
+          })
+          Button('CENTER').id('btn_align_CENTER').onClick(() => {
+            this.openAlign('CENTER', DialogBaseAlignment.CENTER);
+          })
+        }
+        Row() {
+          Button('BOTTOM').id('btn_align_BOTTOM').onClick(() => {
+            this.openAlign('BOTTOM', DialogBaseAlignment.BOTTOM);
+          })
+          Button('DEFAULT').id('btn_align_DEFAULT').onClick(() => {
+            this.openAlign('DEFAULT', DialogBaseAlignment.DEFAULT);
+          })
+        }
+        Row() {
+          Button('TOP_START').id('btn_align_TOP_START').onClick(() => {
+            this.openAlign('TOP_START', DialogBaseAlignment.TOP_START);
+          })
+          Button('TOP_END').id('btn_align_TOP_END').onClick(() => {
+            this.openAlign('TOP_END', DialogBaseAlignment.TOP_END);
+          })
+        }
+        Row() {
+          Button('CENTER_START').id('btn_align_CENTER_START').onClick(() => {
+            this.openAlign('CENTER_START', DialogBaseAlignment.CENTER_START);
+          })
+          Button('CENTER_END').id('btn_align_CENTER_END').onClick(() => {
+            this.openAlign('CENTER_END', DialogBaseAlignment.CENTER_END);
+          })
+        }
+        Row() {
+          Button('BOTTOM_START').id('btn_align_BOTTOM_START').onClick(() => {
+            this.openAlign('BOTTOM_START', DialogBaseAlignment.BOTTOM_START);
+          })
+          Button('BOTTOM_END').id('btn_align_BOTTOM_END').onClick(() => {
+            this.openAlign('BOTTOM_END', DialogBaseAlignment.BOTTOM_END);
+          })
+        }
+
         Button('maskRect offset')
           .id('btn_layout_mask')
           .onClick(async () => {

@@ -47,41 +47,6 @@ export default function Int16ArraySomeTest02(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_0100
-     * @tc.name testInt16ArraySomeTestTwo001
-     * @tc.desc Verify some() matches with greater-than predicate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 50, 4]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element > 30;
-      });
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_0200
-     * @tc.name testInt16ArraySomeTestTwo002
-     * @tc.desc Verify some() short-circuits after first match callCount 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      let callCount: int = 0;
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        callCount++;
-        return element === 1;
-      });
-      expect(result).assertTrue();
-      expect(callCount).assertEqual(1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_0300
      * @tc.name testInt16ArraySomeTestTwo003
      * @tc.desc Verify some() visits only index 0 on first-element match
@@ -143,76 +108,6 @@ export default function Int16ArraySomeTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_0600
-     * @tc.name testInt16ArraySomeTestTwo006
-     * @tc.desc Verify some() does not call predicate on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([]);
-      let callCount: int = 0;
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        callCount++;
-        return true;
-      });
-      expect(result).assertFalse();
-      expect(callCount).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_0700
-     * @tc.name testInt16ArraySomeTestTwo007
-     * @tc.desc Verify some() returns false when no element exceeds threshold
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element > 999;
-      });
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_0800
-     * @tc.name testInt16ArraySomeTestTwo008
-     * @tc.desc Verify some() returns false when all equal non-target
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([8, 8, 8, 8]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element === 5;
-      });
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_0900
-     * @tc.name testInt16ArraySomeTestTwo009
-     * @tc.desc Verify some() visits all elements when no match callCount length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      let callCount: int = 0;
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        callCount++;
-        return element > 999;
-      });
-      expect(result).assertFalse();
-      expect(callCount).assertEqual(5);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_1000
      * @tc.name testInt16ArraySomeTestTwo010
      * @tc.desc Verify some() does not change length after true match
@@ -225,25 +120,6 @@ export default function Int16ArraySomeTest02(): void {
       let lenBefore: int = arr.length;
       arr.some((element: number, index: int, array: Int16Array): boolean => {
         return element === 3;
-      });
-      let r1: int = arr.length;
-      let e1: int = lenBefore;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_1100
-     * @tc.name testInt16ArraySomeTestTwo011
-     * @tc.desc Verify some() does not change length after false match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20, 30]);
-      let lenBefore: int = arr.length;
-      arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element < 0;
       });
       let r1: int = arr.length;
       let e1: int = lenBefore;
@@ -265,25 +141,6 @@ export default function Int16ArraySomeTest02(): void {
       });
       let r1: int = arr.length;
       let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_1300
-     * @tc.name testInt16ArraySomeTestTwo013
-     * @tc.desc Verify some() keeps length when predicate always false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([5, 10, 15, 20, 25]);
-      let lenBefore: int = arr.length;
-      arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return false;
-      });
-      let r1: int = arr.length;
-      let e1: int = lenBefore;
       expect(r1).assertEqual(e1);
     });
 
@@ -323,24 +180,6 @@ export default function Int16ArraySomeTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_1600
-     * @tc.name testInt16ArraySomeTestTwo016
-     * @tc.desc Verify some() keeps single-element length 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([42]);
-      arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element === 42;
-      });
-      let r1: int = arr.length;
-      let e1: int = 1;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_1700
      * @tc.name testInt16ArraySomeTestTwo017
      * @tc.desc Verify some() does not change byteLength after match
@@ -353,25 +192,6 @@ export default function Int16ArraySomeTest02(): void {
       let byteLenBefore: int = arr.byteLength;
       arr.some((element: number, index: int, array: Int16Array): boolean => {
         return element === 2;
-      });
-      let r1: int = arr.byteLength;
-      let e1: int = byteLenBefore;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_1800
-     * @tc.name testInt16ArraySomeTestTwo018
-     * @tc.desc Verify some() does not change byteLength after no match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
-      let byteLenBefore: int = arr.byteLength;
-      arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element < 0;
       });
       let r1: int = arr.byteLength;
       let e1: int = byteLenBefore;
@@ -446,25 +266,6 @@ export default function Int16ArraySomeTest02(): void {
       });
       let r1: int = arr.byteLength % 2;
       let e1: int = 0;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_2300
-     * @tc.name testInt16ArraySomeTestTwo023
-     * @tc.desc Verify some() keeps byteLength after early match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      let byteLenBefore: int = arr.byteLength;
-      arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element === 1;
-      });
-      let r1: int = arr.byteLength;
-      let e1: int = byteLenBefore;
       expect(r1).assertEqual(e1);
     });
 
@@ -568,25 +369,6 @@ export default function Int16ArraySomeTest02(): void {
       });
       let r1: boolean = ref === arr;
       expect(r1).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_2900
-     * @tc.name testInt16ArraySomeTestTwo029
-     * @tc.desc Verify some() keeps length after all-match predicate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
-      let lenBefore: int = arr.length;
-      arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element > 0;
-      });
-      let r1: int = arr.length;
-      let e1: int = lenBefore;
-      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -815,71 +597,6 @@ export default function Int16ArraySomeTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_4100
-     * @tc.name testInt16ArraySomeTestTwo041
-     * @tc.desc Verify some() predicate can compare element with array.$_get(index)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20, 30]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element === array.$_get(index);
-      });
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_4200
-     * @tc.name testInt16ArraySomeTestTwo042
-     * @tc.desc Verify some() predicate can use index and element together
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([10, 20, 30]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return index === 1 && element === 20;
-      });
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_4300
-     * @tc.name testInt16ArraySomeTestTwo043
-     * @tc.desc Verify some() third argument array is original array reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([5, 10, 15]);
-      let ref: Int16Array = arr;
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return array === ref;
-      });
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_4400
-     * @tc.name testInt16ArraySomeTestTwo044
-     * @tc.desc Verify some() supports compound predicate with index parity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([3, 7, 11, 14]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element > 5 && element < 15 && index % 2 === 0;
-      });
-      expect(result).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_4500
      * @tc.name testInt16ArraySomeTestTwo045
      * @tc.desc Verify some() can match element equal to array.length
@@ -1028,26 +745,6 @@ export default function Int16ArraySomeTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_5300
-     * @tc.name testInt16ArraySomeTestTwo053
-     * @tc.desc Verify some() false result is usable in if-not branch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element > 999;
-      });
-      let entered: boolean = false;
-      if (!result) {
-        entered = true;
-      }
-      expect(entered).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_5400
      * @tc.name testInt16ArraySomeTestTwo054
      * @tc.desc Verify some() false result negates to true
@@ -1082,44 +779,6 @@ export default function Int16ArraySomeTest02(): void {
       });
       let r1: boolean = hasTwo && hasThree;
       expect(r1).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_5600
-     * @tc.name testInt16ArraySomeTestTwo056
-     * @tc.desc Verify some() with single predicate returns true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3]);
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        return element > 0;
-      });
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_5700
-     * @tc.name testInt16ArraySomeTestTwo057
-     * @tc.desc Verify some() predicate throw is propagated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3]);
-      try {
-        arr.some((element: number, index: int, array: Int16Array): boolean => {
-          throw new Error('predicate error at index 0');
-        });
-        expect().assertFail();
-      } catch (e) {
-        let r1: string = e.name;
-        let e1: string = 'Error';
-        expect(r1).assertEqual(e1);
-      }
     });
 
     /**
@@ -1163,59 +822,6 @@ export default function Int16ArraySomeTest02(): void {
         let r3: string = e.name;
         let e3: string = 'RangeError';
         expect(r3).assertEqual(e3);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_6000
-     * @tc.name testInt16ArraySomeTestTwo060
-     * @tc.desc Verify some() predicate throws Error at middle index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      try {
-        arr.some((element: number, index: int, array: Int16Array): boolean => {
-          if (index === 2) {
-            throw new Error('throw at middle element');
-          }
-          return false;
-        });
-        expect().assertFail();
-      } catch (e) {
-        let r4: string = e.name;
-        let e4: string = 'Error';
-        expect(r4).assertEqual(e4);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_6100
-     * @tc.name testInt16ArraySomeTestTwo061
-     * @tc.desc Verify some() predicate throws Error at last index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([7, 8, 9]);
-      let callCount: int = 0;
-      try {
-        arr.some((element: number, index: int, array: Int16Array): boolean => {
-          callCount++;
-          if (index === arr.length - 1) {
-            throw new Error('throw at last element');
-          }
-          return false;
-        });
-        expect().assertFail();
-      } catch (e) {
-        let r5: string = e.name;
-        let e5: string = 'Error';
-        expect(r5).assertEqual(e5);
-        expect(callCount).assertEqual(arr.length);
       }
     });
 
@@ -1329,31 +935,6 @@ export default function Int16ArraySomeTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_6600
-     * @tc.name testInt16ArraySomeTestTwo066
-     * @tc.desc Verify some() nested helper throw propagates outside
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let helper: () => boolean = (): boolean => {
-        throw new Error('nested throw');
-      };
-      let arr: Int16Array = new Int16Array([1, 2, 3]);
-      try {
-        arr.some((element: number, index: int, array: Int16Array): boolean => {
-          return helper();
-        });
-        expect().assertFail();
-      } catch (e) {
-        let r8: string = e.name;
-        let e8: string = 'Error';
-        expect(r8).assertEqual(e8);
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_6700
      * @tc.name testInt16ArraySomeTestTwo067
      * @tc.desc Verify some() predicate Error message is accessible outside
@@ -1377,75 +958,6 @@ export default function Int16ArraySomeTest02(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_6800
-     * @tc.name testInt16ArraySomeTestTwo068
-     * @tc.desc Verify some() only first predicate throw propagates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
-      try {
-        arr.some((element: number, index: int, array: Int16Array): boolean => {
-          if (index >= 1) {
-            throw new Error('throw from index ' + index.toString());
-          }
-          return false;
-        });
-        expect().assertFail();
-      } catch (e) {
-        let r9: string = e.name;
-        let e9: string = 'Error';
-        expect(r9).assertEqual(e9);
-        let r10: string = e.message;
-        let e10: string = 'throw from index 1';
-        expect(r10).assertEqual(e10);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_6900
-     * @tc.name testInt16ArraySomeTestTwo069
-     * @tc.desc Verify some() predicate throw RangeError is propagated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([50]);
-      try {
-        arr.some((element: number, index: int, array: Int16Array): boolean => {
-          throw new RangeError('out of some range');
-        });
-        expect().assertFail();
-      } catch (e) {
-        let r11: string = e.name;
-        let e11: string = 'RangeError';
-        expect(r11).assertEqual(e11);
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_7000
-     * @tc.name testInt16ArraySomeTestTwo070
-     * @tc.desc Verify empty some() never calls predicate so throw path is unreachable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array(0);
-      let called: boolean = false;
-      let result: boolean = arr.some((element: number, index: int, array: Int16Array): boolean => {
-        called = true;
-        throw new Error('should never reach');
-      });
-      expect(result).assertFalse();
-      expect(called).assertFalse();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_7100
      * @tc.name testInt16ArraySomeTestTwo071
      * @tc.desc Verify some() $_set current element does not change element arg
@@ -1463,30 +975,6 @@ export default function Int16ArraySomeTest02(): void {
       });
       expect(capturedElement).assertEqual(15);
       expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_TWO_7200
-     * @tc.name testInt16ArraySomeTestTwo072
-     * @tc.desc Verify some() $_set future element is seen on later visit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInt16ArraySomeTestTwo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4]);
-      let futureElement: number = 0;
-      arr.some((element: number, index: int, array: Int16Array): boolean => {
-        if (index === 0) {
-          array.$_set(2, 999);
-          return false;
-        }
-        if (index === 2) {
-          futureElement = element;
-        }
-        return element === 999;
-      });
-      expect(futureElement).assertEqual(999);
     });
 
     /**

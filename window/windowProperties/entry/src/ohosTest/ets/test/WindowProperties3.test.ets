@@ -1415,18 +1415,16 @@ export default function windowPropertiesTest3() {
 
         let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
         console.info(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
-        
+        let densityInfo = mainWindowClass.getWindowDensityInfo();
+        console.info(`${message} densityInfo: ${JSON.stringify(densityInfo)}`);
+        let systemDensityFromApi = densityInfo.systemDensity;
+        console.info(`${message} systemDensity from getWindowDensityInfo: ${systemDensityFromApi}`);
         let driver: Driver = Driver.create();
         let button: Component = await driver.findComponent(ON.id('SystemDensity'));
         let envSystemDensityText = await button.getText();
         let envSystemDensity = Number(envSystemDensityText);
         console.info(`${message} envSystemDensity from page: ${envSystemDensity}`);
-        
-        let densityInfo = mainWindowClass.getWindowDensityInfo();
-        console.info(`${message} densityInfo: ${JSON.stringify(densityInfo)}`);
-        let systemDensityFromApi = densityInfo.systemDensity;
-        console.info(`${message} systemDensity from getWindowDensityInfo: ${systemDensityFromApi}`);
-        
+      
         expect(envSystemDensity).assertEqual(systemDensityFromApi);
         console.info(`${message} Succeeded. envSystemDensity equals systemDensity from API.`);
         

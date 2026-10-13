@@ -1199,5 +1199,64 @@ export default function DeviceInfoTest() {
       console.info(`${caseName} END`);
       done();
     });
+
+    /**
+     * @tc.name   deviceinfo_test_static_4900
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_4900
+     * @tc.desc   Get the kernelVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_4900 start');
+      let kernelVersionInfo = deviceinfo.kernelVersion;
+      console.info('the value of the kernelVersion is :' + kernelVersionInfo);
+
+      expect(kernelVersionInfo).assertInstanceOf('String');
+      if (kernelVersionInfo != "" && kernelVersionInfo != null && kernelVersionInfo != undefined) {
+        console.info('the value of the kernelVersion is :' + kernelVersionInfo);
+        expect(kernelVersionInfo).assertInstanceOf('String');
+        done();
+      }
+      else {
+        console.info('the return value kernelVersion is null or incorrect.');
+        expect().assertFail();
+        done();
+      }
+      console.info('deviceinfo_test_static_4900 : end');
+    })
+
+    /**
+     * @tc.name   deviceinfo_test_static_5000
+     * @tc.number SUB_STARTUP_JS_DEVCEINFO_5000
+     * @tc.desc   Get the kernelVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('deviceinfo_test_static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('deviceinfo_test_static_5000 start');
+      let kernelVersionInfo = deviceinfo.kernelVersion;
+      console.info('the value of the kernelVersion is :' + kernelVersionInfo);
+
+      if (kernelVersionInfo != "" && kernelVersionInfo != null && kernelVersionInfo != undefined) {
+        let charArray: string[] = kernelVersionInfo.split('');
+        let bufferstr: string = '';
+        for (let i = 0; i < charArray.length; i++) {
+          console.info('the value of the char[' + i + '] is :' + charArray[i]);
+          bufferstr += charArray[i];
+        }
+        console.info('the value of the bufferstr is :' + bufferstr);
+        expect(kernelVersionInfo).assertEqual(bufferstr);
+        done();
+      }
+      else {
+        console.info('the return value kernelVersion is null or incorrect.');
+        expect().assertFail();
+        done();
+      }
+      console.info('deviceinfo_test_static_5000 : end');
+    })
   })
 }

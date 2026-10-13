@@ -21,6 +21,7 @@ import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function springBack() {
   describe('springBack', () => {
@@ -68,7 +69,9 @@ export default function springBack() {
       let y1 = Math.round(point.y)
       let y2 = Math.round(point.y + vp2px(150))
       let stepLen = Math.round(vp2px(30))
-      await driver.fling({x: x1, y: y1},{x: x1, y: y2}, stepLen, 3000);
+      // 涉及坐标
+      await driver.fling({x: x1, y: y1, displayId: displayID},{x: x1, y: y2, displayId: displayID}, stepLen, 3000);
+      // await driver.fling({x: x1, y: y1},{x: x1, y: y2}, stepLen, 3000);
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('onWillSpringBackWhenDismiss');

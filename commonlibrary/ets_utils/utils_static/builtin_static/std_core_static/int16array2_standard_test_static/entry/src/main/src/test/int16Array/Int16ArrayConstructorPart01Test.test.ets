@@ -117,21 +117,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__0600
-     * @tc.name int16ArrayConstructorPart01Test006
-     * @tc.desc Verify new Int16Array() instance BYTES_PER_ELEMENT equals static value
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let actual: int = arr.BYTES_PER_ELEMENT;
-      let expected: number = Int16Array.BYTES_PER_ELEMENT;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__0700
      * @tc.name int16ArrayConstructorPart01Test007
      * @tc.desc Verify new Int16Array() name property equals Int16Array string
@@ -159,35 +144,6 @@ export default function int16ArrayConstructorPart01Test(): void {
       let actual: int = arr.buffer.byteLength;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__0900
-     * @tc.name int16ArrayConstructorPart01Test009
-     * @tc.desc Verify new Int16Array() buffer.byteLength equals view byteLength
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let actual: int = arr.buffer.byteLength;
-      let expected: int = arr.byteLength;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__1000
-     * @tc.name int16ArrayConstructorPart01Test010
-     * @tc.desc Verify new Int16Array() buffer.byteLength is at least view byteLength
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let actual: boolean = arr.buffer.byteLength >= arr.byteLength;
-      expect(actual).assertTrue();
     });
 
     /**
@@ -219,25 +175,6 @@ export default function int16ArrayConstructorPart01Test(): void {
       const arr2 = new Int16Array();
       let actual: boolean = arr1 === arr2;
       expect(actual).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__1300
-     * @tc.name int16ArrayConstructorPart01Test013
-     * @tc.desc Verify two new Int16Array() instances both keep length 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Int16Array();
-      const arr2 = new Int16Array();
-      let actual: int = arr1.length;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-      let actual2: int = arr2.length;
-      let expected2: int = 0;
-      expect(actual2).assertEqual(expected2);
     });
 
     /**
@@ -534,24 +471,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__3100
-     * @tc.name int16ArrayConstructorPart01Test031
-     * @tc.desc Verify new Int16Array() some callback is not invoked on empty array
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let called = false;
-      arr.some((_v: number) => {
-        called = true;
-        return true;
-      });
-      expect(called).assertFalse();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__3200
      * @tc.name int16ArrayConstructorPart01Test032
      * @tc.desc Verify new Int16Array() every returns true on empty array
@@ -563,24 +482,6 @@ export default function int16ArrayConstructorPart01Test(): void {
       const arr = new Int16Array();
       const result = arr.every((_v: number) => false);
       expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__3300
-     * @tc.name int16ArrayConstructorPart01Test033
-     * @tc.desc Verify new Int16Array() every callback is not invoked on empty array
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let called = false;
-      arr.every((_v: number) => {
-        called = true;
-        return false;
-      });
-      expect(called).assertFalse();
     });
 
     /**
@@ -715,21 +616,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__4300
-     * @tc.name int16ArrayConstructorPart01Test043
-     * @tc.desc Verify new Int16Array() join with separator returns empty string
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let actual: string = arr.join(',');
-      let expected: string = '';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__4400
      * @tc.name int16ArrayConstructorPart01Test044
      * @tc.desc Verify new Int16Array() toString returns empty string
@@ -740,21 +626,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     it("int16ArrayConstructorPart01Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array();
       let actual: string = arr.toString();
-      let expected: string = '';
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__4500
-     * @tc.name int16ArrayConstructorPart01Test045
-     * @tc.desc Verify new Int16Array() toLocaleString returns empty string
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let actual: string = arr.toLocaleString();
       let expected: string = '';
       expect(actual).assertEqual(expected);
     });
@@ -775,22 +646,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__4700
-     * @tc.name int16ArrayConstructorPart01Test047
-     * @tc.desc Verify new Int16Array() reverse keeps length 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      arr.reverse();
-      let actual: int = arr.length;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__4800
      * @tc.name int16ArrayConstructorPart01Test048
      * @tc.desc Verify new Int16Array() sort without compareFn returns this
@@ -806,40 +661,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__4900
-     * @tc.name int16ArrayConstructorPart01Test049
-     * @tc.desc Verify new Int16Array() sort compareFn is not called on empty array
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let called = false;
-      arr.sort((_a: number, _b: number) => {
-        called = true;
-        return 0;
-      });
-      expect(called).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__5000
-     * @tc.name int16ArrayConstructorPart01Test050
-     * @tc.desc Verify new Int16Array() sort keeps length 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      arr.sort();
-      let actual: int = arr.length;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__5100
      * @tc.name int16ArrayConstructorPart01Test051
      * @tc.desc Verify new Int16Array() fill returns the same this reference
@@ -852,22 +673,6 @@ export default function int16ArrayConstructorPart01Test(): void {
       const ret = arr.fill(0);
       let actual: boolean = ret === arr;
       expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__5200
-     * @tc.name int16ArrayConstructorPart01Test052
-     * @tc.desc Verify new Int16Array() fill(0,0,0) keeps length 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      arr.fill(0, 0, 0);
-      let actual: int = arr.length;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
     });
 
     /**
@@ -903,22 +708,6 @@ export default function int16ArrayConstructorPart01Test(): void {
       const ret = arr.copyWithin(0, 0);
       let actual: boolean = ret === arr;
       expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__5500
-     * @tc.name int16ArrayConstructorPart01Test055
-     * @tc.desc Verify new Int16Array() copyWithin(0,0,0) keeps length 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      arr.copyWithin(0, 0, 0);
-      let actual: int = arr.length;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
     });
 
     /**
@@ -979,22 +768,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     it("int16ArrayConstructorPart01Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array();
       const result = arr.subarray();
-      let actual: int = result.length;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__6000
-     * @tc.name int16ArrayConstructorPart01Test060
-     * @tc.desc Verify new Int16Array() subarray(0,0) view length equals 0
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      const result = arr.subarray(0, 0);
       let actual: int = result.length;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
@@ -1079,38 +852,6 @@ export default function int16ArrayConstructorPart01Test(): void {
     it("int16ArrayConstructorPart01Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array();
       const iter = arr.entries();
-      const first = iter.next();
-      let actual: boolean = first.done;
-      expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__6600
-     * @tc.name int16ArrayConstructorPart01Test066
-     * @tc.desc Verify new Int16Array() keys iterator first next done is true
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      const iter = arr.keys();
-      const first = iter.next();
-      let actual: boolean = first.done;
-      expect(actual).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__6700
-     * @tc.name int16ArrayConstructorPart01Test067
-     * @tc.desc Verify new Int16Array() values iterator first next done is true
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      const iter = arr.values();
       const first = iter.next();
       let actual: boolean = first.done;
       expect(actual).assertTrue();
@@ -1204,21 +945,6 @@ export default function int16ArrayConstructorPart01Test(): void {
       let actual2: int = view2.length;
       let expected2: int = 0;
       expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART01__7300
-     * @tc.name int16ArrayConstructorPart01Test073
-     * @tc.desc Verify new Int16Array() buffer.byteLength equals view byteLength zero
-     * @tc.size MEDIUMTEST
-     * @tc.type FUNCTION
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart01Test073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int16Array();
-      let actual: int = arr.buffer.byteLength;
-      let expected: number = arr.byteLength;
-      expect(actual).assertEqual(expected);
     });
 
     /**

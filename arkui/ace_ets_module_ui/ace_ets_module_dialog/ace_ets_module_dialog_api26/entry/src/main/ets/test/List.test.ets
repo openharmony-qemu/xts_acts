@@ -54,7 +54,7 @@ export default function testsuite() {
   DisplayModeInSubWindow();
   DialogStyleAlert();
   DialogStyleSheets();
-  DialogBaseOptionsLayout();
+  
   DialogBaseOptionsVisual();
   DialogBaseControllerLife();
   DialogEnumsAssert();
@@ -63,8 +63,11 @@ export default function testsuite() {
   DialogLifeCallbacks();
   DialogBaseSizeBorder();
   DialogEnumsAssertExtra();
-  DialogAlignWordBreak();
+  
   DialogAlignWordBreakExtra();
   DialogAbnormalOpts();
   DialogAbnormalOptsExtra();
+  
+  DialogBaseOptionsLayout();
+  DialogAlignWordBreak();
 }

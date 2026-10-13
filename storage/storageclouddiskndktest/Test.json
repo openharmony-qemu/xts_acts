@@ -6,7 +6,7 @@
         "shell-timeout": "180000",
         "bundle-name": "com.acts.storage.clouddiskndk",
         "module-name": "entry_test",
-        "testcase-timeout": 70000
+        "testcase-timeout": "20000"
     },
     "kits": [
         {

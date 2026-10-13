@@ -1,4 +1,4 @@
-'use static';
+'use static'
 import {
   Entry,
   Component,
@@ -99,41 +99,48 @@ struct DropAnimationExample {
       }
       .id('Column2')
       .width(150)
-      .height(150)
+      .height('40%')
 
-      Column({ space: 5 } as ColumnOptions) {
+      Column() {
         Button('resetText')
           .id('Common_resetText')
           .onClick((e: ClickEvent) => {
             this.myModifier1.message = 'Hello World';
             this.myModifier2.message = 'Hello World';
           })
+          .height('10%')
         Button('isOnDragEndUndefined : ' + this.myModifier1.isOnDragEndUndefined)
           .onClick((e: ClickEvent) => {
             this.myModifier1.isOnDragEndUndefined = !this.myModifier1.isOnDragEndUndefined
           })
           .id('Common_OnDragEnd')
+          .height('10%')
         Button('isOnDragEnterUndefined : ' + this.myModifier2.isOnDragEnterUndefined)
           .onClick((e: ClickEvent) => {
             this.myModifier2.isOnDragEnterUndefined = !this.myModifier2.isOnDragEnterUndefined
           })
           .id('Common_OnDragEnter')
+          .height('10%')
         Button('isOnDragLeaveUndefined : ' + this.myModifier2.isOnDragLeaveUndefined)
           .onClick((e: ClickEvent) => {
             this.myModifier2.isOnDragLeaveUndefined = !this.myModifier2.isOnDragLeaveUndefined
           })
           .id('Common_OnDragLeave')
+          .height('10%')
         Button('isOnDragMoveUndefined : ' + this.myModifier2.isOnDragMoveUndefined)
           .onClick((e: ClickEvent) => {
             this.myModifier2.isOnDragMoveUndefined = !this.myModifier2.isOnDragMoveUndefined
           })
           .id('Common_OnDragMove')
+          .height('10%')
         Button('isOnDropUndefined : ' + this.myModifier1.isOnDropUndefined)
           .onClick((e: ClickEvent) => {
             this.myModifier1.isOnDropUndefined = !this.myModifier1.isOnDropUndefined
           })
           .id('Common_OnDrop')
+          .height('10%')
       }
+    .height('40%')
     }
     .alignItems(HorizontalAlign.Center)
     .width('80%')

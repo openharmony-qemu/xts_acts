@@ -46,9 +46,16 @@ async function getHdrComposedPixelmapPixelmapWithOptionsAbnormalPromiseTest(done
 
 export default function getHdrComposedPixelmapStaticSuppTest(): void {
   describe('getHdrComposedPixelmapStaticSuppTest', () => {
+    let isSupportHdr: Boolean = false;
 
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
+      try {
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
+      } catch (err) {
+        console.error('The file path does not exist');
+      }
     });
 
     beforeEach(() => {
@@ -72,6 +79,11 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmap_abnormal_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmap_abnormal_promise_static_0100';
       const path = 'test.jpeg';
       await getHdrComposedPixelmapPixelmapWithOptionsAbnormalPromiseTest(done, testName, path, async (PictureObj:image.Picture | undefined) => {
@@ -120,6 +132,11 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmap_abnormal_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmap_abnormal_promise_static_0200';
       const path = 'AllAuxiliaryPictures.jpg';
       await getHdrComposedPixelmapPixelmapWithOptionsAbnormalPromiseTest(done, testName, path, async (PictureObj:image.Picture | undefined) => {
@@ -169,6 +186,11 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0100', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0100';
       const path = 'CUVAHdr.jpg';
       let opt: image.HdrComposeOptions = {
@@ -220,6 +242,11 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0200', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0200';
       const path = 'AllAuxiliaryPictures.jpg';
       let opt: image.HdrComposeOptions = {
@@ -271,6 +298,11 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0300', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0300';
       const path = 'test.jpeg';
       let opt: image.HdrComposeOptions = {
@@ -322,6 +354,11 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0400', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0400';
       const path = 'test.jpeg';
       let opt: image.HdrComposeOptions = {
@@ -373,6 +410,11 @@ export default function getHdrComposedPixelmapStaticSuppTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0500', Level.LEVEL0, async (done: () => void) => {
+      if (!isSupportHdr) {
+        console.info("device does not support hdr");
+        done();
+        return
+      }
       const testName = 'SUB_MEDIA_IMAGE_picture_getHdrComposedPixelmapWithOptions_abnormal_promise_static_0500';
       const path = 'test.jpeg';
       await getHdrComposedPixelmapPixelmapWithOptionsAbnormalPromiseTest(done, testName, path, async (PictureObj:image.Picture | undefined) => {

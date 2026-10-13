@@ -39,7 +39,7 @@ struct CustomPopupOptionsLevelMode {
   }
 
   build() {
-    Column({ space: 12 }) {
+    Column() {
       Text('CustomPopupOptions.levelMode').fontSize(18).fontWeight(FontWeight.Bold)
       Button('custom OVERLAY')
         .id('btn_custom_level_overlay')

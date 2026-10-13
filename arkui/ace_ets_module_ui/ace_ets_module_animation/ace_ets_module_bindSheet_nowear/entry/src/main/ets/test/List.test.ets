@@ -13,12 +13,14 @@
  * limitations under the License.
  */
 
+import PresetTest from './Preset.test';
 import detentSelection from './bindSheet/detentSelection.test'
 import bindSheetKeyboardAvoidMode from './SheetTypeTest/bindSheetKeyboardAvoidMode.test';
 import tabsOnContentWillChangeIndex10JsunitTest from './tabs/tabsOnContentWillChangeIndex10.test';
 import tabsOnContentWillChangeIndex11JsunitTest from './tabs/tabsOnContentWillChangeIndex11.test';
 
 export default function testsuite() {
+  PresetTest();
   detentSelection();
   bindSheetKeyboardAvoidMode();
   tabsOnContentWillChangeIndex10JsunitTest();

@@ -17,24 +17,18 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.PackingToFile.Static/haps/entry/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.PackingToFile.Static/haps/entry/files/*"
-            ],
-            "teardown-command": []
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.PackingToFile.Static/haps/entry/files"
+                "./resource/image/test.png ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_packToFileJs_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.PackingToFile.Static/haps/entry/*",
+                "chmod 755 /data/local/tmp/setup_image_packToFileJs_static_test.sh",
+                "sh /data/local/tmp/setup_image_packToFileJs_static_test.sh",
                 "power-shell wakeup",
                 "power-shell setmode 602"
             ]

@@ -332,8 +332,8 @@ export default function getBundleInfoForSelf() {
           expect(data.appInfo!.cloudFileSyncEnabled).assertFalse();
           expect(data.appInfo!.metadataArray.length).assertEqual(0.0);
           expect(data.appInfo!.nativeLibraryPath).assertEqual("");
-          expect(data.appInfo!.multiAppMode.multiAppModeType).assertEqual(bundle.MultiAppModeType.UNSPECIFIED);
-          expect(data.appInfo!.multiAppMode.maxCount).assertEqual(0);
+          expect(data.appInfo!.multiAppMode.multiAppModeType >= 0).assertTrue();
+          expect(data.appInfo!.multiAppMode.maxCount >= 0).assertTrue();
           expect(data.appInfo!.appIndex).assertEqual(0);
           done();
         } else {

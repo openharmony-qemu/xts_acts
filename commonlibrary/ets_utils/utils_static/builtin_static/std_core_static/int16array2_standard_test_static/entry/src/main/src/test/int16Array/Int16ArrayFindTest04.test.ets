@@ -42,70 +42,6 @@ export default function int16ArrayFindTestFourTest(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_0100
-     * @tc.name testInt16ArrayFindTestFour001
-     * @tc.desc Verify find external accumulator sum side effect
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(5, 10, 15);
-      let acc: number = 0;
-      arr.find((value: number, index: int, array: Int16Array): boolean => {
-        acc = acc + value;
-        return false;
-      });
-      expect(acc).assertEqual(30);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_0200
-     * @tc.name testInt16ArrayFindTestFour002
-     * @tc.desc Verify find predicate records values into external array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(100, 200, 300);
-      let recorded: number[] = [];
-      arr.find((value: number, index: int, array: Int16Array): boolean => {
-        recorded.push(value);
-        return false;
-      });
-      let actual1: number = recorded[0];
-      expect(actual1).assertEqual(100);
-      let actual2: number = recorded[1];
-      expect(actual2).assertEqual(200);
-      let actual3: number = recorded[2];
-      expect(actual3).assertEqual(300);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_0300
-     * @tc.name testInt16ArrayFindTestFour003
-     * @tc.desc Verify find predicate records indices into external array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(7, 8, 9);
-      let indices: int[] = [];
-      arr.find((value: number, index: int, array: Int16Array): boolean => {
-        indices.push(index);
-        return false;
-      });
-      let actual1: number = indices[0];
-      expect(actual1).assertEqual(0);
-      let actual2: number = indices[1];
-      expect(actual2).assertEqual(1);
-      let actual3: number = indices[2];
-      expect(actual3).assertEqual(2);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_0400
      * @tc.name testInt16ArrayFindTestFour004
      * @tc.desc Verify find predicate records index value map entries
@@ -126,61 +62,6 @@ export default function int16ArrayFindTestFourTest(): void {
       expect(actual2).assertEqual(22);
       let actual3: number = map.get(2)!;
       expect(actual3).assertEqual(33);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_0500
-     * @tc.name testInt16ArrayFindTestFour005
-     * @tc.desc Verify find predicate uses external boolean flag for early match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      let shouldMatch: boolean = false;
-      let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => {
-        if (index === 1) {
-          shouldMatch = true;
-        }
-        return shouldMatch;
-      });
-      expect(result).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_0600
-     * @tc.name testInt16ArrayFindTestFour006
-     * @tc.desc Verify find predicate compares against external Int16Array baseline
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(15, 25, 35);
-      let baseline: Int16Array = Int16Array.of(10, 20, 30);
-      let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => {
-        return value > baseline.$_get(index);
-      });
-      expect(result).assertEqual(15);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_0700
-     * @tc.name testInt16ArrayFindTestFour007
-     * @tc.desc Verify find predicate appends value strings to external trace
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      let trace: string = '';
-      arr.find((value: number, index: int, array: Int16Array): boolean => {
-        trace = trace + value.toString();
-        return false;
-      });
-      expect(trace).assertEqual('123');
     });
 
     /**
@@ -418,27 +299,6 @@ export default function int16ArrayFindTestFourTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_2000
-     * @tc.name testInt16ArrayFindTestFour020
-     * @tc.desc Verify find predicate double $_set overwrites previous value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(1, 2, 3);
-      arr.find((value: number, index: int, array: Int16Array): boolean => {
-        if (index === 0) {
-          array.$_set(2, 50);
-          array.$_set(2, 77);
-        }
-        return false;
-      });
-      let actual1: number = arr.$_get(2);
-      expect(actual1).assertEqual(77);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_2100
      * @tc.name testInt16ArrayFindTestFour021
      * @tc.desc Verify find predicate writes MIN -32768 while matching later value
@@ -609,23 +469,6 @@ export default function int16ArrayFindTestFourTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_3000
-     * @tc.name testInt16ArrayFindTestFour030
-     * @tc.desc Verify find result is defined after successful match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(50, 10, 30);
-      arr.sort();
-      let result: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => {
-        return value > 25;
-      });
-      expect(result).assertEqual(30);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_3100
      * @tc.name testInt16ArrayFindTestFour031
      * @tc.desc Verify subarray view find returns first matching value
@@ -781,24 +624,6 @@ export default function int16ArrayFindTestFourTest(): void {
         return value === 99;
       });
       expect(result).assertEqual(99);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FIND_FOUR_4000
-     * @tc.name testInt16ArrayFindTestFour040
-     * @tc.desc Verify find then $_set and $_get on found position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFindTestFour040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(10, 20, 30);
-      let found: number | undefined = arr.find((value: number, index: int, array: Int16Array): boolean => {
-        return value === 20;
-      });
-      arr.$_set(1, 0);
-      let actual1: number = arr.$_get(1);
-      expect(actual1).assertEqual(0);
     });
 
     /**

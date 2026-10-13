@@ -50,7 +50,9 @@ group("storage") {
       "storagestatfsjsteststatic:storagestatfs_js_test_static",
       "storagestatisticsjstest:storagestatistics_js_test",
       "storagestatisticsteststatic:storage_statistics_test_static",
-      "storagefilecompressndktest:ActsStorageFileCompressNdkTest"
+      "storagefilecompressndktest:ActsStorageFileCompressNdkTest",
+      "storagevolumemanagertest:storagevolumemanager_js_test",
+      "storagevolumemanagerteststatic:storagevolumemanager_js_test_static"
     ]
   }
 }

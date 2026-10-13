@@ -17,39 +17,35 @@
             "cleanup-apps": true
         },
         {
-            "type": "ShellKit",
-            "run-command": [
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files/",
-                "chmod -R 666 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files/*",
-                "mkdir -p /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/cache/",
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/*"
-            ]
-        },
-        {
             "type": "PushKit",
             "pre-push": [],
             "push": [
-                "./resource/image/HEIFISOMultiChannelBaseColor0512V12.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/0801_sdr2.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/all_auxtype.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/AllAuxiliaryPictures.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/CUVAHdrMulti.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/HDRVividSingleLayer.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/JPEGISOSingle.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/AllAuxiliaryPictures_exclude_fragment.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/JpegFragmentMap.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/test.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/test.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/testExif.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/GainMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/UnrefocusMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files",
-                "./resource/image/FragmentMap.dat ->/data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files"
+                "./resource/image/HEIFISOMultiChannelBaseColor0512V12.heic ->/data/local/tmp/",
+                "./resource/image/0801_sdr2.heic ->/data/local/tmp/",
+                "./resource/image/all_auxtype.heic ->/data/local/tmp/",
+                "./resource/image/AllAuxiliaryPictures.jpg ->/data/local/tmp/",
+                "./resource/image/CUVAHdrMulti.jpg ->/data/local/tmp/",
+                "./resource/image/HDRVividSingleLayer.heic ->/data/local/tmp/",
+                "./resource/image/JPEGISOSingle.jpg ->/data/local/tmp/",
+                "./resource/image/AllAuxiliaryPictures_exclude_fragment.jpg ->/data/local/tmp/",
+                "./resource/image/JpegFragmentMap.jpg ->/data/local/tmp/",
+                "./resource/image/test.jpg ->/data/local/tmp/",
+                "./resource/image/test.png ->/data/local/tmp/",
+                "./resource/image/testExif.jpg ->/data/local/tmp/",
+                "./resource/image/GainMap.dat ->/data/local/tmp/",
+                "./resource/image/UnrefocusMap.dat ->/data/local/tmp/",
+                "./resource/image/FragmentMap.dat ->/data/local/tmp/",
+                "./resource/image/LHDR.jpg ->/data/local/tmp/",
+                "./resource/image/LHDR.heic ->/data/local/tmp/",
+                "./resource/image/test_aisr.dng ->/data/local/tmp/",
+                "./resource/image/sh/setup_image_picture_static_test.sh ->/data/local/tmp/"
             ]
         },
         {
             "type": "ShellKit",
             "run-command": [
-                "chmod -R 777 /data/app/el2/100/base/ohos.acts.multimedia.image.imagePicture.Static/haps/entry/files/*",
+                "chmod 755 /data/local/tmp/setup_image_picture_static_test.sh",
+                "sh /data/local/tmp/setup_image_picture_static_test.sh",
                 "power-shell wakeup",
                 "power-shell setmode 602"
             ]

@@ -52,7 +52,7 @@ struct ContextMenuByResponseType {
   }
 
   build() {
-    Column({ space: 16 }) {
+    Column() {
       Text('bindContextMenuByResponseType').fontSize(18).fontWeight(FontWeight.Bold)
       Text('last=' + this.lastAction).id('resp_last_action').fontSize(14)
       Button('LongPress MenuElement')

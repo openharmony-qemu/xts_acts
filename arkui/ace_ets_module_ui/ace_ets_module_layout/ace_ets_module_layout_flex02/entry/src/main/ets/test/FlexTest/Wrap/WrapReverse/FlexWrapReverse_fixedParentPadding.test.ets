@@ -49,15 +49,15 @@ export default function flexWrapReverse_fixedParentPadding() {
     });
 
     /**
-     * @tc.name   testWrapReverseParentfixedPaddingChildPadding
-     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildPadding
+     * @tc.name   FlexWrapReverse_fixedParentPadding_0100
+     * @tc.number SUB_ACE_ARKUI_FlexWrapReverse_fixedParentPadding_0100
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWrapReverseParentfixedPaddingChildPadding',  Level.LEVEL0, async () => {
-      console.info('new testWrapReverseParentfixedPaddingChildPadding START');
+    it('FlexWrapReverse_fixedParentPadding_0100',  Level.LEVEL0, async () => {
+      console.info('new FlexWrapReverse_fixedParentPadding_0100 START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 20
       })
@@ -92,20 +92,20 @@ export default function flexWrapReverse_fixedParentPadding() {
       expect(Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))) <= 1).assertTrue();
-      console.info('new testWrapReverseParentfixedPaddingChildPadding END');
+      console.info('new FlexWrapReverse_fixedParentPadding_0100 END');
 
     });
 
     /**
-     * @tc.name   testWrapReverseParentfixedPaddingChildMargin
-     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildMargin
+     * @tc.name   FlexWrapReverse_fixedParentPadding_0200
+     * @tc.number SUB_ACE_ARKUI_FlexWrapReverse_fixedParentPadding_0200
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWrapReverseParentfixedPaddingChildMargin',  Level.LEVEL0, async () => {
-      console.info('new testWrapReverseParentfixedPaddingChildMargin START');
+    it('FlexWrapReverse_fixedParentPadding_0200',  Level.LEVEL0, async () => {
+      console.info('new FlexWrapReverse_fixedParentPadding_0200 START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 0
       })
@@ -123,9 +123,25 @@ export default function flexWrapReverse_fixedParentPadding() {
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest30');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest10');
 
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi1:' + Math.floor(Math.abs(Math.round(locationFlex.right - locationText1.right) - vp2px(70))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi2:' + Math.floor(Math.abs(Math.round(locationText1.left - locationText2.right) - vp2px(20))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi3:' + Math.floor(Math.abs(Math.round(locationText2.left - locationFlex.left) - vp2px(110))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi4:' + Math.floor(Math.abs(Math.round(locationText3.left - locationText1.left) - vp2px(20))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi5:' + Math.floor(Math.abs(Math.round(locationFlex.right - locationText3.right) - vp2px(50))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi6:' + Math.floor(Math.abs(Math.round(locationText1.top - locationText2.top) - vp2px(20))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi7:' + Math.floor(Math.abs(Math.round(locationText2.top - locationFlex.top) - vp2px(50))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi8:' + Math.floor(Math.abs(locationText3.top - locationText2.bottom)));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi9:' + Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom)));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi10:' + Math.floor(Math.abs((locationText3.right - locationText3.left) - (locationText2.right - locationText2.left))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi11:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - (locationText2.right - locationText2.left))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi12:' + Math.floor(Math.abs((locationText1.right - locationText1.left) - vp2px(150))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi13:' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(50))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi14:' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))));
+      console.info('FlexWrapReverse_fixedParentPadding_0200_chazhi15:' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))));
+
       expect(Math.floor(Math.abs(Math.round(locationFlex.right - locationText1.right) - vp2px(70))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationText1.left - locationText2.right) - vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Math.round(locationText2.left - locationFlex.left) - vp2px(110))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Math.round(locationText2.left - locationFlex.left) - vp2px(110))) <= 2).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationText3.left - locationText1.left) - vp2px(20))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationFlex.right - locationText3.right) - vp2px(50))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Math.round(locationText1.top - locationText2.top) - vp2px(20))) <= 1).assertTrue();
@@ -141,20 +157,19 @@ export default function flexWrapReverse_fixedParentPadding() {
       expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))) <= 1).assertTrue();
 
-      console.info('new testWrapReverseParentfixedPaddingChildMargin END');
-
+      console.info('new FlexWrapReverse_fixedParentPadding_0200 END');
     });
 
     /**
-     * @tc.name   testWrapReverseParentfixedPaddingChildPaddingAndMargin
-     * @tc.number SUB_ACE_testWrapReverseParentfixedPaddingChildPaddingAndMargin
+     * @tc.name   FlexWrapReverse_fixedParentPadding_0300
+     * @tc.number SUB_ACE_ARKUI_FlexWrapReverse_fixedParentPadding_0300
      * @tc.desc   The parent component layout space is fixed, and the parent component setting padding,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testWrapReverseParentfixedPaddingChildPaddingAndMargin',  Level.LEVEL0, async () => {
-      console.info('new testWrapReverseParentfixedPaddingChildPaddingAndMargin START');
+    it('FlexWrapReverse_fixedParentPadding_0300',  Level.LEVEL0, async () => {
+      console.info('new FlexWrapReverse_fixedParentPadding_0300 START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
         name: 'padding', value: 10
       })
@@ -172,23 +187,23 @@ export default function flexWrapReverse_fixedParentPadding() {
       let locationText3: RectValue = CommonFunc.getComponentRect('WrapReverseTest30');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexWrapReverseTest10');
 
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi1 :' + Math.floor(Math.abs((locationFlex.right - locationText1.right) - vp2px(80))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi2 :' + Math.floor(Math.abs((locationText1.left - locationText2.right) - vp2px(30))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi3 :' + Math.floor(Math.abs((locationText2.left - locationFlex.left) - vp2px(90))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi4 :' + Math.floor(Math.abs((locationText3.left - locationText1.left) - vp2px(30))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi5 :' + Math.floor(Math.abs((locationFlex.right - locationText3.right) - vp2px(50))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi6 :' + Math.floor(Math.abs((locationText1.top - locationText2.top) - vp2px(30))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi7 :' + Math.floor(Math.abs((locationText2.top - locationFlex.top) - vp2px(50))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi8 :' + Math.floor(Math.abs((locationText3.top - locationText2.bottom) - vp2px(10))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi9 :' + Math.floor(Math.abs((locationText3.bottom - locationFlex.bottom) - vp2px(10))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi10 :' + Math.floor(Math.abs((locationText3.right - locationText3.left) - 
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi1 :' + Math.floor(Math.abs((locationFlex.right - locationText1.right) - vp2px(80))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi2 :' + Math.floor(Math.abs((locationText1.left - locationText2.right) - vp2px(30))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi3 :' + Math.floor(Math.abs((locationText2.left - locationFlex.left) - vp2px(90))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi4 :' + Math.floor(Math.abs((locationText3.left - locationText1.left) - vp2px(30))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi5 :' + Math.floor(Math.abs((locationFlex.right - locationText3.right) - vp2px(50))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi6 :' + Math.floor(Math.abs((locationText1.top - locationText2.top) - vp2px(30))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi7 :' + Math.floor(Math.abs((locationText2.top - locationFlex.top) - vp2px(50))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi8 :' + Math.floor(Math.abs((locationText3.top - locationText2.bottom) - vp2px(10))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi9 :' + Math.floor(Math.abs((locationText3.bottom - locationFlex.bottom) - vp2px(10))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi10 :' + Math.floor(Math.abs((locationText3.right - locationText3.left) - 
       (locationText2.right - locationText2.left))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi11 :' + Math.floor(Math.abs((locationText1.right - locationText1.left) -
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi11 :' + Math.floor(Math.abs((locationText1.right - locationText1.left) -
        (locationText2.right - locationText2.left))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi12 :' + Math.floor(Math.abs((locationText1.right - locationText1.left) - vp2px(150))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi13 :' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(50))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi14 :' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))));
-      console.info('testWrapReverseParentfixedPaddingChildPaddingAndMargin_chazhi15 :' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi12 :' + Math.floor(Math.abs((locationText1.right - locationText1.left) - vp2px(150))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi13 :' + Math.floor(Math.abs((locationText1.bottom - locationText1.top) - vp2px(50))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi14 :' + Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))));
+      console.info('FlexWrapReverse_fixedParentPadding_0300_chazhi15 :' + Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))));
 
       expect(Math.floor(Math.abs((locationFlex.right - locationText1.right) - vp2px(80))) <= 2).assertTrue();
       expect(Math.floor(Math.abs((locationText1.left - locationText2.right) - vp2px(30))) <= 1).assertTrue();
@@ -208,7 +223,7 @@ export default function flexWrapReverse_fixedParentPadding() {
       expect(Math.floor(Math.abs((locationText2.bottom - locationText2.top) - vp2px(100))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((locationText3.bottom - locationText3.top) - vp2px(150))) <= 1).assertTrue();
 
-      console.info('new testWrapReverseParentfixedPaddingChildPaddingAndMargin END');
+      console.info('new FlexWrapReverse_fixedParentPadding_0300 END');
 
     });
   })

@@ -23,6 +23,7 @@ export default function ImageMetadataTestStatic(): void {
     let testContext: common.UIAbilityContext = Hypium.get('Context') as common.UIAbilityContext;
     let filePath: string = '';
     let fdNumber: int;
+    let isSupportedTiff: boolean = true;
 
     const getFd = (fileName: string): int => {
       filePath = testContext.filesDir + "/" + fileName;
@@ -39,6 +40,9 @@ export default function ImageMetadataTestStatic(): void {
 
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
+      let formats = await image.getImageSourceSupportedFormats();
+      isSupportedTiff = formats.includes('image/tiff');
+      console.info('isSupportedTiff is ' + isSupportedTiff);
     });
 
     beforeEach(() => {
@@ -291,6 +295,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_HEIFS_METADATA_TiffMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_TiffMetadata_PropertyKey_STATIC_0100";
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       let filePath = await getFilePath("tiff_xmp.tiff");
       try {
         const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
@@ -1779,6 +1788,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_STATIC_0100", Level.LEVEL0, async (done:() => void)=>{
       const testName: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_STATIC_0100";
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       let filePath = await getFilePath("tiff_xmp.tiff");
       const imageSourceApi: image.ImageSource | undefined = image.createImageSource(filePath);
       console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
@@ -1807,6 +1821,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0100', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0100';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -1842,6 +1861,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0200', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0200';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -1877,6 +1901,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0300', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_static_0300';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -1912,6 +1941,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0400', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0400';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -1947,6 +1981,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0500', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_AbNormal_static_0500';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -1982,6 +2021,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0600', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0600';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2020,6 +2064,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0700', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0700';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2054,6 +2103,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0800', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0800';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2088,6 +2142,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0900', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_0900';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2122,6 +2181,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1000', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1000';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2156,6 +2220,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1100', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1100';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2190,6 +2259,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1200', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1200';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2224,6 +2298,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1300', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_BinaryBufferInfo_Normal_static_1300';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
@@ -2259,6 +2338,11 @@ export default function ImageMetadataTestStatic(): void {
      */
     it('SUB_MEDIA_IMAGE_packBinaryImageToTiffData_Normal_static_0100', Level.LEVEL0, async (done: () => void) => {
       const testName = 'SUB_MEDIA_IMAGE_packBinaryImageToTiffData_Normal_static_0100';
+      if (!isSupportedTiff) {
+        console.info(`${testName} does not support tiff`);
+        done();
+        return
+      }
       const width = 100;
       const height = 100;
       const rowBytes = 13;
