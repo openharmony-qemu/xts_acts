@@ -141,6 +141,7 @@ export default function windowLayoutTest() {
     let driver: Driver;
     let displayWidth: number;
     let displayHeight: number;
+    let displayID: number;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -173,6 +174,7 @@ export default function windowLayoutTest() {
       driver = Driver.create();
       displayWidth = display.getDefaultDisplaySync().width;
       displayHeight = display.getDefaultDisplaySync().height;
+      displayID = display.getDefaultDisplaySync().id;
       console.info(`beforeAll:displayWidth = ${JSON.stringify(displayWidth)},displayHeight = ${JSON.stringify(displayHeight)}`)
     });
     beforeEach(() => {
