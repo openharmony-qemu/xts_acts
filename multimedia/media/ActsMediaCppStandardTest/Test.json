@@ -29,10 +29,7 @@
     {
       "type": "PushKit",
       "pre-push": [],
-      "push": [
-        "./resource/media/AAC_48000_32_1.aac->/data/app/el2/100/base/com.example.actsmediacppstandardtest/haps/entry_test/files/",
-        "./resource/media/es/out_320_240_10s.h264->/data/app/el2/100/base/com.example.actsmediacppstandardtest/haps/entry_test/files/"
-      ]
+      "push": []
     }
   ]
 }
