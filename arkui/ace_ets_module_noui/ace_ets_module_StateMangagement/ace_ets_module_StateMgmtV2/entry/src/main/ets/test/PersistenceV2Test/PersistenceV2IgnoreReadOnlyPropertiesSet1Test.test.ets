@@ -47,7 +47,6 @@ export default function persistenceV2IgnoreReadOnlyPropertiesSet1Test() {
     afterEach(async () => {
       // Cleanup persisted data
       PersistenceV2.remove('ac81');
-      await CommonFunc.sleep(500);
       console.info('[PersistenceV2IgnoreReadOnlyPropertiesSetTest] afterEach called');
     });
 

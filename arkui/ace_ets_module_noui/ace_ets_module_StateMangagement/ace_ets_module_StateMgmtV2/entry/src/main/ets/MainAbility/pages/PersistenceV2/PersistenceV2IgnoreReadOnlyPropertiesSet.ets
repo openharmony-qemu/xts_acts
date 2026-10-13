@@ -40,13 +40,17 @@ struct PersistenceV2IgnoreReadOnlyPropertiesSet {
 
   build() {
     Column({ space: 8 }) {
-      Text('AC-8.1: 子类 getter 遮蔽父类 setter + true').fontSize(16).fontWeight(FontWeight.Bold)
+      Text('AC-8.1: 子类 getter 遮蔽父类 setter + true')
+        .height('5%')
       Text(`other = ${this.data.other}`).fontSize(14)
         .id('IgnoreReadOnlyPropertiesSet_001')
+        .height('5%')
       Text(`value = ${getValue(this.data)}`).fontSize(14)
         .id('IgnoreReadOnlyPropertiesSet_002')
+        .height('5%')
       Button('设置 other=50 并保存')
         .id('IgnoreReadOnlyPropertiesSet_003')
+        .height('5%')
         .onClick(() => {
           this.data.other = 50;
           PersistenceV2.save('ac81');
