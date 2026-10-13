@@ -47,14 +47,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     const INT8_MIN = -128;
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0200
-     * @tc.name int8ArraySubarrayPart04Test002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0100
+     * @tc.name int8ArraySubarrayPart04Test001
      * @tc.desc Verify fill on parent visible in subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(2, 5);
       arr.fill(7, 1, 4);
@@ -67,14 +67,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0300
-     * @tc.name int8ArraySubarrayPart04Test003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0200
+     * @tc.name int8ArraySubarrayPart04Test002
      * @tc.desc Verify subarray full range view sees parent reverse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([11, 22, 33, 44, 55]);
       let view: Int8Array = arr.subarray(0, 5);
       arr.reverse();
@@ -87,14 +87,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0400
-     * @tc.name int8ArraySubarrayPart04Test004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0300
+     * @tc.name int8ArraySubarrayPart04Test003
      * @tc.desc Verify copyWithin on parent visible in subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(2, 5);
       arr.copyWithin(0, 3, 5);
@@ -104,14 +104,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0500
-     * @tc.name int8ArraySubarrayPart04Test005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0400
+     * @tc.name int8ArraySubarrayPart04Test004
      * @tc.desc Verify set(src, 2) on parent visible in subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let view: Int8Array = arr.subarray(1, 4);
       let src: Int8Array = new Int8Array([5, 6]);
@@ -125,14 +125,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0700
-     * @tc.name int8ArraySubarrayPart04Test007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0500
+     * @tc.name int8ArraySubarrayPart04Test005
      * @tc.desc Verify fill on subarray view fills parent range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(2, 5);
       view.fill(9);
@@ -148,14 +148,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0800
-     * @tc.name int8ArraySubarrayPart04Test008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0600
+     * @tc.name int8ArraySubarrayPart04Test006
      * @tc.desc Verify reverse on subarray view reverses parent mid range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       view.reverse();
@@ -168,14 +168,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0900
-     * @tc.name int8ArraySubarrayPart04Test009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0700
+     * @tc.name int8ArraySubarrayPart04Test007
      * @tc.desc Verify subarray view copyWithin copies within parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(1, 5);
       view.copyWithin(0, 2, 4);
@@ -188,14 +188,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1000
-     * @tc.name int8ArraySubarrayPart04Test010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0800
+     * @tc.name int8ArraySubarrayPart04Test008
      * @tc.desc Verify subarray view set offset one writes parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let view: Int8Array = arr.subarray(1, 4);
       let src: Int8Array = new Int8Array([77, 88]);
@@ -209,14 +209,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1400
-     * @tc.name int8ArraySubarrayPart04Test014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_0900
+     * @tc.name int8ArraySubarrayPart04Test009
      * @tc.desc Verify subarray() creates view sharing the same underlying ArrayBuffer with writes from both sides
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       view.$_set(1, 50);
@@ -227,14 +227,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1500
-     * @tc.name int8ArraySubarrayPart04Test015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1000
+     * @tc.name int8ArraySubarrayPart04Test010
      * @tc.desc Verify subarray view after fill() mutates original array via shared buffer at edges
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 0, 0, 0, 0, 0]);
       let viewLeft: Int8Array = arr.subarray(0, 2);
       let viewRight: Int8Array = arr.subarray(4, 6);
@@ -249,14 +249,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1600
-     * @tc.name int8ArraySubarrayPart04Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1100
+     * @tc.name int8ArraySubarrayPart04Test011
      * @tc.desc Verify sort on subarray view sorts parent range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 3, 1, 4, 2]);
       let view: Int8Array = arr.subarray(0, 5);
       view.sort((a: number, b: number) => {
@@ -271,14 +271,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1700
-     * @tc.name int8ArraySubarrayPart04Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1200
+     * @tc.name int8ArraySubarrayPart04Test012
      * @tc.desc Verify subarray().subarray() inner write hits source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let inner: Int8Array = arr.subarray(1, 4).subarray(0, 2);
       inner.$_set(0, 44);
@@ -288,14 +288,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1800
-     * @tc.name int8ArraySubarrayPart04Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1300
+     * @tc.name int8ArraySubarrayPart04Test013
      * @tc.desc Verify triple subarray chain write hits index 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6, 7, 8]);
       let deep: Int8Array = arr.subarray(2, 7).subarray(1, 4).subarray(0, 2);
       deep.$_set(1, 77);
@@ -305,14 +305,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2100
-     * @tc.name int8ArraySubarrayPart04Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1400
+     * @tc.name int8ArraySubarrayPart04Test014
      * @tc.desc Verify subarray(0,3).subarray(1,2) view value 20
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let v: Int8Array = arr.subarray(0, 3).subarray(1, 2);
       let r1: int = v.length;
@@ -324,14 +324,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2200
-     * @tc.name int8ArraySubarrayPart04Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1500
+     * @tc.name int8ArraySubarrayPart04Test015
      * @tc.desc Verify sort on parent visible through subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([9, 7, 5, 3, 1]);
       let view: Int8Array = arr.subarray(0, 5);
       arr.sort((a: number, b: number) => {
@@ -346,14 +346,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2300
-     * @tc.name int8ArraySubarrayPart04Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1600
+     * @tc.name int8ArraySubarrayPart04Test016
      * @tc.desc Verify subarray parent set out of range throws leaves view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       try {
@@ -368,14 +368,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2400
-     * @tc.name int8ArraySubarrayPart04Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1700
+     * @tc.name int8ArraySubarrayPart04Test017
      * @tc.desc Verify subarray view sees parent partial fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6, 7]);
       let view: Int8Array = arr.subarray(3, 7);
       arr.fill(0, 2, 5);
@@ -391,14 +391,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2500
-     * @tc.name int8ArraySubarrayPart04Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1800
+     * @tc.name int8ArraySubarrayPart04Test018
      * @tc.desc Verify reverse on parent visible through subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let view: Int8Array = arr.subarray(0, 5);
       arr.reverse();
@@ -411,14 +411,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2600
-     * @tc.name int8ArraySubarrayPart04Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_1900
+     * @tc.name int8ArraySubarrayPart04Test019
      * @tc.desc Verify reverse on subarray view flips 4 middle elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(1, 5);
       view.reverse();
@@ -434,14 +434,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2700
-     * @tc.name int8ArraySubarrayPart04Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2000
+     * @tc.name int8ArraySubarrayPart04Test020
      * @tc.desc Verify subarray view sort keeps outside element intact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([9, 5, 3, 1, 7, 2]);
       let view: Int8Array = arr.subarray(0, 5);
       view.sort((a: number, b: number) => {
@@ -459,14 +459,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2800
-     * @tc.name int8ArraySubarrayPart04Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2100
+     * @tc.name int8ArraySubarrayPart04Test021
      * @tc.desc Verify fill on view writes whole subarray range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(2, 5);
       view.fill(8);
@@ -482,14 +482,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2900
-     * @tc.name int8ArraySubarrayPart04Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2200
+     * @tc.name int8ArraySubarrayPart04Test022
      * @tc.desc Verify subarray view copyWithin shifts parent elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6, 7]);
       let view: Int8Array = arr.subarray(1, 6);
       view.copyWithin(0, 3, 5);
@@ -502,14 +502,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3000
-     * @tc.name int8ArraySubarrayPart04Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2300
+     * @tc.name int8ArraySubarrayPart04Test023
      * @tc.desc Verify subarray view set at start writes parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let view: Int8Array = arr.subarray(1, 4);
       let src: Int8Array = new Int8Array([11, 22]);
@@ -523,14 +523,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3100
-     * @tc.name int8ArraySubarrayPart04Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2400
+     * @tc.name int8ArraySubarrayPart04Test024
      * @tc.desc Verify subarray view set 128 truncates both
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 0, 0]);
       let view: Int8Array = arr.subarray(0, 3);
       view.$_set(0, 128);
@@ -543,14 +543,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4300
-     * @tc.name int8ArraySubarrayPart04Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2500
+     * @tc.name int8ArraySubarrayPart04Test025
      * @tc.desc Verify subarray(subarray(x, 1, 5), 0, 2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let v: Int8Array = arr.subarray(1, 5).subarray(0, 2);
       let r1: int = v.length;
@@ -565,14 +565,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4400
-     * @tc.name int8ArraySubarrayPart04Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2600
+     * @tc.name int8ArraySubarrayPart04Test026
      * @tc.desc Verify chained subarray calls produce view with correct length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6, 7, 8]);
       let v: Int8Array = arr.subarray(2, 8).subarray(1, 5).subarray(0, 2);
       let r1: int = v.length;
@@ -587,14 +587,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4500
-     * @tc.name int8ArraySubarrayPart04Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2700
+     * @tc.name int8ArraySubarrayPart04Test027
      * @tc.desc Verify subarray(1, 6).subarray(0, 0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6, 7]);
       let v: Int8Array = arr.subarray(1, 6).subarray(0, 0);
       let r1: int = v.length;
@@ -603,14 +603,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4600
-     * @tc.name int8ArraySubarrayPart04Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2800
+     * @tc.name int8ArraySubarrayPart04Test028
      * @tc.desc Verify subarray(0, 4).subarray(2, 2)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let v: Int8Array = arr.subarray(0, 4).subarray(2, 2);
       let r1: int = v.length;
@@ -619,14 +619,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4700
-     * @tc.name int8ArraySubarrayPart04Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_2900
+     * @tc.name int8ArraySubarrayPart04Test029
      * @tc.desc Verify $_set then $_get on same subarray view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       view.$_set(1, 42);
@@ -636,14 +636,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4800
-     * @tc.name int8ArraySubarrayPart04Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3000
+     * @tc.name int8ArraySubarrayPart04Test030
      * @tc.desc Verify subarray view set read back through parent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       view.$_set(0, 55);
@@ -653,14 +653,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4900
-     * @tc.name int8ArraySubarrayPart04Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3100
+     * @tc.name int8ArraySubarrayPart04Test031
      * @tc.desc Verify subarray view set repeated calls overwrite final
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let view: Int8Array = arr.subarray(0, 3);
       view.$_set(1, 10);
@@ -675,14 +675,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5000
-     * @tc.name int8ArraySubarrayPart04Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3200
+     * @tc.name int8ArraySubarrayPart04Test032
      * @tc.desc Verify subarray view set out of range throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       try {
@@ -700,14 +700,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5100
-     * @tc.name int8ArraySubarrayPart04Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3300
+     * @tc.name int8ArraySubarrayPart04Test033
      * @tc.desc Verify subarray $_get undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 3);
       let v = view.at(5);
@@ -715,14 +715,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5200
-     * @tc.name int8ArraySubarrayPart04Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3400
+     * @tc.name int8ArraySubarrayPart04Test034
      * @tc.desc Verify subarray view forEach mutates parent array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 5);
       let collected: number[] = [];
@@ -739,14 +739,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5300
-     * @tc.name int8ArraySubarrayPart04Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3500
+     * @tc.name int8ArraySubarrayPart04Test035
      * @tc.desc Verify subarray view forEach visits all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 5);
       let count: int = 0;
@@ -763,14 +763,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5400
-     * @tc.name int8ArraySubarrayPart04Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3600
+     * @tc.name int8ArraySubarrayPart04Test036
      * @tc.desc Verify subarray view map callback writes into source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let view: Int8Array = arr.subarray(0, 3);
       let result: Int8Array = view.map((v: number, i: int, a: Int8Array) => {
@@ -786,14 +786,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5500
-     * @tc.name int8ArraySubarrayPart04Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3700
+     * @tc.name int8ArraySubarrayPart04Test037
      * @tc.desc Verify subarray view forEach keeps view length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 5);
       let lenBefore: int = view.length;
@@ -809,14 +809,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5600
-     * @tc.name int8ArraySubarrayPart04Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3800
+     * @tc.name int8ArraySubarrayPart04Test038
      * @tc.desc Verify subarray + at
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let view: Int8Array = arr.subarray(1, 4);
       let r1 = view.at(0);
@@ -828,14 +828,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5700
-     * @tc.name int8ArraySubarrayPart04Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_3900
+     * @tc.name int8ArraySubarrayPart04Test039
      * @tc.desc Verify subarray + with
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 3);
       let newArr: Int8Array = view.with(1, 50);
@@ -848,14 +848,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5800
-     * @tc.name int8ArraySubarrayPart04Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4000
+     * @tc.name int8ArraySubarrayPart04Test040
      * @tc.desc Verify subarray + toReversed
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 4);
       let rev: Int8Array = view.toReversed();
@@ -868,14 +868,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5900
-     * @tc.name int8ArraySubarrayPart04Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4100
+     * @tc.name int8ArraySubarrayPart04Test041
      * @tc.desc Verify subarray + toSorted
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 3, 1, 4, 2]);
       let view: Int8Array = arr.subarray(0, 5);
       let sorted: Int8Array = view.toSorted();
@@ -888,14 +888,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6000
-     * @tc.name int8ArraySubarrayPart04Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4200
+     * @tc.name int8ArraySubarrayPart04Test042
      * @tc.desc Verify subarray + indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 20, 10]);
       let view: Int8Array = arr.subarray(1, 4);
       let r1: int = view.indexOf(20);
@@ -907,14 +907,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6100
-     * @tc.name int8ArraySubarrayPart04Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4300
+     * @tc.name int8ArraySubarrayPart04Test043
      * @tc.desc Verify subarray + includes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
       let view: Int8Array = arr.subarray(1, 4);
       let r1: boolean = view.includes(30);
@@ -924,14 +924,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6200
-     * @tc.name int8ArraySubarrayPart04Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4400
+     * @tc.name int8ArraySubarrayPart04Test044
      * @tc.desc Verify subarray + find
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 10, 15, 20, 25]);
       let view: Int8Array = arr.subarray(0, 5);
       let found = view.find((v: number, i: int, a: Int8Array): boolean => {
@@ -941,14 +941,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6300
-     * @tc.name int8ArraySubarrayPart04Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4500
+     * @tc.name int8ArraySubarrayPart04Test045
      * @tc.desc Verify subarray + findIndex
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 10, 15, 20, 25]);
       let view: Int8Array = arr.subarray(0, 5);
       let idx: int = view.findIndex((v: number, i: int, a: Int8Array): boolean => {
@@ -958,14 +958,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6400
-     * @tc.name int8ArraySubarrayPart04Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4600
+     * @tc.name int8ArraySubarrayPart04Test046
      * @tc.desc Verify subarray + filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(0, 6);
       let filtered: Int8Array = view.filter((v: number, i: int, a: Int8Array): boolean => {
@@ -980,14 +980,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6500
-     * @tc.name int8ArraySubarrayPart04Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4700
+     * @tc.name int8ArraySubarrayPart04Test047
      * @tc.desc Verify subarray + reduce
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 5);
       let sum: number = view.reduce((acc: number, v: number, i: int, a: Int8Array) => {
@@ -997,14 +997,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6600
-     * @tc.name int8ArraySubarrayPart04Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4800
+     * @tc.name int8ArraySubarrayPart04Test048
      * @tc.desc Verify subarray + join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       let r1: string = view.join('-');
@@ -1013,14 +1013,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6700
-     * @tc.name int8ArraySubarrayPart04Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_4900
+     * @tc.name int8ArraySubarrayPart04Test049
      * @tc.desc Verify subarray + entries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let view: Int8Array = arr.subarray(1, 3);
       let iter = view.entries();
@@ -1033,14 +1033,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6800
-     * @tc.name int8ArraySubarrayPart04Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5000
+     * @tc.name int8ArraySubarrayPart04Test050
      * @tc.desc Verify subarray + keys
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let view: Int8Array = arr.subarray(1, 3);
       let iter = view.keys();
@@ -1053,14 +1053,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6900
-     * @tc.name int8ArraySubarrayPart04Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5100
+     * @tc.name int8ArraySubarrayPart04Test051
      * @tc.desc Verify subarray + values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40]);
       let view: Int8Array = arr.subarray(1, 3);
       let iter = view.values();
@@ -1073,14 +1073,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7000
-     * @tc.name int8ArraySubarrayPart04Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5200
+     * @tc.name int8ArraySubarrayPart04Test052
      * @tc.desc Verify subarray leaves original elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let before0: number = arr.$_get(0);
       let before4: number = arr.$_get(4);
@@ -1094,14 +1094,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7100
-     * @tc.name int8ArraySubarrayPart04Test071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5300
+     * @tc.name int8ArraySubarrayPart04Test053
      * @tc.desc Verify subarray view length three keeps source length six
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(1, 4);
       let r1: int = view.length;
@@ -1113,14 +1113,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7200
-     * @tc.name int8ArraySubarrayPart04Test072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5400
+     * @tc.name int8ArraySubarrayPart04Test054
      * @tc.desc Verify subarray view set keeps view length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 3);
       let lenBefore: int = view.length;
@@ -1131,14 +1131,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7300
-     * @tc.name int8ArraySubarrayPart04Test073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5500
+     * @tc.name int8ArraySubarrayPart04Test055
      * @tc.desc Verify subarray view set preserves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 4);
       let offBefore: int = view.byteOffset;
@@ -1149,14 +1149,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7400
-     * @tc.name int8ArraySubarrayPart04Test074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5600
+     * @tc.name int8ArraySubarrayPart04Test056
      * @tc.desc Verify $_set on empty subarray throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(1, 1);
       try {
@@ -1174,14 +1174,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7500
-     * @tc.name int8ArraySubarrayPart04Test075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5700
+     * @tc.name int8ArraySubarrayPart04Test057
      * @tc.desc Verify subarray() creates view sharing the same underlying ArrayBuffer with equal length and elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 5);
       let r1: int = view.length;
@@ -1196,14 +1196,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7600
-     * @tc.name int8ArraySubarrayPart04Test076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5800
+     * @tc.name int8ArraySubarrayPart04Test058
      * @tc.desc Verify subarray view after fill() mutates original array via shared buffer across halves
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 0, 0, 0, 0, 0]);
       let viewLeft: Int8Array = arr.subarray(0, 3);
       let viewRight: Int8Array = arr.subarray(3, 6);
@@ -1218,14 +1218,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7700
-     * @tc.name int8ArraySubarrayPart04Test077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_5900
+     * @tc.name int8ArraySubarrayPart04Test059
      * @tc.desc Verify subarray() creates view sharing the same underlying ArrayBuffer on split ranges
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let viewLeft: Int8Array = arr.subarray(0, 3);
       let viewRight: Int8Array = arr.subarray(3, 6);
@@ -1240,14 +1240,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7800
-     * @tc.name int8ArraySubarrayPart04Test078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6000
+     * @tc.name int8ArraySubarrayPart04Test060
      * @tc.desc Verify subarray nested views share original buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let child: Int8Array = arr.subarray(1, 4);
       let grand: Int8Array = child.subarray(0, 2);
@@ -1260,14 +1260,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_7900
-     * @tc.name int8ArraySubarrayPart04Test079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6100
+     * @tc.name int8ArraySubarrayPart04Test061
      * @tc.desc Verify subarray + slice slice buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let view: Int8Array = arr.subarray(0, 5);
       let copy: Int8Array = view.slice(0, 3);
@@ -1281,14 +1281,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_8000
-     * @tc.name int8ArraySubarrayPart04Test080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6200
+     * @tc.name int8ArraySubarrayPart04Test062
      * @tc.desc Verify subarray set Int8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 0, 0, 0, 0]);
       let view: Int8Array = arr.subarray(1, 4);
       let src: Int8Array = new Int8Array([7, 8, 9]);
@@ -1302,14 +1302,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_8100
-     * @tc.name int8ArraySubarrayPart04Test081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6300
+     * @tc.name int8ArraySubarrayPart04Test063
      * @tc.desc Verify subarray view fill middle of parent range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6, 7]);
       let view: Int8Array = arr.subarray(1, 6);
       view.fill(0, 1, 3);
@@ -1328,14 +1328,14 @@ export default function int8ArraySubarrayPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_8200
-     * @tc.name int8ArraySubarrayPart04Test082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SUBARRAY_PART04_TEST_6400
+     * @tc.name int8ArraySubarrayPart04Test064
      * @tc.desc Verify subarray view copyWithin duplicates head of range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySubarrayPart04Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySubarrayPart04Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5, 6]);
       let view: Int8Array = arr.subarray(0, 5);
       view.copyWithin(2, 0, 2);

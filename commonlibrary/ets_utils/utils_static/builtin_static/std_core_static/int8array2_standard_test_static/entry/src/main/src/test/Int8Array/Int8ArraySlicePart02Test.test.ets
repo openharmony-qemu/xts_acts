@@ -69,14 +69,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0300
-     * @tc.name int8ArraySlicePart02Test003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0200
+     * @tc.name int8ArraySlicePart02Test002
      * @tc.desc Verify slice(0, 0) returns empty Int8Array copy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(0, 0);
       let resultLen: int = result.length;
@@ -86,14 +86,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0400
-     * @tc.name int8ArraySlicePart02Test004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0300
+     * @tc.name int8ArraySlicePart02Test003
      * @tc.desc Verify slice(0, 100) copies all five elements when end is out of bounds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(0, 100);
       let bytesPerElement: int = result.BYTES_PER_ELEMENT;
@@ -106,14 +106,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0500
-     * @tc.name int8ArraySlicePart02Test005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0400
+     * @tc.name int8ArraySlicePart02Test004
      * @tc.desc Verify slice(100, 200) begin out-of-bounds returns empty Int8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(100, 200);
       let bytesPerElement: int = result.BYTES_PER_ELEMENT;
@@ -126,14 +126,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1400
-     * @tc.name int8ArraySlicePart02Test014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0500
+     * @tc.name int8ArraySlicePart02Test005
      * @tc.desc Verify slice(3, 1) start greater than end returns empty slice with length 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(3, 1);
       let sliceLength: int = result.length;
@@ -142,14 +142,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1500
-     * @tc.name int8ArraySlicePart02Test015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0600
+     * @tc.name int8ArraySlicePart02Test006
      * @tc.desc Verify slice containing -128 boundary value element returns correct value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([INT8_MIN, 1, 2]);
       let result: Int8Array = arr.slice(0, 1);
       let element0: number = result.$_get(0);
@@ -158,14 +158,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1600
-     * @tc.name int8ArraySlicePart02Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0700
+     * @tc.name int8ArraySlicePart02Test007
      * @tc.desc Verify slice containing 127 boundary value element returns correct value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([INT8_MAX, 1, 2]);
       let result: Int8Array = arr.slice(0, 1);
       let element0: number = result.$_get(0);
@@ -174,14 +174,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1700
-     * @tc.name int8ArraySlicePart02Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0800
+     * @tc.name int8ArraySlicePart02Test008
      * @tc.desc Verify slice containing 0 element returns correct value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([INT8_ZERO, 1, 2]);
       let result: Int8Array = arr.slice(0, 1);
       let element0: number = result.$_get(0);
@@ -190,14 +190,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1800
-     * @tc.name int8ArraySlicePart02Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_0900
+     * @tc.name int8ArraySlicePart02Test009
      * @tc.desc Verify slice of array with all identical elements returns correct values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([7, 7, 7, 7]);
       let result: Int8Array = arr.slice(1, 3);
       let element0: number = result.$_get(0);
@@ -209,14 +209,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1900
-     * @tc.name int8ArraySlicePart02Test019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1000
+     * @tc.name int8ArraySlicePart02Test010
      * @tc.desc Verify slice containing truncated wrap-around value 200 rounds to -56 and returns correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([200, 1, 2]);
       let result: Int8Array = arr.slice(0, 1);
       let element0: number = result.$_get(0);
@@ -225,14 +225,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2300
-     * @tc.name int8ArraySlicePart02Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1100
+     * @tc.name int8ArraySlicePart02Test011
      * @tc.desc Verify slice(1, 3) return value byteOffset equals 0 indicating copy starts from new buffer origin
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(1, 3);
       let byteOffsetValue: int = result.byteOffset;
@@ -241,14 +241,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2400
-     * @tc.name int8ArraySlicePart02Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1200
+     * @tc.name int8ArraySlicePart02Test012
      * @tc.desc Verify slice() return value byteOffset equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice();
       let byteOffsetValue: int = result.byteOffset;
@@ -257,14 +257,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2500
-     * @tc.name int8ArraySlicePart02Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1300
+     * @tc.name int8ArraySlicePart02Test013
      * @tc.desc Verify slice(-2) negative index slice return value byteOffset equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(-2);
       let byteOffsetValue: int = result.byteOffset;
@@ -273,14 +273,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2600
-     * @tc.name int8ArraySlicePart02Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1400
+     * @tc.name int8ArraySlicePart02Test014
      * @tc.desc Verify slice return value length equals byteLength since Int8Array has 1 byte per element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(0, 3);
       let sliceLength: int = result.length;
@@ -289,14 +289,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2700
-     * @tc.name int8ArraySlicePart02Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1500
+     * @tc.name int8ArraySlicePart02Test015
      * @tc.desc Verify slice(-2) return value length equals 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(-2);
       let sliceLength: int = result.length;
@@ -305,14 +305,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2800
-     * @tc.name int8ArraySlicePart02Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1600
+     * @tc.name int8ArraySlicePart02Test016
      * @tc.desc Verify original array length unchanged after slice()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let resultVal1: Int8Array = arr.slice();
       let expectedVal1: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
@@ -323,14 +323,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_3600
-     * @tc.name int8ArraySlicePart02Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1700
+     * @tc.name int8ArraySlicePart02Test017
      * @tc.desc Verify original array elements remain unchanged after multiple slice calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let resultVal1: Int8Array = arr.slice();
       let expectedVal1: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
@@ -350,14 +350,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_3700
-     * @tc.name int8ArraySlicePart02Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1800
+     * @tc.name int8ArraySlicePart02Test018
      * @tc.desc Verify original array buffer reference unchanged after slice()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let bufBefore: ArrayBuffer = arr.buffer;
       let resultVal1: Int8Array = arr.slice();
@@ -369,14 +369,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_3800
-     * @tc.name int8ArraySlicePart02Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_1900
+     * @tc.name int8ArraySlicePart02Test019
      * @tc.desc Verify original array buffer.byteLength unchanged after slice()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let resultVal1: Int8Array = arr.slice();
       let expectedVal1: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
@@ -387,14 +387,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4200
-     * @tc.name int8ArraySlicePart02Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2000
+     * @tc.name int8ArraySlicePart02Test020
      * @tc.desc Verify slice().slice() chained copy equals original values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice().slice();
       let bytesPerElement: int = result.BYTES_PER_ELEMENT;
@@ -407,14 +407,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4300
-     * @tc.name int8ArraySlicePart02Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2100
+     * @tc.name int8ArraySlicePart02Test021
      * @tc.desc Verify slice(1).slice(1) chained return value is correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(1).slice(1);
       let element0: number = result.$_get(0);
@@ -423,14 +423,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4400
-     * @tc.name int8ArraySlicePart02Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2200
+     * @tc.name int8ArraySlicePart02Test022
      * @tc.desc Verify slice().slice().slice() triple chained length is correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice().slice().slice();
       let sliceLength: int = result.length;
@@ -439,14 +439,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4500
-     * @tc.name int8ArraySlicePart02Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2300
+     * @tc.name int8ArraySlicePart02Test023
      * @tc.desc Verify slice(0, 3).slice(0, 1) chained return value is correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(0, 3).slice(0, 1);
       let element0: number = result.$_get(0);
@@ -455,14 +455,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4600
-     * @tc.name int8ArraySlicePart02Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2400
+     * @tc.name int8ArraySlicePart02Test024
      * @tc.desc Verify slice(0, 3) copy buffer.byteLength equals slice length 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(0, 3);
       let bufferByteLength: int = result.buffer.byteLength;
@@ -471,14 +471,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4700
-     * @tc.name int8ArraySlicePart02Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2500
+     * @tc.name int8ArraySlicePart02Test025
      * @tc.desc Verify slice(1, 3) copy buffer.byteLength equals slice length 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(1, 3);
       let bufferByteLength: int = result.buffer.byteLength;
@@ -487,14 +487,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4800
-     * @tc.name int8ArraySlicePart02Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2600
+     * @tc.name int8ArraySlicePart02Test026
      * @tc.desc Verify slice() copy buffer.byteLength equals original buffer.byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice();
       let bufferByteLength: int = result.buffer.byteLength;
@@ -503,14 +503,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_4900
-     * @tc.name int8ArraySlicePart02Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2700
+     * @tc.name int8ArraySlicePart02Test027
      * @tc.desc Verify slice(0, 0) copy buffer.byteLength equals 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(0, 0);
       let bufferByteLength: int = result.buffer.byteLength;
@@ -519,14 +519,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_5000
-     * @tc.name int8ArraySlicePart02Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2800
+     * @tc.name int8ArraySlicePart02Test028
      * @tc.desc Verify slice() copy buffer.byteLength equals original array byteLength 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice();
       let bufferByteLength: int = result.buffer.byteLength;
@@ -535,14 +535,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_5100
-     * @tc.name int8ArraySlicePart02Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_2900
+     * @tc.name int8ArraySlicePart02Test029
      * @tc.desc Verify three slice calls produce mutually independent copies by cross-mutation checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let r1: Int8Array = arr.slice();
       let r2: Int8Array = arr.slice();
@@ -561,14 +561,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_5200
-     * @tc.name int8ArraySlicePart02Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_3000
+     * @tc.name int8ArraySlicePart02Test030
      * @tc.desc Verify slice copy buffer byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let result: Int8Array = arr.slice(0, 3);
       result.$_set(0, 99);
@@ -578,14 +578,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_5300
-     * @tc.name int8ArraySlicePart02Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_3100
+     * @tc.name int8ArraySlicePart02Test031
      * @tc.desc Verify two slice(0, 3) calls produce independent copies by mutating one and checking other unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let r1: Int8Array = arr.slice(0, 3);
       let r2: Int8Array = arr.slice(0, 3);
@@ -596,14 +596,14 @@ export default function int8ArraySlicePart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_5400
-     * @tc.name int8ArraySlicePart02Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_SLICE_PART02_3200
+     * @tc.name int8ArraySlicePart02Test032
      * @tc.desc Verify slice copy byteOffset is still 0 when original array byteOffset is nonzero from offset buffer view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArraySlicePart02Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArraySlicePart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let arr: Int8Array = new Int8Array(buf, 2, 5);
       let result: Int8Array = arr.slice();
