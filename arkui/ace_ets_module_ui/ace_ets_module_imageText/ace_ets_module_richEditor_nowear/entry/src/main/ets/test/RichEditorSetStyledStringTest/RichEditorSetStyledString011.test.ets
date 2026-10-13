@@ -75,9 +75,9 @@ export default function RichEditorSetStyledString011() {
       let image_top = await driver.findComponent(ON.id('image_top'));
       await image_top.click();
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, 0, displayID);
       await CommonFunc.sleep(500);
       let onCopyCall = await driver.findComponent(ON.id('onCopyCall'));
       let onCopyCallText = await onCopyCall.getText();
@@ -97,7 +97,7 @@ export default function RichEditorSetStyledString011() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0021',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0021 START');
       let driver = Driver.create();
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);
       let onPasteCall = await driver.findComponent(ON.id('onPasteCall'));
       let onPasteCallText = await onPasteCall.getText();
@@ -117,9 +117,9 @@ export default function RichEditorSetStyledString011() {
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0023',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_0023 START');
       let driver = Driver.create();
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_X, 0, displayID);
       await CommonFunc.sleep(500);
       let onCut = await driver.findComponent(ON.id('onCut'));
       let onCutText = await onCut.getText();

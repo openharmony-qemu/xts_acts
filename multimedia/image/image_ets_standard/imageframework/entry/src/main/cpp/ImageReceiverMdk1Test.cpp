@@ -343,6 +343,35 @@ napi_value JsImageFormatJPEG(napi_env env, napi_callback_info info)
     return ret;
 }
 
+napi_value JsImageComponentFormatEnum(napi_env env, napi_callback_info info)
+{
+    napi_value ret = nullptr;
+    
+    const int32_t yuvYValue = 1;
+    const int32_t yuvUValue = 2;
+    const int32_t yuvVValue = 3;
+    const int32_t jpegValue = 4;
+    
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y != yuvYValue) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_U != yuvUValue) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    if (OHOS_IMAGE_COMPONENT_FORMAT_YUV_V != yuvVValue) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    if (OHOS_IMAGE_COMPONENT_FORMAT_JPEG != jpegValue) {
+        napi_create_int32(env, -1, &ret);
+        return ret;
+    }
+    napi_create_int32(env, 0, &ret);
+    return ret;
+}
+
 napi_value JsImageComponentFormatYUVY(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -363,7 +392,16 @@ napi_value JsImageComponentFormatYUVY(napi_env env, napi_callback_info info)
 
     struct OhosImageComponent component;
     int32_t res = OH_Image_GetComponent(native, OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y, &component);
-    
+    if (component.byteBuffer != nullptr &&
+        component.size > 0 &&
+        component.componentType == OHOS_IMAGE_COMPONENT_FORMAT_YUV_Y &&
+        component.rowStride > 0 &&
+        component.pixelStride > 0) {
+        LOG("Component data is valid and can be processed");
+    } else {
+        LOG("Component data is invalid, returning error result");
+        return result;
+    }
     int32_t resultValue = res == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);
@@ -389,6 +427,16 @@ napi_value JsImageComponentFormatYUVU(napi_env env, napi_callback_info info)
 
     struct OhosImageComponent component;
     int32_t res = OH_Image_GetComponent(native, OHOS_IMAGE_COMPONENT_FORMAT_YUV_U, &component);
+    if (component.byteBuffer != nullptr &&
+        component.size > 0 &&
+        component.componentType == OHOS_IMAGE_COMPONENT_FORMAT_YUV_U &&
+        component.rowStride > 0 &&
+        component.pixelStride > 0) {
+        LOG("Component data is valid and can be processed");
+    } else {
+        LOG("Component data is invalid, returning error result");
+        return result;
+    }
     
     int32_t resultValue = res == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
@@ -414,6 +462,16 @@ napi_value JsImageComponentFormatYUVV(napi_env env, napi_callback_info info)
     }
     struct OhosImageComponent component;
     int32_t res = OH_Image_GetComponent(native, OHOS_IMAGE_COMPONENT_FORMAT_YUV_V, &component);
+    if (component.byteBuffer != nullptr &&
+        component.size > 0 &&
+        component.componentType == OHOS_IMAGE_COMPONENT_FORMAT_YUV_V &&
+        component.rowStride > 0 &&
+        component.pixelStride > 0) {
+        LOG("Component data is valid and can be processed");
+    } else {
+        LOG("Component data is invalid, returning error result");
+        return result;
+    }
     
     int32_t resultValue = res == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
@@ -440,6 +498,16 @@ napi_value JsImageComponentFormatJPEG(napi_env env, napi_callback_info info)
 
     struct OhosImageComponent component;
     int32_t res = OH_Image_GetComponent(native, OHOS_IMAGE_COMPONENT_FORMAT_JPEG, &component);
+    if (component.byteBuffer != nullptr &&
+        component.size > 0 &&
+        component.componentType == OHOS_IMAGE_COMPONENT_FORMAT_JPEG &&
+        component.rowStride > 0 &&
+        component.pixelStride > 0) {
+        LOG("Component data is valid and can be processed");
+    } else {
+        LOG("Component data is invalid, returning error result");
+        return result;
+    }
     
     int32_t resultValue = res == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
@@ -522,12 +590,23 @@ napi_value JsImageClipRect(napi_env env, napi_callback_info info)
     napi_get_undefined(env, &result);
 
     ImageNative* native = getNativeImage(env, info);
+    LOG("native is: %{public}p", native);
     if (native == nullptr) {
+        LOG("native is nullptr");
         return result;
     }
     struct OhosImageRect rect;
     int32_t res = OH_Image_ClipRect(native, &rect);
-
+    LOG("ClipRect res is: %{public}d", res);
+    if (rect.x >= 0 && rect.y >= 0 && rect.width > 0 && rect.height > 0) {
+        LOG("Rect satisfies all conditions");
+    } else {
+        LOG("Rect does not satisfy conditions");
+        if (rect.x < 0 || rect.y < 0 || rect.width <= 0 || rect.height <= 0) {
+            LOG("x coordinate is negative");
+            return result;
+        }
+    }
     int32_t resultValue = res == IMAGE_RESULT_SUCCESS ? 0 : -1;
     napi_value ret;
     napi_create_int32(env, resultValue, &ret);

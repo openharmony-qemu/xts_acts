@@ -95,15 +95,16 @@ struct FocusScopeId4 {
   }
 
   build() {
-    Column({space: 5} as ColumnOptions) {
+    Column({space: 2} as ColumnOptions) {
       Navigation(this.pageInfos) {
         Scroll() {
-          Column({ space: 5 } as ColumnOptions) {
-            Text('当前语言' + this.languageValue)
+          Column({ space: 2 } as ColumnOptions) {
+            Text('当前语言' + this.languageValue).fontSize(10)
 
-            Row({ space: 5 } as RowOptions) {
-              Button('ug(维吾尔语)')
+            Row({ space: 2 } as RowOptions) {
+              Button('ug')
                 .id('FocusScopeId4_ug')
+                .height(32)
                 .onClick((e: ClickEvent) => {
                   console.log('getAppPreferredLanguage last ' + i18n.System.getAppPreferredLanguage())
                   try {
@@ -117,8 +118,9 @@ struct FocusScopeId4 {
                   }
                 })
 
-              Button('zh-Hans(汉语)')
+              Button('zh-Hans')
                 .id('FocusScopeId4_zh')
+                .height(32)
                 .onClick((e: ClickEvent) => {
                   console.log('getAppPreferredLanguage last ' + i18n.System.getAppPreferredLanguage())
                   try {
@@ -134,9 +136,10 @@ struct FocusScopeId4 {
             }
 
             Text('焦点组5')
-            Column({ space: 5 } as ColumnOptions) {
+            Column({ space: 2 } as ColumnOptions) {
               Button('单栏')
                 .id('FocusScopeId4_btn1_5')
+                .height(32)
                 .onClick((e: ClickEvent) => {
                   this.modeValue = NavigationMode.Stack
                 })
@@ -144,6 +147,7 @@ struct FocusScopeId4 {
 
               Button('双栏')
                 .id('FocusScopeId4_btn2_5')
+                .height(32)
                 .onClick((e: ClickEvent) => {
                   this.modeValue = NavigationMode.Split
                 })
@@ -151,6 +155,7 @@ struct FocusScopeId4 {
 
               Button('pushPageOne')
                 .id('FocusScopeId4_btn3_5')
+                .height(32)
                 .onClick((e: ClickEvent) => {
                   const pathInfo = new NavPathInfo('pageOne', null);
                   this.pageInfos.pushPath(pathInfo);
@@ -161,25 +166,29 @@ struct FocusScopeId4 {
             .borderWidth(1)
 
 
-            Text('焦点组6，第三个按钮设置默认获焦')
-            Column({ space: 5 } as ColumnOptions) {
+            Text('焦点组6，默认获焦').fontSize(10)
+            Column({ space: 2 } as ColumnOptions) {
               Button('btn1').focusOnTouch(true)
                 .id('FocusScopeId4_btn1_6')
+                .height(32)
               Button('btn2').focusOnTouch(true)
                 .id('FocusScopeId4_btn2_6')
-              Button('defaultFocus:true').focusOnTouch(true).defaultFocus(true)
+                .height(32)
+              Button('defaultFocus').focusOnTouch(true).defaultFocus(true)
                 .id('FocusScopeId4_btn3_6')
+                .height(32)
             }
             .focusScopeId('FocusScopeId4_focusGroup6', true)
             .borderWidth(1)
 
             Button('clearFocus')
               .id('FocusScopeId4_clearFocus')
+              .height(32)
               .onClick((e: ClickEvent) => {
                 this.getUIContext().getFocusController().clearFocus()
               })
 
-            Button('btn').focusOnTouch(true)
+            Button('btn').focusOnTouch(true).height(32)
 
           }
         }

@@ -31,6 +31,7 @@ add_library(nativerender SHARED
     arcList/ArcListEventCallbackTest.cpp
     arcSwiper/ArcSwiperEventCallbackTest.cpp
     arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.cpp
+    dragEventSummary/DragEventSummaryTest.cpp
 )
 
  add_library(nativeNode SHARED 

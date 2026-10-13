@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
+import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import {
     setDelayRequestAndCloseWorkerInstantlyTest,
     gcAfterLockAsyncTest,

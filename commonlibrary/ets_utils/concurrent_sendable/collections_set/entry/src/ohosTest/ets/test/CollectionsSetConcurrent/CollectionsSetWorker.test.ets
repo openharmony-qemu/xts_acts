@@ -20,7 +20,7 @@ import {
   TestType,
   Size,
   Level, beforeEach
-} from '@ohos/hypium-dynamic';
+} from '@ohos/hypium';
 
 import {
   collections,

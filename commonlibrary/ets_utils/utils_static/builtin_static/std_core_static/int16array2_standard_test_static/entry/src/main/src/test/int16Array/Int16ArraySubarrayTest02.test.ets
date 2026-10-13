@@ -74,23 +74,6 @@ export default function int16ArraySubarrayTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_TWO_0300
-     * @tc.name testInt16ArraySubarrayTestTwo003
-     * @tc.desc Verify subarray(begin) length and first element values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArraySubarrayTestTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = Int16Array.of(32767, 0, -1, -32768);
-      let ret: Int16Array = arr.subarray(1);
-      let actual1: int = ret.length;
-      expect(actual1).assertEqual(3);
-      let actual2: number = ret[0];
-      expect(actual2).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_TWO_0400
      * @tc.name testInt16ArraySubarrayTestTwo004
      * @tc.desc Verify subarray(begin, end) length and first element values

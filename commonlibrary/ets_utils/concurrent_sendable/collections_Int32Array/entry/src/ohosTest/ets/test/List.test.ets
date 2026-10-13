@@ -19,10 +19,13 @@ import Int32ArrayConcurrentTest from './Concurrent/Int32ArrayConcurrent.test';
 import Int32ArrayNormalTest from './Normal/Int32ArrayNormal.test';
 import Int32ArrayTaskPoolTest from './TaskPool/Int32ArrayTaskPool.test';
 
+import IntIntArrayTest from './IntIntArrayTest.test'
 export default function testsuite() {
   Int32ArrayBasicTest();
   Int32ArrayAllTest();
   Int32ArrayConcurrentTest();
   Int32ArrayNormalTest();
   Int32ArrayTaskPoolTest();
+  
+  IntIntArrayTest();
 }

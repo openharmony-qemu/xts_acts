@@ -21,6 +21,8 @@ import window from '@ohos.window';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function CloseMask() {
   describe('CloseMask',  () =>{
     beforeEach(async (done:Function) =>{
@@ -61,7 +63,9 @@ export default function CloseMask() {
       await Button.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click(200,200);
+      // 涉及坐标
+      await driver.clickAt({ x: 200, y: 200, displayId: displayID });
+      // await driver.click(200,200);
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('CloseMaskText');

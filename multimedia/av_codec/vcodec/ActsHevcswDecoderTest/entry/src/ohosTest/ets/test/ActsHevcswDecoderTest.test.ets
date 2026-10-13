@@ -361,5 +361,26 @@ export default function abilityTest() {
         done();
       }
     });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_DEC_DMABUF_SUFFIX_0010
+     * @tc.number SUB_MULTIMEDIA_VIDEO_DEC_DMABUF_SUFFIX_0010
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_VIDEO_DEC_DMABUF_SUFFIX_0010', Level.LEVEL2, async (done: Function) => {
+      TAG = 'SUB_MULTIMEDIA_VIDEO_DEC_DMABUF_SUFFIX_0010';
+      try {
+        let result: number = hevcswDecoderNapi.VideoDecodeS265DmabufSuffix0010();
+        console.info(TAG + "test ret Result ===>" + result);
+        expect(result).assertEqual(0);
+        done();
+      } catch (err) {
+        console.error("===> " + TAG + "err:" + err);
+        expect().assertFail();
+        done();
+      }
+    });
   })
 }

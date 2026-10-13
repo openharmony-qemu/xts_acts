@@ -14,27 +14,38 @@
  */
 
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeEach, afterEach, it, expect, Level } from '@ohos/hypium-dynamic';
+import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import DialogApi26TestHelper from '../common/DialogApi26TestHelper';
+
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
 
 export default function ContextMenuGridStyle() {
   describe('ContextMenuGridStyle', () => {
     beforeEach(async (done: Function) => {
       console.info('[ARKUI_DYN] ContextMenuGridStyle beforeEach');
-      await DialogApi26TestHelper.openPageIfNeeded('ContextMenuGridStyle', 'MainAbility/pages/menu/ContextMenuGridStyle');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/menu/ContextMenuGridStyle'
+      };
+      try {
+        router.clear();
+        let pages = router.getState();
+        if (pages.name !== 'ContextMenuGridStyle') {
+          await router.pushUrl(options);
+          await CommonFunc.sleep(2000);
+        }
+      } catch (err) {
+        console.error('[ARKUI_DYN] push ContextMenuGridStyle error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
 
     afterEach(async () => {
+      await CommonFunc.sleep(800);
       console.info('[ARKUI_DYN] ContextMenuGridStyle afterEach');
     });
-    afterAll(async () => {
-      await DialogApi26TestHelper.leavePage();
-      console.info('[ARKUI_DYN] ContextMenuGridStyle afterAll');
-    });
-
 
     /**
      * @tc.number SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0100
@@ -47,15 +58,15 @@ export default function ContextMenuGridStyle() {
     it('SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_grid_top'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('T_Copy'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0100 END');
       done();
     });
@@ -71,15 +82,15 @@ export default function ContextMenuGridStyle() {
     it('SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0200 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_grid_bottom'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('B_Paste'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0200 END');
       done();
     });
@@ -95,15 +106,15 @@ export default function ContextMenuGridStyle() {
     it('SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0300 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_grid_count2'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('C2_Cut'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0300 END');
       done();
     });
@@ -119,15 +130,15 @@ export default function ContextMenuGridStyle() {
     it('SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0400 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_grid_count4'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('C4_Share'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0400 END');
       done();
     });
@@ -143,15 +154,15 @@ export default function ContextMenuGridStyle() {
     it('SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0500', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0500 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_grid_hsize'));
       expect(btn !== null).assertTrue();
       await btn.click();
       await CommonFunc.sleep(1000);
       let node = await driver.findComponent(ON.text('H_Select'));
       expect(node !== null).assertTrue();
-      await driver.pressBack();
-      await CommonFunc.sleep(200);
+      await driver.pressBack(displayID);
+      await CommonFunc.sleep(500);
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0500 END');
       done();
     });
@@ -167,7 +178,7 @@ export default function ContextMenuGridStyle() {
     it('SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0600', Level.LEVEL2, async (done: Function) => {
       console.info('[ARKUI_DYN] SUB_ArkUI_DialogApi26_ContextMenuGridStyle_0600 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let btn = await driver.findComponent(ON.id('btn_grid_combined'));
       expect(btn !== null).assertTrue();
       await btn.click();
@@ -176,7 +187,7 @@ export default function ContextMenuGridStyle() {
       expect(node !== null).assertTrue();
       let item = await driver.findComponent(ON.text('M_Favorite'));
       await item.click();
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(800);
       let label = await driver.findComponent(ON.id('grid_last_action'));
       let txt = await label.getText();
       expect(txt === 'last=M_Favorite').assertTrue();

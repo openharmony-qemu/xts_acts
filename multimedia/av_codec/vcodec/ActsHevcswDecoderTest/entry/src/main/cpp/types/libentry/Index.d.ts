@@ -33,3 +33,4 @@ export const VideoSwdecH265Speed0090Test: () => number;
 export const VideoSwdecH265SurfExpired0010Test: () => number;
 export const VideoSwdecH265SetMaxInputSize0010Test: () => number;
 export const VideoSwdecH265GetCropSize0010Test: () => number;
+export const VideoDecodeS265DmabufSuffix0010: () => number;

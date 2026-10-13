@@ -98,22 +98,22 @@ export default function OnTextSelectionChangeTest() {
       await CommonFunc.sleep(500);
       // 点击shift键(2047)+向右方向键(2015)
       try {
-        await driver.triggerCombineKeys(2047, 2015, displayID);
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
       try {
-        await driver.triggerCombineKeys(2047, 2015, displayID);
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
       try {
-        await driver.triggerCombineKeys(2047, 2015, displayID);
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
       try {
-        await driver.triggerCombineKeys(2047, 2015, displayID);
+        await driver.triggerCombineKeys(2047, 2015, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }

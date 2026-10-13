@@ -449,5 +449,19 @@ export default function fontManagerScopeFontTest():void {
         expect((error as BusinessError).code).assertEqual(ERR_INVALID_PARAM);
       }
     });
+
+    /**
+     * @tc.name   test_onServiceDied_2900
+     * @tc.number SUB_Global_FontManager_OnServiceDied_Static_JS_2900
+     * @tc.desc   test onServiceDied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('test_onServiceDied_2900', Level.LEVEL2, () => {
+      let value = validObserver.onServiceDied();
+      expect(value).assertEqual(undefined);
+    });
+
   });
 }

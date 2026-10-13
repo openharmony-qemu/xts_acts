@@ -20,6 +20,7 @@ import Int8ArrayConcurrentTestConcurrent from './Concurrent/Int8ArrayConcurrent.
 import Int8ArrayNormalTest from './Normal/Int8ArrayNormal.test';
 import Int8ArrayTaskPoolTest from './TaskPool/Int8ArrayTaskPool.test';
 
+import IntByteArrayTest from './intArray/IntByteArrayTest.test'
 export default function testsuite() {
   Int8ArrayBasicTest();
   Int8ArrayConcurrentTest();
@@ -27,4 +28,6 @@ export default function testsuite() {
   Int8ArrayConcurrentTestConcurrent();
   Int8ArrayNormalTest();
   Int8ArrayTaskPoolTest();
+  
+  IntByteArrayTest();
 }

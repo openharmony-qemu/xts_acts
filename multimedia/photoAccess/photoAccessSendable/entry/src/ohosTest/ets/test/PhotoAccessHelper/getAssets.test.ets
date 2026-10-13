@@ -25,7 +25,8 @@ import {
   fetchOption,
   sleep,
   getPermission,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function getAssetsTest() {
@@ -41,6 +42,7 @@ export default function getAssetsTest() {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

@@ -68,7 +68,7 @@ struct PopupCommonOptionsColorMode {
   }
 
   build() {
-    Column({ space: 12 }) {
+    Column() {
       Text('PopupCommonOptions.colorMode').fontSize(18).fontWeight(FontWeight.Bold)
       WithTheme({ colorMode: ThemeColorMode.LIGHT }) {
         Column({ space: 10 }) {

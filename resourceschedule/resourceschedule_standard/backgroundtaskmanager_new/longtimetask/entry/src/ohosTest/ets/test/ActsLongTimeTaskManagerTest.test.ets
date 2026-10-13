@@ -2196,6 +2196,34 @@ export default function LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_2100 end---');
     })
 
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900
+     * @tc.desc   Test that the backgroundTaskManager enum ContinuousTaskDetailedCancelReason of SYSTEM_CANCEL_NOT_USE_NEARLINK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900 begin---');
+
+        try {
+          let type: number = backgroundTaskManager.ContinuousTaskDetailedCancelReason.SYSTEM_CANCEL_NOT_USE_NEARLINK;
+          console.info('SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900 ContinuousTaskDetailedCancelReason: ' + type);
+          expect(type).assertEqual(15);
+          done();
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(e));
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '---SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_XTS_3900 end---');
+    })
+
   })
 }
+
 

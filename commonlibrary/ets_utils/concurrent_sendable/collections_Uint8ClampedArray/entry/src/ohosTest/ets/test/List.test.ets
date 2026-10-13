@@ -20,6 +20,9 @@ import Uint8ClampedArrayConcurrentTestConcurrent from './Concurrent/Uint8Clamped
 import Uint8ClampedArrayNormalTest from './Normal/Uint8ClampedArrayNormal.test';
 import Uint8ClampedArrayTaskPoolTest from './TaskPool/Uint8ClampedArrayTaskPool.test';
 
+import UintByteClampedArrayConcurrentTest from './uintArray/UintByteClampedArrayConcurrentTest.test';
+import UintByteClampedArrayCtorTest from './uintArray/UintByteClampedArrayCtorTest.test';
+import UintByteClampedArrayMethodTest from './uintArray/UintByteClampedArrayMethodTest.test';
 export default function testsuite() {
   Uint8ClampedArrayBasicTest();
   Uint8ClampedArrayConcurrentTest();
@@ -27,4 +30,7 @@ export default function testsuite() {
   Uint8ClampedArrayConcurrentTestConcurrent();
   Uint8ClampedArrayNormalTest();
   Uint8ClampedArrayTaskPoolTest();
+  UintByteClampedArrayConcurrentTest();
+  UintByteClampedArrayCtorTest();
+  UintByteClampedArrayMethodTest();
 }

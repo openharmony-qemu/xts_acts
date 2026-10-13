@@ -27,24 +27,28 @@ const PAGE_URL = 'MainAbility/pages/coverage/TabsApiCoverageStatic';
 
 export default function tabsApiCoverageStaticTest(): void {
   describe('tabsApiCoverageStaticTest', () => {
-    beforeEach(() => {
+    beforeEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} beforeEach start`);
+      const options: router.RouterOptions = {
+        url: PAGE_URL,
+      };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         const pages = routerInstance.getState();
         if (pages.name !== 'TabsApiCoverageStatic') {
-          const options: router.RouterOptions = {
-            url: PAGE_URL,
-          };
-          routerInstance.replaceUrl(options);
+          routerInstance.clear();
+          await Utils.sleep(400);
+          await routerInstance.pushUrl(options);
+          await Utils.sleep(2500);
         }
       } catch (err) {
         console.info(`${LOG_TAG} beforeEach navigate soft-fail: ${err}`);
       }
     });
 
-    afterEach(() => {
+    afterEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} afterEach`);
+      await Utils.sleep(300);
     });
 
     /**

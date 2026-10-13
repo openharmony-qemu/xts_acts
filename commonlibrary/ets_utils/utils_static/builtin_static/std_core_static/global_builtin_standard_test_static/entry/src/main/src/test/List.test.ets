@@ -26,6 +26,18 @@ import GlobalParseIntTest from "./global/GlobalParseIntTest.test";
 import GlobalSetIntervalTest from "./global/GlobalSetIntervalTest.test";
 import GlobalSetTimeoutTest from "./global/GlobalSetTimeoutTest.test";
 
+import GlobalClearIntervalPart_1Test from "./global/GlobalClearIntervalPart1Test.test";
+import GlobalClearTimeoutPart_1Test from "./global/GlobalClearTimeoutPart1Test.test";
+import GlobalConstantPart_1Test from "./global/GlobalConstantPart1Test.test";
+import GlobalIsFinitePart_1Test from "./global/GlobalIsFinitePart1Test.test";
+import GlobalIsIntegerPart_1Test from "./global/GlobalIsIntegerPart1Test.test";
+import GlobalIsNaNPart_1Test from "./global/GlobalIsNaNPart1Test.test";
+import GlobalIsSafeIntegerPart_1Test from "./global/GlobalIsSafeIntegerPart1Test.test";
+import GlobalParseFloatPart_1Test from "./global/GlobalParseFloatPart1Test.test";
+import GlobalParseIntPart_1Test from "./global/GlobalParseIntPart1Test.test";
+import GlobalSetIntervalPart_1Test from "./global/GlobalSetIntervalPart1Test.test";
+import GlobalSetTimeoutPart_1Test from "./global/GlobalSetTimeoutPart1Test.test";
+
 export default function testsuite(): void {
   GlobalClearIntervalTest();
   GlobalClearTimeoutTest();
@@ -38,4 +50,16 @@ export default function testsuite(): void {
   GlobalParseIntTest();
   GlobalSetIntervalTest();
   GlobalSetTimeoutTest();
+
+  GlobalClearIntervalPart_1Test();
+  GlobalClearTimeoutPart_1Test();
+  GlobalConstantPart_1Test();
+  GlobalIsFinitePart_1Test();
+  GlobalIsIntegerPart_1Test();
+  GlobalIsNaNPart_1Test();
+  GlobalIsSafeIntegerPart_1Test();
+  GlobalParseFloatPart_1Test();
+  GlobalParseIntPart_1Test();
+  GlobalSetIntervalPart_1Test();
+  GlobalSetTimeoutPart_1Test();
 }

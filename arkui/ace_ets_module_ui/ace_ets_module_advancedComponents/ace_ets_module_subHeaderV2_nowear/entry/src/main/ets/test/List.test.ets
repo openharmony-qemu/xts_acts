@@ -15,8 +15,10 @@
 
 import subHeaderV2Select from './api18/subHeaderV2Select.test';
 import subHeaderV2Select23 from './api23/subHeaderV2Select23.test';
+import subHeaderV2EndIcon from './SubHeaderV2EndIcon.test';
 
 export default function testsuite() {
   subHeaderV2Select();
   subHeaderV2Select23();
+  subHeaderV2EndIcon();
 }

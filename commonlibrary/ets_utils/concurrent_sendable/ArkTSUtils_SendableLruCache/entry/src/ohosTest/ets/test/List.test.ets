@@ -27,6 +27,29 @@ import sendableLruCacheCountsTest from './SendableLruCacheCounts.test';
 import sendableLruCacheCreateDefaultTest from './SendableLruCacheCreateDefault.test';
 import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent.test';
 
+import sendableLruCacheBasicTest from './SendableLruCacheBase/SendableLruCacheBasicTypes.test';
+import sendableLruCacheBoundaryTest from './SendableLruCacheBase/SendableLruCacheBoundaryCases.test';
+import sendableLruCacheCompositeTest from './SendableLruCacheBase/SendableLruCacheComplexTypes.test';
+import sendableLruCacheErrorTest from './SendableLruCacheBase/SendableLruCacheError.test';
+import sendableLruCacheSpecialTest from './SendableLruCacheBase/SendableLruCacheSpecial.test';
+import sendableLruCacheNullableTest from './SendableLruCacheBase/SendableLruCacheNullableTest.test';
+import sendableLruCacheBigintTest from './SendableLruCacheBase/Typetest/SendableLruCacheBigintTest.test';
+import sendableLruCacheBooleanTest from './SendableLruCacheBase/Typetest/SendableLruCacheBooleanTest.test';
+import sendableLruCacheConcurrencyTest from './SendableLruCacheBase/Typetest/SendableLruCacheConcurrencyTest.test';
+import sendableLruCacheNonSendableTest from './SendableLruCacheBase/Typetest/SendableLruCacheNonSendableTest.test';
+import sendableLruCacheNumberTest from './SendableLruCacheBase/Typetest/SendableLruCacheNumberTest.test';
+import sendableLruCacheSendableTest from './SendableLruCacheBase/Typetest/SendableLruCacheSendableTest.test';
+import sendableLruCacheStringTest from './SendableLruCacheBase/Typetest/SendableLruCacheStringTest.test';
+import sendableLruCacheUnionTest from './SendableLruCacheBase/Typetest/SendableLruCacheUnionTest.test';
+import sendableLruCacheBatch1Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch1.test';
+import sendableLruCacheBatch2Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch2.test';
+import sendableLruCacheBatch3Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch3.test';
+import sendableLruCacheBatch4Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch4.test';
+
+import sendableLruCacheConcurrentSubTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
+import SendableLruCacheExpand1024Test from './SendableLruCacheConcurrent/SendableLruCacheExpand1024Test.test';
+import SendableExpand1024Test from './SendableLruCacheConcurrent/SendableExpand1024Test.test';
+
 export default function testsuite() {
   sendableLruCacheConstructorTest();
   sendableLruCachePutTest();
@@ -41,4 +64,27 @@ export default function testsuite() {
   sendableLruCacheCountsTest();
   sendableLruCacheCreateDefaultTest();
   sendableLruCacheConcurrentTest();
+  
+  sendableLruCacheBasicTest();
+  sendableLruCacheBoundaryTest();
+  sendableLruCacheCompositeTest();
+  sendableLruCacheErrorTest();
+  sendableLruCacheSpecialTest();
+  sendableLruCacheNullableTest();
+  sendableLruCacheBigintTest();
+  sendableLruCacheBooleanTest();
+  sendableLruCacheConcurrencyTest();
+  sendableLruCacheNonSendableTest();
+  sendableLruCacheNumberTest();
+  sendableLruCacheSendableTest();
+  sendableLruCacheStringTest();
+  sendableLruCacheUnionTest();
+  sendableLruCacheBatch1Test();
+  sendableLruCacheBatch2Test();
+  sendableLruCacheBatch3Test();
+  sendableLruCacheBatch4Test();
+  
+  sendableLruCacheConcurrentSubTest();
+  SendableLruCacheExpand1024Test();
+  SendableExpand1024Test();
 }

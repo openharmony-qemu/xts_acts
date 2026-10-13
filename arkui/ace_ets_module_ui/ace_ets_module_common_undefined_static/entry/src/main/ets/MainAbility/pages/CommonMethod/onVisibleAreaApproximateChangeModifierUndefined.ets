@@ -1,12 +1,12 @@
-'use static';
+'use static'
 import { Entry, Text, Column, Component, Button, ClickEvent, ColumnOptions, HorizontalAlign, FlexAlign, Color, Scroller, Scroll, ScrollState, Edge, Row, BarState, Margin, TextAlign, VisibleAreaChangeCallback, VisibleAreaEventOptions, Area, SizeOptions, ForEach, AttributeModifier, CommonAttribute } from '@ohos.arkui.component';
 import { State, Observed } from '@ohos.arkui.stateManagement';
 @Observed
 export class VisibleAreaChangeModifier implements AttributeModifier<CommonAttribute> {
-  public change: Boolean = true
-  public change2: Boolean = true
-  public testTextStr: string = 'test'
-  public testRowStr: string = 'test'
+  change: Boolean = true
+  change2: Boolean = true
+  testTextStr: string = 'test'
+  testRowStr: string = 'test'
 
   applyNormalAttribute(instance: CommonAttribute): void {
     if (this.change && this.change2) {
@@ -78,13 +78,13 @@ struct ScrollExample {
         Column() {
           Text('Test Text Visible Change')
             .fontSize(20)
-            .height(50)
+            .height('30%')
             .margin({ top: 10, bottom: 10 } as Margin)
             .attributeModifier(this.visibleModifier)
           ForEach(this.arr, (item: Int) => {
             Text('item' + item)
               .width('90%')
-              .height(150)
+              .height('15%')
               .fontSize(16)
               .textAlign(TextAlign.Center)
               .margin({ top: 10 } as Margin)

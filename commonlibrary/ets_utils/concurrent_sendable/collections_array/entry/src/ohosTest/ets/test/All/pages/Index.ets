@@ -15,7 +15,7 @@
 
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { Hypium } from '@ohos/hypium-dynamic';
+import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 
 @Entry

@@ -14,7 +14,7 @@
  */
 
 
-import { beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
 import * as Utils from '../utils/TestUtils';
 

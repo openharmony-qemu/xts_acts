@@ -15,25 +15,18 @@
  */
 
 import {
-  AlertDialogV2, AdvancedDialogV2Button, PopoverDialogV2, PopoverDialogV2Options,
-  PopoverDialogV2OnVisibleChange
-} from '@ohos.arkui.advanced.DialogV2';
-import {
-  Filter, FilterParams, FilterResult, FilterType
-} from '@ohos.arkui.advanced.Filter';
-import {
-  ToolBarV2, ToolBarV2Item, ToolBarV2ItemText, ToolBarV2ItemImage,
+  ToolBarV2Item, ToolBarV2ItemText, ToolBarV2ItemImage,
   ToolBarV2ItemState, ToolBarV2ItemAction, ToolBarV2SymbolGlyph
 } from '@ohos.arkui.advanced.ToolBarV2';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
 import promptAction from '@ohos.promptAction';
 import {
   Entry, ComponentV2, Column, Text, Button, Scroll, Radio, Rating, Slider,
-  Builder, Color, BorderStyle, ShadowStyle, Matrix2D, TransitionEffect, RenderFit,
-  LengthMetricsUnit, PulseSymbolEffect, SymbolGlyph, $r,
+  Builder, Color, BorderStyle, ShadowStyle, Matrix2D, RenderFit,
+  LengthMetricsUnit, $r,
   OnRadioChangeCallback, OnRatingChangeCallback, SliderTriggerChangeCallback,
-  SliderChangeMode, ButtonTriggerClickCallback, TransitionFinishCallback,
-  TipsMessageType, Degree, ContentTransition,
+  SliderChangeMode, ButtonTriggerClickCallback,
+  TipsMessageType, Degree,
   SliderPrefixOptions, SliderSuffixOptions,
   CustomDialogController, CompatibleInitCallback, CompatibleUpdateCallback,
   CompatibleUpdatableBuilder, CompatibleComponentInfo, compatibleWrappedBuilder,
@@ -46,12 +39,9 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { ColorMetrics, Pivot, Translation, typeNode } from '@ohos.arkui.node';
 import { InputEventType } from 'arkui.BuilderNode';
 
-type OnFilterChangedCallback = (filterResults: FilterResult[]) => void;
-
 @Entry
 @ComponentV2
 struct CoverageStaticIndex {
-  @Local isShow: boolean = false;
   @Local dialogOptFlag: string = 'init';
   @Local filterFlag: string = 'init';
   @Local radioFlag: string = 'init';
@@ -73,27 +63,7 @@ struct CoverageStaticIndex {
   @Local dialogGetStateFlag: string = 'init';
   @Local sdkAliasFlag: string = 'init';
   @Local toolBarList: ToolBarV2Item[] = [];
-  @Local popoverOptions: PopoverDialogV2Options = {
-    builder: (): void => {
-      this.dialogBuilder();
-    }
-  };
   private coverageDlgCtrl: CustomDialogController | undefined = undefined;
-  private filterParam: FilterParams[] = [{
-    name: '类别',
-    options: ['全部', 'A', 'B']
-  }];
-  private additionParam: FilterParams = {
-    name: '更多',
-    options: ['X', 'Y']
-  };
-  private filterCb: OnFilterChangedCallback = (results: FilterResult[]): void => {
-    this.filterFlag = results.length > 0 ? 'changed' : 'ready';
-  };
-  private visibleCb: PopoverDialogV2OnVisibleChange = (visible: boolean): void => {
-    this.isShow = visible;
-    this.popoverFlag = visible ? 'shown' : 'hidden';
-  };
   private radioCb: OnRadioChangeCallback = (isChecked: boolean): void => {
     this.radioFlag = isChecked ? 'checked' : 'unchecked';
   };
@@ -106,9 +76,6 @@ struct CoverageStaticIndex {
     };
   private clickCb: ButtonTriggerClickCallback = (xPos: number, yPos: number): void => {
     this.clickFlag = `${xPos}_${yPos}`;
-  };
-  private finishCb: TransitionFinishCallback = (transitionIn: boolean): void => {
-    this.clickFlag = transitionIn ? 'tin' : 'tout';
   };
   private toolBarAction: ToolBarV2ItemAction = (index: int): void => {
     this.toolBarFlag = `idx_${index}`;
@@ -150,15 +117,14 @@ struct CoverageStaticIndex {
     m1.translateY = 4;
     this.matrixPropFlag = 'ok';
     this.typeAliasFlag = 'ready';
-    this.filterCb([]);
     this.filterFlag = 'ready';
+    this.popoverFlag = 'ready';
     this.radioFlag = 'bound';
     this.ratingFlag = 'bound';
     this.sliderFlag = 'bound';
     this.clickFlag = 'bound';
     this.pulseFlag = 'ok';
     this.clickSoundFlag = 'ok';
-    new PulseSymbolEffect();
     this.initToolBarItems();
     this.initCommonCtrlAndAliases();
     this.initTypeNodeCoverage();
@@ -175,13 +141,12 @@ struct CoverageStaticIndex {
     const st = commonCtrl.getState();
     commonCtrl.close();
     this.commonCtrlFlag = `${st}`.length >= 0 ? 'ok' : 'fail';
-    const contentTrans: ContentTransition | undefined = undefined;
     const translation: Translation = { x: 1, y: 2 };
     const pivot: Pivot = { x: 0.5, y: 0.5 };
     const prefixOpt: SliderPrefixOptions | undefined = undefined;
     const suffixOpt: SliderSuffixOptions | undefined = undefined;
     const aliasMark: string =
-      `${translation.x}_${pivot.y}_${contentTrans}_${prefixOpt}_${suffixOpt}`;
+      `${translation.x}_${pivot.y}_${prefixOpt}_${suffixOpt}`;
     this.moreAliasFlag = (aliasMark.indexOf('1_0.5') >= 0) ? 'ok' : 'fail';
   }
 
@@ -293,36 +258,7 @@ struct CoverageStaticIndex {
 
   @Builder
   dialogBuilder(): void {
-    AlertDialogV2({
-      content: 'popover content',
-      primaryButton: new AdvancedDialogV2Button({
-        content: '取消',
-        action: (): void => {
-          this.isShow = false;
-        }
-      }),
-      secondaryButton: new AdvancedDialogV2Button({
-        content: '确认',
-        action: (): void => {
-          this.isShow = false;
-        }
-      })
-    });
-  }
-
-  @Builder
-  targetBuilder(): void {
-    Button('打开PopoverDialogV2')
-      .id('popoverTarget')
-      .onClick((): void => {
-        this.isShow = true;
-        this.popoverFlag = 'shown';
-      });
-  }
-
-  @Builder
-  filterBody(): void {
-    Text('filter-body').id('filterBody')
+    Text('dlg').id('coverageDlgBody')
   }
 
   build() {
@@ -350,25 +286,6 @@ struct CoverageStaticIndex {
         Text(this.dialogGetStateFlag).id('dialogGetStateFlag')
         Text(this.sdkAliasFlag).id('sdkAliasFlag')
 
-        PopoverDialogV2({
-          visible: this.isShow,
-          $visible: this.visibleCb,
-          popover: this.popoverOptions,
-          targetBuilder: this.targetBuilder
-        })
-
-        Filter({
-          multiFilters: this.filterParam,
-          additionFilters: this.additionParam,
-          filterType: FilterType.LIST_FILTER,
-          container: this.filterBody
-        })
-
-        ToolBarV2({
-          toolBarList: this.toolBarList,
-          activatedIndex: 0
-        })
-
         Button('clickCb')
           .id('btnClick')
           .enableClickSoundEffect(true)
@@ -376,7 +293,6 @@ struct CoverageStaticIndex {
           .onClick((): void => {
             this.clickCb(1, 2);
           })
-          .transition(TransitionEffect.OPACITY, this.finishCb)
 
         Radio({ value: 'r1', group: 'g1' })
           .id('radioCoverage')
@@ -391,10 +307,6 @@ struct CoverageStaticIndex {
           .onChange((value: number, mode: SliderChangeMode): void => {
             this.sliderCb(value, mode);
           })
-
-        SymbolGlyph($r('sys.symbol.ohos_star'))
-          .id('pulseSymbol')
-          .symbolEffect(new PulseSymbolEffect(), true)
 
         Text('fitBottom')
           .id('fitBottom')

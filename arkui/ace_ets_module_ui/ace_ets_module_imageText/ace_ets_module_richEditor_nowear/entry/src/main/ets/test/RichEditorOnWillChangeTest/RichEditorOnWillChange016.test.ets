@@ -87,7 +87,7 @@ export default function RichEditorOnWillChange016() {
 
       //撤销输入
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Z, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
@@ -108,7 +108,7 @@ export default function RichEditorOnWillChange016() {
 
       //还原输入
       try {
-        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y, displayID);
+        await driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_Y, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }

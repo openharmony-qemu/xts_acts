@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { PromiseAnyTest054 } from './promisejs';
 import { emptyObj, obj40, type12, type27, type90 } from './promisets';
 import { sleep } from './utils';

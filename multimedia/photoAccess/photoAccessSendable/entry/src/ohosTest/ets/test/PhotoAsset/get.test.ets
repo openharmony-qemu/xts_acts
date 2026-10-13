@@ -28,7 +28,8 @@ import {
   getAssetId,
   getFileAsset,
   isNum,
-  createResource
+  createResource,
+  checkResourceFile
 } from '../../util/common'
 
 export default function getTest () {
@@ -42,6 +43,7 @@ export default function getTest () {
       await getPermission();
       await sleep(10);
       await driveFn();
+      checkResourceFile(globalContext);
       await createResource(globalContext, fileNameList);
     });
 

@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
@@ -82,8 +83,12 @@ it('assertContain_static', Level.LEVEL0, async () => {
       console.info('[ProvideConsume0100Test_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
-      let btn: Component|null = await driver.findComponent(ON.id("click"));
+      let displayId:undefined|Int = 0;
+      let btn = await driver.findComponent(ON.id("click"));
       await CommonFunc.sleep(1000);
+      displayId = await btn?.getDisplayId()
+      await CommonFunc.sleep(1000);
+
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let btn1: Component|null = await driver.findComponent(ON.id("change"));
@@ -95,7 +100,10 @@ it('assertContain_static', Level.LEVEL0, async () => {
       await CommonFunc.sleep(1000);
       console.info("[ProvideConsume0100Test_001] component obj is: " + obj.getElement('$attrs').getString('content'));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('world')
-      await driver.pressBack()
+      if(displayId!=undefined){
+        await driver.pressBack(displayId as Int)
+      } 
+    
 
       let btn2: Component|null = await driver.findComponent(ON.id("parent_change"));
       await CommonFunc.sleep(1000);
@@ -106,7 +114,9 @@ it('assertContain_static', Level.LEVEL0, async () => {
       console.info("[ProvideConsume0100Test_001] component obj2 is: " + obj2.getElement('$attrs').getString('content'));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('hello world')
       console.info('[ProvideConsume0100Test_001] END');
-      await driver.pressBack()
+      if(displayId!=undefined){
+        await driver.pressBack(displayId as Int)
+      } 
 
     })
   })

@@ -220,6 +220,7 @@ import RichEditorImageSpanStyleResizableTest from './RichEditorApi26Test/RichEdi
 import ImageAttachmentResizableTest from './RichEditorApi26Test/ImageAttachmentResizable.test';
 import RefreshOffsetTest from './RichEditorApi26Test/RefreshOffset.test';
 import richEditorBuilderSpanApi26Test from './RichEditorApi26Test/RichEditorBuilderSpan.test';
+import richEditorBuilderSpanParamTest from './RichEditorApi26Test/RichEditorBuilderSpanParam.test';
 import stylesVersionDecoratorTest from './RichEditorApi26Test/StylesVersionDecorator.test';
 
 export default function testsuite() {
@@ -432,5 +433,6 @@ export default function testsuite() {
   ImageAttachmentResizableTest()
   RefreshOffsetTest()
   richEditorBuilderSpanApi26Test()
+  richEditorBuilderSpanParamTest()
   stylesVersionDecoratorTest()
 }

@@ -16,7 +16,8 @@
 {
   "license": "",
   "devDependencies": {
-    "@types/libclouddisk.so": "file:./src/main/cpp/types/libclouddisk"
+    "@types/libclouddisk.so": "file:./src/main/cpp/types/libclouddisk",
+    "@types/libclouddisk1.so": "file:./src/main/cpp/types/libclouddisk1"
   },
   "author": "",
   "name": "entry",

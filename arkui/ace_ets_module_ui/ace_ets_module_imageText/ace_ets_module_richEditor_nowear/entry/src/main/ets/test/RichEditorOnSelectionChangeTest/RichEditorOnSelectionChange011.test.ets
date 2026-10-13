@@ -73,7 +73,7 @@ export default function RichEditorOnSelectionChange011() {
       await CommonFunc.sleep(1000);
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(1000);
       let onSelectCallBack = await driver.findComponent(ON.id('onSelectCallBack'));
       let onSelectCallBackText = await onSelectCallBack.getText();
@@ -83,14 +83,14 @@ export default function RichEditorOnSelectionChange011() {
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
       expect(messageText).assertEqual('message:{"start":0,"end":1}');
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, 0, displayID);
       await CommonFunc.sleep(1000);
       await driver.longClick(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(1000);
       let set1 = await driver.findComponent(ON.id('set1'))
       await set1?.click();
       await CommonFunc.sleep(1000);
-      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, displayID);
+      driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(1000);
       onSelectCallBackText = await onSelectCallBack.getText();
       await CommonFunc.sleep(500);

@@ -68,13 +68,13 @@ export default function SearchOnWillCopyTest() {
       await Search.longClick()
       await CommonFunc.sleep(500);
       try {
-        await driver.triggerCombineKeys(2072,2017, displayID);
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
       await CommonFunc.sleep(500);
       try {
-        await driver.triggerCombineKeys(2072,2019, displayID);
+        await driver.triggerCombineKeys(2072,2019, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
@@ -102,13 +102,13 @@ export default function SearchOnWillCopyTest() {
       await Search.longClick()
       await CommonFunc.sleep(500);
       try {
-        await driver.triggerCombineKeys(2072,2017, displayID);
+        await driver.triggerCombineKeys(2072,2017, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }
       await CommonFunc.sleep(500);
       try {
-        await driver.triggerCombineKeys(2072,2019, displayID);
+        await driver.triggerCombineKeys(2072,2019, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }

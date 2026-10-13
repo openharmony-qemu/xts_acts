@@ -15,7 +15,7 @@
 // ArrayConcurrent.test.ets 5.3 注解测试中 @Concurrent装饰验证 的需求
 
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, taskpool, ArkTSUtils } from '@kit.ArkTS';
 import { NumberWrapper } from './test_data/TestDataFactory';
 

@@ -1,4 +1,4 @@
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { errorManager } from '@kit.AbilityKit';
 import { ArkTSUtils, taskpool, worker } from '@kit.ArkTS';
 import testNapi from 'libentry.so';

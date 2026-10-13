@@ -9,6 +9,7 @@
     "MainAbility/pages/api12/subHeaderTitleModifier",
     "MainAbility/pages/api18/subHeaderSelect18",
     "MainAbility/pages/api23/subHeader23",
-    "MainAbility/pages/migratedActs/SubHeaderPropsPage"
+    "MainAbility/pages/migratedActs/SubHeaderPropsPage",
+    "MainAbility/pages/subHeaderEndIcon"
   ]
 }

@@ -15,7 +15,7 @@
 // ArrayModify.test.ets
 // 修改/重组操作方法组（8个）：splice, slice, fill, copyWithin, sort, reverse, extendTo, shrinkTo
 
-import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium-dynamic';
+import { describe, it, beforeEach, expect, TestType, Size, Level } from '@ohos/hypium';
 import { collections, lang } from '@kit.ArkTS';
 import {
   getNumberTestValues,

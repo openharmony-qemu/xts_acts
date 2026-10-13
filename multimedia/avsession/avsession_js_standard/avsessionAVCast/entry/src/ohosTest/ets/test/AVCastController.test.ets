@@ -34,6 +34,7 @@ export default function abilityTest() {
     let TAG: string = "[AVCastController]";
     let session: avSession.AVSession | ESObject;
     let controller: avSession.AVSessionController | ESObject;
+    let avCastController: avSession.AVCastController | ESObject;
     let tag: string = 'AVCastXTS';
 
     beforeAll(() => {
@@ -61,12 +62,26 @@ export default function abilityTest() {
       } catch (err) {
         console.info(`${TAG}: getController error: code: ${err.code}, message: ${err.message}`);
       }
+      try {
+        avCastController = await session.getAVCastController();
+        console.info(`${TAG}: getAVCastController success`);
+      } catch (err) {
+        console.info(`${TAG}: getAVCastController error: code: ${err.code}, message: ${err.message}`);
+      }
       await sleep(800);
       console.info(`${TAG}: beforeEach out`);
     })
 
     afterEach(async () => {
       console.info(`${TAG}: afterEach in`);
+      if (avCastController != null) {
+        try {
+          await avCastController.destroy();
+          console.info(`${TAG}: AVCastController destroy success`);
+        } catch (err) {
+          console.info(`${TAG}: AVCastController destroy error: code: ${err.code}, message: ${err.message}`);
+        }
+      }
       if (session != null) {
         await session.destroy().then(() => {
           console.info(`${TAG}: Session destroy success`);
@@ -119,6 +134,208 @@ export default function abilityTest() {
       done();
     })
 
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0100
+     * @tc.desc   正常值参数测试-传入有效 AVQueueItem 更新媒体信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: update PARAM_0100 start`);
+      if (avCastController == null || avCastController == undefined) {
+        console.info(`${TAG}: update PARAM_0100 avCastController is null, getAVCastController failed as expected without cast device`);
+        done();
+        return;
+      }
+      let mediaDescription: avSession.AVMediaDescription = {
+        assetId: 'update_test_001',
+        title: 'UpdatedTitle',
+      };
+      let queueItem: avSession.AVQueueItem = {
+        itemId: 0,
+        description: mediaDescription,
+      };
+      try {
+        await avCastController.update(queueItem).then(() => {
+          console.info(`${TAG}: update PARAM_0100 success`);
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG}: update PARAM_0100 BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        });
+      } catch (err) {
+        console.info(`${TAG}: update PARAM_0100 catch error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      await sleep(300);
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0200
+     * @tc.desc   正常值参数测试-传入带 mediaImage 的 AVQueueItem 更新媒体图片
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG}: update PARAM_0200 start`);
+      if (avCastController == null || avCastController == undefined) {
+        console.info(`${TAG}: update PARAM_0200 avCastController is null, getAVCastController failed as expected without cast device`);
+        done();
+        return;
+      }
+      let mediaDescription: avSession.AVMediaDescription = {
+        assetId: 'update_test_002',
+        title: 'TitleWithImage',
+        mediaImage: 'https://example.com/image.jpg',
+      };
+      let queueItem: avSession.AVQueueItem = {
+        itemId: 1,
+        description: mediaDescription,
+      };
+      try {
+        await avCastController.update(queueItem).then(() => {
+          console.info(`${TAG}: update PARAM_0200 success`);
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG}: update PARAM_0200 BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        });
+      } catch (err) {
+        console.info(`${TAG}: update PARAM_0200 catch error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      await sleep(300);
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0300
+     * @tc.desc   正常值参数测试-传入仅含必填字段的 AVQueueItem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info(`${TAG}: update PARAM_0300 start`);
+      if (avCastController == null || avCastController == undefined) {
+        console.info(`${TAG}: update PARAM_0300 avCastController is null, getAVCastController failed as expected without cast device`);
+        done();
+        return;
+      }
+      let mediaDescription: avSession.AVMediaDescription = {
+        assetId: 'update_test_003',
+      };
+      let queueItem: avSession.AVQueueItem = {
+        itemId: 2,
+        description: mediaDescription,
+      };
+      try {
+        await avCastController.update(queueItem).then(() => {
+          console.info(`${TAG}: update PARAM_0300 success`);
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG}: update PARAM_0300 BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect(false).assertTrue();
+        });
+      } catch (err) {
+        console.info(`${TAG}: update PARAM_0300 catch error: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      }
+      await sleep(300);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_ERROR_0300
+     * @tc.desc   错误码测试-未建立远端连接调用 update 触发 6600109
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_ERROR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info(`${TAG}: update ERROR_0300 start`);
+      if (avCastController == null || avCastController == undefined) {
+        console.info(`${TAG}: update ERROR_0300 avCastController is null, getAVCastController failed with 6600109 as expected without cast device`);
+        done();
+        return;
+      }
+      let mediaDescription: avSession.AVMediaDescription = {
+        assetId: 'update_test_err_001',
+        title: 'ErrorNoConnection',
+      };
+      let queueItem: avSession.AVQueueItem = {
+        itemId: 0,
+        description: mediaDescription,
+      };
+      try {
+        await avCastController.update(queueItem).then(() => {
+          console.info(`${TAG}: update ERROR_0300 resolved without remote connection`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG}: update ERROR_0300 BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(6600109);
+        });
+      } catch (err) {
+        console.info(`${TAG}: update ERROR_0300 catch error: code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600109);
+      }
+      await sleep(300);
+      done();
+    })
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_ERROR_0400
+     * @tc.desc   错误码测试-Controller 销毁后调用 update 触发 6600101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_AVCASTCONTROLLER_UPDATE_ERROR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      console.info(`${TAG}: update ERROR_0400 start`);
+      if (avCastController == null || avCastController == undefined) {
+        console.info(`${TAG}: update ERROR_0400 avCastController is null, getAVCastController failed as expected without cast device`);
+        done();
+        return;
+      }
+      let mediaDescription: avSession.AVMediaDescription = {
+        assetId: 'update_test_err_002',
+        title: 'ErrorAfterDestroy',
+      };
+      let queueItem: avSession.AVQueueItem = {
+        itemId: 0,
+        description: mediaDescription,
+      };
+      try {
+        await avCastController.destroy();
+        console.info(`${TAG}: update ERROR_0400 avCastController destroy success`);
+      } catch (err) {
+        console.info(`${TAG}: update ERROR_0400 avCastController destroy error: code: ${err.code}, message: ${err.message}`);
+      }
+      try {
+        await avCastController.update(queueItem).then(() => {
+          console.info(`${TAG}: update ERROR_0400 should reject but resolved after destroy`);
+          expect(false).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG}: update ERROR_0400 BusinessError: code: ${err.code}, message: ${err.message}`);
+          expect(err.code).assertEqual(6600101);
+        });
+      } catch (err) {
+        console.info(`${TAG}: update ERROR_0400 catch error: code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(6600101);
+      }
+      avCastController = null;
+      await sleep(300);
+      done();
+    })
   })
 }
 

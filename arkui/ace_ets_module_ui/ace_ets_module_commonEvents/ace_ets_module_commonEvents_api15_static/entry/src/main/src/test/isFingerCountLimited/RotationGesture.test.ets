@@ -157,9 +157,9 @@ it('RotationGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(3, 2);
       pointers.setPoint(0, 0,
-        { x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt() });
+        { x: Math.round(areaObj1.right + - areaWidth1 / 2).toInt(), y: Math.round(areaObj1.top + areaHeight1 / 4).toInt() });
       pointers.setPoint(0, 1, {
-        x: Math.round(areaObj1.right - areaWidth1 / 2).toInt(),
+        x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(),
         y: Math.round(areaObj1.top + areaHeight1 / 4).toInt()
       });
       pointers.setPoint(1, 0, {
