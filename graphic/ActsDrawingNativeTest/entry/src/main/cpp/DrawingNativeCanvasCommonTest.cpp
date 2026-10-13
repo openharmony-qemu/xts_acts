@@ -107,15 +107,15 @@ OH_PixelmapNative *GET_OH_PixelmapNative4KBoundary()
     // 255/0 means rgba data
     size_t dataLength = width * height * NUMBER_4;
     vector<uint8_t> data(dataLength);
-    uint8_t rgbaValue[] = {NUMBER_255, NUMBER_255, 0, NUMBER_255};
-
-    for (size_t i = 0; i < dataLength; i += NUMBER_4) {
-        size_t offset = i;
-        data[offset] = rgbaValue[0];     // R
-            data[offset + NUMBER_1] = rgbaValue[NUMBER_1];
-            data[offset + NUMBER_2] = rgbaValue[NUMBER_2];
-            data[offset + NUMBER_3] = rgbaValue[NUMBER_3];
-    }
+    // Pixel value is {255, 255, 0, 255} (R=255, G=255, B=0, A=255).
+    // Treat as uint32_t and fill in bulk (4x fewer writes than per-byte loop).
+    // On little-endian, byte[0]=R is LSB, so pack as: A<<24 | B<<16 | G<<8 | R.
+    uint32_t pixelValue = (static_cast<uint32_t>(NUMBER_255) << 24) |
+                          (static_cast<uint32_t>(0) << 16) |
+                          (static_cast<uint32_t>(NUMBER_255) << 8) |
+                          static_cast<uint32_t>(NUMBER_255);
+    std::fill(reinterpret_cast<uint32_t *>(data.data()),
+              reinterpret_cast<uint32_t *>(data.data() + dataLength), pixelValue);
     // 4096 * 2160 means data length
     OH_PixelmapNative_CreatePixelmap(data.data(), dataLength, options, &pixelMap);
     OH_PixelmapInitializationOptions_Release(options);
