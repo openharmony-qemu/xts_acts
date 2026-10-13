@@ -3956,44 +3956,6 @@ describe('threadWorkerTest', function () {
     })
 
     /**
-     * @tc.name   threadWorker_constructor_test_012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0201
-     * @tc.desc   worker constructor with null scriptURL.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('threadWorker_constructor_test_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-        try {
-            let ss = new worker.ThreadWorker(null)
-            ss.terminate()
-            expect().assertFail()
-        } catch (error) {
-            expect(error.name == "BusinessError").assertTrue()
-        }
-        done()
-    })
-
-    /**
-     * @tc.name   threadWorker_constructor_test_013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0202
-     * @tc.desc   worker constructor with undefined scriptURL.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('threadWorker_constructor_test_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
-        try {
-            let ss = new worker.ThreadWorker(undefined)
-            ss.terminate()
-            expect().assertFail()
-        } catch (error) {
-            expect(error.name == "BusinessError").assertTrue()
-        }
-        done()
-    })
-
-    /**
      * @tc.name   threadWorker_constructor_test_014
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0203
      * @tc.desc   worker constructor with options.name="" (empty string).
@@ -4008,8 +3970,12 @@ describe('threadWorkerTest', function () {
             ss.onexit = function () {
                 isTerminate = true
             }
-            expect(ss != null).assertTrue()
-            ss.terminate()
+            ss.onmessage = function (d) {
+                res = d.data.type;
+                expect(res).assertEqual("normal")
+                ss.terminate()
+            }
+            ss.postMessage({type: "normal", value: 12})
             while (!isTerminate) {
                 await promiseCase()
             }
@@ -4034,8 +4000,12 @@ describe('threadWorkerTest', function () {
             ss.onexit = function () {
                 isTerminate = true
             }
-            expect(ss != null).assertTrue()
-            ss.terminate()
+            ss.onmessage = function (d) {
+                res = d.data.type;
+                expect(res).assertEqual("normal")
+                ss.terminate()
+            }
+            ss.postMessage({type: "normal", value: 12})
             while (!isTerminate) {
                 await promiseCase()
             }

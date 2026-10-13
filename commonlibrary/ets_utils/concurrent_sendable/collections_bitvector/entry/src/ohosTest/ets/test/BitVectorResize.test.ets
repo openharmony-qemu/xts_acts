@@ -661,6 +661,7 @@ export default function BitVectorResizeTest() {
         const caseName = 'testBitVectorResize10200201';
         console.info(`${caseName} test start`);
         let count = 0;
+        let hasException = false;
         let bitVector = new collections.BitVector(4);
         try {
           for (let i = 0; i < 100; i++) {
@@ -674,11 +675,15 @@ export default function BitVectorResizeTest() {
             bitVector.resize(10)
           }
         } catch (e) {
+          hasException = true;
           console.info(`${caseName} Task execution failed with error: ${(e as BusinessError).message}, code: ${(e as BusinessError).code}`);
           expect((e as BusinessError).code === 10200201 || (e as BusinessError).code === 10200001).assertEqual(true)
         }
         while (count < 100) {
           await asyncSleep(100)
+        }
+        if (!hasException) {
+          expect(bitVector.length).assertEqual(10);
         }
         console.info(`${caseName} test end`);
         done()
