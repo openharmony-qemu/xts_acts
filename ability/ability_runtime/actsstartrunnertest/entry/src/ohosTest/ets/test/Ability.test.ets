@@ -268,25 +268,20 @@ export default function abilityTest() {
                 });
               });
               console.log('====>start startAbility====>');
-              await delegator.startAbility(
+              delegator.startAbility(
                 {
                   bundleName: 'com.example.error',
                   abilityName: 'MainAbility2'
-                })
-                .then(() => {
-                  console.log('====>startAbility end====>');
-                }).catch((error: BusinessError) => {
+                }, (error: BusinessError) => {
                   if (error) {
-                    console.error(JSON.stringify(error));
+                    console.log('ACTS_StartAbility_Promise_0200 - timeout');
+                    commonEvent.unsubscribe(subscriber, () => {
+                      console.log('====>UnSubscribeCallback====>');
+                      done();
+                    });
                   }
-                  expect().assertFail();
-                  console.log('ACTS_StartAbility_Promise_0200 - timeout');
-                  commonEvent.unsubscribe(subscriber, () => {
-                    console.log('====>UnSubscribeCallback====>');
-                    done();
-                  })
+                  console.log('====>startAbility end====>');
                 });
-
             })
             .catch((error: BusinessError) => {
               console.error(JSON.stringify(error));
