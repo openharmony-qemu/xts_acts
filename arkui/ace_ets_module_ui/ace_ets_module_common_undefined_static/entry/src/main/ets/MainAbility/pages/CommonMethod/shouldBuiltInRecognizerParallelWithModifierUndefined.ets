@@ -1,4 +1,4 @@
-'use static';
+'use static'
 import { Entry, Text, Column, Component, Button, ClickEvent, ColumnOptions, HorizontalAlign, FlexAlign, Color, Scroller, Scroll, ScrollState, Edge, Row, BarState, Margin, TextAlign, VisibleAreaChangeCallback, VisibleAreaEventOptions, Area, SizeOptions, ForEach, GestureRecognizer, Stack, GestureControl, AttributeModifier, CommonAttribute } from '@ohos.arkui.component';
 import { State, Observed } from '@ohos.arkui.stateManagement';
 @Observed
@@ -31,7 +31,7 @@ export class ShouldParallelModifier implements AttributeModifier<CommonAttribute
 @Component
 struct DemoPage {
   @State modDynamic: ShouldParallelModifier = new ShouldParallelModifier()
-  @State arr: Int[] = [0, 1, 2, 3, 4, 5];
+  @State arr: Int[] = [0, 1];
   private scroller: Scroller = new Scroller()
   private scroller2: Scroller = new Scroller()
 
@@ -45,31 +45,31 @@ struct DemoPage {
         Column() {
           Text('Scroll Area')
             .width('90%')
-            .height(150)
+            .height(40)
             .borderRadius(15)
-            .fontSize(16)
+            .fontSize(14)
             .textAlign(TextAlign.Center)
-            .margin({ top: 10 } as Margin)
+            .margin({ top: 4 } as Margin)
             .id('commonmethod_shouldBuiltInRecognizerParallelWithModifier1')
           Scroll(this.scroller2) {
             Column() {
               Text('Scroll Area2')
                 .width('90%')
-                .height(150)
+                .height(40)
                 .borderRadius(15)
-                .fontSize(16)
+                .fontSize(14)
                 .textAlign(TextAlign.Center)
-                .margin({ top: 10 } as Margin)
+                .margin({ top: 4 } as Margin)
                 .id('commonmethod_shouldBuiltInRecognizerParallelWithModifier2')
               Column() {
                 ForEach(this.arr, (item: Int) => {
                   Text('item' + item)
                     .width('90%')
-                    .height(150)
+                    .height(50)
                     .borderRadius(15)
-                    .fontSize(16)
+                    .fontSize(14)
                     .textAlign(TextAlign.Center)
-                    .margin({ top: 10 } as Margin)
+                    .margin({ top: 4 } as Margin)
                     .id('commonmethod_shouldBuiltInRecognizerParallelWithModifier4' + item)
                 })
               }.width('100%')
@@ -77,7 +77,7 @@ struct DemoPage {
           }
           .id('ModifierInner')
           .width('100%')
-          .height(800)
+          .height(300)
         }.width('100%')
       }
       .scrollBar(BarState.On)

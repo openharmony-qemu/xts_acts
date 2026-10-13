@@ -28,7 +28,7 @@ struct FatherControlChild {
   scroller: Scroller = new Scroller();
   scroller2: Scroller = new Scroller();
   @State change: boolean = true;
-  @State arr: Int[] = [0, 1, 2, 3];
+  @State arr: Int[] = [0, 1];
   private childRecognizer: GestureRecognizer = new GestureRecognizer();
   private currentRecognizer: GestureRecognizer = new GestureRecognizer();
   @State count: Int = 0;
@@ -43,28 +43,28 @@ struct FatherControlChild {
           .id('button_shouldBuiltInRecognizerParallelWith')
         Text('Scroll Area')
           .width('92%')
-          .height(100)
+          .height(40)
           .borderRadius(12)
-          .fontSize(16)
-          .margin({ top: 8 } as Margin)
+          .fontSize(14)
+          .margin({ top: 4 } as Margin)
           .id('commonmethod_shouldBuiltInRecognizerParallelWith1')
         Scroll(this.scroller2) {
           Column() {
             Text('Count' + this.count)
               .width('90%')
-              .height(150)
+              .height(50)
               .borderRadius(15)
-              .fontSize(16)
+              .fontSize(14)
               .textAlign(TextAlign.Center)
-              .margin({ top: 10 } as Margin)
+              .margin({ top: 4 } as Margin)
               .id('commonmethod_shouldBuiltInRecognizerParallelWith3')
             Column() {
               ForEach(this.arr, (item: Int) => {
                 Text('item' + item)
                   .width('90%')
-                  .height(150)
+                  .height(50)
                   .borderRadius(15)
-                  .fontSize(16)
+                  .fontSize(14)
                   .textAlign(TextAlign.Center)
                   .focusable(true)
                   .focusOnTouch(true)

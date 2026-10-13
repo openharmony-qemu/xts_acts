@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -74,7 +74,7 @@ class MyNodeController extends NodeController {
     a.commonAttribute
       .borderWidth(2)
       .backgroundColor(Color.Red)
-      .size({width: 100, height: 150})
+      .size({width: 100, height: 100})
       .id('frameNode001')
     a.addSupportedUIStates(31, (node: FrameNode, currentUIStates: int) => {
       if (currentUIStates == 0) {
@@ -119,19 +119,19 @@ struct HoveredAttributeTestPage {
         Button('Modifier Hover')
           .id('modifierHoverBtn')
           .width('80%')
-          .height('8%')
+          .height('5%')
           .attributeModifier(this.modifier)
 
         Text('Area2: stateStyles hovered')
           .width('90%')
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
-          .margin({ top: '5%' } as Margin)
+          .margin({ top: '2%' } as Margin)
 
         Text('StateStyles Hover')
           .id('stateHoverText')
           .width('80%')
-          .height('8%')
+          .height('5%')
           .backgroundColor('#0000FF')
           .textAlign(TextAlign.Center)
           .stateStyles({
@@ -142,14 +142,14 @@ struct HoveredAttributeTestPage {
           .width('90%')
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
-          .margin({ top: '5%' } as Margin)
+          .margin({ top: '2%' } as Margin)
 
         NodeContainer(this.myNodeController).id('NodeContainer001')
 
         Text('HoverTarget')
           .id('frameNodeHoverText')
           .width('80%')
-          .height('8%')
+          .height('5%')
           .backgroundColor(this.frameNodeBgColor)
           .textAlign(TextAlign.Center)
           .fontColor(Color.White)
@@ -169,7 +169,7 @@ struct HoveredAttributeTestPage {
         Button('RemoveHover')
           .id('frameNodeRemoveBtn')
           .width('80%')
-          .height('8%')
+          .height('5%')
           .onClick(() => {
             this.frameNodeRemoved = true;
           })
@@ -178,17 +178,17 @@ struct HoveredAttributeTestPage {
           .width('90%')
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
-          .margin({ top: '5%' } as Margin)
+          .margin({ top: '2%' } as Margin)
 
         Button('Move Mouse Out')
           .id('moveOutBtn')
           .width('80%')
-          .height('8%')
+          .height('5%')
           .backgroundColor('#FFFFFF')
           .borderWidth(1)
           .borderColor('#000000')
 
-        Blank().height('5%')
+        Blank().height('2%')
       }
       .width('100%')
       .padding({ left: '5%', right: '5%' } as Margin)
