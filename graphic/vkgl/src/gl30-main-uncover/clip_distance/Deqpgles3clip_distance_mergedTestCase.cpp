@@ -23,6 +23,14 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000012,
-        "KHR-GL30.transform_feed",
-        "back.linking_errors_test");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000007,
+        "KHR-GL30.clip_d",
+        "istance.coverage");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000008,
+        "KHR-GL30.clip_di",
+        "stance.functional");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000009,
+        "KHR-GL30.clip_d",
+        "istance.negative");

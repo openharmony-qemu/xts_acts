@@ -23,6 +23,14 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000018,
-        "KHR-GL30.transform_fe",
-        "edback.get_xfb_varying");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000864,
+        "KHR-GL30.framebuffer_blit.multisampled_",
+        "to_singlesampled_blit_color_config_test");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000865,
+        "KHR-GL30.framebuffer_blit.multisampled_",
+        "to_singlesampled_blit_depth_config_test");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000866,
+        "KHR-GL30.framebuffe",
+        "r_blit.scissor_blit");

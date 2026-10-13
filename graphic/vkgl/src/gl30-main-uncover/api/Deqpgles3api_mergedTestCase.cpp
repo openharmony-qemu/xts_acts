@@ -23,6 +23,6 @@ using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000013,
-        "KHR-GL30.transform_",
-        "feedback.limits_test");
+static SHRINK_HWTEST_F(ActsDeqpgles30001TestSuite, TestCase_000874,
+        "KHR-GL30.a",
+        "pi.coverage");
