@@ -14,7 +14,7 @@
 -->
 <div class="container">
     <div class="content-title">
-        <text class="title">RouterTransition · 正常：动效类型（10 项）</text>
+        <text class="title">Router Transition · Normal animation types (10)</text>
     </div>
     <list class="scroll-area">
         <list-item class="litem" style="height:205px;">

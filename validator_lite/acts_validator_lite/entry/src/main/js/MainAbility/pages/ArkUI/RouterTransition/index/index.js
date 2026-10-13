@@ -20,9 +20,9 @@ export default {
   data: {
     itemIndex: 0,
     todolist: [
-      { id: 0, title: '正常：动效类型（10 项）', url: 'pages/RouterTransition/normal/index' },
-      { id: 1, title: '接口与参数（6 项）', url: 'pages/RouterTransition/edge_api/index' },
-      { id: 2, title: '边界：时长取值（9 项）', url: 'pages/RouterTransition/edge_duration/index' },
+      { id: 0, title: 'Normal animation types (10)', url: 'pages/ArkUI/RouterTransition/normal/index' },
+      { id: 1, title: 'API and parameters (6)', url: 'pages/ArkUI/RouterTransition/edge_api/index' },
+      { id: 2, title: 'Edge: duration values (9)', url: 'pages/ArkUI/RouterTransition/edge_duration/index' },
       { id: 25, title: '返回首页', url: 'pages/index/index' }
     ]
   },

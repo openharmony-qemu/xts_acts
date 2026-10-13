@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { createRouterTransitionPage } from '../../../common/js/router_transition';
+import { createRouterTransitionPage } from '../../../../common/js/router_transition';
 
-const BACK_URI = 'pages/RouterTransition/normal/index';
+const BACK_URI = 'pages/ArkUI/RouterTransition/normal/index';
 const DURATION = 800;
 
 // Case table. Every item of this group is a normal case, so a row carries nothing but its key and
