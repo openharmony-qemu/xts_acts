@@ -2027,7 +2027,7 @@ export default function StringLengthTest(): void {
       const str: string = 'hello world';
       const pattern: RegExp = new RegExp('o', 'g');
       const matches: RegExpMatchArray | null = str.match(pattern);
-      const matchCount: number = matches !== null ? matches.length : 0;
+      const matchCount: number = matches !== null ? Int.toDouble(matches.length) : 0.0;
       expect(matchCount).assertEqual(2);
     });
 

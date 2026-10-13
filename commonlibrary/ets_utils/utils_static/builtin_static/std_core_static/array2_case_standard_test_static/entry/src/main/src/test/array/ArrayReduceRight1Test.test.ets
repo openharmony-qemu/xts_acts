@@ -669,7 +669,7 @@ export default function ArrayReduceRight1Test(): void {
         if (acc >= 0) {
           return acc;
         }
-        return v % 4 === 0 ? v : -1;
+        return v % 4 === 0 ? v : -1.0;
       }, -1);
       expect(result).assertEqual(12);
     });

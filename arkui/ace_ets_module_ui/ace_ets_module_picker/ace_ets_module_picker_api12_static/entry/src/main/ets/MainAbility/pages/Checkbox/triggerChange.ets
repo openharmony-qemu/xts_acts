@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,13 +40,13 @@ class MyCheckboxStyle_trigger implements ContentModifier<CheckBoxConfiguration> 
           config.triggerChange(true)
           console.log("config.triggerChange: " + config.triggerChange)
         }
-      }).opacity(config.enabled ? 1 : 0.1)
+      }).opacity(config.enabled ? 1.0 : 0.1)
       Path().width(10).height(10).commands('M50 0 L100 100 L0 100 Z')
         .visibility(config.selected ? Visibility.Visible : Visibility.Hidden)
         .fill(config.selected ? (config.contentModifier as MyCheckboxStyle_trigger).selectedColor : Color.Black)
         .stroke((config.contentModifier as MyCheckboxStyle_trigger).selectedColor)
         .margin({left:11,top:10} as Margin)
-        .opacity(config.enabled ? 1 : 0.1)
+        .opacity(config.enabled ? 1.0 : 0.1)
     }
     .width(300)
     .height(200)

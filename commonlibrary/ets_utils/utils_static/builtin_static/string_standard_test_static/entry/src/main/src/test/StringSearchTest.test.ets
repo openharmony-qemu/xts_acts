@@ -250,7 +250,7 @@ class SearchHelperTest {
     const str: string = "hello hello";
     const searchResult: number = str.search(new RegExp("hello"));
     const matchResult: RegExpMatchArray | null = str.match(new RegExp("hello", "g"));
-    const matchCount: number = matchResult !== null ? matchResult.length : 0;
+    const matchCount: number = matchResult !== null ? Int.toDouble(matchResult.length) : 0.0;
     return [searchResult, matchCount];
   }
 

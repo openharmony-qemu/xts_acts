@@ -1323,7 +1323,7 @@ export default function HashMapTest2(): void {
         hashMap.set(1, 1);
         hashMap.set(2, 2);
         hashMap.forEach((value: number, key: number) => {
-          expect(String(hashMap.replace(key, value ? value + 1 : 0))).assertEqual('true');
+          expect(String(hashMap.replace(key, value ? value + 1 : 0.0))).assertEqual('true');
         });
       } catch (err) {
         err = err as BusinessError;
@@ -1569,7 +1569,7 @@ export default function HashMapTest2(): void {
           if (!temp.value) {
             let key = temp.value![0];
             let value = temp.value![1];
-            expect(String(hashMap.replace(key, value ? value + 1 : 0))).assertEqual('true');
+            expect(String(hashMap.replace(key, value ? value + 1 : 0.0))).assertEqual('true');
           }
           temp = entries.next();
         }

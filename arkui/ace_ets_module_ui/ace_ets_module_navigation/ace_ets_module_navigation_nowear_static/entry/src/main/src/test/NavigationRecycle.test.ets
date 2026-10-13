@@ -15,7 +15,7 @@ const MOD_PAGE_URL = 'MainAbility/pages/ModifierRecyclePage';
 
 function getAppStorageNumber(key: string): number {
   let val: number | undefined = AppStorage.get<number>(key);
-  return val !== undefined ? val : 0;
+  return val !== undefined ? val : 0.0;
 }
 
 function getAppStorageString(key: string): string {

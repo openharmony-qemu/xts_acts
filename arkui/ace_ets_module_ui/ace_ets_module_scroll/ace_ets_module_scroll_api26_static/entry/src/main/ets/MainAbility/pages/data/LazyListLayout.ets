@@ -590,7 +590,7 @@ export class LazyListLayout extends LazyCustomLayoutAlgorithm {
       // 这些元素的总高度为：itemArrStartIndex * estimateItemHeight + (itemArrStartIndex - 1) * space
       const expectedStart = this.itemArrStartIndex > 0
         ? this.itemArrStartIndex * this.estimateItemHeight + (this.itemArrStartIndex - 1) * this.space
-        : 0;
+        : 0.0;
       const actualStart = this.itemArr[0].start;
       // 使用浮点数容差比较，避免精度问题
       if (Math.abs(expectedStart - actualStart) > 0.1) {

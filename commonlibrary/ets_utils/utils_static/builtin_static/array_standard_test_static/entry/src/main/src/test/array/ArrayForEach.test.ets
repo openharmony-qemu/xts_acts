@@ -1416,7 +1416,7 @@ export default function ArrayForEachTest(): void {
     it("testArrayForEach0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: Array<number> = [NaN, 1];
       const result: number[] = [];
-      arr.forEach((v): void => result.push(Number.isNaN(v) ? -1 : v));
+      arr.forEach((v): void => result.push(Number.isNaN(v) ? -1.0 : v));
       expect(JSON.stringify(result)).assertDeepEquals(JSON.stringify([-1, 1]));
     });
 

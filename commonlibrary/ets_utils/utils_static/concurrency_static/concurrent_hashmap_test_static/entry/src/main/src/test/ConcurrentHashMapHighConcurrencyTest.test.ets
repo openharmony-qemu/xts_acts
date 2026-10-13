@@ -388,7 +388,7 @@ async function runSameKeyCase(workers: number): Promise<number> {
 
 async function runScaleCase(total: number): Promise<number> {
   let map: containers.ConcurrentHashMap<number, number> = new containers.ConcurrentHashMap<number, number>();
-  let workers: number = total >= 100 ? 10 : (total >= 10 ? 2 : 1);
+  let workers: number = total >= 100 ? 10.0 : (total >= 10 ? 2.0 : 1.0);
   let perWorker: number = total / workers;
   let tasks: Promise<Any>[] = [];
   for (let i: int = 0; i < workers; i++) {

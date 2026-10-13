@@ -443,7 +443,7 @@ export default function TextPicker(): void {
 
     let mountNewPickerOptions = async (
       pickerOptions: PickerOptions,
-      eventId: long = EventType.PHOTO_PICKER_INFO,
+      eventId: long = EventType.PHOTO_PICKER_INFO.valueOf().toLong(),
       isOnItemClickedNotifySet: boolean = false
     ): Promise<void> => {
       let options: router.RouterOptions = {

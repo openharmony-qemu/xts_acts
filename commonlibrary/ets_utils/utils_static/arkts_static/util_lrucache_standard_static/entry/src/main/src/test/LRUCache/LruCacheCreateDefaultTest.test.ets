@@ -1625,7 +1625,7 @@ export default function lruCacheCreateDefaultTest(): void {
 
       // --- [3] Verify negative zero key result keeps negative zero semantics via reciprocal ---
       {
-        let c: FactoryCache<double, double> = new FactoryCache<double, double>((k: double) => k === 0 ? -0.0 : 1);
+        let c: FactoryCache<double, double> = new FactoryCache<double, double>((k: double) => k === 0 ? -0.0 : 1.0);
         let r: double = c.createDefault(-0)!;
         expect(1 / r).assertEqual(Double.NEGATIVE_INFINITY);
       }

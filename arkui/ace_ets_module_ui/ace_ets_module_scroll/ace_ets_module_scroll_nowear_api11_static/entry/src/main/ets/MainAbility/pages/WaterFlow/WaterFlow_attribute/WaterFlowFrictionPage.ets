@@ -47,7 +47,7 @@ struct WaterFlowFrictionPage {
 
   getSize() {
     let ret = Math.floor(Math.random() * this.maxSize);
-    return (ret > this.minSize ? ret : this.minSize);
+    return (ret > this.minSize ? ret : Int.toDouble(this.minSize));
   }
 
   getItemSizeArray() {

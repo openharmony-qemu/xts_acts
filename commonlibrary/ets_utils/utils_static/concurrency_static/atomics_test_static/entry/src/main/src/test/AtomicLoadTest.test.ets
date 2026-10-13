@@ -1737,7 +1737,7 @@ export default function atomicsLoadTest() {
       // Increment and rollback if exceeds 15
       Atomics.add(ia, 0, 8); // 10 + 8 = 18
       const current = Atomics.load(ia, 0);
-      const rolledBack = Atomics.compareExchange(ia, 0, current as long, current > 15 ? 10 : current);
+      const rolledBack = Atomics.compareExchange(ia, 0, current as long, current > 15 ? 10 as long : current);
 
       expect(rolledBack).assertEqual(18);
       expect(Atomics.load(ia, 0)).assertEqual(10);

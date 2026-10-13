@@ -2039,7 +2039,7 @@ export default function typeArrayInt32ArrayTest(): void {
       let countFrequencies = (data: Int32Array): Map<number, number> => {
         let freq = new Map<number, number>();
         data.forEach((val: number) => {
-          let count = freq.has(val) ? freq.get(val)! + 1 : 1;
+          let count = freq.has(val) ? freq.get(val)! + 1 : 1.0;
           freq.set(val, count);
         });
         return freq;
