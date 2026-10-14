@@ -31,15 +31,15 @@ export default function abilityTest() {
      */
     it('Acts_UriPermisssion_0100', Level.LEVEL0, async (done: Function) => {
       console.log('Acts_UriPermisssion_0100 start.');
-      await abilityDelegator.executeShellCommand("hilog -x | grep UriPermissionManagerService")
+      await abilityDelegator.executeShellCommand('hilog -x | grep UriPermissionManagerService')
         .then((data) => {
-          console.log("executeShellCommand Acts_UriPermisssion_0100 : data : " + data.stdResult);
+          console.log('executeShellCommand Acts_UriPermisssion_0100 : data : ' + data.stdResult);
           let i = JSON.stringify(data.stdResult).indexOf('UriPermissionManagerService start');
           expect(i).assertEqual(-1);
           done();
         })
         .catch((error: BusinessError) => {
-          console.log("executeShellCommand Acts_UriPermisssion_0100 error : " + JSON.stringify(error));
+          console.log('executeShellCommand Acts_UriPermisssion_0100 error : ' + JSON.stringify(error));
           expect().assertFail();
           done();
         })

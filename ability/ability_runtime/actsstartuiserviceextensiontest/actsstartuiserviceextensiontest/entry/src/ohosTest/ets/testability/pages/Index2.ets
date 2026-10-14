@@ -19,7 +19,7 @@ import Want from '@ohos.app.ability.Want';
 let testAbilityWant:Want;
 @Entry
 @Component
-struct Index {
+struct TestabilityPagesIndex2 {
   @State message: string = 'Hello World'
   private context:common.UIAbilityContext = getContext(this) as common.UIAbilityContext;
   aboutToAppear() {
@@ -34,12 +34,12 @@ struct Index {
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
             EmbeddedComponent({
-              bundleName: "com.acts.startuiserviceextensiontest",
-              abilityName: "UIExtAbility1",
+              bundleName: 'com.acts.startuiserviceextensiontest',
+              abilityName: 'UIExtAbility1',
               parameters:{
-                "case":testAbilityWant?.parameters?.case as string,
-                "caseName":testAbilityWant?.parameters?.caseName as string,
-                "param":testAbilityWant?.parameters?.param
+                'case':testAbilityWant?.parameters?.case as string,
+                'caseName':testAbilityWant?.parameters?.caseName as string,
+                'param':testAbilityWant?.parameters?.param
               }
             }, EmbeddedType.EMBEDDED_UI_EXTENSION)
             .width('100%')
