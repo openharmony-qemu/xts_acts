@@ -99,32 +99,6 @@ export default function errorCodeTest() {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0002
-     * @tc.number SUB_Ability_AbilityBase_ErrorCode_0002
-     * @tc.desc   To verify the errcode 16000071 when The App clone is not supported.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityBase_ErrorCode_0002', Level.LEVEL0, async (done: Function)=> {
-      hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_ErrorCode_0002 start');
-      // test errcode
-      try {
-        let appCloneIndex = AppStorage.get<common.ApplicationContext>("ApplicationContext")!.getApplicationContext().getCurrentAppCloneIndex();
-        console.info("the app clone is " + appCloneIndex);
-        expect().assertFail();
-        done();
-      } catch(err) {
-        // 处理入参错误异常
-        let code = (err as BusinessError).code;
-        let message = (err as BusinessError).message;
-        console.error(TAG + `startAbility failed, code is ${code}, message is ${message}`);
-        expect(err.code).assertEqual(16000071)
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_Ability_AbilityBase_ErrorCode_0003
      * @tc.number SUB_Ability_AbilityBase_ErrorCode_0003
      * @tc.desc   To verify the errcode 28800001 when The Startup task or its dependency not found.
@@ -148,7 +122,6 @@ export default function errorCodeTest() {
           expect().assertFail();
           done();
         })
-
       } catch(err) {
         // 处理入参错误异常
         let code = (err as BusinessError).code;

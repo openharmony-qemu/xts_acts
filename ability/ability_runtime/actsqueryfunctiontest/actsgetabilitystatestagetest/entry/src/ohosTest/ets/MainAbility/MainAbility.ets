@@ -28,6 +28,7 @@ export default class MainAbility extends Ability {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     console.info('start run testcase!!!')
+    let appCloneIndex = this.context.getApplicationContext().getCurrentAppCloneIndex();
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
 

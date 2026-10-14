@@ -39,6 +39,9 @@ export default function abilityTest() {
       if (allowed) {
         await allowed.click();
       }
+      if (deviceSupport === 'false') {
+
+      }
     })
 
     /**

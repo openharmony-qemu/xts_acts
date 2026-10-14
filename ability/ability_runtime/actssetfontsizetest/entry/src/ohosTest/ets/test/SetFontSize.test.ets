@@ -18,7 +18,9 @@ import { application, common } from '@kit.AbilityKit';
 import { Driver, ON, Component } from '@ohos.UiTest'
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+import display from '@ohos.display';
 
+let currentDisplayId = display.getDefaultDisplaySync().id;
 let context = getContext(this) as common.UIAbilityContext;
 
 function sleep(ms: number) {
@@ -30,7 +32,7 @@ export default function abilityTest() {
     beforeAll(async() => {
       let driver = Driver.create();	
       try {
-        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
         if (allowed) {
           await allowed.click();
         }
@@ -105,7 +107,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -171,10 +173,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
+        let button2: Component = await driver.waitForComponent(ON.id('show').belongingDisplay(currentDisplayId), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -240,10 +242,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
+        let button2: Component = await driver.waitForComponent(ON.id('show').belongingDisplay(currentDisplayId), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -309,10 +311,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
+        let button2: Component = await driver.waitForComponent(ON.id('show').belongingDisplay(currentDisplayId), 3000);
         await button2.click();
         await sleep(4000);
       } catch (e) {
@@ -378,7 +380,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -444,7 +446,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -511,7 +513,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
+        let button: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -576,10 +578,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
+        let button2: Component = await driver.waitForComponent(ON.id('show').belongingDisplay(currentDisplayId), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -644,10 +646,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
+        let button2: Component = await driver.waitForComponent(ON.id('show').belongingDisplay(currentDisplayId), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -712,10 +714,10 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
-        let button2: Component = await driver.waitForComponent(ON.id('show'), 3000);
+        let button2: Component = await driver.waitForComponent(ON.id('show').belongingDisplay(currentDisplayId), 3000);
         await button2.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -780,7 +782,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
@@ -845,7 +847,7 @@ export default function abilityTest() {
         });
         await sleep(1000);
         let driver:Driver = Driver.create();
-        let button1: Component = await driver.waitForComponent(ON.id('set and show'), 3000);
+        let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);

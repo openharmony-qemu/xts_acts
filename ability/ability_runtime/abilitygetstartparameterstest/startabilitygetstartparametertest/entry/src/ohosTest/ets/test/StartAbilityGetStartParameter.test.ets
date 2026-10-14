@@ -66,6 +66,10 @@ export default function StartAbilityGetStartParameterTest() {
     beforeAll(async (done: Function) => {
       console.info(`${TEST_SUITE_NAME} case begin beforeAll`);
       let cmd = 'bm dump -n com.ohos.startabilitygetstartparametertest';
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       await abilityDelegator.executeShellCommand(cmd).then((result) => {
         console.info(`${TEST_SUITE_NAME} executeShellCommand result: ${JSON.stringify(result.stdResult)}`);
         let resultObject: ESObject = JSON.parse(result.stdResult.split('com.ohos.startabilitygetstartparametertest:')[1]);

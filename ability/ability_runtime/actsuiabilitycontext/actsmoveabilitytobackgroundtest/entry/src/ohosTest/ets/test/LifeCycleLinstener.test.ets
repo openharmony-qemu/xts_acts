@@ -69,6 +69,7 @@ export default function LifeCycleLinstenerTest() {
     it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100`;
       console.log(`${tag}, it begin`);
+      let appCloneIndex
       try {
         let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
         let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();

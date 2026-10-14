@@ -116,6 +116,7 @@ export default function setFontTest() {
         let cmd = "hilog -x -e UpdateConfiguration";
         let flag: boolean = false;
         hilog.info(0x0000, TAG, "[%{public}s] applicationContext: %{public}s", TAG, JSON.stringify(applicationContext));
+        AppStorage.setOrCreate<string>("onConfigurationUpdate", '');
         uiContext.getFont().registerFont({
           familyName: "font1",
           familySrc: $rawfile('font/TestFont1.ttf')
@@ -124,7 +125,7 @@ export default function setFontTest() {
         await sleep(500);
         hilog.info(0x0000, TAG, "[%{public}s] flag: %{public}s", TAG, JSON.stringify(flag));
         let onUpdateCallback:string = AppStorage.get<string>("onConfigurationUpdate") as string;
-        expect(onUpdateCallback).assertEqual(undefined)
+        expect(onUpdateCallback).assertEqual('')
         done();
       } catch (paramError) {
         hilog.info(0x0000, TAG, "[%{public}s] paramError: %{public}s", TAG, JSON.stringify(paramError));

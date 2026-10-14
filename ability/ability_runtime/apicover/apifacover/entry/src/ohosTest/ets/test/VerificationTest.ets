@@ -23,10 +23,10 @@ import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import { UiDriver, BY, Driver, ON } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import display from '@ohos.display';
 
 let INVALID_PARAM = 401;
 let TAG: string;
-
 function sleep(ms: number) {
   return new Promise<number>(resolve => setTimeout(resolve, ms));
 }
@@ -332,12 +332,13 @@ export default function verificationTest() {
             }
           })
         })
-
+        let currentDisplayId = display.getDefaultDisplaySync().id;
+        console.info(TAG + "getDefaultDisplaySync data = " + currentDisplayId);
         let wantNum: Want = {
           bundleName: 'ohos.acts.aafwk.test.stagesupplement',
           abilityName: 'MainAbility4'
         }
-        AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(wantNum,  {displayId: 0})
+        AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(wantNum,  {displayId: currentDisplayId})
           .then((data) => {
             console.info(TAG + "startAbility data = " + JSON.stringify(data));
           })
@@ -429,6 +430,8 @@ export default function verificationTest() {
     it('SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_RequestPermissionsFromUser_0200 ==>';
       console.info(TAG + " start");
+      let currentDisplayId = display.getDefaultDisplaySync().id;
+      console.info(TAG + "getDefaultDisplaySync data = " + currentDisplayId);
       let permissionRequestResult: ESObject;
       let subscriber: commonEventManager.CommonEventSubscriber | null = null;
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -437,8 +440,7 @@ export default function verificationTest() {
       try {
         console.info(TAG + `come in driveFn`);
         let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-        let driver = await UiDriver.create();
-        console.info(TAG + `driver is ${JSON.stringify(driver)}`);
+        console.info(TAG + `driver is ${JSON.stringify(driver1)}`);
         commonEvent.createSubscriber(subscribeInfo, (err, data) => {
           console.info(TAG + "===CreateSubscriberCallback===")
           subscriber = data;
@@ -472,7 +474,7 @@ export default function verificationTest() {
           });
         await sleep(2000);
         console.info(TAG + `UiDriver start`);
-        let button = await driver.findComponent(BY.text('允许'));
+        let button = await driver1.findComponent(ON.text('允许').belongingDisplay(currentDisplayId));
         if(button == null){
           console.info(TAG + "findComponent err , permission dialog is empty ");
           let cmd = "hidumper -s WindowManagerService -a'-a'";

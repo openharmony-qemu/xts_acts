@@ -65,6 +65,7 @@ export default function abilityTest() {
     console.info("-----------------LifecycleTest is start----------------")
 
     beforeAll(()=>{
+      if(deviceSupport === 'false'){}
       let actsEvents = [
         'Hap2MainAbility10onForeground',
         'Hap3MainAbility3onForeground',

@@ -115,8 +115,8 @@ export default function ApiCoverTest() {
           expect(data).assertEqual('')
           done()
         }).catch((err:BusinessError)=>{
-            expect().assertFalse();
-            done()
+          expect().assertFalse();
+          done()
         })
     })
 

@@ -52,6 +52,10 @@ export default function startAbilityTest() {
         ability = data as UIAbility;
       });
       let cmd = "bm install -p data/test/MockService.hap";
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
       console.info("cmd : "+cmd)
       abilityDelegator.executeShellCommand(cmd, (err: base.BusinessError, d: ESObject) => {
         console.info("executeShellCommand : err : " + JSON.stringify(err)," data : " + JSON.stringify(d));})
@@ -89,6 +93,10 @@ export default function startAbilityTest() {
       "FreeInstall_Stage_Local_StartAbility_3500" === TAG ||
       "FreeInstall_Stage_Local_StartAbility_2000" === TAG) {
         let cmd4 = "bm uninstall -n com.example.qianyiyingyong.hmservice";
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd4 += ' -u ' + user;
+        }
         abilityDelegator.executeShellCommand(cmd4, (err: base.BusinessError, d: ESObject) => {
           console.info("executeShellCommand4 : err : " + JSON.stringify(err), " data : " + JSON.stringify(d));
         })
@@ -97,6 +105,10 @@ export default function startAbilityTest() {
 
       if ("FreeInstall_Stage_Local_StartAbility_2000" === TAG) {
         let cmd5 = "bm uninstall -n com.ohos.hag.famanager";
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd5 += ' -u ' + user;
+        }
         abilityDelegator.executeShellCommand(cmd5, (err: base.BusinessError, d: ESObject) => {
           console.info("executeShellCommand5 : err : " + JSON.stringify(err), " data : " + JSON.stringify(d));
         })

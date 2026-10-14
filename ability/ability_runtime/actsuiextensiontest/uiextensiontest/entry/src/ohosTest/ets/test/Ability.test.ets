@@ -23,7 +23,9 @@ import Utils from './Utils'
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 
+function getDumpcmd():string{}
 export default function abilityTest() {
+
 
   describe('ACTS_UIExtension', () => {
     let context = getContext() as common.UIAbilityContext;

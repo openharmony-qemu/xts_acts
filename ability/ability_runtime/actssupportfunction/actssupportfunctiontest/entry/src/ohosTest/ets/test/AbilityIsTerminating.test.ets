@@ -195,6 +195,7 @@ export default function AbilityIsTerminatingTest() {
       let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: [onCreate, onDestroy]
       }
+      let abilityDelegator
       await commonEventManager.createSubscriber(subscribeInfo).then(async (data) => {
         console.log(TAG + "createSubscriber data : " + JSON.stringify(data));
         subscriber = data;
