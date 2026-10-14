@@ -57,6 +57,8 @@
 #define ERROR_CODE_2305024 2305024
 #define ERROR_CODE_2305027 2305027
 #define ERROR_CODE_2305062 2305062
+#define ERROR_PARAM_PREFIX "ERROR_"
+#define ERROR_PARAM_PREFIX_LEN 6
 #define MOCK_CERT_COUNT 3
 
 extern "C" {
@@ -1054,10 +1056,10 @@ static const FreeCertChainParamEntry TEST_PARAM_TABLE[] = {
 // 处理ERROR_前缀参数，优先查映射表，否则尝试解析数字错误码
 static bool TryGetErrorParamResult(napi_env env, const char *param, napi_value *outResult)
 {
-    if (strncmp(param, "ERROR_", 6) != 0) {
+    if (strncmp(param, ERROR_PARAM_PREFIX, ERROR_PARAM_PREFIX_LEN) != 0) {
         return false;
     }
-    const char *errorStr = param + 6;
+    const char *errorStr = param + ERROR_PARAM_PREFIX_LEN;
     size_t entryCount = sizeof(ERROR_PARAM_TABLE) / sizeof(ERROR_PARAM_TABLE[0]);
     for (size_t i = 0; i < entryCount; ++i) {
         if (strcmp(errorStr, ERROR_PARAM_TABLE[i].param) == 0) {
@@ -1069,8 +1071,8 @@ static bool TryGetErrorParamResult(napi_env env, const char *param, napi_value *
     }
     // 尝试解析数字错误码
     char *endPtr = nullptr;
-    unsigned long errorCode = strtoul(param + 6, &endPtr, 10);
-    if (endPtr != param + 6 && *endPtr == '\0') {
+    unsigned long errorCode = strtoul(param + ERROR_PARAM_PREFIX_LEN, &endPtr, 10);
+    if (endPtr != param + ERROR_PARAM_PREFIX_LEN && *endPtr == '\0') {
         OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG,
                      "OHNetStackFreeCertChain: returning error code %lu", errorCode);
         napi_value result = nullptr;
@@ -1116,6 +1118,12 @@ static napi_value DoFreeTestCertChain(napi_env env)
     certChain[0].type = NetStack_CertType::NETSTACK_CERT_TYPE_PEM;
     const char *testData = "test cert data";
     size_t dataLen = strlen(testData);
+    if (dataLen == 0 || dataLen > MAX_DATA_LENGTH) {
+        free(certChain);
+        napi_value result = nullptr;
+        napi_create_int32(env, 0, &result);
+        return result;
+    }
     certChain[0].data = static_cast<uint8_t *>(malloc(dataLen));
     if (certChain[0].data == nullptr) {
         free(certChain);
