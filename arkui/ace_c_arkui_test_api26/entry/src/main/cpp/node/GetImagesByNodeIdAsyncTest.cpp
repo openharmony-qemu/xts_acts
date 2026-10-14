@@ -102,8 +102,8 @@ static napi_value GetImagesByNodeIdAsyncTest008(napi_env env, napi_callback_info
     NAPI_START(column, ARKUI_NODE_COLUMN);
     auto context = OH_ArkUI_GetContextByNode(column);
     ASSERT_EQ(context != nullptr, true);
-    const int32_t* nodeIds = 0;
-    void* userData = 0;
+    const int32_t* nodeIds = nullptr;
+    void* userData = nullptr;
     auto errorCode = OH_ArkUI_NativeModule_GetImagesByNodeIdAsync(nullptr, nodeIds, PARAM_1, OnImageCollection, userData);
     ASSERT_EQ(errorCode, ARKUI_ERROR_CODE_UI_CONTEXT_INVALID);
     NAPI_END;
