@@ -14,7 +14,7 @@
  */
 
 #include "common/common.h"
-#include <arkui/native_image_collection.h>
+#include <arkui/ui_info_collection.h>
 #include <arkui/native_node.h>
 #include <arkui/native_interface.h>
 #include <multimedia/image_framework/image/pixelmap_native.h>
