@@ -99,11 +99,13 @@ static napi_value GetImagesByNodeIdAsyncTest007(napi_env env, napi_callback_info
 
 static napi_value GetImagesByNodeIdAsyncTest008(napi_env env, napi_callback_info info)
 {
-    OH_ArkUI_NativeModule_ImageCollection* collection = nullptr;
-    OH_PixelmapNative** outPixelmap = nullptr;
-    ArkUI_ErrorCode* outItemError = nullptr;
-    auto ret = OH_ArkUI_NativeModule_ImageCollectionTakeItemByNodeId(collection, PARAM_1, &outPixelmap, &outItemError);
-    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_START(column, ARKUI_NODE_COLUMN);
+    auto context = OH_ArkUI_GetContextByNode(column);
+    ASSERT_EQ(context != nullptr, true);
+    const int32_t* nodeIds = 0;
+    void* userData = 0;
+    auto errorCode = OH_ArkUI_NativeModule_GetImagesByNodeIdAsync(nullptr, nodeIds, PARAM_1, OnImageCollection, userData);
+    ASSERT_EQ(errorCode, ARKUI_ERROR_CODE_UI_CONTEXT_INVALID);
     NAPI_END;
 }
 
