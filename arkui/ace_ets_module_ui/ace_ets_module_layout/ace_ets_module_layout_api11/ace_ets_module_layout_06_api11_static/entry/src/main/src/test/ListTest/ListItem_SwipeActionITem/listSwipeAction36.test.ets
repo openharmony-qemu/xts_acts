@@ -78,23 +78,18 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGEs_static_0360', Level.LEVEL0
       let strJson = inspector.getInspectorByKey('lSwipe36Action0');
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGEs_static_0360] current component obj is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)));
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe36Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom - top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGEs_static_0360 value is" + left + " --" + right + "--" +
-        top + "--" + bottom);
+      let swipeComp36a = await driver.findComponent(ON.id('lSwipe36Action0'));
+      let rect36a = await swipeComp36a!.getBounds();
+      let displayId36a = await swipeComp36a!.getDisplayId();
+      let width36a = rect36a.right - rect36a.left;
 
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(20))).toInt()
+            await driver.swipeBetween(
+        { x: (Math.round(rect36a.left + width36a / 2)).toInt(), y: (Math.round(rect36a.top +
+          UIContext.resolveUIContext()!.vp2px(10))).toInt(), displayId: displayId36a },
+        { x: (Math.round(rect36a.left + width36a / 2)).toInt(), y: (Math.round(rect36a.top +
+          UIContext.resolveUIContext()!.vp2px(20))).toInt(), displayId: displayId36a }
       );
       await CommonFunc.sleep(5000);
 
@@ -110,12 +105,12 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGEs_static_0360', Level.LEVEL0
       buttonReset2!.click();
       await CommonFunc.sleep(1000);
 
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(90))).toInt()
+
+      await driver.swipeBetween(
+        { x: (Math.round(rect36a.left + width36a / 2)).toInt(), y: (Math.round(rect36a.top +
+          UIContext.resolveUIContext()!.vp2px(100))).toInt(), displayId: displayId36a },
+        { x: (Math.round(rect36a.left + width36a / 2)).toInt(), y: (Math.round(rect36a.top +
+          UIContext.resolveUIContext()!.vp2px(90))).toInt(), displayId: displayId36a }
       );
       await CommonFunc.sleep(5000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe36Offset');
@@ -147,24 +142,19 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
       let strJson = inspector.getInspectorByKey('lSwipe36Action0');
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0380] current component obj is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)));
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe36Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom - top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0380 value is" + left + " --" + right + "--" +
-        top + "--" + bottom);
-      
+      let swipeComp36b = await driver.findComponent(ON.id('lSwipe36Action0'));
+      let rect36b = await swipeComp36b!.getBounds();
+      let displayId36b = await swipeComp36b!.getDisplayId();
+      let width36b = rect36b.right - rect36b.left;
+      let height36b = rect36b.bottom - rect36b.top;
 
-   await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt()
+   await driver.swipeBetween(
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.2)).toInt(), displayId: displayId36b },
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.4)).toInt(), displayId: displayId36b }
       );
       await CommonFunc.sleep(5000);
       
@@ -179,11 +169,11 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
         .getElement('$attrs')
         .getString('content'))) - Math.round(UIContext.resolveUIContext()!.px2vp(swipe_height))) <= 1).assertTrue();
 
-   await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt()
+   await driver.swipeBetween(
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.4)).toInt(), displayId: displayId36b },
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.2)).toInt(), displayId: displayId36b }
       );
       await CommonFunc.sleep(5000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset36'));
@@ -191,11 +181,11 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
       buttonReset2!.click();
       await CommonFunc.sleep(3000);
 
-   await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt()
+   await driver.swipeBetween(
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.4)).toInt(), displayId: displayId36b },
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.2)).toInt(), displayId: displayId36b }
       );
       await CommonFunc.sleep(4000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe36Offset');
@@ -209,11 +199,11 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0380', Level.LEVEL0,
         .getElement('$attrs')
         .getString('content'))) - (-Math.round(UIContext.resolveUIContext()!.px2vp(swipe_height2)))) <= 1).assertTrue();
 
-   await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height*0.4)).toInt()
+   await driver.swipeBetween(
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.2)).toInt(), displayId: displayId36b },
+        { x: (Math.round(rect36b.left + width36b / 2)).toInt(),
+          y: (Math.round(rect36b.top + height36b * 0.4)).toInt(), displayId: displayId36b }
       );
       await CommonFunc.sleep(2000);
       done();
@@ -240,23 +230,18 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0390', Level.LEVEL0,
       let strJson = inspector.getInspectorByKey('lSwipe36Action0');
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0390] current component obj is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)));
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe36Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom - top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0390 value is" + left + " --" + right + "--" +
-        top + "--" + bottom);
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(20))).toInt()
+      let swipeComp36c = await driver.findComponent(ON.id('lSwipe36Action0'));
+      let rect36c = await swipeComp36c!.getBounds();
+      let displayId36c = await swipeComp36c!.getDisplayId();
+      let width36c = rect36c.right - rect36c.left;
+      let height = rect36c.bottom - rect36c.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect36c.left + width36c / 2)).toInt(), y: (Math.round(rect36c.top +
+          UIContext.resolveUIContext()!.vp2px(10))).toInt(), displayId: displayId36c },
+        { x: (Math.round(rect36c.left + width36c / 2)).toInt(), y: (Math.round(rect36c.top +
+          UIContext.resolveUIContext()!.vp2px(20))).toInt(), displayId: displayId36c }
       );
       await CommonFunc.sleep(1000);
       
@@ -266,12 +251,13 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0390', Level.LEVEL0,
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset0)
         .getElement('$attrs')
         .getString('content')))) <= 1).assertTrue();
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(2))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + bottom - UIContext.resolveUIContext()!.vp2px(2))).toInt()
+
+      await driver.swipeBetween(
+        { x: (Math.round(rect36c.left + width36c / 2)).toInt(), y: (Math.round(rect36c.top +
+          UIContext.resolveUIContext()!.vp2px(2))).toInt(), displayId: displayId36c },
+        { x: (Math.round(rect36c.left + width36c / 2)).toInt(),
+          y: (Math.round(rect36c.bottom -
+          UIContext.resolveUIContext()!.vp2px(2))).toInt(), displayId: displayId36c }
       );
       await CommonFunc.sleep(5000);
 
@@ -289,12 +275,14 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0390', Level.LEVEL0,
       await driver.delayMs(300);
       buttonReset2!.click();
       await CommonFunc.sleep(1000);
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + bottom - UIContext.resolveUIContext()!.vp2px(2))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(2))).toInt());
+
+            await driver.swipeBetween(
+        { x: (Math.round(rect36c.left + width36c / 2)).toInt(),
+          y: (Math.round(rect36c.bottom -
+          UIContext.resolveUIContext()!.vp2px(2))).toInt(), displayId: displayId36c },
+        { x: (Math.round(rect36c.left + width36c / 2)).toInt(), y: (Math.round(rect36c.top +
+          UIContext.resolveUIContext()!.vp2px(2))).toInt(), displayId: displayId36c }
+      );
       await CommonFunc.sleep(5000);
       let textSwipeOffset2 = inspector.getInspectorByKey('swipe36Offset');
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0390 json is ' +

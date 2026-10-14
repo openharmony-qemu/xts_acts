@@ -79,23 +79,21 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430', Level.LEVEL0,
       
       let strJson = inspector.getInspectorByKey('lSwipe43Action0');
 
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430] current component obj is: " + strJson);
-      
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe43Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      
-      await driver.swipe(	 
-         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),	 
-         (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),	 
-         (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),	 
-         (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()	 
-       );
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0430] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+
+      let swipeComp43 = await driver.findComponent(ON.id('lSwipe43Action0'));
+      let rect43 = await swipeComp43!.getBounds();
+      let displayId43 = await swipeComp43!.getDisplayId();
+      let height43 = rect43.bottom - rect43.top;
+
+      await driver.swipeBetween(
+        { x: (Math.round(rect43.left +
+          UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+          y: (Math.round(rect43.top + height43 / 2)).toInt(), displayId: displayId43 },
+        { x: (Math.round(rect43.left +
+          UIContext.resolveUIContext()!.vp2px(100))).toInt(),
+          y: (Math.round(rect43.top + height43 / 2)).toInt(), displayId: displayId43 }
+      );
       await CommonFunc.sleep(5000);
       
       let driver2 = Driver.create();

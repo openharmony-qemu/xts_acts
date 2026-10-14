@@ -74,17 +74,21 @@ it('setListEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
         await btnEvent.click();
         await CommonFunc.sleep(1500);
 
-        let swipeScroll = CommonFunc.getComponentRectOnScreen('key_listItem_set');
-        let top = swipeScroll.top;
-        let right = swipeScroll.right;
-        let left = swipeScroll.left;
-        let bottom = swipeScroll.bottom;
+        let swipeComp = await driver.findComponent(ON.id('key_listItem_set'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        let top = rect.top;
+        let right = rect.right;
+        let left = rect.left;
+        let bottom = rect.bottom;
         console.info("setListEvent_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
         let height = bottom - top;
         let width = right - left;
-        await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.8)).toInt(),
-          (Math.round(left + width / 2)).toInt(),
-          (Math.round(top + height * 0.2)).toInt());
+        await driver.swipeBetween(
+          { x: (Math.round(left + width / 2)).toInt(),
+            y: (Math.round(top + height * 0.8)).toInt(), displayId: displayId },
+          { x: (Math.round(left + width / 2)).toInt(),
+            y: (Math.round(top + height * 0.2)).toInt(), displayId: displayId });
         await CommonFunc.sleep(2000);
         let btn: Component = await driver.findComponent(ON.id('List_setOnReach_02')) as Component;
         await btn.click();

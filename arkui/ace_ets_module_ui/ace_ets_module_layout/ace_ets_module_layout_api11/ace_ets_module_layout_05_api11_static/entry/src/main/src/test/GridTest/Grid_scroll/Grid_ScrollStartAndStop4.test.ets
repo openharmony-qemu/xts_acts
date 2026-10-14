@@ -88,15 +88,19 @@ export default function Grid_ScrollStartandStop4() {
 it('Grid_ScrollStartandStop4_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[Grid_ScrollStartandStop4_static_0500] START');
-      let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollStartandStop_grid')
       let driver = Driver.create()
+      let gridRectComp = await driver.findComponent(ON.id('Grid_ScrollStartandStop_grid'))
+      let gridRect = await gridRectComp!.getBounds()
+      let displayId = await gridRectComp!.getDisplayId()
       await driver.fling({
-        x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
+        x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+        y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
+        displayId: displayId
       },
         {
-          x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
+          x: (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
+          y: (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`)).toInt(),
+          displayId: displayId
         }, 5, 1000);
       await CommonFunc.sleep(2000);
 

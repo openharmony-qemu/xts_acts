@@ -75,22 +75,18 @@ it('SUB_ACE_ListItem_Delete_Start_static_0200', Level.LEVEL0, async (done: () =>
       console.info('[SUB_ACE_ListItem_Delete_Start_static_0200] START');
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({name:'actionAreaDistance', value:50});
       await CommonFunc.sleep(1000);
-      let ListItem_00:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_00');
-      let ListItem_01:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_01');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_ListItem_Delete_Start_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
       let driver = Driver.create();
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+      let swipeComp = await driver.findComponent(ON.id('ListItem_Delete_Start_ListItem_00'));
+      let rect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      let width = rect.right - rect.left;
+      let height = rect.bottom - rect.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+          y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+          y: (Math.round(rect.top + (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId }
       );
       await CommonFunc.sleep(3000);
 
@@ -134,20 +130,18 @@ it('SUB_ACE_ListItem_Delete_Start_static_0300', Level.LEVEL0, async (done: () =>
       await btn!.click();
       await CommonFunc.sleep(1000);
 
-      let ListItem_00:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_00');
-      let ListItem_01:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_01');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_ListItem_Delete_Start_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+      let swipeComp03 = await driver.findComponent(ON.id('ListItem_Delete_Start_ListItem_00'));
+      let rect03 = await swipeComp03!.getBounds();
+      let displayId03 = await swipeComp03!.getDisplayId();
+      let width = rect03.right - rect03.left;
+      let height = rect03.bottom - rect03.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect03.left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
+          y: (Math.round(rect03.top + (rect03.bottom - rect03.top) / 2)).toInt(),
+          displayId: displayId03 },
+        { x: (Math.round(rect03.left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
+          y: (Math.round(rect03.top + (rect03.bottom - rect03.top) / 2)).toInt(),
+          displayId: displayId03 }
       );
       await CommonFunc.sleep(1000);
 
@@ -192,20 +186,18 @@ it('SUB_ACE_ListItem_Delete_Start_static_0400', Level.LEVEL0, async (done: () =>
       await btn!.click();
       await CommonFunc.sleep(1000);
 
-      let ListItem_00:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_00');
-      let ListItem_01:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_01');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_ListItem_Delete_Start_0400 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+      let swipeComp04 = await driver.findComponent(ON.id('ListItem_Delete_Start_ListItem_00'));
+      let rect04 = await swipeComp04!.getBounds();
+      let displayId04 = await swipeComp04!.getDisplayId();
+      let width = rect04.right - rect04.left;
+      let height = rect04.bottom - rect04.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect04.left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
+          y: (Math.round(rect04.top + (rect04.bottom - rect04.top) / 2)).toInt(),
+          displayId: displayId04 },
+        { x: (Math.round(rect04.left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
+          y: (Math.round(rect04.top + (rect04.bottom - rect04.top) / 2)).toInt(),
+          displayId: displayId04 }
       );
       await CommonFunc.sleep(1000);
 
@@ -249,21 +241,18 @@ it('SUB_ACE_ListItem_Delete_Start_static_0500', Level.LEVEL0, async (done: () =>
       await btn!.click();
       await CommonFunc.sleep(1000);
 
-      let ListItem_00:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_00');
-      let ListItem_01:RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_ListItem_01');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_ListItem_Delete_Start_0500 value is" + left + " --" + right + "--" + top + "--" + bottom);
-
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
+      let swipeComp05 = await driver.findComponent(ON.id('ListItem_Delete_Start_ListItem_00'));
+      let rect05 = await swipeComp05!.getBounds();
+      let displayId05 = await swipeComp05!.getDisplayId();
+      let width = rect05.right - rect05.left;
+      let height = rect05.bottom - rect05.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect05.left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
+          y: (Math.round(rect05.top + (rect05.bottom - rect05.top) / 2)).toInt(),
+          displayId: displayId05 },
+        { x: (Math.round(rect05.left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
+          y: (Math.round(rect05.top + (rect05.bottom - rect05.top) / 2)).toInt(),
+          displayId: displayId05 }
       );
       await CommonFunc.sleep(1000);
 

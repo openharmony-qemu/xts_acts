@@ -60,17 +60,18 @@ it('TouchTestStrategy_static_0100', Level.LEVEL0, async (done: () => void): Prom
       try {
         console.info('TouchTestStrategy_static_0100 START');
         await CommonFunc.sleep(1000);
-        let gridTop = CommonFunc.getComponentRect('border_TouchStrategy');
-        let top = gridTop.top
-        let gridBottom = CommonFunc.getComponentRect('border_TouchStrategy');
-        let bottom = gridBottom.bottom
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
         const uiContext = AppStorage.get<UIContext>('uiContext')!;
-        await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-          (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(80))).toInt(),
-          (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-          (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(10))).toInt());
+        let touchComp = await driver.findComponent(ON.id('border_TouchStrategy'));
+        let touchRect = await touchComp!.getBounds();
+        let touchDisplayId = await touchComp!.getDisplayId();
+        await driver.swipeBetween(
+          { x: (Math.round(touchRect.left + uiContext.vp2px(100))).toInt(),
+            y: (Math.round(touchRect.top + uiContext.vp2px(80))).toInt(), displayId: touchDisplayId },
+          { x: (Math.round(touchRect.left + uiContext.vp2px(100))).toInt(),
+            y: (Math.round(touchRect.top + uiContext.vp2px(10))).toInt(), displayId: touchDisplayId }
+        );
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('listText_TouchStrategy');
         let obj = JSON.parseJsonElement(strJson);

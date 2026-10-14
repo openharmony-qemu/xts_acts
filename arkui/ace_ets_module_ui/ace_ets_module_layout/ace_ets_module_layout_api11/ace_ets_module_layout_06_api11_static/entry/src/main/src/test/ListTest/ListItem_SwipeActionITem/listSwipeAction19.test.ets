@@ -79,23 +79,19 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0190', Level.LEVEL0,
       await CommonFunc.sleep(500);
       
       let strJson = inspector.getInspectorByKey('lSwipe19Action0');
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0190] current component obj is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0190] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipe19Action0');
-      let right: number = ListItem_00.right;
-      let left: number = ListItem_00.left;
-      let top: number = ListItem_00.top;
-      let bottom: number = ListItem_00.bottom;
-      let width = right - left;
-      let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0190 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(150))).toInt()
+      let swipeComponent19 = await driver.findComponent(ON.id('lSwipe19Action0'));
+      let rect19 = await swipeComponent19!.getBounds();
+      let displayId19 = await swipeComponent19!.getDisplayId();
+      let width19 = rect19.right - rect19.left;
+
+            await driver.swipeBetween(
+        { x: (Math.round(rect19.left + width19 / 2)).toInt(), y: (Math.round(rect19.top +
+          UIContext.resolveUIContext()!.vp2px(50))).toInt(), displayId: displayId19 },
+        { x: (Math.round(rect19.left + width19 / 2)).toInt(), y: (Math.round(rect19.top +
+          UIContext.resolveUIContext()!.vp2px(150))).toInt(), displayId: displayId19 }
       );
       await CommonFunc.sleep(4000);
       
