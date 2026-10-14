@@ -69,14 +69,29 @@ export default function LifeCycleLinstenerTest() {
     it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100`;
       console.log(`${tag}, it begin`);
-      let appCloneIndex
-      try {
-        let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
-        let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
-      } catch (err) {
-        console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
-        expect(err?.code).assertEqual(16000071);
-        done();
+      let appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
+      if(!appCloneSupport){
+        try {
+          let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
+          let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
+          expect().assertFail();
+          done();
+        } catch (err) {
+          console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
+          expect(err?.code).assertEqual(16000071);
+          done();
+        }
+      } else {
+        try {
+          let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
+          let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
+          expect(appCloneIndex).assertEqual(0);
+          done();
+        } catch (err) {
+          console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
+          expect().assertFail();
+          done();
+        }
       }
     });
 
