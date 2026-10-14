@@ -15,8 +15,8 @@
  
 import AbilityStage from '@ohos.app.ability.AbilityStage';
 import { application, Want } from '@kit.AbilityKit';
-import { BusinessError } from '@kit.BasicServicesKit';
-import { commonEventManager } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+
 const DOMAIN = 0x0000;
 export enum Constant {
   event_000 = 'START_ABILITY_CALLBACK_000',

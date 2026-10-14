@@ -17,13 +17,15 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { commonEventManager } from '@kit.BasicServicesKit';
+import { Want } from '@kit.AbilityKit';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 export default class UiAbility03 extends UIAbility {
-  onCreate(want, launchParam):void {
+onCreate(want: Want, launchParam: AbilityConstant.LaunchParam):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 onCreate');
     globalThis.uiAbilityContext3 = this.context
     hilog.info(0x0000, 'testTag', '%{public}s', `UiAbility03 JSON.stringify(want) is: ${JSON.stringify(want)}`);
-    commonEventManager.publish('ability03_onCreate', function () {
+    commonEventManager.publish('ability03_onCreate', () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onCreate');
     });
   }
@@ -34,10 +36,10 @@ export default class UiAbility03 extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage):void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 onWindowStageCreate');
-    commonEventManager.publish('ability03_onWindowStageCreate', function () {
+    commonEventManager.publish('ability03_onWindowStageCreate', () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onWindowStageCreate');
     });
-    windowStage.loadContent('testability/pages/Index', (err, data) => {
+    windowStage.loadContent('testability/pages/Index', (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -53,7 +55,7 @@ export default class UiAbility03 extends UIAbility {
   onForeground():void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 onForeground');
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 execute router.back!');
-    commonEventManager.publish('ability03_onForeground', function () {
+    commonEventManager.publish('ability03_onForeground', () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onForeground');
     });
     setTimeout(() => {
@@ -64,7 +66,7 @@ export default class UiAbility03 extends UIAbility {
   onBackground():void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility03 onBackground');
-    commonEventManager.publish('ability03_onBackground', function () {
+    commonEventManager.publish('ability03_onBackground', () => {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbilityForResult_5000 publish ability03_onBackground');
     });
   }

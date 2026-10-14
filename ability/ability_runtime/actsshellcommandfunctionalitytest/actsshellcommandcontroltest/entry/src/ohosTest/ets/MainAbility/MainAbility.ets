@@ -24,7 +24,7 @@ import window from '@ohos.window';
 export default class MainAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
-    console.log("ActsShellCommandControlTest  MainAbility onCreate");
+    console.log('ActsShellCommandControlTest  MainAbility onCreate');
     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs = abilityDelegatorRegistry.getArguments();
     console.info('start run testcase!!!');
@@ -33,28 +33,28 @@ export default class MainAbility extends Ability {
 
   onDestroy() {
     // Ability is destroying, release resources for this ability
-    console.log("ActsShellCommandControlTest  MainAbility onDestroy");
+    console.log('ActsShellCommandControlTest  MainAbility onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.log("ActsShellCommandControlTest  MainAbility onWindowStageCreate");
-    windowStage.loadContent("pages/index/index", null);
-    console.log("ActsShellCommandControlTest  MainAbility onWindowStageCreate finish");
+    console.log('ActsShellCommandControlTest  MainAbility onWindowStageCreate');
+    windowStage.loadContent('pages/index/index', null);
+    console.log('ActsShellCommandControlTest  MainAbility onWindowStageCreate finish');
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("ActsShellCommandControlTest  MainAbility onWindowStageDestroy");
+    console.log('ActsShellCommandControlTest  MainAbility onWindowStageDestroy');
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("ActsShellCommandControlTest  MainAbility onForeground");
+    console.log('ActsShellCommandControlTest  MainAbility onForeground');
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("ActsShellCommandControlTest  MainAbility onBackground");
+    console.log('ActsShellCommandControlTest  MainAbility onBackground');
   }
 }
