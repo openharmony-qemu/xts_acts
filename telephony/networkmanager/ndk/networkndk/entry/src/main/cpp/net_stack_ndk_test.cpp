@@ -47,6 +47,17 @@
 #define ERROR_CODE_2305001 2305001
 #define ERROR_CODE_2305069 2305069
 #define ERROR_CODE_69 69
+#define ERROR_CODE_201 201
+#define ERROR_CODE_2305002 2305002
+#define ERROR_CODE_2305004 2305004
+#define ERROR_CODE_2305006 2305006
+#define ERROR_CODE_2305007 2305007
+#define ERROR_CODE_2305009 2305009
+#define ERROR_CODE_2305010 2305010
+#define ERROR_CODE_2305024 2305024
+#define ERROR_CODE_2305027 2305027
+#define ERROR_CODE_2305062 2305062
+#define MOCK_CERT_COUNT 3
 
 extern "C" {
 __attribute__((weak)) uint32_t OH_NetStack_CreateAndVerifySortedCertChain(const struct NetStack_CertBlob *, size_t,
@@ -109,7 +120,7 @@ void GetCertData(NetStack_CertBlob &cert, char *certPath, NetStack_CertType cert
     buffer = nullptr;
 }
 
-static uint32_t TestCaseCertVerification(uint32_t index, char *pemCertPath, char *derCertPath)
+static uint32_t RunCertVerificationCase(uint32_t index, char *pemCertPath, char *derCertPath)
 {
     NetStack_CertBlob cert = {};
     NetStack_CertBlob caCert = {};
@@ -151,6 +162,11 @@ static uint32_t TestCaseCertVerification(uint32_t index, char *pemCertPath, char
         GetCertData(cert, pemCertPath, NetStack_CertType::NETSTACK_CERT_TYPE_DER);
         ret = OH_NetStack_CertVerification(&cert, nullptr);
     }
+    return ret;
+}
+
+static uint32_t AdjustCertVerificationRet(uint32_t index, uint32_t ret)
+{
     if (ret != 0 && (index == CASE_INDEX_1 || index == CASE_INDEX_2 || index == CASE_INDEX_6 || index == CASE_INDEX_7 ||
                      index == CASE_INDEX_9 || index == CASE_INDEX_10)) {
         OH_LOG_Print(LOG_APP, LOG_WARN, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG,
@@ -169,6 +185,12 @@ static uint32_t TestCaseCertVerification(uint32_t index, char *pemCertPath, char
         ret = ERROR_CODE_2305069;
     }
     return ret;
+}
+
+static uint32_t TestCaseCertVerification(uint32_t index, char *pemCertPath, char *derCertPath)
+{
+    uint32_t ret = RunCertVerificationCase(index, pemCertPath, derCertPath);
+    return AdjustCertVerificationRet(index, ret);
 }
 
 // 校验证书
@@ -548,6 +570,39 @@ static napi_value OHNetStackGetCertificatesForHostName(napi_env env, napi_callba
     return result;
 }
 
+// 尝试返回mock的pin set结果，未命中mock域名时返回false
+static bool TryGetMockPinSet(napi_env env, char *hostname, napi_value *outResult)
+{
+    if (hostname == nullptr) {
+        return false;
+    }
+    if (strcmp(hostname, "getonepin.com") == 0) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock single pin set");
+        napi_value result = nullptr;
+        const char *pinStr = "sha256//FEDCBA987654321";
+        napi_create_string_utf8(env, pinStr, strlen(pinStr), &result);
+        free(hostname);
+        *outResult = result;
+        return true;
+    }
+    if (strcmp(hostname, "getmultipin.com") == 0) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock multi pin set");
+        napi_value result = nullptr;
+        const char *pinStr = "sha256//FEDCBA987654321;sha256//ABCDEF987654321;sha256//FEDCBA123456789";
+        napi_create_string_utf8(env, pinStr, strlen(pinStr), &result);
+        free(hostname);
+        *outResult = result;
+        return true;
+    }
+    if (strcmp(hostname, "notexit.com") == 0 || strcmp(hostname, "getoverduepin.com") == 0) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock empty pin set");
+        free(hostname);
+        *outResult = nullptr;
+        return true;
+    }
+    return false;
+}
+
 static napi_value OHNetStackGetPinSetForHostName2(napi_env env, napi_callback_info info)
 {
     napi_status status;
@@ -573,27 +628,9 @@ static napi_value OHNetStackGetPinSetForHostName2(napi_env env, napi_callback_in
         }
     }
 
-    if (hostname != nullptr && strcmp(hostname, "getonepin.com") == 0) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock single pin set");
-        napi_value result = nullptr;
-        const char *pinStr = "sha256//FEDCBA987654321";
-        napi_create_string_utf8(env, pinStr, strlen(pinStr), &result);
-        free(hostname);
-        return result;
-    }
-    if (hostname != nullptr && strcmp(hostname, "getmultipin.com") == 0) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock multi pin set");
-        napi_value result = nullptr;
-        const char *pinStr = "sha256//FEDCBA987654321;sha256//ABCDEF987654321;sha256//FEDCBA123456789";
-        napi_create_string_utf8(env, pinStr, strlen(pinStr), &result);
-        free(hostname);
-        return result;
-    }
-    if (hostname != nullptr && (strcmp(hostname, "notexit.com") == 0 ||
-                                strcmp(hostname, "getoverduepin.com") == 0)) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock empty pin set");
-        free(hostname);
-        return nullptr;
+    napi_value mockResult = nullptr;
+    if (TryGetMockPinSet(env, hostname, &mockResult)) {
+        return mockResult;
     }
 
     NetStack_CertificatePinning pin = {};
@@ -620,6 +657,47 @@ static napi_value OHNetStackGetPinSetForHostName2(napi_env env, napi_callback_in
     return result;
 }
 
+// 尝试返回mock的证书结果，未命中mock域名时返回false
+static bool TryGetMockCertificates(napi_env env, char *hostname, napi_value *outResult)
+{
+    if (hostname == nullptr) {
+        return false;
+    }
+    if (strcmp(hostname, "getonecert.com") == 0) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock single certificate");
+        napi_value jsArray = nullptr;
+        napi_create_array_with_length(env, 1, &jsArray);
+        napi_value item = nullptr;
+        const char *certStr = "mock_cert_1";
+        napi_create_string_utf8(env, certStr, strlen(certStr), &item);
+        napi_set_element(env, jsArray, 0, item);
+        free(hostname);
+        *outResult = jsArray;
+        return true;
+    }
+    if (strcmp(hostname, "getmulticert.com") == 0) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock multi certificates");
+        napi_value jsArray = nullptr;
+        napi_create_array_with_length(env, MOCK_CERT_COUNT, &jsArray);
+        const char *certStrs[MOCK_CERT_COUNT] = {"mock_cert_1", "mock_cert_2", "mock_cert_3"};
+        for (uint32_t i = 0; i < MOCK_CERT_COUNT; ++i) {
+            napi_value item = nullptr;
+            napi_create_string_utf8(env, certStrs[i], strlen(certStrs[i]), &item);
+            napi_set_element(env, jsArray, i, item);
+        }
+        free(hostname);
+        *outResult = jsArray;
+        return true;
+    }
+    if (strcmp(hostname, "notexit.com") == 0) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock empty certificates");
+        free(hostname);
+        *outResult = nullptr;
+        return true;
+    }
+    return false;
+}
+
 static napi_value OHNetStackGetCertificatesForHostName2(napi_env env, napi_callback_info info)
 {
     napi_status status;
@@ -634,34 +712,9 @@ static napi_value OHNetStackGetCertificatesForHostName2(napi_env env, napi_callb
         napi_get_value_string_utf8(env, args[0], hostname, hostnameSize + 1, nullptr);
     }
 
-    if (hostname != nullptr && strcmp(hostname, "getonecert.com") == 0) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock single certificate");
-        napi_value jsArray = nullptr;
-        napi_create_array_with_length(env, 1, &jsArray);
-        napi_value item = nullptr;
-        const char *certStr = "mock_cert_1";
-        napi_create_string_utf8(env, certStr, strlen(certStr), &item);
-        napi_set_element(env, jsArray, 0, item);
-        free(hostname);
-        return jsArray;
-    }
-    if (hostname != nullptr && strcmp(hostname, "getmulticert.com") == 0) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock multi certificates");
-        napi_value jsArray = nullptr;
-        napi_create_array_with_length(env, 3, &jsArray);
-        const char *certStrs[3] = {"mock_cert_1", "mock_cert_2", "mock_cert_3"};
-        for (uint32_t i = 0; i < 3; ++i) {
-            napi_value item = nullptr;
-            napi_create_string_utf8(env, certStrs[i], strlen(certStrs[i]), &item);
-            napi_set_element(env, jsArray, i, item);
-        }
-        free(hostname);
-        return jsArray;
-    }
-    if (hostname != nullptr && strcmp(hostname, "notexit.com") == 0) {
-        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG, "mock empty certificates");
-        free(hostname);
-        return nullptr;
+    napi_value mockResult = nullptr;
+    if (TryGetMockCertificates(env, hostname, &mockResult)) {
+        return mockResult;
     }
 
     NetStack_Certificates certs = {};
@@ -963,167 +1016,89 @@ static napi_value OHNetStackCreateAndVerifySortedCertChain(napi_env env, napi_ca
     return result;
 }
 
-// 释放证书链内存
-static napi_value OHNetStackFreeCertChain(napi_env env, napi_callback_info info)
+struct FreeCertChainParamEntry {
+    const char *param;
+    int32_t code;
+};
+
+// ERROR_前缀参数与错误码映射表
+static const FreeCertChainParamEntry ERROR_PARAM_TABLE[] = {
+    {"0", 0},
+    {"201", ERROR_CODE_201},
+    {"2305001", ERROR_CODE_2305001},
+    {"2305002", ERROR_CODE_2305002},
+    {"2305004", ERROR_CODE_2305004},
+    {"2305006", ERROR_CODE_2305006},
+    {"2305007", ERROR_CODE_2305007},
+    {"2305009", ERROR_CODE_2305009},
+    {"2305010", ERROR_CODE_2305010},
+    {"2305024", ERROR_CODE_2305024},
+    {"2305027", ERROR_CODE_2305027},
+    {"2305062", ERROR_CODE_2305062},
+};
+
+// TEST_前缀参数与错误码映射表，用于测试参数覆盖场景
+static const FreeCertChainParamEntry TEST_PARAM_TABLE[] = {
+    {"TEST_NULL_certChain", ERROR_CODE_2305001},
+    {"TEST_zero_certCount", ERROR_CODE_2305002},
+    {"TEST_invalid_certChain", ERROR_CODE_2305004},
+    {"TEST_NULL_data", ERROR_CODE_2305006},
+    {"TEST_zero_size", ERROR_CODE_2305007},
+    {"TEST_invalid_type", ERROR_CODE_2305009},
+    {"TEST_double_free", ERROR_CODE_2305010},
+    {"TEST_large_certCount", ERROR_CODE_2305024},
+    {"TEST_invalid_certChain_ptr", ERROR_CODE_2305027},
+    {"TEST_memory_error", ERROR_CODE_2305062},
+};
+
+// 处理ERROR_前缀参数，优先查映射表，否则尝试解析数字错误码
+static bool TryGetErrorParamResult(napi_env env, const char *param, napi_value *outResult)
 {
-    size_t argc = 1;
-    napi_value args[1] = {};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    
-    // 检查是否传入特殊参数以返回201错误码
-    if (argc > 0) {
-        char *param = nullptr;
-        size_t paramBufSize = 0;
-        napi_get_value_string_utf8(env, args[0], param, 0, &paramBufSize);
-        if (paramBufSize > 0) {
-            param = new char[paramBufSize + 1];
-            napi_get_value_string_utf8(env, args[0], param, paramBufSize + 1, nullptr);
-            
-            // 检查是否传入特殊参数以返回错误码
-            if (strncmp(param, "ERROR_", 6) == 0) {
-                // 直接检查特定的错误码字符串
-                const char* errorStr = param + 6;
-                if (strcmp(errorStr, "0") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 0, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "201") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 201, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305001") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305001, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305002") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305002, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305004") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305004, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305006") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305006, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305007") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305007, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305009") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305009, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305010") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305010, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305024") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305024, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305027") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305027, &result);
-                    delete[] param;
-                    return result;
-                } else if (strcmp(errorStr, "2305062") == 0) {
-                    napi_value result = nullptr;
-                    napi_create_int32(env, 2305062, &result);
-                    delete[] param;
-                    return result;
-                } else {
-                    // 尝试解析数字错误码
-                    char *endPtr = nullptr;
-                    unsigned long errorCode = strtoul(param + 6, &endPtr, 10);
-                    if (endPtr != param + 6 && *endPtr == '\0') {
-                        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG,
-                                     "OHNetStackFreeCertChain: returning error code %lu", errorCode);
-                        napi_value result = nullptr;
-                        napi_create_int32(env, static_cast<int32_t>(errorCode), &result);
-                        delete[] param;
-                        return result;
-                    }
-                }
-            }
-            // 检查是否传入特殊参数以测试参数覆盖场景
-            if (strcmp(param, "TEST_NULL_certChain") == 0) {
-                // 测试 certChain 为 NULL 的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305001, &result); // 返回未指定错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_zero_certCount") == 0) {
-                // 测试 certCount 为 0 的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305002, &result); // 返回无法获取颁发者证书错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_invalid_certChain") == 0) {
-                // 测试无效证书链的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305004, &result); // 返回无法解密证书签名错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_NULL_data") == 0) {
-                // 测试证书数据为 NULL 的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305006, &result); // 返回无法解码颁发者公钥错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_zero_size") == 0) {
-                // 测试证书大小为 0 的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305007, &result); // 返回证书签名失败错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_invalid_type") == 0) {
-                // 测试无效证书类型的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305009, &result); // 返回证书尚未生效错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_double_free") == 0) {
-                // 测试双重释放的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305010, &result); // 返回证书已过期错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_large_certCount") == 0) {
-                // 测试大证书数量的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305024, &result); // 返回无效证书颁发机构错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_invalid_certChain_ptr") == 0) {
-                // 测试无效证书链指针的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305027, &result); // 返回证书不受信任错误
-                delete[] param;
-                return result;
-            } else if (strcmp(param, "TEST_memory_error") == 0) {
-                // 测试内存错误的情况
-                napi_value result = nullptr;
-                napi_create_int32(env, 2305062, &result); // 返回主机名验证失败错误
-                delete[] param;
-                return result;
-            }
-            
-            delete[] param;
+    if (strncmp(param, "ERROR_", 6) != 0) {
+        return false;
+    }
+    const char *errorStr = param + 6;
+    size_t entryCount = sizeof(ERROR_PARAM_TABLE) / sizeof(ERROR_PARAM_TABLE[0]);
+    for (size_t i = 0; i < entryCount; ++i) {
+        if (strcmp(errorStr, ERROR_PARAM_TABLE[i].param) == 0) {
+            napi_value result = nullptr;
+            napi_create_int32(env, ERROR_PARAM_TABLE[i].code, &result);
+            *outResult = result;
+            return true;
         }
     }
-    
+    // 尝试解析数字错误码
+    char *endPtr = nullptr;
+    unsigned long errorCode = strtoul(param + 6, &endPtr, 10);
+    if (endPtr != param + 6 && *endPtr == '\0') {
+        OH_LOG_Print(LOG_APP, LOG_INFO, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG,
+                     "OHNetStackFreeCertChain: returning error code %lu", errorCode);
+        napi_value result = nullptr;
+        napi_create_int32(env, static_cast<int32_t>(errorCode), &result);
+        *outResult = result;
+        return true;
+    }
+    return false;
+}
+
+// 处理TEST_前缀参数，按映射表返回错误码
+static bool TryGetTestParamResult(napi_env env, const char *param, napi_value *outResult)
+{
+    size_t entryCount = sizeof(TEST_PARAM_TABLE) / sizeof(TEST_PARAM_TABLE[0]);
+    for (size_t i = 0; i < entryCount; ++i) {
+        if (strcmp(param, TEST_PARAM_TABLE[i].param) == 0) {
+            napi_value result = nullptr;
+            napi_create_int32(env, TEST_PARAM_TABLE[i].code, &result);
+            *outResult = result;
+            return true;
+        }
+    }
+    return false;
+}
+
+// 构造测试证书链并调用OH_NetStack_FreeCertChain释放
+static napi_value DoFreeTestCertChain(napi_env env)
+{
     if (OH_NetStack_FreeCertChain == nullptr) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, WEBSOCKET_LOG_DOMAIN, WEBSOCKET_LOG_TAG,
                      "OH_NetStack_FreeCertChain is not available");
@@ -1156,6 +1131,39 @@ static napi_value OHNetStackFreeCertChain(napi_env env, napi_callback_info info)
     napi_value result = nullptr;
     napi_create_int32(env, 0, &result);
     return result;
+}
+
+// 释放证书链内存
+static napi_value OHNetStackFreeCertChain(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    // 检查是否传入特殊参数以返回201错误码
+    if (argc > 0) {
+        char *param = nullptr;
+        size_t paramBufSize = 0;
+        napi_get_value_string_utf8(env, args[0], param, 0, &paramBufSize);
+        if (paramBufSize > 0) {
+            param = new char[paramBufSize + 1];
+            napi_get_value_string_utf8(env, args[0], param, paramBufSize + 1, nullptr);
+
+            napi_value paramResult = nullptr;
+            if (TryGetErrorParamResult(env, param, &paramResult)) {
+                delete[] param;
+                return paramResult;
+            }
+            if (TryGetTestParamResult(env, param, &paramResult)) {
+                delete[] param;
+                return paramResult;
+            }
+
+            delete[] param;
+        }
+    }
+
+    return DoFreeTestCertChain(env);
 }
 
 // 参数测试函数 - 返回201错误码
