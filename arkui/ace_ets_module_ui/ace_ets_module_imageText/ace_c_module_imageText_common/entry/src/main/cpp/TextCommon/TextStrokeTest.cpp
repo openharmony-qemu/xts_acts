@@ -14,6 +14,7 @@
  */
 #include "common/common.h"
 #include <arkui/native_node.h>
+#include <arkui/node_attributes/text_common.h>
 #include <hilog/log.h>
 
 namespace ArkUICapiTest {
@@ -387,6 +388,140 @@ static napi_value TextStrokeTest_030(napi_env env, napi_callback_info info)
     ASSERT_EQ(resetResult, ARKUI_ERROR_CODE_NO_ERROR);
     const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
     ASSERT_EQ(itemptr->value[0].i32, PARAM_0);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_031(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN }};
+    ArkUI_AttributeItem item = { value, PARAM_1 };
+    int32_t setResult = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_031 setResult=%{public}d", setResult);
+    ASSERT_EQ(setResult, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_032(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_ROUND_JOIN }};
+    ArkUI_AttributeItem item = { value, PARAM_1 };
+    int32_t setResult = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_032 setResult=%{public}d", setResult);
+    ASSERT_EQ(setResult, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_ROUND_JOIN);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_033(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN }};
+    ArkUI_AttributeItem item = { value, PARAM_1 };
+    int32_t setResult = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_033 setResult=%{public}d", setResult);
+    ASSERT_EQ(setResult, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_034(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value1[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN }};
+    ArkUI_AttributeItem item1 = { value1, PARAM_1 };
+    int32_t setResult1 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item1);
+    ASSERT_EQ(setResult1, ARKUI_ERROR_CODE_NO_ERROR);
+    ArkUI_NumberValue value2[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_ROUND_JOIN }};
+    ArkUI_AttributeItem item2 = { value2, PARAM_1 };
+    int32_t setResult2 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item2);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_034 setResult2=%{public}d", setResult2);
+    ASSERT_EQ(setResult2, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_ROUND_JOIN);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_035(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value1[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_ROUND_JOIN }};
+    ArkUI_AttributeItem item1 = { value1, PARAM_1 };
+    int32_t setResult1 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item1);
+    ASSERT_EQ(setResult1, ARKUI_ERROR_CODE_NO_ERROR);
+    ArkUI_NumberValue value2[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN }};
+    ArkUI_AttributeItem item2 = { value2, PARAM_1 };
+    int32_t setResult2 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item2);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_035 setResult2=%{public}d", setResult2);
+    ASSERT_EQ(setResult2, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_036(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value1[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN }};
+    ArkUI_AttributeItem item1 = { value1, PARAM_1 };
+    int32_t setResult1 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item1);
+    ASSERT_EQ(setResult1, ARKUI_ERROR_CODE_NO_ERROR);
+    ArkUI_NumberValue value2[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN }};
+    ArkUI_AttributeItem item2 = { value2, PARAM_1 };
+    int32_t setResult2 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item2);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_036 setResult2=%{public}d", setResult2);
+    ASSERT_EQ(setResult2, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_037(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value1[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN }};
+    ArkUI_AttributeItem item1 = { value1, PARAM_1 };
+    int32_t setResult1 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item1);
+    ASSERT_EQ(setResult1, ARKUI_ERROR_CODE_NO_ERROR);
+    ArkUI_NumberValue value2[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN }};
+    ArkUI_AttributeItem item2 = { value2, PARAM_1 };
+    int32_t setResult2 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item2);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_037 setResult2=%{public}d", setResult2);
+    ASSERT_EQ(setResult2, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN);
+    NAPI_END(text);
+}
+
+static napi_value TextStrokeTest_038(napi_env env, napi_callback_info info)
+{
+    NAPI_START(text, ARKUI_NODE_TEXT);
+    ArkUI_NumberValue value1[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_MITER_JOIN }};
+    ArkUI_AttributeItem item1 = { value1, PARAM_1 };
+    nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item1);
+    ArkUI_NumberValue value2[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_ROUND_JOIN }};
+    ArkUI_AttributeItem item2 = { value2, PARAM_1 };
+    nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item2);
+    ArkUI_NumberValue value3[] = {{ .i32 = OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN }};
+    ArkUI_AttributeItem item3 = { value3, PARAM_1 };
+    int32_t setResult3 = nodeAPI->setAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE, &item3);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "NODE_TEXT_STROKE_JOIN_STYLE TextStrokeTest_038 setResult3=%{public}d", setResult3);
+    ASSERT_EQ(setResult3, ARKUI_ERROR_CODE_NO_ERROR);
+    const ArkUI_AttributeItem* itemptr = nodeAPI->getAttribute(text, NODE_TEXT_STROKE_JOIN_STYLE);
+    ASSERT_EQ(itemptr->value[0].i32, OH_ARKUI_STROKE_JOIN_STYLE_BEVEL_JOIN);
     NAPI_END(text);
 }
 

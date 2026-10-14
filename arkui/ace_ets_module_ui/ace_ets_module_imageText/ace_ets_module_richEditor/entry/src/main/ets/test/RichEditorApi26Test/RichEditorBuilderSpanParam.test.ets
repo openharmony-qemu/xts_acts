@@ -483,6 +483,8 @@ export default function richEditorBuilderSpanParamTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_all') as string;
       expect(result !== undefined && result !== 'failed' && result !== 'undefined').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(count > 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0100] END');
     });
 
@@ -503,7 +505,9 @@ export default function richEditorBuilderSpanParamTest() {
       await (await driver.findComponent(ON.id('btn_get_undefined'))).click();
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_undefined') as string;
-      expect(result !== undefined && result !== 'failed').assertTrue();
+      expect(result !== undefined && result !== 'failed' && result !== 'undefined').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(count > 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0200] END');
     });
 
@@ -525,6 +529,8 @@ export default function richEditorBuilderSpanParamTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_null') as string;
       expect(result !== undefined).assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(result === 'failed' || result === 'undefined' || count > 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0300] END');
     });
 
@@ -545,7 +551,9 @@ export default function richEditorBuilderSpanParamTest() {
       await (await driver.findComponent(ON.id('btn_get_range_normal'))).click();
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_range_normal') as string;
-      expect(result !== undefined && result !== 'failed').assertTrue();
+      expect(result !== undefined && result !== 'failed' && result !== 'undefined').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(count > 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0400] END');
     });
 
@@ -567,6 +575,8 @@ export default function richEditorBuilderSpanParamTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_range_empty') as string;
       expect(result !== undefined && result !== 'failed').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(result === 'undefined' || count === 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0500] END');
     });
 
@@ -587,7 +597,9 @@ export default function richEditorBuilderSpanParamTest() {
       await (await driver.findComponent(ON.id('btn_get_range_only_start'))).click();
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_range_only_start') as string;
-      expect(result !== undefined && result !== 'failed').assertTrue();
+      expect(result !== undefined && result !== 'failed' && result !== 'undefined').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(count > 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0600] END');
     });
 
@@ -608,7 +620,9 @@ export default function richEditorBuilderSpanParamTest() {
       await (await driver.findComponent(ON.id('btn_get_range_only_end'))).click();
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_range_only_end') as string;
-      expect(result !== undefined && result !== 'failed').assertTrue();
+      expect(result !== undefined && result !== 'failed' && result !== 'undefined').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(count > 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0700] END');
     });
 
@@ -650,7 +664,9 @@ export default function richEditorBuilderSpanParamTest() {
       await (await driver.findComponent(ON.id('btn_get_range_large_end'))).click();
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_range_large_end') as string;
-      expect(result !== undefined && result !== 'failed').assertTrue();
+      expect(result !== undefined && result !== 'failed' && result !== 'undefined').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(count > 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_0900] END');
     });
 
@@ -691,6 +707,8 @@ export default function richEditorBuilderSpanParamTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_no_span') as string;
       expect(result !== undefined && result !== 'failed').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(result === 'undefined' || count === 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_1100] END');
     });
 
@@ -712,6 +730,8 @@ export default function richEditorBuilderSpanParamTest() {
       await CommonFunc.sleep(SLEEP_TIME);
       let result: string = AppStorage.get<string>('param_get_after_delete') as string;
       expect(result !== undefined && result !== 'failed').assertTrue();
+      let count: number = Number(result.split('|')[0]);
+      expect(result === 'undefined' || count === 0).assertTrue();
       console.info('[SUB_ARKUI_RICHEDITOR_BUILDERSPAN_PARAM_GET_1200] END');
     });
   });
