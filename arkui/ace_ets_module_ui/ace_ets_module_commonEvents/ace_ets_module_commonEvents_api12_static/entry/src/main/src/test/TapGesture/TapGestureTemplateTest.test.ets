@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,10 +16,11 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 const uiContext = new UIContext();
 
 
@@ -80,10 +81,10 @@ it('TapGestureTemplateTest_static_0010', Level.LEVEL0, async (done: () => void):
       let timeSpace:  Int = 3000
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.click(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
+      await driver.clickAt({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt(), displayId: displayID});
       await CommonFunc.sleep(timeSpace);
       let timeBefore:number = Date.now();
-      await driver.click(Math.round(areaObj.left + areaWidth/2).toInt(),Math.round(areaObj.top + areaHeight/2).toInt());
+      await driver.clickAt({x: Math.round(areaObj.left + areaWidth/2).toInt(), y: Math.round(areaObj.top + areaHeight/2).toInt(), displayId: displayID});
       let timeAfter:number = Date.now();
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('TapGestureTemplate_Text01');

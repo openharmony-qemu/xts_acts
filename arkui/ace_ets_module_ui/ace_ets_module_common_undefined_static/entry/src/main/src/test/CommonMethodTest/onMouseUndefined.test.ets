@@ -26,6 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function OnMouseUndefinedTest() {
   describe('OnMouseUndefinedTest', () => {
 
@@ -71,25 +72,25 @@ export default function OnMouseUndefinedTest() {
       await CommonFunc.sleep(1000);
       let point: Point = await (myButton?.getBoundsCenter() as Promise<Point>);
       let point1: Point = await (changeBtn?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(point1);
+      await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
       await CommonFunc.sleep(1000);
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      await driver.mouseMoveTo(point);
+      await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID});
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('MyButtonMouse');
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
       expect(res).assertEqual('onMouse:1');
       await (changeBtn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      await driver.mouseMoveTo(point1);
+      await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
       await CommonFunc.sleep(1000);
-      await driver.mouseMoveTo(point);
+      await driver.mouseMoveTo({x: point.x, y: point.y, displayId: displayID});
       await CommonFunc.sleep(1000);
       strJson = inspector.getInspectorByKey('MyButtonMouse');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
       expect(res).assertEqual('onMouse:2');
-      await driver.mouseMoveTo(point1);
+      await driver.mouseMoveTo({x: point1.x, y: point1.y, displayId: displayID});
       await CommonFunc.sleep(1000);
       await (changeBtn?.click() as Promise<void>);
       console.info('[OnMouseUndefinedTest_static_0100] END');

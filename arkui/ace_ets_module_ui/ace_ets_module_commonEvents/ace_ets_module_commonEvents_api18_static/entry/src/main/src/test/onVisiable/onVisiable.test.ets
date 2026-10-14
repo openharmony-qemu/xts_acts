@@ -17,11 +17,12 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON } from '@kit.TestKit';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function onVisibleAreaApproximateChangeTest() {
 
   describe('onVisibleAreaApproximateChangeTest', () => {
@@ -81,7 +82,7 @@ it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () =
       let width = right - left;
       await CommonFunc.sleep(1000);
       // 从完全可见滑动到完全不可见
-      await driver.swipe(Math.round(left + width*0.5).toInt(),Math.round(bottom - height*0.08).toInt(),Math.round(left + width*0.5).toInt(),Math.round(top + height*0.08).toInt());
+      await driver.swipeBetween({x: Math.round(left + width*0.5).toInt(), y: Math.round(bottom - height*0.08).toInt(), displayId: displayID}, {x: Math.round(left + width*0.5).toInt(), y: Math.round(top + height*0.08).toInt(), displayId: displayID});
       await CommonFunc.sleep(3000);      
       let strJson = inspector.getInspectorByKey('onVisibleAreaApproximateChange_column_id');
       await CommonFunc.sleep(1000);
@@ -92,7 +93,7 @@ it('onVisibleAreaApproximateChange_static_0010', Level.LEVEL0, async (done: () =
       await CommonFunc.sleep(1000);
 
       // 从完全可见滑动到完全不可见
-      await driver.swipe(Math.round(left + width*0.5).toInt(),Math.round(top + height*0.08).toInt(),Math.round(left + width*0.5).toInt(),Math.round(bottom - height*0.08).toInt());
+      await driver.swipeBetween({x: Math.round(left + width*0.5).toInt(), y: Math.round(top + height*0.08).toInt(), displayId: displayID}, {x: Math.round(left + width*0.5).toInt(), y: Math.round(bottom - height*0.08).toInt(), displayId: displayID});
       await CommonFunc.sleep(3000);
       strJson = inspector.getInspectorByKey('onVisibleAreaApproximateChange_column_id');
       await CommonFunc.sleep(1000);

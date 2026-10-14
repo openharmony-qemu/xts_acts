@@ -16,6 +16,7 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -24,6 +25,7 @@ import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function setCustomCursorundefined(): void{
   describe('setCustomCursorundefined', () => {
@@ -74,17 +76,17 @@ export default function setCustomCursorundefined(): void{
 
       let button1 = await driver.findComponent(ON.id('button01'));
       let point1: Point = await (button1?.getBoundsCenter() as Promise<Point>);
-      await driver!.mouseClick({x: point1.x, y: point1.y}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver!.mouseClick({x: point1.x, y: point1.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1500);
 
       let button2 = await driver.findComponent(ON.id('button02'));
       let point2: Point = await (button2?.getBoundsCenter() as Promise<Point>);
-      await driver!.mouseClick({x: point2.x, y: point2.y}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver!.mouseClick({x: point2.x, y: point2.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1500);
 
       let button3 = await driver.findComponent(ON.id('button03'));
       let point3: Point = await (button3?.getBoundsCenter() as Promise<Point>);
-      await driver!.mouseClick({x: point3.x, y: point3.y}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver!.mouseClick({x: point3.x, y: point3.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('getHistoricalPointsX');

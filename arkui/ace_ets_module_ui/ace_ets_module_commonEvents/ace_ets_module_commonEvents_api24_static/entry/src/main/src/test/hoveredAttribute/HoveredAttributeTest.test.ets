@@ -22,6 +22,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function HoveredAttributeTest(): void {
   describe('HoveredAttributeTest', () => {
 
@@ -71,7 +72,7 @@ export default function HoveredAttributeTest(): void {
       let component = await driver.findComponent(ON.id('modifierHoverBtn'));
       let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0100] modifierHoverBtn center: ' + JSON.stringify(center));
-      await driver.mouseMoveTo(center);
+      await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('modifierHoverBtn');
@@ -83,7 +84,7 @@ export default function HoveredAttributeTest(): void {
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0100] moveOutBtn center: ' + JSON.stringify(moveOutCenter));
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('modifierHoverBtn');
@@ -121,13 +122,13 @@ export default function HoveredAttributeTest(): void {
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
 
       for (let i: number = 0; i < 3; i++) {
-        await driver.mouseMoveTo(center);
+        await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
         await CommonFunc.sleep(1000);
         let strJson = inspector.getInspectorByKey('modifierHoverBtn');
         let obj = JSON.parseJsonElement(strJson);
         expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFF0000');
 
-        await driver.mouseMoveTo(moveOutCenter);
+        await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
         await CommonFunc.sleep(1000);
         strJson = inspector.getInspectorByKey('modifierHoverBtn');
         obj = JSON.parseJsonElement(strJson);
@@ -159,7 +160,7 @@ export default function HoveredAttributeTest(): void {
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('modifierHoverBtn');
@@ -193,12 +194,12 @@ export default function HoveredAttributeTest(): void {
 
       let component = await driver.findComponent(ON.id('modifierHoverBtn'));
       let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(center);
+      await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('modifierHoverBtn');
@@ -233,7 +234,7 @@ export default function HoveredAttributeTest(): void {
       let component = await driver.findComponent(ON.id('stateHoverText'));
       let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] stateHoverText center: ' + JSON.stringify(center));
-      await driver.mouseMoveTo(center);
+      await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('stateHoverText');
@@ -244,7 +245,7 @@ export default function HoveredAttributeTest(): void {
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('stateHoverText');
@@ -282,13 +283,13 @@ export default function HoveredAttributeTest(): void {
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
 
       for (let i: number = 0; i < 3; i++) {
-        await driver.mouseMoveTo(center);
+        await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
         await CommonFunc.sleep(1000);
         let strJson = inspector.getInspectorByKey('stateHoverText');
         let obj = JSON.parseJsonElement(strJson);
         expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFF0000');
 
-        await driver.mouseMoveTo(moveOutCenter);
+        await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
         await CommonFunc.sleep(1000);
         strJson = inspector.getInspectorByKey('stateHoverText');
         obj = JSON.parseJsonElement(strJson);
@@ -320,7 +321,7 @@ export default function HoveredAttributeTest(): void {
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('stateHoverText');
@@ -354,12 +355,12 @@ export default function HoveredAttributeTest(): void {
 
       let component = await driver.findComponent(ON.id('stateHoverText'));
       let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(center);
+      await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('stateHoverText');
@@ -393,13 +394,13 @@ export default function HoveredAttributeTest(): void {
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let component = await driver.findComponent(ON.id('frameNodeHoverText'));
       let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] frameNodeHoverText center: ' + JSON.stringify(center));
-      await driver.mouseMoveTo(center);
+      await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('frameNodeHoverText');
@@ -408,7 +409,7 @@ export default function HoveredAttributeTest(): void {
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] hoverColor: ' + hoverColor);
       expect(hoverColor).assertEqual('#FF0000FF');
 
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('frameNodeHoverText');
@@ -446,13 +447,13 @@ export default function HoveredAttributeTest(): void {
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
 
       for (let i: number = 0; i < 3; i++) {
-        await driver.mouseMoveTo(center);
+        await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
         await CommonFunc.sleep(1000);
         let strJson = inspector.getInspectorByKey('frameNodeHoverText');
         let obj = JSON.parseJsonElement(strJson);
         expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF0000FF');
 
-        await driver.mouseMoveTo(moveOutCenter);
+        await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
         await CommonFunc.sleep(1000);
         strJson = inspector.getInspectorByKey('frameNodeHoverText');
         obj = JSON.parseJsonElement(strJson);
@@ -489,7 +490,7 @@ export default function HoveredAttributeTest(): void {
       let component = await driver.findComponent(ON.id('frameNodeHoverText'));
       let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
       console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0300] frameNodeHoverText center: ' + JSON.stringify(center));
-      await driver.mouseMoveTo(center);
+      await driver.mouseMoveTo({x: center.x, y: center.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('frameNodeHoverText');
@@ -523,7 +524,7 @@ export default function HoveredAttributeTest(): void {
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
-      await driver.mouseMoveTo(moveOutCenter);
+      await driver.mouseMoveTo({x: moveOutCenter.x, y: moveOutCenter.y, displayId: displayID});
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('frameNodeHoverText');

@@ -15,7 +15,7 @@
  */
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
@@ -23,6 +23,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function ListMonopolize() {
   describe('ListMonopolize', () => {
     beforeEach(async ():Promise<void> => {
@@ -75,7 +76,7 @@ it('ListMonopolize_static_001', Level.LEVEL0, async (done: () => void): Promise<
       let column = await (scrollBar?.scrollSearch(ON.id('column')) as Promise<Component | null>);
 
       await (column?.click() as Promise<void>);
-      await driver.mouseScroll({x: Math.round(AppStorage.get<number>("winLeft") as number + uiContext!.vp2px(200)).toInt(), y: Math.round(AppStorage.get<number>("winTop") as number  + uiContext!.vp2px(200)).toInt()}, true, 30, 2072, 20);
+      await driver.mouseScroll({x: Math.round(AppStorage.get<number>("winLeft") as number + uiContext!.vp2px(200)).toInt(), y: Math.round(AppStorage.get<number>("winTop") as number  + uiContext!.vp2px(200)).toInt(), displayId: displayID}, true, 30, 2072, 20);
       await CommonFunc.sleep(200);
       let strJson = inspector.getInspectorByKey('listText');
       console.info("[ListMonopolize_001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

@@ -16,6 +16,7 @@
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -24,6 +25,7 @@ import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 export default function getHistoricalPoints(): void{
   describe('getHistoricalPoints', () => {
@@ -71,7 +73,7 @@ export default function getHistoricalPoints(): void{
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('button01'));
       let point: Point = await (button?.getBoundsCenter() as Promise<Point>);
-      await driver!.mouseClick({x: point.x, y: point.y}, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver!.mouseClick({x: point.x, y: point.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1500);
 
       let strJson = inspector.getInspectorByKey('getHistoricalPointsX');

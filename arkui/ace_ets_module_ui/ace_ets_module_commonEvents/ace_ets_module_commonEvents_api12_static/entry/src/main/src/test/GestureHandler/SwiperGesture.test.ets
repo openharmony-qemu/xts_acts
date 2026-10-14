@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Driver, ON, Component, UiWindow, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Driver, ON, Component, UiWindow, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@kit.TestKit';
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -24,6 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function SwiperGestureHandlerTest() {
 
   describe('SwiperGestureHandlerTest', () => {
@@ -77,8 +78,8 @@ it('SwiperGestureHandler_static_0010', Level.LEVEL0, async (done: () => void): P
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 100).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 100).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID},
+        {x: Math.round(right - 100).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('SwiperGestureHandler1');
