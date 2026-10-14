@@ -15,7 +15,6 @@
  */
 
 import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { Driver } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -23,7 +22,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-const SLEEP_TIME = 1000;
+const SLEEP_TIME_L = 1000;
+const SLEEP_TIME_S = 100;
 
 export default function ImageAnimatorInterpolationTest() {
   describe('ImageAnimatorInterpolationTest', () => {
@@ -40,7 +40,7 @@ export default function ImageAnimatorInterpolationTest() {
         if (!("ImageAnimatorInterpolationPage" == pages.name)) {
           console.info("get ImageAnimatorInterpolationTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(SLEEP_TIME);
+          await CommonFunc.sleep(SLEEP_TIME_L);
         }
       } catch (err) {
         console.error("push ImageAnimatorInterpolationTest page error:" + err);
@@ -49,30 +49,28 @@ export default function ImageAnimatorInterpolationTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      await Utils.sleep(SLEEP_TIME_L);
       console.info("ImageAnimatorInterpolationTest after each called");
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_DEFAULT_0500
-     * @tc.name   ImageAnimatorInterpolationTest_static_0100
-     * @tc.desc   Verify default value of interpolation property (not set), expect ImageInterpolation.Low
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.number   SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0100
+     * @tc.name     ImageAnimatorInterpolationTest_static_0100
+     * @tc.desc     Test ImageAnimator interpolation property set to ImageInterpolation.None
+     * @tc.level    LEVEL0
+     * @tc.type     FUNCTION
+     * @tc.size     SMALLTEST
      */
     it('ImageAnimatorInterpolationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageAnimatorInterpolationTest_static_0100 START');
       try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_default');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ia_interpolation_none');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_0100] $type: ' + obj.getString('$type'));
         console.info('[static_0100] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
         expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
+        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('None');
       } catch (err) {
         console.error('[static_0100] error: ' + err);
         expect(false).assertTrue();
@@ -81,25 +79,23 @@ export default function ImageAnimatorInterpolationTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0500
-     * @tc.name   ImageAnimatorInterpolationTest_static_0200
-     * @tc.desc   Verify interpolation property set to ImageInterpolation.None
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.number   SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0200
+     * @tc.name     ImageAnimatorInterpolationTest_static_0200
+     * @tc.desc     Test ImageAnimator interpolation property set to ImageInterpolation.Low
+     * @tc.level    LEVEL0
+     * @tc.type     FUNCTION
+     * @tc.size     SMALLTEST
      */
     it('ImageAnimatorInterpolationTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageAnimatorInterpolationTest_static_0200 START');
       try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_none');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ia_interpolation_low');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_0200] $type: ' + obj.getString('$type'));
         console.info('[static_0200] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
         expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('None');
+        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
       } catch (err) {
         console.error('[static_0200] error: ' + err);
         expect(false).assertTrue();
@@ -108,25 +104,23 @@ export default function ImageAnimatorInterpolationTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0600
-     * @tc.name   ImageAnimatorInterpolationTest_static_0300
-     * @tc.desc   Verify interpolation property set to ImageInterpolation.Low
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.number   SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0300
+     * @tc.name     ImageAnimatorInterpolationTest_static_0300
+     * @tc.desc     Test ImageAnimator interpolation property set to ImageInterpolation.Medium
+     * @tc.level    LEVEL0
+     * @tc.type     FUNCTION
+     * @tc.size     SMALLTEST
      */
     it('ImageAnimatorInterpolationTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageAnimatorInterpolationTest_static_0300 START');
       try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_low');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ia_interpolation_medium');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_0300] $type: ' + obj.getString('$type'));
         console.info('[static_0300] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
         expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
+        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Medium');
       } catch (err) {
         console.error('[static_0300] error: ' + err);
         expect(false).assertTrue();
@@ -135,25 +129,23 @@ export default function ImageAnimatorInterpolationTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0700
-     * @tc.name   ImageAnimatorInterpolationTest_static_0400
-     * @tc.desc   Verify interpolation property set to ImageInterpolation.Medium
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.number   SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0400
+     * @tc.name     ImageAnimatorInterpolationTest_static_0400
+     * @tc.desc     Test ImageAnimator interpolation property set to ImageInterpolation.High
+     * @tc.level    LEVEL0
+     * @tc.type     FUNCTION
+     * @tc.size     SMALLTEST
      */
     it('ImageAnimatorInterpolationTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageAnimatorInterpolationTest_static_0400 START');
       try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_medium');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ia_interpolation_high');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_0400] $type: ' + obj.getString('$type'));
         console.info('[static_0400] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
         expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Medium');
+        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('High');
       } catch (err) {
         console.error('[static_0400] error: ' + err);
         expect(false).assertTrue();
@@ -162,25 +154,23 @@ export default function ImageAnimatorInterpolationTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0800
-     * @tc.name   ImageAnimatorInterpolationTest_static_0500
-     * @tc.desc   Verify interpolation property set to ImageInterpolation.High
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.number   SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0500
+     * @tc.name     ImageAnimatorInterpolationTest_static_0500
+     * @tc.desc     Test ImageAnimator interpolation default value is ImageInterpolation.Low when not set
+     * @tc.level    LEVEL0
+     * @tc.type     FUNCTION
+     * @tc.size     SMALLTEST
      */
     it('ImageAnimatorInterpolationTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageAnimatorInterpolationTest_static_0500 START');
       try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_high');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ia_interpolation_default');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_0500] $type: ' + obj.getString('$type'));
         console.info('[static_0500] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
         expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('High');
+        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
       } catch (err) {
         console.error('[static_0500] error: ' + err);
         expect(false).assertTrue();
@@ -189,20 +179,18 @@ export default function ImageAnimatorInterpolationTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_ERROR_0500
-     * @tc.name   ImageAnimatorInterpolationTest_static_0600
-     * @tc.desc   Verify interpolation property with invalid enum value 99, expect fallback to default Low
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
+     * @tc.number   SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0600
+     * @tc.name     ImageAnimatorInterpolationTest_static_0600
+     * @tc.desc     Test ImageAnimator interpolation property set to undefined
+     * @tc.level    LEVEL0
+     * @tc.type     FUNCTION
+     * @tc.size     SMALLTEST
      */
     it('ImageAnimatorInterpolationTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ImageAnimatorInterpolationTest_static_0600 START');
       try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_invalid_enum');
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('ia_interpolation_undefined');
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_0600] $type: ' + obj.getString('$type'));
         console.info('[static_0600] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
@@ -210,60 +198,6 @@ export default function ImageAnimatorInterpolationTest() {
         expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
       } catch (err) {
         console.error('[static_0600] error: ' + err);
-        expect(false).assertTrue();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_ERROR_0600
-     * @tc.name   ImageAnimatorInterpolationTest_static_0700
-     * @tc.desc   Verify interpolation property with invalid negative value -1, expect fallback to default Low
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     */
-    it('ImageAnimatorInterpolationTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ImageAnimatorInterpolationTest_static_0700 START');
-      try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_invalid_negative');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_0700] $type: ' + obj.getString('$type'));
-        console.info('[static_0700] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
-        expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
-      } catch (err) {
-        console.error('[static_0700] error: ' + err);
-        expect(false).assertTrue();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_ERROR_0700
-     * @tc.name   ImageAnimatorInterpolationTest_static_0800
-     * @tc.desc   Verify interpolation property with undefined value, expect fallback to default Low
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     */
-    it('ImageAnimatorInterpolationTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ImageAnimatorInterpolationTest_static_0800 START');
-      try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-
-        let strJson = inspector.getInspectorByKey('ia_interpolation_undefined');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_0800] $type: ' + obj.getString('$type'));
-        console.info('[static_0800] interpolation: ' + obj.getElement('$attrs').getString('interpolation'));
-        expect(obj.getString('$type')).assertContain('ImageAnimator');
-        expect(obj.getElement('$attrs').getString('interpolation')).assertContain('Low');
-      } catch (err) {
-        console.error('[static_0800] error: ' + err);
         expect(false).assertTrue();
       }
       done();

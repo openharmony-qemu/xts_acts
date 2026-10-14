@@ -81,7 +81,7 @@ export default function ImageAnimatorInterpolationModifierTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0100
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_MODIFIER_PARAM_0100
      * @tc.name   ImageAnimatorInterpolationModifierTest_static_0200
      * @tc.desc   Verify interpolation property set to ImageInterpolation.None
      * @tc.level  LEVEL0
@@ -108,7 +108,7 @@ export default function ImageAnimatorInterpolationModifierTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0200
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_MODIFIER_PARAM_0200
      * @tc.name   ImageAnimatorInterpolationModifierTest_static_0300
      * @tc.desc   Verify interpolation property set to ImageInterpolation.Low
      * @tc.level  LEVEL0
@@ -135,7 +135,7 @@ export default function ImageAnimatorInterpolationModifierTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0300
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_MODIFIER_PARAM_0300
      * @tc.name   ImageAnimatorInterpolationModifierTest_static_0400
      * @tc.desc   Verify interpolation property set to ImageInterpolation.Medium
      * @tc.level  LEVEL0
@@ -162,7 +162,7 @@ export default function ImageAnimatorInterpolationModifierTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_PARAM_0400
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_MODIFIER_PARAM_0400
      * @tc.name   ImageAnimatorInterpolationModifierTest_static_0500
      * @tc.desc   Verify interpolation property set to ImageInterpolation.High
      * @tc.level  LEVEL0
@@ -189,7 +189,7 @@ export default function ImageAnimatorInterpolationModifierTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_ERROR_0100
+     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_MODIFIER_ERROR_0100
      * @tc.name   ImageAnimatorInterpolationModifierTest_static_0600
      * @tc.desc   Verify interpolation property with undefined value, expect fallback to default Low
      * @tc.level  LEVEL0

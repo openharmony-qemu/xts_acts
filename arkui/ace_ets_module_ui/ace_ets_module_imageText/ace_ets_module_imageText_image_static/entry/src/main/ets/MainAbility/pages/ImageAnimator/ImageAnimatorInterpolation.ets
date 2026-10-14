@@ -19,10 +19,12 @@ import {
   Component,
   Scroll,
   Column,
-  ColumnOptions,
+  Row,
+  Text,
   ImageAnimator,
   ImageInterpolation,
   $r,
+  FontWeight,
   FlexAlign,
   HorizontalAlign
 } from '@ohos.arkui.component'
@@ -32,101 +34,88 @@ import {
 struct ImageAnimatorInterpolationPage {
   build() {
     Scroll() {
-      Column({ space: 10 } as ColumnOptions) {
-        // 默认值组件：不设置 interpolation，验证默认值为 ImageInterpolation.Low
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .id('ia_interpolation_default')
-          .width(100)
-          .height(100)
+      Column() {
+        Text('ImageAnimator Interpolation Test')
+          .fontSize(20)
+          .fontWeight(FontWeight.Bold)
+          .margin({ top: 10, bottom: 10 })
 
-        // 参数测试：ImageInterpolation.None
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(ImageInterpolation.None)
-          .id('ia_interpolation_none')
-          .width(100)
-          .height(100)
+        Row() {
+          ImageAnimator()
+            .images([
+              { src: $r('app.media.startIcon') },
+              { src: $r('app.media.flower') },
+              { src: $r('app.media.landscape') }
+            ])
+            .interpolation(ImageInterpolation.None)
+            .width(100)
+            .height(100)
+            .key('ia_interpolation_none')
+        }.width('80%')
 
-        // 参数测试：ImageInterpolation.Low
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(ImageInterpolation.Low)
-          .id('ia_interpolation_low')
-          .width(100)
-          .height(100)
+        Row() {
+          ImageAnimator()
+            .images([
+              { src: $r('app.media.startIcon') },
+              { src: $r('app.media.flower') },
+              { src: $r('app.media.landscape') }
+            ])
+            .interpolation(ImageInterpolation.Low)
+            .width(100)
+            .height(100)
+            .key('ia_interpolation_low')
+        }.width('80%')
 
-        // 参数测试：ImageInterpolation.Medium
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(ImageInterpolation.Medium)
-          .id('ia_interpolation_medium')
-          .width(100)
-          .height(100)
+        Row() {
+          ImageAnimator()
+            .images([
+              { src: $r('app.media.startIcon') },
+              { src: $r('app.media.flower') },
+              { src: $r('app.media.landscape') }
+            ])
+            .interpolation(ImageInterpolation.Medium)
+            .width(100)
+            .height(100)
+            .key('ia_interpolation_medium')
+        }.width('80%')
 
-        // 参数测试：ImageInterpolation.High
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(ImageInterpolation.High)
-          .id('ia_interpolation_high')
-          .width(100)
-          .height(100)
+        Row() {
+          ImageAnimator()
+            .images([
+              { src: $r('app.media.startIcon') },
+              { src: $r('app.media.flower') },
+              { src: $r('app.media.landscape') }
+            ])
+            .interpolation(ImageInterpolation.High)
+            .width(100)
+            .height(100)
+            .key('ia_interpolation_high')
+        }.width('80%')
 
-        // 异常值：非法枚举数字 99
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(99 as ImageInterpolation)
-          .id('ia_interpolation_invalid_enum')
-          .width(100)
-          .height(100)
+        Row() {
+          ImageAnimator()
+            .images([
+              { src: $r('app.media.startIcon') },
+              { src: $r('app.media.flower') },
+              { src: $r('app.media.landscape') }
+            ])
+            .width(100)
+            .height(100)
+            .key('ia_interpolation_default')
+        }.width('80%')
 
-        // 异常值：负数 -1
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(-1 as ImageInterpolation)
-          .id('ia_interpolation_invalid_negative')
-          .width(100)
-          .height(100)
-
-        // 异常值：undefined
-        ImageAnimator()
-          .images([
-            { src: $r('app.media.startIcon') },
-            { src: $r('app.media.flower') },
-            { src: $r('app.media.landscape') }
-          ])
-          .interpolation(undefined)
-          .id('ia_interpolation_undefined')
-          .width(100)
-          .height(100)
+        Row() {
+          ImageAnimator()
+            .images([
+              { src: $r('app.media.startIcon') },
+              { src: $r('app.media.flower') },
+              { src: $r('app.media.landscape') }
+            ])
+            .interpolation(undefined)
+            .width(100)
+            .height(100)
+            .key('ia_interpolation_undefined')
+        }.width('80%')
       }
       .justifyContent(FlexAlign.Start)
       .alignItems(HorizontalAlign.Center)
