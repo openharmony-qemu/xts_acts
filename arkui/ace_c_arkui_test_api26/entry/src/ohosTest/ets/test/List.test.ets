@@ -57,6 +57,7 @@ import ArcSwiperEventCallbackTest from './arcSwiper/ArcSwiperEventCallbackTest.t
 import ArcAlphabetIndexerAttributeTest from './arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.test'
 import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.test'
 import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
+import RuntimeCheckModeTest from './nativeModule/RuntimeCheckModeTest.test'
 import UIAgentGetPageTextTest from './node/UIAgentGetPageTextTest.test'
 import NativeModuleAnimationTest from './animate/NativeModuleAnimation.test'
 import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
@@ -110,4 +111,5 @@ export default function testsuite() {
   ArcAlphabetIndexerEventCallbackTest()
   NativeModuleAnimationTest()
   DragEventSummaryTest()
+  RuntimeCheckModeTest()
 }
