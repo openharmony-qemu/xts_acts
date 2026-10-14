@@ -35,7 +35,7 @@ class ExtendedAtomics {
   }
 }
 
-export function taskFunction(sharedArray: Int32Array, index: number, value: number) {
+export function taskFunction(sharedArray: Int32Array, index: number, value: number): void {
   ExtendedAtomics.exchange(sharedArray, index, value);
 }
 
@@ -44,7 +44,7 @@ export declare class ArkTools {
   static forceFullGC(): void;
 }
 
-export function gc() {
+export function gc(): void {
   // gc
 }
 
@@ -140,7 +140,7 @@ export class MemoryMonitor {
 
 
 
-export function atomicTask() {
+export function atomicTask(): number {
   const buffer = new ArrayBuffer(4);
   const sharedArray = new Int32Array(buffer);
   for (let i = 0; i < 10; i++) {
@@ -151,7 +151,7 @@ export function atomicTask() {
 
 
 
-export function atomicTask1(sharedArray:Int8Array) {
+export function atomicTask1(sharedArray:Int8Array): number {
   for (let i = 0; i < 100; i++) {
     Atomics.add(sharedArray, 0, 1);
   }
@@ -163,7 +163,7 @@ export class WorkerSrc {
   public static workerInstance :EAWorker= new EAWorker();
 }
 
-export function atomicCompareExchangeTask(sharedArray:Int16Array) {
+export function atomicCompareExchangeTask(sharedArray:Int16Array): number {
   for (let i = 0; i < 100; i++) {
     const index = i % 100;
     const expected = sharedArray[index].toInt();
@@ -174,7 +174,7 @@ export function atomicCompareExchangeTask(sharedArray:Int16Array) {
 }
 
 
-export function atomicOrTask(sharedArray:Int32Array) {
+export function atomicOrTask(sharedArray:Int32Array): number {
   for (let i = 0; i < 100; i++) {
     const index = i % 100;
     Atomics.or(sharedArray, index, 2);
@@ -184,7 +184,7 @@ export function atomicOrTask(sharedArray:Int32Array) {
 
 
 
-export function atomicXorTask(buffer:ArrayBuffer) {
+export function atomicXorTask(buffer:ArrayBuffer): bigint {
   const sharedArray = new BigInt64Array(buffer);
   for (let i = 0; i < 100; i++) {
     Atomics.xor(sharedArray, i, 2n);
@@ -192,7 +192,7 @@ export function atomicXorTask(buffer:ArrayBuffer) {
   return Atomics.load(sharedArray, 0);
 }
 
-export function checkAllTasksCompleted() {
+export function checkAllTasksCompleted(): void {
   const buffer = new ArrayBuffer(800);
   const sharedArray = new BigInt64Array(buffer);
   let completedTasks = 0;
@@ -214,7 +214,7 @@ export function checkAllTasksCompleted() {
 }
 
 
-export function calculateExpectedValue(index: number) {
+export function calculateExpectedValue(index: number): bigint {
   let value = BigInt(index);
   for (let i = 0; i < 100; i++) {
     value = value ^ 2n;
@@ -239,7 +239,7 @@ export function calculateExpectedValue(index: number) {
 
 
 
-export function andTask(buffer: ArrayBuffer) {
+export function andTask(buffer: ArrayBuffer): ArrayBuffer {
   const array = new BigInt64Array(buffer);
   for (let i = 0; i < 100; i++) {
     const index = i % 100;
@@ -249,7 +249,7 @@ export function andTask(buffer: ArrayBuffer) {
 }
 
 
-export function exchangeTask(buffer: ArrayBuffer) {
+export function exchangeTask(buffer: ArrayBuffer): ArrayBuffer {
   const array = new BigInt64Array(buffer);
   for (let i = 0; i < 100; i++) {
     const index = i % 100;
@@ -259,7 +259,7 @@ export function exchangeTask(buffer: ArrayBuffer) {
 }
 
 
-export function orTask(buffer: ArrayBuffer) {
+export function orTask(buffer: ArrayBuffer): ArrayBuffer {
   const array = new BigInt64Array(buffer);
   for (let i = 0; i < 100; i++) {
     const index = i % 100;
@@ -269,7 +269,7 @@ export function orTask(buffer: ArrayBuffer) {
 }
 
 
-export function subTask(buffer: ArrayBuffer) {
+export function subTask(buffer: ArrayBuffer): ArrayBuffer {
   const array = new BigInt64Array(buffer);
   for (let i = 0; i < 100; i++) {
     const index = i % 100;
@@ -282,7 +282,7 @@ export function subTask(buffer: ArrayBuffer) {
 
 
 
-export function taskXor(int32Array: Int32Array, startIndex: number, counterIndex: number) {
+export function taskXor(int32Array: Int32Array, startIndex: number, counterIndex: number): void {
   for (let i = 0; i < 100; i++) {
     Atomics.xor(int32Array, startIndex.toInt() + i, 1);
     Atomics.add(int32Array, counterIndex.toInt(), 1);
@@ -290,7 +290,7 @@ export function taskXor(int32Array: Int32Array, startIndex: number, counterIndex
 }
 
 
-export function taskStore(int32Array: Int32Array, startIndex: number, counterIndex: number) {
+export function taskStore(int32Array: Int32Array, startIndex: number, counterIndex: number): void {
   for (let i = 0; i < 100; i++) {
     Atomics.store(int32Array, startIndex.toInt() + i, i * 2);
     Atomics.add(int32Array, counterIndex.toInt(), 1);
@@ -298,7 +298,7 @@ export function taskStore(int32Array: Int32Array, startIndex: number, counterInd
 }
 
 
-export function taskAnd(int32Array: Int32Array, startIndex: number, counterIndex: number) {
+export function taskAnd(int32Array: Int32Array, startIndex: number, counterIndex: number): void {
   for (let i = 0; i < 100; i++) {
     Atomics.and(int32Array, startIndex.toInt() + i, 0x0F);
     Atomics.add(int32Array, counterIndex.toInt(), 1);
@@ -306,7 +306,7 @@ export function taskAnd(int32Array: Int32Array, startIndex: number, counterIndex
 }
 
 
-export function taskExchange(int32Array: Int32Array, startIndex: number, counterIndex: number) {
+export function taskExchange(int32Array: Int32Array, startIndex: number, counterIndex: number): void {
   for (let i = 0; i < 100; i++) {
     Atomics.exchange(int32Array, startIndex.toInt() + i, -1);
     Atomics.add(int32Array, counterIndex.toInt(), 1);
@@ -314,7 +314,7 @@ export function taskExchange(int32Array: Int32Array, startIndex: number, counter
 }
 
 
-export function taskOr(int32Array: Int32Array, startIndex: number, counterIndex: number) {
+export function taskOr(int32Array: Int32Array, startIndex: number, counterIndex: number): void {
   for (let i = 0; i < 100; i++) {
     Atomics.or(int32Array, startIndex.toInt() + i, 0xFF);
     Atomics.add(int32Array, counterIndex.toInt(), 1);
@@ -322,7 +322,7 @@ export function taskOr(int32Array: Int32Array, startIndex: number, counterIndex:
 }
 
 
-export function taskSub(int32Array: Int32Array, startIndex: number, counterIndex: number) {
+export function taskSub(int32Array: Int32Array, startIndex: number, counterIndex: number): void {
   for (let i = 0; i < 100; i++) {
     Atomics.sub(int32Array, startIndex.toInt() + i, 10);
     Atomics.add(int32Array, counterIndex.toInt(), 1);
@@ -331,7 +331,7 @@ export function taskSub(int32Array: Int32Array, startIndex: number, counterIndex
 
 
 
-export function modifyValueTask(int8Array: Int8Array, targetIndex: number) {
+export function modifyValueTask(int8Array: Int8Array, targetIndex: number): void {
   Atomics.store(int8Array, targetIndex.toInt(), 20);
 }
 
@@ -339,7 +339,7 @@ export function modifyValueTask(int8Array: Int8Array, targetIndex: number) {
 
 
 export function modifyInt16Array(sharedBuffer: ArrayBuffer,
-  targetIdx: number, newVal: number, statusIdx: number) {
+  targetIdx: number, newVal: number, statusIdx: number): void {
   const arr: Int32Array = new Int32Array(sharedBuffer);
   Atomics.notify(arr, statusIdx.toInt());
   setTimeout(() => {
@@ -351,7 +351,7 @@ export function modifyInt16Array(sharedBuffer: ArrayBuffer,
 
 
 
-export function waitInTaskpool(sharedBuffer: ArrayBuffer, statusIdx: number) {
+export function waitInTaskpool(sharedBuffer: ArrayBuffer, statusIdx: number): void {
   const arr: BigInt64Array = new BigInt64Array(sharedBuffer);
   console.log(`Taskpool task is waiting at index ${statusIdx}`);
   console.log(`Taskpool task at index ${statusIdx} has been notified`);
@@ -359,7 +359,7 @@ export function waitInTaskpool(sharedBuffer: ArrayBuffer, statusIdx: number) {
 
 
 
-export function waitInTaskpool2(sharedBuffer: ArrayBuffer, statusIdx: number) {
+export function waitInTaskpool2(sharedBuffer: ArrayBuffer, statusIdx: number): void {
   const arr: Int32Array = new Int32Array(sharedBuffer);
   console.log(`Taskpool task is waiting at index ${statusIdx} with timeout 1s`);
 }
@@ -367,7 +367,7 @@ export function waitInTaskpool2(sharedBuffer: ArrayBuffer, statusIdx: number) {
 
 
 
-export function notifyInTaskpool(sharedBuffer: ArrayBuffer, statusIdx: number) {
+export function notifyInTaskpool(sharedBuffer: ArrayBuffer, statusIdx: number): void {
   const arr: BigInt64Array = new BigInt64Array(sharedBuffer);
   console.log(`Taskpool notify task is notifying at index ${statusIdx}`);
   Atomics.notify(arr, statusIdx.toInt());
@@ -376,7 +376,7 @@ export function notifyInTaskpool(sharedBuffer: ArrayBuffer, statusIdx: number) {
 
 
 
-export function waitInTaskpool3(sharedBuffer: ArrayBuffer, statusIdx: number, expectedValue: BigInt) {
+export function waitInTaskpool3(sharedBuffer: ArrayBuffer, statusIdx: number, expectedValue: BigInt): void {
   const arr: Int32Array = new Int32Array(sharedBuffer);
   console.log(`Taskpool wait task is waiting at index ${statusIdx} for value ${expectedValue}`);
   console.log(`Taskpool wait task at index ${statusIdx} for value ${expectedValue} has been notified`);
