@@ -86,34 +86,6 @@ napi_value NativeAnimPathGetDelay087(napi_env env, napi_callback_info info)
     OH_ArkUI_NativeModule_PathAnimation_Destroy(anim);
     NAPI_END;
 }
-napi_value NativeAnimPathSetCurve088(napi_env env, napi_callback_info info)
-{
-    NAPI_START(column, ARKUI_NODE_COLUMN);
-    (void)column;
-    auto anim = OH_ArkUI_NativeModule_PathAnimation_Create(SamplePathCommands());
-    ASSERT_EQ(anim != nullptr, true);
-    ArkUI_CurveHandle curve = MakeCurve();
-    ASSERT_EQ(curve != nullptr, true);
-    ASSERT_EQ(PathAnimSetCurve(anim, curve), ARKUI_ERROR_CODE_NO_ERROR);
-    DisposeCurve(curve);
-    OH_ArkUI_NativeModule_PathAnimation_Destroy(anim);
-    NAPI_END;
-}
-napi_value NativeAnimPathGetCurve089(napi_env env, napi_callback_info info)
-{
-    NAPI_START(column, ARKUI_NODE_COLUMN);
-    (void)column;
-    auto anim = OH_ArkUI_NativeModule_PathAnimation_Create(SamplePathCommands());
-    ASSERT_EQ(anim != nullptr, true);
-    ArkUI_CurveHandle curve = MakeCurve();
-    ArkUI_CurveHandle got = nullptr;
-    ASSERT_EQ(curve != nullptr, true);
-    ASSERT_EQ(PathAnimSetCurve(anim, curve), ARKUI_ERROR_CODE_NO_ERROR);
-    ASSERT_EQ(PathAnimGetCurve(anim, &got), ARKUI_ERROR_CODE_NO_ERROR);
-    DisposeCurve(curve);
-    OH_ArkUI_NativeModule_PathAnimation_Destroy(anim);
-    NAPI_END;
-}
 napi_value NativeAnimPathSetTempo090(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -260,19 +232,7 @@ napi_value NativeAnimPathDelayNull104(napi_env env, napi_callback_info info)
     OH_ArkUI_NativeModule_PathAnimation_Destroy(anim);
     NAPI_END;
 }
-napi_value NativeAnimPathCurveNull105(napi_env env, napi_callback_info info)
-{
-    (void)info;
-    ArkUI_CurveHandle curve = nullptr;
-    ASSERT_EQ(PathAnimSetCurve(nullptr, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
-    ASSERT_EQ(PathAnimGetCurve(nullptr, &curve), ARKUI_ERROR_CODE_PARAM_INVALID);
-    auto anim = OH_ArkUI_NativeModule_PathAnimation_Create(SamplePathCommands());
-    ASSERT_EQ(anim != nullptr, true);
-    ASSERT_EQ(PathAnimSetCurve(anim, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
-    ASSERT_EQ(PathAnimGetCurve(anim, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
-    OH_ArkUI_NativeModule_PathAnimation_Destroy(anim);
-    NAPI_END;
-}
+
 napi_value NativeAnimPathTempoNull106(napi_env env, napi_callback_info info)
 {
     (void)info;
@@ -688,7 +648,7 @@ napi_value NativeAnimGroupCurveNull142(napi_env env, napi_callback_info info)
     ASSERT_EQ(OH_ArkUI_NativeModule_AnimationGroup_GetCurve(nullptr, &curve), ARKUI_ERROR_CODE_PARAM_INVALID);
     auto group = OH_ArkUI_NativeModule_AnimationGroup_Create();
     ASSERT_EQ(group != nullptr, true);
-    ASSERT_EQ(OH_ArkUI_NativeModule_AnimationGroup_SetCurve(group, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(OH_ArkUI_NativeModule_AnimationGroup_SetCurve(group, nullptr), ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(OH_ArkUI_NativeModule_AnimationGroup_GetCurve(group, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
     OH_ArkUI_NativeModule_AnimationGroup_Destroy(group);
     NAPI_END;

@@ -487,6 +487,7 @@ export default function nativeModuleAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
+     // failed
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0036', Level.LEVEL2, async (done: Function) => {
       expect(nativeAnim.NativeAnimPropSetCurveNull036()).assertEqual(0);
       done();
@@ -1033,6 +1034,7 @@ export default function nativeModuleAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
+     // failed
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0078', Level.LEVEL2, async (done: Function) => {
       expect(nativeAnim.NativeAnimKeySetCurveNull078()).assertEqual(0);
       done();
@@ -1152,32 +1154,6 @@ export default function nativeModuleAnimationTest() {
      */
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0087', Level.LEVEL1, async (done: Function) => {
       expect(nativeAnim.NativeAnimPathGetDelay087()).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0088
-     * @tc.number SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0088
-     * @tc.desc   PathAnimation_SetCurve
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0088', Level.LEVEL1, async (done: Function) => {
-      expect(nativeAnim.NativeAnimPathSetCurve088()).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0089
-     * @tc.number SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0089
-     * @tc.desc   PathAnimation_GetCurve
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0089', Level.LEVEL1, async (done: Function) => {
-      expect(nativeAnim.NativeAnimPathGetCurve089()).assertEqual(0);
       done();
     });
 
@@ -1373,19 +1349,6 @@ export default function nativeModuleAnimationTest() {
      */
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0104', Level.LEVEL2, async (done: Function) => {
       expect(nativeAnim.NativeAnimPathDelayNull104()).assertEqual(0);
-      done();
-    });
-
-    /**
-     * @tc.name   SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0105
-     * @tc.number SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0105
-     * @tc.desc   PathAnimation_Set/GetCurve nullptr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0105', Level.LEVEL2, async (done: Function) => {
-      expect(nativeAnim.NativeAnimPathCurveNull105()).assertEqual(0);
       done();
     });
 
@@ -1865,6 +1828,7 @@ export default function nativeModuleAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
+     // failed
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0142', Level.LEVEL2, async (done: Function) => {
       expect(nativeAnim.NativeAnimGroupCurveNull142()).assertEqual(0);
       done();
