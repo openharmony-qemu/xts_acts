@@ -20,7 +20,7 @@ const TAG = 'MuseEditorExtensionAbility';
 
 @Entry
 @Component
-struct Index {
+struct PhotoEditorP1 {
     aboutToAppear() {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
     }
@@ -47,6 +47,10 @@ struct Index {
                             }
                         }
                         commonEventManager.publish(onResultEvent, options, (err) => {
+                            if (err) {
+                              console.info(`callback err: ${JSON.stringify(err)}`);
+                              return;
+                            }
                             console.log(TAG + 'ACTS_PhotoEditorExtension_OnRemoteReady');
                         });
                     })
