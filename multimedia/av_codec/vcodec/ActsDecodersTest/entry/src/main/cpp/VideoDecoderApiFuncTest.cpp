@@ -788,6 +788,7 @@ napi_value VideoEncCapApi0022(napi_env env, napi_callback_info info)
 // Check the secure decoder type
 napi_value VideoDecCapApi0023(napi_env env, napi_callback_info info)
 {
+    if (access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) { return CreateIntInt32Result(env, 0); }
     napi_value result;
     MediaKeySystem *drmKeySystem = nullptr;
     Drm_ErrCode ret = DRM_ERR_INVALID_VAL;
@@ -800,7 +801,6 @@ napi_value VideoDecCapApi0023(napi_env env, napi_callback_info info)
     ret = OH_MediaKeySystem_GetCertificateStatus(drmKeySystem, &certStatus);
     if (ret != DRM_ERR_OK && certStatus == CERT_STATUS_PROVISIONED) {
         uint32_t count = 0;
-        if (access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) { return CreateIntInt32Result(env, 0); }
         OH_AVCapability **capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
         if (capabilityList == nullptr || count == 0) { return CreateIntInt32Result(env, -1); }
         for (uint32_t i = 0; i < count; ++i) {
