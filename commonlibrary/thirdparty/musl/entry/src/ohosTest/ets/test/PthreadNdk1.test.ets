@@ -397,7 +397,7 @@ export default function muslPThreadNdk1Test() {
      * @tc.level  LEVEL0
      */
     it('testMuslPThreadPThreadBarrierWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      expect(pthread.pThreadBarrierWait()).assertEqual(-1);
+      expect(pthread.pThreadBarrierWait()).assertEqual(0);
       done()
     });
 

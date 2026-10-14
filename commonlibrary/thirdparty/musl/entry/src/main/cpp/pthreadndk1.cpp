@@ -19,6 +19,7 @@
 #include <csignal>
 #include <cstdlib>
 #include <cstring>
+#include <ctime>
 #include <pthread.h>
 #include <semaphore.h>
 #include <unistd.h>
@@ -468,11 +469,16 @@ static napi_value PThreadBarrierInit(napi_env env, napi_callback_info info)
     napi_create_int32(env, ret, &result);
     return result;
 }
-int g_pthreadBarrierWaitResult;
+
+struct PthreadBarrierWaitArg {
+    pthread_barrier_t *barrier;
+    int *result;
+};
+
 static void *PThreadBarrierWaitThread(void *arg)
 {
-    pthread_barrier_t *pbarrier = (pthread_barrier_t *)arg;
-    g_pthreadBarrierWaitResult = pthread_barrier_wait(pbarrier);
+    PthreadBarrierWaitArg *w = static_cast<PthreadBarrierWaitArg *>(arg);
+    *(w->result) = pthread_barrier_wait(w->barrier);
     return nullptr;
 }
 
@@ -481,16 +487,45 @@ static napi_value PThreadBarrierWait(napi_env env, napi_callback_info info)
     const unsigned int threadnum = PARAM_4;
     pthread_barrier_t barrier;
     pthread_t threadIds[threadnum];
+    int workerResults[threadnum] = {PARAM_0};
+    PthreadBarrierWaitArg args[threadnum];
+    int ret = PARAM_0;
+
     pthread_barrier_init(&barrier, nullptr, threadnum + PARAM_1);
     for (unsigned int i = PARAM_0; i < threadnum; i++) {
-        pthread_create(&threadIds[i], nullptr, PThreadBarrierWaitThread, &barrier);
+        args[i].barrier = &barrier;
+        args[i].result = &workerResults[i];
+        if (pthread_create(&threadIds[i], nullptr, PThreadBarrierWaitThread, &args[i]) != PARAM_0) {
+            // 创建失败：销毁屏障，避免主线程永久阻塞，并返回失败
+            pthread_barrier_destroy(&barrier);
+            napi_value result = nullptr;
+            napi_create_int32(env, PARAM_1, &result);
+            return result;
+        }
     }
-    int ret = pthread_barrier_wait(&barrier);
+
+    int mainResult = pthread_barrier_wait(&barrier);
     for (unsigned int i = PARAM_0; i < threadnum; i++) {
         pthread_join(threadIds[i], nullptr);
-        ret |= g_pthreadBarrierWaitResult;
     }
     pthread_barrier_destroy(&barrier);
+
+    int serialCount = (mainResult == PTHREAD_BARRIER_SERIAL_THREAD) ? PARAM_1 : PARAM_0;
+    if (mainResult != PARAM_0 && mainResult != PTHREAD_BARRIER_SERIAL_THREAD) {
+        ret = PARAM_1;
+    }
+    for (unsigned int i = PARAM_0; i < threadnum; i++) {
+        if (workerResults[i] != PARAM_0 && workerResults[i] != PTHREAD_BARRIER_SERIAL_THREAD) {
+            ret = PARAM_1;
+        }
+        if (workerResults[i] == PTHREAD_BARRIER_SERIAL_THREAD) {
+            serialCount = serialCount + PARAM_1;
+        }
+    }
+    if (serialCount != PARAM_1) {
+        ret = PARAM_1;
+    }
+
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     return result;
@@ -588,11 +623,13 @@ struct pthreadCondTimedWaitParam {
     pthread_mutex_t mutex;
 };
 int g_pthreadCondTimedWaitResult;
+std::atomic<bool> g_isCondTimedWaitReady(false);
 static void *PThreadCondTimedWaitThreadA(void *arg)
 {
-    pthreadCondTimedWaitParam *pparam = (pthreadCondTimedWaitParam *)arg;
+    pthreadCondTimedWaitParam *pparam = static_cast<pthreadCondTimedWaitParam *>(arg);
     timespec outtime;
     pthread_mutex_lock(&(pparam->mutex));
+    g_isCondTimedWaitReady = true;
     clock_gettime(CLOCK_REALTIME, &outtime);
     outtime.tv_sec += PARAM_5;
     g_pthreadCondTimedWaitResult = pthread_cond_timedwait(&(pparam->cond), &(pparam->mutex), &outtime);
@@ -601,7 +638,10 @@ static void *PThreadCondTimedWaitThreadA(void *arg)
 }
 static void *PThreadCondTimedWaitThreadB(void *arg)
 {
-    pthreadCondTimedWaitParam *pparam = (pthreadCondTimedWaitParam *)arg;
+    pthreadCondTimedWaitParam *pparam = static_cast<pthreadCondTimedWaitParam *>(arg);
+    while (!g_isCondTimedWaitReady) {
+        usleep(SLEEP_10_MS);
+    }
     pthread_mutex_lock(&(pparam->mutex));
     pthread_cond_signal(&(pparam->cond));
     pthread_mutex_unlock(&(pparam->mutex));
@@ -610,6 +650,7 @@ static void *PThreadCondTimedWaitThreadB(void *arg)
 
 static napi_value PThreadCondTimedWait(napi_env env, napi_callback_info info)
 {
+    g_isCondTimedWaitReady = false;
     pthreadCondTimedWaitParam param;
     pthread_t threadIdA;
     pthread_t threadIdB;
@@ -630,7 +671,7 @@ struct pthreadCondWaitParam {
     pthread_cond_t cond;
     pthread_mutex_t mutex;
 };
-std:: atomic<bool> isPthreadRun (false);
+std::atomic<bool> isPthreadRun(false);
 int g_pthreadCondWaitResult;
 static void *PThreadCondWaitThreadA(void *arg)
 {
@@ -644,7 +685,7 @@ static void *PThreadCondWaitThreadA(void *arg)
 static void *PThreadCondWaitThreadB(void *arg)
 {
     pthreadCondWaitParam *pparam = (pthreadCondWaitParam *)arg;
-    while(!isPthreadRun){
+    while (!isPthreadRun) {
         usleep(SLEEP_10_MS);
     }
     pthread_mutex_lock(&(pparam->mutex));
@@ -767,22 +808,25 @@ static napi_value PThreadCreate(napi_env env, napi_callback_info info)
     return result;
 }
 
+static const int DETACH_POLL_ITERS = 200;
+std::atomic<int> g_detachCount(PARAM_0);
 static void *PThreadDetachThread(void *arg)
 {
-    int *pret = static_cast<int *>(arg);
-    (*pret)++;
-    pthread_exit(PARAM_0);
-    return pret;
+    (void)arg;
+    g_detachCount.fetch_add(PARAM_1);
+    return nullptr;
 }
 
 static napi_value PThreadDetach(napi_env env, napi_callback_info info)
 {
-    int count = PARAM_0;
+    g_detachCount = PARAM_0;
     pthread_t threadId;
-    pthread_create(&threadId, nullptr, PThreadDetachThread, &count);
+    pthread_create(&threadId, nullptr, PThreadDetachThread, nullptr);
     int ret = pthread_detach(threadId);
-    sleep(PARAM_1);
-    ret |= count != PARAM_1;
+    for (int i = PARAM_0; i < DETACH_POLL_ITERS && g_detachCount.load() != PARAM_1; i++) {
+        usleep(SLEEP_10_MS);
+    }
+    ret |= g_detachCount.load() != PARAM_1;
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     return result;
@@ -810,7 +854,6 @@ int g_pthreadExitResult;
 static void *PThreadExitThread(void *arg)
 {
     g_pthreadExitResult = *static_cast<int *>(arg);
-    pthread_exit((void *)&g_pthreadExitResult);
     return nullptr;
 }
 
@@ -917,14 +960,22 @@ static void PThreadKillHandler(int sig) { return; }
 
 struct sigaction actold;
 int g_pthreadKillResult;
+std::atomic<bool> g_pthreadKillReady(false);
+static const int KILL_POLL_ITERS = 200;
 static void *PThreadKillThread(void *arg)
 {
+    (void)arg;
     struct sigaction act;
     memset(&act, PARAM_0, sizeof(act));
     act.sa_flags = PARAM_0;
     act.sa_handler = PThreadKillHandler;
     sigemptyset(&act.sa_mask);
     sigaction(SIGUSR1, &act, &actold);
+    sigset_t blockSet;
+    sigemptyset(&blockSet);
+    sigaddset(&blockSet, SIGUSR1);
+    pthread_sigmask(SIG_BLOCK, &blockSet, nullptr);
+    g_pthreadKillReady = true;
     int sigret = sigpause(SIGUSR1);
     g_pthreadKillResult = (sigret == -1) && (errno == EINTR);
     sigaction(SIGUSR1, &actold, nullptr);
@@ -933,9 +984,12 @@ static void *PThreadKillThread(void *arg)
 
 static napi_value PThreadKill(napi_env env, napi_callback_info info)
 {
+    g_pthreadKillReady = false;
     pthread_t threadId;
     pthread_create(&threadId, nullptr, PThreadKillThread, nullptr);
-    sleep(PARAM_1);
+    for (int i = PARAM_0; i < KILL_POLL_ITERS && !g_pthreadKillReady.load(); i++) {
+        usleep(SLEEP_10_MS);
+    }
     int killRet = pthread_kill(threadId, SIGUSR1);
     pthread_join(threadId, nullptr);
     int ret = (killRet == PARAM_0) && (g_pthreadKillResult == PARAM_1);
@@ -1128,31 +1182,35 @@ void PThreadOnceFunc(void)
     gOnceParam.count++;
     pthread_mutex_unlock(&gOnceParam.mutex);
 }
-int g_pthreadOnceResult;
+struct PthreadOnceArg {
+    pthread_once_t *once;
+    int *result;
+};
 static void *PThreadOnceThread(void *arg)
 {
-    g_pthreadOnceResult = pthread_once(&gOnceParam.once, PThreadOnceFunc);
+    PthreadOnceArg *oarg = static_cast<PthreadOnceArg *>(arg);
+    *(oarg->result) = pthread_once(oarg->once, PThreadOnceFunc);
     return nullptr;
 }
 static napi_value PThreadOnce(napi_env env, napi_callback_info info)
 {
-    pthread_t thread1;
-    pthread_t thread2;
-    pthread_t thread3;
-    pthread_t thread4;
+    pthread_t threads[PARAM_4];
+    int results[PARAM_4] = {PARAM_0};
+    PthreadOnceArg args[PARAM_4];
     pthread_mutex_init(&gOnceParam.mutex, nullptr);
     gOnceParam.once = PTHREAD_ONCE_INIT;
     gOnceParam.count = PARAM_0;
-
-    pthread_create(&thread1, nullptr, PThreadOnceThread, nullptr);
-    pthread_create(&thread2, nullptr, PThreadOnceThread, nullptr);
-    pthread_create(&thread3, nullptr, PThreadOnceThread, nullptr);
-    pthread_create(&thread4, nullptr, PThreadOnceThread, nullptr);
-    pthread_join(thread1, nullptr);
-    pthread_join(thread2, nullptr);
-    pthread_join(thread3, nullptr);
-    pthread_join(thread4, nullptr);
-    int ret = g_pthreadOnceResult | g_pthreadOnceResult | g_pthreadOnceResult | g_pthreadOnceResult | (gOnceParam.count != 1);
+    for (int i = PARAM_0; i < PARAM_4; i++) {
+        args[i].once = &gOnceParam.once;
+        args[i].result = &results[i];
+        pthread_create(&threads[i], nullptr, PThreadOnceThread, &args[i]);
+    }
+    int ret = PARAM_0;
+    for (int i = PARAM_0; i < PARAM_4; i++) {
+        pthread_join(threads[i], nullptr);
+        ret |= results[i];
+    }
+    ret |= gOnceParam.count != PARAM_1;
     pthread_mutex_destroy(&gOnceParam.mutex);
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
