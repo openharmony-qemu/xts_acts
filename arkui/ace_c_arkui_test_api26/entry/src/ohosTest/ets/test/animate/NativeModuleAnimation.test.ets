@@ -487,7 +487,6 @@ export default function nativeModuleAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     // failed
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0036', Level.LEVEL2, async (done: Function) => {
       expect(nativeAnim.NativeAnimPropSetCurveNull036()).assertEqual(0);
       done();
@@ -1034,7 +1033,6 @@ export default function nativeModuleAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     // failed
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0078', Level.LEVEL2, async (done: Function) => {
       expect(nativeAnim.NativeAnimKeySetCurveNull078()).assertEqual(0);
       done();
@@ -1828,7 +1826,6 @@ export default function nativeModuleAnimationTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     // failed
     it('SUB_ARKUI_CAPI_NATIVE_MODULE_ANIM_0142', Level.LEVEL2, async (done: Function) => {
       expect(nativeAnim.NativeAnimGroupCurveNull142()).assertEqual(0);
       done();
