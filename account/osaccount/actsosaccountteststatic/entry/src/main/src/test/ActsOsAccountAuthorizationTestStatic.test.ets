@@ -22,6 +22,7 @@ import deviceInfo from '@ohos.deviceInfo';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import display from '@ohos.display';
 
 let tag: string = 'AuthTestTag';
 
@@ -29,6 +30,7 @@ const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let driver: Driver = Driver.create();
 let deviceType: string = deviceInfo.deviceType;
 hilog.info(0x0000, tag, "====>the value of the deviceinfo deviceType is: " + deviceType);
+
 // Bundle name of the system authorization dialog; vendor word split to keep OSS code clean.
 const ADMIN_AUTH_BUNDLE: string = 'com.hua' + 'wei.adminauth';
 
@@ -61,6 +63,25 @@ async function clearAuthorizationDialog(): Promise<void> {
   hilog.info(0x0000, tag, "====>clearAuthorizationDialog: end====");
 }
 
+
+async function clickAuthDialogFallback(confirm: boolean): Promise<boolean> {
+  try {
+    let d: display.Display = display.getDefaultDisplaySync();
+    let w: number = d.width;
+    let h: number = d.height;
+    hilog.info(0x0000, tag, "====>clickAuthDialogFallback screen " + w + "x" + h + " confirm=" + confirm);
+    let btnY: int = Math.floor(h * 0.72).toInt();
+    let btnX: int = confirm ? Math.floor(w * 0.68).toInt() : Math.floor(w * 0.32).toInt();
+    hilog.info(0x0000, tag, "====>clickAuthDialogFallback click at (" + btnX + "," + btnY + ")");
+    await driver.click(btnX, btnY);
+    hilog.info(0x0000, tag, "====>clickAuthDialogFallback click done");
+    return true;
+  } catch (err) {
+    hilog.info(0x0000, tag, "====>clickAuthDialogFallback err: " + JSON.stringify(err));
+    return false;
+  }
+}
+
 async function requestAuthAndClick(
   manager: authorization.AuthorizationManager,
   privilege: authorization.Privilege,
@@ -71,29 +92,22 @@ async function requestAuthAndClick(
     manager.requestAuthorization(privilege, context);
   await Utils.msSleep(3000);
   let clicked: boolean = false;
-  let maxRetries: int = 10;
+  let maxRetries: int = 5;
   for (let retry: int = 0; retry < maxRetries && !clicked; retry++) {
     for (let i: int = 0; i < buttonCandidates.length; i++) {
       let btnText: string = buttonCandidates[i];
       try {
-        let btn = await driver.findComponent(ON.text(btnText));
+        let btn: Component | null = await driver.findComponent(ON.text(btnText));
         if (btn != null) {
-          await Utils.msSleep(500);
           await btn.click();
           await Utils.msSleep(1000);
-          let dialogDismissed: boolean = false;
-          try {
-            let btnStill = await driver.findComponent(ON.text(btnText));
-            dialogDismissed = (btnStill == null);
-          } catch (e) {
-            dialogDismissed = true;
-          }
-          if (dialogDismissed) {
+          let btnAfter: Component | null = await driver.findComponent(ON.text(btnText));
+          if (btnAfter != null) {
+            hilog.info(0x0000, tag, "====>requestAuthAndClick clicked failed: " + btnText + " (retry " + retry + ")");
+          } else {
             clicked = true;
             hilog.info(0x0000, tag, "====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
             break;
-          } else {
-            hilog.info(0x0000, tag, "====>requestAuthAndClick click landed on dialog, retry: " + btnText + " (retry " + retry + ")");
           }
         }
       } catch (err) {
@@ -101,13 +115,28 @@ async function requestAuthAndClick(
       }
     }
     if (!clicked) {
-      hilog.info(0x0000, tag, "====>requestAuthAndClick retry " + retry + " no button found or click failed, waiting...");
+      hilog.info(0x0000, tag, "====>requestAuthAndClick retry " + retry + " no button found, waiting...");
       await Utils.msSleep(1000);
     }
   }
 
   if (!clicked) {
-    hilog.info(0x0000, tag, "====>requestAuthAndClick: no button effectively clicked after " + maxRetries + " retries");
+    hilog.info(0x0000, tag, "====>requestAuthAndClick: no button via findComponent, trying coordinate fallback");
+    let firstBtn: string = buttonCandidates[0];
+    let isConfirm: boolean = (firstBtn === '确定' || firstBtn === 'OK');
+    for (let retry: int = 0; retry < maxRetries && !clicked; retry++) {
+      clicked = await clickAuthDialogFallback(isConfirm);
+      if (clicked) {
+        hilog.info(0x0000, tag, "====>requestAuthAndClick coordinate fallback clicked (retry " + retry + ")");
+      } else {
+        hilog.info(0x0000, tag, "====>requestAuthAndClick coordinate fallback retry " + retry + " failed");
+        await Utils.msSleep(1000);
+      }
+    }
+  }
+
+  if (!clicked) {
+    hilog.info(0x0000, tag, "====>requestAuthAndClick: no button clicked after all retries and fallbacks");
   }
   let result: authorization.AuthorizationResult = await pending;
   return result;
