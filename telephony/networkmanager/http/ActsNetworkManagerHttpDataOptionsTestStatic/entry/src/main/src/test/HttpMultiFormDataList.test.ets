@@ -103,7 +103,7 @@ export default function httpMultiFormDataListTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success  : data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode == 200);
+                                    ExpectTrue(data?.responseCode === 200);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -145,7 +145,7 @@ export default function httpMultiFormDataListTest() {
                             httpRequestOptions_string
                         ).then((res: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +' httpRequest success : data ->'+JSON.stringify(res));
-                            ExpectTrue(res.responseCode == 200);
+                            ExpectTrue(res.responseCode === 200);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -200,7 +200,7 @@ export default function httpMultiFormDataListTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success  : data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode == 200);
+                                    ExpectTrue(data?.responseCode === 200);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -247,7 +247,7 @@ export default function httpMultiFormDataListTest() {
                             ],
                         }).then((res: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: data ->'+JSON.stringify(res));
-                            ExpectTrue(res.responseCode == 200);
+                            ExpectTrue(res.responseCode === 200);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -313,7 +313,7 @@ export default function httpMultiFormDataListTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -364,7 +364,7 @@ export default function httpMultiFormDataListTest() {
                             ],
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: data ->'+JSON.stringify(data));
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -432,7 +432,7 @@ export default function httpMultiFormDataListTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success : data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode == 200);
+                                    ExpectTrue(data?.responseCode === 200);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -485,7 +485,7 @@ export default function httpMultiFormDataListTest() {
                             ],
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success : data ->'+JSON.stringify(data));
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -546,7 +546,7 @@ export default function httpMultiFormDataListTest() {
                             }, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                             if (err?.code != 0) {
                                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                                ExpectTrue(err?.code==2300026);
+                                ExpectTrue(err?.code===2300026);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -611,7 +611,7 @@ export default function httpMultiFormDataListTest() {
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code==2300026);
+                            ExpectTrue(err.code===2300026);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done()
@@ -664,7 +664,7 @@ export default function httpMultiFormDataListTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success  : data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode == 200);
+                                    ExpectTrue(data?.responseCode === 200);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -709,7 +709,7 @@ export default function httpMultiFormDataListTest() {
                         let promise = httpRequest.request('http://baidu.com', httpRequestOptions_noParm);
                         promise.then((data:http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse ->'+JSON.stringify(data));
-                            ExpectTrue(data != null);
+                            ExpectTrue(data !== undefined);
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             httpRequest.destroy();
                             done();

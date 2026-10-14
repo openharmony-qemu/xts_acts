@@ -75,7 +75,7 @@ export default function HttpRequestOptionsTest() {
                                     done();
                                 } else {
                                     console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                    ExpectTrue(data.responseCode == 200);
+                                    ExpectTrue(data.responseCode === 200);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -123,7 +123,7 @@ export default function HttpRequestOptionsTest() {
                                     done();
                                 } else {
                                     console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                    ExpectTrue(data.responseCode == 200);
+                                    ExpectTrue(data.responseCode === 200);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -170,7 +170,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -214,7 +214,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -259,7 +259,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -304,7 +304,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -348,7 +348,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -415,7 +415,7 @@ export default function HttpRequestOptionsTest() {
                                             } else {
                                                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                                 console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                                ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                                ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                                 httpRequest.destroy();
                                                 done();
                                             }
@@ -474,7 +474,7 @@ export default function HttpRequestOptionsTest() {
                                         } else {
                                             console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                             console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                            ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                            ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                             httpRequest.destroy();
                                             done();
                                         }
@@ -527,7 +527,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -573,7 +573,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -619,7 +619,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -665,7 +665,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -705,7 +705,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -748,7 +748,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -791,7 +791,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -834,7 +834,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -883,7 +883,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -923,7 +923,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -972,7 +972,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1018,7 +1018,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1058,7 +1058,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -1101,7 +1101,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: Error) => {
@@ -1150,7 +1150,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1190,7 +1190,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -1240,7 +1240,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1280,7 +1280,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -1329,7 +1329,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1369,7 +1369,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -1418,7 +1418,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1458,7 +1458,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -1507,7 +1507,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1553,7 +1553,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1600,7 +1600,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1640,7 +1640,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -1683,7 +1683,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -1726,7 +1726,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -1771,7 +1771,7 @@ export default function HttpRequestOptionsTest() {
                             (err: BusinessError, data: http.HttpResponse) => {
                                 if (err) {
                                     console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
-                                    ExpectTrue(err.code == 2300028);
+                                    ExpectTrue(err.code === 2300028);
                                     httpRequest.destroy();
                                     done();
                                 } else {
@@ -1817,7 +1817,7 @@ export default function HttpRequestOptionsTest() {
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions, (err: BusinessError, data: http.HttpResponse) => {
                             if (err) {
                                 console.info(`${caseName} err:--- ${JSON.stringify(err)}`);
-                                ExpectTrue(err.code == 2300028);
+                                ExpectTrue(err.code === 2300028);
                                 httpRequest.destroy();
                                 done();
                             } else {
@@ -1866,7 +1866,7 @@ export default function HttpRequestOptionsTest() {
                             done();
                         }).catch((err: BusinessError) => {
                             console.info(`${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
-                            ExpectTrue(err?.code == 2300028);
+                            ExpectTrue(err?.code === 2300028);
                             httpRequest.destroy();
                             done();
                         });
@@ -1909,7 +1909,7 @@ export default function HttpRequestOptionsTest() {
                             done();
                         }).catch((err: BusinessError) => {
                             console.info(`${caseName} request fail err : ${JSON.stringify(err)} code:---${JSON.stringify(err?.code)}`);
-                            ExpectTrue(err?.code == 2300028);
+                            ExpectTrue(err?.code === 2300028);
                             httpRequest.destroy();
                             done();
                         });
@@ -1955,7 +1955,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1996,7 +1996,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2045,7 +2045,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2091,7 +2091,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2131,7 +2131,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTPS_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2174,7 +2174,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTPS_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2224,7 +2224,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2271,7 +2271,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2312,7 +2312,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2356,7 +2356,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2406,7 +2406,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2453,7 +2453,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2495,7 +2495,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2540,7 +2540,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2587,7 +2587,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: http.HttpResponse) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data.responseCode == 200);
+                            ExpectTrue(data.responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -2637,7 +2637,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2684,7 +2684,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2733,7 +2733,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data.responseCode == 200);
+                                ExpectTrue(data.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2969,7 +2969,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${data}`);
-                                ExpectTrue(data == 200);
+                                ExpectTrue(data === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -3008,7 +3008,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions).then((responseCode: number) => {
                             console.info(`${caseName} responseCode:--- `);
-                            ExpectTrue(responseCode == 200);
+                            ExpectTrue(responseCode === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -3075,7 +3075,7 @@ export default function HttpRequestOptionsTest() {
                                             } else {
                                                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                                 console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                                ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                                ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                                 httpRequest.destroy();
                                                 done();
                                             }
@@ -3141,7 +3141,7 @@ export default function HttpRequestOptionsTest() {
                                             } else {
                                                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                                 console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                                ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                                ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                                 httpRequest.destroy();
                                                 done();
                                             }
@@ -3207,7 +3207,7 @@ export default function HttpRequestOptionsTest() {
                                             } else {
                                                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                                 console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                                ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                                ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                                 httpRequest.destroy();
                                                 done();
                                             }
@@ -3273,7 +3273,7 @@ export default function HttpRequestOptionsTest() {
                                             } else {
                                                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                                 console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                                ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                                ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                                 httpRequest.destroy();
                                                 done();
                                             }
@@ -3348,7 +3348,7 @@ export default function HttpRequestOptionsTest() {
                                             } else {
                                                 console.info(`${caseName} secondResponse performanceTiming ${JSON.stringify(data.performanceTiming)}`);
                                                 console.info(`${caseName} secondResponse tcpTiming ${data.performanceTiming.tcpTiming}`);
-                                                ExpectTrue(data.performanceTiming.tcpTiming == 0);
+                                                ExpectTrue(data.performanceTiming.tcpTiming === 0);
                                                 httpRequest.destroy();
                                                 done();
                                             }
@@ -3399,7 +3399,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data == 200);
+                                ExpectTrue(data === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -3446,7 +3446,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data == 200);
+                                ExpectTrue(data === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -3495,7 +3495,7 @@ export default function HttpRequestOptionsTest() {
                                 done();
                             } else {
                                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                                ExpectTrue(data == 200);
+                                ExpectTrue(data === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -3536,7 +3536,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: number) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data == 200);
+                            ExpectTrue(data === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -3581,7 +3581,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: number) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data == 200);
+                            ExpectTrue(data === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {
@@ -3628,7 +3628,7 @@ export default function HttpRequestOptionsTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(XTS_TEST_HTTP_URL, httpRequestOptions).then((data: number) => {
                             console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                            ExpectTrue(data == 200);
+                            ExpectTrue(data === 200);
                             httpRequest.destroy();
                             done();
                         }).catch((err: BusinessError) => {

@@ -58,7 +58,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.OK == 200)
+                ExpectTrue(http.ResponseCode.OK === 200)
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -80,7 +80,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.CREATED == 201)
+                ExpectTrue(http.ResponseCode.CREATED === 201)
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -102,7 +102,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.ACCEPTED == 202);
+                ExpectTrue(http.ResponseCode.ACCEPTED === 202);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -124,7 +124,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0400';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.NOT_AUTHORITATIVE == 203);
+                ExpectTrue(http.ResponseCode.NOT_AUTHORITATIVE === 203);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -146,7 +146,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.NO_CONTENT == 204);
+                ExpectTrue(http.ResponseCode.NO_CONTENT === 204);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -168,7 +168,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.RESET == 205);
+                ExpectTrue(http.ResponseCode.RESET === 205);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -190,7 +190,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0700';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.PARTIAL == 206);
+                ExpectTrue(http.ResponseCode.PARTIAL === 206);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -212,7 +212,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0800';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.MULT_CHOICE == 300);
+                ExpectTrue(http.ResponseCode.MULT_CHOICE === 300);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -234,7 +234,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_0900';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.MOVED_PERM == 301);
+                ExpectTrue(http.ResponseCode.MOVED_PERM === 301);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -256,7 +256,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1000';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.MOVED_TEMP == 302);
+                ExpectTrue(http.ResponseCode.MOVED_TEMP === 302);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -278,7 +278,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.SEE_OTHER == 303);
+                ExpectTrue(http.ResponseCode.SEE_OTHER === 303);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -300,7 +300,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.NOT_MODIFIED == 304);
+                ExpectTrue(http.ResponseCode.NOT_MODIFIED === 304);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -322,7 +322,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.USE_PROXY == 305);
+                ExpectTrue(http.ResponseCode.USE_PROXY === 305);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -344,7 +344,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1400';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.BAD_REQUEST == 400);
+                ExpectTrue(http.ResponseCode.BAD_REQUEST === 400);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -366,7 +366,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.UNAUTHORIZED == 401);
+                ExpectTrue(http.ResponseCode.UNAUTHORIZED === 401);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -388,7 +388,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.PAYMENT_REQUIRED == 402);
+                ExpectTrue(http.ResponseCode.PAYMENT_REQUIRED === 402);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -410,7 +410,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1700';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.FORBIDDEN == 403);
+                ExpectTrue(http.ResponseCode.FORBIDDEN === 403);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -432,7 +432,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1800';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.NOT_FOUND == 404);
+                ExpectTrue(http.ResponseCode.NOT_FOUND === 404);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -454,7 +454,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_1900';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.BAD_METHOD == 405);
+                ExpectTrue(http.ResponseCode.BAD_METHOD === 405);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -476,7 +476,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2000';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.NOT_ACCEPTABLE == 406);
+                ExpectTrue(http.ResponseCode.NOT_ACCEPTABLE === 406);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -498,7 +498,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.PROXY_AUTH == 407);
+                ExpectTrue(http.ResponseCode.PROXY_AUTH === 407);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -520,7 +520,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.CLIENT_TIMEOUT == 408);
+                ExpectTrue(http.ResponseCode.CLIENT_TIMEOUT === 408);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -542,7 +542,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.CONFLICT == 409);
+                ExpectTrue(http.ResponseCode.CONFLICT === 409);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -564,7 +564,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2400';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.GONE == 410);
+                ExpectTrue(http.ResponseCode.GONE === 410);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -586,7 +586,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.LENGTH_REQUIRED == 411);
+                ExpectTrue(http.ResponseCode.LENGTH_REQUIRED === 411);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -608,7 +608,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.PRECON_FAILED == 412);
+                ExpectTrue(http.ResponseCode.PRECON_FAILED === 412);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -630,7 +630,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2700';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.ENTITY_TOO_LARGE == 413);
+                ExpectTrue(http.ResponseCode.ENTITY_TOO_LARGE === 413);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -652,7 +652,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2800';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.REQ_TOO_LONG == 414);
+                ExpectTrue(http.ResponseCode.REQ_TOO_LONG === 414);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -674,7 +674,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_2900';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.UNSUPPORTED_TYPE == 415);
+                ExpectTrue(http.ResponseCode.UNSUPPORTED_TYPE === 415);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -696,7 +696,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3000';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.INTERNAL_ERROR == 500);
+                ExpectTrue(http.ResponseCode.INTERNAL_ERROR === 500);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -718,7 +718,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.NOT_IMPLEMENTED == 501);
+                ExpectTrue(http.ResponseCode.NOT_IMPLEMENTED === 501);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -740,7 +740,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.BAD_GATEWAY == 502);
+                ExpectTrue(http.ResponseCode.BAD_GATEWAY === 502);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -762,7 +762,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.UNAVAILABLE == 503);
+                ExpectTrue(http.ResponseCode.UNAVAILABLE === 503);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -784,7 +784,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3400';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.GATEWAY_TIMEOUT == 504);
+                ExpectTrue(http.ResponseCode.GATEWAY_TIMEOUT === 504);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -806,7 +806,7 @@ export default function HttpResponseCodeTest() {
             let caseName: string = 'testNetworkMgrHttpResponseCode_static_3500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
-                ExpectTrue(http.ResponseCode.VERSION == 505);
+                ExpectTrue(http.ResponseCode.VERSION === 505);
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -846,7 +846,7 @@ export default function HttpResponseCodeTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -885,7 +885,7 @@ export default function HttpResponseCodeTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(XTS_TEST_HTTP_URL).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'request success: data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 200);
+                            ExpectTrue(data?.responseCode === 200);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -938,7 +938,7 @@ export default function HttpResponseCodeTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +'request success: data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 404);
+                                ExpectTrue(data?.responseCode === 404);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -977,7 +977,7 @@ export default function HttpResponseCodeTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.request(`${XTS_TEST_HTTP_URL}openHarmonyXts`).then((data: http.HttpResponse) => {
                            hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
-                            ExpectTrue(data?.responseCode == 404);
+                            ExpectTrue(data?.responseCode === 404);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();

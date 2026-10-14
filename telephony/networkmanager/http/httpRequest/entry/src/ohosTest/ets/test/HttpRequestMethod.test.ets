@@ -68,7 +68,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -108,7 +108,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -158,7 +158,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -198,7 +198,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -243,12 +243,12 @@ export default function HttpRequestMethodTest() {
             }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+                ExpectTrue(err.code === 2300999);//The device does not support HTTP3
                 httpRequest.destroy();
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -288,12 +288,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+              ExpectTrue(err.code === 2300999);//The device does not support HTTP3
               httpRequest.destroy();
               done();
             });
@@ -338,7 +338,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -378,7 +378,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -430,7 +430,7 @@ export default function HttpRequestMethodTest() {
             done();
           } else {
             console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             httpRequest.destroy();
             done();
           }
@@ -468,7 +468,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -513,12 +513,12 @@ export default function HttpRequestMethodTest() {
             }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);
+                ExpectTrue(err.code === 2300999);
                 httpRequest.destroy();
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -558,12 +558,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code === 2300999);
               httpRequest.destroy();
               done();
             });
@@ -608,7 +608,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -648,7 +648,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -699,7 +699,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -739,7 +739,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -786,12 +786,12 @@ export default function HttpRequestMethodTest() {
         }, (err: BusinessError, data: http.HttpResponse) => {
           if (err) {
             console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-            ExpectTrue(err.code == 2300999);
+            ExpectTrue(err.code === 2300999);
             httpRequest.destroy();
             done();
           } else {
             console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             httpRequest.destroy();
             done();
           }
@@ -830,12 +830,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code === 2300999);
               httpRequest.destroy();
               done();
             });
@@ -882,7 +882,7 @@ export default function HttpRequestMethodTest() {
             done();
           } else {
             console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             httpRequest.destroy();
             done();
           }
@@ -920,7 +920,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -970,7 +970,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -1010,7 +1010,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1055,12 +1055,12 @@ export default function HttpRequestMethodTest() {
             }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);
+                ExpectTrue(err.code === 2300999);
                 httpRequest.destroy();
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -1100,12 +1100,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code === 2300999);
               httpRequest.destroy();
               done();
             });
@@ -1150,7 +1150,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -1190,7 +1190,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1240,7 +1240,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -1280,7 +1280,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1327,12 +1327,12 @@ export default function HttpRequestMethodTest() {
         }, (err: BusinessError, data: http.HttpResponse) => {
           if (err) {
             console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-            ExpectTrue(err.code == 2300999);
+            ExpectTrue(err.code === 2300999);
             httpRequest.destroy();
             done();
           } else {
             console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             httpRequest.destroy();
             done();
           }
@@ -1370,12 +1370,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code === 2300999);
               httpRequest.destroy();
               done();
             });
@@ -1420,7 +1420,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -1460,7 +1460,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1510,7 +1510,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -1550,7 +1550,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1595,12 +1595,12 @@ export default function HttpRequestMethodTest() {
             }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);
+                ExpectTrue(err.code === 2300999);
                 httpRequest.destroy();
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -1640,12 +1640,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code === 2300999);
               httpRequest.destroy();
               done();
             });
@@ -1690,7 +1690,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(typeof data.responseCode == 'number');
+                ExpectTrue(typeof data.responseCode === 'number');
                 httpRequest.destroy();
                 done();
               }
@@ -1730,7 +1730,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(typeof data.responseCode == 'number');
+              ExpectTrue(typeof data.responseCode === 'number');
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1780,7 +1780,7 @@ export default function HttpRequestMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(typeof data.responseCode == 'number');
+                ExpectTrue(typeof data.responseCode === 'number');
                 httpRequest.destroy();
                 done();
               }
@@ -1820,7 +1820,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(typeof data.responseCode == 'number');
+              ExpectTrue(typeof data.responseCode === 'number');
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1865,12 +1865,12 @@ export default function HttpRequestMethodTest() {
             }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);
+                ExpectTrue(err.code === 2300999);
                 httpRequest.destroy();
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(typeof data.responseCode == 'number');
+                ExpectTrue(typeof data.responseCode === 'number');
                 httpRequest.destroy();
                 done();
               }
@@ -1910,12 +1910,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(typeof data.responseCode == 'number');
+              ExpectTrue(typeof data.responseCode === 'number');
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code === 2300999);
               httpRequest.destroy();
               done();
             });
@@ -1962,7 +1962,7 @@ export default function HttpRequestMethodTest() {
             done();
           } else {
             console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-            ExpectTrue(typeof data.responseCode == 'number');
+            ExpectTrue(typeof data.responseCode === 'number');
             httpRequest.destroy();
             done();
           }
@@ -2000,7 +2000,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP1_1
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(typeof data.responseCode == 'number');
+              ExpectTrue(typeof data.responseCode === 'number');
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -2052,7 +2052,7 @@ export default function HttpRequestMethodTest() {
             done();
           } else {
             console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-            ExpectTrue(typeof data.responseCode == 'number');
+            ExpectTrue(typeof data.responseCode === 'number');
             httpRequest.destroy();
             done();
           }
@@ -2090,7 +2090,7 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP2
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(typeof data.responseCode == 'number');
+              ExpectTrue(typeof data.responseCode === 'number');
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -2135,12 +2135,12 @@ export default function HttpRequestMethodTest() {
             }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail ${JSON.stringify(err)}`);
-                ExpectTrue(err.code == 2300999);
+                ExpectTrue(err.code === 2300999);
                 httpRequest.destroy();
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(typeof data.responseCode == 'number');
+                ExpectTrue(typeof data.responseCode === 'number');
                 httpRequest.destroy();
                 done();
               }
@@ -2180,12 +2180,12 @@ export default function HttpRequestMethodTest() {
               usingProtocol: http.HttpProtocol.HTTP3
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName}  httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(typeof data.responseCode == 'number');
+              ExpectTrue(typeof data.responseCode === 'number');
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName}  httpRequest fail ${JSON.stringify(err)}`);
-              ExpectTrue(err.code == 2300999);
+              ExpectTrue(err.code === 2300999);
               httpRequest.destroy();
               done();
             });

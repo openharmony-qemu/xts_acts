@@ -466,8 +466,8 @@ export default function HttpRequestInStreamTest() {
         try {
           httpRequest.on("dataReceiveProgress", (data: http.DataReceiveProgressInfo) => {
             console.info(`${caseName} dataReceiveProgress DataSendProgressInfo success:" + ${JSON.stringify(data)}`);
-            ExpectTrue(data.totalSize != null);
-            ExpectTrue(data.receiveSize != null);
+            ExpectTrue(data.totalSize !== undefined);
+            ExpectTrue(data.receiveSize !== undefined);
           });
           httpRequest.on("dataEnd", dataEnd_on_callback);
           httpRequest.requestInStream(Address_Img, httpRequestOptions, async (error, data) => {
@@ -517,7 +517,7 @@ export default function HttpRequestInStreamTest() {
         try {
           httpRequest.on("dataReceive", (data: ArrayBuffer) => {
             console.info(`${caseName} dataReceive DataSendProgressInfo success: ${JSON.stringify(data.byteLength)}`);
-            ExpectTrue(data.byteLength != null);
+            ExpectTrue(data.byteLength !== undefined);
           });
           httpRequest.on("dataReceiveProgress", dataReceiveProgress_on_callback);
           httpRequest.on("dataEnd", dataEnd_on_callback);

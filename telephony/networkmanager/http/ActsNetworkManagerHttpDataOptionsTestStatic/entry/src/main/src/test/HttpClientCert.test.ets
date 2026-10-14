@@ -96,7 +96,7 @@ export default function httpClientCertTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +'httpRequest success: data ->'+JSON.stringify(data));
-                                    ExpectTrue(data?.responseCode == 200);
+                                    ExpectTrue(data?.responseCode === 200);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -149,7 +149,7 @@ export default function httpClientCertTest() {
                             }as http.ClientCert,
                         }).then((res: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +'request success res: res ->'+JSON.stringify(res));
-                            ExpectTrue(res.responseCode == 200);
+                            ExpectTrue(res.responseCode === 200);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -212,7 +212,7 @@ export default function httpClientCertTest() {
                             (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                                 if (err?.code != 0) {
                                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code == 2300058);
+                                    ExpectTrue(err?.code === 2300058);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -279,7 +279,7 @@ export default function httpClientCertTest() {
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code == 2300058);
+                            ExpectTrue(err.code === 2300058);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -335,7 +335,7 @@ export default function httpClientCertTest() {
                             (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                                 if (err?.code != 0) {
                                     hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest fail err is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code == 2300058);
+                                    ExpectTrue(err?.code === 2300058);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -401,7 +401,7 @@ export default function httpClientCertTest() {
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest fail: get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code == 2300058);
+                            ExpectTrue(err.code === 2300058);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -457,7 +457,7 @@ export default function httpClientCertTest() {
                             (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                                 if (err?.code != 0) {
                                     hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest fail, get error is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code == 2300058);
+                                    ExpectTrue(err?.code === 2300058);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -523,7 +523,7 @@ export default function httpClientCertTest() {
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +' httpRequest fail: get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code == 2300058);
+                            ExpectTrue(err.code === 2300058);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();
@@ -579,7 +579,7 @@ export default function httpClientCertTest() {
                             (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                                 if (err?.code != 0) {
                                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                                    ExpectTrue(err?.code == 2300058);
+                                    ExpectTrue(err?.code === 2300058);
                                     httpRequest.destroy();
                                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                     done();
@@ -645,7 +645,7 @@ export default function httpClientCertTest() {
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                            ExpectTrue(err.code == 2300058);
+                            ExpectTrue(err.code === 2300058);
                             httpRequest.destroy();
                             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                             done();

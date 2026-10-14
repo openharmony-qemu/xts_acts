@@ -73,8 +73,15 @@ export default function HttpCaPathTest() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request(URL1, httpRequestOptions1, (err, data) => {
+          if (err) {
+            console.info(`${CASE_NAME} httpsRequest fail, err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            done();
+            return;
+          }
           console.info(`${CASE_NAME} httpsRequest success, data: ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         })
@@ -99,8 +106,15 @@ export default function HttpCaPathTest() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request(URL1, httpRequestOptions2, (err, data) => {
+          if (err) {
+            console.info(`${CASE_NAME} httpsRequest fail, err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            done();
+            return;
+          }
           console.info(`${CASE_NAME} httpsRequest success, data: ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         })
@@ -125,8 +139,15 @@ export default function HttpCaPathTest() {
       try {
         let httpRequest = http.createHttp();
         httpRequest.request(URL1, httpRequestOptions3, (err, data) => {
+          if (err) {
+            console.info(`${CASE_NAME} httpsRequest fail, err: ${JSON.stringify(err)}`);
+            ExpectFail();
+            httpRequest.destroy();
+            done();
+            return;
+          }
           console.info(`${CASE_NAME} httpsRequest success, data: ${JSON.stringify(data)}`);
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           done();
         })

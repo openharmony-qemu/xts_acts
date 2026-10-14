@@ -157,7 +157,7 @@ export default function HttpDeleteTest() {
                 } else {
                   hilog.info(domain, tag, '%{public}s',
                     caseName + ': delete success httpResponseCache ->' + JSON.stringify(httpResponseCache));
-                  ExpectTrue(httpResponseCache != null);
+                  ExpectTrue(httpResponseCache !== undefined);
                   done();
                 }
               });
@@ -193,7 +193,7 @@ export default function HttpDeleteTest() {
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + '  Network connected ');
               let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
-              ExpectTrue(typeof httpResponseCache == 'object');
+              ExpectTrue(typeof httpResponseCache === 'object');
               httpResponseCache.delete((err: BusinessError<void> | null) => {
                 if (err?.code != 0) {
                   hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
@@ -201,7 +201,7 @@ export default function HttpDeleteTest() {
                 } else {
                   hilog.info(domain, tag, '%{public}s',
                     caseName + ': delete success httpResponseCache ->' + JSON.stringify(httpResponseCache));
-                  ExpectTrue(httpResponseCache != null);
+                  ExpectTrue(httpResponseCache !== undefined);
                   done();
                 }
               });

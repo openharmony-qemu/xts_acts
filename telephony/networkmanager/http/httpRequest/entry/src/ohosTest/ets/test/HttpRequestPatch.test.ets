@@ -154,9 +154,9 @@ export default function HttpRequestPatchTest() {
         httpRequest.request("https://localhost:"+ port, options, (err: Error, data: http.HttpResponse) => {
           if (!err) {
             console.info(`${caseName} options is `+JSON.stringify(options));
-            ExpectTrue(options.method == "PATCH");
+            ExpectTrue(options.method === "PATCH");
             console.info(`${caseName} request success data is `+JSON.stringify(data));
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
             done();
           } else {
             console.error(`${caseName} request err is `+JSON.stringify(err));
@@ -223,7 +223,7 @@ export default function HttpRequestPatchTest() {
         };
         httpRequest.request("https://localhost:"+ port, options).then((data) => {
           console.info(`${caseName} options is `+JSON.stringify(options));
-          ExpectTrue(options.method == "PATCH");
+          ExpectTrue(options.method === "PATCH");
           console.info(`${caseName} request success data is`+JSON.stringify(data));
           console.error(`${caseName} Unexpected success: should have failed due to missing caData`);
           done();

@@ -67,7 +67,7 @@ export default function HttpHttpDataTypeTest() {
                 httpRequest.destroy();
                 done();
               } else {
-                ExpectTrue(res?.resultType == http.HttpDataType.STRING);
+                ExpectTrue(res?.resultType === http.HttpDataType.STRING);
                 httpRequest.destroy();
                 done();
               }
@@ -110,7 +110,7 @@ export default function HttpHttpDataTypeTest() {
             }).then((res: http.HttpResponse) => {
               resultType = res.resultType;
               console.info(`${caseName} httpRequest success!!!`);
-              ExpectTrue(resultType == http.HttpDataType.STRING);
+              ExpectTrue(resultType === http.HttpDataType.STRING);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -159,7 +159,7 @@ export default function HttpHttpDataTypeTest() {
                 httpRequest.destroy();
                 done();
               } else {
-                ExpectTrue(res?.resultType == http.HttpDataType.ARRAY_BUFFER);
+                ExpectTrue(res?.resultType === http.HttpDataType.ARRAY_BUFFER);
                 httpRequest.destroy();
                 done();
               }
@@ -202,7 +202,7 @@ export default function HttpHttpDataTypeTest() {
             }).then((res: http.HttpResponse) => {
               resultType = res.resultType;
               console.info(`${caseName} httpRequest success!!!`);
-              ExpectTrue(resultType == http.HttpDataType.ARRAY_BUFFER);
+              ExpectTrue(resultType === http.HttpDataType.ARRAY_BUFFER);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -337,7 +337,7 @@ export default function HttpHttpDataTypeTest() {
                 ExpectFail();
                 done();
               } else {
-                ExpectTrue(res?.resultType == http.HttpDataType.STRING);
+                ExpectTrue(res?.resultType === http.HttpDataType.STRING);
                 httpRequest.destroy();
                 done();
               }
@@ -377,7 +377,7 @@ export default function HttpHttpDataTypeTest() {
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS).then((res: http.HttpResponse) => {
               resultType = res.resultType;
               console.info(`${caseName} httpRequest success!!!`);
-              ExpectTrue(resultType == http.HttpDataType.STRING);
+              ExpectTrue(resultType === http.HttpDataType.STRING);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -423,7 +423,7 @@ export default function HttpHttpDataTypeTest() {
                 ExpectFail();
                 done();
               } else {
-                ExpectTrue(res?.resultType == http.HttpDataType.STRING);
+                ExpectTrue(res?.resultType === http.HttpDataType.STRING);
                 httpRequest.destroy();
                 done();
               }
@@ -465,7 +465,7 @@ export default function HttpHttpDataTypeTest() {
             }).then((res: http.HttpResponse) => {
               resultType = res.resultType;
               console.info(`${caseName} httpRequest success!!!`);
-              ExpectTrue(resultType == http.HttpDataType.STRING);
+              ExpectTrue(resultType === http.HttpDataType.STRING);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {

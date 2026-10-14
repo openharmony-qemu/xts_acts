@@ -952,7 +952,7 @@ export default function SniTest() {
           let responseData: string = String(data);
           try {
             console.info(`${caseName} responseData success: ${JSON.stringify(responseData)}`);
-            expectTrue(responseData == "200");
+            expectTrue(responseData === "200");
           } catch (e) {
             console.info(`${caseName} trycatch err: ${JSON.stringify(data)}`);
           }
@@ -999,7 +999,7 @@ export default function SniTest() {
           let responseData: string = String(data);
           try {
             console.info(`${caseName} responseData success: ${JSON.stringify(responseData)}`);
-            expectTrue(responseData == "200");
+            expectTrue(responseData === "200");
           } catch (e) {
             console.info(`${caseName} trycatch err: ${JSON.stringify(data)}`);
           }
@@ -1046,7 +1046,7 @@ export default function SniTest() {
           let responseData: string = String(data);
           try {
             console.info(`${caseName} responseData success: ${JSON.stringify(responseData)}`);
-            expectTrue(responseData == "200");
+            expectTrue(responseData === "200");
           } catch (e) {
             console.info(`${caseName} trycatch err: ${JSON.stringify(data)}`);
           }

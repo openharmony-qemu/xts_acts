@@ -166,7 +166,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               await testNetManager.RemoveAllInterceptor(2);
               httpRequest.destroy();
               done();
@@ -211,7 +211,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               testNetManager.RemoveAllInterceptor(2);
               httpRequest.destroy();
               done();
@@ -247,7 +247,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(REQUEST_GROUP0_MODIFY_URL);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} AddWritableRequestInterceptor success, result->${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -304,7 +304,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.RemoveAllInterceptor(4);
               httpRequest.destroy();
-              ExpectTrue(err.code == 2300996);
+              ExpectTrue(err.code === 2300996);
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
@@ -353,7 +353,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               testNetManager.RemoveResponseInterceptor(0);
               httpRequest.destroy();
               done();
@@ -398,7 +398,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               testNetManager.RemoveResponseInterceptor(0);
               httpRequest.destroy();
               done();
@@ -443,7 +443,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               testNetManager.RemoveAllInterceptor(1);
               httpRequest.destroy();
               done();
@@ -488,7 +488,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res.header)}`);
-              ExpectTrue(res.header["ddddddd"] == "6666666");
+              ExpectTrue(res.header["ddddddd"] === "6666666");
               testNetManager.RemoveAllInterceptor(2);
               httpRequest.destroy();
               done();
@@ -533,7 +533,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res.result)}`);
-              ExpectTrue(res.result == 'response_body_modify');
+              ExpectTrue(res.result === 'response_body_modify');
               testNetManager.RemoveAllInterceptor(0);
               httpRequest.destroy();
               done();
@@ -586,8 +586,8 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
-              ExpectTrue(res.result == 'data:body');
+              ExpectTrue(res.responseCode === 403);
+              ExpectTrue(res.result === 'data:body');
               httpRequest.destroy();
               testNetManager.RemoveResponseInterceptor(0);
               testNetManager.RemoveResponseInterceptor(1);
@@ -621,7 +621,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.AddNullPtrReadOnlyRequestInterceptor();
-          ExpectTrue(result == 401);
+          ExpectTrue(result === 401);
           console.info(`${TAG} ${caseName}AddNullPtrReadOnlyRequestInterceptor failed, result:${result}`);
           done();
         } catch (error) {
@@ -647,7 +647,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.AddNullPtrWritableResponseInterceptor();
-          ExpectTrue(result == 401);
+          ExpectTrue(result === 401);
           console.info(`${TAG} ${caseName} AddNullPtrWritableResponseInterceptor failed, result:${result}`);
           done();
         } catch (error) {
@@ -673,13 +673,13 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result1: number = testNetManager.AddReadOnlyResponseInterceptor(99, 1);
-          ExpectTrue(result1 == 401);
+          ExpectTrue(result1 === 401);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor failed, result1:${result1}`);
           let result3: number = testNetManager.AddWritableRequestInterceptor(99, 1);
-          ExpectTrue(result3 == 401);
+          ExpectTrue(result3 === 401);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor failed, result3:${result3}`);
           let result4: number = testNetManager.AddWritableResponseInterceptor(99, 1);
-          ExpectTrue(result4 == 401);
+          ExpectTrue(result4 === 401);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor failed, result4:${result4}`);
           done();
         } catch (error) {
@@ -712,7 +712,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(REQUEST_GROUP0_MODIFY_URL);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -764,7 +764,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(REQUEST_GROUP3_MODIFY_HEADERS);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(3, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -817,7 +817,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(REQUEST_GROUP2_MODIFY_BODY);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(2, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -870,7 +870,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(REQUEST_GROUP1_MODIFY_METHOD);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(1, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -916,7 +916,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.AddWritableRequestInterceptor(4, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableRequestInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -927,7 +927,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.RemoveRequestInterceptor(4);
               httpRequest.destroy();
-              ExpectTrue(err.code == 2300996);
+              ExpectTrue(err.code === 2300996);
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
@@ -973,10 +973,10 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP11_READONLY_RESPONSE_CODE);
           });
           let addReadOnlyResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
-          ExpectTrue(addReadOnlyResult == 0);
+          ExpectTrue(addReadOnlyResult === 0);
           console.info(`${TAG} ${caseName}AddReadOnlyResponseInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
           let result: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableResponseInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -994,7 +994,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               testNetManager.RemoveResponseInterceptor(1);
               testNetManager.RemoveResponseInterceptor(11);
               httpRequest.destroy();
@@ -1040,10 +1040,10 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP12_READONLY_HEADERS);
           });
           let addReadOnlyResult: number = testNetManager.AddReadOnlyResponseInterceptor(12, 1);
-          ExpectTrue(addReadOnlyResult == 0);
+          ExpectTrue(addReadOnlyResult === 0);
           console.info(`${TAG} ${caseName}AddReadOnlyResponseInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
           let result: number = testNetManager.AddWritableResponseInterceptor(2, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableResponseInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -1059,7 +1059,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.header['ddddddd'] == '6666666');
+              ExpectTrue(res.header['ddddddd'] === '6666666');
             }
             testNetManager.RemoveAllInterceptor(2);
             testNetManager.RemoveAllInterceptor(12);
@@ -1105,10 +1105,10 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP10_READONLY_BODY);
           });
           let addReadOnlyResult: number = testNetManager.AddReadOnlyResponseInterceptor(10, 1);
-          ExpectTrue(addReadOnlyResult == 0);
+          ExpectTrue(addReadOnlyResult === 0);
           console.info(`${TAG} ${caseName}AddReadOnlyResponseInterceptor success, addReadOnlyResult:${addReadOnlyResult}`);
           let result: number = testNetManager.AddWritableResponseInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName}AddWritableResponseInterceptor success, result:${result}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -1124,7 +1124,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.result == 'response_body_modify');
+              ExpectTrue(res.result === 'response_body_modify');
             }
             testNetManager.RemoveAllInterceptor(0);
             testNetManager.RemoveAllInterceptor(10);
@@ -1173,7 +1173,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }
@@ -1231,7 +1231,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               httpRequest.request(HTTP_URL_ERROR, options, (err: BusinessError, res: http.HttpResponse) => {
                 if (err) {
                   console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-                  ExpectTrue(err.code == 2300999);
+                  ExpectTrue(err.code === 2300999);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -1286,7 +1286,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }
@@ -1329,7 +1329,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               let delResult: number = testNetManager.RemoveResponseInterceptor(1);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName}RemoveResponseInterceptor success, delResult:${delResult}`);
@@ -1341,7 +1341,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.responseCode == 200);
+                  ExpectTrue(res.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -1386,7 +1386,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             } else {
               createServer(caseName, done);
               console.info(`${TAG} ${caseName} first_res_header:${JSON.stringify(res.header)}`);
-              ExpectTrue(res.header["ddddddd"] == "6666666");
+              ExpectTrue(res.header["ddddddd"] === "6666666");
               let delResult: number = testNetManager.RemoveResponseInterceptor(2);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName}RemoveResponseInterceptor success, delResult:${delResult}`);
@@ -1446,7 +1446,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.result == 'response_body_modify');
+              ExpectTrue(res.result === 'response_body_modify');
               let delResult: number = testNetManager.RemoveResponseInterceptor(0);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName}RemoveResponseInterceptor success, delResult:${delResult}`);
@@ -1491,7 +1491,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.RemoveNullptrInterceptor();
-          ExpectTrue(result == 401);
+          ExpectTrue(result === 401);
           console.info(`${TAG} ${caseName}RemoveNullptrInterceptor failed, result:${result}`);
           done();
         } catch (error) {
@@ -1539,7 +1539,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }
@@ -1590,13 +1590,13 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP11_READONLY_RESPONSE_CODE);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
-          ExpectTrue(readOnlyResResult == 0);
+          ExpectTrue(readOnlyResResult === 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
           let result1: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result1 == 0);
+          ExpectTrue(result1 === 0);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result1:${result1}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -1616,7 +1616,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               testNetManager.UnregisterCallback(RESPONSE_GROUP1_MODIFY_RESPONSE_CODE);
               let delReadOnlyResult1: number = testNetManager.RemoveResponseInterceptor(1);
               ExpectTrue(delReadOnlyResult1 === 0);
@@ -1629,7 +1629,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.responseCode == 200);
+                  ExpectTrue(res.responseCode === 200);
                 }
                 testNetManager.UnregisterCallback(REQUEST_GROUP0_MODIFY_URL);
                 testNetManager.UnregisterCallback(RESPONSE_GROUP11_READONLY_RESPONSE_CODE);
@@ -1697,7 +1697,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }
@@ -1725,10 +1725,10 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.RemoveRequestInterceptor(99);
-          ExpectTrue(result == 401);
+          ExpectTrue(result === 401);
           console.info(`${TAG} ${caseName} RemoveRequestInterceptor failed, result:${result}`);
           let result1: number = testNetManager.RemoveResponseInterceptor(99);
-          ExpectTrue(result1 == 401);
+          ExpectTrue(result1 === 401);
           console.info(`${TAG} ${caseName} RemoveResponseInterceptor failed, result1:${result1}`);
           done();
         } catch (error) {
@@ -1780,7 +1780,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }
@@ -1839,7 +1839,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
                   testNetManager.UnregisterCallback(REQUEST_GROUP0_MODIFY_URL);
                   await testNetManager.RemoveAllInterceptor(0);
-                  ExpectTrue(err.code == 2300999);
+                  ExpectTrue(err.code === 2300999);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -1891,7 +1891,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               let delResult: number = testNetManager.RemoveAllInterceptor(1);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName}RemoveAllInterceptor success, delResult:${delResult}`);
@@ -1904,7 +1904,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.responseCode == 200);
+                  ExpectTrue(res.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -1950,7 +1950,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.header["ddddddd"] == "6666666");
+              ExpectTrue(res.header["ddddddd"] === "6666666");
               let delResult: number = testNetManager.RemoveAllInterceptor(2);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName}RemoveAllInterceptor success delResult:${delResult}`);
@@ -1963,7 +1963,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.header?.['ddddddd'] == undefined);
+                  ExpectTrue(res.header?.['ddddddd'] === undefined);
                   httpRequest.destroy();
                   done();
                 }
@@ -2009,7 +2009,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.result == 'response_body_modify');
+              ExpectTrue(res.result === 'response_body_modify');
               let delResult: number = testNetManager.RemoveAllInterceptor(0);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName}RemoveAllInterceptor success delResult:${delResult}`);
@@ -2053,7 +2053,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.RemoveAllInterceptor(99);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} RemoveAllInterceptor failed, result:${result}`);
           done();
         } catch (error) {
@@ -2091,16 +2091,16 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP1_MODIFY_RESPONSE_CODE);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let result1: number = testNetManager.AddWritableRequestInterceptor(20, 1);
-          ExpectTrue(result1 == 401);
+          ExpectTrue(result1 === 401);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result1:${result1}`);
           let result2: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result2 == 0);
+          ExpectTrue(result2 === 0);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result2:${result2}`);
           let result3: number = testNetManager.AddWritableResponseInterceptor(21, 1);
-          ExpectTrue(result1 == 401);
+          ExpectTrue(result1 === 401);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result3:${result3}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -2118,7 +2118,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res-first:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               let delResult: number = testNetManager.RemoveAllInterceptor(0);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName} RemoveAllInterceptor success, delResult:${delResult}`);
@@ -2132,7 +2132,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
-                  ExpectTrue(res.responseCode == 403);
+                  ExpectTrue(res.responseCode === 403);
                 }
                 testNetManager.RemoveRequestInterceptor(0);
                 testNetManager.RemoveResponseInterceptor(1);
@@ -2180,13 +2180,13 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP11_READONLY_RESPONSE_CODE);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
-          ExpectTrue(readOnlyResResult == 0);
+          ExpectTrue(readOnlyResResult === 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
           let result1: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result1 == 0);
+          ExpectTrue(result1 === 0);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result1:${result1}`);
           let delResult: number = testNetManager.RemoveAllInterceptor(0);
           ExpectTrue(delResult === 0);
@@ -2208,7 +2208,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res-first:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               testNetManager.UnregisterCallback(RESPONSE_GROUP1_MODIFY_RESPONSE_CODE);
               testNetManager.UnregisterCallback(RESPONSE_GROUP11_READONLY_RESPONSE_CODE);
               let delResult: number = testNetManager.RemoveAllInterceptor(1);
@@ -2230,7 +2230,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
-                  ExpectTrue(res.responseCode == 200);
+                  ExpectTrue(res.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -2346,7 +2346,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               let startResult: number = testNetManager.StartAllInterceptor(1);
               ExpectTrue(startResult === 0);
               console.info(`${TAG} ${caseName}StartAllInterceptor startResult:${startResult}`);
@@ -2359,7 +2359,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.responseCode == 403);
+                  ExpectTrue(res.responseCode === 403);
                   testNetManager.RemoveResponseInterceptor(1);
                   httpRequest.destroy();
                   done();
@@ -2406,7 +2406,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.header?.["ddddddd"] == undefined);
+              ExpectTrue(res.header?.["ddddddd"] === undefined);
               let startResult: number = testNetManager.StartAllInterceptor(2);
               ExpectTrue(startResult === 0);
               console.info(`${TAG} ${caseName}StartAllInterceptor startResult:${startResult}`);
@@ -2419,7 +2419,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.header["ddddddd"] == "6666666");
+                  ExpectTrue(res.header["ddddddd"] === "6666666");
                   testNetManager.RemoveResponseInterceptor(2);
                   httpRequest.destroy();
                   done();
@@ -2466,7 +2466,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.result == 'data:body');
+              ExpectTrue(res.result === 'data:body');
               let startResult: number = testNetManager.StartAllInterceptor(0);
               ExpectTrue(startResult === 0);
               console.info(`${TAG} ${caseName}StartAllInterceptor startResult:${startResult}`);
@@ -2479,7 +2479,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.result == 'response_body_modify');
+                  ExpectTrue(res.result === 'response_body_modify');
                   httpRequest.destroy();
                   testNetManager.RemoveResponseInterceptor(0);
                   done();
@@ -2523,16 +2523,16 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP1_MODIFY_RESPONSE_CODE);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 0);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let result1: number = testNetManager.AddWritableRequestInterceptor(20, 0);
-          ExpectTrue(result1 == 401);
+          ExpectTrue(result1 === 401);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result1:${result1}`);
           let result2: number = testNetManager.AddWritableResponseInterceptor(1, 0);
-          ExpectTrue(result2 == 0);
+          ExpectTrue(result2 === 0);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result2:${result2}`);
           let result3: number = testNetManager.AddWritableResponseInterceptor(21, 0);
-          ExpectTrue(result3 == 401);
+          ExpectTrue(result3 === 401);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result3:${result3}`);
           let startResult: number = testNetManager.StartAllInterceptor(0);
           ExpectTrue(startResult === 0);
@@ -2553,7 +2553,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res-first:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               let startResult: number = testNetManager.StartAllInterceptor(1);
               ExpectTrue(startResult === 0);
               console.info(`${TAG} ${caseName} StartAllInterceptor success, startResult:${startResult}`);
@@ -2569,7 +2569,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
-                  ExpectTrue(res.responseCode == 403);
+                  ExpectTrue(res.responseCode === 403);
                   testNetManager.RemoveRequestInterceptor(0);
                   testNetManager.RemoveResponseInterceptor(1);
                   httpRequest.destroy();
@@ -2605,7 +2605,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.StartAllInterceptor(99);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} StartAllInterceptor failed, result:${result}`);
           done();
         } catch (error) {
@@ -2649,16 +2649,16 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP11_READONLY_RESPONSE_CODE);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 0);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 0);
-          ExpectTrue(readOnlyResResult == 0);
+          ExpectTrue(readOnlyResResult === 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
           let result1: number = testNetManager.AddWritableResponseInterceptor(1, 0);
-          ExpectTrue(result1 == 0);
+          ExpectTrue(result1 === 0);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result1:${result1}`);
           let startResult: number = testNetManager.StartAllInterceptor(0);
-          ExpectTrue(startResult == 0);
+          ExpectTrue(startResult === 0);
           console.info(`${TAG} ${caseName} StartAllInterceptor success, startResult:${startResult}`);
           let httpRequest: http.HttpRequest = http.createHttp();
           let options: http.HttpRequestOptions = {
@@ -2678,12 +2678,12 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               let startResult: number = testNetManager.StartAllInterceptor(11);
-              ExpectTrue(startResult == 0);
+              ExpectTrue(startResult === 0);
               console.info(`${TAG} ${caseName} StartAllInterceptor success, startResult:${startResult}`);
               let startResult1: number = testNetManager.StartAllInterceptor(1);
-              ExpectTrue(startResult1 == 0);
+              ExpectTrue(startResult1 === 0);
               console.info(`${TAG} ${caseName} StartAllInterceptor success, startResult1:${startResult1}`);
               httpRequest.request(HTTP_URL_ERROR, options, (err: BusinessError, res: http.HttpResponse) => {
                 if (err) {
@@ -2696,7 +2696,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.responseCode == 403);
+                  ExpectTrue(res.responseCode === 403);
                 }
                 testNetManager.RemoveRequestInterceptor(0);
                 testNetManager.RemoveResponseInterceptor(1);
@@ -2761,7 +2761,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }
@@ -2815,7 +2815,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} responseCode:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }
@@ -2925,7 +2925,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               let stopResult: number = testNetManager.StopAllInterceptor(1);
               ExpectTrue(stopResult === 0);
               console.info(`${TAG} ${caseName}StopAllInterceptor success, stopResult:${stopResult}`);
@@ -2937,7 +2937,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.responseCode == 200);
+                  ExpectTrue(res.responseCode === 200);
                 }
                 testNetManager.RemoveResponseInterceptor(1);
                 httpRequest.destroy();
@@ -2983,7 +2983,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.header["ddddddd"] == "6666666");
+              ExpectTrue(res.header["ddddddd"] === "6666666");
               let stopResult: number = testNetManager.StopAllInterceptor(2);
               ExpectTrue(stopResult === 0);
               console.info(`${TAG} ${caseName}StopAllInterceptor stopResult:${stopResult}`);
@@ -2996,7 +2996,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.header?.['ddddddd'] == undefined);
+                  ExpectTrue(res.header?.['ddddddd'] === undefined);
                   testNetManager.RemoveResponseInterceptor(2);
                   httpRequest.destroy();
                   done();
@@ -3043,7 +3043,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             } else {
               createServer(caseName, done);
               console.info(`${TAG} ${caseName} first_res:${res.result}`);
-              ExpectTrue(res.result == 'response_body_modify');
+              ExpectTrue(res.result === 'response_body_modify');
               let stopResult: number = testNetManager.StopAllInterceptor(0);
               ExpectTrue(stopResult === 0);
               console.info(`${TAG} ${caseName}StopAllInterceptor success, stopResult:${stopResult}`);
@@ -3088,7 +3088,7 @@ export default function HttpInterceptorForSafeCheckTest() {
         console.info(`${TAG} ${caseName} test Start`);
         try {
           let result: number = testNetManager.StopAllInterceptor(99);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} StopAllInterceptor failed, result:${result}`);
           done();
         } catch (error) {
@@ -3132,13 +3132,13 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP11_READONLY_RESPONSE_CODE);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let readOnlyResResult: number = testNetManager.AddReadOnlyResponseInterceptor(11, 1);
-          ExpectTrue(readOnlyResResult == 0);
+          ExpectTrue(readOnlyResResult === 0);
           console.info(`${TAG} ${caseName} AddReadOnlyResponseInterceptor success, readOnlyResResult:${readOnlyResResult}`);
           let result1: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result1 == 0);
+          ExpectTrue(result1 === 0);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result1:${result1}`);
           let delResult: number = testNetManager.StopAllInterceptor(0);
           ExpectTrue(delResult === 0);
@@ -3161,7 +3161,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               let delResult: number = testNetManager.StopAllInterceptor(11);
               ExpectTrue(delResult === 0);
               console.info(`${TAG} ${caseName} StopAllInterceptor success, delResult:${delResult}`);
@@ -3179,7 +3179,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res:${JSON.stringify(res)}`);
-                  ExpectTrue(res.responseCode == 200);
+                  ExpectTrue(res.responseCode === 200);
                 }
                 testNetManager.RemoveRequestInterceptor(0);
                 testNetManager.RemoveResponseInterceptor(1);
@@ -3230,16 +3230,16 @@ export default function HttpInterceptorForSafeCheckTest() {
             testNetManager.UnregisterCallback(RESPONSE_GROUP1_MODIFY_RESPONSE_CODE);
           });
           let result: number = testNetManager.AddWritableRequestInterceptor(0, 1);
-          ExpectTrue(result == 0);
+          ExpectTrue(result === 0);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result:${result}`);
           let result1: number = testNetManager.AddWritableRequestInterceptor(20, 1);
-          ExpectTrue(result1 == 401);
+          ExpectTrue(result1 === 401);
           console.info(`${TAG} ${caseName} AddWritableRequestInterceptor success, result1:${result1}`);
           let result2: number = testNetManager.AddWritableResponseInterceptor(1, 1);
-          ExpectTrue(result2 == 0);
+          ExpectTrue(result2 === 0);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result2:${result2}`);
           let result3: number = testNetManager.AddWritableResponseInterceptor(21, 1);
-          ExpectTrue(result3 == 401);
+          ExpectTrue(result3 === 401);
           console.info(`${TAG} ${caseName} AddWritableResponseInterceptor success, result3:${result3}`);
           let stopResult: number = testNetManager.StopAllInterceptor(0);
           ExpectTrue(stopResult === 0);
@@ -3260,7 +3260,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               done();
             } else {
               console.info(`${TAG} ${caseName} res-first:${res.responseCode}`);
-              ExpectTrue(res.responseCode == 403);
+              ExpectTrue(res.responseCode === 403);
               let stopResult: number = testNetManager.StopAllInterceptor(1);
               ExpectTrue(stopResult === 0);
               console.info(`${TAG} ${caseName} StopAllInterceptor success, stopResult:${stopResult}`);
@@ -3274,7 +3274,7 @@ export default function HttpInterceptorForSafeCheckTest() {
                   done();
                 } else {
                   console.info(`${TAG} ${caseName} res-second:${res.responseCode}`);
-                  ExpectTrue(res.responseCode == 200);
+                  ExpectTrue(res.responseCode === 200);
                 }
                 testNetManager.RemoveRequestInterceptor(0);
                 testNetManager.RemoveResponseInterceptor(1);
@@ -3451,7 +3451,7 @@ export default function HttpInterceptorForSafeCheckTest() {
               console.info(`${TAG} ${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
               testNetManager.RemoveAllInterceptor(4);
               httpRequest.destroy();
-              ExpectTrue(err.code == 2300996);
+              ExpectTrue(err.code === 2300996);
               done();
             } else {
               console.info(`${TAG} ${caseName} request unexpected success:${JSON.stringify(res)}`);
@@ -3502,7 +3502,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             console.info(`${TAG} ${caseName} requestSync fail, error code: ${err.code}, msg: ${err.message}`);
             testNetManager.RemoveAllInterceptor(4);
             httpRequest.destroy();
-            ExpectTrue(err.code == 2300996);
+            ExpectTrue(err.code === 2300996);
             done();
           }
         } catch (error) {
@@ -3547,7 +3547,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             console.info(`${TAG} ${caseName} requestSync fail, error code: ${err.code}, msg: ${err.message}`);
             testNetManager.RemoveAllInterceptor(4);
             httpRequest.destroy();
-            ExpectTrue(err.code == 2300996);
+            ExpectTrue(err.code === 2300996);
             done();
           }
         } catch (error) {
@@ -3592,7 +3592,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             console.info(`${TAG} ${caseName} requestSync fail, error code: ${err.code}, msg: ${err.message}`);
             testNetManager.RemoveAllInterceptor(4);
             httpRequest.destroy();
-            ExpectTrue(err.code == 2300996);
+            ExpectTrue(err.code === 2300996);
             done();
           }
         } catch (error) {
@@ -3637,7 +3637,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             console.info(`${TAG} ${caseName} requestSync fail, error code: ${err.code}, msg: ${err.message}`);
             testNetManager.RemoveAllInterceptor(4);
             httpRequest.destroy();
-            ExpectTrue(err.code == 2300996);
+            ExpectTrue(err.code === 2300996);
             done();
           }
         } catch (error) {
@@ -3682,7 +3682,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             console.info(`${TAG} ${caseName} requestSync fail, error code: ${err.code}, msg: ${err.message}`);
             testNetManager.RemoveAllInterceptor(4);
             httpRequest.destroy();
-            ExpectTrue(err.code == 2300996);
+            ExpectTrue(err.code === 2300996);
             done();
           }
         } catch (error) {
@@ -3724,7 +3724,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             console.info(`${TAG} ${caseName} requestSync fail, error code: ${err.code}, msg: ${err.message}`);
             testNetManager.RemoveAllInterceptor(4);
             httpRequest.destroy();
-            ExpectTrue(err.code == 2300996);
+            ExpectTrue(err.code === 2300996);
             done();
           }
         } catch (error) {
@@ -3769,7 +3769,7 @@ export default function HttpInterceptorForSafeCheckTest() {
             console.info(`${TAG} ${caseName} requestSync fail, error code: ${err.code}, msg: ${err.message}`);
             testNetManager.RemoveAllInterceptor(4);
             httpRequest.destroy();
-            ExpectTrue(err.code == 2300996);
+            ExpectTrue(err.code === 2300996);
             done();
           }
         } catch (error) {
