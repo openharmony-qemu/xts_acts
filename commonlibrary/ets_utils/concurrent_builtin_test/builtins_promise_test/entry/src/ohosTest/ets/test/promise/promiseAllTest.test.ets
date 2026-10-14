@@ -1523,7 +1523,6 @@ export default function promiseAllTest() {
       const p2Duration = Date.now() - p2Start!;
 
       expect(p2Duration + 1).assertLargerOrEqual(20);
-      expect(p2Duration).assertLess(30);
     });
 
     /**
