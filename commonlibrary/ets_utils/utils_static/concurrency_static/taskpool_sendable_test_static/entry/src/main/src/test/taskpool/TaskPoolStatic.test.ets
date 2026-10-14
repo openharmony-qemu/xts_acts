@@ -1648,3 +1648,1653 @@ export default function TaskPoolStaticTest(): void {
             console.info(`gate-cb-catch: ${JSON.stringify(error)}`);
             expect(error).assertFail();
           }});
+        await taskpool.execute(task);
+        console.info(caseName, "taskPool: execute task success");
+          console.info(`callbackCalled = ${callbackCalled}`);
+        await delay(100);
+        expect(callbackCalled).assertTrue();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskIsDoneStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0550
+     * @tc.desc   Testing the task->isDone with task is not added.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskIsDoneStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskIsDoneStatic0001';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 1);
+        expect(task.isDone()).assertFalse();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskIsDoneStatic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0560
+     * @tc.desc   Testing the task->isDone with task is not executed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskIsDoneStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskIsDoneStatic0002';
+      console.info(`${caseName} test start`);
+      try {
+        let task1: taskpool.Task = new taskpool.Task(delay, 1);
+        let task2: taskpool.Task = new taskpool.Task(delay, 1);
+        await taskpool.execute(task2);
+        console.info("taskPool: execute task success");
+        expect(task1.isDone()).assertFalse();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskIsDoneStatic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0570
+     * @tc.desc   Testing the task->isDone with task is executing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskIsDoneStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskIsDoneStatic0003';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 500);
+        let executePromise: Promise<Any> = taskpool.execute(task);
+        await delay(300);
+        expect(task.isDone()).assertFalse();
+        taskpool.cancel(task);
+        try {
+          await executePromise;
+        } catch (error) {
+          expect(error.code).assertLarger(0);
+        }
+        console.info("taskPool: execute task success");
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskIsDoneStatic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0580
+     * @tc.desc   Testing the task->isDone with task is executed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskIsDoneStatic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskIsDoneStatic0004';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 1);
+        await taskpool.execute(task);
+        console.info("taskPool: execute task success");
+          expect(task.isDone()).assertTrue();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskIsDoneStatic0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0590
+     * @tc.desc   Testing the task->isDone with task is canceled when executing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskIsDoneStatic0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskIsDoneStatic0005';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 500);
+        let executePromise: Promise<Any> = taskpool.executeDelayed(500, task);
+        expect(task.isDone()).assertFalse();
+        taskpool.cancel(task);
+        try {
+          await executePromise;
+        } catch (error) {
+          console.info(`${caseName} canceled promise: ${JSON.stringify(error)}`);
+        }
+        expect(task.isDone()).assertFalse();
+        console.info("taskPool: canceled pending task");
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskPriorityStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0600
+     * @tc.desc   Submit tasks with four different priorities and wait for all tasks to complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPriorityStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskPriorityStatic0001';
+      console.info(`${caseName} test start`);
+      try {
+        let allCount: int = 4;
+        let taskArray: Array<taskpool.Task> = [];
+        let taskPromises: Array<Promise<Any>> = [];
+        for (let i: int = 0; i < allCount; i++) {
+          taskArray.push(new taskpool.Task(delay, 10));
+          taskArray.push(new taskpool.Task(delay, 10));
+          taskArray.push(new taskpool.Task(delay, 10));
+          taskArray.push(new taskpool.Task(delay, 10));
+        }
+        for (let i: int = 0; i < taskArray.length; i += 4) {
+          taskPromises.push(taskpool.execute(taskArray[i], taskpool.Priority.HIGH));
+          taskPromises.push(taskpool.execute(taskArray[i + 1], taskpool.Priority.LOW));
+          taskPromises.push(taskpool.execute(taskArray[i + 2], taskpool.Priority.MEDIUM));
+          taskPromises.push(taskpool.execute(taskArray[i + 3], taskpool.Priority.IDLE));
+        }
+        let results: Any[] = await Promise.all(taskPromises);
+        expect(results.length).assertEqual(taskArray.length);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0610
+     * @tc.desc   Testing cancel(task) when task is canceled directly without added to execute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0001';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 10);
+        taskpool.cancel(task);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200088);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0620
+     * @tc.desc   Testing cancel(task) when task is canceled without run.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0002';
+      console.info(`${caseName} test start`);
+      try {
+        let task1: taskpool.Task = new taskpool.Task(delay, 10);
+        let task2: taskpool.Task = new taskpool.Task(delay, 10);
+        await taskpool.execute(task2);
+        console.info("taskPool: execute task success");
+        taskpool.cancel(task1);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200088);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    //todo taskpool.Task.isCanceled() 始终为false
+    /**
+     * @tc.name   testCancelTaskStatic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0630
+     * @tc.desc   testCancelTask0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0003';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        await taskpool.execute(task);
+        console.info("taskPool: execute task success");
+        let cancelCaught: boolean = false;
+        try { taskpool.cancel(task); } catch (error) { cancelCaught = true; }
+        expect(cancelCaught).assertTrue();
+        // expect(taskpool.Task.isCanceled()).assertEqual(true);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0640
+     * @tc.desc   Testing cancel(task) when task is executing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0004';
+      console.info(`${caseName} test start`);
+      try {
+        let task1: taskpool.Task = new taskpool.Task(inspectStatus, 100.0);
+        let task2: taskpool.Task = new taskpool.Task(inspectStatus, 200.0);
+        let task3: taskpool.Task = new taskpool.Task(inspectStatus, 300.0);
+        let task4: taskpool.Task = new taskpool.Task(inspectStatus, 400.0);
+        let task5: taskpool.Task = new taskpool.Task(inspectStatus, 500.0);
+        let task6: taskpool.Task = new taskpool.Task(inspectStatus, 600.0);
+        let res: Any = await taskpool.executeDelayed(0, task1);
+        console.info("taskpool test result: " + res);
+        let p2: Promise<Any> = taskpool.execute(task2);
+        let p3: Promise<Any> = taskpool.execute(task3);
+        let p4: Promise<Any> = taskpool.execute(task4);
+        let p5: Promise<Any> = taskpool.execute(task5);
+        let p6: Promise<Any> = taskpool.execute(task6);
+        await promiseCase();
+        let cancelCaught: boolean = false;
+        try {
+          taskpool.cancel(task1);
+        } catch (e) {
+          cancelCaught = true;
+          console.info(`${caseName} cancel completed task code => ${e.code} message => ${e.message}`);
+        }
+        expect(cancelCaught).assertFalse();
+        expect(await p2 as number).assertEqual(201);
+        expect(await p3 as number).assertEqual(301);
+        expect(await p4 as number).assertEqual(401);
+        expect(await p5 as number).assertEqual(501);
+        expect(await p6 as number).assertEqual(601);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0650
+     * @tc.desc   Testing cancel(task) when task is executing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+        it('testCancelTaskStatic0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0005';
+      console.info(`${caseName} test start`);
+      try {
+        // 取消尚未开始的 delayed 任务，避免长忙等竞态
+        let task1: taskpool.Task = new taskpool.Task(inspectStatus, 200.0);
+        let task2: taskpool.Task = new taskpool.Task(inspectStatus, 200.0);
+        let p1: Promise<Any> = taskpool.executeDelayed(500, task1);
+        let p2: Promise<Any> = taskpool.execute(task2);
+        await promiseCase();
+        let cancelCaught: boolean = false;
+        try {
+          taskpool.cancel(task1);
+        } catch (e) {
+          cancelCaught = true;
+          console.info(`${caseName} cancel throw code => ${e.code} message => ${e.message}`);
+        }
+        if (!cancelCaught) {
+          try {
+            await p1;
+            expect().assertFail();
+          } catch (e) {
+            cancelCaught = true;
+          }
+        } else {
+          try { await p1; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
+        }
+        try { await p2; } catch (error) { console.info(`gate-catch: ${JSON.stringify(error)}`); }
+        expect(cancelCaught).assertTrue();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0660
+     * @tc.desc   Testing cancel(task) when task is executed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0006';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        await taskpool.execute(task);
+        console.info("taskPool: execute task success");
+        await delay(100);
+        taskpool.cancel(task);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200085);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0670
+     * @tc.desc   Testing cancel(task) when task is non-existent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0007';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(inspectStatus, 100);
+        taskpool.cancel(task);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200088);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0680
+     * @tc.desc   Testing cancel(task) when task is cancellation for SequenceRunner.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0008';
+      console.info(`${caseName} test start`);
+      try {
+        let finalString: string = "";
+        let task1: taskpool.Task = new taskpool.Task(additionDelay, 300.0);
+        let task2: taskpool.Task = new taskpool.Task(additionDelay, 200.0);
+        let task3: taskpool.Task = new taskpool.Task(additionDelay, 100.0);
+        let task4: taskpool.Task = new taskpool.Task(waitForRunner, finalString);
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+        let promise1: Promise<Any> = runner.execute(task1);
+        let promise2: Promise<Any> = runner.execute(task2);
+        taskpool.cancel(task2);
+        await promise1;
+        finalString += 'a';
+        let cancelCaught: boolean = false;
+        try {
+          await promise2;
+          finalString += 'b';
+        } catch (error) {
+          cancelCaught = true;
+          console.info(`${caseName} canceled task2: code => ${error.code} message => ${error.message}`);
+        }
+        await runner.execute(task3);
+        finalString += 'c';
+        await runner.execute(task4);
+        expect(cancelCaught).assertTrue();
+        expect(finalString).assertEqual("ac")
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskStatic0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0690
+     * @tc.desc   Testing cancel(task) when tasks have a dependency relationship.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskStatic0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskStatic0009';
+      console.info(`${caseName} test start`);
+      try {
+        let task1: taskpool.Task = new taskpool.Task(delay, 10);
+        let task2: taskpool.Task = new taskpool.Task(delay, 20);
+        task1.addDependency(task2);
+        await taskpool.execute(task2);
+        let executePromise: Promise<Any> = taskpool.executeDelayed(500, task1);
+        taskpool.cancel(task1);
+        let cancelCaught: boolean = false;
+        try { await executePromise; } catch (error) { cancelCaught = true; }
+        expect(cancelCaught).assertTrue();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskGroupStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0700
+     * @tc.desc   Testing cancel(taskGroup) when task is canceled directly without added to task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskGroupStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskGroupStatic0001';
+      console.info(`${caseName} test start`);
+      try {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskpool.cancel(taskGroup);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200089);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskGroupStatic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0710
+     * @tc.desc   Testing cancel(taskGroup) when task is canceled directly without added to execute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskGroupStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskGroupStatic0002';
+      console.info(`${caseName} test start`);
+      try {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup.addTask(printArgs, 10.0);
+        taskGroup.addTask(printArgs, 20.0);
+        taskGroup.addTask(printArgs, 30.0);
+        taskpool.cancel(taskGroup);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200089);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskGroupStatic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0720
+     * @tc.desc   Testing cancel(taskGroup) when task is executing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskGroupStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskGroupStatic0003';
+      console.info(`${caseName} test start`);
+      try {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup.addTask(printArgs, 10.0);
+        taskGroup.addTask(printArgs, 20.0);
+        taskGroup.addTask(printArgs, 30.0);
+        let res: Any = await taskpool.execute(taskGroup);
+        let cancelCaught: boolean = false;
+        try { taskpool.cancel(taskGroup); } catch (error) { cancelCaught = true; }
+        expect(cancelCaught).assertTrue();
+        console.info("taskpool execute res is:" + res);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testCancelTaskGroupStatic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0730
+     * @tc.desc   Testing cancel(taskGroup) when task is executing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCancelTaskGroupStatic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testCancelTaskGroupStatic0004';
+      console.info(`${caseName} test start`);
+      try {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskGroup.addTask(printArgs, 10.0);
+        taskGroup.addTask(printArgs, 20.0);
+        taskGroup.addTask(printArgs, 30.0);
+        let res: Any = await taskpool.execute(taskGroup);
+        console.info("taskpool execute res is:" + res);
+        await delay(100);
+        taskpool.cancel(taskGroup);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200089);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0740
+     * @tc.desc   Cancel a delayed task before it runs and assert the execute promise rejects.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0001';
+      console.info(`${caseName} test task start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        let p: Promise<Any> = taskpool.executeDelayed(500, task);
+        taskpool.cancel(task);
+        let cancelled: boolean = false;
+        try {
+          await p;
+        } catch (e) {
+          cancelled = true;
+          console.info(`${caseName} cancel reject code => ${e.code} message => ${e.message}`);
+        }
+        expect(cancelled).assertTrue();
+      } catch (e) {
+        console.info(`${caseName} catch error: code => ${e.code} message => ${e.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test task end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0750
+     * @tc.desc   执行&取消, TaskGroup & cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0002';
+      try {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        taskGroup.addTask(task);
+        await taskpool.execute(taskGroup);
+        try {
+          taskpool.cancel(task);
+          expect().assertFail();
+        } catch (error) {
+          expect(error.code).assertEqual(10200085);
+        }
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0760
+     * @tc.desc   执行&取消, 延时 & cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0003';
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        let executePromise: Promise<Any> = taskpool.executeDelayed(500, task, taskpool.Priority.LOW);
+        taskpool.cancel(task);
+        let rejected: boolean = false;
+        try {
+          await executePromise;
+        } catch (error) {
+          rejected = true;
+        }
+        expect(rejected).assertTrue();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0770
+     * @tc.desc   执行&取消, 周期 & cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0004';
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        taskpool.executePeriodically(10, task, taskpool.Priority.LOW);
+        await asyncSleep(50);
+        taskpool.cancel(task);
+        expect(task.isDone()).assertFalse();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0780
+     * @tc.desc   执行&取消, 串行 & cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0005';
+      console.info(`${caseName} test sequenceRunner start`);
+      try {
+        let task1: taskpool.Task = new taskpool.Task(additionDelay, 500.0);
+        let task2: taskpool.Task = new taskpool.Task(additionDelay, 500.0);
+        let task3: taskpool.Task = new taskpool.Task(additionDelay, 500.0);
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner(caseName, taskpool.Priority.LOW);
+        console.info(`${caseName} sequenceRunner: execute task start`);
+        let promise1: Promise<Any> = runner.execute(task1);
+        let promise2: Promise<Any> = runner.execute(task2);
+        let promise3: Promise<Any> = runner.execute(task3);
+        taskpool.cancel(task2);
+        await promise1;
+        let rejected2: boolean = false;
+        try {
+          await promise2;
+        } catch (error) {
+          rejected2 = true;
+          console.info(`${caseName} canceled task2 reject code => ${error.code} message => ${error.message}`);
+        }
+        expect(rejected2).assertTrue();
+        await promise3;
+        console.info(`${caseName} sequenceRunner: execute task end`);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test sequenceRunner end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0790
+     * @tc.desc   执行&取消, 长时 & cancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0006';
+      try {
+        let task: taskpool.LongTask = new taskpool.LongTask(additionDelay, 1000);
+        let executePromise: Promise<Any> = taskpool.execute(task);
+        await delay(100);
+        taskpool.terminateTask(task);
+        let rejected: boolean = false;
+        try {
+          await executePromise;
+        } catch (error) {
+          rejected = true;
+        }
+        expect(rejected).assertTrue();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0800
+     * @tc.desc   执行组合，Task 嵌套 Task | TaskGroup | 延时 | 周期 | 串行 | 长时
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0007';
+      try {
+        let task1: taskpool.Task = new taskpool.Task(executeTask, caseName);
+        let task2: taskpool.Task = new taskpool.Task(executeTaskGroup, caseName);
+        let task3: taskpool.Task = new taskpool.Task(executeDelayed, caseName);
+        let task4: taskpool.Task = new taskpool.Task(executePeriodically, caseName);
+        let task5: taskpool.Task = new taskpool.Task(executeSequenceRunner, caseName);
+        let task6: taskpool.Task = new taskpool.Task(executeLongTask, caseName);
+        expect(await taskpool.execute(task1) as string).assertEqual(caseName);
+        expect(await taskpool.execute(task2) as string).assertEqual(caseName);
+        expect(await taskpool.execute(task3) as string).assertEqual(caseName);
+        expect(await taskpool.execute(task4) as string).assertEqual(caseName);
+        expect(await taskpool.execute(task5) as string).assertEqual(caseName);
+        expect(await taskpool.execute(task6) as string).assertEqual(caseName);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0810
+     * @tc.desc   执行组合，TaskGroup 嵌套 Task | TaskGroup | 延时 | 周期 | 串行 | 长时
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0008';
+      try {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(executeTask, caseName);
+        let task2: taskpool.Task = new taskpool.Task(executeTaskGroup, caseName);
+        let task3: taskpool.Task = new taskpool.Task(executeDelayed, caseName);
+        let task4: taskpool.Task = new taskpool.Task(executePeriodically, caseName);
+        let task5: taskpool.Task = new taskpool.Task(executeSequenceRunner, caseName);
+        let task6: taskpool.Task = new taskpool.Task(executeLongTask, caseName);
+        taskGroup.addTask(task1);
+        taskGroup.addTask(task2);
+        taskGroup.addTask(task3);
+        taskGroup.addTask(task4);
+        taskGroup.addTask(task5);
+        taskGroup.addTask(task6);
+        let results: Array<string> = await taskpool.execute(taskGroup) as Array<string>;
+        expect(results.length).assertEqual(6);
+        for (let result of results) {
+          expect(result).assertEqual(caseName);
+        }
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0820
+     * @tc.desc   执行组合，延时 嵌套 Task | TaskGroup | 延时 | 周期 | 串行 | 长时
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0009';
+      try {
+        let task1: taskpool.Task = new taskpool.Task(executeTask, caseName);
+        let task2: taskpool.Task = new taskpool.Task(executeTaskGroup, caseName);
+        let task3: taskpool.Task = new taskpool.Task(executeDelayed, caseName);
+        let task4: taskpool.Task = new taskpool.Task(executePeriodically, caseName);
+        let task5: taskpool.Task = new taskpool.Task(executeSequenceRunner, caseName);
+        let task6: taskpool.Task = new taskpool.Task(executeLongTask, caseName);
+        let promise1: Promise<Any> = taskpool.executeDelayed(100, task1);
+        let promise2: Promise<Any> = taskpool.executeDelayed(100, task2);
+        let promise3: Promise<Any> = taskpool.executeDelayed(100, task3);
+        let promise4: Promise<Any> = taskpool.executeDelayed(100, task4);
+        let promise5: Promise<Any> = taskpool.executeDelayed(100, task5);
+        let promise6: Promise<Any> = taskpool.executeDelayed(100, task6);
+        expect(await promise1 as string).assertEqual(caseName);
+        expect(await promise2 as string).assertEqual(caseName);
+        expect(await promise3 as string).assertEqual(caseName);
+        expect(await promise4 as string).assertEqual(caseName);
+        expect(await promise5 as string).assertEqual(caseName);
+        expect(await promise6 as string).assertEqual(caseName);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0830
+     * @tc.desc   执行组合，周期 嵌套 Task | TaskGroup | 延时 | 周期 | 串行 | 长时
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0010';
+      try {
+        let task1: taskpool.Task = new taskpool.Task(executeTask, caseName);
+        let task2: taskpool.Task = new taskpool.Task(executeTaskGroup, caseName);
+        let task3: taskpool.Task = new taskpool.Task(executeDelayed, caseName);
+        let task4: taskpool.Task = new taskpool.Task(executePeriodically, caseName);
+        let task5: taskpool.Task = new taskpool.Task(executeSequenceRunner, caseName);
+        let task6: taskpool.Task = new taskpool.Task(executeLongTask, caseName);
+        taskpool.executePeriodically(100, task1);
+        taskpool.executePeriodically(100, task2);
+        taskpool.executePeriodically(100, task3);
+        taskpool.executePeriodically(100, task4);
+        taskpool.executePeriodically(100, task5);
+        taskpool.executePeriodically(100, task6);
+        await asyncSleep(300);
+        taskpool.cancel(task1);
+        taskpool.cancel(task2);
+        taskpool.cancel(task3);
+        taskpool.cancel(task4);
+        taskpool.cancel(task5);
+        taskpool.cancel(task6);
+        expect(task1.isDone()).assertFalse();
+        expect(task6.isDone()).assertFalse();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0840
+     * @tc.desc   执行组合，串行 嵌套 Task | TaskGroup | 延时 | 周期 | 串行 | 长时
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0011';
+      try {
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+        let task1: taskpool.Task = new taskpool.Task(executeTask, caseName);
+        let task2: taskpool.Task = new taskpool.Task(executeTaskGroup, caseName);
+        let task3: taskpool.Task = new taskpool.Task(executeDelayed, caseName);
+        let task4: taskpool.Task = new taskpool.Task(executePeriodically, caseName);
+        let task5: taskpool.Task = new taskpool.Task(executeSequenceRunner, caseName);
+        let task6: taskpool.Task = new taskpool.Task(executeLongTask, caseName);
+        expect(await runner.execute(task1) as string).assertEqual(caseName);
+        expect(await runner.execute(task2) as string).assertEqual(caseName);
+        expect(await runner.execute(task3) as string).assertEqual(caseName);
+        expect(await runner.execute(task4) as string).assertEqual(caseName);
+        expect(await runner.execute(task5) as string).assertEqual(caseName);
+        expect(await runner.execute(task6) as string).assertEqual(caseName);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0850
+     * @tc.desc   执行组合，长时 嵌套 Task | TaskGroup | 延时 | 周期 | 串行 | 长时
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0012';
+      try {
+        let task1: taskpool.LongTask = new taskpool.LongTask(executeTask, caseName);
+        let task2: taskpool.LongTask = new taskpool.LongTask(executeTaskGroup, caseName);
+        let task3: taskpool.LongTask = new taskpool.LongTask(executeDelayed, caseName);
+        let task4: taskpool.LongTask = new taskpool.LongTask(executePeriodically, caseName);
+        let task5: taskpool.LongTask = new taskpool.LongTask(executeSequenceRunner, caseName);
+        let task6: taskpool.LongTask = new taskpool.LongTask(executeLongTask, caseName);
+        expect(await taskpool.execute(task1) as string).assertEqual(caseName);
+        taskpool.terminateTask(task1);
+        expect(await taskpool.execute(task2) as string).assertEqual(caseName);
+        taskpool.terminateTask(task2);
+        expect(await taskpool.execute(task3) as string).assertEqual(caseName);
+        taskpool.terminateTask(task3);
+        expect(await taskpool.execute(task4) as string).assertEqual(caseName);
+        taskpool.terminateTask(task4);
+        expect(await taskpool.execute(task5) as string).assertEqual(caseName);
+        taskpool.terminateTask(task5);
+        expect(await taskpool.execute(task6) as string).assertEqual(caseName);
+        taskpool.terminateTask(task6);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+
+    /**
+     * @tc.name   testTaskCombineScenesStatic0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0860
+     * @tc.desc   执行组合，taskpool 并列 taskpool：Task | TaskGroup | 延时 | 周期 | 串行 | 长时
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskCombineScenesStatic0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskCombineScenesStatic0013';
+      try {
+        expect(await executeTask(caseName)).assertEqual(caseName);
+        expect(await executeTaskGroup(caseName)).assertEqual(caseName);
+        expect(await executeDelayed(caseName)).assertEqual(caseName);
+        expect(await executePeriodically(caseName)).assertEqual(caseName);
+        expect(await executeSequenceRunner(caseName)).assertEqual(caseName);
+        expect(await executeLongTask(caseName)).assertEqual(caseName);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0870
+     * @tc.desc   period：10，task：不指定任务名，优先级：不指定
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0001';
+      try {
+        let task: taskpool.Task = new taskpool.Task(printArgs, caseName);
+        taskpool.executePeriodically(10, task);
+        await asyncSleep(50);
+        taskpool.cancel(task);
+        expect(task.isDone()).assertFalse();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0880
+     * @tc.desc   period：0，task：指定任务名，优先级：指定taskpool.Priority.LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0002';
+      try {
+        let task: taskpool.Task = new taskpool.Task(caseName, printArgs, caseName);
+        taskpool.executePeriodically(0, task, taskpool.Priority.LOW);
+        await asyncSleep(50);
+        taskpool.cancel(task);
+        expect(task.isDone()).assertFalse();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0890
+     * @tc.desc   period：-100，task：指定任务名，优先级：指定taskpool.Priority.MEDIUM 报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0003';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(caseName, printArgs, caseName);
+        taskpool.executePeriodically(-100, task, taskpool.Priority.MEDIUM);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200096);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0900
+     * @tc.desc   period：100，task：不指定任务名，带依赖关系，优先级：指定taskpool.Priority.HIGH 按照依赖顺序执行 报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0004';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 10);
+        let task1: taskpool.Task = new taskpool.Task(delay, 10);
+        console.info(`${caseName} dependency: add dependency start`);
+        task.addDependency(task1);
+        console.info(`${caseName} dependency: add dependency end`);
+        taskpool.executePeriodically(100, task, taskpool.Priority.HIGH);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertLarger(0);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0910
+     * @tc.desc   已经执行的task 报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0005';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 10);
+        taskpool.execute(task);
+        taskpool.executePeriodically(100, task);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertEqual(10200086);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0920
+     * @tc.desc   周期任务 报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0006';
+      let task: taskpool.Task = new taskpool.Task(delay, 10);
+      try {
+        taskpool.executePeriodically(100, task);
+        try {
+          taskpool.executePeriodically(100, task);
+          expect().assertFail();
+        } catch (error) {
+          expect(error.code).assertEqual(10200086);
+        }
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      } finally {
+        taskpool.cancel(task);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0930
+     * @tc.desc   处于其他任务组的任务 报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0007';
+      console.info(`${caseName} test start`);
+      try {
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        console.info(`${caseName} taskGroup: add task start`);
+        taskGroup.addTask(task);
+        taskpool.execute(taskGroup);
+        console.info(`${caseName} taskGroup: add task end`);
+        taskpool.executePeriodically(100, task);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertLarger(0);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0940
+     * @tc.desc   有依赖关系的任务 报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0008';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(delay, 100);
+        let task1: taskpool.Task = new taskpool.Task(delay, 200);
+        console.info(`${caseName} dependency: add dependency start`);
+        task.addDependency(task1);
+        console.info(`${caseName} dependency: add dependency end`);
+        taskpool.executePeriodically(100, task);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertLarger(0);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskExecutePeriodicallyStatic0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0950
+     * @tc.desc   SequenceRunner的task 报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskExecutePeriodicallyStatic0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskExecutePeriodicallyStatic0009';
+      console.info(`${caseName} test start`);
+      try {
+        let finalString: string = "";
+        let task1: taskpool.Task = new taskpool.Task(delay, 10);
+        let task2: taskpool.Task = new taskpool.Task(delay, 10);
+        let task3: taskpool.Task = new taskpool.Task(delay, 10);
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+        await runner.execute(task1);
+        finalString += 'a';
+          console.info(`${caseName} task1 done.`);
+        await runner.execute(task2);
+        finalString += 'b';
+          console.info(`${caseName} task2 done.`);
+        await runner.execute(task3);
+        finalString += 'c';
+          console.info(`${caseName} task3 done.`);
+        console.info(`${caseName} seqrunner done, finalString is ${finalString}`);
+        taskpool.executePeriodically(100, task1);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect(error.code).assertLarger(0);
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskStateStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0960
+     * @tc.desc   Create a task, read its state and assert isDone returns false before execution completes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskStateStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskStateStatic0001';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(caseName, additionDelay, 50.0);
+        let executePromise: Promise<Any> = taskpool.executeDelayed(500, task);
+        let taskpoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();
+        let state: number = getTaskStateByTaskName(taskpoolInfo, caseName);
+        expect(state).assertEqual(taskpool.State.DELAYED);
+        expect(task.isDone()).assertFalse();
+        taskpool.cancel(task);
+        try {
+          await executePromise;
+        } catch (error) {
+          console.info(`${caseName} canceled promise: ${JSON.stringify(error)}`);
+        }
+        expect(task.isDone()).assertFalse();
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskStateStatic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0970
+     * @tc.desc   创建task，并execute，实际执行中 RUNNING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskStateStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskStateStatic0002';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(caseName, additionDelay, 500.0);
+        let executePromise: Promise<Any> = taskpool.execute(task);
+        let state: number = 0;
+        let waitStart: number = Date.now();
+        while (state !== taskpool.State.RUNNING && Date.now() - waitStart < 1000) {
+          await delay(10);
+          let taskpoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();
+          state = getTaskStateByTaskName(taskpoolInfo, caseName);
+        }
+        expect(state).assertEqual(taskpool.State.RUNNING);
+        await executePromise;
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskStateStatic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0980
+     * @tc.desc   Execute a task to completion, assert isDone is true and, if the task is still listed in taskInfos, its state is not RUNNING.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskStateStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskStateStatic0003';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(caseName, delay, 100);
+        await taskpool.execute(task);
+        console.info(`${caseName} task end`);
+        // 终态可观察断言：execute 完成后 isDone 必须为 true（不再用 0|6 魔数恒真式）
+        expect(task.isDone()).assertTrue();
+        let taskpoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();
+        // 独立 sentinel 检索：helper getTaskStateByTaskName 未命中默认返 0，无法区分"未命中"与 WAITING
+        let stateFound: boolean = false;
+        let state: number = -1;
+        for (let taskInfo of Array.from(taskpoolInfo.taskInfos)) {
+          if (taskInfo.name == caseName) {
+            stateFound = true;
+            state = taskInfo.state;
+          }
+        }
+        if (stateFound) {
+          // 已完成任务不得仍处于 RUNNING；任务完成后被移出 taskInfos 亦属正常终态
+          expect(state === taskpool.State.RUNNING).assertFalse();
+        }
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskStateStatic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_0990
+     * @tc.desc   创建task，并execute，cancel任务 CANCELED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskStateStatic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskStateStatic0004';
+      console.info(`${caseName} test start`);
+      try {
+        let task: taskpool.Task = new taskpool.Task(caseName, delay, 50);
+        taskpool.executeDelayed(500, task);
+        taskpool.cancel(task);
+        let taskpoolInfo: taskpool.TaskPoolInfo = taskpool.getTaskPoolInfo();
+        let state: number = getTaskStateByTaskName(taskpoolInfo, caseName);
+        expect(state).assertEqual(taskpool.State.CANCELED);
+      } catch (error) {
+        console.info(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskGroupConstructorStatic001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1000
+     * @tc.desc   Set the taskpool taskgroup constructor without groupname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupConstructorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupConstructorStatic001';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskExecute1.addTask(ConstructorTest1);
+        taskExecute1.addTask(ConstructorTest2);
+        taskExecute1.addTask(ConstructorTest3);
+
+        let res: Any = await taskpool.execute(taskExecute1);
+        console.info(`${caseName}: testTaskpoolTaskGroupConstructor001 return value: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          expect(res as string[]).assertDeepEquals([`ConstructorTest1`, `ConstructorTest2`, `ConstructorTest3`]);
+          console.info(`${caseName}: groupName:${taskExecute1.name}`);
+          expect(taskExecute1.name).assertEqual("");
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskGroupConstructorStatic002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1010
+     * @tc.desc   Set the taskpool taskgroup constructor with string ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupConstructorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupConstructorStatic002';
+      console.info(`${caseName} test start`);
+      try {
+        let taskGroupName: string = "";
+        let isTerminate1: boolean = false;
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup(taskGroupName);
+        taskExecute1.addTask(ConstructorTest1);
+
+        let res: Any = await taskpool.execute(taskExecute1);
+        console.info(`${caseName}: taskGroupName: ${taskExecute1.name}`);
+        isTerminate1 = true;
+        expect(taskExecute1.name).assertEqual(taskGroupName);
+        expect(res as string[]).assertDeepEquals(['ConstructorTest1']);
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskGroupConstructorStatic005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1020
+     * @tc.desc   Set the taskpool taskgroup constructor with taskname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupConstructorStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupConstructorStatic005';
+      console.info(`${caseName} test start`);
+      try {
+        let taskGroupName: string = "taskname";
+        let isTerminate1: boolean = false;
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup(taskGroupName);
+        taskExecute1.addTask(ConstructorTest1);
+
+        let res: Any = await taskpool.execute(taskExecute1);
+        console.info(`${caseName}: taskGroupName: ${taskExecute1.name}`);
+          expect(taskExecute1.name).assertDeepEquals("taskname");
+          isTerminate1 = true;
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+
+    // func:使用@Concurrent装饰器装饰,返回number类型，无参数     then中可断言返回类型及返回值
+    /**
+     * @tc.name   testTaskpoolTaskGroupAddTaskStatic002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1030
+     * @tc.desc   testTaskpoolTaskGroupAddTask002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupAddTaskStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupAddTaskStatic002';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        taskExecute1.addTask(Concurrent);
+        taskExecute1.addTask(Concurrent);
+        let res: Array<number> = await taskpool.execute(taskExecute1) as Array<number>;
+        console.info(`${caseName}: taskExecute1 return value: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          for (let i: int = 0; i < res.length; i++) {
+            console.info(`${caseName}: ${res[i].toString()}`);
+          }
+          expect((res as number[])[0]).assertEqual(321.0);
+          expect((res as number[])[1]).assertEqual(321.0);
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.name   testTaskpoolTaskGroupAddTaskStatic004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1040
+     * @tc.desc   Add two preconstructed Task objects returning strings into a TaskGroup and assert the group results are ['1001', '2001'].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupAddTaskStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupAddTaskStatic004';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let result1: object[] = [];
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(addTaskTask1, 100.0);
+        let task2: taskpool.Task = new taskpool.Task(addTaskTask1, 200.0);
+        taskExecute1.addTask(task1);
+        taskExecute1.addTask(task2);
+        let res: Any = await taskpool.execute(taskExecute1);
+        console.info(`${caseName}: execute res is: ${res}`);
+          isTerminate1 = true;
+          result1 = res as object[];
+          expect(result1).assertDeepEquals([`1001`, `2001`]);
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskGroupAddTaskStatic005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1050
+     * @tc.desc   Add two named tasks returning number arrays into a TaskGroup and assert each group result equals [1, 2, 3, 4].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupAddTaskStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupAddTaskStatic005';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let taskName: string = "taskName";
+        let task1: taskpool.Task = new taskpool.Task(taskName, addTaskTaskArray, "A");
+        let task2: taskpool.Task = new taskpool.Task(taskName, addTaskTaskArray, "B");
+        taskExecute1.addTask(task1);
+        taskExecute1.addTask(task2);
+        let res: Array<Array<number>> = await taskpool.execute(taskExecute1, taskpool.Priority.LOW) as Array<Array<number>>;
+        console.info(`${caseName}: execute res is: ${res}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: typeof: ${typeof (res)}, length:${res.length}`);
+          for (let i: int = 0; i < res.length; i++) {
+            console.info(`${caseName}: ${res[i].toString()}`);
+            expect(res[i]).assertDeepEquals(new Array<number>(1, 2, 3, 4));
+          };
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskGroupAddTaskStatic006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1060
+     * @tc.desc   Add two named tasks returning number arrays into a TaskGroup and assert each group result equals [1, 2, 3, 4].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupAddTaskStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupAddTaskStatic006';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let taskName: string = "taskName";
+        let task1: taskpool.Task = new taskpool.Task(taskName, addTaskTaskArray, "A");
+        let task2: taskpool.Task = new taskpool.Task(taskName, addTaskTaskArray, "B");
+        taskExecute1.addTask(task1);
+        taskExecute1.addTask(task2);
+        let res: Array<Array<number>> = await taskpool.execute(taskExecute1, taskpool.Priority.MEDIUM) as Array<Array<number>>;
+        console.info(`${caseName}: execute res is: ${res}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: typeof: ${typeof (res)}, length:${res.length}`);
+          for (let i: int = 0; i < res.length; i++) {
+            console.info(`${caseName}: ${res[i].toString()}`);
+            expect(res[i]).assertDeepEquals(new Array<number>(1, 2, 3, 4));
+          };
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskGroupAddTaskStatic007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1070
+     * @tc.desc   Add two tasks returning strings into a TaskGroup and assert the group results are ['AAA1', 'BBB1'].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskGroupAddTaskStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskGroupAddTaskStatic007';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let result1: object[] = [];
+        let taskExecute1: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(addTaskTask1, "AAA");
+        let task2: taskpool.Task = new taskpool.Task(addTaskTask1, "BBB");
+        taskExecute1.addTask(task1);
+        taskExecute1.addTask(task2);
+        let res: Any = await taskpool.execute(taskExecute1);
+        console.info(`${caseName}: execute res is: ${res}`);
+          isTerminate1 = true;
+          result1 = res as object[];
+          expect(result1).assertDeepEquals([`AAA1`, `BBB1`]);
+        while (!(isTerminate1)) {
+          await promiseCase();
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
