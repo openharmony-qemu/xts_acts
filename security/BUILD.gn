@@ -35,6 +35,7 @@ group("security") {
       "dlp_enterprise_service_xts:DlpEnterpriseServiceTest",
       "dlp_enterprise_service_xts_permission:DlpEnterpriseServicePermissionTest",
       "huks",
+      "privacyComputation",
       "security_component",
       "sandbox",
       "el5filekey",
