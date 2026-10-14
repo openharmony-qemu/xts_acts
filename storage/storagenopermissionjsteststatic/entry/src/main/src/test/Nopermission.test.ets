@@ -45,7 +45,7 @@ export default function nopermissionTest() {
           const err = error as BusinessError;
           hilog.error(domain, tag, 'Failed to getExternalVolumeInfos. Code: %{public}d, message: %{public}s',
             err.code, err.message);
-          expect(err.code == 201).assertTrue();
+          expect(err.code === 201).assertTrue();
           done();
         }
       });
@@ -70,7 +70,7 @@ export default function nopermissionTest() {
           const err = error as BusinessError;
           hilog.error(domain, tag, 'Failed to getExternalDiskInfos. Code: %{public}d, message: %{public}s',
             err.code, err.message);
-          expect(err.code == 201).assertTrue();
+          expect(err.code === 201).assertTrue();
           done();
         }
       });
