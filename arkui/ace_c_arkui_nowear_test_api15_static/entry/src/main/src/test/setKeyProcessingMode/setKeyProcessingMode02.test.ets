@@ -22,7 +22,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { LibUtil } from '../../../ets/pages/LibUtil';
 let libUtil: LibUtil = new LibUtil();
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function setKeyProcessingMode02(){
 
   describe('setKeyProcessingMode02', () => {
@@ -51,11 +50,11 @@ export default function setKeyProcessingMode02(){
         let driver = Driver.create();
         await Utils.sleep(500);
 
-        await driver.triggerKey(2049, displayID);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(500);
-        await driver.triggerKey(2049, displayID);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(500);
-        await driver.triggerKey(2049, displayID);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(500);
         let strJson = inspector.getInspectorByKey('text21');
         await Utils.sleep(200);

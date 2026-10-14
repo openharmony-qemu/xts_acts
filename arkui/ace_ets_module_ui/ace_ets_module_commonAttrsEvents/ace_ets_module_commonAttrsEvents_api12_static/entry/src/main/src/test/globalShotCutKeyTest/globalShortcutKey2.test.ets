@@ -88,7 +88,7 @@ export default function globalShortcutKeyTest2() {
 async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver): Promise<void> {
   console.info('test SHIFT + ' + keyChar + " start");
   // keyboard to simulate
-  driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar) as int, displayID);
+  driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar) as int, 0, displayID);
   try {
     await CommonFunc.sleep(2000);
   } catch (err) {

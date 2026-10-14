@@ -19,6 +19,17 @@ import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, expect } from '../../../../hypium/index';
 import { jsonx } from 'std/core';
 import inspector from '@ohos.arkui.inspector';
+import { inputMethod } from '@kit.IMEKit';
+
+async function stopIME(): Promise<void> {
+  try {
+    let inputMethodController = inputMethod.getController();
+    inputMethodController.stopInputSession();
+    await Utils.sleep(500);
+  } catch (err) {
+    console.info('stopInputSession err: ' + JSON.stringify(err));
+  }
+}
 
 export default function DefaultFocusTest() {
   //A list of components that support the position attribute, which is required.
@@ -93,6 +104,8 @@ export default function DefaultFocusTest() {
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
       console.info('[' + data.caseTag + '] Press Tab.');
+      // 关闭输入法弹窗，防止 IME 覆盖窗口影响焦点
+      await stopIME();
       // AppStorage.setOrCreate<boolean>('_defaultFocus', data.testValue.setValue)
       // console.info('DefaultFocusTest123456 is: ', data.testValue.setValue)
 
@@ -128,6 +141,8 @@ export default function DefaultFocusTest() {
           console.info('DefaultFocusTest pushPage err: ' + JSON.stringify(err));
         }
         console.log('test textComponentKey is:2 ' + data.pageConfig.textComponentKey)
+        // 重新推送页面后关闭输入法弹窗，确保 Tab 键事件不被 IME 拦截
+        await stopIME();
 
         expect(Utils.performKeyEventDownUp(2049, 'Tab')).assertTrue();
         try {
