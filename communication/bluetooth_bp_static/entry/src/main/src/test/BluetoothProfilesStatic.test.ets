@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -39,31 +39,12 @@ function onReceiveEvent(data: baseProfile.StateChangeParam) {
     hilog.info(domain, tag, 'connection StateChangeParam state:'+ data.state);
     hilog.info(domain, tag, 'connection StateChangeParam cause:'+ data.cause);
 }
-export default function bluetoothProfilesTest() {
+export default function bluetoothProfilesTest(): void {
 
     describe("bluetoothProfilesTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         beforeAll(async (): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-            try {
-                await Utils.msSleep(2000);
-                hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
-                g_context = Hypium.get('Context') as common.UIAbilityContext;
-                let atManager = abilityAccessCtrl.createAtManager();
-                let arr: Array<Permissions> = new Array<Permissions>();
-                arr.push('ohos.permission.ACCESS_BLUETOOTH')
-                atManager.requestPermissionsFromUser(g_context, arr,
-                    (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
-                        hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
-                        hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
-                        hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
-                    });
-            } catch (err) {
-                err = err as BusinessError;
-                hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
-            }
-            await Utils.msSleep(2000);
-            await Utils.clickRequestPermission('允许');
             a2dpProfile = a2dp.createA2dpSrcProfile();
             hilog.info(domain, tag, "a2dpProfile success" + JSON.stringify(a2dpProfile));
             hilog.info(domain, tag, '%{public}s', 'beforeAll end');
@@ -82,7 +63,7 @@ export default function bluetoothProfilesTest() {
 
         /**
          * @tc.name   createA2dpSrcProfileTest
-         * @tc.number createA2dpSrcProfileTest
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_CREATEA2DPSRCPROFILETEST_0100
          * @tc.desc   Test createA2dpSrcProfileTest API functionality
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -107,7 +88,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  getConnectedDevicesTest
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDDEVICESTEST_0100
          * @tc.name    getConnectedDevicesTest
          * @tc.desc    Test getConnectedDevicesTest API functionality
          * @tc.level   Level 0
@@ -123,13 +104,13 @@ export default function bluetoothProfilesTest() {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                expect(err.code).assertEqual(2900099);
             }
             done();
         })
 
         /**
-         * @tc.number  getConnectionStateTest
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTIONSTATETEST_0100
          * @tc.name    getConnectionStateTest
          * @tc.desc    Test getConnectionStateTest API functionality
          * @tc.level   Level 0
@@ -145,14 +126,14 @@ export default function bluetoothProfilesTest() {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                expect(err.code).assertEqual(2900099);
             }
             done();
         })
 
         /**
          * @tc.name   createHfpAgProfileTest
-         * @tc.number createHfpAgProfileTest
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_CREATEHFPAGPROFILETEST_0100
          * @tc.desc   Test createHfpAgProfileTest API functionality
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -177,7 +158,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  getConnectedDevicesTest_001
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDDEVICESTEST001_0100
          * @tc.name    getConnectedDevicesTest_001
          * @tc.desc    Test getConnectedDevicesTest_001 API functionality
          * @tc.level   Level 0
@@ -195,13 +176,13 @@ export default function bluetoothProfilesTest() {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                expect(err.code).assertEqual(2900099);
             }
             done();
         })
 
         /**
-         * @tc.number  getConnectionStateTest_001
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTIONSTATETEST001_0100
          * @tc.name    getConnectionStateTest_001
          * @tc.desc    Test getConnectionStateTest_001 API functionality
          * @tc.level   Level 0
@@ -219,14 +200,14 @@ export default function bluetoothProfilesTest() {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionStateTest_001 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                expect(err.code).assertEqual(2900099);
             }
             done();
         })
 
         /**
          * @tc.name   createHidHostProfileTest
-         * @tc.number createHidHostProfileTest
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_CREATEHIDHOSTPROFILETEST_0100
          * @tc.desc   Test createHidHostProfileTest API functionality
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -251,7 +232,7 @@ export default function bluetoothProfilesTest() {
         })
         /**
          * @tc.name   connectionStateChangeTest
-         * @tc.number connectionStateChangeTest
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONSTATECHANGETEST_0100
          * @tc.desc   Test connectionStateChangeTest API functionality
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -298,7 +279,7 @@ export default function bluetoothProfilesTest() {
 
         /**
          * @tc.name   connectionStateChangeTest2
-         * @tc.number connectionStateChangeTest2
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_CONNECTIONSTATECHANGETEST2_0100
          * @tc.desc   Test connectionStateChangeTest API functionality
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
@@ -341,7 +322,7 @@ export default function bluetoothProfilesTest() {
             done();
         })
         /**
-         * @tc.number  getConnectedDevicesTest_002
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDDEVICESTEST002_0100
          * @tc.name    getConnectedDevicesTest_002
          * @tc.desc    Test getConnectedDevicesTest_002 API functionality
          * @tc.level   Level 0
@@ -359,13 +340,13 @@ export default function bluetoothProfilesTest() {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                expect(err.code).assertEqual(2900099);
             }
             done();
         })
 
         /**
-         * @tc.number  getConnectionStateTest_002
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTIONSTATETEST002_0100
          * @tc.name    getConnectionStateTest_002
          * @tc.desc    Test getConnectionStateTest_002 API functionality
          * @tc.level   Level 0
@@ -383,13 +364,13 @@ export default function bluetoothProfilesTest() {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionStateTest_002 get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(2900099);
+                expect(err.code).assertEqual(2900099);
             }
             done();
         })
 
         /**
-         * @tc.number  testDisconnectCause
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_TESTDISCONNECTCAUSE_0100
          * @tc.name    testDisconnectCause
          * @tc.desc    Test testDisconnectCause API functionality
          * @tc.level   Level 0
@@ -420,7 +401,7 @@ export default function bluetoothProfilesTest() {
             done();
         })
         /**
-         * @tc.number  onConnectionStateChangeTest_001
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_ONCONNECTIONSTATECHANGETEST_0100
          * @tc.name    onConnectionStateChangeTest_001
          * @tc.desc    onConnectionStateChange_A2dpSourceProfile
          * @tc.level   Level 0
@@ -445,7 +426,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  onConnectionStateChangeTest_002
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_ONCONNECTIONSTATECHANGETEST_0200
          * @tc.name    onConnectionStateChangeTest_002
          * @tc.desc    onConnectionStateChange_A2dpSourceProfile
          * @tc.level   Level 0
@@ -470,7 +451,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  onConnectionStateChangeTest_003
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_ONCONNECTIONSTATECHANGETEST_0300
          * @tc.name    onConnectionStateChangeTest_003
          * @tc.desc    onConnectionStateChange_HandsFreeAudioGatewayProfile
          * @tc.level   Level 0
@@ -496,7 +477,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  onConnectionStateChangeTest_004
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_ONCONNECTIONSTATECHANGETEST_0400
          * @tc.name    onConnectionStateChangeTest_004
          * @tc.desc    onConnectionStateChange_HandsFreeAudioGatewayProfile
          * @tc.level   Level 0
@@ -522,7 +503,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  onConnectionStateChangeTest_005
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_ONCONNECTIONSTATECHANGETEST_0500
          * @tc.name    onConnectionStateChangeTest_005
          * @tc.desc    onConnectionStateChange_HidHostProfile
          * @tc.level   Level 0
@@ -548,7 +529,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  onConnectionStateChangeTest_006
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_ONCONNECTIONSTATECHANGETEST_0600
          * @tc.name    onConnectionStateChangeTest_006
          * @tc.desc    onConnectionStateChange_HidHostProfile
          * @tc.level   Level 0
@@ -574,7 +555,7 @@ export default function bluetoothProfilesTest() {
         })
 
         /**
-         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_PROFILECONNECTIONSTATE_ADD_0100
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_PROFILECONNECTIONSTATEADD_0100
          * @tc.name    SUB_COMMUNICATION_BLUETOOTHBLE_PROFILECONNECTIONSTATE_ADD_0100
          * @tc.desc    Test getConnectionStateTest API functionality
          * @tc.level   Level 0
@@ -589,7 +570,7 @@ export default function bluetoothProfilesTest() {
             } catch (err) {
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
-                expect(Number(err.code)).assertEqual(401);
+                expect(err.code).assertEqual(401);
             }
             done();
         })

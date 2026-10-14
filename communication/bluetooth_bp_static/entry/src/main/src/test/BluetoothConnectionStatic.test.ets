@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -65,34 +65,10 @@ function BondStateParam1(data: connection.BondStateParam) {
     data.cause);
 }
 
-export default function bluetoothConnectionTest() {
+export default function bluetoothConnectionTest(): void {
 
   describe("bluetoothConnectionTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
-    beforeAll(async (): Promise<void> => {
-      hilog.info(domain, tag, '%{public}s', 'beforeAll start');
-      try {
-        await Utils.msSleep(2000);
-        hilog.info(domain, tag, " uitestOnTest load up over!!!!!")
-        g_context = Hypium.get('Context') as common.UIAbilityContext;
-        let atManager = abilityAccessCtrl.createAtManager();
-        let arr: Array<Permissions> = new Array<Permissions>();
-        arr.push('ohos.permission.ACCESS_BLUETOOTH')
-        atManager.requestPermissionsFromUser(g_context, arr,
-          (err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
-            hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
-            hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
-            hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
-          });
-      } catch (err) {
-        err = err as BusinessError;
-        hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
-      }
-      await Utils.msSleep(2000);
-      await Utils.clickRequestPermission('允许');
-      await Utils.msSleep(2000);
-      hilog.info(domain, tag, '%{public}s', 'beforeAll end');
-    })
 
     beforeEach(async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'beforeEach start');
@@ -106,7 +82,7 @@ export default function bluetoothConnectionTest() {
     })
     /**
      * @tc.name   getRemoteDeviceNameTest
-     * @tc.number getRemoteDeviceNameTest
+     * @tc.number SUB_COMMUNICATION_BP_GETREMOTEDEVICENAMETEST_0100
      * @tc.desc   Test getRemoteDeviceNameTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +101,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
@@ -133,7 +109,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   getRemoteDeviceNameAliasTest
-     * @tc.number getRemoteDeviceNameAliasTest
+     * @tc.number SUB_COMMUNICATION_BP_GETREMOTEDEVICENAMEALIASTEST_0100
      * @tc.desc   Test getRemoteDeviceNameAliasTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +130,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
@@ -162,7 +138,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   getRemoteDeviceClassTest
-     * @tc.number getRemoteDeviceClassTest
+     * @tc.number SUB_COMMUNICATION_BP_GETREMOTEDEVICECLASSTEST_0100
      * @tc.desc   Test getRemoteDeviceClassTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -184,7 +160,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
@@ -192,7 +168,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   setBluetoothScanModeTest
-     * @tc.number setBluetoothScanModeTest
+     * @tc.number SUB_COMMUNICATION_BP_SETBLUETOOTHSCANMODETEST_0100
      * @tc.desc   Test setBluetoothScanModeTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -218,7 +194,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   getPairedDevicesTest
-     * @tc.number getPairedDevicesTest
+     * @tc.number SUB_COMMUNICATION_BP_GETPAIREDDEVICESTEST_0100
      * @tc.desc   Test getPairedDevicesTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -246,7 +222,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   connectionConstantTest
-     * @tc.number connectionConstantTest
+     * @tc.number SUB_COMMUNICATION_BP_CONNECTIONCONSTANTTEST_0100
      * @tc.desc   Test connectionConstantTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -273,7 +249,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   bluetoothDeviceFindTest
-     * @tc.number bluetoothDeviceFindTest
+     * @tc.number SUB_COMMUNICATION_BP_BLUETOOTHDEVICEFINDTEST_0100
      * @tc.desc   Test bluetoothDeviceFindTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -314,7 +290,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   bluetoothDeviceFindTest2
-     * @tc.number bluetoothDeviceFindTest2
+     * @tc.number SUB_COMMUNICATION_BP_BLUETOOTHDEVICEFINDTEST2_0100
      * @tc.desc   Test bluetoothDeviceFindTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -355,7 +331,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   discoveryResultTest
-     * @tc.number discoveryResultTest
+     * @tc.number SUB_COMMUNICATION_BP_DISCOVERYRESULTTEST_0100
      * @tc.desc   Test discoveryResultTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -398,7 +374,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   discoveryResultTest2
-     * @tc.number discoveryResultTest2
+     * @tc.number SUB_COMMUNICATION_BP_DISCOVERYRESULTTEST2_0100
      * @tc.desc   Test discoveryResultTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -440,7 +416,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   bondStateChangeTest
-     * @tc.number bondStateChangeTest
+     * @tc.number SUB_COMMUNICATION_BP_BONDSTATECHANGETEST_0100
      * @tc.desc   Test bondStateChangeTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -484,7 +460,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   bondStateChangeTest2
-     * @tc.number bondStateChangeTest2
+     * @tc.number SUB_COMMUNICATION_BP_BONDSTATECHANGETEST2_0100
      * @tc.desc   Test bondStateChangeTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -526,7 +502,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   pinRequiredTest
-     * @tc.number pinRequiredTest
+     * @tc.number SUB_COMMUNICATION_BP_PINREQUIREDTEST_0100
      * @tc.desc   Test pinRequiredTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -569,7 +545,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   pinRequiredTest2
-     * @tc.number pinRequiredTest2
+     * @tc.number SUB_COMMUNICATION_BP_PINREQUIREDTEST2_0100
      * @tc.desc   Test pinRequiredTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -611,7 +587,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   batteryChangeTest
-     * @tc.number batteryChangeTest
+     * @tc.number SUB_COMMUNICATION_BP_BATTERYCHANGETEST_0100
      * @tc.desc   Test batteryChangeTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -653,7 +629,7 @@ export default function bluetoothConnectionTest() {
 
     /**
      * @tc.name   batteryChangeTest2
-     * @tc.number batteryChangeTest2
+     * @tc.number SUB_COMMUNICATION_BP_BATTERYCHANGETEST2_0100
      * @tc.desc   Test batteryChangeTest API functionality
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -693,7 +669,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  getLastConnectionTimeTest
+     * @tc.number  SUB_COMMUNICATION_BP_GETLASTCONNECTIONTIMETEST_0100
      * @tc.name    getLastConnectionTimeTest
      * @tc.desc    Test getLastConnectionTime API functionality
      * @tc.level   Level 0
@@ -703,9 +679,8 @@ export default function bluetoothConnectionTest() {
     it("getLastConnectionTimeTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.getLastConnectionTime(deviceId).then((time: long) => {
-            hilog.info(domain, tag, "getLastConnectionTime result:" + JSON.stringify(time));
-          });
+          let time = await connection.getLastConnectionTime(deviceId);
+          hilog.info(domain, tag, "getLastConnectionTime result:" + JSON.stringify(time));
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -714,14 +689,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getRemoteDeviceBatteryInfoTest
+     * @tc.number  SUB_COMMUNICATION_BP_GETREMOTEDEVICEBATTERYINFOTEST_0100
      * @tc.name    getRemoteDeviceBatteryInfoTest
      * @tc.desc    Test getRemoteDeviceBatteryInfo API functionality
      * @tc.level   Level 0
@@ -731,23 +706,22 @@ export default function bluetoothConnectionTest() {
     it("getRemoteDeviceBatteryInfoTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.getRemoteDeviceBatteryInfo(deviceId).then((data: connection.BatteryInfo) => {
-            hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success" + JSON.stringify(data));
-            hilog.info(domain, tag,
-              "getRemoteDeviceBatteryInfo success, BatteryInfo batteryLevel:" + JSON.stringify(data.batteryLevel));
-            hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo leftEarBatteryLevel:" +
-              JSON.stringify(data.leftEarBatteryLevel));
-            hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo leftEarChargeState:" +
-              JSON.stringify(data.leftEarChargeState));
-            hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo rightEarBatteryLevel:" +
-              JSON.stringify(data.rightEarBatteryLevel));
-            hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo rightEarChargeState:" +
-              JSON.stringify(data.rightEarChargeState));
-            hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo boxBatteryLevel:" +
-              JSON.stringify(data.boxBatteryLevel));
-            hilog.info(domain, tag,
-              "getRemoteDeviceBatteryInfo success, BatteryInfo boxChargeState:" + JSON.stringify(data.boxChargeState));
-          });
+          let data = await connection.getRemoteDeviceBatteryInfo(deviceId);
+          hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success" + JSON.stringify(data));
+          hilog.info(domain, tag,
+            "getRemoteDeviceBatteryInfo success, BatteryInfo batteryLevel:" + JSON.stringify(data.batteryLevel));
+          hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo leftEarBatteryLevel:" +
+            JSON.stringify(data.leftEarBatteryLevel));
+          hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo leftEarChargeState:" +
+            JSON.stringify(data.leftEarChargeState));
+          hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo rightEarBatteryLevel:" +
+            JSON.stringify(data.rightEarBatteryLevel));
+          hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo rightEarChargeState:" +
+            JSON.stringify(data.rightEarChargeState));
+          hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo boxBatteryLevel:" +
+            JSON.stringify(data.boxBatteryLevel));
+          hilog.info(domain, tag,
+            "getRemoteDeviceBatteryInfo success, BatteryInfo boxChargeState:" + JSON.stringify(data.boxChargeState));
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -756,14 +730,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  setRemoteDeviceNameTest
+     * @tc.number  SUB_COMMUNICATION_BP_SETREMOTEDEVICENAMETEST_0100
      * @tc.name    setRemoteDeviceNameTest
      * @tc.desc    Test setRemoteDeviceName API functionality
      * @tc.level   Level 0
@@ -773,9 +747,8 @@ export default function bluetoothConnectionTest() {
     it("setRemoteDeviceNameTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.setRemoteDeviceName(deviceId, "RemoteDeviceName").then(() => {
-            hilog.info(domain, tag, "setRemoteDeviceName success");
-          });
+          await connection.setRemoteDeviceName(deviceId, "RemoteDeviceName");
+          hilog.info(domain, tag, "setRemoteDeviceName success");
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -784,14 +757,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(401);
+            expect(err.code).assertEqual(401);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0100
      * @tc.name    getBluetoothScanModeTest
      * @tc.desc    Test getBluetoothScanMode API functionality
      * @tc.level   Level 0
@@ -819,14 +792,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_001
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST001_0100
      * @tc.name    getBluetoothScanModeTest_001
      * @tc.desc    Test getBluetoothScanModeTest_001 API functionality
      * @tc.level   Level 0
@@ -854,14 +827,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_002
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0200
      * @tc.name    getBluetoothScanModeTest_002
      * @tc.desc    Test getBluetoothScanModeTest_002 API functionality
      * @tc.level   Level 0
@@ -889,14 +862,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_003
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0300
      * @tc.name    getBluetoothScanModeTest_003
      * @tc.desc    Test getBluetoothScanModeTest_003 API functionality
      * @tc.level   Level 0
@@ -924,14 +897,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_004
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0400
      * @tc.name    getBluetoothScanModeTest_004
      * @tc.desc    Test getBluetoothScanModeTest_004 API functionality
      * @tc.level   Level 0
@@ -959,14 +932,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_005
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0500
      * @tc.name    getBluetoothScanModeTest_005
      * @tc.desc    Test getBluetoothScanModeTest_005 API functionality
      * @tc.level   Level 0
@@ -994,14 +967,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_006
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0600
      * @tc.name    getBluetoothScanModeTest_006
      * @tc.desc    Test getBluetoothScanModeTest_006 API functionality
      * @tc.level   Level 0
@@ -1029,14 +1002,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_007
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0700
      * @tc.name    getBluetoothScanModeTest_007
      * @tc.desc    Test getBluetoothScanModeTest_007 API functionality
      * @tc.level   Level 0
@@ -1064,14 +1037,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getBluetoothScanModeTest_008
+     * @tc.number  SUB_COMMUNICATION_BP_GETBLUETOOTHSCANMODETEST_0800
      * @tc.name    getBluetoothScanModeTest_008
      * @tc.desc    Test getBluetoothScanModeTest_008 API functionality
      * @tc.level   Level 0
@@ -1099,14 +1072,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getProfileConnectionStateTest
+     * @tc.number  SUB_COMMUNICATION_BP_GETPROFILECONNECTIONSTATETEST_0100
      * @tc.name    getProfileConnectionStateTest
      * @tc.desc    Test getProfileConnectionState API functionality
      * @tc.level   Level 0
@@ -1137,7 +1110,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  getLocalNameTest
+     * @tc.number  SUB_COMMUNICATION_BP_GETLOCALNAMETEST_0100
      * @tc.name    getLocalNameTest
      * @tc.desc    Test getLocalName API functionality
      * @tc.level   Level 0
@@ -1165,7 +1138,7 @@ export default function bluetoothConnectionTest() {
 
 
     /**
-     * @tc.number  getPairStateTest
+     * @tc.number  SUB_COMMUNICATION_BP_GETPAIRSTATETEST_0100
      * @tc.name    getPairStateTest
      * @tc.desc    Test getPairState API functionality
      * @tc.level   Level 0
@@ -1185,14 +1158,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  isBluetoothDiscoveringTest
+     * @tc.number  SUB_COMMUNICATION_BP_ISBLUETOOTHDISCOVERINGTEST_0100
      * @tc.name    isBluetoothDiscoveringTest
      * @tc.desc    Test isBluetoothDiscovering API functionality
      * @tc.level   Level 0
@@ -1219,7 +1192,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  connectAllowedProfiles_callback
+     * @tc.number  SUB_COMMUNICATION_BP_CONNECTALLOWEDPROFILESCALLBACK_0100
      * @tc.name    connectAllowedProfiles_callback
      * @tc.desc    Test connectAllowedProfiles_callback API functionality
      * @tc.level   Level 0
@@ -1246,14 +1219,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  connectAllowedProfiles_promise
+     * @tc.number  SUB_COMMUNICATION_BP_CONNECTALLOWEDPROFILESPROMISE_0100
      * @tc.name    connectAllowedProfiles_promise
      * @tc.desc    Test connectAllowedProfiles_promise API functionality
      * @tc.level   Level 0
@@ -1275,14 +1248,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getRemoteProfileUuids_callback
+     * @tc.number  SUB_COMMUNICATION_BP_GETREMOTEPROFILEUUIDSCALLBACK_0100
      * @tc.name    getRemoteProfileUuids_callback
      * @tc.desc    Test getRemoteProfileUuids_callback API functionality
      * @tc.level   Level 0
@@ -1306,16 +1279,16 @@ export default function bluetoothConnectionTest() {
             "getRemoteProfileUuids_callback get errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, 'api is not support');
-            expect(Number(err.code) === 801).assertTrue();
+            expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  getRemoteProfileUuids_promise
+     * @tc.number  SUB_COMMUNICATION_BP_GETREMOTEPROFILEUUIDSPROMISE_0100
      * @tc.name    getRemoteProfileUuids_promise
      * @tc.desc    Test getRemoteProfileUuids_promise API functionality
      * @tc.level   Level 0
@@ -1325,9 +1298,8 @@ export default function bluetoothConnectionTest() {
     it("getRemoteProfileUuids_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.getRemoteProfileUuids(deviceId).then((data: connection.ProfileUuids[]) => {
-            hilog.info(domain, tag, "getRemoteProfileUuids_promise resule:" + JSON.stringify(data));
-          });
+          let data = await connection.getRemoteProfileUuids(deviceId);
+          hilog.info(domain, tag, "getRemoteProfileUuids_promise resule:" + JSON.stringify(data));
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1335,16 +1307,16 @@ export default function bluetoothConnectionTest() {
             "getRemoteProfileUuids_promise get errCode:" + err.code + ",errMessage:" + err.message);
           if (err.code === 801) {
             hilog.info(domain, tag, 'api is not support');
-            expect(Number(err.code) === 801).assertTrue();
+            expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  setDevicePinCode_callback
+     * @tc.number  SUB_COMMUNICATION_BP_SETDEVICEPINCODECALLBACK_0100
      * @tc.name    setDevicePinCode_callback
      * @tc.desc    Test setDevicePinCode_callback API functionality
      * @tc.level   Level 0
@@ -1369,14 +1341,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "setDevicePinCode is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  setDevicePinCode_promise
+     * @tc.number  SUB_COMMUNICATION_BP_SETDEVICEPINCODEPROMISE_0100
      * @tc.name    setDevicePinCode_promise
      * @tc.desc    Test setDevicePinCode_promise API functionality
      * @tc.level   Level 0
@@ -1386,11 +1358,8 @@ export default function bluetoothConnectionTest() {
     it("setDevicePinCode_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.setDevicePinCode(deviceId, "12345").then(() => {
-            hilog.info(domain, tag, "setDevicePinCode_promise");
-          }).catch((err: Error) => {
-            hilog.info(domain, tag, "setDevicePinCode_promise error:" + Number(err.code));
-          });
+          await connection.setDevicePinCode(deviceId, "12345");
+          hilog.info(domain, tag, "setDevicePinCode_promise");
         } catch (err) {
           err = err as BusinessError;
           hilog.info(domain, tag, "get error:" + JSON.stringify(err));
@@ -1399,14 +1368,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "setDevicePinCode is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  testBluetoothTransport
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBLUETOOTHTRANSPORT_0100
      * @tc.name    testBluetoothTransport
      * @tc.desc    Test testBluetoothTransport API functionality
      * @tc.level   Level 0
@@ -1430,7 +1399,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  testScanMode
+     * @tc.number  SUB_COMMUNICATION_BP_TESTSCANMODE_0100
      * @tc.name    testScanMode
      * @tc.desc    Test testScanMode API functionality
      * @tc.level   Level 0
@@ -1474,7 +1443,7 @@ export default function bluetoothConnectionTest() {
     })
 
     /**
-     * @tc.number  testDeviceChargeState
+     * @tc.number  SUB_COMMUNICATION_BP_TESTDEVICECHARGESTATE_0100
      * @tc.name    testDeviceChargeState
      * @tc.desc    Test testDeviceChargeState API functionality
      * @tc.level   Level 0
@@ -1502,7 +1471,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  testUnbondCause
+     * @tc.number  SUB_COMMUNICATION_BP_TESTUNBONDCAUSE_0100
      * @tc.name    testUnbondCause
      * @tc.desc    Test testUnbondCause API functionality
      * @tc.level   Level 0
@@ -1532,7 +1501,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  setDevicePairingConfirmationTest
+     * @tc.number  SUB_COMMUNICATION_BP_SETDEVICEPAIRINGCONFIRMATIONTEST_0100
      * @tc.name    setDevicePairingConfirmationTest
      * @tc.desc    Test setDevicePairingConfirmationTest API functionality
      * @tc.level   Level 0
@@ -1556,14 +1525,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  startOrStopBluetoothDiscoveryTest
+     * @tc.number  SUB_COMMUNICATION_BP_STARTORSTOPBLUETOOTHDISCOVERYTEST_0100
      * @tc.name    startOrStopBluetoothDiscoveryTest
      * @tc.desc    Test startOrStopBluetoothDiscoveryTest API functionality
      * @tc.level   Level 0
@@ -1586,7 +1555,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         connection.offBluetoothDeviceFind(onReceiveEvent2);
@@ -1594,7 +1563,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  pairDeviceTest_callback
+     * @tc.number  SUB_COMMUNICATION_BP_PAIRDEVICETESTCALLBACK_0100
      * @tc.name    pairDeviceTest_callback
      * @tc.desc    Test pairDeviceTest_callback API functionality
      * @tc.level   Level 0
@@ -1622,7 +1591,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "pairDevice is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         connection.offBondStateChange(BondStateParam);
@@ -1630,7 +1599,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  pairDeviceTest_promise
+     * @tc.number  SUB_COMMUNICATION_BP_PAIRDEVICETESTPROMISE_0100
      * @tc.name    pairDeviceTest_promise
      * @tc.desc    Test pairDeviceTest_promise API functionality
      * @tc.level   Level 0
@@ -1641,9 +1610,8 @@ export default function bluetoothConnectionTest() {
       async (done: () => void): Promise<void> => {
         try {
           connection.onBondStateChange(BondStateParam);
-          await connection.pairDevice("11:22:55:66:33:44").then(() => {
-            hilog.info(domain, tag, "pairDevice success");
-          });
+          await connection.pairDevice("11:22:55:66:33:44");
+          hilog.info(domain, tag, "pairDevice success");
           await Utils.msSleep(900);
           expect(connection.BondState.BOND_STATE_INVALID === 0).assertTrue();
           expect(connection.BondState.BOND_STATE_BONDING === 1).assertTrue();
@@ -1655,7 +1623,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "pairDevice is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         connection.offBondStateChange(BondStateParam);
@@ -1663,7 +1631,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  testOnBondStateChange
+     * @tc.number  SUB_COMMUNICATION_BP_TESTONBONDSTATECHANGE_0100
      * @tc.name    testOnBondStateChange
      * @tc.desc    Test testOnBondStateChange API functionality
      * @tc.level   Level 0
@@ -1674,9 +1642,8 @@ export default function bluetoothConnectionTest() {
       async (done: () => void): Promise<void> => {
         try {
           connection.onBondStateChange(BondStateParam1);
-          await connection.pairDevice("11:22:55:66:33:44").then(() => {
-            hilog.info(domain, tag, "pairDevice success");
-          });
+          await connection.pairDevice("11:22:55:66:33:44");
+          hilog.info(domain, tag, "pairDevice success");
           await Utils.msSleep(900);
           expect(connection.BondState.BOND_STATE_INVALID === 0).assertTrue();
           expect(connection.BondState.BOND_STATE_BONDING === 1).assertTrue();
@@ -1688,7 +1655,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "pairDevice is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         connection.offBondStateChange(BondStateParam1);
@@ -1696,7 +1663,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  testOnDiscoveryResult
+     * @tc.number  SUB_COMMUNICATION_BP_TESTONDISCOVERYRESULT_0100
      * @tc.name    testOnDiscoveryResult
      * @tc.desc    Test testOnDiscoveryResult API functionality
      * @tc.level   Level 0
@@ -1723,7 +1690,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  testBatteryChange
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBATTERYCHANGE_0100
      * @tc.name    testBatteryChange
      * @tc.desc    Test testBatteryChange API functionality
      * @tc.level   Level 0
@@ -1741,7 +1708,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "api is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         try {
@@ -1753,14 +1720,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "api is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  setDevicePairingConfirmationTest_001
+     * @tc.number  SUB_COMMUNICATION_BP_SETDEVICEPAIRINGCONFIRMATIONTEST001_0100
      * @tc.name    setDevicePairingConfirmationTest_001
      * @tc.desc    Test setDevicePairingConfirmationTest_001 API functionality
      * @tc.level   Level 0
@@ -1784,14 +1751,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
     /**
-     * @tc.number  startOrStopBluetoothDiscoveryTest_001
+     * @tc.number  SUB_COMMUNICATION_BP_STARTORSTOPBLUETOOTHDISCOVERYTEST001_0100
      * @tc.name    startOrStopBluetoothDiscoveryTest_001
      * @tc.desc    Test startOrStopBluetoothDiscoveryTest_001 API functionality
      * @tc.level   Level 0
@@ -1814,7 +1781,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, 'api is not support');
             expect(true).assertEqual(err.code === 801);
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         connection.offBluetoothDeviceFind();
@@ -1822,7 +1789,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  pairDeviceTest_callback_001
+     * @tc.number  SUB_COMMUNICATION_BP_PAIRDEVICETESTCALLBACK001_0100
      * @tc.name    pairDeviceTest_callback_001
      * @tc.desc    Test pairDeviceTest_callback_001 API functionality
      * @tc.level   Level 0
@@ -1850,7 +1817,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "pairDevice is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         connection.offBondStateChange();
@@ -1858,7 +1825,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  pairDeviceTest_promise_001
+     * @tc.number  SUB_COMMUNICATION_BP_PAIRDEVICETESTPROMISE001_0100
      * @tc.name    pairDeviceTest_promise_001
      * @tc.desc    Test pairDeviceTest_promise_001 API functionality
      * @tc.level   Level 0
@@ -1869,9 +1836,8 @@ export default function bluetoothConnectionTest() {
       async (done: () => void): Promise<void> => {
         try {
           connection.onBondStateChange(BondStateParam);
-          await connection.pairDevice("11:22:55:66:33:44").then(() => {
-            hilog.info(domain, tag, "pairDevice success");
-          });
+          await connection.pairDevice("11:22:55:66:33:44");
+          hilog.info(domain, tag, "pairDevice success");
           await Utils.msSleep(900);
           expect(connection.BondState.BOND_STATE_INVALID === 0).assertTrue();
           expect(connection.BondState.BOND_STATE_BONDING === 1).assertTrue();
@@ -1883,7 +1849,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "pairDevice is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         connection.offBondStateChange();
@@ -1891,7 +1857,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  testOnDiscoveryResult_001
+     * @tc.number  SUB_COMMUNICATION_BP_TESTONDISCOVERYRESULT001_0100
      * @tc.name    testOnDiscoveryResult_001
      * @tc.desc    Test testOnDiscoveryResult_001 API functionality
      * @tc.level   Level 0
@@ -1918,7 +1884,7 @@ export default function bluetoothConnectionTest() {
       })
 
     /**
-     * @tc.number  testBatteryChange_001
+     * @tc.number  SUB_COMMUNICATION_BP_TESTBATTERYCHANGE001_0100
      * @tc.name    testBatteryChange_001
      * @tc.desc    Test testBatteryChange_001 API functionality
      * @tc.level   Level 0
@@ -1936,7 +1902,7 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "api is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         try {
@@ -1948,14 +1914,14 @@ export default function bluetoothConnectionTest() {
             hilog.info(domain, tag, "api is not support");
             expect(err.code === 801).assertTrue();
           } else {
-            expect(Number(err.code)).assertEqual(2900099);
+            expect(err.code).assertEqual(2900099);
           }
         }
         done();
       })
 
       /**
-       * @tc.number SUB_Communication_BP_PairDevice_Callback_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_PAIRDEVICECALLBACKDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpPairDeviceCallbackDeviceIdEmpty0100
        * @tc.desc Test pairDevice(callback) with empty string deviceId
        * @tc.level LEVEL0
@@ -1987,7 +1953,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_PAIRDEVICEPROMISEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpPairDevicePromiseDeviceIdEmpty0100
        * @tc.desc Test pairDevice(promise) with empty string deviceId
        * @tc.level LEVEL0
@@ -1999,10 +1965,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_PairDevice_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.pairDevice("").then(() => {
-                  hilog.info(domain, tag, `${caseName} pairDevice promise success`);
-                  expect().assertFail();
-              });
+              await connection.pairDevice("");
+              hilog.info(domain, tag, `${caseName} pairDevice promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2014,7 +1979,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteDeviceName_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_GETREMOTEDEVICENAMEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpGetRemoteDeviceNameDeviceIdEmpty0100
        * @tc.desc Test getRemoteDeviceName with empty string deviceId
        * @tc.level LEVEL0
@@ -2040,7 +2005,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteDeviceClass_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_GETREMOTEDEVICECLASSDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpGetRemoteDeviceClassDeviceIdEmpty0100
        * @tc.desc Test getRemoteDeviceClass with empty string deviceId
        * @tc.level LEVEL0
@@ -2066,7 +2031,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetPairState_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_GETPAIRSTATEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpGetPairStateDeviceIdEmpty0100
        * @tc.desc Test getPairState with empty string deviceId
        * @tc.level LEVEL0
@@ -2092,7 +2057,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePairingConfirmation_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_SETDEVICEPAIRINGCONFIRMATIONDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpSetDevicePairingConfirmationDeviceIdEmpty0100
        * @tc.desc Test setDevicePairingConfirmation with empty string deviceId
        * @tc.level LEVEL0
@@ -2118,7 +2083,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_SETDEVICEPINCODECALLBACKDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpSetDevicePinCodeCallbackDeviceIdEmpty0100
        * @tc.desc Test setDevicePinCode(callback) with empty string deviceId
        * @tc.level LEVEL0
@@ -2150,7 +2115,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_SETDEVICEPINCODEPROMISEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpSetDevicePinCodePromiseDeviceIdEmpty0100
        * @tc.desc Test setDevicePinCode(promise) with empty string deviceId
        * @tc.level LEVEL0
@@ -2162,10 +2127,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_SetDevicePinCode_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.setDevicePinCode("", "12345").then(() => {
-                  hilog.info(domain, tag, `${caseName} setDevicePinCode promise success`);
-                  expect().assertFail();
-              });
+              await connection.setDevicePinCode("", "12345");
+              hilog.info(domain, tag, `${caseName} setDevicePinCode promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2177,7 +2141,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Callback_Code_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_SETDEVICEPINCODECALLBACKCODEEMPTY_0100
        * @tc.name subCommunicationBpSetDevicePinCodeCallbackCodeEmpty0100
        * @tc.desc Test setDevicePinCode(callback) with empty string pinCode
        * @tc.level LEVEL0
@@ -2210,7 +2174,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_SETDEVICEPINCODEPROMISECODEEMPTY_0100
        * @tc.name subCommunicationBpSetDevicePinCodePromiseCodeEmpty0100
        * @tc.desc Test setDevicePinCode(promise) with empty string pinCode
        * @tc.level LEVEL0
@@ -2222,10 +2186,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_SetDevicePinCode_Promise_Code_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.setDevicePinCode(deviceId, "").then(() => {
-                  hilog.info(domain, tag, `${caseName} setDevicePinCode promise success`);
-                  expect().assertFail();
-              });
+              await connection.setDevicePinCode(deviceId, "");
+              hilog.info(domain, tag, `${caseName} setDevicePinCode promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2237,7 +2200,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Callback_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_GETREMOTEPROFILEUUIDSCALLBACKDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpGetRemoteProfileUuidsCallbackDeviceIdEmpty0100
        * @tc.desc Test getRemoteProfileUuids(callback) with empty string deviceId
        * @tc.level LEVEL0
@@ -2270,7 +2233,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_GETREMOTEPROFILEUUIDSPROMISEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpGetRemoteProfileUuidsPromiseDeviceIdEmpty0100
        * @tc.desc Test getRemoteProfileUuids(promise) with empty string deviceId
        * @tc.level LEVEL0
@@ -2282,10 +2245,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_GetRemoteProfileUuids_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.getRemoteProfileUuids("").then((data: connection.ProfileUuids[]) => {
-                  hilog.info(domain, tag, `${caseName} getRemoteProfileUuids promise success`);
-                  expect().assertFail();
-              });
+              await connection.getRemoteProfileUuids("");
+              hilog.info(domain, tag, `${caseName} getRemoteProfileUuids promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2297,7 +2259,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Callback_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_CONNECTALLOWEDPROFILESCALLBACKDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpConnectAllowedProfilesCallbackDeviceIdEmpty0100
        * @tc.desc Test connectAllowedProfiles(callback) with empty string deviceId
        * @tc.level LEVEL0
@@ -2330,7 +2292,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_CONNECTALLOWEDPROFILESPROMISEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpConnectAllowedProfilesPromiseDeviceIdEmpty0100
        * @tc.desc Test connectAllowedProfiles(promise) with empty string deviceId
        * @tc.level LEVEL0
@@ -2342,10 +2304,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_ConnectAllowedProfiles_Promise_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.connectAllowedProfiles("").then(() => {
-                  hilog.info(domain, tag, `${caseName} connectAllowedProfiles promise success`);
-                  expect().assertFail();
-              });
+              await connection.connectAllowedProfiles("");
+              hilog.info(domain, tag, `${caseName} connectAllowedProfiles promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2357,7 +2318,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_GETREMOTEDEVICEBATTERYINFODEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpGetRemoteDeviceBatteryInfoDeviceIdEmpty0100
        * @tc.desc Test getRemoteDeviceBatteryInfo with empty string deviceId
        * @tc.level LEVEL0
@@ -2369,10 +2330,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_GetRemoteDeviceBatteryInfo_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.getRemoteDeviceBatteryInfo("").then((data: connection.BatteryInfo) => {
-                  hilog.info(domain, tag, `${caseName} getRemoteDeviceBatteryInfo promise success`);
-                  expect().assertFail();
-              });
+              await connection.getRemoteDeviceBatteryInfo("");
+              hilog.info(domain, tag, `${caseName} getRemoteDeviceBatteryInfo promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2384,7 +2344,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_SETREMOTEDEVICENAMEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpSetRemoteDeviceNameDeviceIdEmpty0100
        * @tc.desc Test setRemoteDeviceName with empty string deviceId
        * @tc.level LEVEL0
@@ -2396,10 +2356,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_SetRemoteDeviceName_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.setRemoteDeviceName("", "NewDeviceName").then(() => {
-                  hilog.info(domain, tag, `${caseName} setRemoteDeviceName promise success`);
-                  expect().assertFail();
-              });
+              await connection.setRemoteDeviceName("", "NewDeviceName");
+              hilog.info(domain, tag, `${caseName} setRemoteDeviceName promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2411,7 +2370,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_SETREMOTEDEVICENAMENAMEEMPTY_0100
        * @tc.name subCommunicationBpSetRemoteDeviceNameNameEmpty0100
        * @tc.desc Test setRemoteDeviceName with empty string name
        * @tc.level LEVEL0
@@ -2423,10 +2382,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_SetRemoteDeviceName_Name_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.setRemoteDeviceName(deviceId, "").then(() => {
-                  hilog.info(domain, tag, `${caseName} setRemoteDeviceName promise success`);
-                  expect().assertFail();
-              });
+              await connection.setRemoteDeviceName(deviceId, "");
+              hilog.info(domain, tag, `${caseName} setRemoteDeviceName promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2438,7 +2396,7 @@ export default function bluetoothConnectionTest() {
       })
 
       /**
-       * @tc.number SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_0100
+       * @tc.number SUB_COMMUNICATION_BP_GETLASTCONNECTIONTIMEDEVICEIDEMPTY_0100
        * @tc.name subCommunicationBpGetLastConnectionTimeDeviceIdEmpty0100
        * @tc.desc Test getLastConnectionTime with empty string deviceId
        * @tc.level LEVEL0
@@ -2450,10 +2408,9 @@ export default function bluetoothConnectionTest() {
           let caseName = "SUB_Communication_BP_GetLastConnectionTime_DeviceId_Empty_001";
           hilog.info(domain, tag, `${caseName} test start`);
           try {
-              await connection.getLastConnectionTime("").then((time: long) => {
-                  hilog.info(domain, tag, `${caseName} getLastConnectionTime promise success`);
-                  expect().assertFail();
-              });
+              await connection.getLastConnectionTime("");
+              hilog.info(domain, tag, `${caseName} getLastConnectionTime promise success`);
+              expect().assertFail();
           } catch (err) {
               err = err as BusinessError;
               hilog.info(domain, tag, `${caseName} get error: ${JSON.stringify(err)}`);
@@ -2463,7 +2420,7 @@ export default function bluetoothConnectionTest() {
           hilog.info(domain, tag, `${caseName} test end`);
           done();
       })
-    /**
+      /**
      * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100
      * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100
      * @tc.desc    Test disconnectAllowedProfiles_promise API 入参正常
