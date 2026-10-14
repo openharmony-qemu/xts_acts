@@ -229,14 +229,14 @@ export default function MethodIsConstructor01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISCONSTRUCTOR_ONE_0900
-     * @tc.name testMethodIsConstructorAtOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISCONSTRUCTOR_ONE_0800
+     * @tc.name testMethodIsConstructorAtOne008
      * @tc.desc Verify isConstructor returns true for overloaded constructors across 3-level inheritance with overloading
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsConstructorAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsConstructorAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((Type.from<T81_Base5>() as ClassType).getConstructor(0).isConstructor()).assertTrue();
       expect((Type.from<T81_Base5>() as ClassType).getConstructor(1).isConstructor()).assertTrue();
       expect((Type.from<T81_Mid>() as ClassType).getConstructor(0).isConstructor()).assertTrue();
@@ -247,14 +247,14 @@ export default function MethodIsConstructor01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISCONSTRUCTOR_ONE_1000
-     * @tc.name testMethodIsConstructorAtOne010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISCONSTRUCTOR_ONE_0900
+     * @tc.name testMethodIsConstructorAtOne009
      * @tc.desc Verify isConstructor returns true for constructor and false for both abstract and concrete methods in same abstract class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsConstructorAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsConstructorAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<T87_AbsAll>() as ClassType;
       expect(ct.getConstructor(0).isConstructor()).assertTrue();
       expect(ct.getMethodByName('abs').isConstructor()).assertFalse();
@@ -262,14 +262,14 @@ export default function MethodIsConstructor01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISCONSTRUCTOR_ONE_1100
-     * @tc.name testMethodIsConstructorAtOne011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISCONSTRUCTOR_ONE_1000
+     * @tc.name testMethodIsConstructorAtOne010
      * @tc.desc Verify isConstructor returns false for abstract method with same name as class in abstract class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsConstructorAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsConstructorAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(
         (Type.from<T109_Abs2_MethodIsConstructor03>() as ClassType)
           .getMethodByName('Abs2_MethodIsConstructor03')

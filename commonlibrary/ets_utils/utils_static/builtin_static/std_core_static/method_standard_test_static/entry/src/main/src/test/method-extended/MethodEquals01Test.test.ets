@@ -102,68 +102,68 @@ export default function MethodEquals01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0400
-     * @tc.name testMethodEqualsAtOne004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0300
+     * @tc.name testMethodEqualsAtOne003
      * @tc.desc Verify equals returns false when comparing methods with the same name from different classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodEqualsAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodEqualsAtOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = (Type.from<ClassTypeA>() as ClassType).getMethodByName('run');
       let m2: Method | null = (Type.from<ClassTypeB>() as ClassType).getMethodByName('run');
       expect(m1.equals(m2)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0500
-     * @tc.name testMethodEqualsAtOne005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0400
+     * @tc.name testMethodEqualsAtOne004
      * @tc.desc Verify equals returns false when comparing public methods from different classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodEqualsAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodEqualsAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = (Type.from<Calculator>() as ClassType).getMethodByName('add');
       let m2: Method | null = (Type.from<StringUtil>() as ClassType).getMethodByName('reverse');
       expect(m1.equals(m2)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0700
-     * @tc.name testMethodEqualsAtOne007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0500
+     * @tc.name testMethodEqualsAtOne005
      * @tc.desc Verify equals returns false when comparing instance method with null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodEqualsAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodEqualsAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m = (Type.from<Calculator>() as ClassType).getMethodByName('add');
       expect(m.equals(null)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0800
-     * @tc.name testMethodEqualsAtOne008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0600
+     * @tc.name testMethodEqualsAtOne006
      * @tc.desc Verify equals returns false when comparing method with non-empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodEqualsAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodEqualsAtOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m = (Type.from<Calculator>() as ClassType).getMethodByName('add');
       expect(m.equals('add')).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0900
-     * @tc.name testMethodEqualsAtOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0700
+     * @tc.name testMethodEqualsAtOne007
      * @tc.desc Verify mixed positive and negative equals checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodEqualsAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodEqualsAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m1 = (Type.from<Calculator>() as ClassType).getMethodByName('add');
       let m2 = (Type.from<Calculator>() as ClassType).getMethodByName('add');
       let m3 = (Type.from<Calculator>() as ClassType).getMethodByName('subtract');
@@ -176,14 +176,14 @@ export default function MethodEquals01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_1000
-     * @tc.name testMethodEqualsAtOne010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_EQUALS_ONE_0800
+     * @tc.name testMethodEqualsAtOne008
      * @tc.desc Verify equals calls do not mutate Method state
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodEqualsAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodEqualsAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m = (Type.from<Calculator>() as ClassType).getMethodByName('add');
       let before: string = m.getName();
       m.equals(null);

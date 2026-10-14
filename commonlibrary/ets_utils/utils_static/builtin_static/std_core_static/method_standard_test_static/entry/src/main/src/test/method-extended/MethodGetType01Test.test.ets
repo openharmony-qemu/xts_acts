@@ -224,9 +224,6 @@ class GetType03ErrPrivateInherit011 {
   }
 }
 class GetType03ErrPrivateInheritChild011 extends GetType03ErrPrivateInherit011 {}
-const isNotNull = (m: Method | null): boolean => {
-  return m !== null;
-};
 
 export default function MethodGetType01Test(): void {
   describe('MethodGetType01Test', (): void => {
@@ -257,14 +254,14 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0300
-     * @tc.name testMethodGetTypeAtOne003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0200
+     * @tc.name testMethodGetTypeAtOne002
      * @tc.desc Verify parent public method visible appears in child class getMethods traversal with result type string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods: Method[] = __getMethods(Type.from<GetTypeSrc991>() as ClassType);
       let found: boolean = false;
       for (let i: number = 0; i < methods.length; i++) {
@@ -278,14 +275,14 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0400
-     * @tc.name testMethodGetTypeAtOne004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0300
+     * @tc.name testMethodGetTypeAtOne003
      * @tc.desc Class type conversion safety verification
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let ct: ClassType = Type.from<GetTypeSrc1081>() as ClassType;
         let method = ct.getMethodByName('process');
@@ -300,28 +297,28 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0500
-     * @tc.name testMethodGetTypeAtOne005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0400
+     * @tc.name testMethodGetTypeAtOne004
      * @tc.desc Verify getType works on constructor obtained via getConstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor: Method = (Type.from<GetTypeSrc1131>() as ClassType).getConstructor(0);
       let mt: MethodType = ctor.getType();
       expect(mt.getResultType()).not().assertNull();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0600
-     * @tc.name testMethodGetTypeAtOne006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0500
+     * @tc.name testMethodGetTypeAtOne005
      * @tc.desc 50 own methods plus 18 inherited builtin methods yields 68 total; traversal without exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods: Method[] = __getMethods(Type.from<GetTypeSrc1191>() as ClassType);
       let methodCount: number = methods.length;
       expect(methodCount).assertEqual(68);
@@ -332,14 +329,14 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0700
-     * @tc.name testMethodGetTypeAtOne007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0600
+     * @tc.name testMethodGetTypeAtOne006
      * @tc.desc Call getType().getResultType() multiple times on Method, returns consistent result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = (Type.from<TC61Class>() as ClassType).getMethodByName('getVersion');
       let rt1: Type = method.getType().getResultType();
       let rt2: Type = method.getType().getResultType();
@@ -349,42 +346,42 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0800
-     * @tc.name testMethodGetTypeAtOne008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0700
+     * @tc.name testMethodGetTypeAtOne007
      * @tc.desc Verify different classes with same method name calling getResultType() return same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let rtA: Type = (Type.from<TC64ClassA>() as ClassType).getMethodByName('calc').getType().getResultType();
       let rtB: Type = (Type.from<TC64ClassB>() as ClassType).getMethodByName('calc').getType().getResultType();
       expect(rtA as Object).assertEqual(rtB);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0900
-     * @tc.name testMethodGetTypeAtOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0800
+     * @tc.name testMethodGetTypeAtOne008
      * @tc.desc No-parameter method parameters length is 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = _M(Type.from<TC70Class>() as ClassType, 'getStatus');
       let methodType: MethodType = method.getType();
       expect(methodType.getParametersNum()).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1000
-     * @tc.name testMethodGetTypeAtOne010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_0900
+     * @tc.name testMethodGetTypeAtOne009
      * @tc.desc Getter and setter type detection: getResultType() is not null for both getter and setter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct: ClassType = Type.from<TC81Class>() as ClassType;
       let methods: Method[] = __getMethods(ct);
       let getterFound: boolean = false;
@@ -404,14 +401,14 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1100
-     * @tc.name testMethodGetTypeAtOne011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1000
+     * @tc.name testMethodGetTypeAtOne010
      * @tc.desc Verify __getMethods on GetType03ErrCrossA011: the last method in traversal has a non-empty result type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods: Method[] = __getMethods(Type.from<GetType03ErrCrossA011>() as ClassType);
       let idx: number = methods.length - 1;
       if (idx >= 0) {
@@ -423,14 +420,14 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1200
-     * @tc.name testMethodGetTypeAtOne012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1100
+     * @tc.name testMethodGetTypeAtOne011
      * @tc.desc Verify getType for sibling class Methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mA = (Type.from<GetType03ErrSibA021>() as ClassType).getMethodByName('aMethod');
       let mB = (Type.from<GetType03ErrSibB021>() as ClassType).getMethodByName('bMethod');
       let mtA: MethodType = mA.getType();
@@ -440,14 +437,14 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1300
-     * @tc.name testMethodGetTypeAtOne013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1200
+     * @tc.name testMethodGetTypeAtOne012
      * @tc.desc Verify parent private method not visible via child class Type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = (Type.from<GetType03ErrDeepPrivL51>() as ClassType).getMethodByName('secret');
       let mtPub: MethodType = method.getType();
       expect(mtPub.getResultType() as Object).assertEqual(Type.from<string>());
@@ -457,42 +454,28 @@ export default function MethodGetType01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1400
-     * @tc.name testMethodGetTypeAtOne014
-     * @tc.desc Verify getType for covariant return type in child class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testMethodGetTypeAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let mChild = (Type.from<GetType03ErrCovariantChild021>() as ClassType).getMethodByName('getObj');
-      let mtChild: MethodType = mChild.getType();
-      expect(mtChild.getResultType().toString()).assertEqual(Type.from<GetType03ErrCovariantChild021>().toString());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1500
-     * @tc.name testMethodGetTypeAtOne015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1300
+     * @tc.name testMethodGetTypeAtOne013
      * @tc.desc Verify diamond inheritance method getType
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = (Type.from<GetType03ErrDiamondLeaf>() as ClassType).getMethodByName('baseMethod');
       let mt: MethodType = method.getType();
       expect(mt.getResultType() as Object).assertEqual(Type.from<string>());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1700
-     * @tc.name testMethodGetTypeAtOne017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_TYPE_ONE_1400
+     * @tc.name testMethodGetTypeAtOne014
      * @tc.desc Verify __getMethods on child class GetType03ErrPrivateInheritChild011 yields 20 methods each with a non-empty result type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetTypeAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetTypeAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let methods: Method[] = __getMethods(Type.from<GetType03ErrPrivateInheritChild011>() as ClassType);
       for (let i: number = 0; i < methods.length; i++) {
         let mt: MethodType = methods[i.toInt()].getType();

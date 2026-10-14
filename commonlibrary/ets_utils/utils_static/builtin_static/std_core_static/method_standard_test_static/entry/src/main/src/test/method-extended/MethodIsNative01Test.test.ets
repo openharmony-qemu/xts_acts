@@ -339,14 +339,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_0900
-     * @tc.name testMethodIsNativeAtOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_0800
+     * @tc.name testMethodIsNativeAtOne008
      * @tc.desc Verify that isNative returns false for constructor and true for native method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S11_MethodIsNative01>() as ClassType;
       const ctor = cls.getConstructor(0);
       const nativeMethod = _M(cls, 'nativeMethod');
@@ -355,14 +355,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1000
-     * @tc.name testMethodIsNativeAtOne010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_0900
+     * @tc.name testMethodIsNativeAtOne009
      * @tc.desc Verify that isNative returns false for union-type normal method and true for native method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S12_MethodIsNative01>() as ClassType;
       const overloaded = cls.getMethodByName('overloadedFunc');
       const nativeMethod = _M(cls, 'nativeMethod');
@@ -371,14 +371,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1300
-     * @tc.name testMethodIsNativeAtOne013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1000
+     * @tc.name testMethodIsNativeAtOne010
      * @tc.desc Verify that isNative returns true for both parameterized and parameterless native methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S15_MethodIsNative01>() as ClassType;
       const withParam = _M(cls, 'nativeMethod');
       const withoutParam = _M(cls, 'nativeMethod');
@@ -387,14 +387,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1400
-     * @tc.name testMethodIsNativeAtOne014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1100
+     * @tc.name testMethodIsNativeAtOne011
      * @tc.desc Verify that isNative returns false for both parameterized and parameterless normal methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S16_MethodIsNative01>() as ClassType;
       const withParam = cls.getMethodByName('normalWithParam');
       const withoutParam = cls.getMethodByName('normalWithoutParam');
@@ -403,14 +403,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1500
-     * @tc.name testMethodIsNativeAtOne015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1200
+     * @tc.name testMethodIsNativeAtOne012
      * @tc.desc Verify that isNative returns true for both return and void native methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S17_MethodIsNative01>() as ClassType;
       const retMethod = cls.getMethodByName('nativeWithReturn');
       const voidMethod = _M(cls, 'nativeMethod');
@@ -419,14 +419,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1800
-     * @tc.name testMethodIsNativeAtOne018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1300
+     * @tc.name testMethodIsNativeAtOne013
      * @tc.desc Verify that isNative returns true for native methods in different classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const classA = Type.from<S21_A_MethodIsNative01>() as ClassType;
       const classB = Type.from<S21_B_MethodIsNative01>() as ClassType;
       const nativeA = _M(classA, 'nativeMethod');
@@ -436,14 +436,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1900
-     * @tc.name testMethodIsNativeAtOne019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1400
+     * @tc.name testMethodIsNativeAtOne014
      * @tc.desc Verify that isNative returns false for normal methods in different classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const classA = Type.from<S22_A_MethodIsNative01>() as ClassType;
       const classB = Type.from<S22_B_MethodIsNative01>() as ClassType;
       const normalA = classA.getMethodByName('normalFunc');
@@ -453,14 +453,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2000
-     * @tc.name testMethodIsNativeAtOne020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1500
+     * @tc.name testMethodIsNativeAtOne015
      * @tc.desc Verify that isNative returns true for inherited native method in sub class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const baseCls = Type.from<S23_Base_MethodIsNative01>() as ClassType;
       const subCls = Type.from<S23_Derived_MethodIsNative01>() as ClassType;
       const baseNative = _M(baseCls, 'nativeMethod');
@@ -474,14 +474,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2100
-     * @tc.name testMethodIsNativeAtOne021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1600
+     * @tc.name testMethodIsNativeAtOne016
      * @tc.desc Verify that isNative returns true for native method and false for normal method in a generic class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const genericCls = Type.from<S27_MethodIsNative01<number>>() as ClassType;
       const nativeM = _M(genericCls, 'nativeMethod');
       const normalM = genericCls.getMethodByName('normalFunc');
@@ -490,28 +490,28 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2400
-     * @tc.name testMethodIsNativeAtOne024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1700
+     * @tc.name testMethodIsNativeAtOne017
      * @tc.desc Verify that isNative returns false for custom method in enum-style class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const enumCls = Type.from<S30_MethodIsNative01>() as ClassType;
       const customM = enumCls.getMethodByName('customFunc');
       expect(customM.isNative()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2500
-     * @tc.name testMethodIsNativeAtOne025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1800
+     * @tc.name testMethodIsNativeAtOne018
      * @tc.desc Verify that isNative returns false for inherited normal methods in multi-level inheritance chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const grandParent = Type.from<S42_GP_MethodIsNative01>() as ClassType;
       const parent = Type.from<S42_P_MethodIsNative01>() as ClassType;
       const child = Type.from<S42_C_MethodIsNative01>() as ClassType;
@@ -524,14 +524,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2600
-     * @tc.name testMethodIsNativeAtOne026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_1900
+     * @tc.name testMethodIsNativeAtOne019
      * @tc.desc Verify that isNative returns true for system-native method and false for user-defined normal method with the same name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const systemCls = Type.from<S62_System_MethodIsNative01>() as ClassType;
       const userCls = Type.from<S62_User_MethodIsNative01>() as ClassType;
       const systemNative = systemCls.getMethodByName('toString');
@@ -541,14 +541,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2900
-     * @tc.name testMethodIsNativeAtOne029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2000
+     * @tc.name testMethodIsNativeAtOne020
      * @tc.desc Verify that isNative returns true for Object native method override and false for custom normal method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S65_MethodIsNative01>() as ClassType;
       const overrideNative = cls.getMethodByName('toString');
       const normalM = cls.getMethodByName('customMethod');
@@ -557,14 +557,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3000
-     * @tc.name testMethodIsNativeAtOne030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2100
+     * @tc.name testMethodIsNativeAtOne021
      * @tc.desc Verify that isNative returns consistent true when calling the same native method object multiple times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S76_MethodIsNative01>() as ClassType;
       const m = _M(cls, 'nativeMethod');
       const r1: boolean = m.isNative();
@@ -576,14 +576,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3100
-     * @tc.name testMethodIsNativeAtOne031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2200
+     * @tc.name testMethodIsNativeAtOne022
      * @tc.desc Verify that isNative returns true and isConstructor returns false on the same native method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S80_MethodIsNative01>() as ClassType;
       const m = _M(cls, 'nativeMethod');
       expect(m.isNative()).assertTrue();
@@ -591,14 +591,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3200
-     * @tc.name testMethodIsNativeAtOne032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2300
+     * @tc.name testMethodIsNativeAtOne023
      * @tc.desc Verify that isNative returns false and isConstructor returns false on the same normal method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S81_MethodIsNative01>() as ClassType;
       const m = cls.getMethodByName('normalFunc');
       expect(m.isNative()).assertFalse();
@@ -606,14 +606,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3300
-     * @tc.name testMethodIsNativeAtOne033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2400
+     * @tc.name testMethodIsNativeAtOne024
      * @tc.desc Verify isNative returns true and getParametersNum returns correct count on a native method with parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S82_MethodIsNative01>() as ClassType;
       const m = _M(cls, 'nativeMethod');
       expect(m.isNative()).assertTrue();
@@ -621,14 +621,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3400
-     * @tc.name testMethodIsNativeAtOne034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2500
+     * @tc.name testMethodIsNativeAtOne025
      * @tc.desc Verify isNative returns false and getParametersNum returns correct count on a normal method with parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S83_MethodIsNative01>() as ClassType;
       const m = cls.getMethodByName('normalWithParams');
       expect(m.isNative()).assertFalse();
@@ -636,14 +636,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3500
-     * @tc.name testMethodIsNativeAtOne035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2600
+     * @tc.name testMethodIsNativeAtOne026
      * @tc.desc Verify isNative returns true and getName returns the correct name on a native method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S84_MethodIsNative01>() as ClassType;
       const m = _M(cls, 'nativeMethod');
       expect(m.isNative()).assertTrue();
@@ -651,14 +651,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3600
-     * @tc.name testMethodIsNativeAtOne036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2700
+     * @tc.name testMethodIsNativeAtOne027
      * @tc.desc Verify isNative returns false and getName returns the correct name on a normal method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S85_MethodIsNative01>() as ClassType;
       const m = cls.getMethodByName('normalFunc');
       expect(m.isNative()).assertFalse();
@@ -666,14 +666,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3700
-     * @tc.name testMethodIsNativeAtOne037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2800
+     * @tc.name testMethodIsNativeAtOne028
      * @tc.desc Verify isNative returns true and getResultType returns the correct type on a native method with return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S86_MethodIsNative01>() as ClassType;
       const m = cls.getMethodByName('nativeGetData');
       expect(m.isNative()).assertTrue();
@@ -681,14 +681,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3800
-     * @tc.name testMethodIsNativeAtOne038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_2900
+     * @tc.name testMethodIsNativeAtOne029
      * @tc.desc Verify isNative returns false and getResultType returns the correct type on a normal method with return value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S87_MethodIsNative01>() as ClassType;
       const m = cls.getMethodByName('normalGetData');
       expect(m.isNative()).assertFalse();
@@ -696,14 +696,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3900
-     * @tc.name testMethodIsNativeAtOne039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3000
+     * @tc.name testMethodIsNativeAtOne030
      * @tc.desc Verify that isNative returns true for a native method and false for a user class normal method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const objectCls = Type.from<S95_Object_MethodIsNative01>() as ClassType;
       const userCls = Type.from<S95_User_MethodIsNative01>() as ClassType;
       const nativeFromObject = _M(objectCls, 'nativeMethod');
@@ -713,41 +713,41 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_4000
-     * @tc.name testMethodIsNativeAtOne040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3100
+     * @tc.name testMethodIsNativeAtOne031
      * @tc.desc Verify that isNative returns true for native method in enum class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const enumCls = Type.from<S96_Enum_MethodIsNative01>() as ClassType;
       expect(enumCls.getMethodByName('nativeEnumFunc').isNative()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_4100
-     * @tc.name testMethodIsNativeAtOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3200
+     * @tc.name testMethodIsNativeAtOne032
      * @tc.desc Verify getMethodByName finds normal method with native in its name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<DestroyedCls_MethodIsNative03>() as ClassType;
       let method = ct.getMethodByName('nativeFunc');
       expect(method as Object).not().assertNull();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_4200
-     * @tc.name testMethodIsNativeAtOne042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3300
+     * @tc.name testMethodIsNativeAtOne033
      * @tc.desc Verify multiple Method objects for the same native-named normal method return same isNative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<MainCls_MethodIsNative03>() as ClassType;
       let m1 = ct.getMethodByName('nativeFunc');
       let m2 = ct.getMethodByName('nativeFunc');
@@ -755,14 +755,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_4300
-     * @tc.name testMethodIsNativeAtOne043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3400
+     * @tc.name testMethodIsNativeAtOne034
      * @tc.desc Verify isNative comparison between same native-named normal method from different classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctA = Type.from<ClsFromLoaderA_MethodIsNative03>() as ClassType;
       let ctB = Type.from<ClsFromLoaderB_MethodIsNative03>() as ClassType;
       let m1 = ctA.getMethodByName('nativeFunc');
@@ -771,14 +771,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_4400
-     * @tc.name testMethodIsNativeAtOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3500
+     * @tc.name testMethodIsNativeAtOne035
      * @tc.desc Verify isNative returns false for both child and base methods when chainMethod is overridden
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCt = Type.from<ChildCls_MethodIsNative03>() as ClassType;
       let baseCt = Type.from<BaseCls_MethodIsNative03>() as ClassType;
       let method = childCt.getMethodByName('chainMethod');
@@ -788,14 +788,14 @@ export default function MethodIsNative01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_4600
-     * @tc.name testMethodIsNativeAtOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISNATIVE_ONE_3600
+     * @tc.name testMethodIsNativeAtOne036
      * @tc.desc Verify isNative returns false for native method with empty body
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsNativeAtOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsNativeAtOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<MainCls_MethodIsNative03>() as ClassType;
       let method = ct.getMethodByName('emptyNative');
       expect(method.isNative()).assertFalse();

@@ -688,14 +688,14 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3300
-     * @tc.name testMethodGetAttributesAtOne033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3200
+     * @tc.name testMethodGetAttributesAtOne032
      * @tc.desc Verify StringReflect004 getAttributes returns correct value with as Object cast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<StringReflect004>() as ClassType;
       const method = ct.getMethodByName('process');
       if (isNotNull(method)) {
@@ -707,14 +707,14 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3400
-     * @tc.name testMethodGetAttributesAtOne034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3300
+     * @tc.name testMethodGetAttributesAtOne033
      * @tc.desc Verify getConstructor with out-of-range index 5 on single-constructor class ExactParamCtor006 throws TypeError and leaves the result null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<ExactParamCtor006>() as ClassType;
       let ctor5: Method | null = null;
       try {
@@ -725,28 +725,28 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3500
-     * @tc.name testMethodGetAttributesAtOne035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3400
+     * @tc.name testMethodGetAttributesAtOne034
      * @tc.desc Verify __getMethods (getMethodsNum + getMethod) traversal of FieldsOnly009 returns at least 18 methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<FieldsOnly009>() as ClassType;
       const methods: Method[] = __getMethods(ct);
       expect(methods.length >= 18).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3600
-     * @tc.name testMethodGetAttributesAtOne036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3500
+     * @tc.name testMethodGetAttributesAtOne035
      * @tc.desc Verify getMethodByName with non-existent method name returns null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<CaseSensitive019>() as ClassType;
       let method: Method | null = null;
       try {
@@ -757,14 +757,14 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3700
-     * @tc.name testMethodGetAttributesAtOne037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3600
+     * @tc.name testMethodGetAttributesAtOne036
      * @tc.desc Verify CtorNotAbstract023 constructor is not abstract
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<CtorNotAbstract023>() as ClassType;
       const ctor: Method = ct.getConstructor(0);
       const isAbstract: boolean = ctor.isAbstract();
@@ -772,14 +772,14 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3800
-     * @tc.name testMethodGetAttributesAtOne038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3700
+     * @tc.name testMethodGetAttributesAtOne037
      * @tc.desc Verify CtorNotStatic024 constructor is not static
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<CtorNotStatic024>() as ClassType;
       const ctor: Method = ct.getConstructor(0);
       const isStatic: boolean = ctor.isStatic();
@@ -787,14 +787,14 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3900
-     * @tc.name testMethodGetAttributesAtOne039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3800
+     * @tc.name testMethodGetAttributesAtOne038
      * @tc.desc Verify ImplChain051 interface chain method attributes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<ImplChain051>() as ClassType;
       const m1 = ct.getMethodByName('baseOp');
       const m2 = ct.getMethodByName('derivedOp');
@@ -806,28 +806,28 @@ export default function MethodGetAttributes01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_4000
-     * @tc.name testMethodGetAttributesAtOne040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_3900
+     * @tc.name testMethodGetAttributesAtOne039
      * @tc.desc Verify MixedTraverse055 mixed static/instance traversal yields 22 methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<MixedTraverse055>() as ClassType;
       const methods: Method[] = __getMethods(ct);
       expect(methods.length).assertEqual(22);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_4100
-     * @tc.name testMethodGetAttributesAtOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ATTRIBUTES_ONE_4000
+     * @tc.name testMethodGetAttributesAtOne040
      * @tc.desc Verify GA3PubStatClassA066 and GA3PubStatClassB066 static method attributes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAttributesAtOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAttributesAtOne040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const aMethods: Method[] = __getMethods(Type.from<GA3PubStatClassA066>() as ClassType);
       const bMethods: Method[] = __getMethods(Type.from<GA3PubStatClassB066>() as ClassType);
       let aMethod: Method | null = null;

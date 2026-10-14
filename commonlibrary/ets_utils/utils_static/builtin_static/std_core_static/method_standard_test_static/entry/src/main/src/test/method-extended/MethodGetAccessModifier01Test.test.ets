@@ -447,27 +447,27 @@ export default function MethodGetAccessModifier01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ACCESS_MODIFIER_ONE_1400
-     * @tc.name testMethodGetAccessModifierAtOne014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ACCESS_MODIFIER_ONE_1300
+     * @tc.name testMethodGetAccessModifierAtOne013
      * @tc.desc Verify __getMethods on properties-only class PropOnlyClass returns exactly 18 methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAccessModifierAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAccessModifierAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const methods = __getMethods(Type.from<PropOnlyClass>() as ClassType);
       expect(methods.length).assertEqual(18);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ACCESS_MODIFIER_ONE_1500
-     * @tc.name testMethodGetAccessModifierAtOne015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_GET_ACCESS_MODIFIER_ONE_1400
+     * @tc.name testMethodGetAccessModifierAtOne014
      * @tc.desc Verify two __getMethods traversals of RepeatMethods return consistent access modifiers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodGetAccessModifierAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodGetAccessModifierAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<RepeatMethods>() as ClassType;
       const ms1 = __getMethods(ct);
       const ms2 = __getMethods(ct);

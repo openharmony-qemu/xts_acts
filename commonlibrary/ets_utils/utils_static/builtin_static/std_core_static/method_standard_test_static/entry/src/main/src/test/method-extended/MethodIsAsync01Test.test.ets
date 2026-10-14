@@ -421,14 +421,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_0900
-     * @tc.name testMethodIsAsyncAtOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_0400
+     * @tc.name testMethodIsAsyncAtOne004
      * @tc.desc Verify isAsync() returns true for static async interface method in StaticImpl
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<StaticImpl_1>() as ClassType;
       try {
         let m = _M(cls, 'staticAsyncMethod');
@@ -443,14 +443,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1500
-     * @tc.name testMethodIsAsyncAtOne015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_0500
+     * @tc.name testMethodIsAsyncAtOne005
      * @tc.desc Verify isAsync for special-naming methods (async/sync, getters, operators, internal, unicode names)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let specialCls: ClassType = Type.from<SpecialNamingMethods_Nested>() as ClassType;
       expect(specialCls.getMethodByName('fooAsync').isAsync()).assertFalse();
       expect(specialCls.getMethodByName('syncStyle').isAsync()).assertTrue();
@@ -503,14 +503,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1600
-     * @tc.name testMethodIsAsyncAtOne016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_0600
+     * @tc.name testMethodIsAsyncAtOne006
      * @tc.desc Verify isAsync for methods with different parameter counts and parameter styles
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let paramCls: ClassType = Type.from<ParamCountMethods_Nested>() as ClassType;
       expect(paramCls.getMethodByName('noParamAsync').isAsync()).assertTrue();
       expect(paramCls.getMethodByName('noParamSync').isAsync()).assertFalse();
@@ -529,14 +529,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1700
-     * @tc.name testMethodIsAsyncAtOne017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_0700
+     * @tc.name testMethodIsAsyncAtOne007
      * @tc.desc Verify isAsync for methods with different access modifiers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let accessClsV2: ClassType = Type.from<AccessModMethodsV2_Nested>() as ClassType;
       expect(accessClsV2.getMethodByName('publicAsync').isAsync()).assertTrue();
       expect(accessClsV2.getMethodByName('publicSync').isAsync()).assertFalse();
@@ -549,14 +549,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1800
-     * @tc.name testMethodIsAsyncAtOne018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_0800
+     * @tc.name testMethodIsAsyncAtOne008
      * @tc.desc Verify isAsync returns false for valueOf sync method from enum-style class Color_03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumCls: ClassType = Type.from<Color_03>() as ClassType;
       let enumMethod = enumCls.getMethodByName('valueOf');
       if (enumMethod != undefined) {
@@ -567,14 +567,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_2100
-     * @tc.name testMethodIsAsyncAtOne021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_0900
+     * @tc.name testMethodIsAsyncAtOne009
      * @tc.desc Verify isAsync returns consistent result for getValueAsync across BoxNumber_03 and BoxString_03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxNumCls: ClassType = Type.from<BoxNumber_03>() as ClassType;
       let boxStrCls: ClassType = Type.from<BoxString_03>() as ClassType;
       expect(boxNumCls.getMethodByName('getValueAsync').isAsync()).assertEqual(
@@ -583,14 +583,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_2400
-     * @tc.name testMethodIsAsyncAtOne024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1000
+     * @tc.name testMethodIsAsyncAtOne010
      * @tc.desc Verify isAsync returns true for reflectedAsync and false for reflectedSync in ReflectionTarget_03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<ReflectionTarget_03>() as ClassType;
       let asyncMethod = cls.getMethodByName('reflectedAsync');
       let syncMethod = cls.getMethodByName('reflectedSync');
@@ -599,14 +599,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_2500
-     * @tc.name testMethodIsAsyncAtOne025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1100
+     * @tc.name testMethodIsAsyncAtOne011
      * @tc.desc Verify isAsync returns consistent result for same method obtained through different paths
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsAlt: ClassType = Type.from<ReflectionTarget_03>() as ClassType;
       let methodAlt = clsAlt.getMethodByName('reflectedAsync');
       let cls: ClassType = Type.from<ReflectionTarget_03>() as ClassType;
@@ -616,42 +616,42 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_2600
-     * @tc.name testMethodIsAsyncAtOne026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1200
+     * @tc.name testMethodIsAsyncAtOne012
      * @tc.desc Verify isAsync returns false for constructor method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<GetMethodTarget_03>() as ClassType;
       const ctorMethod = cls.getConstructor(0);
       expect(ctorMethod.isAsync()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_2800
-     * @tc.name testMethodIsAsyncAtOne028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1300
+     * @tc.name testMethodIsAsyncAtOne013
      * @tc.desc Verify isAsync returns false for getter method obtained via getMethodByName
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<GetMethodTarget_03>() as ClassType;
       const getterMethod = cls.getMethodByName('%%get-myValue');
       expect(getterMethod.isAsync()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_3300
-     * @tc.name testMethodIsAsyncAtOne033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1400
+     * @tc.name testMethodIsAsyncAtOne014
      * @tc.desc Verify isAsync returns true for async function expression assigned to class method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<AsyncPatternVariants_03>() as ClassType;
       let method: Method | undefined = _findMethod(cls, 'arrowAsync');
       if (method != undefined) {
@@ -662,14 +662,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_4100
-     * @tc.name testMethodIsAsyncAtOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1500
+     * @tc.name testMethodIsAsyncAtOne015
      * @tc.desc Verify isAsync in NormalClass_03 via for-loop: existingAsync true, existingSync false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<NormalClass_03>() as ClassType;
       let allMethodNames: string[] = ['existingAsync', 'existingSync'];
       for (let name of allMethodNames) {
@@ -684,14 +684,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_4400
-     * @tc.name testMethodIsAsyncAtOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1600
+     * @tc.name testMethodIsAsyncAtOne016
      * @tc.desc Verify isAsync returns true for incrementAsync via before-call check in SideEffectCheck_03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<SideEffectCheck_03>() as ClassType;
       let incrementAsyncMethod = cls.getMethodByName('incrementAsync');
       let beforeCall: boolean = incrementAsyncMethod.isAsync();
@@ -699,14 +699,14 @@ export default function MethodIsAsync01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_4500
-     * @tc.name testMethodIsAsyncAtOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISASYNC_ONE_1700
+     * @tc.name testMethodIsAsyncAtOne017
      * @tc.desc Verify getMethodByName returns non-null method and isAsync returns true for targetMethod in LargeMethodClass_03
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsAsyncAtOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsAsyncAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: ClassType = Type.from<LargeMethodClass_03>() as ClassType;
       let method = cls.getMethodByName('targetMethod');
       expect(method).not().assertUndefined();

@@ -283,14 +283,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0400
-     * @tc.name testMethodInvokeAtOne004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0300
+     * @tc.name testMethodInvokeAtOne003
      * @tc.desc Verify invoke with empty args for hashCode
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let personCls = Type.from<Inv01Person>() as ClassType;
       let person = new Inv01Person();
       let method = personCls.getMethodByName('hashCode');
@@ -299,14 +299,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0500
-     * @tc.name testMethodInvokeAtOne005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0400
+     * @tc.name testMethodInvokeAtOne004
      * @tc.desc Verify invoke with single Object param add
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let listCls = Type.from<Inv01ArrayList>() as ClassType;
       let list = new Inv01ArrayList();
       let method = listCls.getMethodByName('add');
@@ -315,14 +315,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0600
-     * @tc.name testMethodInvokeAtOne006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0500
+     * @tc.name testMethodInvokeAtOne005
      * @tc.desc Verify child instance calls parent non-overridden method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let baseCls = Type.from<Inv01BaseClass>() as ClassType;
       let derived = new Inv01DerivedClass();
       let method = baseCls.getMethodByName('baseOnlyMethod');
@@ -331,14 +331,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0700
-     * @tc.name testMethodInvokeAtOne007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0600
+     * @tc.name testMethodInvokeAtOne006
      * @tc.desc Verify Person instance invokes Calculator isZero - should fail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv01Calculator>() as ClassType;
       let person = new Inv01Person();
       let method = calcCls.getMethodByName('isZero');
@@ -351,14 +351,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0900
-     * @tc.name testMethodInvokeAtOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0700
+     * @tc.name testMethodInvokeAtOne007
      * @tc.desc Verify invoke with empty args for no-param void method clear
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let holderCls = Type.from<Inv01DataHolder>() as ClassType;
       let holder = new Inv01DataHolder();
       let setM = holderCls.getMethodByName('setValue');
@@ -371,14 +371,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1000
-     * @tc.name testMethodInvokeAtOne010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0800
+     * @tc.name testMethodInvokeAtOne008
      * @tc.desc Verify invoke with empty args for no-param method size
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let listCls = Type.from<Inv01ArrayList>() as ClassType;
       let list = new Inv01ArrayList();
       let method = listCls.getMethodByName('size');
@@ -387,14 +387,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1100
-     * @tc.name testMethodInvokeAtOne011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_0900
+     * @tc.name testMethodInvokeAtOne009
      * @tc.desc Verify invoke with empty args for no-param method isEmpty true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let listCls = Type.from<Inv01ArrayList>() as ClassType;
       let list = new Inv01ArrayList();
       let method = _M(listCls, 'isEmpty');
@@ -403,14 +403,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1200
-     * @tc.name testMethodInvokeAtOne012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1000
+     * @tc.name testMethodInvokeAtOne010
      * @tc.desc Verify invoke with single number param isZero true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv01Calculator>() as ClassType;
       let calc = new Inv01Calculator();
       let method = calcCls.getMethodByName('isZero');
@@ -419,14 +419,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1300
-     * @tc.name testMethodInvokeAtOne013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1100
+     * @tc.name testMethodInvokeAtOne011
      * @tc.desc Verify invoke with single number param isZero false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv01Calculator>() as ClassType;
       let calc = new Inv01Calculator();
       let method = calcCls.getMethodByName('isZero');
@@ -435,14 +435,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1400
-     * @tc.name testMethodInvokeAtOne014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1200
+     * @tc.name testMethodInvokeAtOne012
      * @tc.desc Verify invoke with two params concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let utilCls = Type.from<Inv01StringUtil>() as ClassType;
       let util = new Inv01StringUtil();
       let method = utilCls.getMethodByName('concat');
@@ -451,14 +451,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1500
-     * @tc.name testMethodInvokeAtOne015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1300
+     * @tc.name testMethodInvokeAtOne013
      * @tc.desc Verify invoke with two params join
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let utilCls = Type.from<Inv01StringUtil>() as ClassType;
       let util = new Inv01StringUtil();
       let method = utilCls.getMethodByName('join');
@@ -467,14 +467,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1600
-     * @tc.name testMethodInvokeAtOne016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1400
+     * @tc.name testMethodInvokeAtOne014
      * @tc.desc Verify invoke with empty args for two-param method throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv01Calculator>() as ClassType;
       let calc = new Inv01Calculator();
       let method = calcCls.getMethodByName('add');
@@ -487,14 +487,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1700
-     * @tc.name testMethodInvokeAtOne017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1500
+     * @tc.name testMethodInvokeAtOne015
      * @tc.desc Verify null receiver for instance add throws exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = (Type.from<Inv03Calculator>() as ClassType).getMethodByName('add');
       try {
         method.invoke(null, [1, 2] as FixedArray<object>);
@@ -505,14 +505,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1800
-     * @tc.name testMethodInvokeAtOne018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1600
+     * @tc.name testMethodInvokeAtOne016
      * @tc.desc Verify object state unchanged after exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let holder: Inv03DataHolder = new Inv03DataHolder();
       let setM = (Type.from<Inv03DataHolder>() as ClassType).getMethodByName('setValue');
       setM.invoke(holder, [42] as FixedArray<number>);
@@ -529,14 +529,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1900
-     * @tc.name testMethodInvokeAtOne019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1700
+     * @tc.name testMethodInvokeAtOne017
      * @tc.desc Verify nested exception propagation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calc: Inv03Calculator = new Inv03Calculator();
       let method = (Type.from<Inv03Calculator>() as ClassType).getMethodByName('callThrowException');
       try {
@@ -548,14 +548,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2000
-     * @tc.name testMethodInvokeAtOne020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1800
+     * @tc.name testMethodInvokeAtOne018
      * @tc.desc Verify checkNotNull with null arg throws exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let util: Inv03StringUtil = new Inv03StringUtil();
       let method = (Type.from<Inv03StringUtil>() as ClassType).getMethodByName('checkNotNull');
       try {
@@ -567,14 +567,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2100
-     * @tc.name testMethodInvokeAtOne021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_1900
+     * @tc.name testMethodInvokeAtOne019
      * @tc.desc Verify setPositive with negative throws exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calc: Inv03Calculator = new Inv03Calculator();
       let method = (Type.from<Inv03Calculator>() as ClassType).getMethodByName('setPositive');
       try {
@@ -586,14 +586,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2200
-     * @tc.name testMethodInvokeAtOne022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2000
+     * @tc.name testMethodInvokeAtOne020
      * @tc.desc Verify recursion stack overflow throws exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calc: Inv03Calculator = new Inv03Calculator();
       let method = (Type.from<Inv03Calculator>() as ClassType).getMethodByName('infiniteRecursion');
       try {
@@ -605,14 +605,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2300
-     * @tc.name testMethodInvokeAtOne023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2100
+     * @tc.name testMethodInvokeAtOne021
      * @tc.desc Verify invoke dispatches by receiver: Calculator toString invoked on Person receiver runs receiver default toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let method = (Type.from<Inv03Calculator>() as ClassType).getMethodByName('toString');
       let person: Inv03Person = new Inv03Person();
       let result = method.invoke(person, [] as FixedArray<never>);
@@ -620,14 +620,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2500
-     * @tc.name testMethodInvokeAtOne025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2200
+     * @tc.name testMethodInvokeAtOne022
      * @tc.desc Verify Method object obtained via getMethod invoke
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calc: Inv03Calculator = new Inv03Calculator();
       let getMethodM = (Type.from<Inv03Calculator>() as ClassType).getMethodByName('getMethod');
       let addMethod = getMethodM.invoke(calc, ['add'] as FixedArray<string>);
@@ -639,14 +639,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2600
-     * @tc.name testMethodInvokeAtOne026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2300
+     * @tc.name testMethodInvokeAtOne023
      * @tc.desc Verify invoke throws TypeError when getMethodByName called with empty method name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv03Calculator>() as ClassType;
       try {
         let method = _M(calcCls, '');
@@ -657,14 +657,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2700
-     * @tc.name testMethodInvokeAtOne027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2400
+     * @tc.name testMethodInvokeAtOne024
      * @tc.desc Verify invoke throws RangeError when list get called with negative index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let listCls = Type.from<Inv03ArrayList>() as ClassType;
       let list = new Inv03ArrayList();
       let method = listCls.getMethodByName('get');
@@ -677,14 +677,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2800
-     * @tc.name testMethodInvokeAtOne028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2500
+     * @tc.name testMethodInvokeAtOne025
      * @tc.desc Verify exception handling for invoke
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv03Calculator>() as ClassType;
       let calc = new Inv03Calculator();
       let method = calcCls.getMethodByName('add');
@@ -693,14 +693,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2900
-     * @tc.name testMethodInvokeAtOne029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2600
+     * @tc.name testMethodInvokeAtOne026
      * @tc.desc Verify exception handling for invoke
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv03Calculator>() as ClassType;
       let calc = new Inv03Calculator();
       let method = calcCls.getMethodByName('isZero');
@@ -709,14 +709,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_3000
-     * @tc.name testMethodInvokeAtOne030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2700
+     * @tc.name testMethodInvokeAtOne027
      * @tc.desc Verify exception handling for invoke
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calcCls = Type.from<Inv03Calculator>() as ClassType;
       let calc = new Inv03Calculator();
       let method = calcCls.getMethodByName('add');
@@ -729,14 +729,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_3100
-     * @tc.name testMethodInvokeAtOne031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2800
+     * @tc.name testMethodInvokeAtOne028
      * @tc.desc Verify exception handling for invoke
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumCls = Type.from<Inv03Color>() as ClassType;
       let method: Method | undefined = undefined;
       let n: number = enumCls.getMethodsNum();
@@ -757,14 +757,14 @@ export default function MethodInvoke01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_3200
-     * @tc.name testMethodInvokeAtOne032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_INVOKE_ONE_2900
+     * @tc.name testMethodInvokeAtOne029
      * @tc.desc Verify getMethodByName for static method addStatic via instance returns 3, then the case voluntarily fails expecting TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodInvokeAtOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodInvokeAtOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let calcCls = Type.from<Inv03Calculator>() as ClassType;
         let calc = new Inv03Calculator();

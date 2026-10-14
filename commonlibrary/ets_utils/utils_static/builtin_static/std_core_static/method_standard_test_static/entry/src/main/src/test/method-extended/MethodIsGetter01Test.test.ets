@@ -511,80 +511,80 @@ export default function MethodIsGetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1300
-     * @tc.name testMethodIsGetterAtOne013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1100
+     * @tc.name testMethodIsGetterAtOne011
      * @tc.desc Verify isGetter returns false for a simple normal method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = _M(Type.from<IsGetter02_S3E1_SimpleMethod>() as ClassType, 'x');
+      expect(method.isGetter()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1200
+     * @tc.name testMethodIsGetterAtOne012
+     * @tc.desc Verify isGetter returns false for a setter method that is paired with a getter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testMethodIsGetterAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const method = (Type.from<IsGetter02_S3E3_SetterWithGetter>() as ClassType).getMethodByName('%%set-v');
+      expect(method.isGetter()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1300
+     * @tc.name testMethodIsGetterAtOne013
+     * @tc.desc Verify isGetter returns false for a method with parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('testMethodIsGetterAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const method = (Type.from<IsGetter02_S3E14_ParamMethod>() as ClassType).getMethodByName('add');
       expect(method.isGetter()).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1400
      * @tc.name testMethodIsGetterAtOne014
-     * @tc.desc Verify isGetter returns false for a setter method that is paired with a getter
+     * @tc.desc Verify isGetter returns false for an abstract method in abstract class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('testMethodIsGetterAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const method = (Type.from<IsGetter02_S3E3_SetterWithGetter>() as ClassType).getMethodByName('%%set-v');
+      const method = (Type.from<IsGetter02_S3E15_AbstractMethod>() as ClassType).getMethodByName('doWork');
       expect(method.isGetter()).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1500
      * @tc.name testMethodIsGetterAtOne015
-     * @tc.desc Verify isGetter returns false for a method with parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testMethodIsGetterAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const method = (Type.from<IsGetter02_S3E14_ParamMethod>() as ClassType).getMethodByName('add');
-      expect(method.isGetter()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1600
-     * @tc.name testMethodIsGetterAtOne016
-     * @tc.desc Verify isGetter returns false for an abstract method in abstract class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testMethodIsGetterAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const method = (Type.from<IsGetter02_S3E15_AbstractMethod>() as ClassType).getMethodByName('doWork');
-      expect(method.isGetter()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1800
-     * @tc.name testMethodIsGetterAtOne018
      * @tc.desc Verify isGetter distinguishes getter from method in the same class using assertTrue and assertFalse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<IsGetter02_S5E1_MixedGetterMethod>() as ClassType;
       expect(ct.getMethodByName('%%get-x').isGetter()).assertTrue();
       expect(ct.getMethodByName('y').isGetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1900
-     * @tc.name testMethodIsGetterAtOne019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1600
+     * @tc.name testMethodIsGetterAtOne016
      * @tc.desc Verify isGetter returns correct results for multiple getters and methods in Calculator-style class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<IsGetter02_S5E2_Calculator>() as ClassType;
       expect(ct.getMethodByName('%%get-pi').isGetter()).assertTrue();
       expect(ct.getMethodByName('%%get-e').isGetter()).assertTrue();
@@ -593,14 +593,14 @@ export default function MethodIsGetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2000
-     * @tc.name testMethodIsGetterAtOne020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1700
+     * @tc.name testMethodIsGetterAtOne017
      * @tc.desc Verify isGetter returns correct results for getters and methods in inheritance chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<IsGetter02_S5E3_Derived>() as ClassType;
       expect(ct.getMethodByName('%%get-baseProp').isGetter()).assertTrue();
       expect(ct.getMethodByName('%%get-derivedProp').isGetter()).assertTrue();
@@ -609,27 +609,27 @@ export default function MethodIsGetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2400
-     * @tc.name testMethodIsGetterAtOne024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1800
+     * @tc.name testMethodIsGetterAtOne018
      * @tc.desc Verify isGetter returns true for a generic class getter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = (Type.from<IsGetter02_S6E9_Box<string>>() as ClassType).getMethodByName('%%get-item');
       expect(method.isGetter()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2600
-     * @tc.name testMethodIsGetterAtOne026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_1900
+     * @tc.name testMethodIsGetterAtOne019
      * @tc.desc Verify getMethodByName for non-existent method throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct: ClassType = Type.from<Empty23_MethodIsGetter03>() as ClassType;
       try {
         let m: Method | null = ct.getMethodByName('anything');
@@ -641,40 +641,40 @@ export default function MethodIsGetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2700
-     * @tc.name testMethodIsGetterAtOne027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2000
+     * @tc.name testMethodIsGetterAtOne020
      * @tc.desc Verify that isGetter returns true when child method overrides parent private getter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct: ClassType = Type.from<Derived43_MethodIsGetter03>() as ClassType;
       expect(ct.getMethodByName('%%get-val').isGetter()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2900
-     * @tc.name testMethodIsGetterAtOne029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2100
+     * @tc.name testMethodIsGetterAtOne021
      * @tc.desc Verify that isGetter returns false for method overridden across multi-level method chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct: ClassType = Type.from<C46_MethodIsGetter03>() as ClassType;
       expect(_M(ct, 'val').isGetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_3400
-     * @tc.name testMethodIsGetterAtOne034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2200
+     * @tc.name testMethodIsGetterAtOne022
      * @tc.desc Verify that filtering getters by isGetter correctly identifies them in a collection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct: ClassType = Type.from<A114_MethodIsGetter03>() as ClassType;
       let names: string[] = ['%%get-a', 'b', '%%get-c'];
       let getters: Method[] = [];
@@ -688,27 +688,27 @@ export default function MethodIsGetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_3700
-     * @tc.name testMethodIsGetterAtOne037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2300
+     * @tc.name testMethodIsGetterAtOne023
      * @tc.desc Verify that isGetter returns false for regular method implementation of generic interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct: ClassType = Type.from<StringContainer124_MethodIsGetter03>() as ClassType;
       expect(ct.getMethodByName('getItem').isGetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_3800
-     * @tc.name testMethodIsGetterAtOne038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2400
+     * @tc.name testMethodIsGetterAtOne024
      * @tc.desc Verify that isGetter returns true for outer class getter and false for inner class method when they share the same name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerCt: ClassType = Type.from<Outer133_MethodIsGetter03>() as ClassType;
       expect(outerCt.getMethodByName('%%get-val').isGetter()).assertTrue();
       let innerCt: ClassType = Type.from<Inner133_MethodIsGetter03>() as ClassType;
@@ -716,28 +716,28 @@ export default function MethodIsGetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_3900
-     * @tc.name testMethodIsGetterAtOne039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2500
+     * @tc.name testMethodIsGetterAtOne025
      * @tc.desc Verify that isGetter returns correct values for getter and regular method in static inner class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct: ClassType = Type.from<Inner134_MethodIsGetter03>() as ClassType;
       expect(ct.getMethodByName('%%get-x').isGetter()).assertTrue();
       expect(ct.getMethodByName('y').isGetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_4100
-     * @tc.name testMethodIsGetterAtOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISGETTER_ONE_2600
+     * @tc.name testMethodIsGetterAtOne026
      * @tc.desc Verify getMethodByName for parent private getter val on child class yields isGetter false, then the case voluntarily fails expecting TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsGetterAtOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsGetterAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let ct: ClassType = Type.from<Derived164_MethodIsGetter03>() as ClassType;
         expect(_M(ct, 'val').isGetter()).assertFalse();

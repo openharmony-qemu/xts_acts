@@ -619,41 +619,41 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1300
-     * @tc.name testMethodIsSetterAtOne013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1200
+     * @tc.name testMethodIsSetterAtOne012
      * @tc.desc Verify that isSetter returns false for inherited getter from parent class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S33_DerivedFromBase_IsSetter01>() as ClassType;
       expect(cls.getMethodByName('%%get-val').isSetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1900
-     * @tc.name testMethodIsSetterAtOne019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1300
+     * @tc.name testMethodIsSetterAtOne013
      * @tc.desc Verify that isSetter returns true for setter and false for getter in standard property encapsulation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S76_FullProp_IsSetter01>() as ClassType;
       expect(cls.getMethodByName('%%set-x').isSetter()).assertTrue();
       expect(cls.getMethodByName('%%get-x').isSetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2000
-     * @tc.name testMethodIsSetterAtOne020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1400
+     * @tc.name testMethodIsSetterAtOne014
      * @tc.desc Verify that isSetter returns false for all normal methods in multi-level inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S79_C2_IsSetter01>() as ClassType;
       const normalNames: string[] = ['gpFn', 'pFn'];
       for (let i: number = 0; i < normalNames.length; i++) {
@@ -662,14 +662,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2100
-     * @tc.name testMethodIsSetterAtOne021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1500
+     * @tc.name testMethodIsSetterAtOne015
      * @tc.desc Verify that isSetter returns correct results for class implementing interface and extending abstract class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = Type.from<S82_MixedImpl_IsSetter01>() as ClassType;
       expect(cls.getMethodByName('%%set-val').isSetter()).assertTrue();
       expect(cls.getMethodByName('%%set-abstractVal').isSetter()).assertTrue();
@@ -677,14 +677,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2200
-     * @tc.name testMethodIsSetterAtOne022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1600
+     * @tc.name testMethodIsSetterAtOne016
      * @tc.desc Verify that isSetter returns true for setters in unrelated classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls1 = Type.from<S76_FullProp_IsSetter01>() as ClassType;
       const cls2 = Type.from<S86_OtherClassB_IsSetter01>() as ClassType;
       expect(cls1.getMethodByName('%%set-x').isSetter()).assertTrue();
@@ -692,14 +692,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2300
-     * @tc.name testMethodIsSetterAtOne023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1700
+     * @tc.name testMethodIsSetterAtOne017
      * @tc.desc Verify that isSetter returns false for normal methods in unrelated classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls1 = Type.from<S87_NormalOnly_IsSetter01>() as ClassType;
       const cls2 = Type.from<S64_Return_IsSetter01>() as ClassType;
       expect(cls1.getMethodByName('doWork').isSetter()).assertFalse();
@@ -707,40 +707,40 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2400
-     * @tc.name testMethodIsSetterAtOne024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1800
+     * @tc.name testMethodIsSetterAtOne018
      * @tc.desc Verify isSetter returns false for a static ordinary method using assertFalse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = findIsSetter02Method(Type.from<IsSetter02_StaticMethodClass>() as ClassType, 'doSomething');
       expect(method.isSetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2500
-     * @tc.name testMethodIsSetterAtOne025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_1900
+     * @tc.name testMethodIsSetterAtOne019
      * @tc.desc Verify isSetter returns false for a generic class ordinary method using assertFalse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = (Type.from<IsSetter02_GenericClass<string>>() as ClassType).getMethodByName('process');
       expect(method.isSetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2600
-     * @tc.name testMethodIsSetterAtOne026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2000
+     * @tc.name testMethodIsSetterAtOne020
      * @tc.desc Verify isSetter returns false for all ordinary methods in a plain method class using assertFalse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<IsSetter02_PlainMethodClass>() as ClassType;
       const mAdd = ct.getMethodByName('add');
       const mGreet = ct.getMethodByName('greet');
@@ -751,14 +751,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2700
-     * @tc.name testMethodIsSetterAtOne027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2100
+     * @tc.name testMethodIsSetterAtOne021
      * @tc.desc Verify isSetter returns false for all ordinary methods in parent and child classes using assertFalse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const baseType = Type.from<IsSetter02_BaseProp>() as ClassType;
       const derivedType = Type.from<IsSetter02_DerivedProp>() as ClassType;
       const mBase = baseType.getMethodByName('baseMethod');
@@ -768,27 +768,27 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2800
-     * @tc.name testMethodIsSetterAtOne028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2200
+     * @tc.name testMethodIsSetterAtOne022
      * @tc.desc Verify isSetter returns false for an inherited ordinary method using assertFalse
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = (Type.from<IsSetter02_DerivedProp>() as ClassType).getMethodByName('baseMethod');
       expect(method.isSetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2900
-     * @tc.name testMethodIsSetterAtOne029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2300
+     * @tc.name testMethodIsSetterAtOne023
      * @tc.desc Verify isSetter returns correct results for all methods in a class by traversing method categories
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<IsSetter02_PropertyClass>() as ClassType;
       const setterNames: string[] = ['%%set-name', '%%set-age', '%%set-active'];
       const normalNames: string[] = ['doTask', 'helper'];
@@ -801,14 +801,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3000
-     * @tc.name testMethodIsSetterAtOne030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2400
+     * @tc.name testMethodIsSetterAtOne024
      * @tc.desc Verify isSetter returns correct assertEqual results for parent and child class setters and getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const baseType = Type.from<IsSetter02_BaseProp>() as ClassType;
       const derivedType = Type.from<IsSetter02_DerivedProp>() as ClassType;
       const baseSetter = baseType.getMethodByName('%%set-val');
@@ -822,14 +822,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3100
-     * @tc.name testMethodIsSetterAtOne031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2500
+     * @tc.name testMethodIsSetterAtOne025
      * @tc.desc Verify isSetter returns assertTrue for PureSetterClass setters and assertFalse for PureGetterClass getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const pureSetterType = Type.from<IsSetter02_PureSetterClass>() as ClassType;
       const pureGetterType = Type.from<IsSetter02_PureGetterClass>() as ClassType;
       const sX = pureSetterType.getMethodByName('%%set-x');
@@ -843,27 +843,27 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3300
-     * @tc.name testMethodIsSetterAtOne033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2600
+     * @tc.name testMethodIsSetterAtOne026
      * @tc.desc Verify isSetter returns true for a setter when a same-named ordinary method exists in the class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = (Type.from<IsSetter02_SameNameClass>() as ClassType).getMethodByName('%%set-val');
       expect(method.isSetter()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3400
-     * @tc.name testMethodIsSetterAtOne034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2700
+     * @tc.name testMethodIsSetterAtOne027
      * @tc.desc Verify isSetter returns correct results for a large class with 10 properties and 5 ordinary methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<IsSetter02_LargePropClass>() as ClassType;
       for (let i: number = 1; i <= 10; i++) {
         expect(ct.getMethodByName('%%set-p' + i).isSetter()).assertTrue();
@@ -874,14 +874,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3500
-     * @tc.name testMethodIsSetterAtOne035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2800
+     * @tc.name testMethodIsSetterAtOne028
      * @tc.desc Verify isSetter returns correct results for class combining inheritance interface and own methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct = Type.from<IsSetter02_Worker>() as ClassType;
       const setterNames: string[] = ['%%set-status', '%%set-taskName'];
       const otherNames: string[] = ['%%get-status', '%%get-taskName', 'log', 'execute', 'report'];
@@ -894,28 +894,28 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3600
-     * @tc.name testMethodIsSetterAtOne036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_2900
+     * @tc.name testMethodIsSetterAtOne029
      * @tc.desc Verify SingleMethodClass compiles and contains doOneThing method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<IsSetter03_SingleMethodClass>() as ClassType;
       const method = ct.getMethodByName('doOneThing');
       expect(method.getName()).assertEqual('doOneThing');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3800
-     * @tc.name testMethodIsSetterAtOne038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3000
+     * @tc.name testMethodIsSetterAtOne030
      * @tc.desc Verify getMethodByName may not find private parent method from child class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const childType: ClassType = Type.from<IsSetter03_ChildClass2>() as ClassType;
       const method = childType.getMethodByName('privateParentMethod');
       if (method != null) {
@@ -926,14 +926,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4100
-     * @tc.name testMethodIsSetterAtOne041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3100
+     * @tc.name testMethodIsSetterAtOne031
      * @tc.desc Verify isSetter returns true for setters in nested class hierarchy
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const innerMethod = (Type.from<IsSetter03_InnerLevel>() as ClassType).getMethodByName('%%set-inner');
       const outerMethod = (Type.from<IsSetter03_OuterLevel>() as ClassType).getMethodByName('%%set-outer');
       expect(innerMethod.isSetter()).assertTrue();
@@ -941,27 +941,27 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4200
-     * @tc.name testMethodIsSetterAtOne042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3200
+     * @tc.name testMethodIsSetterAtOne032
      * @tc.desc Verify isSetter returns false for getter with side-effect implementation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const method = (Type.from<IsSetter03_SideEffectGetterClass>() as ClassType).getMethodByName('%%get-sideEffect');
       expect(method.isSetter()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4300
-     * @tc.name testMethodIsSetterAtOne043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3300
+     * @tc.name testMethodIsSetterAtOne033
      * @tc.desc Verify getMethodByName for inherited non-existent method throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const parentCt: ClassType = Type.from<IsSetter03_ParentWithSetter>() as ClassType;
         const childCt: ClassType = Type.from<IsSetter03_ChildHides>() as ClassType;
@@ -974,28 +974,28 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4400
-     * @tc.name testMethodIsSetterAtOne044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3400
+     * @tc.name testMethodIsSetterAtOne034
      * @tc.desc Verify implemention class of interface setter has valid method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<IsSetter03_ImplAsNormal>() as ClassType;
       const method = ct.getMethodByName('%%set-val');
       expect(method.isSetter()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4500
-     * @tc.name testMethodIsSetterAtOne045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3500
+     * @tc.name testMethodIsSetterAtOne035
      * @tc.desc Verify alternating isSetter calls on setter and getter are stable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<IsSetter03_AlternatingClass>() as ClassType;
       const setter = ct.getMethodByName('%%set-val');
       const getter = ct.getMethodByName('%%get-val');
@@ -1006,14 +1006,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4600
-     * @tc.name testMethodIsSetterAtOne046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3600
+     * @tc.name testMethodIsSetterAtOne036
      * @tc.desc Verify isSetter correctly classifies setter getter and normal methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<IsSetter03_DemoHundredClass>() as ClassType;
       expect(ct.getMethodByName('%%set-s').isSetter()).assertTrue();
       expect(ct.getMethodByName('%%get-s').isSetter()).assertFalse();
@@ -1021,14 +1021,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4700
-     * @tc.name testMethodIsSetterAtOne047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3700
+     * @tc.name testMethodIsSetterAtOne037
      * @tc.desc Verify getMethodByName for parent private setter val on child class yields isSetter false, then the case voluntarily fails expecting TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const childType: ClassType = Type.from<IsSetter03_ChildOfPrivateSetter>() as ClassType;
         const method = _M(childType, 'val');
@@ -1043,14 +1043,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4800
-     * @tc.name testMethodIsSetterAtOne048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3800
+     * @tc.name testMethodIsSetterAtOne038
      * @tc.desc Verify isSetter returns true for setter regardless of access modifier
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<IsSetter03_AccessModifierClass>() as ClassType;
       expect(ct.getMethodByName('%%set-pub').isSetter()).assertTrue();
       expect(ct.getMethodByName('%%set-prot').isSetter()).assertTrue();
@@ -1059,14 +1059,14 @@ export default function MethodIsSetter01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_4900
-     * @tc.name testMethodIsSetterAtOne049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISSETTER_ONE_3900
+     * @tc.name testMethodIsSetterAtOne039
      * @tc.desc Verify isSetter returns false for getter regardless of access modifier
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsSetterAtOne049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsSetterAtOne039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const ct: ClassType = Type.from<IsSetter03_AccessModGetterClass>() as ClassType;
       expect(ct.getMethodByName('%%get-pub').isSetter()).assertFalse();
       expect(ct.getMethodByName('%%get-prot').isSetter()).assertFalse();

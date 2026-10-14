@@ -105,14 +105,14 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0300
-     * @tc.name testMethodIsFinalAtOne003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0200
+     * @tc.name testMethodIsFinalAtOne002
      * @tc.desc Verify isFinal on normal class static method with parameters throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         expect(_M((Type.from<NormalCls_IsFinal01_T31>() as ClassType), 'create').isFinal()).assertFalse();
         expect().assertFail();
@@ -120,14 +120,14 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0400
-     * @tc.name testMethodIsFinalAtOne004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0300
+     * @tc.name testMethodIsFinalAtOne003
      * @tc.desc Verify isFinal on normal class static getter throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         expect(_M((Type.from<NormalCls_IsFinal01_T35>() as ClassType), '%%get-count').isFinal()).assertFalse();
         expect().assertFail();
@@ -135,14 +135,14 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0500
-     * @tc.name testMethodIsFinalAtOne005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0400
+     * @tc.name testMethodIsFinalAtOne004
      * @tc.desc Verify getConstructor with out-of-range index throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         expect((Type.from<NormalCls_IsFinal01_T39>() as ClassType).getConstructor(1).isFinal()).assertFalse();
         expect().assertFail();
@@ -150,14 +150,14 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0800
-     * @tc.name testMethodIsFinalAtOne008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0500
+     * @tc.name testMethodIsFinalAtOne005
      * @tc.desc Verify isFinal returns false for all methods in five-layer normal inheritance chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<E_IsFinal01_T50>() as ClassType;
       expect(ct.getMethodByName('a').isFinal()).assertFalse();
       expect(ct.getMethodByName('b').isFinal()).assertFalse();
@@ -167,41 +167,41 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0900
-     * @tc.name testMethodIsFinalAtOne009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0600
+     * @tc.name testMethodIsFinalAtOne006
      * @tc.desc Verify isFinal returns false for bottom non-final method in three-layer inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<Bot_IsFinal01_T52>() as ClassType;
       expect(ct.getMethodByName('botMethod').isFinal()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1400
-     * @tc.name testMethodIsFinalAtOne014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0700
+     * @tc.name testMethodIsFinalAtOne007
      * @tc.desc Verify isFinal returns false for interface methods implemented in normal subclass with multi-level interface inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<Impl_IsFinal01_T74>() as ClassType;
       expect(ct.getMethodByName('methodA').isFinal()).assertFalse();
       expect(ct.getMethodByName('methodB').isFinal()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1600
-     * @tc.name testMethodIsFinalAtOne016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0800
+     * @tc.name testMethodIsFinalAtOne008
      * @tc.desc Verify isFinal returns false for all ten methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<TenMethods_IsFinal01_T81>() as ClassType;
       expect(ct.getMethodByName('a').isFinal()).assertFalse();
       expect(ct.getMethodByName('b').isFinal()).assertFalse();
@@ -216,14 +216,14 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1700
-     * @tc.name testMethodIsFinalAtOne017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_0900
+     * @tc.name testMethodIsFinalAtOne009
      * @tc.desc Verify isFinal on static method throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ct = Type.from<Mixed_IsFinal01_T83>() as ClassType;
       try {
         expect(_M(ct, 's').isFinal()).assertFalse();
@@ -237,38 +237,38 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1800
-     * @tc.name testMethodIsFinalAtOne018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1000
+     * @tc.name testMethodIsFinalAtOne010
      * @tc.desc Verify getMethodsNum returns 18 for empty final class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((Type.from<EmptyCls_IsFinal01_T85>() as ClassType).getMethodsNum()).assertEqual(18);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1900
-     * @tc.name testMethodIsFinalAtOne019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1100
+     * @tc.name testMethodIsFinalAtOne011
      * @tc.desc Verify isFinal returns false for constructor in normal class with only constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((Type.from<OnlyCtor_IsFinal01_T88>() as ClassType).getConstructor(0).isFinal()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_3100
-     * @tc.name testMethodIsFinalAtOne031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1200
+     * @tc.name testMethodIsFinalAtOne012
      * @tc.desc Verify that getMethodByName with non-existent name on normal class throws exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let m = (Type.from<Cls_IsFinal03_T21>() as ClassType).getMethodByName('nonExistent');
         m.isFinal();
@@ -277,40 +277,40 @@ export default function MethodIsFinal01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_3200
-     * @tc.name testMethodIsFinalAtOne032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1300
+     * @tc.name testMethodIsFinalAtOne013
      * @tc.desc Verify that isFinal returns false for abstract method implemented in normal subclass
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let ct = Type.from<NormalCls_IsFinal03_T27>() as ClassType;
         expect(ct.getMethodByName('doIt').isFinal()).assertFalse();
         });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_3300
-     * @tc.name testMethodIsFinalAtOne033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1400
+     * @tc.name testMethodIsFinalAtOne014
      * @tc.desc Verify that isFinal returns false for implemented interface method accessed from impl class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m = (Type.from<Impl_IsFinal03_T45>() as ClassType).getMethodByName('b');
       expect(m.isFinal()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_3500
-     * @tc.name testMethodIsFinalAtOne035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_METHOD_ISFINAL_ONE_1500
+     * @tc.name testMethodIsFinalAtOne015
      * @tc.desc Verify that getMethodsNum of final class with 19 methods returns 19
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testMethodIsFinalAtOne035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testMethodIsFinalAtOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect((Type.from<Cls_IsFinal03_T82>() as ClassType).getMethodsNum()).assertEqual(19);
     });
   });
