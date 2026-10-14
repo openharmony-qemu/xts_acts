@@ -196,7 +196,7 @@ export default function File_Nopermission_test() {
         done();
       } catch (err) {
         console.info("VolumeManager_NoPermission_001 failed with error message: " + err.message + ", error code: " + err.code);
-        expect(err.code == 201).assertTrue();
+        expect(err.code === 201).assertTrue();
         done();
       }
     });
@@ -217,7 +217,7 @@ export default function File_Nopermission_test() {
         done();
       } catch (err) {
         console.info("VolumeManager_NoPermission_002 failed with error message: " + err.message + ", error code: " + err.code);
-        expect(err.code == 201).assertTrue();
+        expect(err.code === 201).assertTrue();
         done();
       }
     });
