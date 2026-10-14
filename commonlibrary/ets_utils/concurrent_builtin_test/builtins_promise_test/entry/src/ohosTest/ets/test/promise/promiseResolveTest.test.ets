@@ -1144,7 +1144,7 @@ export default function promiseResolveTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseResolveTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseResolveTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const start = Date.now();
       const innerAny = Promise.any([
         Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-20ms'), 200))),
@@ -1159,6 +1159,7 @@ export default function promiseResolveTest() {
       const end = Date.now();
 
       expect(result).assertEqual('outer-5ms');
+      done();
     });
 
     /**
