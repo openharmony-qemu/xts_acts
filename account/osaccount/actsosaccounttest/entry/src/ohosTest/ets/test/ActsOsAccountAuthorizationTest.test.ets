@@ -15,9 +15,10 @@
 import { authorization, BusinessError } from '@kit.BasicServicesKit'
 import { describe, it, expect, beforeEach, TestType, Size, Level } from '@ohos/hypium-dynamic'
 import { common } from '@kit.AbilityKit'
-import { Driver, ON } from '@ohos.UiTest'
+import { Driver, ON, Component } from '@ohos.UiTest'
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import deviceInfo from '@ohos.deviceInfo';
+import display from '@ohos.display';
 
 
 const abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -52,6 +53,24 @@ async function clearAuthorizationDialog(): Promise<void> {
   console.info("====>clearAuthorizationDialog: end====");
 }
 
+async function clickAuthDialogFallback(confirm: boolean): Promise<boolean> {
+  try {
+    let d: display.Display = display.getDefaultDisplaySync();
+    let w: number = d.width;
+    let h: number = d.height;
+    console.info("====>clickAuthDialogFallback screen " + w + "x" + h + " confirm=" + confirm);
+    let btnY: number = Math.floor(h * 0.72);
+    let btnX: number = confirm ? Math.floor(w * 0.68) : Math.floor(w * 0.32);
+    console.info("====>clickAuthDialogFallback click at (" + btnX + "," + btnY + ")");
+    await driver.click(btnX, btnY);
+    console.info("====>clickAuthDialogFallback click done");
+    return true;
+  } catch (err) {
+    console.info("====>clickAuthDialogFallback err: " + JSON.stringify(err));
+    return false;
+  }
+}
+
 async function requestAuthAndClick(
   manager: authorization.AuthorizationManager,
   privilege: authorization.Privilege,
@@ -62,29 +81,22 @@ async function requestAuthAndClick(
     manager.requestAuthorization(privilege, context);
   await sleep(3000);
   let clicked = false;
-  let maxRetries = 10;
+  let maxRetries = 5;
   for (let retry = 0; retry < maxRetries && !clicked; retry++) {
     for (let i = 0; i < buttonCandidates.length; i++) {
       let btnText = buttonCandidates[i];
       try {
-        let btn = await driver.findComponent(ON.text(btnText));
+        let btn: Component | null = await driver.findComponent(ON.text(btnText));
         if (btn != null) {
-          await sleep(500);
           await btn.click();
           await sleep(1000);
-          let dialogDismissed = false;
-          try {
-            let btnStill = await driver.findComponent(ON.text(btnText));
-            dialogDismissed = (btnStill == null);
-          } catch (e) {
-            dialogDismissed = true;
-          }
-          if (dialogDismissed) {
+          let btnAfter: Component | null = await driver.findComponent(ON.text(btnText));
+          if (btnAfter != null) {
+            console.info("====>requestAuthAndClick clicked failed: " + btnText + " (retry " + retry + ")");
+          } else {
             clicked = true;
             console.info("====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
             break;
-          } else {
-            console.info("====>requestAuthAndClick click landed on dialog, retry: " + btnText + " (retry " + retry + ")");
           }
         }
       } catch (err) {
@@ -92,13 +104,28 @@ async function requestAuthAndClick(
       }
     }
     if (!clicked) {
-      console.info("====>requestAuthAndClick retry " + retry + " no button found or click failed, waiting...");
+      console.info("====>requestAuthAndClick retry " + retry + " no button found, waiting...");
       await sleep(1000);
     }
   }
 
   if (!clicked) {
-    console.info("====>requestAuthAndClick: no button effectively clicked after " + maxRetries + " retries");
+    console.info("====>requestAuthAndClick: no button via findComponent, trying coordinate fallback");
+    let firstBtn: string = buttonCandidates[0];
+    let isConfirm: boolean = (firstBtn === '确定' || firstBtn === 'OK');
+    for (let retry = 0; retry < maxRetries && !clicked; retry++) {
+      clicked = await clickAuthDialogFallback(isConfirm);
+      if (clicked) {
+        console.info("====>requestAuthAndClick coordinate fallback clicked (retry " + retry + ")");
+      } else {
+        console.info("====>requestAuthAndClick coordinate fallback retry " + retry + " failed");
+        await sleep(1000);
+      }
+    }
+  }
+
+  if (!clicked) {
+    console.info("====>requestAuthAndClick: no button clicked after all retries and fallbacks");
   }
   let result: authorization.AuthorizationResult = await pending;
   return result;
