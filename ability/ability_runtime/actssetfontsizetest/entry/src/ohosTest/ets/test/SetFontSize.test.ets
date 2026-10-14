@@ -22,7 +22,7 @@ import display from '@ohos.display';
 
 let currentDisplayId = display.getDefaultDisplaySync().id;
 let context = getContext(this) as common.UIAbilityContext;
-
+let driver:Driver;
 function sleep(ms: number) {
   return new Promise<string>(resolve => setTimeout(resolve, ms));
 }
@@ -106,7 +106,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
@@ -172,7 +171,8 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
+        let currentDisplayId = display.getDefaultDisplaySync().id;
+        let driver:Driver = await Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
@@ -241,7 +241,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
@@ -310,7 +309,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
@@ -379,7 +377,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
@@ -445,7 +442,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
@@ -512,7 +508,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button.click();
       } catch (e) {
@@ -577,7 +572,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
@@ -645,7 +639,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
@@ -713,7 +706,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
         await sleep(2000);
@@ -781,7 +773,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
@@ -846,7 +837,6 @@ export default function abilityTest() {
           }
         });
         await sleep(1000);
-        let driver:Driver = Driver.create();
         let button1: Component = await driver.waitForComponent(ON.id('set and show').belongingDisplay(currentDisplayId), 3000);
         await button1.click();
       } catch (e) {
