@@ -1,14 +1,3 @@
-/*
-* Copyright (c) 2022 Huawei Device Co., Ltd.
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
@@ -23,42 +12,44 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
  
 export default class MainAbility extends Ability {
-    onCreate(want:Want, launchParam:AbilityConstant.LaunchParam) {
-        console.log('test MainAbility onCreate')
-        try{
-            console.log('test MainAbility getCurrentAppCloneIndex start')
-            let appIndex = this.context.getApplicationContext().getCurrentAppCloneIndex();
-            console.log('MainAbility appIndex ' + appIndex)
-            if(appIndex === 0){
-                AppStorage.setOrCreate('appCloneSupport', true);
-            }
-        }catch(e){
-            console.log('MainAbility getCurrentAppCloneIndex catch ' + e.code + ' ' + e.message)
-            AppStorage.setOrCreate('appCloneSupport', false);
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    console.log('test MainAbility onCreate')
+    try{
+        console.log('test MainAbility getCurrentAppCloneIndex start')
+        let appIndex = this.context.getApplicationContext().getCurrentAppCloneIndex();
+        console.log('MainAbility appIndex ' + appIndex)
+        if(appIndex === 0){
+            AppStorage.setOrCreate('appCloneSupport', true);
         }
-        console.log('test MainAbility getCurrentAppCloneIndex end')
-        let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-        let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-        console.info('start run testcase!!!testttt')
-        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+    }catch(e){
+        console.log('MainAbility getCurrentAppCloneIndex catch ' + e.code + ' ' + e.message)
+        AppStorage.setOrCreate('appCloneSupport', false);
     }
+    console.log('test MainAbility getCurrentAppCloneIndex end')
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    console.info('test start run testcase!!!')
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+  }
  
-    onDestroy() {
-        console.log('test MainAbility onDestroy')
-    }
+  onDestroy() {
+    console.log('MainAbility onDestroy')
+  }
  
-    onWindowStageCreate(windowStage:window.WindowStage) {
-    }
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    console.log('MainAbility onWindowStageCreate')
+    windowStage.loadContent('MainAbility/pages/index', null)
+    globalThis.abilityContext = this.context;
+  }
  
-    onWindowStageDestroy() {
-        console.log('test MainAbility onWindowStageDestroy')
-    }
+  onWindowStageDestroy() {
+    console.log('test MainAbility onWindowStageDestroy')
+  }
  
-    onForeground() {
-        console.log('test MainAbility onForeground')
-    }
+  onForeground() {
+    console.log('test MainAbility onForeground')
+  }
  
-    onBackground() {
-        console.log('test MainAbility onBackground')
-    }
-};
+  onBackground() {
+    console.log('test MainAbility onBackground')
+  }
