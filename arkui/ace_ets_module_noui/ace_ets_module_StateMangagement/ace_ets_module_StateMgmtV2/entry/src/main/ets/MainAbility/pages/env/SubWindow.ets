@@ -12,9 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { uiObserver, window, UIUtils, display, SystemProperties } from '@kit.ArkUI';
+import { uiObserver, window,UIUtils,display } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
-import { BusinessError } from '@ohos.base';
 let subWindowClass: window.Window | undefined = undefined;
 let envNum: number = 0;
 
@@ -33,7 +32,7 @@ struct SubMainWindow {
   }
 
   private isWindowInfoInitialized(): boolean {
-    return this.getUIContext().getWindowId() !== undefined;
+    return this.getUIContext().isWindowInfoInitialized();
   }
 
   build() {
