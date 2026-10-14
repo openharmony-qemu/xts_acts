@@ -71,30 +71,43 @@ async function requestAuthAndClick(
     manager.requestAuthorization(privilege, context);
   await Utils.msSleep(3000);
   let clicked: boolean = false;
-  let maxRetries: int = 5;
+  let maxRetries: int = 10;
   for (let retry: int = 0; retry < maxRetries && !clicked; retry++) {
     for (let i: int = 0; i < buttonCandidates.length; i++) {
       let btnText: string = buttonCandidates[i];
       try {
         let btn = await driver.findComponent(ON.text(btnText));
         if (btn != null) {
+          await Utils.msSleep(500);
           await btn.click();
-          clicked = true;
-          hilog.info(0x0000, tag, "====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
-          break;
+          await Utils.msSleep(1000);
+          let dialogDismissed: boolean = false;
+          try {
+            let btnStill = await driver.findComponent(ON.text(btnText));
+            dialogDismissed = (btnStill == null);
+          } catch (e) {
+            dialogDismissed = true;
+          }
+          if (dialogDismissed) {
+            clicked = true;
+            hilog.info(0x0000, tag, "====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
+            break;
+          } else {
+            hilog.info(0x0000, tag, "====>requestAuthAndClick click landed on dialog, retry: " + btnText + " (retry " + retry + ")");
+          }
         }
       } catch (err) {
         hilog.info(0x0000, tag, "====>requestAuthAndClick find " + btnText + " err: " + JSON.stringify(err));
       }
     }
     if (!clicked) {
-      hilog.info(0x0000, tag, "====>requestAuthAndClick retry " + retry + " no button found, waiting...");
+      hilog.info(0x0000, tag, "====>requestAuthAndClick retry " + retry + " no button found or click failed, waiting...");
       await Utils.msSleep(1000);
     }
   }
 
   if (!clicked) {
-    hilog.info(0x0000, tag, "====>requestAuthAndClick: no button clicked via findComponent after " + maxRetries + " retries");
+    hilog.info(0x0000, tag, "====>requestAuthAndClick: no button effectively clicked after " + maxRetries + " retries");
   }
   let result: authorization.AuthorizationResult = await pending;
   return result;

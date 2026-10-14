@@ -62,30 +62,43 @@ async function requestAuthAndClick(
     manager.requestAuthorization(privilege, context);
   await sleep(3000);
   let clicked = false;
-  let maxRetries = 5;
+  let maxRetries = 10;
   for (let retry = 0; retry < maxRetries && !clicked; retry++) {
     for (let i = 0; i < buttonCandidates.length; i++) {
       let btnText = buttonCandidates[i];
       try {
         let btn = await driver.findComponent(ON.text(btnText));
         if (btn != null) {
+          await sleep(500);
           await btn.click();
-          clicked = true;
-          console.info("====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
-          break;
+          await sleep(1000);
+          let dialogDismissed = false;
+          try {
+            let btnStill = await driver.findComponent(ON.text(btnText));
+            dialogDismissed = (btnStill == null);
+          } catch (e) {
+            dialogDismissed = true;
+          }
+          if (dialogDismissed) {
+            clicked = true;
+            console.info("====>requestAuthAndClick clicked: " + btnText + " (retry " + retry + ")");
+            break;
+          } else {
+            console.info("====>requestAuthAndClick click landed on dialog, retry: " + btnText + " (retry " + retry + ")");
+          }
         }
       } catch (err) {
         console.info("====>requestAuthAndClick find " + btnText + " err: " + JSON.stringify(err));
       }
     }
     if (!clicked) {
-      console.info("====>requestAuthAndClick retry " + retry + " no button found, waiting...");
+      console.info("====>requestAuthAndClick retry " + retry + " no button found or click failed, waiting...");
       await sleep(1000);
     }
   }
 
   if (!clicked) {
-    console.info("====>requestAuthAndClick: no button clicked via findComponent after " + maxRetries + " retries");
+    console.info("====>requestAuthAndClick: no button effectively clicked after " + maxRetries + " retries");
   }
   let result: authorization.AuthorizationResult = await pending;
   return result;
