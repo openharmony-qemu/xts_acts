@@ -77,7 +77,9 @@ export default function abilityTest() {
           setTimeout(async () => {
             console.info('====>Acts_ShareExtensionAbility_0100 unSubscribeCallback');
             await globalThis.terminate('Acts_ShareExtensionAbility_0100');
+            console.info('====>Acts_ShareExtensionAbility_0100 terminateCalledAbility before');
             await globalThis.terminateCalledAbility('Acts_ShareExtensionAbility_0100');
+            console.info('====>Acts_ShareExtensionAbility_0100 terminateCalledAbility after');
             await sleep(500);
             done();
           }, 1000);
