@@ -4948,3 +4948,560 @@ export default function TaskPoolTest(): void {
      * @tc.name   testTaskPoolClassStatic186
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1930
      * @tc.desc   taskpool support executeDelayed interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let task: taskpool.Task = new taskpool.Task(printArgs, 100.0);
+        taskpool.executeDelayed(-100, task);
+      expect().assertFail();
+    } catch(e) {
+        expect(e.code).assertEqual(10200028);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic187
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1940
+     * @tc.desc   executePeriodically schedules an async task with positive period and LOW priority, then cancel works
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let task = new taskpool.Task(testString, "hello");
+        // 周期任务 duration 落账有秒级延迟且负载下不可达（实测 2995ms/超 5s），不做时序断言，对齐 0002 稳定形态
+        taskpool.executePeriodically(100, task, taskpool.Priority.LOW);
+        await asyncSleep(500);
+        taskpool.cancel(task);
+        expect(task.isDone()).assertFalse();
+      } catch (e) {
+        console.error(`testTaskPoolClassStatic187 failed`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic188
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1950
+     * @tc.desc   TaskPool converts a cloned number array into the returned typed array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let source: Array<number> = [0, 0, 0, 0];
+      let task: taskpool.Task = new taskpool.Task(setCloneListTest, source);
+      try {
+        let result: Int32Array = await taskpool.execute(task) as Int32Array;
+        expect(result[0]).assertEqual(5);
+        expect(result[3]).assertEqual(8);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic189
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1960
+     * @tc.desc   taskpool support sendData and onReceiveData interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let res: number = 0;
+        let task: taskpool.Task = new taskpool.Task(sendDataTest, 1.0);
+        task.onReceiveData((data: number)=>{
+          res = data;
+        });
+        await taskpool.execute(task);
+        // sendData 回调与任务结果分属两条异步事件队列，无先后保证，轮询等待数据最终送达
+        const deadline: number = Date.now() + 2000;
+        while (!(res === 10) && Date.now() < deadline) {
+          await asyncSleep(10.0);
+        }
+        expect(res).assertEqual(10);
+      } catch (error) {
+        console.error("testTaskPoolClassStatic189 failed");
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1970
+     * @tc.desc   taskpool support SendableClass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let testClass1 = new SendableClass(10);
+        let testClass2 = new SendableClass(20);
+        let task: taskpool.Task = new taskpool.Task(sendableClassTestFunc, testClass1, testClass2);
+        let res: number = await taskpool.execute(task) as number;
+        expect(res).assertEqual(30);
+      } catch (error) {
+        console.error(`testTaskPoolClassStatic190 failed`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic191
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1980
+     * @tc.desc   taskpool support Int8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let int8Buffer: Int8Array = new Int8Array(3);
+      let task: taskpool.Task = new taskpool.Task(Int8ArrayTestFunc, int8Buffer);
+      try {
+        let res: Int8Array = await taskpool.execute(task) as Int8Array;
+        expect(res.length).assertEqual(3);
+        expect(res[1]).assertEqual(1);
+        expect(res[2]).assertEqual(2);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic192
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1990
+     * @tc.desc   taskpool support collections.Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let set: Set<number> = new Set<number>([1, 2, 3]);
+      let task: taskpool.Task = new taskpool.Task(SetTestFunc, set);
+      try {
+        let res: Set<number> = await taskpool.execute(task) as Set<number>;
+        expect(res.size).assertEqual(4);
+        expect(res.has(4)).assertTrue();
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic193
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2000
+     * @tc.desc   taskpool support collections.Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let map: Map<number, number> = new Map<number, number>([[1, 2], [3, 4]]);
+      let task: taskpool.Task = new taskpool.Task(MapTestFunc, map);
+      try {
+        let res: Map<number, number> = await taskpool.execute(task) as Map<number, number>;
+        expect(res.size).assertEqual(3);
+        expect(res.get(5)).assertEqual(6);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic194
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2010
+     * @tc.desc   taskpool support SendableClass
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testClass1 = new SimpleSendable(10);
+      let testClass2 = new SimpleSendable(20);
+      let task: taskpool.Task = new taskpool.Task(simpleSendableClassTestFunc, testClass1, testClass2);
+      try {
+        let res: number = await taskpool.execute(task) as number;
+        expect(res).assertEqual(30);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic195
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2020
+     * @tc.desc   taskpool support Uint8ClampedArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let arkTSTest : Uint8ClampedArray = new Uint8ClampedArray(3);
+      let task: taskpool.Task = new taskpool.Task(Uint8ClampedArrayTestFunc, arkTSTest);
+      try {
+        let res: Uint8ClampedArray = await taskpool.execute(task) as Uint8ClampedArray;
+        expect(res.length).assertEqual(3);
+        expect(res.at(1)).assertEqual(1);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic196
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2030
+     * @tc.desc   taskpool execute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let ret1: number = 0;
+      let ret2 = "";
+      let ret3 = "";
+      try {
+        const value_1: number = await taskpool.execute(printArgs, 100.0) as number;
+        ret1 = value_1;
+
+        const value_2: string = await taskpool.execute(testWithThreeParams, 100.0, "test", 100.0) as string;
+        ret2 = value_2;
+
+        const value_3: string = await taskpool.execute(testWithArray, [100, "test"]) as string;
+        ret3 = value_3;
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+
+      expect(ret1).assertEqual(100);
+      expect(ret2).assertEqual("result: test 200");
+      expect(ret3).assertEqual("result:[100,\"test\"]");
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic197
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2040
+     * @tc.desc   taskpool execute tasks with different priorities
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let ret1: number = 0;
+      let ret2: number = 0;
+      let ret3: number = 0;
+
+      let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0); // 100: test number
+      let task2: taskpool.Task = new taskpool.Task(printArgs, 200.0); // 200: test number
+      let task3: taskpool.Task = new taskpool.Task(printArgs, 300.0); // 300: test number
+      try {
+        const value_4: number = await taskpool.execute(task1, taskpool.Priority.LOW) as number;
+        ret1 = value_4;
+
+        const value_5: number = await taskpool.execute(task2, taskpool.Priority.MEDIUM) as number;
+        ret2 = value_5;
+
+        const value_6: number = await taskpool.execute(task3, taskpool.Priority.HIGH) as number;
+        ret3 = value_6;
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+
+      expect(ret1).assertEqual(100);
+      expect(ret2).assertEqual(200);
+      expect(ret3).assertEqual(300);
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic198
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2050
+     * @tc.desc   taskpool executeDelayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let ret1 = "";
+      let task: taskpool.Task = new taskpool.Task(printStrArgs, "test");
+      try {
+        let delayedResult: Any = await taskpool.executeDelayed(500, task);
+        ret1 = delayedResult as string;
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      expect(ret1).assertEqual("test");
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic199
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2060
+     * @tc.desc   taskpool executePeriodically
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let res: number = 0;
+      let received: boolean = false;
+      const periodicTask: taskpool.Task = new taskpool.Task(sendDataTest, 200.0);
+      periodicTask.onReceiveData((data: number) => {
+        res = data;
+        received = true;
+        console.info("TaskPoolTestClass199: data is: " + data);
+      });
+      try {
+        taskpool.executePeriodically(500, periodicTask);
+        const waitStart: number = Date.now();
+        while (!received && Date.now() - waitStart < 5000) {
+          await promiseCase();
+        }
+        expect(received).assertTrue();
+        expect(res).assertEqual(2000);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        taskpool.cancel(periodicTask);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2070
+     * @tc.desc   taskpool executePeriodically
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let res: number = 0;
+      let receivedCount: number = 0;
+      let firstTime: number = 0;
+      let secondTime: number = 0;
+      const periodicTask: taskpool.Task = new taskpool.Task(sendDataTest, 200.0);
+      periodicTask.onReceiveData((data: number) => {
+        res = data;
+        receivedCount += 1;
+        if (receivedCount === 1) {
+          firstTime = Date.now();
+        } else if (receivedCount === 2) {
+          secondTime = Date.now();
+        }
+        console.info("TaskPoolTestClass200: data is: " + data);
+      });
+      try {
+        taskpool.executePeriodically(1000, periodicTask);
+        const waitStart: number = Date.now();
+        while (receivedCount < 2 && Date.now() - waitStart < 5000) {
+          try {
+            await asyncSleep(50.0);
+          } catch (error) {
+            console.info(`gate-catch: ${JSON.stringify(error)}`);
+            expect().assertFail();
+          }
+        }
+        expect(receivedCount >= 2).assertTrue();
+        expect(res).assertEqual(2000);
+        expect(secondTime - firstTime >= 500).assertTrue();
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      } finally {
+        taskpool.cancel(periodicTask);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic201
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2080
+     * @tc.desc   taskpool taskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let task:taskpool.Task = new taskpool.Task(errorTest);
+      let task2:taskpool.Task = new taskpool.Task(printArgs, 100.0);
+      let taskGroup:taskpool.TaskGroup = new taskpool.TaskGroup();
+      taskGroup.addTask(task);
+      taskGroup.addTask(task2);
+      let caught: boolean = false;
+      try {
+        await taskpool.execute(taskGroup);
+        expect().assertFail();
+      } catch (error) {
+        caught = true;
+      }
+      expect(caught).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic202
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2090
+     * @tc.desc   taskpool sendableFunc add sendableClass test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let task1 = new taskpool.Task(sendableFuncTest, sendableFunc);
+      try {
+        let res: number = await taskpool.execute(task1) as number;
+        expect(res).assertEqual(500);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+
+      let classTest: SendableClassTest = new SendableClassTest(sendableFunc);
+      let task2 = new taskpool.Task(sendableClassTest, classTest);
+      try {
+        let res2: number = await taskpool.execute(task2) as number;
+        expect(res2).assertEqual(600);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic203
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2100
+     * @tc.desc   Cancel the task that has been executed via SequenceRunner
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let task: taskpool.Task = new taskpool.Task(printArgs, 100.0); // 100: test number
+        let runner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
+        await runner.execute(task);
+        expect(task.isDone()).assertTrue();
+        try {
+          taskpool.cancel(task);
+        expect().assertFail();
+      } catch (e) {
+          expect(e.code).assertEqual(10200082);
+        }
+      } catch (error) {
+        console.error(`testTaskPoolClassStatic203 failed`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic204
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2110
+     * @tc.desc   Register a callback of TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let task1Succeeded: boolean = false;
+        let task2Succeeded: boolean = false;
+        let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(printArgs, 100.0); // 100: test number
+        task1.onExecutionSucceeded(()=>{
+          try {
+            task1Succeeded = true;
+
+          } catch (error) {
+            console.info(`gate-cb-catch: ${JSON.stringify(error)}`);
+            expect(error).assertFail();
+          }})
+        let task2: taskpool.Task = new taskpool.Task(printArgs, 200.0); // 200: test number
+        task2.onExecutionSucceeded(()=>{
+          try {
+            task2Succeeded = true;
+
+          } catch (error) {
+            console.info(`gate-cb-catch: ${JSON.stringify(error)}`);
+            expect(error).assertFail();
+          }})
+        taskGroup.addTask(task1);
+        taskGroup.addTask(task2);
+        try {
+          let res: Array<number> = await taskpool.execute(taskGroup) as Array<number>;
+          expect(res.includes(100)).assertTrue();
+          expect(res.includes(200)).assertTrue();
+        } catch (error) {
+          console.info(`gate-catch: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        }
+        let waitCount: number = 0;
+        while (!task1Succeeded || !task2Succeeded) {
+          await promiseCase();
+          waitCount++;
+          if (waitCount >= 50) {
+            break;
+          }
+        }
+        expect(task1Succeeded).assertTrue();
+        expect(task2Succeeded).assertTrue();
+      } catch (error) {
+        console.error("testTaskPoolClassStatic204 failed");
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   testTaskPoolClassStatic205
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_2120
+     * @tc.desc   taskpool TaskGroup returns Map result from hashMapTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskPoolClassStatic205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
+      let task1: taskpool.Task = new taskpool.Task(hashMapTest, 300.0); // 300: test number
+      taskGroup.addTask(task1);
+      try {
+        let result: Array<Map<string, number>> = await taskpool.execute(taskGroup) as Array<Map<string, number>>;
+        expect(result[0].get("a")).assertEqual(123);
+      } catch (error) {
+        console.info(`gate-catch: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+  })
+}
