@@ -4948,3 +4948,1653 @@ export default function TaskPoolStaticTest(): void {
           let res: Array<number> = await taskpool.execute(task) as Array<number>;
           console.info(`${caseName}: testTaskpoolTask010 return value: ${JSON.stringify(res)}`);
             isTerminate = true;
+            expect(res[0]).assertEqual(2.0);
+            expect(res[1]).assertEqual(3.0);
+            expect(res[2]).assertEqual(4.0);
+            expect(res[3]).assertEqual(5.0);
+            expect(res[4]).assertEqual(6.0);
+        } catch (error) {
+          console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+          isTerminate = true;
+          expect().assertFail();
+        }
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        console.info(`${caseName} test end`);
+      } catch (error) {
+        console.error("testTaskpoolTaskStatic010 failed");
+        expect(false).assertFail();
+      }
+      done();
+    });
+
+    //func:使用@Concurrent装饰器装饰,返回Map类型，参数1：Map，参数2：boolean----then中可断言返回类型及返回值
+    /**
+     * @tc.name   testTaskpoolTaskStatic011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1530
+     * @tc.desc   testTaskpoolTask011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskStatic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const caseName: string = 'testTaskpoolTaskStatic011';
+        let isTerminate: boolean = false;
+        let resMap: Map<string, number> = new Map<string, number>([
+          ['1', 1],
+          ['2', 2],
+          ['3', 3],
+        ]);
+        let resB: boolean = false;
+        console.info(`${caseName} test start`);
+
+        try {
+          let task: taskpool.Task = new taskpool.Task(funcRetMap, resMap, resB);
+          let res: Map<string, number> = await taskpool.execute(task) as Map<string, number>;
+          console.info(`${caseName}:  return value: ${resMap.get('1')}`);
+            isTerminate = true;
+            expect(res.get('1')).assertEqual(2);
+        } catch (error) {
+          console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+          isTerminate = true;
+          expect().assertFail();
+        }
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        console.info(`${caseName} test end`);
+      } catch (error) {
+        console.error("testTaskpoolTaskStatic011 failed");
+        expect(false).assertFail();
+      }
+      done();
+    });
+
+    //func:使用@Concurrent装饰器装饰,返回Set类型，参数1：Set，参数2：boolean----then中可断言返回类型及返回值
+    /**
+     * @tc.name   testTaskpoolTaskStatic012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1540
+     * @tc.desc   testTaskpoolTask012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskStatic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const caseName: string = 'testTaskpoolTaskStatic012';
+        let isTerminate: boolean = false;
+        console.info(`${caseName} test start`);
+        try {
+          let resSet: Set<number> = new Set<number>([1, 2, 3, 4, 5]);
+          let resB: boolean = false;
+          let task: taskpool.Task = new taskpool.Task(funcRetSet, resSet, resB);
+          let res: Set<number> = await taskpool.execute(task) as Set<number>;
+          console.info(`${caseName}:  return value: ${JSON.stringify(res)}`);
+            isTerminate = true;
+            for (let value of resSet) {
+              console.info(`${caseName}:  resSet value: ${value}`);
+            }
+            expect(res.size).assertEqual(5);
+        } catch (error) {
+          console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+          isTerminate = true;
+          expect().assertFail();
+        }
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        console.info(`${caseName} test end`);
+      } catch (error) {
+        console.error("testTaskpoolTaskStatic012 failed");
+        expect(false).assertFail();
+      }
+      done();
+    });
+
+    //func:使用@Concurrent装饰器装饰,返回Object(class)类型，参数1：string，参数2：Object(class)----then中可断言返回类型及返回值
+    /**
+     * @tc.name   testTaskpoolTaskStatic013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1550
+     * @tc.desc   testTaskpoolTask013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskStatic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        const caseName: string = 'testTaskpoolTaskStatic013';
+        let isTerminate: boolean = false;
+        console.info(`${caseName} test start`);
+        try {
+          let resP = new Person1("mangGuoYuJiu", 25.0);
+          let resS: string = 'mfWang';
+          let task: taskpool.Task = new taskpool.Task(funcRetClass, resS, resP);
+          let res: Object = await taskpool.execute(task) as Object;
+          console.info(`${caseName}:  return value: ${JSON.stringify(res)}`);
+            isTerminate = true;
+            expect((res as Person1).age).assertEqual(resP.age);
+        } catch (error) {
+          console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+          isTerminate = true;
+          expect().assertFail();
+        }
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        console.info(`${caseName} test end`);
+      } catch (error) {
+        console.error("testTaskpoolTaskStatic013 failed");
+        expect(false).assertFail();
+      }
+      done();
+    });
+
+    //func:使用@Concurrent装饰器装饰,返回ArrayBuffer类型，参数1：string，参数2：ArrayBuffer----then中可断言返回类型及返回值
+    /**
+     * @tc.name   testTaskpoolTaskStatic014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1560
+     * @tc.desc   testTaskpoolTask014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskStatic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskStatic014';
+      try {
+        let isTerminate: boolean = false;
+        console.info(`${caseName} test start`);
+        try {
+          let buffer = new ArrayBuffer(16);
+          let resS: string = 'mfWang';
+          let task: taskpool.Task = new taskpool.Task(funcRetAB, resS, buffer);
+          let res: Any = await taskpool.execute(task);
+          console.info(`${caseName}:  return value: ${JSON.stringify(res)}`);
+            isTerminate = true;
+            expect(new DataView(res as ArrayBuffer).getUint32(0, true)).assertEqual(0x12345678);
+        } catch (error) {
+          console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+          isTerminate = true;
+          expect().assertFail();
+        }
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        console.info(`${caseName} test end`);
+      } catch (error) {
+        console.error(`${caseName} failed`);
+        expect(false).assertFail();
+      }
+      done();
+    });
+
+    //func:使用@Concurrent装饰器装饰,返回TypedArray类型，参数1：TypedArray，参数2：boolean----then中可断言返回类型及返回值
+    /**
+     * @tc.name   testTaskpoolTaskStatic015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1570
+     * @tc.desc   testTaskpoolTask015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskStatic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskStatic015';
+      let isTerminate: boolean = false;
+      console.info(`${caseName} test start`);
+      try {
+        let buffer = new ArrayBuffer(10);
+        let uint8 = new Uint8Array(buffer);
+        uint8.set([10, 20, 30, 40, 50]);
+        let resB: boolean = false;
+        let task: taskpool.Task = new taskpool.Task(funcRetU8, uint8, resB);
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}:  return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          expect((res as Uint8Array)[6]).assertEqual(100);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        isTerminate = true;
+        expect().assertFail();
+      }
+      while (!(isTerminate)) {
+        try {
+          await promiseCase();
+        } catch (error) {
+          console.info(`gate-catch: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        }
+      }
+      done();
+      console.info(`${caseName} test end`);
+    });
+
+    //$5.0 isCanceled----cancel(task)结合该方法用例进行判断验证
+    /**
+     * @tc.name   testTaskpoolCancelStatic001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1580
+     * @tc.desc   Cancel a task from the task pool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+        it('testTaskpoolCancelStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolCancelStatic001';
+      console.info(`${caseName} test start`);
+      try {
+        let result1: number = 1;
+        let result2: number = 1;
+        let result3: number = 0;
+        // delayed 任务便于在真正执行前 cancel；mathMore 瞬时任务验证未取消路径
+        let taskExecute1: taskpool.Task = new taskpool.Task(additionDelay, 100.0);
+        let taskExecute2: taskpool.Task = new taskpool.Task(additionDelay, 100.0);
+        let taskExecute3: taskpool.Task = new taskpool.Task(mathMore, 9.0);
+        let p1: Promise<Object> = taskpool.executeDelayed(500, taskExecute1) as Promise<Object>;
+        let p2: Promise<Object> = taskpool.executeDelayed(500, taskExecute2) as Promise<Object>;
+        let p3: Promise<Object> = taskpool.execute(taskExecute3) as Promise<Object>;
+        taskpool.cancel(taskExecute1);
+        taskpool.cancel(taskExecute2);
+        try {
+          await p1;
+          result1 = 1;
+        } catch (e) {
+          result1 = 0;
+        }
+        try {
+          await p2;
+          result2 = 1;
+        } catch (e) {
+          result2 = 0;
+        }
+        try {
+          let res3: number = await p3 as number;
+          result3 = res3 as number;
+        } catch (e) {
+          console.info(`${caseName} p3 err: ${e}`);
+          expect().assertFail();
+        }
+        let cancelCaught3: boolean = false;
+        try {
+          taskpool.cancel(taskExecute3);
+        } catch (ce) {
+          cancelCaught3 = true;
+          console.info(`${caseName} cancel3 after done: ${ce}`);
+        }
+        expect(cancelCaught3).assertTrue();
+        expect(result1).assertEqual(0);
+        expect(result2).assertEqual(0);
+        expect(Number(result3)).assertEqual(4);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolCancelStatic002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1590
+     * @tc.desc   Cancel a task group in a task pool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolCancelStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolCancelStatic002';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let result1: number[] = [2, 2, 2];
+        let result2: number[] = [1, 1, 1];
+        let taskGroup1 = new taskpool.TaskGroup();
+        taskGroup1.addTask(mathPow, 2.0, 3.0);
+        taskGroup1.addTask(mathPow, 4.0, 2.0);
+        taskGroup1.addTask(mathPow, 8.0, 2.0);
+        let taskGroup2 = new taskpool.TaskGroup();
+        let task1: taskpool.Task = new taskpool.Task(mathSqrt, 9.0);
+        let task2: taskpool.Task = new taskpool.Task(mathSqrt, 25.0);
+        let task3: taskpool.Task = new taskpool.Task(mathSqrt, 36.0);
+        taskGroup2.addTask(task1);
+        taskGroup2.addTask(task2);
+        taskGroup2.addTask(task3);
+        let res: Any = await taskpool.execute(taskGroup1);
+        console.info(`${caseName}: taskGroup1 return value: ${JSON.stringify(res)}`);
+          result1 = res as number[];
+          isTerminate1 = true;
+          expect(result1[0]).assertEqual(8.0);
+          expect(result1[1]).assertEqual(16.0);
+          expect(result1[2]).assertEqual(64.0);
+        let cancelGroupCaught: boolean = false;
+        try {
+          taskpool.cancel(taskGroup1);
+        } catch (e) {
+          cancelGroupCaught = true;
+          console.info(`${caseName}: cancel completed group code => ${e.code} message => ${e.message}`);
+        }
+        expect(cancelGroupCaught).assertTrue();
+        let res2: Any = await taskpool.execute(taskGroup2);
+        console.info(`${caseName}: taskGroup2 return value: ${JSON.stringify(res2)}`);
+          result2 = res2 as number[];
+          isTerminate2 = true;
+          expect(result2[0]).assertEqual(3.0);
+          expect(result2[1]).assertEqual(5.0);
+          expect(result2[2]).assertEqual(6.0);
+        console.info(`${caseName} test end`);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        console.info(`${caseName} test end`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1600
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Int8Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic001';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(8); // 创建一个8字节的ArrayBuffer
+      let view: Int8Array = new Int8Array(buffer); // 使用ArrayBuffer创建一个Int8Array视图
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Int8Array = new Int8Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(8);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1610
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Int8Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic004';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      // 上游 004 以 setTransferList([view.buffer, view1.buffer]) 转移 8/16 字节 buffer 与 001(空表)区分；
+      // 静态模式 setTransferList 不可用，改以 16/32 字节尺寸变体与 001(8/16) 形成真实入参差异（reconcile 授权）
+      let buffer: ArrayBuffer = new ArrayBuffer(16); // 创建一个16字节的ArrayBuffer
+      let view: Int8Array = new Int8Array(buffer); // 使用ArrayBuffer创建一个Int8Array视图
+      let buffer1: ArrayBuffer = new ArrayBuffer(32);
+      let view1: Int8Array = new Int8Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(16);
+        expect(view1.byteLength).assertEqual(32);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1620
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Uint8Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic005';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(8);
+      let view: Uint8Array = new Uint8Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Uint8Array = new Uint8Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(8);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1630
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Uint8ClampedArray views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic006';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(8);
+      let view: Uint8ClampedArray = new Uint8ClampedArray(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Uint8ClampedArray = new Uint8ClampedArray(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(8);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1640
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Int16Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic007';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(8);
+      let view: Int16Array = new Int16Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Int16Array = new Int16Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(8);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1650
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Uint16Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic008';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(4);
+      let view: Uint16Array = new Uint16Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(8);
+      let view1: Uint16Array = new Uint16Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(4);
+        expect(view1.byteLength).assertEqual(8);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1660
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Int32Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic009';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(8);
+      let view: Int32Array = new Int32Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Int32Array = new Int32Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(8);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1670
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Uint32Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic010';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(8);
+      let view: Uint32Array = new Uint32Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Uint32Array = new Uint32Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(8);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1680
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Float32Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic011';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(8);
+      let view: Float32Array = new Float32Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Float32Array = new Float32Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(8);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1690
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Float32Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic012';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(32);
+      let view: Float32Array = new Float32Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(16);
+      let view1: Float32Array = new Float32Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(32);
+        expect(view1.byteLength).assertEqual(16);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTransferStatic013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1700
+     * @tc.desc   Execute a Task with two ArrayBuffer arguments backed by Int32Array and Float32Array views and assert both host-side buffers remain available.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTransferStatic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTransferStatic013';
+      console.info(`${caseName} test start`);
+      let isTerminate: boolean = false;
+      let buffer: ArrayBuffer = new ArrayBuffer(32);
+      let view: Int32Array = new Int32Array(buffer);
+      let buffer1: ArrayBuffer = new ArrayBuffer(32);
+      let view1: Float32Array = new Float32Array(buffer1);
+      try {
+        console.info(`${caseName}:testTransfer start view byteLength:` + view.byteLength);
+        console.info(`${caseName}:testTransfer start view1 byteLength:` + view1.byteLength);
+        let task: taskpool.Task = new taskpool.Task(testTransfer, view.buffer, view1.buffer);
+        // task.setTransferList([view.buffer, view1.buffer])  // API not available in ArkTS 1.2 static mode;
+        let res: Any = await taskpool.execute(task);
+        console.info(`${caseName}: task return value: ${JSON.stringify(res)}`);
+          isTerminate = true;
+          ;
+
+        while (!(isTerminate)) {
+          await promiseCase();
+        }
+        // 静态模式默认 clone：主机侧 buffer 不被 detach（精确长度断言），并校验子线程回传值
+        expect(view.byteLength).assertEqual(32);
+        expect(view1.byteLength).assertEqual(32);
+        expect(res as number).assertEqual(100);
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName}:testTransfer end view byteLength:` + view.byteLength);
+      console.info(`${caseName}:testTransfer end view1 byteLength:` + view1.byteLength);
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1710
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Int8Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic001';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(4);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(8);
+        let arrayInt1: Int8Array = new Int8Array(arrayBuffer1);
+        let arrayInt2: Int8Array = new Int8Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1720
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Uint8Array (4-byte and 16-byte buffers, data set [2,'b',4,'a']) and assert both task results equal "11" with host buffer lengths unchanged.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic002';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [2, 'b', 4, 'a'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(4);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(16);
+        let arrayUint1: Uint8Array = new Uint8Array(arrayBuffer1);
+        let arrayUint2: Uint8Array = new Uint8Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayUint1[i] = stringToNumber(arr[i]);
+          arrayUint2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayUint1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayUint2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayUint1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayUint2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        // 静态模式默认 clone：主机侧 buffer 长度保持不变（clone 语义）
+        expect(arrayBuffer1.byteLength).assertEqual(4);
+        expect(arrayBuffer2.byteLength).assertEqual(16);
+        done();
+        console.info(`${caseName}: result11: ${arrayUint1[0]}`);
+        console.info(`${caseName}: result22: ${arrayUint2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1730
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Int16Array (8-byte and 32-byte buffers, data set [3,'a',1,'b']) and assert both task results equal "11" with host buffer lengths unchanged.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic003';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [3, 'a', 1, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(8);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(32);
+        let arrayShort1: Int16Array = new Int16Array(arrayBuffer1);
+        let arrayShort2: Int16Array = new Int16Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayShort1[i] = stringToNumber(arr[i]);
+          arrayShort2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayShort1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayShort2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayShort1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayShort2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        // 静态模式默认 clone：主机侧 buffer 长度保持不变（clone 语义）
+        expect(arrayBuffer1.byteLength).assertEqual(8);
+        expect(arrayBuffer2.byteLength).assertEqual(32);
+        done();
+        console.info(`${caseName}: result11: ${arrayShort1[0]}`);
+        console.info(`${caseName}: result22: ${arrayShort2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1740
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Float64Array (32-byte and 64-byte buffers, data set [4,'b',2,'a']) and assert both task results equal "11" with host buffer lengths unchanged.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic004';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [4, 'b', 2, 'a'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(32);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(64);
+        let arrayDouble1: Float64Array = new Float64Array(arrayBuffer1);
+        let arrayDouble2: Float64Array = new Float64Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayDouble1[i] = stringToNumber(arr[i]);
+          arrayDouble2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayDouble1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayDouble2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayDouble1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayDouble2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        // 静态模式默认 clone：主机侧 buffer 长度保持不变（clone 语义）
+        expect(arrayBuffer1.byteLength).assertEqual(32);
+        expect(arrayBuffer2.byteLength).assertEqual(64);
+        done();
+        console.info(`${caseName}: result11: ${arrayDouble1[0]}`);
+        console.info(`${caseName}: result22: ${arrayDouble2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1750
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Uint8Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic005';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(8);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(8);
+        let arrayInt1: Uint8Array = new Uint8Array(arrayBuffer1);
+        let arrayInt2: Uint8Array = new Uint8Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1760
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Uint8ClampedArray and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic006';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(8);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(8);
+        let arrayInt1: Uint8ClampedArray = new Uint8ClampedArray(arrayBuffer1);
+        let arrayInt2: Uint8ClampedArray = new Uint8ClampedArray(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1770
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Int16Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic007';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(8);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(8);
+        let arrayInt1: Int16Array = new Int16Array(arrayBuffer1);
+        let arrayInt2: Int16Array = new Int16Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1780
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Uint16Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic008';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(8);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(8);
+        let arrayInt1: Uint16Array = new Uint16Array(arrayBuffer1);
+        let arrayInt2: Uint16Array = new Uint16Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1790
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Int32Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic009';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(16);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(32);
+        let arrayInt1: Int32Array = new Int32Array(arrayBuffer1);
+        let arrayInt2: Int32Array = new Int32Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1800
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Uint32Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic010';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(16);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(16);
+        let arrayInt1: Uint32Array = new Uint32Array(arrayBuffer1);
+        let arrayInt2: Uint32Array = new Uint32Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1810
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Float32Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic011';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(16);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(16);
+        let arrayInt1: Float32Array = new Float32Array(arrayBuffer1);
+        let arrayInt2: Float32Array = new Float32Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1820
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Float64Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic012';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(32);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(32);
+        let arrayInt1: Float64Array = new Float64Array(arrayBuffer1);
+        let arrayInt2: Float64Array = new Float64Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSetCloneListStatic013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1830
+     * @tc.desc   Execute tasks with cloned ArrayBuffer arguments backed by Int16Array and Float64Array and assert both task results equal "11" under ArkTS static default-clone behavior.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSetCloneListStatic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSetCloneListStatic013';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let arr: (number | string)[] = [1, 'a', 3, 'b'];
+        let arrayBuffer1: ArrayBuffer = new ArrayBuffer(16);
+        let arrayBuffer2: ArrayBuffer = new ArrayBuffer(32);
+        let arrayInt1: Int16Array = new Int16Array(arrayBuffer1);
+        let arrayInt2: Float64Array = new Float64Array(arrayBuffer2);
+        for (let i: int = 0; i < arr.length; i++) {
+          arrayInt1[i] = stringToNumber(arr[i]);
+          arrayInt2[i] = stringToNumber(arr[i]);
+        }
+        let task1 = new taskpool.Task(testFunc, arrayInt1.buffer);
+        let task2 = new taskpool.Task(testFunc, arrayInt2.buffer);
+        let res: Any = await taskpool.execute(task1);
+        console.info(`${caseName}: res1: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+          console.info(`${caseName}: result1: ${arrayInt1[0]}`);
+          // 静态默认 clone：以返回值为准；主机侧缓冲可能不被改写
+          expect(`${res as Object}`).assertEqual('11');
+        let res2: Any = await taskpool.execute(task2);
+        console.info(`${caseName}: res2: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+          console.info(`${caseName}: result2: ${arrayInt2[0]}`);
+          expect(`${res2 as Object}`).assertEqual('11');
+        done();
+        console.info(`${caseName}: result11: ${arrayInt1[0]}`);
+        console.info(`${caseName}: result22: ${arrayInt2[0]}`);
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTaskpoolTaskSendDataStatic001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1840
+     * @tc.desc   Send a message to the host thread and trigger a callback during task execution
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTaskpoolTaskSendDataStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testTaskpoolTaskSendDataStatic001';
+      console.info(`${caseName} test start`);
+      try {
+        let isTerminate1: boolean = false;
+        let isTerminate2: boolean = false;
+        let isTerminate3: boolean = false;
+        let isTerminate4: boolean = false;
+        let isTerminate5: boolean = false;
+        let isTerminate6: boolean = false;
+        let isTerminate7: boolean = false;
+        let isTerminate8: boolean = false;
+        let taskConstructor1: taskpool.Task = new taskpool.Task(concurrentF, 1.0);
+        let taskConstructor2: taskpool.Task = new taskpool.Task(spileString, 'q', 'e');
+        let taskConstructor3: taskpool.Task = new taskpool.Task(funArray, [1.0, 2.0, 3.0]);
+        let taskConstructor4: taskpool.Task = new taskpool.Task(funDate, new Date(2024, 0, Math.floor(1).toInt()));
+        let taskConstructor5: taskpool.Task = new taskpool.Task(changeT, false);
+        let taskConstructor6: taskpool.Task = new taskpool.Task(funcRUndef);
+        let taskConstructor7: taskpool.Task = new taskpool.Task(changeN2T);
+        taskConstructor1.onReceiveData((res: Object) => {
+          console.info(`${caseName}: taskConstructor1.onReceiveData res: ${JSON.stringify(res)}`);
+          expect(`${res}`).assertEqual('10');
+        });
+        taskConstructor2.onReceiveData((res: string) => {
+          console.info(`${caseName}: taskConstructor2.onReceiveData res: ${JSON.stringify(res)}`);
+          expect(res as string).assertEqual('qe');
+        });
+        taskConstructor3.onReceiveData((res: Object) => {
+          console.info(`${caseName}: taskConstructor3.onReceiveData res: ${JSON.stringify(res)}`);
+          let arr: number[] = res as number[];
+          expect(arr[0]).assertEqual(1.0);
+          expect(arr[1]).assertEqual(2.0);
+          expect(arr[2]).assertEqual(3.0);
+        });
+        taskConstructor4.onReceiveData((res: object) => {
+          console.info(`${caseName}: taskConstructor4.onReceiveData res: ${JSON.stringify(res)}`);
+          expect((res as Date).toString()).assertEqual('Mon Jan 01 2024 00:00:00 GMT+0800');
+        });
+        taskConstructor5.onReceiveData((res: Object) => {
+          console.info(`${caseName}: taskConstructor5.onReceiveData res: ${JSON.stringify(res)}`);
+          expect(res as boolean).assertEqual(true);
+        });
+        taskConstructor6.onReceiveData((res: Object) => {
+          console.info(`${caseName}: taskConstructor6.onReceiveData res: ${JSON.stringify(res)}`);
+          expect(typeof (res) === typeof (undefined)).assertEqual(true);
+        });
+        taskConstructor7.onReceiveData((res: Object) => {
+          console.info(`${caseName}: taskConstructor7.onReceiveData res: ${JSON.stringify(res)}`);
+          expect(typeof (res) === typeof (undefined)).assertEqual(true);
+        });
+        let res: Any = await taskpool.execute(taskConstructor1);
+        console.info(`${caseName}: taskConstructor1 return value: ${JSON.stringify(res)}`);
+          isTerminate1 = true;
+        let res2: Any = await taskpool.execute(taskConstructor2);
+        console.info(`${caseName}: taskConstructor2 return value: ${JSON.stringify(res2)}`);
+          isTerminate2 = true;
+        let res3: Any = await taskpool.execute(taskConstructor3);
+        console.info(`${caseName}: taskConstructor3 return value: ${JSON.stringify(res3)}`);
+          isTerminate3 = true;
+        let res4: Any = await taskpool.execute(taskConstructor4);
+        console.info(`${caseName}: taskConstructor4 return value: ${JSON.stringify(res4)}`);
+          isTerminate4 = true;
+        let res5: Any = await taskpool.execute(taskConstructor5);
+        console.info(`${caseName}: taskConstructor5 return value: ${JSON.stringify(res5)}`);
+          isTerminate5 = true;
+        let res6: Any = await taskpool.execute(taskConstructor6);
+        console.info(`${caseName}: taskConstructor6 return value: ${JSON.stringify(res6)}`);
+          isTerminate6 = true;
+        let res7: Any = await taskpool.execute(taskConstructor7);
+        console.info(`${caseName}: taskConstructor7 return value: ${JSON.stringify(res7)}`);
+          isTerminate7 = true;
+        while (!(isTerminate1 && isTerminate2 && isTerminate3 && isTerminate4 && isTerminate5 && isTerminate6
+          && isTerminate7)) {
+          await promiseCase();
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testExecuteTaskShareTypeStatic0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1850
+     * @tc.desc   Testing the task->execute with create func, assert return type and value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExecuteTaskShareTypeStatic0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testExecuteTaskShareTypeStatic0001';
+      console.info(`${caseName} test start`);
+      try {
+        let data: Array<number> = new Array<number>(1, 2, 4);
+        let res: Any = await taskpool.execute(shareTypeTask0001, data);
+        ArkTools.forceFullGC();
+          console.info(`${caseName} res: ${res}`);
+          expect(res instanceof Array).assertTrue();
+          expect((res as Array<number>)[0]).assertEqual(1);
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    })
+
+    /**
+     * @tc.name   testExecuteTaskShareTypeStatic0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1860
+     * @tc.desc   Testing the task->execute with create func, assert return type and value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExecuteTaskShareTypeStatic0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testExecuteTaskShareTypeStatic0002';
+      console.info(`${caseName} test start`);
+      try {
+        let data: Array<number> = new Array<number>();
+        let res: Array<number> = await taskpool.execute(shareTypeTask0002, data) as Array<number>;
+        ArkTools.forceFullGC();
+          console.info(`${caseName} res: ${res}`);
+          expect(res instanceof Array).assertTrue();
+          expect((res)[0]).assertEqual(1);
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    })
+
+    /**
+     * @tc.name   testExecuteTaskShareTypeStatic0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1870
+     * @tc.desc   Testing the task->execute with create func, assert return type and value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExecuteTaskShareTypeStatic0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testExecuteTaskShareTypeStatic0003';
+      console.info(`${caseName} test start`);
+      try {
+        let data: Map<string, string> = new Map<string, string>();
+        let res: Map<string, string> = await taskpool.execute(shareTypeTask0003, data) as Map<string, string>;
+        ArkTools.forceFullGC();
+          console.info(`${caseName} res: ${res}`);
+          expect(res instanceof Map).assertTrue();
+          expect((res).get('key')).assertEqual('value');
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    })
+
+    /**
+     * @tc.name   testExecuteTaskShareTypeStatic0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1880
+     * @tc.desc   Testing the task->execute with create func, assert return type and value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExecuteTaskShareTypeStatic0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      const caseName: string = 'testExecuteTaskShareTypeStatic0004';
+      console.info(`${caseName} test start`);
+      try {
+        let data: Set<number> = new Set<number>();
+        let res: Set<number> = await taskpool.execute(shareTypeTask0004, data) as Set<number>;
+        ArkTools.forceFullGC();
+          console.info(`${caseName} res: ${res}`);
+          expect(res instanceof Set).assertTrue();
+          expect((res).has(1)).assertTrue();
+      } catch (error) {
+        console.error(`${caseName} catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(`${caseName} test end`);
+      done();
+    })
+
+    /**
+     * @tc.name   testExecuteTaskShareTypeStatic0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTATIC_1890
+     * @tc.desc   Testing the task->execute with create func, assert return type and value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
