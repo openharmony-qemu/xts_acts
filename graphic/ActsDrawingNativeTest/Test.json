@@ -4,6 +4,7 @@
         "type": "OHJSUnitTest",
         "test-timeout": "600000",
         "shell-timeout": "600000",
+        "testcase-timeout": "10000",
         "bundle-name": "com.example.acts_drawing_native",
         "module-name": "drawing_native_test"
     },
