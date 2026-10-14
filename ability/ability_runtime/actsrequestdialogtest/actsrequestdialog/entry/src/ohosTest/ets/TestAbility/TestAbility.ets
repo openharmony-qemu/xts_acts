@@ -30,7 +30,7 @@ export default class TestAbility extends Ability {
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     console.log('TestAbility onWindowStageCreate');
-    windowStage.loadContent("TestAbility/pages/index", (err, data) => {
+    windowStage.loadContent('TestAbility/pages/index', (err, data) => {
       if (err.code) {
         console.error('Failed to load the content. Cause:' + JSON.stringify(err));
         return;
@@ -38,7 +38,7 @@ export default class TestAbility extends Ability {
       console.info('Succeeded in loading the content. Data: ' + JSON.stringify(data))
     });
 
-    AppStorage.setOrCreate<common.UIAbilityContext>("abilityContext", this.context);
+    AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);
   }
 
   onWindowStageDestroy() {

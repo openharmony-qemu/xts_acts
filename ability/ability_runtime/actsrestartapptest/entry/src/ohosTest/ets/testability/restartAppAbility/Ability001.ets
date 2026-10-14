@@ -17,37 +17,42 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 
-const caseName = 'SUB_Ability_AbilityRuntime_restartApp_0500';
+const caseName = 'SUB_Ability_AbilityRuntime_restartApp_0100';
 
-export default class Ability005 extends UIAbility {
+export default class Ability001 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability005 onCreate');
+    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability001 onCreate');
   }
 
   onDestroy(): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability005 onDestroy');
+    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability001 onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability005 onWindowStageCreate');
+    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability001 onWindowStageCreate');
 
-    windowStage.loadContent('testability/pages/Ability005', (err, data) => {
+    windowStage.loadContent('testability/pages/Ability001', (err, data) => {
       if (err.code) {
-        hilog.error(0x0000, 'testTag', caseName + 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        hilog.error(0x0000, 'testTag', caseName +
+          'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
       }
-      hilog.info(0x0000, 'testTag', caseName + 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
+      hilog.info(0x0000, 'testTag', caseName +
+        'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
   }
 
   onWindowStageDestroy(): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability005 onWindowStageDestroy');
+    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability001 onWindowStageDestroy');
   }
 
   onForeground(): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability005 onForeground');
+    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability001 onForeground');
     let applicationContext = this.context.getApplicationContext();
-    let want: Want = {};
+    let want: Want = {
+      bundleName: 'com.test.actsrestartapptest',
+      abilityName: 'Ability000'
+    };
     try {
       applicationContext.restartApp(want);
       console.info(`${caseName} Succeed to restart App.`);
@@ -57,7 +62,7 @@ export default class Ability005 extends UIAbility {
         code: 0,
         data: e.code.toString()
       };
-      commonEventManager.publish('restartapp0500', options, (err: BusinessError) => {
+      commonEventManager.publish('restartapp0100', options, (err: BusinessError) => {
         if (err) {
           hilog.error(0xFF00, 'testTag', caseName + 'PublishCallBack err = ' + JSON.stringify(err));
         } else {
@@ -68,6 +73,6 @@ export default class Ability005 extends UIAbility {
   }
 
   onBackground(): void {
-    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability005 onBackground');
+    hilog.info(0x0000, 'testTag', '%{public}s', caseName + 'Ability001 onBackground');
   }
 }

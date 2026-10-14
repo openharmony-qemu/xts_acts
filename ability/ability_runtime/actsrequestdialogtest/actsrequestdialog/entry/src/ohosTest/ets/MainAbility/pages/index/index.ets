@@ -21,9 +21,9 @@ let testTime = 0;
 
 @Entry
 @Component
-struct Index {
+struct MainAbilityIndex {
   aboutToAppear() {
-    console.info("start run testcase!!!!");
+    console.info('start run testcase!!!!');
     if (testTime++ == 0) {
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();

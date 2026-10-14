@@ -20,14 +20,14 @@ import { BusinessError } from '@ohos.base';
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs;
 
-function translateParamsToString(parameters) {
+function translateParamsToString(parameters: Record<string, string>) {
   const keySet = new Set([
     '-s class', '-s notClass', '-s suite', '-s it',
     '-s level', '-s testType', '-s size', '-s timeout',
     '-s dryRun'
   ]);
   let targetParams = '';
-  for (const key in parameters) {
+  for (const key of Object.keys(parameters)) {
     if (keySet.has(key)) {
       targetParams = `${targetParams} ${key} ${parameters[key]}`;
     }
@@ -36,11 +36,11 @@ function translateParamsToString(parameters) {
 }
 
 async function onAbilityCreateCallback() {
-  console.log("onAbilityCreateCallback");
+  console.log('onAbilityCreateCallback');
 }
 
 async function addAbilityMonitorCallback(err: BusinessError) {
-  console.info("addAbilityMonitorCallback : " + JSON.stringify(err));
+  console.info('addAbilityMonitorCallback : ' + JSON.stringify(err));
 }
 
 export default class OpenHarmonyTestRunner implements TestRunner {
@@ -48,7 +48,7 @@ export default class OpenHarmonyTestRunner implements TestRunner {
   }
 
   onPrepare() {
-    console.info("OpenHarmonyTestRunner OnPrepare ");
+    console.info('OpenHarmonyTestRunner OnPrepare ');
   }
 
   async onRun() {
@@ -56,18 +56,19 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let testAbilityName = abilityDelegatorArguments.bundleName + '.MainAbility';
-    let lMonitor = {
+    let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
       abilityName: testAbilityName,
       onAbilityCreate: onAbilityCreateCallback,
     };
     abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
-    let cmd = 'aa start -d 0 -a com.acts.example.requestdialog.MainAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
-    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    let cmd = 'aa start -d 0 -a com.acts.example.requestdialog.MainAbility' + ' -b ' +
+      abilityDelegatorArguments.bundleName;
+    let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
     if(user !== undefined){
         cmd += ' -u ' + user;
     }
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
-    let debug = abilityDelegatorArguments.parameters["-D"];
+    let debug = abilityDelegatorArguments.parameters['-D'];
     if (debug == 'true') {
       cmd += ' -D'
     }
