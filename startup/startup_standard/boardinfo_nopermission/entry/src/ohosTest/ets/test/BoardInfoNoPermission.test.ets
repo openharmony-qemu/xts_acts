@@ -53,7 +53,7 @@ export default function BoardInfoNoPermissionTest() {
                 expect(boardSn).assertEqual('');
             } catch (e) {
                 console.info('boardinfo_noperm_test_001 error code: ' + e.code + ', error message: ' + e.message);
-                expect(Number(e.code)).assertEqual(201);
+                expect(e.code).assertEqual(201);
             }
             console.info('boardinfo_noperm_test_001 : end');
             done();
@@ -78,7 +78,7 @@ export default function BoardInfoNoPermissionTest() {
                     expect(boardSn).assertEqual('');
                 } catch (e) {
                     console.info('boardinfo_noperm_test_002 iteration ' + i + ' error code: ' + e.code + ', error message: ' + e.message);
-                    expect(Number(e.code)).assertEqual(201);
+                    expect(e.code).assertEqual(201);
                 }
             }
             console.info('boardinfo_noperm_test_002 : end');
@@ -102,7 +102,7 @@ export default function BoardInfoNoPermissionTest() {
                 expect(boardSn).assertEqual('');
             } catch (e) {
                 console.info('boardinfo_noperm_test_003 error code: ' + e.code + ', error message: ' + e.message);
-                expect(Number(e.code)).assertEqual(201);
+                expect(e.code).assertEqual(201);
                 expect(e.message.length).assertLarger(0);
             }
             console.info('boardinfo_noperm_test_003 : end');
