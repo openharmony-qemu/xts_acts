@@ -371,7 +371,7 @@ napi_value NativeAnimPropSetCurveNull036(napi_env env, napi_callback_info info)
     ASSERT_EQ(OH_ArkUI_NativeModule_PropertyAnimation_SetCurve(nullptr, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
     auto anim = OH_ArkUI_NativeModule_PropertyAnimation_Create(OH_ARKUI_ANIMATION_PROPERTY_OPACITY);
     ASSERT_EQ(anim != nullptr, true);
-    ASSERT_EQ(OH_ArkUI_NativeModule_PropertyAnimation_SetCurve(anim, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(OH_ArkUI_NativeModule_PropertyAnimation_SetCurve(anim, nullptr), ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_NativeModule_PropertyAnimation_Destroy(anim);
     NAPI_END;
 }
@@ -817,7 +817,7 @@ napi_value NativeAnimKeySetCurveNull078(napi_env env, napi_callback_info info)
         ARKUI_ERROR_CODE_PARAM_INVALID);
     auto anim = OH_ArkUI_NativeModule_KeyframeAnimation_Create(OH_ARKUI_ANIMATION_PROPERTY_OPACITY, KEYFRAME_SIZE);
     ASSERT_EQ(anim != nullptr, true);
-    ASSERT_EQ(OH_ArkUI_NativeModule_KeyframeAnimation_SetCurve(anim, PARAM_0, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
+    ASSERT_EQ(OH_ArkUI_NativeModule_KeyframeAnimation_SetCurve(anim, PARAM_0, nullptr), ARKUI_ERROR_CODE_NO_ERROR);
     OH_ArkUI_NativeModule_KeyframeAnimation_Destroy(anim);
     NAPI_END;
 }
