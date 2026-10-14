@@ -70,7 +70,7 @@ export default function RichEditorShortCutKeys014() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('RichEditorShortCutKeys014'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let getSpans = await driver.findComponent(ON.id('getSpans'));
       await getSpans.click();
@@ -79,7 +79,7 @@ export default function RichEditorShortCutKeys014() {
       let styleText = await style.getText();
       await CommonFunc.sleep(500);
       expect(styleText).assertContain('"decoration":{"type":1');
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let selectAll = await driver.findComponent(ON.text('全选'));
       await selectAll.click();

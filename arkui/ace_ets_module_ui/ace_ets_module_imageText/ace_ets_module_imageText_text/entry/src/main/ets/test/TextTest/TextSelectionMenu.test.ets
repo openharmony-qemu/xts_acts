@@ -17,6 +17,8 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it,expect, Level }
 import { Driver, ON ,MouseButton} from '@ohos.UiTest';
 import CommonFunc from "../../MainAbility/common/Common";
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function TextSelectionMenu() {
   describe('TextSelectionMenu', () => {
     beforeEach(async (done: Function) => {
@@ -62,7 +64,7 @@ export default function TextSelectionMenu() {
       let text3 = CommonFunc.getComponentRectOnScreen('Text_bindSelectionMenu_test')
       let x: number = Math.floor(((text3.right-text3.left)*0.5+text3.left))
       let y: number = Math.floor(((text3.bottom-text3.top)*0.5+text3.top))
-      await driver.mouseClick({ x: x, y: y}, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driver.mouseClick({ x: x, y: y, displayId: displayID}, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
 
       let strJson = getInspectorByKey('textApi_text1_test');
@@ -93,7 +95,7 @@ export default function TextSelectionMenu() {
       let test4 = CommonFunc.getComponentRectOnScreen('text_TextResponseType')
       let x: number = Math.floor((test4.right-test4.left)*0.2+test4.left)
       let y: number = Math.floor((test4.bottom-test4.top)*0.5+test4.top)
-      await driver.longClick(x, y)
+      await driver.longClickAt({ x: x, y: y, displayId: displayID })
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('textApi_text2');

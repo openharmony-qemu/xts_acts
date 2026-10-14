@@ -31,6 +31,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorThreeStrikes008() {
   describe('RichEditorThreeStrikes008', () => {
     beforeEach(async (done: Function) => {
@@ -69,13 +71,13 @@ export default function RichEditorThreeStrikes008() {
       let rich = await driver.findComponent(ON.id('RichEditorThreeStrikes008'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 90, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 90, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(1000);
-      await driver.click(getBounds.left + 150, getBounds.top + 50);
+      await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 50, displayId: displayID });
       await CommonFunc.sleep(80);
-      await driver.click(getBounds.left + 150, getBounds.top + 50);
+      await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 50, displayId: displayID });
       await CommonFunc.sleep(80);
-      await driver.click(getBounds.left + 150, getBounds.top + 50);
+      await driver.clickAt({ x: getBounds.left + 150, y: getBounds.top + 50, displayId: displayID });
       await CommonFunc.sleep(80);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();

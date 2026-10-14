@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorParticiple001() {
   describe('RichEditorParticiple001', () => {
     beforeEach(async (done: Function) => {
@@ -68,7 +70,7 @@ export default function RichEditorParticiple001() {
 
       let richEditor = await driver.findComponent(ON.id('RichEditorParticiple001'));
       let pointCenter = await richEditor.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let select = await driver.findComponent(ON.id('select'))

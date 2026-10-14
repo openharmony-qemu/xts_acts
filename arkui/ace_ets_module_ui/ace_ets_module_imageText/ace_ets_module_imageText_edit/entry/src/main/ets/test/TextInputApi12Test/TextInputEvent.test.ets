@@ -96,7 +96,7 @@ export default function TextInputEvent() {
       let driver = Driver.create();
       let text = await driver.findComponent(ON.id('TextInputEvent2'));
       let point = await text.getBoundsCenter();
-      await driver.inputText(point, '9');
+      await driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '9');
       await CommonFunc.sleep(1000);
       try {
         await driver.triggerKey(2070, displayID);
@@ -133,7 +133,7 @@ export default function TextInputEvent() {
       let driver = Driver.create();
       let text = await driver.findComponent(ON.id('TextInputEvent'));
       let point = await text.getBoundsCenter();
-      await driver.inputText(point, '123');
+      await driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '123');
       await CommonFunc.sleep(1000);
       try {
         await driver.triggerKey(2070, displayID);
@@ -170,7 +170,7 @@ export default function TextInputEvent() {
       let driver = Driver.create();
       let text = await driver.findComponent(ON.id('TextInputEvent2'));
       let point = await text.getBoundsCenter();
-      await driver.inputText(point, '3');
+      await driver.inputText({ x: point.x, y: point.y, displayId: displayID }, '3');
       await CommonFunc.sleep(1000);
       try {
         await driver.triggerKey(2070, displayID);

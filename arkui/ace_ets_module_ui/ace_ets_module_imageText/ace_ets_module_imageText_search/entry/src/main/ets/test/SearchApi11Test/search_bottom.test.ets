@@ -19,6 +19,8 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function search_bottom() {
   describe('search_bottom', () => {
     beforeEach(async (done: Function) => {
@@ -66,7 +68,7 @@ export default function search_bottom() {
 
         let driver = await Driver.create();
         await CommonFunc.sleep(500);
-        await driver.mouseScroll({x:360, y:640}, true, 30, 2072)
+        await driver.mouseScroll({x:360, y:640, displayId: displayID}, true, 30, 2072)
         await CommonFunc.sleep(1000);
 
         console.log('get swipe after Initial value')
@@ -75,9 +77,7 @@ export default function search_bottom() {
         console.log('assert click before position')
         let y1 = search_01.bottom
 
-        await driver.click(
-          Math.round(search_01.left + (search_01.right - search_01.left)/2),Math.round(search_01.top + (search_01.bottom - search_01.top)/2)
-        );
+        await driver.clickAt({ x: Math.round(search_01.left + (search_01.right - search_01.left)/2), y: Math.round(search_01.top + (search_01.bottom - search_01.top)/2), displayId: displayID });
         await CommonFunc.sleep(1000);
 
         console.log('get click after Initial value')

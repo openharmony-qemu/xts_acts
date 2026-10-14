@@ -70,7 +70,7 @@ export default function RichEditorCustomSpan016() {
       let rich = await driver.findComponent(ON.id('RichEditorCustomSpan016'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y );
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       let imageTop = await driver.findComponent(ON.id('imageTop'));
       await imageTop.click();
@@ -111,7 +111,7 @@ export default function RichEditorCustomSpan016() {
       let rich = await driver.findComponent(ON.id('RichEditorCustomSpan016_1'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y );
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);

@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorPreventDefault002() {
   describe('RichEditorPreventDefault002', () => {
     beforeEach(async (done: Function) => {
@@ -68,9 +70,9 @@ export default function RichEditorPreventDefault002() {
       let rich = await driver.findComponent(ON.id('RichEditorPreventDefault002'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 30, getBounds.top + 30);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 30, displayId: displayID });
       await CommonFunc.sleep(100);
       let callNum = await driver.findComponent(ON.id('callNum'));
       let callNumText = await callNum.getText();

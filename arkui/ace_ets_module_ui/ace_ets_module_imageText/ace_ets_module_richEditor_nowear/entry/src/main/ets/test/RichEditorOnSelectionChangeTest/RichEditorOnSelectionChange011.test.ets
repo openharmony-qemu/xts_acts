@@ -69,9 +69,9 @@ export default function RichEditorOnSelectionChange011() {
       let driver = Driver.create();
       let rich = await driver.findComponent(ON.id('rich_struct'));
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(1000);
@@ -85,7 +85,7 @@ export default function RichEditorOnSelectionChange011() {
       expect(messageText).assertEqual('message:{"start":0,"end":1}');
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, 0, displayID);
       await CommonFunc.sleep(1000);
-      await driver.longClick(pointCenter.x, pointCenter.y);
+      await driver.longClickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       let set1 = await driver.findComponent(ON.id('set1'))
       await set1?.click();

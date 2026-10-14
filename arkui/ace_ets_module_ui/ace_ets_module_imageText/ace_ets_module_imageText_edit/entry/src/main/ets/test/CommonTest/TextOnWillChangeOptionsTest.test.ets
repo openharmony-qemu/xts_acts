@@ -65,7 +65,7 @@ export default function TextOnWillChangeOptionsTest() {
         await CommonFunc.sleep(500);
         let point = await search.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.inputText(point,'3')
+        await driver.inputText({ x: point.x, y: point.y, displayId: displayID },'3')
         await CommonFunc.sleep(500);
 
         let oldContent = getInspectorByKey('oldContent');
@@ -197,7 +197,7 @@ export default function TextOnWillChangeOptionsTest() {
         await CommonFunc.sleep(500);
         let point = await textArea.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.inputText(point,'3')
+        await driver.inputText({ x: point.x, y: point.y, displayId: displayID },'3')
         await CommonFunc.sleep(500);
 
         let oldContent = getInspectorByKey('oldContent');
@@ -329,7 +329,7 @@ export default function TextOnWillChangeOptionsTest() {
         await CommonFunc.sleep(500);
         let point = await textInput.getBoundsCenter();
         await CommonFunc.sleep(500);
-        await driver.inputText(point,'3')
+        await driver.inputText({ x: point.x, y: point.y, displayId: displayID },'3')
         await CommonFunc.sleep(500);
 
         let oldContent = getInspectorByKey('oldContent');

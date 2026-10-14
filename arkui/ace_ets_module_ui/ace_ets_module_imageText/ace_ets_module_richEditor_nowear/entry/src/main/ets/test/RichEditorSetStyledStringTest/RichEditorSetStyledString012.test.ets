@@ -70,7 +70,7 @@ export default function RichEditorSetStyledString012() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString012'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       let image_top = await driver.findComponent(ON.id('image_top'));
       await image_top.click();
@@ -102,7 +102,7 @@ export default function RichEditorSetStyledString012() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString012'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
@@ -127,7 +127,7 @@ export default function RichEditorSetStyledString012() {
       let rich = await driver.findComponent(ON.id('RichEditorSetStyledString012'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       try {
         await driver.triggerKey(KeyCode.KEYCODE_A, displayID);
       } catch (err) {

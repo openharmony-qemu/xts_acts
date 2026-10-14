@@ -30,6 +30,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 import { KeyCode } from '@kit.InputKit';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorOnWillChange019() {
   describe('RichEditorOnWillChange019', () => {
     beforeEach(async (done: Function) => {
@@ -72,9 +74,9 @@ export default function RichEditorOnWillChange019() {
       await CommonFunc.sleep(500);
 
       let pointCenter = await rich.getBoundsCenter();
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(1000);
 
       let selectAll = await driver.findComponent(ON.text('全选'));
@@ -85,9 +87,9 @@ export default function RichEditorOnWillChange019() {
       await copy?.click();
       await CommonFunc.sleep(1000);
 
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
-      await driver.click(pointCenter.x, pointCenter.y);
+      await driver.clickAt({ x: pointCenter.x, y: pointCenter.y, displayId: displayID });
       await CommonFunc.sleep(500);
 
       let paste = await driver.findComponent(ON.text('粘贴'));

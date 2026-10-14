@@ -70,13 +70,13 @@ export default function RichEditorShortCutKeys019() {
       let rich = await driver.findComponent(ON.id('RichEditorShortCutKeys019'));
       let getBounds = await rich.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.longClick(getBounds.x, getBounds.y );
+      await driver.longClickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(1000);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A, 0, displayID);
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C, 0, displayID);
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.x, getBounds.y);
+      await driver.clickAt({ x: getBounds.x, y: getBounds.y, displayId: displayID });
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_V, 0, displayID);
       await CommonFunc.sleep(500);

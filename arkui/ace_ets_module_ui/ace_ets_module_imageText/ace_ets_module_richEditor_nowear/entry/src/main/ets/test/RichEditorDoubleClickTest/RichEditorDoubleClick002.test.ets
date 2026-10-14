@@ -31,6 +31,8 @@ import {
 import CommonFunc from '../../MainAbility/common/Common';
 
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function RichEditorDoubleClick002() {
   describe('RichEditorDoubleClick002', () => {
     beforeEach(async (done: Function) => {
@@ -69,11 +71,11 @@ export default function RichEditorDoubleClick002() {
       let rich = await driver.findComponent(ON.id('RichEditorDoubleClick002'));
       let getBounds = await rich.getBounds();
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 30, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 30, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(500);
-      await driver.click(getBounds.left + 65, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 65, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 65, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 65, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
       let message = await driver.findComponent(ON.id('message'));
       let messageText = await message.getText();
@@ -83,9 +85,9 @@ export default function RichEditorDoubleClick002() {
       let copy = await driver.findComponent(ON.text('复制'))
       await copy?.click()
       await CommonFunc.sleep(1000);
-      await driver.click(getBounds.left + 90, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 90, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
-      await driver.click(getBounds.left + 90, getBounds.top + 20);
+      await driver.clickAt({ x: getBounds.left + 90, y: getBounds.top + 20, displayId: displayID });
       await CommonFunc.sleep(100);
       messageText = await message.getText();
       await CommonFunc.sleep(1000);

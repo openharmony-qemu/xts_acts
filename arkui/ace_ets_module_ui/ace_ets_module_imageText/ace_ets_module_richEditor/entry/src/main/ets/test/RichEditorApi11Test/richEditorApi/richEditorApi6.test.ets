@@ -31,6 +31,8 @@ import {
   MouseButton
 } from '@ohos.UiTest';
 
+let displayID: number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
+
 export default function richEditorApi61() {
   describe('richEditorApi61', () => {
     beforeEach(async (done: Function) => {
@@ -76,7 +78,7 @@ export default function richEditorApi61() {
       let richEditor = CommonFunc.getComponentRectOnScreen('RichEditor6');
       let clickButton = await driver.findComponent(ON.id('RichEditor6'))
       let point = await clickButton.getBoundsCenter();
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT)   
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_LEFT)
       await CommonFunc.sleep(1000);
 
       console.info("text1111");
