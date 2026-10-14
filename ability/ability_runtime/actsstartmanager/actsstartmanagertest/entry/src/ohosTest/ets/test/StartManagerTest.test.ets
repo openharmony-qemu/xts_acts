@@ -24,7 +24,7 @@ let TAG = 'RunTimeTest';
 let currentDisplayId = display.getDefaultDisplaySync().id;
 let uiAbilityContext: common.UIAbilityContext;
 let buttonClicked:boolean = false;
-let driver = Driver.create();
+let driver:Driver |undefined = undefined;
 const LOG_TAG = 'COMPLETION_HANDLER_TEST';
 const DOMAIN = 0x0000;
 const DELAY_TIME = 2000;
@@ -51,8 +51,10 @@ export default function StartManagerTest() {
   describe('StartManagerTest', () => {
     beforeAll(async () => {
       uiAbilityContext = AppStorage.get<Context>('uiAbilityContext') as common.UIAbilityContext;
-
-      let allowed: Component | undefined;
+      hilog.info(DOMAIN, TAG, 'driver create: start');
+      driver = await Driver.create();
+      hilog.info(DOMAIN, TAG, 'driver create: end');
+      let allowed: Component | undefined | undefined;
       try {
         allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
       } catch (e) {
@@ -109,22 +111,22 @@ export default function StartManagerTest() {
             .catch((err: BusinessError) => {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
             })
-          await driver.delayMs(1000);
+          await driver?.delayMs(1000);
           try{
             await allowOpen();
-            await driver.delayMs(1000);
+            await driver?.delayMs(1000);
           } catch (e) {
             hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
-          await driver.delayMs(1000);
-          let setCallbackButton: Component = await driver.findComponent(ON.id('setCallbackButton').belongingDisplay(currentDisplayId));
-          let cancelCallbackButton: Component = await driver.findComponent(ON.id('cancelCallbackButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
-          await setCallbackButton.click();
+          await driver?.delayMs(1000);
+          let setCallbackButton: Component  | undefined = await driver.findComponent(ON.id('setCallbackButton').belongingDisplay(currentDisplayId));
+          let cancelCallbackButton: Component  | undefined = await driver.findComponent(ON.id('cancelCallbackButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component  | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          await setCallbackButton?.click();
           await sleep(500);
-          await cancelCallbackButton.click();
+          await cancelCallbackButton?.click();
           await sleep(500);
-          await terminateButton.click();
+          await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
             hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
@@ -178,22 +180,22 @@ export default function StartManagerTest() {
             .catch((err: BusinessError) => {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
             })
-          await driver.delayMs(1000);
+          await driver?.delayMs(1000);
           try{
             await allowOpen();
-            await driver.delayMs(1000);
+            await driver?.delayMs(1000);
           } catch (e) {
             hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
-          await driver.delayMs(1000);
+          await driver?.delayMs(1000);
           let setPromiseButton: Component = await driver.findComponent(ON.id('setPromiseButton').belongingDisplay(currentDisplayId));
           let cancelPromiseButton: Component = await driver.findComponent(ON.id('cancelPromiseButton').belongingDisplay(currentDisplayId));
           let terminateButton: Component = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
-          await setPromiseButton.click();
+          await setPromiseButton?.click();
           await sleep(500);
-          await cancelPromiseButton.click();
+          await cancelPromiseButton?.click();
           await sleep(500);
-          await terminateButton.click();
+          await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
             hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
@@ -247,19 +249,19 @@ export default function StartManagerTest() {
             .catch((err: BusinessError) => {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
             })
-          await driver.delayMs(1000);
+          await driver?.delayMs(1000);
           try{
             await allowOpen();
-            await driver.delayMs(1000);
+            await driver?.delayMs(1000);
           } catch (e) {
             hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
-          await driver.delayMs(1000);
-          let queryCallbackButton: Component = await driver.findComponent(ON.id('queryCallbackButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
-          await queryCallbackButton.click();
+          await driver?.delayMs(1000);
+          let queryCallbackButton: Component | undefined = await driver.findComponent(ON.id('queryCallbackButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          await queryCallbackButton?.click();
           await sleep(500);
-          await terminateButton.click();
+          await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
             hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
@@ -313,19 +315,19 @@ export default function StartManagerTest() {
             .catch((err: BusinessError) => {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
             })
-          await driver.delayMs(1000);
+          await driver?.delayMs(1000);
           try{
             await allowOpen();
-            await driver.delayMs(1000);
+            await driver?.delayMs(1000);
           } catch (e) {
             hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
-          await driver.delayMs(1000);
-          let queryPromiseButton: Component = await driver.findComponent(ON.id('queryPromiseButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
-          await queryPromiseButton.click();
+          await driver?.delayMs(1000);
+          let queryPromiseButton: Component | undefined = await driver.findComponent(ON.id('queryPromiseButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          await queryPromiseButton?.click();
           await sleep(500);
-          await terminateButton.click();
+          await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
             hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
@@ -379,22 +381,22 @@ export default function StartManagerTest() {
             .catch((err: BusinessError) => {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
             })
-          await driver.delayMs(1000);
+          await driver?.delayMs(1000);
           try{
             await allowOpen();
-            await driver.delayMs(1000);
+            await driver?.delayMs(1000);
           } catch (e) {
             hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
-          await driver.delayMs(1000);
-          let onButton: Component = await driver.findComponent(ON.id('onButton').belongingDisplay(currentDisplayId));
-          let offButton: Component = await driver.findComponent(ON.id('offButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
-          await onButton.click();
+          await driver?.delayMs(1000);
+          let onButton: Component | undefined = await driver.findComponent(ON.id('onButton').belongingDisplay(currentDisplayId));
+          let offButton: Component | undefined = await driver.findComponent(ON.id('offButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          await onButton?.click();
           await sleep(500);
-          await offButton.click();
+          await offButton?.click();
           await sleep(500);
-          await terminateButton.click();
+          await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
             hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
