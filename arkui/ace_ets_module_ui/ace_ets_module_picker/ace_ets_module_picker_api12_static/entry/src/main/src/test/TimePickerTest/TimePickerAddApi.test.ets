@@ -60,10 +60,14 @@ export default function TimePickerAddApi() {
       console.info('[TimePickerAddApi_static_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
+      let timePickerComp = await driver.findComponent(ON.id('TimePickerAddApi'));
+      let displayId = await timePickerComp?.getDisplayId();
       let pos = CommonFunc.getComponentRectOnScreen('TimePickerAddApi')
       console.log("================================================== " + JSON.stringify(pos))
       await CommonFunc.sleep(500);
-      await driver.swipe(Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(), Math.round(pos.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)).toInt(),Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(),Math.round(pos.top).toInt());
+      await driver.swipeBetween(
+        { x: Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(), y: Math.round(pos.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)).toInt(), displayId: displayId },
+        { x: Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(), y: Math.round(pos.top).toInt(), displayId: displayId });
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);
