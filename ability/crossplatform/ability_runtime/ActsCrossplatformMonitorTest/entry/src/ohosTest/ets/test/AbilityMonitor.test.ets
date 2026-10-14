@@ -46,6 +46,7 @@ export default function AbilityMonitorTest() {
     });
 
     afterEach(async (done: Function) => {
+      await sleep(500)
       console.info(LABLE + TAG + "AbilityMonitorTest afterEach each called");
       if (monitor) {
         console.info(LABLE + TAG + "AbilityMonitorTest afterEach removeAbilityMonitor called");
