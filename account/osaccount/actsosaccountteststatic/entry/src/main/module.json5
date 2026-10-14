@@ -38,6 +38,9 @@
       },
       {
         "name": "ohos.permission.REQUEST_LOCAL_ACCOUNT_AUTHORIZATION"
+      },
+      {
+          "name": "ohos.permission.kernel.NET_RAW"
       }
     ],
     "abilities": [
