@@ -16,7 +16,8 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level 
 
 import FormInfo from '@ohos.application.formInfo';
 import formError from '@ohos.application.formError';
-import featureAbility from '@ohos.ability.featureAbility'
+import featureAbility from '@ohos.ability.featureAbility';
+import ability from '@ohos.ability.ability';
 import {BusinessError} from "@ohos.base";
 export default function ApiCoverTest() {
   describe('ApiCoverTestTest', () => {
@@ -119,6 +120,122 @@ export default function ApiCoverTest() {
           done()
         })
     })
-
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_DataAbilityOperation_0100
+     * @tc.number SUB_Ability_AbilityBase_DataAbilityOperation_0100
+     * @tc.desc   Test DataAbilityOperation object construction with all fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_DataAbilityOperation_0100', Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_Ability_AbilityBase_DataAbilityOperation_0100");
+      try {
+        let operation: ability.DataAbilityOperation = {
+          uri: 'dataability://com.example.test/person',
+          type: featureAbility.DataAbilityOperationType.TYPE_INSERT,
+          valuesBucket: {},
+          valueBackReferences: {},
+          expectedCount: 1,
+          interrupted: false
+        }
+        expect(operation.uri).assertEqual('dataability://com.example.test/person')
+        expect(operation.type).assertEqual(featureAbility.DataAbilityOperationType.TYPE_INSERT)
+        expect(operation.expectedCount).assertEqual(1)
+        expect(operation.interrupted).assertEqual(false)
+        done()
+      } catch (err) {
+        expect().assertFail()
+        done()
+      }
+    })
+ 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_DataAbilityOperation_0200
+     * @tc.number SUB_Ability_AbilityBase_DataAbilityOperation_0200
+     * @tc.desc   Test DataAbilityOperation with all operation types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_DataAbilityOperation_0200', Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_Ability_AbilityBase_DataAbilityOperation_0200");
+      try {
+        let insertOp: ability.DataAbilityOperation = {
+          uri: 'dataability://com.example.test/person',
+          type: featureAbility.DataAbilityOperationType.TYPE_INSERT
+        }
+        expect(insertOp.type).assertEqual(1)
+ 
+        let updateOp: ability.DataAbilityOperation = {
+          uri: 'dataability://com.example.test/person',
+          type: featureAbility.DataAbilityOperationType.TYPE_UPDATE
+        }
+        expect(updateOp.type).assertEqual(2)
+ 
+        let deleteOp: ability.DataAbilityOperation = {
+          uri: 'dataability://com.example.test/person',
+          type: featureAbility.DataAbilityOperationType.TYPE_DELETE
+        }
+        expect(deleteOp.type).assertEqual(3)
+ 
+        let assertOp: ability.DataAbilityOperation = {
+          uri: 'dataability://com.example.test/person',
+          type: featureAbility.DataAbilityOperationType.TYPE_ASSERT
+        }
+        expect(assertOp.type).assertEqual(4)
+        done()
+      } catch (err) {
+        expect().assertFail()
+        done()
+      }
+    })
+ 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_DataAbilityResult_0100
+     * @tc.number SUB_Ability_AbilityBase_DataAbilityResult_0100
+     * @tc.desc   Test DataAbilityResult object construction with uri and count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_DataAbilityResult_0100', Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_Ability_AbilityBase_DataAbilityResult_0100");
+      try {
+        let result: ability.DataAbilityResult = {
+          uri: 'dataability://com.example.test/person',
+          count: 1
+        }
+        expect(result.uri).assertEqual('dataability://com.example.test/person')
+        expect(result.count).assertEqual(1)
+        done()
+      } catch (err) {
+        expect().assertFail()
+        done()
+      }
+    })
+ 
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_DataAbilityResult_0200
+     * @tc.number SUB_Ability_AbilityBase_DataAbilityResult_0200
+     * @tc.desc   Test DataAbilityResult object construction with optional fields omitted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityBase_DataAbilityResult_0200', Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_Ability_AbilityBase_DataAbilityResult_0200");
+      try {
+        let result: ability.DataAbilityResult = {
+          uri: 'dataability://com.example.test/person'
+        }
+        expect(result.uri).assertEqual('dataability://com.example.test/person')
+        expect(result.count).assertUndefined()
+        done()
+      } catch (err) {
+        expect().assertFail()
+        done()
+      }
+    })
   })
 }
