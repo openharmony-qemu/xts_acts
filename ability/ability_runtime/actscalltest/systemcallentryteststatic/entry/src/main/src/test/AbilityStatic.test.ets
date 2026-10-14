@@ -36,9 +36,9 @@ class CustomParcelable implements rpc.Parcelable {
   }
 }
 
-export default function AbilityStaticTest() {
+export default function abilityStaticTest() {
 
-  describe('AbilityStaticTest', (): void => {
+  describe('abilityStaticTest', (): void => {
     const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
     const BUNDLE_NAME: string = 'com.example.systemcalltest.static';
     let caller: Caller | undefined;
@@ -195,7 +195,8 @@ export default function AbilityStaticTest() {
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
         const err = e as BusinessError;
-        hilog.info(domain, tag, `${itName} caller onRemoteStateChange fail error code: ${err?.code}, msg: ${err?.message}`);
+        hilog.info(domain, tag,
+          `${itName} caller onRemoteStateChange fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
         done();
         hilog.info(domain, tag, `${itName} end`);
@@ -243,7 +244,8 @@ export default function AbilityStaticTest() {
         hilog.info(domain, tag, `${itName} end`);
       } catch (e) {
         const err = e as BusinessError;
-        hilog.info(domain, tag, `${itName} caller off release with callback fail error code: ${err?.code}, msg: ${err?.message}`);
+        hilog.info(domain, tag,
+          `${itName} caller off release with callback fail error code: ${err?.code}, msg: ${err?.message}`);
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
       }
