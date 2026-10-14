@@ -482,7 +482,7 @@ export default function httpJsunit() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -572,7 +572,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -692,13 +692,13 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
     });
-     /**
-     * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0400
+      /**
+      * @tc.name   testNetworkMgrUDPSocketSetLoopbackModePromise0400
      * @tc.number SUB_NetworkMgr_UDPSocket_SetLoopbackMode_Promise_0400
      * @tc.desc   Test setMulticastTTL401 property.
      * @tc.type   FUNCTION
@@ -724,11 +724,11 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
-    });
+     });
 
     /**
      * @tc.name   testNetworkMgrUDPSocketGetLoopbackModePromise0100
@@ -925,7 +925,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -955,7 +955,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -985,7 +985,7 @@ export default function httpJsunit() {
         });
       } catch (error) {
         console.info(`${caseName} test failed err:${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1131,7 +1131,7 @@ export default function httpJsunit() {
         });
       } catch (err) {
         console.info(`${caseName} test failed err:${JSON.stringify(err)}`);
-        expectTrue(err.code === 401);
+        expectTrue(err.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }

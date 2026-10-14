@@ -1604,7 +1604,7 @@ export default function HttpRequestInterceptor() {
         } catch (error) {
           const err: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 2300801);
+          ExpectTrue(Number(err.code) === 2300801);
           ExpectTrue(err.message === "Parameter type not supported by the interceptor");
           done();
         }
@@ -1656,7 +1656,7 @@ export default function HttpRequestInterceptor() {
         } catch (error) {
           const err: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 2300801);
+          ExpectTrue(Number(err.code) === 2300801);
           ExpectTrue(err.message === "Parameter type not supported by the interceptor");
           done();
         }
@@ -1710,7 +1710,7 @@ export default function HttpRequestInterceptor() {
         } catch (error) {
           const err: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 2300802);
+          ExpectTrue(Number(err.code) === 2300802);
           ExpectTrue(err.message === "Duplicated interceptor type in the chain");
           done();
         }
@@ -1762,7 +1762,7 @@ export default function HttpRequestInterceptor() {
         } catch (error) {
           const err: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectTrue(err.code === 2300999);
+          ExpectTrue(Number(err.code) === 2300999);
           ExpectTrue(err.message === "Internal error");
           done();
         }
