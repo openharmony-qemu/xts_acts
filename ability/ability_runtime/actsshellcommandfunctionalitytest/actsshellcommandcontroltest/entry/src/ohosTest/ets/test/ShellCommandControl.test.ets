@@ -32,7 +32,8 @@ export default function shellCommandControlTest() {
       TAG = 'Acts_Ability_ShellCommandControl__0100';
       console.log(`${TAG} --- start`);
       let cmd = 'aa help';
-      AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>("abilityDelegator")!.executeShellCommand(cmd, (err, data) => {
+      AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>('abilityDelegator')!.executeShellCommand(cmd, (err,
+        data) => {
         console.log(`${TAG} stdResult = ${data.stdResult}`);
         console.log(`${TAG} stdResult = ${JSON.stringify(err)}`);
         expect(data.exitCode).assertEqual(0);
@@ -53,7 +54,8 @@ export default function shellCommandControlTest() {
       TAG = 'Acts_Ability_ShellCommandControl__0200';
       console.log(`${TAG} --- start`);
       let cmd = 'ls -l';
-      AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>("abilityDelegator")!.executeShellCommand(cmd, (err, data) => {
+      AppStorage.get<abilityDelegatorRegistry.AbilityDelegator>('abilityDelegator')!.executeShellCommand(cmd, (err,
+        data) => {
         console.log(`${TAG} stdResult = ${data.stdResult}`);
         console.log(`${TAG} stdResult = ${JSON.stringify(err)}`);
         expect(data.exitCode).assertEqual(-1);

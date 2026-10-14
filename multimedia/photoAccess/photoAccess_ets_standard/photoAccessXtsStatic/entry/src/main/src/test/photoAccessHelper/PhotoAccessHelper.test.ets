@@ -20,8 +20,24 @@ import { createUserAlbum, getPermission, LOG_TAG, sleep } from '../common';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { Context } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+import fs from '@ohos.file.fs';
 
 const TAG = LOG_TAG + 'getAssetsTest';
+
+export function checkResourceFile(context: Context) {
+  try {
+    const sandboxPath = context.filesDir;
+    let resourcePath = context.resourceDir;
+    let resourcePathArray = fs.listFileSync(resourcePath);
+    for (let index = 0; index < resourcePathArray.length; index++) {
+      fs.copyFileSync((resourcePath + '/' + resourcePathArray[index]), (sandboxPath + '/' + resourcePathArray[index]));
+    }
+    let sandboxFileArray = fs.listFileSync(sandboxPath)
+    console.log(`sandbox fileList ==> ${sandboxFileArray}`)
+  } catch (error) {
+    console.error(`checkResourceFile failed, err is ${error}`);
+  }
+}
 
 export default function getAssetsTest(): void {
   describe('getAssetsTest', () => {
@@ -185,6 +201,7 @@ export default function getAssetsTest(): void {
       let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
       let extension: string = 'jpg';
       let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest | null= photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+      checkResourceFile(testContext);
       let fileUri = testContext.filesDir + '/test_mov_1.jpg';
       if (assetChangeRequest !== null) {
         assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, fileUri);

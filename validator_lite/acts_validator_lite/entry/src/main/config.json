@@ -40,27 +40,7 @@
     ],
     "js": [
       {
-        "pages": [
-          "pages/index/index",
-          "pages/ArkUI/chart/line/index",
-          "pages/ArkUI/common/index/index",
-          "pages/ArkUI/marquee/index",
-          "pages/ArkUI/ui_advanced/index",
-          "pages/ArkUI/ui_basic/index",
-          "pages/Communication/nfc/index",
-          "pages/DistributedData/storage/index",
-          "pages/FileManagement/file/index",
-          "pages/PowerManager/power/index",
-          "pages/Startup/deviceInfo/index",
-          "pages/Sensors/index/index",
-          "pages/Location/index/index",
-          "pages/RouterTransition/index/index",
-          "pages/RouterTransition/normal/index",
-          "pages/RouterTransition/edge_api/index",
-          "pages/RouterTransition/edge_duration/index",
-          "pages/RouterTransition/target/index",
-          "pages/common/help/index"
-        ],
+        "pages": [],
         "name": "ValidatorAbility"
       }
     ]

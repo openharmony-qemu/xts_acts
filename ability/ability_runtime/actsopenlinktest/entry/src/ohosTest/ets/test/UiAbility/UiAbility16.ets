@@ -14,6 +14,7 @@
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
@@ -62,7 +63,7 @@ export default class UiAbility16 extends UIAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
+      console.log('====>terminateSelfWithResult success====>')
     });
   }
 

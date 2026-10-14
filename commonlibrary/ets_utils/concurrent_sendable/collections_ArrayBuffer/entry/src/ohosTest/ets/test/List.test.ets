@@ -23,6 +23,7 @@ import CollectionsArrayBufferViewTest from './All/CollectionsArrayBufferViewTest
 import ArrayBufferNormalTest from './Normal/ArrayBufferNormal.test';
 import ArrayBufferTaskPoolTest from './TaskPool/ArrayBufferTaskPool.test';
 
+import ArrayBufferTest from './ArrayBufferTest.test';
 export default function testsuite() {
   ArrayBufferBasicTest();
   CollectionsArrayBufferByteLengthTest();
@@ -33,4 +34,5 @@ export default function testsuite() {
   CollectionsArrayBufferViewTest();
   ArrayBufferNormalTest();
   ArrayBufferTaskPoolTest();
+  ArrayBufferTest();
 }

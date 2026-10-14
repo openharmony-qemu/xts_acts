@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import {
   DelayedRejectThenable97,
   PromiseCatchTest036,
@@ -1665,8 +1665,8 @@ export default function promiseCatchTest() {
         .then(() => {
           // Parallel nested async chains
           return Promise.all([
-            asyncTask(1, false, 30).then(() => asyncTask(11, true, 5)), // Fails first
-            asyncTask(2, false, 10).then(() => asyncTask(22, true, 20))
+            asyncTask(1, false, 200).then(() => asyncTask(11, true, 50)),
+            asyncTask(2, false, 10).then(() => asyncTask(22, true, 50)) // Fails first (60ms < 250ms)
           ]);
         })
         .catch((err: string) => {
@@ -1819,10 +1819,10 @@ export default function promiseCatchTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('PromiseCatchTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseCatchTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let raceErrReason: string = '';
-      const slowResolve: Promise<string> = new Promise(resolve => setTimeout(() => resolve('Slow win'), 50));
-      const fastReject: Promise<never> = new Promise((_, reject) => setTimeout(() => reject('Fast fail'), 15));
+      const slowResolve: Promise<string> = new Promise(resolve => setTimeout(() => resolve('Slow win'), 200));
+      const fastReject: Promise<never> = new Promise((_, reject) => setTimeout(() => reject('Fast fail'), 50));
 
       await Promise.resolve()
         .then(() => {
@@ -1832,6 +1832,7 @@ export default function promiseCatchTest() {
         })
         .catch((err: string) => {
           raceErrReason = err;
+      done();
         });
 
       expect(raceErrReason).assertEqual('Fast fail');
@@ -2056,8 +2057,8 @@ export default function promiseCatchTest() {
 
       // Concurrent loading with timeout
       await Promise.all([
-        withTimeout(loadResource('image1.png', 40), 30),
-        withTimeout(loadResource('script1.js', 20), 30)
+        withTimeout(loadResource('image1.png', 200), 50),
+        withTimeout(loadResource('script1.js', 50), 200)
       ])
         .then((resources) => {
           loadedResources = resources;
@@ -2440,20 +2441,20 @@ export default function promiseCatchTest() {
       let raceError: string = '';
       const timerLog: string[] = [];
 
-      // Promise 1: Rejects after 20ms
+      // Promise 1: Rejects after 50ms (winner)
       const fastReject = new Promise<never>((_, reject) => {
         setTimeout(() => {
           timerLog.push('Fast reject executed');
           reject('Fast rejection wins');
-        }, 20);
+        }, 50);
       });
 
-      // Promise 2: Resolves after 50ms
+      // Promise 2: Resolves after 200ms (non-winner)
       const slowResolve = new Promise<string>((resolve) => {
         setTimeout(() => {
           timerLog.push('Slow resolve executed');
           resolve('Slow resolve loses');
-        }, 50);
+        }, 200);
       });
 
       await Promise.race([fastReject, slowResolve])
@@ -2736,16 +2737,16 @@ export default function promiseCatchTest() {
         ]);
       };
 
-      // Long-running promise (resolves after 50ms)
+      // Long-running promise (resolves after 200ms, non-winner)
       const longRunningTask = new Promise<string>((resolve) => {
         setTimeout(() => {
           timerEvents.push('Long task completed');
           resolve('Task success');
-        }, 50);
+        }, 200);
       });
 
-      // Apply 30ms timeout (task will be timed out)
-      await withTimeout(longRunningTask, 30, 'Task timed out after 30ms')
+      // Apply 50ms timeout (winner, task will be timed out)
+      await withTimeout(longRunningTask, 50, 'Task timed out after 50ms')
         .then((val) => {
           timeoutResult = `Task succeeded: ${val}`;
           timerEvents.push('Then executed');
@@ -2756,9 +2757,9 @@ export default function promiseCatchTest() {
         });
 
       // Wait for long task to complete (to verify it still runs)
-      await new Promise<void>(resolve => setTimeout(resolve, 30));
+      await new Promise<void>(resolve => setTimeout(resolve, 200));
 
-      expect(timeoutResult).assertEqual('Catch handled: Task timed out after 30ms');
+      expect(timeoutResult).assertEqual('Catch handled: Task timed out after 50ms');
       expect(timerEvents).assertDeepEquals(['Timeout triggered', 'Catch executed', 'Long task completed']);
     });
 

@@ -14,12 +14,14 @@
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
+import { Want } from '@kit.AbilityKit';
 
 export default class SecondAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.secondContext = this.context;
   }

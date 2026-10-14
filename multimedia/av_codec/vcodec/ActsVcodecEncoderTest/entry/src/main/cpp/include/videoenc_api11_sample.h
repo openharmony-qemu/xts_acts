@@ -138,6 +138,8 @@ public:
     int32_t OpenFile();
     uint32_t ReturnZeroIfEOS(uint32_t expectedSize);
     int64_t GetSystemTimeUs();
+    bool enableDmabufNameSuffix = false;
+    std::string dmabufNameSuffix;
     int32_t Start();
     int32_t Flush();
     int32_t Reset();

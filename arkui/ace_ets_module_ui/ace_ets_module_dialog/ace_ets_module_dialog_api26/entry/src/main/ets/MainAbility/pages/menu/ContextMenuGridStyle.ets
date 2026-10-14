@@ -47,7 +47,7 @@ struct ContextMenuGridStyle {
 
   build() {
     Scroll() {
-      Column({ space: 12 }) {
+      Column() {
         Text('ContextMenuOptions.gridStyle').fontSize(18).fontWeight(FontWeight.Bold)
         Text('last=' + this.lastAction).id('grid_last_action')
         Button('grid TOP')

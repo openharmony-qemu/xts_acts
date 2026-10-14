@@ -45,7 +45,7 @@
       },
       {
         "name": "Ability001",
-        "srcEntry": "./ets/testability/restartAppAbility/Ability001.ts",
+        "srcEntry": "./ets/testability/restartAppAbility/Ability001.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -64,7 +64,7 @@
       },
       {
         "name": "Ability002",
-        "srcEntry": "./ets/testability/restartAppAbility/Ability002.ts",
+        "srcEntry": "./ets/testability/restartAppAbility/Ability002.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -83,7 +83,7 @@
       },
       {
         "name": "Ability003",
-        "srcEntry": "./ets/testability/restartAppAbility/Ability003.ts",
+        "srcEntry": "./ets/testability/restartAppAbility/Ability003.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -102,7 +102,7 @@
       },
       {
         "name": "Ability004",
-        "srcEntry": "./ets/testability/restartAppAbility/Ability004.ts",
+        "srcEntry": "./ets/testability/restartAppAbility/Ability004.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -121,7 +121,7 @@
       },
       {
         "name": "Ability005",
-        "srcEntry": "./ets/testability/restartAppAbility/Ability005.ts",
+        "srcEntry": "./ets/testability/restartAppAbility/Ability005.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",

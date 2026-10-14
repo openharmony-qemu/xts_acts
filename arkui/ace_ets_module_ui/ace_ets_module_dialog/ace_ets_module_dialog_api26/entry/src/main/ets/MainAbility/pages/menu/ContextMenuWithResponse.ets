@@ -47,7 +47,7 @@ struct ContextMenuWithResponse {
   }
 
   build() {
-    Column({ space: 16 }) {
+    Column() {
       Text('bindContextMenuWithResponse').fontSize(18).fontWeight(FontWeight.Bold)
       Text('last=' + this.lastAction).id('with_resp_last_action')
       Button('WithResponse MenuElement')

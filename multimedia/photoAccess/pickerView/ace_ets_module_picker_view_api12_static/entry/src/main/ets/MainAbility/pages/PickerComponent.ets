@@ -190,7 +190,8 @@ struct PickerComponent {
   }
 
   private onPickerControllerReady(): void {
-    console.info('onPickerControllerReady');
+    AppStorage.setOrCreate<PickerController>('staticPickerController', this.pickerController);
+    console.info('onPickerControllerReady: controller stored');
     this.pickerController.setPhotoBrowserUIElementVisibility([PhotoBrowserUIElement.CHECKBOX,
       PhotoBrowserUIElement.BACK_BUTTON], true);
   }
@@ -325,6 +326,7 @@ struct PickerComponent {
   }
 
   aboutToDisappear(): void {
+    AppStorage.delete('staticPickerController');
     console.info('testPicker disappear');
   }
 

@@ -36,7 +36,7 @@ struct IndexEntry {
   build() {
     Row() {
       Column() {
-        Text("Hello Entry")
+        Text('Hello Entry')
           .fontSize('1%')
           .fontWeight(FontWeight.Bold)
 
@@ -55,9 +55,10 @@ struct IndexEntry {
             };
             commonEventManager.publish('Rely_IndexEntry_getFontSizeScale', options, (err: BusinessError) => {
               if (err) {
-                hilog.info(0x0000, this.TAG, "[%{public}s] PublishCallBack err: %{public}s", this.TAG, JSON.stringify(err));
+                hilog.info(0x0000, this.TAG, '[%{public}s] PublishCallBack err: %{public}s', this.TAG,
+                  JSON.stringify(err));
               } else {
-                hilog.info(0x0000, this.TAG, "[%{public}s] Publish success", this.TAG);
+                hilog.info(0x0000, this.TAG, '[%{public}s] Publish success', this.TAG);
               }
             });
           })
@@ -78,9 +79,10 @@ struct IndexEntry {
             };
             commonEventManager.publish('Rely_IndexEntry_setFontSizeScale', options, (err: BusinessError) => {
               if (err) {
-                hilog.info(0x0000, this.TAG, "[%{public}s] PublishCallBack err: %{public}s", this.TAG, JSON.stringify(err));
+                hilog.info(0x0000, this.TAG, '[%{public}s] PublishCallBack err: %{public}s', this.TAG,
+                  JSON.stringify(err));
               } else {
-                hilog.info(0x0000, this.TAG, "[%{public}s] Publish success", this.TAG);
+                hilog.info(0x0000, this.TAG, '[%{public}s] Publish success', this.TAG);
               }
             });
           })
@@ -114,13 +116,15 @@ struct IndexEntry {
             try {
               this.context.terminateSelf((err: BusinessError) => {
                 if (err.code) {
-                  hilog.info(0x0000, this.TAG, "[%{public}s] terminateSelf failed, err: %{public}s", this.TAG, JSON.stringify(err));
+                  hilog.info(0x0000, this.TAG, '[%{public}s] terminateSelf failed, err: %{public}s', this.TAG,
+                    JSON.stringify(err));
                   return;
                 }
-                hilog.info(0x0000, this.TAG, "[%{public}s] terminateSelf succeed", this.TAG);
+                hilog.info(0x0000, this.TAG, '[%{public}s] terminateSelf succeed', this.TAG);
               });
             } catch (paramErr) {
-              hilog.info(0x0000, this.TAG, "[%{public}s] terminateSelf failed, paramErr: %{public}s", this.TAG, JSON.stringify(paramErr));
+              hilog.info(0x0000, this.TAG, '[%{public}s] terminateSelf failed, paramErr: %{public}s', this.TAG,
+                JSON.stringify(paramErr));
             }
           })
       }

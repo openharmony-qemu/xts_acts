@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="content-title">
+        <text class="page-title">flex size constraints</text>
+        <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+    </div>
+
+    <list class="case-list" scrollbar="on">
+        <list-item class="case case-fixed">
+            <text class="case-title">1. width: 240px / height: 100px</text>
+            <div class="stage stage-fixed">
+                <div class="fixed-box"><text>240 x 100</text></div>
+            </div>
+            <text class="hint">Expected: blue item keeps fixed size.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">2. min-width: 300px / flex-shrink: 1</text>
+            <div class="stage stage-row">
+                <div class="shrink-limited"><text>min 300</text></div>
+                <div class="shrink-normal"><text>shrink</text></div>
+            </div>
+            <text class="hint">Expected: green item does not shrink below 300px.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">3. max-width: 300px / flex-grow: 1</text>
+            <div class="stage stage-row">
+                <div class="grow-limited"><text>max 300</text></div>
+                <div class="grow-fixed"><text>fixed</text></div>
+            </div>
+            <text class="hint">Expected: purple item grows but is capped at 300px.</text>
+        </list-item>
+        <list-item class="case case-fixed">
+            <text class="case-title">4. height: 40px / min-height: 100px</text>
+            <div class="stage stage-fixed">
+                <div class="min-height-box"><text>min-height 100</text></div>
+            </div>
+            <text class="hint">Expected: green item height is raised to 100px.</text>
+        </list-item>
+        <list-item class="case case-fixed">
+            <text class="case-title">5. aspect-ratio: 2 / width: 180px</text>
+            <div class="stage stage-ratio">
+                <div class="ratio-box ratio-integer"><text>2 : 1</text></div>
+            </div>
+            <text class="hint">Expected: blue item height is about 90px.</text>
+        </list-item>
+        <list-item class="case case-fixed">
+            <text class="case-title">6. aspect-ratio: 1.5 / width: 180px</text>
+            <div class="stage stage-ratio">
+                <div class="ratio-box ratio-decimal"><text>3 : 2</text></div>
+            </div>
+            <text class="hint">Expected: orange item height is about 120px.</text>
+        </list-item>
+    </list>
+
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

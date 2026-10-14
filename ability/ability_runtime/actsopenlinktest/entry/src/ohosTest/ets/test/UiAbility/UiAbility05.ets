@@ -14,6 +14,7 @@
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
@@ -21,9 +22,10 @@ import { url } from '@kit.ArkTS';
 import { rpc } from '@kit.IPCKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import { BusinessError } from '@ohos.base';
+import { Want } from '@kit.AbilityKit';
 
 export default class UiAbility05 extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.info('UiAbility05 onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.uiAbilityContext5 = this.context
@@ -50,7 +52,7 @@ export default class UiAbility05 extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
     globalThis.uiAbilityContext5.terminateSelf();
-    console.log("====>terminateSelfWithResult success====>")
+    console.log('====>terminateSelfWithResult success====>')
     commonEventManager.publish('ACTS_TEST_DESTROY', function () {
       console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_2300 publish ACTS_TEST_DESTROY');
     })

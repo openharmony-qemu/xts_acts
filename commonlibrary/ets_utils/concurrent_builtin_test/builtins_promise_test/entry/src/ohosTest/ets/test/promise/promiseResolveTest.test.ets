@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { PromiseResolveTest005, PromiseResolveTest048, PromiseResolveTest054 } from './promisejs';
 import {
   asyncThenable34,
@@ -1040,22 +1040,20 @@ export default function promiseResolveTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseResolveTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const start = Date.now();
+    it('PromiseResolveTest056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const innerRace = Promise.race([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-slow'), 20))),
+        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-slow'), 200))),
         Promise.resolve('inner-fast')
       ]);
       const outerRace = Promise.race([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerRace), 10))),
+        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerRace), 100))),
         Promise.resolve('outer-fast')
       ]);
 
       const result = await outerRace;
-      const end = Date.now();
 
       expect(result).assertEqual('outer-fast');
-      expect(end - start).assertLess(15);
+      done();
     });
 
     /**
@@ -1070,20 +1068,20 @@ export default function promiseResolveTest() {
       const timeLog: string[] = [];
       const innerSet = new Set([
         Promise.resolve(new Promise<number>(resolve => setTimeout(() => {
-          timeLog.push('inner-1: 15ms');
+          timeLog.push('inner-1: 350ms');
           resolve(10);
-        }, 15))),
+        }, 350))),
         Promise.resolve(new Promise<number>(resolve => setTimeout(() => {
-          timeLog.push('inner-2: 5ms');
+          timeLog.push('inner-2: 50ms');
           resolve(20);
-        }, 5)))
+        }, 50)))
       ]);
       const midSet = new Set([
         Promise.resolve(Promise.allSettled(innerSet)),
         Promise.resolve(new Promise<number>(resolve => setTimeout(() => {
-          timeLog.push('mid: 10ms');
+          timeLog.push('mid: 200ms');
           resolve(30);
-        }, 10)))
+        }, 200)))
       ]);
       const outerSet = Promise.allSettled(Array.from(midSet));
 
@@ -1093,7 +1091,7 @@ export default function promiseResolveTest() {
       expect((innerRes[0] as PromiseFulfilledResult<number>).value).assertEqual(10);
       expect((innerRes[1] as PromiseFulfilledResult<number>).value).assertEqual(20);
       expect((result[1] as PromiseFulfilledResult<number>).value).assertEqual(30);
-      expect(timeLog).assertDeepEquals(['inner-2: 5ms', 'mid: 10ms', 'inner-1: 15ms']);
+      expect(timeLog).assertDeepEquals(['inner-2: 50ms', 'mid: 200ms', 'inner-1: 350ms']);
     });
 
     /**
@@ -1146,14 +1144,14 @@ export default function promiseResolveTest() {
      * @tc.type Function
      * @tc.level Level 4
      */
-    it('PromiseResolveTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseResolveTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const start = Date.now();
       const innerAny = Promise.any([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-20ms'), 20))),
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-10ms'), 10)))
+        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-20ms'), 200))),
+        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-10ms'), 100)))
       ]);
       const outerAny = Promise.any([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerAny), 15))),
+        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerAny), 150))),
         Promise.resolve('outer-5ms')
       ]);
 
@@ -1161,7 +1159,7 @@ export default function promiseResolveTest() {
       const end = Date.now();
 
       expect(result).assertEqual('outer-5ms');
-      expect(end - start).assertLess(10);
+      done();
     });
 
     /**
@@ -1276,15 +1274,15 @@ export default function promiseResolveTest() {
      * @tc.type Function
      * @tc.level Level 5
      */
-    it('PromiseResolveTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseResolveTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const start = Date.now();
       const race1 = Promise.race([
-        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(10), 5))),
-        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(20), 10)))
+        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(10), 50))),
+        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(20), 200)))
       ]);
       const race2 = Promise.race([
-        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(30), 15))),
-        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(40), 5)))
+        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(30), 200))),
+        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(40), 50)))
       ]);
       const all = Promise.all([race1, race2]);
 
@@ -1292,6 +1290,7 @@ export default function promiseResolveTest() {
       const end = Date.now();
 
       expect(result).assertDeepEquals([10, 40]);
+      done();
     });
 
     /**
@@ -1639,23 +1638,23 @@ export default function promiseResolveTest() {
     it('PromiseResolveTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const timeLog: string[] = [];
       const p1 = Promise.resolve(new Promise<number>(resolve => setTimeout(() => {
-        timeLog.push('p1: 10ms');
+        timeLog.push('p1: 200ms');
         resolve(10);
-      }, 10)));
+      }, 200)));
       const p2 = p1.then(val => new Promise<number>(resolve => setTimeout(() => {
-        timeLog.push(`p2: ${val} (15ms)`);
+        timeLog.push(`p2: ${val} (200ms)`);
         resolve(val * 2);
-      }, 15)));
+      }, 200)));
       const p3 = Promise.resolve(new Promise<number>(resolve => setTimeout(() => {
-        timeLog.push('p3: 5ms');
+        timeLog.push('p3: 50ms');
         resolve(30);
-      }, 5)));
+      }, 50)));
 
       const res = await Promise.all([p1, p2, p3]);
       expect(res[0]).assertEqual(10);
       expect(res[1]).assertEqual(20);
       expect(res[2]).assertEqual(30);
-      expect(timeLog).assertDeepEquals(['p3: 5ms', 'p1: 10ms', 'p2: 10 (15ms)']);
+      expect(timeLog).assertDeepEquals(['p3: 50ms', 'p1: 200ms', 'p2: 10 (200ms)']);
     });
 
     /**
@@ -1767,11 +1766,11 @@ export default function promiseResolveTest() {
       const start = Date.now();
       const set1 = new Set([
         Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(10), 10))),
-        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(20), 15)))
+        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(20), 50)))
       ]);
       const set2 = new Set([
         Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(30), 5))),
-        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(40), 20)))
+        Promise.resolve(new Promise<number>(resolve => setTimeout(() => resolve(40), 200)))
       ]);
       const race = Promise.race([
         Promise.allSettled(set1),

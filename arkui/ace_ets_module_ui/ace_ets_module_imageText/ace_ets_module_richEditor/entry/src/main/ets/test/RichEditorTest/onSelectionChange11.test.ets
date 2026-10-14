@@ -78,7 +78,7 @@ export default function onSelectionChange11() {
       expect(Obj3_1.$attrs.content).assertEqual('10');
 
       try {
-        await driver.triggerCombineKeys(2047,2015, displayID);
+        await driver.triggerCombineKeys(2047,2015, 0, displayID);
       } catch (err) {
         console.log('triggerCombineKeys error: ' + JSON.stringify(err));
       }

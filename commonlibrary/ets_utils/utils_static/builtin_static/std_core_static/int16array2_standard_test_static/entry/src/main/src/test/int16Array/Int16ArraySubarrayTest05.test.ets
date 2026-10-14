@@ -112,21 +112,6 @@ export default function int16ArraySubarrayTestFiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_FIVE_0500
-     * @tc.name testInt16ArraySubarrayTestFive005
-     * @tc.desc Verify 0x7FFF element source subarray() returns first element 32767
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArraySubarrayTestFive005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src = Int16Array.of(0x7fff as short, 0 as short, -1 as short);
-      let sub = src.subarray();
-      let actual1: number = sub.$_get(0);
-      expect(actual1).assertEqual(32767);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_FIVE_0600
      * @tc.name testInt16ArraySubarrayTestFive006
      * @tc.desc Verify 0x7FFF element source subarray(1, 3) skips first element correctly

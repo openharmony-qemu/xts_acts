@@ -128,15 +128,13 @@ export default function ListJsunit() {
       console.info('[ListJsunit_0200] START');
 
       // Verify onScroll function of List component
-      let gridTop = CommonFunc.getComponentRect('list');
-      let top = gridTop.top
-      let gridBottom = CommonFunc.getComponentRect('list');
-      let bottom = gridBottom.bottom
-      let gridRight = CommonFunc.getComponentRect('list');
-      let right = gridRight.right
-      let left = gridRight.left;
       let driver = Driver.create();
       let swipeComponent = await driver.findComponent(ON.id('list'));
+      let gridRect = await swipeComponent.getBounds();
+      let top = gridRect.top
+      let bottom = gridRect.bottom
+      let right = gridRect.right
+      let left = gridRect.left;
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + (right - left) / 2), y: Math.round(top + (bottom - top) / 2),

@@ -42,6 +42,8 @@ import MapConcurrentTest from './Concurrent/MapConcurrent.test';
 import MapNormalTest from './Normal/MapNormal.test';
 import MapTaskPoolTest from './TaskPool/MapTaskPool.test';
 
+import MapInheritanceTest from './collections/MapInheritanceTest.test';
+
 export default function testsuite() {
   CollectionsMapClearTest();
   CollectionsMapConstructorTest();
@@ -70,4 +72,6 @@ export default function testsuite() {
   MapConcurrentTest();
   MapNormalTest();
   MapTaskPoolTest();
+  
+  MapInheritanceTest();
 };

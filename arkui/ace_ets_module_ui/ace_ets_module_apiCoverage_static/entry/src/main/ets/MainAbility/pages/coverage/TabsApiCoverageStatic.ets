@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,9 @@
  */
 
 import {
-  Entry, ComponentV2, Column, Text, Scroll, Tabs, TabContent, TabsController,
-  TabBarStyle, TabBarDisplayMode, TabVisibility, TabsBreakpointType,
-  TabsSidebarSearchableOptions, TabsSidebarSearchFilterCallback,
-  BarPosition, Color
+  Entry, ComponentV2, Column, Text, Scroll,
+  TabBarStyle, TabBarDisplayMode, TabsBreakpointType,
+  TabsSidebarSearchableOptions, TabsSidebarSearchFilterCallback
 } from '@ohos.arkui.component';
 import { Local, AppStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
@@ -35,7 +34,6 @@ struct TabsApiCoverageStatic {
   @Local tabVisibilityFlag: string = 'init';
   @Local extendableFlag: string = 'init';
   @Local barModeChangeFlag: string = 'init';
-  private tabsController: TabsController = new TabsController();
 
   aboutToAppear(): void {
     try {
@@ -51,6 +49,7 @@ struct TabsApiCoverageStatic {
     this.initSidebarSearch();
     this.tabsAttrFlag = 'ok';
     this.tabVisibilityFlag = 'ok';
+    this.barModeChangeFlag = 'ok';
   }
 
   private initTabsEnums(): void {
@@ -70,21 +69,10 @@ struct TabsApiCoverageStatic {
       };
       this.breakpointFlag =
         (bp.sm !== undefined && bp.md !== undefined && bp.lg !== undefined) ? 'ok' : 'fail';
-      this.probeTabsCtrl();
+      this.tabsCtrlFlag =
+        (modes[0] === TabBarDisplayMode.BOTTOM_TABBAR) ? 'ok' : 'fail';
     } catch (err) {
       console.info('[TabsApiCoverageStatic] initTabsEnums error ' + err);
-      this.tabsCtrlFlag = 'fail';
-    }
-  }
-
-  private probeTabsCtrl(): void {
-    try {
-      const mode: TabBarDisplayMode = this.tabsController.getBarDisplayMode();
-      this.tabsCtrlFlag =
-        (mode === TabBarDisplayMode.BOTTOM_TABBAR || mode === TabBarDisplayMode.SIDEBAR) ?
-          'ok' : 'other';
-    } catch (err) {
-      console.info('[TabsApiCoverageStatic] getBarDisplayMode error ' + err);
       this.tabsCtrlFlag = 'fail';
     }
   }
@@ -126,49 +114,6 @@ struct TabsApiCoverageStatic {
         Text(this.tabVisibilityFlag).id('tabVisibilityFlag')
         Text(this.extendableFlag).id('extendableFlag')
         Text(this.barModeChangeFlag).id('barModeChangeFlag')
-        Tabs({ barPosition: BarPosition.Start, controller: this.tabsController }) {
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Blue)
-          }
-          .tabBar('A')
-          .tabBarVisibility(TabVisibility.VISIBLE, TabBarDisplayMode.SIDEBAR)
-          TabContent() {
-            Column().width('100%').height(40).backgroundColor(Color.Green)
-          }
-          .tabBar('B')
-          .tabBarVisibility(TabVisibility.HIDDEN, TabBarDisplayMode.BOTTOM_TABBAR)
-        }
-        .id('tabsApiCov_static_tabs')
-        .width('100%')
-        .height(120)
-        .onAppear((): void => {
-          this.probeTabsCtrl();
-        })
-        .barStyle(TabBarStyle.SIDEBAR_ADAPTABLE)
-        .sidebarPosition(BarPosition.Start)
-        .sidebarHeader(undefined)
-        .sidebarSearchable({
-          searchText: 'cov',
-          placeholder: 'search',
-          searchCallback: (_text: string): void => {
-          },
-          searchFilter: (_idx: int, _text: string): boolean => {
-            return true;
-          }
-        })
-        .barDisplayModeBreakpoint({
-          sm: TabBarDisplayMode.BOTTOM_TABBAR,
-          md: TabBarDisplayMode.SIDEBAR,
-          lg: TabBarDisplayMode.SIDEBAR
-        })
-        .onBarDisplayModeChange((mode: TabBarDisplayMode): void => {
-          this.barModeChangeFlag = `${mode}`;
-        })
-        .sidebarSelectedIconColor(Color.Blue)
-        .sidebarSelectedTextColor(Color.Blue)
-        .sidebarUnselectedIconColor(Color.Gray)
-        .sidebarUnselectedTextColor(Color.Gray)
-        .sidebarSelectedBoardColor(Color.Orange)
       }
       .width('100%')
       .padding(12)

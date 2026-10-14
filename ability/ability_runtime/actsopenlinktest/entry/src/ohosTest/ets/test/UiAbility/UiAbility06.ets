@@ -62,7 +62,7 @@ export default class UiAbility06 extends ServiceExtensionAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
+      console.log('====>terminateSelfWithResult success====>')
       commonEventManager.publish('ACTS_TEST_DESTROY', function () {
         console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1300 publish ACTS_TEST_DESTROY');
       })

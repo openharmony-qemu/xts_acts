@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium-dynamic'
+import { describe, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import { skipConditional } from './utils'
 import { exclusiveSingleTest, exclusiveMultiTest, exclusiveMultiWorkerTest, sharedSingleTest, sharedMultiTest,
   sharedMultiWorkerTest, isAvailableTest, isNotAvailableTest, queryTest, abortTest, twoLocksSingleTest,

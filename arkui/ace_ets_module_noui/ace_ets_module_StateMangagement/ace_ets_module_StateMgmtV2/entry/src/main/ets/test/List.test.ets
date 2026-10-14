@@ -18,6 +18,8 @@ import Env001 from './envTest/Env001.test';
 import PerGlobalConnectTest from './PersistenceV2Test/PerGlobalConnectTest.test';
 import persistenceV2NotifyOnErrorTest from './PersistenceV2Test/PersistenceV2NotifyOnErrorTest.test';
 import persistenceV2TypeMismatchTest from './PersistenceV2Test/PersistenceV2TypeMismatch.test';
+import ignoreReadOnlyTrueTest from './PersistenceV2Test/IgnoreReadOnlyTrueTest.test';
+import ignoreReadOnlyFalseTest from './PersistenceV2Test/IgnoreReadOnlyFalseTest.test';
 import ReuseV2Test0030 from './ReuseV2Test/ReuseV2Test0030.test';
 import reuseOptionsDynamicReuseIdTest from './ReuseV2Test/ReuseOptionsDynamicReuseIdTest.test';
 import monitorWildcardTest from './MonitorTest/MonitorWildcardTest.test';
@@ -82,11 +84,22 @@ import persistenceV2NullUndefinedTest from './PersistenceV2Test/PersistenceV2Nul
 import CustomEnvTest from './CustomEnvTest/CustomEnvTest.test';
 import CustomEnvWatchTest from './CustomEnvTest/CustomEnvWatchTest.test';
 import CustomEnvDeepWatchTest from './CustomEnvTest/CustomEnvDeepWatchTest.test';
+import CustomEnvMonitorTest from './CustomEnvTest/CustomEnvMonitorTest.test';
+import CustomEnvFreezeTest from './CustomEnvTest/CustomEnvFreezeTest.test';
 import CustomDefaultvalueTest from './CustomEnvTest/CustomDefaultvalueTest.test';
 import CustomEnvParamV2Test from './CustomEnvTest/CustomEnvParamV2Test.test';
 import CustomEnvObservedV2Test from './CustomEnvTest/CustomEnvObservedV2Test.test';
+import CustomEnvArrayTest from './CustomEnvTest/CustomEnvArrayTest.test';
+import CustomEnvDateTest from './CustomEnvTest/CustomEnvDateTest.test';
+import CustomEnvMapTest from './CustomEnvTest/CustomEnvMapTest.test';
+import CustomEnvSetTest from './CustomEnvTest/CustomEnvSetTest.test';
 import CustomEnvMultiTypeTest from './CustomEnvTest/CustomEnvMultiTypeTest.test';
 import CustomEnvNearTest from './CustomEnvTest/CustomEnvNearTest.test';
+import persistenceV2IgnoreReadOnlyProperties1Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties1Test.test';
+import persistenceV2IgnoreReadOnlyProperties2Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties2Test.test';
+import persistenceV2IgnoreReadOnlyProperties3Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyProperties3Test.test';
+import persistenceV2IgnoreReadOnlyPropertiesSet1Test from './PersistenceV2Test/PersistenceV2IgnoreReadOnlyPropertiesSet1Test.test';
+
 
 export default function testsuite() {
 	ArrayLikeStringTest();
@@ -154,12 +167,24 @@ export default function testsuite() {
     appStorageV2NullUndefinedTest();
     persistenceV2NotifyOnErrorTest();
     persistenceV2TypeMismatchTest();
+    ignoreReadOnlyTrueTest();
+    ignoreReadOnlyFalseTest();
     CustomEnvTest();
     CustomEnvWatchTest();
     CustomEnvDeepWatchTest();
+    CustomEnvMonitorTest();
+    CustomEnvFreezeTest();
     CustomDefaultvalueTest();
     CustomEnvParamV2Test();
     CustomEnvObservedV2Test();
+    CustomEnvArrayTest();
+    CustomEnvDateTest();
+    CustomEnvMapTest();
+    CustomEnvSetTest();
     CustomEnvMultiTypeTest();
     CustomEnvNearTest();
+    persistenceV2IgnoreReadOnlyProperties1Test();
+    persistenceV2IgnoreReadOnlyProperties2Test();
+    persistenceV2IgnoreReadOnlyProperties3Test();
+    persistenceV2IgnoreReadOnlyPropertiesSet1Test();
 }

@@ -13,13 +13,33 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { collections } from '@kit.ArkTS';
+import { taskpool } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 const SLEEP_INTERVAL_MS: number = 100;
 
 function sleep(ms: number): Promise<void> {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, ms));
+}
+
+async function asyncSleep(time: number) {
+  return await new Promise<number>((resolve) => {
+    setTimeout(() => {
+      resolve(1)
+    }, time)
+  })
+}
+
+@Concurrent
+function testResize(index: number, bit: collections.BitVector) {
+  let tag = 'testResize'
+  try {
+    bit.resize(10);
+  } catch (e) {
+    console.info(`${tag} Task execution catch: ${(e as BusinessError).message}, code: ${(e as BusinessError).code}`);
+  }
 }
 
 export default function BitVectorResizeTest() {
@@ -627,5 +647,46 @@ export default function BitVectorResizeTest() {
             }
             done()
           });
+
+    /**
+     * @tc.name   testBitVectorResize10200201
+     * @tc.number SUB_COMMONLIBRARY_BITVECTOR_TEST_0626
+     * @tc.desc   BitVector resize 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testBitVectorResize10200201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const caseName = 'testBitVectorResize10200201';
+        console.info(`${caseName} test start`);
+        let count = 0;
+        let hasException = false;
+        let bitVector = new collections.BitVector(4);
+        try {
+          for (let i = 0; i < 100; i++) {
+            taskpool.execute(testResize, i, bitVector).then(() => {
+              count++
+            }).catch((e: BusinessError) => {
+              console.info(`${caseName} Task execution catch: ${e.message}, code: ${e.code}`);
+            })
+          }
+          for (let i = 0; i < 10; i++) {
+            bitVector.resize(10)
+          }
+        } catch (e) {
+          hasException = true;
+          console.info(`${caseName} Task execution failed with error: ${(e as BusinessError).message}, code: ${(e as BusinessError).code}`);
+          expect((e as BusinessError).code === 10200201 || (e as BusinessError).code === 10200001).assertEqual(true)
+        }
+        while (count < 100) {
+          await asyncSleep(100)
+        }
+        if (!hasException) {
+          expect(bitVector.length).assertEqual(10);
+        }
+        console.info(`${caseName} test end`);
+        done()
+      });
   })
 }

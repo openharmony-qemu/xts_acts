@@ -64,7 +64,7 @@ struct MenuItemSubMenuBuilder {
   }
 
   build() {
-    Column({ space: 16 }) {
+    Column() {
       Text('MenuItem.subMenuBuilder').fontSize(18).fontWeight(FontWeight.Bold)
       Text('last=' + this.lastAction).id('submenu_last_action')
       Button('open menu with submenu')

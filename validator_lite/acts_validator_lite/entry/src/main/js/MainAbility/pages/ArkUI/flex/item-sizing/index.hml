@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="content-title">
+        <text class="page-title">flex item sizing</text>
+        <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+    </div>
+
+    <list class="case-list" scrollbar="on">
+        <list-item class="case">
+            <text class="case-title">1. flex-grow: 1 / 2 / 1</text>
+            <div class="parent">
+                <div class="grow-1"><text>1</text></div>
+                <div class="grow-2"><text>2</text></div>
+                <div class="grow-1"><text>1</text></div>
+            </div>
+            <text class="hint">Expected: orange item is twice the width of each blue item.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">2. flex-grow: 0 / 1</text>
+            <div class="parent">
+                <div class="fixed-grow"><text>grow:0</text></div>
+                <div class="fill-grow"><text>grow:1</text></div>
+            </div>
+            <text class="hint">Expected: green item fills remaining row width.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">3. flex-shrink: 0</text>
+            <div class="parent boundary">
+                <div class="no-shrink"><text>700px</text></div>
+            </div>
+            <text class="hint">Expected: red item keeps 700px width and overflows parent.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">4. flex-shrink: 1 / 1 / 1</text>
+            <div class="parent boundary">
+                <div class="shrink-equal"><text>1</text></div>
+                <div class="shrink-equal"><text>1</text></div>
+                <div class="shrink-equal"><text>1</text></div>
+            </div>
+            <text class="hint">Expected: three purple items shrink equally inside parent.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">5. flex-basis: 100px</text>
+            <div class="parent">
+                <div class="basis-px"><text>basis 100</text></div>
+                <div class="basis-width"><text>width 60</text></div>
+            </div>
+            <text class="hint">Expected: first item is wider than second item.</text>
+        </list-item>
+    </list>
+
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog';
 
 @Entry
 @Component
-struct Index {
+struct MainAbility2Index {
   @State message: string = 'Hello World -- MainAbility2';
 
   aboutToAppear() {

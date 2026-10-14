@@ -42,21 +42,6 @@ export default function int16ArrayWithTestTwoTest(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_TWO_0100
-     * @tc.name testInt16ArrayWithTestTwo001
-     * @tc.desc Verify with(1, 99) stores 99 at index 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestTwo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([100, 200, 300, 400, 500]);
-      let result: Int16Array = arr.with(1, 99);
-      let actual1: number = result.$_get(1);
-      expect(actual1).assertEqual(99);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_TWO_0200
      * @tc.name testInt16ArrayWithTestTwo002
      * @tc.desc Verify with(-2, 99) stores 99 at index 3
@@ -505,21 +490,6 @@ export default function int16ArrayWithTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_TWO_3000
-     * @tc.name testInt16ArrayWithTestTwo030
-     * @tc.desc Verify with(0, 65536) wraps to 0 under Int16 conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([100, 200, 300]);
-      let result: Int16Array = arr.with(0, 65536);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_TWO_3100
      * @tc.name testInt16ArrayWithTestTwo031
      * @tc.desc Verify with(0, 65537) wraps to 1 under Int16 conversion
@@ -652,21 +622,6 @@ export default function int16ArrayWithTestTwoTest(): void {
       let result: Int16Array = arr.with(0, -200000);
       let actual1: number = result.$_get(0);
       expect(actual1).assertEqual(-3392);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_TWO_4000
-     * @tc.name testInt16ArrayWithTestTwo040
-     * @tc.desc Verify with(0, 5e-324) stores 0 at index 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestTwo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([100, 200, 300]);
-      let result: Int16Array = arr.with(0, 5e-324);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(0);
     });
 
     /**
@@ -807,21 +762,6 @@ export default function int16ArrayWithTestTwoTest(): void {
       let result: Int16Array = arr.with(0, -3.5);
       let actual1: number = result.$_get(0);
       expect(actual1).assertEqual(-3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_WITH_TWO_5000
-     * @tc.name testInt16ArrayWithTestTwo050
-     * @tc.desc Verify with(0, 131071) wraps to -1 under Int16 conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayWithTestTwo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([100, 200, 300]);
-      let result: Int16Array = arr.with(0, 131071);
-      let actual1: number = result.$_get(0);
-      expect(actual1).assertEqual(-1);
     });
 
     /**

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { describe, it, expect, Level, Size, TestType } from '@ohos/hypium';
 import { ArkTSUtils, lang } from '@kit.ArkTS';
 
 @Sendable

@@ -439,6 +439,35 @@ export default function ImageCreateImageReceiverCreator() {
       }
       done();
     })
+    /**
+     * @tc.name       SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_0008
+     * @tc.number     SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_0008
+     * @tc.desc       ImageCreator.on('imageRelease') register two different callbacks, verify no error
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_0008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_CREATE_IMAGE_CREATOR_SUPP_0008';
+      let creator: image.ImageCreator = image.createImageCreator(8192, 8, image.ImageFormat.JPEG, 8);
+      let firstCallbackFunc = () => {
+        console.info(TAG, testName, 'first callback listen succeeded');
+      }
+      let secondCallbackFunc = () => {
+        console.info(TAG, testName, 'second callback listen succeeded');
+      }
+      try {
+        creator.on('imageRelease', firstCallbackFunc);
+        creator.on('imageRelease', secondCallbackFunc);
+        creator.off('imageRelease');
+        console.info(TAG, testName, 'on/off imageRelease succeeded without error');
+      } catch (error) {
+        console.info(TAG, testName, `Listen error. ${error.code}, error is ${error}`);
+        expect().assertFail();
+      }
+      creator.release();
+      done();
+    })
 
 
   })

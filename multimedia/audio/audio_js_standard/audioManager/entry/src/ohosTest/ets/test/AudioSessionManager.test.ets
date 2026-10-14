@@ -336,6 +336,26 @@ export default function audioSessionManagerTest() {
     })
 
     /**
+    * @tc.name   SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100
+    * @tc.number SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100
+    * @tc.desc   setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE test.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("SUB_MULTIMEDIA_AUDIO_SESSION_MANAGER_SET_AUDIO_SESSION_SCENE_VOICE_MESSAGE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        audioSessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_VOICE_MESSAGE);
+        console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE: PASS`);
+        done();
+      } catch (error) {
+        console.info(`${TagFrmwk}: setAudioSessionScene with AUDIO_SESSION_SCENE_VOICE_MESSAGE: FAIL :${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
     * @tc.name   AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_EARPIECE_0100
     * @tc.number AUDIO_SESSION_MANAGER_SET_DEFAULT_OUTPUT_DEVICE_EARPIECE_0100
     * @tc.desc   setDefaultOutputDevice with EARPIECE test.

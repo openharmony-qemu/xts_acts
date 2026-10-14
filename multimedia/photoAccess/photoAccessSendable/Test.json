@@ -53,10 +53,7 @@
         {
             "type": "PushKit",
             "pre-push": [],
-            "push": [
-                "./resource/medialibrary/01.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.photoaccess/haps/entry_test/files/",
-                "./resource/medialibrary/01.mp4 ->/data/app/el2/100/base/ohos.acts.multimedia.photoaccess/haps/entry_test/files/"
-            ]
+            "push": []
         },
         {
             "type": "ShellKit",

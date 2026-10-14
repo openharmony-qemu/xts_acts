@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import ArrayLikeStringTest from './ArrayLikeTest/ArrayLikeStringTest.test';
 import ReuseV2Test0030 from './ReuseV2Test/ReuseV2Test0030.test';
 import AddMonitorErrorCode from './AddMonitorTest/AddMonitorErrorCode.test';
@@ -50,23 +50,27 @@ import CustomEnvSet from './CustomComponentTest/CustomEnvSet.test';
 import CustomEnvV2ToV1 from './CustomComponentTest/CustomEnvV2ToV1.test';
 import CustomEnvV1ToV2 from './CustomComponentTest/CustomEnvV1ToV2.test';
 import CustomEnvMultipleTypes from './CustomComponentTest/CustomEnvMultipleTypes.test';
- 
- 
+import CustomEnvWatch from './CustomComponentTest/CustomEnvWatch.test';
+import CustomEnvMonitor from './CustomComponentTest/CustomEnvMonitor.test';
+import CustomEnvTabContent from './CustomComponentTest/CustomEnvTabContent.test';
+import CustomEnvNearest from './CustomComponentTest/CustomEnvNearest.test';
+
+
 export default function testsuite(): void {
-  AddMonitorSetPath(); 
+  AddMonitorSetPath();
   ArrayLikeStringTest();
-  //ReuseV2Test0030(); 
-  AddMonitorNoPath(); 
-  AddMonitorObservedV2Int(); 
-  AddMonitorObservedV2Boolean(); 
-  AddMonitorObservedV2String(); 
-  AddMonitorObservedV2Array(); 
-  AddMonitorObservedV2Date(); 
-  AddMonitorObservedV2Map(); 
-  AddMonitorObservedV2Set(); 
+  //ReuseV2Test0030();
+  AddMonitorNoPath();
+  AddMonitorObservedV2Int();
+  AddMonitorObservedV2Boolean();
+  AddMonitorObservedV2String();
+  AddMonitorObservedV2Array();
+  AddMonitorObservedV2Date();
+  AddMonitorObservedV2Map();
+  AddMonitorObservedV2Set();
   AddMonitorErrorCode();
-  AddMonitorParentChild(); 
-  AddMonitorTwoDimensionalArray(); 
+  AddMonitorParentChild();
+  AddMonitorTwoDimensionalArray();
   SyncMonitorNotWildcardsTest();
   PersistenceV2ApiTest();
   PersistenceV2DefaultSubCreatorsTest();
@@ -88,4 +92,8 @@ export default function testsuite(): void {
   CustomEnvV2ToV1();
   CustomEnvV1ToV2();
   CustomEnvMultipleTypes();
+  CustomEnvWatch();
+  CustomEnvMonitor();
+  CustomEnvTabContent();
+  CustomEnvNearest();
 }

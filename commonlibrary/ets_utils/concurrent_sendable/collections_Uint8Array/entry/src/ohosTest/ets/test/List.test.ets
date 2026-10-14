@@ -20,6 +20,9 @@ import Uint8ArrayConcurrentTestConcurrent from './Concurrent/Uint8ArrayConcurren
 import Uint8ArrayNormalTest from './Normal/Uint8ArrayNormal.test';
 import Uint8ArrayTaskPoolTest from './TaskPool/Uint8ArrayTaskPool.test';
 
+import UintByteArrayTest from './intArray/UintByteArrayTest.test';
+
+
 export default function testsuite() {
   Uint8ArrayBasicTest();
   Uint8ArrayConcurrentTest();
@@ -27,4 +30,7 @@ export default function testsuite() {
   Uint8ArrayConcurrentTestConcurrent();
   Uint8ArrayNormalTest();
   Uint8ArrayTaskPoolTest();
+  
+  UintByteArrayTest();
+
 }

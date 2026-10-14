@@ -468,3 +468,5 @@ export const CapabilityConfig0010: () => Promise<number>;
 export const VideoCapabilityConfig0020Test: () => Promise<number>;
 export const VideoEncoderSetXPS0010Test: () => Promise<number>;
 export const VideoEncoderSetXPS0020Test: () => Promise<number>;
+export const VideoEncoder264DmabufSuffix0010: () => Promise<number>;
+export const VideoEncoder265DmabufSuffix0010: () => Promise<number>;

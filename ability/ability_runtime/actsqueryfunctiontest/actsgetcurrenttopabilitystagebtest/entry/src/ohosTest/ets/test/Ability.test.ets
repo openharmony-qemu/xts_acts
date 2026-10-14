@@ -14,7 +14,7 @@
 */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
-import commonEvent from "@ohos.commonEvent"
+import commonEvent from '@ohos.commonEvent'
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import { Want } from '@kit.AbilityKit';
@@ -23,13 +23,13 @@ import eventBus from '../lib/EventBus';
 function sleep(time:number) {
     return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
 
-let subscriberInfo_MainAbility2: CommonEventManager.CommonEventSubscribeInfo = {
-    events: ["GetCurrentTopAbility"],
+let subscriberInfoMainAbility2: CommonEventManager.CommonEventSubscribeInfo = {
+    events: ['GetCurrentTopAbility'],
 };
 const START_ABILITY_TIMEOUT = 4000;
 export default function abilityTest() {
@@ -44,32 +44,44 @@ export default function abilityTest() {
         /**
          * @tc.name   ACTS_GetCurrentTopAbility_0200
          * @tc.number ACTS_GetCurrentTopAbility_0200
-         * @tc.desc   Start PageAbility2,Ability1 to be tested in turn, and get the current foreground Ability (AsyncCallback)
+         * @tc.desc   Start PageAbility2,Ability1 to be tested in turn, and get the current foreground Ability
+           (AsyncCallback)
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
         it('ACTS_GetCurrentTopAbility_0200', Level.LEVEL0, async (done:Function) => {
-            console.log("ACTS_GetCurrentTopAbility_0200 --- start")
+            console.log('ACTS_GetCurrentTopAbility_0200 --- start')
             abilityDelegatorRegistry.getAbilityDelegator()
             let flag=true;
-            let Subscriber:CommonEventManager.CommonEventSubscriber;
-            let AbilityDelegator=await abilityDelegatorRegistry.getAbilityDelegator();
+            let subscriber:CommonEventManager.CommonEventSubscriber;
+            let abilityDelegator=await abilityDelegatorRegistry.getAbilityDelegator();
 
-            commonEvent.createSubscriber(subscriberInfo_MainAbility2).then(async (data) => {
-                console.info("ACTS_GetCurrentTopAbility_0200====>Create Subscriber====>");
-                Subscriber = data;
-                await commonEvent.subscribe(Subscriber, async (err, data) => {
-                    console.info("ACTS_GetCurrentTopAbility_0200====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            commonEvent.createSubscriber(subscriberInfoMainAbility2).then(async (data) => {
+                console.info('ACTS_GetCurrentTopAbility_0200====>Create Subscriber====>');
+                subscriber = data;
+                await commonEvent.subscribe(subscriber, async (err, data) => {
+                    if (err && err.code !== 0) {
+                      console.info(`callback err: ${JSON.stringify(err)}`);
+                      expect().assertFail();
+                      return;
+                    }
+                    console.info('ACTS_GetCurrentTopAbility_0200====>Subscribe CallBack data:====>' +
+                      JSON.stringify(data));
                     expect(data.event == 'GetCurrentTopAbility').assertTrue();
                     if (data.event == 'GetCurrentTopAbility') {
                     await sleep(1000);
-                    AbilityDelegator.getCurrentTopAbility((err,data) => {
-                        console.info("====>thisTopAbility====>"+JSON.stringify(data.lastRequestWant))
-                        console.info("====>start startAbility====>");
+                    abilityDelegator.getCurrentTopAbility((err,data) => {
+                        if (err && err.code !== 0) {
+                          console.info(`callback err: ${JSON.stringify(err)}`);
+                          expect().assertFail();
+                          return;
+                        }
+                        console.info('====>thisTopAbility====>'+JSON.stringify(data.lastRequestWant))
+                        console.info('====>start startAbility====>');
                         expect(data.lastRequestWant.abilityName).assertEqual('Ability1')
-                        commonEvent.unsubscribe(Subscriber, async () => {
-                            console.debug("ACTS_GetCurrentTopAbility_0200====>UnSubscribe CallBack====>");
+                        commonEvent.unsubscribe(subscriber, async () => {
+                            console.debug('ACTS_GetCurrentTopAbility_0200====>UnSubscribe CallBack====>');
                             await globalThis.ability2Context.terminateSelf();
                             await globalThis.ability3Context.terminateSelf();
                             done();
@@ -83,11 +95,16 @@ export default function abilityTest() {
                         abilityName: 'Ability2'
                     }
                 ).then(()=>{
-                    console.info("====>ACTS_GetCurrentTopAbility_0200 startAbility Ability2 start ====>");
+                    console.info('====>ACTS_GetCurrentTopAbility_0200 startAbility Ability2 start ====>');
                 }).catch((err:BusinessError) =>{
-                    console.info("====>ACTS_GetCurrentTopAbility_0200 startAbility Ability2 err ====>"+JSON.stringify(err));
+                    console.info('====>ACTS_GetCurrentTopAbility_0200 startAbility Ability2 err ====>' +
+                      JSON.stringify(err));
                 })
             
+            }).catch((err: BusinessError) => {
+                console.info('ACTS_GetCurrentTopAbility_0200 createSubscriber err====>' + JSON.stringify(err));
+                expect().assertFail();
+                done();
             })
         })
 
@@ -100,40 +117,50 @@ export default function abilityTest() {
          * @tc.level  LEVEL0
          */
         it('ACTS_GetCurrentTopAbility_0500', Level.LEVEL0, async (done:Function) => {
-            console.log("ACTS_GetCurrentTopAbility_0500 --- start")
+            console.log('ACTS_GetCurrentTopAbility_0500 --- start')
             abilityDelegatorRegistry.getAbilityDelegator()
             let flag=true;
-            let Subscriber:CommonEventManager.CommonEventSubscriber;
-            let AbilityDelegator=await abilityDelegatorRegistry.getAbilityDelegator();
+            let subscriber:CommonEventManager.CommonEventSubscriber;
+            let abilityDelegator=await abilityDelegatorRegistry.getAbilityDelegator();
 
-            commonEvent.createSubscriber(subscriberInfo_MainAbility2).then(async (data) => {
-                console.info("ACTS_GetCurrentTopAbility_0500====>Create Subscriber====>");
-                Subscriber = data;
-                await commonEvent.subscribe(Subscriber, (err, data) => {
-                    console.info("ACTS_GetCurrentTopAbility_0500====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            commonEvent.createSubscriber(subscriberInfoMainAbility2).then(async (data) => {
+                console.info('ACTS_GetCurrentTopAbility_0500====>Create Subscriber====>');
+                subscriber = data;
+                await commonEvent.subscribe(subscriber, (err, data) => {
+                    if (err && err.code !== 0) {
+                      console.info(`callback err: ${JSON.stringify(err)}`);
+                      expect().assertFail();
+                      return;
+                    }
+                    console.info('ACTS_GetCurrentTopAbility_0500====>Subscribe CallBack data:====>' +
+                      JSON.stringify(data));
                     expect(data.event == 'GetCurrentTopAbility').assertTrue();
                     if (data.event == 'GetCurrentTopAbility') {
-                        AbilityDelegator.getCurrentTopAbility().then((data) => {
-                            console.info("====>thisTopAbility====>"+JSON.stringify(data.lastRequestWant))
-                            console.info("====>start startAbility====>");
+                        abilityDelegator.getCurrentTopAbility().then((data) => {
+                            console.info('====>thisTopAbility====>'+JSON.stringify(data.lastRequestWant))
+                            console.info('====>start startAbility====>');
                             expect(data.lastRequestWant.abilityName).assertEqual('Ability1')
-                            commonEvent.unsubscribe(Subscriber, async () => {
-                                console.info("ACTS_GetCurrentTopAbility_0500====>UnSubscribe CallBack====>");
+                            commonEvent.unsubscribe(subscriber, async () => {
+                                console.info('ACTS_GetCurrentTopAbility_0500====>UnSubscribe CallBack====>');
                                 await globalThis.ability2Context.terminateSelf();
                                 await globalThis.ability3Context.terminateSelf();
                                 done();
                             })
+                        }).catch((err: BusinessError) => {
+                            console.info('====>getCurrentTopAbility err====>' + JSON.stringify(err));
+                            expect().assertFail();
+                            done();
                         })
                     }
                 });
 
                 if (globalThis.mainAbilityOnBackground) { 
                     let cmd = `aa start -b com.example.actsgetcurrenttopabilitystagebtest -a MainAbility`;
-                    let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+                    let user = abilityDelegatorRegistry.getArguments().parameters['-u'];
                     if(user !== undefined){
                         cmd += ' -u ' + user;
                     }
-                    AbilityDelegator.executeShellCommand(cmd); 
+                    abilityDelegator.executeShellCommand(cmd); 
                     await eventBus.onWait('MainAbility_onForeground'); 
                 }
 
@@ -142,10 +169,15 @@ export default function abilityTest() {
                         bundleName: 'com.example.actsgetcurrenttopabilitystagebtest',
                         abilityName: 'Ability2',
                     }).then(()=>{
-                        console.info("====>ACTS_GetCurrentTopAbility_0500 startAbility Ability2 start ====>");
+                        console.info('====>ACTS_GetCurrentTopAbility_0500 startAbility Ability2 start ====>');
                     }).catch((err:BusinessError) =>{
-                        console.info("====>ACTS_GetCurrentTopAbility_0500 startAbility Ability2 err ====>"+JSON.stringify(err));
+                        console.info('====>ACTS_GetCurrentTopAbility_0500 startAbility Ability2 err ====>' +
+                          JSON.stringify(err));
                     })
+            }).catch((err: BusinessError) => {
+                console.info('ACTS_GetCurrentTopAbility_0500 createSubscriber err====>' + JSON.stringify(err));
+                expect().assertFail();
+                done();
             })
         })
     })

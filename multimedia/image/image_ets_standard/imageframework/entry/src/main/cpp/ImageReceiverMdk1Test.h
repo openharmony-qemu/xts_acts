@@ -35,6 +35,7 @@ napi_value JsReceiverRelease(napi_env env, napi_callback_info info);
 napi_value JsImageFormatYcbcr422Sp(napi_env env, napi_callback_info info);
 napi_value JsImageFormatJPEG(napi_env env, napi_callback_info info);
 
+napi_value JsImageComponentFormatEnum(napi_env env, napi_callback_info info);
 napi_value JsImageComponentFormatYUVY(napi_env env, napi_callback_info info);
 napi_value JsImageComponentFormatYUVU(napi_env env, napi_callback_info info);
 napi_value JsImageComponentFormatYUVV(napi_env env, napi_callback_info info);

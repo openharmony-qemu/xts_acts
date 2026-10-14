@@ -107,13 +107,10 @@ import malloc1NdkTest from './Malloc1Ndk.test';
 import stat1NdkTest from './Stat1Ndk.test';
 import fenvNdk1Test from './FenvNdk1.test';
 import fnmatchNdk1Test from './FnMatchNdk1.test';
-import fsuidNdk1Test from './FsuidNdk1.test';
 import muslIfaddrsNdk1Test from './IfaddrsNdk1.test';
-import muslKlogNdk1Test from './KlogNdk1.test';
 import mmanNdk1Test from './MmanNdk1.test';
 import mntentNdk1Test from './MntentNdk1.test';
 import muslPThreadNdk1Test from './PthreadNdk1.test';
-import mountNdk1Test from './MountNdk1.test';
 import muslQuotaNdk1Test from './QuotaNdk1.test';
 import muslRandomNdk1Test from './RandomNdk1.test';
 import muslResourceNdk1Test from './ResourceNdk1.test';
@@ -135,6 +132,8 @@ import RegisterPrintfModifierTest from './RegisterPrintfModifier.test';
 import abilityPthreadJoinTest from './PthreadJoinDetach.test';
 import pthreadSetcanceltypeTest from './PthreadSetcanceltype.test';
 import pthreadYieldTest from './PthreadYield.test';
+import pthreadTsdTest from './PthreadTsd.test';
+import pthreadKeyCreateTest from './PthreadKeyCreate.test';
 import GroupIpcTest from './GroupIpc.test';
 
 
@@ -154,11 +153,8 @@ export default function testsuite() {
   muslPThreadNdk1Test();
   unistdNdk1Test();
   fenvNdk1Test();
-  fsuidNdk1Test();
   muslIfaddrsNdk1Test();
-  muslKlogNdk1Test();
   mntentNdk1Test();
-  mountNdk1Test();
   muslQuotaNdk1Test();
   muslRandomNdk1Test();
   muslSearch1Test();
@@ -252,4 +248,6 @@ export default function testsuite() {
   GroupIpcTest();
   pthreadSetcanceltypeTest();
   pthreadYieldTest();
+  pthreadTsdTest();
+  pthreadKeyCreateTest();
 }

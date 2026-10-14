@@ -1,9 +1,15 @@
 {
   "src": [
-		"MainAbility/pages/ArrayLike/ArrayLikeString",
+    "MainAbility/pages/ArrayLike/ArrayLikeString",
     "MainAbility/pages/PersistenceV2/PerGlobalConnect",
     "MainAbility/pages/PersistenceV2/PersistenceV2NotifyOnErrorTest",
     "MainAbility/pages/PersistenceV2/PersistenceV2TypeMismatch",
+    "MainAbility/pages/PersistenceV2/IgnoreReadOnlyTrue",
+    "MainAbility/pages/PersistenceV2/IgnoreReadOnlyFalse",
+    "MainAbility/pages/PersistenceV2/PersistenceV2IgnoreReadOnlyProperties1",
+    "MainAbility/pages/PersistenceV2/PersistenceV2IgnoreReadOnlyProperties2",
+    "MainAbility/pages/PersistenceV2/PersistenceV2IgnoreReadOnlyProperties3",
+    "MainAbility/pages/PersistenceV2/PersistenceV2IgnoreReadOnlyPropertiesSet",
     "MainAbility/pages/ReuseV2/ReuseV20030",
     "MainAbility/pages/ReuseV2/ReuseOptionsDynamicReuseIdTest",
     "MainAbility/pages/Monitor/Monitor1",
@@ -70,10 +76,16 @@
     "MainAbility/pages/CustomEnv/CustomEnv",
     "MainAbility/pages/CustomEnv/CustomEnvWatch",
     "MainAbility/pages/CustomEnv/CustomEnvDeepWatch",
+    "MainAbility/pages/CustomEnv/CustomEnvMonitor",
+    "MainAbility/pages/CustomEnv/CustomEnvFreeze",
     "MainAbility/pages/CustomEnv/CustomDefaultvalue",
     "MainAbility/pages/CustomEnv/CustomEnvParamV2",
     "MainAbility/pages/CustomEnv/CustomEnvObservedV2",
+    "MainAbility/pages/CustomEnv/CustomEnvArray",
     "MainAbility/pages/CustomEnv/CustomEnvMultiType",
-    "MainAbility/pages/CustomEnv/CustomEnvNear"
+    "MainAbility/pages/CustomEnv/CustomEnvDate",
+    "MainAbility/pages/CustomEnv/CustomEnvMap",
+    "MainAbility/pages/CustomEnv/CustomEnvNear",
+    "MainAbility/pages/CustomEnv/CustomEnvSet"
   ]
 }

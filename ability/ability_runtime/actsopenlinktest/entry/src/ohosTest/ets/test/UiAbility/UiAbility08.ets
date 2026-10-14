@@ -14,6 +14,7 @@
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
@@ -58,7 +59,7 @@ export default class UiAbility08 extends UIAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
+      console.log('====>terminateSelfWithResult success====>')
       commonEventManager.publish('ACTS_TEST_DESTROY', function () {
         console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_1700 publish ACTS_TEST_DESTROY');
       });

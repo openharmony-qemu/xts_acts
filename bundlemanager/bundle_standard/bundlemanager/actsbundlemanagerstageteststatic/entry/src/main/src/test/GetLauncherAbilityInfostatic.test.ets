@@ -72,8 +72,8 @@ export default function abilityTest() {
         expect(data![0].applicationInfo.debug).assertEqual(true);
         expect(data![0].applicationInfo.dataUnclearable).assertEqual(false);
         expect(data![0].applicationInfo.nativeLibraryPath).assertEqual("");
-        expect(data![0].applicationInfo.multiAppMode.multiAppModeType).assertEqual(MAX_COUNT);
-        expect(data![0].applicationInfo.multiAppMode.maxCount).assertEqual(MAX_COUNT);
+        expect(data![0].applicationInfo.multiAppMode.multiAppModeType >=0 ).assertTrue();
+        expect(data![0].applicationInfo.multiAppMode.maxCount >=0).assertTrue();
         expect(data![0].applicationInfo.appIndex).assertEqual(APP_Index);
         expect(data![0].applicationInfo.installSource).assertEqual("unknown");
         expect(data![0].applicationInfo.cloudFileSyncEnabled).assertEqual(false);

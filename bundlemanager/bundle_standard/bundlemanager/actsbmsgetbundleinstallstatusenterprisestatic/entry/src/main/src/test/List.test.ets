@@ -15,7 +15,9 @@
  */
 
 import getBundleInstallStatusTest from './GetBundleInstallStatus.test.ets';
+import getInstalledBundleListTest from './GetInstalledBundleList.test.ets';
 
 export default function testsuite(): void {
   getBundleInstallStatusTest();
+  getInstalledBundleListTest();
 }

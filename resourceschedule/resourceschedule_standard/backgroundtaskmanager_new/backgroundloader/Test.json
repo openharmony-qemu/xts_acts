@@ -18,12 +18,14 @@
         "type": "ShellKit",
         "run-command": [
             "power-shell wakeup",
-            "power-shell setmode 602"
+            "power-shell setmode 602",
+            "setenforce 0"
         ]
     }, {
         "type": "ShellKit",
         "teardown-command": [
-            "rm -rf data/test"
+            "rm -rf data/test",
+            "setenforce 1"
         ]
     }
 ]

@@ -1,7 +1,6 @@
 'use static';
 
 
-import ability from './Ability.test';
 import Int16ArrayFilterTest01 from './int16array/Int16ArrayFilterTest01.test';
 import Int16ArrayFilterTest02 from './int16array/Int16ArrayFilterTest02.test';
 import Int16ArrayOverviewTest01 from './int16array/Int16ArrayOverviewTest01.test';
@@ -19,7 +18,6 @@ import Int16ArrayToSortedTest02 from './int16array/Int16ArrayToSortedTest02.test
 import Int16ArrayToStringTest01 from './int16array/Int16ArrayToStringTest01.test';
 
 export default function testsuite(): void {
-  ability();
   Int16ArrayFilterTest01();
   Int16ArrayFilterTest02();
   Int16ArrayOverviewTest01();

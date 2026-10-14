@@ -70,8 +70,8 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       emitKey = "emitWebViewSdkSchemeHandler_getHttpBodyStream"
       Utils.emitEvent(emitKey, 142311);
       let isReturn = false;
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getHttpBodyStream", true, 142370, done);
-      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getHttpBodyStream", true, 142370, () => { isReturn = true; });
+      await Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
@@ -87,8 +87,8 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       emitKey = "emitWebViewSdkSchemeHandler_getSize"
       Utils.emitEvent(emitKey, 142311);
       let isReturn = false;
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getSize", true, 142380, done);
-      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getSize", true, 142380, () => { isReturn = true; });
+      await Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
@@ -104,8 +104,8 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       emitKey = "emitWebViewSdkSchemeHandler_getPosition"
       Utils.emitEvent(emitKey, 142311);
       let isReturn = false;
-      Utils.registerEvent("testWebViewSdkSchemeHandler_getPosition", true, 142390, done);
-      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_getPosition", true, 142390, () => { isReturn = true; });
+      await Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
@@ -122,8 +122,8 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       emitKey = "emitWebViewSdkSchemeHandler_isChunked"
       Utils.emitEvent(emitKey, 142311);
       let isReturn = false;
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isChunked", true, 142400, done);
-      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isChunked", true, 142400, () => { isReturn = true; });
+      await Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
@@ -141,8 +141,8 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       emitKey = "emitWebViewSdkSchemeHandler_isEof"
       Utils.emitEvent(emitKey, 142311);
       let isReturn = false;
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isEof", true, 142410, done);
-      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isEof", true, 142410, () => { isReturn = true; });
+      await Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })
@@ -158,8 +158,8 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
       emitKey = "emitWebViewSdkSchemeHandler_isInMemory"
       Utils.emitEvent(emitKey, 142311);
       let isReturn = false;
-      Utils.registerEvent("testWebViewSdkSchemeHandler_isInMemory", true, 142420, done);
-      Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
+      Utils.registerEvent("testWebViewSdkSchemeHandler_isInMemory", true, 142420, () => { isReturn = true; });
+      await Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
       await waitForExist(()=>isReturn, emitKey, true,1000);
       done();
     })

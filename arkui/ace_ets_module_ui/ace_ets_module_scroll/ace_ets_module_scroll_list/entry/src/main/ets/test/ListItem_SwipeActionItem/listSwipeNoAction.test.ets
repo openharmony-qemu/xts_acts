@@ -68,7 +68,8 @@ export default function listSwipeNoActionJsunit() {
 
       console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0050] current component obj is: " + JSON.stringify(JSON.parse(strJson)));
       // swipe the listItem
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeActionNoAction0');
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeActionNoAction0'));
+      let ListItem_00 = await swipeComponent.getBounds();
       let right: number = ListItem_00.right;
       let left: number = ListItem_00.left;
       let top: number = ListItem_00.top;
@@ -77,7 +78,6 @@ export default function listSwipeNoActionJsunit() {
       let height = bottom -top;
       console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0050 value is" + left + " --" + right + "--" + top + "--" + bottom);
       // swipe the listItem
-      let swipeComponent = await driver.findComponent(ON.id('lSwipeActionNoAction0'));
       let displayId = await swipeComponent.getDisplayId();
       await driver.swipeBetween(
         { x: Math.round(left + vp2px(50)), y: Math.round(top + height / 2), displayId: displayId },

@@ -1,0 +1,99 @@
+<!-- align-items: four cross-axis alignments for row and column, integrated into one page with two cards -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">align-items</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <!-- 001 row cross axis (vertical), 4 alignments -->
+    <list-item class="card card-1">
+      <div class="card-head">
+        <text class="label">001 row 交叉轴（垂直）4种对齐</text>
+      </div>
+
+      <text class="v-label">1. flex-start 顶部对齐</text>
+      <div class="demo ai-start">
+        <div class="vb h40 r"></div>
+        <div class="vb h80 g"></div>
+        <div class="vb h60 b"></div>
+      </div>
+
+      <text class="v-label">2. flex-end 底部对齐</text>
+      <div class="demo ai-end">
+        <div class="vb h40 r"></div>
+        <div class="vb h80 g"></div>
+        <div class="vb h60 b"></div>
+      </div>
+
+      <text class="v-label">3. center 垂直居中</text>
+      <div class="demo ai-center">
+        <div class="vb h40 r"></div>
+        <div class="vb h80 g"></div>
+        <div class="vb h60 b"></div>
+      </div>
+
+      <text class="v-label">4. stretch 无高度块拉满行高</text>
+      <div class="demo ai-stretch">
+        <div class="vb r"></div>
+        <div class="vb g"></div>
+        <div class="vb b"></div>
+      </div>
+
+      <text class="expect">预期：1-3 高低不一的块分别顶对齐/底对齐/垂直居中；4 三个无高度块均拉满灰条高度</text>
+    </list-item>
+
+    <!-- 002 column cross axis (horizontal), 4 alignments as side-by-side strips -->
+    <list-item class="card card-2">
+      <div class="card-head">
+        <text class="label">002 column 交叉轴（水平）4种对齐</text>
+      </div>
+
+      <div class="strips">
+        <div class="strip">
+          <text class="s-label">start</text>
+          <div class="strip-demo ai-start">
+            <div class="hb w40 r"></div>
+            <div class="hb w70 g"></div>
+            <div class="hb w55 b"></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">end</text>
+          <div class="strip-demo ai-end">
+            <div class="hb w40 r"></div>
+            <div class="hb w70 g"></div>
+            <div class="hb w55 b"></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">center</text>
+          <div class="strip-demo ai-center">
+            <div class="hb w40 r"></div>
+            <div class="hb w70 g"></div>
+            <div class="hb w55 b"></div>
+          </div>
+        </div>
+        <div class="strip">
+          <text class="s-label">stretch</text>
+          <div class="strip-demo ai-stretch">
+            <div class="hb r"></div>
+            <div class="hb g"></div>
+            <div class="hb b"></div>
+          </div>
+        </div>
+      </div>
+
+      <text class="expect">预期：1-3 宽度不一的块分别左对齐/右对齐/水平居中；4 三个无宽度块均拉满竖条宽度</text>
+    </list-item>
+
+    <!-- bottom pass/fail/back buttons, as the last list item so they scroll into view -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

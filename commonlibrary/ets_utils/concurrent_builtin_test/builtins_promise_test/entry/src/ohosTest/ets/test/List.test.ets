@@ -10,17 +10,57 @@ import promiseResolveTest from './promise/promiseResolveTest.test';
 import promiseTest from './promise/promiseTest.test';
 import promiseThenTest from './promise/promiseThenTest.test';
 //import promiseWithResolversTest from './promise/promiseWithResolversTest.test';
+import PromiseAllSecondTest from './promise/PromiseAllSecondTest.test';
+import PromiseAllSettledSecondTest from './promise/PromiseAllSettledSecondTest.test';
+import PromiseAnyPortTest from './promise/PromiseAnyPortTest.test';
+import PromiseAnySecondTest from './promise/PromiseAnySecondTest.test';
+import PromiseAsyncOperationTest from './promise/PromiseAsyncOperationTest.test';
+import PromiseErrorTest from './promise/PromiseErrorTest.test';
+import PromiseMultiAsyncOperationTest from './promise/PromiseMultiAsyncOperationTest.test';
+import PromiseSecondRaceTest from './promise/PromiseRaceSecondTest.test';
+import PromiseRaceStressTest from './promise/PromiseRaceStressTest.test';
+import PromiseRejectSecondTest from './promise/PromiseRejectSecondTest.test';
+import PromiseResolveSecondTest from './promise/PromiseResolveSecondTest.test';
+import PromiseSecondTest from './promise/PromiseSecondTest.test';
+import PromiseTimeOutTest from './promise/PromiseTimeOutTest.test';
+import PromiseAllSettledTest1 from './promise/PromiseAllSettledTest1.test';
+import PromiseAllTest1 from './promise/PromiseAllTest1.test';
+import PromiseAnyTest1 from './promise/PromiseAnyTest1.test';
+import PromiseRaceTest1 from './promise/PromiseRaceTest1.test';
+import PromiseRejectTest1 from './promise/PromiseRejectTest1.test';
+import PromiseResolveTest1 from './promise/PromiseResolveTest1.test';
+import PromiseTest1 from './promise/PromiseTest1.test';
 
 export default function testsuite() {
-  promiseAnyTest()
-  promiseRaceTest()
-  promiseResolveTest()
-  promiseTest()
-  promiseThenTest()
-  promiseCatchTest()
-  promiseFinallyTest()
-  promiseAllTest()
-  promiseAllSettledTest()
-  promiseRejectTest()
-  promiseCombTest()
+  promiseAnyTest();
+  promiseRaceTest();
+  promiseResolveTest();
+  promiseTest();
+  promiseThenTest();
+  promiseCatchTest();
+  promiseFinallyTest();
+  promiseAllTest();
+  promiseAllSettledTest();
+  promiseRejectTest();
+  promiseCombTest();
+  PromiseAllSecondTest();
+  PromiseAllSettledSecondTest();
+  PromiseAnyPortTest();
+  PromiseAnySecondTest();
+  PromiseAsyncOperationTest();
+  PromiseErrorTest();
+  PromiseMultiAsyncOperationTest();
+  PromiseSecondRaceTest();
+  PromiseRaceStressTest();
+  PromiseRejectSecondTest();
+  PromiseResolveSecondTest();
+  PromiseSecondTest();
+  PromiseTimeOutTest();
+  PromiseAllSettledTest1();
+  PromiseAllTest1();
+  PromiseAnyTest1();
+  PromiseRaceTest1();
+  PromiseRejectTest1();
+  PromiseResolveTest1();
+  PromiseTest1();
 }

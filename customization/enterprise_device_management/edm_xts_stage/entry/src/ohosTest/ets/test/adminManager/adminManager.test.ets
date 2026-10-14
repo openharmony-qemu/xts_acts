@@ -3410,7 +3410,7 @@ export default function adminManagerTest() {
         adminManager.getAdminInfos();
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200001).assertTrue();
+        expect(error.code === 9200001).assertTrue();
       }
       done();
     })
@@ -3429,7 +3429,7 @@ export default function adminManagerTest() {
         adminManager.getAdminInfos();
         expect(false).assertTrue();
       } catch (error) {
-        expect(Number(error.code) === 9200002).assertTrue();
+        expect(error.code === 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }

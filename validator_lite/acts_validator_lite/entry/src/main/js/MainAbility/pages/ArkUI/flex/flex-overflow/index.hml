@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title-text">flex overflow</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <div class="content">
+        <text class="label">横向 overflow: {{overflowModeH}}</text>
+        <div class="btn-row">
+            <input class="btn" type="button" value="visible" onclick="setOverflowHVisible" />
+            <input class="btn" type="button" value="hidden" onclick="setOverflowHHidden" />
+        </div>
+        <div class="box" style="overflow: {{overflowModeH}};">
+            <div class="child child-wide"><text class="child-text">水平超出部分</text></div>
+        </div>
+
+        <text class="label">纵向 overflow: {{overflowModeV}}</text>
+        <div class="btn-row">
+            <input class="btn" type="button" value="visible" onclick="setOverflowVVisible" />
+            <input class="btn" type="button" value="hidden" onclick="setOverflowVHidden" />
+        </div>
+        <div class="box-v" style="overflow: {{overflowModeV}};">
+            <div class="child-v-tall"><text class="child-text">垂直超出部分</text></div>
+        </div>
+    </div>
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

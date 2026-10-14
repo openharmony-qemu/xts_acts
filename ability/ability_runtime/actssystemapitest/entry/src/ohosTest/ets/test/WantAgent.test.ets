@@ -32,7 +32,10 @@ export default function wantAgentTest() {
       let TAG = 'System_API_Test_WantAgent_Manager_0100';
       try {
         WantAgent.getWant(undefined, (error, data) => {
-          console.info(TAG + " ==========================>getWantCallback=======================>");
+          if (error) {
+            console.error(JSON.stringify(error));
+          }
+          console.info(TAG + ' ==========================>getWantCallback=======================>');
         })
       } catch (error) {
         console.info(TAG + ` getWantCallback err: + ${error.code} + ${error.message}`);

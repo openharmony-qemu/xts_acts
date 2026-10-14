@@ -14,6 +14,7 @@
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
@@ -29,7 +30,7 @@ export default class UiAbility15 extends UIAbility {
     globalThis.uiAbilityContext15 = this.context
     console.info('UiAbility15 JSON.stringify(want) is', JSON.stringify(want));
     console.info('UiAbility15 JSON.stringify(want) is', JSON.stringify(want.parameters));
-    if (want.parameters.appLinkingOnly == false && want.parameters.demo_key == "demo_value"
+    if (want.parameters.appLinkingOnly == false && want.parameters.demo_key == 'demo_value'
     && want.parameters.demo_num == 111) {
       console.info('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000 get want success');
     }
@@ -59,7 +60,7 @@ export default class UiAbility15 extends UIAbility {
           }
         }
       }, () => {
-      console.log("====>terminateSelfWithResult success====>")
+      console.log('====>terminateSelfWithResult success====>')
       commonEventManager.publish('ACTS_TEST_DESTROY', function () {
         console.info('====>SUB_Ability_AbilityRuntime_ABILITY_StartAbility_OpenLink_3000 publish ACTS_TEST_DESTROY');
       });

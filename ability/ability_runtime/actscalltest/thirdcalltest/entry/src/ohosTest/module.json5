@@ -17,7 +17,7 @@
   "module": {
     "name": "phone",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -26,8 +26,28 @@
     "pages": "$profile:test_pages",
     "abilities": [
       {
+        "name": "com.example.thirdcalltest.TestAbility",
+        "srcEntry": "./ets/TestAbility/TestAbility.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
+      },
+      {
         "name": "com.example.thirdcalltest.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/MainAbility/MainAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -49,7 +69,7 @@
       },
       {
         "name": "com.example.thirdcalltest.SecondAbility",
-        "srcEntry": "./ets/SecondAbility/SecondAbility.ts",
+        "srcEntry": "./ets/SecondAbility/SecondAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -61,7 +81,7 @@
       },
       {
         "name": "com.example.thirdcalltest.ThirdAbility",
-        "srcEntry": "./ets/ThirdAbility/ThirdAbility.ts",
+        "srcEntry": "./ets/ThirdAbility/ThirdAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -73,7 +93,7 @@
       },
       {
         "name": "com.example.thirdcalltest.ForthAbility",
-        "srcEntry": "./ets/ForthAbility/ForthAbility.ts",
+        "srcEntry": "./ets/ForthAbility/ForthAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -85,7 +105,7 @@
       },
       {
         "name": "com.example.thirdcalltest.FifthAbility",
-        "srcEntry": "./ets/FifthAbility/FifthAbility.ts",
+        "srcEntry": "./ets/FifthAbility/FifthAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",

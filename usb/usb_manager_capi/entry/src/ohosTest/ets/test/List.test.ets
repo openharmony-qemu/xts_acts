@@ -13,7 +13,15 @@
  * limitations under the License.
  */
 import usbManagerCapiTest from './UsbManagerCapi.test'
+import usbManagerDeviceTest from './UsbManagerDevice.test'
+import usbManagerPermissionTest from './UsbManagerPermission.test'
+import usbManagerPipeTest from './UsbManagerPipe.test'
+import usbManagerCompareTest from './UsbManagerCompare.test'
 
 export default function testsuite() {
   usbManagerCapiTest()
+  usbManagerDeviceTest()
+  usbManagerPermissionTest()
+  usbManagerPipeTest()
+  usbManagerCompareTest()
 }

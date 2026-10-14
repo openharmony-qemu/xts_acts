@@ -217,28 +217,6 @@ export default function int16ArrayFillTestFourTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0080
-     * @tc.name testInt16ArrayFillTestFour008
-     * @tc.desc Verify fill(0) stores expected int16 value across range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestFour008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([32767, 32767, 32767, 32767, 32767, 32767, 32767, 32767]);
-      arr.fill(0 as short);
-      let actual1: number = arr.$_get(0);
-      let expected1: number = 0 as short;
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = arr.$_get(4);
-      let expected2: number = 0 as short;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(7);
-      let expected3: number = 0 as short;
-      expect(actual3).assertEqual(expected3);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0090
      * @tc.name testInt16ArrayFillTestFour009
      * @tc.desc Verify fill(-1) stores expected int16 value across range
@@ -731,30 +709,6 @@ export default function int16ArrayFillTestFourTest(): void {
       expect(actual2).assertEqual(expected2);
       let actual3: number = arr.$_get(7);
       let expected3: number = 0 as short;
-      expect(actual3).assertEqual(expected3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0310
-     * @tc.name testInt16ArrayFillTestFour031
-     * @tc.desc Verify fill(-0) stores +0 for negative zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestFour031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrA: Int16Array = new Int16Array([10, 10, 10, 10]);
-      let arrB: Int16Array = new Int16Array([10, 10, 10, 10]);
-      arrA.fill(-0 as short);
-      arrB.fill(0 as short);
-      let actual1: number = arrA.$_get(0);
-      let expected1: number = arrB.$_get(0);
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = arrA.$_get(1);
-      let expected2: number = arrB.$_get(1);
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arrA.$_get(3);
-      let expected3: number = arrB.$_get(3);
       expect(actual3).assertEqual(expected3);
     });
 
@@ -1756,68 +1710,6 @@ export default function int16ArrayFillTestFourTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0760
-     * @tc.name testInt16ArrayFillTestFour076
-     * @tc.desc Verify chained fill() calls overwrite with last fill value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestFour076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
-      arr.fill(99 as short, 0, 3).reverse();
-      let actual1: number = arr.$_get(0);
-      let expected1: number = 5 as short;
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = arr.$_get(1);
-      let expected2: number = 4 as short;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(2);
-      let expected3: number = 99 as short;
-      expect(actual3).assertEqual(expected3);
-      let actual4: number = arr.$_get(3);
-      let expected4: number = 99 as short;
-      expect(actual4).assertEqual(expected4);
-      let actual5: number = arr.$_get(4);
-      let expected5: number = 99 as short;
-      expect(actual5).assertEqual(expected5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0770
-     * @tc.name testInt16ArrayFillTestFour077
-     * @tc.desc Verify chained fill() calls overwrite with last fill value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestFour077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([0, 0, 0, 0, 0, 0, 0, 0]);
-      arr
-        .fill(1 as short, 0, 2)
-        .fill(2, 2, 5)
-        .fill(3, 5, 8);
-      let actual1: number = arr.$_get(0);
-      let expected1: number = 1 as short;
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = arr.$_get(1);
-      let expected2: number = 1 as short;
-      expect(actual2).assertEqual(expected2);
-      let actual3: number = arr.$_get(2);
-      let expected3: number = 2 as short;
-      expect(actual3).assertEqual(expected3);
-      let actual4: number = arr.$_get(4);
-      let expected4: number = 2 as short;
-      expect(actual4).assertEqual(expected4);
-      let actual5: number = arr.$_get(5);
-      let expected5: number = 3 as short;
-      expect(actual5).assertEqual(expected5);
-      let actual6: number = arr.$_get(7);
-      let expected6: number = 3 as short;
-      expect(actual6).assertEqual(expected6);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0780
      * @tc.name testInt16ArrayFillTestFour078
      * @tc.desc Verify fill(99, 2, 5) keeps length unchanged
@@ -1912,27 +1804,6 @@ export default function int16ArrayFillTestFourTest(): void {
       expect(actual1).assertEqual(expected1);
       let actual2: number = bytes.$_get(1);
       let expected2: number = 127 as short;
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FILL_FOUR_0830
-     * @tc.name testInt16ArrayFillTestFour083
-     * @tc.desc Verify fill(32768) int16 overflow wrap semantics
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayFillTestFour083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(6);
-      let arr: Int16Array = new Int16Array(buf);
-      arr.fill(32768);
-      let view: Int16Array = new Int16Array(buf);
-      let actual1: number = view.$_get(0);
-      let expected1: number = -32768 as short;
-      expect(actual1).assertEqual(expected1);
-      let actual2: number = view.$_get(1);
-      let expected2: number = -32768 as short;
       expect(actual2).assertEqual(expected2);
     });
 

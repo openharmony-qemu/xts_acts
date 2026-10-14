@@ -625,6 +625,7 @@ static napi_value TestNativeArkWeb_GetBlanklessInfoWithKeyByCase(napi_env env, n
             infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "test_key");
             break;
         case CASE_NUM_1:
+            (void)OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "match_key");
             infoResult = OH_NativeArkWeb_GetBlanklessInfoWithKey("test_tag", "new_key");
             break;
         case CASE_NUM_2:

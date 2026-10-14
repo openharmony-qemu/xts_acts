@@ -80,21 +80,35 @@ import nestedScrollTest from './TabsTest/nestedScrollTest/nestedScrollTest.test'
 import nestedScroll01Test from './TabsTest/nestedScrollTest/nestedScroll01Test.test';
 import nestedScroll_CombinedTest from './TabsTest/nestedScrollTest/nestedScroll_CombinedTest.test';
 
-import TabContentSubTabBarStyleIndicatorNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleIndicatorNullUndefined.test';
-import TabContentSubTabBarStyleBoardNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleBoardNullUndefined.test';
-import TabContentSubTabBarStyleLabelStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleLabelStyleNullUndefined.test';
-import TabContentSubTabBarStyleIdNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStyleIdNullUndefined.test';
-import TabContentSubTabBarStylePaddingNullUndefinedTest from './TabContentNullUndefinedTest/TabContentSubTabBarStylePaddingNullUndefined.test';
+import TabContentSubTabBarStyleIndicatorNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentSubTabBarStyleIndicatorNullUndefined.test';
+import TabContentSubTabBarStyleBoardNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentSubTabBarStyleBoardNullUndefined.test';
+import TabContentSubTabBarStyleLabelStyleNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentSubTabBarStyleLabelStyleNullUndefined.test';
+import TabContentSubTabBarStyleIdNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentSubTabBarStyleIdNullUndefined.test';
+import TabContentSubTabBarStylePaddingNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentSubTabBarStylePaddingNullUndefined.test';
 
-import TabContentBottomTabBarStyleIconStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleIconStyleNullUndefined.test';
-import TabContentBottomTabBarStyleIdNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleIdNullUndefined.test';
-import TabContentBottomTabBarStyleLabelStyleNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleLabelStyleNullUndefined.test';
-import TabContentBottomTabBarStylePaddingNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStylePaddingNullUndefined.test';
-import TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest from './TabContentNullUndefinedTest/TabContentBottomTabBarStyleVerticalAlignNullUndefined.test';
+import TabContentBottomTabBarStyleIconStyleNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentBottomTabBarStyleIconStyleNullUndefined.test';
+import TabContentBottomTabBarStyleIdNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentBottomTabBarStyleIdNullUndefined.test';
+import TabContentBottomTabBarStyleLabelStyleNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentBottomTabBarStyleLabelStyleNullUndefined.test';
+import TabContentBottomTabBarStylePaddingNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentBottomTabBarStylePaddingNullUndefined.test';
+import TabContentBottomTabBarStyleVerticalAlignNullUndefinedTest from
+  './TabContentNullUndefinedTest/TabContentBottomTabBarStyleVerticalAlignNullUndefined.test';
 import tabBarNullUndefined from './TabContentNullUndefinedTest/tabBarNullUndefined.test';
 import animationCurveNullUndefinedTest from './animationCurveNullUndefinedTest/animationCurveNullUndefined.test';
+import TabsSidebarStyleTest from './TabsTest/TabsSidebarStyle.test';
+import TabBarOptionsCoverageTest from './TabContentTest/TabBarOptionsCoverage.test';
 
 export default function testsuite() {
+  TabsSidebarStyleTest();
+  TabBarOptionsCoverageTest();
   tabsBarPositionJsunit();
   TabsApi();
   APITabsBarBackgroundBlurStyleJsunit();

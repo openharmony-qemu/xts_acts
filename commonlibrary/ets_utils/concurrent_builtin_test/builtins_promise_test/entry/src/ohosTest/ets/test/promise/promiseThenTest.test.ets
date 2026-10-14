@@ -1,4 +1,4 @@
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { finalResult77, PromiseThenTest030 } from './promisejs';
 import { emptyObj, result13, testObj32, testObj32init, user12 } from './promisets';
 import { sleep } from './utils';
@@ -2227,12 +2227,12 @@ export default function promiseThenTest() {
         .then(() => {
           log.push('outer-start');
           // 嵌套并行任务
-          const tasks = [parallelTask('parallel1', 15), parallelTask('parallel2', 5)];
+          const tasks = [parallelTask('parallel1', 200), parallelTask('parallel2', 50)];
           return Promise.all<void>(tasks);
         })
         .then(() => {
           log.push('outer-middle');
-          return parallelTask('outer-async', 10);
+          return parallelTask('outer-async', 50);
         })
         .then(() => log.push('outer-end'));
 

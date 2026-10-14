@@ -208,6 +208,9 @@ export default function checkBoxGroupUIJsunit() {
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
+      // reset checkbox group state: deselect all, then select only cb2
+      globalThis.value.message.notify({name:'selectAll',value:false})
+      await driver.delayMs(waitUiReadyMs);
       let checkGoup = await driver.findComponent(ON.id('cb2'));
       await checkGoup.click();
       await driver.delayMs(waitUiReadyMs);

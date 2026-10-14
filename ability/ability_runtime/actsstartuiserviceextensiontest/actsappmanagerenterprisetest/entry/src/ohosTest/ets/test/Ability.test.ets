@@ -14,8 +14,8 @@ export default function abilityTest() {
     beforeAll(async (done:Function) => {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       await testAbilityContext.startAbility({
-        bundleName:"com.acts.startuiserviceextensionrely",
-        abilityName:"EntryAbility"
+        bundleName:'com.acts.startuiserviceextensionrely',
+        abilityName:'EntryAbility'
       })
       await sleep(2000);
       done();
@@ -29,23 +29,24 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_2500', Level.LEVEL0, async (done: Function) => {
-      let tag = "SUB_Ability_AbilityRuntime_AppManager_2500";
+      let tag = 'SUB_Ability_AbilityRuntime_AppManager_2500';
       console.info('====> [SUB_Ability_AbilityRuntime_AppManager_2500] start');
       try {
-        await appManager.isAppRunning("com.acts.startuiserviceextensionrely").then((data: boolean) => {
+        await appManager.isAppRunning('com.acts.startuiserviceextensionrely').then((data: boolean) => {
           hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
           try{expect(data).assertTrue();}catch{};
         }).catch((err: BusinessError) => {
           hilog.error(0x0000, 'testTag', `isAppRunning error, code: ${err.code}, msg:${err.message}`);
           try{expect().assertFail();}catch{};
         })
-        await appManager.killProcessesByBundleName("com.acts.startuiserviceextensionrely", false, 0).then(()=>{
+        await appManager.killProcessesByBundleName('com.acts.startuiserviceextensionrely', false, 0).then(()=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName succeed`);
         }).catch((err:BusinessError)=>{
           hilog.info(0x0000, 'testTag', tag + `killProcessesByBundleName err ` + err?.code);
+          done();
         });
         await sleep(1000);
-        await appManager.isAppRunning("com.acts.startuiserviceextensionrely").then((data: boolean) => {
+        await appManager.isAppRunning('com.acts.startuiserviceextensionrely').then((data: boolean) => {
           hilog.info(0x0000, 'testTag', `data: ${JSON.stringify(data)}`);
           try{expect(data).assertFalse();}catch{};
         }).catch((err: BusinessError) => {

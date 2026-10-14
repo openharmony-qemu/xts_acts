@@ -3110,6 +3110,11 @@ export default function PiPWindowTest() {
       */
       it('test_on_controlEvent_VIDEO_PLAY_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let msgStr = 'test_on_controlEvent_VIDEO_PLAY_01 '
+        if (deviceType == 'car') {
+          console.log(`${msgStr} device is car, pass directly`);
+          done();
+          return;
+        }
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";
@@ -3197,6 +3202,11 @@ export default function PiPWindowTest() {
        */
       it('test_on_controlEvent_VIDEO_PLAY_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         let msgStr = 'test_on_controlEvent_VIDEO_PLAY_02 '
+        if (deviceType == 'car') {
+          console.log(`${msgStr} device is car, pass directly`);
+          done();
+          return;
+        }
         let pipController: pipWindow.PiPController | undefined = undefined;
         let mXComponentController = new XComponentController();
         let navId = "";

@@ -232,5 +232,17 @@ export default function ActsFuncTest() {
       const result = await libSwdecoderTest.VideoSwdecodeBlankFrame0010();
       expect(result).assertEqual(0);
     })
+    /**
+     * @tc.name   SUB_MUlTIMEDIA_AV_CODEC_VIDEO_SWDECODE_DMABUF_SUFFIX_0010
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_SWDECODE_DMABUF_SUFFIX_0010
+     * @tc.desc   function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_SWDECODE_DMABUF_SUFFIX_0010', Level.LEVEL2, async () => {
+      const result = await libSwdecoderTest.VideoDecoderS264DmabufSuffix0010();
+      expect(result).assertEqual(0);
+    })
   })
 }

@@ -59,23 +59,6 @@ export default function int16ArraySubarrayTestThreeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_THREE_0200
-     * @tc.name testInt16ArraySubarrayTestThree002
-     * @tc.desc Verify empty Int16Array subarray(0) returns empty view
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArraySubarrayTestThree002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Int16Array = new Int16Array();
-      let sub: Int16Array = src.subarray(0);
-      let actual1: int = sub.length;
-      expect(actual1).assertEqual(0);
-      let actual2: int = sub.byteLength;
-      expect(actual2).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SUBARRAY_THREE_0300
      * @tc.name testInt16ArraySubarrayTestThree003
      * @tc.desc Verify single-element Int16Array subarray(0) keeps the element

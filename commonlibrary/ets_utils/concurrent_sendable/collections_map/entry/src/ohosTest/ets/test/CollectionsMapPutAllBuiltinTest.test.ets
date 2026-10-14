@@ -14,7 +14,7 @@
  */
 
 import { collections, taskpool, worker, MessageEvents } from '@kit.ArkTS';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium-dynamic';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 
 function sleep(time: number): Promise<void> {

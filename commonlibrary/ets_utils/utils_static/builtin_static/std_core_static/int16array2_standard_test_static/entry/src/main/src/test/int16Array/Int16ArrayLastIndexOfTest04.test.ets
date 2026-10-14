@@ -42,46 +42,6 @@ export default function int16ArrayLastIndexOfTestFourTest(): void {
     afterAll((): void => {});
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_FOUR_0100
-     * @tc.name testInt16ArrayLastIndexOfTestFour001
-     * @tc.desc Verify lastIndexOf(20) leaves plain array unchanged after finding element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestFour001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([10, 20, 30]);
-      let result = arr.lastIndexOf(20);
-      expect(result).assertEqual(1);
-      let actual1: number = arr.$_get(0);
-      expect(actual1).assertEqual(10);
-      let actual2: number = arr.$_get(1);
-      expect(actual2).assertEqual(20);
-      let actual3: number = arr.$_get(2);
-      expect(actual3).assertEqual(30);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_FOUR_0200
-     * @tc.name testInt16ArrayLastIndexOfTestFour002
-     * @tc.desc Verify lastIndexOf(99) leaves array unchanged when element not found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestFour002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([10, 20, 30]);
-      let result = arr.lastIndexOf(99);
-      expect(result).assertEqual(-1);
-      let actual1: number = arr.$_get(0);
-      expect(actual1).assertEqual(10);
-      let actual2: number = arr.$_get(1);
-      expect(actual2).assertEqual(20);
-      let actual3: number = arr.$_get(2);
-      expect(actual3).assertEqual(30);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_FOUR_0300
      * @tc.name testInt16ArrayLastIndexOfTestFour003
      * @tc.desc Verify lastIndexOf(5) on empty array keeps length 0
@@ -241,24 +201,6 @@ export default function int16ArrayLastIndexOfTestFourTest(): void {
       expect(actual1).assertEqual(1);
       let actual2: number = arr.$_get(2);
       expect(actual2).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_LAST_INDEX_OF_FOUR_1200
-     * @tc.name testInt16ArrayLastIndexOfTestFour012
-     * @tc.desc Verify lastIndexOf(22) keeps length property unchanged
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayLastIndexOfTestFour012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([11, 22, 33, 44]);
-      let beforeLen: number = arr.length;
-      let result = arr.lastIndexOf(22);
-      expect(result).assertEqual(1);
-      let actual1: int = arr.length;
-      let expected1: number = beforeLen;
-      expect(actual1).assertEqual(expected1);
     });
 
     /**

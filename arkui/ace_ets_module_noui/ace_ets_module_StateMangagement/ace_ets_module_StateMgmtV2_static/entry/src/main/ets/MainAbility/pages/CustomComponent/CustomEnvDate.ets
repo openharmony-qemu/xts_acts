@@ -29,7 +29,6 @@ struct CustomEnvDate {
         Text('Selected Date: ' + `${this.selectedDate.toLocaleDateString()}`)
           .id('customEnvDate_001')
           .height('5%')
-          .fontSize(20)
           .margin(5)
         // 调用Date的setFullYear接口修改年份，触发UI刷新
         Button('increase the year by 1')

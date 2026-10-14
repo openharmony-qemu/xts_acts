@@ -21,6 +21,7 @@ import Int16ArrayConcurrentTestConcurrent from './Concurrent/Int16ArrayConcurren
 import Int16ArrayNormalTest from './Normal/Int16ArrayNormal.test';
 import Int16ArrayTaskPoolTest from './TaskPool/Int16ArrayTaskPool.test';
 
+import IntShortArrayTest from './intArray/IntShortArrayTest.test';
 export default function testsuite() {
   Int16ArrayBasicTest();
   Int16ArrayConcurrentTest();
@@ -29,4 +30,6 @@ export default function testsuite() {
   Int16ArrayConcurrentTestConcurrent();
   Int16ArrayNormalTest();
   Int16ArrayTaskPoolTest();
+  
+  IntShortArrayTest();
 }

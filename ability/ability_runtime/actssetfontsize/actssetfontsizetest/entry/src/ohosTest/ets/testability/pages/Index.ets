@@ -45,20 +45,22 @@ struct Index {
         })
 
         EmbeddedComponent({
-          bundleName: "com.test.actssetfontsizetest",
-          abilityName: "TestUIExtensionAbility",
+          bundleName: 'com.test.actssetfontsizetest',
+          abilityName: 'TestUIExtensionAbility',
         }, EmbeddedType.EMBEDDED_UI_EXTENSION)
           .width('100%')
           .height('90%')
           .onTerminated((info) => {
             let TAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_TestPageIndex';
-            hilog.info(0x0000, TAG, '[%{public}s] EmbeddedComponent onTerminated, info: [%{public}s]', TAG, JSON.stringify(info));
+            hilog.info(0x0000, TAG, '[%{public}s] EmbeddedComponent onTerminated, info: [%{public}s]', TAG,
+              JSON.stringify(info));
             this.message = 'Termination: code = ' + info.code + ', want = ' + JSON.stringify(info.want);
             this.context.terminateSelf()
           })
           .onError((error) => {
             let TAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_TestPageIndex';
-            hilog.info(0x0000, TAG, '[%{public}s] EmbeddedComponent onError, error: [%{public}s]', TAG, JSON.stringify(error));
+            hilog.info(0x0000, TAG, '[%{public}s] EmbeddedComponent onError, error: [%{public}s]', TAG,
+              JSON.stringify(error));
             this.message = 'EmbeddedComponent Error: code = ' + error.code + ', message = ' + error.message;
           })
       }

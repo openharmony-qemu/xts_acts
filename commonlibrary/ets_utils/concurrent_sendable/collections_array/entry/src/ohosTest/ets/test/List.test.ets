@@ -106,6 +106,32 @@ import ConcatArrayNormalTest from './Normal/ConcatArrayNormal.test';
 import ArrayTaskPoolTest from './TaskPool/ArrayTaskPool.test';
 import ConcatArrayTaskPoolTest from './TaskPool/ConcatArrayTaskPool.test';
 
+import ConcatArrayImplTest from './concatArray/ConcatArrayImplTest.test'
+import ConcatArrayConcurrentTest from './concatArray/ConcatArrayConcurrentTest.test'
+import concatArrayBigintTest from './concatArray/Typetest/ConcatArrayBigintTest.test';
+import concatArrayBooleanTest from './concatArray/Typetest/ConcatArrayBooleanTest.test';
+import concatArrayDateTest from './concatArray/Typetest/ConcatArrayDateTest.test';
+import concatArrayFunctionTest from './concatArray/Typetest/ConcatArrayFunctionTest.test';
+import concatArrayMapTest from './concatArray/Typetest/ConcatArrayMapTest.test';
+import concatArrayNestedTest from './concatArray/Typetest/ConcatArrayNestedTest.test';
+import concatArrayNumberTest from './concatArray/Typetest/ConcatArrayNumberTest.test';
+import concatArrayObjectTest from './concatArray/Typetest/ConcatArrayObjectTest.test';
+import concatArrayRegExpTest from './concatArray/Typetest/ConcatArrayRegExpTest.test';
+import concatArraySetTest from './concatArray/Typetest/ConcatArraySetTest.test';
+import concatArrayStringTest from './concatArray/Typetest/ConcatArrayStringTest.test';
+import concatArrayUnionTest from './concatArray/Typetest/ConcatArrayUnionTest.test';
+
+
+import CollectionsConcatArrayExpand1024Test from './concatArray/CollectionsConcatArrayExpand1024Test.test';
+
+import collectionsConcatArrayTest from './CollectionsConcatArrayTest/CollectionsConcatArray.test';
+
+import ArrayInheritanceTest from './collections/ArrayInheritanceTest.test';
+import ContainerComboTest from './collections/ContainerComboTest.test'
+import ConcurrentFactorComboTest from './collections/ConcurrentFactorComboTest.test'
+import RealWorldComboTest from './collections/RealWorldComboTest.test'
+import StressStabilityComboTest from './collections/StressStabilityComboTest.test'
+
 export default function testsuite() {
   CollectionsArrayCombinationTest();
   CollectionsArrayCombinationSecondTest();
@@ -199,5 +225,29 @@ export default function testsuite() {
   ConcatArrayNormalTest();
   ArrayTaskPoolTest();
   ConcatArrayTaskPoolTest();
+  
+  ConcatArrayImplTest();
+  ConcatArrayConcurrentTest();
+  concatArrayBigintTest();
+  concatArrayBooleanTest();
+  concatArrayDateTest();
+  concatArrayFunctionTest();
+  concatArrayMapTest();
+  concatArrayNestedTest();
+  concatArrayNumberTest();
+  concatArrayObjectTest();
+  concatArrayRegExpTest();
+  concatArraySetTest();
+  concatArrayStringTest();
+  concatArrayUnionTest();
+  CollectionsConcatArrayExpand1024Test();
+  
+  collectionsConcatArrayTest();
+  
+  StressStabilityComboTest();
+  ArrayInheritanceTest();
+  ContainerComboTest();
+  ConcurrentFactorComboTest();
+  RealWorldComboTest();
 };
 

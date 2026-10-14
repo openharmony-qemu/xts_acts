@@ -888,5 +888,29 @@ export default function VideoEncoderFuncTest() {
       let result: number = await testNapi.VideoEncodeCapability9800Test();
       expect(result).assertEqual(0);
     });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_264_DMABUF_SUFFIX_0010
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_264_DMABUF_SUFFIX_0010
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_264_DMABUF_SUFFIX_0010', Level.LEVEL0, async () => {
+      let result: number = await testNapi.VideoEncoder264DmabufSuffix0010();
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_265_DMABUF_SUFFIX_0010
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_265_DMABUF_SUFFIX_0010
+     * @tc.desc   api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_265_DMABUF_SUFFIX_0010', Level.LEVEL2, async () => {
+      let result: number = await testNapi.VideoEncoder265DmabufSuffix0010();
+      expect(result).assertEqual(0);
+    });
   });
 }

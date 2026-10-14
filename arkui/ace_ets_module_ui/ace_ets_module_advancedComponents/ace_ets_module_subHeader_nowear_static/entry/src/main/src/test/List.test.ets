@@ -18,6 +18,7 @@ import subHeaderButton from './subHeader/subHeaderButton.test';
 import subHeaderIconGroup from './subHeader/subHeaderIconGroup.test';
 import subHeaderSelect from './subHeader/subHeaderSelect.test';
 import subHeaderTitleAccessibitText from './subHeader/subHeaderTitleAccessibitText.test';
+import subHeaderEndIcon from './subHeader/SubHeaderEndIcon.test';
 import SubHeaderIdFieldsTest from './SubHeaderIdFieldsTest/SubHeaderIdFields.test';
 import SubHeaderV2IdFieldsTest from './SubHeaderV2IdFieldsTest/SubHeaderV2IdFields.test';
 
@@ -26,6 +27,7 @@ export default function testsuite() {
   subHeaderIconGroup();
   subHeaderSelect();
   subHeaderTitleAccessibitText()
+  subHeaderEndIcon();
   SubHeaderIdFieldsTest();
   SubHeaderV2IdFieldsTest();
 }

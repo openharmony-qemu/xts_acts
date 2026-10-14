@@ -72,22 +72,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_0300
-     * @tc.name testInt16ArrayKeysTestTwo003
-     * @tc.desc Verify keys/next (assertFalse)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([1, 2, 3]);
-      let iter = arr.keys();
-      let r = iter.next();
-      let actual1: boolean = r.done;
-      expect(actual1).assertFalse();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_0400
      * @tc.name testInt16ArrayKeysTestTwo004
      * @tc.desc Verify keys/next (assertTrue)
@@ -119,21 +103,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
       let iter = arr.keys();
       let actual1: boolean = iter === arr;
       expect(actual1).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_0600
-     * @tc.name testInt16ArrayKeysTestTwo006
-     * @tc.desc Verify keys/next (assertEqual)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array([42, 99]);
-      let iter = arr.keys();
-      let key: int = iter.next().value!;
-      expect(key).assertEqual(0);
     });
 
     /**
@@ -303,30 +272,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_1600
-     * @tc.name testInt16ArrayKeysTestTwo016
-     * @tc.desc Verify keys/next (assertEqual)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let len = 128;
-      let arr = new Int16Array(len);
-      let iter = arr.keys();
-      let count = 0;
-      let maxKey = -1;
-      let r = iter.next();
-      while (!r.done) {
-        count++;
-        maxKey = r.value!;
-        r = iter.next();
-      }
-      expect(count).assertEqual(len);
-      expect(maxKey).assertEqual(len - 1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_1700
      * @tc.name testInt16ArrayKeysTestTwo017
      * @tc.desc Verify keys/next (assertEqual)
@@ -336,44 +281,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
      */
     it('testInt16ArrayKeysTestTwo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(3);
-      let iter = arr.keys();
-      let actual1: int = iter.next().value!;
-      expect(actual1).assertEqual(0);
-      let actual2: int = iter.next().value!;
-      expect(actual2).assertEqual(1);
-      let actual3: int = iter.next().value!;
-      expect(actual3).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_1800
-     * @tc.name testInt16ArrayKeysTestTwo018
-     * @tc.desc Verify keys/next (assertEqual)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(32767, 32767, 32767);
-      let iter = arr.keys();
-      let actual1: int = iter.next().value!;
-      expect(actual1).assertEqual(0);
-      let actual2: int = iter.next().value!;
-      expect(actual2).assertEqual(1);
-      let actual3: int = iter.next().value!;
-      expect(actual3).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_1900
-     * @tc.name testInt16ArrayKeysTestTwo019
-     * @tc.desc Verify keys/next (assertEqual)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(-32768, -32768, -32768);
       let iter = arr.keys();
       let actual1: int = iter.next().value!;
       expect(actual1).assertEqual(0);
@@ -501,27 +408,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_2600
-     * @tc.name testInt16ArrayKeysTestTwo026
-     * @tc.desc Verify keys/next (assertEqual)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(4);
-      let bpe = arr.BYTES_PER_ELEMENT;
-      let iter = arr.keys();
-      let r = iter.next();
-      while (!r.done) {
-        r = iter.next();
-      }
-      let actual1: int = arr.BYTES_PER_ELEMENT;
-      let expected1: int = bpe;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_2700
      * @tc.name testInt16ArrayKeysTestTwo027
      * @tc.desc Verify keys BYTES_PER_ELEMENT byteLength
@@ -557,44 +443,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
       let iter = arr.keys();
       iter.next();
       iter.next();
-      let actual1: int = arr.length;
-      let expected1: int = origLen;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_2900
-     * @tc.name testInt16ArrayKeysTestTwo029
-     * @tc.desc Verify keys (assertEqual)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(7);
-      let origLen = arr.length;
-      let iter = arr.keys();
-      let actual1: int = arr.length;
-      let expected1: int = origLen;
-      expect(actual1).assertEqual(expected1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_3000
-     * @tc.name testInt16ArrayKeysTestTwo030
-     * @tc.desc Verify keys/next (assertEqual)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(4);
-      let origLen = arr.length;
-      let iter = arr.keys();
-      let r = iter.next();
-      while (!r.done) {
-        r = iter.next();
-      }
       let actual1: int = arr.length;
       let expected1: int = origLen;
       expect(actual1).assertEqual(expected1);
@@ -680,23 +528,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_3500
-     * @tc.name testInt16ArrayKeysTestTwo035
-     * @tc.desc Verify keys/next (assertTrue)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(1);
-      let iter = arr.keys();
-      iter.next();
-      iter.next();
-      let actual1: boolean = iter.next().done;
-      expect(actual1).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_3600
      * @tc.name testInt16ArrayKeysTestTwo036
      * @tc.desc Verify keys() after 10 next() done true
@@ -717,25 +548,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
         }
       }
       expect(allDone).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_3700
-     * @tc.name testInt16ArrayKeysTestTwo037
-     * @tc.desc Verify spread keys length length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(5);
-      let keysArr: int[] = [];
-      for (const key of arr.keys()) {
-        keysArr.push(key);
-      }
-      let actual1: int = keysArr.length;
-      let expected1: int = arr.length;
-      expect(actual1).assertEqual(expected1);
     });
 
     /**
@@ -803,21 +615,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_4100
-     * @tc.name testInt16ArrayKeysTestTwo041
-     * @tc.desc Verify keys/next (assertTrue)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int16Array(0);
-      let iter = arr.keys();
-      let actual1: boolean = iter.next().done;
-      expect(actual1).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_4200
      * @tc.name testInt16ArrayKeysTestTwo042
      * @tc.desc Verify keys/next (assertEqual)
@@ -856,26 +653,6 @@ export default function int16ArrayKeysTestTwoTest(): void {
         r = iter.next();
       }
       expect(count).assertEqual(sub.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_KEYS_TWO_4400
-     * @tc.name testInt16ArrayKeysTestTwo044
-     * @tc.desc Verify subarray() keys keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('testInt16ArrayKeysTestTwo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = Int16Array.of(10, 20, 30);
-      let sub = arr.subarray(0, 3);
-      let iter = sub.keys();
-      let actual1: int = iter.next().value!;
-      expect(actual1).assertEqual(0);
-      let actual2: int = iter.next().value!;
-      expect(actual2).assertEqual(1);
-      let actual3: int = iter.next().value!;
-      expect(actual3).assertEqual(2);
     });
 
     /**

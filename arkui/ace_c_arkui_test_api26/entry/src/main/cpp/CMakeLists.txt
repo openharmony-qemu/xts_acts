@@ -31,6 +31,7 @@ add_library(nativerender SHARED
     arcList/ArcListEventCallbackTest.cpp
     arcSwiper/ArcSwiperEventCallbackTest.cpp
     arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.cpp
+    dragEventSummary/DragEventSummaryTest.cpp
 )
 
  add_library(nativeNode SHARED 
@@ -42,6 +43,13 @@ add_library(nativerender SHARED
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
     hovered/HoveredTest.cpp
+)
+
+add_library(nativeanim SHARED
+    animate/NativeModuleAnimationTest.cpp
+    animate/NativeModuleAnimationExtraTest.cpp
+    animate/NativeModuleAnimationInit.cpp
+    animate/native_anim_common.cpp
 )
 
 find_library(
@@ -76,5 +84,8 @@ target_link_libraries(nativerender PUBLIC
         libnative_drawing.so libpixelmap.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so)
 target_link_libraries(nativefunc PUBLIC
  	    libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib})
+target_link_libraries(nativeanim PUBLIC
+        libnative_drawing.so libpixelmap.so libace_napi.z.so libudmf.so ${hilog-lib} ${libace-lib} ${libnapi-lib}
+        ${libuv-lib} dl)
 target_link_libraries(nativeNode PUBLIC
         libnative_drawing.so libpixelmap.so libace_napi.z.so ${hilog-lib} ${libace-lib} ${libnapi-lib} ${libuv-lib} libudmf.so)
