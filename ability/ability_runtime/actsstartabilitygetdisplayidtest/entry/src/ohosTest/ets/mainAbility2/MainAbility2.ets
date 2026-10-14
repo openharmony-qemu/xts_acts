@@ -16,20 +16,20 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import commonEvent from '@ohos.commonEvent';
+import commonEvent from '@ohos.commonEventManager';
 import { Constant } from '../Common';
 import Want from '@ohos.app.ability.Want';
 import commonEventManager from '@ohos.commonEventManager';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 async function publishEvent() {
-  let abilityWant: Want = AppStorage.get<Want>("abilityWant2")!;
+  let abilityWant: Want = AppStorage.get<Want>('abilityWant2')!;
   let commonEventPublishData: commonEventManager.CommonEventPublishData = {
     parameters: {
       displayId: abilityWant.parameters![Constant.displayId]
     }
   };
-  console.log("liubea-Ability received abilityWant = " + JSON.stringify(abilityWant));
+  console.log('liubea-Ability received abilityWant = ' + JSON.stringify(abilityWant));
   commonEvent.publish(Constant.event_200, commonEventPublishData, () => {
     console.log('liubea-============>publish START_ABILITY_CALLBACK_998877 success==========>>');
   });
@@ -38,7 +38,7 @@ async function publishEvent() {
 export default class MainAbility2 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    AppStorage.setOrCreate<Want>("abilityWant2", want);
+    AppStorage.setOrCreate<Want>('abilityWant2', want);
   }
 
   onDestroy() {

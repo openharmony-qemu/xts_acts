@@ -15,6 +15,7 @@
 
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { taskpool } from '@kit.ArkTS';
+// boundary value coverage tests
 
 // 测试函数定义
 @Concurrent
@@ -2346,5 +2347,55 @@ export default function taskPoolCoverageTest() {
         expect(e.code).assertEqual(10200014);
       }
     });
+
+    // ==================== Section 8: Boundary value coverage supplements ====================
+
+    /**
+     * @tc.name   testTaskConstructorNamedWithEmptyArrayArgs
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASK_PARAM_0005
+     * @tc.desc   Test Task(name, func, ...args) with args=[].
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskConstructorNamedWithEmptyArrayArgs', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const task = new taskpool.Task('testTask', noArgFunc, []);
+        const result = await taskpool.execute(task);
+        expect(result).assertEqual(42);
+        done();
+      });
+
+    /**
+     * @tc.name   testTaskGroupAddTaskWithExplicitEmptyArray
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_TASKGROUP_PARAM_0008
+     * @tc.desc   Test TaskGroup.addTask(func, ...args) with args=[].
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTaskGroupAddTaskWithExplicitEmptyArray', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const group = new taskpool.TaskGroup();
+        group.addTask(noArgFunc, []);
+        const results = await taskpool.execute(group);
+        expect(results.length).assertEqual(1);
+        done();
+      });
+
+    /**
+     * @tc.name   testExecuteFuncWithExplicitEmptyArray
+     * @tc.number SUB_CONCURRENCY_TASKPOOL_EXECUTE_PARAM_0009
+     * @tc.desc   Test taskpool.execute(func, ...args) with args=[].
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExecuteFuncWithExplicitEmptyArray', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (done: Function) => {
+        const result = await taskpool.execute(noArgFunc, []);
+        expect(result).assertEqual(42);
+        done();
+      });
   });
 }

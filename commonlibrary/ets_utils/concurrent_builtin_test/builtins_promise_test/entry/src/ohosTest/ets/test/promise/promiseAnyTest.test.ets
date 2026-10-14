@@ -818,9 +818,9 @@ export default function promiseAnyTest() {
       // Create promises in sequence with increasing delays
       for (let i = 0; i < 5; i++) {
         promises.push(new Promise<number>((resolve) =>
-        setTimeout(() => resolve(i), (5 - i) * 20)
+        setTimeout(() => resolve(i), (5 - i) * 120)
         ));
-        await new Promise<void>((resolve) => setTimeout(resolve, 10));
+        await new Promise<void>((resolve) => setTimeout(resolve, 5));
       }
 
       const result = await Promise.any(promises);
@@ -878,9 +878,9 @@ export default function promiseAnyTest() {
         });
       };
 
-      const p1: Promise<number> = createNestedAsync(100, 1);
-      const p2: Promise<number> = createNestedAsync(60, 2);
-      const p3: Promise<number> = createNestedAsync(80, 3);
+      const p1: Promise<number> = createNestedAsync(200, 1);
+      const p2: Promise<number> = createNestedAsync(50, 2);
+      const p3: Promise<number> = createNestedAsync(350, 3);
 
       const result = await Promise.any([p1, p2, p3]);
       expect(result).assertEqual(2);
@@ -992,19 +992,20 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAnyTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const innerAny1: Promise<number> = Promise.any([
-        new Promise<number>((resolve) => setTimeout(() => resolve(1), 100)),
-        new Promise<number>((resolve) => setTimeout(() => resolve(2), 50))
+        new Promise<number>((resolve) => setTimeout(() => resolve(1), 350)),
+        new Promise<number>((resolve) => setTimeout(() => resolve(2), 200))
       ]);
 
       const innerAny2: Promise<number> = Promise.any([
-        new Promise<number>((resolve) => setTimeout(() => resolve(3), 30)),
-        new Promise<number>((resolve) => setTimeout(() => resolve(4), 40))
+        new Promise<number>((resolve) => setTimeout(() => resolve(3), 50)),
+        new Promise<number>((resolve) => setTimeout(() => resolve(4), 200))
       ]);
 
       const result = await Promise.any([innerAny1, innerAny2]);
       expect(result).assertEqual(3);
+      done();
     });
 
     /**
@@ -1115,8 +1116,8 @@ export default function promiseAnyTest() {
         validate(1, 10), // Rejects
         validate(3, 20), // Rejects
         validate(5, 30), // Rejects
-        validate(4, 40), // Resolves
-        validate(6, 50)// Resolves later
+        validate(4, 50), // Resolves
+        validate(6, 200)// Resolves later
       ]);
 
       expect(result).assertEqual(4);
@@ -1199,7 +1200,8 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAnyTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const depDelays: Record<number, number> = { 1: 200, 2: 50, 3: 60, 4: 200 };
       const resolveDependency = async (id: number, deps: number[]): Promise<number> => {
         if (deps.length > 0) {
           // Resolve dependencies first
@@ -1208,7 +1210,7 @@ export default function promiseAnyTest() {
           ));
         }
         // Simulate resolution time
-        await new Promise<void>((resolve) => setTimeout(resolve, id * 20));
+        await new Promise<void>((resolve) => setTimeout(resolve, depDelays[id]));
         return id;
       };
 
@@ -1220,6 +1222,7 @@ export default function promiseAnyTest() {
       ]);
 
       expect(result).assertEqual(2);
+      done();
     });
 
     /**
@@ -1556,9 +1559,9 @@ export default function promiseAnyTest() {
       };
 
       const result = await Promise.any([
-        createNestedOp(1, [10, 20, 30]), // Total: 60ms
-        createNestedOp(2, [15, 15, 20]), // Total: 50ms
-        createNestedOp(3, [5, 25, 15])// Total: 45ms
+        createNestedOp(1, [150, 200]),
+        createNestedOp(2, [100, 100]),
+        createNestedOp(3, [50])
       ]);
 
       expect(result).assertEqual(3);
@@ -1689,14 +1692,14 @@ export default function promiseAnyTest() {
         );
       };
 
-      const pipeline1: Promise<string> = fetchData("API", 30)
-        .then(data => processData(data, 25));
+      const pipeline1: Promise<string> = fetchData("API", 200)
+        .then(data => processData(data, 200));
 
-      const pipeline2: Promise<string> = fetchData("Cache", 15)
-        .then(data => processData(data, 20));
+      const pipeline2: Promise<string> = fetchData("Cache", 100)
+        .then(data => processData(data, 150));
 
-      const pipeline3: Promise<string> = fetchData("Database", 20)
-        .then(data => processData(data, 10));
+      const pipeline3: Promise<string> = fetchData("Database", 50)
+        .then(data => processData(data, 50));
 
       const result = await Promise.any([pipeline1, pipeline2, pipeline3]);
       expect(result).assertEqual("Processed: Data from Database");
@@ -1737,32 +1740,16 @@ export default function promiseAnyTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const operations: Array<() => Promise<number>> = [
-        () => new Promise<number>((resolve) => setTimeout(() => resolve(1), 100)),
-        () => new Promise<number>((resolve) => setTimeout(() => resolve(2), 60)),
-        () => new Promise<number>((resolve) => setTimeout(() => resolve(3), 80))
+    it('PromiseAnyTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const promises: Promise<number>[] = [
+        new Promise<number>((resolve) => setTimeout(() => resolve(1), 200)),
+        new Promise<number>((resolve) => setTimeout(() => resolve(2), 50)),
+        new Promise<number>((resolve) => setTimeout(() => resolve(3), 350))
       ];
-
-      const promises: Promise<number>[] = [];
-      let lastStart = 0;
-
-      // Start operations sequentially with small delays between them
-      for (const op of operations) {
-        const startDelay = Date.now() - lastStart;
-        lastStart = Date.now();
-
-        promises.push(new Promise<number>((resolve) => {
-          setTimeout(() => {
-            op().then(resolve);
-          }, startDelay);
-        }));
-
-        await new Promise<void>((resolve) => setTimeout(resolve, 10));
-      }
 
       const result = await Promise.any(promises);
       expect(result).assertEqual(2);
+      done();
     });
 
     /**
@@ -1790,9 +1777,9 @@ export default function promiseAnyTest() {
       };
 
       const result = await Promise.any([
-        createProgressiveCascade(1, 10), // Total: 10+20+30=60ms
-        createProgressiveCascade(2, 8), // Total: 8+16+24=48ms
-        createProgressiveCascade(3, 12)// Total: 12+24+36=72ms
+        createProgressiveCascade(1, 200), // Total: 200+400+600=1200ms
+        createProgressiveCascade(2, 50), // Total: 50+100+150=300ms
+        createProgressiveCascade(3, 120)// Total: 120+240+360=720ms
       ]);
 
       expect(result).assertEqual(2);
@@ -1828,11 +1815,11 @@ export default function promiseAnyTest() {
     it('PromiseAnyTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const p1: Promise<number> = Promise.all([
         Promise.resolve(1),
-        new Promise<number>(resolve => setTimeout(() => resolve(2), 30))
+        new Promise<number>(resolve => setTimeout(() => resolve(2), 200))
       ]).then(values => values.reduce((a, b) => a + b, 0));
 
       const p2: Promise<number> = Promise.all([
-        new Promise<number>(resolve => setTimeout(() => resolve(3), 10)),
+        new Promise<number>(resolve => setTimeout(() => resolve(3), 50)),
         Promise.resolve(4)
       ]).then(values => values.reduce((a, b) => a + b, 0));
 
@@ -1841,26 +1828,27 @@ export default function promiseAnyTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_093
+     * @tc.number SUB_BUILTINS_PROMISE_ANY_TEST_0093
      * @tc.name PromiseAnyTest093
      * @tc.desc Combine Promise.any with Promise.race in cascading calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAnyTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAnyTest093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const race1: Promise<string> = Promise.race([
-        new Promise<string>(resolve => setTimeout(() => resolve("race1-1"), 50)),
-        new Promise<string>(resolve => setTimeout(() => resolve("race1-2"), 30))
+        new Promise<string>(resolve => setTimeout(() => resolve("race1-1"), 350)),
+        new Promise<string>(resolve => setTimeout(() => resolve("race1-2"), 200))
       ]);
 
       const race2: Promise<string> = Promise.race([
-        new Promise<string>(resolve => setTimeout(() => resolve("race2-1"), 20)),
-        new Promise<string>(resolve => setTimeout(() => resolve("race2-2"), 40))
+        new Promise<string>(resolve => setTimeout(() => resolve("race2-1"), 50)),
+        new Promise<string>(resolve => setTimeout(() => resolve("race2-2"), 200))
       ]);
 
       const result = await Promise.any([race1, race2]);
       expect(result).assertEqual("race2-1");
+      done();
     });
 
     /**
@@ -1875,7 +1863,7 @@ export default function promiseAnyTest() {
       const allSettled1: Promise<number> = Promise.allSettled([
         Promise.resolve(10),
         Promise.reject(new Error('Error')),
-        new Promise<number>(resolve => setTimeout(() => resolve(20), 20))
+        new Promise<number>(resolve => setTimeout(() => resolve(20), 200))
       ]).then(results => {
         const values = results
           .filter(r => r.status === 'fulfilled')
@@ -1884,7 +1872,7 @@ export default function promiseAnyTest() {
       });
 
       const allSettled2: Promise<number> = Promise.allSettled([
-        new Promise<number>(resolve => setTimeout(() => resolve(15), 10)),
+        new Promise<number>(resolve => setTimeout(() => resolve(15), 50)),
         Promise.resolve(5)
       ]).then(results => {
         const values = results
@@ -1936,12 +1924,12 @@ export default function promiseAnyTest() {
       const createConditionalPromise = (shouldResolveFast: boolean): Promise<number> => {
         if (shouldResolveFast) {
           return new Promise<number>(resolve =>
-          setTimeout(() => resolve(1), 10)
+          setTimeout(() => resolve(1), 50)
           );
         } else {
           return Promise.all([
             new Promise<number>(resolve => setTimeout(() => resolve(2), 20)),
-            new Promise<number>(resolve => setTimeout(() => resolve(3), 30))
+            new Promise<number>(resolve => setTimeout(() => resolve(3), 200))
           ]).then((res: number[]) => res[0] + res[1]);
         }
       };
@@ -1966,7 +1954,7 @@ export default function promiseAnyTest() {
     it('PromiseAnyTest099', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL4, async () => {
       // Layer 1: Create individual promises
       const p1: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(1), 10));
-      const p2: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(2), 20));
+      const p2: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(2), 50));
       const p3: Promise<number> = new Promise<number>((_, reject) => setTimeout(() => reject(), 15));
 
       // Layer 2: Combine with Promise.all
@@ -1979,7 +1967,7 @@ export default function promiseAnyTest() {
       const any1: Promise<number> = Promise.any([all1, race1]);
 
       // Alternative path
-      const alt1: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(5), 30));
+      const alt1: Promise<number> = new Promise<number>(resolve => setTimeout(() => resolve(5), 200));
 
       // Final combination
       const result = await Promise.any([any1, alt1]);

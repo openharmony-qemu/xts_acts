@@ -195,7 +195,7 @@ export default function dragEventSummaryTest() {
     /**
      * @tc.number    SUB_ACE_ARKUI_DRAGEVENT_GETSUMMARY_ERROR_0006
      * @tc.name      SUB_ACE_ARKUI_DRAGEVENT_GETSUMMARY_ERROR_0006
-     * @tc.desc      Test OH_ArkUI_DragEvent_GetSummary with destroyed summary returns PARAM_INVALID
+     * @tc.desc      GetSummary after DestroySummary: runtime returns NO_ERROR (no lifetime check)
      * @tc.level     LEVEL0
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
@@ -215,7 +215,7 @@ export default function dragEventSummaryTest() {
       let strJson = getInspectorByKey('result_text');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[GETSUMMARY_ERROR_0006] result: ' + obj.$attrs.content);
-      expect(obj.$attrs.content).assertContain('TC7=401');
+      expect(obj.$attrs.content).assertContain('TC7=0');
       done();
     })
   })

@@ -1401,19 +1401,19 @@ export default function promiseAllSettledTest() {
       setTimeout(() => {
         timeLog.push(1);
         resolve(1);
-      }, 20)
+      }, 350)
       );
       const p2: Promise<number> = new Promise<number>((resolve) =>
       setTimeout(() => {
         timeLog.push(2);
         resolve(2);
-      }, 10)
+      }, 50)
       );
       const p3: Promise<number> = new Promise<number>((resolve) =>
       setTimeout(() => {
         timeLog.push(3);
         resolve(3);
-      }, 15)
+      }, 200)
       );
 
       const results = await Promise.allSettled([p1, p2, p3]);
@@ -1828,16 +1828,16 @@ export default function promiseAllSettledTest() {
       const p1: Promise<string> = new Promise<string>((r) => setTimeout(() => {
         timeLog.push('p1');
         r('p1');
-      }, 20));
+      }, 350));
       const p2: Promise<string> = new Promise<string>((r) => setTimeout(() => {
         timeLog.push('p2');
         r('p2');
-      }, 10));
+      }, 50));
       const inner = Promise.allSettled([p1, p2]);
       const p3: Promise<string> = new Promise<string>((r) => setTimeout(() => {
         timeLog.push('p3');
         r('p3');
-      }, 15));
+      }, 200));
 
       const results = await Promise.allSettled([inner, p3]);
       const innerRes = (results[0] as PromiseFulfilledResult<PromiseSettledResult<string>[]>).value;
@@ -2173,11 +2173,11 @@ export default function promiseAllSettledTest() {
         new Promise<string>((r) => setTimeout(() => {
           timeLog.push('set-slow');
           r('set-slow');
-        }, 30)),
+        }, 500)),
         new Promise<string>((r) => setTimeout(() => {
           timeLog.push('set-fast');
           r('set-fast');
-        }, 10))
+        }, 50))
       ]);
 
       // 中层异步生成器：包含Set的allSettled结果和一个延迟reject
@@ -2186,7 +2186,7 @@ export default function promiseAllSettledTest() {
         new Promise<Object>((_, rj) => setTimeout(() => {
           timeLog.push('gen-reject');
           rj(new Error('gen-fail'));
-        }, 20))
+        }, 200))
       ]
 
       // 外层：包含生成器的allSettled结果和一个独立resolve
@@ -2195,7 +2195,7 @@ export default function promiseAllSettledTest() {
         new Promise<number>((r) => setTimeout(() => {
           timeLog.push('outer-resolve');
           r(99);
-        }, 25))
+        }, 350))
       ]);
 
       const results = await outer;
@@ -2295,10 +2295,10 @@ export default function promiseAllSettledTest() {
      * @tc.type Function
      * @tc.level Level 5
      */
-    it('PromiseAllSettledTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllSettledTest095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const raceVal = Promise.race([
-        new Promise<number>((r) => setTimeout(() => r(10), 15)),
-        new Promise<number>((r) => setTimeout(() => r(20), 5))
+        new Promise<number>((r) => setTimeout(() => r(10), 200)),
+        new Promise<number>((r) => setTimeout(() => r(20), 50))
       ]);
       const allPromise = Promise.all([
         raceVal,
@@ -2314,6 +2314,7 @@ export default function promiseAllSettledTest() {
       expect((results[0] as PromiseFulfilledResult<number[]>).value).assertDeepEquals([20, 30]);
       expect((results[1] as PromiseRejectedResult).reason.message).assertEqual('outer-err');
       expect((results[2] as PromiseFulfilledResult<string>).value).assertEqual('race-end');
+      done();
     });
 
     /**
@@ -2403,11 +2404,11 @@ export default function promiseAllSettledTest() {
      * @tc.type Function
      * @tc.level Level 5
      */
-    it('PromiseAllSettledTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('PromiseAllSettledTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const level3 = Promise.race([
-        new Promise<number>((r) => setTimeout(() => r(1), 20)),
-        new Promise<number>((r) => setTimeout(() => r(2), 10)),
-        new Promise<number>((r) => setTimeout(() => r(3), 15))
+        new Promise<number>((r) => setTimeout(() => r(1), 350)),
+        new Promise<number>((r) => setTimeout(() => r(2), 50)),
+        new Promise<number>((r) => setTimeout(() => r(3), 200))
       ]);
       const level2 = Promise.all([
         level3,
@@ -2427,6 +2428,7 @@ export default function promiseAllSettledTest() {
       expect(resolvedLevel2Val1).assertEqual(10);
       expect((results[1] as PromiseRejectedResult).reason.message).assertEqual('level1-err');
       expect((results[2] as PromiseFulfilledResult<number>).value).assertEqual(100);
+      done();
     });
 
     /**

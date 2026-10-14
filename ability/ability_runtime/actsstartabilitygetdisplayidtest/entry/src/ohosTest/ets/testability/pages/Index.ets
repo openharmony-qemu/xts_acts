@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog';
 
 @Entry
 @Component
-struct Index {
+struct TestabilityIndex {
   @State message: string = 'Hello World';
 
   aboutToAppear() {

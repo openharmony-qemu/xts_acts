@@ -14,7 +14,7 @@
  */
 @Entry
 @Component
-struct Index {
+struct MainAbilitySecond {
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('SystemCallTest SecondAbility)')

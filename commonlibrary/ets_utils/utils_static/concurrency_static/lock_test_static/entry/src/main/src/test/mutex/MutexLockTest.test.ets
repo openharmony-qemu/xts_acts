@@ -263,8 +263,8 @@ function deadlockTaskB(mutex1: Mutex, mutex2: Mutex, flags: MutexLockDeadlockFla
   }
 }
 
-export default function MutexLockTest(): void {
-  describe('MutexLockTest', (): void => {
+export default function MutexLockSubTest(): void {
+  describe('MutexLockSubTest', (): void => {
     beforeAll((): void => {})
     beforeEach((): void => {})
     afterEach((): void => {})

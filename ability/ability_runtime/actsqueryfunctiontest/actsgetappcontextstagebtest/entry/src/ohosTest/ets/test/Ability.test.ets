@@ -18,10 +18,11 @@ import commonEvent from '@ohos.commonEvent';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
+import { BusinessError } from '@ohos.base';
 
 const START_ABILITY_TIMEOUT = 5000;
-let GetAppContext1: commonEventManager.CommonEventSubscribeInfo = {
-  events: ["ACTS_GetAppContext"]
+let getAppContext1: commonEventManager.CommonEventSubscribeInfo = {
+  events: ['ACTS_GetAppContext']
 };
 
 export default function abilityTest() {
@@ -35,37 +36,49 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('ACTS_GetAppContext_0200', Level.LEVEL0, async (done: Function) => {
-      let Subscriber: commonEventManager.CommonEventSubscriber;
+      let subscriber: commonEventManager.CommonEventSubscriber;
       let flag = true;
-      let AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      commonEvent.createSubscriber(GetAppContext1).then(async (data) => {
-        console.debug("ACTS_GetAppContext_0200====>Create Subscriber====");
-        Subscriber = data;
-        commonEvent.subscribe(Subscriber, (err, data) => {
-          expect(data.event == "ACTS_GetAppContext").assertTrue();
-          console.debug("====>0200 Subscribe CallBack data:" + JSON.stringify(data));
-          let context = AbilityDelegator.getAppContext();
-          console.debug("====>ACTS_GetAppContext_0200 context:" + context);
-          expect(context.applicationInfo.name).assertEqual("com.example.actsgetappcontextstagebtest");
-          commonEvent.unsubscribe(Subscriber, () => {
-            console.debug("====>UnSubscribeCallback====");
+      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      commonEvent.createSubscriber(getAppContext1).then(async (data) => {
+        console.debug('ACTS_GetAppContext_0200====>Create Subscriber====');
+        subscriber = data;
+        commonEvent.subscribe(subscriber, (err, data) => {
+          if (err && err.code !== 0) {
+            console.info(`callback err: ${JSON.stringify(err)}`);
+            expect().assertFail();
+            return;
+          }
+          expect(data.event == 'ACTS_GetAppContext').assertTrue();
+          console.debug('====>0200 Subscribe CallBack data:' + JSON.stringify(data));
+          let context = abilityDelegator.getAppContext();
+          console.debug('====>ACTS_GetAppContext_0200 context:' + context);
+          expect(context.applicationInfo.name).assertEqual('com.example.actsgetappcontextstagebtest');
+          commonEvent.unsubscribe(subscriber, () => {
+            console.debug('====>UnSubscribeCallback====');
             flag = false
             done();
           });
         });
-        console.debug("====>start startAbility====");
-        AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(
+        console.debug('====>start startAbility====');
+        AppStorage.get<common.UIAbilityContext>('abilityContext')!.startAbility(
           {
             bundleName: 'com.example.actsgetappcontextstagebtest',
             abilityName: 'MainAbility1'
           })
           .then(() => {
-            console.debug("====>startAbility end====");
+            console.debug('====>startAbility end====');
+          }).catch((err: BusinessError) => {
+            console.debug('====>startAbility err:' + JSON.stringify(err));
+            expect().assertFail();
+            done();
           })
+      }).catch((err: BusinessError) => {
+        console.debug('====>createSubscriber err:' + JSON.stringify(err));
+        expect().assertFail();
+        done();
       })
       setTimeout(() => {
         if (flag == true) {
-          expect().assertFail();
           console.debug('ACTS_GetAppContext_0200 - timeout');
           done();
         }

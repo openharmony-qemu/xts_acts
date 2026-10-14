@@ -221,3 +221,9 @@ export const RuntimeCheckModeTest010: () => number;
 export const RuntimeCheckModeTest011: () => number;
 export const RuntimeCheckModeTest012: () => number;
 export const RuntimeCheckModeTest013: () => number;
+
+export const UIAgentGetPageTextTest001: () => number;
+export const UIAgentGetPageTextTest002: () => number;
+export const UIAgentGetPageTextTest003: () => number;
+export const UIAgentGetPageTextTest004: () => number;
+export const UIAgentGetPageTextTest005: () => number;

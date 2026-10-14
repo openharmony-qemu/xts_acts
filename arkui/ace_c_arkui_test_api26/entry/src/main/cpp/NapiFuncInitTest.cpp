@@ -49,6 +49,7 @@
 #include "arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.cpp"
 #include "node/SetUiDvsyncSwitchTest.cpp"
 #include "nativeModule/RuntimeCheckModeTest.cpp"
+#include "node/UIAgentGetPageTextTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -294,6 +295,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"RuntimeCheckModeTest011", nullptr, RuntimeCheckModeTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RuntimeCheckModeTest012", nullptr, RuntimeCheckModeTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"RuntimeCheckModeTest013", nullptr, RuntimeCheckModeTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"UIAgentGetPageTextTest001", nullptr, UIAgentGetPageTextTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest002", nullptr, UIAgentGetPageTextTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest003", nullptr, UIAgentGetPageTextTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

@@ -3935,5 +3935,84 @@ describe('threadWorkerTest', function () {
             done()
         }
     })
+
+    /**
+     * @tc.name   threadWorker_constructor_test_011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0200
+     * @tc.desc   worker constructor with empty string scriptURL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('threadWorker_constructor_test_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        try {
+            let ss = new worker.ThreadWorker("")
+            ss.terminate()
+            expect().assertFail()
+        } catch (error) {
+            expect(error.name == "BusinessError").assertTrue()
+        }
+        done()
+    })
+
+    /**
+     * @tc.name   threadWorker_constructor_test_014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0203
+     * @tc.desc   worker constructor with options.name="" (empty string).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('threadWorker_constructor_test_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        try {
+            let ss = new worker.ThreadWorker("/entry_test/ets/workers/newworker.js", { name: "" })
+            let isTerminate = false
+            ss.onexit = function () {
+                isTerminate = true
+            }
+            ss.onmessage = function (d) {
+                res = d.data.type;
+                expect(res).assertEqual("normal")
+                ss.terminate()
+            }
+            ss.postMessage({type: "normal", value: 12})
+            while (!isTerminate) {
+                await promiseCase()
+            }
+        } catch (error) {
+            expect(error.name == "BusinessError").assertTrue()
+        }
+        done()
+    })
+
+    /**
+     * @tc.name   threadWorker_constructor_test_017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_THREADWORKER_0206
+     * @tc.desc   worker constructor with options={} (empty object).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('threadWorker_constructor_test_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+        try {
+            let ss = new worker.ThreadWorker("/entry_test/ets/workers/newworker.js", {})
+            let isTerminate = false
+            ss.onexit = function () {
+                isTerminate = true
+            }
+            ss.onmessage = function (d) {
+                res = d.data.type;
+                expect(res).assertEqual("normal")
+                ss.terminate()
+            }
+            ss.postMessage({type: "normal", value: 12})
+            while (!isTerminate) {
+                await promiseCase()
+            }
+        } catch (error) {
+            expect(error.name == "BusinessError").assertTrue()
+        }
+        done()
+    })
 })
 }

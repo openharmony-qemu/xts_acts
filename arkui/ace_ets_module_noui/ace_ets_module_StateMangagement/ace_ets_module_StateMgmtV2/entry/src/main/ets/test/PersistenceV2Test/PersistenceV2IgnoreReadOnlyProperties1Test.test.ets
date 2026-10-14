@@ -44,7 +44,8 @@ export default function persistenceV2IgnoreReadOnlyProperties1Test() {
       done();
     });
 
-    afterEach(() => {
+    afterEach(async () => {
+      PersistenceV2.remove('IgnoreReadOnlyProperties1');
       console.info('[PersistenceV2IgnoreReadOnlyProperties1Test] afterEach called');
     });
 
