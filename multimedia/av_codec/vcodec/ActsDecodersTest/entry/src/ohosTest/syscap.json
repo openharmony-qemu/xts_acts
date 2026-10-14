@@ -1,10 +1,13 @@
 {
     "devices": {
-        "general": [
-        ],
+        "general": [],
         "custom": [
             {
-                "xts": ["SystemCapability.Multimedia.Media.CodecBase"]
+                "xts": [
+                    "SystemCapability.Account.AppAccount",
+                    "SystemCapability.Account.OsAccount",
+                    "SystemCapability.Multimedia.Media.CodecBase"
+                ]
             }
         ]
     }
