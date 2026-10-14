@@ -49,6 +49,7 @@
 #include "arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.cpp"
 #include "node/SetUiDvsyncSwitchTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
+#include "node/GetImagesByNodeIdAsyncTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -287,6 +288,15 @@ static napi_value Init(napi_env env, napi_value exports)
         {"UIAgentGetPageTextTest003", nullptr, UIAgentGetPageTextTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest004", nullptr, UIAgentGetPageTextTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest005", nullptr, UIAgentGetPageTextTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+
+        {"GetImagesByNodeIdAsyncTest001", nullptr, GetImagesByNodeIdAsyncTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest002", nullptr, GetImagesByNodeIdAsyncTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest003", nullptr, GetImagesByNodeIdAsyncTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest004", nullptr, GetImagesByNodeIdAsyncTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest005", nullptr, GetImagesByNodeIdAsyncTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest006", nullptr, GetImagesByNodeIdAsyncTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest007", nullptr, GetImagesByNodeIdAsyncTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetImagesByNodeIdAsyncTest008", nullptr, GetImagesByNodeIdAsyncTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

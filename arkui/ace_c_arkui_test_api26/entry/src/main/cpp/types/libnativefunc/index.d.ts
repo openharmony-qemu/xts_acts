@@ -213,3 +213,12 @@ export const UIAgentGetPageTextTest002: () => number;
 export const UIAgentGetPageTextTest003: () => number;
 export const UIAgentGetPageTextTest004: () => number;
 export const UIAgentGetPageTextTest005: () => number;
+
+export const GetImagesByNodeIdAsyncTest001: () => number;
+export const GetImagesByNodeIdAsyncTest002: () => number;
+export const GetImagesByNodeIdAsyncTest003: () => number;
+export const GetImagesByNodeIdAsyncTest004: () => number;
+export const GetImagesByNodeIdAsyncTest005: () => number;
+export const GetImagesByNodeIdAsyncTest006: () => number;
+export const GetImagesByNodeIdAsyncTest007: () => number;
+export const GetImagesByNodeIdAsyncTest008: () => number;
