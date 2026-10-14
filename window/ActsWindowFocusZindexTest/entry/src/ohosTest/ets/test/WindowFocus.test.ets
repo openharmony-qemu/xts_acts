@@ -2234,9 +2234,9 @@ export default function windowFocusTest() {
     })
 
    /**
-     * @tc.name   testOffWindowFocusStateChangeErrCode1300002_0100
+     * @tc.name   testOffWindowFocusStateChangeErrCode_0100
      * @tc.number SUB_BASIC_WMS_OFF_WindowFocusStateChange_WITH_DESTROYED_SUBWINDOW_0100
-     * @tc.desc   testOffWindowFocusStateChangeErrCode1300002_0100
+     * @tc.desc   testOffWindowFocusStateChangeErrCode_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3

@@ -875,6 +875,45 @@ it('testSetTouchableAreasNoPermission_static_0100', TestType.FUNCTION | Size.MED
     }
   });
 
+   /**
+     * @tc.name SUB_BASIC_WMS_setWindowPosition_NoPermission_STATIC_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_NoPermission_STATIC_0100
+     * @tc.desc SUB_BASIC_WMS_setWindowPosition_NoPermission_STATIC_0100
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_BASIC_WMS_setWindowPosition_NoPermission_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_NoPermission_STATIC_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
+        try {
+          let mainWindow: window.Window = windowStage!.getMainWindowSync();
+          let windowId: int = mainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}`);
+          
+          let windowPositionParamsArray: Array<window.WindowPositionParams> = [{
+            windowId: windowId,
+            insertAfter: window.WindowPosition.TOPMOST
+          }];
+          await window.setWindowPosition(windowPositionParamsArray);
+          expect(false).assertTrue();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          hilog.error(domain, tag, `${caseName} Exception. Cause: ${exception.code}, ${exception.message}`);
+          if (exception.code === 801) {
+            hilog.info(domain, tag, `${caseName} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+          } else {
+            expect(exception.code).assertEqual(201);
+          }
+          expect(exception.message !== '').assertTrue;
+          done();
+        }
+      });
+
 })
 
 }
