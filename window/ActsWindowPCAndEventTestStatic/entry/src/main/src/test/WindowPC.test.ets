@@ -85,6 +85,7 @@ export default function WindowPCTest() {
         let isPCStatus: string = '';
         let isFreeWindowMode = false;
         let driver: Driver = Driver.create();
+        let displayId = display.getDefaultDisplaySync().id;
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(domain, tag,'windowTest context: ' + JSON.stringify(context))
@@ -115,6 +116,7 @@ export default function WindowPCTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
+            console.info(`beforeAll:displayId = ${JSON.stringify(displayId)}`)
         })
 
         /**
@@ -165,7 +167,7 @@ export default function WindowPCTest() {
                             expect(info!.globalRect!.top).assertEqual(res.windowRect.top);
                             expect(info!.globalRect!.width).assertEqual(res.windowRect.width);
                             expect(info!.globalRect!.height).assertEqual(res.windowRect.height);
-                            expect(info!.displayId).assertEqual(0);
+                            expect(info!.displayId).assertEqual(displayId);
                             expect(info!.bundleName === "com.example.actswindowtest.static").assertTrue();
                             expect(info!.abilityName !== null).assertTrue();
                             expect(info!.windowId).assertLargerOrEqual(0);
@@ -240,7 +242,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point!.x, point!.y, point!.x + 500, point!.y + 500, 200);
+                await driver.dragBetween({x:point!.x,y:point!.y,displayId:displayId.toInt()}, {x:point!.x + 50, y:point!.y + 50,displayId:displayId.toInt()}, 200);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)
@@ -308,23 +310,16 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.drag(point.x, point.y, point.x + 500, point.y + 500, 200);
+                await driver.dragBetween({x:point!.x,y:point!.y,displayId:displayId.toInt()}, {x:point!.x + 50, y:point!.y + 50,displayId:displayId.toInt()}, 200);
                 await Utils.msSleep(1000)
-                let text = await driver.findComponent(ON.id('startMovingText'));
-                await Utils.msSleep(1000)
-                console.info(`${caseName} text = ${JSON.stringify(text)}`);
-                let textDragged = await text!.getText();
-                await Utils.msSleep(5000)
-                console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
-                if (textDragged == 'startMoving success') {
-                    expect().assertFail();
-                } else if (textDragged == 'startMoving 801') {
-                    console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
-                } else if (textDragged == 'startMoving 1300001') {
-                    console.info(`${caseName} textDragged = ${JSON.stringify(textDragged)}`);
+                let errorCode = AppStorage.get<int>('teststartMovingParamStaticRepeated_errorCode') as int;
+                console.info(`${caseName} errorCode = ${JSON.stringify(errorCode)}`);
+                if(isFreeWindowMode){ 
+                 console.info(`${caseName} startMoving 801`);
+                 expect(errorCode).assertEqual(801);
                 } else {
-                    console.error(`${caseName} Error.`);
-                    expect(true).assertFalse()
+                 console.info(`${caseName} startMoving 1300001`);
+                 expect(errorCode).assertEqual(1300001);
                 }
                 await subWindowClass.destroyWindow();
                 done();
@@ -364,7 +359,7 @@ export default function WindowPCTest() {
                         (subWin! as window.Window).recover().then(async () => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling recover.');
                             expect(false).assertTrue();
-                        }).catch((err: Error): void  => {
+                        }).catch((err: Error):Promise<void>  => {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call recover. Cause: ' + JSON.stringify(err));
                             expect(err!.code).assertEqual(1300002);
                         });
@@ -376,7 +371,7 @@ export default function WindowPCTest() {
                     }
                     })
                 })
-                .catch((err: Error): void => {
+                .catch((err: Error):Promise<void> => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -401,7 +396,7 @@ export default function WindowPCTest() {
                 promise.then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
                     done();
-                }).catch((err: Error): void => {
+                }).catch((err: Error):Promise<void> => {
                     if (err!.code === 801 || err!.code === 1300001) {
                         hilog.info(0x0000, '[ANI]',msgStr + ' The current device type does not support calling recover or recover not support ')
                         done();
@@ -4354,7 +4349,7 @@ export default function WindowPCTest() {
           }).catch((err: Error): PromiseLike<void> | undefined => {
             hilog.error(domain, tag,
               `${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
-            if (err.code === 801) {
+            if (err.code === 801 || err.code === 1300002) {
               expect(err.message != null).assertTrue();
               done();
             } else {

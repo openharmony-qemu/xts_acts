@@ -2233,6 +2233,40 @@ export default function windowFocusTest() {
       }
     })
 
+   /**
+     * @tc.name   testOffWindowFocusStateChangeErrCode1300002_0100
+     * @tc.number SUB_BASIC_WMS_OFF_WindowFocusStateChange_WITH_DESTROYED_SUBWINDOW_0100
+     * @tc.desc   testOffWindowFocusStateChangeErrCode1300002_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOffWindowFocusStateChangeErrCode_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "testOffWindowFocusStateChangeErrCode_0100 ";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let callback = (windowFocusState: window.WindowFocusState) => {
+        console.log(`${msgStr} onWindowFocusStateChange callBack1. ${JSON.stringify(windowFocusState)}`);
+      }
+      try {
+        let subWin: ohosWindow.Window =
+          await windowStage.createSubWindow('test_offWindowFocusStateChange_0100');
+        await subWin.destroyWindow();
+        await sleep(300);
+        subWin.offWindowFocusStateChange(callback);
+        console.log(msgStr + 'Succeeded in offWindowFocusStateChange.');
+        done()
+      } catch (error) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(error.code) + ` message:${error.message}`);
+        if (!canIUseRes) {
+          expect(error.code).assertEqual(801);
+          expect(error.message !== '').assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+        done()
+      }
+    })
 
     /**
      * @tc.name   SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_0100

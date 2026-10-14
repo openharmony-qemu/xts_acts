@@ -426,7 +426,7 @@ export default function WindowFocusTest() {
         window.offApplicationFocusStateChange();
         done();
       } catch (err) {
-        console.info(`${caseName} setWindowFocusable err, message: ${err.message} code:${err.code}`);
+        console.info(`${caseName} err, message: ${err.message} code:${err.code}`);
         expect(true).assertFail();
         done();
       }
@@ -631,6 +631,232 @@ export default function WindowFocusTest() {
           done();
         }
       })
+
+/**
+     * @tc.number     SUB_BASIC_WMS_ON_WindowFocusStateChange_WITH_DESTROYED_SUBWINDOW_STATIC_0100
+     * @tc.name       SUB_BASIC_WMS_ON_WindowFocusStateChange_WITH_DESTROYED_SUBWINDOW_STATIC_0100
+     * @tc.desc       SUB_BASIC_WMS_ON_WindowFocusStateChange_WITH_DESTROYED_SUBWINDOW_STATIC_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_ON_WindowFocusStateChange_WITH_DESTROYED_SUBWINDOW_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_BASIC_WMS_ON_WindowFocusStateChange_WITH_DESTROYED_SUBWINDOW_STATIC_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let callback = (windowFocusState: window.WindowFocusState) => {
+          console.log(`${msgStr} onWindowFocusStateChange callBack1. ${JSON.stringify(windowFocusState)}`);
+        }
+        try {
+          let subWin: window.Window =
+            await windowStage!.createSubWindow('test_onWindowFocusStateChange_0000');
+          await subWin?.destroyWindow();
+          await Utils.msSleep(300);
+          subWin.onWindowFocusStateChange(callback);
+          console.log(msgStr + 'Succeeded in onWindowFocusStateChange.');
+          expect(false).assertTrue();
+          done()
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception!.code},message: ${exception!.message}`);
+          expect(exception!.code).assertEqual(1300002);
+          expect(exception!.message !== '').assertTrue();
+          done()
+        }
+      });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_STATIC_0100
+     * @tc.name       SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_STATIC_0100
+     * @tc.desc       SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_STATIC_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_STATIC_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let windowFocusStateResult: window.WindowFocusState | undefined = undefined;
+        let callback = (windowFocusState: window.WindowFocusState) => {
+          console.log(`${msgStr} onWindowFocusStateChange callBack1. ${JSON.stringify(windowFocusState)}`);
+          windowFocusStateResult = windowFocusState
+        }
+        let windowClass = windowStage!.getMainWindowSync();
+        let subWindow: window.Window | undefined = undefined
+        try {
+          let mainWindowId = windowClass.getWindowProperties().id;
+          windowClass.onWindowFocusStateChange(callback);
+          subWindow = await windowStage!.createSubWindow('test_onWindowFocusStateChange_0100');
+          let subWindowId = subWindow?.getWindowProperties().id;
+          console.info(`${msgStr} mainWindowId:${mainWindowId},subWindowId:${subWindowId}`);
+          let windowLimit = subWindow?.getWindowLimits();
+          let minWidth = windowLimit?.minWidth;
+          let minHeight = windowLimit?.minHeight;
+          console.info(`${msgStr} minWidth:${minWidth},minHeight:${minHeight}`);
+          await subWindow?.setUIContent('pages/index2');
+          await subWindow?.resizeAsync(minWidth! + 40, minHeight! + 40);
+          await subWindow?.showWindow();
+          await Utils.msSleep(500);
+          expect(windowFocusStateResult !== undefined).assertTrue();
+          expect(windowFocusStateResult!.isFocused).assertFalse();
+          expect(windowFocusStateResult!.focusChangeReason).assertEqual(window.FocusChangeReason.DEFAULT);
+          expect(windowFocusStateResult!.nextFocusedWindowId).assertEqual(subWindowId);
+          let button = await driver.findComponent(ON.id('mainWindow'));
+          await button?.click();
+          await Utils.msSleep(500);
+          expect(windowFocusStateResult!.isFocused).assertTrue();
+          expect(windowFocusStateResult!.focusChangeReason).assertEqual(window.FocusChangeReason.CLICK);
+          expect(windowFocusStateResult!.prevFocusedWindowId).assertEqual(subWindowId);
+          expect(windowFocusStateResult!.nextFocusedWindowId).assertEqual(undefined);
+          windowClass.offWindowFocusStateChange();
+          await subWindow?.destroyWindow();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception!.code},message: ${exception!.message}`);
+          await subWindow?.destroyWindow();
+          if (!canIUseRes) {
+            console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+            expect(exception!.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue()
+          }
+          done()
+        }
+      });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_SubWindow_STATIC_0100
+     * @tc.name       SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_SubWindow_STATIC_0100
+     * @tc.desc       SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_SubWindow_STATIC_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_SubWindow_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_SubWindow_STATIC_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let windowFocusStateResult: window.WindowFocusState | undefined = undefined;
+        let callback = (windowFocusState: window.WindowFocusState) => {
+          console.log(`${msgStr} onWindowFocusStateChange callBack1. ${JSON.stringify(windowFocusState)}`);
+          windowFocusStateResult = windowFocusState
+        }
+        let windowClass = windowStage!.getMainWindowSync();
+        let subWindow: window.Window | undefined = undefined
+        try {
+          let mainWindowId = windowClass.getWindowProperties().id;
+          subWindow = await windowStage!.createSubWindow('test_onWindowFocusStateChange_0200');
+          subWindow?.onWindowFocusStateChange(callback);
+          let subWindowId = subWindow?.getWindowProperties().id;
+          console.info(`${msgStr} mainWindowId:${mainWindowId},subWindowId:${subWindowId}`);
+          let windowLimit = subWindow?.getWindowLimits();
+          let minWidth = windowLimit?.minWidth;
+          let minHeight = windowLimit?.minHeight;
+          console.info(`${msgStr} minWidth:${minWidth},minHeight:${minHeight}`);
+          await subWindow?.setUIContent('pages/index2');
+          await subWindow?.resizeAsync(minWidth! + 40, minHeight! + 40);
+          await subWindow?.showWindow();
+          await Utils.msSleep(500);
+          expect(windowFocusStateResult !== undefined).assertTrue();
+          expect(windowFocusStateResult!.isFocused).assertTrue();
+          expect(windowFocusStateResult!.focusChangeReason).assertEqual(window.FocusChangeReason.DEFAULT);
+          expect(windowFocusStateResult!.prevFocusedWindowId).assertEqual(mainWindowId);
+          expect(windowFocusStateResult!.nextFocusedWindowId).assertEqual(undefined);
+          await subWindow?.minimize();
+          await Utils.msSleep(500);
+          expect(windowFocusStateResult!.isFocused).assertFalse();
+          expect(windowFocusStateResult!.focusChangeReason).assertEqual(window.FocusChangeReason.DEFAULT);
+          expect(windowFocusStateResult!.nextFocusedWindowId).assertEqual(mainWindowId);
+          expect(windowFocusStateResult!.prevFocusedWindowId).assertEqual(undefined);
+          windowClass.offWindowFocusStateChange(callback);
+          await subWindow?.destroyWindow();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception!.code},message: ${exception!.message}`);
+          await subWindow?.destroyWindow();
+          if (!canIUseRes) {
+            console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+            expect(exception!.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue()
+          }
+          done()
+        }
+      });
+
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_TWO_CALLBACK_STATIC_0100
+     * @tc.name       SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_TWO_CALLBACK_STATIC_0100
+     * @tc.desc       SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_TWO_CALLBACK_STATIC_0100
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
+     */
+    it('SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_TWO_CALLBACK_STATIC_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_BASIC_WMS_ON_WINDOW_FOCUS_STATE_CHANGE_TWO_CALLBACK_STATIC_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]', msgStr + 'begin');
+        let count: number = 0;
+        let count2: number = 0;
+        let callback = (windowFocusState: window.WindowFocusState) => {
+          console.log(`${msgStr} onWindowFocusStateChange callBack1. ${JSON.stringify(windowFocusState)}`);
+          count++;
+        }
+        let callback2 = (windowFocusState: window.WindowFocusState) => {
+          console.log(`${msgStr} onWindowFocusStateChange callBack2. ${JSON.stringify(windowFocusState)}`);
+          count2++;
+        }
+        let windowClass = windowStage!.getMainWindowSync();
+        let subWindow: window.Window | undefined = undefined
+        try {
+          let mainWindowId = windowClass.getWindowProperties().id;
+          subWindow = await windowStage!.createSubWindow('test_onWindowFocusStateChange_0300');
+          windowClass.onWindowFocusStateChange(callback);
+          windowClass.onWindowFocusStateChange(callback2);
+          let subWindowId = subWindow?.getWindowProperties().id;
+          console.info(`${msgStr} mainWindowId:${mainWindowId},subWindowId:${subWindowId}`);
+          let windowLimit = subWindow?.getWindowLimits();
+          let minWidth = windowLimit?.minWidth;
+          let minHeight = windowLimit?.minHeight;
+          console.info(`${msgStr} minWidth:${minWidth},minHeight:${minHeight}`);
+          await subWindow?.setUIContent('pages/index2');
+          await subWindow?.resizeAsync(minWidth! + 40, minHeight! + 40);
+          await subWindow?.showWindow();
+          await Utils.msSleep(500);
+          expect(count).assertEqual(1);
+          expect(count2).assertEqual(1);
+          await window.shiftAppWindowFocus(subWindowId, mainWindowId);
+          await Utils.msSleep(500);
+          expect(count).assertEqual(2);
+          expect(count2).assertEqual(2);
+          windowClass.offWindowFocusStateChange(callback2);
+          await window.shiftAppWindowFocus(mainWindowId, subWindowId);
+          await Utils.msSleep(500);
+          expect(count).assertEqual(3);
+          expect(count2).assertEqual(2);
+          windowClass.offWindowFocusStateChange();
+          await subWindow?.destroyWindow();
+          done();
+        } catch (exception) {
+          console.error(`${msgStr} Failed. Cause code: ${exception!.code},message: ${exception!.message}`);
+          await subWindow?.destroyWindow();
+          if (!canIUseRes) {
+            console.log(msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+            expect(exception.code).assertEqual(801);
+          } else {
+            expect(false).assertTrue()
+          }
+          done()
+        }
+      });
 
     })
 

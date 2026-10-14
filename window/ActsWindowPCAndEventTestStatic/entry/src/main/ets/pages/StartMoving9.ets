@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { window } from '@kit.ArkUI';
+import window from '@ohos.window';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent,Blank,TouchEvent,Color,HitTestMode,TouchType} from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { AppStorage,State } from '@ohos.arkui.stateManagement'
 
-let caseName: string = 'teststartMovingwithOffsetXandOffsetYRepeated';
+let caseName: string = 'teststartMovingParamStaticRepeated';
 @Entry
 @Component
 struct StartMoving9 {
@@ -40,17 +40,25 @@ struct StartMoving9 {
               let windowClass = AppStorage.get<window.Window>('windowClass2') as window.Window;
               let windowRect = windowClass.getWindowProperties().windowRect;
               console.log(`${caseName} subWindowClass windowRect: ${JSON.stringify(windowRect)}`);
-              windowClass.startMoving(50, 50).then(async () => {
-                await windowClass.startMoving(50, 50);
-                this.message = 'startMoving success'
+              let offSetX = Math.round(windowRect.width / 2).toInt();
+              console.log(`${caseName}  offSetX: ${JSON.stringify(offSetX)}`);
+              let offSetY = Math.round(windowRect.height / 2).toInt();
+              console.log(`${caseName}  offSetY: ${JSON.stringify(offSetY)}`);
+              windowClass.startMoving(offSetX, offSetY).then(async () => {
+                await windowClass.startMoving(offSetX, offSetY);
+                this.message = 'startMoving success';
                 console.info('start moving successfully');
               }).catch((err) => {
                 err = err as BusinessError;
                 console.error('start moving : ' + err.code + ',message:' + err.message)
                 if (err.code == 801) {
                   this.message = 'startMoving 801'
+                  AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', 801);
                 } else if (err.code == 1300001) {
                   this.message = 'startMoving 1300001'
+                  AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', 1300001)
+                } else {
+                AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', 0)
                 }
               })
             } catch (exception) {

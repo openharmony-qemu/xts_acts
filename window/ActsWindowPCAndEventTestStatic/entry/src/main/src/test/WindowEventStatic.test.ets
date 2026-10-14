@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll,afterEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
@@ -45,6 +45,22 @@ export default function WindowEventStatic() {
             }
         });
 
+    afterEach(async ()=>{
+      try {
+        await Utils.msSleep(500);
+        let windowClassArray: Array<window.Window> = await windowStage!.getSubWindow();
+        if(windowClassArray.length!=0){
+           for(let i = 0;i<windowClassArray.length;i++){
+               await windowClassArray[i].destroyWindow();
+               await Utils.msSleep(500);
+               hilog.info(domain, tag,`brforeAll destroyWindow windowClassArray ${i} success`);
+            }
+        }
+      } catch (error) {
+        console.log('afterEach fail cause'+error)
+      }
+    });
+    
         /**
          * @tc.number SUB_WINDOW_EVENT_OFFTOUCHOUTSIDE_NORMAL_001
          * * @tc.name testOffTouchOutside_NORMAL_001
@@ -607,8 +623,11 @@ export default function WindowEventStatic() {
 
                 let maskWidth = subWindow.getWindowProperties().windowRect.width;
                 let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
-                    let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
+                let windowMask = Array.create<Array<Long>>(maskHeight, []).map((_, row) => {
+                    let array = Array.create<Long>(maskWidth, 0);
+                    for (let i = 0 ; i < maskWidth; i++) {
+                        array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+                    }
                     return array;
                 });
 
@@ -660,8 +679,11 @@ export default function WindowEventStatic() {
 
                 let maskWidth = subWindow.getWindowProperties().windowRect.width;
                 let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
-                    let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
+                let windowMask = Array.create<Array<Long>>(maskHeight, []).map((_, row) => {
+                    let array = Array.create<Long>(maskWidth, 0);
+                    for (let i = 0 ; i < maskWidth; i++) {
+                        array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+                    }
                     return array;
                 });
 
@@ -1060,8 +1082,11 @@ export default function WindowEventStatic() {
 
                 let maskWidth = subWindow.getWindowProperties().windowRect.width;
                 let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
-                    let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
+                let windowMask = Array.create<Array<Long>>(maskHeight, []).map((_, row) => {
+                    let array = Array.create<Long>(maskWidth, 0);
+                    for (let i = 0 ; i < maskWidth; i++) {
+                        array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
+                    }
                     return array;
                 });
 
