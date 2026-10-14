@@ -65,7 +65,18 @@ export default function abilityTest() {
     console.info("-----------------LifecycleTest is start----------------")
 
     beforeAll(()=>{
-      if(deviceSupport === 'false'){}
+      console.info(TAG + ' beforeAll. deviceSupport: ' + deviceSupport);
+      if(deviceSupport === 'false'){
+        let appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
+        if(appCloneSupport){
+          //current application has appClone
+          deviceSupport = 'true';
+        }else{
+          deviceSupport = 'false';
+        }
+        console.info(TAG + ' beforeAll. appCloneSupport: ' + appCloneSupport);
+      }
+      console.info(TAG + ' beforeAll. deviceSupport end: ' + deviceSupport);
       let actsEvents = [
         'Hap2MainAbility10onForeground',
         'Hap3MainAbility3onForeground',
