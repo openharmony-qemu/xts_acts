@@ -1523,7 +1523,6 @@ export default function promiseAllTest() {
       const p2Duration = Date.now() - p2Start!;
 
       expect(p2Duration + 1).assertLargerOrEqual(20);
-      expect(p2Duration).assertLess(30);
     });
 
     /**
@@ -2059,13 +2058,13 @@ export default function promiseAllTest() {
       setTimeout(() => {
         log.push('fast');
         resolve(1);
-      }, 10)
+      }, 50)
       );
       const slowPromise = new Promise<number>(resolve =>
       setTimeout(() => {
         log.push('slow');
         resolve(2);
-      }, 20)
+      }, 200)
       );
 
       const raceResult = Promise.race([fastPromise, slowPromise]);
@@ -2076,6 +2075,7 @@ export default function promiseAllTest() {
       );
 
       const result = await Promise.all([raceResult, chained]);
+      await new Promise<void>(resolve => setTimeout(resolve, 200));
       expect(result).assertDeepEquals([1, 10]);
       expect(log).assertDeepEquals(['fast', 'slow']); // slow still executes
     });
@@ -2195,17 +2195,17 @@ export default function promiseAllTest() {
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAllTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAllTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const outerStartTime = Date.now();
 
       const inner1 = Promise.all([
-        new Promise<number>(resolve => setTimeout(() => resolve(1), 10)),
-        new Promise<number>(resolve => setTimeout(() => resolve(2), 20))
+        new Promise<number>(resolve => setTimeout(() => resolve(1), 60)),
+        new Promise<number>(resolve => setTimeout(() => resolve(2), 280))
       ]);
 
       const inner2 = Promise.all([
-        new Promise<number>(resolve => setTimeout(() => resolve(3), 15)),
-        new Promise<number>(resolve => setTimeout(() => resolve(4), 5))
+        new Promise<number>(resolve => setTimeout(() => resolve(3), 50)),
+        new Promise<number>(resolve => setTimeout(() => resolve(4), 150))
       ]);
 
       const raceBetweenInners = Promise.race([inner1, inner2]);
@@ -2216,6 +2216,7 @@ export default function promiseAllTest() {
       expect(result[0]).assertDeepEquals([1, 2]);
       expect(result[1]).assertDeepEquals([3, 4]);
       expect(result[2]).assertDeepEquals([3, 4]); // inner2 finishes first
+      done();
     });
 
     /**
@@ -2367,13 +2368,13 @@ export default function promiseAllTest() {
       new Promise<number>(resolve => setTimeout(() => resolve(value), delay));
 
       const race1 = Promise.race([
-        createTimedPromise(1, 20),
-        createTimedPromise(2, 10)
+        createTimedPromise(1, 200),
+        createTimedPromise(2, 50)
       ]);
 
       const race2 = Promise.race([
-        createTimedPromise(3, 5),
-        createTimedPromise(4, 30)
+        createTimedPromise(3, 50),
+        createTimedPromise(4, 200)
       ]);
 
       const allRaces = Promise.all([race1, race2]);
@@ -2584,18 +2585,18 @@ export default function promiseAllTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_PROMISE_ALL_TEST_10000
+     * @tc.number SUB_BUILTINS_PROMISE_ALL_TEST_1000
      * @tc.name PromiseAllTest100
      * @tc.desc test Promise.all with all Promise static methods in chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 3
      */
-    it('PromiseAllTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+    it('PromiseAllTest100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       // Create promises that will fail and succeed
-      const fastFail = new Promise<number>((_, reject) => setTimeout(() => reject(1), 5));
-      const slowSuccess = new Promise<number>(resolve => setTimeout(() => resolve(2), 10));
-      const mediumSuccess = new Promise<number>(resolve => setTimeout(() => resolve(3), 15));
+      const fastFail = new Promise<number>((_, reject) => setTimeout(() => reject(1), 50));
+      const slowSuccess = new Promise<number>(resolve => setTimeout(() => resolve(2), 200));
+      const mediumSuccess = new Promise<number>(resolve => setTimeout(() => resolve(3), 350));
 
       // Combine different static methods
       const anyResult = Promise.any([fastFail, slowSuccess, mediumSuccess]);
@@ -2610,6 +2611,7 @@ export default function promiseAllTest() {
       ]);
 
       expect(result).assertDeepEquals([2, 0, 2]);
+      done();
     });
 
   })

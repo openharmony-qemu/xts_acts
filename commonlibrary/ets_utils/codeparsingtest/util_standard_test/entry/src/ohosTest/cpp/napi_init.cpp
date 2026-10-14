@@ -641,13 +641,7 @@ static napi_value ReleaseThreadsafeFunctions(napi_env env, napi_callback_info in
         }
     }
     for (napi_threadsafe_function func : funcs) {
-        // The acquire in AcquireThreadsafeFunctions leaves threadCount_ above zero, which
-        // per the Node.js contract would keep the function alive until every thread calls
-        // release. This code intentionally relies on the OpenHarmony-specific semantics:
-        // napi_release_threadsafe_function with napi_tsfn_abort forces finalization
-        // regardless of the remaining thread count (native_safe_async_work.cpp).
         napi_status status = napi_release_threadsafe_function(func, napi_tsfn_abort);
-        // napi_generic_failure means the function is already closing or closed.
         if (status != napi_ok && status != napi_generic_failure) {
             napi_throw_error(env, nullptr, "ReleaseThreadsafeFunctions: release failed");
             return nullptr;
@@ -655,6 +649,38 @@ static napi_value ReleaseThreadsafeFunctions(napi_env env, napi_callback_info in
     }
     napi_value result = nullptr;
     napi_get_boolean(env, true, &result);
+    return result;
+}
+
+static napi_value GetCApiHandleCount(napi_env env, napi_callback_info info)
+{
+    size_t count = 0;
+    napi_status status = napi_get_global_handle_count(env, &count);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "GetCApiHandleCount: failed to get count");
+        return nullptr;
+    }
+    napi_value result = nullptr;
+    napi_create_double(env, static_cast<double>(count), &result);
+    return result;
+}
+
+static napi_value GetSubRuntimeHandleCount(napi_env env, napi_callback_info info)
+{
+    napi_env subEnv = nullptr;
+    if (napi_create_ark_runtime(&subEnv) != napi_ok || subEnv == nullptr) {
+        napi_throw_error(env, nullptr, "GetSubRuntimeHandleCount: create ark runtime failed");
+        return nullptr;
+    }
+    size_t count = 0;
+    napi_status status = napi_get_global_handle_count(subEnv, &count);
+    napi_destroy_ark_runtime(&subEnv);
+    if (status != napi_ok) {
+        napi_throw_error(env, nullptr, "GetSubRuntimeHandleCount: C API failed on sub runtime");
+        return nullptr;
+    }
+    napi_value result = nullptr;
+    napi_create_double(env, static_cast<double>(count), &result);
     return result;
 }
 
@@ -750,6 +776,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"acquireThreadsafeFunctions", nullptr, AcquireThreadsafeFunctions,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"releaseThreadsafeFunctions", nullptr, ReleaseThreadsafeFunctions,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getCApiHandleCount", nullptr, GetCApiHandleCount,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getSubRuntimeHandleCount", nullptr, GetSubRuntimeHandleCount,
             nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

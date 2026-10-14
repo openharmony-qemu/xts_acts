@@ -68,7 +68,7 @@ export default function StartManagerTest() {
 
     })
     afterEach(() => {
-      hilog.info(0x0000, TAG, "[%{public}s] case end.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case end.', TAG);
     })
     afterAll(() => {
 
@@ -84,7 +84,7 @@ export default function StartManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['catchErrorEvent']
       };
@@ -92,9 +92,14 @@ export default function StartManagerTest() {
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
-          hilog.info(0x0000, TAG, "[%{public}s] createSubscriber succeed", TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, "[%{public}s] subscribe callback. Gained commonEventData: %{public}s", TAG, JSON.stringify(commonEventData));
+          hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
               expect(commonEventData.parameters?.errCode).assertEqual(202);
             } catch {
@@ -109,14 +114,16 @@ export default function StartManagerTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver?.delayMs(1000);
           try{
             await allowOpen();
             await driver?.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
           let setCallbackButton: Component  | undefined = await driver.findComponent(ON.id('setCallbackButton').belongingDisplay(currentDisplayId));
@@ -129,12 +136,14 @@ export default function StartManagerTest() {
           await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-            hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
+            hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+              JSON.stringify(err), JSON.stringify(data));
             done();
           });
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {
@@ -153,7 +162,7 @@ export default function StartManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['catchErrorEvent']
       };
@@ -161,9 +170,14 @@ export default function StartManagerTest() {
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
-          hilog.info(0x0000, TAG, "[%{public}s] createSubscriber succeed", TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, "[%{public}s] subscribe callback. Gained commonEventData: %{public}s", TAG, JSON.stringify(commonEventData));
+          hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
               expect(commonEventData.parameters?.errCode).assertEqual(202);
             } catch {
@@ -178,14 +192,16 @@ export default function StartManagerTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver?.delayMs(1000);
           try{
             await allowOpen();
             await driver?.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
           let setPromiseButton: Component = await driver.findComponent(ON.id('setPromiseButton').belongingDisplay(currentDisplayId));
@@ -198,12 +214,14 @@ export default function StartManagerTest() {
           await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-            hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
+            hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+              JSON.stringify(err), JSON.stringify(data));
             done();
           });
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {
@@ -222,7 +240,7 @@ export default function StartManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['catchErrorEvent']
       };
@@ -230,9 +248,14 @@ export default function StartManagerTest() {
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
-          hilog.info(0x0000, TAG, "[%{public}s] createSubscriber succeed", TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, "[%{public}s] subscribe callback. Gained commonEventData: %{public}s", TAG, JSON.stringify(commonEventData));
+          hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
               expect(commonEventData.parameters?.errCode).assertEqual(202);
             } catch {
@@ -247,14 +270,16 @@ export default function StartManagerTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver?.delayMs(1000);
           try{
             await allowOpen();
             await driver?.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
           let queryCallbackButton: Component | undefined = await driver.findComponent(ON.id('queryCallbackButton').belongingDisplay(currentDisplayId));
@@ -264,12 +289,14 @@ export default function StartManagerTest() {
           await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-            hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
+            hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+              JSON.stringify(err), JSON.stringify(data));
             done();
           });
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {
@@ -288,7 +315,7 @@ export default function StartManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['catchErrorEvent']
       };
@@ -296,9 +323,14 @@ export default function StartManagerTest() {
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
-          hilog.info(0x0000, TAG, "[%{public}s] createSubscriber succeed", TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, "[%{public}s] subscribe callback. Gained commonEventData: %{public}s", TAG, JSON.stringify(commonEventData));
+          hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
               expect(commonEventData.parameters?.errCode).assertEqual(202);
             } catch {
@@ -313,14 +345,16 @@ export default function StartManagerTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver?.delayMs(1000);
           try{
             await allowOpen();
             await driver?.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
           let queryPromiseButton: Component | undefined = await driver.findComponent(ON.id('queryPromiseButton').belongingDisplay(currentDisplayId));
@@ -330,12 +364,14 @@ export default function StartManagerTest() {
           await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-            hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
+            hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+              JSON.stringify(err), JSON.stringify(data));
             done();
           });
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {
@@ -354,7 +390,7 @@ export default function StartManagerTest() {
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['catchErrorEvent']
       };
@@ -362,9 +398,14 @@ export default function StartManagerTest() {
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
-          hilog.info(0x0000, TAG, "[%{public}s] createSubscriber succeed", TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, "[%{public}s] subscribe callback. Gained commonEventData: %{public}s", TAG, JSON.stringify(commonEventData));
+          hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              console.error(JSON.stringify(err));
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
               expect(commonEventData.parameters?.errCode).assertEqual(202);
             } catch {
@@ -379,14 +420,16 @@ export default function StartManagerTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver?.delayMs(1000);
           try{
             await allowOpen();
             await driver?.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
           let onButton: Component | undefined = await driver.findComponent(ON.id('onButton').belongingDisplay(currentDisplayId));
@@ -399,12 +442,14 @@ export default function StartManagerTest() {
           await terminateButton?.click();
           await sleep(2000);
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-            hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
+            hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+              JSON.stringify(err), JSON.stringify(data));
             done();
           });
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {

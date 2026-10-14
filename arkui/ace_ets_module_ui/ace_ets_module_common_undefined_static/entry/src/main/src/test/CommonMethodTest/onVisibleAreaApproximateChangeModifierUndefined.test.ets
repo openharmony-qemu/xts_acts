@@ -60,15 +60,13 @@ export default function onVisibleAreaApproximateChangeModifierUndefinedTest() {
       await CommonFunc.sleep(500);
 
       let driver1 = Driver.create();
-      let onVisibleAreaApproximateChangeModifier1 = await driver1.findComponent(ON.id('commonmethod_onVisibleAreaApproximateChangeModifier22')) as Component;
-      await CommonFunc.sleep(500);
-      let onVisibleAreaApproximateChangeModifier2 = await driver1.findComponent(ON.id('commonmethod_onVisibleAreaApproximateChangeModifier21')) as Component;
-      await CommonFunc.sleep(500);
-      await (onVisibleAreaApproximateChangeModifier1?.dragTo(onVisibleAreaApproximateChangeModifier2) as Promise<void>);
-      await CommonFunc.sleep(2000);
+      let scrollBar: Component = await driver1.findComponent(ON.type('Scroll')) as Component;
+      await scrollBar.scrollToBottom();
+      await CommonFunc.sleep(3000);
 
       let strJson = inspector.getInspectorByKey('commonmethod_onVisibleAreaApproximateChangeModifier1');
       let onVisibleAreaApproximateChangeModifierValue = JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content');
+      console.info('onVisibleAreaApproximateChangeModifier1 content is :' + onVisibleAreaApproximateChangeModifierValue.asString());
       expect(onVisibleAreaApproximateChangeModifierValue.asString()).assertEqual('Test Text is completely invisible');
 
       let driver2 = Driver.create();
@@ -79,14 +77,12 @@ export default function onVisibleAreaApproximateChangeModifierUndefinedTest() {
       let btn3: Component | null = await driver3.findComponent(ON.id('button_onVisibleAreaApproximateChangeModifier2'));
       btn3?.click();
       await CommonFunc.sleep(2000);
-      let driver4 = Driver.create();
-      let onVisibleAreaApproximateChangeModifier3 = await driver4.findComponent(ON.id('commonmethod_onVisibleAreaApproximateChangeModifier24')) as Component;
-      await CommonFunc.sleep(500);
-      await (onVisibleAreaApproximateChangeModifier1?.dragTo(onVisibleAreaApproximateChangeModifier3) as Promise<void>);
-      await CommonFunc.sleep(500);
+      await scrollBar.scrollToTop();
+      await CommonFunc.sleep(3000);
 
       let strJson1 = inspector.getInspectorByKey('commonmethod_onVisibleAreaApproximateChangeModifier1');
       let onVisibleAreaApproximateChangeModifierValue1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content');
+      console.info('onVisibleAreaApproximateChangeModifier1 content2 is :' + onVisibleAreaApproximateChangeModifierValue1.asString());
       expect(onVisibleAreaApproximateChangeModifierValue1.asString()).assertEqual('Test Text is completely invisible');
 
       console.info('[onVisibleAreaApproximateChangeModifierUndefinedTest_static_0100] END');

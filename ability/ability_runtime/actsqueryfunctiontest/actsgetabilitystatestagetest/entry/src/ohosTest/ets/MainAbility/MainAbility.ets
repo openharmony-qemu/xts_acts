@@ -21,7 +21,8 @@ import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
- 
+import UIAbility from '@ohos.app.ability.UIAbility';
+
 export default class MainAbility extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     console.log('test MainAbility onCreate')

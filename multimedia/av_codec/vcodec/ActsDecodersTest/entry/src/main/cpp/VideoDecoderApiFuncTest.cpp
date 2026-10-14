@@ -23,6 +23,9 @@
 #include <multimedia/player_framework/native_avsource.h>
 #include <multimedia/player_framework/native_avmemory.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
+#include "multimedia/drm_framework/native_mediakeysystem.h"
+#include "multimedia/drm_framework/native_drm_common.h"
+#include "multimedia/drm_framework/native_drm_err.h"
 #include <fcntl.h>
 #include <string>
 #include <sys/stat.h>
@@ -785,14 +788,27 @@ napi_value VideoEncCapApi0022(napi_env env, napi_callback_info info)
 // Check the secure decoder type
 napi_value VideoDecCapApi0023(napi_env env, napi_callback_info info)
 {
-    uint32_t count = 0;
-    if (access("/system/lib64/media/", 0)) { return CreateIntInt32Result(env, 0); }
-    OH_AVCapability **capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
-    if (capabilityList == nullptr || count == 0) { return CreateIntInt32Result(env, -1); }
-    for (uint32_t i = 0; i < count; ++i) {
-        if (OH_AVCapability_IsSecure(capabilityList[i])) { return CreateIntInt32Result(env, 0); }
+    if (access("/system/lib64/libav_codec_hevc_parser.z.so", 0)) { return CreateIntInt32Result(env, 0); }
+    napi_value result;
+    MediaKeySystem *drmKeySystem = nullptr;
+    Drm_ErrCode ret = DRM_ERR_INVALID_VAL;
+    ret = OH_MediaKeySystem_Create("com.wiseplay.drm", &drmKeySystem);
+    if (ret != DRM_ERR_OK) {
+        napi_create_int32(env, DRM_ERR_INVALID_VAL, &result);
+        return result;
     }
-    return CreateIntInt32Result(env, -1);
+    DRM_CertificateStatus certStatus = CERT_STATUS_UNAVAILABLE;
+    ret = OH_MediaKeySystem_GetCertificateStatus(drmKeySystem, &certStatus);
+    if (ret != DRM_ERR_OK && certStatus == CERT_STATUS_PROVISIONED) {
+        uint32_t count = 0;
+        OH_AVCapability **capabilityList = OH_AVCodec_GetCapabilityList(OH_AVCODEC_TYPE_VIDEO_DECODER, &count);
+        if (capabilityList == nullptr || count == 0) { return CreateIntInt32Result(env, -1); }
+        for (uint32_t i = 0; i < count; ++i) {
+            if (OH_AVCapability_IsSecure(capabilityList[i])) { return CreateIntInt32Result(env, 0); }
+        }
+        return CreateIntInt32Result(env, -1);
+    }
+    return CreateIntInt32Result(env, 0);
 }
 
 // Check the encoder type

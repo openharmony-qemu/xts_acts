@@ -36,3 +36,5 @@ export const clearDeferreds: ()=> boolean;
 export const createThreadsafeFunctions: (callback: () => void, count: number)=> boolean;
 export const acquireThreadsafeFunctions: ()=> boolean;
 export const releaseThreadsafeFunctions: ()=> boolean;
+export const getCApiHandleCount: ()=> number;
+export const getSubRuntimeHandleCount: ()=> number;

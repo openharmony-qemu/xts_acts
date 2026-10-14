@@ -990,5 +990,32 @@ export default function ProcessBoundaryTest() {
         console.info(`${caseName}, test end`);
         Done();
       });
+
+    /**
+     * @tc.name   ProcessBoundaryTest_kill_006
+     * @tc.number SUB_PROCESS_BOUNDARY_TEST_KILL_0006
+     * @tc.desc   process.kill with signal boundary values 0,1,64,65 (range 1-64).
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
+     */
+    it('ProcessBoundaryTest_kill_006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
+      async (Done: Function) => {
+        const caseName = 'ProcessBoundaryTest_kill_006';
+        console.info(`${caseName}, test start`);
+        const signals: number[] = [0, 1, 64, 65];
+        for (const sig of signals) {
+          try {
+            const pro = new process.ProcessManager();
+            const result = pro.kill(sig, 999999999);
+            expect(result === false).assertEqual(true);
+            console.info(`${caseName}, signal=${sig} returned false`);
+          } catch (error) {
+            console.info(`${caseName}, signal=${sig} threw: ${error.message}`);
+          }
+        }
+        console.info(`${caseName}, test end`);
+        Done();
+      });
   });
 }

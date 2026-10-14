@@ -41,7 +41,9 @@ import RWLockReadLockTest from './rwLock/RWLockReadLockTest.test'
 import RWLockWriteLockTest from './rwLock/RWLockWriteLockTest.test'
 import WriteLockLockTest from './writeLock/WriteLockLockTest.test'
 import WriteLockUnlockTest from './writeLock/WriteLockUnlockTest.test'
+import CoroutineDumpTest from './coroutineDump/CoroutineDumpTest.test'
 export default function testsuite(): void {
+  CoroutineDumpTest()
   MutexLockTest()
   RWLockTest()
   CombLockTest()

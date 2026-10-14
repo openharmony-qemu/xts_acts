@@ -43,6 +43,10 @@ import {
 export default function saveCompCustomizeStaticTest() {
   describe('saveCompCustomizeStaticTest', () => {
     console.info('====>saveCompCustomizeStaticTest start');
+    let driver: Driver = Driver.create();
+    let authorized: boolean = false;
+    let caseDone: boolean = false;
+    
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility('com.example.savecomponent_customize.static', 'EntryAbility')
       await UtilsTest.msSleep(2000);
@@ -138,12 +142,14 @@ export default function saveCompCustomizeStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickSecComponent err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickSecComponent function End====`);
     }
 
-    let sucCallback = (testname: string, done: () => void) => {
+    let sucCallback = (testname: string) => {
       console.info(`====>${testname} sucCallback function Start====`);
       let clickEvent:events_emitter.InnerEvent = {
         eventId: 2,
@@ -157,25 +163,22 @@ export default function saveCompCustomizeStaticTest() {
             console.info(`====>${testname} get clickData.data.clickResult is: ` + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == SaveButtonOnClickResult.SUCCESS) {
               console.info(`====>${testname} 设置权限成功`);
-              expect(data['clickResult'] == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info(`====>${testname} END====`);
-              done();
             } else {
               console.info(`====>${testname} 设置权限失败`);
-              expect(false).assertTrue();
+              authorized = false;
               console.info(`====>${testname} END====`);
-              done();
             }
           } else {
             console.info(`====>${testname} ERR CASE 失败`);
-            expect(false).assertTrue();
+            authorized = false;
             console.info(`====>${testname} END====`);
-            done();
           }
         } catch (err) {
           err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
-          done();
+          authorized = false;
         }
       }
       events_emitter.once(clickEvent, clickCallback);
@@ -193,6 +196,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_Customize_Static_0100';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let expectText: string = '下载';
       let strJson: string = inspector.getInspectorByKey('keySave');
       console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
@@ -204,9 +209,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getBoolean('stateEffect')).assertEqual(true);
       expect(obj.getElement('$attrs').getString('id')).assertEqual('keySave');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, expectText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -220,6 +232,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0200';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource = $r('app.media.startIcon');
       let customText: string = '自定义保存';
       try {
@@ -247,9 +261,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       expect(obj.getElement('$attrs').getBoolean('stateEffect')).assertEqual(true);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -263,6 +284,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0300';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource =$r('app.media.startIcon');
       let customText: string = 'CustomSave';
       try {
@@ -290,9 +313,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       expect(obj.getElement('$attrs').getBoolean('stateEffect')).assertEqual(false);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -306,6 +336,8 @@ export default function saveCompCustomizeStaticTest() {
      it('Test_Security_SaveButton_Customize_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0400';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource =$r('app.media.startIcon');
       let customText: string = '';
       let expectText: string = '保存';
@@ -332,9 +364,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(0);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(0);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, expectText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -348,6 +387,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0500';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource =$r('app.media.startIcon');
       let customText: string = '保存控件05';
       try {
@@ -377,9 +418,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getElement('iconBorderRadius').getString('bottomLeft')).assertEqual('10.00vp');
       expect(obj.getElement('$attrs').getElement('iconBorderRadius').getString('bottomRight')).assertEqual('10.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -393,6 +441,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0600';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource =$r('app.media.startIcon');
       let customText: string = 'SaveCase06';
       try {
@@ -425,9 +475,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getElement('iconBorderRadius').getString('bottomLeft')).assertEqual('0.00vp');
       expect(obj.getElement('$attrs').getElement('iconBorderRadius').getString('bottomRight')).assertEqual('12.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -441,6 +498,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0700';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource =$r('app.media.startIcon');
       let customText: string = 'Custom.&*#07';
       try {
@@ -467,9 +526,16 @@ export default function saveCompCustomizeStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('iconSize')).assertEqual('20.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -483,6 +549,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0800';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
       let customText: string = 'Custom.&*#08';
       try {
@@ -511,9 +579,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.MULTIPLE_OPACITY');
       expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Bold');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -527,6 +602,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_0900';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
       let customText: string = 'Custom.&*#09';
       try {
@@ -553,9 +630,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.SINGLE');
       expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('900');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -569,6 +653,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_1000';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
       let customText: string = 'Custom.&*#10';
       try {
@@ -595,9 +681,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getString('SymbolRenderingStrategy')).assertEqual('SymbolRenderingStrategy.MULTIPLE_COLOR');
       expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Lighter');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -611,6 +704,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_1100';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
       let customText: string = 'Custom.&*#11';
       try {
@@ -637,9 +732,16 @@ export default function saveCompCustomizeStaticTest() {
       expect(obj.getElement('$attrs').getString('symbolIconColor').length).assertEqual(0);
       expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Lighter');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -653,6 +755,8 @@ export default function saveCompCustomizeStaticTest() {
     it('Test_Security_SaveButton_Customize_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME = 'Test_Security_SaveButton_Customize_Static_1200';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let customIcon: Resource = $r('sys.symbol.ohos_folder_badge_plus');
       let customText: string = 'Custom.&*#12';
       try {
@@ -677,9 +781,16 @@ export default function saveCompCustomizeStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('SymbolFontWeight')).assertEqual('FontWeight.Lighter');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, customText, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
   })
 }

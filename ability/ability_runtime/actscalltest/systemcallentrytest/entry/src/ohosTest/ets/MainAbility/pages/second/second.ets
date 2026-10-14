@@ -12,11 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 @Entry
 @Component
-struct Index {
+struct MainAbilitySecond {
   build() {
-    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center,
+      justifyContent: FlexAlign.Center }) {
       Text('SystemCallTest SecondAbility)')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)

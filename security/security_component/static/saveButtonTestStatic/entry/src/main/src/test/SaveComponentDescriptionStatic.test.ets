@@ -32,6 +32,10 @@ import {
 export default function saveComponentDescriptionStaticTest() {
   describe('saveComponentDescriptionStaticTest', () => {
     console.info('====>saveComponentDescriptionStaticTest start');
+    let driver: Driver = Driver.create();
+    let authorized: boolean = false;
+    let caseDone: boolean = false;
+
     beforeAll(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'pages/saveDescription',
@@ -101,7 +105,9 @@ export default function saveComponentDescriptionStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickBtn err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickBtn function End====`);
     }
@@ -122,7 +128,9 @@ export default function saveComponentDescriptionStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickSecComponent err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickSecComponent function End====`);
     }
@@ -138,12 +146,14 @@ export default function saveComponentDescriptionStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickSwitchButton err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickSwitchButton function End====`);
     }
 
-    let sucCallback = (testname: string, done: () => void) => {
+    let sucCallback = (testname: string) => {
       console.info(`====>${testname} sucCallback function Start====`);
       let clickEvent:events_emitter.InnerEvent = {
         eventId: 2,
@@ -157,25 +167,22 @@ export default function saveComponentDescriptionStaticTest() {
             console.info(`====>${testname} get clickData.data.clickResult is: ` + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == SaveButtonOnClickResult.SUCCESS) {
               console.info(`====>${testname} 设置权限成功`);
-              expect(data['clickResult'] == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info(`====>${testname} END====`);
-              done();
             } else {
               console.info(`====>${testname} 设置权限失败`);
-              expect(false).assertTrue();
+              authorized = false;
               console.info(`====>${testname} END====`);
-              done();
             }
           } else {
             console.info(`====>${testname} ERR CASE 失败`);
-            expect(false).assertTrue();
+            authorized = false;
             console.info(`====>${testname} END====`);
-            done();
           }
         } catch (err) {
           err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
-          done();
+          authorized = false;
         }
       }
       events_emitter.once(clickEvent, clickCallback);
@@ -193,15 +200,24 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0100';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       let strJson: string = inspector.getInspectorByKey('keyDescription1');
       console.info(`====>>${TCNAME} strJson: ` + JSON.stringify(strJson));
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('icon')).assertEqual(1);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(1);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -215,7 +231,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0200';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription2');
@@ -223,8 +240,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(2);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -238,7 +263,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0300';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription3');
@@ -246,8 +272,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(3);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -261,7 +295,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0400';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription4');
@@ -269,8 +304,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(4);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -284,7 +327,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0500';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription5');
@@ -292,8 +336,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(5);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -307,7 +359,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0600';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription6');
@@ -315,8 +368,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(6);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -330,7 +391,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0700';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription7');
@@ -338,8 +400,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(7);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -353,7 +423,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0800';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription8');
@@ -361,8 +432,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(8);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -376,7 +455,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_0900';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription9');
@@ -384,8 +464,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(9);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -399,7 +487,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_1000';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription10');
@@ -407,8 +496,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(10);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -422,7 +519,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_1100';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription11');
@@ -430,8 +528,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(11);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -445,7 +551,8 @@ export default function saveComponentDescriptionStaticTest() {
      it('Test_Security_SaveDescription_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveDescription_Static_1200';
       console.info(`====>${TCNAME} START====`);
-      let driver = Driver.create();
+      authorized = false;
+      caseDone = false;
       await clickSwitchButton(TCNAME, driver);
       await UtilsTest.msSleep(500);
       let strJson: string = inspector.getInspectorByKey('keyDescription12');
@@ -453,8 +560,16 @@ export default function saveComponentDescriptionStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getInteger('text')).assertEqual(12);
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
   })
 }

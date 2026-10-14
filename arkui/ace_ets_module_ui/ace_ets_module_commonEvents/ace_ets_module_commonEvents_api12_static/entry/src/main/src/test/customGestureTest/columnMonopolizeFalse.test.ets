@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,12 +25,13 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 const uiContext = new UIContext();
 
@@ -93,8 +94,8 @@ it('columnMonopolizeFalse_static_001', Level.LEVEL0, async (done: () => void): P
       let column2 = await driver.findComponent(ON.id('columnClick2'));
 
       await CommonFunc.sleep(200);
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt());
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
+        y: Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt(), displayId: displayID});
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       await CommonFunc.sleep(500);
@@ -108,8 +109,8 @@ it('columnMonopolizeFalse_static_001', Level.LEVEL0, async (done: () => void): P
 
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt());
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
+        y: Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt(), displayId: displayID});
       await CommonFunc.sleep(1000);
       await (column2?.click() as Promise<void>);
       let strJson2 = inspector.getInspectorByKey('columnTextFalse');

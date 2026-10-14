@@ -4,6 +4,8 @@
     "custom": [
       {
         "xts": [
+          "SystemCapability.Account.AppAccount",
+          "SystemCapability.Account.OsAccount",
           "SystemCapability.Multimedia.Media.Core",
           "SystemCapability.Graphic.Graphic2D.NativeBuffer",
           "SystemCapability.Multimedia.Media.CodecBase",

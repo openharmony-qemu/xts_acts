@@ -16,6 +16,7 @@
 import refreshJsunit from './Refresh/RefreshJsunit.test';
 import RefreshUxTest from './Refresh/refreshUx.test';
 import refreshOffsetJsunit from './Refresh/refreshOffsetJsunit.test';
+import RefreshOffsetMinTest from './Refresh/RefreshOffsetMin.test';
 import refreshOffsetChangeJsunit from './Refresh/refreshOffsetChangeJsunit.test';
 import refreshResource from './Refresh/refreshResource.test';
 import refreshString from './Refresh/refreshString.test';
@@ -32,6 +33,7 @@ export default function testsuite() {
   refreshJsunit()
   RefreshUxTest()
   refreshOffsetJsunit()
+  RefreshOffsetMinTest()
   refreshOffsetChangeJsunit()
   refreshResource()
   refreshString()

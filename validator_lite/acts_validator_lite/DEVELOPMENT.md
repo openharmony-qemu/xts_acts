@@ -8,6 +8,7 @@
 | ArkUI | `ArkUI/ui_advanced/index` | 11（animator/picker/swiper/image/switch/event/app/config/timer×2） | list-item 合并 |
 | ArkUI | `ArkUI/chart/line/index` | 1（chart_line） | list-item 单项 |
 | ArkUI | `ArkUI/marquee/index` | 1（marquee） | 原始 div 布局 |
+| ArkUI | `ArkUI/RouterTransition/index/index` | 25（normal 10 / edge_api 6 / edge_duration 9） | 子菜单 + 3 页 |
 | PowerManager | `PowerManager/power/index` | 3（battery/brightness_value/brightness_mode） | list-item 合并 |
 | Sensors | `Sensors/index/index` | 7（vibrator/acc/gyro/step/baro/hr/onbody） | list-item 合并 |
 | Location | `Location/index/index` | 2（location_info/location_subscribe） | list-item 合并 |
@@ -15,11 +16,10 @@
 | DistributedData | `DistributedData/storage/index` | 1（storage） | list-item 单项 |
 | FileManagement | `FileManagement/file/index` | 1（file） | list-item 单项 |
 | Startup | `Startup/deviceInfo/index` | 1（deviceinfo） | list-item 单项 |
-| RouterTransition | 子菜单 `RouterTransition/index/index` → `normal` / `edge_api` / `edge_duration`（各配 `target` 探针页） | 25（`normal` 10：10 种动效类型；`edge_api` 6：animation/type 非法与 `replaceUrl` 别名；`edge_duration` 9：duration 取值） | 拆 3 页 + 子菜单，见「ACE Lite 注意事项」 |
 
 > marquee 因动画在 `<list-item>` 内不生效，保留原始 div 布局，仅 pass/fail 改为 toggle 变色。
 >
-> RouterTransition：从首页进入 `RouterTransition/index`（子菜单），再进 `normal` / `edge_api` / `edge_duration` 三个分组页；每个测试项点“播放”=`router.replace` 携带对应 `animation` 参数（正常用例 duration 800ms；`router_edge_replace_url` 走 `router.replaceUrl` 别名）跳转到 `target` 页，操作员观察真实页切换动效后返回本页点 pass/fail；`target` 在动效结束后才允许返回（引擎会忽略动效进行中的 replace）。分组页的“back”回子菜单，子菜单的“返回首页”回 `pages/index/index`。
+> Router Transition：从 ArkUI 子菜单进入 `ArkUI/RouterTransition/index`（子菜单），再进 `normal` / `edge_api` / `edge_duration` 三个分组页；每个测试项点“播放”=`router.replace` 携带对应 `animation` 参数（正常用例 duration 800ms；`router_edge_replace_url` 走 `router.replaceUrl` 别名）跳转到 `target` 页，操作员观察真实页切换动效后返回本页点 pass/fail；`target` 在动效结束后才允许返回（引擎会忽略动效进行中的 replace）。分组页的“back”回子菜单，子菜单的“返回首页”回 `pages/index/index`。
 >
 > 异常边界用例的判定靠「请求值 → 引擎生效值」：`5000` 与 `5001` 的动效都是约 5s、`0`/`-1`/`0.5` 都是瞬间切换，**靠时长分不出降级方式**，所以 `target` 页会把该轮用例的预期处理分支（截断仍播放 / 归一为无动效 / 取默认值 / 降级无动效）直接显示成判定语。
 
@@ -140,9 +140,9 @@ failX() {
 - pf-row: 58px（40px + 6px + 12px）
 - border: 4px
 
-## 新增用例
+## 新增用例（已有页面）
 
-以 ArkUI 下新增测试项为例，改 5 个文件：
+以 ArkUI 下新增测试项为例：
 
 ### 1. app.js — 注册用例
 
@@ -171,26 +171,21 @@ failX() {
 </list-item>
 ```
 
-### 4. config.json + manifest.json — 注册路由
-
-两个文件的 `pages` 数组都需添加页面路径。
-
-### 5. BUILD.gn — 注册源文件
-
-```gn
-"entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.css",
-"entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.hml",
-"entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.js",
-```
+以上 3 步即可——页面已在 `_pages` 清单中，无需改 `BUILD.gn`。新增页面见「新增子系统」/「新增子页面」。
 
 ## 新增子系统
 
-1. `index/index.hml` — 添加首页按钮
-2. `index/index.js` — `navigateTo` 中添加路由
-3. `pages/<子系统>/index/index.{js,hml,css}` — 创建用例页（list-item 布局）
-4. `app.js` — 注册该子系统下的用例
-5. `config.json` + `manifest.json` — 注册路由
-6. `BUILD.gn` — 注册源文件
+在 `pages/` 根目录下新增子系统目录（顶级页，如 `pages/Sensors/`）：
+
+1. `pages/<子系统>/index/index.{js,hml,css}` — 创建用例页（list-item 布局；路由 = 文件路径去后缀）
+2. `BUILD.gn` — `_pages` 加一行路由字符串（任何新页面都必须；`manifest.json`/`config.json` 的 pages 由构建生成，无需维护）
+3. `app.js` — 注册该子系统下的用例条目
+4. `index/index.hml` — 添加首页按钮
+5. `index/index.js` — `navigateTo` 中添加路由
+
+## 新增子页面（非根目录）
+
+在已有子系统/分组下新增页面（如 ArkUI 子页面、RouterTransition 组内页面）：前 3 步同「新增子系统」，入口注册改为——所属菜单页 todolist 加一行（如 `pages/ArkUI/common/index/index.js`、`pages/ArkUI/RouterTransition/index/index.js`）。
 
 ## 不支持能力处理（canIUse 前置判定）
 
@@ -251,16 +246,49 @@ HML 中每个测试点 list-item 内加独立 tip：
 
 新增/修改用例时，以下文件需同步检查：
 
-| 文件 | 用途 |
+| 位置 | 用途 |
 |------|------|
 | `app.js` | testItems 注册 |
-| `manifest.json` | 页面路由注册 |
-| `config.json` | 页面路由注册（与 manifest.json 保持一致） |
-| `BUILD.gn` | 源文件列表（ninja 依赖来源） |
+| `BUILD.gn` `_pages` | 页面清单（唯一真源，首页 `pages/index/index` 必须保持首位） |
 | `index/index.js` | 首页 navigateTo 路由 |
 | 对应子系统 `common/index/index.js` | 子菜单列表（ArkUI 专属） |
 
-> **三个路由文件必须一致**：`manifest.json`、`config.json`、`BUILD.gn` 的页面列表必须完全匹配，否则编译报 `missing and no known rule to make it`。修改后需删除 `out/.../toolchain.ninja` 让 GN 重新生成。
+`manifest.json` / `config.json` 的 `pages` 由构建按 `_pages` 生成，无需维护。
+
+## 条件编译（页面级）
+
+### 新增条件编译用例
+
+按「新增用例 / 新增子系统 / 新增子页面」正常添加，唯一区别：`_pages` 那一行写在 if 块内（条件为任意 GN 布尔表达式：产品名、import 的引擎 feature 等）：
+
+```gn
+if (<任意 GN 布尔条件>) {
+  _pages += [ "pages/Xxx/index/index" ]
+}
+```
+
+条件不命中时，该页面及其 app.js 条目、首页按钮、路由行、子菜单行自动从产物移除，无需其他动作；条目或路由引用不一致会构建报错。
+
+### 引擎能力门控（当前 6 组）
+
+条件统一来自 `import("//foundation/arkui/ace_engine_lite/ace_lite.gni")`——这些开关和引擎自己用的是同一个 `declare_args()`，各产品在 `vendor/<产品>/config.json` 的 `ace_engine_lite` features 里按需打开（默认全 false）：
+
+| 开关 | 门控的页面 | 页数 |
+|------|-----------|------|
+| `ace_engine_lite_enable_flex_layout_config` | `pages/ArkUI/flex/*` | 13 |
+| `ace_engine_lite_enable_gradient_capability` | `pages/ArkUI/gradient_*` | 4 |
+| `ace_engine_lite_enable_svg_component_config` | `pages/ArkUI/svg{Shape,Path,Paint,Transform,Text,Animate}` | 6 |
+| `ace_engine_lite_enable_animation_capability` | `pathAnimator`、`transition_basic` | 2 |
+| `ace_engine_lite_enable_element_transition_capability` | `element-transition` | 1 |
+| `ace_engine_lite_feature_page_transition_effect` | `pages/ArkUI/RouterTransition/*` + 全部 `router_*` 用例 | 5 |
+
+新增门控子页面时：加页面文件 → 把路由加进对应 if 块内的 `_pages`。
+
+### 注意
+
+- 页内单条 test item 不做编译期裁剪；设备能力差异继续用 `canIUse` 运行时跳过（untested）
+- 改了 if 条件或清单后正常走 `./build.sh`（会重新 gen），裸跑 ninja 不会刷新
+- 验证：多产品构建后解包 HAP，对比 `manifest.json` pages / `app.js` testItems / 首页与子菜单
 
 ## ACE Lite 注意事项
 
@@ -270,5 +298,4 @@ HML 中每个测试点 list-item 内加独立 tip：
 - Help 页在 `onShow` 中读 `getApp().data.helpData`
 - **`<list-item>` 内 `<marquee>` 不生效**：marquee 页面保留原始 div 布局
 - **合并页面 list-item 不宜过多**：18 项合并页在 ipcamera 设备上闪退（内存/view 节点上限），拆为 `ui_basic`（7 项）+ `ui_advanced`（11 项）两个页面
-- **单页 view 节点数以 ~110 为上界**：RouterTransition 25 项合并成一页时达 **206 个 view 节点**，是已知可用上限（`ui_advanced` 107 个）的 1.9 倍，点击进入即在 `init state -> ready state` 之后报 `[JS Exception]: JS HEAP OOM` 并闪退——**崩在建组件树这一步，不是用例逻辑**。故按用例性质拆为 `normal`（10 项 / 86 节点）、`edge_api`（6 项 / 54 节点）、`edge_duration`（9 项 / 78 节点）三页，由子菜单页 `RouterTransition/index`（5 节点）串联。**新增合并页前先数节点数**：`grep -o '<[a-z-]*[ >]' xxx.hml | wc -l`
 - **`show` 属性在 `<marquee>` 上不可靠**：不要用 `show` 切换 marquee 元素

@@ -21,9 +21,10 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import { common, OpenLinkOptions, wantConstant } from '@kit.AbilityKit';
 import base from '@ohos.base';
 
+
 let invalidParamErrNo = 401;
 let link = 'example1://www.example1.com';
-let context = getContext(this) as common.UIAbilityContext;;
+let context = getContext(this) as common.UIAbilityContext;
 let ACTS_EVENT: commonEventManager.CommonEventSubscribeInfo = {
   events: ['ACTS_TEST_OPENLINK', 'ACTS_TEST_DESTROY']
 };
@@ -105,7 +106,7 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 try {
@@ -230,7 +231,6 @@ export default function startAbilityOpenLink() {
       try {
         context.openLink(link).then((result) => {
             console.info(`#${tag}# open link successful`);
-            expect().assertFail();
             done();
           }).catch((error: BusinessError) => {
             console.info(`#${tag}# open link err : ${error}`);
@@ -239,7 +239,6 @@ export default function startAbilityOpenLink() {
           });
       } catch (err) {
         console.info(`#${tag}# open fail : ${err}`);
-        expect().assertFail();
         done();
       }
     });
@@ -290,7 +289,7 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 try {
@@ -299,9 +298,11 @@ export default function startAbilityOpenLink() {
                   })
                     .catch((error: BusinessError) => {
                       console.info(`#${tag}# open link err : ${error}`);
+                      expect().assertFail();
                     })
                 } catch (err) {
                   console.info(`#${tag}# open fail : ${err}`);
+                  expect().assertFail();
                 }
               }, 500);
             }
@@ -340,12 +341,17 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, {
                   appLinkingOnly: true
                 }, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -391,12 +397,17 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, {
                   appLinkingOnly: true
                 }, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -441,10 +452,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptionsService, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:', JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -489,10 +505,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptionsService, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -537,10 +558,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptions, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -585,10 +611,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptionsFalse, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -633,12 +664,17 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, {
                   appLinkingOnly: false
                 }, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -683,10 +719,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptionsOnlyParam, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -731,10 +772,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, undefined, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -779,10 +825,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, null, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -828,10 +879,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, {}, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .catch((err: BusinessError) => {
@@ -876,10 +932,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptions, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                   checkAbilityResultWithParams(data, done)
                 })
@@ -928,10 +989,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptions, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                   checkAbilityResultWithoutParams(data, done)
                 })
@@ -980,9 +1046,14 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               context.openLink(link, openLinkOptions, (err, data) => {
+                if (err) {
+                  console.info(`callback err: ${JSON.stringify(err)}`);
+                  expect().assertFail();
+                  return;
+                }
                 console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
               })
                 .then(() => undefined)
@@ -1021,7 +1092,7 @@ export default function startAbilityOpenLink() {
         uri: link,
         parameters: {
           appLinkingOnly: true,
-          demo_key: "demo_value",
+          demo_key: 'demo_value',
           demo_num: 111
         }
       }
@@ -1035,7 +1106,7 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.startAbility(want, (err: BusinessError) => {
@@ -1076,7 +1147,7 @@ export default function startAbilityOpenLink() {
         uri: link,
         parameters: {
           appLinkingOnly: false,
-          demo_key: "demo_value",
+          demo_key: 'demo_value',
           demo_num: 111
         }
       }
@@ -1090,7 +1161,7 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.startAbility(want, (err: BusinessError) => {
@@ -1143,7 +1214,7 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.startAbilityForResult(want).then((data: common.AbilityResult) => {
@@ -1199,16 +1270,16 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.startAbilityForResult(want).then((data: common.AbilityResult) => {
                   console.info(`${tag} start startAbilityForResult=====>` + JSON.stringify(data));
                   expect(data.resultCode).assertEqual(100)
                   if(data.want){
-                    if(data.want.parameters){
-                      if(data.want.parameters.key){
-                        expect(data.want.parameters.key).assertEqual(123)
+                    if(data.want?.parameters){
+                      if(data.want?.parameters?.key){
+                        expect(data.want?.parameters?.key).assertEqual(123)
                         commonEventManager.publish('ACTS_TEST_DESTROY', ()=> {
                           console.info(`${tag} publish ACTS_TEST_DESTROY`);
                         })
@@ -1248,8 +1319,8 @@ export default function startAbilityOpenLink() {
       let openLinkOptions: OpenLinkOptions = {
         appLinkingOnly: true,
         parameters: {
-          "ohos.extra.param.key.showMode":1,
-          "ohos.aafwk.param.callerBundleName":"xxx"
+          'ohos.extra.param.key.showMode':1,
+          'ohos.aafwk.param.callerBundleName':'xxx'
         }
       };
       commonEventManager.createSubscriber(ACTS_EVENT)
@@ -1262,10 +1333,15 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.openLink(link, openLinkOptions, (err, data) => {
+                  if (err) {
+                    console.info(`callback err: ${JSON.stringify(err)}`);
+                    expect().assertFail();
+                    return;
+                  }
                   console.log(tag, 'open link success. Callback result:' + JSON.stringify(data));
                 })
                   .then(() => undefined)
@@ -1317,7 +1393,7 @@ export default function startAbilityOpenLink() {
             }, 1000);
           }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log('OpenLink subscribeCallBack success')
             if (data.event == 'ACTS_TEST_OPENLINK') {
               setTimeout(() => {
                 context.startAbilityForResult(want).then((data: common.AbilityResult) => {
@@ -1356,11 +1432,11 @@ async function sleep(time: number) {
 function checkAbilityResultWithParams(data: common.AbilityResult, done: Function) {
   if (data.want) {
     expect(data.resultCode).assertEqual(100)
-    if (data.want.parameters) {
-      expect(data.want.parameters.keyNumber).assertEqual(200)
-      expect(data.want.parameters.keyString).assertEqual('str')
-      if (data.want.parameters.keyObj) {
-        expect(JSON.stringify(data.want.parameters.keyObj)).assertEqual('{"keyObjKey":"objValue"}')
+    if (data.want?.parameters) {
+      expect(data.want?.parameters?.keyNumber).assertEqual(200)
+      expect(data.want?.parameters?.keyString).assertEqual('str')
+      if (data.want?.parameters?.keyObj) {
+        expect(JSON.stringify(data.want?.parameters?.keyObj)).assertEqual('{"keyObjKey":"objValue"}')
         done();
       }
     }
@@ -1371,8 +1447,8 @@ function checkAbilityResultWithoutParams(data: common.AbilityResult, done: Funct
   if (data.want) {
     expect(data.resultCode).assertEqual(-1)
     if (data.want) {
-      expect(data.want.bundleName).assertEqual('')
-      expect(JSON.stringify(data.want.parameters)).assertEqual('{}')
+      expect(data.want?.bundleName).assertEqual('')
+      expect(JSON.stringify(data.want?.parameters)).assertEqual('{}')
       done();
     }
   }

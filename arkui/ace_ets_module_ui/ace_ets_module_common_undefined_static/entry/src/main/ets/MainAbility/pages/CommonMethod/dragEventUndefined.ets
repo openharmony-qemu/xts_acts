@@ -73,9 +73,9 @@ struct DropAnimationExample {
         }
         .id('Column2')
         .width(150)
-        .height(150)
+        .height('40%')
 
-        Column({ space: 5 } as ColumnOptions) {
+        Column() {
           Button('resetText')
             .id('Common_resetText')
             .onClick((e: ClickEvent) => {
@@ -106,7 +106,7 @@ struct DropAnimationExample {
               this.isOnDropUndefined = !this.isOnDropUndefined
             })
             .id('Common_OnDrop')
-        }
+        }.height('40%')
       }
       .alignItems(HorizontalAlign.Center)
       .width('80%')

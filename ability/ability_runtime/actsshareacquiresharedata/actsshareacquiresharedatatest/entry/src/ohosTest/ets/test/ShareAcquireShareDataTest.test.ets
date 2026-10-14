@@ -66,7 +66,7 @@ export default function shareAcquireShareDataTest() {
     })
     afterEach(async () => {
       await sleep(2000);
-      hilog.info(0x0000, TAG, "[%{public}s] case end.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case end.', TAG);
     })
     afterAll(() => {
 
@@ -82,7 +82,7 @@ export default function shareAcquireShareDataTest() {
      */
     it('SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_2300';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['button_onClick_event']
       };
@@ -91,14 +91,23 @@ export default function shareAcquireShareDataTest() {
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
           hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG, JSON.stringify(commonEventData));
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              hilog.error(0x0000, TAG, 'subscribe err: %{public}s', JSON.stringify(err));
+              return;
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
-              expect(JSON.stringify(commonEventData.parameters?.result)).assertEqual(JSON.stringify('clearUpResult. code: 202, message: The application is not system-app, can not use system-api.'));
+              expect(JSON.stringify(commonEventData.parameters?.result)).assertEqual(
+                JSON.stringify('clearUpResult. code: 202, message: The application is no' +
+                  't system-app, can not use system-api.'));
             } catch {
             }
             commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-              hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG, JSON.stringify(err), JSON.stringify(data));
+              hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+                JSON.stringify(err), JSON.stringify(data));
               done();
             });
           })
@@ -118,14 +127,16 @@ export default function shareAcquireShareDataTest() {
             await allowOpen();
             await driver.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver.delayMs(1000);
           let button: Component = await driver.findComponent(ON.id(TAG).belongingDisplay(currentDisplayId));
           await button.click();
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {
@@ -144,7 +155,7 @@ export default function shareAcquireShareDataTest() {
      */
     it('SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_AppManager_ShareAcquireShareData_3100';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['button_onClick_event']
       };
@@ -153,14 +164,23 @@ export default function shareAcquireShareDataTest() {
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
           hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG, JSON.stringify(commonEventData));
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              hilog.error(0x0000, TAG, 'subscribe err: %{public}s', JSON.stringify(err));
+              return;
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
-              expect(JSON.stringify(commonEventData.parameters?.result)).assertEqual(JSON.stringify('acquireShareResult. code: 202, message: The application is not system-app, can not use system-api.'));
+              expect(JSON.stringify(commonEventData.parameters?.result)).assertEqual(
+                JSON.stringify('acquireShareResult. code: 202, message: The application ' +
+                  'is not system-app, can not use system-api.'));
             } catch {
             }
             commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-              hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG, JSON.stringify(err), JSON.stringify(data));
+              hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+                JSON.stringify(err), JSON.stringify(data));
               done();
             });
           })
@@ -180,14 +200,16 @@ export default function shareAcquireShareDataTest() {
             await allowOpen();
             await driver.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver.delayMs(1000);
           let button: Component = await driver.findComponent(ON.id(TAG).belongingDisplay(currentDisplayId));
           await button.click();
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {

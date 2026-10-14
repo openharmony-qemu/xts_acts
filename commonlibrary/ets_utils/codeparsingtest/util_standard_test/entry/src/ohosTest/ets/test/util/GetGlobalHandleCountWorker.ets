@@ -32,6 +32,18 @@ workerPort.onmessage = (event: MessageEvents) => {
     let result: number[] = [before, afterCreate, afterDelete, WORKER_STRONG_REF_COUNT,
       created ? 1 : 0, deleted ? 1 : 0];
     workerPort.postMessage(result);
+  } else if (cmd === 'capiConsistency') {
+    let arktsCount: number = util.ArkTSVM.getGlobalHandleCount();
+    let capiCount: number = testNapi.getCApiHandleCount();
+    let result: number[] = [arktsCount, capiCount];
+    workerPort.postMessage(result);
+  } else if (cmd === 'concurrentQuery') {
+    const CALL_TIMES = 100;
+    let results: number[] = [];
+    for (let i = 0; i < CALL_TIMES; i++) {
+      results.push(util.ArkTSVM.getGlobalHandleCount());
+    }
+    workerPort.postMessage(results);
   } else {
     let count: number = util.ArkTSVM.getGlobalHandleCount();
     workerPort.postMessage(count);

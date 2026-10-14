@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,6 +33,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const uiContext = new UIContext();
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 
 export default function TapGestureBasicDoubleClickMouseTest() {
@@ -104,7 +105,8 @@ it('TapGestureBasicDoubleClickMouseTest_static_0010', Level.LEVEL0, async (done:
       await CommonFunc.sleep(1000);
       await driver.mouseDoubleClick({
         x: Math.round(areaObj.left + areaWidth / 2).toInt(),
-        y: Math.round(areaObj.top + areaHeight / 2).toInt()
+        y: Math.round(areaObj.top + areaHeight / 2).toInt(),
+      displayId: displayID
       }, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(3000);
       let text1 = inspector.getInspectorByKey('TapGestureBasicDoubleClickMouse_repeat');

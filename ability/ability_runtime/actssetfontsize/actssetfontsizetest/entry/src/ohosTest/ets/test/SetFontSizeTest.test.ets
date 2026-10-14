@@ -52,8 +52,8 @@ function sleep(ms: number) {
   return new Promise<string>(resolve => setTimeout(resolve, ms));
 }
 
-export default function SetFontSizeTest() {
-  describe('SetFontSizeTest', () => {
+export default function setFontSizeTest() {
+  describe('setFontSizeTest', () => {
     beforeAll(async() => {
       let driver = Driver.create();	
       try {
@@ -68,7 +68,7 @@ export default function SetFontSizeTest() {
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
       } catch (err) {
-        hilog.info(0x0000, TAG, "[%{public}s] Get system parameter error: ${public}s", TAG, JSON.stringify(err));
+        hilog.info(0x0000, TAG, '[%{public}s] Get system parameter error: ${public}s', TAG, JSON.stringify(err));
         mpEnable = 'fail';
       }
     })
@@ -77,7 +77,7 @@ export default function SetFontSizeTest() {
     })
     afterEach(async () => {
       await sleep(2000); 
-      hilog.info(0x0000, TAG, "[%{public}s] case end.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case end.', TAG);
     })
     afterAll(() => {
 
@@ -86,14 +86,15 @@ export default function SetFontSizeTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600
-     * @tc.desc   Verify multi-module application properly follows system behavior when setFontSizeScale(1.3) is applied across all components
+     * @tc.desc   Verify multi-module application properly follows system behavior when setFontSizeScale(1.3)
+     *           is applied across all components
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['Rely_IndexEntry_setFontSizeScale', 'Rely_IndexFeature_getFontSizeScale']
       };
@@ -103,9 +104,15 @@ export default function SetFontSizeTest() {
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
-          hilog.info(0x0000, TAG, "[%{public}s] createSubscriber succeed", TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, "[%{public}s] subscribe callback. Gained commonEventData: %{public}s", TAG, JSON.stringify(commonEventData));
+          hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              hilog.error(0x0000, TAG, 'subscribe err: %{public}s', JSON.stringify(err));
+              return;
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             switch (commonEventData.parameters?.from) {
               case 'Rely_IndexEntry_setFontSizeScale':
                 entryFlag = true;
@@ -129,14 +136,16 @@ export default function SetFontSizeTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver.delayMs(1000);
           try{
             await allowOpen();
             await driver.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           let setFontSizeScaleButton: Component = await driver.waitForComponent(ON.id('setFontSizeScaleButton').belongingDisplay(currentDisplayId), 2000);
           hilog.info(0x0000, TAG, `setFontSizeScaleButton: ${!!setFontSizeScaleButton}`);
@@ -153,18 +162,22 @@ export default function SetFontSizeTest() {
           let terminateEntryButton: Component = await driver.waitForComponent(ON.id('terminateEntryButton').belongingDisplay(currentDisplayId), 2000);
           hilog.info(0x0000, TAG, `terminateEntryButton: ${!!terminateEntryButton}`);
           await terminateEntryButton.click();
-          hilog.info(0x0000, TAG, "[%{public}s] Flags: entryFlag = %{public}s, featureFlag = %{public}s", TAG, entryFlag, featureFlag);
+          hilog.info(0x0000, TAG,
+            '[%{public}s] Flags: entryFlag = %{public}s, featureFlag = %{public}s', TAG, entryFlag,
+            featureFlag);
           try {
             expect(entryFlag && featureFlag).assertEqual(true);
           } catch {
           }
           commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-            hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
+            hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+              JSON.stringify(err), JSON.stringify(data));
             done();
           });
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {
@@ -176,14 +189,15 @@ export default function SetFontSizeTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700
      * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700
-     * @tc.desc   Verify the follow system with multiple modules: after app closure and restart, the obtained config's font size is 1
+     * @tc.desc   Verify the follow system with multiple modules: after app closure and restart, the obtained
+     *           config's font size is 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700';
-      hilog.info(0x0000, TAG, "[%{public}s] case start.", TAG);
+      hilog.info(0x0000, TAG, '[%{public}s] case start.', TAG);
       let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
         events: ['Rely_IndexEntry_getFontSizeScale']
       };
@@ -191,15 +205,22 @@ export default function SetFontSizeTest() {
       await commonEventManager.createSubscriber(commonEventSubscribeInfo)
         .then(async (commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
           subscriber = commonEventSubscriber;
-          hilog.info(0x0000, TAG, "[%{public}s] createSubscriber succeed", TAG);
-          commonEventManager.subscribe(subscriber, (err: BusinessError, commonEventData: commonEventManager.CommonEventPublishData) => {
-            hilog.info(0x0000, TAG, "[%{public}s] subscribe callback. Gained commonEventData: %{public}s", TAG, JSON.stringify(commonEventData));
+          hilog.info(0x0000, TAG, '[%{public}s] createSubscriber succeed', TAG);
+          commonEventManager.subscribe(subscriber, (err: BusinessError,
+            commonEventData: commonEventManager.CommonEventPublishData) => {
+            if (err) {
+              hilog.error(0x0000, TAG, 'subscribe err: %{public}s', JSON.stringify(err));
+              return;
+            }
+            hilog.info(0x0000, TAG, '[%{public}s] subscribe callback. Gained commonEventData: %{public}s', TAG,
+              JSON.stringify(commonEventData));
             try {
               expect(commonEventData.parameters?.fontSize).assertEqual(1);
             } catch {
             }
             commonEventManager.unsubscribe(commonEventSubscriber, (err, data) => {
-              hilog.info(0x0000, TAG, "[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s", TAG, JSON.stringify(err), JSON.stringify(data));
+              hilog.info(0x0000, TAG, '[%{public}s] unsubscribe callback. err: %{public}s, data: %{public}s', TAG,
+                JSON.stringify(err), JSON.stringify(data));
             });
           })
           let wantEntry: Want = {
@@ -212,14 +233,16 @@ export default function SetFontSizeTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver.delayMs(2000);
           try{
             await allowOpen();
             await driver.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           let terminateEntryButton: Component = await driver.findComponent(ON.id('terminateEntryButton').belongingDisplay(currentDisplayId));
           await terminateEntryButton.click();
@@ -229,14 +252,16 @@ export default function SetFontSizeTest() {
               hilog.info(0x0000, TAG, "[%{public}s] start entry's ability succeed.", TAG);
             })
             .catch((err: BusinessError) => {
-              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG, JSON.stringify(err));
+              hilog.info(0x0000, TAG, "[%{public}s] start entry's ability failed. err: %{public}s", TAG,
+                JSON.stringify(err));
             })
           await driver.delayMs(2000);
           try{
             await allowOpen();
             await driver.delayMs(1000);
           } catch (e) {
-            hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
+            hilog.error(DOMAIN, LOG_TAG, '%{public}s',
+              `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           let getFontSizeScaleButton: Component = await driver.findComponent(ON.id('getFontSizeScaleButton').belongingDisplay(currentDisplayId));
           await getFontSizeScaleButton.click();
@@ -246,7 +271,8 @@ export default function SetFontSizeTest() {
           done();
         })
         .catch((err: BusinessError) => {
-          hilog.info(0x0000, TAG, "[%{public}s] Failed to create subscriber. err: %{public}s", TAG, JSON.stringify(err));
+          hilog.info(0x0000, TAG, '[%{public}s] Failed to create subscriber. err: %{public}s', TAG,
+            JSON.stringify(err));
           try {
             expect().assertFail();
           } catch {

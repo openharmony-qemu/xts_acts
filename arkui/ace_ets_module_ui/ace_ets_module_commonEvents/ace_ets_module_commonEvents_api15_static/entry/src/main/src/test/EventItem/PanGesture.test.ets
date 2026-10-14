@@ -21,6 +21,7 @@ import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function panGestureEventTest() {
   describe('panGestureEvent', () => {
     beforeEach(async (): Promise<void> => {
@@ -68,15 +69,15 @@ it('PanGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(1,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.1).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt() });
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.3).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt() });
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.1).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt(), displayId: displayID });
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.3).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.5).toInt(), displayId: displayID });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('PanGesture1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[PanGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[PanGesture1_static_0100] title: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual(displayID + '');
       console.info('[PanGesture1_static_0100] END');
       done();
     });

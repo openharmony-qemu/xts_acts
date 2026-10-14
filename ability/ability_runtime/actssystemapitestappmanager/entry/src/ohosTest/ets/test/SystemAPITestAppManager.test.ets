@@ -94,7 +94,7 @@ export default function systemAPITestAppManagerTest() {
       let tag = `SUB_Ability_AbilityRuntime_ABILITY_StateInfo_SystemAPITestAppManager_0700`;
       console.log(`${tag}, it begin`);
       let bundleName = 'com.test.actssystemapitestappmanager'
-      let getRunningProcessInfoByBundleNameCallback = (err: BusinessError, data: Array<appManager.ProcessInformation>) =>{
+      let getRunningProcessInfoByBundleNameCallback = (err: BusinessError, data: appManager.ProcessInformation[]) =>{
         if (err) {
           console.error(`getRunningProcessInfoByBundleNameCallback fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(202)
@@ -154,7 +154,7 @@ export default function systemAPITestAppManagerTest() {
       console.log(`${tag}, it begin`);
       let bundleName = 'com.test.actssystemapitestappmanager'
       let userId = 0;
-      let getRunningProcessInfoByBundleNameCallback = (err: BusinessError, data: Array<appManager.ProcessInformation>) =>{
+      let getRunningProcessInfoByBundleNameCallback = (err: BusinessError, data: appManager.ProcessInformation[]) =>{
         if (err) {
           console.error(`getRunningProcessInfoByBundleNameCallback fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(202)

@@ -5465,6 +5465,14 @@ static napi_value AudioSessionManagerSetScene_001(napi_env env, napi_callback_in
         LOG("SetScene fail AUDIO_SESSION_SCENE_VOICE_COMMUNICATION, result is: %{public}d", TEST_FAIL);
         return res;
     }
+
+    scene = AUDIO_SESSION_SCENE_VOICE_MESSAGE;
+    result = OH_AudioSessionManager_SetScene(audioSessionManager, scene);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_FAIL, &res);
+        LOG("SetScene fail AUDIO_SESSION_SCENE_VOICE_MESSAGE, result is: %{public}d", TEST_FAIL);
+        return res;
+    }
     napi_create_int32(env, TEST_PASS, &res);
     return res;
 }

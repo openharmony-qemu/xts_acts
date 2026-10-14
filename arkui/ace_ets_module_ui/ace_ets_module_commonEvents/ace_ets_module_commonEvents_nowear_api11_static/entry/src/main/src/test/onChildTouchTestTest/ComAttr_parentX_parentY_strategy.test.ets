@@ -68,9 +68,9 @@ it('parentX_parentY_strategy_Test_static_0100', Level.LEVEL0, async (done: () =>
         console.info('[parentX_parentY_strategy_Test_static_0100] START');
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let row: Component|null = await driver.findComponent(ON.id('row'));
-        if (row != null && row != undefined) {
-          let point: Point = await (row.getBoundsCenter() as Promise<Point>);
+        let column: Component|null = await driver.findComponent(ON.id('Column_CustomEvent'));
+        if (column != null && column != undefined) {
+          let point: Point = await (column.getBoundsCenter() as Promise<Point>);
           await CommonFunc.sleep(1000);
           await (driver?.click(Math.round(point.x.toDouble()).toInt(), Math.round(point.y.toDouble()).toInt()) as Promise<void>)
           await CommonFunc.sleep(3000);
@@ -101,9 +101,9 @@ it('parentX_parentY_strategy_Test_static_0200', Level.LEVEL0, async (done: () =>
         console.info('[parentX_parentY_strategy_Test_static_0200] START');
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let row: Component|null = await driver.findComponent(ON.id('row'));
-        if (row != null && row != undefined) {
-          let point: Point = await (row.getBoundsCenter() as Promise<Point>);
+        let column: Component|null = await driver.findComponent(ON.id('Column_CustomEvent'));
+        if (column != null && column != undefined) {
+          let point: Point = await (column.getBoundsCenter() as Promise<Point>);
           await CommonFunc.sleep(1000);
           await (driver?.click(Math.round(point.x).toInt(), Math.round(point.y).toInt()) as Promise<void>)
           await CommonFunc.sleep(3000);

@@ -15,7 +15,7 @@
   "module": {
     "package": "com.ohos.actsfaabilitydisplayorientationtest",
     "name": ".entry",
-    "mainAbility": ".TestAbility1",
+    "mainAbility": ".TestAbility",
     "deviceType": [],
     "distro": {
       "deliveryWithInstall": true,
@@ -38,7 +38,7 @@
         "orientation": "unspecified",
         "visible": true,
         "srcPath": "TestAbility",
-        "name": ".TestAbility1",
+        "name": ".TestAbility",
         "srcLanguage": "ets",
         "icon": "$media:icon",
         "description": "$string:TestAbility_desc",
@@ -57,7 +57,7 @@
         "pages": [
           "pages/index"
         ],
-        "name": ".TestAbility1",
+        "name": ".TestAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false

@@ -40,13 +40,13 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0100';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       context.startAbilityWithAccount(want, account, (error: BusinessError) => {
         if (error.code) {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         }
@@ -64,8 +64,8 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0200';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       let options: StartOptions = {
@@ -73,7 +73,7 @@ export default function abilityContextTest() {
       };
       context.startAbilityWithAccount(want, account, options, (error: BusinessError) => {
         if (error.code) {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         }
@@ -91,15 +91,15 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0300';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       context.startAbilityWithAccount(want, account)
         .then(() => {
         })
         .catch((error: BusinessError) => {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -116,8 +116,8 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0400';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       let options: StartOptions = {
@@ -127,7 +127,7 @@ export default function abilityContextTest() {
         .then(() => {
         })
         .catch((error: BusinessError) => {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -144,16 +144,19 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0500';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       try {
         context.startAbilityForResultWithAccount(want, account, (error) => {
+          if (error) {
+            console.error(JSON.stringify(error));
+          }
 
         })
       } catch (error) {
-        console.log(TAG + " error: " + error.code + ", " + error.message);
+        console.log(TAG + ' error: ' + error.code + ', ' + error.message);
         expect(error.code).assertEqual(ERROR_CODE);
         done();
       }
@@ -170,8 +173,8 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0600';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       let options: StartOptions = {
@@ -179,10 +182,13 @@ export default function abilityContextTest() {
       };
       try {
         context.startAbilityForResultWithAccount(want, account, options, (error: BusinessError) => {
+          if (error) {
+            console.error(JSON.stringify(error));
+          }
 
         })
       } catch (error) {
-        console.log(TAG + " error: " + error.code + ", " + error.message);
+        console.log(TAG + ' error: ' + error.code + ', ' + error.message);
         expect(error.code).assertEqual(ERROR_CODE);
         done();
       }
@@ -199,8 +205,8 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0700';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       try {
@@ -208,10 +214,13 @@ export default function abilityContextTest() {
           .then(() => {
           })
           .catch((error: BusinessError) => {
+            if (error) {
+              console.error(JSON.stringify(error));
+            }
 
           })
       } catch (error) {
-        console.log(TAG + " error: " + error.code + ", " + error.message);
+        console.log(TAG + ' error: ' + error.code + ', ' + error.message);
         expect(error.code).assertEqual(ERROR_CODE);
         done();
       }
@@ -228,8 +237,8 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0800', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0800';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       let options: StartOptions = {
@@ -240,10 +249,13 @@ export default function abilityContextTest() {
           .then(() => {
           })
           .catch((error: BusinessError) => {
+            if (error) {
+              console.error(JSON.stringify(error));
+            }
 
           })
       } catch (error) {
-        console.log(TAG + " error: " + error.code + ", " + error.message);
+        console.log(TAG + ' error: ' + error.code + ', ' + error.message);
         expect(error.code).assertEqual(ERROR_CODE);
         done();
       }
@@ -260,12 +272,12 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_0900', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_0900';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       context.startServiceExtensionAbility(want, (error: BusinessError) => {
         if (error.code) {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         }
@@ -283,14 +295,14 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1000', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1000';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       context.startServiceExtensionAbility(want)
         .then(() => {
         })
         .catch((error: BusinessError) => {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -307,13 +319,13 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1100';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       context.startServiceExtensionAbilityWithAccount(want, account, (error: BusinessError) => {
         if (error.code) {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         }
@@ -331,15 +343,15 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1200';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       context.startServiceExtensionAbilityWithAccount(want, account)
         .then(() => {
         })
         .catch((error: BusinessError) => {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -356,12 +368,12 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1300', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1300';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       context.stopServiceExtensionAbility(want, (error: BusinessError) => {
         if (error.code) {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         }
@@ -379,14 +391,14 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1400', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1400';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       context.stopServiceExtensionAbility(want)
         .then(() => {
         })
         .catch((error: BusinessError) => {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -403,13 +415,13 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1500', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1500';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       context.stopServiceExtensionAbilityWithAccount(want, account, (error: BusinessError) => {
         if (error.code) {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         }
@@ -427,8 +439,8 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1600', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1600';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let account: number = 110;
       context.stopServiceExtensionAbilityWithAccount(want, account)
@@ -437,7 +449,7 @@ export default function abilityContextTest() {
           done();
         })
         .catch((error: BusinessError) => {
-          console.log(TAG + " error: " + error.code + ", " + error.message);
+          console.log(TAG + ' error: ' + error.code + ', ' + error.message);
           expect(error.code).assertEqual(ERROR_CODE);
           done();
         })
@@ -454,8 +466,8 @@ export default function abilityContextTest() {
     it('System_API_Test_AbilityContext_1700', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_AbilityContext_1700';
       let want: Want = {
-        abilityName: "aaa",
-        bundleName: "bbb"
+        abilityName: 'aaa',
+        bundleName: 'bbb'
       }
       let accountId: number = 110;
 
@@ -468,7 +480,7 @@ export default function abilityContextTest() {
           console.log('----------- onDisconnect -----------')
         },
         onFailed(code) {
-          console.log(TAG + " error: " + code);
+          console.log(TAG + ' error: ' + code);
         }
       });
       } catch (paramError) {
@@ -501,12 +513,15 @@ export default function abilityContextTest() {
         context.setMissionIcon(pixelmap, (error) => {
           console.log(TAG + ' ---------- setMissionIcon fail, err: -----------', error);
           if (error.code) {
-            console.log(TAG + " error: " + error.code + ", " + error.message);
+            console.log(TAG + ' error: ' + error.code + ', ' + error.message);
             expect(error.code).assertEqual(ERROR_CODE);
             done();
           }
         })
       }).catch((error: BusinessError) => {
+        if (error) {
+          console.error(JSON.stringify(error));
+        }
         console.log(TAG + ' Failed to create pixelmap.');
       })
     })
@@ -535,11 +550,14 @@ export default function abilityContextTest() {
             console.log('-------------- setMissionIcon success -------------');
           })
           .catch((error: BusinessError) => {
-            console.log(TAG + " error: " + error.code + ", " + error.message);
+            console.log(TAG + ' error: ' + error.code + ', ' + error.message);
             expect(error.code).assertEqual(ERROR_CODE);
             done();
           });
       }).catch((error: BusinessError) => {
+        if (error) {
+          console.error(JSON.stringify(error));
+        }
         console.log(TAG + ' Failed to create pixelmap.');
       })
     })

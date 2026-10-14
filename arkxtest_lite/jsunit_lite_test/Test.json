@@ -1,0 +1,34 @@
+{
+    "description": "Jsunit Lite test framework",
+    "environment": [
+        {
+            "type": "device",
+            "label": "ipcamera",
+            "device": {
+                "label": "ipcamera",
+                "type": "usb"
+            }
+        }
+    ],
+    "kits": [
+        {
+            "type": "MountKit",
+            "server": "NfsServer",
+            "mount": [
+                {
+                    "source": "$testcases/jsunit_lite_test",
+                    "target": "/test_root"
+                }
+            ]
+        }
+    ],
+    "driver": {
+        "type": "JSUnitTestLite",
+        "ability-name": "JsunitAbility",
+        "bundle-name": "com.ohos.actjsunitlitetest",
+        "hap-file-name": "ActsJsunitLiteTest.hap",
+        "timeout": "600000",
+        "cleanup": "true",
+        "reboot-after-cleanup": "true"
+    }
+}

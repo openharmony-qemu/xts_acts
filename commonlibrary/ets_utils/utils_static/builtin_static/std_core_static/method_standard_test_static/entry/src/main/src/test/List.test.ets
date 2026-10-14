@@ -16,6 +16,24 @@ import MethodIsSetterTest from "./method/MethodIsSetterTest.test";
 import MethodIsStaticTest from "./method/MethodIsStaticTest.test";
 import MethodToStringTest from "./method/MethodToStringTest.test";
 
+import MethodEquals01Test from "./method-extended/MethodEquals01Test.test";
+import MethodGetAccessModifier01Test from "./method-extended/MethodGetAccessModifier01Test.test";
+import MethodGetAttributes01Test from "./method-extended/MethodGetAttributes01Test.test";
+import MethodGetName01Test from "./method-extended/MethodGetName01Test.test";
+import MethodGetType01Test from "./method-extended/MethodGetType01Test.test";
+import MethodInvoke01Test from "./method-extended/MethodInvoke01Test.test";
+import MethodInvoke02Test from "./method-extended/MethodInvoke02Test.test";
+import MethodIsAbstract01Test from "./method-extended/MethodIsAbstract01Test.test";
+import MethodIsAsync01Test from "./method-extended/MethodIsAsync01Test.test";
+import MethodIsConstructor01Test from "./method-extended/MethodIsConstructor01Test.test";
+import MethodIsFinal01Test from "./method-extended/MethodIsFinal01Test.test";
+import MethodIsGetter01Test from "./method-extended/MethodIsGetter01Test.test";
+import MethodIsNative01Test from "./method-extended/MethodIsNative01Test.test";
+import MethodIsSetter01Test from "./method-extended/MethodIsSetter01Test.test";
+import MethodIsStatic01Test from "./method-extended/MethodIsStatic01Test.test";
+import MethodMethod01Test from "./method-extended/MethodMethod01Test.test";
+import MethodToString01Test from "./method-extended/MethodToString01Test.test";
+
 export default function testsuite(): void {
   MethodEqualsTest();
   MethodGetAccessModifierTest();
@@ -33,4 +51,22 @@ export default function testsuite(): void {
   MethodIsSetterTest();
   MethodIsStaticTest();
   MethodToStringTest();
+
+  MethodEquals01Test();
+  MethodGetAccessModifier01Test();
+  MethodGetAttributes01Test();
+  MethodGetName01Test();
+  MethodGetType01Test();
+  MethodInvoke01Test();
+  MethodInvoke02Test();
+  MethodIsAbstract01Test();
+  MethodIsAsync01Test();
+  MethodIsConstructor01Test();
+  MethodIsFinal01Test();
+  MethodIsGetter01Test();
+  MethodIsNative01Test();
+  MethodIsSetter01Test();
+  MethodIsStatic01Test();
+  MethodMethod01Test();
+  MethodToString01Test();
 }

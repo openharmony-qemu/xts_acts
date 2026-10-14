@@ -48,18 +48,19 @@ export default function connectNativePermissionCoverageDirect() {
     });
 
     /**
-     * @tc.name   testConnectNativePermission201Direct
+     * @tc.name   testConnectNativePermissionDenyDirect
      * @tc.number SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_6500
-     * @tc.desc   connectNative without ohos.permission.WEB_NATIVE_MESSAGING in module.json5 returns 201
+     * @tc.desc   connectNative without ohos.permission.WEB_NATIVE_MESSAGING should be denied
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testConnectNativePermission201Direct', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('testConnectNativePermissionDenyDirect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         const tcNumber = 'SUB_WEB_WebNativeMessagingExtension_ConnectNative_PermissionDeny_6500';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin, permission=${WEB_NATIVE_MESSAGING_PERMISSION} not declared`);
 
+        let settled: boolean = false;
         let want: Want = {
           bundleName: 'com.acts.context.webonconnectnativerelypermission',
           abilityName: 'WebNativeExtensionExtAbility1',
@@ -67,26 +68,50 @@ export default function connectNativePermissionCoverageDirect() {
             'ohos.arkweb.extensionOrigin': 'testOrigin',
           }
         };
-
         let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
           onConnect: () => {
+            if (settled) {
+              return;
+            }
+            settled = true;
             hilog.info(0x0000, 'testTag', `${tcNumber} onConnect unexpected without permission`);
+            expect().assertFail();
+            done();
           },
           onDisconnect: () => {},
           onFailed: (code: number, errMsg: string) => {
+            if (settled) {
+              return;
+            }
+            settled = true;
             hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
+            let errorCode = Number(code);
+            if (errorCode === CAPABILITY_NOT_SUPPORTED_ERROR) {
+              expect(errorCode).assertEqual(CAPABILITY_NOT_SUPPORTED_ERROR);
+            } else {
+              expect(errorCode).assertEqual(webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY);
+            }
+            done();
           }
         };
 
         try {
           webNativeMessagingExtensionManager.connectNative(context, want, callback);
-          await sleep(PERMISSION_CHECK_WAIT_MS);
-          hilog.info(0x0000, 'testTag', `${tcNumber} connectNative returned without throwing 201`);
-          expect().assertFail();
-          done();
         } catch (err) {
+          if (settled) {
+            return;
+          }
+          settled = true;
           hilog.info(0x0000, 'testTag', `${tcNumber} connectNative error: ${JSON.stringify(err)}`);
           assertPermissionOrCapabilityError(err as BusinessError);
+          done();
+          return;
+        }
+
+        await sleep(PERMISSION_CHECK_WAIT_MS);
+        if (!settled) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} connectNative returned without permission deny`);
+          expect().assertFail();
           done();
         }
       })

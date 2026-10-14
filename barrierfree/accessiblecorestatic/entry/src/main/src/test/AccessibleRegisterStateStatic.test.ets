@@ -1246,5 +1246,38 @@ export default function abilityTest() {
         });
       })
 
+      /**
+      * @tc.name   SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800
+      * @tc.number SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800
+      * @tc.desc   onUIAccessibilityFocusChanged
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
+      it('SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800');
+        let callbackdata = (data: accessibility.UIAccessibilityFocusChangeInfo) => {
+          hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800 callback');
+          if (data.focusedElement) {
+            expect(data.focusedElement).assertEqual(undefined);
+          }
+          if (data.unfocusedElement) {
+            expect(data.unfocusedElement).assertEqual(undefined);
+          }
+        }
+        let result = false;
+        try {
+          accessibility.onUIAccessibilityFocusChanged(callbackdata);
+          accessibility.offUIAccessibilityFocusChanged(callbackdata);
+          accessibility.offUIAccessibilityFocusChanged();
+          result = true;
+        } catch (error) {
+          hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_Accessibility_getFocusedElement_and_FocusedChange_9800 failed');
+          expect(null).assertFail();
+          result = false;
+        }
+        expect(result).assertEqual(true);
+        done();
+      })
   })
 }

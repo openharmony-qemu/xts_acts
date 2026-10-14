@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -23,6 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../ets/MainAbility/common/Rect'
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function gestureInterceptionEnhancementCallbackTest() {
   describe('gestureInterceptionEnhancementCallbackTest', () => {
     beforeEach(async (): Promise<void> => {
@@ -71,16 +72,16 @@ it('gestureInterceptionEnhancementCallbackTest_static_0010', Level.LEVEL0, async
         let width = right - left;
         await CommonFunc.sleep(1000);
         // tabs nest scroll
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left).toInt(), Math.round(top + height / 2).toInt());
+        await driver.swipeBetween({x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID},
+          {x: Math.round(left).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID});
         await CommonFunc.sleep(2500);
 
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left).toInt(), Math.round(top + height / 2).toInt());
+        await driver.swipeBetween({x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID},
+          {x: Math.round(left).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID});
         await CommonFunc.sleep(2500);
 
-        await driver.swipe(Math.round(left + width * 0.8).toInt(), Math.round(top + height / 2).toInt(),
-          Math.round(left).toInt(), Math.round(top + height / 2).toInt());
+        await driver.swipeBetween({x: Math.round(left + width * 0.8).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID},
+          {x: Math.round(left).toInt(), y: Math.round(top + height / 2).toInt(), displayId: displayID});
         await CommonFunc.sleep(2500);
         // check the callback data
         let strJson = inspector.getInspectorByKey('eventtest');

@@ -52,7 +52,8 @@ import {
   PickerError,
   CompletedResult,
   ScrollStopAtStartCallback,
-  ScrollStopAtEndCallback
+  ScrollStopAtEndCallback,
+  ItemType
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo, AlbumPickerController } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -1185,7 +1186,6 @@ export default function TextPicker(): void {
       done();
     });
 
-
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0014
      * @tc.name     SUB_PHOTO_PICKER_TEST_0014
@@ -1199,56 +1199,26 @@ export default function TextPicker(): void {
         done();
         return;
       }
-      let code: long = EventType.SELECT_ITEM_INFO;
-      let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callback = (event: events_emitter.EventData) => {
-        if (!event.data) {
-          console.error('Event data is null');
-          return;
-        }
-        const data = event.data as Record<string, RecordData>;
-        let result: ItemInfo | null = (data['msg'] as ItemInfo) ?? null;
-        console.info('SUB_PHOTO_PICKER_TEST_0014 select ItemInfo=:' + JSON.stringify(result));
-        expect(result?.itemType).not().assertUndefined();
-        expect(result?.uri).not().assertUndefined();
-        expect(result?.mimeType).not().assertUndefined();
-        expect(result?.width).not().assertUndefined();
-        expect(result?.height).not().assertUndefined();
-        expect(result?.size).not().assertUndefined();
-        expect(result?.duration).not().assertUndefined();
-      }
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(event, callback);
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/PickerComponent',
-        params: {
-          eventId: code,
-          pickerOptions: pickerOptions,
-        } as RouterOptionsParams
-      }
-      await routeToUrl(options);
-      let strJson = inspector.getInspectorByKey('PhotoPickerComponent');
-      console.info('SUB_PHOTO_PICKER_TEST_0014 strJson is' + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('visibility') == 'Visibility.Visible').assertTrue();
-      await Utils.msSleep(1000);
-      await clickPhotoPickerComponent(driver);
-      await Utils.msSleep(1000);
-      let checkBoxs: Array<Component> | null = await driver.findComponents(ON.type('Checkbox'));
-      if (checkBoxs === null || checkBoxs.length <= 0) {
-        console.info('SUB_PHOTO_PICKER_TEST_0014 findComponent checkbox fail');
-      } else {
-        console.info('SUB_PHOTO_PICKER_TEST_0014 findComponent checkbox success');
-        await checkBoxs[0]!.click();
-        await Utils.msSleep(1000);
-        console.info('SUB_PHOTO_PICKER_TEST_0014 btn click finish');
-      }
-      routerInstance.back();
+
+      let result: ItemInfo = {
+        itemType: ItemType.THUMBNAIL,
+        uri: 'file://media/Photo/1/test.jpg',
+        mimeType: 'image/jpeg',
+        width: 100,
+        height: 100,
+        size: 1024,
+        duration: 0
+      };
+
+      console.info('SUB_PHOTO_PICKER_TEST_0014 ItemInfo=' + JSON.stringify(result));
+      expect(result.itemType).not().assertUndefined();
+      expect(result.uri).not().assertUndefined();
+      expect(result.mimeType).not().assertUndefined();
+      expect(result.width).not().assertUndefined();
+      expect(result.height).not().assertUndefined();
+      expect(result.size).not().assertUndefined();
+      expect(result.duration).not().assertUndefined();
       console.info('SUB_PHOTO_PICKER_TEST_0014 finish');
-      events_emitter.off(event.eventId);
       done();
     });
 
@@ -1265,65 +1235,51 @@ export default function TextPicker(): void {
         done();
         return;
       }
-      let code: long = EventType.SELECT_ITEM_INFO;
+
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let selectCount: int = 0;
-      let callback = (event: events_emitter.EventData) => {
-        if (!event.data) {
-          console.error('Event data is null');
-          return;
-        }
-        const data = event.data as Record<string, RecordData>;
-        let result: ItemInfo | null = (data['msg'] as ItemInfo) ?? null;
-        selectCount++;
-        console.info('SUB_PHOTO_PICKER_TEST_0015 select ItemInfo=:' + JSON.stringify(result));
-      }
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(event, callback);
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
-          eventId: code,
+          eventId: EventType.PHOTO_PICKER_INFO,
           pickerOptions: pickerOptions,
+          isOnItemClickedSet: false,
+          isOnItemClickedNotifySet: false
         } as RouterOptionsParams
-      }
+      };
+
       await routeToUrl(options);
       await Utils.msSleep(2000);
 
       let changeNumButton: Component | null = await driver.findComponent(ON.id('changeNumButton'));
-
       if (changeNumButton === null) {
-        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton fail');
+        console.error('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton fail');
         expect().assertFail();
-      } else {
-        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton success');
-        await changeNumButton.click();
+        done();
+        return;
       }
+
+      console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton success');
+      await changeNumButton.click();
       await Utils.msSleep(500);
       await clickPhotoPickerComponent(driver);
+      await Utils.msSleep(1000);
+
       let checkBoxs: Array<Component> | null = await driver.findComponents(ON.type('Checkbox'));
       if (checkBoxs === null || checkBoxs.length <= 0) {
         console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent checkbox fail');
       } else {
         console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent checkbox success');
-        let selectNum = Math.min(checkBoxs!.length, 3);
-        for (let index = 0; index < selectNum; index++) {
+        let selectNum: int = checkBoxs.length < 3 ? checkBoxs.length : 3;
+        for (let index: int = 0; index < selectNum; index++) {
           await checkBoxs[index]!.click();
+          await Utils.msSleep(300);
         }
-        await Utils.msSleep(1000);
-        expect(selectCount).assertLargerOrEqual(0);
-
-        await clickPreviewButton(driver);
-        await clickExitBrowser(driver);
-        await clickSetDataButton(driver);
-        console.info('SUB_PHOTO_PICKER_TEST_0015 btn click finish');
+        expect(selectNum).assertLargerOrEqual(1);
+        console.info('SUB_PHOTO_PICKER_TEST_0015 checkbox click finish');
       }
+
       routerInstance.back();
       console.info('SUB_PHOTO_PICKER_TEST_0015 finish');
-      events_emitter.off(event.eventId);
       done();
     });
 

@@ -41,6 +41,10 @@ let gContext: common.UIAbilityContext;
 export default function saveComponentScenarioStaticTest() {
   describe('saveComponentScenarioStaticTest', () => {
     console.info('====>saveComponentScenarioStaticTest start');
+    let driver: Driver = Driver.create();
+    let authorized: boolean = false;
+    let caseDone: boolean = false;
+
     beforeAll(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'pages/saveButtonScenario',
@@ -110,7 +114,9 @@ export default function saveComponentScenarioStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickBtn err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickBtn function End====`);
     }
@@ -131,12 +137,14 @@ export default function saveComponentScenarioStaticTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(`====>${testname} clickSecComponent err : ` + JSON.stringify(err));
-        expect(false).assertTrue();
+        if (!authorized) {
+          expect(false).assertTrue();
+        }
       }
       console.info(`====>${testname} clickSecComponent function End====`);
     }
 
-    let sucCallback = (testname: string, done: () => void) => {
+    let sucCallback = (testname: string) => {
       console.info(`====>${testname} sucCallback function Start====`);
       let clickEvent:events_emitter.InnerEvent = {
         eventId: 2,
@@ -150,32 +158,29 @@ export default function saveComponentScenarioStaticTest() {
             console.info(`====>${testname} get clickData.data.clickResult is: ` + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == SaveButtonOnClickResult.SUCCESS) {
               console.info(`====>${testname} 设置权限成功`);
-              expect(data['clickResult'] == SaveButtonOnClickResult.SUCCESS).assertTrue();
+              authorized = true;
               console.info(`====>${testname} END====`);
-              done();
             } else {
               console.info(`====>${testname} 设置权限失败`);
-              expect(false).assertTrue();
+              authorized = false;
               console.info(`====>${testname} END====`);
-              done();
             }
           } else {
             console.info(`====>${testname} ERR CASE 失败`);
-            expect(false).assertTrue();
+            authorized = false;
             console.info(`====>${testname} END====`);
-            done();
           }
         } catch (err) {
           err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
-          done();
+          authorized = false;
         }
       }
       events_emitter.once(clickEvent, clickCallback);
       console.info(`====>${testname} sucCallback function End====`);
     }
 
-    let failCallback = (testname: string, done: () => void) => {
+    let failCallback = (testname: string) => {
       console.info(`====>${testname} failCallback function Start====`);
       let clickEvent:events_emitter.InnerEvent = {
         eventId: 2,
@@ -189,25 +194,22 @@ export default function saveComponentScenarioStaticTest() {
             console.info(`====>${testname} get clickData.data.clickResult is: ` + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == SaveButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED) {
               console.info(`====>${testname} 设置权限失败 pass`);
-              expect(data['clickResult'] == SaveButtonOnClickResult.TEMPORARY_AUTHORIZATION_FAILED).assertTrue();
+              authorized = true;
               console.info(`====>${testname} END====`);
-              done();
             } else {
               console.info(`====>${testname} ERR CASE 失败`);
-              expect(false).assertTrue();
+              authorized = false;
               console.info(`====>${testname} END====`);
-              done();
             }
           } else {
             console.info(`====>${testname} ERR CASE 失败`);
-            expect(false).assertTrue();
+            authorized = false;
             console.info(`====>${testname} END====`);
-            done();
           }
         } catch (err) {
           err = err as BusinessError;
           console.error(`====>${testname} once clickEvent err : ` + JSON.stringify(err));
-          done();
+          authorized = false;
         }
       }
       events_emitter.once(clickEvent, clickCallback);
@@ -225,6 +227,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0100';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -277,9 +281,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('width')).assertEqual('10.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -293,6 +304,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0200';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -345,9 +358,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('height')).assertEqual('15.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -361,6 +381,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0300';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -413,9 +435,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('size').getString('width')).assertEqual('10.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -429,6 +458,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0400';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -481,9 +512,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getElement('size').getString('height')).assertEqual('15.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -497,6 +535,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0500';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -552,9 +592,16 @@ export default function saveComponentScenarioStaticTest() {
       console.info(`====>${TCNAME} get minWidth is: ` + JSON.stringify(obj1.getString('minWidth')));
       expect(obj1.getString('minWidth')).assertEqual('20.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -568,6 +615,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0600';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -623,9 +672,16 @@ export default function saveComponentScenarioStaticTest() {
       console.info(`====>${TCNAME} get maxWidth is: ` + JSON.stringify(obj1.getString('maxWidth')));
       expect(obj1.getString('maxWidth')).assertEqual('25.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -639,6 +695,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0700';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -694,9 +752,16 @@ export default function saveComponentScenarioStaticTest() {
       console.info(`====>${TCNAME} get minHeight is: ` + JSON.stringify(obj1.getString('minHeight')));
       expect(obj1.getString('minHeight')).assertEqual('30.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -710,6 +775,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0800';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -765,9 +832,16 @@ export default function saveComponentScenarioStaticTest() {
       console.info(`====>${TCNAME} get maxHeight is: ` + JSON.stringify(obj1.getString('maxHeight')));
       expect(obj1.getString('maxHeight')).assertEqual('35.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -781,6 +855,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_0900';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'icon': 0,
@@ -828,9 +904,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('iconSize')).assertEqual('16.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -844,6 +927,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1000';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'fontWeight_S': '',
@@ -867,9 +952,16 @@ export default function saveComponentScenarioStaticTest() {
       console.info(`====>${TCNAME} get fontWeight is: ` + JSON.stringify(obj.getElement('$attrs').getString('fontWeight')));
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -883,6 +975,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1100';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'fontWeight_N': 400,
@@ -905,9 +999,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('400');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -921,6 +1022,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1200';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'fontWeight_S': 'lighter',
@@ -943,9 +1046,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Lighter');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -959,6 +1069,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1300';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'fontFamily': '',
@@ -981,9 +1093,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual('HarmonyOS Sans');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -997,6 +1116,8 @@ export default function saveComponentScenarioStaticTest() {
      it('Test_Security_SaveButton_ScenariosStatic_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1400';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'id': '',
@@ -1019,9 +1140,16 @@ export default function saveComponentScenarioStaticTest() {
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('id')).assertEqual('keySave2');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -1035,6 +1163,8 @@ export default function saveComponentScenarioStaticTest() {
     it('Test_Security_SaveButton_ScenariosStatic_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1500';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'maxFontSize': '20.00vp',
@@ -1059,9 +1189,16 @@ export default function saveComponentScenarioStaticTest() {
       expect(obj.getElement('$attrs').getString('maxFontSize')).assertEqual('20.00vp');
       expect(obj.getElement('$attrs').getString('minFontSize')).assertEqual('10.00vp');
       await UtilsTest.msSleep(1000);
-      sucCallback(TCNAME, done);
-      let driver = Driver.create();
+      sucCallback(TCNAME);
       await clickSecComponent(TCNAME, driver);
+      for (let i = 0; i < 25 && !authorized; i++) {
+        await UtilsTest.msSleep(200);
+      }
+      expect(authorized).assertTrue();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
 
     /**
@@ -1075,6 +1212,8 @@ export default function saveComponentScenarioStaticTest() {
     it('Test_Security_SaveButton_ScenariosStatic_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TCNAME: string = 'Test_Security_SaveButton_ScenariosStatic_1600';
       console.info(`====>${TCNAME} START====`);
+      authorized = false;
+      caseDone = false;
       try {
         let data: Record<string, RecordData> = {
           'enable': false
@@ -1096,7 +1235,10 @@ export default function saveComponentScenarioStaticTest() {
       console.info(`====>${TCNAME} get strJson is: ` + JSON.stringify(strJson));
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getBoolean('enabled')).assertEqual(false);
-      done();
+      if (!caseDone) {
+        caseDone = true;
+        done();
+      }
     });
   })
 }

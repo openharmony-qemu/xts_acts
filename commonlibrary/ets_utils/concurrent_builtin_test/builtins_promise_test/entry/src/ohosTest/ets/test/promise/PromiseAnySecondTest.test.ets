@@ -57,9 +57,9 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest2700';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1RejectDelay = 50;
+      const p1RejectDelay = 200;
       const p2RejectDelay = 10;
-      const overallDelay = 150;
+      const overallDelay = 400;
       const p1RejectError = 'p1 rejection';
       const p2RejectError = 'p2 rejection';
 
@@ -147,9 +147,9 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest2800';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1RejectDelay = 50;
+      const p1RejectDelay = 200;
       const p2RejectDelay = 10;
-      const overallDelay = 150;
+      const overallDelay = 400;
       const p1RejectError = 'p1 rejection again';
       const p2RejectError = 'p2 rejection again';
 
@@ -237,8 +237,8 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest2900';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1Delay = 50;
-      const overallDelay = 150;
+      const p1Delay = 200;
+      const overallDelay = 400;
       const p1FinallyErrorMessage = 'Error intentionally thrown in p1.finally';
 
       executionOrder.push('start');
@@ -339,8 +339,8 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3000';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1Delay = 50;
-      const overallDelay = 150;
+      const p1Delay = 200;
+      const overallDelay = 400;
       const p1FinallyErrorMessage = 'Error intentionally thrown in p1.finally again';
 
       executionOrder.push('start');
@@ -441,8 +441,8 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3100';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1Delay = 50;
-      const overallDelay = 150;
+      const p1Delay = 200;
+      const overallDelay = 400;
 
       executionOrder.push('start');
 
@@ -539,8 +539,8 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3200';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1RejectDelay = 50;
-      const overallDelay = 150;
+      const p1RejectDelay = 200;
+      const overallDelay = 400;
       const p1FinallyErrorMessage = 'Error intentionally thrown in p1.finally after rejection';
       const p1RejectError = 'p1 intentional rejection';
 
@@ -733,8 +733,8 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3400';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const p1RejectDelay = 50;
-      const overallDelay = 150;
+      const p1RejectDelay = 200;
+      const overallDelay = 400;
       const p1RejectError = 'p1 intentional rejection in 3400';
       const p2ResolveValue = 'p2 immediate value in 3400';
 
@@ -829,7 +829,7 @@ export default function PromiseAnySecondTest() {
       const caseName = 'PromiseAnySecondTest3500';
       const executionOrder: string[] = [];
       let expectedOrder: string[] = [];
-      const overallDelay = 150;
+      const overallDelay = 400;
       const p1ThenErrorMessage = 'Error thrown in p1.then in 3500';
       const p1ResolveValue = 'p1 resolved value in 3500';
       const p2ResolveValue = 'p2 immediate value in 3500';

@@ -421,7 +421,7 @@ function testGetAllowedOpticalDiscDriveBurnUsbDevices() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
     try {
       let result = await usbManager.getAllowedOpticalDiscDriveBurnUsbDevices();
-      expect(result.length >= 0).assertEqual(true);
+      expect(result.length).assertEqual(0);
     } catch (error) {
       expect(error.code).assertEqual(201);
     } finally {
