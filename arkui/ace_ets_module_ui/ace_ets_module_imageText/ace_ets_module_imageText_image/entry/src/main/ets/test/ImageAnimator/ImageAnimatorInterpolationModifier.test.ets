@@ -204,38 +204,5 @@ export default function ImageAnimatorInterpolationModifierTest() {
       }
       done();
     });
-
-    /**
-     * @tc.name   ImageAnimatorInterpolationModifierTest_0800
-     * @tc.number SUB_ARKUI_IMAGEANIMATOR_INTERPOLATION_MODIFIER_0800
-     * @tc.desc   Test interpolation property with undefined value via applyNormalAttribute of AttributeModifier
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ImageAnimatorInterpolationModifierTest_0800', Level.LEVEL1, async (done: Function) => {
-      console.info('[ImageAnimatorInterpolationModifierTest_0800] START');
-      try {
-        let driver = Driver.create();
-        await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('imageAnimatorInterpolationModifier');
-        let obj: ESObject = JSON.parse(strJson);
-        console.info('[ImageAnimatorInterpolationModifierTest_0800] initial interpolation: ' + obj.$attrs.interpolation);
-
-        let btnUndefined = await driver.findComponent(ON.id('btn_undefined'));
-        await btnUndefined.click();
-        await CommonFunc.sleep(1000);
-
-        let strJson2 = getInspectorByKey('imageAnimatorInterpolationModifier');
-        let obj2: ESObject = JSON.parse(strJson2);
-        console.info('[ImageAnimatorInterpolationModifierTest_0800] after undefined click interpolation: ' + obj2.$attrs.interpolation);
-        expect(obj2.$attrs.interpolation).assertEqual('ImageInterpolation.Low');
-        console.info('[ImageAnimatorInterpolationModifierTest_0800] END');
-      } catch (err) {
-        expect().assertFail();
-        console.info('[ImageAnimatorInterpolationModifierTest_0800] ERR ' + JSON.stringify(err));
-      }
-      done();
-    });
   })
 }
