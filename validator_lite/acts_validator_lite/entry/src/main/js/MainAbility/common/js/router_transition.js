@@ -17,8 +17,8 @@ import router from '@system.router';
 // Shared page logic for the three RouterTransition group pages (normal / edge_api / edge_duration).
 // Exported as a factory rather than a shared object: each page needs its own `data` and its own
 // pass/fail state, and one shared object would let the pages overwrite each other's colours.
-const TARGET_URI = 'pages/RouterTransition/target/index';
-const MENU_URI = 'pages/RouterTransition/index/index';
+const TARGET_URI = 'pages/ArkUI/RouterTransition/target/index';
+const MENU_URI = 'pages/ArkUI/RouterTransition/index/index';
 const ROUTER_KEY_PREFIX = 'router_';
 const COLOR_PASS = '#4caf50';
 const COLOR_FAIL = '#f44336';

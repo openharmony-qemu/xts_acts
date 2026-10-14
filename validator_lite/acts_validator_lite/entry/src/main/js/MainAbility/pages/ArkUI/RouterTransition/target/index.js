@@ -14,7 +14,7 @@
  */
 import router from '@system.router';
 
-const DEFAULT_BACK = 'pages/RouterTransition/index/index';
+const DEFAULT_BACK = 'pages/ArkUI/RouterTransition/index/index';
 
 // Builds the verdict sentence the probe page shows: it spells out how the engine is expected to
 // treat the requested values, which is what the operator judges against. It matters most for the

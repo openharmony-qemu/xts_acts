@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { createRouterTransitionPage } from '../../../common/js/router_transition';
+import { createRouterTransitionPage } from '../../../../common/js/router_transition';
 
-const BACK_URI = 'pages/RouterTransition/edge_api/index';
+const BACK_URI = 'pages/ArkUI/RouterTransition/edge_api/index';
 const DURATION = 800;
 
 // Case table. Every item here is a malformed or boundary parameter combination; how the mode/anim/

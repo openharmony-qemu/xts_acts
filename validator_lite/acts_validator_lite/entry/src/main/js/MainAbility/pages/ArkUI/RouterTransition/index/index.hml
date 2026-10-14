@@ -14,7 +14,7 @@
 -->
 <div class="container" onswipe="swipeEvent">
   <text class="titleTextStyle">
-    RouterTransition
+    Router Transition
   </text>
   <list class="todo-wraper" onswipe="swipeEvent" ref="list">
     <list-item for="{{todolist}}" class="listItem">

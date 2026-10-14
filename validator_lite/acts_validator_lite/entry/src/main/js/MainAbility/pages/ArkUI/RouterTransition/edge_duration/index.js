@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { createRouterTransitionPage } from '../../../common/js/router_transition';
+import { createRouterTransitionPage } from '../../../../common/js/router_transition';
 
-const BACK_URI = 'pages/RouterTransition/edge_duration/index';
+const BACK_URI = 'pages/ArkUI/RouterTransition/edge_duration/index';
 // Every row of this group states its own eff/req, so DURATION is only the fallback value (taken by
 // the two rows whose req is null) and takes no part in any verdict.
 const DURATION = 800;
