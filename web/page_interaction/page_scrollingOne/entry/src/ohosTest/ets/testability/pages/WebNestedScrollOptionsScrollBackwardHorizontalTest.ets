@@ -15,7 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
-import { Driver } from '@ohos.UiTest';
+import { Driver, ON, Point } from '@ohos.UiTest';
 import Utils from '../../test/Utils';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '@ohos/hypium';
@@ -68,18 +68,19 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
 
-
   build() {
     Column() {
       Button("NestedScrollOptionsScrollBackwardHorizontal click")
         .key('NestedScrollOptionsScrollBackwardHorizontalTestButton')
         .onClick(async () => {
           console.info("key==>" + this.str)
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000);
           let webRect = Utils.getComponentRect('RowSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
+          const displayId: number = await (await driver.findComponent(
+            ON.id('NestedScrollOptionsScrollBackwardHorizontalTestButton'))).getDisplayId();
           switch (this.str) {
 
             case "testNestedScrollOptionsScrollBackwardHorizontal001": {
@@ -87,14 +88,20 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184110)
               } catch (error) {
@@ -108,19 +115,25 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset')
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webYOffset', 40)
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webYOffset', 40)
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184120)
               } catch (error) {
@@ -135,16 +148,23 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.Start)
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset', 40)
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset',
+                  40)
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 184130)
               } catch (error) {
@@ -158,9 +178,9 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 let driver = Driver.create();
@@ -168,7 +188,13 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184140)
               } catch (error) {
@@ -182,15 +208,21 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184150)
               } catch (error) {
@@ -204,20 +236,26 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184160)
               } catch (error) {
@@ -231,20 +269,26 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 9007)
               } catch (error) {
@@ -258,17 +302,23 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184180)
               } catch (error) {
@@ -282,15 +332,21 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184190)
               } catch (error) {
@@ -304,20 +360,26 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 60, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184200)
               } catch (error) {
@@ -331,19 +393,25 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 100, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 184210)
               } catch (error) {
@@ -357,17 +425,23 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 100, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184220)
               } catch (error) {
@@ -381,15 +455,21 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 100, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 184230)
               } catch (error) {
@@ -403,20 +483,26 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST
                 this.controller.scrollTo(0, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 100, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 184240)
               } catch (error) {
@@ -430,19 +516,25 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST
                 this.scroller.scrollEdge(Edge.Start)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(40, 0)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 100, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 184250)
               } catch (error) {
@@ -456,17 +548,23 @@ struct WebNestedScrollOptionsScrollBackwardHorizontalTest {
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL
                 this.controller.scrollTo(5000, 0)
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.controller.getPageOffset().x, this.str + ' webXOffset');
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.scroller.scrollEdge(Edge.End)
-                await Utils.waitForScrollStop(()=>this.scroller.currentOffset().xOffset, this.str+' scrollXOffset')
+                await Utils.waitForScrollStop(() => this.scroller.currentOffset().xOffset, this.str + ' scrollXOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
                 this.userAgentPC = this.controller.getUserAgent();
                 if ((this.userAgentPC).includes("PC")) {
                   await driver.swipe(X - 100, Y, X + 60, Y);
                 } else {
-                  await driver.swipe(X - 60, Y, X + 140, Y);
+                  const pointStart: Point = {
+                    x: X - 60, y: Y, displayId: displayId
+                  }
+                  const pointEnd: Point = {
+                    x: X + 140, y: Y, displayId: displayId
+                  }
+                  await driver.swipeBetween(pointStart, pointEnd)
                 }
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 184260)
               } catch (error) {

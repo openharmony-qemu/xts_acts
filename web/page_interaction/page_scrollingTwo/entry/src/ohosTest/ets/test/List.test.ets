@@ -23,7 +23,7 @@ export default function testsuite() {
   webNestedScrollOptionsScrollBackwardTest()
   webViewSrollableJsunit()
   WebViewGetPageOffSet()
-  WebBackToTop()
   WebScrollbarLayoutPolicy()
   WebScrollDirectionalLock()
+  WebBackToTop()
 }

@@ -27,9 +27,9 @@ export default function testsuite() {
   WebViewGetMimeTypes()
   WebViewGetAcceptType()
   WebViewGetMode()
-  WebViewContextMenuMediaType()
   WebViewRequestPasswordAutoFill()
   WebViewOnTextSelectionChange()
   WebViewEnableImageAnalyzer()
   WebViewOnShowFileSelector()
+  WebViewContextMenuMediaType()
 }

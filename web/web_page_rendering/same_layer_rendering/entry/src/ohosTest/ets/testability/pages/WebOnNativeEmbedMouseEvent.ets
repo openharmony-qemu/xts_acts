@@ -18,37 +18,37 @@ import { NodeController, BuilderNode, NodeRenderType, FrameNode } from '@ohos.ar
 import { BusinessError } from '@ohos.base';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
-import { waitForExist} from '../../test/WaitTest.test';
-import { Driver, MouseButton } from '@ohos.UiTest';
+import { waitForExist } from '../../test/WaitTest.test';
+import { Driver, MouseButton, ON } from '@ohos.UiTest';
 
 @Observed
 declare class Params {
   textOne: string
-  textTwo : string
-  width : number
-  height : number
+  textTwo: string
+  width: number
+  height: number
 }
 
 declare class nodeControllerParams {
   surfaceId: string
-  type : string
-  renderType : NodeRenderType
-  embedId : string
-  width : number
-  height : number
+  type: string
+  renderType: NodeRenderType
+  embedId: string
+  width: number
+  height: number
 }
 
 class MyNodeController extends NodeController {
   private rootNode: BuilderNode<[Params]> | undefined | null;
-  private embedId_ : string = "";
+  private embedId_: string = "";
   private surfaceId_: string = "";
   private renderType_: NodeRenderType = NodeRenderType.RENDER_TYPE_DISPLAY;
-  private width_ : number = 0;
-  private height_ : number = 0;
-  private type_ : string = "";
-  private isDestroy_ : boolean = false;
+  private width_: number = 0;
+  private height_: number = 0;
+  private type_: string = "";
+  private isDestroy_: boolean = false;
 
-  setRenderOption(params : nodeControllerParams) {
+  setRenderOption(params: nodeControllerParams) {
     this.surfaceId_ = params.surfaceId
     this.renderType_ = params.renderType;
     this.embedId_ = params.embedId;
@@ -60,7 +60,12 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.rootNode = new BuilderNode(uiContext, { surfaceId: this.surfaceId_, type: this.renderType_ });
     if (this.type_ === 'native/web') {
-      this.rootNode.build(wrapBuilder(WebBuilder), { textOne: "myButton1", textTwo: "myButton2", width : this.width_, height : this.height_ })
+      this.rootNode.build(wrapBuilder(WebBuilder), {
+        textOne: "myButton1",
+        textTwo: "myButton2",
+        width: this.width_,
+        height: this.height_
+      })
     }
     return this.rootNode.getFrameNode();
   }
@@ -77,20 +82,21 @@ class MyNodeController extends NodeController {
     this.rootNode?.update(arg);
   }
 
-  getEmbedId() : string {
+  getEmbedId(): string {
     return this.embedId_;
   }
 
-  postEvent(event:TouchEvent | undefined) : boolean {
+  postEvent(event: TouchEvent | undefined): boolean {
     return this.rootNode?.postTouchEvent(event) as boolean
   }
 
-  setDestroy(isDestroy : boolean) : void {
+  setDestroy(isDestroy: boolean): void {
     this.isDestroy_ = isDestroy;
     if (this.isDestroy_) {
-      this.rootNode= null;
+      this.rootNode = null;
     }
   }
+
   postInputEvent(event: MouseEvent | TouchEvent | undefined): boolean {
     return this.rootNode?.postInputEvent(event) as boolean
   }
@@ -118,10 +124,10 @@ struct WebComponent {
         .fileAccess(true)
         .width(280)
         .height(400)
-        .onMouse((event)=> {
-          console.log ("zhouke, event:" + JSON.stringify(event))
+        .onMouse((event) => {
+          console.log("zhouke, event:" + JSON.stringify(event))
         })
-        .onTouchIntercept((event : TouchEvent) => {
+        .onTouchIntercept((event: TouchEvent) => {
           return HitTestMode.Transparent
         })
     }
@@ -142,8 +148,8 @@ struct WebIndex {
   browserTabController: WebviewController = new webview.WebviewController()
   private nodeControllerMap: Map<string, MyNodeController> = new Map();
   @State componentIdArr: Array<string> = []
-  @State isGetPermission:boolean = false;
-  @State num : number = 0
+  @State isGetPermission: boolean = false;
+  @State num: number = 0
   @State eventType: string = '触碰类型'
   @State eventType2: string = '触碰次数'
   @State eventType3: string = '返回类型'
@@ -155,11 +161,13 @@ struct WebIndex {
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State isComplete: number = -1;
-  @State str:string = 'emitOnNativeEmbedMouseEvent001'
+  @State str: string = 'emitOnNativeEmbedMouseEvent001'
+
   aboutToAppear() {
     // 配置Web开启调试模式
     webview.WebviewController.setWebDebuggingAccess(true);
   }
+
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 153530,
@@ -167,7 +175,8 @@ struct WebIndex {
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
-  onPageHide() {	
+
+  onPageHide() {
     events_emitter.off(153530)
   }
 
@@ -187,8 +196,11 @@ struct WebIndex {
       Row() {
         Button("WebOnNativeEmbedMouseEvent").id('WebOnNativeEmbedMouseButton').onClick(async () => {
           console.info("key==>" + this.str)
-          await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
           await waitForExist(() => this.isComplete, this.str, 0);
+          let driver: Driver = Driver.create();
+          const displayId: number =
+            await (await driver.findComponent(ON.id('WebOnNativeEmbedMouseButton'))).getDisplayId();
           this.isReceive = -1;
           switch (this.str) {
             case "emitOnNativeEmbedMouseEvent001": {
@@ -198,10 +210,10 @@ struct WebIndex {
                 await Utils.sleep(2000);
                 let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
                 let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
-                let driver: Driver = Driver.create();
-                await driver.mouseClick({x:downX, y:downY}, MouseButton.MOUSE_BUTTON_LEFT);
+                await driver.mouseClick({ x: downX, y: downY, displayId: displayId }, MouseButton.MOUSE_BUTTON_LEFT);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+                console.error(
+                  `ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
               break;
             }
@@ -220,11 +232,12 @@ struct WebIndex {
           }
         })
       }
+
       Column({ space: 5 }) {
         Text(this.eventType)
         Text(this.eventType2)
         Text(this.eventType3)
-        Stack({ alignContent: Alignment.TopStart }){
+        Stack({ alignContent: Alignment.TopStart }) {
           ForEach(this.componentIdArr, (componentId: string) => {
             NodeContainer(this.nodeControllerMap.get(componentId))
               .position(this.positionMap.get(componentId))
@@ -243,18 +256,21 @@ struct WebIndex {
               console.log("NativeEmbed surfaceId" + embed.surfaceId);
               // 获取web侧embed元素的id
               const componentId = embed.info?.id?.toString() as string
-              if(embed.status == NativeEmbedStatus.CREATE) {
+              if (embed.status == NativeEmbedStatus.CREATE) {
                 console.log("onNativeEmbedLifecycleChange NativeEmbed create" + JSON.stringify(embed.info));
                 // 创建节点控制器、设置参数并rebuild
                 let nodeController = new MyNodeController()
                 // 1. embed.info.width和embed.info.height单位是px格式，需要转换成ets侧的默认单位vp
-                nodeController.setRenderOption({surfaceId : embed.surfaceId as string,
-                  type : embed.info?.type as string,
-                  renderType : NodeRenderType.RENDER_TYPE_TEXTURE,
-                  embedId : embed.embedId as string,
-                  width : px2vp(embed.info?.width),
-                  height : px2vp(embed.info?.height)})
-                this.edges = {left: `${embed.info?.position?.x as number}px`, top: `${embed.info?.position?.y as number}px`}
+                nodeController.setRenderOption({
+                  surfaceId: embed.surfaceId as string,
+                  type: embed.info?.type as string,
+                  renderType: NodeRenderType.RENDER_TYPE_TEXTURE,
+                  embedId: embed.embedId as string,
+                  width: px2vp(embed.info?.width),
+                  height: px2vp(embed.info?.height)
+                })
+                this.edges =
+                  { left: `${embed.info?.position?.x as number}px`, top: `${embed.info?.position?.y as number}px` }
                 nodeController.setDestroy(false);
                 //根据web传入的embed的id属性作为key，将nodeController存入Map
                 this.nodeControllerMap.set(componentId, nodeController);
@@ -263,14 +279,16 @@ struct WebIndex {
                 this.positionMap.set(componentId, this.edges);
                 // 将web传入的embed的id属性存入@State状态数组变量中，用于动态创建nodeContainer节点容器,需要将push动作放在set之后
                 this.componentIdArr.push(componentId)
-              } else if(embed.status == NativeEmbedStatus.UPDATE) {
+              } else if (embed.status == NativeEmbedStatus.UPDATE) {
                 let nodeController = this.nodeControllerMap.get(componentId);
                 console.log("onNativeEmbedLifecycleChange NativeEmbed update" + JSON.stringify(embed));
-                this.edges = {left: `${embed.info?.position?.x as number}px`, top: `${embed.info?.position?.y as number}px`}
+                this.edges =
+                  { left: `${embed.info?.position?.x as number}px`, top: `${embed.info?.position?.y as number}px` }
                 this.positionMap.set(componentId, this.edges);
                 this.widthMap.set(componentId, px2vp(embed.info?.width));
                 this.heightMap.set(componentId, px2vp(embed.info?.height));
-                nodeController?.updateNode({textOne: 'update', width: px2vp(embed.info?.width), height: px2vp(embed.info?.height)} as ESObject)
+                nodeController?.updateNode(
+                  { textOne: 'update', width: px2vp(embed.info?.width), height: px2vp(embed.info?.height) } as ESObject)
               } else {
                 console.log("onNativeEmbedLifecycleChange NativeEmbed destroy" + JSON.stringify(embed));
                 let nodeController = this.nodeControllerMap.get(componentId);
@@ -283,8 +301,8 @@ struct WebIndex {
               }
             })
             .onNativeEmbedGestureEvent((touch) => {
-              this.num+=1
-              this.eventType2='onNativeEmbedGestureEvent---' + this.num
+              this.num += 1
+              this.eventType2 = 'onNativeEmbedGestureEvent---' + this.num
               console.log("NativeEmbed onNativeEmbedGestureEvent" + JSON.stringify(touch.touchEvent));
               this.componentIdArr.forEach((componentId: string) => {
                 let nodeController = this.nodeControllerMap.get(componentId);
@@ -296,8 +314,8 @@ struct WebIndex {
                     console.log("onNativeEmbedGestureEvent fail " + componentId);
                   }
                   if (touch.result) {
-                    touch.result.setGestureEventResult(ret,true);
-                    this.eventType3 = 'setGestureEventResult--'+ret
+                    touch.result.setGestureEventResult(ret, true);
+                    this.eventType3 = 'setGestureEventResult--' + ret
                     console.log("NativeEmbed setGestureEventResult " + ret);
                   } else {
                     console.log("NativeEmbed setGestureEventResult event.result null");
@@ -333,7 +351,7 @@ struct WebIndex {
                     console.log("setMouseEventResult fail " + componentId)
                   }
                   if (mouse.result) {
-                    mouse.result.setMouseEventResult(ret,true);
+                    mouse.result.setMouseEventResult(ret, true);
                     console.log("NativeEmbed setMouseEventResult " + ret);
                     console.log("NativeEmbed setMouseEventResult6666 " + mouse.result.setMouseEventResult(ret));
                   } else {

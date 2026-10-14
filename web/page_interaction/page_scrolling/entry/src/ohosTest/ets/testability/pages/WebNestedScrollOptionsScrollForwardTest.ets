@@ -15,7 +15,7 @@
 
 import events_emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
-import { Driver } from '@ohos.UiTest';
+import { Driver, Point, ON } from '@ohos.UiTest';
 import Utils from '../../test/Utils';
 
 const EVENT_ID_SET_SUITE_KEY = 179501;
@@ -71,6 +71,7 @@ struct WebNestedScrollOptionsScrollForwardTest {
           let webRect = Utils.getComponentRect('ForwardColumnSize');
           let X = Utils.getRectHorizontalCenterX(webRect)
           let Y = Utils.getRectVerticalCenterY(webRect)
+          const displayId:number=await (await driver.findComponent(ON.id('NestedScrollOptionsScrollForwardTestButton'))).getDisplayId()
           console.log("webRect,X,Y",X,Y)
           switch (this.str) {
             case "testNestedScrollOptionsScrollForward001": {
@@ -85,7 +86,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 await Utils.waitForReleaseDriver(this.str,driver)
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 179510)
               } catch (error) {
@@ -110,7 +117,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 179520)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -130,7 +143,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 this.parentScrollTime = 0
                 this.scroller.scrollBy(0, -40)
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 179530)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -148,7 +167,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 50, X, Y - 50);
+                const pointStart:Point={
+                  x:X,y:Y+ 50,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 50,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 179540)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -169,7 +194,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 179550)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -193,7 +224,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 179560)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -214,7 +251,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 this.scroller.scrollBy(0, -40)
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 179570)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -232,7 +275,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 50, X, Y - 50);
+                const pointStart:Point={
+                  x:X,y:Y+ 50,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 50,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 179580)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -253,7 +302,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 179590)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -277,7 +332,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 179600)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -298,7 +359,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 this.scroller.scrollBy(0, -40)
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 179610)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -316,7 +383,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 50, X, Y - 50);
+                const pointStart:Point={
+                  x:X,y:Y+ 50,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 50,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 179620)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -337,7 +410,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime == 0 && this.selfScrollTime != 0, 179630)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -361,7 +440,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > this.selfScrollTime && this.selfScrollTime > 0, 179640)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -382,7 +467,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 this.scroller.scrollBy(0, -40)
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                await driver.swipe(X, Y + 100, X, Y - 100);
+                const pointStart:Point={
+                  x:X,y:Y+ 100,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 100,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime < this.selfScrollTime && this.parentScrollTime > 0, 179650)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -400,7 +491,13 @@ struct WebNestedScrollOptionsScrollForwardTest {
                 await Utils.waitForScrollStop(()=>this.scroller.currentOffset().yOffset, this.str+' scrollYOffset')
                 this.selfScrollTime = 0
                 this.parentScrollTime = 0
-                await driver.swipe(X, Y + 50, X, Y - 50);
+                const pointStart:Point={
+                  x:X,y:Y+ 50,displayId:displayId
+                }
+                const pointEnd:Point={
+                  x:X,y:Y- 50,displayId:displayId
+                }
+                await driver.swipeBetween(pointStart,pointEnd);
                 Utils.emitEvent(this.parentScrollTime > 0 && this.selfScrollTime > 0, 179660)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
