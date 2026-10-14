@@ -27,6 +27,8 @@
     "hspOne": "file:../hspOne",
     "hspTwo": "file:../hspTwo",
     "sharedHarOne": "file:../sharedHarOne",
-    "sharedHspOne": "file:../sharedHspOne"
+    "sharedHspOne": "file:../sharedHspOne",
+    "static_module": "file:../staticModule",
+    "shared_module": "file:../sharedModule"
   }
 }
