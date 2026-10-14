@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,6 +34,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
 
+let displayID: Int = (AppStorage.get<number>('displayID') ?? 0).toInt();
+
 export default function AttributeModifierDemoAPI02Jsunit() {
   describe('AttributeModifierDemoAPI02Jsunit', () => {
     beforeEach(async (): Promise<void> => {
@@ -56,7 +59,6 @@ export default function AttributeModifierDemoAPI02Jsunit() {
       }
     });
 
-    
     /**
      * @tc.number   AttributeModifierDemoAPI02Jsunit_static_0100
      * @tc.name     AttributeModifierDemoAPI02Jsunit_static_0100
@@ -69,7 +71,7 @@ it('AttributeModifierDemoAPI02Jsunit_static_0100', Level.LEVEL0, async (done: ()
 
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049)
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(5000);
 
       let strcontent = inspector.getInspectorByKey('AttributeModifierDemoAPI02ButtonFocus');
