@@ -475,7 +475,8 @@ export default function verificationTest() {
         await sleep(2000);
         console.info(TAG + `UiDriver start`);
         let button = await driver1.findComponent(ON.text('允许').belongingDisplay(currentDisplayId));
-        if(button == null){
+        let button1 = await driver1.findComponent(ON.text('始终允许').belongingDisplay(currentDisplayId));
+        if(button == null && button1 ==null){
           console.info(TAG + "findComponent err , permission dialog is empty ");
           let cmd = "hidumper -s WindowManagerService -a'-a'";
           await abilityDelegator.executeShellCommand(cmd);
