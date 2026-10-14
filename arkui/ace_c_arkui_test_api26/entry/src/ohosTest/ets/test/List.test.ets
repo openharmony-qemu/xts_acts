@@ -57,6 +57,7 @@ import ArcSwiperEventCallbackTest from './arcSwiper/ArcSwiperEventCallbackTest.t
 import ArcAlphabetIndexerAttributeTest from './arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.test'
 import ArcAlphabetIndexerEventCallbackTest from './arcAlphabetIndexer/ArcAlphabetIndexerEventCallbackTest.test'
 import SetUiDvsyncSwitchTest from './node/SetUiDvsyncSwitchTest.test'
+import RuntimeCheckModeTest from './nativeModule/RuntimeCheckModeTest.test'
 import DragEventSummaryTest from './dragEventSummary/DragEventSummaryTest.test';
 
 export default function testsuite() {
@@ -106,4 +107,5 @@ export default function testsuite() {
   ArcSwiperEventCallbackTest()
   ArcAlphabetIndexerEventCallbackTest()
   DragEventSummaryTest()
+  RuntimeCheckModeTest()
 }
