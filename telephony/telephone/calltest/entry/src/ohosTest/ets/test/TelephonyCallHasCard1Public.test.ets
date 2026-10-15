@@ -21,10 +21,10 @@ import { Driver, MatchPattern, Component, ON } from '@ohos.UiTest';
 import account from '@ohos.account.osAccount';
 import bundlemanager from '@ohos.bundle.bundleManager';
 
-const rightPhone: string = "17301740854";
+const rightPhone: string = "178xxxxxxxx";
 const emptyStr: string = "";
 const errPhone: string = "125qqqq555";
-const emergencyPhone: string = "120";
+const emergencyPhone: string = "911";
 const specialPhone: string = "10086";
 
 const ExpectFail = () => {
