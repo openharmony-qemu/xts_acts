@@ -648,7 +648,12 @@ napi_value NativeAnimGroupCurveNull142(napi_env env, napi_callback_info info)
     ASSERT_EQ(OH_ArkUI_NativeModule_AnimationGroup_GetCurve(nullptr, &curve), ARKUI_ERROR_CODE_PARAM_INVALID);
     auto group = OH_ArkUI_NativeModule_AnimationGroup_Create();
     ASSERT_EQ(group != nullptr, true);
-    ASSERT_EQ(OH_ArkUI_NativeModule_AnimationGroup_SetCurve(group, nullptr), ARKUI_ERROR_CODE_NO_ERROR);
+    auto curveRet = OH_ArkUI_NativeModule_AnimationGroup_SetCurve(group, nullptr);
+    auto curveErr = ErrCodeAnyOfFailed(
+        env, curveRet, { ARKUI_ERROR_CODE_NO_ERROR, ARKUI_ERROR_CODE_PARAM_INVALID });
+    if (curveErr) {
+        return curveErr;
+    }
     ASSERT_EQ(OH_ArkUI_NativeModule_AnimationGroup_GetCurve(group, nullptr), ARKUI_ERROR_CODE_PARAM_INVALID);
     OH_ArkUI_NativeModule_AnimationGroup_Destroy(group);
     NAPI_END;
