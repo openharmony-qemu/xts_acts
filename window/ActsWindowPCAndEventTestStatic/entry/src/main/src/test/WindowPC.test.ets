@@ -359,7 +359,7 @@ export default function WindowPCTest() {
                         (subWin! as window.Window).recover().then(async () => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling recover.');
                             expect(false).assertTrue();
-                        }).catch((err: Error):Promise<void>  => {
+                        }).catch((err: Error): void  => {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call recover. Cause: ' + JSON.stringify(err));
                             expect(err!.code).assertEqual(1300002);
                         });
@@ -371,7 +371,7 @@ export default function WindowPCTest() {
                     }
                     })
                 })
-                .catch((err: Error):Promise<void> => {
+                .catch((err: Error): void  => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -396,7 +396,7 @@ export default function WindowPCTest() {
                 promise.then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
                     done();
-                }).catch((err: Error):Promise<void> => {
+                }).catch((err: Error): void  => {
                     if (err!.code === 801 || err!.code === 1300001) {
                         hilog.info(0x0000, '[ANI]',msgStr + ' The current device type does not support calling recover or recover not support ')
                         done();
