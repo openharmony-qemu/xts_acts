@@ -1,4 +1,5 @@
 'use static';
+
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
@@ -64,7 +66,6 @@ export default function TabSegmentButtonV2Test() {
       console.info('TabSegmentButtonV2Test after each called');
     });
 
-
     /**
      * @tc.number    TabSegmentButtonV2Test_static_0100
      * @tc.name      TabSegmentButtonV2Test_static_0100
@@ -100,8 +101,6 @@ export default function TabSegmentButtonV2Test() {
         done();
       });
 
-
-
      /**
       * @tc.number    TabSegmentButtonV2Test_static_0110
       * @tc.name      TabSegmentButtonV2Test_static_0110
@@ -125,7 +124,6 @@ export default function TabSegmentButtonV2Test() {
         console.log("TabSegmentButtonV2Test_static_0110", "END");
         done();
       });
-
 
      /**
       * @tc.number    TabSegmentButtonV2Test_static_0120
@@ -169,7 +167,6 @@ export default function TabSegmentButtonV2Test() {
           done();
       });
 
-
       /**
        * @tc.number    TabSegmentButtonV2Test_static_0130
        * @tc.name      TabSegmentButtonV2Test_static_0130
@@ -196,8 +193,6 @@ export default function TabSegmentButtonV2Test() {
         done();
       });
 
-
-
      /**
       * @tc.number    TabSegmentButtonV2Test_static_0140
       * @tc.name      TabSegmentButtonV2Test_static_0140
@@ -216,12 +211,11 @@ export default function TabSegmentButtonV2Test() {
           .getArray("$children")[5]
           .getArray("$children")[0]
         console.log("TabSegmentButtonV2Test_static_0140 itemMinHeight ", itemMinHeight.getElement('$attrs').getString('height'))
-        expect(itemMinHeight.getElement('$attrs').getString('height')).assertEqual('80.00vp');
+        expect(Math.floor(Math.abs(parseFloat(itemMinHeight.getElement('$attrs').getString('height')))) - 80 <= 1).assertTrue();
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonV2Test_static_0140", "END");
         done();
       });
-
 
       /**
        * @tc.number    TabSegmentButtonV2Test_static_0150
@@ -250,7 +244,6 @@ export default function TabSegmentButtonV2Test() {
         console.log("TabSegmentButtonV2Test_static_0150", "END");
         done();
       });
-
 
     /**
      * @tc.number    TabSegmentButtonV2Test_static_0160

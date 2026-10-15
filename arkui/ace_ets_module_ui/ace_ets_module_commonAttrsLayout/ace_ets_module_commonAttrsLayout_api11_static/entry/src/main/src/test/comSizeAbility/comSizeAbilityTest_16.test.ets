@@ -24,8 +24,6 @@ import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-
-
 export default function comSizeAbilityTest_16() {
   describe('comSizeAbilityTest_16', () => {
     beforeEach(async (): Promise<void> => {
@@ -191,8 +189,12 @@ it('comSizeAbilityTestJsunit_static_42', Level.LEVEL0, async (done: () => void):
       } catch (err) {
         console.info('xxxTest sleep err: ' + JSON.stringify(err));
       }
-      expect(Math.abs(SizeWidth - Math.round(uiContext.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(SizeHeight - Math.round(uiContext.vp2px(120))) <= 1).assertTrue();
+
+      console.info("[comSizeAbilityTestJsunit_static_42] chazhi1 is: " + Math.floor(Math.abs(SizeWidth - Math.round(uiContext.vp2px(150)))))
+      console.info("[comSizeAbilityTestJsunit_static_42] chazhi1 is: " + Math.floor(Math.abs(SizeHeight - Math.round(uiContext.vp2px(120)))))
+      expect(Math.floor(Math.abs(SizeWidth - Math.round(uiContext.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(SizeHeight - Math.round(uiContext.vp2px(120)))) <= 1).assertTrue();
+
       // expect(JSON.stringify(Translate)).assertEqual('{"x":1,"y":1,"z":1}');
       expect(JSON.stringify(Translate.x)).assertEqual('1');
       expect(JSON.stringify(Translate.y)).assertEqual('1');

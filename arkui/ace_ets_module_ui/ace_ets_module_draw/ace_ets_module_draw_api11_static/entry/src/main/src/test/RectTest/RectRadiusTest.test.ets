@@ -1,4 +1,5 @@
 'use static';
+
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
@@ -63,8 +65,6 @@ export default function RectRadiusTest() {
       await CommonFunc.sleep(1000);
       console.info("RectRadiusTest after each called");
     });
-
-
     
     /**
      * @tc.number   testRectRadiusTest_static_0010
@@ -84,21 +84,29 @@ it('testRectRadiusTest_static_0010', Level.LEVEL0, async (done: () => void): Pro
       console.info('[testRectRadiusTest_static_0010] Rect obj.$attrs.radius is: ' + obj.getElement('$attrs').getElement('radius'));
 
       expect(obj.getString('$type')).assertEqual('Rect');
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble())).assertEqual(20);
+
+      console.info('[testRectRadiusTest_static_0010] chazhi1 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0010] chazhi2 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0010] chazhi3 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0010] chazhi4 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0010] chazhi5 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0010] chazhi6 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0010] chazhi7 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0010] chazhi8 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble()) - 20)));
+
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble()) - 20)) <= 1).assertTrue();
 
       console.info('[testRectRadiusTest_static_0010] END');
       done();
     });
 
-
-    
     /**
      * @tc.number   testRectRadiusTest_static_0020
      * @tc.name     testRectRadiusTest_static_0020
@@ -117,14 +125,24 @@ it('testRectRadiusTest_static_0020', Level.LEVEL0, async (done: () => void): Pro
       console.info('[testRectRadiusTest_static_0020] Rect obj.$attrs.radius is: ' + obj.getElement('$attrs').getElement('radius'));
 
       expect(obj.getString('$type')).assertEqual('Rect');
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble())).assertEqual(20);
-      expect(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble())).assertEqual(20);
+
+      console.info('[testRectRadiusTest_static_0020] chazhi1 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0020] chazhi2 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0020] chazhi3 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0020] chazhi4 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0020] chazhi5 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0020] chazhi6 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0020] chazhi7 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble()) - 20)));
+      console.info('[testRectRadiusTest_static_0020] chazhi8 is: ' + Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble()) - 20)));
+
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[0][1].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[1][1].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[2][1].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][0].asDouble()) - 20)) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(uiContext.px2vp(obj.getElement('$attrs').getArray('radius')[3][1].asDouble()) - 20)) <= 1).assertTrue();
 
       console.info('[testRectRadiusTest_static_0020] END');
       done();

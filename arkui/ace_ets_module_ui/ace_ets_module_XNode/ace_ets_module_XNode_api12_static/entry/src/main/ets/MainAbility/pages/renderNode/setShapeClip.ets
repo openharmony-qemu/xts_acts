@@ -1,6 +1,7 @@
 'use static';
+
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -60,10 +61,13 @@ struct SetShapeClip {
   @State myShapeClip: string = 'Init'
 
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column({ space: 3 } as ColumnOptions) {
       NodeContainer(this.myNodeController)
         .borderWidth(1)
+        .height('40%')
       TextArea({ text:'Set and Get ShapeClip:' + this.myShapeClip})
+        .height('15%')
+        .width('80%')
       Button(this.myShapeClip).id('SetShapeClip_id')
         .onClick((e:ClickEvent) => {
           shapeClip.setRectShape({
@@ -76,6 +80,7 @@ struct SetShapeClip {
           this.myShapeClip = "" + JSON.stringify(renderNode.shapeClip)
           console.log('+++++++++++++++',JSON.stringify(renderNode.shapeClip)) //值是rect\":{\"top\":0,\"left\":0,\"right\":150,\"bottom\":150},
         })
+        .height('3%')
       Button('setRoundRectShape')
         .onClick((e:ClickEvent) => {
           renderNode.shapeClip.setRoundRectShape({
@@ -94,12 +99,13 @@ struct SetShapeClip {
           });
           renderNode.shapeClip = renderNode.shapeClip;
         })
+        .height('3%')
       Button('setCircleShape')
         .onClick((e:ClickEvent) => {
           renderNode.shapeClip.setCircleShape({ centerY: 75, centerX: 75, radius: 75 });
           renderNode.shapeClip = renderNode.shapeClip;
-
         })
+        .height('3%')
       Button('setOvalShape')
         .onClick((e:ClickEvent) => {
           renderNode.shapeClip.setOvalShape({
@@ -110,11 +116,13 @@ struct SetShapeClip {
           });
           renderNode.shapeClip = renderNode.shapeClip;
         })
+        .height('3%')
       Button('setCommandPath')
         .onClick((e:ClickEvent) => {
           renderNode.shapeClip.setCommandPath({ commands: 'M100 0 L0 100 L50 200 L150 200 L200 100 Z' });
           renderNode.shapeClip = renderNode.shapeClip;
         })
-    }
+        .height('3%')
+    }.width('100%').height('100%')
   }
 }
