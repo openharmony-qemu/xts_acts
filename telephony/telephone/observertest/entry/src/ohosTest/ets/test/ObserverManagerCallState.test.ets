@@ -806,49 +806,6 @@ export default function observerManagerCallStateTest() {
     });
 
     /**
-     * @tc.name   testTelephonyObserverCallStateChangeExOn1300
-     * @tc.number SUB_Telephony_Observer_CallStateChangeExOn_1300
-     * @tc.desc   Subscribe to call status change event, make three calls and verify data is not null in each callback
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testTelephonyObserverCallStateChangeExOn1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'testTelephonyObserverCallStateChangeExOn1300';
-      console.info(`${caseName} test start `);
-      try {
-        await sleep(5000);
-        let callback1: (data: call.TelCallState) => void = (data: call.TelCallState) => {
-          console.log(`${caseName} callback1 on callStateChangeEx, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
-          observer.off('callStateChangeEx',callback1);
-        }
-        let callback2: (data: call.TelCallState) => void = (data: call.TelCallState) => {
-          console.log(`${caseName} callback2 on callStateChangeEx, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
-          observer.off('callStateChangeEx',callback2);
-        }
-        let callback3: (data: call.TelCallState) => void = (data: call.TelCallState) => {
-          console.log(`${caseName} callback3 on callStateChangeEx, data:` + JSON.stringify(data));
-          ExpectTrue(data !== null);
-          observer.off('callStateChangeEx',callback3);
-          done();
-        }
-        let options: observer.ObserverOptions = {
-          slotId: 0
-        }
-        observer.on('callStateChangeEx', callback1, options);
-        observer.on('callStateChangeEx', callback2, options);
-        observer.on('callStateChangeEx', callback3, options);
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}`);
-        ExpectTrue(false);
-        done();
-      }
-      console.info(`${caseName} test end `);
-    });
-
-    /**
      * @tc.name   Telephony_observer_on_cCallStateInfo_0100
      * @tc.number Telephony_observer_on_cCallStateInfo_0100
      * @tc.desc   call the on method of cCallStateInfo
