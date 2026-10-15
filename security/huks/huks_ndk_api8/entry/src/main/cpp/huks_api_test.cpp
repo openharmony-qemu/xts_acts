@@ -107,6 +107,7 @@ napi_value OHHuksNativeApi22Type0400(napi_env env, napi_callback_info info)
         (OH_HUKS_TAG_KEY_OVERRIDE == (OH_HUKS_TAG_TYPE_BOOL | 520)) &&
         (OH_HUKS_TAG_AE_TAG_LEN == (OH_HUKS_TAG_TYPE_UINT | 521)) &&
         (OH_HUKS_TAG_KEY_CLASS == (OH_HUKS_TAG_TYPE_UINT | 522)) &&
+        (OH_HUKS_TAG_TIMEOUT == (OH_HUKS_TAG_TYPE_UINT | 529)) &&
         (OH_HUKS_TAG_KEY_ACCESS_GROUP == (OH_HUKS_TAG_TYPE_BYTES | 523)) &&
         (OH_HUKS_TAG_IS_KEY_ALIAS == (OH_HUKS_TAG_TYPE_BOOL | 1001)) &&
         (OH_HUKS_TAG_KEY_STORAGE_FLAG == (OH_HUKS_TAG_TYPE_UINT | 1002)) &&
