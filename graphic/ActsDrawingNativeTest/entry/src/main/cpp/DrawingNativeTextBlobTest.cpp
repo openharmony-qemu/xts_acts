@@ -18,15 +18,15 @@
 #include "include/OhosCommonTest.h"
 #include "log_common.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_2 2
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_4 4
-#define DRAWING_NUMBER_6 6
-#define DRAWING_NUMBER_9 9
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_16 16
-#define DRAWING_NUMBER_100 100
+#define NUMBER_1 1
+#define NUMBER_2 2
+#define NUMBER_3 3
+#define NUMBER_4 4
+#define NUMBER_6 6
+#define NUMBER_9 9
+#define NUMBER_10 10
+#define NUMBER_16 16
+#define NUMBER_100 100
 
 namespace OHOS {
 namespace Rosen {
@@ -83,21 +83,21 @@ int TestTextBlobBuilderCreateDestroyNull()
 int TestTextBlobBuilderCreateDestroyMultipleCalls()
 {
     DrawingNativeTextBlobTestSetUp();
-    OH_Drawing_TextBlobBuilder *builders[DRAWING_NUMBER_10];
+    OH_Drawing_TextBlobBuilder *builders[NUMBER_10];
     // 1. Call OH_Drawing_TextBlobBuilderCreate 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         builders[i] = OH_Drawing_TextBlobBuilderCreate();
         EXPECT_NE(nullptr, builders[i]);
     }
     // 2. Call OH_Drawing_TextBlobBuilderDestroy 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         if (0) {
             // todo cpp crash
             OH_Drawing_TextBlobBuilderDestroy(builders[i]);
         }
     }
     // 3. Call OH_Drawing_TextBlobBuilderCreate and OH_Drawing_TextBlobBuilderDestroy alternately 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
         EXPECT_NE(nullptr, builder);
         if (0) {
@@ -117,7 +117,7 @@ int TestTextBlobCreateFromTextNormal()
     // 1. Traverse the enumeration values of OH_Drawing_TextEncoding and use OH_Drawing_CanvasDrawTextBlob in
     // combination
     const char *str = "123456";
-    char16_t c[] = {DRAWING_NUMBER_1, DRAWING_NUMBER_2, DRAWING_NUMBER_3};
+    char16_t c[] = {NUMBER_1, NUMBER_2, NUMBER_3};
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_Typeface *typeSurface = OH_Drawing_TypefaceCreateDefault();
@@ -132,9 +132,9 @@ int TestTextBlobCreateFromTextNormal()
         if (encode == TEXT_ENCODING_UTF8) {
             byteLength = strlen(str);
         } else if (encode == TEXT_ENCODING_UTF32) {
-            byteLength = strlen(str) * DRAWING_NUMBER_4;
+            byteLength = strlen(str) * NUMBER_4;
         } else if (encode == TEXT_ENCODING_GLYPH_ID) {
-            byteLength = strlen(str) * DRAWING_NUMBER_16;
+            byteLength = strlen(str) * NUMBER_16;
         }
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromText(str, byteLength, font, encode);
         // add assert
@@ -144,7 +144,7 @@ int TestTextBlobCreateFromTextNormal()
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     }
-    OH_Drawing_TextBlob *textBlob2 = OH_Drawing_TextBlobCreateFromText(c, DRAWING_NUMBER_6, font, TEXT_ENCODING_UTF16);
+    OH_Drawing_TextBlob *textBlob2 = OH_Drawing_TextBlobCreateFromText(c, NUMBER_6, font, TEXT_ENCODING_UTF16);
     // add assert
     EXPECT_NE(textBlob2, nullptr);
     OH_Drawing_ErrorCodeReset();
@@ -182,7 +182,7 @@ int TestTextBlobCreateFromTextNull()
     OH_Drawing_TextBlob *textBlob3 = OH_Drawing_TextBlobCreateFromText(str, strlen(str), nullptr, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 4. OH_Drawing_TextBlobCreateFromText with the first parameter being a string
-    OH_Drawing_TextBlob *textBlob4 = OH_Drawing_TextBlobCreateFromText("123456", DRAWING_NUMBER_6, font,
+    OH_Drawing_TextBlob *textBlob4 = OH_Drawing_TextBlobCreateFromText("123456", NUMBER_6, font,
         TEXT_ENCODING_UTF8);
     // 5. Free memory
     OH_Drawing_FontDestroy(font);
@@ -212,8 +212,8 @@ int TestTextBlobCreateFromTextMultipleCalls()
     // 1. Call OH_Drawing_TextBlobCreateFromText 10 times (passing in different types of strings with different lengths,
     // such as Chinese, English, special characters, numbers, traditional Chinese characters, etc.) and use
     // OH_Drawing_CanvasDrawTextBlob in combination
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const char *str = strs[i % DRAWING_NUMBER_6];
+    for (int i = 0; i < NUMBER_10; i++) {
+        const char *str = strs[i % NUMBER_6];
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromText(str, strlen(str), font, TEXT_ENCODING_UTF8);
         // add assert
         EXPECT_NE(textBlob, nullptr);
@@ -242,7 +242,7 @@ int TestTextBlobCreateFromTextAbnormal()
     // with OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromText(str, strlen(str), font, static_cast<OH_Drawing_TextEncoding>(
-            -DRAWING_NUMBER_1));
+            -NUMBER_1));
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
@@ -306,7 +306,7 @@ int TestTextBlobCreateFromPosTextNull()
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_TextBlobCreateFromPosText with the first parameter being a string
-    textblob = OH_Drawing_TextBlobCreateFromPosText("123456", DRAWING_NUMBER_6, &pts[0], font, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText("123456", NUMBER_6, &pts[0], font, TEXT_ENCODING_UTF8);
     // 5. OH_Drawing_TextBlobCreateFromPosText with the fourth parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
     textblob = OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], nullptr, TEXT_ENCODING_UTF8);
@@ -334,8 +334,8 @@ int TestTextBlobCreateFromPosTextMultipleCalls()
     // 1. Call OH_Drawing_TextBlobCreateFromPosText 10 times (passing in different types of strings with different
     // lengths, such as Chinese, English, special characters, numbers, traditional Chinese characters, etc.) and use
     // OH_Drawing_CanvasDrawTextBlob in combination
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const char *str = strs[i % DRAWING_NUMBER_6];
+    for (int i = 0; i < NUMBER_10; i++) {
+        const char *str = strs[i % NUMBER_6];
         int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
         OH_Drawing_Point2D pts[count];
         OH_Drawing_TextBlob* textblob =
@@ -368,7 +368,7 @@ int TestTextBlobCreateFromPosTextAbnormal()
     // code with OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob* textblob =
         OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, static_cast<OH_Drawing_TextEncoding>(
-            -DRAWING_NUMBER_1));
+            -NUMBER_1));
     EXPECT_EQ(textblob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
@@ -420,7 +420,7 @@ int TestTextBlobCreateFromStringNormal()
     OH_Drawing_TextBlobDestroy(textBlobUtf32);
     // 4. GLYPH_ID: convert UTF-8 text to glyph IDs, then create text blob with explicit byte length
     int glyphCount = OH_Drawing_FontCountText(font, strUtf8, strlen(strUtf8), TEXT_ENCODING_UTF8);
-    uint16_t glyphs[DRAWING_NUMBER_10] = {0};
+    uint16_t glyphs[NUMBER_10] = {0};
     OH_Drawing_FontTextToGlyphs(font, strUtf8, strlen(strUtf8), TEXT_ENCODING_UTF8, glyphs, glyphCount);
     size_t glyphByteLen = static_cast<size_t>(glyphCount) * sizeof(uint16_t);
     OH_Drawing_TextBlob *textBlobGlyph =
@@ -487,8 +487,8 @@ int TestTextBlobCreateFromStringMultipleCalls()
     // 1. Call OH_Drawing_TextBlobCreateFromString 10 times (passing in strings of different lengths and types, such as
     // Chinese, English, special characters, numbers, traditional Chinese characters, etc.) and use
     // OH_Drawing_CanvasDrawTextBlob in combination
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const char *str = strs[i % DRAWING_NUMBER_6];
+    for (int i = 0; i < NUMBER_10; i++) {
+        const char *str = strs[i % NUMBER_6];
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
         EXPECT_NE(textBlob, nullptr);
         OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -519,7 +519,7 @@ int TestTextBlobCreateFromStringAbnormal()
     // 1. Call OH_Drawing_TextBlobCreateFromString interface with OH_Drawing_TextEncoding out of range, check the error
     // code with OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob *textBlob =
-        OH_Drawing_TextBlobCreateFromString(str, font, static_cast<OH_Drawing_TextEncoding>(-DRAWING_NUMBER_1));
+        OH_Drawing_TextBlobCreateFromString(str, font, static_cast<OH_Drawing_TextEncoding>(-NUMBER_1));
     EXPECT_EQ(textBlob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
@@ -597,8 +597,8 @@ int TestTextBlobGetBoundsMultipleCalls()
     const char *strs[] = {
         "Hello World", "你好世界", "Hello 世界", "Hello 世界123", "Hello $#@!", "繁體中文",
     };
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const char *str = strs[i % DRAWING_NUMBER_6];
+    for (int i = 0; i < NUMBER_10; i++) {
+        const char *str = strs[i % NUMBER_6];
         OH_Drawing_TextBlob *textBlob =
             OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
         EXPECT_NE(textBlob, nullptr);
@@ -619,8 +619,8 @@ int TestTextBlobGetBoundsAbnormal()
 {
     DrawingNativeTextBlobTestSetUp();
     // 1. Create OH_Drawing_TextBlob and OH_Drawing_Rect
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(-DRAWING_NUMBER_1, -DRAWING_NUMBER_1, -DRAWING_NUMBER_1,
-        -DRAWING_NUMBER_1);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(-NUMBER_1, -NUMBER_1, -NUMBER_1,
+        -NUMBER_1);
     EXPECT_NE(rect, nullptr);
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
@@ -695,8 +695,8 @@ int TestTextBlobUniqueIDMultipleCalls()
     };
     // 2. Call OH_Drawing_TextBlobUniqueID 10 times (passing in strings of different lengths and types, such as Chinese,
     // English, special characters, numbers, traditional Chinese characters, etc.)
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const char *str = strs[i % DRAWING_NUMBER_6];
+    for (int i = 0; i < NUMBER_10; i++) {
+        const char *str = strs[i % NUMBER_6];
         OH_Drawing_TextBlob *textBlob =
             OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
         EXPECT_NE(textBlob, nullptr);
@@ -723,8 +723,7 @@ int TestTextBlobBuilderAllocRunPosNormal()
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
     EXPECT_NE(builder, nullptr);
     // 2. OH_Drawing_TextBlobBuilderAllocRunPos
-    const OH_Drawing_RunBuffer *runBuffer =
-        OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9, rect);
+    const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, NUMBER_9, rect);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_NE(runBuffer, nullptr);
@@ -749,13 +748,13 @@ int TestTextBlobBuilderAllocRunPosNull()
     // 2. Call OH_Drawing_TextBlobBuilderAllocRunPos with the first parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
     const OH_Drawing_RunBuffer *runBuffer =
-        OH_Drawing_TextBlobBuilderAllocRunPos(nullptr, font, DRAWING_NUMBER_9, rect);
+        OH_Drawing_TextBlobBuilderAllocRunPos(nullptr, font, NUMBER_9, rect);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(runBuffer, nullptr);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_TextBlobBuilderAllocRunPos with the second parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
-    runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, nullptr, DRAWING_NUMBER_9, rect);
+    runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, nullptr, NUMBER_9, rect);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     EXPECT_EQ(runBuffer, nullptr);
     OH_Drawing_ErrorCodeReset();
@@ -767,7 +766,7 @@ int TestTextBlobBuilderAllocRunPosNull()
     OH_Drawing_ErrorCodeReset();
     // 5. Call OH_Drawing_TextBlobBuilderAllocRunPos with the fourth parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
-    runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9, nullptr);
+    runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, NUMBER_9, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     EXPECT_NE(runBuffer, nullptr);
     // 6. Free memory
@@ -788,15 +787,13 @@ int TestTextBlobBuilderAllocRunPosMultipleCalls()
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
     EXPECT_NE(builder, nullptr);
     // 1. Call OH_Drawing_TextBlobBuilderAllocRunPos 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9,
-            rect);
+    for (int i = 0; i < NUMBER_10; i++) {
+        const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, NUMBER_9, rect);
         EXPECT_NE(runBuffer, nullptr);
     }
     // 2. Call OH_Drawing_TextBlobBuilderMake and then call OH_Drawing_TextBlobBuilderAllocRunPos again
     OH_Drawing_TextBlobBuilderMake(builder);
-    const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, DRAWING_NUMBER_9, rect)
-        ;
+    const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, NUMBER_9, rect);
     EXPECT_NE(runBuffer, nullptr);
     // 3. Free memory
     OH_Drawing_RectDestroy(rect);
@@ -851,7 +848,7 @@ int TestTextBlobBuilderMakeMultipleCalls()
     // add assert
     EXPECT_NE(builder, nullptr);
     // 2. Call OH_Drawing_TextBlobBuilderMake 10 times
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobBuilderMake(builder);
         // add assert
         EXPECT_EQ(textBlob, nullptr);
@@ -994,12 +991,12 @@ int TestTextBlobCreateFromTextWithFallbackAbnormal()
     uint32_t textBlobsCount = 0;
     // 1. Pass an out-of-range enum value as the fourth parameter (encoding)
     OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromTextWithFallback(
-        utf8Text, strlen(utf8Text), font, static_cast<OH_Drawing_TextEncoding>(DRAWING_NUMBER_100),
+        utf8Text, strlen(utf8Text), font, static_cast<OH_Drawing_TextEncoding>(NUMBER_100),
         &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Pass a negative number as the fourth parameter (encoding)
     errorCode = OH_Drawing_TextBlobCreateFromTextWithFallback(
-        utf8Text, strlen(utf8Text), font, static_cast<OH_Drawing_TextEncoding>(-DRAWING_NUMBER_1),
+        utf8Text, strlen(utf8Text), font, static_cast<OH_Drawing_TextEncoding>(-NUMBER_1),
         &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     OH_Drawing_TypefaceDestroy(typeface);
@@ -1016,7 +1013,7 @@ int TestTextBlobCreateFromTextWithFallbackMultipleCalls()
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateDefault();
     OH_Drawing_FontSetTypeface(font, typeface);
     const char utf8Text[] = "Hello 你好";
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_TextBlob **textBlobs = nullptr;
         uint32_t textBlobsCount = 0;
         OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromTextWithFallback(
@@ -1150,12 +1147,12 @@ int TestTextBlobCreateFromPosTextWithFallbackAbnormal()
     uint32_t textBlobsCount = 0;
     // 1. Pass an out-of-range enum value as the fifth parameter (encoding)
     OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(
-        utf8Text, strlen(utf8Text), pts, font, static_cast<OH_Drawing_TextEncoding>(DRAWING_NUMBER_100),
+        utf8Text, strlen(utf8Text), pts, font, static_cast<OH_Drawing_TextEncoding>(NUMBER_100),
         &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Pass a negative number as the fifth parameter (encoding)
     errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(
-        utf8Text, strlen(utf8Text), pts, font, static_cast<OH_Drawing_TextEncoding>(-DRAWING_NUMBER_1),
+        utf8Text, strlen(utf8Text), pts, font, static_cast<OH_Drawing_TextEncoding>(-NUMBER_1),
         &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     delete[] pts;
@@ -1175,7 +1172,7 @@ int TestTextBlobCreateFromPosTextWithFallbackMultipleCalls()
     const char utf8Text[] = "Hello 你好";
     int count = OH_Drawing_FontCountText(font, utf8Text, strlen(utf8Text), TEXT_ENCODING_UTF8);
     OH_Drawing_Point2D *pts = new OH_Drawing_Point2D[count];
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_TextBlob **textBlobs = nullptr;
         uint32_t textBlobsCount = 0;
         OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromPosTextWithFallback(
@@ -1229,7 +1226,7 @@ int TestTextBlobCreateFromStringWithFallbackNormal()
     OH_Drawing_TextBlobsArrayDestroy(textBlobs, textBlobsCount);
     // 4. GLYPH_ID: convert UTF-8 text to glyph IDs, then create text blob
     int glyphCount = OH_Drawing_FontCountText(font, strUtf8, strlen(strUtf8), TEXT_ENCODING_UTF8);
-    uint16_t glyphs[DRAWING_NUMBER_10] = {0};
+    uint16_t glyphs[NUMBER_10] = {0};
     OH_Drawing_FontTextToGlyphs(font, strUtf8, strlen(strUtf8), TEXT_ENCODING_UTF8, glyphs, glyphCount);
     size_t glyphByteLen = static_cast<size_t>(glyphCount) * sizeof(uint16_t);
     textBlobs = nullptr;
@@ -1289,11 +1286,11 @@ int TestTextBlobCreateFromStringWithFallbackAbnormal()
     uint32_t textBlobsCount = 0;
     // 1. Pass an out-of-range enum value as the third parameter (encoding)
     OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromStringWithFallback(
-        str, font, static_cast<OH_Drawing_TextEncoding>(DRAWING_NUMBER_100), &textBlobs, &textBlobsCount);
+        str, font, static_cast<OH_Drawing_TextEncoding>(NUMBER_100), &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Pass a negative number as the third parameter (encoding)
     errorCode = OH_Drawing_TextBlobCreateFromStringWithFallback(
-        str, font, static_cast<OH_Drawing_TextEncoding>(-DRAWING_NUMBER_1), &textBlobs, &textBlobsCount);
+        str, font, static_cast<OH_Drawing_TextEncoding>(-NUMBER_1), &textBlobs, &textBlobsCount);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     OH_Drawing_TypefaceDestroy(typeface);
     OH_Drawing_FontDestroy(font);
@@ -1311,7 +1308,7 @@ int TestTextBlobCreateFromStringWithFallbackMultipleCalls()
     const char *str = "123456";
     OH_Drawing_TextBlob **textBlobs = nullptr;
     uint32_t textBlobsCount = 0;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromStringWithFallback(
             str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8, &textBlobs, &textBlobsCount);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1358,7 +1355,7 @@ int TestTextBlobsArrayDestroyMultipleCalls()
     OH_Drawing_Typeface *typeface = OH_Drawing_TypefaceCreateDefault();
     OH_Drawing_FontSetTypeface(font, typeface);
     const char *str = "123456";
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_TextBlob **textBlobs = nullptr;
         uint32_t textBlobsCount = 0;
         OH_Drawing_ErrorCode errorCode = OH_Drawing_TextBlobCreateFromStringWithFallback(

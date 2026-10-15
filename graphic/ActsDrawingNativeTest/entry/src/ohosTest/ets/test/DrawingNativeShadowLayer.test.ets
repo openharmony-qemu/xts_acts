@@ -43,7 +43,7 @@ export default function DrawingNativeShadowLayerTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testShadowLayerCreateNormal', Level.LEVEL0, () => {
+    it('testShadowLayerCreateNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingShadowLayer(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeShadowLayerTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testShadowLayerCreateNull', Level.LEVEL3, () => {
+    it('testShadowLayerCreateNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingShadowLayer(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeShadowLayerTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testShadowLayerCreateAbnormal', Level.LEVEL3, () => {
+    it('testShadowLayerCreateAbnormal', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingShadowLayer(2);
       expect(result).assertEqual(0);
     })
@@ -82,7 +82,7 @@ export default function DrawingNativeShadowLayerTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testShadowLayerCreateMaximum', Level.LEVEL3, () => {
+    it('testShadowLayerCreateMaximum', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingShadowLayer(3);
       expect(result).assertEqual(0);
     })
@@ -95,7 +95,7 @@ export default function DrawingNativeShadowLayerTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testShadowLayerCreateMultipleCalls', Level.LEVEL3, () => {
+    it('testShadowLayerCreateMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingShadowLayer(4);
       expect(result).assertEqual(0);
     })
@@ -108,7 +108,7 @@ export default function DrawingNativeShadowLayerTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testShadowLayerDestroyNormal', Level.LEVEL0, () => {
+    it('testShadowLayerDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingShadowLayer(5);
       expect(result).assertEqual(0);
     })
@@ -121,7 +121,7 @@ export default function DrawingNativeShadowLayerTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testShadowLayerDestroyNull', Level.LEVEL3, () => {
+    it('testShadowLayerDestroyNull', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingShadowLayer(6);
       expect(result).assertEqual(0);
     })

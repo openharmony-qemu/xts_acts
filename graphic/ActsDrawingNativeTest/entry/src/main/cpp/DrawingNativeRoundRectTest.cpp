@@ -19,12 +19,12 @@
 #include "include/DrawingNativeScalarCommonTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_1 1
-#define DRAWING_NUMBER_3 3
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_20 20
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_19937 19937
+#define NUMBER_1 1
+#define NUMBER_3 3
+#define NUMBER_10 10
+#define NUMBER_20 20
+#define NUMBER_100 100
+#define NUMBER_19937 19937
 
 namespace OHOS {
 namespace Rosen {
@@ -48,10 +48,10 @@ int TestRoundRectCreateNormal()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // add assert
@@ -68,17 +68,17 @@ int TestRoundRectCreateNull()
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(nullptr, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(nullptr, NUMBER_20, NUMBER_20);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 2. OH_Drawing_RoundRectCreate with 0 as the second parameter
-    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, 0, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, 0, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect2, nullptr);
     // 3. OH_Drawing_RoundRectCreate with 0 as the third parameter
-    OH_Drawing_RoundRect *roundRect3 = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, 0);
+    OH_Drawing_RoundRect *roundRect3 = OH_Drawing_RoundRectCreate(rect, NUMBER_20, 0);
     // add assert
     EXPECT_NE(roundRect3, nullptr);
     // 4. Free memory
@@ -93,17 +93,17 @@ int TestRoundRectCreateNull()
 int TestRoundRectCreateAbnormal()
 {
     DrawingNativeRoundRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 1. OH_Drawing_RoundRectCreate with a negative value for the second parameter xRad
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, -DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, -NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. OH_Drawing_RoundRectCreate with a negative value for the third parameter yRad
-    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, -DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, NUMBER_20, -NUMBER_20);
     // add assert
     EXPECT_NE(roundRect2, nullptr);
     // add assert
@@ -119,17 +119,17 @@ int TestRoundRectCreateAbnormal()
 int TestRoundRectCreateMaximum()
 {
     DrawingNativeRoundRectTestSetUp();
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     // 1. OH_Drawing_RoundRectCreate with the second parameter xRad as the maximum value
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, FLT_MAX, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, FLT_MAX, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. OH_Drawing_RoundRectCreate with the third parameter yRad as the maximum value
-    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, FLT_MAX);
+    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, NUMBER_20, FLT_MAX);
     // add assert
     EXPECT_NE(roundRect2, nullptr);
     // add assert
@@ -146,9 +146,9 @@ int TestRoundRectCreateMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. Call OH_Drawing_RoundRectCreate 10 times
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
-        OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
+        OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
         EXPECT_NE(roundRect, nullptr);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
@@ -162,10 +162,10 @@ int TestRoundRectSetGetCornerNormal()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 2. Enumerate OH_Drawing_RoundRectSetCorner and OH_Drawing_RoundRectGetCorner with OH_Drawing_CornerPos values
@@ -176,23 +176,23 @@ int TestRoundRectSetGetCornerNormal()
         CORNER_POS_BOTTOM_LEFT,
     };
     for (OH_Drawing_CornerPos pos : posArray) {
-        OH_Drawing_RoundRectSetCorner(roundRect, pos, {DRAWING_NUMBER_10, DRAWING_NUMBER_10});
+        OH_Drawing_RoundRectSetCorner(roundRect, pos, {NUMBER_10, NUMBER_10});
         OH_Drawing_Corner_Radii radii = OH_Drawing_RoundRectGetCorner(roundRect, pos);
-        EXPECT_EQ(IsScalarAlmostEqual(radii.x, DRAWING_NUMBER_10), true);
-        EXPECT_EQ(IsScalarAlmostEqual(radii.y, DRAWING_NUMBER_10), true);
+        EXPECT_EQ(IsScalarAlmostEqual(radii.x, NUMBER_10), true);
+        EXPECT_EQ(IsScalarAlmostEqual(radii.y, NUMBER_10), true);
     }
     // 3. OH_Drawing_RoundRectSetCorner with integer values for x and y radii, and call OH_Drawing_RoundRectGetCorner to
     // retrieve the values
-    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {DRAWING_NUMBER_10, DRAWING_NUMBER_10});
+    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {NUMBER_10, NUMBER_10});
     OH_Drawing_Corner_Radii radii = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radii.x, DRAWING_NUMBER_10), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radii.y, DRAWING_NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii.x, NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii.y, NUMBER_10), true);
     // 4. OH_Drawing_RoundRectSetCorner with decimal values for x and y radii, and call OH_Drawing_RoundRectGetCorner to
     // retrieve the values
     OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {10.1f, 10.1f});
-    OH_Drawing_Corner_Radii radiiDRAWING_NUMBER_2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.x, 10.1f), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.y, 10.1f), true);
+    OH_Drawing_Corner_Radii radii2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.x, 10.1f), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.y, 10.1f), true);
     // 5. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
@@ -204,15 +204,15 @@ int TestRoundRectSetGetCornerNull()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 2. OH_Drawing_RoundRectSetCorner with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_RoundRectSetCorner(nullptr, CORNER_POS_TOP_LEFT, {DRAWING_NUMBER_10, DRAWING_NUMBER_10});
+    OH_Drawing_RoundRectSetCorner(nullptr, CORNER_POS_TOP_LEFT, {NUMBER_10, NUMBER_10});
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_RoundRectSetCorner with 0 as the third parameter
@@ -232,24 +232,24 @@ int TestRoundRectSetGetCornerAbnormal()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 2. OH_Drawing_RoundRectSetCorner with negative value for x-axis in OH_Drawing_Corner_Radii, followed by
     // OH_Drawing_RoundRectGetCorner
-    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {-DRAWING_NUMBER_10, DRAWING_NUMBER_10});
+    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {-NUMBER_10, NUMBER_10});
     OH_Drawing_Corner_Radii radii = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radii.x, -DRAWING_NUMBER_10), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radii.y, DRAWING_NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii.x, -NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii.y, NUMBER_10), true);
     // 3. OH_Drawing_RoundRectSetCorner with negative value for y-axis in OH_Drawing_Corner_Radii, followed by
     // OH_Drawing_RoundRectGetCorner
-    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {DRAWING_NUMBER_10, -DRAWING_NUMBER_10});
-    OH_Drawing_Corner_Radii radiiDRAWING_NUMBER_2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.x, DRAWING_NUMBER_10), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.y, -DRAWING_NUMBER_10), true);
+    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {NUMBER_10, -NUMBER_10});
+    OH_Drawing_Corner_Radii radii2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.x, NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.y, -NUMBER_10), true);
     // 4. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
@@ -261,24 +261,24 @@ int TestRoundRectSetGetCornerMaximum()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 2. Call OH_Drawing_RoundRectSetCorner with the maximum value for the x-axis in OH_Drawing_Corner_Radii, followed
     // by OH_Drawing_RoundRectGetCorner
-    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {FLT_MAX, DRAWING_NUMBER_10});
+    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {FLT_MAX, NUMBER_10});
     OH_Drawing_Corner_Radii radii = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
     EXPECT_EQ(IsScalarAlmostEqual(radii.x, FLT_MAX), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radii.y, DRAWING_NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii.y, NUMBER_10), true);
     // 3. Call OH_Drawing_RoundRectSetCorner with the maximum value for the y-axis in OH_Drawing_Corner_Radii, followed
     // by OH_Drawing_RoundRectGetCorner
-    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {DRAWING_NUMBER_10, FLT_MAX});
-    OH_Drawing_Corner_Radii radiiDRAWING_NUMBER_2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.x, DRAWING_NUMBER_10), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radiiDRAWING_NUMBER_2.y, FLT_MAX), true);
+    OH_Drawing_RoundRectSetCorner(roundRect, CORNER_POS_TOP_LEFT, {NUMBER_10, FLT_MAX});
+    OH_Drawing_Corner_Radii radii2 = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.x, NUMBER_10), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii2.y, FLT_MAX), true);
     // 4. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
@@ -290,19 +290,19 @@ int TestRoundRectSetGetCornerMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // 2. OH_Drawing_RoundRectSetCorner (pass random values for x-axis and y-axis radii, and a random enum value for
     // OH_Drawing_CornerPos), followed by calling OH_Drawing_RoundRectGetCorner
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_100);
-    std::uniform_int_distribution<int> dis2(0, DRAWING_NUMBER_3);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_real_distribution<float> dis(0, NUMBER_100);
+    std::uniform_int_distribution<int> dis2(0, NUMBER_3);
+    for (int i = 0; i < NUMBER_10; i++) {
         float x = dis(gen);
         float y = dis(gen);
         OH_Drawing_CornerPos pos = static_cast<OH_Drawing_CornerPos>(dis2(gen));
@@ -322,18 +322,18 @@ int TestRoundRectGetCornerWhenNoSet()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. Call OH_Drawing_RoundRectGetCorner directly
     OH_Drawing_Corner_Radii radii = OH_Drawing_RoundRectGetCorner(roundRect, CORNER_POS_TOP_LEFT);
-    EXPECT_EQ(IsScalarAlmostEqual(radii.x, DRAWING_NUMBER_20), true);
-    EXPECT_EQ(IsScalarAlmostEqual(radii.y, DRAWING_NUMBER_20), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii.x, NUMBER_20), true);
+    EXPECT_EQ(IsScalarAlmostEqual(radii.y, NUMBER_20), true);
     // 3. Free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
@@ -345,12 +345,12 @@ int TestRoundRectDestroyNormal()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. OH_Drawing_RoundRectCreate
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // add assert
@@ -377,31 +377,31 @@ int TestRoundRectOffsetNormal()
 {
     DrawingNativeRoundRectTestSetUp();
     //1. OH_Drawing_RoundRectCreate with the second parameter as integar values
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     //2. OH_Drawing_RoundRectCreate with the second parameter as floating-point values
-    OH_Drawing_RoundRect *roundRect1 = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect1 = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect1, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     //3. OH_Drawing_RoundRectCreate with the first parameter as integar values
-    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect2, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     //4. OH_Drawing_RoundRectCreate with the first parameter as floating-point values
-    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(0.f, 0.f, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(0.f, 0.f, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect1, nullptr);
-    OH_Drawing_RoundRect *roundRect3 = OH_Drawing_RoundRectCreate(rect1, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect3 = OH_Drawing_RoundRectCreate(rect1, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect3, nullptr);
     // add assert
@@ -419,20 +419,20 @@ int TestRoundRectOffsetNull()
     DrawingNativeRoundRectTestSetUp();
     // 1. Call OH_Drawing_RoundRectOffset with nullptr as the first parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
-    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, NUMBER_20, NUMBER_20);
     // add assert
     EXPECT_NE(roundRect, nullptr);
-    EXPECT_EQ(OH_Drawing_RoundRectOffset(nullptr, DRAWING_NUMBER_1, DRAWING_NUMBER_1),
+    EXPECT_EQ(OH_Drawing_RoundRectOffset(nullptr, NUMBER_1, NUMBER_1),
         OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 2. Call OH_Drawing_RoundRectOffset with 0 as the second parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
-    EXPECT_EQ(OH_Drawing_RoundRectOffset(roundRect, 0, DRAWING_NUMBER_1), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RoundRectOffset(roundRect, 0, NUMBER_1), OH_DRAWING_SUCCESS);
     // 3. Call OH_Drawing_RoundRectOffset with 0 as the third parameter, check the error code using
     // OH_Drawing_ErrorCodeGet
-    EXPECT_EQ(OH_Drawing_RoundRectOffset(roundRect, DRAWING_NUMBER_1, 0), OH_DRAWING_SUCCESS);
+    EXPECT_EQ(OH_Drawing_RoundRectOffset(roundRect, NUMBER_1, 0), OH_DRAWING_SUCCESS);
     //4. free memory
     OH_Drawing_RoundRectDestroy(roundRect);
     OH_Drawing_RectDestroy(rect);
@@ -444,13 +444,13 @@ int TestRoundRectOffsetMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();
     //1. Call OH_Drawing_RoundRectCreate with random values
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     // add assert
     EXPECT_NE(rect, nullptr);
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, DRAWING_NUMBER_100);
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    std::uniform_real_distribution<float> dis(0, NUMBER_100);
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_RoundRect *roundRect = OH_Drawing_RoundRectCreate(rect, dis(gen), dis(gen));
         // add assert
         EXPECT_NE(roundRect, nullptr);
@@ -468,7 +468,7 @@ int TestRoundRectCopyNormal()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. Create a rect object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect1 = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect1, nullptr);
     // 2. Create a roundRect object by OH_Drawing_RoundRectCreate.
     OH_Drawing_RoundRect *roundRect1 = OH_Drawing_RoundRectCreate(rect1, 0, 0);
@@ -477,23 +477,23 @@ int TestRoundRectCopyNormal()
     OH_Drawing_RoundRect *roundRect2 = OH_Drawing_RoundRectCopy(roundRect1);
     EXPECT_NE(roundRect2, nullptr);
     // 4. Create a rect object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect2 = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect2, nullptr);
     // 5. Create a roundRect object by OH_Drawing_RoundRectCreate.
-    OH_Drawing_RoundRect *roundRect3 = OH_Drawing_RoundRectCreate(rect2, DRAWING_NUMBER_20, DRAWING_NUMBER_20);
+    OH_Drawing_RoundRect *roundRect3 = OH_Drawing_RoundRectCreate(rect2, NUMBER_20, NUMBER_20);
     EXPECT_NE(roundRect3, nullptr);
     // 6. Copy a roundRect object by OH_Drawing_RoundRectCopy.
     OH_Drawing_RoundRect *roundRect4 = OH_Drawing_RoundRectCopy(roundRect3);
     EXPECT_NE(roundRect4, nullptr);
     // 7. Create a rect object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect3 = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect3, nullptr);
     // 8. Create a roundRect object by OH_Drawing_RoundRectCreate.
     OH_Drawing_RoundRect *roundRect5 = OH_Drawing_RoundRectCreate(rect3, 0, 0);
     EXPECT_NE(roundRect5, nullptr);
     // 9. Set the upper left corner of the rectangle as a rounded corner.
-    OH_Drawing_RoundRectSetCorner(roundRect5, OH_Drawing_CornerPos::CORNER_POS_TOP_LEFT, {DRAWING_NUMBER_20,
-        DRAWING_NUMBER_20});
+    OH_Drawing_RoundRectSetCorner(roundRect5, OH_Drawing_CornerPos::CORNER_POS_TOP_LEFT, {NUMBER_20,
+        NUMBER_20});
     // 10. Copy a roundRect object by OH_Drawing_RoundRectCopy.
     OH_Drawing_RoundRect *roundRect6 = OH_Drawing_RoundRectCopy(roundRect5);
     EXPECT_NE(roundRect6, nullptr);
@@ -515,7 +515,7 @@ int TestRoundRectCopyNull()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. Create a rect object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     // 2. Create a roundRect object by OH_Drawing_RoundRectCreate.
     OH_Drawing_RoundRect *roundRect1 = OH_Drawing_RoundRectCreate(rect, 0, 0);
@@ -535,7 +535,7 @@ int TestRoundRectCopyMultipleCalls()
 {
     DrawingNativeRoundRectTestSetUp();
     // 1. Create a rect object by OH_Drawing_RectCreate.
-    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
+    OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, NUMBER_100, NUMBER_100);
     EXPECT_NE(rect, nullptr);
     // 2. Create a roundRect object by OH_Drawing_RoundRectCreate.
     OH_Drawing_RoundRect *roundRect1 = OH_Drawing_RoundRectCreate(rect, 0, 0);
@@ -543,7 +543,7 @@ int TestRoundRectCopyMultipleCalls()
     // 3. Copy a roundRect object by OH_Drawing_RoundRectCopy.
     OH_Drawing_RoundRect *roundRect2 = nullptr;
     // 4. The function OH_Drawing_RoundRectCopy is called 10 times.
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         roundRect2 = OH_Drawing_RoundRectCopy(roundRect1);
         EXPECT_NE(roundRect2, nullptr);
     }

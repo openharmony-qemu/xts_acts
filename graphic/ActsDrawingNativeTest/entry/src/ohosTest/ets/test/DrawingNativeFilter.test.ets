@@ -43,7 +43,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testFilterCreateDestroyNormal', Level.LEVEL0, () => {
+    it('testFilterCreateDestroyNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingFilterCreateDestroy(0);
       expect(result).assertEqual(0);
     })
@@ -56,7 +56,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterCreateDestroyNULL', Level.LEVEL3, () => {
+    it('testFilterCreateDestroyNULL', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterCreateDestroy(1);
       expect(result).assertEqual(0);
     })
@@ -69,7 +69,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterCreateDestroyMultipleCalls', Level.LEVEL3, () => {
+    it('testFilterCreateDestroyMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterCreateDestroy(2);
       expect(result).assertEqual(0);
     })
@@ -83,7 +83,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testFilterSetImageFilterNormal', Level.LEVEL0, () => {
+    it('testFilterSetImageFilterNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingFilterSetImageFilter(0);
       expect(result).assertEqual(0);
     })
@@ -96,7 +96,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterSetImageFilterNULL', Level.LEVEL3, () => {
+    it('testFilterSetImageFilterNULL', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterSetImageFilter(1);
       expect(result).assertEqual(0);
     })
@@ -109,7 +109,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterSetImageFilterMultipleCalls', Level.LEVEL3, () => {
+    it('testFilterSetImageFilterMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterSetImageFilter(2);
       expect(result).assertEqual(0);
     })
@@ -123,7 +123,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testFilterSetMaskFilterNormal', Level.LEVEL0, () => {
+    it('testFilterSetMaskFilterNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingFilterSetMaskFilter(0);
       expect(result).assertEqual(0);
     })
@@ -136,7 +136,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterSetMaskFilterNULL', Level.LEVEL3, () => {
+    it('testFilterSetMaskFilterNULL', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterSetMaskFilter(1);
       expect(result).assertEqual(0);
     })
@@ -149,7 +149,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterSetMaskFilterMultipleCalls', Level.LEVEL3, () => {
+    it('testFilterSetMaskFilterMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterSetMaskFilter(2);
       expect(result).assertEqual(0);
     })
@@ -163,7 +163,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testFilterSetColorFilterNormal', Level.LEVEL0, () => {
+    it('testFilterSetColorFilterNormal', Level.LEVEL0, async () => {
       const result = libDrawingNative.DrawingFilterSetColorFilter(0);
       expect(result).assertEqual(0);
     })
@@ -176,7 +176,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterSetColorFilterNULL', Level.LEVEL3, () => {
+    it('testFilterSetColorFilterNULL', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterSetColorFilter(1);
       expect(result).assertEqual(0);
     })
@@ -189,7 +189,7 @@ export default function DrawingNativeFilterTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL3
      */
-    it('testFilterSetColorFilterMultipleCalls', Level.LEVEL3, () => {
+    it('testFilterSetColorFilterMultipleCalls', Level.LEVEL3, async () => {
       const result = libDrawingNative.DrawingFilterSetColorFilter(2);
       expect(result).assertEqual(0);
     })

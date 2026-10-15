@@ -16,19 +16,19 @@
 #include "include/DrawingNativePathIteratorTest.h"
 #include "include/OhosCommonTest.h"
 
-#define DRAWING_NUMBER_4 4
-#define DRAWING_NUMBER_5 5
-#define DRAWING_NUMBER_7 7
-#define DRAWING_NUMBER_10 10
-#define DRAWING_NUMBER_50 50
-#define DRAWING_NUMBER_100 100
-#define DRAWING_NUMBER_150 150
-#define DRAWING_NUMBER_200 200
-#define DRAWING_NUMBER_250 250
-#define DRAWING_NUMBER_350 350
-#define DRAWING_NUMBER_450 450
-#define DRAWING_NUMBER_550 550
-#define DRAWING_NUMBER_650 650
+#define NUMBER_4 4
+#define NUMBER_5 5
+#define NUMBER_7 7
+#define NUMBER_10 10
+#define NUMBER_50 50
+#define NUMBER_100 100
+#define NUMBER_150 150
+#define NUMBER_200 200
+#define NUMBER_250 250
+#define NUMBER_350 350
+#define NUMBER_450 450
+#define NUMBER_550 550
+#define NUMBER_650 650
 
 namespace OHOS {
 namespace Rosen {
@@ -53,11 +53,11 @@ int TestPathIteratorCreateNormal()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -74,11 +74,11 @@ int TestPathIteratorCreateNull()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(nullptr, &pathIterator);
@@ -98,14 +98,14 @@ int TestPathIteratorCreateMultipleCalls()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
-    for (int i = 0; i < DRAWING_NUMBER_10; i++) {
+    for (int i = 0; i < NUMBER_10; i++) {
         OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorCreate(path, &pathIterator);
         EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
         EXPECT_NE(pathIterator, nullptr);
@@ -122,11 +122,11 @@ int TestPathIteratorDestroyNormal()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -151,18 +151,18 @@ int TestPathIteratorHasNextNormal()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
     OH_Drawing_PathIteratorVerb verb = OH_Drawing_PathIteratorVerb::MOVE;
     bool hasNext = false;
-    const int verbSize = DRAWING_NUMBER_7;
-    const int offsetSize = DRAWING_NUMBER_4;
+    const int verbSize = NUMBER_7;
+    const int offsetSize = NUMBER_4;
     const int pointSize = verbSize * offsetSize;
     OH_Drawing_Point2D point2d[pointSize] = {{0, 0}};
     for (int i = 0; i < verbSize; i++) {
@@ -182,11 +182,11 @@ int TestPathIteratorHasNextNull()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
@@ -208,17 +208,17 @@ int TestPathIteratorNextNormal()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
     OH_Drawing_PathIteratorVerb verb = OH_Drawing_PathIteratorVerb::MOVE;
-    const int verbSize = DRAWING_NUMBER_7;
-    const int offset = DRAWING_NUMBER_4;
+    const int verbSize = NUMBER_7;
+    const int offset = NUMBER_4;
     const int count = verbSize * offset;
     OH_Drawing_Point2D point2d[count] = {{0, 0}};
     for (int i = 0; i < verbSize; i++) {
@@ -238,17 +238,17 @@ int TestPathIteratorNextNull()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
     OH_Drawing_PathIteratorVerb verb = OH_Drawing_PathIteratorVerb::MOVE;
-    const int verbSize = DRAWING_NUMBER_7;
-    const int offset = DRAWING_NUMBER_4;
+    const int verbSize = NUMBER_7;
+    const int offset = NUMBER_4;
     const int count = verbSize * offset;
     OH_Drawing_Point2D point2d[count] = {{0, 0}};
     OH_Drawing_ErrorCode errorCode = OH_Drawing_PathIteratorNext(nullptr, point2d, count, offset, &verb);
@@ -277,17 +277,17 @@ int TestPathIteratorPeekNormal()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);
     OH_Drawing_PathIteratorVerb verb = OH_Drawing_PathIteratorVerb::MOVE;
-    const int verbSize = DRAWING_NUMBER_7;
-    const int offsetSize = DRAWING_NUMBER_4;
+    const int verbSize = NUMBER_7;
+    const int offsetSize = NUMBER_4;
     const int pointSize = verbSize * offsetSize;
     OH_Drawing_Point2D point2d[pointSize] = {{0, 0}};
     for (int i = 0; i < verbSize; i++) {
@@ -307,11 +307,11 @@ int TestPathIteratorPeekNull()
     DrawingNativePathIteratorTestSetUp();
     OH_Drawing_Path* path = OH_Drawing_PathCreate();
     OH_Drawing_PathMoveTo(path, 0, 0);
-    OH_Drawing_PathLineTo(path, DRAWING_NUMBER_5, DRAWING_NUMBER_5);
-    OH_Drawing_PathQuadTo(path, DRAWING_NUMBER_10, DRAWING_NUMBER_50, DRAWING_NUMBER_100, DRAWING_NUMBER_100);
-    OH_Drawing_PathConicTo(path, DRAWING_NUMBER_150, DRAWING_NUMBER_200, DRAWING_NUMBER_250, DRAWING_NUMBER_350, 0.5f);
-    OH_Drawing_PathCubicTo(path, DRAWING_NUMBER_350, DRAWING_NUMBER_450, DRAWING_NUMBER_450, DRAWING_NUMBER_550,
-        DRAWING_NUMBER_550, DRAWING_NUMBER_650);
+    OH_Drawing_PathLineTo(path, NUMBER_5, NUMBER_5);
+    OH_Drawing_PathQuadTo(path, NUMBER_10, NUMBER_50, NUMBER_100, NUMBER_100);
+    OH_Drawing_PathConicTo(path, NUMBER_150, NUMBER_200, NUMBER_250, NUMBER_350, 0.5f);
+    OH_Drawing_PathCubicTo(path, NUMBER_350, NUMBER_450, NUMBER_450, NUMBER_550,
+        NUMBER_550, NUMBER_650);
     OH_Drawing_PathClose(path);
     OH_Drawing_PathIterator *pathIterator = nullptr;
     OH_Drawing_PathIteratorCreate(path, &pathIterator);

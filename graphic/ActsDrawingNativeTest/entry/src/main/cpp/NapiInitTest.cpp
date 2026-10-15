@@ -18,7 +18,7 @@
 #include "NapiInitPart3Test.cpp"
 #include "NapiInitPart4Test.cpp"
 
-#define DRAWING_NUMBER_1 1
+#define NUMBER_1 1
 
 
 // Include the split implementation files
@@ -236,7 +236,7 @@ EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 EXTERN_C_END
 
 static napi_module drawingNativeModule = {
-    .nm_version = DRAWING_NUMBER_1,
+    .nm_version = NUMBER_1,
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
