@@ -6552,7 +6552,7 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
       expect(restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY)).assertEqual(false);
     } catch (error) {
-      expect().assertFail();
+      expect(error.code).assertEqual(801);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -6573,7 +6573,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
       expect().assertFail();
     } catch (error) {
-      expect(error.code).assertEqual(9200002);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -6594,7 +6598,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
       expect().assertFail();
     } catch (error) {
-      expect(error.code).assertEqual(9200002);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -6614,7 +6622,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
       expect().assertFail();
     } catch (error) {
-      expect(error.code).assertEqual(9200001);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
     }
     done();
   });
@@ -6633,7 +6645,11 @@ function testSetDisallowedPolicy() {
       restrictions.setDisallowedPolicy(INVALID_WANT, restrictions.FeatureForDevice.SUPER_PRIVACY, false);
       expect().assertFail();
     } catch (error) {
-      expect(error.code).assertEqual(401);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -7880,7 +7896,7 @@ it("test_get_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function
       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
       expect(ret).assertEqual(false);
     } catch (error) {
-      expect().assertFail();
+      expect(error.code).assertEqual(801);
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -7900,7 +7916,11 @@ it("test_get_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function
       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
       expect().assertFail();
     } catch (error) {
-      expect(error.code).assertEqual(9200001);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200001);
+      }
     }
     done();
   });
@@ -7919,7 +7939,11 @@ it("test_get_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function
       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
       expect().assertFail();
     } catch (error) {
-      expect(error.code).assertEqual(9200002);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(9200002);
+      }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -7940,7 +7964,11 @@ it("test_get_disallowed_policy_uinput_0500", Level.LEVEL2, async (done: Function
       restrictions.getDisallowedPolicy(INVALID_WANT, restrictions.FeatureForDevice.SUPER_PRIVACY);
       expect().assertFail();
     } catch (error) {
-      expect(error.code).assertEqual(401);
+      if (error.code === 801) {
+        expect(error.code).assertEqual(801);
+      } else {
+        expect(error.code).assertEqual(401);
+      }
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

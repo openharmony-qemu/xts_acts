@@ -59,7 +59,6 @@ const LABEL_APP_CLONE = "appClone";
 const LABEL_UNMUTE_DEVICE = "unmuteDevice";
 const LABEL_VIRTUAL_SERVICE = "virtualService";
 const LABEL_MODIFY_WALLPAPER = "modifyWallpaper";
-const restrictions.FeatureForDevice.SUPER_PRIVACY = "superPrivacyMode";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
