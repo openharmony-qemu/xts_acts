@@ -1,7 +1,39 @@
 import("//build/lite/config/hap_pack.gni")
+import("//test/xts/tools/lite/build/xts_gated_js_suite.gni")
 
-_suite_dir = "$root_out_dir/suites/acts_validator_lite/testcases/acts_validator_lite"
+_suite_dir =
+    "$root_out_dir/suites/acts_validator_lite/testcases/acts_validator_lite"
 _tools_dir = "$root_out_dir/suites/acts_validator_lite/testcases/tools"
+
+_pages = [
+  "pages/index/index",
+  "pages/ArkUI/chart/line/index",
+  "pages/ArkUI/common/index/index",
+  "pages/ArkUI/marquee/index",
+  "pages/ArkUI/ui_advanced/index",
+  "pages/ArkUI/ui_basic/index",
+  "pages/Communication/nfc/index",
+  "pages/DistributedData/storage/index",
+  "pages/FileManagement/file/index",
+  "pages/PowerManager/power/index",
+  "pages/Startup/deviceInfo/index",
+  "pages/Sensors/index/index",
+  "pages/Location/index/index",
+  "pages/common/help/index",
+]
+
+_extra_js = [
+  "common/js/event.js",
+  "common/js/general.js",
+  "common/js/swiper.js",
+]
+
+xts_gated_js_suite("validator_src") {
+  src_root = "entry/src/main/js/MainAbility"
+  config_json = "entry/src/main/config.json"
+  pages = _pages
+  extra_sources = _extra_js
+}
 
 action("acts_validator_lite_ace_loader_build") {
   script = "pre_build.py"
@@ -12,58 +44,12 @@ action("acts_validator_lite_ace_loader_build") {
 action("acts_validator_lite_js_bundle") {
   deps = [
     ":acts_validator_lite_ace_loader_build",
-    
+    ":validator_src_render",
   ]
   script = "acts_validator_lite_build_js.py"
   sources = [
-    "entry/src/main/js/MainAbility/app.js",
-    "entry/src/main/js/MainAbility/manifest.json",
-    "entry/src/main/js/MainAbility/common/js/event.js",
-    "entry/src/main/js/MainAbility/common/js/general.js",
-    "entry/src/main/js/MainAbility/common/js/swiper.js",
-    "entry/src/main/js/MainAbility/pages/index/index.css",
-    "entry/src/main/js/MainAbility/pages/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/index/index.js",
-    "entry/src/main/js/MainAbility/pages/common/help/index.css",
-    "entry/src/main/js/MainAbility/pages/common/help/index.hml",
-    "entry/src/main/js/MainAbility/pages/common/help/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/common/index/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/marquee/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_advanced/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_advanced/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_advanced/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/ui_basic/index.js",
-    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.css",
-    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.hml",
-    "entry/src/main/js/MainAbility/pages/ArkUI/chart/line/index.js",
-    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.css",
-    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.hml",
-    "entry/src/main/js/MainAbility/pages/FileManagement/file/index.js",
-    "entry/src/main/js/MainAbility/pages/PowerManager/power/index.css",
-    "entry/src/main/js/MainAbility/pages/PowerManager/power/index.hml",
-    "entry/src/main/js/MainAbility/pages/PowerManager/power/index.js",
-    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.css",
-    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.hml",
-    "entry/src/main/js/MainAbility/pages/DistributedData/storage/index.js",
-    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.css",
-    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.hml",
-    "entry/src/main/js/MainAbility/pages/Startup/deviceInfo/index.js",
-    "entry/src/main/js/MainAbility/pages/Sensors/index/index.css",
-    "entry/src/main/js/MainAbility/pages/Sensors/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/Sensors/index/index.js",
-    "entry/src/main/js/MainAbility/pages/Location/index/index.css",
-    "entry/src/main/js/MainAbility/pages/Location/index/index.hml",
-    "entry/src/main/js/MainAbility/pages/Location/index/index.js",
-    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.css",
-    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.hml",
-    "entry/src/main/js/MainAbility/pages/Communication/nfc/index.js",
-    "acts_validator_lite_build_js.py",
+    "$root_out_dir/validator_src/config.json",
+    "$root_out_dir/validator_src/main/manifest.json",
   ]
   outputs = [
     "$root_out_dir/acts_validator_lite/assets/js/default/app.js",
@@ -71,7 +57,7 @@ action("acts_validator_lite_js_bundle") {
     "$root_out_dir/acts_validator_lite/assets/js/default/pages/index/index.js",
   ]
   args = [
-    rebase_path("entry/src/main/js/MainAbility"),
+    rebase_path("$root_out_dir/validator_src/main"),
     rebase_path("$root_out_dir/acts_validator_lite/assets/js/default"),
   ]
 }
@@ -81,11 +67,9 @@ group("acts_validator_lite_js_assets") {
 }
 
 hap_pack("acts_validator_lite_hap") {
-  deps = [
-    ":acts_validator_lite_js_assets",
-  ]
+  deps = [ ":acts_validator_lite_js_assets" ]
   mode = "hap"
-  json_path = "entry/src/main/config.json"
+  json_path = "$root_out_dir/validator_src/config.json"
   assets_path = "$root_out_dir/acts_validator_lite/assets"
   force = "true"
   cert_profile = "cert/openharmony_sx.p7b"
@@ -122,6 +106,8 @@ action("acts_validator_lite_deploy") {
     rebase_path("$root_out_dir/dev_tools/bin/aa"),
     "--tools-out",
     rebase_path(_tools_dir),
+    "--kernel-type",
+    "${ohos_kernel_type}",
   ]
 }
 
@@ -133,15 +119,15 @@ action("acts_validator_lite_copy_bm") {
     "--method_name",
     "copy_file",
     "--arguments",
-    "output=" + rebase_path(_tools_dir) +
-    "#sources=" + rebase_path("$root_out_dir/dev_tools/bin/bm") + "#to_dir=True",
+    "output=" + rebase_path(_tools_dir) + "#sources=" +
+        rebase_path("$root_out_dir/dev_tools/bin/bm") + "#to_dir=True",
   ]
 }
 
 action("acts_validator_lite_remove_from_rootfs") {
   deps = [
-    ":acts_validator_lite_deploy",
     ":acts_validator_lite_copy_bm",
+    ":acts_validator_lite_deploy",
   ]
   script = "rm_from_rootfs.py"
   outputs = [ "$target_gen_dir/rm_acts_validator_lite.stamp" ]
