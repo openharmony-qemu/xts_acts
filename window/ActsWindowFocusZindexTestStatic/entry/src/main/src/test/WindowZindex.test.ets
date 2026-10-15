@@ -2144,11 +2144,7 @@ TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Pr
             done()
           }).catch((err: Error): PromiseLike<void> | undefined => {
             console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err!.code},message:${err!.message}`);
-            if (deviceType === '2in1' || isPCMode) {
-              expect(err!.code).assertEqual(1300002);
-            } else {
-              expect(err!.code).assertEqual(801);
-            }
+            expect(err.code).assertEqual(1300002);
             expect(err!.message !== '').assertTrue();
             done()
           })
@@ -2195,7 +2191,11 @@ TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Pr
             done()
           }).catch((err: Error): PromiseLike<void> | undefined => {
             console.error(`${msgStr} Failed to setWindowPosition. Cause code: ${err!.code},message:${err!.message}`);
-            expect(err!.code).assertEqual(1300002);
+            if (deviceType === '2in1' || isPCMode) {
+              expect(err.code).assertEqual(1300002);
+            } else {
+              expect(err.code).assertEqual(801);
+            }
             expect(err!.message !== '').assertTrue();
             done()
           })
