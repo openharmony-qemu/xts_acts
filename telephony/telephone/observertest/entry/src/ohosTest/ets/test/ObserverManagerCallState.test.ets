@@ -866,7 +866,7 @@ export default function observerManagerCallStateTest() {
       } catch (err) {
         if(err.code === 201) {
           console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
-          ExpectTrue(err.code == 201);
+          ExpectTrue(err.code === 201);
           done();
         } else {
           console.info(`${caseName} catchError: ${JSON.stringify(err)}` + err);
@@ -902,7 +902,7 @@ export default function observerManagerCallStateTest() {
       } catch (err) {
         if(err.code === 201) {
           console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
-          ExpectTrue(err.code == 201);
+          ExpectTrue(err.code === 201);
           done();
         } else {
           console.info(`${caseName} catchError ${JSON.stringify(err)}`);
@@ -938,7 +938,7 @@ export default function observerManagerCallStateTest() {
       } catch (err) {
         if(err.code === 201) {
           console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
-          ExpectTrue(err.code == 201);
+          ExpectTrue(err.code === 201);
           done();
         } else {
           console.info(`${caseName} catchError ${JSON.stringify(err)}`);
@@ -1006,7 +1006,7 @@ export default function observerManagerCallStateTest() {
       } catch (err) {
         if(err.code === 201) {
           console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
-          ExpectTrue(err.code == 201);
+          ExpectTrue(err.code === 201);
           done();
         } else {
           console.info(`${caseName} catchError ${JSON.stringify(err)}` + err);
@@ -1073,7 +1073,7 @@ export default function observerManagerCallStateTest() {
       } catch (err) {
         if(err.code === 201) {
           console.log(`${caseName} Device type is wearable, on callStateChange, err:` + JSON.stringify(err));
-          ExpectTrue(err.code == 201);
+          ExpectTrue(err.code === 201);
           done();
         } else {
           console.info(`${caseName} catchError ${JSON.stringify(err)}`+err);
