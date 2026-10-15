@@ -16,8 +16,10 @@
 import jsMessageExt from './JsMessageExt.test'
 import webJsunit from './WebJsunit.test'
 import webJsunitTwo from './WebJsunitTwo.test'
-export default function testsuite() {
+import webResourceResponseSetResponseBodyParam from './WebResourceResponseSetResponseBodyParam.test'
+export default function testsuite(): void {
   jsMessageExt();
   webJsunit();
   webJsunitTwo();
+  webResourceResponseSetResponseBodyParam();
 }
