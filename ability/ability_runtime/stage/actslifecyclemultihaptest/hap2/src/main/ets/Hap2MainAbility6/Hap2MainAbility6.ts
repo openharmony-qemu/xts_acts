@@ -58,6 +58,15 @@ export default class Hap2MainAbility6 extends Ability {
     onBackground() {
         // Ability has back to background
         console.log("[Demo] Hap2MainAbility6 onBackground")
+        try{
+            let appIndex = this.context.getApplicationContext().getCurrentAppCloneIndex();
+            console.log('[Demo] Hap2MainAbility6 appIndex ' + appIndex)
+            if(appIndex === 0){
+               deviceSupport = true;
+            }
+        }catch(e){
+            console.log('[Demo] Hap2MainAbility6 appIndex  catch ' + e.code + ' ' + e.message)
+        }
         if (deviceSupport === 'false') {
           setTimeout(() => {
             globalThis.testEvent.push('MainAbility4onForeground');
