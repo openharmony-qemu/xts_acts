@@ -379,7 +379,7 @@ export default function callJsunit() {
           done();
         } catch (err) {
           console.info(`${CASE_NAME} fail, err->${JSON.stringify(err)}`);
-          ExpectTrue(err?.code == 201);
+          ExpectTrue(err?.code === 201);
           done();
         }
       });
@@ -399,7 +399,7 @@ export default function callJsunit() {
         call.rejectCall((err: BusinessError) => {
           if (err) {
             console.log(`${caseName} rejectCall callback: err->` + JSON.stringify(err));
-            ExpectTrue(err.code == 201);
+            ExpectTrue(err.code === 201);
             done();
           } else {
             console.log(`${caseName} rejectCall callback: success without permission, unexpected`);
@@ -408,7 +408,7 @@ export default function callJsunit() {
         });
       } catch (err) {
         console.log(`${caseName} rejectCall callback: err->` + JSON.stringify(err));
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code === 201);
         console.log(`==========> ${caseName} Test end ==========>`);
         done();
       }
@@ -429,7 +429,7 @@ export default function callJsunit() {
         call.hangUpCall((err: BusinessError) => {
           if (err) {
             console.log(`${caseName} hangUpCall callback: err->` + JSON.stringify(err));
-            ExpectTrue(err.code == 201);
+            ExpectTrue(err.code === 201);
             done();
           } else {
             console.log(`${caseName} hangUpCall callback: success without permission, unexpected`);
@@ -439,7 +439,7 @@ export default function callJsunit() {
         });
       } catch (err) {
         console.log(`${caseName} hangUpCall callback: err->` + JSON.stringify(err));
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code === 201);
         console.log(`==========> ${caseName} Test end ==========>`);
         done();
       }
@@ -460,7 +460,7 @@ export default function callJsunit() {
         call.answerCall((err: BusinessError) => {
           if (err) {
             console.log(`${caseName} answerCall callback: err->` + JSON.stringify(err));
-            ExpectTrue(err.code == 201);
+            ExpectTrue(err.code === 201);
             done();
           } else {
             console.log(`${caseName} answerCall callback: success without permission, unexpected`);
@@ -469,7 +469,7 @@ export default function callJsunit() {
         });
       } catch (err) {
         console.log(`${caseName} answerCall callback: err->` + JSON.stringify(err));
-        ExpectTrue(err.code == 201);
+        ExpectTrue(err.code === 201);
         console.log(`==========> ${caseName} Test end ==========>`);
         done();
       }
