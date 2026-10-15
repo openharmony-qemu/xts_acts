@@ -93,7 +93,7 @@ export default function callManagerAllTestStatic() {
         let promise = call.getCallState();
         promise.then(data => {
           hilog.info(domain, tag, `${caseName} getCallState success, data: ${data}`);
-          ExpectTrue(true);
+          expect(data).assertEqual(call.CallState.CALL_STATE_IDLE);
           done();
         }).catch(err => {
           hilog.error(domain, tag, `${caseName} getCallState fail, err: ${err}`);
@@ -149,7 +149,7 @@ export default function callManagerAllTestStatic() {
       try {
         let data = await call.hasCall();
         hilog.info(domain, tag, `${caseName} hasCall success, data:${data}`);
-        ExpectTrue(true);
+        ExpectTrue(data === false);
         done();
       } catch(error) {
         hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
