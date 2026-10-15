@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import pasteboardNdkTest from './Ability.test';
+import UDMFNdkDragTest from './Ability.test';
 import EmptyTest from './Empty.test';
 
 /**
@@ -22,7 +22,7 @@ import EmptyTest from './Empty.test';
  */
 export default function testsuite() {
   if (canIUse("SystemCapability.DistributedDataManager.UDMF.Core")){
-    pasteboardNdkTest();
+    UDMFNdkDragTest();
   } else {
     EmptyTest()
   }
