@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,32 +20,21 @@ import Want from '@ohos.app.ability.Want';
 import { Driver, ON, PointerMatrix } from '@ohos.UiTest';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 
-// Prefix prepended to every log line of this suite.
 let TAG = 'DragTest: ';
-// Identity of the application under test, used to launch it in beforeAll.
 let BUNDLE_NAME = 'ohos.acts.udmfndkdragtest';
 let ABILITY_NAME = 'EntryAbility';
 
-/**
- * Drag the component identified by "componentId" by the given offset.
- * The gesture starts at the center of the component and is injected
- * through a two-point pointer matrix.
- */
 async function dragComponent(driver: Driver, componentId: string, offsetX: number, offsetY: number): Promise<void> {
-  // The target component must exist, otherwise the drag cannot be performed.
   let component = await driver.findComponent(ON.id(componentId));
   expect(component !== null && component !== undefined).assertEqual(true);
 
-  // Compute the center of the component as the drag start point.
   let componentRect = await component.getBounds();
   let centerX = Math.ceil((componentRect.left + componentRect.right) / 2);
   let centerY = Math.ceil((componentRect.top + componentRect.bottom) / 2);
 
-  // The drag ends at the start point shifted by the given offset.
   let endX = centerX + offsetX;
   let endY = centerY + offsetY;
 
-  // Build a 1x2 pointer matrix: press at the start point, then move to the end point.
   let pointerMatrix = PointerMatrix.create(1, 2);
   pointerMatrix.setPoint(0, 0, { x: centerX, y: centerY });
   pointerMatrix.setPoint(0, 1, { x: endX, y: endY });
@@ -54,24 +43,17 @@ async function dragComponent(driver: Driver, componentId: string, offsetX: numbe
   console.log(TAG, `dragComponent done: from (${centerX}, ${centerY}) to (${endX}, ${endY})`);
 }
 
-/**
- * Drag the source component onto the target component: the gesture starts at
- * the center of the source and is released at the center of the target.
- */
 async function dragToTarget(driver: Driver, sourceId: string, targetId: string): Promise<void> {
-  // Both the drag source and the drop target must be present on the page.
   let source = await driver.findComponent(ON.id(sourceId));
   expect(source !== null && source !== undefined).assertEqual(true);
 
   let target = await driver.findComponent(ON.id(targetId));
   expect(target !== null && target !== undefined).assertEqual(true);
 
-  // Center of the source component, where the drag gesture begins.
   let sourceRect = await source.getBounds();
   let sourceCenterX = Math.ceil((sourceRect.left + sourceRect.right) / 2);
   let sourceCenterY = Math.ceil((sourceRect.top + sourceRect.bottom) / 2);
 
-  // Center of the target component, where the drag gesture ends.
   let targetRect = await target.getBounds();
   let targetCenterX = Math.ceil((targetRect.left + targetRect.right) / 2);
   let targetCenterY = Math.ceil((targetRect.top + targetRect.bottom) / 2);
@@ -80,21 +62,12 @@ async function dragToTarget(driver: Driver, sourceId: string, targetId: string):
   console.log(TAG, `dragToTarget done: from (${sourceCenterX}, ${sourceCenterY}) to (${targetCenterX}, ${targetCenterY})`);
 }
 
-/**
- * Suspend the current asynchronous flow for the given duration, which is
- * used to wait for time-consuming UI or native operations to settle.
- */
 function sleep(ms: number): Promise<ESObject> {
   return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
 }
 
-/**
- * Entry of the ability test suite: launches the application under test and
- * runs all UDMF NDK drag related cases.
- */
-export default function abilityTest() {
-  describe('ActsAbilityTest', () => {
-    // Launch the entry ability once so that the drag test page is ready.
+export default function UDMFNdkDragTest() {
+  describe('UDMFNdkDragTest', () => {
     beforeAll(async () => {
       let delegator = abilityDelegatorRegistry.getAbilityDelegator();
       let startWant: Want = {
@@ -108,18 +81,13 @@ export default function abilityTest() {
         console.error(TAG, `startAbility failed, ERROR: ${error.code}, message: ${error.message}`);
         expect().assertFail();
       }
-
-      // Wait for the first layout of the launched page before running cases.
       let driver = Driver.create();
       await driver.delayMs(2000);
     })
-    // No extra preparation is needed before each case.
     beforeEach(() => {
     })
-    // No extra cleanup is needed after each case.
     afterEach(() => {
     })
-    // No extra cleanup is needed after the whole suite.
     afterAll(() => {
     })
 
