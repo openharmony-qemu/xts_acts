@@ -126,7 +126,13 @@ export default function actsDebuggableAaStartTest() {
      */
     it('SUB_AA_AMS_Debuggable_2600', Level.LEVEL1, async (done: Function) => {
       let res = '';
-      let cmd = 'aa start -h';
+      let cmd = 'aa start';
+      let param = ' -h'
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+      if(user !== undefined){
+          cmd += ' -u ' + user;
+      }
+      cmd += param;
       await abilityDelegator.executeShellCommand(cmd).then(data => {
         hilog.info(0x0000, 'debuggabletest', '%{public}s',
           'SUB_AA_AMS_Debuggable_2600 aa process data is: ' + data.stdResult);
