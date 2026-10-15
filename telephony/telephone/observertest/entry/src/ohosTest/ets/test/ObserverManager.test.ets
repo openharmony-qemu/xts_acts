@@ -530,7 +530,7 @@ export default function observerManagerTest() {
           network: radio.RadioTechnology = radio.RadioTechnology.RADIO_TECHNOLOGY_UNKNOWN
         };
         observer.on('cellularDataConnectionStateChange', {
-          slotId: 3
+          slotId: 100
         }, (data: Value) => {
           console.info(`${caseName} data ${JSON.stringify(data)}`);
           ExpectTrue(false);
