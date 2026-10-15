@@ -1051,7 +1051,7 @@ export default function WindowEventStatic() {
             }
         });
 
-        /**
+       /**
          * @tc.number SUB_WINDOW_EVENT_CLEARWINDOWMASK_NORMAL_001
          * @tc.name testClearWindowMask_NORMAL_001
          * @tc.desc clearWindowMask clear mask test.
@@ -1059,55 +1059,52 @@ export default function WindowEventStatic() {
          * @tc.type Function
          * @tc.level Level3
          */
-        it('testClearWindowMask_NORMAL_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testClearWindowMask_NORMAL_001';
-            let msgStr: string = 'jsunittest ' + caseName + ' ';
-            hilog.info(domain, tag, msgStr + 'begin');
+       it('testClearWindowMask_NORMAL_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName: string = 'testClearWindowMask_NORMAL_001';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
+        hilog.info(domain, tag, msgStr + 'begin');
 
-            try {
-                let subWindow: window.Window = await windowStage!.createSubWindow('testClearWindowMask_subWindow');
-                hilog.info(domain, tag, caseName + ' create subWindow success');
-                await subWindow.setUIContent('pages/index2');
-                hilog.info(domain, tag, caseName + ' setUIContent success');
-                await subWindow.resize(200, 200);
-                hilog.info(domain, tag, caseName + ' resize success');
-                await subWindow.showWindow();
-                hilog.info(domain, tag, caseName + ' showWindow success');
+        try {
+            let subWindow: window.Window = await windowStage!.createSubWindow('testClearWindowMask_subWindow');
+            hilog.info(domain, tag, caseName + ' create subWindow success');
+            await subWindow.setUIContent('pages/index2');
+            hilog.info(domain, tag, caseName + ' setUIContent success');
+            await subWindow.resize(200, 200);
+            hilog.info(domain, tag, caseName + ' resize success');
+            await subWindow.showWindow();
+            hilog.info(domain, tag, caseName + ' showWindow success');
 
-                let maskWidth = subWindow.getWindowProperties().windowRect.width;
-                let maskHeight = subWindow.getWindowProperties().windowRect.height;
-                let windowMask = Array.create<Array<Long>>(maskHeight, []).map((_, row) => {
-                    let array = Array.create<Long>(maskWidth, 0);
-                    for (let i = 0 ; i < maskWidth; i++) {
-                        array[i] = (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0;
-                    }
-                    return array;
-                });
+            let maskWidth = subWindow.getWindowProperties().windowRect.width;
+            let maskHeight = subWindow.getWindowProperties().windowRect.height;
+            let windowMask = Array.create<Array<Long>>(maskHeight, [] as Array<Long>).map((_, row) => {
+                let array = new Array<Long>(maskWidth, (i) => { return (i + row) > (maskWidth + maskHeight) / 2 ? 1 : 0 });
+                return array;
+            });
 
-                await subWindow.setWindowMask(windowMask);
-                hilog.info(domain, tag, caseName + ' setWindowMask success');
+            await subWindow.setWindowMask(windowMask);
+            hilog.info(domain, tag, caseName + ' setWindowMask success');
 
-                await subWindow.clearWindowMask();
-                hilog.info(domain, tag, caseName + ' clearWindowMask success');
+            await subWindow.clearWindowMask();
+            hilog.info(domain, tag, caseName + ' clearWindowMask success');
 
-                await subWindow.destroyWindow();
-                hilog.info(domain, tag, caseName + ' destroyWindow success');
+            await subWindow.destroyWindow();
+            hilog.info(domain, tag, caseName + ' destroyWindow success');
 
-                
+            
+            done();
+        } catch (e) {
+            e = e as BusinessError;
+            hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
+            hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.code));
+            hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.message));
+            if (e.code === 801) {
                 done();
-            } catch (e) {
-                e = e as BusinessError;
-                hilog.error(domain, tag, msgStr + 'exception = ' + JSON.stringify(e));
-                hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.code));
-                hilog.error(domain, tag, msgStr + 'exception code = ' + JSON.stringify(e.message));
-                if (e.code === 801) {
-                    done();
-                } else {
-                    expect(false).assertTrue();
-                    done();
-                }
+            } else {
+                expect(false).assertTrue();
+                done();
             }
-        });
+        }
+    });
 
         /**
          * @tc.number SUB_WINDOW_EVENT_CLEARWINDOWMASK_ERRCODE1300002_001
