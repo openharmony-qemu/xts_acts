@@ -133,15 +133,14 @@ acts_validator_lite/
         └── pages/
             ├── index/        # 主入口
             ├── common/help/  # 帮助页
-            ├── ArkUI/        # ArkUI 子系统
+            ├── ArkUI/        # ArkUI 子系统（含 RouterTransition 页切换动效）
             ├── PowerManager/
             ├── FileManagement/
             ├── DistributedData/
             ├── Startup/
             ├── Communication/
             ├── Sensors/
-            ├── Location/
-            └── RouterTransition/  # 页切换动效(10项) + target 探针页
+            └── Location/
 ```
 
 ## 用例开发

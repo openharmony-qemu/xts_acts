@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +18,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 
 import { Callback, Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -55,6 +55,7 @@ keycodeMap.set(FunctionKey.DPAD_DOWN, KeyCode.KEYCODE_DPAD_DOWN);
 keycodeMap.set(FunctionKey.DPAD_LEFT, KeyCode.KEYCODE_DPAD_LEFT);
 keycodeMap.set(FunctionKey.DPAD_RIGHT, KeyCode.KEYCODE_DPAD_RIGHT);
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function globalShortcutKeyTest3() {
   describe('globalShortcutKeyTest3', () => {
     beforeEach(async (): Promise<void> => {
@@ -127,7 +128,7 @@ async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver):
     console.info('xxxTest sleep err: ' + JSON.stringify(err));
   }
   // keyboard to sumilate
-  driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, keycodeMap.get(keyChar) as int);
+  driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, keycodeMap.get(keyChar) as int, displayID);
   try {
     await CommonFunc.sleep(2000);
   } catch (err) {

@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import PresetTest from './Preset.test';
 import AddMonitor001 from './uiutilsTest/AddMonitor001.test';
 import AddMonitor002 from './uiutilsTest/AddMonitor002.test';
 import MakeBinding001 from './uiutilsTest/MakeBinding001.test';
@@ -84,6 +85,7 @@ import V2ObservedTest from './uiutilsTest/V2Observed.test';
 import DecoratorInfoTest from './uiutilsTest/DecoratorInfo.test';
 
 export default function testsuite() {
+    PresetTest();
     V1LinkObservedTest();
     V1LocalStoageLinkObservedTest();
     V1LocalStoagePropObservedTest();

@@ -18,7 +18,7 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
-import { Driver } from '@kit.TestKit';
+import { Driver, ON } from '@kit.TestKit';
 import prompt from '@ohos.promptAction';
 
 const EVENT_ID_SET_SUITE_KEY = 182306;
@@ -32,10 +32,9 @@ struct webViewScrollable {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   @State x: boolean = true;
   @State webHeight: number = 0
-  @State isWebBottom:Boolean = false;
-  @State isWebTop:Boolean = false;
+  @State isWebBottom: Boolean = false;
+  @State isWebTop: Boolean = false;
   @State isPageEnd: number = -1;
-
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -60,7 +59,6 @@ struct webViewScrollable {
     }
   }
 
-
   getWebHeight() {
     try {
       this.controller?.runJavaScriptExt('window.innerHeight',
@@ -78,108 +76,109 @@ struct webViewScrollable {
 
   checkScrollPosition() {
     console.log("y:" + this.controller.getScrollOffset().y + ",webHeight :" + this.webHeight + ",getPageHeight:" +
-    this.controller.getPageHeight());
-    if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight()- 2) {
+      this.controller.getPageHeight());
+    if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight() - 2) {
       this.isWebBottom = true;
       console.log("页面已经滑动到底部");
-    }
-    else if(this.controller.getScrollOffset().y == 0) {
+    } else if (this.controller.getScrollOffset().y == 0) {
       this.isWebTop = true;
       console.log("页面已经滑动到顶部");
     }
   }
 
-
   build() {
-      Column() {
-        Row() {
-          Button("web click").key('WebBackToTopButton').onClick(async () => {
-            console.info("key==>" + this.str)
-            await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
-            let driver: Driver = Driver.create();
-            switch (this.str) {
-              case "emitBackToTop001": {
-                try {
-                  this.x = true;
-                  let webRect = Utils.getComponentRect('WebBackToTopKey');
-                  let downX = Math.round(globalThis.winLeft + webRect.left  + 5);
-                  let downY = Math.round(globalThis.winTop + webRect.top + 5);
-                  this.isPageEnd = -1;
-                  this.controller.pageDown(true);
-                  await driver.mouseScroll({x:downX , y:downY }, true, 30, 2072)
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str, 0);
-                  setTimeout(() => {
-                    if (this.isWebTop) {
-                      console.log("页面已经滑动到顶部");
-                      Utils.emitEvent(true, 20251216);
-                    } else {
-                      Utils.emitEvent(false, 20251216);
-                    }
-                  },3000)
+    Column() {
+      Row() {
+        Button("web click").key('WebBackToTopButton').onClick(async () => {
+          console.info("key==>" + this.str)
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
+          await Utils.waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 1, 1000, 5);
+          let driver: Driver = Driver.create();
+          const displayId: number = await (await driver.findComponent(ON.id('WebBackToTopButton'))).getDisplayId();
+          switch (this.str) {
+            case "emitBackToTop001": {
+              try {
+                this.x = true;
+                let webRect = Utils.getComponentRect('WebBackToTopKey');
+                let downX = Math.round(globalThis.winLeft + webRect.left + 5);
+                let downY = Math.round(globalThis.winTop + webRect.top + 5);
+                this.isPageEnd = -1;
+                this.controller.pageDown(true);
+                await driver.mouseScroll({ x: downX, y: downY, displayId: displayId }, true, 30, 2072)
+                await Utils.waitForExist(() => this.isPageEnd, this.str, 1);
+                setTimeout(() => {
+                  if (this.isWebTop) {
+                    console.log("页面已经滑动到顶部");
+                    Utils.emitEvent(true, 20251216);
+                  } else {
+                    Utils.emitEvent(false, 20251216);
+                  }
+                }, 3000)
 
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                }
-                break;
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              case "emitBackToTop002": {
-                try {
-                  this.x = false;
-                  let webRect = Utils.getComponentRect('WebBackToTopKey');
-                  let downX = Math.round(globalThis.winLeft + webRect.left  + 5);
-                  let downY = Math.round(globalThis.winTop + webRect.top + 5);
-                  this.isPageEnd = -1;
-                  this.controller.pageDown(true);
-                  await driver.mouseScroll({x:downX , y:downY }, true, 30, 2072)
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str, 0);
-                  setTimeout(() => {
-                    if (this.isWebTop) {
-                      console.log("页面已经滑动到顶部");
-                      Utils.emitEvent(false, 20251217);
-                    } else {
-                      Utils.emitEvent(true, 20251217);
-                    }
-                  },3000)
-
-                } catch (error) {
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                }
-                break;
-              }
-
+              break;
             }
-          })
-        }
+            case "emitBackToTop002": {
+              try {
+                this.x = false;
+                let webRect = Utils.getComponentRect('WebBackToTopKey');
+                let downX = Math.round(globalThis.winLeft + webRect.left + 5);
+                let downY = Math.round(globalThis.winTop + webRect.top + 5);
+                this.isPageEnd = -1;
+                this.controller.pageDown(true);
+                await driver.mouseScroll({ x: downX, y: downY, displayId: displayId }, false, 30, 2072)
+                await Utils.waitForExist(() => this.isPageEnd, this.str, 1);
+                setTimeout(() => {
+                  if (this.isWebTop) {
+                    console.log("页面已经滑动到顶部");
+                    Utils.emitEvent(false, 20251217);
+                  } else {
+                    Utils.emitEvent(true, 20251217);
+                  }
+                }, 3000)
 
-        Web({ src: $rawfile('indexFive.html'), controller: this.controller }).key('WebBackToTopKey')
-          .javaScriptAccess(true)
-          .fileAccess(true)
-          .imageAccess(true)
-          .domStorageAccess(true)
-          .onlineImageAccess(true)
-          .databaseAccess(true)
-          .onPageEnd((event) => {
-            this.getWebHeight();
-            console.log('onPageEnd url:' + event.url);
-            this.isPageEnd = 1;
-          })
-          .onScroll((event) => {
-            console.log('onScroll xOffset:' + event.xOffset + ' yOffset:' + event.yOffset);
-            this.checkScrollPosition();
-          }).height('95%')
-          .backToTop(this.x)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
 
-        // [ARKWEB_COV] null/undefined attribute coverage
-        Web({ src: $rawfile('indexFive.html'), controller: new web_webview.WebviewController() })
-          .backToTop(null)
-          .height(1)
-          .width(1)
-        Web({ src: $rawfile('indexFive.html'), controller: new web_webview.WebviewController() })
-          .backToTop(undefined)
-          .height(1)
-          .width(1)
-
+          }
+        })
       }
+
+      Web({ src: $rawfile('indexFive.html'), controller: this.controller })
+        .key('WebBackToTopKey')
+        .javaScriptAccess(true)
+        .fileAccess(true)
+        .imageAccess(true)
+        .domStorageAccess(true)
+        .onlineImageAccess(true)
+        .databaseAccess(true)
+        .onPageEnd((event) => {
+          this.getWebHeight();
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
+        })
+        .onScroll((event) => {
+          console.log('onScroll xOffset:' + event.xOffset + ' yOffset:' + event.yOffset);
+          this.checkScrollPosition();
+        })
+        .height('95%')
+        .backToTop(this.x)
+
+      // [ARKWEB_COV] null/undefined attribute coverage
+      Web({ src: $rawfile('indexFive.html'), controller: new web_webview.WebviewController() })
+        .backToTop(null)
+        .height(1)
+        .width(1)
+      Web({ src: $rawfile('indexFive.html'), controller: new web_webview.WebviewController() })
+        .backToTop(undefined)
+        .height(1)
+        .width(1)
+
+    }
   }
 }

@@ -16,7 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -26,6 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function NextFocusUndefinedTest() {
   describe('NextFocusUndefinedTestAdapt001', () => {
 
@@ -64,9 +65,9 @@ export default function NextFocusUndefinedTest() {
       console.info('[NextFocusUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('C');
       let res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');
@@ -82,9 +83,9 @@ export default function NextFocusUndefinedTest() {
       await CommonFunc.sleep(1000);
       await (resetValue?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
-      await driver.triggerKey(2049);
+      await driver.triggerKey(2049, displayID);
       await CommonFunc.sleep(2000);
       strJson = inspector.getInspectorByKey('C');
       res = JSON.parseJsonElement(strJson).getElement('$attrs').getString('label');

@@ -208,6 +208,20 @@ export const SetUiDvsyncSwitchTest002: () => number;
 export const SetUiDvsyncSwitchTest003: () => number;
 export const SetUiDvsyncSwitchTest004: () => number;
 
+export const RuntimeCheckModeTest001: () => number;
+export const RuntimeCheckModeTest002: () => number;
+export const RuntimeCheckModeTest003: () => number;
+export const RuntimeCheckModeTest004: () => number;
+export const RuntimeCheckModeTest005: () => number;
+export const RuntimeCheckModeTest006: () => number;
+export const RuntimeCheckModeTest007: () => number;
+export const RuntimeCheckModeTest008: () => number;
+export const RuntimeCheckModeTest009: () => number;
+export const RuntimeCheckModeTest010: () => number;
+export const RuntimeCheckModeTest011: () => number;
+export const RuntimeCheckModeTest012: () => number;
+export const RuntimeCheckModeTest013: () => number;
+
 export const UIAgentGetPageTextTest001: () => number;
 export const UIAgentGetPageTextTest002: () => number;
 export const UIAgentGetPageTextTest003: () => number;

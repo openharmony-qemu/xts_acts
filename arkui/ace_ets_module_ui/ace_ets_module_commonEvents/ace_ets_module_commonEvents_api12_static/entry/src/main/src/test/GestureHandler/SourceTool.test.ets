@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Component, Driver, MouseButton, ON, Point } from '@ohos.UiTest';
+import { Component, Driver, MouseButton, ON, Point } from '@kit.TestKit';
 import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -24,6 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 const uiContext = new UIContext();
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function SourceToolTest() {
 
   describe('SourceToolTest', () => {
@@ -74,7 +75,7 @@ it('SourceTool_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
 
       let point = await (button?.getBoundsCenter() as Promise<Point>);
 
-      await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT);
+      await driver.mouseClick({x: point.x, y: point.y, displayId: displayID}, MouseButton.MOUSE_BUTTON_LEFT);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('sourceTool1_id');
       await CommonFunc.sleep(2000);
@@ -103,8 +104,8 @@ it('SourceTool_static_0020', Level.LEVEL0, async (done: () => void): Promise<voi
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 20).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 20).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 20).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID},
+        {x: Math.round(right - 20).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('sourceTool1_id');
       await CommonFunc.sleep(2000);
@@ -157,8 +158,8 @@ it('axisHorizontal_static_0040', Level.LEVEL0, async (done: () => void): Promise
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 20).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 20).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 20).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID},
+        {x: Math.round(right - 20).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('axisHorizontal_id');
       let obj = JSON.parseJsonElement(strJson);
@@ -185,8 +186,8 @@ it('axisVertical_static_0050', Level.LEVEL0, async (done: () => void): Promise<v
       let bottom = colum.bottom
       let left = colum.left
       let right = colum.right
-      await ((driver.swipe(Math.round(left + 20).toInt(), Math.round((top + bottom) / 2).toInt(),
-        Math.round(right - 20).toInt(), Math.round((top + bottom) / 2).toInt())) as Promise<void>);
+      await ((driver.swipeBetween({x: Math.round(left + 20).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID},
+        {x: Math.round(right - 20).toInt(), y: Math.round((top + bottom) / 2).toInt(), displayId: displayID})) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('axisVertical_id');
       let obj = JSON.parseJsonElement(strJson);

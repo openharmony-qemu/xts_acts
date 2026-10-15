@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,6 +33,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 const uiContext = new UIContext();
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 
 
 export default function PinchGestureBasic02Test() {
@@ -97,10 +98,10 @@ it('PinchGestureBasic02Test_static_0010', Level.LEVEL0, async (done: () => void)
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let pointers: PointerMatrix = PointerMatrix.create(2,2);
-      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.1).toInt() } as Point);
-      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.3).toInt() } as Point);
-      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.bottom - areaHeight1 * 0.1).toInt() } as Point);
-      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.bottom - areaHeight1 * 0.3).toInt() } as Point);
+      pointers.setPoint(0,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.1).toInt(), displayId: displayID } as Point);
+      pointers.setPoint(0,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.top + areaHeight1 * 0.3).toInt(), displayId: displayID } as Point);
+      pointers.setPoint(1,0,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.bottom - areaHeight1 * 0.1).toInt(), displayId: displayID } as Point);
+      pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1 * 0.5).toInt(),y: Math.round(areaObj1.bottom - areaHeight1 * 0.3).toInt(), displayId: displayID } as Point);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
       // 拖动之后重新获取当前区域的位置信息

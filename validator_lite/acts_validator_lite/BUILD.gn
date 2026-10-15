@@ -1,10 +1,19 @@
 import("//build/lite/config/hap_pack.gni")
 import("//test/xts/tools/lite/build/xts_gated_js_suite.gni")
 
+# Capability switches for the engine features these cases exercise. All six are
+# declared together in foundation/arkui/ace_engine_lite/ace_lite.gni (each default
+# false) and turned on per product through the component "features" in
+# vendor <product>/config.json. Importing the engine's own declaration keeps every
+# gate below and the engine reading the same source; a case whose capability is
+# compiled out cannot pass, so it is dropped from the suite instead of shipping.
+import("//foundation/arkui/ace_engine_lite/ace_lite.gni")
 _suite_dir =
     "$root_out_dir/suites/acts_validator_lite/testcases/acts_validator_lite"
 _tools_dir = "$root_out_dir/suites/acts_validator_lite/testcases/tools"
 
+# Pages that every product builds; pages needing an engine capability are appended
+# below, each inside the matching switch.
 _pages = [
   "pages/index/index",
   "pages/ArkUI/chart/line/index",
@@ -19,43 +28,78 @@ _pages = [
   "pages/Startup/deviceInfo/index",
   "pages/Sensors/index/index",
   "pages/Location/index/index",
-  "pages/RouterTransition/index/index",
-  "pages/RouterTransition/normal/index",
-  "pages/RouterTransition/edge_api/index",
-  "pages/RouterTransition/edge_duration/index",
-  "pages/RouterTransition/target/index",
   "pages/common/help/index",
-  "pages/ArkUI/flex/aspect-ratio/index",
-  "pages/ArkUI/flex/item-sizing/index",
-  "pages/ArkUI/flex/align-self/index",
-  "pages/ArkUI/flex/size-constraints/index",
-  "pages/ArkUI/flex/align-content/index",
-  "pages/ArkUI/flex/flexDirection/index",
-  "pages/ArkUI/flex/justifyContent/index",
-  "pages/ArkUI/flex/alignItems/index",
-  "pages/ArkUI/flex/flexWrap/index",
-  "pages/ArkUI/flex/flex-gap/index",
-  "pages/ArkUI/flex/flex-margin-left/index",
-  "pages/ArkUI/flex/flex-overflow/index",
-  "pages/ArkUI/flex/flex-position/index",
-  "pages/ArkUI/gradient_angle/index",
-  "pages/ArkUI/gradient_button/index",
-  "pages/ArkUI/gradient_direction/index",
-  "pages/ArkUI/gradient_list/index",
-  "pages/ArkUI/pathAnimator/index",
-  "pages/ArkUI/svgAnimate/index",
-  "pages/ArkUI/svgPaint/index",
-  "pages/ArkUI/svgPath/index",
-  "pages/ArkUI/svgShape/index",
-  "pages/ArkUI/svgText/index",
-  "pages/ArkUI/svgTransform/index",
-  "pages/ArkUI/element-transition/index",
-  "pages/ArkUI/transition_basic/index",
 ]
+
+# Capability-gated pages. With a switch off the render step drops these routes from
+# the generated manifest.json / config.json and removes the pages, their app.js
+# report items, the home button, the navigateTo route and the submenu row; a
+# dangling reference fails the build instead of silently shipping.
+if (ace_engine_lite_enable_flex_layout_config) {
+  _pages += [
+    "pages/ArkUI/flex/aspect-ratio/index",
+    "pages/ArkUI/flex/item-sizing/index",
+    "pages/ArkUI/flex/align-self/index",
+    "pages/ArkUI/flex/size-constraints/index",
+    "pages/ArkUI/flex/align-content/index",
+    "pages/ArkUI/flex/flexDirection/index",
+    "pages/ArkUI/flex/justifyContent/index",
+    "pages/ArkUI/flex/alignItems/index",
+    "pages/ArkUI/flex/flexWrap/index",
+    "pages/ArkUI/flex/flex-gap/index",
+    "pages/ArkUI/flex/flex-margin-left/index",
+    "pages/ArkUI/flex/flex-overflow/index",
+    "pages/ArkUI/flex/flex-position/index",
+  ]
+}
+
+if (ace_engine_lite_enable_gradient_capability) {
+  _pages += [
+    "pages/ArkUI/gradient_angle/index",
+    "pages/ArkUI/gradient_button/index",
+    "pages/ArkUI/gradient_direction/index",
+    "pages/ArkUI/gradient_list/index",
+  ]
+}
+
+if (ace_engine_lite_enable_svg_component_config) {
+  _pages += [
+    "pages/ArkUI/svgShape/index",
+    "pages/ArkUI/svgPath/index",
+    "pages/ArkUI/svgPaint/index",
+    "pages/ArkUI/svgTransform/index",
+    "pages/ArkUI/svgText/index",
+    "pages/ArkUI/svgAnimate/index",
+  ]
+}
+
+if (ace_engine_lite_enable_animation_capability) {
+  _pages += [
+    "pages/ArkUI/pathAnimator/index",
+    "pages/ArkUI/transition_basic/index",
+  ]
+}
+
+if (ace_engine_lite_enable_element_transition_capability) {
+  _pages += [ "pages/ArkUI/element-transition/index" ]
+}
+
+if (ace_engine_lite_feature_page_transition_effect) {
+  _pages += [
+    "pages/ArkUI/RouterTransition/index/index",
+    "pages/ArkUI/RouterTransition/normal/index",
+    "pages/ArkUI/RouterTransition/edge_api/index",
+    "pages/ArkUI/RouterTransition/edge_duration/index",
+    "pages/ArkUI/RouterTransition/target/index",
+  ]
+}
 
 _extra_js = [
   "common/js/event.js",
   "common/js/general.js",
+
+  # Only imported by the three gated RouterTransition group pages.
+  "common/js/router_transition.js",
   "common/js/swiper.js",
 ]
 

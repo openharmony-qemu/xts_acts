@@ -134,8 +134,8 @@ export default class Utils {
     await image.pinchIn(0.5);
   }
 
-  static async triggerKey(id: number,driver: Driver) {
-    await driver.triggerKey(id);
+  static async triggerKey(id: number,driver: Driver,displayId?:number) {
+    await driver.triggerKey(id,displayId);
   }
 
   static async fingerZoom(key: string, isOut: boolean) {

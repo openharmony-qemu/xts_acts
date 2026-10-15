@@ -25,7 +25,7 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 
@@ -34,6 +34,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function PanGesture1() {
   describe('PanGesture1', () => {
     beforeEach(async (): Promise<void> => {
@@ -96,10 +97,7 @@ it('PanGesture1_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
       let colum = CommonFunc.getComponentRectOnScreen('PanGesture1');
       let top = colum.top
       let left = colum.left
-      await ((driver.swipe(Math.round(AppStorage.get<number>("winLeft") as number + 100).toInt(),
-        Math.round(top + 100).toInt(),
-        Math.round(AppStorage.get<number>("winLeft") as number + 500).toInt(), Math.round(top + 500).toInt(),
-        600)) as Promise<void>)
+      await ((driver.swipeBetween({x: Math.round(AppStorage.get<number>("winLeft") as number + 100).toInt(), y: Math.round(top + 100).toInt(), displayId: displayID}, {x: Math.round(AppStorage.get<number>("winLeft") as number + 500).toInt(), y: Math.round(top + 500).toInt(), displayId: displayID}, 600)) as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PanGesture1_1');
       await CommonFunc.sleep(1000);

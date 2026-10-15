@@ -25,11 +25,10 @@ import WebViewEnableDefaultContextMenu from './WebViewEnableDefaultContextMenu.t
 
 export default function testsuite() {
   webViewController()
+  webViewMenuShowResult()
   WebViewEnumAndFontLibrary()
   WebViewEnumAndSetWebController()
-  webViewMenuShowResult()
   webViewHasImageJsunit()
   WebViewBypassVsyncCondition()
   WebViewEnableDefaultContextMenu()
-
 }

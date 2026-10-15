@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,21 @@
  */
 
 import btNopUiJsunit from "./BtNopUiJsunitStatic.test";
-export default function testsuite() {
+import btBleNopUiJsunit from './BtBleNopUiJsunit.test';
+import btBleServerNopUiJsunit from './BtBleServerNopUiJsunit.test';
+import btConnectionNopUiJsunit from './BtConnectionNopUiJsunit.test';
+import btProfileNopUiJsunit from './BtProfileNopUiJsunit.test';
+import btSocketNopUiJsunit from './BtSocketNopUiJsunit.test';
+import btHidNopUiJsunit from './BtHidNopUiJsunit.test';
+import btNopUiJsunitCoverageTest from './BtNopUiJsunitCoverage.test'
+
+export default function testsuite(): void {
   btNopUiJsunit();
+  btBleNopUiJsunit();
+  btBleServerNopUiJsunit();
+  btConnectionNopUiJsunit();
+  btProfileNopUiJsunit();
+  btSocketNopUiJsunit();
+  btHidNopUiJsunit();
+  btNopUiJsunitCoverageTest();
 }

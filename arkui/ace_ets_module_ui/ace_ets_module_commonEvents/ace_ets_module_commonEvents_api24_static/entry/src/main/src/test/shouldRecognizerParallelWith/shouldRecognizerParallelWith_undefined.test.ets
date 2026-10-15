@@ -24,6 +24,7 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 import inspector from '@ohos.arkui.inspector';
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function shouldRecognizerParallelWith_undefined(): void{
   describe('shouldRecognizerParallelWith_undefined', () => {
 
@@ -75,11 +76,9 @@ export default function shouldRecognizerParallelWith_undefined(): void{
       console.log('SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100 item height and width', areaHeight, areaWidth);
 
       let driver = Driver.create();
-      await driver.swipe(
-        Math.round(areaObj1.left + areaWidth / 2).toInt(),
-        Math.round(areaObj1.bottom - areaHeight * 0.2).toInt(),
-        Math.round(areaObj1.left + areaWidth / 2).toInt(),
-        Math.round(areaObj1.top).toInt(),
+      await driver.swipeBetween(
+        {x: Math.round(areaObj1.left + areaWidth / 2).toInt(), y: Math.round(areaObj1.bottom - areaHeight * 0.2).toInt(), displayId: displayID},
+        {x: Math.round(areaObj1.left + areaWidth / 2).toInt(), y: Math.round(areaObj1.top).toInt(), displayId: displayID},
         300
       );
 

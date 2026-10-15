@@ -1283,7 +1283,7 @@ struct WebComponent {
                 mediaErrorState = 2
                 let str = '';
                 this.controller.loadUrl($rawfile('nativeMediaError.html'))
-                await Utils.sleep(2000)
+                await Utils.sleep(3000)
                 this.controller.runJavaScript('buttonPlay()', (error, result) => {
                   console.error(`The buttonPlay() return error is: ${error}`);
                   console.log(`The buttonPlay() return value is: ${result}`);
@@ -1303,12 +1303,13 @@ struct WebComponent {
                 mediaErrorState = 1
                 let str = '';
                 this.controller.loadUrl($rawfile('nativeMediaError.html'))
-                await Utils.sleep(2000)
+                await Utils.sleep(3000)
                 this.controller.runJavaScript('buttonPlay()', (error, result) => {
                   console.error(`The buttonPlay() return error is: ${error}`);
                   console.log(`The buttonPlay() return value is: ${result}`);
                   str = result;
                 })
+                console.info('isError:'+isError+',isRelease:'+isRelease+',mediaErrorTypeList:'+JSON.stringify(mediaErrorTypeList))
                 await waitForExist(() => (isError && isRelease &&
                   mediaErrorTypeList.indexOf(1) > -1) ? 1 : 0, this.emitKey, 1);
                 console.log(`The isRelease: ${isRelease}`);

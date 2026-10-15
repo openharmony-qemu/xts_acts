@@ -48,6 +48,7 @@
 #include "arcSwiper/ArcSwiperMethodTest.cpp"
 #include "arcAlphabetIndexer/ArcAlphabetIndexerAttributeTest.cpp"
 #include "node/SetUiDvsyncSwitchTest.cpp"
+#include "nativeModule/RuntimeCheckModeTest.cpp"
 #include "node/UIAgentGetPageTextTest.cpp"
 #include "node/GetImagesByNodeIdAsyncTest.cpp"
 
@@ -282,6 +283,19 @@ static napi_value Init(napi_env env, napi_value exports)
         {"SetUiDvsyncSwitchTest002", nullptr, SetUiDvsyncSwitchTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetUiDvsyncSwitchTest003", nullptr, SetUiDvsyncSwitchTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetUiDvsyncSwitchTest004", nullptr, SetUiDvsyncSwitchTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest001", nullptr, RuntimeCheckModeTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest002", nullptr, RuntimeCheckModeTest002, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest003", nullptr, RuntimeCheckModeTest003, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest004", nullptr, RuntimeCheckModeTest004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest005", nullptr, RuntimeCheckModeTest005, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest006", nullptr, RuntimeCheckModeTest006, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest007", nullptr, RuntimeCheckModeTest007, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest008", nullptr, RuntimeCheckModeTest008, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest009", nullptr, RuntimeCheckModeTest009, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest010", nullptr, RuntimeCheckModeTest010, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest011", nullptr, RuntimeCheckModeTest011, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest012", nullptr, RuntimeCheckModeTest012, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RuntimeCheckModeTest013", nullptr, RuntimeCheckModeTest013, nullptr, nullptr, nullptr, napi_default, nullptr},
 
         {"UIAgentGetPageTextTest001", nullptr, UIAgentGetPageTextTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"UIAgentGetPageTextTest002", nullptr, UIAgentGetPageTextTest002, nullptr, nullptr, nullptr, napi_default, nullptr},

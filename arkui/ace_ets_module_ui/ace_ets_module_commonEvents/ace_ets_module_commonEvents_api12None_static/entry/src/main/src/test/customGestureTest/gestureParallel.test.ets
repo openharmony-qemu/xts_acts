@@ -15,12 +15,13 @@
  */
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function gestureParallelTest() {
   describe('gestureParallelTest', () => {
     beforeEach(async ():Promise<void> => {
@@ -80,8 +81,8 @@ it('gestureParallelTest_static_001', Level.LEVEL0, async (done: () => void): Pro
         Number(Number(rectInfo[0][1] ?? 0) + Number(AppStorage.get<number>("winTop") ?? 0));
       console.info("rect_left = " + CommonFunc.rect_left + "CommonFunc.rect_top = " + CommonFunc.rect_top);
       let driver = Driver.create();
-      await driver.longClick(Math.round(CommonFunc.rect_left + uiContext!.vp2px(66.66)).toInt(), Math.round(CommonFunc.rect_top + uiContext!.vp2px(133.33)).toInt());
-      await driver.doubleClick(Math.round(CommonFunc.rect_left + uiContext!.vp2px(66.66)).toInt(), Math.round(CommonFunc.rect_top + uiContext!.vp2px(133.33)).toInt());
+      await driver.longClickAt({x: Math.round(CommonFunc.rect_left + uiContext!.vp2px(66.66)).toInt(), y: Math.round(CommonFunc.rect_top + uiContext!.vp2px(133.33)).toInt(), displayId: displayID});
+      await driver.doubleClickAt({x: Math.round(CommonFunc.rect_left + uiContext!.vp2px(66.66)).toInt(), y: Math.round(CommonFunc.rect_top + uiContext!.vp2px(133.33)).toInt(), displayId: displayID});
       let strJson1 = inspector.getInspectorByKey("longPressMsg");
       await CommonFunc.sleep(200);
       console.info("[gestureParallelTest_001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));

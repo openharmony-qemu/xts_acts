@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 /**
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,13 +27,14 @@ import {
   ResizeDirection,
   UiWindow,
   WindowMode
-} from '@ohos.UiTest';
+} from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
 
+let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function btnDragStart() {
   describe('btnDragStart', () => {
 
@@ -93,8 +94,8 @@ it('btnDragStart_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
 
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
-      await driver.drag(Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
-        Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt(), 200, 200, 600);
+      await driver.dragBetween({x: Math.round(CommonFunc.rect_left + uiContext.vp2px(33.33)).toInt(),
+        y: Math.round(CommonFunc.rect_top + uiContext.vp2px(26.66)).toInt(), displayId: displayID}, {x: 200, y: 200, displayId: displayID}, 600);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey("buttonDrag_2");
       await CommonFunc.sleep(200);

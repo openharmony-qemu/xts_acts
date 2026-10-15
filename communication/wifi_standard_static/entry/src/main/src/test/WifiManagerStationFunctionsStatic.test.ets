@@ -3330,6 +3330,7 @@ export default function actsWifiManagerFunctionsTest() {
       let caseName = "LOG_SUB_Communication_WifiManager_StartScan_0077";
       hilog.info(domain, tag, `${caseName} test start`);
       try {
+        await Utils.msSleep(31000);
         wifiManager.startScan();
         hilog.info(domain, tag, `${caseName} startScan success`);
       } catch (err) {
