@@ -15,8 +15,12 @@
 
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import Utils from './Utils.test';
+import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@ohos.UiTest';
+
+const FACTOR_PAGE_URL = 'testability/pages/WebZoomFactorTestPage';
+const FACTOR_BUTTON_ID = 'WebZoomFactorTestButton';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -27,10 +31,18 @@ const driver = Driver.create();
 export default function webZoomFactorTest() {
   describe('WebZoomFactorTest', () => {
     beforeAll(async (done: Function) => {
+      let options: router.RouterOptions = {
+        url: FACTOR_PAGE_URL,
+      };
       try {
-        await driver.waitForComponent(ON.id('WebZoomAccessTestButton'), 10000);
+        router.clear();
+        let pages = router.getState();
+        if (pages.name !== 'WebZoomFactorTestPage') {
+          await router.pushUrl(options);
+          await driver.waitForComponent(ON.id(FACTOR_BUTTON_ID), 10000);
+        }
       } catch (err) {
-        console.error('wait WebZoomAccessTestButton error: ' + err);
+        console.error('push WebZoomFactorTestPage error: ' + err);
       }
       done();
     });
@@ -48,7 +60,7 @@ export default function webZoomFactorTest() {
       Utils.emitEvent(action, EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
       Utils.registerEvent(action, true, eventId, () => { isReturn = true });
-      Utils.waitAndClickComponent(driver, 'WebZoomAccessTestButton', action);
+      Utils.waitAndClickComponent(driver, FACTOR_BUTTON_ID, action);
       await Utils.waitForExist(() => isReturn, action + '_returnCheck', true, 300, 80);
       done();
     };
@@ -185,7 +197,7 @@ export default function webZoomFactorTest() {
       Utils.emitEvent('testSetZoomFactorInitErr', EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent('testSetZoomFactorInitErr', '17100001', 181211, () => { });
       Utils.registerEvent('testSetZoomFactorInitErr', INIT_ERR_MSG, 181311, done);
-      await Utils.waitAndClickComponent(driver, 'WebZoomAccessTestButton', 'testSetZoomFactorInitErr');
+      await Utils.waitAndClickComponent(driver, FACTOR_BUTTON_ID, 'testSetZoomFactorInitErr');
     });
 
     /**
@@ -200,7 +212,7 @@ export default function webZoomFactorTest() {
       Utils.emitEvent('testGetZoomFactorInitErr', EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent('testGetZoomFactorInitErr', '17100001', 181212, () => { });
       Utils.registerEvent('testGetZoomFactorInitErr', INIT_ERR_MSG, 181312, done);
-      await Utils.waitAndClickComponent(driver, 'WebZoomAccessTestButton', 'testGetZoomFactorInitErr');
+      await Utils.waitAndClickComponent(driver, FACTOR_BUTTON_ID, 'testGetZoomFactorInitErr');
     });
 
     /**
@@ -214,7 +226,7 @@ export default function webZoomFactorTest() {
     it('testSetZoomFactorUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.registerEvent('testSetZoomFactorUndefined', '401', 181213, done);
       Utils.emitEvent('testSetZoomFactorUndefined', EVENT_ID_SET_SUITE_KEY);
-      await Utils.waitAndClickComponent(driver, 'WebZoomAccessTestButton', 'testSetZoomFactorUndefined');
+      await Utils.waitAndClickComponent(driver, FACTOR_BUTTON_ID, 'testSetZoomFactorUndefined');
     });
 
     /**
@@ -228,7 +240,7 @@ export default function webZoomFactorTest() {
     it('testSetZoomFactorNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.registerEvent('testSetZoomFactorNull', '401', 181214, done);
       Utils.emitEvent('testSetZoomFactorNull', EVENT_ID_SET_SUITE_KEY);
-      await Utils.waitAndClickComponent(driver, 'WebZoomAccessTestButton', 'testSetZoomFactorNull');
+      await Utils.waitAndClickComponent(driver, FACTOR_BUTTON_ID, 'testSetZoomFactorNull');
     });
 
   });
