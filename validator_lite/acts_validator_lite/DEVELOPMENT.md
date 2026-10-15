@@ -8,6 +8,7 @@
 | ArkUI | `ArkUI/ui_advanced/index` | 11（animator/picker/swiper/image/switch/event/app/config/timer×2） | list-item 合并 |
 | ArkUI | `ArkUI/chart/line/index` | 1（chart_line） | list-item 单项 |
 | ArkUI | `ArkUI/marquee/index` | 1（marquee） | 原始 div 布局 |
+| ArkUI | `ArkUI/RouterTransition/index/index` | 25（normal 10 / edge_api 6 / edge_duration 9） | 子菜单 + 3 页 |
 | PowerManager | `PowerManager/power/index` | 3（battery/brightness_value/brightness_mode） | list-item 合并 |
 | Sensors | `Sensors/index/index` | 7（vibrator/acc/gyro/step/baro/hr/onbody） | list-item 合并 |
 | Location | `Location/index/index` | 2（location_info/location_subscribe） | list-item 合并 |
@@ -17,10 +18,14 @@
 | Startup | `Startup/deviceInfo/index` | 1（deviceinfo） | list-item 单项 |
 
 > marquee 因动画在 `<list-item>` 内不生效，保留原始 div 布局，仅 pass/fail 改为 toggle 变色。
+>
+> Router Transition：从 ArkUI 子菜单进入 `ArkUI/RouterTransition/index`（子菜单），再进 `normal` / `edge_api` / `edge_duration` 三个分组页；每个测试项点“播放”=`router.replace` 携带对应 `animation` 参数（正常用例 duration 800ms；`router_edge_replace_url` 走 `router.replaceUrl` 别名）跳转到 `target` 页，操作员观察真实页切换动效后返回本页点 pass/fail；`target` 在动效结束后才允许返回（引擎会忽略动效进行中的 replace）。分组页的“back”回子菜单，子菜单的“返回首页”回 `pages/index/index`。
+>
+> 异常边界用例的判定靠「请求值 → 引擎生效值」：`5000` 与 `5001` 的动效都是约 5s、`0`/`-1`/`0.5` 都是瞬间切换，**靠时长分不出降级方式**，所以 `target` 页会把该轮用例的预期处理分支（截断仍播放 / 归一为无动效 / 取默认值 / 降级无动效）直接显示成判定语。
 
 ## testItems 数据结构
 
-在 `app.js` 的 `testItems` 中注册用例（当前 38 项）：
+在 `app.js` 的 `testItems` 中注册用例（当前 63 项）：
 
 ```javascript
 testItems: {
@@ -180,7 +185,7 @@ failX() {
 
 ## 新增子页面（非根目录）
 
-在已有子系统/分组下新增页面（如 ArkUI 子页面、RouterTransition 组内页面）：前 3 步同「新增子系统」，入口注册改为——所属菜单页 todolist 加一行（如 `pages/ArkUI/common/index/index.js`、`pages/RouterTransition/index/index.js`）。
+在已有子系统/分组下新增页面（如 ArkUI 子页面、RouterTransition 组内页面）：前 3 步同「新增子系统」，入口注册改为——所属菜单页 todolist 加一行（如 `pages/ArkUI/common/index/index.js`、`pages/ArkUI/RouterTransition/index/index.js`）。
 
 ## 不支持能力处理（canIUse 前置判定）
 
@@ -230,7 +235,7 @@ HML 中每个测试点 list-item 内加独立 tip：
 [report] text_largeColor pass
 [report] api_file fail writeText error: TypeError
 [report] api_battery untested unsupported: SystemCapability.PowerManager.BatteryManager.Lite
-[total] 38 5 2
+[total] 63 5 2
 [report_end]
 [end] run suites end
 ```
@@ -263,6 +268,16 @@ if (<任意 GN 布尔条件>) {
 ```
 
 条件不命中时，该页面及其 app.js 条目、首页按钮、路由行、子菜单行自动从产物移除，无需其他动作；条目或路由引用不一致会构建报错。
+
+### 引擎能力门控（当前 1 组）
+
+条件统一来自 `import("//foundation/arkui/ace_engine_lite/ace_lite.gni")`——这些开关和引擎自己用的是同一个 `declare_args()`，各产品在 `vendor/<产品>/config.json` 的 `ace_engine_lite` features 里按需打开（默认全 false）：
+
+| 开关 | 门控的页面 | 页数 |
+|------|-----------|------|
+| `ace_engine_lite_feature_page_transition_effect` | `pages/ArkUI/RouterTransition/*` + 全部 `router_*` 用例 | 5 |
+
+新增门控子页面时：加页面文件 → 把路由加进对应 if 块内的 `_pages`。
 
 ### 注意
 
