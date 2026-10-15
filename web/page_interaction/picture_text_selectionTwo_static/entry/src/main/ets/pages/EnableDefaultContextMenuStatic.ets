@@ -37,7 +37,7 @@ import { fileIo, fileUri } from '@kit.CoreFileKit';
 import { http } from '@kit.NetworkKit';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 const EVENT_ID_SET_SUITE_KEY = 177009;
-const driver = Driver.create();
+
 export class StringFields {
   public str: string = '';
 }
@@ -82,6 +82,7 @@ struct BindMenuTest {
       Row() {
         Button("web test").key('webEnableDefaultContextMenu').onClick((e: ClickEvent) => {
           console.info("key==>" +  this.stringObj.str)
+          const driver = Driver.create();
           switch ( this.stringObj.str) {
             case "EnableDefaultContextMenuStatic01": {
               this.enableDefaultMenu = true;
@@ -95,7 +96,7 @@ struct BindMenuTest {
                 if (buttonOne !== null) {
                   Utils.emitEvent(true, 20260325)
                 }
-              },2000)
+              },5000)
               break;
             }
 
@@ -112,7 +113,7 @@ struct BindMenuTest {
                 if (buttonOne == null) {
                   Utils.emitEvent(true, 20260326)
                 }
-              },2000)
+              },5000)
               break;
             }
 
@@ -129,7 +130,7 @@ struct BindMenuTest {
                 if (buttonOne !== null) {
                   Utils.emitEvent(true, 20260327)
                 }
-              },2000)
+              },5000)
               break;
             }
 
@@ -147,7 +148,7 @@ struct BindMenuTest {
                 if (buttonOne == null) {
                   Utils.emitEvent(true, 20260328)
                 }
-              },2000)
+              },5000)
               break;
             }
           }
