@@ -86,7 +86,10 @@ export default function subwindowDialog() {
 
       await CommonFunc.sleep(1000);
       // 涉及坐标
-      await driver.clickAt({ x: Math.round(globalThis.winLeft+vp2px(100)), y: Math.round(globalThis.winTop+vp2px(100)), displayId: displayID });
+      await driver.clickAt({ 
+        x: Math.round(globalThis.winLeft+vp2px(100)), 
+        y: Math.round(globalThis.winTop+vp2px(100)), 
+        displayId: displayID });
       // await driver.click(Math.round(globalThis.winLeft + vp2px(100)),Math.round(globalThis.winTop + vp2px(100)));
       await CommonFunc.sleep(1000);
       let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
