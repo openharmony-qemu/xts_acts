@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-export const sleep = (ms: int): Promise<int> => {
+export const sleep: (ms: int) => Promise<int> = (ms: int): Promise<int> => {
   return new Promise<int>(resolve => {
     setTimeout(() => {
       resolve(1)
@@ -110,7 +110,7 @@ export async function locksTimeTask(lock: AsyncLock,
   return res;
 }
 
-export function sendableFunction() {
+export function sendableFunction(): void {
   console.info(`sendableFunction`);
 }
 
