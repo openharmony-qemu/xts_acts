@@ -26,6 +26,26 @@ _extra_js = [
   "common/js/event.js",
   "common/js/general.js",
   "common/js/swiper.js",
+
+  # Image assets referenced by ui_basic (opacity) and ui_advanced (image / image-animator).
+  "common/icon.png",
+  "common/A094_051.png",
+  "common/A094_052.png",
+  "common/A094_053.png",
+  "common/A094_054.png",
+  "common/A094_055.png",
+  "common/A094_056.png",
+  "common/A094_057.png",
+  "common/A094_058.png",
+  "common/A094_059.png",
+  "common/A094_060.png",
+  "common/A094_061.png",
+  "common/A094_062.png",
+  "common/A094_063.png",
+  "common/A094_064.png",
+  "common/A094_065.png",
+  "common/A094_066.png",
+  "common/A094_067.png",
 ]
 
 xts_gated_js_suite("validator_src") {
