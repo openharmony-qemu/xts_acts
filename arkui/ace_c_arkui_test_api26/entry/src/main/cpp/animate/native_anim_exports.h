@@ -167,6 +167,23 @@ napi_value NativeAnimCtxNull147(napi_env env, napi_callback_info info);
 napi_value NativeAnimCtrlNull148(napi_env env, napi_callback_info info);
 napi_value NativeAnimPropTrans149(napi_env env, napi_callback_info info);
 napi_value NativeAnimFinishModes150(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601ErrSameCtx001(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601Transform3D002(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601TransX003(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601TransY004(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601TransZ005(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601Scale006(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601ScaleX007(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601ScaleY008(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601Rot009(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601RotX010(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601RotY011(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601RotZ012(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601Bounds013(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601BoundsX014(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601BoundsY015(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601BoundsW016(napi_env env, napi_callback_info info);
+napi_value NativeAnimApi2601BoundsH017(napi_env env, napi_callback_info info);
 
 } // namespace ArkUICapiTest
 
