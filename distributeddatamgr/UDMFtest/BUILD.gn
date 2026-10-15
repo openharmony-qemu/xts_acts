@@ -24,6 +24,9 @@ group("UDMFtest") {
       "udmfTestApi20:ActsUdmfApi20Test",
       "UDMFEts_static:ActsUDMFStaticTest",
       "UDMFEtsPermission_static:ActsUDMFPermissionStaticTest",
+      "UDMFDragTest:ActsUDMFDragTest",
+      "UDMFDragTestStatic:ActsUDMFDragTestStatic",
+      "UDMFndkDragTest:ActsUDMFNdkDragTest",
     ]
   }
 }
