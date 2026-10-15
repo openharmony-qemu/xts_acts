@@ -25,6 +25,8 @@
     "MainAbility/pages/drawableDescriptor/SetHdrComposition",
     "MainAbility/pages/drawableDescriptor/GetMaskClipPath",
     "MainAbility/pages/ImageAnimator/ImageAnimatorAttributeModifier",
+    "MainAbility/pages/ImageAnimator/ImageAnimatorInterpolationModifier",
+    "MainAbility/pages/ImageAnimator/ImageAnimatorInterpolation",
     "MainAbility/pages/image/ImageAttributeModifier"
   ]
 }
