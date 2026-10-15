@@ -15,19 +15,17 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
-// Placeholder suite executed on devices without UDMF support so that the
-// test package still reports a passing result.
 export default function EmptyTest() {
   describe('EmptyTest', () => {
     /**
-     * @tc.name   testTheDevicesNotSupportSyscap002
-     * @tc.number testTheDevicesNotSupportSyscap002
+     * @tc.name   testTheDevicesNotSupportSyscap001
+     * @tc.number SUB_DistributedData_UDMF_SDK_DevicesNotSupportSyscapTest_0100
      * @tc.desc   The Devices not support this stsCap.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testTheDevicesNotSupportSyscap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testTheDevicesNotSupportSyscap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let firstOperand: number = 1;
       let secondOperand: number = 2;
       expect(firstOperand + secondOperand).assertEqual(3);
