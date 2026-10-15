@@ -310,12 +310,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_1000 makeCall callback: error->" + JSON.stringify(error));
-            ExpectTrue(error.code == 401);
+            ExpectTrue(error.code === 401);
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_1000 makeCall callback: err->" + JSON.stringify(err));
-          ExpectTrue(err.code == 401);
+          ExpectTrue(err.code === 401);
           done();
         }
       }
@@ -346,12 +346,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_1100 makeCall callback: error->" + JSON.stringify(error.code));
-            ExpectTrue(error.code == 401);
+            ExpectTrue(error.code === 401);
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_1100 makeCall callback: err->" + JSON.stringify(err));
-          ExpectTrue(err.code == 401);
+          ExpectTrue(err.code === 401);
           done();
         }
       }
