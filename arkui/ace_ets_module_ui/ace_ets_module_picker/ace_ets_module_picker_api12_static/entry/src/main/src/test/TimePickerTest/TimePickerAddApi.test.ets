@@ -17,14 +17,25 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+
 const uiContext = AppStorage.get<UIContext>("uiContext")
+
 export default function TimePickerAddApi() {
   describe('TimePickerAddApi', () => {
-
     beforeEach(async () => {
       console.info("TimePickerAddApi beforeEach start");
       let options: router.RouterOptions = {
@@ -48,26 +59,32 @@ export default function TimePickerAddApi() {
       }
     });
 
-    
-
     /**
      * @tc.number   TimePickerAddApi_static_001
      * @tc.name     TimePickerAddApi_static_001
      * @tc.desc     TimePickerAddApi_static_001
      * @tc.level    Level.LEVEL3
      */
-    it('TimePickerAddApi_static_001', Level.LEVEL3, async (done: () => void): Promise<void> =>  {
+    it('TimePickerAddApi_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[TimePickerAddApi_static_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let timePickerComp = await driver.findComponent(ON.id('TimePickerAddApi'));
-      let displayId = await timePickerComp?.getDisplayId();
-      let pos = CommonFunc.getComponentRectOnScreen('TimePickerAddApi')
-      console.log("================================================== " + JSON.stringify(pos))
+      let displayId = await timePickerComp!.getDisplayId();
+      let rect = await timePickerComp!.getBounds();
+      console.info('[TimePickerAddApi_static_001] rect is: ' + JSON.stringify(rect));
       await CommonFunc.sleep(500);
       await driver.swipeBetween(
-        { x: Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(), y: Math.round(pos.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)).toInt(), displayId: displayId },
-        { x: Math.round(pos.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(), y: Math.round(pos.top).toInt(), displayId: displayId });
+        {
+          x: Math.round(rect.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(),
+          y: Math.round(rect.bottom - AppStorage.get<UIContext>("uiContext")!.vp2px(10)).toInt(),
+          displayId: displayId
+        },
+        {
+          x: Math.round(rect.right - AppStorage.get<UIContext>("uiContext")!.vp2px(100)).toInt(),
+          y: Math.round(rect.top).toInt(),
+          displayId: displayId
+        });
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TimePickerAddApiText');
       await CommonFunc.sleep(200);
@@ -80,16 +97,13 @@ export default function TimePickerAddApi() {
       done();
     });
 
-    
-
     /**
      * @tc.number   TimePickerAddApi_static_002
      * @tc.name     TimePickerAddApi_static_002
      * @tc.desc     TimePickerAddApi_static_002
      * @tc.level    Level.LEVEL3
      */
-    it('TimePickerAddApi_static_002', Level.LEVEL3, async (done: () => void): Promise<void> =>  {
-
+    it('TimePickerAddApi_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[TimePickerAddApi_static_001] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('TimePickerAddApi2');
@@ -102,10 +116,5 @@ export default function TimePickerAddApi() {
       console.info('[TimePicker_001] END');
       done();
     });
-
-
-
-
-
   })
 }
