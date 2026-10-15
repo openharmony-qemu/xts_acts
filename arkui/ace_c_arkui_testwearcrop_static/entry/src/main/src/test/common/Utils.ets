@@ -108,8 +108,8 @@ export default class Utils {
     let displayId = await (Picker?.getDisplayId() as Promise<number>);
     let rect = await (Picker?.getBounds() as Promise<Rect>);
     let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
-    let X = Math.round(rect.right - uiContext.vp2px(5));
-    let Y = Math.round(rect.bottom - uiContext.vp2px(5));
+    let X = Math.round(rect.right - uiContext.vp2px(5)).toInt();
+    let Y = Math.round(rect.bottom - uiContext.vp2px(5)).toInt();
     await driver.clickAt({ x: X, y: Y, displayId: displayId });
   }
 //
