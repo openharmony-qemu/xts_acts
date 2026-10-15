@@ -708,10 +708,10 @@ export default function abilityTest() {
                 ",data: " + JSON.stringify(data));
                 expect(error.code).assertEqual(0);
                 globalThis.ApplicationContext4
-                  .unregisterAbilityLifecycleCallback(globalThis.mainAbility4CallBackId,(error:base.BusinessError, data:ESObject) => {
-                    console.log(TAG + ": second unregisterAbilityLifecycleCallback, err: " + JSON.stringify(error) +
+                  .unregisterAbilityLifecycleCallback(globalThis.mainAbility4CallBackId,(err:base.BusinessError, data:ESObject) => {
+                    console.log(TAG + ": second unregisterAbilityLifecycleCallback, err: " + JSON.stringify(err) +
                     ",data: " + JSON.stringify(data));
-                    expect(error.code).assertEqual(1);
+                    expect(err.code).assertEqual(1);
                     done()
                   });
               });
