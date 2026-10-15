@@ -204,9 +204,9 @@ export default function StartManagerTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
-          let setPromiseButton: Component = await driver?.findComponent(ON.id('setPromiseButton').belongingDisplay(currentDisplayId));
-          let cancelPromiseButton: Component = await driver?.findComponent(ON.id('cancelPromiseButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component = await driver?.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          let setPromiseButton: Component | undefined = await driver?.findComponent(ON.id('setPromiseButton').belongingDisplay(currentDisplayId));
+          let cancelPromiseButton: Component | undefined = await driver?.findComponent(ON.id('cancelPromiseButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component | undefined = await driver?.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
           await setPromiseButton?.click();
           await sleep(500);
           await cancelPromiseButton?.click();
