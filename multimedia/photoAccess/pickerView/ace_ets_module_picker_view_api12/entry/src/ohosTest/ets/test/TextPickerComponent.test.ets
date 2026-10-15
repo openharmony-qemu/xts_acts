@@ -86,10 +86,10 @@ interface DialogCreationExTestCase {
 async function driveFn() {
   let dr = Driver.create();
   let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
-  if (power1 === undefined) {
+  if (power1 === undefined || power1 === null) {
     power1 = await dr?.waitForComponent(ON.text('Allow', MatchPattern.EQUALS), 300)
   }
-  if (power1 === undefined) {
+  if (power1 === undefined || power1 === null) {
     power1 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 300);
   }
   await power1?.click();
@@ -3495,22 +3495,16 @@ export default function TextPicker() {
 
       for (let i = 0; i < testCases.length; i++) {
         let isInvalidCase = !testCases[i].src || !testCases[i].config;
-        let originalUris = [' '];
+
         if (isInvalidCase) {
           try {
-            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
-            .then((result) => {
-              originalUris = result;
-            });
+            await photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
           } catch (error) {
             expect((error as BusinessError).code).assertEqual(401);
           }
         } else {
           try {
-            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config)
-            .then((result) => {
-              originalUris = result;
-            });
+            photoAccessHelper.getPhotoAccessHelper(getContext()).showAssetsCreationDialog(testCases[i].src, testCases[i].config);
             await driveFn();
 
             let code: number = EventType.SELECT_ITEM_INFO;
@@ -3557,7 +3551,6 @@ export default function TextPicker() {
             }
             router.back();
             events_emitter.off(event.eventId);
-            console.log(`originalUris = ${JSON.stringify(originalUris)}`);
             console.info("testPicker59 valid case finish");
 
           } catch (error) {
