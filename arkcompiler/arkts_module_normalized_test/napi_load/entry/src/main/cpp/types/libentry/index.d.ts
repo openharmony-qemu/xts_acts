@@ -16,3 +16,7 @@
 export const add: (a: number, b: number) => number;
 export const loadModuleWithInfo: (a: string, b: string) => object;
 export const loadModule: (a: string) => object;
+export const invokeHarNative: (a: number, b: number) => number;
+export const invokeHarArkTS: (a: number, b: number) => number;
+export const invokeHspNative: (a: number, b: number) => number;
+export const invokeHspArkTS: (a: number, b: number) => number;

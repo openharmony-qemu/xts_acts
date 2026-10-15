@@ -14,6 +14,7 @@
                 "ActsModuleNormalizedNapiLoadLib-hspTwo-default-signed.hsp",
                 "ActsModuleNormalizedNapiLoadLib-hspOne-default-signed.hsp",
                 "ActsModuleNormalizedNapiLoadLib-sharedHspOne-default-signed.hsp",
+                "ActsModuleNormalizedNapiLoadLib-sharedModule-default-signed.hsp",
                 "ActsModuleNormalizedNapiLoadLib-entry-default-signed.hap",
                 "ActsModuleNormalizedNapiLoadTest.hap"
             ],
