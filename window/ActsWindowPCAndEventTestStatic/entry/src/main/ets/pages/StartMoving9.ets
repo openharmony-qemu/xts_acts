@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-import { window } from '@kit.ArkUI';
+import window from '@ohos.window';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { common } from '@kit.AbilityKit';
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent,Blank,TouchEvent,Color,HitTestMode,TouchType} from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { AppStorage,State } from '@ohos.arkui.stateManagement'
 
-let caseName: string = 'teststartMovingwithOffsetXandOffsetYRepeated';
+let caseName: string = 'teststartMovingParamStaticRepeated';
 @Entry
 @Component
 struct StartMoving9 {
@@ -36,26 +36,26 @@ struct StartMoving9 {
         .hitTestBehavior(HitTestMode.Transparent)
         .onTouch((event: TouchEvent) => {
           if (event.type == TouchType.Down) {
-            try {
-              let windowClass = AppStorage.get<window.Window>('windowClass2') as window.Window;
-              let windowRect = windowClass.getWindowProperties().windowRect;
-              console.log(`${caseName} subWindowClass windowRect: ${JSON.stringify(windowRect)}`);
-              windowClass.startMoving(50, 50).then(async () => {
-                await windowClass.startMoving(50, 50);
-                this.message = 'startMoving success'
-                console.info('start moving successfully');
-              }).catch((err) => {
+            (async () => {
+              try {
+                let windowClass = AppStorage.get<window.Window>('windowClass2') as window.Window;
+                let windowRect = windowClass.getWindowProperties().windowRect;
+                let offSetX = Math.round(windowRect.width / 2).toInt();
+                let offSetY = Math.round(windowRect.height / 2).toInt();
+                console.log(`${caseName} windowRect: ${JSON.stringify(windowRect)}, offSetX: ${offSetX}, offSetY: ${offSetY}`);
+      
+                await windowClass.startMoving(offSetX, offSetY);
+                console.info(`${caseName} first startMoving success`);
+                await windowClass.startMoving(offSetX, offSetY);
+                this.message = 'startMoving success';
+                console.info(`${caseName} second startMoving success`);
+              } catch (err) {
                 err = err as BusinessError;
-                console.error('start moving : ' + err.code + ',message:' + err.message)
-                if (err.code == 801) {
-                  this.message = 'startMoving 801'
-                } else if (err.code == 1300001) {
-                  this.message = 'startMoving 1300001'
-                }
-              })
-            } catch (exception) {
-              console.error(`Failed to start drag window. Cause code: ${exception.code}, message: ${exception.message}`)
-            }
+                console.error(`${caseName} startMoving failed: ${err.code}, message: ${err.message}`);
+                this.message = `startMoving ${err.code}`;
+                AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', err.code);
+              }
+            })()
           }
         })
     }

@@ -3413,126 +3413,37 @@ export default function windowZindexTest() {
       });
 
     /**
-     * @tc.name   SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_0100
-     * @tc.number SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_0100
-     * @tc.desc   SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_0100
+     * @tc.name   SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100
+     * @tc.number SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100
+     * @tc.desc   SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level  LEVEL3
      */
-    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
-        let caseName: string = 'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_UNDEFINED_0100 ';
-        let msgStr: string = 'jsUnittest ' + caseName + ' ';
+        let caseName: string = 'SUB_BASIC_WMS_setWindowPosition_Exceed_Max_Array_0100 ';
+        let msgStr: string = 'jsunittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
-        let startOptions: StartOptions = {
-          windowCreateParams: {
-            minimizeOnStart: undefined,
-            excludeFromDock: undefined,
-            excludeFromRecent: undefined
-          }
-        }
+        let windowPositionParamsArray: Array<window.WindowPositionParams> = [];
         try {
-          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
-          let mainWindow = windowStageStart.getMainWindowSync();
+          let mainWindow = windowStage.getMainWindowSync();
+          let windowId = mainWindow.getWindowProperties().id;
+          console.info(`${msgStr} windowId: ${windowId}`);
           await sleep(500);
-          let isWindowShowing = mainWindow.isWindowShowing()
-          let isFocused = mainWindow.isFocused()
-          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
-          expect(isWindowShowing).assertTrue();
-          expect(isFocused).assertTrue();
-          await terminateAbility(caseName);
-          done();
+          let windowPositionParams: window.WindowPositionParams = {
+            windowId: windowId,
+            insertAfter: windowId
+          };
+          for (let i = 0; i < 51; i++) {
+            windowPositionParamsArray.push(windowPositionParams)
+          }
+          await window.setWindowPosition(windowPositionParamsArray);
         } catch (exception) {
           console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
-          await terminateAbility(caseName);
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_0100
-     * @tc.number SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_0100
-     * @tc.desc   SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        let caseName: string = 'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_FALSE_0100 ';
-        let msgStr: string = 'jsUnittest ' + caseName + ' ';
-        console.log(msgStr + 'begin');
-        let startOptions: StartOptions = {
-          windowCreateParams: {
-            minimizeOnStart: false,
-            excludeFromDock: false,
-            excludeFromRecent: false
-          }
-        }
-        try {
-          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
-          let mainWindow = windowStageStart.getMainWindowSync();
-          await sleep(500);
-          let isWindowShowing = mainWindow.isWindowShowing()
-          let isFocused = mainWindow.isFocused()
-          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
-          expect(isWindowShowing).assertTrue();
-          expect(isFocused).assertTrue();
-          await terminateAbility(caseName);
-          done();
-        } catch (exception) {
-          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
-          await terminateAbility(caseName);
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_0100
-     * @tc.number SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_0100
-     * @tc.desc   SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_0100
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        let caseName: string = 'SUB_BASIC_WMS_START_ABILITY_MINIMIZE_ON_START_EXCLUDE_FROM_DOCK_RECENT_TRUE_0100 ';
-        let msgStr: string = 'jsUnittest ' + caseName + ' ';
-        console.log(msgStr + 'begin');
-        let startOptions: StartOptions = {
-          windowCreateParams: {
-            minimizeOnStart: true,
-            excludeFromDock: true,
-            excludeFromRecent: true
-          }
-        }
-        try {
-          let windowStageStart: window.WindowStage = await startAbility(caseName, context!, startOptions);
-          let mainWindow = windowStageStart.getMainWindowSync();
-          await sleep(500);
-          let isWindowShowing = mainWindow.isWindowShowing()
-          let isFocused = mainWindow.isFocused()
-          console.info(`${msgStr} isWindowShowing:${isWindowShowing}, isFocused:${isFocused}`);
-          if (deviceType === '2in1' || isPCMode) {
-            expect(isWindowShowing).assertFalse();
-            expect(isFocused).assertFalse();
-          } else {
-            expect(isWindowShowing).assertTrue();
-            expect(isFocused).assertTrue();
-          }
-          await terminateAbility(caseName);
-          done();
-        } catch (exception) {
-          console.error(`${msgStr} Failed. Cause code: ${exception.code},message: ${exception.message}`);
-          await terminateAbility(caseName);
-          expect().assertFail();
+          windowPositionParamsArray.length = 0;
+          expect(exception.code).assertEqual(1300016);
+          expect(exception.message !== '').assertTrue();
           done();
         }
       });
