@@ -436,26 +436,26 @@ static napi_value TestArkWebResourceHandler_DidFinish(napi_env env, napi_callbac
 static napi_value TestArkWeb_CreateErrorInfo(napi_env env, napi_callback_info info)
 {
     (void)info;
+    OH_ArkWeb_CreateErrorInfo(nullptr);
     ArkWeb_ErrorInfo* errorInfo = nullptr;
     OH_ArkWeb_CreateErrorInfo(&errorInfo);
     int32_t ret = (errorInfo != nullptr) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE;
     if (errorInfo != nullptr) {
         OH_ArkWeb_DestroyErrorInfo(errorInfo);
     }
-    OH_ArkWeb_CreateErrorInfo(nullptr);
     return CreateResult(env, ret);
 }
 
 static napi_value TestArkWeb_DestroyErrorInfo(napi_env env, napi_callback_info info)
 {
     (void)info;
+    OH_ArkWeb_DestroyErrorInfo(nullptr);
     ArkWeb_ErrorInfo* errorInfo = nullptr;
     OH_ArkWeb_CreateErrorInfo(&errorInfo);
     if (errorInfo == nullptr) {
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    OH_ArkWeb_DestroyErrorInfo(nullptr);
     return CreateResult(env, TEST_RESULT_SUCCESS);
 }
 
@@ -468,9 +468,11 @@ static napi_value TestArkWebErrorInfo_SetCompleteIfNoResponse(napi_env env, napi
     if (errorInfo == nullptr) {
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
-    int32_t okRet = OH_ArkWebErrorInfo_SetCompleteIfNoResponse(errorInfo, true);
+    int32_t okTrue = OH_ArkWebErrorInfo_SetCompleteIfNoResponse(errorInfo, true);
+    int32_t okFalse = OH_ArkWebErrorInfo_SetCompleteIfNoResponse(errorInfo, false);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (okRet == ARKWEB_NET_OK);
+    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (okTrue == ARKWEB_NET_OK) &&
+        (okFalse == ARKWEB_NET_OK);
     return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
@@ -484,9 +486,11 @@ static napi_value TestArkWebErrorInfo_GetCompleteIfNoResponse(napi_env env, napi
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
     (void)OH_ArkWebErrorInfo_SetCompleteIfNoResponse(errorInfo, true);
-    bool got = OH_ArkWebErrorInfo_GetCompleteIfNoResponse(errorInfo);
+    bool gotTrue = OH_ArkWebErrorInfo_GetCompleteIfNoResponse(errorInfo);
+    (void)OH_ArkWebErrorInfo_SetCompleteIfNoResponse(errorInfo, false);
+    bool gotFalse = OH_ArkWebErrorInfo_GetCompleteIfNoResponse(errorInfo);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    bool pass = (!nullVal) && got;
+    bool pass = (!nullVal) && gotTrue && (!gotFalse);
     return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
@@ -499,9 +503,12 @@ static napi_value TestArkWebErrorInfo_SetCustomErrorCode(napi_env env, napi_call
     if (errorInfo == nullptr) {
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
-    int32_t okRet = OH_ArkWebErrorInfo_SetCustomErrorCode(errorInfo, CUSTOM_ERROR_CODE_SAMPLE);
+    int32_t ok0 = OH_ArkWebErrorInfo_SetCustomErrorCode(errorInfo, 0);
+    int32_t okPos = OH_ArkWebErrorInfo_SetCustomErrorCode(errorInfo, CUSTOM_ERROR_CODE_SAMPLE);
+    int32_t okNeg = OH_ArkWebErrorInfo_SetCustomErrorCode(errorInfo, -1);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (okRet == ARKWEB_NET_OK);
+    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (ok0 == ARKWEB_NET_OK) &&
+        (okPos == ARKWEB_NET_OK) && (okNeg == ARKWEB_NET_OK);
     return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
@@ -516,8 +523,11 @@ static napi_value TestArkWebErrorInfo_GetCustomErrorCode(napi_env env, napi_call
     }
     (void)OH_ArkWebErrorInfo_SetCustomErrorCode(errorInfo, CUSTOM_ERROR_CODE_SAMPLE);
     int32_t got = OH_ArkWebErrorInfo_GetCustomErrorCode(errorInfo);
+    (void)OH_ArkWebErrorInfo_SetCustomErrorCode(errorInfo, 0);
+    int32_t got0 = OH_ArkWebErrorInfo_GetCustomErrorCode(errorInfo);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    return CreateResult(env, (got == CUSTOM_ERROR_CODE_SAMPLE) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
+    bool pass = (got == CUSTOM_ERROR_CODE_SAMPLE) && (got0 == 0);
+    return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebErrorInfo_SetErrorCode(napi_env env, napi_callback_info info)
@@ -529,9 +539,12 @@ static napi_value TestArkWebErrorInfo_SetErrorCode(napi_env env, napi_callback_i
     if (errorInfo == nullptr) {
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
-    int32_t okRet = OH_ArkWebErrorInfo_SetErrorCode(errorInfo, ARKWEB_ERR_FAILED);
+    int32_t ok1 = OH_ArkWebErrorInfo_SetErrorCode(errorInfo, ARKWEB_ERR_FAILED);
+    int32_t ok2 = OH_ArkWebErrorInfo_SetErrorCode(errorInfo, ARKWEB_ERR_TIMED_OUT);
+    int32_t ok3 = OH_ArkWebErrorInfo_SetErrorCode(errorInfo, ARKWEB_ERR_ABORTED);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (okRet == ARKWEB_NET_OK);
+    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (ok1 == ARKWEB_NET_OK) &&
+        (ok2 == ARKWEB_NET_OK) && (ok3 == ARKWEB_NET_OK);
     return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
@@ -545,15 +558,18 @@ static napi_value TestArkWebErrorInfo_GetErrorCode(napi_env env, napi_callback_i
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
     (void)OH_ArkWebErrorInfo_SetErrorCode(errorInfo, ARKWEB_ERR_TIMED_OUT);
-    ArkWeb_NetError got = OH_ArkWebErrorInfo_GetErrorCode(errorInfo);
+    ArkWeb_NetError got1 = OH_ArkWebErrorInfo_GetErrorCode(errorInfo);
+    (void)OH_ArkWebErrorInfo_SetErrorCode(errorInfo, ARKWEB_ERR_ABORTED);
+    ArkWeb_NetError got2 = OH_ArkWebErrorInfo_GetErrorCode(errorInfo);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    return CreateResult(env, (got == ARKWEB_ERR_TIMED_OUT) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
+    bool pass = (got1 == ARKWEB_ERR_TIMED_OUT) && (got2 == ARKWEB_ERR_ABORTED);
+    return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
 static napi_value TestArkWebResponse_SetErrorInfo(napi_env env, napi_callback_info info)
 {
     (void)info;
-    int32_t nullRet = OH_ArkWebResponse_SetErrorInfo(nullptr, nullptr);
+    int32_t bothNull = OH_ArkWebResponse_SetErrorInfo(nullptr, nullptr);
     ArkWeb_Response* response = nullptr;
     OH_ArkWeb_CreateResponse(&response);
     ArkWeb_ErrorInfo* errorInfo = nullptr;
@@ -567,10 +583,14 @@ static napi_value TestArkWebResponse_SetErrorInfo(napi_env env, napi_callback_in
         }
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
+    int32_t rspNull = OH_ArkWebResponse_SetErrorInfo(nullptr, errorInfo);
+    int32_t infoNull = OH_ArkWebResponse_SetErrorInfo(response, nullptr);
     int32_t okRet = OH_ArkWebResponse_SetErrorInfo(response, errorInfo);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
     OH_ArkWeb_DestroyResponse(response);
-    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (okRet == ARKWEB_NET_OK);
+    bool pass = (bothNull == ARKWEB_INVALID_PARAM_CODE) &&
+        (rspNull == ARKWEB_INVALID_PARAM_CODE) &&
+        (infoNull == ARKWEB_INVALID_PARAM_CODE) && (okRet == ARKWEB_NET_OK);
     return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
 }
 
@@ -580,20 +600,19 @@ static napi_value TestArkWebResponse_GetErrorInfo(napi_env env, napi_callback_in
     ArkWeb_ErrorInfo* nullGot = OH_ArkWebResponse_GetErrorInfo(nullptr);
     ArkWeb_Response* response = nullptr;
     OH_ArkWeb_CreateResponse(&response);
+    if (response == nullptr) {
+        return CreateResult(env, TEST_RESULT_FAILURE);
+    }
+    ArkWeb_ErrorInfo* unset = OH_ArkWebResponse_GetErrorInfo(response);
     ArkWeb_ErrorInfo* errorInfo = nullptr;
     OH_ArkWeb_CreateErrorInfo(&errorInfo);
-    if (response == nullptr || errorInfo == nullptr) {
-        if (errorInfo != nullptr) {
-            OH_ArkWeb_DestroyErrorInfo(errorInfo);
-        }
-        if (response != nullptr) {
-            OH_ArkWeb_DestroyResponse(response);
-        }
+    if (errorInfo == nullptr) {
+        OH_ArkWeb_DestroyResponse(response);
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
     (void)OH_ArkWebResponse_SetErrorInfo(response, errorInfo);
     ArkWeb_ErrorInfo* got = OH_ArkWebResponse_GetErrorInfo(response);
-    bool pass = (nullGot == nullptr) && (got == errorInfo);
+    bool pass = (nullGot == nullptr) && (unset == nullptr) && (got == errorInfo);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
     OH_ArkWeb_DestroyResponse(response);
     return CreateResult(env, pass ? TEST_RESULT_SUCCESS : TEST_RESULT_FAILURE);
@@ -602,15 +621,17 @@ static napi_value TestArkWebResponse_GetErrorInfo(napi_env env, napi_callback_in
 static napi_value TestArkWebResourceHandler_DidFailWithErrorInfo(napi_env env, napi_callback_info info)
 {
     (void)info;
-    int32_t nullRet = OH_ArkWebResourceHandler_DidFailWithErrorInfo(nullptr, nullptr);
+    int32_t bothNull = OH_ArkWebResourceHandler_DidFailWithErrorInfo(nullptr, nullptr);
     ArkWeb_ErrorInfo* errorInfo = nullptr;
     OH_ArkWeb_CreateErrorInfo(&errorInfo);
     if (errorInfo == nullptr) {
         return CreateResult(env, TEST_RESULT_FAILURE);
     }
-    int32_t ret = OH_ArkWebResourceHandler_DidFailWithErrorInfo(nullptr, errorInfo);
+    (void)OH_ArkWebErrorInfo_SetErrorCode(errorInfo, ARKWEB_ERR_FAILED);
+    int32_t handlerNull = OH_ArkWebResourceHandler_DidFailWithErrorInfo(nullptr, errorInfo);
     OH_ArkWeb_DestroyErrorInfo(errorInfo);
-    bool pass = (nullRet == ARKWEB_INVALID_PARAM_CODE) && (ret == ARKWEB_INVALID_PARAM_CODE);
+    bool pass = (bothNull == ARKWEB_INVALID_PARAM_CODE) &&
+        (handlerNull == ARKWEB_INVALID_PARAM_CODE);
     return CreateResult(env, pass ? ARKWEB_INVALID_PARAM_CODE : TEST_RESULT_FAILURE);
 }
 
