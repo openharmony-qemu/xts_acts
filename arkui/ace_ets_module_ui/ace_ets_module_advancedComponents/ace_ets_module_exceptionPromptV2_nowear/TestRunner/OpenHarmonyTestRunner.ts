@@ -53,18 +53,22 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     console.log('OpenHarmonyTestRunner onRun run');
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-    let testAbilityName = abilityDelegatorArguments.bundleName + '.MainAbility';
+    let testAbilityName = abilityDelegatorArguments.bundleName + '.EntryAbility';
     let lMonitor = {
       abilityName: testAbilityName,
       onAbilityCreate: onAbilityCreateCallback,
     };
     abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
-    let cmd = 'aa start -d 0 -a com.acts.arkui.exceptionpromptv2.nowear.test.MainAbility' +
+    let cmd = 'aa start -d 0 -a com.acts.arkui.exceptionpromptv2.nowear.test.EntryAbility' +
       ' -b ' + abilityDelegatorArguments.bundleName;
     cmd += ' ' + translateParamsToString(abilityDelegatorArguments.parameters);
     let debug = abilityDelegatorArguments.parameters['-D'];
     if (debug == 'true') {
       cmd += ' -D';
+    }
+    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    if(user !== undefined){
+      cmd += ' -u ' + user;
     }
     console.info('cmd : ' + cmd);
     abilityDelegator.executeShellCommand(cmd,

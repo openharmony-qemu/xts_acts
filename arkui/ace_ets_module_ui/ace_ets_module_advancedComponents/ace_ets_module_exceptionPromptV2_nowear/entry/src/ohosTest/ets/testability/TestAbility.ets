@@ -13,11 +13,16 @@
  * limitations under the License.
  */
 
-import UIAbility from '@ohos.app.ability.UIAbility';
+import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import { BusinessError } from '@ohos.base';
 
 export default class TestAbility extends UIAbility {
+
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onCreate');
+    }
 
     onDestroy() {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onDestroy');
@@ -25,6 +30,13 @@ export default class TestAbility extends UIAbility {
 
     onWindowStageCreate(windowStage: window.WindowStage) {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onWindowStageCreate');
+        let mainWindow: window.Window = windowStage.getMainWindowSync();
+        let promise1 = mainWindow.getProperties();
+        promise1.then((data) => {
+            console.info('当前屏幕ID' + data.displayId);
+            AppStorage.setOrCreate('displayID', data.displayId);
+        }).catch((err: BusinessError) => {
+        });
         windowStage.loadContent('testability/pages/Index', (err, data) => {
             if (err.code) {
                 hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');

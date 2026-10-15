@@ -19,6 +19,8 @@ import Utils from '../../MainAbility/common/Utils';
 import { Driver, ON } from '@ohos.UiTest';
 import inputEventClient from '@ohos.multimodalInput.inputEventClient';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function RatingAdvancedTest2() {
   describe('RatingAdvancedTest2', () => {
 
@@ -48,12 +50,14 @@ export default function RatingAdvancedTest2() {
       console.info("RatingAdvancedTest after each called");
     });
 
-     /*
-      * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0010
-      * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0010
-      * @tc.desc        rating 2,stars 8,steps 2,click rating
-      * @tc.level       Level 3
-      */
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0010
+     * @tc.desc   rating 2,stars 8,steps 2,click rating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0010', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0010] START');
       await routerPush("ratings01")
@@ -68,7 +72,9 @@ export default function RatingAdvancedTest2() {
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0010] obj1.$attrs.content is: " + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertContain('2');
-      await driver.click(rect.left+ Math.round((rect.right-rect.left)/8*3)+1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+ Math.round((rect.right-rect.left)/8*3)+1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+ Math.round((rect.right-rect.left)/8*3)+1,Math.round((rect.top+rect.bottom)/2))
       console.info(`click is: `+rect.left+ Math.round((rect.right-rect.left)/8*3)+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson2 = getInspectorByKey('ratingText01');
@@ -79,11 +85,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020
-     * @tc.desc        rating 0,stars 0,steps 1.5,click rating
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020
+     * @tc.desc   rating 0,stars 0,steps 1.5,click rating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020] START');
@@ -104,7 +112,9 @@ export default function RatingAdvancedTest2() {
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020] obj2.$attrs.content is: " + obj2.$attrs.stars);
       expect(obj2.$attrs.stars).assertEqual("5");
-      await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson3 = getInspectorByKey('ratingText02');
@@ -115,11 +125,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0030
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0030
-     * @tc.desc        rating -1,stars -1,steps 0,click rating
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0030
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0030
+     * @tc.desc   rating -1,stars -1,steps 0,click rating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0030', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0030] START');
@@ -140,8 +152,9 @@ export default function RatingAdvancedTest2() {
       let obj2: ESObject = JSON.parse(strJson2);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0020] obj2.$attrs.stars is: " + obj2.$attrs.stars);
       expect(obj2.$attrs.stars).assertEqual("5");
-
-      await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
 
       await Utils.sleep(1000);
@@ -154,11 +167,13 @@ export default function RatingAdvancedTest2() {
     });
 
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0040
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0040
-     * @tc.desc        rating 0,stars 10,steps 6,click rating
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0040
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0040
+     * @tc.desc   rating 0,stars 10,steps 6,click rating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0040', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0040] START');
@@ -169,14 +184,18 @@ export default function RatingAdvancedTest2() {
       let btn1 = await driver.findComponent(ON.id('rating04'));
       let rect = await btn1.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('ratingText04');
       let obj1: ESObject = JSON.parse(strJson1);
       await Utils.sleep(1000);
       console.info("[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0040] obj1.$attrs.content is: " + obj1.$attrs.content);
       expect(obj1.$attrs.content).assertContain('6');
-      await driver.click(rect.right-1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.right-1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.right-1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson2 = getInspectorByKey('ratingText04');
       let obj2: ESObject = JSON.parse(strJson2);
@@ -186,11 +205,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0050
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0050
-     * @tc.desc        rating 8,stars 7,steps 10,click rating
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0050
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0050
+     * @tc.desc   rating 8,stars 7,steps 10,click rating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0050', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0050] START');
@@ -211,7 +232,9 @@ export default function RatingAdvancedTest2() {
       let btn1 = await driver.findComponent(ON.id('rating05'));
       let rect = await btn1.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson3 = getInspectorByKey('ratingText05');
@@ -222,11 +245,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0060
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0060
-     * @tc.desc        rating 5,stars 10,steps 0.3,click rating
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0060
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0060
+     * @tc.desc   rating 5,stars 10,steps 0.3,click rating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0060', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0060] START');
@@ -237,7 +262,9 @@ export default function RatingAdvancedTest2() {
       let btn1 = await driver.findComponent(ON.id('rating06'));
       let rect = await btn1.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+1,Math.round((rect.top+rect.bottom)/2))
       console.info(`click is: `+rect.left+1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson1 = getInspectorByKey('ratingText06');
@@ -249,11 +276,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0070
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0070
-     * @tc.desc        buildRating ,change indicator and click rating
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0070
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0070
+     * @tc.desc   buildRating ,change indicator and click rating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0070', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0070] START');
@@ -276,7 +305,9 @@ export default function RatingAdvancedTest2() {
       await btn1.click()
       let rect = await btn2.getBounds();
       console.info(`rect is: ` + JSON.stringify(rect))
-      await driver.click(rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
+      // 涉及坐标
+      await driver.clickAt({ x: rect.left+Math.round((rect.right-rect.left)/2)-1, y: Math.round((rect.top+rect.bottom)/2), displayId: displayID });
+      // await driver.click(rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
       console.info(`click is: `,rect.left+Math.round((rect.right-rect.left)/2)-1,Math.round((rect.top+rect.bottom)/2))
       await Utils.sleep(1000);
       let strJson2 = getInspectorByKey('ratingText07');
@@ -288,11 +319,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0080
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0080
-     * @tc.desc        buildRating ,change indicator and change stars
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0080
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0080
+     * @tc.desc   buildRating ,change indicator and change stars
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0080', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0080] START');
@@ -325,11 +358,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0200
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0200
-     * @tc.desc        triggerChange = null
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0200
+     * @tc.desc   triggerChange = null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0200] START');
@@ -349,11 +384,13 @@ export default function RatingAdvancedTest2() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0210
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0210
-     * @tc.desc        triggerChange = undefined
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0210
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0210
+     * @tc.desc   triggerChange = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0210', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_CUSTOMIZINGS_0210] START');
