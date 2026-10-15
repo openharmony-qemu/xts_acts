@@ -1983,3 +1983,505 @@ describe('StaticFieldSetValueTest2', (): void => {
         expect(e.name).assertEqual('NullPointerError');
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1050
+     * @tc.name testStaticFieldSetValueAtTwo105
+     * @tc.desc Verify setValue(10) on EIA4_Child.childReadonly readonly int field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<EIA4_Child>().getStaticField('childReadonly');
+      try {
+        field!.setValue(10);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1060
+     * @tc.name testStaticFieldSetValueAtTwo106
+     * @tc.desc Verify setValue(99) on EIA5_GrandChild.root readonly inherited field throws NullPointerError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<EIA5_GrandChild>().getStaticField('root');
+      try {
+        field!.setValue(99);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1070
+     * @tc.name testStaticFieldSetValueAtTwo107
+     * @tc.desc Verify setValue("bad") on EIA6_Child.num inherited int field throws NullPointerError (non-readonly inherited from parent)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<EIA6_Child>().getStaticField('num');
+      try {
+        field!.setValue('bad');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1080
+     * @tc.name testStaticFieldSetValueAtTwo108
+     * @tc.desc Verify setValue(999) on EIA7_Parent073.label string field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<EIA7_Parent073>().getStaticField('label');
+      try {
+        field!.setValue(999);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1090
+     * @tc.name testStaticFieldSetValueAtTwo109
+     * @tc.desc Verify setValue("not_int") on EIA9_Parent075.value int field throws TypeError and field value unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<EIA9_Parent075>().getStaticField('value');
+      try {
+        field!.setValue('not_int');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+        expect(EIA9_Parent075.value).assertEqual(10);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1100
+     * @tc.name testStaticFieldSetValueAtTwo110
+     * @tc.desc Verify setValue("corrupt") on EIA10_Child.data inherited field throws NullPointerError and grandparent value unchanged
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<EIA10_Child>().getStaticField('data');
+      try {
+        field!.setValue('corrupt');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+        expect(EIA10_GrandParent076.data).assertEqual(1);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1110
+     * @tc.name testStaticFieldSetValueAtTwo111
+     * @tc.desc Verify setValue(-Infinity) on NumField.num int field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<NumField>().getStaticField('num');
+      try {
+        field!.setValue(-Double.POSITIVE_INFINITY);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1120
+     * @tc.name testStaticFieldSetValueAtTwo112
+     * @tc.desc Verify setValue(Double.MAX_VALUE) on NumField.num int field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<NumField>().getStaticField('num');
+      try {
+        field!.setValue(Double.MAX_VALUE);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1130
+     * @tc.name testStaticFieldSetValueAtTwo113
+     * @tc.desc Verify setValue(non-empty array [1,2,3]) on NumField.num int field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: int[] = [1, 2, 3];
+      let field = Class.from<NumField>().getStaticField('num');
+      try {
+        field!.setValue(arr);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1140
+     * @tc.name testStaticFieldSetValueAtTwo114
+     * @tc.desc Verify setValue(empty array []) on NumField.num int field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: int[] = [];
+      let field = Class.from<NumField>().getStaticField('num');
+      try {
+        field!.setValue(arr);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1150
+     * @tc.name testStaticFieldSetValueAtTwo115
+     * @tc.desc Verify setValue(Map) on ECX3085.msg string field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let m: Map<string, int> = new Map<string, int>();
+      let field = Class.from<ECX3085>().getStaticField('msg');
+      try {
+        field!.setValue(m);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1160
+     * @tc.name testStaticFieldSetValueAtTwo116
+     * @tc.desc Verify setValue(Set) on NumField.num int field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let s: Set<int> = new Set<int>();
+      let field = Class.from<NumField>().getStaticField('num');
+      try {
+        field!.setValue(s);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1170
+     * @tc.name testStaticFieldSetValueAtTwo117
+     * @tc.desc Verify setValue(Box087 object) on NumField.num int field throws TypeError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let b: Box087 = { val: 1 };
+      let field = Class.from<NumField>().getStaticField('num');
+      try {
+        field!.setValue(b);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1180
+     * @tc.name testStaticFieldSetValueAtTwo118
+     * @tc.desc Verify setValue(int array) on ECX6088.num int field throws TypeError and getValue returns original
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: int[] = [1, 2];
+      let field = Class.from<ECX6088>().getStaticField('num');
+      try {
+        field!.setValue(arr);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('TypeError');
+        expect(field!.getValue() as int).assertEqual(42);
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1190
+     * @tc.name testStaticFieldSetValueAtTwo119
+     * @tc.desc Verify setValue(Double.MIN_VALUE) on DoubleBoundaryField.val then getValue returns Double.MIN_VALUE
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<DoubleBoundaryField>().getStaticField('val');
+      field!.setValue(Double.MIN_VALUE);
+      let result = field!.getValue() as Object;
+      expect(result).assertEqual(Double.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1200
+     * @tc.name testStaticFieldSetValueAtTwo120
+     * @tc.desc Verify setValue(Double.NEGATIVE_INFINITY) on DoubleBoundaryField.val then getValue returns -Infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<DoubleBoundaryField>().getStaticField('val');
+      field!.setValue(Double.NEGATIVE_INFINITY);
+      let result = field!.getValue() as Object;
+      expect(result).assertEqual(Double.NEGATIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1210
+     * @tc.name testStaticFieldSetValueAtTwo121
+     * @tc.desc Verify setValue(Double.POSITIVE_INFINITY) on DoubleBoundaryField.val then getValue returns Infinity
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<DoubleBoundaryField>().getStaticField('val');
+      field!.setValue(Double.POSITIVE_INFINITY);
+      let result = field!.getValue() as Object;
+      expect(result).assertEqual(Double.POSITIVE_INFINITY);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1220
+     * @tc.name testStaticFieldSetValueAtTwo122
+     * @tc.desc Verify setValue(Double.NaN) on DoubleBoundaryField.val then getValue returns NaN (isNaN assertTrue)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<DoubleBoundaryField>().getStaticField('val');
+      field!.setValue(Double.NaN);
+      let result = field!.getValue() as Object;
+      expect(isNaN(result as double)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1230
+     * @tc.name testStaticFieldSetValueAtTwo123
+     * @tc.desc Verify setValue Double.MAX_VALUE then setValue Double.MIN_VALUE, getValue returns Double.MIN_VALUE (last write wins)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<DoubleBoundaryField>().getStaticField('val');
+      field!.setValue(Double.MAX_VALUE);
+      field!.setValue(Double.MIN_VALUE);
+      let result = field!.getValue() as Object;
+      expect(result).assertEqual(Double.MIN_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1240
+     * @tc.name testStaticFieldSetValueAtTwo124
+     * @tc.desc Verify setValue(Double.MAX_VALUE) then getValue returns Double.MAX_VALUE on DoubleBoundaryField.val
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<DoubleBoundaryField>().getStaticField('val');
+      field!.setValue(Double.MAX_VALUE);
+      let result = field!.getValue() as Object;
+      expect(result).assertEqual(Double.MAX_VALUE);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1250
+     * @tc.name testStaticFieldSetValueAtTwo125
+     * @tc.desc Verify setValue('x'.repeat(5000)) on LongStrField.val then getValue length equals 5000 and content matches
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<LongStrField>().getStaticField('val');
+      let longStr: string = 'x'.repeat(5000);
+      field!.setValue(longStr);
+      let result = field!.getValue() as string;
+      expect(result.length).assertEqual(5000);
+      expect(result).assertEqual(longStr);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1260
+     * @tc.name testStaticFieldSetValueAtTwo126
+     * @tc.desc Verify setValue('abc'.repeat(3334)) on LongStrField.val (10002 chars) then getValue length equals 10002
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<LongStrField>().getStaticField('val');
+      let longStr: string = 'abc'.repeat(3334);
+      field!.setValue(longStr);
+      let result = field!.getValue() as string;
+      expect(result.length).assertEqual(10002);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1270
+     * @tc.name testStaticFieldSetValueAtTwo127
+     * @tc.desc Verify setValue with 10000-char Chinese string on LongStrField.val then getValue length equals 10000
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<LongStrField>().getStaticField('val');
+      let longStr: string = '你好'.repeat(5000);
+      field!.setValue(longStr);
+      let firstRead = field!.getValue() as string;
+      expect(firstRead.length).assertEqual(10000);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1280
+     * @tc.name testStaticFieldSetValueAtTwo128
+     * @tc.desc Verify setValue('') on LongStrField.val after a long string write then getValue returns ''
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<LongStrField>().getStaticField('val');
+      let longStr: string = '你好'.repeat(5000);
+      field!.setValue(longStr);
+      field!.setValue('');
+      let secondRead = field!.getValue() as string;
+      expect(secondRead).assertEqual('');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1290
+     * @tc.name testStaticFieldSetValueAtTwo129
+     * @tc.desc Verify setValue('abc123'.repeat(3334)) on LongStrField.val (20004 chars) then getValue length equals 20004
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<LongStrField>().getStaticField('val');
+      let longStr: string = 'abc123'.repeat(3334);
+      field!.setValue(longStr);
+      let result = field!.getValue() as string;
+      expect(result.length).assertEqual(20004);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1300
+     * @tc.name testStaticFieldSetValueAtTwo130
+     * @tc.desc Verify setValue(0b1010) on RadixField.val then getValue returns 10 (decimal)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<RadixField>().getStaticField('val');
+      field!.setValue(0b1010);
+      expect(field!.getValue() as Object).assertEqual(10);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1310
+     * @tc.name testStaticFieldSetValueAtTwo131
+     * @tc.desc Verify setValue(0b1111111111111111111111111111111) on RadixField.val then getValue returns 2147483647 (INT32_MAX)
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<RadixField>().getStaticField('val');
+      field!.setValue(0b1111111111111111111111111111111);
+      expect(field!.getValue() as Object).assertEqual(2147483647);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1320
+     * @tc.name testStaticFieldSetValueAtTwo132
+     * @tc.desc Verify setValue on non-existent field name throws NullPointerError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<NumField>().getStaticField('nonExistentField');
+      try {
+        field!.setValue(123);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_SETVALUE_TWO_1330
+     * @tc.name testStaticFieldSetValueAtTwo133
+     * @tc.desc Verify setValue on instance field (non-static) throws NullPointerError
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL2
+     */
+    it('testStaticFieldSetValueAtTwo133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let field = Class.from<InstanceFieldClass>().getStaticField('instanceVal');
+      try {
+        field!.setValue(123);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('NullPointerError');
+      }
+    });
+
+  });
+}
