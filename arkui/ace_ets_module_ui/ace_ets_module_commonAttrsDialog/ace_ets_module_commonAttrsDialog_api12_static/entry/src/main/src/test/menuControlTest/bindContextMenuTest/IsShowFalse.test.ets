@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +36,7 @@ import common from '@ohos.app.ability.common';
 
 let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
 
-let displayID : Int = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0
+let displayID: number = AppStorage.get<number>('displayID') ?? 0
 
 export default function IsShowFalse() {
   describe('IsShowFalse', () => {
@@ -77,7 +77,7 @@ it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
         await (button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        let buttonC = await driver.findComponent(ON.text('菜单选项'));
+        let buttonC = await driver.findComponent(ON.text('鑿滃崟閫夐」'));
         await (buttonC?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
       } catch (err) {

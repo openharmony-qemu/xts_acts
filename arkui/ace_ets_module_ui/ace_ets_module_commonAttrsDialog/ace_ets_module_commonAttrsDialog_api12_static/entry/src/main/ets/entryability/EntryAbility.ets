@@ -30,12 +30,20 @@ class EntryAbility extends UIAbility {
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
-    let mainWindow: window.Window = windowStage.getMainWindowSync();
-    let promise1 = mainWindow.getProperties();
-    promise1.then((data) => {
-      console.info('当前屏幕ID' + data.displayId);
-      AppStorage.setOrCreate('displayID',data.displayId);
-    }).catch((err: BusinessError) => {
+    let displayWindowClass: window.Window | undefined = undefined;
+    windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
+      if (err?.code) {
+        console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
+        return;
+      }
+      displayWindowClass = data;
+      try {
+        let properties: window.WindowProperties | undefined = displayWindowClass?.getWindowProperties();
+        AppStorage.setOrCreate<number>('displayID', properties?.displayId ?? 0);
+        console.info('当前屏幕ID' + (properties?.displayId ?? 0));
+      } catch (exception) {
+        hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
+      }
     });
     try {
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {

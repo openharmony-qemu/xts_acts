@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,7 @@ import {LibUtil} from '../../../ets/pages/LibUtil'
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 let libUtil:LibUtil = new LibUtil();
-let displayID : Int = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0
+let displayID: number = AppStorage.get<number>('displayID') ?? 0
 
 export default function customDialogTest1() {
 

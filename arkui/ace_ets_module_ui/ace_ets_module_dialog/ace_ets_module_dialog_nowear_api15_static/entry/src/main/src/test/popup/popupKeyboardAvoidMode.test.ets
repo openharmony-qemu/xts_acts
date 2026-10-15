@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import deviceInfo from "@ohos.deviceInfo"
 
-let displayID : Int = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0
+let displayID: number = AppStorage.get<number>('displayID') ?? 0
 
 export default function popupKeyboardAvoidMode() {
   describe("popupKeyboardAvoidMode", () => {

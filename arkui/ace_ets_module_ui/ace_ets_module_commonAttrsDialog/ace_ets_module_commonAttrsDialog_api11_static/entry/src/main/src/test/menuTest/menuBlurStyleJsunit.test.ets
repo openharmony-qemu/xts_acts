@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +32,7 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-let displayID : Int = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0
+let displayID: number = AppStorage.get<number>('displayID') ?? 0
 
 export default function menuBlurStyleJsunit() {
   describe('menuBlurStyleJsunit', () => {
@@ -52,7 +52,7 @@ export default function menuBlurStyleJsunit() {
         console.info("get menuBlurStyleJsunit state pages:" + JSON.stringify(pages));
         if (!("menuBlurStyle" == pages.name)) {
           console.info("get menuBlurStyleJsunit pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 鏈夊凡鐭ラ棶棰橈紝鍏堟敞閲?浣跨敤 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
