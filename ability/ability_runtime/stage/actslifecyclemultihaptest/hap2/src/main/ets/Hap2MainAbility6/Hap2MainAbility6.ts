@@ -61,10 +61,10 @@ export default class Hap2MainAbility6 extends Ability {
         try{
             let appIndex = this.context.getApplicationContext().getCurrentAppCloneIndex();
             console.log('[Demo] Hap2MainAbility6 appIndex ' + appIndex)
-            if(appIndex === 0){
+            if (appIndex === 0) {
                deviceSupport = true;
             }
-        } catch(e){
+        } catch (e) {
             console.log('[Demo] Hap2MainAbility6 appIndex  catch ' + e.code + ' ' + e.message)
         }
         if (deviceSupport === 'false') {
