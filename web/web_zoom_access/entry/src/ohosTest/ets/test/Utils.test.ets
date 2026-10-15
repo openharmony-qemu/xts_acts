@@ -20,6 +20,10 @@ import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { accessibility, config } from '@kit.AccessibilityKit';
+
+const WEB_ZOOM_EXT_BUNDLE = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const WEB_ZOOM_EXT_CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 
 export default class Utils {
   static sleep(time: number) {
@@ -347,5 +351,13 @@ export default class Utils {
       }
     }
     return
+  }
+
+  static enableWebZoomExtAbility(): void {
+    config.enableAbility(WEB_ZOOM_EXT_BUNDLE, WEB_ZOOM_EXT_CAPACITY).then(() => {
+      console.info('enableWebZoomExtAbility success');
+    }).catch((err: object) => {
+      console.error(`enableWebZoomExtAbility failed, ${err}`);
+    });
   }
 }

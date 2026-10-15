@@ -33,7 +33,7 @@ import {
 } from '@ohos.arkui.component';
 
 export class StringFields {
-  str: string = '';
+  public str: string = '';
 }
 
 @Entry
