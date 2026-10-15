@@ -818,15 +818,17 @@ export default function observerManagerCallStateTest() {
         let callback1: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} callback1 on callStateChangeEx, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx',callback1);
         }
         let callback2: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} callback2 on callStateChangeEx, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
+          observer.off('callStateChangeEx',callback2);
         }
         let callback3: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} callback3 on callStateChangeEx, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
-          observer.off('callStateChangeEx');
+          observer.off('callStateChangeEx',callback3);
           done();
         }
         let options: observer.ObserverOptions = {
