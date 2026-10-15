@@ -128,10 +128,14 @@ it('testListInitialIndexToTwoWithOneLane_static', Level.LEVEL0, async (done: () 
       expect(Math.round(twelfthListItem.bottom - twelfthListItem.top)).assertEqual(UIContext.resolveUIContext()!.vp2px(0));
 
       let driver = Driver.create();
-      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + thirdListItem.left + ((thirdListItem.right - thirdListItem.left) / 2))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + thirdListItem.bottom)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + fifthListItem.left + (fifthListItem.right - fifthListItem.left) / 2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + fifthListItem.bottom)).toInt());
+      let swipeComp = await driver.findComponent(ON.id('List_ListInitialIndex1_Container01'));
+      let swipeRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      await driver.swipeBetween(
+        { x: (Math.round(swipeRect.left + (swipeRect.right - swipeRect.left) / 2)).toInt(),
+          y: (Math.round(swipeRect.top + (swipeRect.bottom - swipeRect.top) * 0.25)).toInt(), displayId: displayId },
+        { x: (Math.round(swipeRect.left + (swipeRect.right - swipeRect.left) / 2)).toInt(),
+          y: (Math.round(swipeRect.top + (swipeRect.bottom - swipeRect.top) * 0.75)).toInt(), displayId: displayId });
       await CommonFunc.sleep(2000);
       firstListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_1');
       secondListItem = CommonFunc.getComponentRect('List_ListInitialIndex1_2');

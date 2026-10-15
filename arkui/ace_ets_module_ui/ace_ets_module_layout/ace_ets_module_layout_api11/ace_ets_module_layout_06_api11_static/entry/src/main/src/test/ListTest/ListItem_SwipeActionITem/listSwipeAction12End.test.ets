@@ -49,7 +49,7 @@ export default function listSwipeAction12EndJsunit() {
     afterEach(async (done: () => void): Promise<void> => {
       await CommonFunc.sleep(1000);
       console.info("listSwipeAction12EndTest after each called");
-      
+
       let driverReset = Driver.create();
       await CommonFunc.sleep(500);
       let buttonReset = await driverReset.findComponent(ON.id('btreset12End'));
@@ -60,9 +60,7 @@ export default function listSwipeAction12EndJsunit() {
 
     });
 
-    
-    
-    
+
 
 
 
@@ -77,27 +75,22 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120', Level.LEVEL0,
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      
+
       let strJson = inspector.getInspectorByKey('lSwipeAction12End0');
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120] current component obj is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)));
 
-        let ListItem_00: RectValue = CommonFunc.getComponentRect('lSwipeAction12End0');
-        let right: number = ListItem_00.right;
-        let left: number = ListItem_00.left;
-        let top: number = ListItem_00.top;
-        let bottom: number = ListItem_00.bottom;
-        let width = right - left;
-        let height = bottom - top;
-        console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0120 value is" + left + " --" + right +
-          "--" + top + "--" + bottom);
+      let swipeComponent = await driver.findComponent(ON.id('lSwipeAction12End0'));
+      let rect = await swipeComponent!.getBounds();
+      let displayId = await swipeComponent!.getDisplayId();
+      let height = rect.bottom - rect.top;
 
-
-        await driver.swipe(
-          (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
-          (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-          (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-          (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
-        );
+            await driver.swipeBetween(
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(150))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          y: (Math.round(rect.top + height / 2)).toInt(), displayId: displayId }
+      );
 
         await CommonFunc.sleep(4000);
 

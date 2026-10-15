@@ -81,10 +81,6 @@ it('testListDividerStrokeWidthToTen_static', Level.LEVEL0, async (done: () => vo
       let List_divider_013: RectValue = CommonFunc.getComponentRect('List_divider_013');
       let List_divider_014: RectValue = CommonFunc.getComponentRect('List_divider_014');
       let List_divider_01: RectValue = CommonFunc.getComponentRect('List_divider_01');
-      let left:number = List_divider_01.left;
-      let top:number = List_divider_01.top;
-      let right:number = List_divider_01.right;
-      let bottom:number = List_divider_01.bottom;
 	  expect(Math.abs(Math.round(List_divider_011.right - List_divider_011.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(List_divider_012.right - List_divider_012.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(List_divider_013.right - List_divider_013.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
@@ -107,10 +103,14 @@ it('testListDividerStrokeWidthToTen_static', Level.LEVEL0, async (done: () => vo
 	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - UIContext.resolveUIContext()!.vp2px(500))) <= 1).assertTrue();
 	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
+      let swipeComp = await driver.findComponent(ON.id('List_divider_01'));
+      let swipeRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+            await driver.swipeBetween(
+        { x: (Math.round(swipeRect.left + (swipeRect.right - swipeRect.left) / 2)).toInt(),
+          y: (Math.round(swipeRect.top + (swipeRect.bottom - swipeRect.top) / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(swipeRect.left + (swipeRect.right - swipeRect.left) / 2)).toInt(),
+          y: (Math.round(swipeRect.top)).toInt(), displayId: displayId });
       await CommonFunc.sleep(3000);
       let List_divider_014Again: RectValue = CommonFunc.getComponentRect('List_divider_014');
       expect(Math.floor(Math.abs(List_divider_014.top - List_divider_014Again.top)) <= 1).assertTrue();
@@ -144,10 +144,6 @@ it('testListDividerStrokeWidthToForty_static', Level.LEVEL0, async (done: () => 
       let List_divider_013: RectValue = CommonFunc.getComponentRect('List_divider_013');
       let List_divider_014: RectValue = CommonFunc.getComponentRect('List_divider_014');
       let List_divider_01: RectValue = CommonFunc.getComponentRect('List_divider_01');
-      let left:number = List_divider_01.left;
-      let top:number = List_divider_01.top;
-      let right:number = List_divider_01.right;
-      let bottom:number = List_divider_01.bottom;
 	  expect(Math.abs(Math.round(List_divider_011.right - List_divider_011.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(List_divider_012.right - List_divider_012.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
 	  expect(Math.abs(Math.round(List_divider_013.right - List_divider_013.left) - Math.round(UIContext.resolveUIContext()!.vp2px(300))) <= 1).assertTrue();
@@ -170,10 +166,14 @@ it('testListDividerStrokeWidthToForty_static', Level.LEVEL0, async (done: () => 
 	  expect(Math.floor(Math.abs((List_divider_01.bottom - List_divider_01.top) - UIContext.resolveUIContext()!.vp2px(500))) <= 1).assertTrue();
 	  expect(Math.floor(Math.abs((List_divider_01.right - List_divider_01.left) - UIContext.resolveUIContext()!.vp2px(350))) <= 1).assertTrue();
       let driver = Driver.create();
-      await driver.swipe((Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + (bottom-top)/2 + top)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + (right -left)/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top)).toInt());
+      let swipeComp2 = await driver.findComponent(ON.id('List_divider_01'));
+      let swipeRect2 = await swipeComp2!.getBounds();
+      let displayId2 = await swipeComp2!.getDisplayId();
+            await driver.swipeBetween(
+        { x: (Math.round(swipeRect2.left + (swipeRect2.right - swipeRect2.left) / 2)).toInt(),
+          y: (Math.round(swipeRect2.top + (swipeRect2.bottom - swipeRect2.top) / 2)).toInt(), displayId: displayId2 },
+        { x: (Math.round(swipeRect2.left + (swipeRect2.right - swipeRect2.left) / 2)).toInt(),
+          y: (Math.round(swipeRect2.top)).toInt(), displayId: displayId2 });
       await CommonFunc.sleep(3000);
       let List_divider_014Again: RectValue = CommonFunc.getComponentRect('List_divider_014');
       expect(Math.floor(Math.abs(List_divider_01.bottom - List_divider_014Again.bottom)) <= 1)

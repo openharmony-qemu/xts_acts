@@ -62,7 +62,7 @@ export default function scrollBarJsunitt() {
 it('testScrollBar001_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollBar001_static_01] START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('scrollBarr' + '_scroll');
+      let strJson = inspector.getInspectorByKey('scrollBarr_scroll');
       console.info("[testScrollBar001_static_01] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollBar001_static_01] direction:" + obj.getElement('$attrs').getString('direction'));
@@ -99,7 +99,7 @@ it('testScrollBar002_static_02', Level.LEVEL0, async (done: () => void): Promise
         console.log("[testScrollBar002_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJson = inspector.getInspectorByKey('scrollBarr' + '_scroll');
+      let strJson = inspector.getInspectorByKey('scrollBarr_scroll');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollBar002_static_02] obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('direction')).assertEqual('ScrollBarDirection.Vertical');
@@ -118,7 +118,7 @@ it('testScrollBar002_static_02', Level.LEVEL0, async (done: () => void): Promise
 it('testScrollBar003_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testScrollBar003_static_03] START');
       await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('scrollBarr' + '_scroll');
+      let strJson = inspector.getInspectorByKey('scrollBarr_scroll');
       console.info("[testScrollBar003_static_03] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollBar003_static_03] state:" + obj.getElement('$attrs').getString('state'));
@@ -152,7 +152,7 @@ it('testScrollBar004_static_04', Level.LEVEL0, async (done: () => void): Promise
         console.log("[testScrollBar004_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJson = inspector.getInspectorByKey('scrollBarr' + '_scroll');
+      let strJson = inspector.getInspectorByKey('scrollBarr_scroll');
       console.info("[testScrollBar004_static_04] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollBar004_static_04] state:" + obj.getElement('$attrs').getString('state'));
@@ -186,7 +186,7 @@ it('testScrollBar005_static_05', Level.LEVEL0, async (done: () => void): Promise
         console.log("[testScrollBar005_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
-      let strJson = inspector.getInspectorByKey('scrollBarr' + '_scroll');
+      let strJson = inspector.getInspectorByKey('scrollBarr_scroll');
       console.info("[testScrollBar005_static_05] component strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testScrollBar005_static_05] state:" + obj.getElement('$attrs').getString('state'));

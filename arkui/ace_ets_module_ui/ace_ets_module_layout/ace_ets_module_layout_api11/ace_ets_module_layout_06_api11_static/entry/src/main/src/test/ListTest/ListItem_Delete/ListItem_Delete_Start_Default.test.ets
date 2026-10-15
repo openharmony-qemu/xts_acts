@@ -69,23 +69,20 @@ export default function ListItem_Delete_Start_Default() {
 it('SUB_ACE_ListItem_Delete_Start_Default_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_ListItem_Delete_Start_Default_static_002] START');
       await CommonFunc.sleep(1000);
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_00');
-      let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_01');
       let driver = Driver.create();
-      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_1');
-      let top:number = swipeBar.top;
-      let right:number = swipeBar.right;
-      let left:number = swipeBar.left;
-      let bottom:number = swipeBar.bottom;
-      let height = bottom -top;
-      let width = right - left;
-      console.info("SUB_ACE_ListItem_Delete_Start_Default_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
 
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
+      let swipeComp = await driver.findComponent(ON.id('ListItem_Delete_Start_Default_1'));
+      let rect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      let width = rect.right - rect.left;
+      let height = rect.bottom - rect.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+          y: (Math.round(rect.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId },
+        { x: (Math.round(rect.right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+          y: (Math.round(rect.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId }
       );
       await CommonFunc.sleep(3000);
 
@@ -127,23 +124,18 @@ it('SUB_ACE_ListItem_Delete_Start_Default_static_003', Level.LEVEL0, async (done
       await btn!.click();
       await CommonFunc.sleep(1000);
 
-      let ListItem_00: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_00');
-      let ListItem_01: RectValue = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_ListItem_01');
-
-      let swipeBar = CommonFunc.getComponentRect('ListItem_Delete_Start_Default_1');
-      let top:number = swipeBar.top;
-      let right:number = swipeBar.right;
-      let left:number = swipeBar.left;
-      let bottom:number = swipeBar.bottom;
-      let height = bottom -top;
-      let width = right - left;
-      console.info("SUB_ACE_ListItem_Delete_Start_Default_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
-
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
+      let swipeComp03 = await driver.findComponent(ON.id('ListItem_Delete_Start_Default_1'));
+      let rect03 = await swipeComp03!.getBounds();
+      let displayId03 = await swipeComp03!.getDisplayId();
+      let width = rect03.right - rect03.left;
+      let height = rect03.bottom - rect03.top;
+      await driver.swipeBetween(
+        { x: (Math.round(rect03.left + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          y: (Math.round(rect03.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId03 },
+        { x: (Math.round(rect03.left + UIContext.resolveUIContext()!.vp2px(100))).toInt(),
+          y: (Math.round(rect03.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId03 }
       );
       await CommonFunc.sleep(3000);
 

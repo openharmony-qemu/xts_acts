@@ -65,17 +65,22 @@ export default function onSelectedTabs() {
      */
 it('onSelectedTabs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onSelectedTabs_static_0100] START');
-      let swipeTabs = CommonFunc.getComponentRectOnScreen('tabs_onSelected');
-      let top = swipeTabs.top;
-      let right = swipeTabs.right;
-      let left = swipeTabs.left;
-      let bottom = swipeTabs.bottom;
+      let driver = Driver.create()
+      let swipeComp = await driver.findComponent(ON.id('tabs_onSelected'));
+      let rect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+      let top = rect.top;
+      let right = rect.right;
+      let left = rect.left;
+      let bottom = rect.bottom;
       console.info("onSelectedTabs_static_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = Driver.create()
-      await driver.drag((Math.round(left + width * 0.8)).toInt(), (Math.round(top + height / 2)).toInt(),
-        (Math.round(left + width * 0.2)).toInt(), (Math.round(top + height / 2)).toInt());
+      await driver.dragBetween(
+        { x: (Math.round(left + width * 0.8)).toInt(),
+          y: (Math.round(top + height / 2)).toInt(), displayId: displayId },
+        { x: (Math.round(left + width * 0.2)).toInt(),
+          y: (Math.round(top + height / 2)).toInt(), displayId: displayId });
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('selectedIndex_tabs_text');
       console.info("[onSelectedTabs_static_0100] component obj1 is: " +

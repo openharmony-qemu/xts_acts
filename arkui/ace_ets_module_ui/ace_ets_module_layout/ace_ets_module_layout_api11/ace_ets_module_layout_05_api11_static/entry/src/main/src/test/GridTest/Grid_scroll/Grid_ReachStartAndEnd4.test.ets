@@ -92,20 +92,26 @@ it('Grid_ReachStartAndEnd4_static_0500', Level.LEVEL0, async (done: () => void):
       let button1 = await driver.findComponent(ON.id('Grid_ReachStartAndEnd_changePadding'))
       await (button1?.click() as Promise<void>)
 
-      let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_grid')
-      await driver.swipe(
-        (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
-        (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`}`)).toInt(),
-        (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
-        (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`)).toInt(),
+      let gridRectComp = await driver.findComponent(ON.id('Grid_ReachStartAndEnd_grid'))
+      let gridRect = await gridRectComp!.getBounds()
+      let displayId = await gridRectComp!.getDisplayId()
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
+          y: (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
+          y: (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`)).toInt(),
+          displayId: displayId },
         1000);
       await CommonFunc.sleep(2000);
 
-      await driver.swipe(
-        (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
-        (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`)).toInt(),
-        (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
-        (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`}`)).toInt(),
+      await driver.swipeBetween(
+        { x: (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
+          y: (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`}`)).toInt(),
+          displayId: displayId },
+        { x: (Number.parseInt(`${`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`}`)).toInt(),
+          y: (Number.parseInt(`${`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`}`)).toInt(),
+          displayId: displayId },
         1000);
       await CommonFunc.sleep(2000);
 

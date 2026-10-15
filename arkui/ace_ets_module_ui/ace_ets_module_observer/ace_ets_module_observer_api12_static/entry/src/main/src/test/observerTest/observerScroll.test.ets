@@ -72,7 +72,14 @@ it('observerScrollTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
         let height = bottom -top;
         let width = right - left;
         await CommonFunc.sleep(1000);
-        await (driver.swipe(Math.round(left + width*0.2).toInt(),Math.round(bottom - height/4).toInt(),Math.round(left + width*0.2).toInt(),Math.round(bottom - height/2).toInt()) as Promise<void>);
+        let swipeComp = await driver.findComponent(ON.id('scrollEvent_4'));
+        let rect = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
+        await driver.swipeBetween(
+          { x: (Math.round(rect.left + (rect.right - rect.left) * 0.2)).toInt(),
+            y: (Math.round(rect.bottom - (rect.bottom - rect.top) / 4)).toInt(), displayId: displayId },
+          { x: (Math.round(rect.left + (rect.right - rect.left) * 0.2)).toInt(),
+            y: (Math.round(rect.bottom - (rect.bottom - rect.top) / 2)).toInt(), displayId: displayId });
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('scrollEvent_1');
         let strJson1 = inspector.getInspectorByKey('scrollEvent_2');

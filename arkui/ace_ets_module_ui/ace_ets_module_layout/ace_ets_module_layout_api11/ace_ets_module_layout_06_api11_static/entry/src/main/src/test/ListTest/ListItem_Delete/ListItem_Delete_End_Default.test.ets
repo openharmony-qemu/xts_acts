@@ -80,11 +80,16 @@ it('SUB_ACE_ListItem_Delete_End_Default_static_0200', Level.LEVEL0, async (done:
       let height = bottom -top;
       let width = right - left;
       console.info("SUB_ACE_ListItem_Delete_End_Default_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
-  await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + UIContext.resolveUIContext()!.vp2px(50))).toInt()
+  let swipeComp = await driver.findComponent(ON.id('ListItem_Delete_End_Default_1'));
+      let rect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
+  await driver.swipeBetween(
+        { x: (Math.round(rect.right - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+          y: (Math.round(rect.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId },
+        { x: (Math.round(rect.left + UIContext.resolveUIContext()!.vp2px(10))).toInt(),
+          y: (Math.round(rect.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId }
       );
       await CommonFunc.sleep(3000);
 
@@ -132,11 +137,16 @@ it('SUB_ACE_ListItem_Delete_End_Default_static_0300', Level.LEVEL0, async (done:
 
 
       console.log('slide ')
-      await driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + UIContext.resolveUIContext()!.vp2px(50))).toInt()
+      let swipeComp03 = await driver.findComponent(ON.id('ListItem_Delete_End_Default_ListItem_00'));
+      let rect03 = await swipeComp03!.getBounds();
+      let displayId03 = await swipeComp03!.getDisplayId();
+      await driver.swipeBetween(
+        { x: (Math.round(rect03.left + UIContext.resolveUIContext()!.vp2px(80))).toInt(),
+          y: (Math.round(rect03.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId03 },
+        { x: (Math.round(rect03.left + UIContext.resolveUIContext()!.vp2px(30))).toInt(),
+          y: (Math.round(rect03.top + UIContext.resolveUIContext()!.vp2px(50))).toInt(),
+          displayId: displayId03 }
       );
       await CommonFunc.sleep(3000);
 
