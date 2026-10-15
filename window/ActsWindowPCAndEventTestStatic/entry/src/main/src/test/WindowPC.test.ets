@@ -314,7 +314,7 @@ export default function WindowPCTest() {
                 await Utils.msSleep(1000)
                 let errorCode = AppStorage.get<int>('teststartMovingParamStaticRepeated_errorCode') as int;
                 console.info(`${caseName} errorCode = ${JSON.stringify(errorCode)}`);
-                if(isFreeWindowMode){ 
+                if(!isFreeWindowMode){ 
                  console.info(`${caseName} startMoving 801`);
                  expect(errorCode).assertEqual(801);
                 } else {
