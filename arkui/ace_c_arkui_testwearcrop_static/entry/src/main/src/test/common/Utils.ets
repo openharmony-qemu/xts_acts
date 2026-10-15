@@ -105,7 +105,7 @@ export default class Utils {
   static async pickerComponent(key: string) {
     let driver = Driver.create();
     let Picker = await driver.findComponent(ON.id(key));
-    let displayId = await (Picker?.getDisplayId() as Promise<number>);
+    let displayId = (await (Picker?.getDisplayId() as Promise<number>)).toInt();
     let rect = await (Picker?.getBounds() as Promise<Rect>);
     let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
     let X = Math.round(rect.right - uiContext.vp2px(5)).toInt();
