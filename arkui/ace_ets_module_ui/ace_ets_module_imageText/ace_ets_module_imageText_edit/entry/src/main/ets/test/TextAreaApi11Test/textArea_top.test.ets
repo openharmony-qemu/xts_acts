@@ -69,7 +69,7 @@ export default function textArea_top() {
         console.log('textArea_01.top' + textArea_01.top)
         console.log('column_01.top' + column_01.top)
 
-        let driver = await UiDriver.create();
+        let driver = await Driver.create();
         // vp2px(100),vp2px(10)
         await driver.clickAt({ x: Math.round((textArea_01.left + (textArea_01.right - textArea_01.left) /2)), y: Math.round((textArea_01.top + (textArea_01.bottom - textArea_01.top) /45)), displayId: displayID });
         await CommonFunc.sleep(1000);
