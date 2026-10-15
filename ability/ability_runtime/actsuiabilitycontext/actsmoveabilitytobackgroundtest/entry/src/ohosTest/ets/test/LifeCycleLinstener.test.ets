@@ -73,7 +73,7 @@ export default function LifeCycleLinstenerTest() {
       let appCloneSupport = AppStorage.get('appCloneSupport') as boolean;
       if(!appCloneSupport){
         try {
-          let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
+          let applicationContext:common.ApplicationContext = testAbilityContext.getApplicationContext();
           let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
           expect().assertFail();
           done();
@@ -84,7 +84,7 @@ export default function LifeCycleLinstenerTest() {
         }
       } else {
         try {
-          let applicationContext:common.ApplicationContext = TestAbilityContext.getApplicationContext();
+          let applicationContext:common.ApplicationContext = testAbilityContext.getApplicationContext();
           let appCloneIndex:number = applicationContext.getCurrentAppCloneIndex();
           expect(appCloneIndex).assertEqual(0);
           done();
