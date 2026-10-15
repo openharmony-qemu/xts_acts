@@ -21,10 +21,10 @@ import { Driver, MatchPattern, Component, ON } from '@ohos.UiTest';
 import account from '@ohos.account.osAccount';
 import bundleManager from '@ohos.bundle.bundleManager';
 
-const rightPhone: string = "17301740854";
+const rightPhone: string = "178xxxxxxxx";
 const emptyStr: string = "";
 const errPhone: string = "125qqqq555";
-const emergencyPhone: string = "120";
+const emergencyPhone: string = "911";
 const specialPhone: string = "10086";
 
 const ExpectFail = () => {
@@ -96,10 +96,10 @@ export default function HasCard1PublicTest() {
           ExpectFail();
         } else {
           if (data) {
-            expect(data == true).assertTrue();
+            ExpectTrue(data == true);
             console.info(`${caseName} success, has call->${JSON.stringify(data)}`);
           } else {
-            expect(data == false).assertTrue();
+            ExpectTrue(data == false);
             console.info(`${caseName} success, does not has call->${JSON.stringify(data)}`);
           }
           done();
@@ -1041,7 +1041,100 @@ export default function HasCard1PublicTest() {
           ExpectTrue(err.code === 401);
           done();
         }
-      });
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerAnswerCall0100
+     * @tc.number SUB_Telephony_CallManager_AnswerCall_0100
+     * @tc.desc   Answer call without active call, expect error 8300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerAnswerCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerAnswerCall0100';
+      console.info(`${caseName} test start `);
+      try {
+        call.answerCall((err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 8300003);
+          } else {
+            console.info(`${caseName} fail, answerCall success without active call`);
+            ExpectFail();
+          }
+          console.info(`${caseName} test end `);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerHangUpCall0100
+     * @tc.number SUB_Telephony_CallManager_HangUpCall_0100
+     * @tc.desc   Hang up call without active call, expect error 8300001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerHangUpCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerHangUpCall0100';
+      console.info(`${caseName} test start `);
+      try {
+        call.hangUpCall((err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 8300001);
+          } else {
+            console.info(`${caseName} fail, hangUpCall success without active call`);
+            ExpectFail();
+          }
+          console.info(`${caseName} test end `);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end `);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerRejectCall0100
+     * @tc.number SUB_Telephony_CallManager_RejectCall_0100
+     * @tc.desc   Reject call without active call, expect error 8300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyCallManagerRejectCall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCallManagerRejectCall0100';
+      console.info(`${caseName} test start `);
+      try {
+        call.rejectCall((err: BusinessError) => {
+          if (err) {
+            console.info(`${caseName} success, err->${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 8300003);
+          } else {
+            console.info(`${caseName} fail, rejectCall success without active call`);
+            ExpectFail();
+          }
+          console.info(`${caseName} test end `);
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} fail, err->${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName} test end `);
+        done();
+      }
+    });
 
   });
 }

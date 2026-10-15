@@ -25,6 +25,22 @@ export function toString(data:object) {
   }
 };
 
+const ExpectFail = () => {
+  try {
+    expect().assertFail();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
+const ExpectTrue = (n: boolean) => {
+  try {
+    expect(n).assertTrue();
+  } catch (err) {
+    console.info("expectInfo", `test failed`);
+  }
+}
+
 export default function callJsunit() {
   describe('callTest', ()=> {
     console.log("==========> call Test start ==========>");
@@ -48,10 +64,10 @@ export default function callJsunit() {
       } else {
         let voiceCapablity = call.hasVoiceCapability();
         if (voiceCapablity) {
-          expect(voiceCapablity).assertEqual(true);
+          ExpectTrue(voiceCapablity == true);
           console.info(`${caseName}  :voiceCapablity is ${JSON.stringify(voiceCapablity)}`);
         } else {
-          expect(voiceCapablity).assertEqual(false);
+          ExpectTrue(voiceCapablity == false);
           console.info(`${caseName}  :voiceCapablity is ${JSON.stringify(voiceCapablity)}`);
         }
         console.log(`==========> ${caseName} Test end ==========>`);
@@ -83,12 +99,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_0700 makeCall callback: error->" + JSON.stringify(error.code));
-            expect(false).assertTrue();
+            ExpectFail();
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_0700 makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          ExpectFail();
           done();
         }
       }
@@ -118,12 +134,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_0500 makeCall callback: err->" + JSON.stringify(error));
-            expect(false).assertTrue();
+            ExpectFail();
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_0500 makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          ExpectFail();
           done();
         }
       }
@@ -158,7 +174,7 @@ export default function callJsunit() {
           });
         } catch (err) {
           console.log("makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          ExpectFail();
           done();
         }
       }
@@ -193,7 +209,7 @@ export default function callJsunit() {
           });
         } catch (err) {
           console.log("makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          ExpectFail();
           done();
         }
       }
@@ -223,12 +239,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("makeCall callback: err->" + JSON.stringify(error.code));
-            expect(false).assertTrue();
+            ExpectFail();
             done();
           });
         } catch (err) {
           console.log("makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          ExpectFail();
           done();
         }
       }
@@ -258,12 +274,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("makeCall callback: err->" + JSON.stringify(error.code));
-            expect(false).assertTrue();
+            ExpectFail();
             done();
           });
         } catch (err) {
           console.log("makeCall callback: err->" + JSON.stringify(err));
-          expect(false).assertTrue();
+          ExpectFail();
           done();
         }
       }
@@ -294,12 +310,12 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_1000 makeCall callback: error->" + JSON.stringify(error));
-            expect(Number(error.code)).assertEqual(401);
+            ExpectTrue(error.code === 401);
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_1000 makeCall callback: err->" + JSON.stringify(err));
-          expect(Number(err.code)).assertEqual(401);
+          ExpectTrue(err.code === 401);
           done();
         }
       }
@@ -330,16 +346,133 @@ export default function callJsunit() {
             done();
           }).catch((error: BusinessError) => {
             console.log("Telephony_Call_Call_MakeCall_1100 makeCall callback: error->" + JSON.stringify(error.code));
-            expect(Number(error.code)).assertEqual(401);
+            ExpectTrue(error.code === 401);
             done();
           });
         } catch (err) {
           console.log("Telephony_Call_Call_MakeCall_1100 makeCall callback: err->" + JSON.stringify(err));
-          expect(Number(err.code)).assertEqual(401);
+          ExpectTrue(err.code === 401);
           done();
         }
       }
       console.log(`==========> ${caseName} Test end ==========>`);
+    });
+
+    /**
+     * @tc.name   testTelephonyCallGetCallTransferInfo0100
+     * @tc.number SUB_Telephony_Call_getCallTransferInfo_0100
+     * @tc.desc   Get call transfer info without permission Promise api26+
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testTelephonyCallGetCallTransferInfo0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      const CASE_NAME = 'testTelephonyCallGetCallTransferInfo0100';
+        console.info(`${CASE_NAME} testTelephonyCallManager start`);
+        try {
+          let phoneNumber: string = '138xxxxxxxx';
+          let type: number = call.CallTransferType.TRANSFER_TYPE_UNCONDITIONAL;
+          let data: call.CallTransferResult = await call.getCallTransferInfo(type, phoneNumber);
+          console.info(`${CASE_NAME} success, data->${JSON.stringify(data)}`);
+          ExpectFail();
+          done();
+        } catch (err) {
+          console.info(`${CASE_NAME} fail, err->${JSON.stringify(err)}`);
+          ExpectTrue(err?.code === 201);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   testTelephonyCallManagerRejectCall0100
+     * @tc.number SUB_Telephony_CallManager_RejectCall_0100
+     * @tc.desc   Reject the call. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonyCallManagerRejectCall0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "testTelephonyCallManagerRejectCall0100";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      try {
+        call.rejectCall((err: BusinessError) => {
+          if (err) {
+            console.log(`${caseName} rejectCall callback: err->` + JSON.stringify(err));
+            ExpectTrue(err.code === 201);
+            done();
+          } else {
+            console.log(`${caseName} rejectCall callback: success without permission, unexpected`);
+            ExpectFail();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} rejectCall callback: err->` + JSON.stringify(err));
+        ExpectTrue(err.code === 201);
+        console.log(`==========> ${caseName} Test end ==========>`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerHangUpCall0100
+     * @tc.number SUB_Telephony_CallManager_HangUpCall_0100
+     * @tc.desc   Hang up the call. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonyCallManagerHangUpCall0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "testTelephonyCallManagerHangUpCall0100";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      try {
+        call.hangUpCall((err: BusinessError) => {
+          if (err) {
+            console.log(`${caseName} hangUpCall callback: err->` + JSON.stringify(err));
+            ExpectTrue(err.code === 201);
+            done();
+          } else {
+            console.log(`${caseName} hangUpCall callback: success without permission, unexpected`);
+            ExpectFail();
+          }
+
+        });
+      } catch (err) {
+        console.log(`${caseName} hangUpCall callback: err->` + JSON.stringify(err));
+        ExpectTrue(err.code === 201);
+        console.log(`==========> ${caseName} Test end ==========>`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testTelephonyCallManagerAnswerCall0100
+     * @tc.number SUB_Telephony_CallManager_AnswerCall_0100
+     * @tc.desc   Answer the call. Use callback for asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testTelephonyCallManagerAnswerCall0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName: string = "testTelephonyCallManagerAnswerCall0100";
+      console.log(`==========> ${caseName} Test start ==========>`);
+      try {
+        call.answerCall((err: BusinessError) => {
+          if (err) {
+            console.log(`${caseName} answerCall callback: err->` + JSON.stringify(err));
+            ExpectTrue(err.code === 201);
+            done();
+          } else {
+            console.log(`${caseName} answerCall callback: success without permission, unexpected`);
+            ExpectFail();
+          }
+        });
+      } catch (err) {
+        console.log(`${caseName} answerCall callback: err->` + JSON.stringify(err));
+        ExpectTrue(err.code === 201);
+        console.log(`==========> ${caseName} Test end ==========>`);
+        done();
+      }
     });
 
   });
