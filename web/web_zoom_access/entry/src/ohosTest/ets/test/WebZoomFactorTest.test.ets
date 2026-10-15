@@ -15,8 +15,11 @@
 
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium-dynamic';
 import Utils from './Utils.test';
+import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@ohos.UiTest';
 
+const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 const EVENT_ID_SET_SUITE_KEY = 181200;
 const INIT_ERR_MSG = 'Init error. The WebviewController must be associated with a Web component';
 const driver = Driver.create();
@@ -33,7 +36,11 @@ export default function webZoomFactorTest() {
     });
 
     beforeEach(async (done: Function) => {
-      Utils.enableWebZoomExtAbility();
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info('enable success');
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      });
       done();
     });
 
