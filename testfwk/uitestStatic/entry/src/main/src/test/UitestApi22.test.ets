@@ -1264,7 +1264,8 @@ export default function uitestDriverTestApi22(): void {
         if (dragResultTextCom != null) {
           await driver!.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result = await driver!.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+          let disId = await dragResultTextCom.getDisplayId();
+          let result = await driver!.isComponentPresentWhenDrag(ON.belongingDisplay(disId).text('ShowDragEventText'), center1, center2)
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1303,7 +1304,8 @@ export default function uitestDriverTestApi22(): void {
         if (dragResultTextCom != null) {
           await driver!.delayMs(waitUiReadyMs);
           let center2 = await dragResultTextCom.getBoundsCenter();
-          let result = await driver!.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2, 600);
+          let disId = await dragResultTextCom.getDisplayId();
+          let result = await driver!.isComponentPresentWhenDrag(ON.belongingDisplay(disId).text('ShowDragEventText'), center1, center2, 600);
           console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue_speed_static result, ${JSON.stringify(result)}`);
           expect(result).assertTrue();
         }
@@ -1382,7 +1384,7 @@ export default function uitestDriverTestApi22(): void {
         let center = await scrollBar.getBoundsCenter()
         let playId = await scrollBar.getDisplayId();
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static playId is: ${JSON.stringify(playId)}`);
-        let result = await driver!.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+        let result = await driver!.isComponentPresentWhenSwipe(ON.belongingDisplay(playId).text('ShowSwipeEventCom'),
           {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4).toInt(), displayId: playId},
           {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4).toInt(), displayId: playId}, 200)
         console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue_static result, ${JSON.stringify(result)}`);
