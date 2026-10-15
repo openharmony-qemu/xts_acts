@@ -63,6 +63,7 @@ export default function volumeManagerTest() {
         try {
           let disks: Array<volumeManager.ExternalDiskInfo> = await volumeManager.getExternalDiskInfos();
           hilog.info(domain, tag, 'getExternalDiskInfos result: %{public}s', JSON.stringify(disks));
+          expect(disks.length).assertEqual(0);
           done();
         } catch (error) {
           const err = error as BusinessError;
@@ -88,6 +89,7 @@ export default function volumeManagerTest() {
         try {
           let volumes: Array<volumeManager.ExternalVolumeInfo> = await volumeManager.getExternalVolumeInfos();
           hilog.info(domain, tag, 'getExternalVolumeInfos successfully: %{public}s', JSON.stringify(volumes));
+          expect(volumes.length).assertEqual(0);
           done();
         } catch (error) {
           const err = error as BusinessError;
