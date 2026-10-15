@@ -64,7 +64,7 @@ export default class Hap2MainAbility6 extends Ability {
             if(appIndex === 0){
                deviceSupport = true;
             }
-        }catch(e){
+        } catch(e){
             console.log('[Demo] Hap2MainAbility6 appIndex  catch ' + e.code + ' ' + e.message)
         }
         if (deviceSupport === 'false') {
