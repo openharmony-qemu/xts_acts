@@ -24,7 +24,6 @@ import inspector from '@ohos.arkui.inspector';
 import { LibUtil } from '../../../ets/pages/LibUtil';
 let libUtil: LibUtil = new LibUtil();
 
-let displayID: Int = AppStorage.get<number>('displayID')?.toInt() ?? 0
 export default function FocusControlTest4(){
   describe('FocusControlTest4',  () =>{
      beforeEach(async (): Promise<void> => {
@@ -87,15 +86,15 @@ export default function FocusControlTest4(){
         await Utils.sleep(1000); 
         
         // tab key
-        await driver.triggerKey(2049, displayID);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(1000);
 
-        await driver.triggerKey(2049, displayID);
+        await driver.triggerKey(2049, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(1000);
 
         expect(Utils.getComponentInfoByKey('button4x').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00');
 
-        await driver.triggerKey(2070, displayID);
+        await driver.triggerKey(2070, AppStorage.get<number>('displayID')?.toInt() ?? 0);
         await Utils.sleep(1000);
         done();
       } catch (err) {

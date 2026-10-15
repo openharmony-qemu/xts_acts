@@ -128,7 +128,7 @@ async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver):
     console.info('xxxTest sleep err: ' + JSON.stringify(err));
   }
   // keyboard to sumilate
-  driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, keycodeMap.get(keyChar) as int, displayID);
+  driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, keycodeMap.get(keyChar) as int, 0, displayID);
   try {
     await CommonFunc.sleep(2000);
   } catch (err) {
