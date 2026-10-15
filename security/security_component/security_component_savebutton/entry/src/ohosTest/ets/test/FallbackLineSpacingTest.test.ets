@@ -52,7 +52,7 @@ export default function fallbackLineSpacingTest() {
       console.info(`====>${testname} clickSecComponent function Start====`);
       try {
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
         let buttonText = await button.getText();
         console.info(`====>${testname} buttonText is:` + JSON.stringify(buttonText));
@@ -60,6 +60,7 @@ export default function fallbackLineSpacingTest() {
         await button.click();
         await Utils.sleep(1000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
         if (titleTx !== null) {
           await clickAllowBtn(testname, driver);
@@ -75,6 +76,7 @@ export default function fallbackLineSpacingTest() {
       console.info(`====>${testname} clickAllowBtn function Start====`);
       try {
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
         if(allowBtn !== null) {
           console.info(`====>${testname} allowBtnClick START====`);
@@ -97,6 +99,7 @@ export default function fallbackLineSpacingTest() {
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(3000);
           console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
           console.info(`====>${testname} allowBtnClick START====`);
           await allowBtn.click();
@@ -158,6 +161,8 @@ export default function fallbackLineSpacingTest() {
       
       try {
         let strJson = getInspectorByKey('keyFallbackLineSpacing');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         let obj : ESObject = JSON.parse(strJson);
         console.info(`====>${TCNAME} getInspectorByKey result: ` + JSON.stringify(obj));
         
@@ -175,6 +180,8 @@ export default function fallbackLineSpacingTest() {
         await Utils.sleep(2000);
         
         strJson = getInspectorByKey('keyFallbackLineSpacing');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         obj = JSON.parse(strJson);
         console.info(`====>${TCNAME} after emit, getInspectorByKey result: ` + JSON.stringify(obj));
         
@@ -206,6 +213,8 @@ export default function fallbackLineSpacingTest() {
       
       try {
         let strJson = getInspectorByKey('keyFallbackLineSpacing');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         let obj : ESObject = JSON.parse(strJson);
         console.info(`====>${TCNAME} getInspectorByKey result: ` + JSON.stringify(obj));
         
@@ -223,6 +232,8 @@ export default function fallbackLineSpacingTest() {
         await Utils.sleep(2000);
         
         strJson = getInspectorByKey('keyFallbackLineSpacing');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         obj = JSON.parse(strJson);
         console.info(`====>${TCNAME} after emit, getInspectorByKey result: ` + JSON.stringify(obj));
         
@@ -254,6 +265,8 @@ export default function fallbackLineSpacingTest() {
       
       try {
         let strJson = getInspectorByKey('keyFallbackLineSpacing');
+        await Utils.sleep(3000);
+        console.info(`====>${TCNAME} strJson is: ${strJson}`);
         let obj : ESObject = JSON.parse(strJson);
         console.info(`====>${TCNAME} getInspectorByKey result: ` + JSON.stringify(obj));
         

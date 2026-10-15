@@ -50,11 +50,12 @@ export default function saveComponentTest_2() {
       console.info(`====>${testname} clickSecComponent function Start====`);
       try {
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info(`====>${testname} button is:` + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
         let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} titleTx is:` + JSON.stringify(titleTx));
         if (titleTx !== null) {
           await clickAllowBtn(testname, driver);
@@ -70,6 +71,7 @@ export default function saveComponentTest_2() {
       console.info(`====>${testname} clickAllowBtn function Start====`);
       try {
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        await Utils.sleep(3000);
         console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
         if(allowBtn !== null) {
           console.info(`====>${testname} allowBtnClick START====`);
@@ -92,6 +94,7 @@ export default function saveComponentTest_2() {
             await Utils.sleep(100);
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(3000);
           console.info(`====>${testname} allowBtn is:` + JSON.stringify(allowBtn));
           console.info(`====>${testname} allowBtnClick START====`);
           await allowBtn.click();
@@ -198,6 +201,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0100] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info("====>[Test_Security_Button_SaveScenarios_0100] get obj is: " + JSON.stringify(obj));
       // width的默认值取值
@@ -245,6 +250,7 @@ export default function saveComponentTest_2() {
             break;
           }
           let textComponent = await driver.findComponent(ON.type('SaveButton'));
+          await Utils.sleep(3000);
           console.info("====>[Test_Security_Button_SaveScenarios_0100] textComponent is:" + JSON.stringify(textComponent));
           await Utils.sleep(200)
           if (textComponent != undefined && textComponent != null) {
@@ -257,6 +263,7 @@ export default function saveComponentTest_2() {
             ;
           }
           let allowBtn = await driver.findComponent(ON.text('允许'));
+          await Utils.sleep(3000);
           console.info("====>[Test_Security_Button_SaveScenarios_0100] allowBtn is:" + JSON.stringify(allowBtn));
           if (allowBtn !== null) {
             console.info("====>[Test_Security_Button_SaveScenarios_0100] allowBtnClick START====");
@@ -332,6 +339,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[TTest_Security_Button_SaveScenarios_0200] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info("====>[TTest_Security_Button_SaveScenarios_0200] get obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.height).assertEqual('15.00vp');
@@ -370,7 +379,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[TTest_Security_Button_SaveScenarios_0200] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -439,6 +448,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0300] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       let constraintSize:ESObject = JSON.parse(obj.$attrs.constraintSize);
       console.info("====>[Test_Security_Button_SaveScenarios_0300] get constraintSize is: " + JSON.stringify(constraintSize));
@@ -480,7 +491,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_SaveScenarios_0300] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -549,6 +560,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0400] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       let constraintSize:ESObject = JSON.parse(obj.$attrs.constraintSize);
       console.info("====>[Test_Security_Button_SaveScenarios_0400] get constraintSize is: " + JSON.stringify(constraintSize));
@@ -590,7 +603,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_SaveScenarios_0400] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -659,6 +672,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0500] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       let constraintSize:ESObject = JSON.parse(obj.$attrs.constraintSize);
       console.info("====>[Test_Security_Button_SaveScenarios_0500] get constraintSize is: " + JSON.stringify(constraintSize));
@@ -700,7 +715,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_SaveScenarios_0500] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -769,6 +784,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0600] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       let constraintSize:ESObject = JSON.parse(obj.$attrs.constraintSize);
       console.info("====>[Test_Security_Button_SaveScenarios_0600] get constraintSize is: " + JSON.stringify(constraintSize));
@@ -810,7 +827,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_SaveScenarios_0600] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -879,6 +896,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0700] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       let constraintSize:ESObject = JSON.parse(obj.$attrs.constraintSize);
       console.info("====>[Test_Security_Button_SaveScenarios_0700] get constraintSize is: " + JSON.stringify(constraintSize));
@@ -920,7 +939,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_SaveScenarios_0700] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -989,6 +1008,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0800] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       let constraintSize:ESObject = JSON.parse(obj.$attrs.constraintSize);
       console.info("====>[Test_Security_Button_SaveScenarios_0800] get constraintSize is: " + JSON.stringify(constraintSize));
@@ -1030,7 +1051,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_SaveScenarios_0800] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -1099,6 +1120,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_0900] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info("====>[Test_Security_Button_SaveScenarios_0900] get obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.iconSize).assertEqual('16.00vp');
@@ -1137,7 +1160,7 @@ export default function saveComponentTest_2() {
       try {
         let driver = Driver.create();
         let button = await driver.findComponent(ON.type('SaveButton'));
-        await Utils.sleep(500);
+        await Utils.sleep(3000);
         console.info("====>[Test_Security_Button_SaveScenarios_0900] button is:" + JSON.stringify(button));
         await button.click();
         await Utils.sleep(1000);
@@ -1174,6 +1197,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew: string = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_1000] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontWeight).assertEqual('400');
@@ -1211,6 +1236,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew: string = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_1100] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontWeight).assertEqual('FontWeight.Lighter');
@@ -1248,6 +1275,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew: string = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_1200] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontWeight).assertEqual('FontWeight.Normal');
@@ -1285,6 +1314,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew: string = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_1300] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.fontFamily).assertEqual('HarmonyOS Sans');
@@ -1322,6 +1353,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew: string = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_1400] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.id).assertEqual('keySave11');
@@ -1360,6 +1393,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew: string = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_1500] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.maxFontSize).assertEqual('20.00fp');
@@ -1398,6 +1433,8 @@ export default function saveComponentTest_2() {
       }
       await Utils.sleep(1000);
       let strJsonNew: string = getInspectorByKey('keySave11');
+      await Utils.sleep(3000);
+      console.info(`====>[Test_Security_Button_SaveScenarios_1600] strJsonNew is: ${strJsonNew}`);
       let obj : ESObject = JSON.parse(strJsonNew);
       console.info(`====>${TCNAME} get obj is: ` + JSON.stringify(obj));
       expect(obj.$attrs.enabled).assertEqual(false);
