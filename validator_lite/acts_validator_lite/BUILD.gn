@@ -1,4 +1,5 @@
 import("//build/lite/config/hap_pack.gni")
+import("//foundation/arkui/ace_engine_lite/ace_lite.gni")
 import("//test/xts/tools/lite/build/xts_gated_js_suite.gni")
 
 # Page-transition capability switch. Declared in
@@ -43,6 +44,57 @@ if (ace_engine_lite_feature_page_transition_effect) {
     "pages/ArkUI/RouterTransition/edge_api/index",
     "pages/ArkUI/RouterTransition/edge_duration/index",
     "pages/ArkUI/RouterTransition/target/index",
+  ]
+}
+
+if (ace_engine_lite_enable_flex_layout_config) {
+  _pages += [
+    "pages/ArkUI/flex/aspect-ratio/index",
+    "pages/ArkUI/flex/item-sizing/index",
+    "pages/ArkUI/flex/align-self/index",
+    "pages/ArkUI/flex/size-constraints/index",
+    "pages/ArkUI/flex/align-content/index",
+    "pages/ArkUI/flex/flexDirection/index",
+    "pages/ArkUI/flex/justifyContent/index",
+    "pages/ArkUI/flex/alignItems/index",
+    "pages/ArkUI/flex/flexWrap/index",
+    "pages/ArkUI/flex/flex-gap/index",
+    "pages/ArkUI/flex/flex-margin-left/index",
+    "pages/ArkUI/flex/flex-overflow/index",
+    "pages/ArkUI/flex/flex-position/index",
+  ]
+}
+
+if (ace_engine_lite_enable_gradient_capability) {
+  _pages += [
+    "pages/ArkUI/gradient_angle/index",
+    "pages/ArkUI/gradient_button/index",
+    "pages/ArkUI/gradient_direction/index",
+    "pages/ArkUI/gradient_list/index",
+  ]
+}
+
+if (ace_engine_lite_enable_animation_capability) {
+  _pages += [
+    "pages/ArkUI/pathAnimator/index",
+    "pages/ArkUI/transition_basic/index",
+  ]
+}
+
+if (ace_engine_lite_enable_svg_component_config) {
+  _pages += [
+    "pages/ArkUI/svgAnimate/index",
+    "pages/ArkUI/svgPaint/index",
+    "pages/ArkUI/svgPath/index",
+    "pages/ArkUI/svgShape/index",
+    "pages/ArkUI/svgText/index",
+    "pages/ArkUI/svgTransform/index",
+  ]
+}
+
+if (ace_engine_lite_enable_element_transition_capability) {
+  _pages += [
+    "pages/ArkUI/element-transition/index",
   ]
 }
 

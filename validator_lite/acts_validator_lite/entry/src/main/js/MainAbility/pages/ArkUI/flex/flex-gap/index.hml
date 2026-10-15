@@ -1,0 +1,159 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title-text">flex gap</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <div class="content">
+        <div class="btn-row">
+            <input class="sc-btn" type="button" value="1" onclick="goScenario1" />
+            <input class="sc-btn" type="button" value="2" onclick="goScenario2" />
+            <input class="sc-btn" type="button" value="3" onclick="goScenario3" />
+            <input class="sc-btn" type="button" value="4" onclick="goScenario4" />
+            <input class="sc-btn" type="button" value="5" onclick="goScenario5" />
+            <input class="sc-btn" type="button" value="6" onclick="goScenario6" />
+            <input class="sc-btn" type="button" value="7" onclick="goScenario9" />
+            <input class="sc-btn" type="button" value="8" onclick="goScenario10" />
+            <input class="sc-btn" type="button" value="9" onclick="goScenario11" />
+        </div>
+
+        <!-- 1. gap 单值（TC-01/14/15） -->
+        <div class="scenario" show="{{sc1}}">
+            <text class="label">1. gap 单值（row 方向水平间距）</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setGap1To0" />
+                <input class="btn" type="button" value="20px" onclick="setGap1To20" />
+                <input class="btn" type="button" value="-10px" onclick="setGap1ToNeg10" />
+            </div>
+            <div class="row-box" style="gap: {{gap1}}; width: 300px; height: 80px;">
+                <div class="item50"></div>
+                <div class="item50"></div>
+                <div class="item50"></div>
+            </div>
+        </div>
+
+        <!-- 2. gap 双值简写（TC-02/08） -->
+        <div class="scenario" show="{{sc2}}">
+            <text class="label">2. gap 双值简写（row-gap column-gap）</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setGap2To0" />
+                <input class="btn" type="button" value="15px 5px" onclick="setGap2To15And5" />
+            </div>
+            <div class="wrap-box" style="gap: {{gap2}};">
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+            </div>
+        </div>
+
+        <!-- 3. column-gap 独立设置（TC-03） -->
+        <div class="scenario" show="{{sc3}}">
+            <text class="label">3. column-gap 独立设置</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setColGap3To0" />
+                <input class="btn" type="button" value="30px" onclick="setColGap3To30" />
+            </div>
+            <div class="row-box" style="column-gap: {{colGap3}};">
+                <div class="item50"></div>
+                <div class="item50"></div>
+                <div class="item50"></div>
+            </div>
+        </div>
+
+        <!-- 4. column-gap 10% -->
+        <div class="scenario" show="{{sc4}}">
+            <text class="label">4. column-gap 10%</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setColGap4To0" />
+                <input class="btn" type="button" value="10%" onclick="setColGap4To10Pct" />
+            </div>
+            <div class="row-box" style="column-gap: {{colGap4}};">
+                <div class="item50"></div>
+                <div class="item50"></div>
+                <div class="item50"></div>
+            </div>
+        </div>
+
+        <!-- 5. gap+flex-wrap 多行（TC-05/07） -->
+        <div class="scenario" show="{{sc5}}">
+            <text class="label">5. gap+flex-wrap多行</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setGap5To0" />
+                <input class="btn" type="button" value="10px" onclick="setGap5To10" />
+            </div>
+            <div class="wrap-box" style="gap: {{gap5}};">
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+            </div>
+        </div>
+
+        <!-- 6. row-gap 10% -->
+        <div class="scenario" show="{{sc6}}">
+            <text class="label">6. row-gap 10%</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setRowGap6To0" />
+                <input class="btn" type="button" value="10%" onclick="setRowGap6To10Pct" />
+            </div>
+            <div class="wrap-box" style="row-gap: {{rowGap6}};">
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+            </div>
+        </div>
+
+        <!-- 9. row-gap（wrap）：上下相邻行之间相隔指定高度 -->
+        <div class="scenario" show="{{sc9}}">
+            <text class="label">7. row-gap（wrap）换行后的行间距</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setRowGap9To0" />
+                <input class="btn" type="button" value="15px" onclick="setRowGap9To15" />
+                <input class="btn" type="button" value="30px" onclick="setRowGap9To30" />
+            </div>
+            <div class="wrap-box" style="row-gap: {{rowGap9}};">
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+            </div>
+        </div>
+
+        <!-- 10. gap 单值百分比 -->
+        <div class="scenario" show="{{sc10}}">
+            <text class="label">8. gap 单值 10%（百分比按容器对应轴尺寸解析）</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setGap10To0" />
+                <input class="btn" type="button" value="10%" onclick="setGap10To10Pct" />
+            </div>
+            <div class="pct-wrap-box" style="gap: {{gap10}};">
+                <div class="item50"></div>
+                <div class="item50"></div>
+                <div class="item50"></div>
+                <div class="item50"></div>
+            </div>
+        </div>
+
+        <!-- 11. gap 双值百分比 20% 50% -->
+        <div class="scenario" show="{{sc11}}">
+            <text class="label">9. gap 双值 20% 50%（row-gap column-gap）</text>
+            <div class="btn-row">
+                <input class="btn" type="button" value="0px" onclick="setGap11To0" />
+                <input class="btn" type="button" value="20% 50%" onclick="setGap11To20And50" />
+                <input class="btn" type="button" value="20px 50%" onclick="setGap11To20pxAnd50" />
+            </div>
+            <div class="wrap-box" style="gap: {{gap11}}; width: 200px; height: 160px;">
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+                <div class="item80"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

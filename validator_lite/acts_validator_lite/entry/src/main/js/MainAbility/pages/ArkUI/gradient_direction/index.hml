@@ -1,0 +1,66 @@
+<!-- gradient 方向渐变：to 方向关键字（对角线 + 轴向） -->
+<div class="container">
+  <div class="header">
+    <text class="header-title">方向渐变</text>
+    <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+  </div>
+
+  <list class="content">
+    <list-item class="card">
+      <text class="label">001 对角线 to top right</text>
+      <div class="stage"><div class="g-box g-tr"></div></div>
+      <text class="expect">预期：左下角红 → 右上角蓝，沿对角线平滑渐变</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">002 对角线 to bottom right</text>
+      <div class="stage"><div class="g-box g-br"></div></div>
+      <text class="expect">预期：左上角红 → 右下角蓝，沿对角线平滑渐变</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">003 轴向 to top</text>
+      <div class="stage"><div class="g-box g-t"></div></div>
+      <text class="expect">预期：底部红 → 顶部蓝，垂直方向平滑渐变</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">004 轴向 to right</text>
+      <div class="stage"><div class="g-box g-r"></div></div>
+      <text class="expect">预期：左侧红 → 右侧蓝，水平方向平滑渐变</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">005 轴向 to bottom</text>
+      <div class="stage"><div class="g-box g-b"></div></div>
+      <text class="expect">预期：顶部红 → 底部蓝，垂直方向平滑渐变（默认方向）</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">006 轴向 to left</text>
+      <div class="stage"><div class="g-box g-l"></div></div>
+      <text class="expect">预期：右侧红 → 左侧蓝，水平方向平滑渐变</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">007 对角线 to bottom left</text>
+      <div class="stage"><div class="g-box g-bl"></div></div>
+      <text class="expect">预期：右上角红 → 左下角蓝，沿对角线平滑渐变</text>
+    </list-item>
+
+    <list-item class="card">
+      <text class="label">008 对角线 to top left</text>
+      <div class="stage"><div class="g-box g-tl"></div></div>
+      <text class="expect">预期：右下角红 → 左上角蓝，沿对角线平滑渐变</text>
+    </list-item>
+
+    <!-- 底部 pass/fail/back 按钮 -->
+    <list-item class="bottom-card">
+      <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+      </div>
+    </list-item>
+  </list>
+</div>

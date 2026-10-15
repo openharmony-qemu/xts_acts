@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="content-title">
+        <text class="page-title">flex align-self</text>
+        <input type="button" value="?" class="help-btn" onclick="helpClicked" />
+    </div>
+
+    <list class="case-list" scrollbar="on">
+        <list-item class="case">
+            <text class="case-title">1. row: align-self center</text>
+            <div class="parent parent-row parent-start">
+                <div class="child-row-center"><text>center</text></div>
+            </div>
+            <text class="hint">Expected: green item is vertically centered.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">2. row: align-self flex-end</text>
+            <div class="parent parent-row parent-center">
+                <div class="child-row-end"><text>end</text></div>
+            </div>
+            <text class="hint">Expected: orange item is aligned to the bottom.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">3. column: align-self center</text>
+            <div class="parent parent-column parent-start">
+                <div class="child-column-center"><text>center</text></div>
+            </div>
+            <text class="hint">Expected: green item is horizontally centered.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">4. column: align-self flex-end</text>
+            <div class="parent parent-column parent-center">
+                <div class="child-column-end"><text>end</text></div>
+            </div>
+            <text class="hint">Expected: orange item is aligned to the right.</text>
+        </list-item>
+        <list-item class="case">
+            <text class="case-title">5. align-self stretch</text>
+            <div class="parent parent-row parent-center">
+                <div class="child-row-stretch"><text>stretch</text></div>
+            </div>
+            <text class="hint">Expected: purple item stretches to parent height.</text>
+        </list-item>
+    </list>
+
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

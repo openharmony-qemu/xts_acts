@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title-text">flex margin-left</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <div class="content">
+        <text class="status">button1 margin-left: {{marginLeftMode1}}</text>
+        <div class="btn-row">
+            <input class="btn" type="button" value="无" onclick="setMarginLeftNone1" />
+            <input class="btn" type="button" value="auto" onclick="setMarginLeftAuto1" />
+        </div>
+        <div class="flex-row">
+            <div class="item"><text class="item-text">A</text></div>
+            <div class="item" style="margin-left: {{marginLeftValue1}};"><text class="item-text">B</text></div>
+        </div>
+
+        <text class="status">button2 margin-left: {{marginLeftMode2}}</text>
+        <div class="btn-row">
+            <input class="btn" type="button" value="20%" onclick="setMarginLeft20p2" />
+            <input class="btn" type="button" value="50px" onclick="setMarginLeft50px2" />
+            <input class="btn" type="button" value="100px" onclick="setMarginLeft100px2" />
+        </div>
+        <div class="flex-row">
+            <div class="item"><text class="item-text">A</text></div>
+            <div class="item" style="margin-left: {{marginLeftValue2}};"><text class="item-text">B</text></div>
+        </div>
+    </div>
+    <div class="bottom-bt">
+        <input type="button" value="pass" class="button" onclick="passClicked" />
+        <input type="button" value="fail" class="button" onclick="failClicked" />
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>
