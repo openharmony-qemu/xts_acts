@@ -242,7 +242,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.dragBetween({x:point!.x,y:point!.y,displayId:displayId.toInt()}, {x:point!.x + 50, y:point!.y + 50,displayId:displayId.toInt()}, 200);
+                await driver.dragBetween({x:point!.x,y:point!.y,displayId:displayId.toInt()}, {x:point!.x + 500, y:point!.y + 500,displayId:displayId.toInt()}, 200);
                 await Utils.msSleep(1000)
                 let text = await driver.findComponent(ON.id('startMovingText'));
                 await Utils.msSleep(1000)
@@ -310,7 +310,7 @@ export default function WindowPCTest() {
                 console.info(`${caseName} blank = ${JSON.stringify(blank)}`);
                 let point = await blank!.getBoundsCenter();
                 console.info(`${caseName} point = ${JSON.stringify(point)}`);
-                await driver.dragBetween({x:point!.x,y:point!.y,displayId:displayId.toInt()}, {x:point!.x + 50, y:point!.y + 50,displayId:displayId.toInt()}, 200);
+                await driver.dragBetween({x:point!.x,y:point!.y,displayId:displayId.toInt()}, {x:point!.x + 500, y:point!.y + 500,displayId:displayId.toInt()}, 200);
                 await Utils.msSleep(1000)
                 let errorCode = AppStorage.get<int>('teststartMovingParamStaticRepeated_errorCode') as int;
                 console.info(`${caseName} errorCode = ${JSON.stringify(errorCode)}`);
