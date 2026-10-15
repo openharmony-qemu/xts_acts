@@ -51,11 +51,11 @@ const HttpRequest = (customMethod: string, url: string, state: boolean): Promise
           reject(new Error(`请求失败：${err.message}`));
         } else {
           if (customMethod == 'MKCOL') {
-            ExpectTrue(data.responseCode == 201);
+            ExpectTrue(data.responseCode === 201);
           } else if (state) {
-            ExpectTrue(data.responseCode == 200);
+            ExpectTrue(data.responseCode === 200);
           } else {
-            ExpectTrue(data.responseCode == 404);
+            ExpectTrue(data.responseCode === 404);
           }
           httpRequest.destroy();
           resolve();
@@ -118,7 +118,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 201);
+                ExpectTrue(data.responseCode === 201);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -161,7 +161,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -203,7 +203,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 201);
+                ExpectTrue(data.responseCode === 201);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -246,7 +246,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -289,7 +289,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 201);
+                ExpectTrue(data.responseCode === 201);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -332,7 +332,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 201);
+                ExpectTrue(data.responseCode === 201);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -378,7 +378,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 207);
+                ExpectTrue(data.responseCode === 207);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -424,7 +424,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 207);
+                ExpectTrue(data.responseCode === 207);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -478,7 +478,7 @@ export default function HttpRequestCustomMethodTest() {
                   lockToken = statusMatch[1];
                 }
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -524,7 +524,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 204);
+                ExpectTrue(data.responseCode === 204);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -565,7 +565,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 400);
+                ExpectTrue(data.responseCode === 400);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -684,7 +684,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -718,7 +718,7 @@ export default function HttpRequestCustomMethodTest() {
           let httpRequest: http.HttpRequest = http.createHttp();
           httpRequest.request(XTS_TEST_HTTP_URL + textName, httpRequestOptions).then((res) => {
             console.info(`${caseName} data: --- ${JSON.stringify(res)}`);
-            ExpectTrue(res.responseCode == 200);
+            ExpectTrue(res.responseCode === 200);
             httpRequest.destroy();
             console.info(`${caseName}---End `);
             done();
@@ -765,7 +765,7 @@ export default function HttpRequestCustomMethodTest() {
                 done();
               } else {
                 console.info(`${caseName} data:--- ${JSON.stringify(data)}`);
-                ExpectTrue(data == 200);
+                ExpectTrue(data === 200);
                 httpRequest.destroy();
                 console.info(`${caseName}---End `);
                 done();
@@ -799,7 +799,7 @@ export default function HttpRequestCustomMethodTest() {
           let httpRequest: http.HttpRequest = http.createHttp();
           httpRequest.requestInStream(XTS_TEST_HTTP_URL + textName, httpRequestOptions).then((res) => {
             console.info(`${caseName} data: --- ${JSON.stringify(res)}`);
-            ExpectTrue(res == 200);
+            ExpectTrue(res === 200);
             httpRequest.destroy();
             console.info(`${caseName}---End `);
             done();

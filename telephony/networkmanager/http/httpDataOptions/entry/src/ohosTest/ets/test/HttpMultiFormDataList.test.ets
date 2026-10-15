@@ -149,7 +149,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                  ExpectTrue(data.responseCode == 200);
+                  ExpectTrue(data.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -189,7 +189,7 @@ export default function HttpMultiFormDataListTest() {
               httpRequestOptions_string
             ).then((res: http.HttpResponse) => {
               console.info(`${caseName} httpRequest success ${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -239,7 +239,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                  ExpectTrue(data.responseCode == 200);
+                  ExpectTrue(data.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -284,7 +284,7 @@ export default function HttpMultiFormDataListTest() {
               ],
             }).then((res: http.HttpResponse) => {
               console.info(`${caseName} httpRequest success ${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -345,7 +345,7 @@ export default function HttpMultiFormDataListTest() {
                 done();
               } else {
                 console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                ExpectTrue(data.responseCode == 200);
+                ExpectTrue(data.responseCode === 200);
                 httpRequest.destroy();
                 done();
               }
@@ -394,7 +394,7 @@ export default function HttpMultiFormDataListTest() {
               ],
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -458,7 +458,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                  ExpectTrue(data.responseCode == 200);
+                  ExpectTrue(data.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -509,7 +509,7 @@ export default function HttpMultiFormDataListTest() {
               ],
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -566,7 +566,7 @@ export default function HttpMultiFormDataListTest() {
               }, (err: BusinessError, data: http.HttpResponse) => {
               if (err) {
                 console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-                ExpectTrue(err.code==2300026);
+                ExpectTrue(err.code===2300026);
                 httpRequest.destroy();
                 done();
               } else {
@@ -626,7 +626,7 @@ export default function HttpMultiFormDataListTest() {
               done()
             }).catch((err: BusinessError) => {
               console.info(`${caseName} httpRequest fail:${JSON.stringify(err)}`);
-              ExpectTrue(err.code==2300026);
+              ExpectTrue(err.code===2300026);
               httpRequest.destroy();
               done()
             });
@@ -670,7 +670,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                  ExpectTrue(data.responseCode == 200);
+                  ExpectTrue(data.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -706,7 +706,7 @@ export default function HttpMultiFormDataListTest() {
             let httpRequest: http.HttpRequest = http.createHttp();
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions_string1).then((res) => {
               console.info(`${caseName} data: --- ${JSON.stringify(res)}`);
-              ExpectTrue(res.responseCode == 200);
+              ExpectTrue(res.responseCode === 200);
               console.info(`${caseName} httpRequest success ${JSON.stringify(res)}`);
               httpRequest.destroy();
               done();
@@ -756,7 +756,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success ${data}`);
-                  ExpectTrue(data == 200);
+                  ExpectTrue(data === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -794,7 +794,7 @@ export default function HttpMultiFormDataListTest() {
             httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions_string1)
               .then((responseCode: number) => {
                 console.info(`${caseName} httpRequest success responseCode: ${responseCode}`);
-                ExpectTrue(responseCode == 200);
+                ExpectTrue(responseCode === 200);
                 httpRequest.destroy();
                 done();
               })
@@ -1298,7 +1298,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-                  ExpectTrue(data.responseCode == 200);
+                  ExpectTrue(data.responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -1348,7 +1348,7 @@ export default function HttpMultiFormDataListTest() {
               ],
             }).then((data: http.HttpResponse) => {
               console.info(`${caseName} httpRequest success ${JSON.stringify(data)}`);
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
@@ -1411,7 +1411,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success, responseCode: ${responseCode}`);
-                  ExpectTrue(responseCode == 200);
+                  ExpectTrue(responseCode === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -1462,7 +1462,7 @@ export default function HttpMultiFormDataListTest() {
               ],
             }).then((responseCode: number) => {
               console.info(`${caseName} httpRequest success, responseCode: ${responseCode}`);
-              ExpectTrue(responseCode == 200);
+              ExpectTrue(responseCode === 200);
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {

@@ -395,7 +395,7 @@ export default function HttpResponseExtraInfoTest() {
                 if (res?.connectionExtraInfo) {
                   let connectionExtraInfo = res?.connectionExtraInfo;
                   console.info(`HttpTest1 connectionExtraInfo:${JSON.stringify(connectionExtraInfo)}`);
-                  ExpectTrue(connectionExtraInfo.isProxyConnection == true);
+                  ExpectTrue(connectionExtraInfo.isProxyConnection === true);
                   httpRequest.destroy();
                   done();
                 } else {
@@ -446,7 +446,7 @@ export default function HttpResponseExtraInfoTest() {
                 if (res?.connectionExtraInfo) {
                   let connectionExtraInfo = res?.connectionExtraInfo;
 
-                  ExpectTrue(connectionExtraInfo.isProxyConnection == true);
+                  ExpectTrue(connectionExtraInfo.isProxyConnection === true);
                   httpRequest.destroy();
                   done();
                   console.info(`HttpTest1 connectionExtraInfo:${JSON.stringify(connectionExtraInfo.isProxyConnection)}`);
@@ -897,7 +897,7 @@ export default function HttpResponseExtraInfoTest() {
                       if (res?.connectionExtraInfo) {
                         let connectionExtraInfo = res?.connectionExtraInfo;
 
-                        ExpectTrue(connectionExtraInfo.redirectCount == 0);
+                        ExpectTrue(connectionExtraInfo.redirectCount === 0);
                         httpRequest.destroy();
                         done();
                         console.info(`HttpTest1 connectionExtraInfo:${JSON.stringify(connectionExtraInfo.redirectCount)}`);
@@ -1013,7 +1013,7 @@ export default function HttpResponseExtraInfoTest() {
                       if (res?.connectionExtraInfo) {
                         let connectionExtraInfo = res?.connectionExtraInfo;
 
-                        ExpectTrue(connectionExtraInfo.redirectCount == 0);
+                        ExpectTrue(connectionExtraInfo.redirectCount === 0);
                         httpRequest.destroy();
                         done();
                         console.info(`HttpTest1 connectionExtraInfo:${JSON.stringify(res.connectionExtraInfo)}`);
@@ -1068,7 +1068,7 @@ export default function HttpResponseExtraInfoTest() {
                     if (res?.connectionExtraInfo) {
                       let connectionExtraInfo = res?.connectionExtraInfo;
 
-                      ExpectTrue(connectionExtraInfo.redirectCount == 0);
+                      ExpectTrue(connectionExtraInfo.redirectCount === 0);
                       httpRequest.destroy();
                       done();
                       console.info(`connectionExtraInfo:${JSON.stringify(res.connectionExtraInfo)}`);

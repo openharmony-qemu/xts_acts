@@ -79,7 +79,7 @@ export default function HttpResponsePropertiesTest() {
                             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS).then((res: http.HttpResponse) => {
 
                                 hilog.info(domain, tag, '%{public}s', caseName +':  res.resultType:->'+JSON.stringify(res));
-                                ExpectTrue(res?.resultType ==http.HttpDataType.STRING);
+                                ExpectTrue(res?.resultType ===http.HttpDataType.STRING);
                                 httpRequest.destroy();
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 done();
@@ -135,7 +135,7 @@ export default function HttpResponsePropertiesTest() {
                                 expectDataType,
                             }).then((res: http.HttpResponse) => {
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(res?.resultType ==expectDataType);
+                                ExpectTrue(res?.resultType ===expectDataType);
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 httpRequest.destroy();
                                 done();
@@ -250,7 +250,7 @@ export default function HttpResponsePropertiesTest() {
                             }).then((res: http.HttpResponse) => {
 
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(res?.resultType ==expectDataType);
+                                ExpectTrue(res?.resultType ===expectDataType);
                                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                                 httpRequest.destroy();
                                 done();
@@ -308,7 +308,7 @@ export default function HttpResponsePropertiesTest() {
                             }).then((res: http.HttpResponse) => {
 
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(res?.resultType ==http.HttpDataType.STRING);
+                                ExpectTrue(res?.resultType ===http.HttpDataType.STRING);
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -362,7 +362,7 @@ export default function HttpResponsePropertiesTest() {
                             }).then((res: http.HttpResponse) => {
 
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(res?.resultType ==http.HttpDataType.ARRAY_BUFFER);
+                                ExpectTrue(res?.resultType ===http.HttpDataType.ARRAY_BUFFER);
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -415,7 +415,7 @@ export default function HttpResponsePropertiesTest() {
                             }).then((res: http.HttpResponse) => {
 
                                 hilog.info(domain, tag, '%{public}s', caseName +': res ->'+JSON.stringify(res));
-                                ExpectTrue(res?.resultType ==http.HttpDataType.ARRAY_BUFFER);
+                                ExpectTrue(res?.resultType ===http.HttpDataType.ARRAY_BUFFER);
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -469,7 +469,7 @@ export default function HttpResponsePropertiesTest() {
                             }).then((res: http.HttpResponse) => {
 
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(res?.resultType ==http.HttpDataType.STRING);
+                                ExpectTrue(res?.resultType ===http.HttpDataType.STRING);
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -524,7 +524,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +' : request  data ->'+JSON.stringify(data));
-                                    ExpectTrue(res?.resultType ==http.HttpDataType.STRING);
+                                    ExpectTrue(res?.resultType ===http.HttpDataType.STRING);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -577,7 +577,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +' : request  data ->'+JSON.stringify(data));
-                                    ExpectTrue(res?.resultType ==expectDataType);
+                                    ExpectTrue(res?.resultType ===expectDataType);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -689,7 +689,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +' : request  data ->'+JSON.stringify(data));
-                                    ExpectTrue(res?.resultType ==expectDataType);
+                                    ExpectTrue(res?.resultType ===expectDataType);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -743,7 +743,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +' : request  data ->'+JSON.stringify(data));
-                                    ExpectTrue(res?.resultType ==http.HttpDataType.STRING);
+                                    ExpectTrue(res?.resultType ===http.HttpDataType.STRING);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -798,7 +798,7 @@ export default function HttpResponsePropertiesTest() {
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +' : request  data ->'+JSON.stringify(data));
 
-                                    ExpectTrue(res?.resultType ==http.HttpDataType.ARRAY_BUFFER);
+                                    ExpectTrue(res?.resultType ===http.HttpDataType.ARRAY_BUFFER);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -852,7 +852,7 @@ export default function HttpResponsePropertiesTest() {
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +' : request  data ->'+JSON.stringify(data));
 
-                                    ExpectTrue(res?.resultType ==http.HttpDataType.ARRAY_BUFFER);
+                                    ExpectTrue(res?.resultType ===http.HttpDataType.ARRAY_BUFFER);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -906,7 +906,7 @@ export default function HttpResponsePropertiesTest() {
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +' : request  data ->'+JSON.stringify(data));
 
-                                    ExpectTrue(res?.resultType ==http.HttpDataType.STRING);
+                                    ExpectTrue(res?.resultType ===http.HttpDataType.STRING);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -951,7 +951,7 @@ export default function HttpResponsePropertiesTest() {
                             }).then((res: http.HttpResponse) => {
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
                                 const type: string = typeof res?.result;
-                                ExpectTrue(type == 'string');
+                                ExpectTrue(type === 'string');
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -1104,7 +1104,7 @@ export default function HttpResponsePropertiesTest() {
                             }).then((res: http.HttpResponse) => {
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
                                 const type: string = typeof res?.result;
-                                ExpectTrue(type == 'string');
+                                ExpectTrue(type === 'string');
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -1259,7 +1259,7 @@ export default function HttpResponsePropertiesTest() {
                                 }as Record<string,string>
                             }).then((res: http.HttpResponse) => {
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(typeof res?.result == 'string');
+                                ExpectTrue(typeof res?.result === 'string');
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -1315,7 +1315,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +':request data ->'+JSON.stringify(res));
-                                    ExpectTrue(typeof res?.result == 'string');
+                                    ExpectTrue(typeof res?.result === 'string');
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -1470,7 +1470,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +':request data ->'+JSON.stringify(res));
-                                    ExpectTrue(typeof res?.result == 'string');
+                                    ExpectTrue(typeof res?.result === 'string');
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -1629,7 +1629,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +':request data ->'+JSON.stringify(res));
-                                    ExpectTrue(typeof res?.result == 'string');
+                                    ExpectTrue(typeof res?.result === 'string');
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -1679,7 +1679,7 @@ export default function HttpResponsePropertiesTest() {
                                 let err = error as BusinessError;
                                 hilog.info(domain, tag, '%{public}s', caseName +'  request fail, error is '+JSON.stringify(err));
                                 httpRequest.destroy();
-                                ExpectTrue(err.code == 2300006);
+                                ExpectTrue(err.code === 2300006);
                                 done();
                             })
                         }
@@ -1721,7 +1721,7 @@ export default function HttpResponsePropertiesTest() {
                             httpRequest.request("abc", (err: BusinessError<void>|null, res: http.HttpResponse| undefined) => {
                                 if (err?.code != 0) {
                                     console.info(`${caseName} request error code: ${err?.code}, msg: ${err?.message}`);
-                                    ExpectTrue(err?.code == 2300006);
+                                    ExpectTrue(err?.code === 2300006);
                                     httpRequest.destroy();
                                     done();
                                 } else {
@@ -1865,7 +1865,7 @@ export default function HttpResponsePropertiesTest() {
                             const httpRequest: http.HttpRequest = http.createHttp();
                             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS).then((res: http.HttpResponse) => {
                                 console.info(`${caseName} res.cookies:${JSON.stringify(res.cookies)}`);
-                                ExpectTrue(typeof res?.cookies == 'string');
+                                ExpectTrue(typeof res?.cookies === 'string');
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => { let err = error as BusinessError;
@@ -1917,7 +1917,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +':request data ->'+JSON.stringify(res));
-                                    ExpectTrue(typeof res?.cookies == 'string');
+                                    ExpectTrue(typeof res?.cookies === 'string');
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -2021,7 +2021,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     console.info(`${caseName} res.performanceTiming:${JSON.stringify(res?.performanceTiming)}`);
-                                    ExpectTrue(res?.performanceTiming != undefined);
+                                    ExpectTrue(res?.performanceTiming !== undefined);
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -2076,7 +2076,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +':request data ->'+JSON.stringify(res));
-                                    ExpectTrue(typeof res?.result == 'string');
+                                    ExpectTrue(typeof res?.result === 'string');
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -2185,7 +2185,7 @@ export default function HttpResponsePropertiesTest() {
                                     done();
                                 } else {
                                     hilog.info(domain, tag, '%{public}s', caseName +':request data ->'+JSON.stringify(res));
-                                    ExpectTrue(typeof res?.result == 'string');
+                                    ExpectTrue(typeof res?.result === 'string');
                                     httpRequest.destroy();
                                     done();
                                 }
@@ -2232,7 +2232,7 @@ export default function HttpResponsePropertiesTest() {
                                 }as Record<string,string>
                             }).then((res: http.HttpResponse) => {
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(typeof res?.result == 'string');
+                                ExpectTrue(typeof res?.result === 'string');
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {
@@ -2337,7 +2337,7 @@ export default function HttpResponsePropertiesTest() {
                                 }as Record<string,string>
                             }).then((res: http.HttpResponse) => {
                                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse  ->'+JSON.stringify(res));
-                                ExpectTrue(typeof res?.result == 'string')
+                                ExpectTrue(typeof res?.result === 'string')
                                 httpRequest.destroy();
                                 done();
                             }).catch((error: Error) => {

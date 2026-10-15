@@ -185,7 +185,7 @@ export default  function HttpCacheTest() {
               cache.flush((err: BusinessError) => {
                 httpRequest.destroy()
                 console.info(`${caseName} cache flush data is: `+ JSON.stringify(data));
-                ExpectTrue(err == undefined);
+                ExpectTrue(err === undefined);
                 console.info(`${caseName}---end`);
                 done();
               });
@@ -276,7 +276,7 @@ export default  function HttpCacheTest() {
               cache.delete( (error: BusinessError)=> {
                 httpRequest.destroy();
                 console.error(`${caseName} get err is `+JSON.stringify(error));
-                ExpectTrue(error == undefined);
+                ExpectTrue(error === undefined);
                 done();
               });
             });

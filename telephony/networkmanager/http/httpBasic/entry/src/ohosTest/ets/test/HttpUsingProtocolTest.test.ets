@@ -51,7 +51,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP1_1
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
@@ -81,7 +81,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP2
         }).then((data) =>{
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
@@ -110,7 +110,7 @@ export default function HttpUsingProtocolTest() {
         let httpRequest  = http.createHttp();
         httpRequest.request("https://www.baidu.com").then( (data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
@@ -140,7 +140,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP1_1
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           expect(http.HttpProtocol.HTTP1_1).assertEqual(0);
           expect(http.HttpProtocol.HTTP2).assertEqual(1);
           httpRequest.destroy();
@@ -172,7 +172,7 @@ export default function HttpUsingProtocolTest() {
           usingProtocol: http.HttpProtocol.HTTP2
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           expect(http.HttpDataType.STRING).assertEqual(0);
           expect(http.HttpDataType.OBJECT).assertEqual(1);
           expect(http.HttpDataType.ARRAY_BUFFER).assertEqual(2);
@@ -213,13 +213,20 @@ export default function HttpUsingProtocolTest() {
             caPath: ''
           }
           let httpRequest = http.createHttp();
-          httpRequest.request("https://www.baidu.com", httpRequestOptions, (err, data) => {
-            console.info(caseName + JSON.stringify(err) + "data" + JSON.stringify(data));
-            ExpectTrue(data.responseCode == 200);
-            ExpectTrue(data.resultType == http.HttpDataType.STRING);
-            httpRequest.destroy();
-            done();
-          });
+           httpRequest.request("https://www.baidu.com", httpRequestOptions, (err, data) => {
+             if (err) {
+               console.info(`${caseName} request error: ${JSON.stringify(err)}`);
+               ExpectFail();
+               httpRequest.destroy();
+               done();
+               return;
+             }
+             console.info(caseName + JSON.stringify(err) + "data" + JSON.stringify(data));
+             ExpectTrue(data.responseCode === 200);
+             ExpectTrue(data.resultType === http.HttpDataType.STRING);
+             httpRequest.destroy();
+             done();
+           });
       } catch (error) {
         console.info(`${caseName}  catch  err: ${JSON.stringify(error)}`);
         ExpectFail();

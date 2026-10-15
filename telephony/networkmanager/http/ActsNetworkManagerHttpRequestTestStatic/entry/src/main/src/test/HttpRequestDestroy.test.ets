@@ -67,7 +67,7 @@ export default function httpRequestDestroyTest() {
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
                         let httpRequest: http.HttpRequest = http.createHttp();
-                        ExpectTrue(httpRequest != null);
+                        ExpectTrue(httpRequest !== undefined);
                         httpRequest.destroy();
                         done();
                     }
@@ -108,7 +108,7 @@ export default function httpRequestDestroyTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +' httpRequest success : data ->'+JSON.stringify(data));
-                                ExpectTrue(data?.responseCode == 200);
+                                ExpectTrue(data?.responseCode === 200);
                                 httpRequest.destroy();
                                 done();
                             }
@@ -148,7 +148,7 @@ export default function httpRequestDestroyTest() {
                 let httpRequest: http.HttpRequest = http.createHttp();
                 httpRequest.request(ADDR_TEST_DOMAIN_HTTPS).then((data: http.HttpResponse) => {
                     hilog.info(domain, tag, '%{public}s', caseName +' httpRequest success : data ->'+JSON.stringify(data));
-                    ExpectTrue(data?.responseCode == 200);
+                    ExpectTrue(data?.responseCode === 200);
                     httpRequest.destroy();
                     done();
                 }).catch((error: Error) => {
@@ -191,7 +191,7 @@ export default function httpRequestDestroyTest() {
                         httpRequest.request(ADDR_TEST_ILLEGAL, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                             if (err?.code != 0) {
                                 hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest fail   error is '+JSON.stringify(err));
-                                ExpectTrue(err?.code == 2300006);
+                                ExpectTrue(err?.code === 2300006);
                                 httpRequest.destroy();
                                 done();
                             } else {
@@ -239,7 +239,7 @@ export default function httpRequestDestroyTest() {
                         }).catch((error: Error) => {
                             let err = error as BusinessError;
                             console.info(`${caseName} httpRequest fail err: ${JSON.stringify(data)}`);
-                            ExpectTrue(err?.code == 2300006);
+                            ExpectTrue(err?.code === 2300006);
                             httpRequest.destroy();
                             done();
                         });
@@ -277,7 +277,7 @@ export default function httpRequestDestroyTest() {
                         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
                             if (err?.code != 0) {
                                 hilog.info(domain, tag, '%{public}s', caseName +' httpRequest.destory fail  error is '+JSON.stringify(err));
-                                ExpectTrue(err?.code == 2300023);
+                                ExpectTrue(err?.code === 2300023);
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +' httpRequest.destory success : data ->'+JSON.stringify(data));
@@ -323,7 +323,7 @@ export default function httpRequestDestroyTest() {
                             done();
                         }).catch((error: Error) => {  let err = error as BusinessError;
                             hilog.info(domain, tag, '%{public}s', caseName +'   httpRequest.destory fail err: '+JSON.stringify(err));
-                            ExpectTrue(err?.code == 2300999)
+                            ExpectTrue(err?.code === 2300999)
                             done();
                         });
                     }
@@ -362,7 +362,7 @@ export default function httpRequestDestroyTest() {
                             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, (err: BusinessError<void>|null) => {
                                 if (err?.code != 0) {
                                     console.info(`${caseName} httpRequest.destory fail err:${JSON.stringify(err)}`);
-                                    ExpectTrue(err?.code == 2300999);
+                                    ExpectTrue(err?.code === 2300999);
                                     httpRequest.destroy();
                                     done();
                                 } else {

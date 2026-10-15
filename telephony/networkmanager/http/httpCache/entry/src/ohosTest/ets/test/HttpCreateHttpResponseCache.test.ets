@@ -47,7 +47,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       console.info(`${caseName}---Start`);
       try {
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
-        ExpectTrue(typeof httpResponseCache == 'object');
+        ExpectTrue(typeof httpResponseCache === 'object');
         done();
       } catch (err) {
         console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
@@ -71,7 +71,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       try {
         let cacheSize: number = 10;
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
-        ExpectTrue(typeof httpResponseCache == 'object');
+        ExpectTrue(typeof httpResponseCache === 'object');
         done();
       } catch (err) {
         console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
@@ -95,7 +95,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       try {
         let cacheSize: number = -1;
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
-        ExpectTrue(typeof httpResponseCache == 'object');
+        ExpectTrue(typeof httpResponseCache === 'object');
         done();
       } catch (err) {
         console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
@@ -119,7 +119,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       try {
         let cacheSize: number = 0;
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
-        ExpectTrue(typeof httpResponseCache == 'object');
+        ExpectTrue(typeof httpResponseCache === 'object');
         done();
       } catch (err) {
         console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
@@ -143,7 +143,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       try {
         let cacheSize: number = 10485761;
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
-        ExpectTrue(typeof httpResponseCache == 'object');
+        ExpectTrue(typeof httpResponseCache === 'object');
         done();
       } catch (err) {
         console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
@@ -165,7 +165,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       console.info(`${caseName}---Start`);
       try {
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(null);
-        ExpectTrue(typeof httpResponseCache == 'object');
+        ExpectTrue(typeof httpResponseCache === 'object');
         done();
       } catch (err) {
         console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
@@ -187,7 +187,7 @@ export default function HttpCreateHttpResponseCacheTest() {
       console.info(`${caseName}---Start`);
       try {
         let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(undefined);
-        ExpectTrue(typeof httpResponseCache == 'object');
+        ExpectTrue(typeof httpResponseCache === 'object');
         done();
       } catch (err) {
         console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
