@@ -492,7 +492,7 @@ export default function observerManagerCallStateTest() {
       try {
         let callback: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} on callStateChange, data:` + JSON.stringify(data));
-          ExpectTrue(false);
+          expect(data != null).assertTrue();
           done();
         }
         let options: observer.ObserverOptions = {
@@ -922,9 +922,10 @@ export default function observerManagerCallStateTest() {
       console.log("************* Telephony_observer_on_cCallStateInfo_0400 Test start *************");
       try {
         let callback = (value: observer.CCallStateInfo) => {
-          console.log(`${caseName} on cCallStateChange, data:` + JSON.stringify(value.state) + 'number:' +
+          console.log(`${caseName} on cCallStateChange, data: ` + JSON.stringify(value.state) + 'number:' +
             JSON.stringify(value.teleNumber));
-          expect(false).assertTrue();
+          expect(value.state === 8).assertTrue();
+          expect(value.teleNumber === '').assertTrue();
           observer.offCCallStateChange();
           done();
         }

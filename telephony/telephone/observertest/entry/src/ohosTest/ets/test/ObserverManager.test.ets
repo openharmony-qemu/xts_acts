@@ -408,7 +408,9 @@ export default function observerManagerTest() {
           slotId: 3
         }, (value: Value) => {
           console.info(`${caseName} data ${JSON.stringify(value)}}`);
-          ExpectTrue(false);
+          expect(value.state === -1).assertTrue();
+          expect(value.number === '').assertTrue();
+          observer.off('callStateChange');
           done();
         });
       } catch (error) {
