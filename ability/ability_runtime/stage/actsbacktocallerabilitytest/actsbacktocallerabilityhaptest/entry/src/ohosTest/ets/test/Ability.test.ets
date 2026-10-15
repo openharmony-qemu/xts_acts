@@ -39,7 +39,8 @@ function sleep(time: number): Promise<void> {
 
 async function clickDialog(TAG: string) {
   await sleep(2000);
-  let driver = Driver.create();
+  let driver = await Driver.create();
+  log(TAG, `driver create success`);
   let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId));
   log(TAG, `no need to click button=allowed== ${allowed}`);
   if (allowed) {
