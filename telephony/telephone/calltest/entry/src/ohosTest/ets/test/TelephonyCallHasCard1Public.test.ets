@@ -19,7 +19,7 @@ import sim from '@ohos.telephony.sim';
 import abilityAccessCtrl, { Permissions } from '@ohos.abilityAccessCtrl';
 import { Driver, MatchPattern, Component, ON } from '@ohos.UiTest';
 import account from '@ohos.account.osAccount';
-import bundlemanager from '@ohos.bundle.bundleManager';
+import bundlemMnager from '@ohos.bundle.bundleManager';
 
 const rightPhone: string = "178xxxxxxxx";
 const emptyStr: string = "";
@@ -61,8 +61,8 @@ async function getPermissions() {
   let list: MyPermissions[] = ['ohos.permission.ANSWER_CALL', 'ohos.permission.WRITE_CALL_LOG', 'ohos.permission.READ_CALL_LOG'];
   try {
     let userId: number = await account.getAccountManager().getOsAccountLocalId();
-    let applicationFlags: number = bundlemanager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
-    let applicationInfo: bundlemanager.ApplicationInfo = await bundlemanager.getApplicationInfoSync('com.example.calltest', applicationFlags, userId);
+    let applicationFlags: number = bundlemMnager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
+    let applicationInfo: bundlemMnager.ApplicationInfo = await bundlemMnager.getApplicationInfoSync('com.example.calltest', applicationFlags, userId);
     let tokenId: number = applicationInfo.accessTokenId;
     for (let index = 0; index < list.length; index++) {
       await  abilityAccessCtrl.createAtManager().grantUserGrantedPermission(tokenId, list[index], 1);
