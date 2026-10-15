@@ -15,19 +15,13 @@
 
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Window from '@ohos.window';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: Window.WindowStage) {
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err) => {
       if (err.code) {
         return;
       }
-      let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
-      abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      abilityDelegator.addAbilityMonitor(abilityDelegator.getArguments().testBundleName, () => {
-        console.info('addAbilityMonitor called');
-      });
     });
   }
 }
