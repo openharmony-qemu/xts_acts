@@ -770,6 +770,7 @@ export default function observerManagerCallStateTest() {
       } catch (error) {
         console.info(`${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error.code == 401);
+        observer.off('callStateChangeEx');
         done();
       }
       console.info(`${caseName} test end `);
@@ -798,6 +799,7 @@ export default function observerManagerCallStateTest() {
       } catch (error) {
         console.info(`${caseName} success,  catchError ${JSON.stringify(error)}`);
         ExpectTrue(error.code == 401);
+        observer.off('callStateChangeEx');
         done();
       }
       console.info(`${caseName} test end `);
@@ -815,6 +817,7 @@ export default function observerManagerCallStateTest() {
       let caseName: string = 'testTelephonyObserverCallStateChangeExOn1300';
       console.info(`${caseName} test start `);
       try {
+        await sleep(5000);
         let callback1: (data: call.TelCallState) => void = (data: call.TelCallState) => {
           console.log(`${caseName} callback1 on callStateChangeEx, data:` + JSON.stringify(data));
           ExpectTrue(data !== null);
