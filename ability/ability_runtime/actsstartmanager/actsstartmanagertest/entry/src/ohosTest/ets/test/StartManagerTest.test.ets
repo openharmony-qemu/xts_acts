@@ -54,7 +54,7 @@ export default function StartManagerTest() {
       hilog.info(DOMAIN, TAG, 'driver create: start');
       driver = await Driver.create();
       hilog.info(DOMAIN, TAG, 'driver create: end');
-      let allowed: Component | undefined | undefined;
+      let allowed: Component | undefined;
       try {
         allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
       } catch (e) {
