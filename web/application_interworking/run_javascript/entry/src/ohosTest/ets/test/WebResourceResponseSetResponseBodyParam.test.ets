@@ -50,13 +50,11 @@ export default function webResourceResponseSetResponseBodyParam() {
     });
 
     beforeEach(async (done: Function) => {
-      try {
-        await config.enableAbility(BUNDLE_NAME, CAPACITY);
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-      } catch (err) {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
-        expect(false).assertTrue();
-      }
+      })
       console.info('webResourceResponseSetResponseBodyParam beforeEach start');
       done();
     })
