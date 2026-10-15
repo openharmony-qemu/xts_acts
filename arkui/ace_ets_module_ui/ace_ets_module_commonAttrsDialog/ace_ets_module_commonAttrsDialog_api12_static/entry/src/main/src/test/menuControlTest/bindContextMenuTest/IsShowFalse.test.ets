@@ -36,6 +36,7 @@ import common from '@ohos.app.ability.common';
 
 let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
 
+let displayID : Int = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0
 
 export default function IsShowFalse() {
   describe('IsShowFalse', () => {
@@ -166,7 +167,7 @@ it('IsShowFalse_0300', Level.LEVEL0, async (done: () => void): Promise<void> => 
       }
       try {
         await CommonFunc.sleep(1000);
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, displayID);
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.info('IsShowFalse_0300 err: ' + JSON.stringify(err));

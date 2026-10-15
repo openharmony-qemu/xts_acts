@@ -33,6 +33,8 @@ import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
+let displayID : Int = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0
+
 export default function CloseEsc() {
   describe('CloseEsc', () => {
     beforeEach(async (): Promise<void> => {
@@ -73,7 +75,7 @@ it('CloseEsc_static_0100', Level.LEVEL0, async (done: () => void): Promise<void>
         await (Button?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
 
-        await driver.triggerKey(2070);
+        await driver.triggerKey(2070, displayID);
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.info('CloseEsc_0100 err: ' + JSON.stringify(err));

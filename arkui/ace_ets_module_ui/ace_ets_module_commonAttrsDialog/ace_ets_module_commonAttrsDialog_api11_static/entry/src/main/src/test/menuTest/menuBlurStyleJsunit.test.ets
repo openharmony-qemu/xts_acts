@@ -32,6 +32,8 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+let displayID : Int = AppStorage.get<number>('displayID') ? AppStorage.get<number>('displayID') as number : 0
+
 export default function menuBlurStyleJsunit() {
   describe('menuBlurStyleJsunit', () => {
     beforeAll(async (): Promise<void> => {
@@ -87,7 +89,7 @@ it('menuBlurStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
       console.info("[menuBlurStyleJsunit_0100] menuText is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("menuBlurStyle");
       await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
+       await driver.triggerKey(2070, displayID);
       await CommonFunc.sleep(1000);
       console.info('[menuBlurStyleJsunit_0100] END');
       done();
