@@ -32,10 +32,10 @@ function sleep(ms: number) {
   return new Promise<string>(resolve => setTimeout(resolve, ms));
 }
 let allowOpen = async () => {
-  let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), DELAY_TIME);
+  let allowed = await driver?.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS).belongingDisplay(currentDisplayId), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
-    let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1').belongingDisplay(currentDisplayId));
+    let buttons = await driver?.findComponents(ON.id('advanced_dialog_button_1').belongingDisplay(currentDisplayId));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', '本次允许');
@@ -56,7 +56,7 @@ export default function StartManagerTest() {
       hilog.info(DOMAIN, TAG, 'driver create: end');
       let allowed: Component | undefined;
       try {
-        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
+        allowed = await driver?.findComponent(ON.id('advanced_dialog_button_0').belongingDisplay(currentDisplayId));
       } catch (e) {
         hilog.info(DOMAIN, TAG, 'advanced_dialog_button_0 not found: %{public}s', JSON.stringify(e));
       }
@@ -126,9 +126,9 @@ export default function StartManagerTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
-          let setCallbackButton: Component  | undefined = await driver.findComponent(ON.id('setCallbackButton').belongingDisplay(currentDisplayId));
-          let cancelCallbackButton: Component  | undefined = await driver.findComponent(ON.id('cancelCallbackButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component  | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          let setCallbackButton: Component  | undefined = await driver?.findComponent(ON.id('setCallbackButton').belongingDisplay(currentDisplayId));
+          let cancelCallbackButton: Component  | undefined = await driver?.findComponent(ON.id('cancelCallbackButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component  | undefined = await driver?.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
           await setCallbackButton?.click();
           await sleep(500);
           await cancelCallbackButton?.click();
@@ -204,9 +204,9 @@ export default function StartManagerTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
-          let setPromiseButton: Component = await driver.findComponent(ON.id('setPromiseButton').belongingDisplay(currentDisplayId));
-          let cancelPromiseButton: Component = await driver.findComponent(ON.id('cancelPromiseButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          let setPromiseButton: Component = await driver?.findComponent(ON.id('setPromiseButton').belongingDisplay(currentDisplayId));
+          let cancelPromiseButton: Component = await driver?.findComponent(ON.id('cancelPromiseButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component = await driver?.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
           await setPromiseButton?.click();
           await sleep(500);
           await cancelPromiseButton?.click();
@@ -282,8 +282,8 @@ export default function StartManagerTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
-          let queryCallbackButton: Component | undefined = await driver.findComponent(ON.id('queryCallbackButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          let queryCallbackButton: Component | undefined = await driver?.findComponent(ON.id('queryCallbackButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component | undefined = await driver?.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
           await queryCallbackButton?.click();
           await sleep(500);
           await terminateButton?.click();
@@ -357,8 +357,8 @@ export default function StartManagerTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
-          let queryPromiseButton: Component | undefined = await driver.findComponent(ON.id('queryPromiseButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          let queryPromiseButton: Component | undefined = await driver?.findComponent(ON.id('queryPromiseButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component | undefined = await driver?.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
           await queryPromiseButton?.click();
           await sleep(500);
           await terminateButton?.click();
@@ -432,9 +432,9 @@ export default function StartManagerTest() {
               `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 allowOpen failed, ${JSON.stringify(e)}`);
           }
           await driver?.delayMs(1000);
-          let onButton: Component | undefined = await driver.findComponent(ON.id('onButton').belongingDisplay(currentDisplayId));
-          let offButton: Component | undefined = await driver.findComponent(ON.id('offButton').belongingDisplay(currentDisplayId));
-          let terminateButton: Component | undefined = await driver.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
+          let onButton: Component | undefined = await driver?.findComponent(ON.id('onButton').belongingDisplay(currentDisplayId));
+          let offButton: Component | undefined = await driver?.findComponent(ON.id('offButton').belongingDisplay(currentDisplayId));
+          let terminateButton: Component | undefined = await driver?.findComponent(ON.id('terminateButton').belongingDisplay(currentDisplayId));
           await onButton?.click();
           await sleep(500);
           await offButton?.click();
