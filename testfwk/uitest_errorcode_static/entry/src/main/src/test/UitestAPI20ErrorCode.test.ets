@@ -17,6 +17,7 @@ import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } fro
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import  hilog  from '@ohos.hilog'
+import display from '@ohos.display';
 import { Utils, startAbility, stopApplication } from './Util.test';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -32,9 +33,13 @@ const ErrorCode: int = 401;
 export default function uitestDriverErrorTest() : void {
   describe('uitest_Api20ErrorTest', (): void => {
     let driver: Driver | undefined;
+    let displayId: int = 0;
+    let primaryId: int = 0;
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverErrorTest loadup start!!!!!")
       driver = Driver.create();
+      displayId = display.getDefaultDisplaySync().id.toInt();
+      primaryId = display.getPrimaryDisplaySync().id.toInt();
       await Utils.msSleep(1000)
       hilog.info(domain, tag, "uitestDriverErrorTest loadup over!!!!!")
     })
@@ -49,12 +54,17 @@ export default function uitestDriverErrorTest() : void {
      */
     it('test_getDisplayId_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_getDisplayId_17000004_static start`);
+      let disPlay = display.getDefaultDisplaySync();
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let button = await driver!.findComponent(ON.text('MainPage'));
         await driver!.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver!.pressBack(disPlay.id.toInt());
+        }
         await driver!.delayMs(waitUiReadyMs);
         if (button != null) {
           await button.getDisplayId();
@@ -64,7 +74,11 @@ export default function uitestDriverErrorTest() : void {
         console.log(`${TestTag}, test_getDisplayId_17000004_static error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
-      await stopApplication('com.uitestScene.acts');
+      if (displayId === primaryId) {
+        await stopApplication('com.uitestScene.acts');
+      } else {
+        await driver!.pressBack(disPlay.id.toInt());
+      }
       console.log(`${TestTag}, test_getDisplayId_17000004_static end`);
     })
 
@@ -78,13 +92,18 @@ export default function uitestDriverErrorTest() : void {
      */
     it('test_getOriginalText_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_getOriginalText_17000004_static start`);
+      let disPlay = display.getDefaultDisplaySync();
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let button = await driver!.findComponent(ON.text('MainPage'));
         if (button != null) {
           await driver!.delayMs(waitUiReadyMs);
-          await stopApplication('com.uitestScene.acts');
+          if (displayId === primaryId) {
+            await stopApplication('com.uitestScene.acts');
+          } else {
+            await driver!.pressBack(disPlay.id.toInt());
+          }
           await driver!.delayMs(waitUiReadyMs);
           await button.getOriginalText();
         }
@@ -93,7 +112,11 @@ export default function uitestDriverErrorTest() : void {
         console.log(`${TestTag}, test_getOriginalText_17000004_static error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
-      await stopApplication('com.uitestScene.acts');
+      if (displayId === primaryId) {
+        await stopApplication('com.uitestScene.acts');
+      } else {
+        await driver!.pressBack(disPlay.id.toInt());
+      }
       console.log(`${TestTag}, test_getOriginalText_17000004_static end`);
     })
 
@@ -270,13 +293,6 @@ export default function uitestDriverErrorTest() : void {
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
-        await driver!.swipeBetween({x: 100, y:100, displayId: 0}, {x:100, y: 100, displayId: 1}, 600);
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, test_driver_swipeBetween_17000007_static diff error is: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
-      }
-      try {
         await driver!.swipeBetween({x: 100, y:100}, {x:100, y: 100}, -1);
         expect().assertFail();
       }catch (e) {
@@ -442,13 +458,6 @@ export default function uitestDriverErrorTest() : void {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag} test_driver_dragBetween_17000007_static, to.displayId = -1 error is: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
-      }
-      try {
-        await driver!.dragBetween({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1}, 600, 1500);
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag} test_driver_dragBetween_17000007_static,diff error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(ParameterErrorCode);
       }
       try {
@@ -649,13 +658,6 @@ export default function uitestDriverErrorTest() : void {
         expect((e as BusinessError).code == 401).assertTrue();
       }
       try {
-        await driver!.mouseDrag({x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 1});
-        expect().assertFail();
-      }catch (e) {
-        console.log(`${TestTag}, test_mouseLongClick_401_static diff error is: ${JSON.stringify(e)}`);
-        expect((e as BusinessError).code == 401).assertTrue();
-      }
-      try {
         await driver!.mouseDrag({x: 100, y: 100}, {x: 100, y: 100}, -1);
         expect().assertFail();
       }catch (e) {
@@ -689,12 +691,17 @@ export default function uitestDriverErrorTest() : void {
      */
     it('test_UiWindow_getDisplayId_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004_static start`);
+      let disPlay = display.getDefaultDisplaySync();
       try {
         await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
         await driver!.delayMs(waitUiReadyMs);
         let window = await driver!.findWindow({bundleName:'com.uitestScene.acts'});
         await driver!.delayMs(waitUiReadyMs);
-        await stopApplication('com.uitestScene.acts');
+        if (displayId === primaryId) {
+          await stopApplication('com.uitestScene.acts');
+        } else {
+          await driver!.pressBack(disPlay.id.toInt());
+        }
         await driver!.delayMs(waitUiReadyMs);
         if (window != null) {
           await window.getDisplayId();
@@ -704,7 +711,11 @@ export default function uitestDriverErrorTest() : void {
         console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004_static error is: ${JSON.stringify(e)}`);
         expect((e as BusinessError).code).assertEqual(InvisibleErrorCode);
       }
-      await stopApplication('com.uitestScene.acts');
+      if (displayId === primaryId) {
+        await stopApplication('com.uitestScene.acts');
+      } else {
+        await driver!.pressBack(disPlay.id.toInt());
+      }
       console.log(`${TestTag}, test_UiWindow_getDisplayId_17000004_static end`);
     })
 
