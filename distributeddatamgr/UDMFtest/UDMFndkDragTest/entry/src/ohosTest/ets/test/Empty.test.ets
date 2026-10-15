@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,27 +15,20 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 
-/**
- * Placeholder suite for devices that do not support the UDMF system
- * capability: it only runs a trivial arithmetic assertion so the test
- * framework still reports a successful pass.
- */
 export default function EmptyTest() {
   describe('EmptyTest', () => {
     /**
      * @tc.name   testTheDevicesNotSupportSyscap001
-     * @tc.number testTheDevicesNotSupportSyscap001
+     * @tc.number SUB_DistributedData_UDMF_SDK_DevicesNotSupportSyscapTest_0100
      * @tc.desc   The Devices not support this stsCap.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
     it('testTheDevicesNotSupportSyscap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      // Trivial arithmetic check: 1 + 2 must equal 3.
       let firstOperand: number = 1;
       let secondOperand: number = 2;
       expect(firstOperand + secondOperand).assertEqual(3);
-      // Notify the framework that this placeholder case has finished.
       done();
     });
   })
