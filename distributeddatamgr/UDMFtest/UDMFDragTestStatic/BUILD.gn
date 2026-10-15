@@ -13,20 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsUDMFDragTestStaticMain") {
+ohos_js_app_static_suite("ActsUDMFDragStaticTest") {
+ # test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsUDMFDragTestStaticMain"
-  subsystem_name = "distributeddatamgr"
-  part_name = "udmf"
-}
-
-ohos_js_app_static_suite("ActsUDMFDragTestStatic") {
-  test_hap = true
-  testonly = true
-  certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsUDMFDragTestStatic"
+  hap_name = "ActsUDMFDragStaticTest"
   part_name = "udmf"
   subsystem_name = "distributeddatamgr"
-  deps = [ ":ActsUDMFDragTestStaticMain" ]
 }
