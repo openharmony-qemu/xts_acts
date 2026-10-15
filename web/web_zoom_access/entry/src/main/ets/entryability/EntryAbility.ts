@@ -16,7 +16,6 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Window from '@ohos.window';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
 
 export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: Window.WindowStage) {
@@ -24,19 +23,10 @@ export default class EntryAbility extends UIAbility {
       if (err.code) {
         return;
       }
-      let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator =
-        AbilityDelegatorRegistry.getAbilityDelegator();
-      let args: AbilityDelegatorRegistry.AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
-      let monitor: AbilityDelegatorRegistry.AbilityMonitor = {
-        abilityName: args.bundleName,
-        onAbilityCreate: () => {
-          console.info('addAbilityMonitor called');
-        },
-      };
-      abilityDelegator.addAbilityMonitor(monitor, (error: BusinessError) => {
-        if (error != null) {
-          console.info('addAbilityMonitor err ' + error.code);
-        }
+      let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
+      abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      abilityDelegator.addAbilityMonitor(abilityDelegator.getArguments().testBundleName, () => {
+        console.info('addAbilityMonitor called');
       });
     });
   }
