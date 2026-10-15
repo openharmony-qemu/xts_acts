@@ -1,10 +1,19 @@
 import("//build/lite/config/hap_pack.gni")
 import("//test/xts/tools/lite/build/xts_gated_js_suite.gni")
 
+# Page-transition capability switch. Declared in
+# foundation/arkui/ace_engine_lite/ace_lite.gni (default false) and turned on per
+# product through the component "features" in vendor <product>/config.json.
+# Importing the engine's own declaration keeps the gate below and the engine
+# reading the same source; a case whose capability is compiled out cannot pass, so
+# it is dropped from the suite instead of shipping.
+import("//foundation/arkui/ace_engine_lite/ace_lite.gni")
 _suite_dir =
     "$root_out_dir/suites/acts_validator_lite/testcases/acts_validator_lite"
 _tools_dir = "$root_out_dir/suites/acts_validator_lite/testcases/tools"
 
+# Pages that every product builds; pages needing an engine capability are appended
+# below, each inside the matching switch.
 _pages = [
   "pages/index/index",
   "pages/ArkUI/chart/line/index",
@@ -22,9 +31,27 @@ _pages = [
   "pages/common/help/index",
 ]
 
+# Capability-gated pages. With a switch off the render step drops these routes from
+# the generated manifest.json / config.json and removes the pages, their app.js
+# report items, the home button, the navigateTo route and the submenu row; a
+# dangling reference fails the build instead of silently shipping.
+
+if (ace_engine_lite_feature_page_transition_effect) {
+  _pages += [
+    "pages/ArkUI/RouterTransition/index/index",
+    "pages/ArkUI/RouterTransition/normal/index",
+    "pages/ArkUI/RouterTransition/edge_api/index",
+    "pages/ArkUI/RouterTransition/edge_duration/index",
+    "pages/ArkUI/RouterTransition/target/index",
+  ]
+}
+
 _extra_js = [
   "common/js/event.js",
   "common/js/general.js",
+
+  # Only imported by the three gated RouterTransition group pages.
+  "common/js/router_transition.js",
   "common/js/swiper.js",
 ]
 

@@ -8,7 +8,8 @@ export default {
       { id: 1, title: 'ui advanced', url: 'pages/ArkUI/ui_advanced/index' },
       { id: 8, title: 'chart(line)', url: 'pages/ArkUI/chart/line/index' },
       { id: 14, title: 'marquee', url: 'pages/ArkUI/marquee/index' },
-      { id: 25, title: '返回首页', url: 'pages/index/index' }
+      { id: 42, title: 'Router Transition', url: 'pages/ArkUI/RouterTransition/index/index' },
+      { id: 41, title: '返回首页', url: 'pages/index/index' }
     ]
   },
 

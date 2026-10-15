@@ -1,0 +1,123 @@
+<!--
+  Copyright (c) 2026 Huawei Device Co., Ltd.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<div class="container">
+    <div class="content-title">
+        <text class="title">Router Transition · Edge: duration values (9)</text>
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration=0</text>
+            <text class="tip">duration=0：语义为无动效，应瞬间切换、不报错</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_zero')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{dzPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_zero')" />
+                <input class="pfBtn" style="background-color:{{dzFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_zero')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration 为负</text>
+            <text class="tip">duration=-1：解析期 clamp 到 0，应无动效、不崩溃</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_negative')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{dnPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_negative')" />
+                <input class="pfBtn" style="background-color:{{dnFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_negative')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration=0.5（亚毫秒）</text>
+            <text class="tip">duration=0.5：截断为 0，应瞬间切换、无过渡</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_sub_ms')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{smPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_sub_ms')" />
+                <input class="pfBtn" style="background-color:{{smFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_sub_ms')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration=5000（恰好上限）</text>
+            <text class="tip">duration=5000：未触发截断（上限即 5000），应播放约 5s 的完整动效</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_bound_max')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{bmPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_bound_max')" />
+                <input class="pfBtn" style="background-color:{{bmFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_bound_max')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration=5001（刚超上限）</text>
+            <text class="tip">duration=5001：超上限 1ms，应截断为 5000 并照常播放约 5s，而不是瞬间切换</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_just_over')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{joPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_just_over')" />
+                <input class="pfBtn" style="background-color:{{joFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_just_over')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration 超上限</text>
+            <text class="tip">duration=8000：应截断为 5000；scale 仍播放，时长约 5s 而非 8s</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_over_max')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{doPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_over_max')" />
+                <input class="pfBtn" style="background-color:{{doFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_over_max')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration=1（最小有效值）</text>
+            <text class="tip">duration=1：最小有效值，应正常跳转、无异常（1ms，肉眼≈瞬间）</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_min_valid')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{mvPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_min_valid')" />
+                <input class="pfBtn" style="background-color:{{mvFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_min_valid')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration 缺省</text>
+            <text class="tip">animation 不带 duration：应取默认 300ms，scale 仍播放</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_default')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{ddPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_default')" />
+                <input class="pfBtn" style="background-color:{{ddFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_default')" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:205px;">
+            <text class="box-title">edge：duration 非数字</text>
+            <text class="tip">duration='800'（字符串）：非 number → 取默认 300ms，仍播放</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="播放" onclick="play('router_edge_dur_not_number')" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{nnPassColor}};" type="button" value="pass" onclick="togglePass('router_edge_dur_not_number')" />
+                <input class="pfBtn" style="background-color:{{nnFailColor}};" type="button" value="fail" onclick="toggleFail('router_edge_dur_not_number')" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>
