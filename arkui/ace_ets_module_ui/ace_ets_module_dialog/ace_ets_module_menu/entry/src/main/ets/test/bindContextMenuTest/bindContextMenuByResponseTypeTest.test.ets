@@ -17,6 +17,8 @@ import router from '@ohos.router';
 import { Driver, ON, Component, Point, PointerMatrix, Rect, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
 
+let displayID : number = AppStorage.get('displayID')?AppStorage.get('displayID') as number : 0
+
 export default function bindContextMenuByResponseTypeTest() {
   describe('bindContextMenuByResponseTypeTest', () => {
     beforeAll(async () => {
@@ -91,7 +93,8 @@ export default function bindContextMenuByResponseTypeTest() {
       await CommonFunc.sleep(500);
       let point = await Btn02.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_RIGHT);
+      // 涉及坐标
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
       await CommonFunc.sleep(1000);
       let menuItem = await driver.findComponent(ON.text('CustomItem1'));
       expect(menuItem !== null).assertTrue();
@@ -142,7 +145,8 @@ export default function bindContextMenuByResponseTypeTest() {
       await CommonFunc.sleep(500);
       let point = await Btn04.getBoundsCenter();
       await CommonFunc.sleep(500);
-      await driver.mouseClick({ x: point.x, y: point.y }, MouseButton.MOUSE_BUTTON_RIGHT);
+      // 涉及坐标
+      await driver.mouseClick({ x: point.x, y: point.y, displayId: displayID }, MouseButton.MOUSE_BUTTON_RIGHT);
       await CommonFunc.sleep(1000);
       let menuItem = await driver.findComponent(ON.text('Element1'));
       expect(menuItem !== null).assertTrue();

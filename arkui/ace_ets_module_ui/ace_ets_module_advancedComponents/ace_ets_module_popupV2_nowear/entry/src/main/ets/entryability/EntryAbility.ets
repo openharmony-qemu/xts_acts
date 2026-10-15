@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,67 +12,133 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { window } from '@kit.ArkUI';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
+import router from '@ohos.router';
+import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import CommonFunc from '../../MainAbility/common/Common';
+import {MessageManager,Callback} from '../../MainAbility/common/MessageManager';
+import window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 
-export default class EntryAbility extends UIAbility {
-  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    globalThis.abilityWant = want;
-  }
+let displayID : number = AppStorage.get('displayID') ? AppStorage.get('displayID') as number : 0;
 
-  onDestroy() {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-  }
-
-  onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
-    globalThis.windowStage = windowStage
-    globalThis.abilityContext = this.context
-    windowStage.loadContent('MainAbility/pages/index/Index', (err: BusinessError, data) => {
-      if (err.code) {
-        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-        return;
+export default function subwindowDialog() {
+  describe('subwindowDialog', () => {
+    beforeEach(async (done: Function) => {
+      console.info("subwindowDialog beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/promptAction/subwindowDialog',
       }
-      let windowClass: window.Window | undefined = undefined;
-      windowStage.getMainWindow((err: BusinessError, data) => {
-        let errCode: number = err.code;
-        if (errCode) {
-          console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
-          return;
+      try {
+        router.clear();
+        let pages = router.getState();
+        console.info("get subwindowDialog state pages: " + JSON.stringify(pages));
+        if (!("subwindowDialog" == pages.name)) {
+          console.info("get subwindowDialog state pages.name: " + JSON.stringify(pages.name));
+          let result = await router.push(options);
+          await CommonFunc.sleep(2000);
+          console.info("push subwindowDialog success: " + JSON.stringify(result));
         }
-        windowClass = data;
-        hilog.info(0x0000, 'testTag', 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
-        try {
-          let properties: window.WindowProperties = windowClass.getWindowProperties();
-          let wRect: window.Rect = properties.windowRect;
-          globalThis.winLeft = wRect.left;
-          globalThis.winTop = wRect.top;
-          hilog.info(0x0000, 'testTag', 'Succeeded get winLeft:' + globalThis.winLeft + ',winTop:' + globalThis.winTop);
-        } catch (exception) {
-          hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
-        }
-      })
-      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
+      } catch (err) {
+        console.error("push subwindowDialog page error: " + err);
+        expect().assertFail();
+      }
+      done();
     });
-  }
 
-  onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
-  }
+    /**
+     * @tc.name   subwindowDialog_0100
+     * @tc.number SUB_ACE_subwindowDialog_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('subwindowDialog_0100', Level.LEVEL2, async (done: Function) => {
+      console.info('subwindowDialog_0100 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let buttonSubwindowFalse = await driver.findComponent(ON.id('subwindowDialogClickFalse'));
+      let buttonOpenDialog = await driver.findComponent(ON.id('subwindowDialogClickOpen'));
+      await buttonSubwindowFalse.click();
+      await CommonFunc.sleep(1000);
+      await buttonOpenDialog.click();
+      await CommonFunc.sleep(1000);
 
-  onForeground(): void {
-    // Ability has brought to foreground
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
-  }
+      let windowClassFirst: window.Window | undefined = undefined;
+      windowClassFirst = await window.getLastWindow(globalThis.abilityContext);
+      let propertiesFirst: window.WindowProperties = windowClassFirst.getWindowProperties();
+      console.info("[subwindowDialog_0100] title: " + JSON.stringify(propertiesFirst.type));
+      expect(propertiesFirst.type).assertEqual(1)//1表示系统告警窗口TYPE_SYSTEM_ALERT
+      
+      let buttonSubwindowMenu = await driver.findComponent(ON.id('subwindowDialogLongClickMenu'));
 
-  onBackground(): void {
-    // Ability has back to background
-    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
-  }
+      await buttonSubwindowMenu.longClick();
+      await CommonFunc.sleep(1000);
+
+      let windowClassSecond: window.Window | undefined = undefined;
+      windowClassSecond = await window.getLastWindow(globalThis.abilityContext);
+      let propertiesSecond: window.WindowProperties = windowClassSecond.getWindowProperties();
+      console.info("[subwindowDialog_0100] title: " + JSON.stringify(propertiesSecond));
+      console.info("[subwindowDialog_0100] title: " + JSON.stringify(propertiesSecond.type));
+      expect(propertiesSecond.type).assertEqual(0)//0表示应用子窗口TYPE_APP
+
+      await CommonFunc.sleep(1000);
+      // 涉及坐标
+      await driver.clickAt({ x: Math.round(globalThis.winLeft+vp2px(100)), y: Math.round(globalThis.winTop+vp2px(100)), displayId: displayID });
+      // await driver.click(Math.round(globalThis.winLeft + vp2px(100)),Math.round(globalThis.winTop + vp2px(100)));
+      await CommonFunc.sleep(1000);
+      let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
+      if (buttonCloseDialog) {
+        await buttonCloseDialog.click();
+        await CommonFunc.sleep(1000);
+      }
+      console.info('[subwindowDialog_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.name   subwindowDialog_0200
+     * @tc.number SUB_ACE_subwindowDialog_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('subwindowDialog_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('subwindowDialog_0200 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let buttonSubwindowTrue = await driver.findComponent(ON.id('subwindowDialogClickTrue'));
+      let buttonOpenDialog = await driver.findComponent(ON.id('subwindowDialogClickOpen'));
+      await buttonSubwindowTrue.click();
+      await CommonFunc.sleep(1000);
+      await buttonOpenDialog.click();
+      await CommonFunc.sleep(1000);
+
+      let windowClass: window.Window | undefined = undefined;
+      windowClass = await window.getLastWindow(globalThis.abilityContext);
+      let properties: window.WindowProperties = windowClass.getWindowProperties();
+      console.info("[subwindowDialog_0200] title: " + JSON.stringify(properties));
+      console.info("[subwindowDialog_0200] title: " + JSON.stringify(properties.type));
+      expect(properties.type).assertEqual(0)//0表示应用子窗口TYPE_APP
+      
+      let buttonSubwindowMenu = await driver.findComponent(ON.id('subwindowDialogLongClickMenu'));
+      let buttonCloseDialog = await driver.findComponent(ON.id('subwindowDialogClickClose'));
+
+      await buttonSubwindowMenu.longClick();
+      await CommonFunc.sleep(1000);
+      let menuBtn = await driver.findComponent(ON.text('菜单选项'));
+      await CommonFunc.sleep(1000);
+      await menuBtn.click();
+      
+      await CommonFunc.sleep(2000);
+      await buttonCloseDialog.click();
+      console.info('[subwindowDialog_0200] END');
+      done();
+    });
+
+  })
 }
+
