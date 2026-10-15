@@ -36,34 +36,26 @@ struct StartMoving9 {
         .hitTestBehavior(HitTestMode.Transparent)
         .onTouch((event: TouchEvent) => {
           if (event.type == TouchType.Down) {
-            try {
-              let windowClass = AppStorage.get<window.Window>('windowClass2') as window.Window;
-              let windowRect = windowClass.getWindowProperties().windowRect;
-              console.log(`${caseName} subWindowClass windowRect: ${JSON.stringify(windowRect)}`);
-              let offSetX = Math.round(windowRect.width / 2).toInt();
-              console.log(`${caseName}  offSetX: ${JSON.stringify(offSetX)}`);
-              let offSetY = Math.round(windowRect.height / 2).toInt();
-              console.log(`${caseName}  offSetY: ${JSON.stringify(offSetY)}`);
-              windowClass.startMoving(offSetX, offSetY).then(async () => {
+            (async () => {
+              try {
+                let windowClass = AppStorage.get<window.Window>('windowClass2') as window.Window;
+                let windowRect = windowClass.getWindowProperties().windowRect;
+                let offSetX = Math.round(windowRect.width / 2).toInt();
+                let offSetY = Math.round(windowRect.height / 2).toInt();
+                console.log(`${caseName} windowRect: ${JSON.stringify(windowRect)}, offSetX: ${offSetX}, offSetY: ${offSetY}`);
+      
+                await windowClass.startMoving(offSetX, offSetY);
+                console.info(`${caseName} first startMoving success`);
                 await windowClass.startMoving(offSetX, offSetY);
                 this.message = 'startMoving success';
-                console.info('start moving successfully');
-              }).catch((err) => {
+                console.info(`${caseName} second startMoving success`);
+              } catch (err) {
                 err = err as BusinessError;
-                console.error('start moving : ' + err.code + ',message:' + err.message)
-                if (err.code == 801) {
-                  this.message = 'startMoving 801'
-                  AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', 801);
-                } else if (err.code == 1300001) {
-                  this.message = 'startMoving 1300001'
-                  AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', 1300001)
-                } else {
-                AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', 0)
-                }
-              })
-            } catch (exception) {
-              console.error(`Failed to start drag window. Cause code: ${exception.code}, message: ${exception.message}`)
-            }
+                console.error(`${caseName} startMoving failed: ${err.code}, message: ${err.message}`);
+                this.message = `startMoving ${err.code}`;
+                AppStorage.setOrCreate('teststartMovingParamStaticRepeated_errorCode', err.code);
+              }
+            })()
           }
         })
     }
