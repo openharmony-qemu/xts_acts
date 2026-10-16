@@ -20,7 +20,8 @@ import sendableContextManager from '@ohos.app.ability.sendableContextManager';
 import contextConstant from '@ohos.app.ability.contextConstant';
 import hilog from '@ohos.hilog';
 import resourceManager from '@ohos.resourceManager';
-import { ApplicationContextObject, AbilityStageObject, ContextObject, UIAbilityContextObject } from '../common/SendableContextObject'
+import { ApplicationContextObject, AbilityStageObject, ContextObject,
+  UIAbilityContextObject } from '../common/SendableContextObject'
 
 const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
 

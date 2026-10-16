@@ -14,14 +14,15 @@
  */
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium-dynamic';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { abilityDelegatorRegistry, TestRunner } from '@kit.TestKit';
 import sendableContextManager from '@ohos.app.ability.sendableContextManager';
 import common from '@ohos.app.ability.common';
 import application from '@ohos.app.ability.application';
 import { worker, MessageEvents } from '@kit.ArkTS';
 import taskpool from '@ohos.taskpool';
-import { SendableContextObject, ApplicationContextObject, AbilityStageObject, ContextObject, UIAbilityContextObject } from '../common/SendableContextObject'
+import { SendableContextObject, ApplicationContextObject, AbilityStageObject, ContextObject,
+  UIAbilityContextObject } from '../common/SendableContextObject'
 import contextConstant from '@ohos.app.ability.contextConstant';
 let sendableContext: sendableContextManager.SendableContext
 
@@ -37,41 +38,48 @@ function sleep(s: number): Promise<void> {
 }
 @Concurrent
 function returnUIAbilityContext(object: UIAbilityContextObject): common.UIAbilityContext {
-  hilog.info(0x0000, 'testTag',  object.contextName + ' taskpool1 print: %{public}s ', JSON.stringify(object.sendableContext.cacheDir));
+  hilog.info(0x0000, 'testTag',  object.contextName + ' taskpool1 print: %{public}s ',
+    JSON.stringify(object.sendableContext.cacheDir));
   return object.sendableContext;
 }
 @Concurrent
 function returnApplicationContext(object: ApplicationContextObject): common.ApplicationContext {
-  hilog.info(0x0000, 'testTag', object.contextName + ' taskpool1 print: %{public}s ', JSON.stringify(object.sendableContext.cacheDir));
+  hilog.info(0x0000, 'testTag', object.contextName + ' taskpool1 print: %{public}s ',
+    JSON.stringify(object.sendableContext.cacheDir));
   return object.sendableContext;
 }
 @Concurrent
 function returnAbilityStageContext(object: AbilityStageObject): common.AbilityStageContext {
-  hilog.info(0x0000, 'testTag', object.contextName + ' taskpool1 print: %{public}s ', JSON.stringify(object.sendableContext.cacheDir));
+  hilog.info(0x0000, 'testTag', object.contextName + ' taskpool1 print: %{public}s ',
+    JSON.stringify(object.sendableContext.cacheDir));
   return object.sendableContext;
 }
 @Concurrent
-function returnContext(object: ContextObject): common.Context {
-  hilog.info(0x0000, 'testTag', object.contextName + ' taskpool1 print: %{public}s ', JSON.stringify(object.sendableContext.cacheDir));
+function returnContext(object: ContextObject): common.UIAbilityContext {
+  hilog.info(0x0000, 'testTag', object.contextName + ' taskpool1 print: %{public}s ',
+    JSON.stringify(object.sendableContext.cacheDir));
   return object.sendableContext;
 }
 @Concurrent
 function returnUIAbilityContext2(object: common.UIAbilityContext):string{
-  hilog.info(0x0000, 'testTag', 'returnUIAbilityContext2 taskpool2 print: %{public}s ', JSON.stringify(object.cacheDir));
+  hilog.info(0x0000, 'testTag', 'returnUIAbilityContext2 taskpool2 print: %{public}s ',
+    JSON.stringify(object.cacheDir));
   return object.cacheDir;
 }
 @Concurrent
 function returnApplicationContext2(object: common.ApplicationContext): string {
-  hilog.info(0x0000, 'testTag','returnApplicationContext2 taskpool2 print: %{public}s ', JSON.stringify(object.cacheDir));
+  hilog.info(0x0000, 'testTag','returnApplicationContext2 taskpool2 print: %{public}s ',
+    JSON.stringify(object.cacheDir));
   return object.cacheDir;
 }
 @Concurrent
 function returnAbilityStageContext2(object: common.AbilityStageContext): string {
-  hilog.info(0x0000, 'testTag', 'returnAbilityStageContext2 taskpool2 print: %{public}s ', JSON.stringify(object.cacheDir));
+  hilog.info(0x0000, 'testTag', 'returnAbilityStageContext2 taskpool2 print: %{public}s ',
+    JSON.stringify(object.cacheDir));
   return object.cacheDir;
 }
 @Concurrent
-function returnContext2(object: common.Context): string {
+function returnContext2(object: common.UIAbilityContext): string {
   hilog.info(0x0000, 'testTag', 'returnContext2 taskpool2 print: %{public}s ', JSON.stringify(object.cacheDir));
   return object.cacheDir;
 }
@@ -82,9 +90,11 @@ export default function sendableContextTest() {
       await sleep(1);
       testUIAbilityContext = AppStorage.get('TestAbilityContext') as common.UIAbilityContext;
       testAbilityStageContext = AppStorage.get('TestAbilityStageContext') as common.AbilityStageContext;
-      hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll AbilityStage get result ' + JSON.stringify(testAbilityStageContext));
+      hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll AbilityStage get result ' +
+        JSON.stringify(testAbilityStageContext));
       testApplicationContext = application.getApplicationContext();
-      hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll application get result ' + JSON.stringify(testApplicationContext));
+      hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll application get result ' +
+        JSON.stringify(testApplicationContext));
     })
 
     beforeEach(() => {
@@ -102,7 +112,8 @@ export default function sendableContextTest() {
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Worker_Stage_1100
      * @tc.number SUB_Ability_AbilityRuntime_Worker_Stage_1100
-     * @tc.desc   UIAbilityContext is converted to sendableContext to pass the destruction and use between different worker threads.
+     * @tc.desc   UIAbilityContext is converted to sendableContext to pass the destruction and use between different
+      * worker threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -112,16 +123,18 @@ export default function sendableContextTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1100 begin');
       let transUIAbilityContext:common.UIAbilityContext|undefined = undefined;
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testUIAbilityContext);
-      let transContext: SendableContextObject = new SendableContextObject(sendableContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1100');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testUIAbilityContext);
+      let transContext: SendableContextObject = new SendableContextObject(sendableContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1100');
       if(sendableContext == undefined || transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -131,23 +144,23 @@ export default function sendableContextTest() {
         transUIAbilityContext = event.data.value;
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
-        Worker1.terminate();
+        worker1.terminate();
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       hilog.info(0x0000, 'testTag', TAG + 'start wait for woker1 done ' + isWoker1Done);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
       hilog.info(0x0000, 'testTag', TAG + 'wait for woker1 done ' + isWoker1Done);
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      hilog.info(0x0000, 'testTag', TAG + '  create Worker2 success');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      hilog.info(0x0000, 'testTag', TAG + '  create worker2 success');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -156,7 +169,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -167,15 +180,17 @@ export default function sendableContextTest() {
         return;
       }else{
         hilog.info(0x0000, 'testTag', TAG + 'transUIAbilityContext success');
-        let transContext2: UIAbilityContextObject = new UIAbilityContextObject(transUIAbilityContext as common.UIAbilityContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1100');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: UIAbilityContextObject = new UIAbilityContextObject
+          (transUIAbilityContext as common.UIAbilityContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1100');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Worker_Stage_1200
      * @tc.number SUB_Ability_AbilityRuntime_Worker_Stage_1200
-     * @tc.desc   ApplicationContext is converted to sendableContext to pass the destruction and use between different worker threads.
+     * @tc.desc   ApplicationContext is converted to sendableContext to pass the destruction and use between different
+      * worker threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -185,16 +200,18 @@ export default function sendableContextTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1200 begin');
       let transApplicaitonContext:common.ApplicationContext|undefined = undefined;
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testApplicationContext);
-      let transContext: SendableContextObject = new SendableContextObject(sendableContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1200');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testApplicationContext);
+      let transContext: SendableContextObject = new SendableContextObject(sendableContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1200');
       if(sendableContext == undefined || transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message ApplicationContext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -205,19 +222,19 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -226,7 +243,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -235,15 +252,17 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: ApplicationContextObject = new ApplicationContextObject(transApplicaitonContext as common.ApplicationContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1200');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: ApplicationContextObject = new ApplicationContextObject
+          (transApplicaitonContext as common.ApplicationContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1200');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Worker_Stage_1300
      * @tc.number SUB_Ability_AbilityRuntime_Worker_Stage_1300
-     * @tc.desc   AbilityStageContext is converted to sendableContext to pass the destruction and use between different worker threads.
+     * @tc.desc   AbilityStageContext is converted to sendableContext to pass the destruction and use between different
+      * worker threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -253,8 +272,10 @@ export default function sendableContextTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1100 begin');
       let transAbilityStageContext:common.AbilityStageContext|undefined = undefined;
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testAbilityStageContext);
-      let transContext: SendableContextObject = new SendableContextObject(sendableContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1300');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testAbilityStageContext);
+      let transContext: SendableContextObject = new SendableContextObject(sendableContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1300');
       if(sendableContext == undefined || transContext == undefined){
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'sendableContext == undefined || transContext == undefined');
         expect().assertFail();
@@ -262,8 +283,8 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + '[WorkerTrans1] fail');
@@ -275,20 +296,20 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + '[WorkerTrans2] fail');
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -297,7 +318,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -307,15 +328,17 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: AbilityStageObject = new AbilityStageObject(transAbilityStageContext as common.AbilityStageContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1300');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: AbilityStageObject = new AbilityStageObject
+          (transAbilityStageContext as common.AbilityStageContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1300');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Worker_Stage_1400
      * @tc.number SUB_Ability_AbilityRuntime_Worker_Stage_1400
-     * @tc.desc   Context(createModuleContext) is converted to sendableContext to pass the destruction and use between different worker threads.
+     * @tc.desc   Context(createModuleContext) is converted to sendableContext to pass the destruction and use between
+      * different worker threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -324,7 +347,7 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1400:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1400 begin');
       let transModuleContext:common.Context|undefined = undefined;
-      let moduleContext : common.Context|undefined = undefined;
+      let moduleContext: common.Context | undefined = undefined;
       await application.createModuleContext(testUIAbilityContext, 'entry_test').then((data)=>{
         moduleContext = data;
       });
@@ -334,16 +357,18 @@ export default function sendableContextTest() {
         done();
         return;
       }
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(moduleContext);
-      let transContext: SendableContextObject = new SendableContextObject(sendableContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1400');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (moduleContext);
+      let transContext: SendableContextObject = new SendableContextObject(sendableContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1400');
       if(sendableContext == undefined || transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -354,19 +379,19 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -375,7 +400,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -384,15 +409,17 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: ContextObject = new ContextObject(transModuleContext as common.Context, 'SUB_Ability_AbilityRuntime_Worker_Stage_1400');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: ContextObject = new ContextObject(transModuleContext as common.UIAbilityContext,
+          'SUB_Ability_AbilityRuntime_Worker_Stage_1400');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Worker_Stage_1500
      * @tc.number SUB_Ability_AbilityRuntime_Worker_Stage_1500
-     * @tc.desc   Context(from uiability) is converted to sendableContext to pass the destruction and use between different worker threads.
+     * @tc.desc   Context(from uiability) is converted to sendableContext to pass the destruction and use between
+      * different worker threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -401,18 +428,20 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1500:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1500 begin');
       let transToContext:common.Context|undefined = undefined;
-      let asContext : common.Context = AppStorage.get('TestAbilityContext') as common.Context;
+      let asContext: common.Context = AppStorage.get<common.Context>('TestAbilityContext') as common.Context;
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(asContext);
-      let transContext: SendableContextObject = new SendableContextObject(sendableContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1500');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (asContext);
+      let transContext: SendableContextObject = new SendableContextObject(sendableContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1500');
       if(sendableContext == undefined || transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -423,19 +452,19 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -444,7 +473,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -453,15 +482,17 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: ContextObject = new ContextObject(transToContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1500');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: ContextObject = new ContextObject(transToContext as common.UIAbilityContext,
+          'SUB_Ability_AbilityRuntime_Worker_Stage_1500');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Worker_Stage_1700
      * @tc.number SUB_Ability_AbilityRuntime_Worker_Stage_1700
-     * @tc.desc   Context(transAreaModeContext) is converted to sendableContext to pass the destruction and use between different worker threads.
+     * @tc.desc   Context(transAreaModeContext) is converted to sendableContext to pass the destruction and use between
+      * different worker threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -471,18 +502,20 @@ export default function sendableContextTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1700 begin');
       let transAreaModeContext:common.Context|undefined = undefined;
       let areaMode: contextConstant.AreaMode = contextConstant.AreaMode.EL4;
-      let areaModeContext : common.Context = testUIAbilityContext.createAreaModeContext(areaMode);
+      let areaModeContext: common.Context = testUIAbilityContext.createAreaModeContext(areaMode);
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(areaModeContext);
-      let transContext: SendableContextObject = new SendableContextObject(sendableContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1700');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (areaModeContext);
+      let transContext: SendableContextObject = new SendableContextObject(sendableContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1700');
       if(sendableContext == undefined || transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -493,19 +526,19 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -514,7 +547,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -523,15 +556,17 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: ContextObject = new ContextObject(transAreaModeContext as common.Context, 'SUB_Ability_AbilityRuntime_Worker_Stage_1700');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: ContextObject = new ContextObject(transAreaModeContext as common.UIAbilityContext,
+          'SUB_Ability_AbilityRuntime_Worker_Stage_1700');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_Worker_Stage_1800
      * @tc.number SUB_Ability_AbilityRuntime_Worker_Stage_1800
-     * @tc.desc   Context(createDisplayContext) is converted to sendableContext to pass the destruction and use between different worker threads.
+     * @tc.desc   Context(createDisplayContext) is converted to sendableContext to pass the destruction and use between
+      * different worker threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -540,18 +575,20 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_1800:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1800 begin');
       let transDisplayContext:common.Context|undefined = undefined;
-      let displayContext : common.Context = testUIAbilityContext.createDisplayContext(0);
+      let displayContext: common.Context = testUIAbilityContext.createDisplayContext(0);
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(displayContext);
-      let transContext: SendableContextObject = new SendableContextObject(sendableContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1800');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (displayContext);
+      let transContext: SendableContextObject = new SendableContextObject(sendableContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1800');
       if(sendableContext == undefined || transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -562,19 +599,19 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -583,7 +620,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -592,8 +629,9 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: ContextObject = new ContextObject(transDisplayContext as common.Context, 'SUB_Ability_AbilityRuntime_Worker_Stage_1800');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: ContextObject = new ContextObject(transDisplayContext as common.UIAbilityContext,
+          'SUB_Ability_AbilityRuntime_Worker_Stage_1800');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
@@ -611,17 +649,19 @@ export default function sendableContextTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_1900 begin');
       let transUIAbilityContext:common.UIAbilityContext|undefined = undefined;
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testUIAbilityContext);
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testUIAbilityContext);
       let contextAfter: common.UIAbilityContext = sendableContextManager.convertToUIAbilityContext(sendableContext);
-      let transContext: UIAbilityContextObject = new UIAbilityContextObject(contextAfter, 'SUB_Ability_AbilityRuntime_Worker_Stage_1900');
+      let transContext: UIAbilityContextObject = new UIAbilityContextObject(contextAfter,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_1900');
       if(transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -631,24 +671,24 @@ export default function sendableContextTest() {
         transUIAbilityContext = event.data.value;
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
-        Worker1.terminate();
+        worker1.terminate();
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext start');
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       hilog.info(0x0000, 'testTag', TAG + 'start wait for woker1 done ' + isWoker1Done);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
       hilog.info(0x0000, 'testTag', TAG + 'wait for woker1 done ' + isWoker1Done);
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      hilog.info(0x0000, 'testTag', TAG + '  create Worker2 success');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      hilog.info(0x0000, 'testTag', TAG + '  create worker2 success');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -657,7 +697,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -668,8 +708,9 @@ export default function sendableContextTest() {
         return;
       }else{
         hilog.info(0x0000, 'testTag', TAG + 'transUIAbilityContext success');
-        let transContext2: UIAbilityContextObject = new UIAbilityContextObject(transUIAbilityContext as common.UIAbilityContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1100');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: UIAbilityContextObject = new UIAbilityContextObject
+          (transUIAbilityContext as common.UIAbilityContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_1100');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
@@ -686,15 +727,16 @@ export default function sendableContextTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_2000 begin');
       let transApplicaitonContext:common.ApplicationContext|undefined = undefined;
       let isWoker1Done:Boolean = false;
-      let transContext: ApplicationContextObject = new ApplicationContextObject(testApplicationContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_2000');
+      let transContext: ApplicationContextObject = new ApplicationContextObject(testApplicationContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_2000');
       if(transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message ApplicationContext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -705,19 +747,19 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -726,7 +768,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -735,8 +777,9 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: ApplicationContextObject = new ApplicationContextObject(transApplicaitonContext as common.ApplicationContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_2000');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: ApplicationContextObject = new ApplicationContextObject
+          (transApplicaitonContext as common.ApplicationContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_2000');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
@@ -753,9 +796,12 @@ export default function sendableContextTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_2700 begin');
       let transAbilityStageContext:common.AbilityStageContext|undefined = undefined;
       let isWoker1Done:Boolean = false;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testAbilityStageContext);
-      let contextAfter: common.AbilityStageContext = sendableContextManager.convertToAbilityStageContext(sendableContext);
-      let transContext: AbilityStageObject = new AbilityStageObject(contextAfter, 'SUB_Ability_AbilityRuntime_Worker_Stage_2700');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testAbilityStageContext);
+      let contextAfter: common.AbilityStageContext = sendableContextManager.convertToAbilityStageContext
+        (sendableContext);
+      let transContext: AbilityStageObject = new AbilityStageObject(contextAfter,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_2700');
       if(transContext == undefined){
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'sendableContext == undefined || transContext == undefined');
         expect().assertFail();
@@ -763,8 +809,8 @@ export default function sendableContextTest() {
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message testAbilityStageContext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + '[WorkerTrans1] fail');
@@ -777,20 +823,20 @@ export default function sendableContextTest() {
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message testAbilityStageContext start');
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + '[WorkerTrans2] fail');
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -799,7 +845,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -809,8 +855,9 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: AbilityStageObject = new AbilityStageObject(transAbilityStageContext as common.AbilityStageContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_2700');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: AbilityStageObject = new AbilityStageObject
+          (transAbilityStageContext as common.AbilityStageContext, 'SUB_Ability_AbilityRuntime_Worker_Stage_2700');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
@@ -826,7 +873,7 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_2100:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_2100 begin');
       let transModuleContext:common.Context|undefined = undefined;
-      let moduleContext : common.Context|undefined = undefined;
+      let moduleContext: common.Context | undefined = undefined;
       await application.createModuleContext(testUIAbilityContext, 'entry_test').then((data)=>{
         moduleContext = data;
       });
@@ -836,17 +883,19 @@ export default function sendableContextTest() {
         done();
         return;
       }
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(moduleContext);
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (moduleContext);
       let contextAfter: common.Context = sendableContextManager.convertToContext(sendableContext);
-      let transContext: ContextObject = new ContextObject(contextAfter, 'SUB_Ability_AbilityRuntime_Worker_Stage_2100');
+      let transContext: ContextObject = new ContextObject(contextAfter as common.UIAbilityContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_2100');
       if(sendableContext == undefined || transContext == undefined){
         expect().assertFail();
         done();
         return;
       }
       hilog.info(0x0000, 'testTag', '%{public}s', TAG + 'Ability post message uiabilitycontext');
-      let Worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
-      Worker1.onmessage = (event: MessageEvents): void => {
+      let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans3.ets');
+      worker1.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         if(key == '[WorkerTrans1] fail'){
           try{expect().assertFail();}catch{};
@@ -857,19 +906,19 @@ export default function sendableContextTest() {
         isWoker1Done = true;
         hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans1 Ability onmessage get success ' + isWoker1Done);
       }
-      Worker1.postMessageWithSharedSendable(transContext);
+      worker1.postMessageWithSharedSendable(transContext);
       await sleep(1000);
       while(!isWoker1Done){
         await sleep(1000); //等待worker1将Context传回主线程
       }
-      Worker1.terminate();
-      let Worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
-      Worker2.onmessage = (event: MessageEvents): void => {
+      worker1.terminate();
+      let worker2: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/WorkerTrans2.ets');
+      worker2.onmessage = (event: MessageEvents): void => {
         let key: string = event.data.key;
         let value: string = event.data.value;
         if(key == '[WorkerTrans2] fail'){
           try{expect().assertFail();}catch{};
-          Worker2.terminate();
+          worker2.terminate();
           done();
           return;
         }
@@ -878,7 +927,7 @@ export default function sendableContextTest() {
         }catch{
           hilog.info(0x0000, 'testTag', TAG + 'WorkerTrans2: fail');
         }
-        Worker2.terminate();
+        worker2.terminate();
         done();
         hilog.info(0x0000, 'testTag', TAG + 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       }
@@ -887,8 +936,9 @@ export default function sendableContextTest() {
         done();
         return;
       }else{
-        let transContext2: ContextObject = new ContextObject(transModuleContext as common.Context, 'SUB_Ability_AbilityRuntime_Worker_Stage_2100');
-        Worker2.postMessageWithSharedSendable(transContext2);
+        let transContext2: ContextObject = new ContextObject(transModuleContext as common.UIAbilityContext,
+          'SUB_Ability_AbilityRuntime_Worker_Stage_2100');
+        worker2.postMessageWithSharedSendable(transContext2);
       }
     })
 
@@ -905,9 +955,11 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3500:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_3500 begin');
       let transModuleContext:common.UIAbilityContext|undefined = undefined;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testUIAbilityContext);
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testUIAbilityContext);
       let contextAfter: common.UIAbilityContext = sendableContextManager.convertToUIAbilityContext(sendableContext);
-      let transContext: UIAbilityContextObject = new UIAbilityContextObject(contextAfter, 'SUB_Ability_AbilityRuntime_Worker_Stage_2100');
+      let transContext: UIAbilityContextObject = new UIAbilityContextObject(contextAfter,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_2100');
       if(transContext == undefined){
         expect().assertFail();
         done();
@@ -950,9 +1002,11 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3200:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_3200 begin');
       let transModuleContext:common.ApplicationContext|undefined = undefined;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testApplicationContext);
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testApplicationContext);
       let contextAfter: common.ApplicationContext = sendableContextManager.convertToApplicationContext(sendableContext);
-      let transContext: ApplicationContextObject = new ApplicationContextObject(contextAfter, 'SUB_Ability_AbilityRuntime_Worker_Stage_3200');
+      let transContext: ApplicationContextObject = new ApplicationContextObject(contextAfter,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_3200');
       if(transContext == undefined){
         expect().assertFail();
         done();
@@ -996,9 +1050,12 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3100:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_3100 begin');
       let transModuleContext:common.AbilityStageContext|undefined = undefined;
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(testAbilityStageContext);
-      let contextAfter: common.AbilityStageContext = sendableContextManager.convertToAbilityStageContext(sendableContext);
-      let transContext: AbilityStageObject = new AbilityStageObject(contextAfter, 'SUB_Ability_AbilityRuntime_Worker_Stage_3100');
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (testAbilityStageContext);
+      let contextAfter: common.AbilityStageContext = sendableContextManager.convertToAbilityStageContext
+        (sendableContext);
+      let transContext: AbilityStageObject = new AbilityStageObject(contextAfter,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_3100');
       if(transContext == undefined){
         expect().assertFail();
         done();
@@ -1041,7 +1098,7 @@ export default function sendableContextTest() {
       let TAG = 'SUB_Ability_AbilityRuntime_Worker_Stage_3300:';
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_Ability_AbilityRuntime_Worker_Stage_3300 begin');
       let transModuleContext:common.Context|undefined = undefined;
-      let moduleContext : common.Context|undefined = undefined;
+      let moduleContext: common.Context | undefined = undefined;
       await application.createModuleContext(testUIAbilityContext, 'entry_test').then((data)=>{
         moduleContext = data;
       });
@@ -1050,9 +1107,11 @@ export default function sendableContextTest() {
         done();
         return;
       }
-      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext(moduleContext);
+      let sendableContext: sendableContextManager.SendableContext = sendableContextManager.convertFromContext
+        (moduleContext);
       let contextAfter: common.Context = sendableContextManager.convertToContext(sendableContext);
-      let transContext: ContextObject = new ContextObject(contextAfter, 'SUB_Ability_AbilityRuntime_Worker_Stage_3300');
+      let transContext: ContextObject = new ContextObject(contextAfter as common.UIAbilityContext,
+        'SUB_Ability_AbilityRuntime_Worker_Stage_3300');
       if(transContext == undefined){
         expect().assertFail();
         done();

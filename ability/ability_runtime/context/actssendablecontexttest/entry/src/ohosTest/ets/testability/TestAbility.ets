@@ -16,7 +16,7 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
-import { Hypium } from '@ohos/hypium-dynamic';
+import { Hypium } from '@ohos/hypium';
 import testsuite from '../test/List.test';
 import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want';
@@ -37,7 +37,7 @@ let abilityWorker: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets
 let worker1: worker.ThreadWorker = new worker.ThreadWorker('entry_test/ets/workers/Worker1.ets');
 
 @Concurrent
-function printNormalContext(context: common.Context): boolean {
+function printNormalContext(context: common.UIAbilityContext): boolean {
   hilog.info(0x0000, 'testTag', 'taskpool print: %{public}s ', JSON.stringify(context));
   return true;
 }
@@ -52,8 +52,20 @@ function printSendableContext(object: SendableContextObject): boolean {
 export default class TestAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onCreate');
-    hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
-    hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + JSON.stringify(launchParam) ?? '');
+    let wantStr: string = '';
+    let launchParamStr: string = '';
+    try {
+      wantStr = JSON.stringify(want);
+    } catch (e) {
+      wantStr = '';
+    }
+    try {
+      launchParamStr = JSON.stringify(launchParam);
+    } catch (e) {
+      launchParamStr = '';
+    }
+    hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + wantStr);
+    hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:' + launchParamStr);
     AppStorage.setOrCreate('TestAbilityContext', this.context);
 
     let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator;
@@ -140,7 +152,8 @@ export default class TestAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Ability onmessage key: %{public}s, value: %{public}s', key, value);
       AppStorage.setOrCreate(key, value);
 
-      let object: NormalContextObject = new NormalContextObject(contextAfter, 'EntryAbilityContext');
+      let object: NormalContextObject = new NormalContextObject(contextAfter as ESObject as common.UIAbilityContext,
+        'EntryAbilityContext');
       hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage post message');
       worker1.postMessage(object);
     } catch (error) {
@@ -202,7 +215,8 @@ export default class TestAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Application key: %{public}s, value: %{public}s', key, value);
       AppStorage.setOrCreate(key, value);
 
-      let object: NormalContextObject = new NormalContextObject(contextAfter, 'ApplicationContext');
+      let object: NormalContextObject = new NormalContextObject(contextAfter as ESObject as common.UIAbilityContext,
+        'ApplicationContext');
       hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityStage post message');
       worker1.postMessage(object);
     } catch (error) {
@@ -265,7 +279,8 @@ export default class TestAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Base key: %{public}s, value: %{public}s', key, value);
       AppStorage.setOrCreate(key, value);
 
-      let object: NormalContextObject = new NormalContextObject(contextAfter, 'BaseContext');
+      let object: NormalContextObject = new NormalContextObject(contextAfter as ESObject as common.UIAbilityContext,
+        'BaseContext');
       hilog.info(0x0000, 'testTag', '%{public}s', 'Base post message');
       worker1.postMessage(object);
     } catch (error) {
