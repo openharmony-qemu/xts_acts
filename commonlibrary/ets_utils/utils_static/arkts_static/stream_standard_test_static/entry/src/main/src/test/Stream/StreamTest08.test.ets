@@ -42,7 +42,7 @@ class TestDuplex extends stream.Duplex {
     this.push(null);
   }
 
-  setDefaultEncoding(encoding: string): boolean {
+  setDefaultEncoding(encoding?: string): boolean {
     super.setDefaultEncoding(encoding);
     return true;
   }
@@ -56,8 +56,8 @@ class CustomDuplex extends stream.Duplex {
     super();
   }
 
-  setDefaultEncoding(encoding: string): boolean {
-    this._defaultEncoding = encoding;
+  setDefaultEncoding(encoding?: string): boolean {
+    this._defaultEncoding = encoding!;
     return true;
   }
 
@@ -306,7 +306,7 @@ class InnerTestDuplex1 extends stream.Duplex {
     this.push(null);
   }
 
-  setDefaultEncoding(encoding: string): boolean {
+  setDefaultEncoding(encoding?: string): boolean {
     return true;
   }
 }
@@ -330,11 +330,11 @@ class InnerTestDuplex2 extends stream.Duplex {
     invokeCb(callback);
   }
 
-  setDefaultEncoding(encoding: string): boolean {
+  setDefaultEncoding(encoding?: string): boolean {
     if (encoding === 'unsupported_encoding') {
       throw new Error('Parameter error');
     }
-    this.defaultEncoding = encoding;
+    this.defaultEncoding = encoding!;
     return true;
   }
 

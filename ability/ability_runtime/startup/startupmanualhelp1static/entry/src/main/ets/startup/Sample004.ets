@@ -29,7 +29,7 @@ export default class Sample004 extends StartupTask {
     return Promise.resolve('Sample004');
   }
 
-  onDependencyCompleted(dependence: string, result: Object): void {
+  onDependencyCompleted(dependence: string, result: Any): void {
     console.info('StartupTest Sample004 onDependencyCompleted dependence=' + dependence);
     console.info('StartupTest Sample004 onDependencyCompleted result=' + JSON.stringify(result));
     let completedValue4:string = AppStorage.get<string>('Sample004_onDependencyCompleted') as string;

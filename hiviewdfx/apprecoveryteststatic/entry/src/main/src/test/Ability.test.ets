@@ -22,12 +22,14 @@ import Want from '@ohos.app.ability.Want';
 import UIAbilityContext from 'application.UIAbilityContext';
 import Ability from "@ohos.app.ability.UIAbility"
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import { RecordData } from '@ohos.base';
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 
 class AbilityTest1 extends Ability {
-    onSaveState(reason:AbilityConstant.StateType, wantParam:Record<string, Object> ) {
+    onSaveState(reason:AbilityConstant.StateType, wantParam:Record<string, RecordData> ) {
         if (reason == AbilityConstant.StateType.APP_RECOVERY) {
             wantParam["test3"] = 3;
             return AbilityConstant.OnSaveResult.ALL_AGREE
@@ -426,7 +428,7 @@ export default function abilityTest() {
             console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1800 start--------------------");
             try{
                 let StateType = AbilityConstant.StateType.APP_RECOVERY;
-                let wantParam:Record<string, Object>= {"test1": 1, "test2": 2};
+                let wantParam:Record<string, RecordData>= {"test1": 1, "test2": 2};
                 let ret = ability_test.onSaveState(StateType, wantParam);
                 if (wantParam["test3"] == 3) {
                     console.info("test3 == 3");
