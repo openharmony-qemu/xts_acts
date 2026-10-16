@@ -190,7 +190,7 @@ struct BindScrollController {
     let scroller: Scroller = new Scroller();
 
     this.rootNode = typeNode.createScrollNode(this.getUIContext());
-    (this.rootNode as typeNode.Scroll)!.initialize(this.scroller1).size({ width: '100%', height: 500 });
+    (this.rootNode as typeNode.Scroll)!.initialize(this.scroller1).size({ width: '100%', height: '70%' });
 
     let colNode = typeNode.createColumnNode(this.getUIContext());
     this.rootNode!.appendChild(colNode);
@@ -198,7 +198,7 @@ struct BindScrollController {
     for (let i = 0; i < 10; i++) {
       let text = typeNode.createTextNode(this.getUIContext());
       text.initialize('item' + i)
-        .size({ width: '90%', height: 100 })
+        .size({ width: '90%', height: '20%' })
         .textAlign(TextAlign.Center)
       colNode.appendChild(text);
     }
@@ -217,7 +217,7 @@ struct BindScrollController {
         ContentSlot(this.nodeContent)
       }
 
-      Column() {
+      Row() {
         Text(this.scrollOffset + '')
           .id('scrollOffset')
         Button('bind scroll2')
@@ -229,6 +229,8 @@ struct BindScrollController {
           .onClick((e: ClickEvent) => {
             this.scroller1.scrollBy(0, 150);
           })
+      }
+      Row() {
         Button('scroller2 scrollBy 150')
           .id('scrollerBy')
           .onClick((e: ClickEvent) => {

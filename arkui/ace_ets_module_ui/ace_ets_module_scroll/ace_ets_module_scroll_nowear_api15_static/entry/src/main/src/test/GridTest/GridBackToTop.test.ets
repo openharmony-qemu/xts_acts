@@ -68,19 +68,21 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async (done: () => void): Promis
         console.info("GridScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
         let height = bottom - top;
         let width = right - left;
-        let driverTop = Driver.create();
-        await CommonFunc.sleep(1000);
-        let topButton: Component = await driverTop.findComponent(ON.id('Top')) as Component;
-        let driverSwitch = Driver.create();
-        let switchButton: Component = await driverSwitch.findComponent(ON.id('Switch')) as Component;
+        let topButton: Component = await driverGrid.findComponent(ON.id('Top')) as Component;
+        let switchButton: Component = await driverGrid.findComponent(ON.id('Switch')) as Component;
         await sleep(1500);
 
-        await driverGrid.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverGrid.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await topButton.click();
         await sleep(1500)
@@ -95,24 +97,34 @@ it('GridScrollTest1_static_0100', Level.LEVEL1, async (done: () => void): Promis
         await topButton.click();
         await sleep(1500)
 
-        await driverGrid.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverGrid.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await switchButton.click();
         await sleep(500)
         await topButton.click();
         await sleep(1500)
 
-        await driverGrid.swipe(
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 4).toInt(),
-          Math.round(left + width * 0.2).toInt(),
-          Math.round(bottom - height / 2).toInt()
-        );
+        await driverGrid.swipeBetween(
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 4).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          },
+          {
+            x: Math.round(left + width * 0.2).toInt(),
+            y: Math.round(bottom - height / 2).toInt(),
+            displayId: AppStorage.get<number>('displayID')?.toInt() ?? 0
+          });
         await sleep(2000);
         await switchButton.click();
         await sleep(500)

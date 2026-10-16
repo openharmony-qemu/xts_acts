@@ -49,13 +49,13 @@ export default function listLevel1Test() {
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0100
-     * @tc.name     listLevel1Test_static_static_0100
-     * @tc.desc     listLevel1Test_static_static_0100
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0100
+     * @tc.name     listLevel1Test_static_0100
+     * @tc.desc     listLevel1Test_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0100] START');
+it('listLevel1Test_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0100] START');
       await CommonFunc.sleep(2000);
       let json = inspector.getInspectorByKey('listlevel1');
       let Obj1 = JSON.parseJsonElement(json);
@@ -66,272 +66,316 @@ it('listLevel1Test_static_static_0100', Level.LEVEL1, async (done: () => void): 
       expect(Obj1.getElement('$attrs').getElement('divider').getString('endMargin')).assertEqual('10.00vp');
       expect(Obj1.getElement('$attrs').getString('contentStartOffset')).assertEqual('10.000000');
       expect(Obj1.getElement('$attrs').getString('contentEndOffset')).assertEqual('10.000000');
-      console.info('[listLevel1Test_static_static_0100] END');
+      console.info('[listLevel1Test_static_0100] END');
       done();
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0200
-     * @tc.name     listLevel1Test_static_static_0200
-     * @tc.desc     listLevel1Test_static_static_0200
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0200
+     * @tc.name     listLevel1Test_static_0200
+     * @tc.desc     listLevel1Test_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0200] START');
+it('listLevel1Test_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0200] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "30.00vp")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0200] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0200] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0200] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
         .assertEqual("30.00vp");
-      console.info('listLevel1Test_static_static_0200 END');
+      console.info('listLevel1Test_static_0200 END');
       done()
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0300
-     * @tc.name     listLevel1Test_static_static_0300
-     * @tc.desc     listLevel1Test_static_static_0300
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0300
+     * @tc.name     listLevel1Test_static_0300
+     * @tc.desc     listLevel1Test_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0300] START');
+it('listLevel1Test_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0300] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "30.90vp")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0300] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0300] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0300] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
         .assertEqual('30.90vp');
-      console.info('listLevel1Test_static_static_0300 END');
+      console.info('listLevel1Test_static_0300 END');
       done()
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0400
-     * @tc.name     listLevel1Test_static_static_0400
-     * @tc.desc     listLevel1Test_static_static_0400
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0400
+     * @tc.name     listLevel1Test_static_0400
+     * @tc.desc     listLevel1Test_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0400] START');
+it('listLevel1Test_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0400] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "0.00vp")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0400] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0400] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0400] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
         .assertEqual("0.00vp");
-      console.info('listLevel1Test_static_static_0400 END');
+      console.info('listLevel1Test_static_0400 END');
       done()
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0500
-     * @tc.name     listLevel1Test_static_static_0500
-     * @tc.desc     listLevel1Test_static_static_0500
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0500
+     * @tc.name     listLevel1Test_static_0500
+     * @tc.desc     listLevel1Test_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0500] START');
+it('listLevel1Test_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0500] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "30.00vp")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0500] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0500] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0500] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('endMargin'))
         .assertEqual("30.00vp");
-      console.info('listLevel1Test_static_static_0500 END');
+      console.info('listLevel1Test_static_0500 END');
       done()
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0600
-     * @tc.name     listLevel1Test_static_static_0600
-     * @tc.desc     listLevel1Test_static_static_0600
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0600
+     * @tc.name     listLevel1Test_static_0600
+     * @tc.desc     listLevel1Test_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0600] START');
+it('listLevel1Test_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0600] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "0.00vp")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0600] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0600] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0600] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('endMargin'))
         .assertEqual("0.00vp");
-      console.info('listLevel1Test_static_static_0600 END');
+      console.info('listLevel1Test_static_0600 END');
       done()
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0700
-     * @tc.name     listLevel1Test_static_static_0700
-     * @tc.desc     listLevel1Test_static_static_0700
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0700
+     * @tc.name     listLevel1Test_static_0700
+     * @tc.desc     listLevel1Test_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0700] START');
+it('listLevel1Test_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0700] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "30.90vp")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0700] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0700] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0700] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('endMargin'))
         .assertEqual("30.90vp");
-      console.info('listLevel1Test_static_static_0700 END');
+      console.info('listLevel1Test_static_0700 END');
       done()
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0800
-     * @tc.name     listLevel1Test_static_static_0800
-     * @tc.desc     listLevel1Test_static_static_0800
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0800
+     * @tc.name     listLevel1Test_static_0800
+     * @tc.desc     listLevel1Test_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0800] START');
+it('listLevel1Test_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0800] START');
       try {
         AppStorage.setOrCreate<number | string>('startMargin', "30%")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0800] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0800] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0800] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('startMargin'))
         .assertEqual("30.00%");
-      console.info('listLevel1Test_static_static_0800 END');
+      console.info('listLevel1Test_static_0800 END');
       done()
     });
 
 
     
     /**
-     * @tc.number   listLevel1Test_static_static_0900
-     * @tc.name     listLevel1Test_static_static_0900
-     * @tc.desc     listLevel1Test_static_static_0900
+     * @tc.number   SUB_ACE_LISTLEVEL1TEST_STATIC_0900
+     * @tc.name     listLevel1Test_static_0900
+     * @tc.desc     listLevel1Test_static_0900
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[listLevel1Test_static_static_0900] START');
+it('listLevel1Test_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[listLevel1Test_static_0900] START');
       try {
         AppStorage.setOrCreate<number | string>('endMargin', "5")
       } catch (err) {
-        console.log("[listLevel1Test_static_static_0900] change component data error: " + err.message);
+        console.log("[listLevel1Test_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
 
-      console.info("[listLevel1Test_static_static_0900] JSON.parseJsonElement(strJson) is: " +
+      console.info("[listLevel1Test_static_0900] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('divider').getString('endMargin'))
         .assertEqual("5.00vp");
-      console.info('listLevel1Test_static_static_0900 END');
+      console.info('listLevel1Test_static_0900 END');
       done()
     });
 
-
-    
     /**
      * @tc.number   listLevel1Test_static_1000
      * @tc.name     listLevel1Test_static_1000
      * @tc.desc     listLevel1Test_static_1000
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('listLevel1Test_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1000] START');
       try {
-        // 1.2只能设置数字
-        AppStorage.setOrCreate<number>('contentStartOffset', 200)
-        AppStorage.setOrCreate<number>('contentEndOffset', 200)
+        AppStorage.setOrCreate<string>('padding', "0")
+        AppStorage.setOrCreate<number>('contentStartOffset', 5)
       } catch (err) {
         console.log("[listLevel1Test_static_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
-
       console.info("[listLevel1Test_static_1000] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("0.00vp");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentStartOffset'))
-        .assertEqual("200.000000");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentEndOffset'))
-        .assertEqual("200.000000");
+        .assertEqual("5.000000");
+
+      await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let button = await driver.findComponent(ON.id('GetItemRectButton'));
+      if (!button) {
+        let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
+        let button = await scrollColumn?.scrollSearch(ON.id('GetItemRectButton')) as Component;
+        await CommonFunc.sleep(1000);
+      }
+      await button!.click();
+      await CommonFunc.sleep(10000);
+      let strJsonRectY: string = inspector.getInspectorByKey('itemRectY');
+      let strJsonRectWidth: string = inspector.getInspectorByKey('itemRectWidth');
+      let strJsonRectHeight: string = inspector.getInspectorByKey('itemRectHeight');
+      console.info("[listLevel1Test_static_1000] JSON.parse(strJsonRectY) is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonRectY).getElement('$attrs').getElement('content')));
+      console.info("[listLevel1Test_static_1000] JSON.parse(strJsonRectWidth) is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonRectWidth).getElement('$attrs').getElement('content')));
+      console.info("[listLevel1Test_static_1000] JSON.parse(strJsonRectHeight) is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonRectHeight).getElement('$attrs').getElement('content')));
+      expect(JSON.parseJsonElement(strJsonRectY).getElement('$attrs').getString('content')).assertEqual('itemRectY:5');
+      expect(JSON.parseJsonElement(strJsonRectWidth).getElement('$attrs').getString('content'))
+        .assertEqual('itemRectWidth:200');
+      expect(JSON.parseJsonElement(strJsonRectHeight).getElement('$attrs').getString('content'))
+        .assertEqual('itemRectHeight:100');
       console.info('listLevel1Test_static_1000 END');
       done()
     });
 
 
-    
+
     /**
      * @tc.number   listLevel1Test_static_1100
      * @tc.name     listLevel1Test_static_1100
      * @tc.desc     listLevel1Test_static_1100
      * @tc.level    Level.LEVEL1
      */
-it('listLevel1Test_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('listLevel1Test_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1100] START');
-      AppStorage.setOrCreate<string>('padding', "5")
-      AppStorage.setOrCreate<number>('contentEndOffset', 5)
+      try {
+        AppStorage.setOrCreate<number>('contentStartOffset', 10)
+        AppStorage.setOrCreate<number>('contentEndOffset', 10)
+      } catch (err) {
+        console.log("[listLevel1Test_static_1100] change component data error: " + err.message);
+      }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
-
       console.info("[listLevel1Test_static_1100] JSON.parseJsonElement(strJson) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("5.00vp");
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentStartOffset'))
+        .assertEqual("10.000000");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentEndOffset'))
-        .assertEqual("5.000000");
+        .assertEqual("10.000000");
+
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let button = await driver.findComponent(ON.id('currentOffsetButton'));
+      if (!button) {
+        let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
+        await scrollColumn?.scrollSearch(ON.id('currentOffsetButton')) as Component;
+        await CommonFunc.sleep(1000);
+      }
+      await button!.click();
+      await CommonFunc.sleep(1000);
+      let strJsonX: string = inspector.getInspectorByKey('xoffset');
+      let strJsonY: string = inspector.getInspectorByKey('yoffset');
+      await CommonFunc.sleep(1000);
+      console.info("[listLevel1Test_static_1100] component xoffset is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonX).getElement('$attrs').getElement('content')));
+      console.info("[listLevel1Test_static_1100] component yoffset is: " +
+        JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonY).getElement('$attrs').getElement('content')));
+      expect(JSON.parseJsonElement(strJsonX).getElement('$attrs').getString('content')).assertEqual("xoffset:0");
+      expect(JSON.parseJsonElement(strJsonY).getElement('$attrs').getString('content')).assertEqual("yoffset:-5");
       console.info('listLevel1Test_static_1100 END');
       done()
     });
-
 
     
     /**
@@ -343,8 +387,9 @@ it('listLevel1Test_static_1100', Level.LEVEL1, async (done: () => void): Promise
 it('listLevel1Test_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1200] START');
       try {
-        AppStorage.setOrCreate<string>('padding', "0")
-        AppStorage.setOrCreate<number>('contentStartOffset', 5)
+        // 1.2只能设置数字
+        AppStorage.setOrCreate<number>('contentStartOffset', 200)
+        AppStorage.setOrCreate<number>('contentEndOffset', 200)
       } catch (err) {
         console.log("[listLevel1Test_static_1200] change component data error: " + err.message);
       }
@@ -353,9 +398,10 @@ it('listLevel1Test_static_1200', Level.LEVEL1, async (done: () => void): Promise
 
       console.info("[listLevel1Test_static_1200] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("0.00vp");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentStartOffset'))
-        .assertEqual("5.000000");
+        .assertEqual("200.000000");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentEndOffset'))
+        .assertEqual("200.000000");
       console.info('listLevel1Test_static_1200 END');
       done()
     });
@@ -370,41 +416,16 @@ it('listLevel1Test_static_1200', Level.LEVEL1, async (done: () => void): Promise
      */
 it('listLevel1Test_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1300] START');
-      try {
-        AppStorage.setOrCreate<string>('padding', "0")
-        AppStorage.setOrCreate<number>('contentStartOffset', 5)
-      } catch (err) {
-        console.log("[listLevel1Test_static_1300] change component data error: " + err.message);
-      }
+      AppStorage.setOrCreate<string>('padding', "5")
+      AppStorage.setOrCreate<number>('contentEndOffset', 5)
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
+
       console.info("[listLevel1Test_static_1300] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("0.00vp");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentStartOffset'))
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("5.00vp");
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentEndOffset'))
         .assertEqual("5.000000");
-
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
-      let button = await scrollColumn.scrollSearch(ON.id('GetItemRectButton')) as Component;
-      await button.click();
-      await CommonFunc.sleep(10000);
-      let strJsonRectY: string = inspector.getInspectorByKey('itemRectY');
-      let strJsonRectWidth: string = inspector.getInspectorByKey('itemRectWidth');
-      let strJsonRectHeight: string = inspector.getInspectorByKey('itemRectHeight');
-      console.info("[listLevel1Test_static_1300] JSON.parse(strJsonRectY) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonRectY).getElement('$attrs').getElement('content')));
-      console.info("[listLevel1Test_static_1300] JSON.parse(strJsonRectWidth) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonRectWidth).getElement('$attrs').getElement('content')));
-      console.info("[listLevel1Test_static_1300] JSON.parse(strJsonRectHeight) is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonRectHeight).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJsonRectY).getElement('$attrs').getString('content')).assertEqual('itemRectY:5');
-      expect(JSON.parseJsonElement(strJsonRectWidth).getElement('$attrs').getString('content'))
-        .assertEqual('itemRectWidth:200');
-      expect(JSON.parseJsonElement(strJsonRectHeight).getElement('$attrs').getString('content'))
-        .assertEqual('itemRectHeight:100');
       console.info('listLevel1Test_static_1300 END');
       done()
     });
@@ -420,35 +441,19 @@ it('listLevel1Test_static_1300', Level.LEVEL1, async (done: () => void): Promise
 it('listLevel1Test_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1400] START');
       try {
-        AppStorage.setOrCreate<number>('contentStartOffset', 10)
-        AppStorage.setOrCreate<number>('contentEndOffset', 10)
+        AppStorage.setOrCreate<string>('padding', "0")
+        AppStorage.setOrCreate<number>('contentStartOffset', 5)
       } catch (err) {
         console.log("[listLevel1Test_static_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('listlevel1');
+
       console.info("[listLevel1Test_static_1400] JSON.parseJsonElement(strJson) is: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual("0.00vp");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentStartOffset'))
-        .assertEqual("10.000000");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('contentEndOffset'))
-        .assertEqual("10.000000");
-
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let scrollColumn: Component = await driver.findComponent(ON.type('Scroll')) as Component;
-      let button = await scrollColumn.scrollSearch(ON.id('currentOffsetButton')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
-      let strJsonX: string = inspector.getInspectorByKey('xoffset');
-      let strJsonY: string = inspector.getInspectorByKey('yoffset');
-      await CommonFunc.sleep(1000);
-      console.info("[listLevel1Test_static_1400] component xoffset is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonX).getElement('$attrs').getElement('content')));
-      console.info("[listLevel1Test_static_1400] component yoffset is: " +
-      JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonY).getElement('$attrs').getElement('content')));
-      expect(JSON.parseJsonElement(strJsonX).getElement('$attrs').getString('content')).assertEqual("xoffset:0");
-      expect(JSON.parseJsonElement(strJsonY).getElement('$attrs').getString('content')).assertEqual("yoffset:-5");
+        .assertEqual("5.000000");
       console.info('listLevel1Test_static_1400 END');
       done()
     });
@@ -463,7 +468,11 @@ it('listLevel1Test_static_1400', Level.LEVEL1, async (done: () => void): Promise
      */
 it('listLevel1Test_static_1500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1500] START');
-      let listItemRect = CommonFunc.getComponentRectOnScreen('listitemlevel0');
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('listitemlevel0'));
+      let listItemRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = listItemRect.top;
       let right = listItemRect.right;
       let left = listItemRect.left;
@@ -471,12 +480,15 @@ it('listLevel1Test_static_1500', Level.LEVEL1, async (done: () => void): Promise
       console.info("listLevel1Test_static_1500 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = Driver.create()
       await CommonFunc.sleep(1000);
       const uiContext = AppStorage.get<UIContext>('uiContext')!;
-      await driver.swipe((Math.round(right - uiContext.vp2px(10))).toInt(),
-        (Math.round(bottom - height / 2)).toInt(), (Math.round(left + width / 2)).toInt(),
-        (Math.round(bottom - height / 2)).toInt());
+      await driver.swipeBetween(
+        { x: (Math.round(right - uiContext.vp2px(10))).toInt(),
+          y: (Math.round(bottom - height / 2)).toInt(),
+          displayId: displayId },
+        { x: (Math.round(left + width / 2)).toInt(),
+          y: (Math.round(bottom - height / 2)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('startDeleteAreaDistance', "50")
@@ -503,7 +515,11 @@ it('listLevel1Test_static_1500', Level.LEVEL1, async (done: () => void): Promise
      */
 it('listLevel1Test_static_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1600] START');
-      let listItemRect = CommonFunc.getComponentRectOnScreen('listitemlevel0');
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('listitemlevel0'));
+      let listItemRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = listItemRect.top;
       let right = listItemRect.right;
       let left = listItemRect.left;
@@ -511,14 +527,15 @@ it('listLevel1Test_static_1600', Level.LEVEL1, async (done: () => void): Promise
       console.info("listLevel1Test_static_1600 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = Driver.create()
       await CommonFunc.sleep(1000);
       const uiContext = AppStorage.get<UIContext>('uiContext')!;
-      await driver.swipe(
-        (Math.round(left + uiContext.vp2px(10))).toInt(),
-        (Math.round(bottom - height / 2)).toInt(),
-        (Math.round(left + width / 2)).toInt(),
-        (Math.round(bottom - height / 2)).toInt());
+      await driver.swipeBetween(
+        { x: (Math.round(left + uiContext.vp2px(10))).toInt(),
+          y: (Math.round(bottom - height / 2)).toInt(),
+          displayId: displayId },
+        { x: (Math.round(left + width / 2)).toInt(),
+          y: (Math.round(bottom - height / 2)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('endDeleteAreaDistance', "50")
@@ -545,7 +562,11 @@ it('listLevel1Test_static_1600', Level.LEVEL1, async (done: () => void): Promise
      */
 it('listLevel1Test_static_1700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[listLevel1Test_static_1700] START');
-      let listItemRect = CommonFunc.getComponentRectOnScreen('listitemlevel0');
+      let driver = Driver.create()
+      await CommonFunc.sleep(500);
+      let swipeComp = await driver.findComponent(ON.id('listitemlevel0'));
+      let listItemRect = await swipeComp!.getBounds();
+      let displayId = await swipeComp!.getDisplayId();
       let top = listItemRect.top;
       let right = listItemRect.right;
       let left = listItemRect.left;
@@ -553,14 +574,15 @@ it('listLevel1Test_static_1700', Level.LEVEL1, async (done: () => void): Promise
       console.info("listLevel1Test_static_1700 value is" + left + " --" + right + "--" + top + "--" + bottom);
       let height = bottom - top;
       let width = right - left;
-      let driver = Driver.create()
       await CommonFunc.sleep(1000);
       const uiContext = AppStorage.get<UIContext>('uiContext')!;
-      await driver.swipe(
-        (Math.round(right - uiContext.vp2px(10))).toInt(),
-        (Math.round(bottom - height / 2)).toInt(),
-        (Math.round(left + width / 2)).toInt(),
-        (Math.round(bottom - height / 2)).toInt());
+      await driver.swipeBetween(
+        { x: (Math.round(right - uiContext.vp2px(10))).toInt(),
+          y: (Math.round(bottom - height / 2)).toInt(),
+          displayId: displayId },
+        { x: (Math.round(left + width / 2)).toInt(),
+          y: (Math.round(bottom - height / 2)).toInt(),
+          displayId: displayId });
       await CommonFunc.sleep(3000);
       try {
         AppStorage.setOrCreate<string>('startDeleteAreaDistance', "100")

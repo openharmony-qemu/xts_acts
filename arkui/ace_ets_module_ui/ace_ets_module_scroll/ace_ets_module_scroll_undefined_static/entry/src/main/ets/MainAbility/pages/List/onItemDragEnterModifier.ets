@@ -83,13 +83,13 @@ struct Index {
             Text(item)
           }
           .width(80)
-          .height(80)
+          .height('20%')
           .borderRadius(4)
           .id('List_item' + item)
         }, (item: string) => item)
       }
       .width('100%')
-      .height(500)
+      .height('40%')
       .alignListItem(ListItemAlign.Center)
       .onItemDragStart((event: ItemDragInfo) => {
         console.log('xxx onItemDragStart')
@@ -101,14 +101,16 @@ struct Index {
         console.log('xxx onItemDrop')
       })
 
-      Button('Change').onClick(() => {
-        this.modifier4.isChange = !this.modifier4.isChange;
-      })
-        .id('changeButton')
+      Row() {
+        Button('Change').onClick(() => {
+          this.modifier4.isChange = !this.modifier4.isChange;
+        })
+          .id('changeButton')
 
-      Button(this.modifier4.text)
-        .backgroundColor('#00ff00')
-        .id('dragText')
+        Button(this.modifier4.text)
+          .backgroundColor('#00ff00')
+          .id('dragText')
+      }.height('5%')
 
       List() {
         ForEach(this.listArr, (item: string) => {
@@ -122,7 +124,7 @@ struct Index {
         }, (item: string) => item)
       }
       .width('100%')
-      .height(500)
+      .height('40%')
       .alignListItem(ListItemAlign.Center)
       .onItemDragStart((event: ItemDragInfo) => {
         console.log('xxx onItemDragStart')

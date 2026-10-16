@@ -53,15 +53,22 @@ export default function onWillStopDraggingTest() {
         await CommonFunc.sleep(1000);
         let dragScroll = await driver.findComponent(ON.id('grid_dragging'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
+        let displayId = await dragScroll!.getDisplayId();
         let top = rect.top;
         let right = rect.right;
         let left = rect.left;
         let bottom = rect.bottom;
-        let height = bottom -top;
+        let height = bottom - top;
         let width = right - left;
-        await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
+        let centerX = (Math.round(left + width / 2)).toInt();
+        let startY = (Math.round(top + height * 0.8)).toInt();
+        let endY = (Math.round(top + height * 0.2)).toInt();
+        await driver.swipeBetween(
+          { x: centerX, y: startY, displayId: displayId },
+          { x: centerX, y: endY, displayId: displayId }
+        );
         await CommonFunc.sleep(2000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onWillStopDragging' + '_onWillStopDragging'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onWillStopDragging_onWillStopDragging'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('第1次拖拽停止');

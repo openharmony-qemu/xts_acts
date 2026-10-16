@@ -48,11 +48,14 @@ struct GridExample {
         }
         .maxCount(this.maxCount_)
         .id('TestGridMaxCount')
+        .width('90%')
+        .height('80%')
 
         Button('Change').onClick(() => {
           this.maxCount_ = undefined;
         })
           .id('changeButton')
+          .height('5%')
       }
       .width('90%')
       .align(Alignment.Center)

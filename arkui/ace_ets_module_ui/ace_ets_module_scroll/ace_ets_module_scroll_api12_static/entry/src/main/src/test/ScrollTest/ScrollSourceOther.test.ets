@@ -96,7 +96,9 @@ it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         console.info('ScrollSourceOther_0200 START');
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
+        let swipeComp = await driver.findComponent(ON.id('scrollSourceOther'));
+        let swiperScroll = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
         let top = swiperScroll.top;
         let right = swiperScroll.right;
         let left = swiperScroll.left;
@@ -105,8 +107,13 @@ it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         let height = bottom - top;
         let width = right - left;
         await CommonFunc.sleep(1000);
-        await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.6)).toInt(),
-          (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt());
+        await driver.swipeBetween(
+          { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
+            y: (Number.parseInt(`${(Math.round(top + height * 0.6)).toInt()}`)).toInt(),
+            displayId: displayId },
+          { x: (Number.parseInt(`${(Math.round(left + width / 2)).toInt()}`)).toInt(),
+            y: (Number.parseInt(`${(Math.round(top + height * 0.2)).toInt()}`)).toInt(),
+            displayId: displayId });
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('EDGE_EFFECT');
         let obj = JSON.parseJsonElement(strJson);
@@ -136,7 +143,9 @@ it('ScrollSourceOther_0300', Level.LEVEL0, async (done: () => void): Promise<voi
         console.info('ScrollSourceOther_0300 START');
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
+        let swipeComp = await driver.findComponent(ON.id('scrollSourceOther'));
+        let swiperScroll = await swipeComp!.getBounds();
+        let displayId = await swipeComp!.getDisplayId();
         let top = swiperScroll.top;
         let right = swiperScroll.right;
         let left = swiperScroll.left;
@@ -148,12 +157,14 @@ it('ScrollSourceOther_0300', Level.LEVEL0, async (done: () => void): Promise<voi
 
         await driver.mouseScroll({
           x: (Math.round(left + width / 2)).toInt(),
-          y: (Math.round(top + height * 0.3)).toInt()
+          y: (Math.round(top + height * 0.3)).toInt(),
+          displayId: displayId
         }, false, 20)
         await CommonFunc.sleep(3000);
         await driver.mouseScroll({
           x: (Math.round(left + width / 2)).toInt(),
-          y: (Math.round(top + height * 0.3)).toInt()
+          y: (Math.round(top + height * 0.3)).toInt(),
+          displayId: displayId
         }, true, 20)
         await CommonFunc.sleep(3000);
 

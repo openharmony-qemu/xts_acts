@@ -62,7 +62,7 @@ struct Index {
         }, (item: string) => item)
       }
       .width('100%')
-      .height(500)
+      .height('80%')
       .alignListItem(ListItemAlign.Center)
       .backgroundColor(Color.Blue)
       .onItemDragStart((event: ItemDragInfo) => {
@@ -85,9 +85,11 @@ struct Index {
         this.isChange = !this.isChange;
       })
         .id('changeButton')
+        .height('5%')
       Button(this.text)
         .backgroundColor('#00ff00')
         .id('dragText')
+        .height('5%')
     }
     .width('100%')
     .height('100%')
