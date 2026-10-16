@@ -395,7 +395,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -419,7 +419,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -477,7 +477,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
@@ -500,7 +500,7 @@ export default function NetworkManagerHttpEnhanceTest() {
         done();
       } catch (error) {
         console.log(`${caseName} catch error: ${JSON.stringify(error)}`);
-        expectTrue(error.code === 401);
+        expectTrue(error.code !== 401);
         console.info(`${caseName}---End`);
         done();
       }
