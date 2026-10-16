@@ -303,7 +303,7 @@ export default function Component3DAttribute() {
           let strJson: string = inspector.getInspectorByKey('Component3D_1');
           let renderWidthValue: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('renderWidth');
           console.info(msg + ' renderWidth: ' + renderWidthValue);
-          expect(renderWidthValue > 0).assertEqual(true);
+          expect(Number(renderWidthValue) > 0).assertEqual(true);
           console.info(msg + ' END');
           done();
         } catch (err) {
@@ -330,7 +330,7 @@ export default function Component3DAttribute() {
           let strJson: string = inspector.getInspectorByKey('Component3D_1');
           let renderHeightValue: string = JSON.parseJsonElement(strJson).getElement('$attrs').getString('renderHeight');
           console.info(msg + ' renderHeight: ' + renderHeightValue);
-          expect(renderHeightValue > 0).assertEqual(true);
+          expect(Number(renderHeightValue) > 0).assertEqual(true);
           console.info(msg + ' END');
           done();
         } catch (err) {

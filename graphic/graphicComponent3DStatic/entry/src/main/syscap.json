@@ -4,7 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Graphic.Graphic2D.ColorManager.Core"
+                    "SystemCapability.ArkUi.Graphics3D"
                 ]
             }
         ]
