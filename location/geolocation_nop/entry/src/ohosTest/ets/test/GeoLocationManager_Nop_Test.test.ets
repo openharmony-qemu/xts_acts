@@ -1929,5 +1929,184 @@ export default function geoLocationManager_nop_test() {
         }
       })
 
+    /**
+     * @tc.name   SUB_Location_nop_location_attributes_0100
+     * @tc.number SUB_Location_nop_location_attributes_0100
+     * @tc.desc   Using geoLocationManager.Location interface properties without permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_location_attributes_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_Location_nop_location_attributes_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+          console.info('The device does not support location core');
+          expect(isAcessToken).assertFalse();
+          done();
+          return;
+        }
+        let requestInfo: geoLocationManager.LocationRequest = {
+          'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
+          'scenario': geoLocationManager.LocationRequestScenario.UNSET,
+          'timeInterval': 1,
+          'distanceInterval': 0,
+          'maxAccuracy': 0
+        };
+        let locationChange = (location: geoLocationManager.Location): void => {
+          console.info('SUB_Location_nop_location_attributes_0100 locationChange data: ' + JSON.stringify(location));
+          expect(typeof location.latitude).assertEqual("number");
+          expect(location.latitude >= -90 && location.latitude <= 90).assertTrue();
+          expect(typeof location.longitude).assertEqual("number");
+          expect(location.longitude >= -180 && location.longitude <= 180).assertTrue();
+          expect(typeof location.altitude).assertEqual("number");
+          expect(typeof location.accuracy).assertEqual("number");
+          expect(typeof location.speed).assertEqual("number");
+          expect(typeof location.timeStamp).assertEqual("number");
+          expect(typeof location.direction).assertEqual("number");
+          expect(location.direction >= 0 && location.direction <= 360).assertTrue();
+          expect(typeof location.timeSinceBoot).assertEqual("number");
+          if (location.additions !== undefined) { expect(Array.isArray(location.additions)).assertTrue(); }
+          if (location.additionsMap !== undefined) { expect(location.additionsMap instanceof Map).assertTrue(); }
+          if (location.additionSize !== undefined) { expect(typeof location.additionSize).assertEqual("number"); expect(location.additionSize >= 0).assertTrue(); }
+          if (location.isFromMock !== undefined) { expect(typeof location.isFromMock).assertEqual("boolean"); }
+          if (location.altitudeAccuracy !== undefined) { expect(typeof location.altitudeAccuracy).assertEqual("number"); }
+          if (location.speedAccuracy !== undefined) { expect(typeof location.speedAccuracy).assertEqual("number"); }
+          if (location.directionAccuracy !== undefined) { expect(typeof location.directionAccuracy).assertEqual("number"); }
+          if (location.uncertaintyOfTimeSinceBoot !== undefined) { expect(typeof location.uncertaintyOfTimeSinceBoot).assertEqual("number"); }
+          if (location.sourceType !== undefined) { expect(typeof location.sourceType).assertEqual("number"); }
+          if (location.poi !== undefined) { expect(typeof location.poi).assertEqual("object"); }
+        };
+        try {
+          geoLocationManager.on('locationChange', requestInfo, locationChange);
+          console.info('SUB_Location_nop_location_attributes_0100 on unexpectedly succeeded');
+          expect().assertFail();
+        } catch (err) {
+          console.info('SUB_Location_nop_location_attributes_0100 on catch err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual('201');
+        }
+        try {
+          geoLocationManager.off('locationChange', locationChange);
+        } catch (err) {
+          console.info('SUB_Location_nop_location_attributes_0100 off catch err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual('201');
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Location_nop_LocationError_0100
+     * @tc.number SUB_Location_nop_LocationError_0100
+     * @tc.desc   Verify geoLocationManager.LocationError enum values and on('locationError') without permission (201).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_LocationError_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let isAcessToken = canIUse('SystemCapability.Location.Location.Core');
+        console.info('SUB_Location_nop_LocationError_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+          console.info('The device does not support location core');
+          expect(isAcessToken).assertFalse();
+          done();
+          return;
+        }
+        expect(geoLocationManager.LocationError.LOCATING_FAILED_DEFAULT).assertEqual(-1);
+        expect(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_PERMISSION_DENIED).assertEqual(-2);
+        expect(geoLocationManager.LocationError.LOCATING_FAILED_BACKGROUND_PERMISSION_DENIED).assertEqual(-3);
+        expect(geoLocationManager.LocationError.LOCATING_FAILED_LOCATION_SWITCH_OFF).assertEqual(-4);
+        expect(geoLocationManager.LocationError.LOCATING_FAILED_INTERNET_ACCESS_FAILURE).assertEqual(-5);
+        let locationErrorCallback = (locationError: geoLocationManager.LocationError): void => {
+          console.info('SUB_Location_nop_LocationError_0100 locationError: ' + JSON.stringify(locationError));
+        };
+        try {
+          geoLocationManager.on('locationError', locationErrorCallback);
+          console.info('SUB_Location_nop_LocationError_0100 on unexpectedly succeeded');
+          try {
+            geoLocationManager.off('locationError', locationErrorCallback);
+          } catch (e) {
+            console.info('SUB_Location_nop_LocationError_0100 cleanup off err: ' + JSON.stringify(e));
+          }
+          expect().assertFail();
+        } catch (err) {
+          console.info('SUB_Location_nop_LocationError_0100 on catch err: ' + JSON.stringify(err));
+          expect(err.code).assertEqual('201');
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Location_nop_getAddressesFromLocationName_0100
+     * @tc.number SUB_Location_nop_getAddressesFromLocationName_0100
+     * @tc.desc   Verify GeoAddress attributes returned by geoLocationManager.getAddressesFromLocationName callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_Location_nop_getAddressesFromLocationName_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let isAcessToken = canIUse('SystemCapability.Location.Location.Geocoder');
+        console.info('SUB_Location_nop_getAddressesFromLocationName_0100: ' + isAcessToken);
+        if (!isAcessToken) {
+          console.info('The device does not support geocoder');
+          expect(isAcessToken).assertFalse();
+          done();
+          return;
+        }
+        let geocodeRequest: geoLocationManager.GeoCodeRequest = {
+          description: '上海市浦东新区xx路xx号',
+          maxItems: 1
+        };
+        try {
+          geoLocationManager.getAddressesFromLocationName(geocodeRequest,
+            (err: BusinessError, data: Array<geoLocationManager.GeoAddress>) => {
+              console.info('SUB_Location_nop_getAddressesFromLocationName_0100 err: ' + JSON.stringify(err)
+                + ', data: ' + JSON.stringify(data));
+              if (err) {
+                if (err.code === 801) {
+                  expect(err.code).assertEqual(801);
+                } else {
+                  expect().assertFail();
+                }
+              } else {
+                if (data && data.length > 0) {
+                  let address: geoLocationManager.GeoAddress = data[0];
+                  if (address.latitude !== undefined) { expect(typeof address.latitude).assertEqual("number"); }
+                  if (address.longitude !== undefined) { expect(typeof address.longitude).assertEqual("number"); }
+                  if (address.locale !== undefined) { expect(typeof address.locale).assertEqual("string"); }
+                  if (address.placeName !== undefined) { expect(typeof address.placeName).assertEqual("string"); }
+                  if (address.countryCode !== undefined) { expect(typeof address.countryCode).assertEqual("string"); }
+                  if (address.countryName !== undefined) { expect(typeof address.countryName).assertEqual("string"); }
+                  if (address.administrativeArea !== undefined) { expect(typeof address.administrativeArea).assertEqual("string"); }
+                  if (address.subAdministrativeArea !== undefined) { expect(typeof address.subAdministrativeArea).assertEqual("string"); }
+                  if (address.locality !== undefined) { expect(typeof address.locality).assertEqual("string"); }
+                  if (address.subLocality !== undefined) { expect(typeof address.subLocality).assertEqual("string"); }
+                  if (address.roadName !== undefined) { expect(typeof address.roadName).assertEqual("string"); }
+                  if (address.subRoadName !== undefined) { expect(typeof address.subRoadName).assertEqual("string"); }
+                  if (address.premises !== undefined) { expect(typeof address.premises).assertEqual("string"); }
+                  if (address.postalCode !== undefined) { expect(typeof address.postalCode).assertEqual("string"); }
+                  if (address.phoneNumber !== undefined) { expect(typeof address.phoneNumber).assertEqual("string"); }
+                  if (address.addressUrl !== undefined) { expect(typeof address.addressUrl).assertEqual("string"); }
+                  if (address.descriptions !== undefined) { expect(Array.isArray(address.descriptions)).assertTrue(); }
+                  if (address.descriptionsSize !== undefined) { expect(typeof address.descriptionsSize).assertEqual("number"); }
+                } else {
+                  console.info('SUB_Location_nop_getAddressesFromLocationName_0100 empty result, no matching address');
+                }
+              }
+              done();
+            });
+        } catch (err) {
+          console.info('SUB_Location_nop_getAddressesFromLocationName_0100 catch err: ' + JSON.stringify(err));
+          if (err.code === 801) {
+            expect(err.code).assertEqual(801);
+          } else {
+            expect().assertFail();
+          }
+          done();
+        }
+      })
+
   })
 }
